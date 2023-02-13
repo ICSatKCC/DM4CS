@@ -7,46 +7,39 @@
       \newcommand{\R}{\mathbb R}
     </macros>
     <latax-image-preamble>
+      \usepackage{amsmath}
       \usepackage{tikz}
     </latax-image-preamble>
   </docinfo>
 
-  <book xml:id="my-great-book">
-    <title>My Great Book</title>
+  <book xml:id="dm4cs">
+    <title>Discrete Mathematics for Computer Science</title>
     <subtitle>An example to get you started</subtitle>
 
-    <frontmatter xml:id="frontmatter">
-      <titlepage>
-        <author>
-          <personname>You</personname>
-          <department>Your department</department>
-          <institution>Your institution</institution>
-        </author>
-        <date>
-          <today />
-        </date>
-      </titlepage>
+    <xi:include href="./frontmatter.ptx" />
+    <!-- These are all the chapter files, section files included there -->
+    <xi:include href="./Chapter1.ptx" />
+    <<!--xi:include
+    href="./Chapter2.xml" />
+<xi:include href="./Chapter3.xml" />
+<xi:include href="./Chapter4.xml" />
+<xi:include href="./Chapter5.xml" />
+<!-- <xi:include href="./XC6.xml" /> ADS Ch 6 moved to ICS 241 -->
+    <xi:include href="./Chapter6.xml" />   <!-- ADS Ch 7 Ch 8 ADS appendix on algorithms + other stuff -->
+    <xi:include href="./Chapter7.xml" />
+    <xi:include href="./Chapter8.xml" />
+    <xi:include href="./Chapter9.xml" />
+    <xi:include href="./Chapter10.xml" />  	<!-- Ch 10 is relations -->
+    <xi:include href="./Chapter11.xml" />  	<!-- Ch 11 Algebraic systems -->
+    <xi:include href="./Chapter12.xml" />  	<!-- Ch 12 Boolean Alg -->
+    <xi:include href="./Chapter13.xml" />  	<!-- Ch 13 Graphs -->
+    <xi:include href="./Chapter14.xml" />  	<!-- Ch 14 Trees -->
+    <xi:include href="./Chapter15.xml" />  	<!-- Ch 15 Automato/FSM -->
+    <xi:include href="./Chapter16.xml" />  	<!-- Ch 16 Recurrence Relations -->
+    <xi:include href="./Chapter17.xml" />  	<!-- Ch 17 Program Correctness -->
+    <xi:include href="./backmatter.xml" />-->
 
-      <colophon>
-
-        <website>
-          <name>
-            <c>example.org</c>
-          </name>
-          <address>https://example.org</address>
-        </website>
-
-        <copyright>
-          <year>2020<ndash />2023</year>
-          <holder>You</holder>
-          <shortlicense> 
-            This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/" visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
-          </shortlicense>
-        </copyright>
-      </colophon>
-    </frontmatter>
-
-    <chapter xml:id="chapter-title">
+    <!--  <chapter xml:id="chapter-title">
       <title>Chapter title</title>
 
       <section xml:id="section-title">
@@ -63,7 +56,7 @@
         <p> This book was authored in <pretext />. </p>
       </colophon>
 
-    </backmatter>
+    </backmatter>-->
 
   </book>
 </pretext>
