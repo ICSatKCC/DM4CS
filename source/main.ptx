@@ -6,10 +6,10 @@
     <macros>
       \newcommand{\R}{\mathbb R}
     </macros>
-    <latax-image-preamble>
+    <latex-image-preamble>
       \usepackage{amsmath}
       \usepackage{tikz}
-    </latax-image-preamble>
+    </latex-image-preamble>
   </docinfo>
 
   <book xml:id="dm4cs">
@@ -19,25 +19,25 @@
     <xi:include href="./frontmatter.ptx" />
     <!-- These are all the chapter files, section files included there -->
     <xi:include href="./Chapter1.ptx" />
-    <<!--xi:include
+    <!--xi:include
     href="./Chapter2.xml" />
 <xi:include href="./Chapter3.xml" />
 <xi:include href="./Chapter4.xml" />
 <xi:include href="./Chapter5.xml" />
-<!-- <xi:include href="./XC6.xml" /> ADS Ch 6 moved to ICS 241 -->
-    <xi:include href="./Chapter6.xml" />   <!-- ADS Ch 7 Ch 8 ADS appendix on algorithms + other stuff -->
-    <xi:include href="./Chapter7.xml" />
-    <xi:include href="./Chapter8.xml" />
-    <xi:include href="./Chapter9.xml" />
-    <xi:include href="./Chapter10.xml" />  	<!-- Ch 10 is relations -->
-    <xi:include href="./Chapter11.xml" />  	<!-- Ch 11 Algebraic systems -->
-    <xi:include href="./Chapter12.xml" />  	<!-- Ch 12 Boolean Alg -->
-    <xi:include href="./Chapter13.xml" />  	<!-- Ch 13 Graphs -->
-    <xi:include href="./Chapter14.xml" />  	<!-- Ch 14 Trees -->
-    <xi:include href="./Chapter15.xml" />  	<!-- Ch 15 Automato/FSM -->
-    <xi:include href="./Chapter16.xml" />  	<!-- Ch 16 Recurrence Relations -->
-    <xi:include href="./Chapter17.xml" />  	<!-- Ch 17 Program Correctness -->
-    <xi:include href="./backmatter.xml" />-->
+<!- <xi:include href="./XC6.xml" /> ADS Ch 6 moved to ICS 241 -->
+    <!--<xi:include href="./Chapter6.xml" />  --> <!-- ADS Ch 7 Ch 8 ADS appendix on algorithms + other stuff -->
+    <!--<xi:include href="./Chapter7.xml" />-->
+    <!--<xi:include href="./Chapter8.xml" />
+    <xi:include href="./Chapter9.xml" />-->
+   <!-- <xi:include href="./Chapter10.xml" />  --> <!-- 	Ch 10 is relations -->
+    <!--<xi:include href="./Chapter11.xml" />-->  	<!-- Ch 11 Algebraic systems -->
+   <!-- <xi:include href="./Chapter12.xml" />  -->	<!-- Ch 12 Boolean Alg -->
+   <!-- <xi:include href="./Chapter13.xml" /> --> 	<!-- Ch 13 Graphs -->
+    <!--<xi:include href="./Chapter14.xml" /> --> 	<!-- Ch 14 Trees -->
+    <!--<xi:include href="./Chapter15.xml" />-->  	<!-- Ch 15 Automato/FSM -->
+    <!--<xi:include href="./Chapter16.xml" /> --> 	<!-- Ch 16 Recurrence Relations -->
+    <!--<xi:include href="./Chapter17.xml" />  -->	<!-- Ch 17 Program Correctness -->
+    <!--<xi:include href="./backmatter.xml" /> -->
 
     <!--  <chapter xml:id="chapter-title">
       <title>Chapter title</title>
