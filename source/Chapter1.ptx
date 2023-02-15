@@ -7,11 +7,11 @@
 
 <aside>Chapter 1 Discrete Mathematics for Computer Science is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 United States License.</aside>
 </introduction>
-<xi:include href="./Section1_1.xml" />
-<xi:include href="./Section1_2.xml" />
-<xi:include href="./Section1_3.xml" />
-<xi:include href="./Section1_4.xml" />
-<xi:include href="./Section1_5.xml" />
+<xi:include href="./Section1_1.ptx" />
+<xi:include href="./Section1_2.ptx" />
+<xi:include href="./Section1_3.ptx" />
+<xi:include href="./Section1_4.ptx" />
+<xi:include href="./Section1_5.ptx" />
 
 
 </chapter>
