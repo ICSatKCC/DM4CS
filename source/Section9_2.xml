@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 9.2 recursive algorithms   -->
+<!-- I have to write -->
+<!-- TODO Taken from Smid Recursion Chapter -->
+<section xml:id="section9_2-Recursive_Algorithms">
+	<title>Recursive Algorithms</title>
+	<idx>Recursive Algorithms</idx>
+<introduction>
+  <blockquote>
+    <p>In order to understand recursion, you must first
+      understand  recursion.</p>
+		</blockquote>
+		<p>Recursion is the concept where an object (such as a function,
+a set, or an algorithm) is defined in the following way:
+<ul>
+<li>There are one or more base cases.</li>
+ <li>There are one or more rules that define an object in terms of
+      <q>smaller</q> objects that have already been defined.</li>
+</ul>
+We have already seen recursive functions and set definitions in <xref ref="section8_4-recursion"/>. In this section we will see several examples of recursive algorithms.</p>
+
+<p>The previous section starts with an algorithm for singing <em>99 Bottles of Beer on the Wall</em>. We can redefine that as a recursive algorithm:
+<algorithm xml:id="alg-99-bottles-recursive"><title>RecursiveBottlesOfBeer</title><statement>
+<paragraphs>
+<title>procedure RecursiveBottlesOfBeer</title> <p>(<m>n</m>: number of bottles)</p>
+    <tabular>
+            <row>
+              <cell colspan="3"><alert>If</alert> n = 0: </cell>
+            </row>
+
+            <row>
+              <cell></cell>
+              <cell colspan="2"><alert>Sing:</alert>  “No bottles of beer on the wall, no bottles of beer,”</cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell colspan="2"><alert>Sing:</alert>  “Go to the store, buy some more, n bottles of beer on the wall.”</cell>
+            </row>
+            <row>
+              <cell colspan="3"><alert>Else:</alert> </cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell colspan="2"><alert>Sing:</alert>  “n bottles of beer on the wall, n bottles of beer,”</cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell colspan="2"><alert>Sing:</alert>  “Take one down, pass it around, n − 1 bottles of beer on the wall.”</cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell colspan="2"><alert>RecursiveBottlesOfBeer</alert> (n-1) </cell>
+            </row>
+          </tabular>
+        </paragraphs>
+      </statement>
+    </algorithm>
+
+    This has all the hallmarks of a recursive algorithm, the loop in <xref ref="alg-99-bottles"/> the non-recursive version is gone and replaced with a recursive case: the call to <em>RecursiveBottlesOfBeer</em> with a smaller input (n - 1). The base case is where no bottles of beer are left, n = 0, a different verse is sung and there is no recursive call, the recursion stops. </p>
+</introduction>
+<!-- TODO This is Smid's new chapter "ChapterNew.txt" rest used in big O section -->
+<subsection xml:id="subsec9_2_1-euclid"><title>Euclid's Algorithm</title><idx>Euclid's Algorithm</idx>
+
+<introduction><blockquote><p>We might call Euclid's method the granddaddy of all
+       algorithms, because it is the oldest nontrivial algorithm that
+       has survived to the present day</p><attribution>Donald E. Knuth, The Art of Computer Programming, Vol. 2,
+      1997</attribution></blockquote>.
+
+<p>The <em>greatest common divisor</em> of two integers <m>a \geq 1</m> and
+<m>b \geq 1</m> is the largest integer that divides both <m>a</m> and <m>b</m>. We
+denote this largest integer by <m>GCD(a,b)</m>. For example, the common
+divisors of <m>75</m> and <m>45</m> are <m>1</m>, <m>3</m>, <m>5</m>, and <m>15</m>. Since <m>15</m> is
+the largest among them, <m>GCD(75,45) = 15</m>. Observe that, for any
+integer <m>a \geq 1</m>, <m>GCD(a,a) = a</m>.</p>
+
+<p>Assume we are given two large integers <m>a</m> and <m>b</m>, say
+<m>a = 371, 435, 805</m> and <m>b = 137, 916, 675</m>. How can we compute their
+greatest common divisor? One approach is to determine the prime
+factorizations of <m>a</m> and <m>b</m>:
+
+<me> a = 371, 435, 805 = 3^2 \cdot 5 \cdot 13^4 \cdot 17^2
+</me>
+and
+<me> b = 137, 916, 675 = 3^4 \cdot 5^2 \cdot 13^3 \cdot 31.
+</me>
+From this, we see that
+<me> GCD(a,b) = 3^2 \cdot 5 \cdot 13^3 = 98, 865.
+</me></p>
+
+<p>Unfortunately, an efficient algorithm is not known for obtaining
+the prime factorization of a very large integer. As a result, this
+approach to compute the greatest common divisor of two large integers
+is not good.</p>
+
+<p>Around 300 BC, Euclid published an algorithm that is both very simple
+and efficient. This algorithm is based on the <em>modulo</em> or <em>mod</em> operation,
+which we introduce first.</p></introduction>
+
+<subsubsection xml:id="sssec9_2_1_1-modulo"><title>The Modulo Operation</title><idx>Modulo Operation</idx>
+<introduction><p>Let <m>a \geq 1</m> and <m>b \geq 1</m> be integers. If we divide <m>a</m> by <m>b</m>,
+then we obtain a <em>quotient</em> <m>q</m> and a <em>remainder</em> <m>r</m>, which
+are the unique integers that satisfy
+<me> a = qb + r\\
+  q \geq 0, \mbox{ and } 0 \leq r \leq b-1 .
+</me>
+The modulo operation, denoted by <m>a \bmod b</m>, is the function that maps
+the pair <m>(a,b)</m> to the remainder <m>r</m>. Thus, we will write
+<me> a \bmod b = r .
+</me></p>
+<p>For example,
+
+<ul>
+  <li><m>17 \bmod 5 = 2</m>, because <m>17 = 3 \cdot 5 + 2</m>,</li>
+<li><m>17 \bmod 17 = 0</m>, because <m>17 = 1 \cdot 17 + 0</m>,</li>
+<li><m>17 \bmod 1 = 0</m>, because <m>17 = 17 \cdot 1 + 0</m>,</li>
+<li><m>17 \bmod 19 = 17</m>, because <m>17 = 0 \cdot 19 + 17</m>.</li></ul>
+
+</p></introduction>
+</subsubsection>
+<subsubsection xml:id="sssec9_2_1_2-euclids-algorithm"><title>The Euclidean Algorithm</title><idx>Euclid's Algorithm</idx>
+<introduction><p>Euclid's algorithm takes as input two positive integers <m>a</m> and <m>b</m>,
+where <m>a \geq b</m>, and returns <m>GCD(a,b)</m>.</p></introduction>
+
+<p>The algorithm starts by computing <m>a \bmod b</m> and stores the result in
+a variable~<m>r</m>. If <m>r=0</m>, then the algorithm returns the value <m>b</m>.
+Otherwise, we have <m>r \geq 1</m>, in which case the algorithm recursively
+computes the greatest common divisor of <m>b</m> and <m>r</m>. The algorithm is
+presented in pseudocode below.</p>
+
+     <algorithm xml:id="alg-euclid"><title>Euclid's GCD Algorithm</title><statement>
+       <paragraphs>
+          <title>procedure Euclid</title> <p>(<m>a, b</m>: integers with <m>a \geq b \geq 1</m>)
+          <tabular>
+            <row>
+              <cell colspan="3"><m>r = a \bmod b</m>;</cell>
+            </row>
+            <row>
+              <cell colspan="3"><alert>if </alert>  <m>r = 0</m>:</cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell colspan="2"><alert>return:</alert> <m>b</m> </cell>
+            </row>
+            <row>
+              <cell colspan="3"><alert>else: </alert></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell colspan="2"><alert>Euclid</alert> <m>(b,r)</m> </cell>
+            </row>
+            </tabular></p>
+        </paragraphs>
+      </statement>
+    </algorithm>
+
+<p>Let us look at an example. If we run Euclid(75,45), then the algorithm
+computes <m>75 \bmod 45</m>, which is <m>30</m>. Then, it runs Euclid(45,30),
+during which the algorithm computes <m>45 \bmod 30</m>, which is <m>15</m>.
+Next, it runs Euclid(30,15), during which the algorithm computes
+<m>30 \bmod 15</m>, which is <m>0</m>. At this moment, the algorithm returns
+<m>15</m>, which is indeed the greatest common divisor of the input values
+<m>75</m> and <m>45</m>.</p>
+
+<p>In the following implementation of Euclid's Algorithm in SageMath, we repeat the process of finding Euclid(75,45).</p>
+
+    <sage>
+			<input>
+def Euclid(a, b):
+    print("Euclid(" + str(a) + "," + str(b) + ")")
+    r = a % b
+    print("r = " + str(r))
+    if r == 0:
+        return b
+    else:
+        return Euclid(b,r)
+
+
+Euclid(75,45)
+</input>
+<output>
+Euclid(75,45)
+r = 30
+Euclid(45,30)
+r = 15
+Euclid(30,15)
+r = 0
+
+15
+  </output>
+</sage>
+
+</subsubsection>
+<conclusion></conclusion>
+</subsection>
+
+<subsection xml:id="subsec9_2_2-recursive-searching"><title>Recursive Searching</title><idx>Recursive Searching</idx>
+  <p>Most algorithms with tasks that are repeated in a loop can be defined recursively. Recursive algorithms have the advantage of less complex definitions leading to shorter computer programs, however as we will see in <xref ref="section9_3-AlgorthmicComplexity"/> this sometimes comes with poor execution efficiency leading to drastically slower running times.</p>
+
+  <paragraphs><title>Recursive Linear Search</title>
+  <p>We can make our Linear Search algorithm from <xref ref="alg-linear-search2"/> recursive by replacing the <c>while</c> loop with a recursive call. We must add an input to keep track of the location to look at in the list. There are two base cases: the <q>not found</q> case where the entire list has been searched; and the <q>found</q> case where the target is found at the current location. Both base cases return a value, either the location of the found target or 0 to indicate it is not in the list. The recursive case <em>returns</em> the result of a recursive call with the location moved forward by one.</p>
+     <algorithm xml:id="alg-recursive-linear-search"><title>Recursive Linear Search</title><statement>
+       <paragraphs>
+          <title>procedure recursive_linear_search:</title> <p>(<m>x</m>: target; <m>\{a_1, a_2, ..., a_n\}</m>: list of items; <m>loc</m>: location, starts at 1)</p>
+          <tabular>
+
+            <row>
+              <cell colspan="3"><alert>If</alert> <m>loc &gt; n</m>: </cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell colspan="2"><alert>return:</alert> 0 </cell>
+            </row>
+            <row>
+              <cell colspan="3"><alert>Else If </alert><m>x = a_{loc}</m>: </cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell colspan="2"><alert>return:</alert> loc </cell>
+            </row>
+            <row>
+              <cell colspan="3"><alert>Else:</alert> </cell>
+            </row>
+            <row>
+                <cell></cell>
+                <cell colspan="2"><alert>return </alert> recursive_linear_search(<m>x</m>; <m>\{a_1, a_2, ..., a_n\}</m>; <m>loc+1</m>)</cell>
+            </row>
+            </tabular>
+        </paragraphs>
+      </statement>
+    </algorithm>
+  </paragraphs>
+    <p>In the following implementation of the Recursive Linear Search in SageMath, we search within the same randomly generated list of integers as Linear Search in the previous section. Printouts have been added to show the pattern of recursive calls.</p>
+
+    <sage>
+			<input>
+def RecursiveLinearSearch(target, aList, loc):
+    if loc == len(aList):
+        print("not found")
+        return 0
+    elif target == aList[loc]:
+        print("found at " + str(loc))
+        return loc
+    else:
+        print("recursive call with loc= " + str((loc +1)))
+        return RecursiveLinearSearch(target, aList, loc+1)
+
+
+s = [64, 7, 30, 91, 32, 1, 15, 45, 42, 86, 24, 75, 22, 82, 38, 22, 13, 5, 82, 30, 89, 47, 81, 34, 41, 9, 5, 66, 49, 42]
+print(s)
+RecursiveLinearSearch(41,s,0)
+</input>
+<output>
+[64, 7, 30, 91, 32, 1, 15, 45, 42, 86, 24, 75, 22, 82, 38, 22, 13, 5, 82, 30, 89, 47, 81, 34, 41, 9, 5, 66, 49, 42]
+recursive call with loc= 1
+recursive call with loc= 2
+recursive call with loc= 3
+recursive call with loc= 4
+recursive call with loc= 5
+recursive call with loc= 6
+recursive call with loc= 7
+recursive call with loc= 8
+recursive call with loc= 9
+recursive call with loc= 10
+recursive call with loc= 11
+recursive call with loc= 12
+recursive call with loc= 13
+recursive call with loc= 14
+recursive call with loc= 15
+recursive call with loc= 16
+recursive call with loc= 17
+recursive call with loc= 18
+recursive call with loc= 19
+recursive call with loc= 20
+recursive call with loc= 21
+recursive call with loc= 22
+recursive call with loc= 23
+recursive call with loc= 24
+found at 24
+
+24
+  </output>
+</sage>
+
+ <paragraphs><title>Recursive Maximum Element</title><p>Similarly to Linear Search, the Maximum Element algorithm can be made recursive. In this task the algorithm must examine every element in the list, so there is only one base case: when the end of the list is reached. An input must be added to keep track of the maximum element between recursive calls. The recursive case is almost identical to Linear Search, it just moves the process to the next list element.</p>
+
+
+       <algorithm xml:id="alg-recursive_max-element"><title>Recursive Maximum Element</title><idx>Recursive Maximum Element Algorithm</idx><statement>
+       <paragraphs>
+          <title>procedure RecursiveMaximumElement:</title> <p>(<m>\{a_1, a_2, ..., a_n\}</m>: list of items; <m>loc</m>: location, starts at 1; <m>max</m>: largest element seen)</p>
+ <tabular>
+
+            <row>
+              <cell colspan="3"><alert>if</alert> <m>loc &gt; n</m>: </cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell colspan="2"><alert>return:</alert> max </cell>
+            </row>
+            <row>
+              <cell colspan="3"><alert>else:</alert> </cell>
+            </row>
+            <row>
+            <cell></cell>
+              <cell colspan="2"><alert>if</alert> loc = 1 </cell>
+            </row>
+            <row>
+                <cell></cell>
+                <cell></cell>
+                <cell><alert>then</alert> max := <m>a_{1} </m></cell>
+            </row>
+             <row>
+              <cell></cell>
+              <cell colspan="2"><alert>else if</alert> max <m>\leq a_{loc}</m></cell>
+            </row>
+            <row>
+                <cell></cell>
+                <cell></cell>
+                <cell><alert>then</alert> max := <m>a_{loc} </m></cell>
+            </row>
+            <row>
+                <cell></cell>
+                <cell colspan="2"><alert>return </alert> RecursiveMaximumElement(<m>x</m>; <m>\{a_1, a_2, ..., a_n\}</m>; <m>loc+1</m>; max)</cell>
+            </row>
+            </tabular>
+        </paragraphs>
+      </statement>
+    </algorithm>
+
+    <p>In the following implementation of Recursive Maximum Element in SageMath, we find the maximum of a randomly generated list of integers.</p>
+
+    <sage>
+			<input>
+def RecursiveMaximumElement(aList, loc, m):
+    if loc == len(aList):
+        print("base case, max is: " + str(m))
+        return m
+    else:
+        if loc == 0:
+              m = aList[0]
+        elif m &lt; aList[loc]:
+              m = aList[loc]
+        print("recursive call with loc= " + str((loc +1)))
+        return RecursiveMaximumElement(aList, loc+1, m)
+
+
+s = [64, 7, 30, 91, 32, 1, 15, 45, 42, 86, 24, 75, 22, 82, 38, 22, 13, 5, 82, 30, 89, 47, 81, 34, 41, 9, 5, 66, 49, 42]
+print(s)
+RecursiveMaximumElement(s,0,0)
+</input>
+<output>
+[64, 7, 30, 91, 32, 1, 15, 45, 42, 86, 24, 75, 22, 82, 38, 22, 13, 5, 82, 30, 89, 47, 81, 34, 41, 9, 5, 66, 49, 42]
+recursive call with loc= 1
+recursive call with loc= 2
+recursive call with loc= 3
+recursive call with loc= 4
+recursive call with loc= 5
+recursive call with loc= 6
+recursive call with loc= 7
+recursive call with loc= 8
+recursive call with loc= 9
+recursive call with loc= 10
+recursive call with loc= 11
+recursive call with loc= 12
+recursive call with loc= 13
+recursive call with loc= 14
+recursive call with loc= 15
+recursive call with loc= 16
+recursive call with loc= 17
+recursive call with loc= 18
+recursive call with loc= 19
+recursive call with loc= 20
+recursive call with loc= 21
+recursive call with loc= 22
+recursive call with loc= 23
+recursive call with loc= 24
+recursive call with loc= 25
+recursive call with loc= 26
+recursive call with loc= 27
+recursive call with loc= 28
+recursive call with loc= 29
+recursive call with loc= 30
+base case, max is: 91
+
+91
+  </output>
+</sage>
+</paragraphs>
+
+<paragraphs><title>Recursive Binary Search</title>
+  <p>
+    Unlike the two algorithms above, Binary Search is more commonly implemented as a recursive algorithm. The recursive version we present here is the most common definition.</p>
+
+  <p> There are two base cases. The first base case is when all possible elements have been compared and the target is not found. This occurs when the <em>begin</em> position is greater than the <em>end</em> position, no elements are left to examine so -1 is returned. The second base case is when the target is found, the middle element is equal to the target and the location of that middle element is returned. There are also two recursive cases, one for if the target is larger than the middle element and one for if the target is smaller than the middle element. If the target is larger than the middle, the recursive call will look at the upper half of the remaining list, if the target is smaller than the middle element, the other recursive call looks at the lower half of the remaining list.</p>
+
+  <p>
+        <algorithm xml:id="alg-recursive-binary-search"><title>Recursive Binary Search</title><idx>Binary Search Algorithm (Recursive)</idx><statement>
+            <paragraphs>
+                <title>procedure BinarySearch</title> <p>(<m>x</m>: target; <m>\{a_1, a_2, ..., a_n\}</m>: sorted list of items; begin: pos; end: pos)</p>
+                    <tabular>
+                        <row>
+                            <cell colspan="3"> mid := (begin + end) / 2</cell>
+                        </row>
+                        <row>
+                        <cell colspan="3"><alert>if </alert> begin &gt; end:</cell>
+                        </row>
+                        <row>
+                          <cell></cell>
+                            <cell colspan="2"><alert>return </alert> -1</cell>
+                        </row>
+
+                        <row>
+                            <cell colspan="3"><alert>else if </alert> <m>x = a_{mid}</m></cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell colspan="2"> <alert>return</alert>  mid</cell>
+                        </row>
+                        <row>
+                          <cell colspan="3"><alert>else if</alert>  <m>  x &lt; a_{mid}</m>:</cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell  colspan="2"><alert>return BinarySearch</alert> (<m>x</m>; <m>\{a_1, a_2, ..., a_n\}</m>; begin; mid-1) </cell>
+                        </row>
+                        <row>
+                            <cell colspan="3"><alert>else</alert> { <m> x &gt; a_{mid}</m> } </cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell  colspan="2"><alert>return BinarySearch</alert> (<m>x</m>; <m>\{a_1, a_2, ..., a_n\}</m>; (mid+1); end) </cell>
+                        </row>
+
+          </tabular>
+        </paragraphs>
+      </statement>
+    </algorithm>
+  </p>
+
+		<p>In the following implementation of the Binary Search in SageMath, we search within a sorted list of integers. Extra printouts of the list being considered at each step have been added. <note>The end position is the length of the list - 1 because of 0 indexing.</note></p>
+
+
+		<sage>
+			<input>
+def BinarySearch(x, aList, begin, end):
+    mid = floor((begin + end)/2)
+    print('list: ' + str(aList[begin:end+1]))
+    print('mid position: '+str(mid))
+    if begin &gt; end:
+        print('not found')
+        return -1
+    elif aList[mid] == x:
+        print('found ' + str(x) + ' in position '+str(mid))
+        return mid
+    elif x &lt; aList[mid]:
+        print ('target is less than: ' + str(aList[mid]))
+        return BinarySearch(x,aList, begin, mid - 1)
+    else: # x &gt; aList[mid]
+        print ('target is greater than: ' + str(aList[mid]))
+        return BinarySearch(x ,aList,mid + 1, end)
+
+
+s=[1,9,13,16,30,31,32,33,36,37,38,45,49,50,52,61,63,64,69,77,79,80,81,83,86,90,93,96]
+t = 37
+print("Searching for " + str(t))
+BinarySearch(t, s,0,len(s)-1)
+			</input>
+			<output>
+				Searching for 37
+				list: [1, 9, 13, 16, 30, 31, 32, 33, 36, 37, 38, 45, 49, 50, 52, 61, 63, 64, 69, 77, 79, 80, 81, 83, 86, 90, 93, 96]
+				mid position: 13
+				target is less than: 50
+				list: [1, 9, 13, 16, 30, 31, 32, 33, 36, 37, 38, 45, 49]
+				mid position: 6
+				target is greater than: 32
+				list: [33, 36, 37, 38, 45, 49]
+				mid position: 9
+				found 37 in position 9
+
+				9
+			</output>
+		</sage>
+
+  </paragraphs>
+	</subsection>
+<subsection xml:id="subsec9_2_3-recursive-sorting"><title>Recursive Sorting</title><idx>Recursive Sorting</idx>
+  <p>The sorting algorithms in the previous section are not usually implemented recursively so we will not present recursive versions here. However, there are many recursive sorting algorithms that are considered more efficient than those we have already seen. One recursive sorting algorithm is Merge Sort.</p>
+  <paragraphs><title>Merge Sort</title>
+    <p>Merge Sort is a recursive sorting algorithm that works as follows. To sort the sequence of <m>n</m> numbers <m>a_1,a_2,\ldots,a_n</m>,
+
+<ul>
+  <li>it recursively sorts the first half of the sequence <m>a_1,a_2,\ldots,a_m</m>, where
+      <m>m = \lfloor n/2 \rfloor</m>, and stores the sorted sequence in a
+      list <m>L_1</m>,</li>
+  <li>it recursively sorts the second half of the sequence <m>a_{m+1},a_{m+2},\ldots,a_n</m>
+      and stores the sorted sequence in a list <m>L_2</m>, </li>
+  <li>it merges the two sorted lists <m>L_1</m> and <m>L_2</m> into one
+      sorted list. </li>
+</ul>
+</p>
+
+<p>The MergeSort process is visualized in the image below:</p>
+  <figure xml:id="fig-merge-sort"><caption>Merge Sort Diagram. VineetKumar at English Wikipedia [Public domain], <url href="https://commons.wikimedia.org/wiki/File:Merge_sort_algorithm_diagram.svg">via Wikimedia Commons</url></caption>
+    <image source="images/Merge_sort_algorithm_diagram.png">
+      <description>Merge sort diagram</description></image>
+ </figure>
+
+<p>Below, you see this recursive algorithm in pseudocode. </p>
+  <p>
+        <algorithm xml:id="alg-merge-sort"><title>Merge Sort</title><idx>Merge Sort Algorithm</idx><statement>
+            <paragraphs>
+        <title>procedure MergeSort</title> <p>(<m>\{a_1, a_2, ..., a_n\}</m>: list of items; <m>n</m>: length of list)</p>
+          <tabular>
+              <row>
+                  <cell colspan="3"><alert>if</alert> <m> n \geq 2</m>:</cell>
+              </row>
+                        <row>
+                            <cell></cell>
+                            <cell colspan="2"> <m>m = \lfloor n/2 \rfloor</m></cell>
+                          </row>
+                          <row>
+                            <cell></cell>
+                            <cell colspan="2"><m>L_1 = </m> list consisting of the first <m>m</m> elements of <m>L</m></cell>
+                          </row>
+                          <row>
+                            <cell></cell>
+                            <cell colspan="2"><m>L_2 = </m> list consisting of the last <m>n-m</m> elements of <m>L</m></cell>
+                          </row>
+                          <row>
+                            <cell></cell>
+                            <cell colspan="2"> <m>L_1 = MergeSort(L_1,m)</m></cell>
+                          </row>
+                          <row>
+                            <cell></cell>
+                            <cell colspan="2"><m>L_2 = MergeSort(L_2,n-m)</m></cell>
+                          </row>
+                          <row>
+                            <cell></cell>
+                            <cell colspan="2"> <m>L = Merge(L_1,L_2)</m></cell>
+                          </row>
+              <row>
+                  <cell colspan="3"><alert>return</alert>  <m>L</m> </cell>
+              </row>
+          </tabular>
+        </paragraphs>
+      </statement>
+    </algorithm>
+  </p>
+
+<p>We still have to specify the non-recursive algorithm <m>Merge(L_1,L_2)</m>. Of course, this
+algorithm uses the fact that both <m>L_1</m> and <m>L_2</m> are sorted lists.
+The task is to merge two sorted lists into one sorted list. </p>
+
+<p>This is done in the
+following way. Initialize an empty list <m>L</m>. (At the end, this list
+will contain the final sorted sequence.) </p>
+
+<ul> <li>Let <m>x</m> be the first element of <m>L_1</m> and let <m>y</m> be the first
+      element of <m>L_2</m>. </li>
+<li> If <m>x \leq y</m>, then remove <m>x</m> from <m>L_1</m> and append it to <m>L</m>
+      (i.e., add <m>x</m> at the end of <m>L</m>). </li>
+<li> Otherwise (i.e., if <m>x > y</m>), remove <m>y</m> from <m>L_2</m> and append
+      it to <m>L</m></li>.</ul>
+
+<p>Repeat these steps until one of <m>L_1</m> and <m>L_2</m> is empty. If <m>L_1</m> is
+empty, then append <m>L_2</m> to <m>L</m>. Otherwise, append <m>L_1</m> to <m>L</m>.
+Here is the algorithm in pseudocode:</p>
+
+  <p>
+        <algorithm xml:id="alg-merge"><title>Merge</title><idx>Merge Algorithm</idx><statement>
+            <paragraphs>
+        <title>procedure Merge</title> <p>(<m>L_1</m>: sorted list of items; <m>L_2</m>: sorted list of items)</p>
+          <tabular>
+            <row>
+                  <cell colspan="3"> <m>L = </m> empty list</cell>
+              </row>
+            <row>
+                  <cell colspan="3"><alert>while</alert> <m>L_1</m> not empty and <m>L_2</m> not empty:</cell>
+              </row>
+                        <row>
+                            <cell></cell>
+                            <cell colspan="2"> <m>x=</m> first element of <m>L_1</m>;</cell>
+                          </row>
+                          <row>
+                            <cell></cell>
+                            <cell colspan="2"><m>y=</m> first element of <m>L_2</m>;</cell>
+                          </row>
+                          <row>
+                            <cell></cell>
+                            <cell colspan="2"><alert>if</alert> <m>x \leq y</m>:</cell>
+                          </row>
+                          <row>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell> remove <m>x</m> from <m>L_1</m>;</cell>
+                          </row>
+                          <row>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell>append <m>x</m> to <m>L</m></cell>
+                          </row>
+                        <row>
+                            <cell></cell>
+                            <cell colspan="2"><alert>else</alert>:</cell>
+                          </row>
+                          <row>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell> remove <m>y</m> from <m>L_2</m>;</cell>
+                          </row>
+                          <row>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell>append <m>y</m> to <m>L</m></cell>
+                          </row>
+              <row>
+                  <cell colspan="3"><alert>if</alert><m>L_1</m> is empty:</cell>
+              </row>
+                        <row>
+                            <cell></cell>
+                            <cell colspan="2"> append <m>L_2</m> to <m>L</m></cell>
+                          </row>
+              <row>
+                  <cell colspan="3"><alert>else</alert></cell>
+              </row>
+                        <row>
+                            <cell></cell>
+                            <cell colspan="2">append <m>L_1</m> to <m>L</m></cell>
+                          </row>
+                      <row>
+                  <cell colspan="3"><alert>return</alert>  <m>L</m> </cell>
+              </row>
+          </tabular>
+        </paragraphs>
+      </statement>
+    </algorithm>
+  </p>
+
+
+</paragraphs>
+<paragraphs><title>Correctness of Algorithm MergeSort</title>
+  <p>
+I hope you are convinced that the output <m>L</m> of algorithm
+<m>Merge(L_1,L_2)</m> is a sorted list that contains all elements of <m>L_1</m>
+and <m>L_2</m> (and no other elements). How do we prove that algorithm
+<m>MergeSort(L,n)</m> is correct, i.e., correctly sorts the elements in any list
+<m>L</m> of <m>n</m> numbers? Since the algorithm is recursive, we prove this
+by induction. </p>
+
+<p>The two base cases are when <m>n=0</m> or <m>n=1</m>. It follows from the
+pseudocode for <m>MergeSort(L,n)</m> that it simply returns the input list <m>L</m>,
+which is obviously sorted. </p>
+
+<p>Let <m>n \geq 2</m> and assume that for any integer <m>k</m> with <m>0 \leq k &lt; n</m>
+and for any list <m>L'</m> of <m>k</m> numbers, algorithm <m>MergeSort(L',k)</m> returns
+a list containing the elements of <m>L'</m> in sorted order.
+Let <m>L</m> be a list of <m>n</m> numbers. By going through the pseudocode for
+<m>MergeSort(L,n)</m>, we observe the following: </p>
+
+<ul> <li>The recursive call <m>MergeSort(L_1,m)</m> is on a list with less than <m>n</m>
+      numbers. Therefore, by the induction hypothesis, its output,
+      which is the list <m>L_1</m>, is sorted.</li>
+ <li>The recursive call <m>MergeSort(L_2,n-m)</m> is on a list with less than <m>n</m>
+      numbers. Again by the induction hypothesis, its output, which is
+      the list <m>L_2</m>, is sorted.  </li>
+ <li>Algorithm <m>Merge(L_1,L_2,)</m> gets as input the two sorted lists
+      <m>L_1</m> and <m>L_2</m>, and returns a list <m>L</m>. Since algorithm
+      <m>Merge</m> is correct, it then follows that <m>L</m> is a sorted list.</li> </ul>
+
+<p>It follows that the final list <m>L</m>, which is returned by algorithm
+<m>MergeSort</m>, is sorted.</p>
+
+<p>This proves the correctness of algorithm <m>MergeSort(L,n)</m> for any integer
+<m>n \geq 0</m> and any list <m>L</m> of <m>n</m> numbers. </p>
+</paragraphs>
+</subsection>
+
+	<exercises><title>Exercises for Section 9.2</title>
+		<exercise number="1"><statement>
+        <p>Consider a recursive algorithm for computing the factorial function (<m>n!</m>)</p>
+      <p>
+        <algorithm xml:id="alg-recursive-factorial"><title>Recursive Factorial</title><idx>Factorial Algorithm (Recursive)</idx><statement>
+            <paragraphs>
+        <title>procedure RecursiveFactorial</title> <p>(<m>n</m>: non-negative integer)</p>
+        <tabular>
+          <row>
+            <cell colspan="3"><alert>if</alert> <m>n = 0</m>:</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell colspan="2"> <alert>return</alert> 1</cell>
+          </row>
+          <row>
+            <cell colspan="3"><alert>else</alert>:</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell colspan="2"> <alert>return</alert>   n * RecursiveFactorial<m>(n-1)</m></cell>
+          </row>
+        </tabular>
+        </paragraphs>
+      </statement>
+      </algorithm></p>
+
+<p><ol label="(a)">
+ <li> Make a trace of the recursive calls for RecursiveFactorial(3)</li>
+    <li>For RecursiveFactorial(3), how many times will the base case be executed?</li>
+    </ol></p></statement>
+			<answer>
+        <p><ol label="(a)">
+            <li> <pre>
+FACTORIAL(3)
+	return 3 * FACTORIAL(2)
+		return 2 * FACTORIAL(1)
+			return 1 * FACTORIAL(0)
+
+FACTORIAL(3)
+	return 3 * FACTORIAL(2)
+		return 2 * FACTORIAL(1)
+			return 1 * 1
+FACTORIAL(3)
+	return 3 * FACTORIAL(2)
+		return 2 * 1
+FACTORIAL(3)
+	return 3 * 2
+  </pre></li>
+						<li><p> The base case will only execute once.</p></li>
+						</ol></p>
+			</answer>
+		</exercise>
+		<exercise number="2"><statement>
+        <p>Consider the recursive implementation of the Fibonacci sequence:</p>
+      <p>
+        <algorithm xml:id="alg-recursive-fibonacci"><title>Recursive Fibonacci</title><idx>Fibonacci Algorithm (Recursive)</idx><statement>
+            <paragraphs>
+        <title>procedure RecursiveFibonacci</title> <p>(<m>n</m>: non-negative integer)</p>
+        <tabular>
+          <row>
+            <cell colspan="3"><alert>if</alert> <m>n = 0</m>:</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell colspan="2"> <alert>return</alert> 1</cell>
+          </row>
+          <row>
+            <cell colspan="3"><alert>else if</alert> <m>n = 1</m>:</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell colspan="2"> <alert>return</alert> 1</cell>
+          </row>
+          <row>
+            <cell colspan="3"><alert>else</alert>:</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell colspan="2"> <alert>return</alert> RecursiveFibonacci<m>(n-1)</m> + RecursiveFibonacci<m>(n-2)</m></cell>
+          </row>
+        </tabular>
+        </paragraphs>
+      </statement>
+      </algorithm></p>
+
+<p><ol label="(a)">
+ <li> Make a trace of the recursive calls for RecursiveFibonacci(5)</li>
+    <li>For RecursiveFibonacci(5), how many times will the base case be executed?</li>
+    </ol></p></statement>
+
+		</exercise>
+
+        <exercise number="3">
+      <statement><p>Write in pseudocode a <em>recursive</em> algorithm that finds the sum of all of the elements in a list of integers of length <m>n</m>.</p>
+      </statement>
+
+      <answer>
+        <statement> <paragraphs>
+          <title>procedure RecursiveSum:</title> <p>(<m>\{a_1, a_2, ..., a_n\}</m>: list of items; <m>loc</m>: location, starts at 1)</p>
+ <tabular>
+
+            <row>
+              <cell colspan="3"><alert>if</alert> <m>loc = n</m>: </cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell colspan="2"><alert>return:</alert> <m>a_{loc} </m> </cell>
+            </row>
+            <row>
+              <cell colspan="3"><alert>else:</alert> </cell>
+            </row>
+            <row>
+                <cell></cell>
+                <cell colspan="2"><alert>return </alert> a_{loc} +  RecursiveSum(<m>\{a_1, a_2, ..., a_n\}</m>; <m>loc+1</m>)</cell>
+            </row>
+            </tabular>
+        </paragraphs>
+      </statement>
+        </answer>
+    </exercise>
+        <exercise number="4">
+      <statement><p>Write in pseudocode a <em>recursive</em> algorithm that finds the sum of all of the first <m>n</m> positive integers.</p>
+      </statement>
+    </exercise>
+    <exercise number="5">
+      <statement><p>Write a complete trace of binary search for 6 on the list [1, 2, 3, 4, 5, 6, 7 , 8 , 9]
+          showing the lists obtained and the values of <c>begin</c>, <c>end</c>, and <c>mid</c> at each step.</p>
+      </statement>
+
+      <answer>
+        <ol>
+          <li>list:[1, 2, 3, 4, 5, 6, 7, 8, 9], begin= 0, end = 8, mid = 4 </li>
+           <li>list:[6, 7, 8, 9], begin= 5, end = 8, mid = 6 </li>
+          <li>list:[6, 7], begin= 5, end = 6, mid = 5 </li>
+           <li>found at 5</li>
+          </ol>
+        </answer>
+</exercise>
+    <exercise number="6">
+      <statement><p>Write a complete trace of merge sort on the list [6, 2, 3, 1, 5, 4]
+          showing the lists obtained at each step. Make sure to show the order in which the splits and merges occur (not like <xref ref="fig-merge-sort"/>).</p>
+      </statement>
+      </exercise>
+  </exercises>
+</section>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Lisa modified ADS 6.1 -->
+<section xml:id="s-basic-definitions"><title>Basic Definitions</title>
+<introduction>
+<p>In Chapter 1 we introduced the concept of the Cartesian product of sets. Let's assume that a person owns three shirts and two pairs of pants. More
+precisely, let <m>A = \{\textrm{blue shirt}, \textrm{tan shirt}, \textrm{mint green shirt}\}</m> and <m>B = \{\textrm{grey pants}, \textrm{tan pants}\}</m>. Then <m>A\times B</m> is the set of all six possible combinations of shirts and pants that the individual could wear. However, an individual may wish to restrict themself to combinations which are color coordinated, or <q>related.</q> This may not be all possible pairs in <m>A\times B</m> but will certainly be a subset of <m>A\times B</m>. For example, one such subset may be: <m>\{(\textrm{blue shirt}, \textrm{grey pants}), (\textrm{blue shirt},  \textrm{tan pants}), (\textrm{mint green shirt}, \textrm{tan pants})\}</m>.</p>
+</introduction>
+<subsection><title>Relations Between Two Sets</title>
+<definition xml:id="Relation"><title>Relation</title><idx>Relation</idx><statement><p> Let <m>A</m> and <m>B</m> be sets. A relation from <m>A</m> into <m>B</m> is any subset of <m>A\times B</m>.</p></statement></definition>
+
+<example xml:id="ex-simple-relation"><title>A simple example</title><statement><p>Let <m>A = \{1, 2, 3\}</m> and <m>B = \{4, 5\}</m>. Then <m>\{(1, 4), (2, 4), (3, 5)\}</m> is a relation from <m>A</m> into <m>B</m>.</p>
+	<p>Of course, there are many others we could describe; 64, to be exact.</p></statement></example>
+
+<example xml:id="ex-divides-example"><title>Divisibility Example</title><statement><p> Let <m>A = \{2, 3, 5, 6\}</m> and define a relation <m>R</m> from <m>A</m> into <m>A</m> by <m>(a, b) \in r</m> if and only if <m>a</m> divides evenly into <m>b</m>. The set of pairs that qualify for membership is <m>r = \{(2, 2), (3, 3), (5, 5), (6, 6), (2, 6), (3, 6)\}</m>.
+</p></statement></example>
+</subsection>
+<subsection><title>Relations on a Set</title>
+<definition xml:id="relation-on-a-set"><title>Relation on a Set</title><idx>Relation on a Set</idx><statement><p>A relation from a set <m>A</m> into itself is called a relation on <m>A</m>.</p></statement></definition>
+
+
+<p>The relation <q>divides</q> in <xref ref="ex-divides-example" text="type-global" /> will appear throughout the book. Here is a general definition on the whole set of integers.</p>
+
+<definition xml:id="Divides"><title>Divides</title>
+<idx>Divides</idx>
+<notation><usage>a \mid b</usage><description><m>a</m> divides <m>b</m>, or <m>a</m> divides evenly into <m>b</m></description></notation>
+<statement><p>Let <m>a, b \in \mathbb{Z}</m>, <m>a \neq 0</m>.
+We say that <m>a</m> divides <m>b</m>, denoted <m>a \mid b</m>,  if and only if there exists an integer <m>k</m> such that <m>a k = b</m>.</p></statement>
+</definition>
+
+<p>Be very careful in writing about the relation <q>divides.</q>  The vertical line symbol use for this relation, if written carelessly, can look like division.  While <m>a \mid b</m> is either true or false, <m>a/b</m> is a number. </p>
+
+<p>Based on the equation <m>a k = b</m>, we can say that <m>a|b</m> is equivalent to <m>k= \frac{b}{a}</m>, or <m>a</m> divides evenly into <m>b</m>. In fact the <q>divides</q> is short for <q>divides evenly into.</q> You might find the equation <m>k= \frac{b}{a}</m> initially easier to understand, but in the long run we will find the equation <m>a k = b</m> more convenient. </p>
+
+
+<p>Sometimes it is helpful to illustrate a relation with a graph. Consider <xref ref="ex-simple-relation" text="type-global" />.  A graph of <m>R</m> can be drawn as in <xref ref="graph-10-1-1-relation" text="type-global" />. The arrows indicate that 1 is related to 4 under <m>R</m>. Also, 2 is related to 4 under <m>R</m>, and 3 is related to 5, while the upper arrow denotes that <m>R</m> is a relation from the whole set <m>A</m> into the set <m>B</m>. </p>
+
+	<figure xml:id="graph-10-1-1-relation">
+		 <caption>The graph of a relation</caption>
+		 <image width="100%" source="images/graph-10-1-relation-graph.png">
+			  <description>The graph of a relation</description>
+		 </image>
+	</figure>
+
+
+
+
+<p>A typical element in a relation <m>R</m> is an ordered pair <m>(x, y)</m>. In some cases, <m>R</m> can be described by actually listing the pairs which are in <m>R</m>, as in the previous examples. This may not be convenient if <m>R</m> is relatively large. Other notations are used with certain well-known relations. Consider the <q>less than or equal</q> relation on the real numbers. We could define it as a set of ordered pairs this way:
+<me>\le = \{(x, y) | x \leq  y\}</me>
+However, the notation <m>x \leq  y</m> is clear and self-explanatory; it is a more natural, and hence preferred, notation to use than <m>(x, y) \in \le</m>.</p>
+
+
+
+<p>Many of the relations we will work with <q>resemble</q> the relation <m>\leq</m>, so <m>x R y</m> is a common way to express the fact that <m>x</m> is related to <m>y</m> through the relation <m>R</m>.</p>
+
+<p><em>Relation Notation</em><idx>Relation Notation</idx> Let <m>R</m> be a relation from a set <m>A</m> into a set <m>B</m>. Then the fact that <m>(x, y) \in R</m> is frequently
+written <m>x R y</m>.<notation><usage>x R y</usage><description><m>x</m> is related to <m>y</m> through the relation <m>R</m></description></notation></p>
+</subsection>
+<subsection><title>Composition of Relations</title>
+
+<p>With <m>A = \{2, 3, 5, 8\}</m>, <m>B = \{4, 6, 16\}</m>, and <m>C = \{1, 4, 5, 7\}</m>, let <m>R</m> be the relation <q>divides,</q>
+from <m>A</m> into <m>B</m>, and let <m>S</m> be the relation <m>\leq</m> from <m>B</m> into <m>C</m>. So <m>R = \{(2, 4), (2, 6), (2,16), (3, 6), (8, 16)\}</m> and <m>S = \{(4, 4), (4, 5), (4, 7), (6, 7)\}</m>.</p>
+<p>Notice that in <xref ref="graph-10-1-relation-composition" text="type-global"/> that we can, for certain elements of <m>A</m>, go through elements in <m>B</m> to results in <m>C</m>. That is:</p>
+<table xml:id="table-relation-composition-example"><title/>
+<tabular halign="center">
+<row><cell><m>2 | 4 \textrm{ and } 4 \leq  4</m></cell></row>
+<row><cell><m>2 | 4 \textrm{ and } 4 \leq  5</m></cell></row>
+<row><cell><m>2 | 4 \textrm{ and } 4 \leq  7</m></cell></row>
+<row><cell><m>2| 6 \textrm{ and } 6 \leq 7</m></cell></row>
+<row><cell><m>3| 6 \textrm{ and } 6 \leq  7</m></cell></row>
+</tabular>
+</table>
+	<figure xml:id="graph-10-1-relation-composition">
+		 <caption>Relation Composition - a graphical view</caption>
+		 <image width="85%" source="images/graph-10-1-relation-composition.png">
+			  <description>The graphs of two relation being composed</description>
+		 </image>
+	</figure>
+<p>Based on this observation, we can define a new relation, call it <m>RS</m>, from <m>A</m> into <m>C</m>. In order for <m>(a, c)</m>
+to be in <m>RS</m>, it must be possible to travel along a path in <xref ref="graph-10-1-relation-composition" text="type-global" /> from <m>a</m> to <m>c</m>. In other words, <m>(a, c) \in rs</m> if and only if <m>(\exists b)_B(a R b \textrm{ and } b S c)</m>. The name <m>RS</m> was chosen because it reminds us that this new relation was formed by the two previous relations <m>R</m> and <m>S</m>. The complete listing of all elements in <m>RS</m> is <m>\{(2, 4), (2, 5), (2, 7), (3, 7)\}</m>. We summarize in a definition.</p>
+
+
+<definition xml:id="def-composition-of-relations"><title>Composition of Relations</title><idx>Composition of Relations</idx><notation><usage>r s</usage><description>the composition of relation <m>R</m> with relation <m>S</m></description></notation><statement><p>Let <m>R</m> be a relation from a set <m>A</m> into a set <m>B</m>, and let <m>S</m> be a relation from <m>B</m> into a set <m>C</m>. The composition of <m>R</m> with <m>S</m>, written <m>RS</m>, is the set of pairs of the form <m>(a, c) \in A\times C</m>, where <m>(a, c) \in RS</m> if and only if there exists <m>b \in B</m> such that <m>(a, b) \in R</m> and <m>(b, c) \in S</m>.</p>
+</statement></definition>
+
+
+<p>Remark: A word of warning to those readers familiar with composition of functions. As indicated above, the traditional way of describing a composition of two relations is <m>RS</m> where <m>R</m> is the first relation and <m>S</m> the second. However, function composition is traditionally expressed in the opposite order:  <m>S\circ R</m>, where <m>R</m> is the first function and <m>S</m> is the second.</p>
+</subsection>
+<exercises xml:id="exercises-10-1"><title>Exercises</title>
+
+
+<exercise number="1"><statement><p> For each of the following relations <m>R</m> defined on <m>\mathbb{P}</m>, determine which of the given ordered pairs belong to <m>R</m></p>
+<p><ol label="(a)">
+<li><p> <m>x R y</m> iff <m>x|y</m>;  (2, 3), (2, 4), (2, 8), (2, 17)</p></li>
+<li><p> <m>x R y</m> iff <m>x \leq  y</m>; (2, 3), (3, 2), (2, 4), (5, 8)</p></li>
+<li><p> <m>x R y</m> iff <m>y =x^2</m> ; (1,1), (2, 3), (2, 4), (2, 6)</p></li>
+</ol></p>
+</statement>
+<answer><p><ol label="(a)"><li><p> <m>(2,4), (2,8)</m>   </p></li>
+<li><p> <m>(2, 3), (2, 4), (5,8)</m>   </p></li>
+<li><p> <m>(1,1), (2,4)</m></p></li>
+</ol></p>
+</answer>
+</exercise>
+<exercise number="2"><statement><p> The following relations are on <m>\{1, 3, 5\}</m>. Let <m>R</m> be the relation <m>x R y</m> iff <m>y = x + 2</m> and <m>S</m> the
+relation <m>x S y</m> iff <m>x \leq  y</m>.</p>
+<p><ol label="(a)">
+<li><p> List all elements in  <m>RS</m>.</p></li>
+<li><p> List all elements in  <m>SR</m>.</p></li>
+<li><p> Illustrate <m>RS</m> and <m>SR</m> via a diagram.</p></li>
+<li><p> Is the relation <m>RS</m> equal to the relation <m>SR</m>?</p></li>
+</ol></p>
+</statement>
+
+</exercise>
+<exercise number="3"><statement><p> Let <m>A = \{1,2,3,4,5\}</m> and define <m>R</m> on <m>A</m> by <m>x R y</m> iff <m>x + 1 = y</m>. We
+define <m>R^2 = R\,R</m> and <m>R^3 = R^2 R</m>. Find:
+<ol label="(a)">
+<li><p> <m>R</m></p></li>
+<li><p> <m>R^2</m></p></li>
+<li><p> <m>R^3</m></p></li>=
+</ol></p>
+</statement>
+<answer><p><ol label="(a)"><li><p> <m>R=\{(1,2), (2,3), (3,4), (4,5)\}</m></p></li>
+<li><p> <m>R^2 = \{(1,3), (2,4), (3,5)\}=\{(x,y) : y=x+2, x,y\in A\}</m></p></li>
+<li><p> <m>R^3=\{(1,4), (2,5)\}=\{(x,y) : y=x+3, x,y \in  A\}</m> </p></li>
+</ol></p>
+</answer>
+</exercise>
+<exercise number="4"><statement><p> Given <m>R</m> and <m>T</m>, relations on <m>\mathbb{Z}</m>, <m> R = \{(1, n) : n \in \mathbb{Z}\}</m> and <m>T= \{(n, 1) : n \in  \mathbb{Z}\}</m>,
+what are <m>RT</m> and <m>TR</m>? Hint: Even when a relation involves infinite sets, you can often get insights into them by drawing
+partial graphs.</p>
+</statement>
+</exercise>
+<exercise number="5"><statement><p> Let <m>\rho</m> be the relation on the power set, <m>\mathcal{P}(S )</m>, of a finite set <m>S</m> of cardinality <m>n</m> defined <m>\rho</m> by <m>(A,B)
+\in \rho</m> iff <m>A\cap  B = \emptyset</m>.</p>
+<p><ol label="(a)">
+<li><p> Consider the specific case <m>n = 3</m>, and determine the cardinality of the set <m>\rho</m>.</p></li>
+<li><p> What is the cardinality of <m>\rho</m> for an arbitrary <m>n</m>? Express your answer in terms of <m>n</m>. (Hint: There are three places that each element of S can go in building an element of <m>\rho</m>.)</p></li>
+</ol></p>
+</statement>
+<answer><p><ol label="(a)"><li><p> When <m>n=3</m>, there are 27 pairs in the relation.</p></li>
+<li><p> Imagine building a pair of disjoint subsets of <m>S</m>. For each element of <m>S</m> there are three places that it can go: into the first set of the ordered pair, into the second set, or into neither set. Therefore the number of pairs in the relation is <m>3^n</m>, by the product rule.</p></li>
+</ol></p>
+</answer>
+</exercise>
+<exercise number="6"><statement><p> Let <m>R_1</m>, <m>R_2</m>, and <m>R_3</m> be relations on any set <m>A</m>. Prove that if <m>R_1\subseteq R_2</m> then <m>R_1R_3\subseteq R_2R_3</m>.</p>
+</statement>
+
+</exercise>
+
+</exercises>
+</section>

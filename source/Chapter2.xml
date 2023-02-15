@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="chapter_2"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Combinatorics</title>
+	<introduction>
+		<poem><title>Enumerative Combinatorics</title>
+			<idx><h>Limerick</h><h>Enumerative Combinatorics</h></idx>
+			<author>
+				Michael Toalster, The Omnificent English Dictionary In Limerick Form
+			</author>
+			<stanza>
+				<line>Enumerative combinatorics</line>
+				<line>Date back to the first prehistorics</line>
+				<line>Who counted; relations</line>
+				<line>Like sets' permutations</line>
+				<line>To them were part cult, part folklorics.</line>
+			</stanza>
+		</poem>
+		<p>Throughout this book we will be counting things. In this chapter we will outline some of the tools that will help us count.</p>
+		<p>Counting occurs not only in highly sophisticated applications of mathematics to engineering and computer science but also in many basic applications. Like many other powerful and useful tools in mathematics, the concepts are simple; we only have to recognize when and how they can be applied.
+		</p>
+	</introduction>
+	<xi:include href="./Section2_1.xml" />
+	<xi:include href="./Section2_2.xml" />
+	<xi:include href="./Section2_3.xml" />
+	<xi:include href="./Section2_4.xml" />
+	<xi:include href="./Section2_5.xml" />
+</chapter>

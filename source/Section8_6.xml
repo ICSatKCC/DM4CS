@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 8.6 is growth of functions, asymtotic notation   -->
+<!-- use data structures wikibook and intro to ALgorithms book by JeffE.cs.illinois  -->
+<section xml:id="section8_6-Growth-of-Functions">
+	<title>Growth of Functions</title>
+	<idx>Growth of Functions</idx>
+
+<!-- OPEN DSA CH 8 Intro and Wikipedia Big-O  -->
+<introduction>
+ <blockquote><p> How long will it take to process the company payroll once we complete our planned merger? Should I buy a new payroll program from vendor X or vendor Y? If a particular program is slow, is it badly implemented or is it solving a hard problem? </p></blockquote>
+  <p>Questions like these ask us to consider the difficulty of a problem, or the relative efficiency of two or more approaches to solving a problem.</p>
+
+<p>This section and the next introduce the motivation, basic notation, and fundamental techniques of algorithm analysis. In this section we focus on <em>Big O notation</em> a mathematical notation that describes the limiting or asymptotic behavior of a function as the input values become large. In the next section we will use Big O notation to analyze running times of different algorithms using <em>asymptotic algorithm analysis</em>.
+</p></introduction>
+
+<subsection xml:id="subsec8_6_1-big-o-notation"><title>Big O Notation</title><idx>Big O Notation</idx>
+  <introduction>
+<!--  mcs.pdf p 631 and Wikipedia Big O notation   -->
+ <p>   Big O is the most frequently used asymptotic notation. It is often used to give an
+upper bound on the growth of a function, such as the running time of an algorithm. Big O notation characterizes functions according to their growth rates: different functions with the same growth rate may be represented using the same Big O notation. The letter O is used because the growth rate of a function is also referred to as the <em>order of the function</em></p>.
+</introduction>
+
+		<definition xml:id="def-big-o"><title>Big O</title>
+			<statement><p>Given functions <m>f(x),g(x): \mathbb{R} \rightarrow \mathbb{R}</m> with <m>g</m> non-negative, we say <m>f(x)</m> is Big O <m>g(x)</m> or:
+           <me>f(x) = O(g(x))</me>
+          if and only if there exists a constant <m>c \geq 0</m> and a <m>k</m> such that for all <m>x \geq k:</m>
+          <me>\lvert f(x) \rvert \leq c g(x)</me>
+          </p></statement></definition>
+
+      <p>This definition is rather complicated, but the idea is simple: <m>f(x) = O(g(x))</m>
+        means <m>f(x)</m> is less than or equal to <m>g(x)</m>, except that we’re willing to ignore a
+        constant factor, namely <m>c</m>, and to allow exceptions for small <m>x</m>, namely, for <m> x \leq k</m> .</p>
+
+    <example xml:id="ex-big-o-x-squared">
+      <title>Prove <m>10x^2 = O(x^2)</m></title>
+      <p>If we choose <m>c = 10</m> and <m>k = 0</m>, then <m>10x^2 = O(x^2) </m> holds because for all <m>x \geq 0,</m>
+        <me> \lvert 10x^2 \rvert \leq 10x^2 </me>. </p></example>
+
+    <p>In the following SageMath cell, we plot <m>f(x) = 10x^2</m>, <m>g(x) = x^2</m>, and <m>c\,*\,g(x)</m> with <m> c = 10</m>. The resulting plot shows that <m>f(x)</m> (red) never exceeds <m>c \,*\, g(x)</m>  (black dots). That is what we want to show for Big O.</p>
+    <sage>
+			<input>
+f(x) = 10*x^2
+g(x) = x^2
+c = 10
+
+p1 = plot(f, (x,0,5), color="red" , legend_label='f(x)', thickness='2')
+p2 = plot(g, (x,0,5),  color="blue", legend_label='g(x)', thickness='2')
+p3 = plot(c*g, (x,0,5),  color="black", linestyle="dotted", legend_label='10*g(x)', thickness='3')
+p1+ p2 + p3
+</input>
+<output>
+<!--  <image source="images/sageplot-bigO10x2.png"/>-->
+  </output>
+  </sage>
+    <example xml:id="ex-big-o-deg2-poly">
+      <title>Prove <m>x^2 + 100x + 10 = O(x^2)</m></title>
+      <p>If we take the polynomial <m>x^2 + 100x + 10</m> and change it so that all of the constant cofficients are multiplied with <m>x^2</m> we have:
+        <me>x^2 + 100x^2 + 10x^2 = 111x^2.</me>
+      It must be true that the original polynomial is less than this new equation:
+      <me>x^2 + 100x + 10 \leq x^2 + 100x^2 + 10x^2, \text{ with } x\geq 1</me>.
+      Therefore, if we choose <m>c = 111</m> and <m>k = 1</m> we have <m>x^2 + 100x + 10 = O(x^2)</m></p> </example>
+
+
+  <p>In the following SageMath cell, we plot <m>f(x) = x^2 + 100x + 10</m>, <m>g(x) = x^2</m>, and <m>c\,*\,g(x)</m> with <m> c = 111</m>. The resulting plot shows that <m>f(x)</m> (red) never exceeds <m>c \, g(x)</m> after <m>x = 1</m>  (black dots). That is what we want to show for Big O. </p>
+
+    <sage>
+			<input>
+f(x) = (x^2 + 100*x + 10)
+g(x) = x^2
+c = 111
+
+p1 = plot(f, (x,0,3), color="red" , legend_label='f(x)', thickness='2')
+p2 = plot(g, (x,0,3),  color="blue", legend_label='g(x)', thickness='2')
+p3 = plot(c*g, (x,0,3),  color="black", linestyle="dotted", legend_label='c*g(x)', thickness='3')
+p1+ p2 + p3
+</input>
+<output>
+<!-- TODO <image source="images/sageplot-bigO-polynomial.png"/>-->
+  </output>
+  </sage>
+
+      <theorem xml:id="bigO-of-polynomials"><title>Polynomial Big O Theorem</title><idx>Polynomial Big O Theorem</idx>
+      <statement><p>For any polynomial, the degree of the highest order term will be its Big O</p>
+        <me>a_k x^k + a_{k-1}x^{k-1} + \dots + a_1x + a_0 = O(x^k)</me>
+        </statement>
+      <proof><p>
+          Given a polynomial: <me>a_k x^k + a_{k-1}x^{k-1} + \dots + a_1x + a_0</me>
+          if we replace all of the lower-order <m>x</m> terms with the highest order <m>x^k</m> we have:
+          <me>\begin{array}{c c}\\
+            a_k x^k + a_{k-1}x^{k-1} + \dots + a_1x + a_0  &amp; \leq a_k x^k + a_{k-1}x^k + \dots + a_1x^k + a_0x^k\\
+              &amp; = (a_k + a_{k-1} + \dots + a_1 + a_0)x^k\\
+            \end{array}
+            </me>
+          Therefore, <me>a_k x^k + a_{k-1}x^{k-1} + \dots + a_1x + a_0 = O(x^k)</me>
+          for <m>c = (a_k + a_{k-1} + \dots + a_1 + a_0)</m> and <m>k \geq 1</m>.
+          </p></proof>
+    </theorem>
+    <example xml:id="ex-big-o-poly-w-neg">
+      <title>Prove <m>6x^4 - 2x^3 + 5 = O(x^4)</m></title>
+      <p>If we have negative coefficients in a polynomial, <xref ref="bigO-of-polynomials"/> still applies because Big O as defined in <xref ref="def-big-o"/>  is an upper bound on the <em>absolute value</em> of <m>f(x)</m> and <m>g(x)</m> must be non-negative.</p>
+
+      <p>Here we take the absolute value of our polynomial <m>\lvert 6x^4 - 2x^3 + 5 \rvert</m> and multipling all of the constant cofficients by <m>x^4</m> we have:
+        <me>\lvert 6x^4 - 2x^4 + 5x^4 \rvert = 6x^4 + \lvert 2x^4 \rvert + 5x^4 = 13x^4.</me>
+        Therefore, we have
+        <me>\begin{array}{c c}
+          6x^4 - 2x^3 + 5  &amp; \leq 13x^4 \\
+            &amp; = O(x^4)
+           \end{array}
+           </me>
+         With <m>c = 13</m> and <m>k = 1</m>.</p>
+
+      <p>We can actually get a closer bound if we realize that the <m> - 2x^3</m> is only making the outcome of the polynomial smaller:
+        <me>\lvert 6x^4 - 2x^3 + 5 \rvert  &lt; \lvert 6x^4 + 5 \rvert. </me>
+        Therefore, we can also say that <m>6x^4 - 2x^3 + 5 = O(x^4)</m> for <m>c = 11</m> and <m>k = 1</m>.</p>
+
+      <p>We only need to show that one <m>c</m> and one <m>k</m> exist to prove Big O. Once they are found, the bound is also true for any larger values of <m>c</m> and <m>k</m>.</p></example>
+
+    <p>In the following SageMath cell, we plot <m>f(x) = 6x^4 - 2x^3 + 5</m> (red), <m>g(x) = x^4</m> (blue), and <m>c\,*\,g(x)</m> with <m> c = 13</m> (black dots). The resulting plot shows that <m>f(x)</m> never exceeds <m>c \, g(x)</m> after <m>x = 1</m>. That is what we want to show for Big O. </p>
+
+    <sage>
+			<input>
+f(x) = (6*x^4 - 2*x^3 + 5)
+g(x) = x^4
+c = 13
+
+p1 = plot(f, (x,0,3), color="red" , legend_label='f(x)', thickness='2')
+p2 = plot(g, (x,0,3),  color="blue", legend_label='g(x)', thickness='2')
+p3 = plot(c*g, (x,0,3),  color="black", linestyle="dotted", legend_label='c*g(x)', thickness='3')
+p1+ p2 + p3
+</input>
+<output>
+<!-- TODO <image source="images/sageplot-bigO-polynomial.png"/>-->
+  </output>
+  </sage>
+
+      <example xml:id="ex-big-o-factorial">
+      <title>Big O of <m>n!</m></title>
+      <p><m>n! = n * (n-1) * \dots * 2 * 1</m> for <m>n \geq 1</m>. There are <m>n</m> terms total. Since <m>n \geq 1 </m>, it must be true that:
+        <me>n * (n-1) * \dots * 2 * 1 \leq n * n * \dots *n * n = n^n</me>
+        Therefore, <m>n! = O(n^n)</m> with <m>c = 1</m> and <m>k = 1</m>.
+        </p></example>
+
+      </subsection>
+
+<subsection xml:id="subsec8_6_2-big-o-common"><title>Big O For Common Functional Forms</title><idx>Big O of Common Functions</idx>
+  <introduction>
+    <p>In <xref ref="section9_3-AlgorthmicComplexity"/> we will be using several functions to analyze the running time of algorithms. The most commonly encountered functions are shown in the <xref ref="fig-big0-common-functions"/> below.</p>
+    </introduction>
+    <figure xml:id="fig-big0-common-functions">
+      <caption>Growth of functions commonly used for algorithm analysis. Image by Cmglee <url href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4</url></caption>
+   <image width="70%" source="images/Comparison_computational_complexity.png"/>
+
+ </figure>
+ <p>In addition to polynomials, we have the following Big O estimates:
+   <ol>
+     <li>Any power of <m>n</m> is Big O any larger power of <m>n</m>, powers greater than 1: <me>n^c = O(n^d), 1  &lt; c  &lt; d.</me></li>
+     <li>A logarithm of <m>n</m> to a power is Big O any power of <m>n</m>, for log bases greater than 1: <me>(log_b n)^c = O(n^d), 0  &lt; c, d.</me></li>
+     <li>Any power of <m>n</m> is Big O an exponential in <m>n</m>: <me>n^c = O(b^n), 1  &lt; b, 0  &lt; c.</me></li>
+     <li>Any exponential is Big O an exponential of a larger constant: <me>b^n = O(c^n), 1  &lt; b  &lt; c </me></li>
+     </ol>
+   </p>
+<!-- TODO Wikipedia Big O    -->
+<table xml:id="table-orders-of-common-functions"><title>Orders of Common Functions</title>
+    <title>Here is a list of orders (or classes) of functions that are commonly encountered when analyzing algorithms.  In each case, <m>c</m> is a positive constant and <m>n</m> increases without bound. Functions are listed from slowest growing at the top to fastest growing at the bottom.</title>
+    <tabular  halign="center">
+<row bottom="medium"><cell>Notation</cell><cell>Name</cell><cell>Example</cell></row>
+
+<row><cell><m>O(1)</m> </cell><cell> Constant time </cell><cell> No looping; Determining if a binary number is even or odd; Calculating <m>(-1)^n</m></cell></row>
+<row bottom="medium"><cell></cell><cell></cell><cell></cell></row>
+
+<row><cell><m>O(\log n)</m> </cell><cell> Logarithmic time </cell><cell> Loops where <m>n</m> is divided by a constant each iteration;
+</cell></row>
+<row bottom="medium"><cell></cell><cell></cell><cell>Finding an item in a sorted array with a BinarySearch.</cell></row>
+
+<row><cell><m>O(n)</m> </cell><cell> Linear time </cell><cell> One loop over all <m>n</m>; Finding an item in an unsorted list or in an unsorted array</cell></row>
+<row bottom="medium"><cell></cell><cell></cell><cell></cell></row>
+
+<row><cell><m>O(n\log n)=O(\log n!)</m> </cell><cell> Linearithmic time </cell><cell> Algorithms that divide <m>n</m> by a constant, but then need to reassemble all <m>n</m> items in some way;</cell></row>
+<row bottom="medium"><cell></cell><cell></cell><cell>Fastest possible comparison sort; HeapSort and MergeSort</cell></row>
+
+<row><cell><m>O(n^2)</m> </cell><cell> Quadratic time </cell><cell> Two nested loops both over <m>n</m>; Multiplying two <m>n</m>-digit numbers by a simple algorithm;
+</cell></row>
+<row bottom="medium"><cell></cell><cell></cell><cell>Simple sorting algorithms, such as BubbleSort, SelectionSort, and InsertionSort</cell></row>
+
+<row><cell><m>O(n^c)</m> </cell><cell> Polynomial time</cell><cell> <m>c</m> nested loops over <m>n</m>; Matrix multiplication using the standard algorithm.
+</cell></row>
+<row bottom="medium"><cell></cell><cell></cell><cell></cell></row>
+
+<row><cell><m>O(c^n)</m>, <m> c>1</m> </cell><cell> Exponential time </cell><cell> Recursive algorithms that make two or more recursive calls each time;
+</cell></row>
+<row bottom="medium"><cell></cell><cell></cell><cell>Determining if two logical statements are equivalent using a truth table (<m>2^n</m> rows)</cell></row>
+
+<row><cell><m>O(n!)</m> </cell><cell> Factorial time </cell><cell> Solving the travelling salesman problem via brute-force search; enumerating all partitions of a set</cell></row>
+<row bottom="medium"><cell></cell><cell></cell><cell></cell></row>
+
+<row><cell><m>O(n^n)</m> </cell><cell> <m>n</m> to the <m>n</m> </cell><cell> Resulting value of <m>f(n) = n!</m></cell></row>
+<row bottom="medium"><cell></cell><cell></cell><cell></cell></row>
+    </tabular>
+    </table>
+  </subsection>
+
+<subsection xml:id="subsec8_6_3-big-o-combinations"><title>Big O For Combinations of Functions</title><idx>Big O of Function Combinations</idx>
+  <introduction><p>The Big O of multiple functions can be combined. If we have a complex function, we can break it down into simpler parts then find the Big O of the simpler functions and combine them.</p></introduction>
+
+  <p><ul>
+      <li><p>If two functions are <em>added</em> together, their Big O is the Big O of the larger one.
+        <ul><li><p>If <m>f_1(x) = O(g_1(x))</m> and <m>f_2(x) = O(g_2(x))</m>: <me>f_1+f_2(x) = O(\max(g_1(x),g_2(x))</me></p></li></ul></p>
+        </li>
+            <li><p>If two functions are <em>multiplied</em> together, their Big O is the product of the Big O of both.
+        <ul><li><p>If <m>f_1(x) = O(g_1(x))</m> and <m>f_2(x) = O(g_2(x))</m>: <me>f_1*f_2(x) = O(g_1(x)*g_2(x))</me></p></li></ul>
+        </p></li>
+      </ul></p>
+
+      <example xml:id="ex-big-o-log_poly">
+      <title>Big O of <m>7x^3\log_{2}x</m></title>
+      <p>Here we have two functions multiplied together: <m>f(x) = x^3</m> and <m>g(x) = \log_{2}x</m>. We can calculate the Big O of both separately and combine them.</p>
+      <p>For the first one <xref ref="bigO-of-polynomials"/> applies so we have <m>f(x) = O(x^3)</m>. For <m>g(x)</m> there are no powers or constants so the Big O is just <m>\log_2(x)</m>.</p>
+      <p>Multiplying: <m>7x^3\log_{2}x = O(x^3\log_{2}x)</m> </p></example>
+
+      <example xml:id="ex-big-o-log_plus_poly">
+      <title>Big O of <m>9x^{2} + 3^x</m></title>
+      <p>Here we have two functions added together: <m>f(x) = 9x^{2}</m> and <m>g(x) = 3^x</m>. We must calculate the Big O of both separately and decide which is largest.</p>
+
+      <p>For the first one <xref ref="bigO-of-polynomials"/> applies so we have <m>f(x) = O(x^2)</m>. For <m>g(x)</m>, this is an exponential in <m>x</m>, so the Big O is just the function itself: <m>3^x</m>. Looking at <xref ref="fig-big0-common-functions"/> we can see that <m>3^x</m> grows much faster than the polynomial <m>x^2</m>, therefore <m>9x^{2} + 3^x = O(3^x)</m></p></example>
+  </subsection>
+
+  <subsection xml:id="subsec8_6_4-big-omega"><title>Big Omega</title><idx>Big Omega</idx>
+    <introduction>
+
+      <p>This is almost the same definition as Big O, except that Big <m>\Omega</m> (Omega) gives a <em>lower bound</em> on the growth of a function or running time of an algorithm. It is used to describe the <em>best case</em> running time for an algorithm on a given data size.</p>
+      </introduction>
+
+      <definition xml:id="def-big-omega"><title>Big <m>\Omega</m></title>
+			<statement><p>Given functions <m>f(x),g(x): \mathbb{R} \rightarrow \mathbb{R}</m> with <m>f</m> non-negative, we say <m>f(x)</m> is Big <m>\Omega</m> (Omega) <m>g(x)</m> or:
+           <me>f(x) = \Omega (g(x))</me>
+           to mean
+           <me>g(x) = O(f(x)).</me>
+         <m> f(x) = \Omega (g(x))</m> if and only if there exists a constant <m>c \geq 0</m> and a <m>k</m> such that for all <m>x \geq k:</m>
+          <me>c f(x) \geq \lvert g(x) \rvert</me>
+          </p></statement></definition>
+
+      <p>To prove: <m>f(x) = \Omega(g(x))</m>
+        we just flip the equation around into Big O form: <m>g(x) = O(f(x))</m> and find a <m>c</m> and <m>k</m> where <m>f(x)</m> is greater than or equal to <m>g(x)</m>.</p>
+</subsection>
+
+  <subsection xml:id="subsec8_6_5-big-theta"><title>Big Theta</title><idx>Big Theta</idx>
+    <introduction>
+
+      <p>Big <m>\Theta</m> (Theta) combines Big O and Big <m>\Omega</m> to specify that the growth of a function (or running time of an algorithm) is always equal to some other function plus or minus a constant factor. We take the definitions of both Big O and Big <m>\Omega</m> to give both an upper and lower bound. It is used to describe the <em>best and worst case</em> running times for an algorithm on a given data size.</p>
+      </introduction>
+
+      <definition xml:id="def-big-theta"><title>Big <m>\Theta</m></title>
+			<statement><p>Given functions <m>f(x),g(x): \mathbb{R} \rightarrow \mathbb{R}</m> with <m>f,g</m> non-negative, we say <m>f(x)</m> is Big <m>\Theta</m> (Theta) <m>g(x)</m> or:
+           <me>f(x) = \Theta (g(x))</me>
+           if and only if:
+           <me>f(x) = O(g(x))</me>
+           and
+           <me>g(x) = O(f(x)).</me>
+
+         <m> f(x) = \Theta (g(x))</m> means <m>f(x)</m> and
+         <m>g(x)</m> are equal to within a constant factor.
+          </p></statement></definition>
+
+      <p>To prove: <m>f(x) = \Theta(g(x))</m>
+        we must show <m>f(x) = O(g(x))</m> for some <m>c_1</m> and <m>k_1</m> and then flip the equation around and show: <m>g(x) = O(f(x))</m> for some <m>c_2</m> and <m>k_2</m>.</p>
+
+    <p>In the following SageMath cell, we plot <m>f(x) = x^4 + 2^x</m> (red), this is an addition of two functions with the larger one being the exponential <m>2^x</m>, so it should be <m>\Theta(2^x)</m>. We show this by using <m>g(x) = 2^x</m> and plotting both <m>c_1\,*\,g(x)</m> with <m> c_1 = 20</m> to show <m>f(x) = O(2^x)</m> and  <m>c_2\,*\,g(x)</m> with <m> c_2 = 1</m> to show <m>f(x) = \Omega(2^x)</m> with black dots. The resulting plot shows that <m>f(x)</m> is bounded above by <m>c_1 \,*\, g(x)</m> after <m>x \approx 7</m> and it is always bounded below by <m>c_2 \,*\, g(x)</m> . That is what we want to show for Big <m>\Theta</m>. </p>
+
+    <sage>
+			<input>
+f(x) = (x^4 + 2^x)
+g(x) = 2^x
+c1 = 20
+c2 = 1
+
+p1 = plot(f, (x,0,10), color="red" , legend_label='f(x)', thickness='2')
+p2 = plot(c1*g, (x,0,10),  color="black", linestyle="dotted", legend_label='20 * g(x)', thickness='3')
+p3 = plot(c2*g, (x,0,10),  color="black", linestyle="dotted", legend_label='1 * g(x)', thickness='3')
+p1+ p2 + p3
+</input>
+<output>
+<!-- TODO <image source="images/sageplot-bigO-polynomial.png"/>-->
+  </output>
+  </sage>
+
+  </subsection>
+
+
+  	<exercises><title>Exercises for Section 8.6</title>
+		<exercise number="1"><statement><p>Show that
+<m>f(x) =  8x^3 - 5x^2 + 7x + 13 </m>
+is <m>\Theta(x^3)</m>. Find <m>c_1, c_2, k_1, k_2</m>.</p></statement>
+
+
+<answer><p>for all <m>x \geq 1</m>
+  <me>\begin{array}{c c}
+ 8x^3 - 5x^2 + 7x + 13  &amp;  \leq  8x^3 + 7x + 13\\
+  &amp;  \leq 8x^3 + 7x^3 + 13x^3\\
+  &amp;  = 28x^3
+ \end{array}</me>
+So <m>8x^3 - 5x^2 + 7x + 13</m> is <m>O(x^3)</m> with  <m>c_1 = 28, k_1 = 1</m>
+  <me>\begin{array}{c c}
+  8x^3 - 5x^2 + 7x + 13  &amp;  \geq  8x^3 -5x^2\\
+  8x^3 - 5x^2 + 7x + 13  &amp;  \geq  8x^3 -x^3\\
+   &amp; x^3 \geq 5x^2 \text{ if } x > 5  \\
+  &amp;  = 7x^3
+\end{array}</me>
+So <m>8x^3 - 5x^2 + 7x + 13</m> is <m>\Omega(x^3)</m> with  <m>c_2 = 7, k_2 = 5</m>
+
+Therefore <m>8x^3 - 5x^2 + 7x + 13</m> is <m>\Theta(x^3)</m>.</p></answer>
+</exercise>
+
+		<exercise number="2"><statement><p>Show that
+<m>f(x) = 10x^2 + x - 22 </m>
+is <m>\Theta(x^2)</m>. Find <m>c_1, c_2, k_1, k_2</m>.</p></statement>
+</exercise>
+
+
+<exercise number="3"><statement><p>Show that <m>f(x) = x^5 \neq O(x^4)</m></p></statement>
+
+  <answer><p>
+    <me>\begin{array}{c c}
+      x^5  &amp;  \leq x^4\\
+      \frac{x^5}{x^4}  &amp;  \leq \frac{x^4}{x^4}\\
+      x  &amp;  \leq 1\\
+      \end{array}</me>
+    This is false, because by definition of Big O the equation must be true for all values of <m>x > k</m>, for some value <m>k</m>. Therefore
+          <m>x^5 \neq O(x^4)</m></p>
+      </answer>
+     </exercise>
+
+  <exercise number="4"><statement><p>For each pair of functions below, determine whether <m>f(x) = O(g(x))</m> and whether <m>g(x) = O(f(x))</m>. If one function is Big O of the other, give values for <m>c</m> and <m>k</m>.</p>
+
+        <p><ol cols="2" label="(a)">
+          <li><m>f(x) = x^2, g(x) = 3x.</m></li>
+          <li><m>f(x) = \frac{3x - 7}{x+4}, g(x) = 4.</m></li>
+          <li><m>f(x) = 2^x, g(x) = 2^{\frac{x}{2}}.</m></li>
+          <li><m>f(x) = \log (n!), g(x) = \log (n^n).</m></li>
+          <li><m>f(x) = x^{10}, g(x) = 10^x.</m></li>
+        </ol> </p>
+        </statement>
+</exercise>
+
+
+
+ <exercise number="5"><statement><p>
+  Determine whether each of the functions: <m>\log(3n + 2)</m> and
+<m>\log(n^3 + 1)</m> is <m>O(\log n)</m> by finding a valid <m>c</m> and <m>k</m> for each, or showing they do not exist.</p></statement>
+
+
+<answer>
+
+  <p><me>\begin{array}{c c}
+ \log(3n + 2)  &amp;  \leq \log(3n + n), \forall n > 2\\
+  &amp;  = \log(4n)\\
+  &amp;  = \log 4 + \log n\\
+  &amp;  \leq \log n + \log n, \text{ if } n > 4.\\
+  &amp;  = 2 \log n.
+  \end{array}</me>
+Therefore <m>\log(3n + 2)</m> is <m>O(\log n)</m> with <m>c = 2, k = 4</m>.
+<me>\begin{array}{c c}
+ \log(n^3 + 1)  &amp;  \leq \log(n^3 + n^3), \forall n > 1\\
+  &amp;  = \log(2n^3)\\
+  &amp;  = \log 2 + \log n^3\\
+  &amp;  = \log 2 + 3\log n\\
+  &amp;  \leq 4 \log n, \text{ if } n > 2.
+ \end{array}</me>
+ Therefore <m>\log(n^3 + 1)</m> is <m>O(\log n)</m> with <m>c = 4, k = 2</m>.</p>
+</answer>
+</exercise>
+  <exercise number="6"><statement><p>Arrange these functions into a sequence from smallest to largest Big O</p>
+
+        <p><ol cols="2" label="(a)">
+          <li><m>n\log n</m></li>
+          <li><m>2^{100} n</m></li>
+          <li><m>n!</m></li>
+          <li><m>2^{2^{100}}</m></li>
+          <li><m>2^{2^{n}}</m></li>
+          <li><m>2^{n}</m></li>
+          <li><m>3^n</m></li>
+          <li><m>n2^{n}</m></li>
+          <li><m>2n</m></li>
+          <li><m>3n</m></li>
+          <li><m>n^2</m></li>
+          <li><m>n^3</m></li>
+          <li><m>\log (n!)</m></li>
+        </ol> </p>
+        </statement>
+</exercise></exercises>
+</section>

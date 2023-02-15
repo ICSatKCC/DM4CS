@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="s-circuit-minimization">
+<title>Logic Circuit Minimization</title>
+<idx>Circuit Minimization</idx>
+<idx>Logic Circuit Minimization</idx>
+
+<!-- The most convenient is the Karnaugh map, a discussion of which can be found in any logical design/switching theory text (see, for example, <xref ref="biblio-hill-1974" />). -->
+<p>Let's start with a logic circuit and see how the laws of boolean algebra can help us simplify it.</p>
+<example xml:id="example-logic-design-1"><title>Simplification of a circuit</title>
+<p>
+Consider the  circuit in <xref ref="fig-ex-1-start-circuit" text="type-global"/>. As usual, we assume that three inputs enter on the left and the output exits on the right.</p>
+ <figure xml:id="fig-ex-1-start-circuit">
+		 <caption>Initial gate diagram
+		 </caption>
+		 <image width="80%" source="images/fig_tikz_gate_simp1_init.png">
+			  <description>Initial gate diagram</description>
+		 </image>
+</figure>
+<p>If we trace the inputs through the gates we see that this circuit realizes the boolean function
+ <me>f\left(x_1, x_2, x_3 \right)=x_1 \cdot  \overline{x_2}\cdot \left(\left( x_1 + x_2\right) + \left(x_1 + x_3\right)\right).</me>
+</p>
+
+<p>We simplify the boolean expression that defines <m>f</m>, simplifying the circuit in so doing.  You should be able to identify the laws of Boolean algebra that are used in each of the steps.  See <xref ref="exerc-12_7-1" text="type-global"/>.
+ <me>
+\begin{split}
+x_1 \cdot  \overline{x_2}\cdot \left(\left( x_1 + x_2\right) + \left(x_1 + x_3\right)\right) &amp; =
+            x_1 \cdot \overline{x_2}\cdot \left(x_1+ x_2 + x_3\right)\\
+ &amp; = x_1 \cdot  \overline{x_2} \cdot  x_1 + x_1 \cdot \overline{x_2} \cdot x_2  + x_1 \cdot  \overline{x_2} \cdot x_3 \\
+ &amp;= x_1\cdot  \overline{x_2} + 0 \cdot  x_1 + x_3 \cdot  x_1 \cdot  \overline{x_2}\\
+ &amp;=x_1 \cdot  \overline{x_2} + x_3 \cdot  x_1 \cdot  \overline{x_2} \\
+ &amp;= x_1 \cdot  \overline{x_2} \cdot  \left(1 + x_3\right)\\
+ &amp;= x_1 \cdot  \overline{x_2}
+ \end{split}
+ </me>
+ Therefore, <m>f\left(x_1, x_2, x_3\right)=x_1 \cdot  \overline{x_2}</m>, which can be realized with the much simpler circuit in <xref ref="fig-ex-1-end-circuit" text="type-global"/>, without using the input <m>x_3</m>.</p>
+  <figure xml:id="fig-ex-1-end-circuit">
+		 <caption>Simplified gate diagram
+		 </caption>
+		 <image width="60%" source="images/fig_tikz_gate_simp1_end.png">
+			  <description>Simplified gate diagram</description>
+		 </image>
+</figure>
+</example>
+<p>Next, we start with a table of desired outputs based on three bits of input and design an efficient circuit to realize this output.</p>
+
+<example xml:id="example-logic-design-2">
+<p>Consider the following table of desired outputs for the three input bits <m>x_1, x_2, x_3</m>.</p>
+
+	<table xml:id="table-logic-design-output">
+	<title>Desired output table</title>
+	<tabular  halign="center">
+	<row><cell><m>x_1</m></cell><cell><m>x_2</m></cell><cell><m>x_3</m></cell><cell><m>f(x_1,x_2,x_3)</m></cell></row>
+	<row><cell>0</cell><cell>0</cell><cell>0</cell><cell>0</cell></row>
+	<row><cell>0</cell><cell>0</cell><cell>1</cell><cell>1</cell></row>
+	<row><cell>0</cell><cell>1</cell><cell>0</cell><cell>0</cell></row>
+	<row><cell>0</cell><cell>1</cell><cell>1</cell><cell>0</cell></row>
+	<row><cell>1</cell><cell>0</cell><cell>0</cell><cell>1</cell></row>
+	<row><cell>1</cell><cell>0</cell><cell>1</cell><cell>1</cell></row>
+	<row><cell>1</cell><cell>1</cell><cell>0</cell><cell>0</cell></row>
+	<row><cell>1</cell><cell>1</cell><cell>1</cell><cell>0</cell></row>
+	</tabular>
+	</table>
+
+<p>A circuit  diagram for this function is <xref ref="fig-logic-design-example-2" text="type-global"/>.  But is this the simplest circuit that realizes the table?  See <xref ref="exerc-simpler-circuit" text="type-global"/>.</p>
+<figure xml:id="fig-logic-design-example-2">
+		 <caption>A realization of the table of desired outputs.
+		 </caption>
+		 <image width="60%" source="images/fig_tikz_gate_simp2.png">
+			  <description>Simplified realization of the desired table of outputs</description>
+		 </image>
+</figure>
+</example>
+<!--
+<example>
+<p>
+Is Circuit b simpler than Circuit a? Both circuits contain the same number of gates, so the hardware costs (costs per gate) would be the same. Hence,
+intuitively, we would guess that they are equivalent with respect to simplicity. However, the signals <m>x_3</m> and <m>x_4</m> in Circuit a pass through
+three levels of gating before reaching the output. All signals in Circuit b go through only two levels of gating (disregard the NOT gate when counting
+levels). Each level of logic (gates) adds to the time delay of the development of a signal at the output. In computers, we want the time delay to
+be as small as possible. Frequently, speed can be increased by decreasing the number of levels in a circuit. However, this frequently forces a larger
+number of gates to be used, thus increasing costs. One of the more difficult jobs of a design engineer is to balance off speed with hardware costs
+(number of gates).</p>
+</example>
+ -->
+ <exercises xml:id="exercises-12-8">
+   <title>Exercises for Section 12.8 </title>
+<exercise number="1" xml:id="exerc-12_8-1">
+<statement><p>List the laws of boolean algebra that justify the steps in the simplification of the boolean function <m>f\left(x_1, x_2, x_3\right)</m> in <xref ref="example-logic-design-1" text="type-global" />. Some steps use more than one law. </p></statement>
+<answer><p>
+<ol label="(1)">
+ <li><p> Associative, commutative, and idempotent laws.</p></li>
+<li><p>Distributive law.</p></li>
+<li><p>Idempotent and complement laws.</p></li>
+<li><p>Null and identity laws</p></li>
+<li><p>Distributive law.</p></li>
+<li><p>Null and identity laws.</p></li>
+</ol>
+</p></answer>
+</exercise>
+
+<exercise number="2">
+<statement><p>Write the following Boolean expression in the notation of logic design.
+<me>\left(x_1\land \overline{x_2}\right)\lor \left(x_1\land x_2\right)\lor \left(\overline{x_1}\land x_2\right).</me>
+</p></statement>
+<answer><p>
+<me>(x_1\cdot  \overline{x_2})+(x_1\cdot  x_2)+(\overline{x_1} \cdot  x_2).</me></p></answer>
+</exercise>
+
+<exercise number="3" xml:id="exerc-simpler-circuit">
+<statement><p>Find a further simplification of the boolean function in <xref ref="example-logic-design-2" text="type-global"/>, and draw the corresponding gate diagram for the circuit that it realizes.
+</p></statement>
+<answer><p>A simpler boolean expression for the function is
+<m>\overline{x_2} \cdot (x_1 + x_3)</m>.</p>
+<figure xml:id="fig-logic-design-exerc-3">
+		 <caption>An even simpler circuit
+		 </caption>
+		 <image width="100%" source="images/fig-logic-design-exerc-3.png">
+			  <description>Figure for exercise 3</description>
+		 </image>
+</figure>
+</answer>
+</exercise>
+
+<exercise number="4">
+<statement>
+ <p>Consider the switching circuit in  <xref ref="fig-logic-design-exerc-4" text="type-global"/>.</p>
+<figure xml:id="fig-logic-design-exerc-4">
+		 <caption>Can this circuit be simplifed?
+		 </caption>
+		 <image width="100%" source="images/fig-logic-design-exerc-4.png">
+			  <description>Figure for exercise 4</description>
+		 </image>
+</figure>
+ <p>
+ <ol label="(a)">
+ <li><p>Draw the corresponding gate diagram for this circuit.</p></li>
+<li><p>Construct a table of outputs for each of the eight inputs to this circuit.</p></li>
+<li><p>Determine the minterm normal of the Boolean function based on the table.</p></li>
+<li><p>Simplify the circuit as much as possible.</p></li>
+</ol>
+</p>
+</statement>
+<!--
+<solution>
+</solution>
+ -->
+</exercise>
+<exercise number="5">
+<statement>
+ <p>Consider the circuit in <xref ref="fig-logic-design-exerc-5" text="type-global"/>.</p>
+ <figure xml:id="fig-logic-design-exerc-5">
+		 <caption>Can this circuit be simplifed?
+		 </caption>
+		 <image width="100%" source="images/fig-logic-design-exerc-5.png">
+			  <description>Figure for exercise 3</description>
+		 </image>
+</figure>
+ <p>
+ <ol label="(a)">
+ <li><p>Trace the inputs though this circuit and determine the Boolean function that it realizes. </p></li>
+<li><p>Construct a table of outputs for each of the eight inputs to this circuit. </p></li>
+<li><p>Find the minterm normal form of <m>f</m>.</p></li>
+<li><p>Draw the circuit based on the minterm normal form.</p></li>
+<li><p>Simplify the circuit algebraically and draw the resulting circuit.</p></li>
+</ol>
+</p>
+</statement>
+<!--
+<solution><p><ol label="(a)">
+ <li><p> <m>f\left(x_1, x_2, x_3\right)</m> <m>=\overline{\left(\left(x_1
++ x_2\right) \cdot  x_3\right)} \cdot  \left(x_1 + x_2\right).</m></p></li>
+<li><p>Simplify <m>f</m> algebraically.</p></li>
+<li><p>Find the minterm normal form of <m>f</m>.</p></li>
+<li><p>Draw and compare the circuit (gate) diagram of parts b and c above.</p></li>
+<li><p>Draw the on-off switching diagram of <m>f</m> in part a.</p></li>
+<li><p>Write the table of the Boolean function \textit{ f }in part a and interpret the results.</p></li>
+</ol></p>
+</solution>
+ -->
+ </exercise>
+<exercise number="6">
+<statement><p>Consider the Boolean function
+<m>f\left(x_1, x_2, x_3, x_4\right)=x_1 + \left(x_2 \cdot  \left(\overline{x_1} + x_4\right) + x_3 \cdot  \left(\overline{x_2} + \overline{x_4}\right)\right).</m></p>
+<p>
+<ol label="(a)">
+<li><p>Simplify <m>f</m> algebraically.</p></li>
+<li><p>Draw the gate diagram based on the simplified version of <m>f</m>.</p></li>
+</ol>
+</p></statement>
+<!--
+<solution>
+</solution>
+ -->
+</exercise>
+</exercises>
+
+</section>
