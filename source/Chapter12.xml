@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="chapter_12" xmlns:xi="http://www.w3.org/2001/XInclude"><title>Boolean Algebra</title>
+<!-- ADS Ch 13 -->
+<introduction>
+           <figure xml:id="fig-george-boole">
+                <caption>George Boole, 1815 - 1864</caption>
+                <image width="100%" source="images/fig-george-boole.png">
+                    <description>George Boole, 1815 - 1864</description>
+                </image>
+            </figure>
+
+           <poem>
+                <title>George Boole</title>
+                <idx><h>George Boole</h><h>a Limerick</h></idx>
+                <idx>Robinson, Andrew</idx>
+                <author>Andrew Robinson, The Omnificent English Dictionary In Limerick Form</author>
+               <stanza>
+                    <line>George Boole wasn't idle a lot.</line>
+                    <line>He churned out ideas on the spot,</line>
+                    <line>Making marvellous use of</line>
+                    <line>Inclusive/exclusive</line>
+                    <line>Expressions like AND, OR, and NOT</line>
+               </stanza>
+            </poem>
+
+
+<p>In this chapter we will develop a type of algebraic system, Boolean algebras, that is particularly important to computer scientists, as it is the mathematical foundation of computer design, or switching theory. The similarities of Boolean algebras and the algebra of sets and logic will be discussed, and we will discover properties of finite Boolean algebras. We will then explore how these concepts are physically manifested in logic-based computer circuits.</p>
+
+<p>In order to achieve these goals, we will recall the basic ideas of posets introduced in Chapter 6 and develop the concept of a lattice.  The reader should view the development of the topics of this chapter as another example of an algebraic system. Hence, we expect to define first the elements in the system, next the operations on the elements, and then the common properties of the operations in the system.</p>
+</introduction>
+<xi:include href="./Section12_1.xml" />
+<xi:include href="./Section12_2.xml" />
+<xi:include href="./Section12_3.xml" />
+<xi:include href="./Section12_4.xml" />
+<xi:include href="./Section12_5.xml" />
+<xi:include href="./Section12_6.xml" />
+<xi:include href="./Section12_7.xml" />
+<xi:include href="./Section12_8.xml" />
+</chapter>

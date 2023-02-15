@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="chapter_9" xmlns:xi="http://www.w3.org/2001/XInclude"><title>Algorithms</title>
+
+  <xi:include href="./Section9_1.xml" />  <!-- algorithms-->
+  <xi:include href="./Section9_2.xml" />  <!--recursive algorithms-->
+    <xi:include href="./Section9_3.xml" />  <!-- algorithmic complexity -->
+</chapter>

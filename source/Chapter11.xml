@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="chapter_11" xmlns:xi="http://www.w3.org/2001/XInclude"><title>Algebraic Structures</title>
+<!-- ADS Chapter 11 -->
+<introduction>
+<p>The primary goal of this chapter is to make the reader aware of what an <em>algebraic system </em>(or just an <em>algebra</em>) is and how algebraic systems can be studied at different levels of abstraction. After describing the concrete, axiomatic, and universal levels, we will introduce one of the most important algebraic systems at the axiomatic level, the group. In this chapter, group theory will be a vehicle for introducing the universal concepts of isomorphism, direct product, subsystem, and generating set. These concepts can be applied to all algebraic systems. The simplicity of group theory will help the reader obtain a good intuitive understanding of these concepts. We will close the chapter with a discussion of how some computer hardware and software systems use the concept of an algebraic system.
+</p></introduction>
+<xi:include href="./Section11_1.xml" />
+<xi:include href="./Section11_2.xml" />
+<xi:include href="./Section11_3.xml" />
+<xi:include href="./Section11_4.xml" />
+<xi:include href="./Section11_5.xml" />
+<xi:include href="./Section11_6.xml" />
+<xi:include href="./Section11_7.xml" />
+</chapter>

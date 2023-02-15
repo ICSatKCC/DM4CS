@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="chapter_16" xmlns:xi="http://www.w3.org/2001/XInclude"><title>Recurrence Relations</title>
+<introduction>
+<p>The goal of this chapter is to discuss recurrence relations. Recurrence relations are a recursive framework essential in computer science. We will concentrate on methods of solving recurrence relations, including an introduction to generating
+functions.
+</p></introduction>
+<xi:include href="./Section16_1.xml" />
+<xi:include href="./Section16_2.xml" />
+<xi:include href="./Section16_3.xml" />
+
+</chapter>
