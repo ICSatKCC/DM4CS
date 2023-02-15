@@ -19,10 +19,9 @@
     <xi:include href="./frontmatter.ptx" />
     <!-- These are all the chapter files, section files included there -->
     <xi:include href="./Chapter1.ptx" />
-    <!--xi:include
-    href="./Chapter2.xml" />
-<xi:include href="./Chapter3.xml" />
-<xi:include href="./Chapter4.xml" />
+    <xi:include href="./Chapter2.ptx" />
+    <xi:include href="./Chapter3.ptx" />
+<!-- <xi:include href="./Chapter4.xml" />
 <xi:include href="./Chapter5.xml" />
 <!- <xi:include href="./XC6.xml" /> ADS Ch 6 moved to ICS 241 -->
     <!--<xi:include href="./Chapter6.xml" />  --> <!-- ADS Ch 7 Ch 8 ADS appendix on algorithms + other stuff -->

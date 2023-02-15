@@ -19,9 +19,9 @@
 		<p>Counting occurs not only in highly sophisticated applications of mathematics to engineering and computer science but also in many basic applications. Like many other powerful and useful tools in mathematics, the concepts are simple; we only have to recognize when and how they can be applied.
 		</p>
 	</introduction>
-	<xi:include href="./Section2_1.xml" />
-	<xi:include href="./Section2_2.xml" />
-	<xi:include href="./Section2_3.xml" />
-	<xi:include href="./Section2_4.xml" />
-	<xi:include href="./Section2_5.xml" />
+	<xi:include href="./Section2_1.ptx" />
+	<xi:include href="./Section2_2.ptx" />
+	<xi:include href="./Section2_3.ptx" />
+	<xi:include href="./Section2_4.ptx" />
+	<xi:include href="./Section2_5.ptx" />
 </chapter>

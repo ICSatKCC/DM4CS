@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="section3_3-ExpectedValue">
+  <title>Expected Value and Variance</title>
+  <idx>Expected Value and Variance</idx>
+  <subsection xml:id="subsec3_3_1-expected-value">
+    <title>Expected Values</title>
+    <idx>Expected Values</idx>
+    <introduction>
+      <p>Consider the probability space <m>(S,P)</m> with sample space <m>S = \{1,2,3\}</m> and
+        probability function <m>P</m> defined by <m>P(1)=4/5</m>, <m>P(2)=1/10</m>, and <m>P(3)=1/10</m>.
+        Assume we choose an element in <m>S</m> according to this probability function. Let <m>X</m>
+        be the random variable whose value is equal to the element in <m>S</m> that is chosen. Thus,
+        as a function <m>X : S \rightarrow \mathbb{R}</m>, we have <m>X(1)=1</m>, <m>X(2)=2</m>, and <m>
+        X(3)=3</m>.</p>
+      <p>The <q>expected value</q> of <m>X</m> is the value of <m>X</m> that we observe <q>on
+        average</q>. How should we define this? Since <m>X</m> has a much higher probability to take
+        the value <m>1</m> than the other two values <m>2</m> and <m>3</m>, the value <m>1</m>
+        should get a larger <q>weight</q> in the expected value of <m>X</m>. Based on this, it is
+        natural to define the expected value of <m>X</m> to be <me>1 \cdot P(1) + 2 \cdot P(2) + 3
+        \cdot P(3)
+          = 1 \cdot \frac{4}{5} + 2 \cdot \frac{1}{10} + 3 \cdot \frac{1}{10}
+          = \frac{13}{10} .
+</me></p>
+    </introduction>
+
+    <definition xml:id="def-expected-value">
+      <title>Expected Value</title>
+      <idx>expected value</idx>
+      <statement>
+        <p> Let <m>(S,P)</m> be a probability space and let <m>X : S \rightarrow \mathbb{R}</m> be a
+          random variable. The <em>expected value</em> (or <em>expectation</em> or <em>weighted
+          average</em>) of <m>X</m> is defined to be <me>\mathbb{E}(X) = \sum_{s \in S} X(s) \cdot
+          P(s)
+</me>. </p>
+      </statement>
+    </definition>
+
+    <example xml:id="ex-expected-coin-flip">
+      <title>Expected value of a coin flip</title>
+      <p> Assume we flip a fair coin, in which case the sample space is <m>S = \{H,T\}</m> and <m>P(H)
+        = P(T) = 1/2</m>. Define the random variable <m>X</m> to have value <me>X =
+        \left\{\begin{array}{ll}
+          1 &amp; \mbox{if the coin comes up heads,} \\
+          0 &amp; \mbox{if the coin comes up tails.}
+          \end{array}
+          \right.
+</me>
+        Thus, as a function <m>X : S \rightarrow \mathbb{R}</m>, we have <m>X(H)=1</m> and <m>X(T)=0</m>.
+        The expected value <m>\mathbb{E}(X)</m> of <m>X</m> is equal to <me>\begin{array}{rl}
+        \mathbb{E}(X) &amp; = X(H) \cdot P(H) + X(T) \cdot P(T) \\
+          &amp; = 1 \cdot \frac{1}{2} + 0 \cdot \frac{1}{2} \\
+          &amp; = \frac{1}{2} .
+          \end{array}</me> This example shows that the term <q>expected value</q> is a bit
+        misleading: <m>\mathbb{E}(X)</m> is <em>not</em> the value that we expect to observe,
+        because many times the value of <m>X</m> can <em>never</em> equal to its expected value.</p>
+    </example>
+
+    <definition xml:id="def-bernoulli-trial">
+      <title>Bernoulli Trial</title>
+      <idx>Bernoulli Trial</idx>
+      <statement>
+        <p>A Bernoulli trial is a special kind of experiment that can have only two outcomes: 1 or
+          0. A 1 is called a <q>success</q> and a 0 is called a <q>failure</q>. The probability of
+          success is defined as <m>p</m> and the probability of failure is therefore <m>1-p</m> or <m>
+          q</m>. If <m>X</m> is a random variable that represents the outcome of a Bernoulli trial
+          then <me>
+            P(X=1) = p </me> and <me>P(X=0) = 1-p = q</me> where <m>p + q = 1</m>.</p>
+
+        <p>In the preceding example (<xref ref="ex-expected-coin-flip" />) we defined a random
+          variable <m>X</m> where <me>X = \left\{\begin{array}{ll}
+            1 &amp; \mbox{if the coin comes up heads,} \\
+            0 &amp; \mbox{if the coin comes up tails.}
+            \end{array}
+            \right.
+</me>
+          Each coin flip is a <em>Bernoulli trial</em>.</p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-expectation-of-bernoulli-successes">
+      <title>Expected Successes in a Bernoulli Trial</title>
+      <idx>Expected Successes in a Bernoulli Trial</idx>
+      <statement>
+        <p>Let <m>X</m> be a random variable representing a Bernoulli trial that takes the value 1
+          with probability <m>p</m> and the value 0 with probability <m>1-p</m>. Then <me>\mathbb{E}(X)
+          = p.
+</me></p>
+      </statement>
+      <proof>
+        <p> By <xref ref="def-expected-value" />
+  <me>\mathbb{E}(X) = 1\cdot p + 0 \cdot (1-p) = p \,
+          \Box</me>
+        </p>
+      </proof>
+    </theorem>
+
+
+    <example xml:id="ex-expected-die-roll">
+      <title>Expected value of a die roll</title>
+      <p> Assume we roll a fair die. Define the random variable <m>X</m> to be the value of the
+        result. Then, <m>X</m> takes each of the values in <m>\{1,2,3,4,5,6\}</m> with equal
+        probability <m>1/6</m>, and we get <me>\begin{array}{rl}
+          \mathbb{E}(X) = &amp; 1 \cdot \frac{1}{6} + 2 \cdot \frac{1}{6} +
+          3 \cdot \frac{1}{6} + 4 \cdot \frac{1}{6} +
+          5 \cdot \frac{1}{6} + 6 \cdot \frac{1}{6} \\
+          = &amp; \frac{7}{2} .
+          \end{array}</me></p>
+      <p> Now define the random variable <m>Y</m> to be equal to one divided by the result of the
+        die. In other words, <m>Y = 1/X</m>. This random variable takes each of the values in <m>
+        \{1,1/2,1/3,1/4,1/5,1/6\}</m> with equal probability <m>1/6</m>, and we get <me>\begin{array}{rl}
+        \mathbb{E}(Y) &amp; = 1 \cdot \frac{1}{6} + \frac{1}{2} \cdot \frac{1}{6} +
+          \frac{1}{3} \cdot \frac{1}{6} +
+          \frac{1}{4} \cdot \frac{1}{6} +
+          \frac{1}{5} \cdot \frac{1}{6} +
+          \frac{1}{6} \cdot \frac{1}{6} \\
+          &amp; = \frac{49}{120} .
+          \end{array}</me> Note that <m>\mathbb{E}(Y) \neq 1 / \mathbb{E}(X)</m>. Thus, this example
+        shows that, in general, <m>\mathbb{E}(1/X) \neq 1 / \mathbb{E}(X)</m>.</p>
+    </example>
+
+    <example xml:id="ex-expected-two-dice-roll">
+      <title>Expected value of rolling two dice</title>
+      <p>Consider a fair red die and a fair blue die, and assume we roll them independently, just
+        like <xref ref="ex-rolling-a-die-twice" />. The sample space is <me>S = \{ (i,j) : 1 \leq i
+        \leq 6 , 1 \leq j \leq 6 \} ,
+</me> where <m>i</m> is the result of
+        the red die and <m>j</m> is the result of the blue die. Each outcome <m>(i,j)</m> in <m>S</m>
+        has the same probability of <m>1/36</m>.</p>
+
+      <p>Let <m>X</m> be the random variable whose value is equal to the sum of the results of the
+        two rolls. As a function <m>X : S \rightarrow \mathbb{R}</m>, we have <m>X(i,j) = i+j</m>.
+        The matrix below gives all possible values of <m>X</m>. The leftmost column indicates the
+        result of the red die, the top row indicates the result of the blue die, and each other
+        entry is the corresponding value of <m>X</m>. <me>\begin{array}{|c||c|c|c|c|c|c|}
+          \hline
+          &amp;1 &amp;2 &amp;3 &amp;4 &amp;5 &amp;6 \\
+          \hline
+          \hline
+          1 &amp;2 &amp;3 &amp;4 &amp;5 &amp;6 &amp;7 \\
+          2 &amp;3 &amp;4 &amp;5 &amp;6 &amp;7 &amp;8 \\
+          3 &amp;4 &amp;5 &amp;6 &amp;7 &amp;8 &amp;9 \\
+          4 &amp;5 &amp;6 &amp;7 &amp;8 &amp;9 &amp;10 \\
+          5 &amp;6 &amp;7 &amp;8 &amp;9 &amp;10 &amp;11 \\
+          6 &amp;7 &amp;8 &amp;9 &amp;10 &amp;11 &amp;12 \\
+          \hline
+          \end{array}</me> The expected value <m>\mathbb{E}(X)</m> of <m>X</m> is equal to <me>\begin{array}{rl}
+        \mathbb{E}(X) &amp; = \sum_{(i,j) \in S} X(i,j) \cdot P(i,j) \\
+          &amp; = \sum_{(i,j) \in S} (i+j) \cdot \frac{1}{36} \\
+          &amp; = \frac{1}{36} \sum_{(i,j) \in S} (i+j) \\
+          &amp; = \frac{1}{36} \cdot \text{the sum of all matrix entries} \\
+          &amp; = \frac{1}{36} \cdot 252 \\
+          &amp; = 7 .
+          \end{array}</me>
+      </p>
+    </example>
+
+    <subsubsection xml:id="ssubsec3_3_1_1-comp-expected-value">
+      <title>Comparing the Expected Values of Comparable Random Variables</title>
+      <idx>comparing expected values</idx>
+      <introduction>
+        <p> Consider a probability space <m>(S,P)</m>, and let <m>X</m> and <m>Y</m> be two random
+          variables on <m>S</m>. Recall that <m>X</m> and <m>Y</m> are functions that map elements
+          of <m>S</m> to real numbers. We will write <m>X \leq Y</m>, if for each element <m>s \in S</m>,
+          we have <m>X(s) \leq Y(s)</m>. In other words, the value of <m>X</m> is at most the value
+          of <m>Y</m>, no matter which outcome <m>s</m> is chosen.</p>
+      </introduction>
+
+      <theorem xml:id="thm-comparison-of-expectations">
+        <title>Comparison of Expectations</title>
+        <statement>
+          <p> Let <m>(S,P)</m> be a probability space and let <m>X</m> and <m>Y</m> be two random
+            variables on <m>S</m>. If <m>X \leq Y</m>, then <m>\mathbb{E}(X) \leq \mathbb{E}(Y)</m>. </p>
+        </statement>
+        <proof>
+          <p> Using <xref ref="def-expected-value" /> and the assumption that <m>X \leq Y</m>, we
+            obtain <me>\begin{array}{rl}
+              \mathbb{E}(X) &amp; = \sum_{s \in S} X(s) \cdot P(s) \\
+              &amp; \leq &amp; \sum_{s \in S} Y(s) \cdot P(s) \\
+              &amp; = \mathbb{E}(Y) .
+              \end{array}</me>
+          </p>
+        </proof>
+      </theorem>
+    </subsubsection>
+
+
+    <subsubsection xml:id="ssubsec3_3_1_2-alt-expected-value">
+      <title>An Alternative Expression for the Expected Value</title>
+
+      <p> In the <xref ref="ex-expected-two-dice-roll" />, we used <xref ref="def-expected-value" />
+        to compute the expected value <m>\mathbb{E}(X)</m> of the random variable <m>X</m> that was
+        defined to be the sum of the results when rolling two fair and independent dice. This was a
+        painful way to compute <m>\mathbb{E}(X)</m>, because we added all <m>36</m> entries in the
+        matrix. There is a slightly easier way to determine <m>\mathbb{E}(X)</m>: By looking at the
+        matrix, we see that the value <m>4</m> occurs three times. Thus, the event <q>
+          <m>X=4</m>
+        </q> has size <m>3</m>, i.e., if we consider the subset of the sample
+        space <m>S</m> that corresponds to this event, then this subset has size <m>3</m>.
+        Similarly, the event <q>
+          <m>X=7</m>
+        </q> has size <m>6</m>, because the value <m>7</m> occurs <m>6</m> times
+        in the matrix. The table below lists the sizes of all non-empty events, together with their
+        probabilities. <me>
+          \begin{array}{|c|c|c|} \hline
+          \text{event} &amp; \text{size of event} &amp; \text{probability} \\
+          \hline
+          \hline
+          X=2 &amp; 1 &amp; 1/36 \\
+          X=3 &amp; 2 &amp; 2/36 \\
+          X=4 &amp; 3 &amp; 3/36 \\
+          X=5 &amp; 4 &amp; 4/36 \\
+          X=6 &amp; 5 &amp; 5/36 \\
+          X=7 &amp; 6 &amp; 6/36 \\
+          X=8 &amp; 5 &amp; 5/36 \\
+          X=9 &amp; 4 &amp; 4/36 \\
+          X=10 &amp; 3 &amp; 3/36 \\
+          X=11 &amp; 2 &amp; 2/36 \\
+          X=12 &amp; 1 &amp; 1/36 \\
+          \hline
+          \end{array}
+</me>
+        Based on this, we get <me>\begin{array}{rl}
+          \mathbb{E}(X) &amp; = 2 \cdot \frac{1}{36} +
+          3 \cdot \frac{2}{36} +
+          4 \cdot \frac{3}{36} +
+          5 \cdot \frac{4}{36} +
+          6 \cdot \frac{5}{36} +
+          7 \cdot \frac{6}{36} + \\
+          &amp; 8 \cdot \frac{5}{36} +
+          9 \cdot \frac{4}{36} +
+          10 \cdot \frac{3}{36} +
+          11 \cdot \frac{2}{36} +
+          12 \cdot \frac{1}{36} \\
+          &amp; = 7 .
+          \end{array}</me> Even though this is still quite painful, less computation is needed. What
+        we have done is the following: In the definition of <m>\mathbb{E}(X)</m>, i.e., <me>\mathbb{E}(X)
+        = \sum_{(i,j) \in S} X(i,j) \cdot P(i,j) ,
+</me> we rearranged the terms in
+        the summation. That is, instead of taking the sum over all elements <m>(i,j)</m> in <m>S</m>,
+        we <ul>
+          <li>
+            <p>grouped together all outcomes <m>(i,j)</m> for which <m>X(i,j) = i+j</m> has the same
+        value, say, <m>k</m>,</p>
+          </li>
+          <li>
+            <p>multiplied this common value <m>k</m> by the probability that <m>X</m> is equal to <m>
+        k</m>,</p>
+          </li>
+          <li>
+            <p>and took the sum of the resulting products over all possible values of <m>k</m>.</p>
+          </li>
+        </ul>
+        This resulted in <me>\mathbb{E}(X) = \sum_{k=2}^{12} k \cdot P(X=k) .
+</me> The following theorem states that
+        this can be done for any random variable. </p>
+      <theorem xml:id="thm-alternative-expected-value">
+        <title>Expected Value Alternative Equation</title>
+        <idx>expected value</idx>
+        <statement>
+          <p> Let <m>(S,P)</m> be a probability space and let <m>X : S \rightarrow \mathbb{R}</m> be
+            a random variable. The expected value of <m>X</m> is equal to <me>\mathbb{E}(X) = \sum_x
+            x \cdot P(X=x) .
+</me>
+          </p>
+        </statement>
+
+        <proof>
+          <p>Recall that the event <q>
+              <m>X=x</m>
+            </q> corresponds to the subset <me>A_x = \{ s \in S : X(s) = x
+            \}
+</me> of the sample space <m>S</m>. We have <me>\begin{array}{rl}
+            \mathbb{E}(X) &amp; = \sum_{s \in S} X(s) \cdot P(s) \\
+              &amp; = \sum_x \sum_{s : X(s) = x}
+              X(s) \cdot P(s) \\
+              &amp; = \sum_x \sum_{s : X(s) = x}
+              x \cdot P(s) \\
+              &amp; = \sum_x \sum_{s \in A_x} x \cdot P(s) \\
+              &amp; = \sum_x x \sum_{s \in A_x} P(s) \\
+              &amp; = \sum_x x \cdot P \left( A_x \right) \\
+              &amp; = \sum_x x \cdot P(X=x) .
+              \end{array}</me></p>
+        </proof>
+      </theorem>
+
+      <p> When determining the expected value of a random variable <m>X</m>, it is usually easier to
+        use <xref ref="thm-alternative-expected-value" /> than <xref ref="def-expected-value" />. To
+        use <xref ref="thm-alternative-expected-value" />, you have to do the following: <ul>
+          <li>
+            <p>Determine all values <m>x</m> that <m>X</m> can take, i.e., determine the <em>range</em>
+        of the function <m>X</m>.</p>
+          </li>
+          <li>
+            <p> For each such value <m>x</m>, determine <m>P(X=x)</m>.</p>
+          </li>
+          <li>
+            <p> Compute the sum of all products <m>x \cdot P(X=x)</m>.</p>
+          </li>
+        </ul></p>
+    </subsubsection>
+  </subsection>
+
+  <subsection xml:id="subsec3_3_2-linearity-of-expectation">
+    <title>Linearity of Expectation</title>
+    <idx>linearity of expectation</idx>
+    <introduction>
+      <p>
+        We now come to one of the most useful tools for determining expected
+        values:</p>
+    </introduction>
+
+    <theorem xml:id="thm-linearity-of-expectation">
+      <title>Linearity of Expectation</title>
+      <idx>linearity of expectation</idx>
+      <statement>
+        <p> Let <m>(S,P)</m> be a probability space. For any two random variables <m>X</m> and <m>Y</m>
+          on <m>S</m>, and for any two real numbers <m>a</m> and <m>b</m>, <me>\mathbb{E}(aX+bY) = a
+          \cdot \mathbb{E}(X) + b \cdot \mathbb{E}(Y) .
+</me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>Recall that both <m>X</m> and <m>Y</m> are functions from <m>S</m> to <m>\mathbb{R}</m>.
+          Define the random variable <m>Z</m> to be <m>Z=aX+bY</m>. That is, as a function <m>Z : S
+          \rightarrow \mathbb{R}</m>, <m>Z</m> is defined by <me>Z(s) = a \cdot X(s) + b \cdot Y(s)
+</me> for all <m>s</m> in <m>S</m>. Using <xref
+            ref="def-expected-value" />, we get <me>\begin{array}{rl}
+            \mathbb{E}(Z) &amp; = \sum_{s \in S} Z(s) \cdot P(s) \\
+            &amp; = \sum_{s \in S}
+            \left( a \cdot X(s) + b \cdot Y(s) \right)
+            \cdot P(s) \\
+            &amp; = a \sum_{s \in S} X(s) \cdot P(s) +
+            b \sum_{s \in S} Y(s) \cdot P(s) \\
+            &amp; = a \cdot \mathbb{E}(X) + b \cdot \mathbb{E}(Y) \, \Box
+            \end{array}</me></p>
+      </proof>
+    </theorem>
+
+
+    <p>Let us return to the example in which we roll two fair and independent dice, one being red
+      and the other being blue. Define the random variable <m>X</m> to be the sum of the results of
+      the two rolls. We have seen two ways to compute the expected value <m>\mathbb{E}(X)</m> of <m>
+      X</m>. We now present a third way, which is the easiest one: We define two random variables <me>Y
+      = \mbox{ the result of the red die}
+</me> and <me>Z = \mbox{ the result of the blue die.}
+</me> We have already seen that <me>\mathbb{E}(Y) = 1
+      \cdot \frac{1}{6} + 2 \cdot \frac{1}{6} +
+        3 \cdot \frac{1}{6} + 4 \cdot \frac{1}{6} +
+        5 \cdot \frac{1}{6} + 6 \cdot \frac{1}{6}
+        = \frac{7}{2} .
+</me>
+      By the same computation, we have <me>\mathbb{E}(Z) = \frac{7}{2} .
+</me> Observe that <me>X = Y + Z .
+</me> Then, by the Linearity of Expectation (i.e., <xref
+        ref="thm-linearity-of-expectation" />), we have <me>\begin{array}{rl}
+        \mathbb{E}(X) &amp; = \mathbb{E}(Y+Z) \\
+        &amp; = \mathbb{E}(Y) + \mathbb{E}(Z) \\
+        &amp; = \frac{7}{2} + \frac{7}{2} \\
+        &amp; = 7 .
+        \end{array}</me></p>
+
+
+    <p>We have stated the Linearity of Expectation for two random variables. The proof of <xref
+        ref="thm-linearity-of-expectation" /> can easily be generalized to any finite sequence of
+      random variables:</p>
+
+    <theorem xml:id="thm-gen-linearity-of-expectation">
+      <title>Generalized Linearity of Expectation</title>
+      <idx>linearity of expectation (generalized)</idx>
+      <statement>
+        <p> Let <m>(S,P)</m> be a probability space, let <m>n \geq 2</m> be an integer, let <m>
+          X_1,X_2,\ldots,X_n</m> be a sequence of random variables on <m>S</m>, and let <m>
+          a_1,a_2,\ldots,a_n</m> be a sequence of real numbers. Then, <me>\mathbb{E} \left(
+          \sum_{i=1}^n a_i X_i \right) =
+            \sum_{i=1}^n a_i \cdot \mathbb{E} \left( X_i \right) .
+</me>
+        </p>
+      </statement>
+    </theorem>
+
+
+    <!-- TODO move part to summation section, add DiscreteStructures 5.15 to probability section. -->
+    <!--<definition
+    xml:id="def-infinite-series">
+			<title>Infinite Series</title><idx>Infinite Series</idx>
+			<statement><p>
+Let <m>a_0,a_1,a_2,\ldots</m> be an infinite sequence of real numbers.
+If
+<me>\lim_{N \rightarrow \infty} \sum_{n=0}^N a_n =
+   \lim_{N \rightarrow \infty} \left( a_0 + a_1 + a_2 + \cdots + a_N
+                               \right)
+</me>
+exists, then we say that the infinite series <m>\sum_{n=0}^{\infty} a_n</m>
+<em>converges</em>. In this case, the value of this infinite series
+is equal to
+<me>\sum_{n=0}^{\infty} a_n =
+         \lim_{N \rightarrow \infty} \sum_{n=0}^N a_n  .
+</me></p></statement></definition>
+
+<theorem xml:id="thm-sum-of-infinite-series">
+			<title>The Sum of an Infinite Series</title><idx>Sum of an Infinite Series</idx>
+			<statement><p>If <m>x</m> is a real number with <m>-1&lt; x &lt; 1</m>, then
+<me>\sum_{n=0}^{\infty} x^n = \frac{1}{1-x} .
+  </me></p></statement>
+<proof><p>Let <m>x</m> be a real number with <m>x \neq 1</m>, and define
+<m>a_n = x^n</m> for <m>n \geq 0</m>. We claim that
+<me>\sum_{n=0}^N a_n = \sum_{n=0}^N x^n = 1 + x + x^2 + \cdots + x^N =
+      \frac{1-x^{N+1}}{1-x} ,
+</me>
+which can be proved either by induction on <m>N</m> or by verifying that
+<me>(1-x) \left( 1 + x + x^2 + \cdots + x^N \right) = 1-x^{N+1} .
+</me>
+If <m>-1 &lt; x &lt; 1</m>, then <m>\lim_{N \rightarrow \infty} x^{N+1} = 0</m>
+and it follows that
+<me>\begin{array}{rl}
+ \sum_{n=0}^{\infty} x^n &amp; =
+        \lim_{N \rightarrow \infty} \sum_{n=0}^N x^n \\
+  &amp; =  \lim_{N \rightarrow \infty} \frac{1-x^{N+1}}{1-x} \\
+  &amp; =  \frac{1}{1-x} .
+  \end{array}</me></p></proof></theorem>
+
+<p>The following theorem states that the Linearity of Expectation also holds
+for infinite sequences of random variables: </p>
+
+<theorem xml:id="thm-infinite-linearity-of-expectation">
+			<title>Linearity of Expectation of Infinite Sequences</title><idx>Linearity of Expectation
+    (Infinite Sequences)</idx>
+			<statement><p>
+Let <m>(S,P)</m> be a probability space and let <m>X_1,X_2,\ldots</m> be an
+infinite sequence of random variables on <m>S</m> such that the infinite
+series
+<me>\sum_{i=1}^{\infty} \mathbb{E} \left( | X_i | \right)
+</me>
+converges. Then,
+<me>\mathbb{E} \left( \sum_{i=1}^{\infty} X_i \right) =
+     \sum_{i=1}^{\infty} \mathbb{E} \left( X_i \right) .
+</me>
+</p></statement>
+<proof><p>Define the random variable <m>X</m> to be
+<me>X = \sum_{i=1}^{\infty} X_i .
+</me>
+The derivation below uses <xref ref="def-expected-value"/> and the assumption that
+the infinite series <m>\sum_{i=1}^{\infty} \mathbb{E} \left( | X_i | \right)</m>
+converges, which allows us to change the order of summation without
+changing the value of the series:
+<me>\begin{array}{rl}
+ \sum_{i=1}^{\infty} \mathbb{E} \left( X_i \right) &amp; =
+ \sum_{i=1}^{\infty} \sum_{s \in S}
+              X_i(s) \cdot P(s) \\
+  &amp; =  \sum_{s \in S} \sum_{i=1}^{\infty}
+              X_i(s) \cdot P(s) \\
+  &amp; =  \sum_{s \in S} P(s)
+              \sum_{i=1}^{\infty} X_i(s) \\
+  &amp; =  \sum_{s \in S} P(s) \cdot X(s) \\
+  &amp; =  \mathbb{E}(X) \\
+  &amp; =  \mathbb{E} \left( \sum_{i=1}^{\infty} X_i \right) .
+\end{array}</me></p></proof></theorem></subsection>-->
+  </subsection>
+
+  <subsection xml:id="subsec3_3_3-geometric-distribution">
+    <title>The Geometric Distribution</title>
+    <idx>Geometric Distribution</idx>
+
+    <introduction>
+      <p>Say we are performing repeated independent Bernoulli trials such that each one is <em>
+        successful</em> with probability <m>p</m> and <em>fails</em> with probability <m>1-p</m>.
+        What is the expected number of times that we must perform the trial before we see a success?</p>
+    </introduction>
+
+    <p>We model this problem in the following way: Assume we have a coin that comes up heads with
+      probability <m>p</m> and, thus, comes up tails with probability <m>1-p</m>. We flip this coin
+      repeatedly and independently until it comes up heads for the first time. Define the random
+      variable <m>X</m> to be the number of times that we flip the coin; this includes the last coin
+      flip, which resulted in heads. We want to determine the expected value <m>\mathbb{E}(X)</m> of <m>
+      X</m>.</p>
+
+    <p>The sample space is given by <me>S = \{ T^{k-1} H : k \geq 1 \} ,
+</me> where <m>T^{k-1} H</m> denotes the sequence consisting
+      of <m>k-1</m> tails followed by one heads. Since the coin flips are independent, the outcome <m>T^{k-1}
+      H</m> has a probability of <m>(1-p)^{k-1} p = p (1-p)^{k-1}</m>, i.e., <me>P \left( T^{k-1} H
+      \right) = p (1-p)^{k-1} .
+      </me></p>
+
+    <p>For any integer <m>k \geq 1</m>, <m>X=k</m> if and only if the coin flips give the sequence <m>T^{k-1}
+      H</m>. It follows that <me>
+        P(X=k) = P \left( T^{k-1} H \right) = p (1-p)^{k-1} .
+      </me></p>
+
+    <definition xml:id="def-geometric-distribution">
+      <title>Geometric Distribution</title>
+      <idx>Geometric Distribution</idx>
+      <statement>
+        <p> Let <m>p</m> be a real number with <m>0 &lt;p &lt;1</m>. A random variable <m>X</m> has
+          a <em>geometric distribution with parameter</em> <m>p</m>, if its distribution function
+          satisfies <me>P(X=k) = p (1-p)^{k-1}
+</me> for any integer <m>k \geq 1</m>.</p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-expectation-of-geo-distribution">
+      <title>Expectation of a Geometric Distribution</title>
+      <idx>expectation of a geometric distribution</idx>
+      <statement>
+        <p> Let <m>p</m> be a real number with <m>0 &lt; p &lt; 1</m> and let <m>X</m> be a random
+          variable that has a geometric distribution with parameter <m>p</m>. Then <me>\mathbb{E}(X)
+          = 1/p .
+</me>
+        </p>
+      </statement>
+      <proof>
+        <p> Informally, this makes sense. If we see a success with probability <m>p</m> in each
+          trial, then we should expect to see a success in 1 out of <m>p</m> trials, (if <m>p = 1/n</m>
+          then we expect to perform <m>1/p = n</m> trials).</p>
+        <p>A formal proof requires calculus so not given here.</p>
+      </proof>
+    </theorem>
+
+    <p>For example, if we flip a fair coin (in which case <m>p=1/2</m>) repeatedly and independently
+      until it comes up heads for the first time, then the expected number of coin flips is equal to <m>
+      2</m>.</p>
+  </subsection>
+
+
+  <subsection xml:id="subsec3_3_4-binomial-distribution">
+    <title>The Binomial Distribution</title>
+    <idx>Binomial Distribution</idx>
+    <introduction>
+      <p>Say as in <xref ref="subsec3_3_3-geometric-distribution" /> we are performing repeated
+        independent Bernoulli trials such that each one is <em>successful</em> with probability <m>p</m>
+        and <em>fails</em> with probability <m>1-p</m>. But now we repeat the experiment a fixed
+        number of times, say <m>n</m> times, integer <m>n \geq 1</m>. What number of successes can
+        we expect to see in those <m>n</m> trials?</p>
+    </introduction>
+
+    <p>We again model this problem using a coin that comes up heads with probability <m>p</m> and,
+      thus, comes up tails with probability <m>1-p</m>. We flip the coin, independently, <m>n</m>
+      times and define the random variable <m>X</m> to be the number of times the coin comes up
+      heads. We want to determine the expected value <m>\mathbb{E}(X)</m>.</p>
+
+    <p>Let <m>n \geq 1</m> and <m>k</m> be integers with <m>0 \leq k \leq n</m>. Then, <m>X=k</m> if
+      and only if there are exactly <m>k</m> <m>H</m>'s in the sequence of <m>n</m> coin flips. The
+      number of such sequences is equal to <m>n \choose k</m>, and each one of them has probability <m>p^k
+      (1-p)^{n-k}</m>. </p>
+
+    <definition xml:id="def-binomial-distribution">
+      <title>Binomial Distribution</title>
+      <idx>Binomial Distribution</idx>
+      <statement>
+        <p> Let <m>n \geq 1</m> be an integer and let <m>p</m> be a real number with <m>0 &lt; p
+          &lt; 1</m>. A random variable <m>X</m> has a <em>binomial distribution with parameters</em>
+<m>
+          n</m> and <m>p</m>, if its distribution function satisfies <me>P(X=k) = {n \choose k} p^k
+          (1-p)^{n-k}
+</me> for any integer <m>k</m> with <m>0 \leq k
+          \leq n</m>.</p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-expectation-of-binomial-distribution">
+      <title>Expectation of a Binomial Distribution</title>
+      <idx>expectation of a binomial distribution</idx>
+      <statement>
+        <p> Let <m>n \geq 1</m> be an integer, let <m>p</m> be a real number with <m>0&lt; p &lt; 1</m>,
+          and let <m>X</m> be a random variable that has a binomial distribution with parameters <m>
+          n</m> and <m>p</m>. Then <me>\mathbb{E}(X) = pn .
+</me></p>
+      </statement>
+      <proof>
+        <p> We define a sequence <m>X_1,X_2,\ldots,X_n</m> of random variables each representing a
+          Bernoulli trial that takes the value 1 with probability <m>p</m> and the value 0 with
+          probability <m>1-p</m>. Observe that <me>X = X_1 + X_2 + \cdots + X_n ,
+</me> because <ul>
+            <li>
+              <p><m>X</m> counts the number of heads in the sequence of <m>n</m> coin flips, and</p>
+            </li>
+            <li>
+              <p>the summation on the right-hand side is equal to the number of <m>1</m>'s in the
+          sequence <m>X_1,X_2,\ldots,X_n</m>, which, by definition, is equal to the number of
+          successes in the sequence of <m>n</m> Bernoulli trials.</p>
+            </li>
+          </ul>
+          Using the Linearity of Expectation (<xref ref="thm-gen-linearity-of-expectation" />), we
+          have <me>\begin{array}{rl}
+            \mathbb{E}(X) &amp; = \mathbb{E} \left( \sum_{i=1}^n X_i \right) \\
+            &amp; = \sum_{i=1}^n \mathbb{E} \left( X_i \right) .
+            \end{array}</me> Thus, we have to determine the expected value for each <m>X_i</m>.
+          Since each <m>X_i</m> is a Bernoulli trial, by <xref
+            ref="thm-expectation-of-bernoulli-successes" />, <me>\mathbb{E} \left( X_i \right) = p .</me>
+          We conclude that <me>\begin{array}{rl}
+            \mathbb{E}(X) &amp; = \sum_{i=1}^n \mathbb{E} \left( X_i \right) \\
+            &amp; = \sum_{i=1}^n p \\
+            &amp; = pn .
+            \end{array}</me></p>
+      </proof>
+    </theorem>
+
+
+  </subsection>
+
+  <subsection xml:id="subsec3_3_5-variance">
+    <title>Variance</title>
+    <idx>Variance</idx>
+    <!-- TODO this section from the amsbook.mac.pdf gnu lisences
+    http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/book.html -->
+    <introduction>
+      <p>The usefulness of the expected value as a prediction for the outcome of an experiment is
+        increased when the outcome is not likely to deviate too much from the expected value. In
+        this section we shall introduce a measure of this deviation, called
+        the variance.</p>
+    </introduction>
+
+    <p>First, we must define what we mean by deviation. </p>
+    <definition xml:id="def-deviation">
+      <title>Deviation of a Random Variable</title>
+      <idx>Deviation of a Random Variable</idx>
+      <statement>
+        <p> Let <m>X</m> be a random variable with expected value <m>\mathbb{E}(X)</m>. Then the <em>
+          deviation</em> of <m>X</m> at <m>s \in S</m> is <me>(X(s) - \mathbb{E}(X)).</me> The
+          deviation can be thought of as the measurement of how far <m>X(s)</m> is from the expected
+          value of <m>X</m>. </p>
+      </statement>
+    </definition>
+
+    <p>The variance is the weighted average (or expectation) of the square of the deviation. This
+      can be seen as answering the question <q>how much on average does the value of <m>X</m> vary
+      from its expected value?</q></p>
+    <definition xml:id="def-variance">
+      <title>Variance</title>
+      <idx>Variance</idx>
+      <statement>
+        <p> Let <m>X</m> be a random variable with expected value <m>\mathbb{E}(X)</m>. Then the <em>
+          variance</em> of <m>X</m>, denoted by <m>V(X)</m> or <m>\sigma^2</m>, is <me>V(X) =
+          \sum_{s \in S}(X(s) - \mathbb{E}(X))^2 \cdot P(s).</me> Note that because of the squaring,
+          the variance is not in the same units as <m>X(s)</m> and <m>\mathbb{E}(X)</m>. A low
+          variance indicates that the values of <m>X</m> tend to be close to the expected value,
+          while a large variance indicates that <m>X</m>'s outcomes are spread out over a wider
+          range. </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="def-standard-deviation">
+      <title>Standard Deviation of a Random Variable</title>
+      <idx>Standard Deviation of a Random Variable</idx>
+      <statement>
+        <p> Let <m>X</m> be a random variable with variance <m>V(X)</m>. Then the <em>standard
+          deviation</em> of <m>X</m> is <me>\sigma = \sqrt{V(X)}</me> Like the variance, a low
+          standard deviation indicates that the outcomes of an experiment, or values of <m>X</m>
+          tend to be close to the expected value, while a high standard deviation indicates that the
+          outcomes are spread out over a wider range of values. The standard deviation is often more
+          useful than the variance because it is in the same units as <m>X</m> and <m>\mathbb{E}(X)</m>
+          .
+          </p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-variance-as-expectation">
+      <title>Variance as Expectation of Deviation</title>
+      <idx>Variance as Expectation of the Deviation</idx>
+      <p>If <m>X</m> is a numerically valued random variable with expected value <m>\mathbb{E}(X) =
+        \mu</m>, we can rewrite the formula above as an expectation of the deviations. <me>V(X) =
+        \mathbb{E}((X - \mu)^2)</me>.</p>
+    </theorem>
+
+    <theorem xml:id="thm-variance-using-square-expectations">
+      <title>Variance Using Squared Expectations</title>
+      <idx>Variance Using Squared Expectations</idx>
+      <p>Applying the definition of <m>\mathbb{E}(X)</m>,<xref ref="def-expected-value" /> to the
+        formula for variance <xref ref="def-variance" />, we have a third form: <me>V(X) =
+        \mathbb{E}(X^2) - \mathbb{E}(X)^2</me></p>
+    </theorem>
+
+    <example xml:id="ex-variance-die-roll">
+      <title>Variance of a Die Roll</title>
+      <p> Continuing our scenario from <xref ref="ex-expected-die-roll" />, assume we roll a fair
+        die. Define the random variable <m>X</m> to be the value of the result, <m>X</m> takes each
+        of the values in <m>S = \{1,2,3,4,5,6\}</m> with equal probability <m>1/6</m>, and we have
+        calculated <m>\mathbb{E}(X) = \frac{7}{2}</m>. To use the variance formula in <xref
+          ref="def-variance" /> we calculate the squared difference between <m>X(s)</m> and <m>
+        \mathbb{E}(X)</m>, shown in the table below: <me>\begin{array}{l|l|l}
+          \hline
+          \hline
+          X(s) &amp; P(s) &amp; (X(s) - \frac{7}{2})^2\\
+          \hline
+          1 &amp; 1/6 &amp; 25/4 \\
+          2 &amp; 1/6 &amp; 9/4 \\
+          3 &amp; 1/6 &amp; 1/4 \\
+          4 &amp; 1/6 &amp; 1/4 \\
+          5 &amp; 1/6 &amp; 9/4 \\
+          6 &amp; 1/6 &amp; 25/4 \\
+          \end{array}.</me> From the table we can calculate <me>\begin{array}{cc}
+          V(X) &amp; =
+        1/6(\frac{25}{4}+\frac{9}{4}+\frac{1}{4}+\frac{1}{4}+\frac{9}{4}+\frac{25}{4})\\
+          &amp; = \frac{35}{12} = 2 \frac{11}{12}
+          \end{array}
+        </me></p>
+    </example>
+
+    <example xml:id="ex-variance-die-roll-mu2">
+      <title>Variance of a Die Roll using <m>\mu^2</m></title>
+      <p>We can calculate the same variance of a fair die using <xref
+          ref="thm-variance-using-square-expectations" />. First we calculate <me>\mathbb{E}(X)^2 =
+        \left(\frac{7}{2}\right)^2 = \frac{49}{4}</me>. Then we must calculate the expectation of
+        the squares of <m>X</m>: <me>\begin{array}{cc}
+          \mathbb{E}(X^2)&amp; = 1^2 (1/6) + 2^2 (1/6) + 3^2 (1/6) + 4^2 (1/6) + 5^2 (1/6) + 6^2
+        (1/6)\\
+          &amp; = 1 (1/6) + 4(1/6) + 9(1/6) + 16(1/6) + 25(1/6) + 36(1/6)\\
+          &amp; = 91/6
+          \end{array}
+        </me>
+        Finally: <me>V(X) = 91/6 - 49/4 = 35/12 = 2 \frac{11}{12}.</me></p>
+    </example>
+
+    <theorem xml:id="thm-variance-of-bernoulli-trial">
+      <title>Variance of Successes in a Bernoulli Trial</title>
+      <idx>Variance of Successes in a Bernoulli Trial</idx>
+      <statement>
+        <p>Let <m>X</m> be a random variable representing a Bernoulli Trial that takes the value 1
+          with probability <m>p</m> and the value 0 with probability <m>1-p = q</m>. The variance of <m>
+          X</m> is <me>V(X) = p(1-p) = pq.</me></p>
+      </statement>
+      <proof>
+        <p>If <m>X</m> is a random variable representing a Bernoulli trial, then we know from <xref
+            ref="thm-expectation-of-bernoulli-successes" /> that <m>\mathbb{E}(X) = p.</m> By <xref
+            ref="def-expected-value" />
+  <me>\mathbb{E}(X^2) = 1^2 \cdot p + 0^2 \cdot (1-p) = p.</me>
+          It follows using <xref ref="thm-variance-using-square-expectations" /> that <me>\begin{array}{rl}
+          V(X) = &amp; \mathbb{E}(X^2) - (\mathbb{E}(X))^2 \\
+            = &amp; p - p^2 \\
+            = &amp; p(1-p)\\
+            = &amp; pq
+            \end{array}</me>
+        </p>
+      </proof>
+    </theorem>
+
+    <theorem xml:id="thm-bienaymes-Formula">
+      <title>Bienaymé's Formula</title>
+      <idx>Bienaymé's Formula</idx>
+      <statement>
+        <p>Let <m>X_1, X_2, \dots, X_n</m> be <m>n</m> independent random variables on sample space <m></m>.
+          The variance of the sum <m>X_1 + X_2 + \dots + X_n</m> is the sum of the variances <me>V(X_1
+          + X_2 + \dots + X_n) = V(X_1) + V(X_2) + \dots + V(X_n) .</me></p>
+      </statement>
+    </theorem>
+
+
+    <theorem xml:id="thm-variance-of-geo-distribution">
+      <title>Variance of a Geometric Distribution</title>
+      <idx>Variance of a geometric distribution</idx>
+      <statement>
+        <p> Let <m>p</m> be a real number with <m>0 &lt; p &lt; 1</m> and let <m>X</m> be a random
+          variable that has a geometric distribution with parameter <m>p</m>. The variance of <m>X</m>
+          is: <me>V(X) = \frac{1-p}{p^2}</me>
+        </p>
+      </statement>
+      <proof><p>Requires calculus so not given here</p>.</proof>
+    </theorem>
+
+    <!-- Wikipedia used to simplify from book -->
+    <theorem xml:id="thm-variance-of-binomial-distribution">
+      <title>Variance of a Binomial Distribution</title>
+      <idx>variance of a binomial distribution</idx>
+      <statement>
+        <p> Let <m>X</m> be a random variable that has a binomial distribution with parameters <m>n</m>
+          and <m>p</m>. Then the variance of <m>X</m> is <me>V(X) = np(1-p) = npq.
+</me></p>
+      </statement>
+      <proof>
+        <p> Like in the proof of <xref ref="thm-expectation-of-binomial-distribution" /> we define a
+          sequence of random variables <m>X_1,X_2,\ldots,X_n</m> each representing a Bernoulli trial
+          that takes the value 1 with probability <m>p</m> and the value 0 with probability <m>1-p</m>.
+          We know from <xref ref="thm-variance-of-bernoulli-trial" /> that <me>V(X_i) = pq.</me>
+          Therefore using Bienaymé's Formula, <xref ref="thm-bienaymes-Formula" />, the variance for
+          the whole distribution is <me>\begin{array}{ll}
+            V(X) &amp;= V(X_1 + X_2 + \dots + X_n) \\
+            &amp;= V(X_1) + V(X_2) + \dots + V(X_n)\\
+            &amp;= nV(X_i)\\
+            &amp;= np(1-p)
+            &amp;= npq
+            \end{array}.</me>
+        </p>
+      </proof>
+    </theorem>
+  </subsection>
+  <exercises>
+    <title>Exercises for Section 3.3</title>
+
+    <!-- TODO from amsbook.mac.pdf     -->
+    <exercise number="1">
+      <statement>
+        <p> A number is chosen at random from the set <m>S = \{−1, 0, 1\}</m>. Let <m>X</m> be the
+          number chosen. Find the expected value, variance, and standard deviation of <m>X</m>.</p>
+      </statement>
+      <answer>
+        <p> Because the numbers are chosen randomly: <me>P(X = -1) = P(X = 0) = P(X = 1) = 1/3.</me>
+          The expected value of <m>X</m> is then <me>\mathbb{E}(X) = (-1)1/3 + (0) 1/3 + (1) 1/3 =
+          0.</me> Using <m>V(X) =\mathbb{E}(X^2) - (\mathbb{E}(X))^2</m>: <me>\begin{array}{rl}
+          \mathbb{E}(X^2) = &amp; = (-1^2)1/3 + (0^2) 1/3 + 1^2 (1/3) = 2/3\\
+            V(X) = &amp; 2/3 - (0)^2 \\
+            = &amp; 2/3.
+            \end{array} </me> The standard deviation is then: <me>\sqrt{2/3} \approx 0.82 </me>
+        </p>
+      </answer>
+    </exercise>
+
+    <exercise number="2">
+      <statement>
+        <p>A random variable X has the distribution <me>\begin{array}{rl}
+            P(X=0) = &amp; 1/3 \\
+            P(X=1) = &amp; 1/3 \\
+            P(X=2) = &amp; 1/6 \\
+            P(X=4) = &amp; 1/6 \\
+            \end{array}</me> Find the expected value, variance, and standard deviation of <m>X</m>. </p>
+      </statement>
+    </exercise>
+
+    <exercise number="3">
+      <statement>
+        <!--  amsbook ex 7 part    -->
+        <p>7 A coin is tossed three times. Let<m> X</m> be the number of heads that turn up. Find <m>V
+          (X)</m> and <m>\sigma(X)</m> (the standard deviation of <m>X</m>). </p>
+      </statement>
+      <answer>
+        <p>This is a straightforward application of the variance of a binomial distribution. <m>X</m>
+          is a random variable with binomial distribution with parameters <m>n = 3></m> and <m>p =
+          1/2</m>
+
+    <me>V(X) = npq = 3*(1/2)*(1/2) = 3/4</me>
+    <me>\sigma(X) = \sqrt{3/4} \approx 0.87 </me>
+        </p>
+      </answer>
+    </exercise>
+
+
+    <exercise number="4">
+      <statement>
+        <p>A random sample of 2400 people are asked if they favor a government proposal to develop
+          new nuclear power plants.
+          If 40 percent of the people in the country are in favor of this proposal, find the
+          expected value and the standard deviation
+          for the number of people in the sample who favored the proposal.</p>
+      </statement>
+    </exercise>
+
+
+    <exercise number="5">
+      <statement>
+        <p> In Las Vegas, a roulette wheel has 38 slots numbered 0, 00, 1, 2, . . . , 36. The
+          0 and 00 slots are green and half of the remaining 36 slots are red and half
+          are black. A croupier spins the wheel and throws in an ivory ball. If you bet
+          1 dollar on red, you win 1 dollar if the ball stops in a red slot and otherwise
+          you lose 1 dollar. </p>
+
+        <p> You place a 1-dollar bet on black. Let <m>X</m> be your winnings. Define <m>S </m> and
+          calculate the values of <m> P(X), \mathbb{E}(X) </m> and <m>V (X)</m>.</p>
+      </statement>
+      <answer>
+        <p>Here the set of outcomes <m>S</m> is the color of the slots we care about: {black, not
+          black}. Let <m>X</m> be a random variable that represents your winnings, it takes the
+          value 1 if a spin results in a black slot, and the value -1 otherwise. The probability of
+          winning in a spin is <m>P(X = 1)</m> the probability the ball lands on a black slot: <m>
+          \frac{18}{38}</m>. The probability of losing a spin is <m>P(X = -1)</m> the probability
+          the ball lands on a green or red slot: <m>\frac{20}{38}</m>. Therefore: <me>\begin{array}{rl}
+          \mathbb{E}(X) = &amp; (1)\frac{18}{38} + (-1)\frac{20}{38}\\
+            = &amp; \frac{-2}{38} \\
+            = &amp; \frac{-1}{19}\\
+            \approx &amp; - 5 \text{ cents}.
+            \end{array} </me> To calculate the variance we calculate <m>\mathbb{E}(X^2)</m>
+        <me>\begin{array}{rl}
+          \mathbb{E}(X^2) = &amp; (1^2)\frac{18}{38} + (-1^2)\frac{20}{38}\\
+            = &amp; \frac{38}{38} \\
+            = &amp; 1 \text{ dollar}.
+            \end{array} </me> Using <m>V(X) =\mathbb{E}(X^2) - (\mathbb{E}(X))^2</m>: <me>\begin{array}{rl}
+          V(X) = &amp; 1 - (\frac{-1}{19})^2 \\
+            = &amp; 1 - \frac{1}{361} \\
+            = &amp; \frac{360}{361} \\
+            \approx &amp; 99.7 \text{ cents}.
+            \end{array} .</me>
+        </p>
+      </answer>
+    </exercise>
+
+
+    <exercise number="6">
+      <statement>
+        <p> Another form of bet for roulette is to bet that a specific number (say 17) will
+          turn up. If the ball stops on your number, you get your dollar back plus 35
+          dollars. If not, you lose your dollar.</p>
+
+        <p>You place a 1-dollar bet on the number 17. Let <m>Y</m> be your winnings. Define <m>S </m>
+          and calculate the values of <m> P(Y), \mathbb{E}(Y) </m> and <m>V (Y)</m>. Compare your
+          answers from exercise 5, <m>\mathbb{E}(X), \mathbb{E}(Y)</m>, and <m>V (X), V (Y).</m>
+          What do these computations tell you about the nature of your winnings if you make a
+          sequence of bets, betting each time on a number versus betting each time on a color?</p>
+      </statement>
+    </exercise>
+
+    <exercise number="7">
+      <statement>
+        <!--  Disc rete Structures ex 6.3 part 2   -->
+        <p>We flip a fair coin 27 times (independently). For each heads, you win 3 dollars, whereas
+          for each tails, you lose 2 dollars. Define the random variable <m>Y</m> to be the amount
+          of money that you win. Compute the expected value <m>\mathbb{E}(Y)</m>. </p>
+      </statement>
+      <answer>
+
+        <p> For a single flip: <me>P(Y = 3) = P(\text{heads}) = 1/2</me>
+    <me>P(Y = -2) =
+          P(\text{tails}) = 1/2</me>
+    <me>\begin{array}{rl}
+            \mathbb{E}(Y) = &amp; (3)\frac{1}{2} + (-2)\frac{1}{2}\\
+            = &amp; \frac{1}{2} \\
+            = &amp; 50 \text{ cents}.
+            \end{array} </me> Therefore the expected amount of winnings is <m>27 * \frac{1}{2} =
+          13.5</m> dollars </p>
+
+        <p>Alternatively we can think of this as a binomial distribution with <m>p = 1/2, n = 27</m>.
+          Let <m>X</m> be a random variable that takes the value 1 for each head and 0 for each
+          tail. <me>P(X = 1) = p = 1/2</me>
+    <me>P(X = 0) = (1-p) = 1/2</me> By <xref
+            ref="thm-expectation-of-binomial-distribution" />
+    <me>\mathbb{E}(X) = pn = 27*
+          \frac{1}{2} = 13.5</me> The 13.5 is the expected number of wins, so the expected winnings
+          is <m>13.5 * 3 = 40.5</m> dollars. Then we also must calculate the expected losses which
+          is <m>13.5 * 2 = 27</m> dollars. So the overall expected winnings is <m>40.5 - 27 = 13.5</m>
+        </p>
+      </answer>
+    </exercise>
+
+    <exercise number="8">
+      <statement>
+        <p>Assume we flip a fair coin twice, independently of each other. Define the following
+          random variables: <me>\begin{array}{rl}
+            X=&amp;\text{ the number of heads,}\\
+            Y=&amp;\text{ the number of tails,}\\
+            Z=&amp;\text{ the number of heads times the number of tails.}\\
+            \end{array} </me>
+
+ <ol>
+            <li>
+              <p>Determine the expected values of these three random variables.</p>
+            </li>
+            <li>
+              <p>Are <m>X</m> and <m>Y</m> independent random variables?</p>
+            </li>
+            <li>
+              <p>Are <m>X</m> and <m>Z</m> independent random variables?</p>
+            </li>
+            <li>
+              <p>Are <m>Y</m> and <m>Z</m> independent random variables?</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+
+  </exercises>
+</section>
