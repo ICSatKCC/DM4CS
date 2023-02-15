@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="s-properties-of-relations"><title>Properties of Relations</title>
+<subsection xml:id="ss-individual-properties"><title>Individual Properties</title>
+
+<p>Consider the set <m>B = \{1, 2, 3, 4, 6, 12, 36, 48\}</m> and the relations <q>divides</q> and <m>\leq </m> on <m>B</m>. We notice that these two relations on <m>B</m> have three properties in common:</p>
+
+<p><ul>
+<li><p>Every element in <m>B</m> divides itself and is less than or equal to itself. This is called the reflexive property.</p></li>
+<li><p>If we search for two elements from <m>B</m> where the first divides the second and the second divides the first, then we are forced to choose the two numbers to be the same. In other words, no two <em>different</em> numbers are related in both directions. The reader can verify that a similar fact is true for the relation <m>\leq </m> on <m>B</m>. This is called the antisymmetric property.</p></li>
+<li><p>Next if we choose three values (not necessarily distinct) from <m>B</m> such that the first divides the second and the second divides the third, then we always find that the first number divides the third.  Again, the same is true if we replace <q>divides</q> with <q>is less than or equal to.</q> This is called the transitive property.</p></li>
+</ul></p>
+
+<p>Relations that satisfy these properties are of special interest to us. Formal definitions of the properties follow.</p>
+
+<definition xml:id="def-reflexive-relation"><title>Reflexive Relation</title><idx>Reflexive Relation</idx><statement><p>Let <m>A</m> be a set and let <m>R</m> be a relation on <m>A</m>.
+Then <m>R</m> is <term>reflexive</term> if and only if <m>a R a</m> for all <m>a \in A</m>.</p></statement></definition>
+
+<definition xml:id="def-antisymmetric-relation"><title>Antisymmetric Relation</title><idx>Antisymmetric Relation</idx><statement><p>Let <m>A</m> be a set and let <m>R</m> be a relation on <m>A</m>.  Then <m>R</m> is <term>antisymmetric</term> if and only if whenever <m>a R b</m> and <m>a \neq  b</m> then <m>b R a</m> is false.</p>
+</statement></definition>
+
+<p>An equivalent condition for antisymmetry is that if <m>a R b</m> and  <m>b R a</m> then <m>a = b</m>. You are encouraged to convince yourself that this is true.  This condition is often more convenient to prove than the definition, even though the definition is probably easier to understand.</p>
+
+<p>A word of warning about antisymmetry: Students frequently find it difficult to understand this definition. Keep in mind that this term is defined through an <q>If...then...</q> statement. The question that you must ask is: Is it true that whenever there are elements <m>a</m> and <m>b</m> from <m>A</m> where <m>a R b</m> and <m>a \neq  b</m>, it follows that <m>b</m> is not related to <m>a</m>? If so, then the relation  is antisymmetric.</p>
+<p>Another way to determine whether a relation is antisymmetric is to examine (or imagine) its digraph. The relation is not antisymmetric if there exists a pair of vertices that are connected by edges in both directions.</p>
+
+<definition xml:id="def-transitive-relation"><title>Transitive Relation</title><idx>Transitive Relation</idx><statement><p>Let <m>A</m> be a set and let <m>R</m> be a relation on <m>A</m>.
+<m>R</m> is <term>transitive</term> if and only if whenever <m>a R b</m> and <m>b R c</m> then <m>a R c</m>.</p></statement></definition>
+
+</subsection>
+<subsection xml:id="ss-partial-ordering"><title>Partial Orderings</title>
+<p>Not all relations have all three of the properties discussed above, but those that do are a special type of relation.</p>
+
+<definition xml:id="partial-ordering"><title>Partial Ordering</title><idx>Partial Ordering</idx><idx>Poset</idx><statement><p>A relation on a set <m>A</m> that is reflexive, antisymmetric, and transitive is called a <term>partial ordering</term> on <m>A</m>. A set on which there is a partial ordering relation defined is called a <term>partially ordered set</term><idx>Partially ordered set</idx> or <term>poset</term>.</p></statement></definition>
+
+<example xml:id="ex-subset-partial-ordering"><title>Set Containment as a Partial Ordering</title><statement><p>Let <m>A</m> be a set. Then <m>\mathcal{P}(A)</m> together with the relation <m>\subseteq</m> (set containment) is a poset.
+To prove this we observe that the three properties hold, as discussed in Chapter 4.</p>
+<p><ul>
+<li><p>Let <m>B \in  \mathcal{P}(A)</m>. The fact that <m>B \subseteq  B</m> follows from the definition of subset. Hence, set containment is reflexive.</p></li>
+<li><p>Let <m>B_1, B_2 \in \mathcal{P}(A)</m> and assume that <m>B_1\subseteq  B_2</m> and <m>B_1\neq  B_2</m> . Could it be that <m>B_2\subseteq  B_1</m>? No.
+There must be some element <m>a\in A</m> such that <m>a \notin B_1</m>, but <m>a\in B_2</m>. This is exactly what we need to conclude that <m>B_2</m> is not contained in <m>B_1</m>.  Hence, set containment is antisymmetric.</p></li>
+<li><p>Let <m>B_1, B_2,B_3 \in \mathcal{P}(A)</m> and assume that <m>B_1 \subseteq  B_2</m> and <m>B_2 \subseteq  B_3</m> . Does it follow that <m>B_1 \subseteq B_3</m> ? Yes, if <m>a\in B_1</m>, then <m>a\in B_2</m> because <m>B_1 \subseteq  B_2</m>. Now that we have <m>a\in B_2</m> and we have assumed <m>B_2 \subseteq B_3</m>, we conclude that <m>a\in B_3</m>.  Therefore, <m>B_1\subseteq B_3</m> and so set containment is transitive.</p></li></ul></p>
+<p><xref ref="fig-graph-10-2-subsets-2" text="type-global" /> is the graph for the <q>set containment</q> relation on the power set of <m>\{1,2\}</m>.</p> </statement></example>
+
+<p><idx>Hasse Diagram</idx><idx>Ordering Diagram</idx><xref ref="fig-graph-10-2-subsets-2" text="type-global" /> is helpful insofar as it reminds us that each set is a subset of itself and shows us at a glance the relationship between the various subsets in <m>\mathcal{P} (\{1,2\})</m>. However, when a relation is a partial ordering, we can streamline a graph like this one.  The streamlined
+form of a graph is called a <term>Hasse diagram</term> or <term>ordering diagram</term>.  A Hasse diagram takes into account the following facts.</p>
+<p><ul>
+<li> By the reflexive property, each vertex must be related to itself, so the arrows from a vertex to itself (called <q>self-loops</q>) are
+not drawn in a Hasse diagram. They are simply assumed.</li>
+<li>  By the antisymmetry property, connections between two distinct elements in a directed graph can only go one way, if at all.  When there
+is a connection, we agree to always place the second element above the first (as we do above with the connection from <m>\{1\}</m> to <m>\{1,2\}</m>).
+For this reason, we can just draw a connection without an arrow, just a line.</li>
+<li> By the transitive property, if there are edges connecting one element up to a second element and the second element up to a third element,
+then there will be a direct connection from the first to the third. We see this in <xref ref="fig-graph-10-2-subsets-2" text="type-global"/> with <m>\emptyset</m> connected to <m>\{1\}</m><m></m>and
+then <m>\{1\}</m> connected to <m>\{1,2\}</m>. Notice the edge connecting <m>\emptyset</m> to <m>\{1,2\}</m>.  Whenever we identify this situation, remove
+the connection from the first to the third in a Hasse diagram and simply observe that an upward path of any length implies that the lower element
+is related to the upper one.
+</li>
+</ul></p>
+<p>Using these observations as a guide, we can draw a Hasse diagram for <m>\subseteq</m> on <m>\{1,2\}</m> as in <xref ref="subsets_2_hasse" text="type-global" />.</p>
+				<figure xml:id="subsets_2_hasse">
+                <caption>Hasse diagram for set containment on subsets of <m>\{1,2\}</m>
+                </caption>
+                <image width="100%" source="images/subsets_2_hasse.png">
+                    <description>Hasse diagram for set containment on subsets of <m>\{1,2\}</m></description>
+                </image>
+            </figure>
+<example xml:id="ex-def-by-hasse"><title>Definition of a relation using a Hasse diagram</title><statement><p>Consider the partial ordering relation <m>R</m> whose Hasse diagram is <xref ref="fig-pentagonal-hasse" text="type-global" />.</p>
+
+				<figure xml:id="fig-pentagonal-hasse">
+                <caption>Hasse diagram for the pentagonal poset
+                </caption>
+                <image width="50%" source="images/pentagonal-hasse.png">
+                    <description>Hasse diagram for the pentagonal poset</description>
+                </image>
+            </figure>
+<!--
+<figure xml:id="fig-pentagonal-hasse">
+   <caption>Hasse Diagram of the Pentagonal Poset</caption>
+   <image xml:id="pentagonal-hasse">
+      <description>Hasse Diagram of the Pentagonal Poset</description>
+          <sageplot>
+          c=0.5
+          p632=DiGraph({1:[2,3],2:[5],3:[4],4:[5]})
+          h632=p632.show(pos={1:(0,0),2:(-1,2*c),3:(1,c),4:(1,3*c),5:(0,4*c)})
+          h632
+          </sageplot>
+    </image>
+</figure>
+ -->
+<p>How do we read this diagram? What is <m>A</m>? What is <m>R</m>? What does the digraph of <m>R</m> look like? Certainly <m>A = \{1,2,3,4,5\}</m> and
+<m>1 R 2</m>, <m>3 R 4</m>, <m>1 R 4</m>, <m>1 R 5</m>, etc., Notice that <m>1 R 5</m> is implied by the fact that there is a path of length three upward
+from 1 to 5. This follows from the edges that are shown and the transitive property that is presumed in a poset.  Since <m>1 R 3</m> and <m>3 R
+4</m>, we know that <m>1 R 4</m>. We then combine <m>1 R 4</m> with <m>4 R 5</m> to infer <m>1 R 5</m>.  Without going into details why, here is
+a complete list of pairs defined by <m>R</m>.
+<me>R = \{(1,1),(2,2),(3,3),(4,4),(5,5),(1,3),\\
+	(1,4),(1,5),(1,2),(3,4),(3,5),(4,5),(2,5)\}</me>
+</p>
+
+
+<p>A digraph for <m>R</m> is <xref ref="fig-pentagonal-digraph" text="type-global" />. It is certainly more complicated to read and difficult to draw than the Hasse diagram.</p>
+
+           <figure xml:id="fig-pentagonal-digraph">
+                <caption>Digraph for the pentagonal poset
+                </caption>
+                <image width="100%" source="images/pentagonal-digraph.png">
+                    <description>Digraph for the pentagonal poset</description>
+                </image>
+            </figure>
+
+</statement></example>
+<!--
+<figure xml:id="fig-pentagonal-digraph">
+   <caption>Hasse Diagram of the pentagonal poset <m>R</m></caption>
+      <image xml:id="pentagonal-digraph">
+         <description>Pentagonal poset Hasse Diagram</description>
+					<sageplot>
+					c=0.5
+					p=DiGraph({1:[1,2,3,4,5],2:[2,5],3:[3,4,5],4:[4,5],5:[5]})
+					j=p.show(pos={1:(0,0),2:(-1,2*c),3:(1,c),4:(1,3*c),5:(0,4*c)})
+					j
+					</sageplot>
+      </image>
+</figure>
+ -->
+
+
+
+<p>A classic example of a partial ordering relation is <m>\leq </m> on the real numbers, <m>\mathbb{R}</m>. Indeed, when graphing partial ordering relations,
+it is natural to <q>plot</q> the elements from the given poset starting with the <q>least</q> element to the <q>greatest</q> and to use terms
+like <q>least,</q> <q>greatest,</q> etc. Because of this the reader should be forewarned that some texts use the symbol <m>\leq</m> for arbitrary
+partial orderings. This can be quite confusing for the novice, so we continue to use generic letters <m>R</m>, <m>R</m>, etc.
+</p>
+</subsection>
+<subsection xml:id="ss-equivalence-relations"><title>Equivalence Relations</title><idx>Equivalence Relations</idx>
+<p>Another common property of relations is symmetry.</p>
+<definition xml:id="def-symmetric-relation"><title>Symmetric Relation</title>
+<idx>Symmetric Relation</idx><statement><p>Let <m>R</m> be a relation on a set <m>A</m>. <m>R</m> is <term>symmetric</term> if and only if whenever <m>a R b</m>, it follows that <m>b R a</m>.</p></statement></definition>
+<p>Consider the relation of equality defined on any set <m>A</m>. Certainly <m>a = b</m> implies that <m>b = a</m> so equality is a symmetric relation on <m>A</m>.</p>
+<p>Surprisingly, equality is also an antisymmetric relation on <m>A</m>. This is due to the fact that the condition that defines the antisymmetry property, <m>a = b</m> and <m>a \neq  b</m>, is a contradiction. Remember, a conditional proposition is always true when the condition is false. So a relation can be both symmetric and antisymmetric on a set! Again recall that these terms are <em>not</em> negatives of one other. That said, there are very few important relations other than equality that are both symmetric and antisymmetric.</p>
+
+<definition xml:id="def-equivalence-relation"><title>Equivalence Relation</title><idx>Equivalence Relation</idx><statement><p>A relation <m>R</m> on a set <m>A</m> is called an equivalence relation if and only if it is reflexive, symmetric, and transitive.</p></statement></definition>
+
+
+<p>The classic example of an equivalence relation is equality on a set <m>A</m>. In fact, the term equivalence relation is used because those relations which satisfy the definition behave quite like the equality relation. Here is another important equivalence relation.</p>
+
+<example xml:id="ex-fraction-equivalence"><title>Equivalent Fractions</title><statement><p>Let <m>\mathbb{Z}</m>* be the set of nonzero integers. One of the most basic equivalence relations in mathematics is the relation <m>Q</m> on <m>\mathbb{Z}\times \mathbb{Z}^*</m> defined by <m>(a, b) Q(c, d)</m> if and only if <m>a d = b c</m>. We will leave it to the reader to, verify
+that <m>Q</m> is indeed an equivalence relation. Be aware that since the elements of <m>\mathbb{Z}\times \mathbb{Z}^*</m> are ordered pairs, proving symmetry involves four numbers and transitivity involves six numbers. Two ordered pairs, <m>(a, b)</m> and <m>(c, d)</m>, are related if the fractions <m>\frac{a}{b}</m> and <m>\frac{c}{d}</m> are numerically equal.
+</p></statement></example>
+
+<p>Our next example involves the following fundamental relations on the set of integers.</p>
+<definition xml:id="def-congruence-mod-m"><title>Congruence Modulo <m>m</m></title>
+<idx>Congruence Modulo m</idx>
+<notation><usage>a \equiv_m b</usage><description><m>a</m> is congruent to <m>b</m> modulo <m>m</m></description></notation>
+<notation><usage>a \equiv b (\textrm{mod } m)</usage><description><m>a</m> is congruent to <m>b</m> modulo <m>m</m></description></notation>
+<statement><p>Let <m>m</m> be a positive integer, <m>m\geq 2</m>.  We define <term>congruence modulo m</term> to be the relation <m>\equiv_m</m> defined on the integers by
+	<me>a \equiv_m b \Leftrightarrow m \mid (a-b)</me>
+</p></statement>
+</definition>
+
+<p>We observe the following about congruence modulo <m>m</m>:</p>
+<p><ul>
+<li><p>This relation is reflexive, for if <m>a \in  \mathbb{Z} </m>,  <m>m \mid (a-a) \Rightarrow  a\equiv_ma </m>.</p></li>
+<li><p>This relation is symmetric. We can prove this through the following chain of implications.
+<me>
+\begin{split}
+a \equiv_m b &amp;\Rightarrow   m \mid (a-b)\\
+   &amp; \Rightarrow \textrm{For  some } k \in \mathbb{Z}, a-b = m k \\
+	&amp; \Rightarrow b-a = m (-k)\\
+	&amp; \Rightarrow  m \mid (b-a)\\
+	&amp; \Rightarrow b \equiv_m a
+\end{split}
+</me>.</p>
+</li>
+<li><p> Finally, this relation is transitive.  We leave it to the reader to prove that if <m>a \equiv _mb </m> and <m>b\equiv _mc</m>, then <m>a \equiv _mc</m>.</p></li>
+</ul></p>
+
+<p>Frequently, you will see the equivalent notation <m>a \equiv b (\textrm{mod } m)</m> for congruence modulo <m>m</m>.</p>
+<example xml:id="ex-no-propery-relation"><title>Random Relations usually have no properties</title><statement><p>Consider the relation s described by the digraph in <xref ref="fig-graph-10-3-5" text="type-global" />. This was created by randomly selecting whether or not two elements from <m>\{a,b,c\}</m> were related or not. Convince yourself that the following are true: </p>
+<p><ul>
+<li><p>This relation is not reflexive.</p></li>
+<li><p>It is not antisymmetric.</p></li>
+<li><p>Also, it is not symmetric.</p></li>
+<li><p>It is not transitive.</p></li>
+<li><p>Is <m>R</m> an equivalence relation or a partial ordering?</p></li>
+</ul></p>
+<figure xml:id="fig-graph-10-3-5">
+   <caption>Digraph of a random relation <m>R</m></caption>
+      <image width="80%" xml:id="graph-10-3-5">
+         <description>A random relation</description>
+					<sageplot>
+					g=DiGraph({'a':['b','c'],'b':['b'],'c':['a','c']})
+					f635=g.plot(layout='circular',loop_size=0.1)
+					f635
+					</sageplot>
+      </image>
+</figure>
+<p>Not every random choice of a relation will be so totally negative, but as the underlying set increases, the likelihood any of the properties are true begins to vanish.</p></statement></example>
+</subsection>
+<exercises xml:id="exercises-10-3"><title>Exercises</title>
+<exercise number="1"><statement>
+<p><ol label="(a)">
+<li><p>Let <m>B = \{a, b\}</m> and <m>U = \mathcal{P}(B)</m>. Draw a Hasse diagram for <m>\subseteq </m> on <m>U</m>.</p></li>
+<li><p>Let <m>A = \{1,2, 3, 6\}</m>. Show that divides, <m>\mid </m>, is a partial ordering on <m>A</m>. </p></li>
+<li><p>Draw a Hasse diagram for divides on <m>A</m>.</p></li>
+<li><p>Compare the graphs of parts a and c.</p></li>
+</ol></p>
+</statement>
+<answer>
+<figure xml:id="fig-sol-10-3-1"><caption/>
+		 <image width="100%" source="images/fig-sol-10-3-1.png">
+			  <description>Solution to number 1 of <xref ref="s-properties-of-relations"/></description>
+		 </image>
+</figure>
+<p><ol label="(a)">
+<li><p>See <xref ref="fig-sol-10-3-1" text="type-global"/>.</p></li>
+<li>
+  <p>
+    <m>\mid</m> on <m>A</m> is reflexive because <m>\forall a \in A, a \mid a</m> is true and <m>(a,a) \in </m> the relation. <m>\mid</m> on <m>A</m> is antisymmetric because <m>\forall a, b \in A</m> if <m> a \mid b</m> is true and <m>(a,b) \in </m> the relation, then <m> b \mid a</m> is not true and <m>(b,a) \notin </m> the relation, unless <m>a = b</m>. <m>\mid</m> on <m>A</m> is transitive because <m>\forall a, b, c \in A</m>, if <m>(a,b)</m> and <m>(b,c) \in</m> the relation, then <m>a|b</m> and <m>b|c</m>. Therefore <m>ak =b</m> for some integer <m>k</m> and <m>bj = c</m> for some integer <m>j</m>. Thus <m>akj = c</m>, <m>a|c</m>, and <m>(a,c) \in</m> the relation. Therefore <m>\mid</m> on <m>A</m> is a partial ordering.
+  </p>
+</li>
+<li><p>See <xref ref="fig-sol-10-3-1" text="type-global"/>.</p></li>
+<li><p> The graphs are the same if we disregard the names of the vertices.</p></li>
+</ol></p>
+</answer>
+</exercise>
+<exercise number="2"><statement><p>Repeat Exercise 1 with <m>B = \{a, b, c\}</m> and <m> A = \{1, 2, 3, 5, 6, 10, 15, 30\}</m>.
+</p></statement>
+<hint><p>Here is a Hasse diagram for the part (a).</p>
+<figure xml:id="fig-subsets-3-hasse"><caption/>
+		 <image width="100%" source="images/fig-subsets-3-hasse.png">
+			  <description>Hasse Diagram for a set containment for subsets of a three element set</description>
+		 </image>
+</figure>
+</hint>
+</exercise>
+<exercise number="3"><statement>
+<p>Consider the relations defined by the digraphs in <xref ref="fig-exercises-10-digraphs" text="type-global"/>.
+<ol label="(a)">
+<li><p> Determine whether the given relations are reflexive, symmetric, antisymmetric,
+or transitive. Try to develop procedures for determining the validity of these properties from the graphs, </p></li>
+<li><p>Which of the graphs are of equivalence relations or of partial orderings?</p></li>
+</ol></p>
+		<figure xml:id="fig-exercises-10-digraphs">
+			<caption>Some digraphs of relations</caption>
+			<image width="100%" source="images/exercises-10-digraphs.png">
+				<description>Some digraphs of relations for exercise 3 of section 6.3</description>
+			</image>
+		</figure>
+  </statement>
+<answer>
+<table xml:id="table-10-3-3-sol"><title>Properties of relations defined by digraphs</title>
+<tabular>
+<row><cell>Part</cell><cell>reflexive?</cell><cell>symmetric?</cell><cell>antisymmetric?</cell><cell>transitive?</cell></row>
+<row><cell>i</cell><cell>yes</cell><cell>no</cell><cell>no</cell><cell>yes</cell></row>
+<row><cell>ii</cell><cell>yes</cell><cell>no</cell><cell>yes</cell><cell>yes</cell></row>
+<row><cell>iii</cell><cell>no</cell><cell>no</cell><cell>no</cell><cell>no</cell></row>
+<row><cell>iv</cell><cell>no</cell><cell>yes</cell><cell>yes</cell><cell>yes</cell></row>
+<row><cell>v</cell><cell>yes</cell><cell>yes</cell><cell>no</cell><cell>yes</cell></row>
+<row><cell>vi</cell><cell>yes</cell><cell>no</cell><cell>yes</cell><cell>yes</cell></row>
+<row><cell>vii</cell><cell>no</cell><cell>no</cell><cell>no</cell><cell>no</cell></row>
+</tabular>
+</table>
+<p><ol label="(a)">
+<li><p>See <xref ref="table-10-3-3-sol" text="type-global"/></p></li>
+<li><p> Graphs ii and vi show partial ordering relations. Graph v is of an equivalence relation. </p></li>
+</ol></p>
+</answer>
+</exercise>
+<exercise number="4">
+<statement><p>Determine which of the following are equivalence relations and/or partial ordering relations for the given sets:</p>
+<p><ol label="(a)">
+<li><p> <m>A = \{\textrm{ lines in the plane}\}</m>, and <m>R</m> defined by  <m>x R y</m> if and only if <m>x</m> is parallel to <m>y</m>.  Assume every line is parallel to itself.</p></li>
+<li><p> <m>A = \mathbb{R}</m> and <m>R</m> defined by  <m>x R y</m> if and only if <m>\lvert x -y \rvert \leq  7</m>.</p></li>
+</ol></p>
+</statement>
+
+</exercise>
+<exercise number="5"><statement><p>Consider the  relation on <m>\{1, 2, 3, 4, 5, 6\}</m> defined by  <m>R = \{(i,j):\enspace \lvert i - j\rvert  = 2\}</m>.</p>
+<p><ol label="(a)">
+<li><p> Is <m>R</m> reflexive?</p></li>
+<li><p> Is <m>R</m> symmetric?</p></li>
+<li><p> Is <m>R</m> transitive?</p></li>
+<li><p> Draw a graph of <m>R</m>.</p></li>
+</ol></p>
+</statement>
+<answer><p><ol label="(a)"><li><p> No, since <m>\mid 1-1\mid =0\neq 2</m>, for example</p></li>
+<li><p> Yes, because <m>\mid i-j\mid =</m><m>\mid j-i\mid </m>.</p></li>
+<li><p> No, since <m>\mid 2-4\mid =2</m> and <m>\mid 4-6\mid =2</m>, but <m>\mid 2-6\mid =4\neq 2</m>, for example.</p></li>
+<li><p>See <xref ref="fig-sol-10-3-5" text="type-global"/></p>
+</li>
+</ol></p>
+<figure xml:id="fig-sol-10-3-5"><caption/>
+                <image width="100%" source="images/fig-sol-10-3-5.png">
+                    <description>Solution to number 5c of section 6.3</description>
+                </image>
+            </figure>
+</answer>
+</exercise>
+<exercise number="6"><statement><p>For the set of cities on a map, consider the relation <m>x R y</m> if and only if city <m>x</m> is connected by a road to city <m>y</m>. A city is considered to be connected to itself, and two cities are connected even though there are cities on the road between them. Is this an equivalence
+relation or a partial ordering? Explain.</p>
+</statement>
+
+</exercise>
+<exercise number="7" xml:id="equivalence-classes"><title>Equivalence Classes</title><statement><p> Let <m>A = \{0, 1, 2, 3\}</m> and let
+<me>R = \{(0, 0), (1, 1), (2, 2), (3, 3), (1, 2),(2, 1), (3, 2), (2, 3), (3, 1), (1, 3)\}</me>
+<ol label="(a)">
+<li><p>Verify that <m>R</m> is an equivalence relation on <m>A</m>.</p></li>
+<li><p>Let <m>a \in A</m> and define <m>c(a) = \{b \in A \mid a R b\}</m>.
+<notation><usage>c(a)</usage><description>the equivalence class of <m>a</m> under <m>R</m></description></notation> <m>c(a)</m> is called the <term>equivalence class of <m>a</m> under <m>R</m></term><idx>Equivalence Class</idx>. Find <m>c(a)</m> for each element <m>a \in A</m>.</p></li>
+<li><p>Show that <m>\{c(a) \mid  a \in A\}</m> forms a partition of <m>A</m> for this set <m>A</m>.</p></li>
+<li><p>Let <m>R</m> be an equivalence relation on an arbitrary set <m>A</m>. Prove that the set of all equivalence classes under <m>R</m> constitutes a partition of <m>A</m>.
+</p></li>
+</ol></p>
+</statement>
+<answer>
+<p><ol label="(a)">
+<li></li>
+<li><p> <m>c(0)=\{0\}, c(1)=\{1,2,3\}=c(2)=c(3)</m></p></li>
+<li><p> <m>c(0)\cup c(1)=A</m> and <m>c(0)\cap c(1)=\emptyset</m></p></li>
+<li><p> Let <m>A</m> be any set and let <m>R</m> be an equivalence relation on <m>A</m>. Let <m>a</m> be any element of <m>A</m>. <m>a\in c(a)</m> since <m>R</m> is reflexive, so each element of <m>A</m> is in some equivalence class. Therefore, the union of all equivalence classes equals <m>A</m>. Next we show that any two equivalence classes are either identical or disjoint and we are done. Let <m>c(a)</m> and <m>c(b)</m> be two equivalence classes, and assume that <m>c(a)\cap c(b)\neq \emptyset</m>. We want to show that <m>c(a)=c(b)</m>. To show that <m>c(a)\subseteq c(b)</m>, let <m>x\in c(a)</m>. <m>x\in c(a) \Rightarrow a R x </m>. Also, there exists an element, <m>y</m>, of <m>A</m> that is in the intersection of <m>c(a)</m>
+and <m>c(b)</m> by our assumption. Therefore,
+  <me>
+  \begin{split}
+  a r y \land b R y &amp;\Rightarrow  a R y \land y R b \quad R\textrm{  is symmetric}\\
+			&amp;\Rightarrow  a R b  \quad \textrm{ transitivity of }R \\
+	\end{split}
+	</me></p>
+<p> Next,
+     <me>
+     \begin{split}
+     a R x \land a R b &amp;\Rightarrow x R a \land a R b\\
+		&amp;\Rightarrow  x R b\\
+		&amp;\Rightarrow  b R x\\
+		&amp; \Rightarrow  x \in c(b)\\
+		\end{split}
+		</me>
+		</p>
+<p> Similarly, <m>c(b)\subseteq c(a)</m>.  <m>\square</m> </p></li>
+</ol></p>
+</answer>
+</exercise>
+<exercise number="8"><statement><p>Define <m>R</m> on the power set of <m> S = \{1, 2, 3\}</m> by <m>A \, R \, B \Leftrightarrow  \lvert A \rvert = \lvert B \rvert </m>, where <m>A,B \subseteq S</m>. Prove that <m>R</m> is an equivalence
+relation. What are the equivalence classes under <m>R</m>?</p>
+</statement>
+
+</exercise>
+<exercise number="9"><statement><p>Consider the following relations on <m>\mathbb{Z}_8= \{0, 1, . . . , 7\}</m>. Which are equivalence relations? For the equivalence relations, list the equivalence classes.</p>
+<p><ol label="(a)">
+<li><p> <m>a R b</m> iff the English spellings of <m>a</m> and <m>b</m> begin with the same letter.</p></li>
+<li><p> <m>a S b</m> iff <m>a - b</m> is a positive integer.</p></li>
+<li><p> <m>a T b</m> iff <m>a-b</m> is an even integer.</p></li>
+</ol></p>
+</statement>
+<answer><p><ol label="(a)"><li>Equivalence Relation,
+ <m>c(0)=\{0\},c(1)=\{1\},c(2)=\{2,3\} =c(3),c(4)=\{4,5\}=c(5)</m>, and
+ <m>c(6)=\{6,7\}=c(7)</m></li>
+<li><p>  Not an Equivalence Relation.</p></li>
+<li><p>  Equivalence Relation,
+ <m>c(0)=\{0,2,4,6\}=c(2)=c(4)=c(6)</m>  and
+ <m>c(1)=\{1,3,5,7\}=c(3)=c(5)=c(7)</m></p>
+</li>
+</ol></p>
+</answer>
+</exercise>
+
+<exercise number="10"><statement><p>Building on <xref ref="equivalence-classes" text="type-global"/>:</p>
+<p><ol label="(a)">
+<li><p>Prove that congruence modulo <m>m</m> is transitive.</p></li>
+<li><p>What are the equivalence classes under congruence modulo 2?</p></li>
+<li><p> What are the equivalence classes under congruence modulo 10? </p></li>
+</ol></p>
+</statement>
+
+</exercise>
+
+
+
+<exercise number="11"><statement><p>In this exercise, we prove that implication is a partial ordering. Let <m>A</m> be any set of propositions.</p>
+<p><ol label="(a)">
+<li><p> Verify that <m>q \to  q</m> is a tautology, thereby showing that <m>\Rightarrow</m> is a reflexive relation on <m>A</m>.</p></li>
+<li> Prove that <m>\Rightarrow</m> is antisymmetric on <m>A</m>. Note: we do not use = when speaking of propositions, but rather equivalence, <m>\Leftrightarrow</m>.</li>
+<li><p> Prove that <m>\Rightarrow</m> is transitive on <m>A</m>.</p></li>
+<li><p> Given that <m>q_i</m> is the proposition <m>n &lt; i</m> on <m>\mathbb{N}</m>, draw the Hasse diagram for the relation <m>\Rightarrow</m> on <m>\{q_1, q_2, q_3,\ldots \}</m>.</p></li>
+</ol></p>
+</statement>
+<answer>
+<p><ol label="(a)">
+<li><p> The proof follows from the biconditional equivalence in <xref ref="table-implications" text="type-global"/>.</p></li>
+<li><p> Apply the chain rule.</p></li>
+<li>
+<p>See <xref ref="fig-sol-10-3-11" text="type-global" />.</p>
+</li>
+</ol></p>
+<figure xml:id="fig-sol-10-3-11"><caption/>
+		 <image width="40%" source="images/fig-sol-10-3-11.png">
+			  <description>Solution to number 11 of <xref ref="s-properties-of-relations"/></description>
+		 </image>
+</figure>
+</answer>
+</exercise>
+
+
+
+
+<exercise number="12" xml:id="exercise-10-3-12"><statement><p>Let <m>S = \{1,2,3,4,5,6,7\}</m> be a poset <m>(S, \leq )</m> with the Hasse diagram shown below. Another relation <m>R \subseteq  S\times S</m> is defined as follows: <m>(x, y) \in  R</m> if and only if there exists <m>z \in S</m> such that <m>z &lt; x</m> and <m>z &lt; y</m> in the poset <m>(S, \leq )</m>.</p>
+<p><ol label="(a)">
+<li><p> Prove that <m>R</m> is reflexive.</p></li>
+<li><p> Prove that <m>R</m> is symmetric.</p></li>
+<li><p> A compatible with respect to relation <m>R</m> is any subset <m>Q</m> of set <m>S</m> such that <m>x \in  Q \textrm{ and } y \in Q \Rightarrow  (x, y) \in R</m>. A compatible <m>g</m> is a maximal compatible if <m>Q</m> is not a proper subset of another compatible. Give all maximal compatibles with respect to relation <m>R</m> defined above.</p></li>
+<li><p> Discuss a characterization of the set of maximal compatibles for relation <m>R</m> when <m>(S, \leq )</m> is a general finite poset. What conditions, if any, on a general finite poset <m>(S, \leq )</m> will make <m>R</m> an equivalence relation?</p></li>
+</ol></p>
+				<figure xml:id="fig-exercise-10-12">
+                <caption>Hasse diagram for <m>R</m> in exercise 12.
+                </caption>
+                <image width="100%"	 source="images/exercise-10-12.png">
+                    <description>Hasse diagram for exercise 12</description>
+                </image>
+            </figure>
+</statement>
+
+</exercise>
+
+</exercises>
+</section>

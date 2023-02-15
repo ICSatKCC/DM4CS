@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 9.3 is Algorithmic Complexity see Jeefe, openDSA-->
+<section xml:id="section9_3-AlgorthmicComplexity">
+	<title>Algorithmic Complexity</title>
+	<idx>Algorithmic Complexity</idx>
+<introduction>
+ <!-- TODO  Erickson Algorthms Introduction    -->
+    <p> The most common way of ranking different algorithms for the same problem is
+by how quickly they run. Ideally, we want the fastest possible algorithm for any
+particular problem. But how do we measure running time?</p>
+<p>As a specific example, how long does
+it take to sing <xref ref="alg-99-bottles"/> the song <c>BottlesOfBeer(n)</c>? This is obviously a function of the
+input value n, but it also depends on how quickly you can sing. Some singers
+might take ten seconds to sing a verse; others might take twenty. Technology
+widens the possibilities even further. Dictating the song over a telegraph using
+Morse code might take a full minute per verse. Downloading an mp3 over
+the Web might take a tenth of a second per verse. Duplicating the mp3 in a
+computer’s main memory might take only a few microseconds per verse.</p>
+<p>What’s important here is how the singing time changes as n grows. Singing
+<c>BottlesOfBeer(2n)</c> requires about twice much time as singing <c>BottlesOfBeer(n)</c>, no matter what technology is being used.</p>
+
+<p>We can measure time by counting how many times the algorithm executes a
+certain instruction or reaches a certain milestone in the <q>code</q>. For example,
+we might notice that the word <q>beer</q> is sung three times in every verse of
+<c>BottlesOfBeer</c>, so the number of times you sing <q>beer</q> is a good indication
+of the total singing time. For this question, we can give an exact answer:
+<c>BottlesOfBeer(n)</c> mentions beer exactly <m>3n + 3</m> times.  This is reflected in the
+asymptotic singing time <m>\Theta(n)</m></p></introduction>
+
+<subsection xml:id="subsec9_3_1-basic_operations"><title>Basic Operations and Input Size</title><idx>Basic Operations</idx>
+
+<introduction> <p> Of primary consideration when estimating an algorithm's performance is the number of <em>basic operations</em> required by the algorithm to process an input of a certain size. The terms "basic operations" and "size" are both rather vague and depend on the algorithm being analyzed. Size is often the number of inputs processed. For example, when singing <c>BottlesOfBeer</c> the size of the input is the number of bottles of beer you start with. When comparing sorting algorithms the size of the problem is typically measured by the number of records to be sorted. A basic operation must have the property that its time to complete does not depend on the particular values of its operands. Adding or comparing two integer variables are examples of basic operations. Summing the contents of an array containing <m>n</m> integers is not, because the cost depends on the value of <m>n</m> (i.e., the size of the input).</p>
+
+<p>Because the most important factor affecting running time is normally size of the input, for a given input size <m>n</m>
+we often express the time <m>T</m> to run the algorithm as a function of <m>n</m>, written as <m>T(n)</m>. We will always assume <m>T(n)</m>
+is a non-negative value. We can then determine the <em>order</em> or <em>asymptotic complexity</em> of the algorithm by calculating the Big O of <m>T(n)</m>.</p>
+  </introduction>
+
+    <example xml:id="ex-counting-ops-max-element">
+      <title>Counting Basic Operations in the MaximumElement Algorithm</title>
+      <p>Consider the <xref ref="alg-max-element"/> that solves the problem of finding the largest value in an array of <m>n</m> integers. The algorithm looks at each integer in turn, saving the largest value seen so far. Here, the size of the problem is the number of integers stored in in the list. The basic operation is to compare an integer's value to that of the largest value seen so far. It is reasonable to assume that it takes a fixed amount of time to do one such comparison, regardless of the value of the two integers or their positions in the array.</p>
+
+
+
+<p>Let us call <m>c</m> the amount of time required to compare two integers in function <c>MaximumElement</c>. We do not care right now what the precise value of <m>c</m> might be. Nor are we concerned with the time required to increment variable <c>index</c> because this must be done for each value in the list, or the time for the actual assignment when a larger value is found, or the little bit of extra time taken to initialize <c>maximum</c>. We just want a reasonable approximation for the time taken to execute the algorithm. The total time to run <c>MaximumElement</c> is therefore approximately <m>cn</m>, because we must make <m>n</m> comparisons, with each comparison costing <m>c</m> time. We say that <c>MaximumElement</c> (and by extension, the largest-value sequential search algorithm for any typical implementation) has a running time expressed by the function
+  <me>T(n)=cn</me>. The asymptotic complexity of <c>MaximumElement</c> is therefore the Big O of <m>T(n)</m>. This is a <em>Linear Complexity</em> algorithm because <m>T(n) = O(n)</m>.</p></example>
+
+    <example xml:id="ex-constant-time">
+      <title>An Algorithm with Constant Running Time</title>
+
+        <p>The running time of a statement that assigns the first value of an integer array to a variable is simply the time required to copy the
+   value of the first array value. We can assume this assignment takes a constant amount of time
+   regardless of the value. Let us call <m>c_1</m> the amount of time necessary to copy an
+   integer.
+   No matter how large the array on a typical computer
+   (given reasonable conditions for memory and array size), the time
+   to copy the value from the first position of the array is always
+   <m>c_1</m>.Thus, the equation for this algorithm is simply
+
+      <me>T(n) = c_1</me>
+
+   indicating that the size of the input <m>n</m> has <em>no effect</em> on
+   the running time. This is a <em>Constant Complexity</em> algorithm because <m>T(n) = O(1)</m>, it has constant running time.</p>.
+      </example>
+      <example xml:id="ex-quadratic-time">
+      <title>Quadratic Running Time</title>
+      <p>Consider the following function written in Python:</p>
+          <sage>
+			<input>
+def NestedLoops(n):
+    sum = 0;
+    for i in range(0,n):
+        for j in range(0,n):
+            sum = sum + 1
+    return sum
+
+NestedLoops(10)
+</input>
+<output>
+100
+  </output>
+  </sage>
+        <p>What is the running time for this function? We can assume that incrementing <c>sum</c> takes constant time; call this time <m>c</m>. (We can ignore the time required to initialize <c>sum</c>, and to increment the loop counters <c>i</c> and <c>j</c>. In practice, these costs can safely be bundled into time <m>c</m>.) The total number of increment operations is <m>n^2</m>. The inner <c>j</c> loop runs <m>n</m> times for each of <m>n</m> values of <c>i</c>, so we have <m>n*n = n^2</m> operations total. Thus, we say that the running time is <m>T(n) = cn^2</m> and the algorithm has quadratic complexity: <m>T(n) = O(n^2)</m>. Therefore <c>NestedLoops</c> has a quadratic running time.</p>
+      </example>
+  </subsection>
+<subsection xml:id="subsec9_3_2-running_times"><title>Analyzing Algorithmic Complexity</title><idx>Algorithmic Complexity</idx>
+  <introduction><p>Analyzing algorithmic complexity or running time can get tricky, but it always follows a few basic rules:
+      <ol><li><p>Look for loops in the algorithm.<ul>
+              <li>If there are no loops, operations run in constant time, <m>O(1)</m></li>
+              <li>If there are loops that run a fixed number of times, that is constant time, <m>O(1)</m></li>
+              <li>If there is one loop using a counter that runs from 1 to <m>n</m> that requires linear time, <m>O(n).</m></li>
+              <li>If there is one loop where <m>n</m> is divided by a constant, that requires logarithmic time, <m>O(\log n)</m>.</li>
+              <li>If there are nested loops, where each one has a counter over <m>n</m>, that will be an <m>O(n^m)</m> running time where<m>m</m>is the number of loops nested.</li>
+              </ul></p></li>
+        <li><p>Look for recursive calls in the algorithm.<ul>
+              <li>These work similarly to loops, if 1 is subtracted from <m>n</m> it is <m>O(1)</m>, if <m>n</m> is divided it will be <m>O(1)</m>, and so on. </li></ul></p></li>
+        <li><p>Nested structures multiply their Big Os to make the overall algorithm Big O.</p></li>
+        <li><p>Structures that happen one after another, the algorithm's Big O will be the largest individual Big O.</p></li>
+        </ol></p>
+
+
+
+
+        <p>Below we will analyze the complexity of several algorithms that were introduced in <xref ref="section9_1-Algorithms"/> and <xref ref="section9_2-Recursive_Algorithms"/></p></introduction>
+
+    <example xml:id="ex-complexity-linear-search">
+      <title>Complexity of the LinearSearch Algorithm</title>
+      <p>Consider the LinearSearch algorithms <xref ref="alg-linear-search"/> and <xref ref="alg-linear-search2"/> that find a target value in an array of <m>n</m> integers. The algorithm looks at each integer in turn, comparing it to the target. Here, the size of the problem is the number of integers stored in in the list. The basic operation is to compare an integer's value to that of the target. As with <c>MaximumElement</c> above, it is reasonable to assume that it takes a fixed amount of time to do one such comparison, regardless of the value of the two integers or their positions in the array.</p>
+
+      <p>Let us call <m>c_1</m> the amount of time required to compare two integers, <m>c_2</m> the time required to increment variable <c>index</c> because this must be done for each value in the list, <m>c_3</m> the time for the assignment to <c>loc</c> when the target is found, and <m>c_4</m> the time taken to initialize <c>index</c> and <c>loc</c>. The total time to run <c>LinearSearch</c> is therefore approximately <m>(c_1 + c_2)n + c_3 + c_4</m>, because we must make <m>n</m> comparisons and increments, but the assignment of the target and initialization only happen once. <c>LinearSearch</c> has a running time expressed by the function
+  <me>T(n)=(c_1 + c_2)n + (c_3 + c_4) </me>. The Big O can then be calculated as follows:
+  <me>\begin{array}{c c}
+          (c_1 + c_2)n + (c_3 + c_4)  &amp; \leq (c_1 + c_2)n + (c_3 + c_4)n  \\
+          &amp; \leq (c_1 + c_2+ c_3 + c_4)n \\
+            &amp; = O(n)
+           \end{array}
+    </me>
+  The asymptotic complexity of <c>LinearSearch</c> is therefore the Big O of <m>T(n)</m>. This is a <em>Linear Complexity</em> algorithm because <m>T(n) = O(n)</m>.</p></example>
+
+    <example xml:id="ex-complexity-binary-search">
+      <title>Complexity of the BinarySearch Algorithm</title>
+      <p>Consider the <xref ref="alg-iterative-binary-search"/> that finds a target value in a sorted list of <m>n</m> integers. The algorithm calculates the middle position and looks at the element in that position in turn, comparing it to the target. Here too, the size of the problem is the number of integers stored in in the list. The basic operation is to compare an integer's value to that of the target. Assume that it takes a fixed amount of time to do one such comparison.</p>
+
+      <p>Let us call <m>c_1</m> the amount of time required to compare two integers, <m>c_2</m> the time required to calculate the middle index, <m>c_3</m> the time to reassign either <c>begin</c> or <c>end</c>, and <m>c_4</m> the time taken to initialize <c>loc, begin</c> and <c>end</c>.</p>
+
+      <p>An important property to remember for this analysis is if <m>n</m> is a power of 2, say <m>2^m</m>, then <m>\log_{2}(n) = m</m></p>
+
+      <p>Assume the length of the list is <m>n = 2^m</m>. At each iteration, the algorithm divides the list in half so the length of the new list is <m>\frac{2^m}{2}  = 2^{m-1}</m>. This happens until the remaining list has a single element, it has length <m>1 = 2^0</m>. Therefore, the maximum number of splits that can occur is <m>m = \log_2(n)</m>.</p>
+
+      <p>The total time to run <c>BinarySearch</c> is therefore approximately <m>(c_1 + c_2 +c_3)\log_2(n) + c_4</m>. <c>BinarySearch</c> has a running time expressed by the function
+  <me>T(n)=(c_1 + c_2 +c_3)\log_2(n) + c_4 </me>. The Big O can then be calculated as follows:
+  <me>\begin{array}{c c}
+          (c_1 + c_2 +c_3)\log_2(n) + c_4  &amp; (c_1 + c_2 +c_3)\log_2(n) + c_4 \log_2(n) \\
+          &amp; \leq (c_1 + c_2+ c_3 + c_4)\log_2(n) \\
+            &amp; = O(\log_2(n))
+           \end{array}
+    </me>
+    The asymptotic complexity and running time of <c>BinarySearch</c> is therefore <m>\log_2(n)</m>. As can be seen in <xref ref="fig-big0-common-functions"/>, this is a far faster algorithm than <m>O(n)</m> <c>LinearSearch</c>.</p>
+
+  <p>The recursive version of BinarySearch <xref ref="alg-recursive-linear-search"/> has the same complexity as the iterative version: <m>\log_2(n)</m>. The only difference is that instead of splitting the list in half and looping, it splits the list in half and makes a recursive call to itself.</p></example>
+
+<example xml:id="ex-complexity-merge-sort">
+<title>Complexity of the MergeSort Algorithm</title>
+<!-- TODO Smid running time of Merge sort -->
+<p>We now analyze the running time of algorithm <c>MergeSort</c>, <xref ref="alg-merge-sort"/>. It follows from the
+pseudocode that, when running this algorithm together with its
+recursive calls, several calls are made to algorithm <c>Merge</c>, <xref ref="alg-merge"/>.
+What we need to count is the total number of comparisons that
+are made. That is, we will determine the total number of times that
+the line <q>if <m>x \leq y</m></q> in algorithm <c>Merge</c> is executed
+when running algorithm <c>MergeSort(L,n)</c>.</p>
+
+<p>We first observe that the number of comparisons made by algorithm
+<c>Merge(L1,L2)</c> is at most <m>|L_1|+|L_2|</m>.</p>
+
+<p>Let <m>n</m> be an integer and assume for simplicity that <m>n</m> is a power of
+two, i.e., <m>n=2^k</m> for some integer <m>k \geq 0</m>. We define <m>T(n)</m> to be
+the maximum number of comparisons made when running algorithm <c>MergeSort(L,n)</c>
+on any input list <m>L</m> of <m>n</m> numbers. Note that we include in <m>T(n)</m>
+all comparisons that are made during all calls to <c>Merge</c> that are
+part of all recursive calls that are generated when running <c>MergeSort(L,n)</c>.</p>
+
+<p>Consider a list <m>L</m> of <m>n</m> numbers, where <m>n</m> is a power of two. For
+<m>n=1</m>, it follows from the pseudocode for <c>MergeSort(L,n)</c> that
+<em> T(1) = 0</em>.
+Assume that <m>n \geq 2</m> and consider again the pseudocode for <c>MergeSort(L,n)</c>.
+Which parts of the algorithm make comparisons between input elements?
+<ul>
+<li><p> The call <c>MergeSort(L1,m)</c> is a recursive call on a list of <m>m=n/2</m>
+      numbers. By definition, the total number of comparisons made
+      in this call (together with all its recursive subcalls) is at
+      most <m>T(n/2)</m>.</p></li>
+	<li> <p>The call <c>MergeSort(L2,n-m)</c> is a recursive call on a list of
+      <m>n-m=n/2</m> numbers. By definition, the total number of comparisons
+      made in this call (together with all its recursive subcalls) is at
+      most <m>T(n/2)</m>.</p></li>
+ <li><p>Finally, algorithm <c>MergeSort(L,n)</c> calls the non-recursive algorithm
+      <c>Merge(L1,L2)</c>. We have seen above that the number of
+      comparisons made in this call is at most <m>|L_1|+|L_2| = n</m>.</p></li>
+</ul></p>
+<p>By adding the number of comparisons, we get
+  <me> T(n) \leq T(n/2) + T(n/2) + n = 2 \cdot T(n/2) + n .
+  </me>
+Thus, we obtain the following recurrence relation:
+<me>
+\begin{array}{c c}
+   T(1)  &amp; =  0 , \nonumber \\
+   T(n)  &amp; \leq 2 \cdot T(n/2) + n \\
+   &amp;<m>n \geq 2, n = 2^k</m>.}
+  \end{array}</me></p>
+<p>Our goal was to determine <m>T(n)</m>, but at this moment, we only have a
+recurrence relation for this function. We will solve this recurrence
+relation using a technique called unfolding:</p>
+
+<p>Recall that we assume that <m>n=2^k</m> for some integer <m>k \geq 0</m>.
+We furthermore assume that <m>n</m> is a large integer. We know from
+above that
+<me> T(n) \leq 2 \cdot T(n/2) + n .
+</me>
+If we replace <m>n</m> by <m>n/2</m>, which is a valid thing to
+do, we get
+<me> T(n/2) \leq 2 \cdot T(n/2^2) + n/2 .
+</me>
+By combining these two inequalities, we get
+<me>
+\begin{array}{c c c}
+ T(n)  &amp; \leq  &amp; 2 \cdot T(n/2) + n \\
+       &amp; \leq  &amp; 2 \left( 2 \cdot T(n/2^2) + n/2 \right) + n \\
+       &amp; =  &amp; 2^2 \cdot T(n/2^2) + 2n .
+       \end{array}</me>
+Let us repeat this: Replacing <m>n</m> by <m>n/2^2</m> the recurrence equation gives
+<me> T(n/2^2) \leq 2 \cdot T(n/2^3) + n/2^2 .
+</me>
+By substituting this into the inequality for <m>T(n)</m>, we get
+<me>
+\begin{array}{c c c}
+ T(n)  &amp; \leq  &amp; 2^2 \cdot T(n/2^2) + 2n \\
+       &amp; \leq  &amp; 2^2 \left( 2 \cdot T(n/2^3) + n/2^2 \right) + 2n \\
+       &amp; =  &amp; 2^3 \cdot T(n/2^3) + 3n .
+ \end{array}</me></p>
+
+<p>In the next step, we replace <m>n</m> by <m>n/2^3</m> in the recurrence equation, which
+gives
+<me>T(n/2^3) \leq 2 \cdot T(n/2^4) + n/2^3 .</me>
+
+
+By substituting this into the inequality for <m>T(n)</m>, we get
+<me>
+\begin{array}{c c c}
+ T(n)  &amp; \leq  &amp; 2^3 \cdot T(n/2^3) + 3n \\
+       &amp; \leq  &amp; 2^3 \left( 2 \cdot T(n/2^4) + n/2^3 \right) + 3n \\
+       &amp; =  &amp; 2^4 \cdot T(n/2^4) + 4n .
+ \end{array}</me></p>
+
+ <p>At this moment, you will see the pattern and, at the end, we get the
+inequality
+<me>T(n) \leq 2^k \cdot T(n/2^k) + kn .
+</me>
+Since <m>n=2^k</m>, we have <m>T(n/2^k) = T(1)</m>, which is <m>0</m> from the base
+case of the recurrence relation. Also, <m>n=2^k</m> implies that
+<m>k = \log n</m>. We conclude that
+<me>T(n) \leq n \cdot T(1) + n \log n = n \log n .
+  </me></p>
+
+  <p>We thus have solved the recurrence relation. In case you have doubts
+about the validity of the unfolding method, we verify by induction that
+indeed
+<me>T(n) \leq n \log n , n= 2^k.
+</me>
+The base case is when <m>n=1</m>. In this case, we have <m>T(1)=0</m> and
+<m>1 \log 1 = 1 \cdot 0 = 0</m>. Let <m>n \geq 2</m> be a power of <m>2</m> and
+assume that
+<me>T(n/2) \leq (n/2) \log (n/2) .
+</me>
+From the recurrence relation, we get
+<me>T(n) \leq 2 \cdot T(n/2) + n .
+</me>
+By substituting the induction hypothesis into this inequality, we get
+<me>
+\begin{array}{c c c}
+ T(n)  &amp; \leq  &amp; 2 \cdot  (n/2) \log (n/2) + n \\
+       &amp; =  &amp; n \log (n/2) + n \\
+       &amp; =  &amp; n \left( \log n - \log 2 \right) + n \\
+       &amp; =  &amp; n \left( \log n - 1 \right) + n \\
+       &amp; =  &amp; n \log n .
+ \end{array}</me>
+Thus, by induction, <m>T(n) \leq n \log n</m> for any integer <m>n</m> that is a
+power of <m>2</m>.</p>
+
+<p>Until now, we have only counted the number of comparisons made by
+algorithm <c>MergeSort</c>. It follows from the pseudocode that the total
+running time, i.e., the total number of <q>elementary</q> steps, is
+within a constant factor of the total number of comparisons. Therefore,
+if <m>n</m> is a power of <m>2</m>, the running time of algorithm <c>MergeSort(L,n)</c>
+is <m>O(n \log n)</m>.</p>
+
+<p>For general values of <m>n</m>, the recurrence relation for the number of
+comparisons becomes the following:
+<me>\begin{array}{lcl}
+      T(n)  &amp; =  &amp; 0 , \mbox{ if <m>n=0</m> or <m>n=1</m>,}  \\
+      T(n)  &amp; \leq  &amp; T(\lfloor n/2 \rfloor) + T(\lceil n/2 \rceil)
+                       + n , \mbox{ if <m>n \geq 2</m>.}
+   \end{array}
+	 </me></p>
+
+<p>It can be shown by induction that this recurrence relation solves to
+<m>T(n) = O(n \log n)</m>. We have proved the following result:</p>
+
+
+<theorem><title>Big O of MergeSort</title><p>For any list <m>L</m> of <m>n</m> numbers, the running time of algorithm
+<c>MergeSort(L,n)</c> is <m>O(n \log n)</m>.</p></theorem>
+
+
+</example>
+</subsection>
+
+
+<exercises><title>Exercises for Section 9.3</title>
+	<exercise number="1"><statement><p>Show that BubbleSort, <xref ref="alg-bubble-sort"/>, has <m>O(n^2)</m> complexity.</p></statement>
+		<answer><p>The outer <m>i</m> loop runs <m>n</m> times.</p>
+			<p>The number of inner <m>j</m> loops varies with <m>i</m>, each time it makes <m>n - (i + 1)</m> loops. If <m>i = 0</m> it makes <m>n-1</m> loops, if <m>i = 1</m> it makes <m>n-2</m> loops, ..., down to <m>n-n = 0</m> loops. These two loops correspond to the sum of the first <m>n-1</m> integers which is equal to <m>\frac{(n-1)n}{2}</m>.</p>
+				<p>Inside the <m>j</m> loop, there is a comparison and the <q>swap</q> does three assignments, making 4 basic operations.</p>
+			<p>So we have <m> 4 * \frac{(n-1)n}{2}= \frac{4n^2 - 4n}{2} = 2n^2 - 2n</m> which is a polynomial with <m>n^2</m> as the highest order term. Therefore, BubbleSort is <m>O(n^2)</m></p>
+		</answer>
+	</exercise>
+
+			<exercise number="2"><statement><p>Show that the greedy algorithm for making change, <xref ref="alg-greedy-change"/>, has <m>O(x)</m> complexity in terms of the number of comparisons made. Where <m>x</m> is the amount of change to be given.</p></statement>
+			</exercise>
+
+
+			<exercise number="3"><statement><p>This is the pseudocode for Selection Sort</p>
+					<p><algorithm xml:id="alg-selection-sort"><title>Selection Sort</title><idx>Selection Sort</idx><statement>
+								<paragraphs>
+									<title>procedure SelectionSort</title> <p>(<m>a_1, a_2, a_3, ... ,a_n</m>: list of <m>n</m> numbers)</p>
+									<tabular>
+										<row>
+											<cell colspan="3"> <alert>for </alert> <m>j = 1</m> to <m>n-1</m></cell>
+										</row>
+										<row>
+											<cell></cell>
+											<cell colspan="2"><m>minLoc = j</m></cell>
+										</row>
+										<row>
+											<cell></cell>
+											<cell colspan="2"><alert>for </alert> <m> i = j+1</m> to <m>n</m></cell>
+										</row>
+										<row>
+											<cell></cell>
+											<cell></cell>
+											<cell><alert>if </alert> <m>a_i &lt; a_{minLoc}</m> <alert>then </alert> <m>minLoc = i</m></cell>
+										</row>
+										<row>
+											<cell></cell>
+											<cell colspan="2"><alert>if </alert> <m>minLoc \neq j</m> </cell>
+										</row>
+										<row>
+											<cell></cell>
+											<cell></cell>
+											<cell  colspan="3">swap <m>a_j</m> and <m>a_{minLoc}</m> </cell>
+										</row>
+									</tabular>
+								</paragraphs>
+							</statement>
+						</algorithm>
+					</p>
+					<p><ol label="(a)">
+
+							<li><p>Trace the Selection Sort on the list: 6, 3, 9, 2, 8. Show all steps, all value changes of <m>i,j, </m> and <m> minLoc</m> and the list at end of each <m>j</m> loop.</p></li>
+
+
+							<li><p>Determine the worst-case time complexity of Selection Sort. Explain your answer, don't just write what the big-O is.</p></li>
+
+
+							</ol></p></statement>
+
+
+
+				<answer>
+
+					<p><ol label="(a)">
+
+							<li><p>	<ul>
+										<li><m>n = 5</m></li>
+										<li><m>j = 1</m></li>
+										<li><m>minLoc = 1</m></li>
+										<li><m>i = 2</m></li>
+										<li>Is 3 less than 6? Yes:<m>minLoc = 2</m></li>
+										<li><m>i = 3</m></li>
+										<li>Is 9 less than 3? No</li>
+										<li><m>i = 4</m></li>
+										<li>Is 2 less than 3? Yes: <m>minLoc = 4</m></li>
+										<li><m>i = 5  </m></li>
+										<li>Is 8 less than 2? No</li>
+										<li>Done with i loop</li>
+										<li><m>minLoc \neq j</m></li>
+										<li>Swap 6 and 2</li>
+										<li>New list: 2, 3, 9, 6, 8</li>
+										<li><m>j = 2</m></li>
+										<li><m>minLoc = 2</m></li>
+										<li><m>i = 3</m></li>
+										<li>Is 9 less than 3? No</li>
+										<li><m>i = 4</m></li>
+										<li>Is 6 less than 3? No</li>\\
+										<li><m>i = 5</m></li>
+										<li>Is 8 less than 3? No</li>\\
+										<li>Done with i loop</li>\\
+										<li><m>minLoc = j</m></li>
+										<li>No swap</li>\\
+										<li>New list: 2, 3, 9, 6, 8</li>\\
+										<li><m>j = 3</m></li>
+										<li><m>minLoc = 3</m></li>
+										<li><m>i = 4</m></li>
+										<li>Is 6 less than 9? Yes: <m>minLoc = 4</m></li>
+										<li><m>i = 5</m></li>
+										<li>Is 8 less than 6? No</li>\\
+										<li>Done with i loop</li>\\
+										<li><m>minLoc \neq j</m></li>
+										<li>Swap 9 and 6</li>\\
+										<li>New list: 2, 3, 6, 9, 8</li>\\
+										<li><m>j = 4</m></li>
+										<li><m>minLoc = 4</m></li>
+										<li><m>i = 5</m></li>
+										<li>Is 8 less than 9? Yes: <m>minLoc = 5minLoc = 5</m></li>
+										<li>Done with i loop</li>\\
+										<li><m>minLoc \neq j</m></li>
+										<li>Swap 9 and 8</li>\\
+										<li>New list: 2, 3, 6, 8, 9</li>\\
+										<li><m>j = 5</m> done.</li></ul></p></li>
+
+							<li>	<p>Selection Sort is <m>O(n^2)</m> because the <m>j</m> loop runs <m>n-1</m> times, and the <m>i</m> loop inside that runs in worst case <m>n-1</m> times.
+									<me>(n-1)(n-1) = n^2 - 2n + 1 = O(n^2)</me></p></li>
+							</ol></p>
+				</answer>
+			</exercise>
+			<exercise number="4"><statement><p>Determine the worst-case time complexity of Insertion Sort, <xref ref="alg-insertion-sort"/>. Explain your answer, don't just write what the big-O is.</p></statement>
+			</exercise>
+
+			<exercise number="5"><statement><p>Determine the worst-case time complexity of Recursive Linear Search, <xref ref="alg-recursive-linear-search"/>. Explain your answer, don't just write what the big-O is.</p></statement>
+				<answer><p>Each call to the recursive function <c>RecursiveLinearSearch</c> runs in constant time. There are no loops only two comparisons. We are only concerned about the worst case for Big O, which is when the target is not in the list. The location variable controls the number of recursive calls that happen. This starts at 1 and increases by 1 in every recursive call. It stops when the base case is reached when <m>loc = n + 1.</m> That means the number of recursive calls that are made is <m>n + 1 - 1 = n</m>. The total number of operations is then: <m>2n</m>. Therefore the algorithm is <m>O(n)</m></p></answer>
+				</exercise>
+
+				<exercise number="6"><statement><p>Determine the worst-case time complexity of Recursive Binary Search, <xref ref="alg-recursive-binary-search"/>. Explain your answer, don't just write what the big-O is.</p></statement>
+					</exercise>
+  </exercises>
+
+</section>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="section5_3-proofs-quantifiers"><title>Proofs of Quantified Statements</title>
+<introduction>
+			<p>Formal proofs of quantified expressions can use all the techniques presented in sections <xref ref="section5_1-math-systems" /> - <xref ref="section5_2-induction" /> , plus some specialized forms.</p>
+</introduction>
+<!-- TODO attribution of this part, check for Rosen content. Or maybe not use this at all, necessary??? -->
+	<subsection xml:id="ss-proofs-with-quantifiers"><title>Proofs With Quantifiers</title>
+		<p>Proving quantified statements often requires invoking one or more the following inference rules. </p>
+		<table xml:id="table-quantifier-inferences">
+			<title>Inference Rules for Quantified Statements</title>
+			<tabular  halign="center">
+				<row>
+					<cell>Existential Instantiation</cell>
+				<cell><m>(\exists x)(p(x)) \Rightarrow p(c)</m></cell>
+					<cell><m>c \in U</m></cell>
+				</row>
+				<row >
+					<cell>Existential Generalization</cell>
+					<cell><m>p(c) \Rightarrow  (\exists x)(p(x)) </m></cell>
+					<cell><m>c \in U</m></cell>
+				</row>
+				<row >
+					<cell>Universal Instantiation</cell>
+					<cell><m>(\forall x)(p(x)) \Rightarrow p(c) </m></cell>
+					<cell><m>c</m> is any arbitrary element of <m>U</m></cell>
+				</row>
+				<row>
+					<cell>Universal Generalization</cell>
+					<cell><m>p(c) \Rightarrow  (\forall x)(p(x)) </m></cell>
+					<cell><m>c</m> is any arbitrary element of <m>U</m></cell>
+				</row>
+			</tabular>
+		</table>
+
+		<p>The instantiation rules are used to fix a variable in a proposition over a universe to a single (but perhaps unspecified) value in order to apply the rules of propositional logic. The generalization rules are used to expand results from a fixed variable to the entire universe. Commonly in less formal proofs, such as those in mathematics, these are implied but not directly stated in the proof.</p>
+
+
+
+		<definition xml:id="def-constructive-proof"><title>Constructive Proof</title><idx>Constructive Proof</idx>
+			<statement><p>Constructive proofs are used to prove theorems of the form: <m>(\exists n)(p(n))</m>. All that is needed is to find one value <m>c</m> for which <m>p(c)</m> is true and then invoke the Existential Generalization Rule. </p>
+			</statement></definition>
+
+			<example xml:id="ex-constructive-proof"><title>A constructive proof</title>
+        <p>Show that there is a positive integer that can be written as the sum of cubes of positive integers in two different ways:</p>
+				<me>10^3 + 9^3 = 12^3 + 1^3 = 1729</me>
+        <p>Therefore by Existential Generalization it is true, there is a positive integer that can be written as the sum of cubes of positive integers in two different ways.
+				</p></example>
+		<definition xml:id="def-non-constructive-proof"><title>Non-Constructive Proof</title><idx>Non-Constructive Proof</idx>
+			<statement><p>Non-constructive proofs are also used to prove theorems of the form: <m>(\exists n)(p(n))</m>. Assume no <m>c</m> exists for which <m>p(c)</m> is true and show this leads to a contradiction.</p>
+				</statement></definition>
+
+		<example xml:id="ex-non-constructive-proof"><title>A non-constructive proof</title>
+			<p>Show that there exist irrational numbers <m>x</m> and <m>y</m> such that <m>x^y</m> is rational.</p>
+
+			<p><ul>
+					<li><p>Take the negation of the conclusion: no such <m>x, y</m> exist.</p></li>
+					<li><p>We know that <m>\sqrt{2}</m> is irrational.</p></li>
+					<li><p>Let both <m>x, y = \sqrt{2}.</m></p></li>
+					<li><p>Then, <m>x^y = \sqrt{2}^{\sqrt{2}}.</m></p></li>
+					<li><p>There are two possibilities, <m>\sqrt{2}^{\sqrt{2}}</m> is either rational or irrational.</p></li>
+					<li><p>If it is rational, we have two irrational numbers <m>x</m> and <m>y</m> with <m>x^y</m>  rational.</p></li>
+					<li><p>If it is irrational:</p>
+					<ul><li><p>Let <m>x = \sqrt{2}^{\sqrt{2}}</m> and <m>y = \sqrt{2}</m>.</p></li>
+						<li><p>Then <me>x^y = (\sqrt{2}^{\sqrt{2}})^{\sqrt{2}} = \sqrt{2}^{(\sqrt{2}\sqrt{2})} = \sqrt{2}^{2} = 2 </me></p></li>
+						<li><p> 2 is rational.</p></li>
+							</ul></li>
+				<li><p>In either case, we have a rational result, which contradicts our negated conclusion.<m>\square</m> </p></li>
+					</ul>.
+				</p></example>
+
+		<definition xml:id="def-proof-of-non-existence"><title>Proof of Non-Existence</title>
+      <statement><p>Non-Existence proofs are used to prove theorems of the form: <m>\neg (\exists n)(p(n))</m>. Using the equivalent form <m>(\forall n) \neg(p(n)) )</m> show that <m>(p(n))</m> is never true.</p>
+			</statement></definition>
+
+			<example xml:id="ex-non-existence-proof"><title>A non-existence proof.</title>
+				<p>Show that there is no number <m>x</m> such that <m>x^2 + 1 \lt 0</m>.
+					<ul><li><p>Let <m>p(x)</m> be <m>x^2 + 1 \lt 0</m></p></li>
+          <li><p>Then the whole statement can be written as: <m>\neg (\exists x)(p(x))</m></p></li>
+					<li><p>Equivalently: <m>(\forall x) (\neg(p(x)))</m></p></li>
+          <li><p>We have three cases:</p>
+            <ol>
+              <li><p>Case 1: <m>x \lt 0</m>. Since multiplying two negatives, gives a positive, <m>x^2</m> is positive. Thus,
+                <m>x^2 + 1</m> is also positive. Hence <m>\neg(p(x))</m> holds.</p></li>
+                 <li><p>Case 2: <m>x = 0</m>. Here <m>x^2 = 0 </m>. Thus,
+                <m>x^2 + 1 = 1</m> is also positive. Hence <m>\neg(p(x))</m> holds.</p></li>
+                <li><p>Case 3: <m>x \gt 0</m>. Since multiplying two positives, gives a positive, <m>x^2</m> is positive.. Thus,
+                <m>x^2 + 1</m> is also positive. Hence <m>\neg(p(x))</m> holds.</p></li>
+						</ol></li>
+            <li><p>Therefore, by Universal Instantiation <m>(\forall x) \neg(p(x)) )\square</m> </p></li>
+						</ul></p>
+        </example>
+ 	<definition xml:id="def-proof-by-counterexample"><title>Proof by Counterexample</title>
+    <statement><p>Counterexamples are used to show theorems of the form <m>(\forall n)(p(n))</m> are false. All that is needed is to find one value <m>c</m> for which <m>p(c)</m> is false. That value is called a counterexample. <m>(\forall n)(p(n))</m> is then false by Universal Instantiation. Counterexamples can also be used to prove statements with a negated universal quantifier <m>\neg (\forall n)(p(n))</m> are true. This is done using the counterexample in a proof by contradiction on <m>(\forall n)(p(n))</m> </p>.
+			</statement></definition>
+
+			<example xml:id="ex-proof-by-counterexample"><title>A counterexample proof.</title>
+				<p>Show that every positive integer is the sum of the squares of 3 integers.
+					<ul><li><p>This can be rewritten as <m>(\forall x)(p(x))</m>, where <m>p(x)</m> is the statement "<m>x</m> is the sum of the squares of 3 integers" and <m>x \in \mathbb{P}</m>. </p></li>
+            <li><p>Enumerating out from 1, we see that 7 cannot be made in this way:</p>
+            <ul><li><p><m>1 = 1^2 + 0^2 + 0^2</m></p></li>
+                <li><p><m>2 = 1^2 + 1^2 + 0^2</m></p></li>
+                <li><p><m>3 = 1^2 + 1^2 + 1^2</m></p></li>
+                <li><p><m>4 = 2^2 + 0^2 + 0^2</m></p></li>
+                <li><p><m>5 = 2^2 + 1^2 + 0^2</m></p></li>
+                <li><p><m>6 = 2^2 + 1^2 + 1^2</m></p></li>
+                <li><p><m>8 = 2^2 + 2^2 + 0^2</m> </p></li></ul>
+						</li>
+            <li><p>Therefore, 7 is a counterexample and <m>(\forall x)(p(x))</m> is false.</p></li>
+            </ul>
+
+				</p></example>
+		<definition xml:id="def-ug-proof"><title>Proof by Universal Generalization</title>
+			<statement><p>Universal Generalization is used for many proofs of mathematical formulas, but most less formal proofs don't state that it is used. In a proof using Universal Generalization, we pick an arbitrary value from the universe and show that the statement is true. The catch is the value must be arbitrary, showing a formula works for a particular value cannot be generalized to all values in the universe.</p>
+			</statement></definition>
+
+			<example xml:id="ex-ug-proof"><title>A proof using Universal Generalization.</title>
+        <p>Prove if an integer <m>x</m> is even then <m>x^2</m> is even. </p>
+
+        <p>The statement to be proven can be rewritten more formally as <m>(\forall x)(p(x) \rightarrow p(x^2))</m>, where
+					<m>p(x)</m> is the statement <m>x</m> is even. A formal proof would proceed as follows:</p>
+				<ol><li><p> <m>(\forall x)(p(x) \rightarrow p(x^2)) </m> Premise</p></li>
+          <li><p><m>(p(c) \rightarrow p(c^2))</m> Universal Instantiation to arbitrary integer <m>c</m></p></li>
+          <li><p><m>p(c)</m> Assume hypothesis is true.</p></li>
+          <li><p><m>c = 2k</m>, for some integer <m>k</m>. Definition of even integer.</p></li>
+					<li><p><m>c^2 = (2k)^2 = 2(2k^2)</m> <m>c^2</m> is also even.</p></li>
+          <li><p><m>p(c^2)</m> is true.</p></li>
+          <li><p> <m>\therefore (\forall x)(p(x) \rightarrow p(x^2))</m> Universal Generalization.</p></li>
+          </ol>
+				</example>
+<!-- TODO	 -->
+</subsection>
+	<exercises xml:id="exercises-5_3">
+		<title>Exercises for Section 5.3 </title>
+		<exercise number="1"><statement><p>Translate the following argument and prove or disprove that it is valid.</p>
+				<p>	<ul>
+						<li><p>Every student likes either soccer or basketball.</p></li>
+						<li><p>There is at least one student who does not like basketball.</p></li>
+						<li><p>For each student, the student does not like soccer or likes baseball.</p></li>
+						<li><p>All students who like volleyball do not like baseball.</p></li>
+						<li><p>Therefore, there exists a student who does not like volleyball.</p></li>
+						</ul>
+				</p>
+				</statement>
+				<answer><p>	Assume that the universe of discourse is the set of all students.
+						Let:</p>
+				<p><ul>
+						<li><p><m>p(x)</m> denote "A student x likes soccer".</p></li>
+						<li><p><m>q(x)</m> denote "A student x likes basketball".</p></li>
+						<li><p><m>r(x)</m> denote "A student x likes baseball".</p></li>
+						<li><p><m>s(x)</m> denote "A student x likes volleyball".</p></li>
+						</ul></p>
+
+				<p>	The given argument is translated  as follows.</p>
+					<p><ol>
+							<li><p><m>(\forall x) (p(x) \lor q(x))</m></p></li>
+							<li><p><m>(\exists x) (\neg q(x))</m></p></li>
+							<li><p><m>(\forall x) (\neg p(x) \lor r(x))</m></p></li>
+							<li><p><m>(\forall x) (s(x) \rightarrow \neg r(x))</m></p></li>
+							</ol></p>
+					<p>Therefore, <m>(\exists x) (\neg s(x))</m></p>
+
+					<p>Proof:</p>
+					<p><ol>
+							<li><p><m>(\exists x) (\neg q(x))</m> Premise 2</p></li>
+							<li><p><m>\neg q(c)</m> Existential Instantiation (1)</p></li>
+							<li><p><m>(\forall x) (p(x) \lor q(x))</m> Premise 1</p></li>
+							<li><p><m>(p(c) \lor q(c))</m> Universal Instantiation (3). Since UI we can let it be same element as (2)</p></li>
+							<li><p><m> p(c) </m> Disjunctive Syllogism (2,4)</p></li>
+							<li><p><m>(\forall x) (\neg p(x) \lor r(x))</m> Premise 3</p></li>
+							<li><p><m>(\neg p(c) \lor r(c))</m> UI (6) </p></li>
+							<li><p><m>r(c)</m> Disjunctive Syllogism (5,7)</p> </li>
+							<li><p><m>(\forall x) (s(x) \rightarrow \neg r(x))</m> Premise 4</p></li>
+							<li><p><m>(s(c) \rightarrow \neg r(c))</m> UI (9)</p></li>
+							<li><p><m>\neg s(c)</m> Indirect Reasoning (8, 10)</p></li>
+							<li><p><m>\therefore (\exists x) (\neg s(x))</m> Existential Generalization (11) </p></li>
+							</ol></p>
+			</answer>
+		</exercise>
+		<exercise number="2"><statement><p> Prove that <m>(\exists x)(\forall y)(p(x, y)) \Rightarrow  (\forall y)(\exists x)(p(x, y))</m>, but that converse is not true.
+				</p>
+			</statement>
+		</exercise>
+
+	</exercises>
+</section>

@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 9.1 is ADS Appendix on algorithms  -->
+<!-- Look at openDSA Chapter 8 -->
+<section xml:id="section9_1-Algorithms">
+  <title>Introduction to Algorithms</title>
+  <idx>Algorithms</idx>
+  <introduction>
+    <p>Computer programs, bicycle assembly instructions, knitting instructions, and recipes all have several things in common. They all tell us how to do something; and the usual format is as a list of steps or instructions. In addition, they are usually prefaced with a description of the raw materials that are needed (the input) to produce the end result (the output).</p>
+
+    <p>We use the term <em>algorithm</em> to describe such lists of instructions.
+      <!--  From intro of algorithms book Jeff Erickson   -->
+      An algorithm is an explicit, precise, unambiguous, mechanically-executable
+      sequence of elementary instructions, usually intended to accomplish a specific
+      purpose. For example, here is an algorithm for singing that annoying song 99
+      Bottles of Beer on the Wall, for arbitrary numbers of bottles:</p>
+
+    <algorithm xml:id="alg-99-bottles"><title>BottlesOfBeer</title><statement>
+<paragraphs>
+          <title>procedure BottlesOfBeer</title> <p>(<m>n</m>: number of bottles)</p>
+    <tabular>
+            <row>
+              <cell colspan="3"><alert>For</alert> i := n down to 1: </cell>
+            </row>
+
+            <row>
+              <cell></cell>
+              <cell colspan="2"><alert>  Sing:</alert>  “i bottles of beer on the wall, i bottles of beer,”</cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell colspan="2"><alert>  Sing:</alert>  “Take one down, pass it around, i − 1 bottles of beer on the wall.”</cell>
+            </row>
+            <row>
+              <cell colspan="3"><alert>Sing:</alert>  “No bottles of beer on the wall, no bottles of beer,”</cell>
+            </row>
+
+            <row>
+              <cell colspan="3"><alert>Sing:</alert>  “Go to the store, buy some more, n bottles of beer on the wall.”</cell>
+            </row>
+          </tabular>
+        </paragraphs>
+      </statement>
+    </algorithm>
+
+
+    <p> The word <q>algorithm</q> is a corruption of the name of the 9th century Persian mathematician Muhammand ibn Musa al-Khwarizmi.
+      Although they have been a topic of formal academic study for only a few decades,
+      algorithms have been with us since the dawn of civilization. Descriptions of
+      step-by-step arithmetic computation are among the earliest examples of written
+      human language, long predating the works of al-Khwarizmi.
+    </p>
+    <p>The most familiar method for multiplying large numbers, at least for American
+      students, is the <em>lattice algorithm</em>. This algorithm was popularized by the medieval Italian mathematician and tradesman
+      Leonardo of Pisa, better known as Fibonacci, in his 1202 book
+      <em>Liber Abaci</em>. Fibonacci learned it from Arabic sources including al-Khwarizmi who
+      in turn learned it from Indian sources, who may have learned it from Chinese sources.
+      The oldest surviving descriptions of the algorithm appear in The Mathematical
+      Classic of Sunzi, written in China between the 3rd and 5th centuries, and in
+      Eutocius of Ascalon's commentaries on Archimedes' Measurement of the Circle,
+      written around 500ce, but there is evidence that the algorithm was known much
+      earlier.
+      </p>
+      </introduction>
+  <!-- TODO cite Erickson for more info, fix al-Khwarizmi spelling took off overlines  -->
+
+  <subsection  xml:id="subsec9_1_1-describing-algorithms"><title>Describing Algorithms</title>
+    <introduction>
+      <p>The skills required to effectively design and analyze algorithms are entangled
+        with the skills required to effectively <em>describe</em> algorithms. A complete description of an algorithm has four components:
+        <dl>
+          <li> <title>What:</title> <p>A precise specification of the problem that the algorithm solves.</p></li>
+          <li>  <title>How:</title> <p>A precise description of the algorithm itself.</p></li>
+          <li>  <title>Why: </title><p>A proof that the algorithm solves the problem it is supposed to solve.</p></li>
+          <li>  <title>How fast:</title> <p>An analysis of the running time of the algorithm.</p></li>
+        </dl>
+      </p>
+      <p>This section and the next will demonstrate ways to specify and describe algorithms and then will introduce some commonly seen algorithms. In <xref ref="section9_3-AlgorthmicComplexity" text="type-global" /> we explore ways to analyze the running times of algorithms. Proving algorithmic correctness, the <q>why</q>, is covered in the second semester of Discrete Mathematics.</p>
+      <!--TODO link to the correctness proof section when written  -->
+      <p>Most of the algorithms in this book will contain a combination of three
+        kinds of steps: the assignment step, the conditional step, and the loop.</p></introduction>
+
+    <subsubsection  xml:id="subsubsec9_1_1_1-assignments"><title>Assignments</title><p>In order to assign a value to a variable, we use an assignment step, which takes the form:
+        <me>\textrm{Variable = Expression to be computed}</me>
+        The equals sign in most languages is used for assignment but some languages may use variations such as <c>:=</c> or a left pointing arrow. Logical equality, which produces a boolean result and would be used in conditional or looping steps, is most commonly expressed with a double-equals, <c>==</c>.</p>
+      <p> An example of an  assignment is <c>k = n - 1</c>
+        which tells us to subtract 1 from the value of <c>n</c> and assign that value to
+        variable <c>k</c>. During the execution of an algorithm, a variable may take on only
+        one value at a time. Another example of an assignment is <c>k = k - 1</c>. This
+        is an instruction to subtract one from the value of <c>k</c> and then reassign that value to <c>k</c>.</p>
+    </subsubsection>
+    <subsubsection xml:id="subsubsec9_1_1_2-conditionalstep"><title>Conditional steps</title>
+      <p>Frequently there are steps that must be performed in
+        an algorithm if and only if a certain condition is met. The conditional or
+        "if ... then" step is then employed. For example, suppose that in step 2 of
+        an algorithm we want to assure that the values of variables x and y satisfy the
+        condition <c>x &lt;= y</c>. The following step would accomplish this objective.</p>
+      <listing><caption>An if/then conditional step.</caption>
+        <program>
+          <input>
+            2. If x > y:
+
+              2.1 t = x
+
+              2.2 x = y
+
+              2.3 y = t
+          </input>
+        </program>
+      </listing>
+      <p>Steps 2.1 through 2.3 would be bypassed if the condition <c>x > y</c> were
+        false before step 2.</p>
+      <p>One slight variation is the "if ... then ... else" step, which allows
+        us to prescribe a step to be taken if the condition is false. For example, if
+        you wanted to exercise today, you might look out the window and execute
+        the following algorithm.</p>
+      <listing><caption>An if/then/else conditional step</caption>
+        <program>
+          <input>
+            1. If it is cold or raining:
+
+              exercise indoors
+
+            else:
+
+              go outside and run
+
+            2. Rest
+          </input>
+        </program>
+      </listing>
+    </subsubsection>
+    <subsubsection xml:id="subsubsec9_1_1_3-loops"><title>Loops</title>
+      <p>The conditional step tells us to do something once if a logical condition is true. A loop tells us to repeat one or more steps, called the body of the loop, while the logical condition is true. Before every
+        execution of the body, the condition is tested. The following flow diagram serves to illustrate the steps in a <c>while</c> loop.</p>
+      <figure xml:id="fig-while-flow">
+        <caption>Flow diagram for a while loop
+        </caption>
+        <image width="60%" source="images/while-flow.png">
+          <description>Flow diagram for a while loop</description>
+        </image>
+      </figure>
+
+      <p>Suppose you wanted to solve the equation <m>f(x) = 0</m>. The following initial
+        assignment and loop could be employed.</p>
+      <listing><caption>A While loop</caption>
+        <program>
+          <input>
+            1. c = your first guess
+
+            2. While f(c) != 0:
+
+              2.1 c = another guess
+          </input>
+        </program>
+      </listing>
+      <p><alert>Caution:</alert> One must always guard against the possibility that the condition
+        of a <c>While</c> loop will never become false. Such "infinite loops" are the bane
+        of beginning programmers. The loop above could very well be such a situation,
+        particularly if the equation has no solution, or if the variable takes on real values</p>
+
+      <p>In cases where  consecutive integer values are to be
+        assigned to a variable, a different loop construction, a <c>For</c> loop, is often employed. For
+        example, suppose we wanted to assign to variable <c>k</c> each of the integer values
+        from <c>m</c> to <c>n</c> and <c>for</c> each of these values perform some undefined steps. We
+        could accomplish this with a <c>While</c> loop:</p>
+      <listing><caption>A While loop from <m>m</m> to <m>n</m></caption>
+        <program>
+          <input>
+            1. k := m
+
+            2. While k &lt;= n:
+
+              2.1 {execute some steps}
+
+              2.2 k = k + l
+          </input>
+        </program>
+      </listing>
+      <p>Alternatively, we can perform these steps is with a <c>For</c> loop.</p>
+      <listing><caption>A For loop from <m>m</m> to <m>n</m></caption>
+        <program>
+          <input>
+            For k = m to n:
+
+              {execute some steps}
+          </input>
+        </program>
+      </listing>
+      <p><c>For</c> loops such as this one have the advantage of being shorter than the
+        equivalent <c>While</c> loop. The <c>While</c> loop construction has the advantage of being
+        able to handle more different situations than the <c>For</c> loop.</p>
+    </subsubsection>
+  </subsection>
+
+  <subsection  xml:id="subsec9_1_2-factorial-algorithm"><title>The Factorial Algorithm</title>
+    <introduction><p><em>Functions</em> and <em>algorithms</em> are two very closely related ways to represent processes. In fact, many programming languages use the word <em>function</em> to denote a block of code that defines an algorithm.</p>
+    </introduction>
+
+    <p>The notation <m>f(n) = n!</m>, denotes the factorial function. Further explanation is needed to define the process of calculating <m>n!</m>, such as: where <m>n! = n * (n-1) * ... * 2 * 1</m> and <m>n</m> is a non-negative integer. The factorial algorithm describes step-by-step instructions for calculating <m>n!</m> when given <m>n</m> as input. </p>
+
+        <algorithm xml:id="alg-factorial"><title>Factorial</title><idx>Factorial Algorithm</idx><statement>
+            <paragraphs>
+        <title>procedure Factorial</title> <p>(<m>n</m>: non-negative integer)</p>
+        <tabular>
+          <row>
+            <cell colspan="3">prod <m>: = 1</m>:</cell>
+          </row>
+          <row>
+            <cell colspan="3"><alert>if</alert> <m>n = 0</m>:</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell colspan="2"> <alert>return</alert> 1 </cell>
+          </row>
+          <row>
+            <cell colspan="3"><alert>else</alert>:</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell colspan="2"> <alert>for</alert> i :=  n  down to 1</cell>
+          </row>
+            <row>
+            <cell></cell>
+            <cell></cell>
+            <cell> prod :=  prod * i</cell>
+          </row>
+           <row>
+            <cell colspan="3"><alert>return </alert> prod</cell>
+          </row>
+        </tabular>
+        </paragraphs>
+      </statement>
+      </algorithm>
+
+
+    </subsection>
+  <subsection  xml:id="subsec9_1_3-some-common-algorithms"><title>Some Common Algorithms</title>
+    <introduction><p>Two tasks that many algorithms have been developed for are <em>searching</em> and <em>sorting</em> on a list of items. This section introduces a few of the more common of these types of algorithms. Additionally, we will discuss a few <term>algorithmic paradigms</term>, different approaches to solving problems algorithmically.</p>
+    </introduction>
+        <subsubsection xml:id="subsubsec9_1_3_1-search-algorithms"><title>Search Algorithms</title>
+          <p>The search task involves looking for a particular item in a list of items.</p>
+          <paragraphs>
+                <title>Linear Search</title>
+              <p>The linear search algorithm must have a list of items <m>\{a_1, a_2, \ldots, a_n\}</m> and the target item <m>x</m> as inputs. There are several ways to format the output, but commonly the output is the target item's location in list if it is found, or some <em>indicator</em> value such as <m>0</m> or <m>-1</m> if the target is not found in the list. Linear Search is an example of a <q>brute force algorithm</q>, it approaches the problem in the most direct way possible, without no attempt at improving efficiency.</p>
+                  <p>The algorithm starts from the beginning of the list of items and compares each item to the target, counting the items as it goes. If the list item is the same as the target item, then the location variable is updated with the count. When it gets to the end of the list, it outputs the value in the location variable.
+                  <ul>
+                    <li><p>Let <m>x</m> be the item to look for and <m>\{a_1, a_2, \ldots, a_n\}</m> be the list of items to search.</p></li>
+                    <li><p>First, compare <m>x</m> with the first item <m>a_1</m>.</p></li>
+                    <li><p>If <m>x</m> and <m>a_1</m> are equal, set location to 1.</p></li>
+                    <li><p>Else, compare <m>x</m> with the second item <m>a_2</m> </p></li>
+                    <li><p>If <m>x</m> and <m>a_2</m> are equal, set location to 2.</p></li>
+                    <li><p>Continue until the whole list has been scanned.</p></li>
+                    <li><p>Return location value or 0 if no match was found.</p></li>
+                  </ul></p>
+    <algorithm xml:id="alg-linear-search"><title>Linear Search</title><idx>Linear Search Algorithm</idx><statement>
+        <paragraphs>
+          <title>procedure linear search</title> <p>(<m>x</m>: target; <m>\{a_1, a_2, ..., a_n\}</m>: list of items)</p>
+          <tabular>
+            <row>
+              <cell colspan="3">index := 1</cell>
+            </row>
+            <row>
+              <cell colspan="3">location := 0</cell>
+            </row>
+            <row>
+                <cell colspan="3"><alert>while</alert>  index <m>\leq</m> n </cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell colspan="2"><alert>if</alert> <m>x = a_{index}</m></cell>
+            </row>
+            <row>
+                <cell></cell>
+                <cell></cell>
+                <cell><alert>then</alert> loc := index </cell>
+            </row>
+            <row>
+                <cell></cell>
+                <cell colspan="2">index := index + 1</cell>
+            </row>
+            <row>
+                <cell><alert>return </alert> loc</cell>
+                <cell></cell>
+                <cell></cell>
+            </row>
+            </tabular>
+        </paragraphs>
+
+      </statement>
+    </algorithm>
+    <p>We can make the linear search algorithm more efficient by modifying the loop condition so that the <c>while</c>loop will stop if the target item is found. This eliminates having to continue to compare items if a matching one has been seen.</p>
+     <algorithm xml:id="alg-linear-search2"><title>Smarter Linear Search</title><statement>
+       <paragraphs>
+          <title>procedure faster linear search:</title> <p>(<m>x</m>: target; <m>\{a_1, a_2, ..., a_n\}</m>: list of items)</p>
+          <tabular>
+            <row>
+              <cell colspan="3">index := 1</cell>
+            </row>
+            <row>
+              <cell colspan="3">location := 0</cell>
+            </row>
+            <row>
+                <cell colspan="3"><alert>while</alert>  (index <m>\leq</m> n) and (<m>x \neq a_{index}</m>)  </cell>
+            </row>
+            <row>
+                <cell></cell>
+                <cell colspan="2">index := index + 1</cell>
+            </row>
+            <row>
+              <cell colspan="3"><alert>if</alert> index <m>\leq </m> n</cell>
+            </row>
+            <row>
+                <cell></cell>
+                <cell colspan="2"><alert>then</alert> loc := index </cell>
+            </row>
+            <row>
+                <cell><alert>return </alert> loc</cell>
+                <cell></cell>
+                <cell></cell>
+            </row>
+            </tabular>
+        </paragraphs>
+      </statement>
+    </algorithm>
+  </paragraphs>
+    <p>In the following implementation of the Faster Linear Search in SageMath, we search within a randomly generated list of integers.</p>
+
+    <sage>
+			<input>
+def LinearSearch(target, aList):
+    loc = -1
+    index = 0
+    n = len(aList) - 1
+
+    while (index &lt;= n) and (target != aList[index]):
+        index = index + 1
+
+    if index &lt;= n:
+        loc = index
+
+    return loc
+
+s = [64, 7, 30, 91, 32, 1, 15, 45, 42, 86, 24, 75, 22, 82, 38, 22, 13, 5, 82, 30, 89, 47, 81, 34, 41, 9, 5, 66, 49, 42]
+print(s)
+LinearSearch(41,s)
+</input>
+<output>
+  [64, 7, 30, 91, 32, 1, 15, 45, 42, 86, 24, 75, 22, 82, 38, 22, 13, 5, 82, 30, 89, 47, 81, 34, 41, 9, 5, 66, 49, 42]
+
+24
+  </output>
+</sage>
+
+ <paragraphs><title>Maximum Element</title><p>Linear Search can be modified to find an item in a list with a specific property. For example, we can modify the algorithm to find the largest item in the list, rather than a specific item of our choosing. To do this we must change how the algorithm compares elements.</p>
+
+  <p>The algorithm for finding the maximum element in a list starts from the beginning of the list of items. It compares the first two items and keeps the larger one, then it compares that to the third item again keeping the larger, this continues through the entire list. When it gets to the end of the list, it outputs the value that it has saved. This must be the maximum element in the list.
+<ul>
+<li><p>Let <m>max</m> be the largest item seen so far and <m>\{a_1, a_2, \ldots, a_n\}</m> be the list of items to search.</p></li>
+<li><p>First, set <m>max</m> to the value of the first item, <m>a_1</m>.</p></li>
+<li><p>Then compare <m>max</m> with the second item, <m>a_2</m>, if <m>a_2</m> is larger, set <m>max = a_2</m>.</p></li>
+<li><p>Next, compare <m>max</m> with the third item, <m>a_3</m>, if <m>a_3</m> is larger, set <m>max = a_3</m>.</p></li>
+<li><p>Continue until the whole list has been scanned.</p></li>
+<li><p>Return the value of <m>max</m>.</p></li>
+</ul></p>
+       <algorithm xml:id="alg-max-element"><title>Maximum Element in a List</title><idx>Maximum Element Algorithm</idx><statement>
+       <paragraphs>
+          <title>procedure maximum element:</title> <p>(<m>\{a_1, a_2, ..., a_n\}</m>: list of items)</p>
+          <tabular>
+            <row>
+              <cell>index := 1</cell><cell></cell><cell></cell>
+            </row>
+
+            <row>
+              <cell colspan="2">maximum := <m>a_1</m></cell><cell></cell>
+            </row>
+            <row>
+            <cell colspan="2"><alert>while</alert>  index <m>\leq</m> n </cell><cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell colspan="2"><alert>if</alert> maximum <m>\leq a_{index}</m></cell>
+            </row>
+            <row>
+                <cell></cell>
+                <cell></cell>
+                <cell><alert>then</alert> maximum := <m>a_{index} </m></cell>
+            </row>
+            <row>
+                <cell></cell>
+                <cell colspan="2">index := index + 1</cell>
+            </row>
+            <row>
+                <cell><alert>return </alert> maximum</cell>
+                <cell></cell>
+                <cell></cell>
+            </row>
+            </tabular>
+        </paragraphs>
+      </statement>
+    </algorithm>
+
+    <p>In the following implementation of the Maximum Element in SageMath, we find the maximum of a randomly generated list of integers.</p>
+
+    <sage>
+			<input>
+def MaximumElement(aList):
+    index = 0
+    max = aList[0]
+    for item in aList:
+        if max &lt; item:
+            max = item
+    return max
+
+s = [64, 7, 30, 91, 32, 1, 15, 45, 42, 86, 24, 75, 22, 82, 38, 22, 13, 5, 82, 30, 89, 47, 81, 34, 41, 9, 5, 66, 49, 42]
+print(s)
+MaximumElement(s)
+</input>
+<output>
+  [64, 7, 30, 91, 32, 1, 15, 45, 42, 86, 24, 75, 22, 82, 38, 22, 13, 5, 82, 30, 89, 47, 81, 34, 41, 9, 5, 66, 49, 42]
+
+91
+
+  </output>
+</sage>
+
+   </paragraphs>
+  <paragraphs>
+    <title>Binary Search</title><p>The binary search algorithm is a much more efficient way to search for an item in a list than linear search, however, the list to be searched must be put into a sorted order before searching can be done. Binary search is an example of a <q>divide-and-conquer</q> algorithm where the problem is repeatedly divided into smaller problems until solving the problem is very easy. We will come back to see the recursive version of Binary Search in <xref ref="section9_2-Recursive_Algorithms"/> on recursive algorithms. Here we describe the <em>iterative</em>, or looping, version.</p>
+
+    <p>The binary search algorithm starts by comparing the item in the middle position of the sorted list to the target. If the middle item is the same as the target item, then the location is returned. If the target is larger than the middle item, the lower half of the list is disregarded, the middle becomes the new start of the list and the target is compared to the item halfway between the new start and the end. If the target is smaller than the middle item, the upper half of the list is disregarded, the middle becomes the new end of the list, and the target is compared to the item halfway between the beginning and the new end. This procedure continues until the target is found or the list is reduced to a single item and that doesn't match the target.</p>
+
+    <p>
+        <algorithm xml:id="alg-iterative-binary-search"><title>Iterative Binary Search</title><idx>Binary Search Algorithm (Iterative)</idx><statement>
+            <paragraphs>
+                <title>procedure binary search</title> <p>(<m>x</m>: target; <m>\{a_1, a_2, ..., a_n\}</m>: sorted list of items)</p>
+                    <tabular>
+                        <row>
+                            <cell colspan="3">loc := -1</cell>
+                        </row>
+
+                        <row>
+                            <cell colspan="3">begin := 1</cell>
+                        </row>
+
+                        <row>
+                            <cell colspan="3">end := n</cell>
+                        </row>
+
+                        <row>
+                            <cell colspan="3">found := FALSE</cell>
+                        </row>
+                        <row>
+                            <cell colspan="3"><alert>while</alert> (begin <m>\leq</m> end) and (not found)</cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell colspan="2"> mid := (begin + end) / 2</cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell colspan="2"><alert>if</alert> <m>x = a_{mid}</m></cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell><alert>then</alert>  loc := mid </cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell> found := TRUE </cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell colspan="2"><alert>else if</alert>  <m> x &lt; a_{mid}</m></cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell><alert>then</alert> end := mid - 1 </cell>
+                        </row>
+                         <row>
+                            <cell></cell>
+                            <cell><alert>else </alert></cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell> begin := mid + 1</cell>
+                        </row>
+                        <row>
+                            <cell><alert>return </alert> loc</cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                        </tabular>
+</paragraphs>
+      </statement>
+    </algorithm>
+  </p>
+    <p>In the following implementation of the Iterative Binary Search in SageMath, we search within a sorted list of integers.</p>
+
+    <sage>
+			<input>
+def IterativeBinarySearch(target, aList):
+  loc = -1
+  begin = 0
+  end = len(aList) - 1
+  mid = -1
+  found = False
+
+  while (begin &lt;= end) and (not found):
+
+    mid = floor((begin + end)/2)
+    print('comparing with item in position '+str(mid))
+    if aList[mid] == target:
+      loc = mid
+      found = True
+      print('found in position '+str(loc))
+    elif aList[mid] &gt; target:
+        end = mid - 1
+        print('target is less than: ' + str(aList[mid]))
+    else:
+        begin = mid + 1
+        print('target is greater than: ' + str(aList[mid]))
+
+  return loc
+s=[1,9,13,16,30,31,32,33,36,37,38,45,49,50,52,61,63,64,69,77,79,80,81,83,86,90,93,96]
+IterativeBinarySearch(37, s)
+			</input>
+			<output>
+comparing with item in position 13
+target is less than: 50
+comparing with item in position 6
+target is greater than: 32
+comparing with item in position 10
+target is less than: 38
+comparing with item in position 8
+target is greater than: 36
+comparing with item in position 9
+found in position 9
+
+9
+			</output>
+		</sage>
+  </paragraphs>
+  </subsubsection>
+
+
+
+  <subsubsection xml:id="subsubsec9_1_3_2-sorting-algorithms"><title>Sorting Algorithms</title>
+          <p>The sorting task involves rearranging a list of items into a sorted order. The development of efficient sorting algorithms has been an important part of theoretical computer science for many years, and there are many different sorting algorithms. In this section we introduce two of the simpler <q>brute-force</q>sorting algorithms.</p>
+          <paragraphs>
+                <title>Bubble Sort</title><p>Bubble sort is very simple. It runs through the list to be sorted several times, comparing neighboring pairs of items. If the first item is larger than the second, they swap places. Then it moves forward and compares the next pair, and so on. This causes the largest item in the list to <q>bubble down</q> to its correct sorted position at the end of the list in the first pass through to list. In the next pass through the list, the second largest item will end up in its correct sorted position (second from the end). In the third pass, the third largest item will be in its sorted position, and so on. Each time the algorithm passes through the list, it can stop looking for swaps sooner,  when it gets to the previously placed items. The algorithm has to make almost as many passes through the list as there are items in it. In each pass execept the last, only one item is guaranteed to be put into its correct position. In the final pass, the last two smallest items are correctly placed because there are only two positions left at that point. The algorithm finishes after making <m>n-1</m> passes through the list, if <m>n</m> is the length of the list it sorted.</p>
+
+                 <p>
+        <algorithm xml:id="alg-bubble-sort"><title>Bubble Sort</title><idx>Bubble Sort Algorithm</idx><statement>
+            <paragraphs>
+                <title>procedure bubble sort</title> <p>(<m>\{a_1, a_2, ..., a_n\}</m>: list of items)</p>
+                    <tabular>
+
+                        <row>
+                            <cell>end := n</cell><cell></cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell colspan="3"><alert>for</alert> (i = 0 to (end - 1))</cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell colspan="2"><alert>for</alert> (j = 0 to (end-i-1))</cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell><alert>if</alert> <m>a_j > a_{j+1} </m> swap them </cell>
+                        </row>
+                        <row>
+                            <cell><alert>return </alert> list</cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                        </tabular>
+</paragraphs>
+      </statement>
+    </algorithm>
+  </p>
+     <p>In the following implementation of Bubble Sort in SageMath, we sort a randomized list of integers.</p>
+
+    <sage>
+			<input>
+def BubbleSort(aList):
+    for i in range(0, len(aList)):
+        for j in range(0, len(aList) - 1 -i):
+            if aList[j] &gt; aList[j+1]:
+                temp = aList[j+1]
+                aList[j+1] = aList[j]
+                aList[j] = temp
+    return aList
+
+s = [19, 20, 12, 0, 30, 23, 11, 9, 0, 17, 7, 30, 9, 0, 14, 5, 22, 9, 29, 26, 9, 16, 5, 1, 10, 30, 0, 5, 12, 25]
+print(s)
+BubbleSort(s)
+print(s)
+			</input>
+			<output>
+[19, 20, 12, 0, 30, 23, 11, 9, 0, 17, 7, 30, 9, 0, 14, 5, 22, 9, 29, 26, 9, 16, 5, 1, 10, 30, 0, 5, 12, 25]
+[0, 0, 0, 0, 1, 5, 5, 5, 7, 9, 9, 9, 9, 10, 11, 12, 12, 14, 16, 17, 19, 20, 22, 23, 25, 26, 29, 30, 30, 30]
+			</output>
+		</sage>
+  </paragraphs>
+
+
+  <paragraphs>
+    <title>Insertion Sort</title><p>Insertion sort works by keeping the list it is sorting in two sections, sorted and unsorted. It starts with the just the first item in the list as the sorted part and the whole rest unsorted. It then puts the second item in sorted order with the first by swapping places if the second is smaller than the first. Now the sorted part is two items long and the rest is unsorted. Then it takes the third item and puts it in its correct position in the sorted part by shifting any larger items over to make room for that item. Then it moves the sorted/unsorted boundary over. This is repeated until the whole list is included in the sorted part.</p>
+                  <p>
+        <algorithm xml:id="alg-insertion-sort"><title>Insertion Sort</title><idx>Insertion Sort Algorithm</idx><statement>
+            <paragraphs>
+                <title>procedure insertion sort</title> <p>(<m>\{a_1, a_2, ..., a_n\}</m>: list of items)</p>
+                    <tabular>
+                        <row>
+                            <cell>end := n</cell><cell></cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell colspan="3"><alert>for</alert> (i = 1 to end)</cell>
+                        </row>
+                        <row><cell></cell>
+                            <cell>j := i</cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell colspan="2"><alert>while</alert> (j &gt; 0) and (<m>a_{j-1} &gt; a_j</m>)</cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell><alert>swap</alert> <m>a_j</m> and <m> a_{j-1} </m> </cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell> j:= j - 1 </cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell> i := i + 1</cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell><alert>return </alert> list</cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+            </tabular>
+</paragraphs>
+      </statement>
+    </algorithm>
+  </p>
+     <p>In the following implementation of Insertion Sort in SageMath, we sort a randomized list of integers.</p>
+
+    <sage>
+			<input>
+def InsertionSort(aList):
+
+    for i in range(0, len(aList)):
+        j = i
+        while j > 0 and aList[j-1] > aList[j]:
+                temp = aList[j]
+                aList[j] = aList[j-1]
+                aList[j-1] = temp
+                j = j-1
+
+    return aList
+
+s = [19, 20, 12, 0, 30, 23, 11, 9, 0, 17, 7, 30, 9, 0, 14, 5, 22, 9, 29, 26, 9, 16, 5, 1, 10, 30, 0, 5, 12, 25]
+print(s)
+InsertionSort(s)
+print(s)
+			</input>
+			<output>
+[19, 20, 12, 0, 30, 23, 11, 9, 0, 17, 7, 30, 9, 0, 14, 5, 22, 9, 29, 26, 9, 16, 5, 1, 10, 30, 0, 5, 12, 25]
+[0, 0, 0, 0, 1, 5, 5, 5, 7, 9, 9, 9, 9, 10, 11, 12, 12, 14, 16, 17, 19, 20, 22, 23, 25, 26, 29, 30, 30, 30]
+			</output>
+		</sage>
+  </paragraphs>
+
+</subsubsection>
+
+<subsubsection xml:id="subsubsec9_1_3_3-greedy-algorithms"><title>Greedy Algorithms</title><p>An <term>optimization problem</term> is where the task is to minimize or maximize some value over a whole range of possibilities. Problems such as finding a delivery route with the shortest mileage or making a schedule of classes using the fewest number of classrooms or predicting the most probable winner in an election are all optimization problems. These kinds of problems are hard to solve algorithmically because the number of possibilities can become unmanageable.</p>
+<p>Greedy algorithms are one type of approach to optimization problems. A greedy algorithm doesn't try to solve the overall problem in an optimal way, instead it makes the <q>best</q> choice it can at each step towards a solution. Often, greedy algorithms are remarkably accurate and efficient. Many optimization tasks are so difficult that a greedy algorithm is the only known way to compute an answer, as we will see in ICS 241.</p>
+  <paragraphs><title>Greedy Change Making Algorithm</title><p>Say we want to develop an algorithm for an automated change machine. How can we program our machine to return any amount of change with the fewest number of coins possible? This is a simple optimization problem. We don't want to approach this in a <q>brute force</q> manner where our machine would have to figure out all possible combinations of coins and then choose the one that requires the least coins. Instead we will use a <q>greedy</q> method.</p>
+   <p>In the greedy paradigm we want our machine to make the best choice at each step. In this case, that will mean always adding the largest value coin possible to the change without exceeding the amount remaining to return.</p>
+   <p>If the machine can hold quarters, dimes, nickels, and pennies we will make a sorted list holding their values from high to low: <m>\{25, 10, 5, 1\}</m> and another list holding the coin types in the same order {quarter, dime, nickel, penny}. These will be the <m>c_i</m> and <m>t_i</m> values below and <m>n</m> would be 4.</p>
+  <p>
+        <algorithm xml:id="alg-greedy-change"><title>Greedy Change Making</title><idx>Greedy Change Making Algorithm</idx><statement>
+
+
+               <paragraphs> <title>procedure makeChange</title> <p>(<m>x</m>: change amount; <m>\{c_1, c_2, ..., c_n\}</m>: list of coin values; <m>\{t_1, t_2, ..., t_n\}</m>: list of coin types)</p>
+                    <tabular>
+                      <row>
+                        <cell colspan="3"><alert>for</alert> (i = 1 to n)</cell>
+                        </row>
+                        <row>
+                          <cell></cell>
+                            <cell colspan="2"><alert>while</alert> (<m>x  &gt; c_i</m>)</cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell><alert>give</alert> coin of type <m>t_i</m> </cell>
+                        </row>
+                        <row>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell> x := x - <m>c_i</m> </cell>
+                        </row>
+            </tabular>
+</paragraphs>
+      </statement>
+      </algorithm></p>
+
+     <p>In the following implementation of the Greedy Change Making algorithm in SageMath the coins it would return are printed out.</p>
+
+    <sage>
+			<input>
+def makeChange(amt, cList, tList):
+    total = 0
+    for i in range(0, len(cList)):
+        while amt >= cList[i]:
+            total = total + cList[i]
+            print('Add a ' + tList[i] + ' for '+ str(total) + ' cents')
+            amt  = amt - cList[i]
+
+amounts = [25, 10, 5, 1]
+types = ["quarter", "dime", "nickel", "penny"]
+change = 92
+makeChange(change, amounts, types)
+			</input>
+			<output>
+Add a quarter for 25 cents
+Add a quarter for 50 cents
+Add a quarter for 75 cents
+Add a dime for 85 cents
+Add a nickel for 90 cents
+Add a penny for 91 cents
+Add a penny for 92 cents
+			</output>
+		</sage>
+  </paragraphs>
+</subsubsection>
+
+</subsection>
+
+  <exercises xml:id="exercises-9-1">
+  <title>Exercises for Section 9.1 </title>
+<!--    <exercise number="1">
+      <statement><p>What are the inputs and outputs of the algorithms listed in the first
+          sentence of this section?</p></statement>
+    </exercise>
+    <exercise number="2">
+      <statement><p>What is wrong with this algorithm?</p>
+        <listing><caption/><program>
+            <input>
+              Input: a and b, integers
+              Output: the value of c will be a - b
+              (1) c = 0
+              (2) While a > b:
+              (2.1) a := a - l
+              (2.2) c := c + l
+            </input>
+          </program>
+        </listing>
+      </statement>
+      <answer><p>The algorithm only works when <c>a > b</c>.</p></answer>
+      </exercise>-->
+      <exercise number="1">
+        <statement><p>Describe, in words, what the following algorithm does:</p>
+          <paragraphs> <title>Alg1</title> <p>(<m>k</m>: positive integer)</p>
+              <tabular>
+                  <row>
+                  <cell colspan="2"><m>s := 0</m></cell>
+                  </row>
+                <row>
+                  <cell colspan="2"><alert>while</alert> <m>k &gt; 0</m>:</cell>
+                  </row>
+                  <row>
+                    <cell></cell>
+                      <cell><m> s := s + k</m></cell>
+                  </row>
+                 <row>
+                    <cell></cell>
+                      <cell><m> k :=  k - 1</m></cell>
+                  </row>
+                  <row>
+                      <cell colspan="2"> <alert>return</alert> <m>s</m> </cell>
+                  </row>
+      </tabular>
+</paragraphs>
+      </statement>
+      		<answer><p>This algorithm calculates the sum of the first <m>k</m> positive integers: <m>s = k + (k-1) + \ldots + 2 + 1</m>.</p></answer>
+    </exercise>
+    <exercise number="2">
+      <statement><p> Describe in words what the following algorithm does:</p>
+                <paragraphs> <title>Alg2</title> <p>(<m>n</m>: positive integer)</p>
+              <tabular>
+                  <row>
+                  <cell colspan="2"><m>f := 0</m></cell>
+                  </row>
+                    <row>
+                  <cell colspan="2"><m>k := n</m></cell>
+                  </row>
+                <row>
+                  <cell colspan="2"><alert>while</alert> <m>k</m> is even</cell>
+                  </row>
+                  <row>
+                    <cell></cell>
+                      <cell><m> f := f + 1</m></cell>
+                  </row>
+                 <row>
+                    <cell></cell>
+                      <cell><m> k := k/2</m></cell>
+                  </row>
+                  <row>
+                      <cell colspan="2"> <alert>return</alert> <m>k</m> </cell>
+                  </row>
+      </tabular>
+</paragraphs>
+      </statement>
+    </exercise>
+    <exercise number="3">
+      <statement><p>Write in pseudocode an algorithm that finds the largest and smallest elements in a list of integers of length <m>n</m> and returns the sum of those two.</p>
+      </statement>
+
+      <answer>
+<paragraphs> <title>LargestAndSmallest</title> <p>(<m>\{a_1, a_2, ..., a_n\}</m>: list of integers)</p>
+              <tabular>
+                  <row>
+                  <cell colspan="3"><m>smallest := a_1</m></cell>
+                  </row>
+                 <row>
+                  <cell colspan="3"><m>largest := a_1</m></cell>
+                  </row>
+                    <row>
+                  <cell colspan="3"><m>index:= 2</m></cell>
+                  </row>
+                <row>
+                  <cell colspan="3"><alert>while</alert> <m>index \leq n</m>:</cell>
+                  </row>
+                  <row>
+                     <cell></cell>
+                    <cell colspan="2"><alert>if</alert> <m>smallest \geq a_{index}</m>:</cell>
+                  </row>
+                  <row>
+                    <cell></cell>
+                    <cell></cell>
+                      <cell><m> smallest := a_{index}</m></cell>
+                    </row>
+                  <row>
+                     <cell></cell>
+                    <cell colspan="2"><alert>if</alert> <m>largest \leq a_{index}</m>:</cell>
+                  </row>
+                  <row>
+                    <cell></cell>
+                    <cell></cell>
+                      <cell><m> largest := a_{index}</m></cell>
+                  </row>
+                 <row>
+                    <cell></cell>
+                      <cell  colspan="2"><m> index := index + 1</m></cell>
+                  </row>
+                  <row>
+                      <cell colspan="3"> <alert>return</alert> <m>smallest + largest</m> </cell>
+                  </row>
+      </tabular>
+      </paragraphs>
+        </answer>
+    </exercise>
+        <exercise number="4">
+      <statement><p>Write in pseudocode an algorithm for finding the average of the elements in a list of integers of length <m>n</m>.</p>
+      </statement>
+
+</exercise>
+    <exercise number="5">
+      <statement><p>Write a complete trace of bubble sort on the list [6, 2, 3, 1, 5, 4]
+showing the lists obtained at each step (each change in values of <m>i </m> and <m>j</m>).</p>
+      </statement>
+      <answer><p>
+			<tabular>
+
+<row><cell>1.</cell><cell> [6 2 3 1 5 4] </cell> <cell>Before anything happens</cell>\\</row>
+<row><cell>2.</cell><cell> [2 6 3 1 5 4] </cell> <cell><m>6&gt;2</m>, so swap</cell>\\</row>
+<row><cell>3.</cell><cell> [2 3 6 1 5 4] </cell> <cell><m>6&gt;3</m>, so swap</cell>\\</row>
+<row><cell>4.</cell><cell> [2 3 1 6 5 4] </cell> <cell><m>6&gt;1</m>, so swap</cell>\\</row>
+<row><cell>5.</cell><cell> [2 3 1 5 6 4] </cell> <cell><m>6&gt;5</m>, so swap</cell>\\</row>
+<row><cell>6.</cell><cell> [2 3 1 5 4 6] </cell> <cell><m>6&gt;4</m>, so swap</cell>\\</row>
+<row><cell>7.</cell><cell> [2 1 3 5 4 6] </cell> <cell><m>2&lt;3</m>, so skip. <m>3&gt;1</m>, so swap.</cell>\\</row>
+<row><cell>8.</cell><cell> [2 1 3 4 5 6] </cell> <cell><m>3&lt;5</m>, so skip. <m>5&gt;4</m>, so swap.</cell>\\</row>
+<row><cell>9.</cell><cell> [1 2 3 4 5 6] </cell> <cell><m>5&lt;6</m>, so skip. <m>1&lt;2</m>, so swap.</cell>\\</row>
+</tabular>
+
+The remaining passes won't swap anything since the list is now sorted.</p>
+
+  </answer>
+</exercise>
+    <exercise number="6">
+      <statement><p>Write a complete trace of insertion sort on the list [6, 2, 3, 1, 5, 4]
+showing the lists obtained at each step (each change in values of <m>i </m> and <m>j</m>).</p>
+      </statement>
+      </exercise>
+  </exercises>
+
+</section>
