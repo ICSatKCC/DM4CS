@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:id="chapter_8" xmlns:xi="http://www.w3.org/2001/XInclude"><title>Functions</title>
 
-	<xi:include href="./Section8_1.xml" />
-	<xi:include href="./Section8_2.xml" />
-	<xi:include href="./Section8_3.xml" />
-<xi:include href="./Section8_4.xml" />    <!--   recursion -->
-  <xi:include href="./Section8_5.xml" />  <!-- sequences-->
-  <xi:include href="./Section8_6.xml" />  <!-- Growth of functions and bigO-->
+	<xi:include href="./Section8_1.ptx" />
+	<xi:include href="./Section8_2.ptx" />
+	<xi:include href="./Section8_3.ptx" />
+<xi:include href="./Section8_4.ptx" />    <!--   recursion -->
+  <xi:include href="./Section8_5.ptx" />  <!-- sequences-->
+  <xi:include href="./Section8_6.ptx" />  <!-- Growth of functions and bigO-->
 </chapter>

@@ -28,12 +28,12 @@
 
 <p>In order to achieve these goals, we will recall the basic ideas of posets introduced in Chapter 6 and develop the concept of a lattice.  The reader should view the development of the topics of this chapter as another example of an algebraic system. Hence, we expect to define first the elements in the system, next the operations on the elements, and then the common properties of the operations in the system.</p>
 </introduction>
-<xi:include href="./Section12_1.xml" />
-<xi:include href="./Section12_2.xml" />
-<xi:include href="./Section12_3.xml" />
-<xi:include href="./Section12_4.xml" />
-<xi:include href="./Section12_5.xml" />
-<xi:include href="./Section12_6.xml" />
-<xi:include href="./Section12_7.xml" />
-<xi:include href="./Section12_8.xml" />
+<xi:include href="./Section12_1.ptx" />
+<xi:include href="./Section12_2.ptx" />
+<xi:include href="./Section12_3.ptx" />
+<xi:include href="./Section12_4.ptx" />
+<xi:include href="./Section12_5.ptx" />
+<xi:include href="./Section12_6.ptx" />
+<xi:include href="./Section12_7.ptx" />
+<xi:include href="./Section12_8.ptx" />
 </chapter>

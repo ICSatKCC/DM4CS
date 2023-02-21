@@ -2,8 +2,8 @@
 
 <chapter xml:id="chapter5" xmlns:xi="http://www.w3.org/2001/XInclude"><title>Proofs</title>
 	<introduction><p>In this chapter, we will learn to construct valid logical arguments. Although these arguments will usually be applied to mathematics, they employ the same techniques that are used by a lawyer in a courtroom or a physician examining a patient.</p></introduction>
-	<xi:include href="./Section5_1.xml" />
-	<xi:include href="./Section5_2.xml" />
-	<xi:include href="./Section5_3.xml" />
-	<xi:include href="./Section5_4.xml" />
+	<xi:include href="./Section5_1.ptx" />
+	<xi:include href="./Section5_2.ptx" />
+	<xi:include href="./Section5_3.ptx" />
+	<xi:include href="./Section5_4.ptx" />
 </chapter>

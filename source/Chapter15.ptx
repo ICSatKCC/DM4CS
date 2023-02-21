@@ -6,10 +6,10 @@
 <p>In this chapter we introduce automata theory, in which computers and other machines are described in abstract terms.</p>
 </introduction>
 
-<xi:include href="./Section15_1.xml" />
-<xi:include href="./Section15_2.xml" />
-<xi:include href="./Section15_3.xml" />
-<xi:include href="./Section15_4.xml" />
-<xi:include href="./Section15_5.xml" />
-<xi:include href="./Section15_6.xml" />
+<xi:include href="./Section15_1.ptx" />
+<xi:include href="./Section15_2.ptx" />
+<xi:include href="./Section15_3.ptx" />
+<xi:include href="./Section15_4.ptx" />
+<xi:include href="./Section15_5.ptx" />
+<xi:include href="./Section15_6.ptx" />
  </chapter>

@@ -19,10 +19,10 @@ are used. In Section 9.1, we will discuss these topics in general, and in later 
 at selected topics in graph theory.</p>
 <p><xref ref="chapter_14"/> will continue our discussion with an examination of trees, a special type of graph.
 </p></introduction>
-<xi:include href="./Section13_1.xml" />
-<xi:include href="./Section13_2.xml" />
-<xi:include href="./Section13_3.xml" />
-<xi:include href="./Section13_4.xml" />
-<xi:include href="./Section13_5.xml" />
-<xi:include href="./Section13_6.xml" />
+<xi:include href="./Section13_1.ptx" />
+<xi:include href="./Section13_2.ptx" />
+<xi:include href="./Section13_3.ptx" />
+<xi:include href="./Section13_4.ptx" />
+<xi:include href="./Section13_5.ptx" />
+<xi:include href="./Section13_6.ptx" />
 </chapter>

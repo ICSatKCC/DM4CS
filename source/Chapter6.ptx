@@ -5,8 +5,8 @@
 			In this chapter we shall look more closely at some basic facts about sets. One question we could ask ourselves is: Can we manipulate sets similarly to the way we manipulated expressions in basic algebra, or to the way we manipulated propositions in logic? In basic algebra we are aware that <m>a \cdot  (b + c) = a\cdot  b + a \cdot  c </m> for all real numbers <m>a</m>, <m>b</m>, and <m>c</m>. In logic we verified an analogue of this statement, namely, <m>p
 			\land  ( q \lor  r) \Leftrightarrow  (p \land  q)\lor  (p \land  r))</m>, where <m>p, q, \textrm{ and } r</m> were arbitrary propositions. If <m>A</m>, <m>B</m>, and <m>C</m> are arbitrary sets, is <m>A \cap  (B \cup  C) = (A \cap  B) \cup  (A \cap  C)</m>? How do we convince ourselves of it is truth, or discover that it is false? Let us consider some approaches to this problem, look at their pros and cons, and determine their validity.  Later in this chapter, we introduce partitions of sets and minsets.
 			</p></introduction>
-	<xi:include href="./Section6_1.xml" />
-	<xi:include href="./Section6_2.xml" />
-	<xi:include href="./Section6_3.xml" />
-	<xi:include href="./Section6_4.xml" />
+	<xi:include href="./Section6_1.ptx" />
+	<xi:include href="./Section6_2.ptx" />
+	<xi:include href="./Section6_3.ptx" />
+	<xi:include href="./Section6_4.ptx" />
 </chapter>

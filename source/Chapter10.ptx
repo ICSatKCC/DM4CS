@@ -4,9 +4,9 @@
 <introduction>
 <p>One understands a set of objects completely only if the structure of that set is made clear by the interrelationships between its elements. For example, the individuals in a crowd can be compared by height, by age, or through any number of other criteria. In mathematics, such comparisons are called relations. The goal of this chapter is to develop the language, tools, and concepts of relations.
 </p></introduction>
-<xi:include href="./Section10_1.xml" />
-<xi:include href="./Section10_2.xml" />
-<xi:include href="./Section10_3.xml" />
-<xi:include href="./Section10_4.xml" />
-<xi:include href="./Section10_5.xml" />
+<xi:include href="./Section10_1.ptx" />
+<xi:include href="./Section10_2.ptx" />
+<xi:include href="./Section10_3.ptx" />
+<xi:include href="./Section10_4.ptx" />
+<xi:include href="./Section10_5.ptx" />
 </chapter>

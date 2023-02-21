@@ -3,8 +3,8 @@
 <introduction>
 <p>The goal of this chapter is to introduce the process of verifying the correctness of computer algorithms and programs. Often this involves using induction, so the first section will review writing inductive proofs. The following sections will cover the basics of proving correctness.
 </p></introduction>
-<xi:include href="./Section17_1.xml" />
-<xi:include href="./Section17_2.xml" />
-<!-- <xi:include href="./Section16_3.xml" /> -->
+<xi:include href="./Section17_1.ptx" />
+<xi:include href="./Section17_2.ptx" />
+<!-- <xi:include href="./Section16_3.ptx" /> -->
 
 </chapter>

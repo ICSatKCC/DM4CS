@@ -2,10 +2,10 @@
 
 <chapter xml:id="chapter4" xmlns:xi="http://www.w3.org/2001/XInclude"><title>Logic</title>
 	<introduction><p>In this chapter, we will introduce some of the basic concepts of mathematical logic. In order to fully understand some of the later concepts in this book, you must be able to recognize valid logical arguments. An added reason for the importance of this chapter is that the circuits that make up digital computers are designed using the same algebra of propositions that we will be discussing.</p></introduction>
-	<xi:include href="./Section4_1.xml" />
-	<xi:include href="./Section4_2.xml" />
-	<xi:include href="./Section4_3.xml" />
-	<xi:include href="./Section4_4.xml" />
-	<xi:include href="./Section4_5.xml" />
-	<xi:include href="./Section4_6.xml" />
+	<xi:include href="./Section4_1.ptx" />
+	<xi:include href="./Section4_2.ptx" />
+	<xi:include href="./Section4_3.ptx" />
+	<xi:include href="./Section4_4.ptx" />
+	<xi:include href="./Section4_5.ptx" />
+	<xi:include href="./Section4_6.ptx" />
 </chapter>

@@ -4,8 +4,8 @@
 <p>The goal of this chapter is to discuss recurrence relations. Recurrence relations are a recursive framework essential in computer science. We will concentrate on methods of solving recurrence relations, including an introduction to generating
 functions.
 </p></introduction>
-<xi:include href="./Section16_1.xml" />
-<xi:include href="./Section16_2.xml" />
-<xi:include href="./Section16_3.xml" />
+<xi:include href="./Section16_1.ptx" />
+<xi:include href="./Section16_2.ptx" />
+<xi:include href="./Section16_3.ptx" />
 
 </chapter>
