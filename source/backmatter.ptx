@@ -9,7 +9,7 @@
 
 <backmatter xml:id="backmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
 
-	<xi:include href="./App-pythonsage.xml" />
+	<xi:include href="./App-pythonsage.ptx" />
 	
 
 
@@ -35,7 +35,7 @@
 
 		</appendix>
 		-->
-		<xi:include href="./references.xml" />
+		<xi:include href="./references.ptx" />
 
 
 		<index>

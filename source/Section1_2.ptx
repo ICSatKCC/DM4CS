@@ -183,7 +183,7 @@
 					</li>
 					</ol></p>
 			<figure xml:id="venn_diagram_complement2">
-				<caption>Venn Diagram for <m>A^{c}</m></caption>
+				<caption>Venn Diagram for <m>\overline{A}</m></caption>
 				<image  width="60%" xml:id="sageplot-venn-complement2">
 					<description>A Venn Diagram for the complement of a set.</description>
 					<sageplot>
@@ -191,7 +191,7 @@
 						sx=3
 						sy=2
 						G = Graphics()
-						r=lambda x,y:  x^2+y^2 &gt; scale^2
+						r=lambda x,y:  x^2+y^2 \gt scale^2
 						G+=region_plot(r,(-sx,sx),(-sy,sy),plot_points=200,incol='lightblue',axes=False)
 						G += circle([0,0], scale)
 						G+=line([[-sx,-sy],[sx,-sy],[sx,sy],[-sx,sy],[-sx,-sy]],rgbcolor=(0,0,0))
@@ -210,7 +210,7 @@
 						sx=3
 						sy=2
 						G = Graphics()
-						r=lambda x,y:  x^2+y^2 &lt; scale^2 and (x-0.75)^2+y^2 &gt; 0.75^2
+						r=lambda x,y:  x^2+y^2 \lt scale^2 and (x-0.75)^2+y^2 \gt 0.75^2
 						G+=region_plot(r,(-sx,sx),(-sy,sy),plot_points=200,incol='lightblue',axes=False)
 						G += circle([0,0], scale)
 						G += circle([0.75,0], 0.75)

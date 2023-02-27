@@ -4,19 +4,12 @@
 
   <docinfo>
     <macros>
-      <!-- Added in from old bookinfo.xml--> 
-      \newcommand{\identity}{\mathrm{id}} 
-      \newcommand{\notdivide}{{\not{\mid}}}
-      \newcommand{\notsubset}{\not\subset} 
-      \newcommand{\lcm}{\operatorname{lcm}}
-      \newcommand{\gf}{\operatorname{GF}} 
-      \newcommand{\inn}{\operatorname{Inn}}
-      \newcommand{\aut}{\operatorname{Aut}} 
-      \newcommand{\Hom}{\operatorname{Hom}}
-      \newcommand{\cis}{\operatorname{cis}} 
-      \newcommand{\chr}{\operatorname{char}}
-      \newcommand{\Null}{\operatorname{Null}} 
-      \renewcommand{\vec}[1]{\mathbf{#1}}
+      <!-- Added in from old bookinfo.xml--> \newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+      \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
+      \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
+      \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
+      \newcommand{\cis}{\operatorname{cis}} \newcommand{\chr}{\operatorname{char}}
+      \newcommand{\Null}{\operatorname{Null}} \renewcommand{\vec}[1]{\mathbf{#1}}
       \newcommand{\R}{\mathbb R} </macros>
     <latex-image-preamble>
       \usepackage{amsmath}
@@ -49,7 +42,7 @@
     <xi:include href="./Chapter15.ptx" />	<!-- Ch 15 Automato/FSM -->
     <xi:include href="./Chapter16.ptx" />  	<!-- Ch 16 Recurrence Relations -->
     <xi:include href="./Chapter17.ptx" />  	<!-- Ch 17 Program Correctness -->
-    <!-- <xi:include href="./backmatter.ptx" />  -->
+    <xi:include href="./backmatter.ptx" />
 
     <!--  <chapter xml:id="chapter-title">
       <title>Chapter title</title>

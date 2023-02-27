@@ -375,8 +375,8 @@ map(lambda k:[k,D(k),(D(k)/factorial(k)).n(digits=8)],range(1,16))
 </subsection>
 
 
-<exercises xml:id="exercises-10-2">
-<title>Exercises for Section 10.2</title>
+<exercises xml:id="exercises-16-2">
+<title>Exercises</title>
 
 
 

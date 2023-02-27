@@ -3,14 +3,15 @@
 <title>Monoids</title>
 <idx>Monoids</idx>
 
-<p>Recall the definition of a monoid from <xref ref="s-algebraic-systems"/>.</p>
+<p>Recall the definition of a monoid from <xref ref="def-monoid"/></p>
 
-<definition xml:id="def-monoid"><title>Monoid</title><idx>Monoid</idx>
+
+<!--<definition xml:id="def-monoid"><title>Monoid</title><idx>Monoid</idx>
 <statement><p>A monoid is a set <m>M</m> together with a binary operation <m>\bullet </m> with the properties
 <ul>
 <li><p> <m>\bullet </m> is associative: <m>\forall a,b,c \in M</m>, <m>(a\bullet b)\bullet c=a\bullet (b\bullet c)</m>  and</p></li>
 <li><p> <m>\bullet </m> has an identity in <m>M</m>:  <m>\exists e\in M</m> such that <m>\forall a \in M</m>, <m>a\bullet e=e\bullet a=a</m></p></li>
-</ul></p></statement></definition>
+</ul></p></statement></definition>-->
 
 <note><p>Since the requirements for a group contain the requirements for a monoid, every group is a monoid.</p></note>
 
