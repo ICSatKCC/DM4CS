@@ -343,7 +343,7 @@ comparisons becomes the following:
 							</statement>
 						</algorithm>
 					</p>
-					<p><ol label="(a)">
+					<p><ol marker="(a)">
 
 							<li><p>Trace the Selection Sort on the list: 6, 3, 9, 2, 8. Show all steps, all value changes of <m>i,j, </m> and <m> minLoc</m> and the list at end of each <m>j</m> loop.</p></li>
 
@@ -357,7 +357,7 @@ comparisons becomes the following:
 
 				<answer>
 
-					<p><ol label="(a)">
+					<p><ol marker="(a)">
 
 							<li><p>	<ul>
 										<li><m>n = 5</m></li>

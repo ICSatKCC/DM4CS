@@ -762,7 +762,7 @@
 			  <statement>
 			    <p>
 						A die is rolled twice.  What is the probability that the sum of the faces	is greater than 7, given that
-				<ol label="(a)">
+				<ol marker="(a)">
 				  <li>
 				    <p>
 				      the first outcome was a 4?
@@ -787,7 +787,7 @@
 			    </p>
 			  </statement>
 			  <solution>
-			    <p>				<ol label="(a)">
+			    <p>				<ol marker="(a)">
 									  <li>
 									    <p>
 									      <m>\frac{1}{2} </m>
@@ -819,7 +819,7 @@
 			    <p>
 						A card is drawn at random from a deck of cards.  What is the probability
 						that
-						<ol label="(a)">
+						<ol marker="(a)">
 						  <li>
 						    <p>
 						      it is a heart, given that it is red?
@@ -878,7 +878,7 @@
 						</dl>
 			    </p>
 					<p>
-						<ol label="(a)">
+						<ol marker="(a)">
 						  <li>
 						    <p>
 						      Which of the following pairs of these events are independent?
@@ -934,7 +934,7 @@
 			  </statement>
 			  <solution>
 			    <p>
-						<ol label="(a)">
+						<ol marker="(a)">
 						  <li>
 						    <p>
 						      (1) and (2)
@@ -1069,7 +1069,7 @@
 are infected with a virus. Furthermore, suppose that when a test for the virus is given, 98% of the patients <em>actually infected</em> with the virus test positive, and that 1% of the patients <em>not infected</em> still test positive
 for it. What is the probability that:
 
-<ol label="(a)">
+<ol marker="(a)">
   <li>
     <p>
       a patient testing positive is actually infected with the virus?

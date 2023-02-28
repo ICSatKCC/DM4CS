@@ -534,7 +534,7 @@ probability that we win the car is equal to
   <statement>
     <p>Give a possible sample space <m>S</m> for each of
 			the following experiments:
-<ol label="(a)">
+<ol marker="(a)">
 			<li> <p>
 		An election decides between two candidates <m>A</m> and <m>B</m>.</p></li>
 
@@ -602,7 +602,7 @@ probability that we win the car is equal to
 <p>Consider a coin that has <m>0</m> on one side and <m>1</m> on the other side.
 We flip this coin once and roll a die twice, and are interested
 in the product of the three numbers.
-<ol label="(a)">
+<ol marker="(a)">
 <li>What is the sample space?</li>
 <li>How many possible events are there?</li>
 <li>If both the coin and the die are fair, how would you define the probability function
@@ -610,7 +610,7 @@ in the product of the three numbers.
 </ol>
 </p></statement>
 <answer>
-<p><ol label="(a)">
+<p><ol marker="(a)">
 	<li><p>The sample space is the products of the combinations of 1 coin flip and two dice rolls. We can use a
 			matrix similar to  <xref ref="ex-rolling-a-die-twice"/> above for the case where the coin flip results in a 0. The product for all entries is 0. Then we can make another matrix of the same size where the coin flip results in a 1. The product is just the product of the two dice rolls
 <me>
@@ -681,7 +681,7 @@ c=1 &amp;1 &amp;2 &amp;3 &amp;4 &amp;5 &amp;6 \\
 			<me>S = \{HHH,\ HHT,\ HTH,\ HTT,\ THH,\ THT,\ TTH,\ TTT\}</me>
 			(see <xref ref="ex-flipping-a-coin"/> and <xref ref="ex-flipping-a-coin-twice"/>).
 
-<ol label="(a)">
+<ol marker="(a)">
 			<li><p> <m>E = \{HHH,HHT,HTH,HTT\}</m>.</p></li>
 			<li><p> <m>E = \{HHH,TTT\}</m>.</p></li>
 			<li><p> <m>E = \{HHT,HTH,THH\}</m>.</p></li>
@@ -731,7 +731,7 @@ In other words, we have a uniform probability space.</p>
 
 <p>You are asked to determine the probability that in the sequence of
 <m>2n</m> flips, the coin comes up heads exactly <m>n</m> times:
-<ol label="(a)">
+<ol marker="(a)">
  <li>What is the event <m>A</m> that describes this?</li>
  <li>Determine <m>P(A)</m>.</li>
 </ol>
@@ -739,7 +739,7 @@ In other words, we have a uniform probability space.</p>
 </statement>
 <answer>
 	<p><m>|S| = 2^{2n} = (2^2)^n = 4^n</m> because each of the <m>2n</m> flips has 2 possible outcomes.
-		<ol label="(a)">
+		<ol marker="(a)">
     <li><p>Let <m>A</m> be the set of all sequences in <m>S</m> that have exactly <m>n</m> heads.</p></li>
     <li><p>We must determine <m>|A|</m>. To do this we must choose <m>n</m> flips to come up heads, out of <m>2n</m> flips total.
         <me>
@@ -758,7 +758,7 @@ In other words, we have a uniform probability space.</p>
 	A cup contains two pennies (P), one nickel (N), and one dime (D).
 	You choose one coin uniformly at random, and then you choose a
 	second coin from the remaining coins, again uniformly at random.
-		<ol label="(a)">
+		<ol marker="(a)">
 			<li> Let <m>S</m> be the sample space consisting of all ordered pairs
 			      of letters P, N, and D that represent the possible outcomes.
 			      Write out all elements of <m>S</m>.</li>

@@ -82,7 +82,7 @@ be presented as in <xref ref="fig-graph-10-2-2" text="type-global" />.</p>
 </figure>
 </answer>
 </exercise>
-<exercise number="4"><statement><p><ol label="(a)">
+<exercise number="4"><statement><p><ol marker="(a)">
 <li>Let <m>A</m> be the set of strings of 0's and 1's of length 3 or less. Define the relation of <m>D</m> on <m>A</m> by <m>x D y</m> if <m>x</m> is contained within <m>y</m>. For example, <m>01 D 101</m>. Draw a digraph for this relation. </li>
 <li> Do the same for the relation <m>P</m> defined by <m>x P y</m> if <m>x</m> is a prefix of <m>y</m>. For example, <m>10 P 101</m>, but <m>01 P 101</m> is false.</li>
 </ol></p>

@@ -43,7 +43,7 @@
 
 		<theorem xml:id="th-math-induction-basic"><title>The Principle of Mathematical Induction</title>
 			<statement><p> Let <m>p(n)</m> be a proposition over the positive integers.  If
-					<ol label="(1)">
+					<ol marker="(1)">
 						<li>  <m>p(1)</m> is true, and</li>
 						<li>  for all <m>n\geq 1</m>,  <m>p(n) \Rightarrow  p(n + 1)</m>,</li>
 					</ol>
@@ -97,7 +97,7 @@
 		<theorem xml:id="th-math-induction-generalized"><title>Principle of Mathematical Induction (Generalized)</title>
 			<statement><p> If <m>p(n)</m> is a proposition over <m>\{k_0 , k_0+ 1, k_0+ 2,\ldots  \}</m>, where
 					<m>k_0</m> is any integer, then <m>p(n)</m> is a tautology if</p>
-				<p><ol label="(1)">
+				<p><ol marker="(1)">
 						<li>  <m>p(k_0)</m> is true, and</li>
 						<li>  for all <m>n \geq k_0</m>,  <m>p(n) \Rightarrow  p(n + 1)</m>.</li>
 					</ol>
@@ -137,7 +137,7 @@
 		<theorem xml:id="th-math-induction-course-of-values"><title>The Course-of-Values Principle of Mathematical Induction</title>
 			<statement><p> If <m>p(n)</m> is a proposition over <m>\{k_0 , k_0+ 1, k_0+ 2,\ldots  \}</m>, where
 					<m>k_0</m> is any integer, then <m>p(n)</m> is a tautology if</p>
-				<p><ol label="(1)">
+				<p><ol marker="(1)">
 						<li>  <m>p(k_0)</m> is true, and</li>
 						<li>for all <m>n\geq k_0</m>,   <m>p(k_0), p(k_0 + 1), . . . , p(n) \Rightarrow  p(n + 1) </m>.</li>
 					</ol>
@@ -166,7 +166,7 @@
 
 		<axiom xml:id="sss-peano-postulates"><title>Peano Postulates</title><statement><p> The system of positive integers consists of a nonempty set, <m>\mathbb{P}</m>; a least element of <m>\mathbb{P}</m>, denoted 1; and a
 					<q>successor function,</q> s, with the properties</p>
-				<p><ol label="(1)">
+				<p><ol marker="(1)">
 						<li><p> If <m>k \in  \mathbb{P}</m> , then there is an element of <m>\mathbb{P}</m> called the successor of <m>k</m>, denoted <m>s(k)</m>.</p></li>
 						<li><p>  No two elements of <m>\mathbb{P}</m> have the same successor.</p></li>
 						<li><p>  No element of <m>\mathbb{P}</m> has <m>1</m> as its successor.</p></li>

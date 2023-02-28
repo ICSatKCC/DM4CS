@@ -701,12 +701,12 @@ Let <m>L</m> be a list of <m>n</m> numbers. By going through the pseudocode for
       </statement>
       </algorithm></p>
 
-<p><ol label="(a)">
+<p><ol marker="(a)">
  <li> Make a trace of the recursive calls for RecursiveFactorial(3)</li>
     <li>For RecursiveFactorial(3), how many times will the base case be executed?</li>
     </ol></p></statement>
 			<answer>
-        <p><ol label="(a)">
+        <p><ol marker="(a)">
             <li> <pre>
 FACTORIAL(3)
 	return 3 * FACTORIAL(2)
@@ -760,7 +760,7 @@ FACTORIAL(3)
       </statement>
       </algorithm></p>
 
-<p><ol label="(a)">
+<p><ol marker="(a)">
  <li> Make a trace of the recursive calls for RecursiveFibonacci(5)</li>
     <li>For RecursiveFibonacci(5), how many times will the base case be executed?</li>
     </ol></p></statement>
