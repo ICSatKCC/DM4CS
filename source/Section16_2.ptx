@@ -230,7 +230,7 @@
 					<h>General Base</h>
 				</idx>
 				<notation>
-					<usage>log_b a</usage>
+					<usage><m>log_b a</m></usage>
 					<description>Logarithm, base <m>b</m> of <m>a</m></description>
 				</notation>
 				<statement>

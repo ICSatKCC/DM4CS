@@ -150,8 +150,8 @@ that <m>Q</m> is indeed an equivalence relation. Be aware that since the element
 <p>Our next example involves the following fundamental relations on the set of integers.</p>
 <definition xml:id="def-congruence-mod-m"><title>Congruence Modulo <m>m</m></title>
 <idx>Congruence Modulo m</idx>
-<notation><usage>a \equiv_m b</usage><description><m>a</m> is congruent to <m>b</m> modulo <m>m</m></description></notation>
-<notation><usage>a \equiv b (\textrm{mod } m)</usage><description><m>a</m> is congruent to <m>b</m> modulo <m>m</m></description></notation>
+<notation><usage><m>a \equiv_m b</m></usage><description><m>a</m> is congruent to <m>b</m> modulo <m>m</m></description></notation>
+<notation><usage><m>a \equiv b (\textrm{mod } m)</m></usage><description><m>a</m> is congruent to <m>b</m> modulo <m>m</m></description></notation>
 <statement><p>Let <m>m</m> be a positive integer, <m>m\geq 2</m>.  We define <term>congruence modulo m</term> to be the relation <m>\equiv_m</m> defined on the integers by
 	<me>a \equiv_m b \Leftrightarrow m \mid (a-b)</me>
 </p></statement>
@@ -306,7 +306,7 @@ relation or a partial ordering? Explain.</p>
 <ol marker="(a)">
 <li><p>Verify that <m>R</m> is an equivalence relation on <m>A</m>.</p></li>
 <li><p>Let <m>a \in A</m> and define <m>c(a) = \{b \in A \mid a R b\}</m>.
-<notation><usage>c(a)</usage><description>the equivalence class of <m>a</m> under <m>R</m></description></notation> <m>c(a)</m> is called the <term>equivalence class of <m>a</m> under <m>R</m></term><idx>Equivalence Class</idx>. Find <m>c(a)</m> for each element <m>a \in A</m>.</p></li>
+<notation><usage><m>c(a)</m></usage><description>the equivalence class of <m>a</m> under <m>R</m></description></notation> <m>c(a)</m> is called the <term>equivalence class of <m>a</m> under <m>R</m></term><idx>Equivalence Class</idx>. Find <m>c(a)</m> for each element <m>a \in A</m>.</p></li>
 <li><p>Show that <m>\{c(a) \mid  a \in A\}</m> forms a partition of <m>A</m> for this set <m>A</m>.</p></li>
 <li><p>Let <m>R</m> be an equivalence relation on an arbitrary set <m>A</m>. Prove that the set of all equivalence classes under <m>R</m> constitutes a partition of <m>A</m>.
 </p></li>

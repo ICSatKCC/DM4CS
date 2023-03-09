@@ -14,7 +14,7 @@
 			<title>Direct Product</title>
 			<idx>Direct Product</idx>
 			<notation>
-				<usage>V_1\times V_2 \times \cdots \times V_n</usage>
+				<usage><m>V_1\times V_2 \times \cdots \times V_n</m></usage>
 				<description>The direct product of algebraic structures <m>V_1, V_2, \dots , V_n </m></description>
 			</notation>
 			<statement>

@@ -251,7 +251,7 @@
             <title>The <m>n</m>-cube</title>
             <idx>N-cube</idx>
             <notation>
-                <usage>Q_n</usage>
+                <usage><m>Q_n</m></usage>
                 <description>the <m>n</m>-cube</description>
             </notation>
             <statement>

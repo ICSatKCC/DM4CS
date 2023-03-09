@@ -34,7 +34,7 @@
         <title>Finite-State Machine</title>
         <idx>Finite-State Machine</idx>
         <notation>
-            <usage>(S, X, Z, w, t)</usage>
+            <usage><m>(S, X, Z, w, t)</m></usage>
             <description>A finite-state machine with states <m>S</m>, input alphabet <m>X</m>,
                 output alphabet <m>X</m>, and output function <m>w</m> and next-state function <m>t</m></description>
         </notation>

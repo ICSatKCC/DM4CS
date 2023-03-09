@@ -16,7 +16,7 @@
 			<ol marker="(a)">
 				<li>
 					<p><notation>
-							<usage>string1 + string2</usage>
+							<usage><m>string1 + string2</m></usage>
 							<description>The concatenation of <m>string1</m> and <m>string2</m></description>
 						</notation>
 						Let <m>B^*</m> be the set of all finite strings of 0's and 1's including the
@@ -201,7 +201,7 @@
 			<title>Group</title>
 			<idx>Group</idx>
 			<notation>
-				<usage>[G;\bullet ]</usage>
+				<usage><m>[G;\bullet ]</m></usage>
 				<description>a group with elements <m>G</m> and binary operation <m>\bullet </m></description>
 			</notation>
 			<statement>

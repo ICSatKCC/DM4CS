@@ -12,11 +12,11 @@
 		<idx>Join</idx>
 		<idx>Meet</idx>
 		<notation>
-			<usage>a \lor b</usage>
+			<usage><m>a \lor b</m></usage>
 			<description>the join, or least upper bound of <m>a</m> and <m>b</m></description>
 		</notation>
 		<notation>
-			<usage>a \land b</usage>
+			<usage><m>a \land b</m></usage>
 			<description>the meet, or greatest lower bound of <m>a</m> and <m>b</m></description>
 		</notation>
 		<statement>
@@ -45,7 +45,7 @@
 		<title>Lattice</title>
 		<idx>Lattice</idx>
 		<notation>
-			<usage>[L;\lor,\land]</usage>
+			<usage><m>[L;\lor,\land]</m></usage>
 			<description>A lattice with domain having meet and join operations</description>
 		</notation>
 		<statement>

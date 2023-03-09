@@ -23,7 +23,7 @@
 	</subsection>
 	<subsection xml:id="ss-truth-sets"><title>Truth Sets</title>
 		<definition xml:id="def-truth-set"><title>Truth Set</title><idx>Truth Set</idx>
-			<notation><usage>T_p</usage><description>the truth set of <m>p</m></description></notation><statement> <p>If <m>p</m> is a proposition over <m>U</m>, the truth set of <m>p</m> is <m>T_p = \{a \in  U \mid p(a) \textrm{ is true}\}</m>.</p>
+			<notation><usage><m>T_p</m></usage><description>the truth set of <m>p</m></description></notation><statement> <p>If <m>p</m> is a proposition over <m>U</m>, the truth set of <m>p</m> is <m>T_p = \{a \in  U \mid p(a) \textrm{ is true}\}</m>.</p>
 				</statement></definition>
 
 		<example xml:id="ex-set-prop"><title>Truth Set Example</title><p>The truth set of the proposition <m>\{1, 2\} \cap A = \emptyset</m>, taken as a proposition over the power set of <m>\{1, 2, 3, 4\}</m> is <m>\{\emptyset , \{3\}, \{4\}, \{3, 4\}\}</m>.
@@ -68,7 +68,7 @@
 			<title>Venn Diagram for <m>T_{p\to q}</m> </title>
 			<image width="70%" xml:id="sageplot-venn-truth-set-conditional">
 				<description>A two set Venn Diagram for<m>T_{p\to q}</m></description>
-				<sageplot>
+<!--				<sageplot>
 					m=2
 					scale = 1.7
 					sx=3
@@ -76,19 +76,19 @@
 					centers = [(cos(n*2*pi/m), sin(n*2*pi/m)) for n in range(m)]
 					clr = ['blue', 'blue', 'green']
 					G = Graphics()
-					r=lambda x,y:(x-centers[0][0])^2+(y-centers[0][1])^2 &lt; scale^2  or (x-centers[1][0])^2+(y-centers[1][1])^2 &gt; scale^2
+					r=lambda x,y:(x-centers[0][0])^2+(y-centers[0][1])^2 \lt scale^2  or (x-centers[1][0])^2+(y-centers[1][1])^2 > scale^2
 					G+=region_plot(r,(-sx,sx),(-sy,sy),plot_points=200,incol='lightblue',axes=False)
 					for i in range(m):
 					G += circle(centers[i], scale)
 					for i in range(m):
 					G += circle(centers[i], scale)
-					G+=line([[-sx,-sy],[sx,-sy],[sx,sy],[-sx,sy],[-sx,-sy]],rgbcolor=(0,0,0))
+					G+=line([[-sx,-sy],[sx,-sy],[sx,sy],[-sx,sy],[-sx,-sy]],rgbcolor=(0,0,0)) -->
 					<!--
 					G+=text('T',centers[0],fontsize='x-large')
 					G+=text('T',centers[1],fontsize='x-large')
 					-->
-					G
-				</sageplot>
+				<!--	G
+				</sageplot>  -->
 			</image>
 		</figure>
 

@@ -33,7 +33,7 @@
 			<title>Generating Function of a Sequence</title>
 			<idx>Generating Function</idx>
 			<notation>
-				<usage></usage>
+				<usage><m></m></usage>
 				<description></description>
 			</notation>
 			<statement>
@@ -243,15 +243,15 @@
 				<h>Operations on,</h>
 			</idx>
 			<notation>
-				<usage>S\uparrow</usage>
+				<usage><m>S\uparrow</m></usage>
 				<description><m>S</m> pop</description>
 			</notation>
 			<notation>
-				<usage>S\downarrow</usage>
+				<usage><m>S\downarrow</m></usage>
 				<description><m>S</m> push</description>
 			</notation>
 			<notation>
-				<usage>S*T</usage>
+				<usage><m>S*T</m></usage>
 				<description>Convolution of sequences <m>S</m> and <m>T</m></description>
 			</notation>
 			<statement>
@@ -410,11 +410,11 @@
 			<title>Multiple Pop and Push</title>
 			<idx>Multiple Pop and Push:</idx>
 			<notation>
-				<usage>S\uparrow p</usage>
+				<usage><m>S\uparrow p</m></usage>
 				<description>Multiple pop operation on <m>S</m></description>
 			</notation>
 			<notation>
-				<usage>S\downarrow p</usage>
+				<usage><m>S\downarrow p</m></usage>
 				<description>Multiple push operation on <m>S</m></description>
 			</notation>
 			<statement>

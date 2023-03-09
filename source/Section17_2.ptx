@@ -3,9 +3,13 @@
     <title>Program Correctness</title>
 
     <!--  <title>The Invariant Relation Theorem</title> -->
-    <p>
-        Under Construction!
-</p>
+    <introduction>
+        <p>
+            Under Construction!
+        </p>
+    </introduction>
+   
+        
     <subsection>
         <title>Two Exponentiation Algorithms</title>
         <p>Consider the following algorithm implemented in Sage to compute <m>a^m mod \, n</m>,
@@ -58,7 +62,7 @@
         <definition xml:id="def-pre-post-values">
             <title>Pre and Post Values</title>
             <notation>
-                <usage>\grave x, \acute x</usage>
+                <usage><m>\grave x, \acute x</m></usage>
                 <description>pre and post values of a variable <m>x</m></description>
             </notation>
             <statement>

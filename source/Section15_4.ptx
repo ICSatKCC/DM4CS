@@ -263,7 +263,7 @@
             <title>Machine of a Monoid</title>
             <idx>Machine of a Monoid</idx>
             <notation>
-                <usage>m(M)</usage>
+                <usage><m>m(M)</m></usage>
                 <description>The machine of monoid <m>M</m></description>
             </notation>
             <statement>

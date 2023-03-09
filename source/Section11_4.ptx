@@ -75,7 +75,7 @@
 			<title>Greatest Common Divisor</title>
 			<idx>Greatest Common Divisor (<m>\gcd</m>) </idx>
 			<notation>
-				<usage>\gcd(a,b)</usage>
+				<usage><m>\gcd(a,b)</m></usage>
 				<description>the greatest common divisor of <m>m</m> and <m>n</m></description>
 			</notation>
 			<statement>
@@ -443,7 +443,7 @@
 			<title>Modular Addition</title>
 			<idx>Modular Addition</idx>
 			<notation>
-				<usage>a +_n b</usage>
+				<usage><m>a +_n b</m></usage>
 				<description>the mod <m>n</m> sum of <m>m</m> and <m>n</m></description>
 			</notation>
 			<statement>
@@ -457,7 +457,7 @@
 			<title>Modular Multiplication</title>
 			<idx>Modular Multiplication</idx>
 			<notation>
-				<usage>a \times_n b</usage>
+				<usage><m>a \times_n b</m></usage>
 				<description>the mod <m>n</m> product of <m>m</m> and <m>n</m></description>
 			</notation>
 			<statement>
@@ -520,7 +520,7 @@
 				<h>Additive Group</h>
 			</idx>
 			<notation>
-				<usage>\mathbb{Z}_n</usage>
+				<usage><m>\mathbb{Z}_n</m></usage>
 				<description>The Additive Group of Integer Modulo <m>n</m></description>
 			</notation>
 			<statement>
@@ -549,7 +549,7 @@
 				<h>Multiplicative Group</h>
 			</idx>
 			<notation>
-				<usage>\mathbb{U}_n</usage>
+				<usage><m>\mathbb{U}_n</m></usage>
 				<description>The Multiplicative Group of Integer Modulo <m>n</m></description>
 			</notation>
 			<statement>

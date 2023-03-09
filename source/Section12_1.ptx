@@ -177,11 +177,11 @@
 		<idx>Greatest Element</idx>
 		<idx>Least Element</idx>
 		<notation>
-			<usage>\pmb{0}</usage>
+			<usage><m>\pmb{0}</m></usage>
 			<description>least element in a poset</description>
 		</notation>
 		<notation>
-			<usage>\pmb{1}</usage>
+			<usage><m>\pmb{1}</m></usage>
 			<description>greatest element in a poset</description>
 		</notation>
 		<statement>
@@ -214,7 +214,7 @@
 		<title>The Set of Divisors of an Integer</title>
 		<idx>Divisors of an Integer</idx>
 		<notation>
-			<usage>D_n</usage>
+			<usage><m>D_n</m></usage>
 			<description>the set of divisors of integer <m>n</m></description>
 		</notation>
 		<statement>

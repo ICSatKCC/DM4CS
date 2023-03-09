@@ -13,7 +13,7 @@
             <title>Cycle</title>
             <idx>Cycle</idx>
             <notation>
-                <usage>C_n</usage>
+                <usage><m>C_n</m></usage>
                 <description>A cycle with <m>n</m> edges.</description>
             </notation>
             <statement>

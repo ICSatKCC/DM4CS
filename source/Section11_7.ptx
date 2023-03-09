@@ -134,7 +134,7 @@
                 <h>Group</h>
             </idx>
             <notation>
-                <usage>G_1 \cong G_2</usage>
+                <usage><m>G_1 \cong G_2</m></usage>
                 <description><m>G_1</m> is isomorphic to <m>G_2</m></description>
             </notation>
             <statement>

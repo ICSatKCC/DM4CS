@@ -501,7 +501,7 @@
             <title>The Value of a Flow</title>
             <idx>Value of a Flow</idx>
             <notation>
-                <usage>V(f)</usage>
+                <usage><m>V(f)</m></usage>
                 <description>The value of flow <m>f</m></description>
             </notation>
             <statement>

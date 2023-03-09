@@ -20,10 +20,6 @@
             <title>Planar Graph/Plane Graph</title>
             <idx>Planar Graph</idx>
             <idx>Plane Graph</idx>
-            <notation>
-                <usage></usage>
-                <description></description>
-            </notation>
             <statement>
                 <p>A graph is planar if it can be drawn in a plane so that no edges cross. If a
                     graph is drawn so that no edges intersect, it is a plane graph, and such a
@@ -73,7 +69,7 @@
             <title>Path Graph</title>
             <idx>Path Graph</idx>
             <notation>
-                <usage>P_n</usage>
+                <usage><m>P_n</m></usage>
                 <description>a path graph of length <m>n</m></description>
             </notation>
             <statement>
@@ -283,7 +279,7 @@
             <idx>Graph Coloring</idx>
             <idx>Chromatic Number</idx>
             <notation>
-                <usage>\chi(G)</usage>
+                <usage><m>\chi(G)</m></usage>
                 <description>the chromatic number of <m>G</m></description>
             </notation>
             <statement>
@@ -680,7 +676,8 @@
     </exercises>
     <references>
         <title>Further Reading</title>
-        <biblio type="raw" xml:id="biblio-wilson-2013">Wilson, R., <title>Four Colors Suffice -
-                How the Map Problem Was Solved</title>Princeton, NJ: Princeton U. Press, 2013.</biblio>
+        <xref text="phrase-global" ref="biblio-wilson-2013" />
+       <!-- <biblio type="raw" xml:id="biblio-wilson-2013">Wilson, R., <title>Four Colors Suffice -
+                How the Map Problem Was Solved</title>Princeton, NJ: Princeton U. Press, 2013.</biblio> -->
     </references>
 </section>

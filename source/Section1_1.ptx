@@ -15,12 +15,14 @@
       be how to describe a set; that is, how do we most conveniently describe a set and the elements
       that are in it? If we are going to discuss a set for any length of time, we usually give it a
       name in the form of a capital letter (or occasionally some other symbol). In discussing set <m>
-      A</m>, if <m> x</m> is an element of <m> A</m>, then we will write <m>x \in A</m>.<notation>
-        <usage>x \in A</usage>
+      A</m>, if <m> x</m> is an element of <m> A</m>, then we will write <m>x \in A</m>.
+      <!-- notation elements only appear in the notation list in an appendix with reference to this paragraph location -->
+      <notation>
+        <usage><m><m>x \in A</m></m></usage>
         <description><m>x</m> is an element of <m>A</m></description>
       </notation> On the other
       hand, if <m> x</m> is not an element of <m> A</m>, we write <m>x \notin A</m>.<notation>
-        <usage>x \notin A</usage>
+        <usage><m>x \notin A</m></usage>
         <description><m>x</m> is not an element of <m>A</m></description>
       </notation> The most
       convenient way of describing the elements of a set will vary depending on the specific set. </p>
@@ -111,7 +113,7 @@
     <definition xml:id="cardinality">
       <title>Cardinality</title>
       <notation>
-        <usage>\lvert A \rvert </usage>
+        <usage><m>\lvert A \rvert </m></usage>
         <description> The number of elements in a finite set <m>A</m>. </description>
       </notation>
       <statement>
@@ -127,7 +129,7 @@
     <definition xml:id="def-subset">
       <title>Subset</title>
       <notation>
-        <usage>A \subseteq B</usage> <!-- why doesn't this appear in the html? -->
+        <usage><m>A \subseteq B</m></usage> <!-- why doesn't this appear in the html? -->
         <description>
           <m>A</m> is a subset of <m>B</m>. </description>
       </notation>
@@ -190,7 +192,7 @@
       Conversely, the expression that defines the word (or concept) can be replaced by the word. </p>
     <p>Occasionally there is need to discuss the set that contains no elements, namely the empty
       set, which is denoted by <m>\emptyset</m><notation>
-        <usage>\emptyset</usage>
+        <usage><m>\emptyset</m></usage>
         <description>the empty set</description>
       </notation><idx>Empty set</idx>. This set is
       also called the null set.</p>

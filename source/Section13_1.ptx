@@ -142,7 +142,7 @@
             <title>Complete Undirected Graph</title>
             <idx>Complete Undirected Graph.</idx>
             <notation>
-                <usage>K_n</usage>
+                <usage><m>K_n</m></usage>
                 <description>A complete undirected graph with <m>n</m> vertices</description>
             </notation>
             <statement>
@@ -431,7 +431,7 @@ fig
             <title>Degree of a vertex</title>
             <idx>Degree</idx>
             <notation>
-                <usage>deg(v), indeg(v), outdeg(v)</usage>
+                <usage><m>deg(v), indeg(v), outdeg(v)</m></usage>
                 <description>degree, indegree and outdegree of vertex <m>v</m></description>
             </notation>
             <statement>
