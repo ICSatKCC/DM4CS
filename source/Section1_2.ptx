@@ -124,8 +124,7 @@
 				<caption>Venn Diagram for the Intersection of Two Sets</caption>
 				<image width="60%" xml:id="sageplot-venn-intersection">
 					<description>A two set Venn Diagram for intersection</description>
-					<sageplot>
-						<input><xi:include parse="text" href="./sage_venn-intersection.py" /></input>
+					<sageplot><xi:include parse="text" href="./sage_venn-intersection.py" />
 						<!-- m=2
 						scale = 1.7
 						sx=3

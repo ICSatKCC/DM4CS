@@ -690,7 +690,7 @@
 						<m>S(k)=k</m>
 					</cell>
 					<cell>
-						<m>G(S;z)=\frac{z}{(1-z)^2}</m>
+						<m>G(S;z)=\frac{1}{(1-z)^2}</m>
 					</cell>
 				</row>
 				<row>
