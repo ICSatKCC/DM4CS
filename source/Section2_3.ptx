@@ -93,9 +93,9 @@
 						clr = ['blue', 'blue', 'green']
 						G = Graphics()
 						for i in range(m):
-						G += circle(centers[i], scale)
+							G += circle(centers[i], scale)
 						for i in range(m):
-						G += circle(centers[i], scale)
+							G += circle(centers[i], scale)
 						G+=line([[-sx,-sy],[sx,-sy],[sx,sy],[-sx,sy],[-sx,-sy]],rgbcolor=(0,0,0))
 						G+=text('$A_2$',lcenters[0],fontsize='x-large')
 						G+=text('$A_1$',lcenters[1],fontsize='x-large')
