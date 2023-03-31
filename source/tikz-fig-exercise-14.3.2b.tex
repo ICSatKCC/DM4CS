@@ -1,0 +1,41 @@
+\begin{tikzpicture}[
+    > = stealth, % arrow head style
+    shorten > = 1pt, % don't touch arrow head to node
+    auto,
+    node distance = 3cm, % distance between nodes
+    semithick % line style
+]
+
+\tikzstyle{ev8ry state}=[
+    draw = black,
+    thick,
+    fill = white,
+    minimum size = 4mm
+]
+
+    \node[state] (v4) at (0,0) {$4$};
+    \node[state] (v5) at (1.5, -2.5) {$5$};
+    \node[state] (v6) at (4, -4) {$6$};
+    \node[state] (v7) at (6.5, -2.5) {$7$};
+    \node[state] (v8) at (8, 0) {$8$};
+    \node[state] (v1) at (6.5, 2.5) {$1$};
+    \node[state] (v2) at (4, 4) {$2$};
+    \node[state] (v3) at (1.5, 2.5) {$3$};
+
+    \path[-] (v4) edge node [sloped, above] {12} (v3);
+    \path[-] (v4) edge node [sloped, above] {13} (v5);
+    \path[-] (v4) edge node [sloped, above] {15} (v7);
+    \path[-] (v4) edge node [pos=0.2,sloped, above] {7} (v1);
+    \path[-] (v5) edge node [sloped, above] {13} (v6);
+    \path[-] (v5) edge node [pos=0.1, sloped, above] {9} (v8);
+    \path[-] (v5) edge node [sloped, below] {14} (v2);
+    \path[-] (v6) edge node [sloped, above] {12} (v7);
+    \path[-] (v6) edge node [pos=0.2, sloped, above] {16} (v3);
+    \path[-] (v6) edge node [sloped, above] {7} (v1);
+    \path[-] (v7) edge node [sloped, above] {11} (v8);
+    \path[-] (v7) edge node [sloped, below] {10} (v2);
+    \path[-] (v8) edge node [sloped, above] {10} (v1);
+    \path[-] (v8) edge node [pos=0.2, sloped, above] {8} (v3);
+    \path[-] (v1) edge node [sloped, above] {10} (v2);
+    \path[-] (v2) edge node [sloped, above] {11} (v3);
+\end{tikzpicture}

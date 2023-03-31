@@ -13,7 +13,8 @@
       \newcommand{\R}{\mathbb R} </macros>
     <latex-image-preamble>
       \usepackage{amsmath}
-      \usepackage{tikz}
+      \usepackage{pgf, tikz}
+      \usetikzlibrary{arrows, automata}
     </latex-image-preamble>
   </docinfo>
 

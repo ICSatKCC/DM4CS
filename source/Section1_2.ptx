@@ -125,24 +125,6 @@
 				<image width="60%" xml:id="sageplot-venn-intersection">
 					<description>A two set Venn Diagram for intersection</description>
 					<sageplot><xi:include parse="text" href="./sage_venn-intersection.py" />
-						<!-- m=2
-						scale = 1.7
-						sx=3
-						sy=2
-						centers = [(cos(n*2*pi/m), sin(n*2*pi/m)) for n in range(m)]
-						clr = ['blue', 'blue', 'green']
-						G = Graphics()
-						r=lambda x,y:(x-centers[0][0])^2+(y-centers[0][1])^2 &lt; scale^2 and \
-						(x-centers[1][0])^2+(y-centers[1][1])^2 &lt; scale^2
-						G+=region_plot(r,(-sx,sx),(-sy,sy),plot_points=200,incol='lightblue',axes=False)
-						for i in range(m):
-							G += circle(centers[i], scale)
-						for i in range(m):
-							G += circle(centers[i], scale)
-						G+=line([[-sx,-sy],[sx,-sy],[sx,sy],[-sx,sy],[-sx,-sy]],rgbcolor=(0,0,0))
-						G+=text('B',centers[0],fontsize='x-large')
-						G+=text('A',centers[1],fontsize='x-large')
-						G -->
 					</sageplot>
 				</image>
 			</figure>
@@ -152,25 +134,7 @@
 				</caption>
 				<image width="60%" xml:id="sageplot-venn-union">
 					<description>A two set Venn Diagram for Union</description>
-					<sageplot>
-						<!-- <xi:include parse="text" href="./sage_venn-union.py" /> -->
-						m=2
-						scale = 1.7
-						sx=3
-						sy=2
-						centers = [(cos(n*2*pi/m), sin(n*2*pi/m)) for n in range(m)]
-						clr = ['blue', 'blue', 'green']
-						G = Graphics()
-						r=lambda x,y:(x-centers[0][0])^2+(y-centers[0][1])^2 &lt; scale^2 or (x-centers[1][0])^2+(y-centers[1][1])^2 &lt; scale^2
-						G+=region_plot(r,(-sx,sx),(-sy,sy),plot_points=200,incol='lightblue',axes=False)
-						for i in range(m):
-							G += circle(centers[i], scale)
-						for i in range(m):
-							G += circle(centers[i], scale)
-						G+=line([[-sx,-sy],[sx,-sy],[sx,sy],[-sx,sy],[-sx,-sy]],rgbcolor=(0,0,0))
-						G+=text('B',centers[0],fontsize='x-large')
-						G+=text('A',centers[1],fontsize='x-large')
-						G
+					<sageplot><xi:include parse="text" href="./sage_venn-union.py" />
 					</sageplot>
 				</image>
 			</figure>
@@ -209,25 +173,7 @@
 			<caption>Venn Diagram for <m>B - A</m></caption>
 			<image width="60%" xml:id="sageplot-venn-complement1">
 				<description>A Venn Diagram for the complement of <m>A</m> relative to <m>B</m></description>
-				<sageplot>
-				<!--	<xi:include parse="text" href="./sage_venn-compliment1.py" />-->
-					m=2
-					scale = 1.7
-					sx=3
-					sy=2
-					centers = [(cos(n*2*pi/m), sin(n*2*pi/m)) for n in range(m)]
-					clr = ['blue', 'blue', 'green']
-					G = Graphics()
-					r=lambda x,y:(x-centers[0][0])^2+(y-centers[0][1])^2 &lt; scale^2 and ~(x-centers[1][0])^2+(y-centers[1][1])^2 &lt; scale^2
-					G+=region_plot(r,(-sx,sx),(-sy,sy),plot_points=200,incol='lightblue',axes=False)
-					for i in range(m):
-						G += circle(centers[i], scale)
-					for i in range(m):
-						G += circle(centers[i], scale)
-					G+=line([[-sx,-sy],[sx,-sy],[sx,sy],[-sx,sy],[-sx,-sy]],rgbcolor=(0,0,0))
-					G+=text('B',centers[0],fontsize='x-large')
-					G+=text('A',centers[1],fontsize='x-large')
-					G
+				<sageplot><xi:include parse="text" href="./sage_venn-compliment1.py" />
 				</sageplot>
 			</image>
 		</figure>-->
@@ -272,18 +218,7 @@
 				<caption>Venn Diagram for <m>\overline{A}</m></caption>
 				<image width="60%" xml:id="sageplot-venn-complement2">
 					<description>A Venn Diagram for the complement of a set.</description>
-					<sageplot>
-						<!-- <xi:include parse="text" href="./sage_venn-compliment2.py" /> -->
-						scale = 1.7
-						sx=3
-						sy=2
-						G = Graphics()
-						r=lambda x,y: x^2+y^2 &gt; scale^2
-						G+=region_plot(r,(-sx,sx),(-sy,sy),plot_points=200,incol='lightblue',axes=False)
-						G += circle([0,0], scale)
-						G+=line([[-sx,-sy],[sx,-sy],[sx,sy],[-sx,sy],[-sx,-sy]],rgbcolor=(0,0,0))
-						G+=text('A',[0,0],fontsize='x-large')
-						G
+					<sageplot><xi:include parse="text" href="./sage_venn-compliment2.py" />
 					</sageplot>
 				</image>
 			</figure>
@@ -291,20 +226,7 @@
 				<caption>Venn Diagram for <m>A-B</m> when <m>B</m> is a subset of <m>A</m></caption>
 				<image width="60%" xml:id="sageplot-venn-complement3">
 					<description>A Venn Diagram for the complement relative to a superset</description>
-					<sageplot>
-						m=1
-						scale = 1.7
-						sx=3
-						sy=2
-						G = Graphics()
-						r=lambda x,y: x^2+y^2 &lt; scale^2 and (x-0.75)^2+y^2 &gt; 0.75^2
-						G+=region_plot(r,(-sx,sx),(-sy,sy),plot_points=200,incol='lightblue',axes=False)
-						G += circle([0,0], scale)
-						G += circle([0.75,0], 0.75)
-						G+=line([[-sx,-sy],[sx,-sy],[sx,sy],[-sx,sy],[-sx,-sy]],rgbcolor=(0,0,0))
-						G+=text('A',[-1,0],fontsize='x-large')
-						G+=text('B',[0.75,0],fontsize='x-large')
-						G
+					<sageplot><xi:include parse="text" href="./sage_venn-compliment3.py" />
 					</sageplot>
 				</image>
 			</figure>
@@ -347,25 +269,7 @@
 				<caption>Venn Diagram for the symmetric difference <m>A \oplus B</m></caption>
 				<image width="60%" xml:id="sageplot-venn-symmetric">
 					<description>A two set Venn Diagram for the symmetric difference of two sets.</description>
-					<sageplot>
-						<!--<xi:include parse="text" href="./sage_venn-symmetric.py" />-->
-						m=2
-						scale = 1.7
-						sx=3
-						sy=2
-						centers = [(cos(n*2*pi/m), sin(n*2*pi/m)) for n in range(m)]
-						clr = ['blue', 'blue', 'green']
-						G = Graphics()
-						r=lambda x,y:((x-centers[0][0])^2+(y-centers[0][1])^2 &lt; scale^2  or (x-centers[1][0])^2+(y-centers[1][1])^2 &lt; scale^2) and ~((x-centers[0][0])^2+(y-centers[0][1])^2 &lt; scale^2  and (x-centers[1][0])^2+(y-centers[1][1])^2 &lt; scale^2)
-						G+=region_plot(r,(-sx,sx),(-sy,sy),plot_points=200,incol='lightblue',axes=False)
-						for i in range(m):
-							G += circle(centers[i], scale)
-						for i in range(m):
-							G += circle(centers[i], scale)
-						G+=line([[-sx,-sy],[sx,-sy],[sx,sy],[-sx,sy],[-sx,-sy]],rgbcolor=(0,0,0))
-						G+=text('B',centers[0],fontsize='x-large')
-						G+=text('A',centers[1],fontsize='x-large')
-						G
+					<sageplot><xi:include parse="text" href="./sage_venn-symmetric.py" />
 					</sageplot>
 				</image>
 			</figure>

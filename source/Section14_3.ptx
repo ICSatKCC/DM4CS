@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="s-rooted-trees">
+<section xml:id="s-rooted-trees" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Rooted Trees</title>
     <idx>Rooted Trees</idx>
 
@@ -344,18 +344,23 @@
             <statement>
                 <p> Use Kruskal's algorithm to find a minimal spanning tree for the following
                     graphs. In addition to the spanning tree, find the final rooted tree in the
-                    algorithm. When you merge two trees in the algorithm, make the root with the
-                    lower number the root of the new tree.</p>
-                <figure xml:id="fig-exercise-14-3-2a">
-                    <caption />
-                    <image width="100%" source="images/fig-exercise-14-3-2a.png">
-                        <description>Figure for exercise 14-3-2a</description>
+                    algorithm. When you merge two trees in the algorithm, make the root of the tree with the
+                    lower vertex number the root of the new tree.</p>
+                <figure >
+                    <caption>Graph 2(a)</caption>
+                    <image xml:id="fig-exercise-14-3-2a" width="100%">
+                     <description>Figure for exercise 14.3.2a</description>
+                    <!-- <image width="100%" source="images/fig-exercise-14-3-2a.png"> -->
+                        <latex-image><xi:include parse="text" href="./tikz-fig-exercise-14.3.2.tex" />
+                        </latex-image>
                     </image>
                 </figure>
-                <figure xml:id="fig-exercise-14-3-2b">
-                    <caption />
-                    <image width="100%" source="images/fig-exercise-14-3-2b.png">
-                        <description>Figure for exercise 14-3-2b</description>
+                <figure>
+                    <caption>Graph 2(b)</caption>
+                    <image xml:id="fig-exercise-14-3-2b" width="100%">
+                     <description>Figure for exercise 14.3.2b</description>
+                        <latex-image><xi:include parse="text" href="./tikz-fig-exercise-14.3.2b.tex" />
+                        </latex-image>
                     </image>
                 </figure>
 

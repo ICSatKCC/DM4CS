@@ -1,0 +1,13 @@
+\begin{tikzpicture}[->,> = latex']
+    \tikzset{vertex/.style = {shape=circle,draw,minimum size=1.5em}}
+
+    \node[initial,state] (v1) at  (0,0) {$s$};
+    \node[state] (v2) at  (3,2) {$a$};
+    \node[state] (v3) at  (3,-2) {$b$};
+
+    \path (v1) edge node[above] {1}(v2);
+    \path (v1) edge node[above] {0}(v3);
+    \path (v3) edge [bend left] node[above, left] {1} (v2);
+    \path (v2) edge [bend left]  node[above, right] {0}(v3);
+    \path (v3) edge [loop right] node[above, right] {0} (v3);
+\end{tikzpicture}

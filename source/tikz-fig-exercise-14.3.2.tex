@@ -1,0 +1,38 @@
+\begin{tikzpicture}[
+    > = stealth, % arrow head style
+    shorten > = 1pt, % don't touch arrow head to node
+    auto,
+    node distance = 3cm, % distance between nodes
+    semithick % line style
+]
+
+\tikzstyle{every state}=[
+    draw = black,
+    thick,
+    fill = white,
+    minimum size = 4mm
+]
+
+    \node[state] (va) {$1$};
+    \node[state] (vb) [right of=va] {$2$};
+    \node[state] (vc) [right of=vb] {$3$};
+    \node[state] (vd) [right of=vc] {$4$};
+    \node[state] (ve) [above right of=va] {$5$};
+    \node[state] (vf) [right of=ve] {$6$};
+    \node[state] (vg) [right of=vf] {$7$};
+    \node[state] (vh) [right of=vg] {$8$};
+
+    \path[-] (va) edge node {21} (ve);
+    \path[-] (va) edge node {41} (vb);
+    \path[-] (vb) edge node {32} (vc);
+    \path[-] (vb) edge node {42} (ve);
+    \path[-] (vb) edge node {22} (vf);
+    \path[-] (vc) edge node {29} (vd);
+    \path[-] (vc) edge node {31} (vg);
+    \path[-] (vd) edge node {23} (vg);
+    \path[-] (vd) edge node {44} (vh);
+    \path[-] (ve) edge node {20} (vf);
+    \path[-] (vf) edge node {62} (vg);
+    \path[-] (vd) edge node {23} (vg);
+    \path[-] (vg) edge node {45} (vh);
+\end{tikzpicture}
