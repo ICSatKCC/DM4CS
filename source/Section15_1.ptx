@@ -1,345 +1,253 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="s-Monoids">
-	<title>Monoids</title>
-	<idx>Monoids</idx>
+<section xml:id="s-Strings">
+	<title>Strings</title>
+	<idx>String</idx>
+	<introduction>
+		<p> In computer science courses, we discuss many algorithms and computational models that
+			manipulate sequences: one-dimensional arrays, linked lists, blocks of text, walks in
+			graphs, sequences of executed instructions, and so on. Ultimately the input and output
+			of any algorithm must be representable as a finite string of symbols—the raw contents of
+			some contiguous portion of the computer's memory. Reasoning about computation requires
+			reasoning about strings.</p>
 
-	<p>Recall the definition of a monoid from <xref ref="def-monoid" /></p>
+		<p> This section lists several formal definitions and formal induction proofs related to
+			strings. These definitions and proofs are <em>intentionally</em> much more detailed than
+			normally used in practice—most people's intuition about strings is fairly accurate—but
+			the extra precision is necessary for any sort of formal proof. It may be helpful to
+			think of this material as part of the “assembly language” of theoretical computer
+			science. We normally think about computation at a much higher level of abstraction, but
+			ultimately every argument must “compile” down to these (and similar) definitions.</p>
 
+		<p>But the actual definitions and theorems are not the point. The point of
+			playing with this material is to get some experience working with formal/mechanical
+			definitions and proofs, especially inductive definitions and recursive proofs. Or should
+			I say recursive definitions and inductive proofs? Whatever, they're the same thing.
+			Strings are a particularly simple and convenient playground for induction/recursion;
+			which you will see many more of in an Algorithms course. When you read this section,
+			don't just look at the content of the definitions and proofs; pay close attention to
+			their structure and the process for creating them. </p>
+	</introduction>
 
-	<!--<definition
-	xml:id="def-monoid"><title>Monoid</title><idx>Monoid</idx>
-<statement><p>A monoid is a set <m>M</m> together with a binary operation <m>\bullet </m> with the
-	properties
-<ul>
-<li><p> <m>\bullet </m> is associative: <m>\forall a,b,c \in M</m>, <m>(a\bullet b)\bullet
-	c=a\bullet (b\bullet c)</m>  and</p></li>
-<li><p> <m>\bullet </m> has an identity in <m>M</m>:  <m>\exists e\in M</m> such that <m>\forall a
-	\in M</m>, <m>a\bullet e=e\bullet a=a</m></p></li>
-</ul></p></statement></definition>-->
+	<subsection xml:id="subsec-Strings">
+		<title>Strings</title>
+		<definition xml:id="def-alphabet">
+			<title>Alphabet</title>
+			<idx>Alphabet.</idx>
+			<statement>
+				<p> Fix an arbitrary finite set <m>\Sigma</m> called the <term> alphabet</term>; the
+					individual elements of <m>\Sigma</m> are called <term>symbols</term> or <term>
+					characters</term>. As a notational convention, this chapter will always use
+					lower-case letters near the start of the English alphabet <m>(a, b, c, . . . )</m>
+					as symbol variables, and never as explicit symbols. For explicit symbols, we
+					will use upper-case letters <m>(A, B, C, . . . )</m>, digits <m>(0, 1,2, . . . )</m>,
+					or other symbols <m>(\diamond, \$, \#, \cdot, . . . )</m> that are clearly
+					distinguishable from variables. </p>
+			</statement>
+		</definition>
 
-	<note>
-		<p>Since the requirements for a group contain the requirements for a monoid, every group is
-			a monoid.</p>
-	</note>
+		<definition
+			xml:id="def-string">
+			<title>String</title>
+			<idx>
+				<h>String.</h>
+			</idx>
+			<notation>
+				<usage>
+					<m>\epsilon</m>
+				</usage>
+				<description>symbol for empty string</description>
+			</notation>
 
-	<example xml:id="ex-some-monoids">
-		<title>Some Monoids</title>
+			<statement>
+				<p> A <term>string</term> (or <term>word</term>) over <m>\Sigma</m> is a finite
+					sequence of zero or more symbols from <m>\Sigma</m>. Formally, a string <m>w</m>
+					over <m>
+						\Sigma</m> is defined recursively as either <ul>
+						<li>
+							<p> the empty string, denoted by the Greek letter <m>\epsilon</m>
+					(epsilon), or </p>
+						</li>
+						<li>
+							<p> an ordered pair <m>(a, x)</m>, where <m>a</m> is a symbol in <m>
+					\Sigma</m> and <m>x</m> is a string over <m>\Sigma</m>. </p>
+						</li>
+					</ul>
+				</p>
+			</statement>
+		</definition>
+
+		<p> We normally write either <term>
+				<m>a \cdot x</m>
+			</term> or simply <term>
+				<m>ax</m>
+			</term> to denote the ordered pair <m>(a,x)</m>. Similarly, we
+			normally write explicit strings as sequences of symbols instead of nested ordered pairs;
+			for example, STRING is convenient shorthand for the formal expression <m>(S, (T, (R, (I,
+			(N, (G,
+				\epsilon))))))</m>. As a notational convention, we will use lower-case letters near
+			the end of the English alphabet <m>(. . . , w, x, y, z)</m> for string variables, and
+			UPPERCASE TEXT to typeset explicit (non-empty) strings.</p>
+
+		<p>The set of all strings over <m>\Sigma</m> is denoted<term>
+				<m>\Sigma^*</m>
+			</term> (pronounced “sigma star”). It is very important
+			to remember that every element of <m>\Sigma^*</m> is a <em> finite </em> string,
+			although <m>\Sigma^*</m>itself is an infinite set containing strings of every possible <em>
+			finite</em> length.</p>
+	</subsection>
+
+	<subsection xml:id="subsec-String-Recursive-Functions">
+		<title>Two Recursive Functions</title>
+		<p> Our first several proofs about strings will involve two natural functions, one giving
+			the length of a string, the other gluing two strings together into a larger string.
+			These two functions behave exactly the way you think they do, but if we actually want to <em>
+			prove</em> anything about them, we first have to <em>define</em> them in a way that
+			supports formal proofs. Because the objects on which these functions act (strings) are
+			defined recursively, the functions must also be defined recursively. </p>
+
+		<definition xml:id="def-string-length">
+			<title>String Length</title>
+			<idx>
+				<h>String Length</h>
+			</idx>
+			<statement>
+				<p> The <term>length <m>|w|</m></term> of a string <m>w</m> is the number of symbols
+					in <m>w</m>, defined formally as follows: <me>
+						|w| =
+						\begin{cases}
+						0, &amp; \text{if}\ w = \epsilon \\
+						1 + |x| , &amp; \text{if}\ w = ax.
+						\end{cases}
+					</me>
+				</p>
+
+			</statement>
+		</definition>
 		<p>
-			<ol marker="(a)">
+			For example, the string FIFTEEN has length 7, the string SEVEN has length 5, and the
+			string 5
+			has length 1. Although they are formally different objects, we do not normally
+			distinguish
+			between symbols and strings of length 1.
+		</p>
+
+		<definition xml:id="def-string-concatenation">
+			<title>String Concatenation</title>
+			<idx>
+				<h>String Concatenation</h>
+			</idx>
+			<notation>
+				<usage>
+					<m>\bullet</m>
+				</usage>
+				<description>symbol for string concatenation</description>
+			</notation>
+			<statement>
+				<p> The <term>concatenation</term> of two strings <m>x</m> and <m>y</m>, denoted
+					either <m>x \bullet y</m> or simply <m>x y</m>, is the unique string containing
+					the characters of <m>x</m> in order, followed by the characters in <m>y</m> in
+					order. For example, the string NOWHERE is the concatenation of the strings NOW
+					and HERE; that is, NOW <m>\bullet</m> HERE = NOWHERE. (On the other hand, HERE <m>
+					\bullet</m> NOW = HERENOW.) Formally, concatenation is defined recusively as
+					follows: <me>
+						w \bullet z =
+						\begin{cases}
+						z, &amp; \text{if}\ w = \epsilon \\
+						a \cdot (x \bullet z) , &amp; \text{if}\ w = ax.
+						\end{cases}
+					</me>
+					(Here we are using a larger dot <m>\bullet</m> to formally distinguish the
+					operator that concatenates two arbitrary strings from the operation <m>\cdot</m>
+					that builds a string from a single character and a string.) </p>
+				<p>When we from describe the concatenation of more than two strings, we normally
+					omit all dots and parentheses, writing <m>wxyz</m> instead of <m>(w \bullet (x
+					\bullet y)) \bullet z</m>, for example. This simplification is justified by the
+					fact (which we will prove shortly) that the function <m>\bullet</m> is
+					associative. </p>
+			</statement>
+		</definition>
+	</subsection>
+	<subsection xml:id="subsec-Induction-on-Strings">
+		<title>Induction on Strings</title>
+		<p> Induction is <em>the</em> standard technique for proving statements about recursively
+			defined objects. Hopefully you are already comfortable proving statements about natural
+			numbers via induction, but induction is actually a far more general technique. Several
+			different variants of induction can be used to prove statements about more general
+			structures; here I describe the variant that I recommend (and actually use in practice).
+			This variant follows two primary design considerations: <ul>
 				<li>
-					<p> The power set of any set together with any one of the operations
-						intersection, union, or symmetric difference is a monoid.</p>
-				</li>
-				<li>
-					<p> The set of integers, <m>\mathbb{Z}</m>, with multiplication, is a monoid.
-						With addition, <m>\mathbb{Z}</m> is also a monoid.</p>
-				</li>
-				<li>
-					<p> The set of <m>n\times n</m> matrices over the integers, <m>M_n(\mathbb{Z})</m>
-						, <m>n\geq 2</m>, with matrix multiplication, is a monoid. This follows from
-						the fact that matrix multiplication is associative and has an identity, <m>
-						I_n</m>. This is an example of a noncommutative monoid since there are
-						matrices, <m>A</m> and <m>B</m>, for which <m>A B \neq B A</m>.</p>
+					<p>
+						<em>The case structure of the proof should mirror the case structure of the
+			recursive definition.</em> For example, if you are proving something about all <em>
+			strings</em>, your proof should have two cases: Either (the base case or basis step)
+			string <m>w = \epsilon</m>, or (the recursive case in the inductive step) string <m>w =
+			ax</m> for some symbol <m>a</m> and string <m>x</m>. </p>
 				</li>
 				<li>
 					<p>
-						<m>\left[\mathbb{Z}_n;\times_n\right],n\geqslant 2</m>, is a monoid with
-						identity 1. </p>
+						<em>The inductive hypothesis should be as strong as possible.</em> The
+			(strong) inductive hypothesis for statements about natural numbers is <em>always</em>
+			"Assume the statement is true for all <m>j</m> such that <m>1 \leq j \leq k</m>." Then
+			the inductive step is done on <m>k+1</m>. I recommend adopting a similar inductive
+			hypothesis for strings: “Assume the statement is true for all strings <m>x</m>, such
+			that <m>|x| \lt |w| </m>. Then for the case <m>w = ax</m>, we have <m>|x| = |w| - 1 \lt
+			|w|</m> by definition of <m>|w|</m>, so the inductive hypothesis applies to <m>x</m>
+					</p>
 				</li>
-				<li>
-					<p> Let <m>X</m> be a nonempty set. The set of all functions from <m>X</m> into <m>
-						X</m>, often denoted <m>X^X</m>, is a monoid over function composition. In
-						Chapter 7, we saw that function composition is associative. The function <m>i:X\to
-						X</m> defined by <m>i(a)=a</m> is the identity element for this system. If <m>\lvert
-						X\rvert</m> is greater than 1 then it is a noncommutative monoid. If <m>X</m>
-						is finite, <m>\left\lvert X^X\right\rvert =\lvert X\rvert ^{\lvert X\rvert }</m>
-						. For example, if <m>B=\{0,1\}, \left\lvert B^B\right\rvert=4</m>. The
-						functions <m>z,u,i,\textrm{ and } t,</m> defined by the graphs in <xref
-							ref="fig-functions-on-B2" text="type-global" />, are the elements of <m>
-						B^B</m> . This monoid is not a group. Do you know why?</p>
-					<p>One reason why <m>B^B</m> is noncommutative is that <m>t \circ z \neq z \circ
-						t</m> because <m>(t\circ z)(0)=t(z(0))=t(0)=1</m> while <m>(z\circ
-						t)(0)=z(t(0))=z(1)=0</m>.</p>
-				</li>
-			</ol>
+			</ul>
 		</p>
-	</example>
-	<figure xml:id="fig-functions-on-B2">
-		<caption>The functions on <m>B_2</m>
-		</caption>
-		<image width="70%" source="images/fig-functions-on-B2.png">
-			<description>The functions on <m>B_2</m></description>
-		</image>
-	</figure>
-	<p>Virtually all of the group concepts that were discussed in Chapter 11 are applicable to
-		monoids. When we introduced subsystems, we saw that a submonoid of monoid <m>M</m> is a
-		subset of <m>M</m>; that is, it is a monoid with the operation of <m>M</m>. To prove that a
-		subset is a submonoid, you can apply the following theorem.</p>
-
-	<theorem xml:id="th-submonoid">
-		<title>Submonoid Test</title>
-		<statement>
-			<p>Assume <m>[M; \bullet ]</m> is a monoid and <m>K</m> is a nonempty subset of <m>M</m>.
-				Then <m>K</m> is a submonoid of <m>M</m> if and only if the following two conditions
-				are met. <ul>
-					<li>
-						<p>If <m>a,b\in K</m>, then. <m>a\bullet b\in K</m>; i. e., <m>K</m> is
-				closed with under <m>\bullet </m>.</p>
-					</li>
-					<li>
-						<p>The identity of <m>M</m> belongs to <m>K</m>.</p>
-					</li>
-				</ul></p>
-		</statement>
-	</theorem>
-
-	<p>Often we will want to discuss the smallest submonoid that includes a certain subset <m>S</m>
-		of a monoid <m>M</m>. This submonoid can be defined recursively by the following definition.</p>
-
-	<definition xml:id="def-submonoid-generated-by-a-set">
-		<title>Submonoid Generated by a Set</title>
-		<idx>
-			<h>Submonoid</h>
-			<h>Generated by a Set</h>
-		</idx>
-		<statement>
-			<p>If <m>S</m> is a subset of monoid <m>[M;\bullet ]</m>, the submonoid generated by <m>
-				S</m>, <m>\langle S\rangle</m>, is defined by:. <ol marker="(a)">
-					<li>
-						<p> (Basis) The identity of <m>M</m> belongs to <m>\langle
-								S\rangle</m>; and <m>a\in S \Rightarrow a\in \langle S \rangle</m>. </p>
-					</li>
-					<li>
-						<p> (Recursion) <m>a,b\in \langle S\rangle \Rightarrow a\bullet b\in \langle
-				S\rangle</m>.</p>
-					</li>
-				</ol></p>
-		</statement>
-	</definition>
-
-	<note>
-		<p> If <m>S=\left\{a_1,a_2,\ldots ,a_n\right\}</m>, we write <m>\left\langle a_1,a_2,\ldots
-			,a_n\right\rangle</m> in place of <m>\left\langle \left\{a_1,a_2,\ldots
-			,a_n\right\}\right\rangle</m>.</p>
-	</note>
-
-	<example xml:id="ex-some-submonoids">
-		<title>Some Submonoids</title>
 		<p>
-			<ol marker="(a)">
-				<li>
-					<p>One example of a submonoid of <m>[\mathbb{Z};+]</m> is <m>\langle 2\rangle
-						=\{0,2,4,6,8,\ldots \}</m>.</p>
-				</li>
-				<li>
-					<p> The power set of <m>\mathbb{Z}</m>, <m>\mathcal{P}(\mathbb{Z})</m>, over
-						union is a monoid with identity <m>\emptyset</m>. If <m>
-						S=\{\{1\},\{2\},\{3\}\}</m>, then <m>\langle S \rangle</m> is the power set
-						of <m>\{1,2,3\}</m>. If <m>S=\{\{n\}:n\in \mathbb{Z}\},</m> then <m>\langle
-						S\rangle</m> is the set of finite subsets of the integers.</p>
-				</li>
-			</ol>
+			Thus, string-induction proofs have the following structure. </p>
+<example>
+	
+
+		<p>Suppose we want to prove that every string is <em>perfectly cromulent</em>, whatever that
+			means. Proof details are not shown but depend on the precise definition of “perfectly
+			cromulent”. </p>
+
+			<p> Let <m>w</m> be an arbitrary string. </p>
+			<p> There are two cases to consider. <ul>
+					<li>
+						<p>
+							<term>Basis Step:</term> The case where <m>w = \epsilon</m>. </p>
+						<p> Show <m>\epsilon</m> is <em>perfectly cromulent</em>
+						</p>
+					</li>
+					<li>
+						<p>
+							<term>Inductive Step:</term>
+							<ul>
+								<li>
+									<p> Assume Inductive Hypothesis, for every string <m>x</m> such
+				that <m>|x| \lt |w|,</m> that <m>x</m> is <em>perfectly cromulent</em>. </p>
+								</li>
+								<li>
+									<p> Suppose <m>w = a x</m> for some symbol <m>a</m> and string <m>
+				x</m>. </p>
+								</li>
+								<li>
+									<p> Show <m>ax</m> is also <em>perfectly cromulent</em>,
+				therefore <m>w</m> is <em>perfectly cromulent</em>
+									</p>
+								</li>
+							</ul>
+
+						</p>
+					</li>
+				</ul>
+			</p>
+		</example>
+		<p>
+			Here are three canonical examples of this proof structure. When developing proofs in this
+style, I strongly recommend first mindlessly writing the green text (the boilerplate) with lots of
+space for each case, then filling in the red text (the actual theorem and the induction hypothesis),
+and only then starting to actually think.
+Many students are confused (or at least bored and distracted) by the fact that we are proving
+mind-bogglingly obvious facts. If you’re one of these students, try to remember that the lemmas
+themselves are not the point. Pay close attention to the structure of the proofs. Notice how each
+proof follows the boilerplate described above. Notice how every sentence of the proof follows
+mechanically from earlier sentences, definitions, and the rules of standard logic and arithmetic.
 		</p>
-	</example>
+	</subsection>
 
-	<p>As you might expect, two monoids are isomorphic if and only if there exists a translation
-		rule between them so that any true proposition in one monoid is translated to a true
-		proposition in the other.</p>
-
-	<example xml:id="ex-15-1-iso">
-		<p><m>M=[\mathcal{P}\{1,2,3\};\cap ]</m> is isomorphic to <m>M_2=\left[\mathbb{Z}_2^3;\cdot
-			\right]</m>, where the operation in <m>M_2</m> is componentwise mod 2 multiplication. A
-			translation rule is that if <m>A\subseteq \{1,2,3\}</m>, then it is translated to <m>
-			\left(d_1,d_2,d_3\right)</m> where <me>d_i=\left\{
-				\begin{array}{cc}
-				1 &amp; \textrm{ if } i\in A \\
-				0 &amp; \textrm{ if } i\notin A \\
-				\end{array}
-				\right.</me> Two cases of how this translation rule works are: <me>
-				\begin{array}{lr}
-				\begin{array}{c}
-				\{1, 2, 3\}\quad\textrm{ is the identity for } M_1\\
-				\updownarrow \\
-				(1,1,1) \quad\textrm{ is the identity for }M_2\\
-				\end{array}
-				&amp;
-				\begin{array}{c}
-				\{1, 2\}\cap \{ 2, 3\}=\{2\}\\
-				\updownarrow \\
-				(1, 1, 0) \cdot (0, 1, 1) = (0, 1, 0)\\
-				\end{array}\\
-				\quad
-				\end{array}
-</me>
-			.</p>
-	</example>
-
-	<p>A more precise definition of a monoid isomorphism is identical to the definition of a group
-		isomorphism, <xref ref="def-group-isomorphism" />.</p>
-
-	<exercises xml:id="exercises-15-1">
-		<title>Exercises</title>
-		<exercise number="1">
-			<statement>
-				<p> For each of the subsets of the indicated monoid, determine whether the subset is
-					a submonoid. <ol marker="(a)">
-						<li>
-							<p>
-								<m>S_1=\{0,2,4,6\}</m> and <m>S_2=\{1,3,5,7\}</m> in <m>
-					[\mathbb{Z}_8;\times_8].</m></p>
-						</li>
-						<li>
-							<p>
-								<m>\{f\in \mathbb{N}^{\mathbb{N}}:f(n) \leqslant n, \forall n \in
-					\mathbb{N}\}</m> and <m>\left\{f\in \mathbb{N}^{\mathbb{N}}:f(1)=2\right\}</m>
-					in the monoid <m>[\mathbb{N}^{\mathbb{N}};\circ]</m>.</p>
-						</li>
-						<li>
-							<p>
-								<m>\{A\subseteq \mathbb{Z} \mid A \textrm{ is finite}\} \textrm{
-					and} \left\{A\subseteq \mathbb{Z} \mid A^c\textrm{ is} \textrm{ finite}\right\}</m>
-					in <m>[\mathcal{P}(\mathbb{Z});\cup].</m></p>
-						</li>
-					</ol>
-				</p>
-			</statement>
-			<answer>
-				<p>
-					<ol marker="(a)">
-						<li>
-							<p>
-								<m>S_1</m> is not a submonoid since the identity of <m>\left[\mathbb{Z}_8;
-								\times_8\right]</m>, which is 1, is not in <m>S_1</m>. <m>S_2</m> is
-								a submonoid since <m>1 \in S_2</m> and <m>S_2</m> is closed under
-								multiplication; that is, for all <m>a, b \in S_2</m>, <m>a \times_8
-								b</m> is in <m>S_2</m>.</p>
-						</li>
-						<li>
-							<p>The identity of <m>\mathbb{N}^{\mathbb{N}}</m> is the identity
-								function <m>i:\mathbb{N}\to \mathbb{N}</m> defined by <m>i(a) = a</m>
-								, <m>\forall a\in \mathbb{N}</m>. If <m>a \in \mathbb{N}</m>, <m>i(a)
-								= a \leq a</m>, thus the identity of <m>\mathbb{N}^{\mathbb{N}}</m>
-								is in <m>S_1</m>. However, the image of 1 under any function in <m>
-								S_2</m> is 2, and thus the identity of <m>\mathbb{N}^{\mathbb{N}}</m>
-								is not in <m>S_2</m>, so <m>S_2</m> is not a submonoid. The
-								composition of any two functions in <m>S_1</m>, <m>f</m> and <m>g</m>,
-								will be a function in <m>S_1</m>: <me>
-									\begin{split}
-									(f\circ g)(n) &amp; = f(g(n)) \leq g(n)\textrm{ since } f
-								\textrm{ is in } S_1\\
-									&amp; \leq n\textrm{ since } g \textrm{ is in } S_1 \Rightarrow
-								f \circ g \in S_1
-									\end{split}
-</me>
-								and the two conditions of a submonoid are satisfied and <m>S_1</m>
-								is a submonoid of <m>\mathbb{N}^{\mathbb{N}}</m>.</p>
-						</li>
-						<li>
-							<p>The first set is a submonoid, but the second is not since the null
-								set has a non-finite complement.</p>
-						</li>
-					</ol>
-				</p>
-			</answer>
-		</exercise>
-		<exercise number="2">
-			<statement>
-				<p> For each subset, describe the submonoid that it generates. <ol marker="(a)">
-						<li>
-							<p>
-								<m>\{3\}</m> in <m>[\mathbb{Z}_{12};\times_{12}]</m></p>
-						</li>
-						<li>
-							<p>
-								<m>\{5\} \textrm{ in } [\mathbb{Z}_{25};\times_{25}]</m>
-							</p>
-						</li>
-						<li>
-							<p> the set of prime numbers in <m>[\mathbb{P}; \cdot ]</m></p>
-						</li>
-						<li>
-							<p>
-								<m>\{3,5\} \textrm{ in } [\mathbb{N}; +]</m>
-							</p>
-						</li>
-					</ol>
-				</p>
-			</statement>
-		</exercise>
-		<exercise number="3">
-			<statement>
-				<p>An <m>n \times n</m> matrix of real numbers is called <term>stochastic</term> if
-					and only if each entry is nonnegative and the sum of entries in each column is
-					1. Prove that the set of stochastic matrices is a monoid over matrix
-					multiplication.</p>
-			</statement>
-			<answer>
-				<p>The set of <m>n \times n</m> real matrices is a monoid under matrix
-					multiplication. This follows from the laws of matrix algebra in Chapter 5. To
-					prove that the set of stochastic matrices is a monoid over matrix
-					multiplication, we need only show that the identity matrix is stochastic (this
-					is obvious) and that the set of stochastic matrices is closed under matrix
-					multiplication. Let <m>A</m> and <m>B</m> be <m>n \times n</m> stochastic
-					matrices. <me>(AB)_{i j}= \sum _{k=1}^n a_{i k} b_{k j}</me>
-				</p>
-				<p>The sum of the <m>j^{\textrm{th}}</m> column is <me>
-						\begin{split}
-						\sum_{j=1}^n (AB)_{i j} &amp; =\sum_{k=1}^n a_{1 k} b_{k j}+\sum_{k=1}^n
-					a_{1k} b_{k j}+\cdots +\sum_{k=1}^n a_{n k} b_{k j}\\
-						&amp;=\sum_{k=1}^n \left(a_{1 k} b_{k j}+a_{1k} b_{k j}+\cdots +a_{n k} b_{k
-					j}\right)\\
-						&amp;=\sum _{k=1}^n b_{k j}\left(a_{1 k} +a_{1k}+\cdots +a_{n k} \right)\\
-					&amp;= \sum _{k=1}^n b_{k j} \quad\textrm{ since } A \textrm{ is stochastic}\\
-					&amp; = 1 \quad\textrm{ since } B \textrm{ is stochastic}\\
-						\end{split}
-</me>
-				</p>
-			</answer>
-		</exercise>
-		<exercise number="4">
-			<statement>
-				<p> A <term>semigroup</term> is an algebraic system <m>[S; \bullet ]</m> with the
-					only axiom that <m>\bullet </m> be associative on <m>S</m>. Prove that if <m>S</m>
-					is a finite set, then there must exist an idempotent element, that is, an <m>a
-					\in S</m> such that <m>a \bullet a = a</m>.</p>
-			</statement>
-		</exercise>
-		<exercise number="5">
-			<statement>
-				<p> Let <m>B</m> be a Boolean algebra and <m>M</m> the set of all Boolean functions
-					on <m>B</m>. Let <m>\bullet </m> be defined on <m>M</m> by <m>(f \bullet g)(a) =
-					f(a) \land g(a)</m>. Prove that <m>[M;\bullet ]</m> is a monoid. Construct the
-					operation table of <m>[M;\bullet ]</m> for the case of <m>B = B_2</m>.</p>
-			</statement>
-			<answer>
-				<p> Let <m>f, g, h \in M</m>, and <m>a \in B</m>. <me>
-						\begin{split}
-						((f\bullet g)\bullet h)(a) &amp; = (f\bullet g)(a) \land h(a)\\
-						&amp; = (f(a)\land g(a))\land h(a)\\
-						&amp; = f(a) \land ( g(a) \land h(a))\\
-						&amp; = f(a) \land (g \bullet h)(a)\\
-						&amp; = (f \bullet (g \bullet h))(a)\\
-						\end{split}
-</me>
-					Therefore <m>(f \bullet g) \bullet h =f \bullet (g \bullet h)</m> and <m>\bullet </m>
-					is associative.</p>
-				<p>The identity for <m>\bullet </m> is the function <m>u \in M</m> where <m>u(a) = 1</m>
-					= the <q>one</q> of <m>B</m>. If <m>a \in B</m>, <m>(f\bullet u)(a) =f(a)\land
-					u(a) = f(a)\land 1 = f(a)</m>. Therefore <m>f \bullet u = f</m>. Similarly, <m>u
-					\bullet f =f</m>.</p>
-				<p>There are <m>2^2= 4</m> functions in <m>M</m> for <m>B = B _2</m>. These four
-					functions are named in the text. See <xref ref="fig-functions-on-B2"
-						text="type-global" />. The table for <m>\bullet </m> is <me>\begin{array}{c|cccc}
-					\bullet &amp; z &amp; i &amp; t &amp; u\\
-						\hline
-						z &amp;z &amp; z &amp; z &amp; z \\
-						i &amp;z &amp; i &amp; z &amp; i \\
-						t &amp;z &amp; z &amp; t &amp; t \\
-						u &amp;z &amp; i &amp; t &amp; u \\
-						\end{array}</me>
-				</p>
-			</answer>
-
-		</exercise>
-	</exercises>
 </section>

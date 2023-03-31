@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <chapter xml:id="chapter_15" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Monoids and Automata/Theory of Computation</title>
+  <!-- Taken from Models of Computation by Jeff Erickson-->
+  <!-- https://jeffe.cs.illinois.edu/teaching/algorithms/#models -->
+  <!-- This work is available under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.-->
+<title>Theory of Computation</title>
 <introduction>
   <!-- TODO  add Turing -->
-<p>In this chapter we introduce automata theory, in which computers and other machines are described in abstract terms.</p>
+<p>In this chapter we introduce fundamental topics on formal languages
+  and automata, in which computers and other machines are described in abstract terms.</p>
 </introduction>
 
 <xi:include href="./Section15_1.ptx" />
