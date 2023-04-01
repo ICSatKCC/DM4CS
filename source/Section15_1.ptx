@@ -198,12 +198,12 @@
 		</p>
 		<p>
 			Thus, string-induction proofs have the following structure. </p>
-<example>
-	
+		<example>
 
-		<p>Suppose we want to prove that every string is <em>perfectly cromulent</em>, whatever that
-			means. Proof details are not shown but depend on the precise definition of “perfectly
-			cromulent”. </p>
+
+			<p>Suppose we want to prove that every string is <em>perfectly cromulent</em>, whatever
+				that means. Proof details are not shown but depend on the precise definition of
+				“perfectly cromulent”. </p>
 
 			<p> Let <m>w</m> be an arbitrary string. </p>
 			<p> There are two cases to consider. <ul>
@@ -215,22 +215,19 @@
 					</li>
 					<li>
 						<p>
-							<term>Inductive Step:</term>
-							<ul>
+							<term>Inductive Step:</term> The case where <m>w = a x</m> for some
+				symbol <m>a</m> and string <m>
+								x</m>. <ol>
 								<li>
 									<p> Assume Inductive Hypothesis, for every string <m>x</m> such
 				that <m>|x| \lt |w|,</m> that <m>x</m> is <em>perfectly cromulent</em>. </p>
-								</li>
-								<li>
-									<p> Suppose <m>w = a x</m> for some symbol <m>a</m> and string <m>
-				x</m>. </p>
 								</li>
 								<li>
 									<p> Show <m>ax</m> is also <em>perfectly cromulent</em>,
 				therefore <m>w</m> is <em>perfectly cromulent</em>
 									</p>
 								</li>
-							</ul>
+							</ol>
 
 						</p>
 					</li>
@@ -238,16 +235,269 @@
 			</p>
 		</example>
 		<p>
-			Here are three canonical examples of this proof structure. When developing proofs in this
-style, I strongly recommend first mindlessly writing the green text (the boilerplate) with lots of
-space for each case, then filling in the red text (the actual theorem and the induction hypothesis),
-and only then starting to actually think.
-Many students are confused (or at least bored and distracted) by the fact that we are proving
-mind-bogglingly obvious facts. If you’re one of these students, try to remember that the lemmas
-themselves are not the point. Pay close attention to the structure of the proofs. Notice how each
-proof follows the boilerplate described above. Notice how every sentence of the proof follows
-mechanically from earlier sentences, definitions, and the rules of standard logic and arithmetic.
+			Here are three canonical examples of this proof structure. When developing proofs in
+			this
+			style, I strongly recommend first mindlessly writing the text from the template in the
+			example above with lots of
+			space for each step, then filling in the actual theorem and the induction hypothesis,
+			and only then starting to actually think.</p>
+
+		<p> Many students are confused (or at least bored and distracted) by the fact that we are
+			proving mind-bogglingly obvious facts. If you’re one of these students, try to remember
+			that <em>the lemmas
+				themselves are not the point</em>. Pay close attention to the <em>structure</em> of
+			the proofs. Notice how each proof follows the template described above. Notice how every
+			sentence of the proof follows <em>mechanically</em> from earlier sentences, definitions,
+			and the rules of standard logic and arithmetic.</p>
+		<lemma xml:id="lem-string-concat-identity">
+			<statement>
+				<p>
+					<em>Adding nothing does nothing</em>: For every string <m>w</m>, we have<m> w
+					\bullet \epsilon = w</m>. </p>
+			</statement>
+			<proof>
+				<p> Let <m>w</m> be an arbitrary string. There are two cases to consider.</p>
+
+				<p>
+					<term>Basis step:</term> Suppose <m>w = \epsilon</m>
+				</p>
+				<md>
+					<mrow>w \bullet \epsilon \amp = \epsilon\bullet\epsilon \amp \text{Because } w =
+						\epsilon</mrow>
+					<mrow> \amp = \epsilon \amp \text{ def. of concatenation,}</mrow>
+					<mrow> \amp = w \amp \text{Because } w = \epsilon </mrow>
+				</md>
+
+				<p>
+					<term>Inductive step:</term>
+				</p>
+				<p> Assume an inductive hypothesis that <m>x \bullet \epsilon = x</m> for every
+					string <m>x</m> such that <m>|x| \lt |w|</m>. </p>
+				<p> Now suppose <m>w = ax</m> for some symbol <m>a</m> and string <m>x</m> (<m>w</m>
+					is string <m>x</m> with one more character, <m>a</m>, concatenated on to it.) </p>
+				<md>
+					<mrow>w \bullet \epsilon \amp = (a \cdot x)\bullet \epsilon \amp \text{Because }
+						w = ax</mrow>
+					<mrow> \amp = a \cdot (x \bullet \epsilon) \amp \text{ by definition of
+						concatenation} </mrow>
+					<mrow> \amp = a \cdot x \amp \text{ by inductive hypothesis} </mrow>
+					<mrow> \amp = w \amp \text{Because } w = ax </mrow>
+				</md>
+				<p> Therefore we conclude that <m>w \bullet \epsilon = w \, \blacksquare</m>
+				</p>
+			</proof>
+		</lemma>
+
+
+		<lemma xml:id="lem-string-concat-add-len">
+			<statement>
+				<p>
+					<em>Concatenation adds length</em>: <m>|w \bullet x| = |w| + |x| </m>, for all
+					strings <m> w</m> and <m>x</m>. </p>
+			</statement>
+			<proof>
+				<p> Let <m>w</m> and <m>x</m> be arbitrary strings. There are two cases to consider.</p>
+
+				<p>
+					<term>Basis step:</term> Suppose <m>w = \epsilon</m>
+				</p>
+				<md>
+					<mrow>|w \bullet x| \amp = |\epsilon\bullet x| \amp \text{Because } w = \epsilon</mrow>
+					<mrow> \amp = |x| \amp \text{ def. of } \bullet </mrow>
+					<mrow> \amp = |\epsilon| + |x| \amp |\epsilon| = 0 \text{ by definition of
+						length}, |\,| </mrow>
+					<mrow> \amp = |w| + |x| \amp \text{Because } w = \epsilon </mrow>
+				</md>
+
+				<p>
+					<term>Inductive step:</term>
+				</p>
+				<p> Assume an inductive hypothesis that <m>|y \bullet x| = |y| + |x|</m> for every
+					string <m>y</m> such that <m>|y| \lt |w|</m>. </p>
+				<p> Now suppose <m>w = ay</m> for some symbol <m>a</m> and string <m>x</m> (<m>w</m>
+					is string <m>x</m> with one more character, <m>a</m>, concatenated on to it.) </p>
+				<md>
+					<mrow>|w \bullet x| \amp = |ay \bullet x| \amp \text{Because } w = ay</mrow>
+					<mrow> \amp = |a \cdot (y \bullet x)| \amp \text{ by definition of } \bullet </mrow>
+					<mrow> \amp = 1 + |y \bullet x| \amp \text{ by definition of length}, |\,| </mrow>
+					<mrow> \amp = 1 + |y| + |x| \amp \text{ by inductive hypothesis}, |\,| </mrow>
+					<mrow> \amp = |ay| + |x| \amp \text{ by definition of length}, |\,| </mrow>
+					<mrow> \amp = |w| + |x| \amp \text{Because } w = ay </mrow>
+				</md>
+				<p> Therefore we conclude that <m>|w \bullet x| = |w| + |x| \, \blacksquare</m>
+				</p>
+			</proof>
+		</lemma>
+
+		<lemma xml:id="lem-string-concat-associativity">
+			<statement>
+				<p>
+					<em>Concatenation is associative</em>: <m>(w \bullet x) \bullet y = w \bullet (x
+					\bullet y) </m>, for all strings <m> w, x</m> and <m>y</m>. </p>
+			</statement>
+			<proof>
+				<p> Let <m>w, x</m> and <m>y</m> be arbitrary strings. There are two cases to
+					consider.</p>
+
+				<p>
+					<term>Basis step:</term> Suppose <m>w = \epsilon</m>
+				</p>
+				<md>
+					<mrow>(w \bullet x) \bullet y \amp = (\epsilon \bullet x) \bullet y \amp
+						\text{Because } w = \epsilon</mrow>
+					<mrow> \amp = x \bullet y \amp \text{ def. of } \bullet </mrow>
+					<mrow> \amp = \epsilon \bullet (x \bullet y)\amp \text{ def. of } \bullet </mrow>
+					<mrow> \amp = = w \bullet (x \bullet y) \amp \text{Because } w = \epsilon </mrow>
+				</md>
+
+				<p>
+					<term>Inductive step:</term>
+				</p>
+				<p> Assume an inductive hypothesis that<m>(z \bullet x) \bullet y = z \bullet (x
+					\bullet y) </m> for every string <m>z</m> such that <m>|z| \lt |w|</m>. </p>
+				<p> Now suppose <m>w = az</m> for some symbol <m>a</m> and string <m>z</m> (<m>w</m>
+					is string <m>z</m> with one more character, <m>a</m>, concatenated on to it.) </p>
+				<md>
+					<mrow>(w \bullet x) \bullet y \amp = (az \bullet x) \bullet y \amp \text{Because
+						} w = az</mrow>
+					<mrow> \amp = (a \cdot (z \bullet x)) \bullet y \amp \text{ def. of } \bullet </mrow>
+					<mrow> \amp = a \cdot ((z \bullet x)) \bullet y) \amp \text{ def. of } \bullet </mrow>
+					<mrow> \amp = a \cdot (z \bullet (x \bullet y)) \amp \text{ by the inductive
+						hypothesis} </mrow>
+					<mrow> \amp = az \bullet (x \bullet y) \amp \text{ def. of } \bullet </mrow>
+					<mrow> \amp = w \bullet (x \bullet y) \amp \text{Because } w = az </mrow>
+				</md>
+				<p> Therefore we conclude that <m>(w \bullet x) \bullet y = w \bullet (x \bullet y)
+					\, \blacksquare</m>
+				</p>
+			</proof>
+		</lemma>
+
+	</subsection>
+	<subsection xml:id="subsec-another-induction-on-strings">
+		<title>More Than One Path up the Mountain</title>
+		<p>This is not the only template that one can use for induction proofs on strings. For
+			example, we can model our case analysis on the following observation, whose easy proof
+			we leave as an exercise (hint, hint): A string <m>w \in \Sigma^*</m> is <term>non-empty</term>
+			if and only if either <ul>
+				<li>
+					<p>
+						<m>w = a</m> for some symbol <m>a \in \Sigma</m> (<m>w</m> is just one
+			character), or </p>
+				</li>
+				<li>
+					<p>
+						<m>w = x \bullet y</m> for some <em>non-empty</em> strings <m>x</m> and <m>y</m>
+			.
+		</p>
+				</li>
+			</ul> In the latter case, Lemma <xref
+				ref="lem-string-concat-add-len" /> implies that <m>|x| \lt |w|</m> and <m>|y| \lt
+			|w|</m>, so in an inductive proof, we can apply to inductive hypothesis to either <m>x</m>
+			or <m>y</m> (or even both). </p>
+		<p> Here is a proof of Lemma <xref ref="lem-string-concat-associativity" /> that uses this
+			alternative recursive structure:
+			<proof>
+				<p> Let <m>w, x</m> and <m>y</m> be arbitrary strings. There are three cases to
+			consider.</p>
+
+				<p>
+					<term>Basis step 1:</term> Suppose <m>w = \epsilon</m>
+				</p>
+				<md>
+					<mrow>(w \bullet x) \bullet y \amp = (\epsilon \bullet x) \bullet y \amp
+			\text{Because } w = \epsilon</mrow>
+					<mrow> \amp = x \bullet y \amp \text{ def. of } \bullet </mrow>
+					<mrow> \amp = \epsilon \bullet (x \bullet y)\amp \text{ def. of } \bullet </mrow>
+					<mrow> \amp = = w \bullet (x \bullet y) \amp \text{Because } w = \epsilon </mrow>
+				</md>
+				<p>
+					<term>Basis step 2:</term> Suppose <m>w = a</m>, <m>w</m> is a single symbol. </p>
+				<md>
+					<mrow>(w \bullet x) \bullet y \amp = (a \bullet x) \bullet y \amp
+						\text{Because } w = a</mrow>
+					<mrow> \amp = (a \cdot x)\bullet y \amp \text{ Because } a \bullet z = a \cdot z
+			\text{ by def. of } \bullet </mrow>
+					<mrow> \amp = a \cdot (x \bullet y)\amp \text{ def. of } \bullet </mrow>
+					<mrow> \amp = a \bullet (x \bullet y)\amp \text{ Because } a \bullet z = a \cdot
+			z \text{ by def. of } \bullet </mrow>
+					<mrow> \amp = = w \bullet (x \bullet y) \amp \text{Because } w = a </mrow>
+				</md>
+				<p>
+					<term>Inductive step:</term>
+				</p>
+				<p> Assume an inductive hypothesis that<m>(z \bullet x') \bullet y' = z \bullet (x'
+			\bullet y') </m> for all strings <m>x', y'</m> and <m>z</m> such that <m>|z| \lt |w|</m>
+			. </p>
+				<p> Now suppose <m>w = u \bullet v</m> for some non-empty strings <m>u</m> and <m>v</m>
+			. </p>
+				<md>
+					<mrow>(w \bullet x) \bullet y \amp = ((u \bullet v) \bullet x) \bullet y \amp
+			\text{Because
+						} w = u \bullet v</mrow>
+					<mrow> \amp = (u \bullet (v \bullet x)) \bullet y \amp \text{ by I.H, because }
+			|u| \lt |w| </mrow>
+					<mrow> \amp = u \bullet ((v \bullet x)) \bullet y) \amp \text{ by I.H, because }
+			|u| \lt |w| </mrow>
+					<mrow> \amp = u \bullet (v \bullet (x \bullet y)) \amp \text{ by I.H, because }
+			|u| \lt |w| </mrow>
+					<mrow> \amp = (u \bullet v) \bullet (x \bullet y) \amp \text{ by I.H, because }
+			|u| \lt |w| </mrow>
+					<mrow> \amp = w \bullet (x \bullet y) \amp \text{Because
+						} w = u \bullet v</mrow>
+				</md>
+				<p> Therefore in all three cases we conclude that <m>(w \bullet x) \bullet y = w
+			\bullet (x \bullet y)
+						\, \blacksquare</m>
+				</p>
+			</proof>
 		</p>
 	</subsection>
+
+	<subsection xml:id="subsec-indices-substrings">
+		<title>Indices, Substrings annd Subsequences</title>
+		<p>
+			Finally, we'll conclude this section by formally defining several other common functions
+			and terms
+			related to strings.
+		</p>
+		<p> For any string <m>w</m> and any integer <m>1 \leq i \leq |w|</m>, the expression <m>w_i</m>
+			denotes the <m>i</m>th symbol in <m>w</m>, counting from left to right (<em>note: this
+			text uses indexing starting at 1, not 0 like most programming languages</em>). More
+			formall, <m>w_i</m> is recursively defined as follows: <me>
+				w_i =
+				\begin{cases}
+				a &amp; \text{if}\ w = ax \text{ and } i = 1 \\
+				x_{i-1} &amp; \text{if}\ w = ax \text{ and } i \gt 1.
+				\end{cases}
+			</me>
+			As one might reasonably expect, <m>w_i</m> is formally undefined if <m>i \lt 1</m> or <m>w
+			= \epsilon</m>, and therefore (by induction) if <m>i \gt |w|</m>. The integer <m>i</m>
+			is called the <term>index</term> of <m>w_i</m>. </p>
+
+		<p> We sometimes write strings as a concatenation of their constituent symbols using this
+			subscript notation: <m>w = w_1 w_2 \dots w_{|w|}</m>. While completely standard, this
+			notation is slightly misleading, because it <em>incorrectly</em> suggestst that the
+			entire string <m>w</m> contains at least three symbols, when in fact <m>w</m> could be a
+			single symbol or the empty string. </p>
+		<p> In actual code, subscripts are usually expressed using the bracket notation <m>w[i]</m>.
+			Brackets were introduced as a typographical convention over a hundred years ago because
+			subscripts and superscripts were difficult or impossible to type. We sometimes write
+			strings as explicit arrays <m>w[1 .. n]</m>, with the understanding that <m>n = |w| </m>.
+			Again, this notation is potentially misleading; always remember that <m>n</m> might be
+			zero; the string/array might be empty. </p>
+		<p> A <term>substring</term>of a string <m>w</m> is another string obtained from <m>w</m> by
+			deleting zero or more symbols from the beginning and from the end. Formally, a string <m>
+			y</m> is a substring of <m>w</m> if and only if there are strings <m>x</m> and <m>z</m>
+			such that <m>w = xyz</m>. Extending the array notation for strings, we write <m>w [i ..
+			j ]</m> to denote the substring of <m>w</m> starting at <m>w_i</m> and ending at <m>w_j</m> . More
+			formally, we define <me>
+				w[i..j] =
+				\begin{cases}
+				\epsilon &amp; \text{if}\ j \lt i, \\
+				w_i \cdot w[i+1 .. j] &amp; \text{otherwise}.\end{cases}
+			</me></p>
+	</subsection>
+
 
 </section>
