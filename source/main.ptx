@@ -10,7 +10,14 @@
       \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
       \newcommand{\cis}{\operatorname{cis}} \newcommand{\chr}{\operatorname{char}}
       \newcommand{\Null}{\operatorname{Null}} \renewcommand{\vec}[1]{\mathbf{#1}}
-      \newcommand{\R}{\mathbb R} </macros>
+      \newcommand{\R}{\mathbb R} 
+  <!--Added for Foundations of CS (ch 15)-->
+      \newcommand{\ab}{\mbox{$\{a,b\}$}}
+\newcommand{\aetc}[2]{\mbox{{${#1}_1{#1}_2\ldots {#1}_{#2}$}}}
+\newcommand{\varep}{\varepsilon}
+\newcommand{\fsafig}[1]{\medskip\centerline{\eps{fsa#1}}\medskip}
+\newcommand{\REOR}{\hbox{$\,|\,$}}
+    </macros>
     <latex-image-preamble>
       \usepackage{amsmath}
       \usepackage{pgf, tikz}

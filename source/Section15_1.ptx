@@ -1,503 +1,364 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="s-Strings">
-	<title>Strings</title>
-	<idx>String</idx>
-	<introduction>
-		<p> In computer science courses, we discuss many algorithms and computational models that
-			manipulate sequences: one-dimensional arrays, linked lists, blocks of text, walks in
-			graphs, sequences of executed instructions, and so on. Ultimately the input and output
-			of any algorithm must be representable as a finite string of symbols—the raw contents of
-			some contiguous portion of the computer's memory. Reasoning about computation requires
-			reasoning about strings.</p>
+<section xml:id="s-Languages">
+    <!-- Foundations of Computation Ch 3.1-->
+    <title>Formal Language Theory</title>
+    <idx>Languages</idx>
+    <idx>
+        <h>Formal Languages</h>
+    </idx>
 
-		<p> This section lists several formal definitions and formal induction proofs related to
-			strings. These definitions and proofs are <em>intentionally</em> much more detailed than
-			normally used in practice—most people's intuition about strings is fairly accurate—but
-			the extra precision is necessary for any sort of formal proof. It may be helpful to
-			think of this material as part of the “assembly language” of theoretical computer
-			science. We normally think about computation at a much higher level of abstraction, but
-			ultimately every argument must “compile” down to these (and similar) definitions.</p>
+    <subsection xml:id="subsec-Languages">
+        <title>Languages</title>
+        <p> In formal language theory, an alphabet is a finite, non-empty
+        set. The elements of the set are called symbols. A finite sequence of symbols <m>a_1a_2\ldots
+        a_n</m> from an alphabet is called a string over that alphabet. </p>
+        <definition
+            xml:id="def-alphabet">
+            <title>Alphabet</title>
+            <idx>Alphabet</idx>
+            <notation>
+                <usage>
+                    <m>\Sigma = \{0,1}</m>
+                </usage>
+                <description>An alphabet with two elements, 0 and 1.</description>
+            </notation>
+            <statement>
+                <p> An alphabet is a finite, non-empty set. It is customary to use <m>\Sigma</m> to
+        denote an alphabet.</p>
+            </statement>
+        </definition>
+        <definition
+            xml:id="def-symbol">
+            <title>Symbol</title>
+            <idx>
+                <h>Symbol</h>
+            </idx>
+            <statement>
+                <p>The elements of an alphabet are called symbols.
+                </p>
+            </statement>
+        </definition>
+        <definition
+            xml:id="def-string">
+            <title>String</title>
+            <idx>
+                <h>String</h>
+            </idx>
+            <notation>
+                <usage>
+                    <m>a_1 a_2 \ldots a_n</m>
+                </usage>
+                <description>A string with <m>n</m> symbols</description>
+            </notation>
+            <statement>
+                <p> A finite sequence of symbols <m>a_1 a_2 \ldots a_n</m> from an alphabet is
+        called a string over that alphabet. </p>
+            </statement>
+        </definition>
 
-		<p>But the actual definitions and theorems are not the point. The point of
-			playing with this material is to get some experience working with formal/mechanical
-			definitions and proofs, especially inductive definitions and recursive proofs. Or should
-			I say recursive definitions and inductive proofs? Whatever, they're the same thing.
-			Strings are a particularly simple and convenient playground for induction/recursion;
-			which you will see many more of in an Algorithms course. When you read this section,
-			don't just look at the content of the definitions and proofs; pay close attention to
-			their structure and the process for creating them. </p>
-	</introduction>
+        <example>
+            <m>\Sigma = \{0,1\}</m> is an alphabet, and <m>011</m>, <m>1010</m>, and <m>1</m> are
+        all strings over <m>\Sigma</m>. </example>
 
-	<subsection xml:id="subsec-Strings">
-		<title>Strings</title>
-		<definition xml:id="def-alphabet">
-			<title>Alphabet</title>
-			<idx>Alphabet.</idx>
-			<statement>
-				<p> Fix an arbitrary finite set <m>\Sigma</m> called the <term> alphabet</term>; the
-					individual elements of <m>\Sigma</m> are called <term>symbols</term> or <term>
-					characters</term>. As a notational convention, this chapter will always use
-					lower-case letters near the start of the English alphabet <m>(a, b, c, . . . )</m>
-					as symbol variables, and never as explicit symbols. For explicit symbols, we
-					will use upper-case letters <m>(A, B, C, . . . )</m>, digits <m>(0, 1,2, . . . )</m>,
-					or other symbols <m>(\diamond, \$, \#, \cdot, . . . )</m> that are clearly
-					distinguishable from variables. </p>
-			</statement>
-		</definition>
+        <p> Note that strings really are <em>sequences</em>
+        of symbols, which implies that order matters. Thus <m>011</m>, <m>101</m>, and <m>110</m>
+        are all different strings, though they are made up of the same symbols. The strings <m>
+        x=\aetc{a}{n}</m> and <m>
+                y=\aetc{b}{m}</m> are <em>equal</em> only if <m>m=n</m> (i.e.\ the strings contain
+        the same number of symbols) and <m>a_i=b_i</m> for all <m>1 \leq i \leq n</m>.</p>
 
-		<definition
-			xml:id="def-string">
-			<title>String</title>
-			<idx>
-				<h>String.</h>
-			</idx>
-			<notation>
-				<usage>
-					<m>\epsilon</m>
-				</usage>
-				<description>symbol for empty string</description>
-			</notation>
+        <p>Just as
+        there are operations defined on numbers, truth values, sets,
+            and other mathematical entities, there are operations defined on
+            strings. Some important operations are:
+        </p>
+        <definition
+            xml:id="def-string-length">
+            <title>Length</title>
+            <notation>
+                <usage>
+                    <m>|x|</m>
+                </usage>
+                <description>The length of string <m>x</m></description>
+            </notation>
 
-			<statement>
-				<p> A <term>string</term> (or <term>word</term>) over <m>\Sigma</m> is a finite
-					sequence of zero or more symbols from <m>\Sigma</m>. Formally, a string <m>w</m>
-					over <m>
-						\Sigma</m> is defined recursively as either <ul>
-						<li>
-							<p> the empty string, denoted by the Greek letter <m>\epsilon</m>
-					(epsilon), or </p>
-						</li>
-						<li>
-							<p> an ordered pair <m>(a, x)</m>, where <m>a</m> is a symbol in <m>
-					\Sigma</m> and <m>x</m> is a string over <m>\Sigma</m>. </p>
-						</li>
-					</ul>
-				</p>
-			</statement>
-		</definition>
+            <statement>
+                <p> The length of a string <m>x</m> is the number of symbols in it. The notation for
+        the length of <m>x</m> is <m>|x|</m>. Note that this is consistent with other uses of <m>|\
+                        |</m>, all of which involve some notion of size: <m>|number|</m> measures
+        how big a number is (in terms of its distance from 0); <m>|set|</m> measures the size of a
+        set (in terms of the number of elements).</p>
 
-		<p> We normally write either <term>
-				<m>a \cdot x</m>
-			</term> or simply <term>
-				<m>ax</m>
-			</term> to denote the ordered pair <m>(a,x)</m>. Similarly, we
-			normally write explicit strings as sequences of symbols instead of nested ordered pairs;
-			for example, STRING is convenient shorthand for the formal expression <m>(S, (T, (R, (I,
-			(N, (G,
-				\epsilon))))))</m>. As a notational convention, we will use lower-case letters near
-			the end of the English alphabet <m>(. . . , w, x, y, z)</m> for string variables, and
-			UPPERCASE TEXT to typeset explicit (non-empty) strings.</p>
+                <p>We will occasionally refer to a <em>length-n string</em>. This is a slightly
+        awkward, but concise, shorthand for ``a string whose length is <m>n</m>".</p>
+            </statement>
+        </definition>
 
-		<p>The set of all strings over <m>\Sigma</m> is denoted<term>
-				<m>\Sigma^*</m>
-			</term> (pronounced “sigma star”). It is very important
-			to remember that every element of <m>\Sigma^*</m> is a <em> finite </em> string,
-			although <m>\Sigma^*</m>itself is an infinite set containing strings of every possible <em>
-			finite</em> length.</p>
-	</subsection>
+        <definition
+            xml:id="def-string-concatenation">
+            <title>Concatenation</title>
+            <notation>
+                <usage>
+                    <m>xy</m>
+                </usage>
+                <description>The concatenation of string <m>x</m> and string <m>y</m>.</description>
+            </notation>
 
-	<subsection xml:id="subsec-String-Recursive-Functions">
-		<title>Two Recursive Functions</title>
-		<p> Our first several proofs about strings will involve two natural functions, one giving
-			the length of a string, the other gluing two strings together into a larger string.
-			These two functions behave exactly the way you think they do, but if we actually want to <em>
-			prove</em> anything about them, we first have to <em>define</em> them in a way that
-			supports formal proofs. Because the objects on which these functions act (strings) are
-			defined recursively, the functions must also be defined recursively. </p>
+            <statement>
+                <p> The concatenation of two strings <m>x=a_1
+                        a_2\ldots a_m</m> and <m>y=b_1b_2\ldots b_n</m> is the sequence of symbols <m>a_1\ldots
+        a_mb_1\ldots b_n</m>. </p>
+        
+        <p>Sometimes <m>\cdot</m> is used to denote concatenation, but it is far
+        more usual to see the concatenation of <m>x</m> and <m>y</m> denoted by <m>xy</m> than by <m>x\cdot
+        y</m>. You can easily convince yourself that concatenation is associative (i.e. <m>(xy)z =
+        x(yz)</m> for all strings <m>x,y</m> and <m>z</m>.) Concatenation is not commutative (i.e.
+        it is not always true that <m>xy = yx</m>: for example, if <m>
+                        x=a</m> and <m>y=b</m> then <m>xy=ab</m> while <m>yx=ba</m> and, as
+        discussed above, these strings are not equal.)</p>
+            </statement>
+        </definition>
+        <definition
+            xml:id="def-string-reversal">
+            <title>Reversal</title>
+            <notation>
+                <usage>
+                    <m>x^R</m>
+                </usage>
+                <description>The reverse of string <m>x</m>.</description>
+            </notation>
 
-		<definition xml:id="def-string-length">
-			<title>String Length</title>
-			<idx>
-				<h>String Length</h>
-			</idx>
-			<statement>
-				<p> The <term>length <m>|w|</m></term> of a string <m>w</m> is the number of symbols
-					in <m>w</m>, defined formally as follows: <me>
-						|w| =
-						\begin{cases}
-						0, &amp; \text{if}\ w = \epsilon \\
-						1 + |x| , &amp; \text{if}\ w = ax.
-						\end{cases}
-					</me>
-				</p>
+            <statement>
+                <p> The reverse of a string <m>x=a_1a_2\ldots a_n</m> is the string <m>x^R =
+        a_na_{n-1}\ldots a_2a_1</m>.</p>
+            </statement>
+        </definition>
 
-			</statement>
-		</definition>
-		<p>
-			For example, the string FIFTEEN has length 7, the string SEVEN has length 5, and the
-			string 5
-			has length 1. Although they are formally different objects, we do not normally
-			distinguish
-			between symbols and strings of length 1.
-		</p>
+        <example
+            xml:id="ex-string-ops">
+            <title>String Operations</title>
+            <p> Let <m>\Sigma = \{a,b\}</m> , <m>x=a</m>, <m>y=abaa</m>, and <m>z=bab</m>. </p>
+                <p>Then <m>|x|
+        = 1</m>, <m>|y| = 4</m>, and <m>
+                    |z|=3</m>. </p>
+                    <p>Also, <m>xx = aa</m>, <m>xy = aabaa</m>, <m>xz = abab</m>, and <m>zx
+                    = baba</m>.</p>
+                    <p> Finally, <m>x^R = a</m>, <m>y^R= aaba</m>, and <m>z^R=bab</m>.</p>
+        </example>
 
-		<definition xml:id="def-string-concatenation">
-			<title>String Concatenation</title>
-			<idx>
-				<h>String Concatenation</h>
-			</idx>
-			<notation>
-				<usage>
-					<m>\bullet</m>
-				</usage>
-				<description>symbol for string concatenation</description>
-			</notation>
-			<statement>
-				<p> The <term>concatenation</term> of two strings <m>x</m> and <m>y</m>, denoted
-					either <m>x \bullet y</m> or simply <m>x y</m>, is the unique string containing
-					the characters of <m>x</m> in order, followed by the characters in <m>y</m> in
-					order. For example, the string NOWHERE is the concatenation of the strings NOW
-					and HERE; that is, NOW <m>\bullet</m> HERE = NOWHERE. (On the other hand, HERE <m>
-					\bullet</m> NOW = HERENOW.) Formally, concatenation is defined recusively as
-					follows: <me>
-						w \bullet z =
-						\begin{cases}
-						z, &amp; \text{if}\ w = \epsilon \\
-						a \cdot (x \bullet z) , &amp; \text{if}\ w = ax.
-						\end{cases}
-					</me>
-					(Here we are using a larger dot <m>\bullet</m> to formally distinguish the
-					operator that concatenates two arbitrary strings from the operation <m>\cdot</m>
-					that builds a string from a single character and a string.) </p>
-				<p>When we from describe the concatenation of more than two strings, we normally
-					omit all dots and parentheses, writing <m>wxyz</m> instead of <m>(w \bullet (x
-					\bullet y)) \bullet z</m>, for example. This simplification is justified by the
-					fact (which we will prove shortly) that the function <m>\bullet</m> is
-					associative. </p>
-			</statement>
-		</definition>
-	</subsection>
-	<subsection xml:id="subsec-Induction-on-Strings">
-		<title>Induction on Strings</title>
-		<p> Induction is <em>the</em> standard technique for proving statements about recursively
-			defined objects. Hopefully you are already comfortable proving statements about natural
-			numbers via induction, but induction is actually a far more general technique. Several
-			different variants of induction can be used to prove statements about more general
-			structures; here I describe the variant that I recommend (and actually use in practice).
-			This variant follows two primary design considerations: <ul>
-				<li>
-					<p>
-						<em>The case structure of the proof should mirror the case structure of the
-			recursive definition.</em> For example, if you are proving something about all <em>
-			strings</em>, your proof should have two cases: Either (the base case or basis step)
-			string <m>w = \epsilon</m>, or (the recursive case in the inductive step) string <m>w =
-			ax</m> for some symbol <m>a</m> and string <m>x</m>. </p>
-				</li>
-				<li>
-					<p>
-						<em>The inductive hypothesis should be as strong as possible.</em> The
-			(strong) inductive hypothesis for statements about natural numbers is <em>always</em>
-			"Assume the statement is true for all <m>j</m> such that <m>1 \leq j \leq k</m>." Then
-			the inductive step is done on <m>k+1</m>. I recommend adopting a similar inductive
-			hypothesis for strings: “Assume the statement is true for all strings <m>x</m>, such
-			that <m>|x| \lt |w| </m>. Then for the case <m>w = ax</m>, we have <m>|x| = |w| - 1 \lt
-			|w|</m> by definition of <m>|w|</m>, so the inductive hypothesis applies to <m>x</m>
-					</p>
-				</li>
-			</ul>
-		</p>
-		<p>
-			Thus, string-induction proofs have the following structure. </p>
-		<example>
+        <p>
+        By the way, the previous example illustrates a naming convention standard throughout
+        language theory texts: if a letter is intended to represent a single symbol in an alphabet,
+        the convention is to use a letter from the beginning of the English alphabet <m>( a,
+                b, c, d )</m>; if a letter is intended to represent a string, the convention is to
+        use a letter from the end of the English alphabet <m>( u, v, \text{etc})</m>. </p>
+        <p> In set
+        theory, we have a special symbol to designate the set that contains no elements. Similarly,
+        language theory has a special symbol <m>\varepsilon</m> which is used to represent the <em>empty
+        string</em>, the string with no symbols in it. (Some texts use the symbol <m>\lambda</m>
+        instead.) It is worth noting that <m>|\varep| = 0</m>, that <m>\varep^R = \varep</m>, and
+        that <m>\varep \cdot x = x \cdot \varep = x</m> for all strings <m>x</m>. (This last fact
+        may appear a bit confusing. Remember that <m>\varep</m> is not a symbol in a string with
+        length 1, but rather the name given to the string made up of 0 symbols. Pasting those 0
+        symbols onto the front or back of a string <m>x</m> still produces <m>x</m>.) </p>
+        <p> The
+        set of all strings over an alphabet <m>\Sigma</m> is denoted <m>\Sigma^*</m>. (In language
+        theory, the symbol <m>^*</m> is typically used to denote ``zero or more'', so <m>\Sigma^*</m>
+        is the set of strings made up of zero or more symbols from <m>\Sigma</m>.) Note that while
+        an alphabet <m>\Sigma</m> is by definition a <em>finite</em> set of symbols, and strings are
+        by definition <em>finite</em> sequences of those symbols, the set <m>\Sigma^*</m> is always <em>
+        infinite</em>. Why is this? Suppose <m>\Sigma</m> contains <m>n</m> elements. Then there is
+        one string over <m>\Sigma</m> with 0 symbols, <m>n</m> strings with 1 symbol, <m>n^2</m>
+        strings with 2 symbols (since there are <m>n</m> choices for the first symbol and <m>n</m>
+        choices for the second), <m>n^3</m> strings with 3 symbols, etc. </p>
 
+        <example
+            xml:id="ex-strings-over-alphabet">
+            <title>Set of all Strings over an Alphabet</title>
+            <p> If <m>\Sigma = \{1\}</m>, then <m>\Sigma^* = \{\varep,
+                    1, 11, 111, \ldots\}</m>.</p>
+                    <p> If <m>\Sigma = \ab</m>, then <m>\Sigma^* = \{
+                    \varep, a, b, aa, ab, ba, bb, aaa, aab, \ldots\}</m>. </p>
+        </example>
+<p>
+        Note that <m>\Sigma^*</m> is <em>countably</em> infinite: if we list the strings as in the
+        preceding example (length-0 strings, length-1 strings in ``alphabetical" order, length-2
+        strings similarly ordered, etc) then any string over <m>\Sigma</m> will eventually appear.
+        (In fact, if <m>|\Sigma| = n \geq 2</m> and <m>x \in \Sigma^*</m> has length <m>k</m>, then <m>
+        x</m> will appear on the list within the first <m>\frac{n^{k+1} -
+                1}{n-1}</m> entries.)</p>
 
-			<p>Suppose we want to prove that every string is <em>perfectly cromulent</em>, whatever
-				that means. Proof details are not shown but depend on the precise definition of
-				“perfectly cromulent”. </p>
+<p> We now come to the definition of a <em>language</em> in
+        the formal language theoretical sense.</p>
 
-			<p> Let <m>w</m> be an arbitrary string. </p>
-			<p> There are two cases to consider. <ul>
-					<li>
-						<p>
-							<term>Basis Step:</term> The case where <m>w = \epsilon</m>. </p>
-						<p> Show <m>\epsilon</m> is <em>perfectly cromulent</em>
-						</p>
-					</li>
-					<li>
-						<p>
-							<term>Inductive Step:</term> The case where <m>w = a x</m> for some
-				symbol <m>a</m> and string <m>
-								x</m>. <ol>
-								<li>
-									<p> Assume Inductive Hypothesis, for every string <m>x</m> such
-				that <m>|x| \lt |w|,</m> that <m>x</m> is <em>perfectly cromulent</em>. </p>
-								</li>
-								<li>
-									<p> Show <m>ax</m> is also <em>perfectly cromulent</em>,
-				therefore <m>w</m> is <em>perfectly cromulent</em>
-									</p>
-								</li>
-							</ol>
+        <definition xml:id="def-language">
+            <title>Languages over an Alphabet</title>
 
-						</p>
-					</li>
-				</ul>
-			</p>
-		</example>
-		<p>
-			Here are three canonical examples of this proof structure. When developing proofs in
-			this
-			style, I strongly recommend first mindlessly writing the text from the template in the
-			example above with lots of
-			space for each step, then filling in the actual theorem and the induction hypothesis,
-			and only then starting to actually think.</p>
+            <statement>
+                <p> A language over an alphabet <m>\Sigma</m> is a subset of <m>\Sigma^*</m>. Thus,
+        a language over <m>\Sigma</m> is an element of <m>{\cal P}(\Sigma^*)</m>, the power set of <m>
+        \Sigma^*</m>.</p>
+            </statement>
+        </definition>
+<p> In other words, any set of
+        strings (over alphabet <m>\Sigma</m>) constitutes a language (over alphabet <m>\Sigma</m>).</p>
+        
+        <example xml:id="ex-languages-over-set">
+            <title>Languages over a set</title>
+        
+        <p>
+        Let <m>\Sigma =
+                \{0,1\}</m>. Then the following are all languages over <m>\Sigma</m>: 
+                <md>
+                    <mrow>L_1 \amp = \{011, 1010,111\} </mrow>
+                    <mrow> L_2 \amp = \{0, 10, 110, 1110, 11110, \ldots\} </mrow>
+                    <mrow> L_3 \amp = \{x \in \Sigma^* \ | \ n_0(x) = n_1(x) \} </mrow>
+                    <mrow> \amp\text{where the notation } n_0(x) \text{ stands for the number of 0's in the string } x </mrow>
+                    <mrow> \amp \text{and similarly for } n_1(x)</mrow>
+                    <mrow> L_4 \amp = \{x| x \mbox{ represents a multiple of 5 in binary}\} </mrow>
+                </md>
+           </p>
+        </example>
 
-		<p> Many students are confused (or at least bored and distracted) by the fact that we are
-			proving mind-bogglingly obvious facts. If you’re one of these students, try to remember
-			that <em>the lemmas
-				themselves are not the point</em>. Pay close attention to the <em>structure</em> of
-			the proofs. Notice how each proof follows the template described above. Notice how every
-			sentence of the proof follows <em>mechanically</em> from earlier sentences, definitions,
-			and the rules of standard logic and arithmetic.</p>
-		<lemma xml:id="lem-string-concat-identity">
-			<statement>
-				<p>
-					<em>Adding nothing does nothing</em>: For every string <m>w</m>, we have<m> w
-					\bullet \epsilon = w</m>. </p>
-			</statement>
-			<proof>
-				<p> Let <m>w</m> be an arbitrary string. There are two cases to consider.</p>
+        <p>
+        Note that languages can be either finite or infinite. Because <m>\Sigma^*</m> is infinite,
+        it clearly has an infinite number of subsets, and so there are an infinite number of
+        languages over <m>\Sigma</m>. But are there countably or uncountably many such languages? </p>
 
-				<p>
-					<term>Basis step:</term> Suppose <m>w = \epsilon</m>
-				</p>
-				<md>
-					<mrow>w \bullet \epsilon \amp = \epsilon\bullet\epsilon \amp \text{Because } w =
-						\epsilon</mrow>
-					<mrow> \amp = \epsilon \amp \text{ def. of concatenation,}</mrow>
-					<mrow> \amp = w \amp \text{Because } w = \epsilon </mrow>
-				</md>
+        <theorem
+            xml:id="thm-number-of-languages">
+            <statement>
+                <p> For any alphabet <m>\Sigma</m>, the number of languages over <m>\Sigma</m> is
+        uncountable. </p>
+            </statement>
+        </theorem>
+       <p>This fact is an immediate
+        consequence of the result, proved in a previous chapter, that the power set of a countably
+        infinite set is uncountable. Since the elements of <m>{\cal P}(\Sigma)</m> are exactly the
+        languages over <m>
+                \Sigma</m>, there are uncountably many such languages. </p>
+        
+       <p> Languages are sets
+        and therefore, as for any sets, it makes sense to talk about the union, intersection, and
+        complement of languages. (When taking the complement of a language over an alphabet <m>
+        \Sigma</m>, we always consider the univeral set to be <m>\Sigma^*</m>, the set of all
+        strings over <m>\Sigma</m>.) Because languages are sets of strings, there are additional
+        operations that can be defined on languages, operations that would be meaningless on more
+        general sets. For example, the idea of concatenation can be extended from strings to
+        languages. </p> 
+        
+        <p>For two sets of strings <m>S</m> and <m>T</m>, we define the <em>
+        concatenation</em> of <m>S</m> and <m>T</m> (denoted <m>S\cdot T</m> or just <m>ST</m>) to
+        be the set <m>ST = \{ st \ | \ s \in S \land t\in T \}</m>. For example, if <m>S = \{ab, aab\}</m> 
+        and <m>T=\{\varep, 110, 1010\}</m>, then <m>ST = \{ab, ab110, ab1010, aab, aab110, aab1010\}</m>. 
+        Note in particular that <m>ab \in
+        ST</m>, because <m>ab \in S</m>, <m>\varep \in T</m>, and <m>ab \cdot \varep = ab</m>.
+        Because concatenation of sets is defined in terms of the concatenation of the strings that
+        the sets contain, concatenation of sets is associative and not commutative. (This can easily
+        be verified.) </p> 
+        
+        <p>When a set <m>S</m> is concatenated with itself, the notation <m>SS</m>
+        is usually scrapped in favour of <m>S^2</m>; if <m>S^2</m> is concatenated with <m>S</m>, we
+        write <m>S^3</m> for the resulting set, etc. So <m>S^2</m> is the set of all strings formed
+        by concatenating two (possibly different, possibly identical) strings from <m>S</m>, <m>S^3</m>
+        is the set of strings formed by concatenating three strings from <m>S</m>, etc. Extending
+        this notation, we take <m>S^1</m> to be the set of strings formed from one string in <m>S</m>
+        (i.e.\ <m>S^1</m> is <m>S</m> itself), and <m>S^0</m> to be the set of strings formed from
+        zero strings in <m>S</m> (i.e.\ <m>S^0 = \{\varep\}</m>). If we take the union <m>S^0 \cup
+        S^1 \cup S^2 \cup \ldots</m>, then the resulting set is the set of all strings formed by
+        concatenating zero or more strings from <m>S</m>, and is denoted <m>S^*</m>. The set <m>S^*</m>
+        is called the <em>Kleene closure</em> of <m>S</m>, and the <m>^*</m> operator is called the <em>Kleene
+        star</em> operator.</p>
+        
+        <example xml:id="ex-kleene-closure">
+            <title>Kleene Closure of a set</title>
+        <p>
+        Let <m>S = \{01, ba\}</m>. Then 
+        <md>
+                <mrow> S^0 \amp = \{\varep\}</mrow>
+                <mrow>S^1 \amp = \{01, ba\} </mrow>
+                <mrow>S^2 \amp = \{0101, 01ba, ba01, baba\}</mrow>
+                <mrow> S^3 \amp = \{010101, 0101ba, 01ba01, 01baba, ba0101, ba01ba, baba01, bababa\}</mrow>
+        <mrow>\text{ etc, so} \amp </mrow>
+                <mrow>S^* \amp =\{\varep,01,ba,0101,01ba,ba01,baba,010101,0101ba,\ldots\}.</mrow>
+            </md>
+        </p>
+        </example>
+         <p>Note that this is the second time we have seen the notation <m>something^*</m>.
+        We have previously seen that for an alphabet <m>\Sigma</m>, <m>\Sigma^*</m> is defined to be
+        the set of all strings over <m>\Sigma</m>. If you think of <m>\Sigma</m> as being a set of
+        length-1 strings, and take its Kleene closure, the result is once again the set of all
+        strings over <m>\Sigma</m>, and so the two notions of <m>^*</m> coincide. </p>
+        
+        <example xml:id="ex-sigma-star">
+            <title><m>\Sigma^*</m></title>>
+            
+        
+         Let <m>\Sigma = \ab</m>. Then 
+         <md>
+            <mrow> \Sigma^0 \amp = \{\varep\} </mrow>
+            <mrow> \Sigma^1 \amp = \ab </mrow>
+            <mrow> \Sigma^2 \amp = \{aa, ab, ba, bb\}</mrow>
+            <mrow> \Sigma^3 \amp = \{aaa, aab, aba, abb, baa, bab, bba, bbb\} </mrow>
+            <mrow> \text{etc, so} \amp </mrow>
+            <mrow> \Sigma^* \amp =\{\varep,a,b,aa,ab,ba,bb,aaa,aab,aba,abb,baa,bab,\ldots\}. </mrow>
+         </md>        
+        </example>
 
-				<p>
-					<term>Inductive step:</term>
-				</p>
-				<p> Assume an inductive hypothesis that <m>x \bullet \epsilon = x</m> for every
-					string <m>x</m> such that <m>|x| \lt |w|</m>. </p>
-				<p> Now suppose <m>w = ax</m> for some symbol <m>a</m> and string <m>x</m> (<m>w</m>
-					is string <m>x</m> with one more character, <m>a</m>, concatenated on to it.) </p>
-				<md>
-					<mrow>w \bullet \epsilon \amp = (a \cdot x)\bullet \epsilon \amp \text{Because }
-						w = ax</mrow>
-					<mrow> \amp = a \cdot (x \bullet \epsilon) \amp \text{ by definition of
-						concatenation} </mrow>
-					<mrow> \amp = a \cdot x \amp \text{ by inductive hypothesis} </mrow>
-					<mrow> \amp = w \amp \text{Because } w = ax </mrow>
-				</md>
-				<p> Therefore we conclude that <m>w \bullet \epsilon = w \, \blacksquare</m>
-				</p>
-			</proof>
-		</lemma>
+        <exercises xml:id="exercises-15-1">
 
-
-		<lemma xml:id="lem-string-concat-add-len">
-			<statement>
-				<p>
-					<em>Concatenation adds length</em>: <m>|w \bullet x| = |w| + |x| </m>, for all
-					strings <m> w</m> and <m>x</m>. </p>
-			</statement>
-			<proof>
-				<p> Let <m>w</m> and <m>x</m> be arbitrary strings. There are two cases to consider.</p>
-
-				<p>
-					<term>Basis step:</term> Suppose <m>w = \epsilon</m>
-				</p>
-				<md>
-					<mrow>|w \bullet x| \amp = |\epsilon\bullet x| \amp \text{Because } w = \epsilon</mrow>
-					<mrow> \amp = |x| \amp \text{ def. of } \bullet </mrow>
-					<mrow> \amp = |\epsilon| + |x| \amp |\epsilon| = 0 \text{ by definition of
-						length}, |\,| </mrow>
-					<mrow> \amp = |w| + |x| \amp \text{Because } w = \epsilon </mrow>
-				</md>
-
-				<p>
-					<term>Inductive step:</term>
-				</p>
-				<p> Assume an inductive hypothesis that <m>|y \bullet x| = |y| + |x|</m> for every
-					string <m>y</m> such that <m>|y| \lt |w|</m>. </p>
-				<p> Now suppose <m>w = ay</m> for some symbol <m>a</m> and string <m>x</m> (<m>w</m>
-					is string <m>x</m> with one more character, <m>a</m>, concatenated on to it.) </p>
-				<md>
-					<mrow>|w \bullet x| \amp = |ay \bullet x| \amp \text{Because } w = ay</mrow>
-					<mrow> \amp = |a \cdot (y \bullet x)| \amp \text{ by definition of } \bullet </mrow>
-					<mrow> \amp = 1 + |y \bullet x| \amp \text{ by definition of length}, |\,| </mrow>
-					<mrow> \amp = 1 + |y| + |x| \amp \text{ by inductive hypothesis}, |\,| </mrow>
-					<mrow> \amp = |ay| + |x| \amp \text{ by definition of length}, |\,| </mrow>
-					<mrow> \amp = |w| + |x| \amp \text{Because } w = ay </mrow>
-				</md>
-				<p> Therefore we conclude that <m>|w \bullet x| = |w| + |x| \, \blacksquare</m>
-				</p>
-			</proof>
-		</lemma>
-
-		<lemma xml:id="lem-string-concat-associativity">
-			<statement>
-				<p>
-					<em>Concatenation is associative</em>: <m>(w \bullet x) \bullet y = w \bullet (x
-					\bullet y) </m>, for all strings <m> w, x</m> and <m>y</m>. </p>
-			</statement>
-			<proof>
-				<p> Let <m>w, x</m> and <m>y</m> be arbitrary strings. There are two cases to
-					consider.</p>
-
-				<p>
-					<term>Basis step:</term> Suppose <m>w = \epsilon</m>
-				</p>
-				<md>
-					<mrow>(w \bullet x) \bullet y \amp = (\epsilon \bullet x) \bullet y \amp
-						\text{Because } w = \epsilon</mrow>
-					<mrow> \amp = x \bullet y \amp \text{ def. of } \bullet </mrow>
-					<mrow> \amp = \epsilon \bullet (x \bullet y)\amp \text{ def. of } \bullet </mrow>
-					<mrow> \amp = = w \bullet (x \bullet y) \amp \text{Because } w = \epsilon </mrow>
-				</md>
-
-				<p>
-					<term>Inductive step:</term>
-				</p>
-				<p> Assume an inductive hypothesis that<m>(z \bullet x) \bullet y = z \bullet (x
-					\bullet y) </m> for every string <m>z</m> such that <m>|z| \lt |w|</m>. </p>
-				<p> Now suppose <m>w = az</m> for some symbol <m>a</m> and string <m>z</m> (<m>w</m>
-					is string <m>z</m> with one more character, <m>a</m>, concatenated on to it.) </p>
-				<md>
-					<mrow>(w \bullet x) \bullet y \amp = (az \bullet x) \bullet y \amp \text{Because
-						} w = az</mrow>
-					<mrow> \amp = (a \cdot (z \bullet x)) \bullet y \amp \text{ def. of } \bullet </mrow>
-					<mrow> \amp = a \cdot ((z \bullet x)) \bullet y) \amp \text{ def. of } \bullet </mrow>
-					<mrow> \amp = a \cdot (z \bullet (x \bullet y)) \amp \text{ by the inductive
-						hypothesis} </mrow>
-					<mrow> \amp = az \bullet (x \bullet y) \amp \text{ def. of } \bullet </mrow>
-					<mrow> \amp = w \bullet (x \bullet y) \amp \text{Because } w = az </mrow>
-				</md>
-				<p> Therefore we conclude that <m>(w \bullet x) \bullet y = w \bullet (x \bullet y)
-					\, \blacksquare</m>
-				</p>
-			</proof>
-		</lemma>
-
-	</subsection>
-	<subsection xml:id="subsec-another-induction-on-strings">
-		<title>More Than One Path up the Mountain</title>
-		<p>This is not the only template that one can use for induction proofs on strings. For
-			example, we can model our case analysis on the following observation, whose easy proof
-			we leave as an exercise (hint, hint): A string <m>w \in \Sigma^*</m> is <term>non-empty</term>
-			if and only if either <ul>
-				<li>
-					<p>
-						<m>w = a</m> for some symbol <m>a \in \Sigma</m> (<m>w</m> is just one
-			character), or </p>
-				</li>
-				<li>
-					<p>
-						<m>w = x \bullet y</m> for some <em>non-empty</em> strings <m>x</m> and <m>y</m>
-			.
-		</p>
-				</li>
-			</ul> In the latter case, Lemma <xref
-				ref="lem-string-concat-add-len" /> implies that <m>|x| \lt |w|</m> and <m>|y| \lt
-			|w|</m>, so in an inductive proof, we can apply to inductive hypothesis to either <m>x</m>
-			or <m>y</m> (or even both). </p>
-		<p> Here is a proof of Lemma <xref ref="lem-string-concat-associativity" /> that uses this
-			alternative recursive structure:
-			<proof>
-				<p> Let <m>w, x</m> and <m>y</m> be arbitrary strings. There are three cases to
-			consider.</p>
-
-				<p>
-					<term>Basis step 1:</term> Suppose <m>w = \epsilon</m>
-				</p>
-				<md>
-					<mrow>(w \bullet x) \bullet y \amp = (\epsilon \bullet x) \bullet y \amp
-			\text{Because } w = \epsilon</mrow>
-					<mrow> \amp = x \bullet y \amp \text{ def. of } \bullet </mrow>
-					<mrow> \amp = \epsilon \bullet (x \bullet y)\amp \text{ def. of } \bullet </mrow>
-					<mrow> \amp = = w \bullet (x \bullet y) \amp \text{Because } w = \epsilon </mrow>
-				</md>
-				<p>
-					<term>Basis step 2:</term> Suppose <m>w = a</m>, <m>w</m> is a single symbol. </p>
-				<md>
-					<mrow>(w \bullet x) \bullet y \amp = (a \bullet x) \bullet y \amp
-						\text{Because } w = a</mrow>
-					<mrow> \amp = (a \cdot x)\bullet y \amp \text{ Because } a \bullet z = a \cdot z
-			\text{ by def. of } \bullet </mrow>
-					<mrow> \amp = a \cdot (x \bullet y)\amp \text{ def. of } \bullet </mrow>
-					<mrow> \amp = a \bullet (x \bullet y)\amp \text{ Because } a \bullet z = a \cdot
-			z \text{ by def. of } \bullet </mrow>
-					<mrow> \amp = = w \bullet (x \bullet y) \amp \text{Because } w = a </mrow>
-				</md>
-				<p>
-					<term>Inductive step:</term>
-				</p>
-				<p> Assume an inductive hypothesis that<m>(z \bullet x') \bullet y' = z \bullet (x'
-			\bullet y') </m> for all strings <m>x', y'</m> and <m>z</m> such that <m>|z| \lt |w|</m>
-			. </p>
-				<p> Now suppose <m>w = u \bullet v</m> for some non-empty strings <m>u</m> and <m>v</m>
-			. </p>
-				<md>
-					<mrow>(w \bullet x) \bullet y \amp = ((u \bullet v) \bullet x) \bullet y \amp
-			\text{Because
-						} w = u \bullet v</mrow>
-					<mrow> \amp = (u \bullet (v \bullet x)) \bullet y \amp \text{ by I.H, because }
-			|u| \lt |w| </mrow>
-					<mrow> \amp = u \bullet ((v \bullet x)) \bullet y) \amp \text{ by I.H, because }
-			|u| \lt |w| </mrow>
-					<mrow> \amp = u \bullet (v \bullet (x \bullet y)) \amp \text{ by I.H, because }
-			|u| \lt |w| </mrow>
-					<mrow> \amp = (u \bullet v) \bullet (x \bullet y) \amp \text{ by I.H, because }
-			|u| \lt |w| </mrow>
-					<mrow> \amp = w \bullet (x \bullet y) \amp \text{Because
-						} w = u \bullet v</mrow>
-				</md>
-				<p> Therefore in all three cases we conclude that <m>(w \bullet x) \bullet y = w
-			\bullet (x \bullet y)
-						\, \blacksquare</m>
-				</p>
-			</proof>
-		</p>
-	</subsection>
-
-	<subsection xml:id="subsec-indices-substrings">
-		<title>Indices, Substrings annd Subsequences</title>
-		<p>
-			Finally, we'll conclude this section by formally defining several other common functions
-			and terms
-			related to strings.
-		</p>
-		<p> For any string <m>w</m> and any integer <m>1 \leq i \leq |w|</m>, the expression <m>w_i</m>
-			denotes the <m>i</m>th symbol in <m>w</m>, counting from left to right (<em>note: this
-			text uses indexing starting at 1, not 0 like most programming languages</em>). More
-			formall, <m>w_i</m> is recursively defined as follows: <me>
-				w_i =
-				\begin{cases}
-				a &amp; \text{if}\ w = ax \text{ and } i = 1 \\
-				x_{i-1} &amp; \text{if}\ w = ax \text{ and } i \gt 1.
-				\end{cases}
-			</me>
-			As one might reasonably expect, <m>w_i</m> is formally undefined if <m>i \lt 1</m> or <m>w
-			= \epsilon</m>, and therefore (by induction) if <m>i \gt |w|</m>. The integer <m>i</m>
-			is called the <term>index</term> of <m>w_i</m>. </p>
-
-		<p> We sometimes write strings as a concatenation of their constituent symbols using this
-			subscript notation: <m>w = w_1 w_2 \dots w_{|w|}</m>. While completely standard, this
-			notation is slightly misleading, because it <em>incorrectly</em> suggestst that the
-			entire string <m>w</m> contains at least three symbols, when in fact <m>w</m> could be a
-			single symbol or the empty string. </p>
-		<p> In actual code, subscripts are usually expressed using the bracket notation <m>w[i]</m>.
-			Brackets were introduced as a typographical convention over a hundred years ago because
-			subscripts and superscripts were difficult or impossible to type. We sometimes write
-			strings as explicit arrays <m>w[1 .. n]</m>, with the understanding that <m>n = |w| </m>.
-			Again, this notation is potentially misleading; always remember that <m>n</m> might be
-			zero; the string/array might be empty. </p>
-		<p> A <term>substring</term>of a string <m>w</m> is another string obtained from <m>w</m> by
-			deleting zero or more symbols from the beginning and from the end. Formally, a string <m>
-			y</m> is a substring of <m>w</m> if and only if there are strings <m>x</m> and <m>z</m>
-			such that <m>w = xyz</m>. Extending the array notation for strings, we write <m>w [i ..
-			j ]</m> to denote the substring of <m>w</m> starting at <m>w_i</m> and ending at <m>w_j</m> . More
-			formally, we define <me>
-				w[i..j] =
-				\begin{cases}
-				\epsilon &amp; \text{if}\ j \lt i, \\
-				w_i \cdot w[i+1 .. j] &amp; \text{otherwise}.\end{cases}
-			</me></p>
-	</subsection>
-
+        <exercise number="1" xml:id="exerc-15_1-1">
+            <statement>
+                <p>
+                    Let <m>S = \{\varep, ab, abab\}</m> and <m>T = \{aa, aba, abba,
+        abbba, \ldots\}</m>. Find the following: 
+        <ol marker="(a)">
+            <li>
+                <p>
+                   <m>S^2</m> 
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>S^3</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>S^*</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>ST</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>TS</m>
+                </p>
+            </li>
+        </ol>
+                    
+                </p>
+            </statement>
+            
+        </exercise>
+        <exercise number="2" xml:id="exerc-15_1-2">
+        <statement>
+            <p>
+                 The <em>reverse</em> of a language <m>L</m> is defined to be <m>L^R = \{ x^R \ | \ x \in L\}</m>. Find <m>
+        S^R</m> and <m>T^R</m> for the <m>S</m> and <m>T</m> in the preceding problem.
+            </p>
+        </statement>
+            
+        </exercise>
+            <exercise number="3" xml:id="exerc-15_1-3">
+                <statement>
+                    <p>Give an example of a language <m>L</m> such that <m>L=L^*</m>.</p>
+                </statement>
+            </exercise>
+        </exercises>
+ </subsection>
 
 </section>
