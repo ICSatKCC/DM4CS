@@ -1,173 +1,559 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="s-regular-expressions">
-  <title>Regular Expressions</title>
+<section xml:id="s-regular-expressions-and-apps">
+  <title>Regular Expressions and Their Applications</title>
+  <subsection xml:id="subsec-regular-expressions">
+    <title>Regular Expressions</title>
+    
+
   <idx>Regular Expressions</idx>
 
-    <p>
-      Though we have used the term <em> string</em> throughout to refer to a sequence of
-symbols from an alphabet, an alternative term that is frequently used is <em>
-word</em>.  The analogy seems fairly obvious: strings are made up of ``letters"
-from an alphabet, just as words are in human languages like English.
-In English, however, there are no particular rules specifying which sequences 
-of letters can be used to form legal English words---even unlikely
-combinations like <em> ghth</em> and <em> ckstr</em> have their place.  
-While some formal languages may simply
-be random collections of arbitrary strings, more interesting languages
-are those where the strings in the language all share some 
-common structure:  
-<md>
-<mrow>L_1 = \{ x\in \ab^* \ | n_a(x) =
-n_b(x)\};</mrow>
- <mrow>L_2 = \{\mbox{legal Java identifiers}\};</mrow>
- <mrow> L_3 = \{\mbox{legal C++
-programs}\}.</mrow>
-</md>  
-In all of these languages, there are structural 
-rules which determine which sequences of symbols are in the language and which
-aren't.
-So
-despite the terminology of ``alphabet" and ``word" in formal
-language theory, the concepts don't necessarily match ``alphabet"
-and ``word" for human languages.  A better parallel is to think of
-the <em> alphabet</em> in a formal language as corresponding to the <em> words</em> in a
-human language; the <em> words</em> in a formal language correspond to
-the <em> sentences</em> in a human language, as there are rules (<em> grammar 
-rules</em>) which determine how they can legally be constructed.
-    </p>
-    <p>
-      One way of describing the grammatical structure of the strings in a language is
-to use a mathematical formalism called a <term>regular expression</term>.  A regular
-expression is a pattern that ``matches" strings that have a particular form.  For
-example, consider the language (over alphabet <m>\Sigma = \ab</m>) <m>L= \{x \ | \ x
-\mbox{ starts and ends with } a\}</m>.  What is the symbol-by-symbol 
-structure of
-strings in this language?  Well, they start with an <m>a</m>, followed by zero or more
-<m>a</m>'s or <m>b</m>'s or both, followed by an <m>a</m>.  The regular expression 
-<m>a \cdot (a \REOR b)^* \cdot a</m> is a pattern that captures this structure and matches any string in
-<m>L</m> (<m>\cdot</m> and <m>^*</m> have their usual meanings, and <m>\REOR</m>  designates <em>or</em>.)
-<aside>
+  <p> Though we have used the term <em> string</em> throughout to refer to a sequence of symbols
+    from an alphabet, an alternative term that is frequently used is <em>
+      word</em>. The analogy seems fairly obvious: strings are made up of ``letters" from an
+    alphabet, just as words are in human languages like English. In English, however, there are no
+    particular rules specifying which sequences of letters can be used to form legal English
+    words---even unlikely combinations like <em> ghth</em> and <em> ckstr</em> have their place.
+    While some formal languages may simply be random collections of arbitrary strings, more
+    interesting languages are those where the strings in the language all share some common
+    structure: <md>
+      <mrow>L_1 = \{ x\in \ab^* \ | n_a(x) =
+        n_b(x)\};</mrow>
+      <mrow>L_2 = \{\mbox{legal Java identifiers}\};</mrow>
+      <mrow> L_3 = \{\mbox{legal C++
+        programs}\}.</mrow>
+    </md> In all of these languages, there are structural rules which
+    determine which sequences of symbols are in the language and which aren't. So despite the
+    terminology of ``alphabet" and ``word" in formal language theory, the concepts don't necessarily
+    match ``alphabet" and ``word" for human languages. A better parallel is to think of the <em>
+    alphabet</em> in a formal language as corresponding to the <em> words</em> in a human language;
+    the <em> words</em> in a formal language correspond to the <em> sentences</em> in a human
+    language, as there are rules (<em> grammar
+      rules</em>) which determine how they can legally be constructed. </p>
+  <p> One way of describing the grammatical structure of the strings in a language is to use a
+    mathematical formalism called a <term>regular expression</term>. A regular expression is a
+    pattern that ``matches" strings that have a particular form. For example, consider the language
+    (over alphabet <m>\Sigma = \ab</m>) <m>L= \{x \ | \ x
+      \mbox{ starts and ends with } a\}</m>. What is the symbol-by-symbol structure of strings in
+    this language? Well, they start with an <m>a</m>, followed by zero or more <m>a</m>'s or <m>b</m>'s
+    or both, followed by an <m>a</m>. The regular expression <m>a \cdot (a \REOR b)^* \cdot a</m> is
+    a pattern that captures this structure and matches any string in <m>L</m> (<m>\cdot</m> and <m>
+    ^*</m> have their usual meanings, and <m>\REOR</m> designates <em>or</em>.) 
+    
+    <aside>
+    <title>Or Notation</title>
+      <p> Various symbols have been used to represent the ``or'' operation in regular expressions.
+    Both <m>+</m> and <m>\cup</m> have been used for this purpose. In this chapter, we use the symbol <m>
+    |</m> because it is commonly used in computer implementations of regular expressions. </p>
+    </aside>
+
+    Conversely, consider the regular expression <m>(a\cdot(a\REOR b)^*) \REOR ((a\REOR b)^*\cdot a)</m>.
+    This is a pattern that matches any string that either has the form ``<m>a</m> followed by zero
+    or more <m>a</m>'s or <m>b</m>'s or both" (i.e. any string that starts with an <m>a</m>) <em>or</em>
+    has the form ``zero or more <m>a</m>'s or <m>b</m>'s or both followed by an <m>a</m>" (i.e. any
+    string that ends with an <m>a</m>). Thus the regular expression <em>generates</em> the language
+    of all strings that start or end (or both) in an <m>a</m>: this is the set of strings that match
+    the regular expression. </p>
   <p>
-  Various
-symbols have been used to represent the ``or'' operation in regular expressions.  Both
-<m>+</m> and <m>\cup</m> have been used for this purpose.  In this book, we use the symbol <m>|</m> because
-it is commonly used in computer implementations of regular expressions.
+    Here are the formal definitions of a regular expression and the language
+    generated by a regular expression:
   </p>
-</aside> 
-Conversely, consider the regular expression <m>(a\cdot(a\REOR b)^*) \REOR  ((a\REOR b)^*\cdot a)</m>.
-This is a pattern that matches any string that either has the form ``<m>a</m> followed
-by zero or more <m>a</m>'s or <m>b</m>'s or both" (i.e. any string that starts with an <m>a</m>)
-<em>or</em> has the form ``zero or more <m>a</m>'s or <m>b</m>'s or both followed by an <m>a</m>"
-(i.e. any string that ends with an <m>a</m>).  Thus the regular expression 
-<em>generates</em> the language of all strings that start or end (or both) in an
-<m>a</m>: this is the set of strings that match the regular expression. 
+
+
+  <definition
+    xml:id="def-regex">
+    <title>Regular Expression</title>
+    <idx>Regular Expression</idx>
+    <notation>
+      <usage>
+        <m>\Phi</m>
+      </usage>
+      <description>A regular expression.</description>
+    </notation>
+    <statement>
+      <p> Let <m>\Sigma</m> be an alphabet. Then the following patterns are <term>regular expressions</term>
+        over <m>\Sigma</m>: <ol>
+          <li>
+            <p>
+              <m>\Phi</m> and <m>\varep</m> are regular expressions; </p>
+          </li>
+          <li>
+            <p>
+              <m>a</m> is a regular expression, for each <m>a \in \Sigma</m>; </p>
+          </li>
+          <li>
+            <p> if <m>r_1</m> and <m>r_2</m> are regular expressions, then so are <m>r_1\REOR r_2</m>
+        , <m>r_1\cdot r_2</m>, <m>r_1^*</m> and <m>(r_1)</m> (and of course, <m>r_2^*</m> and <m>
+        (r_2)</m>). As in concatenation of strings, the <m>\cdot</m> is often left out of the second
+        expression. (Note: the order of precedence of operators, from lowest to highest, is <m>\REOR</m>
+        , <m>\cdot</m>, <m>*</m>.) </p>
+          </li>
+        </ol>
+
+
+      </p>
+      <p>
+        No other patterns are regular expressions.
+</p>
+    </statement>
+  </definition>
+  <definition
+    xml:id="def-language-gen-by-regex">
+    <title>Language Generated by a Regular Expression</title>
+    <idx>Language Generated by a Regular Expression</idx>
+    <notation>
+      <usage>
+        <m>L(r)</m>
+      </usage>
+      <description>A language generated by regular expression <m>r</m>.</description>
+    </notation>
+    <statement>
+      <p>The <term>language generated by a regular expression</term> <m>r</m>, denoted <m>L(r)</m>,
+        is defined as follows: <ol>
+          <li>
+            <p>
+              <m>L(\Phi) = \emptyset,</m> i.e. no strings match <m>\Phi</m>; </p>
+          </li>
+          <li>
+            <p>
+              <m>L(\varep) = \{\varep\}</m>, i.e. <m>\varep</m> matches only the empty string; </p>
+          </li>
+          <li>
+            <p>
+              <m>L(a) = \{a\}</m>, i.e. <m>a</m> matches only the string <m>a</m>; </p>
+          </li>
+          <li>
+            <p>
+              <m>L(r_1\REOR r_2) = L(r_1) \cup L(r_2)</m>, i.e. <m>r_1\REOR r_2</m> matches strings
+        that match <m>r_1</m> or <m>r_2</m> or both; </p>
+          </li>
+          <li>
+            <p>
+              <m>L(r_1r_2) = L(r_1)L(r_2)</m>, i.e. <m>r_1r_2</m> matches strings of the form
+        ``something that matches <m>r_1</m> followed by something that matches <m>r_2</m>"; </p>
+          </li>
+          <li>
+            <p>
+              <m>L(r_1^*) = (L(r_1))^*</m>, i.e. <m>r_1^*</m> matches sequences of 0 or more
+        strings each of which matches <m>r_1</m>. </p>
+          </li>
+          <li>
+            <p>
+              <m>L((r_1)) = L(r_1)</m>, i.e. <m>(r_1)</m> matches exactly those strings matched by <m>
+        r_1</m>. </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </definition>
+  <example>
+    Let <m>\Sigma = \ab</m>, and consider the regular expression <m>r=a^*b^*</m>.  What is
+<m>L(r)</m>?  Well, <m>L(a) = \{a\}</m> so <m>L(a^*) = (L(a))^* = \{a\}^*</m>, and <m>\{a\}^*</m> is
+the set of all strings of zero or more <m>a</m>'s, so <m>L(a^*) = \{\varep, a, aa, aaa,
+\ldots\}</m>.  Similarly, <m>L(b^*) = \{\varep, b, bb, bbb, \ldots\}</m>.  
+Since  <m>L(a^*b^*) = L(a^*)L(b^*) = \{xy \ | \ x\in L(a^*)\land y\in L(b^*)\}</m>, we
+have <m>L(a^*b^*) = \{\varep, a, b, aa, ab, bb, aaa, aab, abb, bbb, \ldots\}</m>,
+which is the set of all strings of the form ``zero or more <m>a</m>'s followed by zero
+or more <m>b</m>'s".
+  </example>
+
+    <example>
+    
+Let <m>\Sigma = \ab</m>, and consider the regular expression <m>r=(a\REOR aa\REOR aaa)(bb)^*</m>.
+Since <m>L(a) = \{a\}</m>, <m>L(aa) = L(a)L(a) = \{aa\}</m>.  Similarly, <m>L(aaa) = \{aaa\}</m>
+and <m>L(bb) = \{bb\}</m>.  Now <m>L(a\REOR aa\REOR aaa) = L(a) \cup L(aa) \cup L(aaa) = \{a, aa,
+aaa\},</m> and <m>L((bb)^*) = (L((bb)))^* = (L(bb))^*</m>  (the last equality is from
+clause 7 of <xref ref="def-language-gen-by-regex"/>), and <m>(L(bb))^* = \{bb\}^* = \{\varep, bb,
+bbbb, \ldots\}</m>.  So <m>L(r)</m> is the set of strings formed by
+concatenating <m>a</m> or <m>aa</m> or <m>aaa</m> with zero or more pairs of <m>b</m>'s.
+
+  </example>
+
+  <definition
+    xml:id="def-regular-language">
+    <title>Regular Language</title>
+    <idx>Regular Language</idx>
+    <statement>
+A language is <em>regular</em> if it is generated by
+a regular expression.
+    </statement>
+  </definition>
+
+
+<p>Clearly the union of two regular languages is regular; likewise, 
+the concatenation of regular languages is regular; and the Kleene
+closure of a regular language is regular. It is less clear whether the
+intersection of regular languages is always regular; nor is it clear whether the
+complement of a regular language is guaranteed to be regular.  These are
+questions that will be taken up in <xref ref=""/>. <!--TODO-->
 </p>
 <p>
-Here are the formal definitions of a regular expression and the language
-generated by a regular expression:
-    </p>
- 
+Regular languages, then, are languages whose strings' structure can be described
+in a very formal, mathematical way.  The fact that a language can be
+``mechanically" described or generated means that we are likely to be
+able to get a computer to recognize strings in that language.
+We will pursue the question of mechanical language recognition in
+<xref ref="section15_4-finite-state-automata"/>, and subsequently will see that our first attempt to model mechanical
+language recognition does in fact produce a family of ``machines" that recognize
+exactly the regular languages.  But first, in the next section, we will look at some
+practical applications of regular expressions.
+</p>
+  </subsection>
+
+
+
+<subsection xml:id="subsec-regex-applications">
+  <title>Application: Using Regular Expressions</title>
+ <p>
+   A common operation when editing text is to search for a
+given string of characters, sometimes with the purpose of
+replacing it with another string.  Many ``search and replace''
+  <idx><h>search and replace</h></idx> facilities have the option of using regular expressions
+instead of simple strings of characters.  A regular expression describes
+a language, that is, a <em>set</em> of strings.  We can think of a regular
+expression as a <term>pattern</term> that matches certain strings, namely all
+the strings in the language described by the regular expression.
+When a regular expression is used in a search operation, the
+goal is to find a string that matches the expression.  This type
+of <term>pattern matching</term> <idx><h>pattern matching</h></idx>is very useful.
+ </p>
+<p>
+The ability to do pattern matching with regular expressions is provided
+in many text editors. Programming languages often come with libraries for working with
+regular expressions.  Java (as of version 1.4) provides regular
+expression handling though a package named <em>java.util.regexp</em>.
+C++ typically provides a header file named <em>regexp.h</em> for
+the same purpose.  In all these applications, many new notations are added to the syntax to make it
+more convenient to use.  The syntax can vary from one implementation
+to another, but most implementations include the capabilities
+discussed in this section.
+</p> 
+<p>
+In applications of regular expressions, the alphabet usually includes
+all the characters on the keyboard.  This leads to a problem, because
+regular expressions actually use two types of symbols:  symbols that
+are members of the alphabet and special symbols such a ``<c>*</c>'' and ``<c>)</c>'' that
+are used to construct expressions.  These special symbols, which
+are not part of the language being described but are used in the
+description, are called <term>meta-characters</term>.  The problem is,
+when the alphabet includes all the available characters, what do we
+do about meta-characters?  If the language that we are describing 
+uses the ``<c>*</c>'' character, for example, how can we represent the
+Kleene star operation?
+</p> 
+<p>
+The solution is to use a so-called ``escape character,'' which is
+usually the backslash, <c>\</c>.  We agree, for example, that the notation
+<c>\*</c> refers to the symbol <c>*</c> that is a member of
+the alphabet, while <c>*</c> by itself is the meta-character
+that represents the Kleene star operation.  Similarly,
+<c>(</c> and <c>)</c> are the meta-characters that are used
+for grouping, while the corresponding characters in the language
+are written as <c>\(</c> and <c>\)</c>.  For example,
+a regular expression that matches the string <c>a*b</c> repeated
+any number of times would be written: <c>(a\*b)*</c>.
+The backslash is also used to represent certain non-printing
+characters.  For example, a tab is represented as <c>\t</c>
+and a new line character is <c>\n</c>.
+</p> 
+<p>
+We introduce two new common operations on regular expressions and two
+new meta-characters to represent them.
+The first operation is represented by the meta-character <c>+</c>:
+If <c>r</c> is a regular expression, then <c>r+</c> represents the
+occurrence of <c>r</c> one or more times.  The second operation
+is represented by <c>?</c>: The notation <c>r?</c> represents an occurrence of <c>r</c> 
+zero or one times.  That is to say, <c>r?</c> represents an optional 
+occurrence of <c>r</c>.  Note that these operations are introduced
+for convenience only and do not represent any real increase
+in the power.  In fact, <c>r+</c> is exactly equivalent to
+<c>rr*</c>, and <c>r?</c> is equivalent to <c>(r|</c><m>\varep</m><c>)</c> 
+(except that in applications there is generally no equivalent to <m>\varep</m>).
+</p> 
+<p>
+To make it easier to deal with the large number of characters in the
+alphabet, <term>character classes</term> are introduced.  A character class
+consists of a list of characters enclosed between brackets, <c>[</c> and
+<c>]</c>.  (The brackets are meta-characters.)  A character class
+matches a single character, which can be any of the characters in
+the list.  For example, <c>[0123456789]</c> matches any one of
+the digits 0 through 9.  The same thing could be expressed
+as <c>(0|1|2|3|4|5|6|7|8|9)</c>, so once again
+we have added only convenience, not new representational power.
+For even more convenience, a hyphen can be included in a character
+class to indicate a range of characters.  This means that
+<c>[0123456789]</c> could also be written as <c>[0-9]</c>
+and that the regular expression <c>[a-z]</c> will match any
+single lowercase letter.  A character class can include multiple
+ranges, so that <c>[a-zA-Z]</c> will match any letter, lower- or
+uppercase.  The period (<c>.</c>) is a meta-character that will
+match any single character, except (in most implementations)
+for an end-of-line.
+These notations can, of course, be used in more complex
+regular expressions.  For example, <c>[A-Z][a-zA-Z]*</c>
+will match any capitalized word, and <c>\(.*\)</c> matches
+any string of characters enclosed in parentheses.
+</p> 
+<p>
+In most implementations, the meta-character <c>^</c> can be used in
+a regular expression to match the beginning of a line of text, so that
+the expression <c>^[a-zA-Z]+</c> will only match a word that
+occurs at the start of a line.  Similarly, <c>$</c> is used
+as a meta-character to match the end of a line.  Some implementations
+also have a way of matching beginnings and ends of words.
+Typically, <c>\b</c> will match such ``word boundaries.''
+Using this notation, 
+the pattern <c>\band\b</c> will match the string ``and''
+when it occurs as a word, but will not match the a-n-d
+in the word ``random.''  We are going a bit beyond
+basic regular expressions here: Previously, we only thought of
+a regular expression as something that either will match
+or will not match a given string in its entirety.   When
+we use a regular expression for a search operation, however,
+we want to find a \textit<em>substring</em> of a given string that
+matches the expression.  The notations <c>^</c>,
+<c>\$</c> and <c>\ b</c> put a restrictions
+on <em>where</em> the matching substring can be located in the string.
+</p> 
+<p>
+When regular expressions are used in search-and-replace operations,
+a regular expression is used for the search pattern.  A search is
+made in a (typically long) string for a substring that matches the pattern,
+and then the substring is replaced by a specified replacement
+pattern.  The replacement pattern is not used for matching
+and is not a regular expression.  However, it can be more than
+just a simple string.  It's possible to include parts of the
+substring that is being replaced in the replacement string.
+The notations <c>\0,\1, ..., \9</c>
+are used for this purpose.  The first of these, <c>\0</c>,
+stands for the entire substring that is being replaced.
+The others are only available when parentheses are used in
+the search pattern.  The notation <c>\1</c> stands for
+``the part of the substring that matched the part of the
+search pattern beginning with the first <c>(</c> in the
+pattern and ending with the matching <c>)</c>.''  Similarly,
+<c>\2</c> represents whatever matched the part of the
+search pattern between the second pair of parentheses, and so on.
+</p> 
+<p>
+Suppose, for example, that you would like to search for
+a name in the form <em>last-name, first-name</em> and
+replace it with the same name in the form <em>first-name last-name</em>.
+For example, ``Reeves, Keanu'' should be converted to ``Keanu Reeves''.
+Assuming that names contain only letters,
+this could be done using the search pattern <c>([A-Za-z]+), ([A-Za-z]+)</c>
+and the replacement pattern <c>\2 \1</c>.  When the match is
+made, the first <c>([A-Za-z]+)</c> will match ``Reeves,'' 
+so that in the replacement pattern, <c>\1</c> represents the
+substring ``Reeves''. Similarly, <c>\2</c> will represent
+``Keanu''.  Note that the parentheses
+are included in the search pattern <em>only</em> to specify what parts
+of the string are represented by <c>\1</c> and <c>\2</c>.
+In practice, you might use <c>^([A-Za-z]+), ([A-Za-z])\$</c>
+as the search pattern to constrain it so that it will only 
+match a complete line of text.  By using a ``global'' search-and-replace,
+you could convert an entire file of names from one format to the other
+in a single operation.
+</p> 
+<p>
+Regular expressions are a powerful and useful technique that
+should be part of any computer scientist's toolbox.  This section
+has given you a taste of what they can do, but you should check
+out the specific capabilities of the regular expression implementation
+in the tools and programming languages that you use.
+</p> 
+</subsection>
+<exercises xml:id="exercises-15-2">
+<exercise number="1"  xml:id="exerc-15_2-1">
+   <statement>
+                <p>
+                    Give English-language descriptions of the languages generated by the
+following regular expressions.
+        <ol marker="(a)">
+            <li>
+                <p>
+                   <m>(a\REOR b)^*</m> 
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>a^*\REOR b^*</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m> b^*(ab^*ab^*)^*</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>b^*(abb^*)</m>
+                </p>
+            </li>
+        </ol>
+                    
+                </p>
+            </statement>
+</exercise>
+<exercise number="2"  xml:id="exerc-15_2-2">
+   <statement>
+                <p>
+                    Give regular expressions over <m>\Sigma=\ab</m> that generate the 
+following languages.
+        <ol marker="(a)">
+            <li>
+                <p>
+                   <m>L_1 = \{ x \ | \ x \mbox{ contains 3 consecutive $a$'s}\}</m> 
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>L_2 = \{ x \ | \ x \mbox{ has even length}\}</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>L_3 = \{ x \ | \ n_b(x) = 2 \bmod{3}\}</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>L_4 = \{ x \ | \ x \mbox{ contains the substring } aaba\}</m>
+                </p>
+            </li>
+            <li>
+              <p>
+                <m>L_5 = \{ x \ | \ n_b(x) \lt 2 \}</m>
+              </p>
+            </li>
+                        <li>
+              <p>
+                <m>L_6 = \{ x \ | \ x \mbox{ doesn't end in } aa\}</m>
+              </p>
+            </li>
+        </ol>
+                    
+                </p>
+            </statement>
+</exercise>
+<exercise number="3" xml:id="exerc-15_2-3">
+<statement>
+  <p>
+    Prove that all finite languages are regular.
+  </p>
+</statement>
   
-   <definition
-            xml:id="def-regex">
-            <title>Regular Expression</title>
-            <idx>Regular Expression</idx>
-            <notation>
-                <usage>
-                    <m>\Phi</m>
-                </usage>
-                <description>A regular expression.</description>
-            </notation>
-            <statement>
-                <p> Let <m>\Sigma</m> be an alphabet.  Then the 
-following patterns are <em>regular expressions</em> over <m>\Sigma</m>:
-<ol>
-  <li>
-    <p>
-       <m>\Phi</m> and <m>\varep</m> are regular expressions;
-    </p>
-  </li>
-  <li>
-    <p>
-      <m>a</m> is a regular expression, for each <m>a \in \Sigma</m>;
-    </p>
-  </li>
-  <li>
-    <p>
-      if <m>r_1</m> and <m>r_2</m> are regular expressions, then so are
-<m>r_1\REOR r_2</m>, <m>r_1\cdot r_2</m>, <m>r_1^*</m> and <m>(r_1)</m> (and of course, <m>r_2^*</m>
-and <m>(r_2)</m>).
-As in concatenation of strings, the <m>\cdot</m> is often left out of
-the second expression.  (Note: the order of precedence of operators, from lowest to highest,
-is <m>\REOR</m> , <m>\cdot</m>, <m>*</m>.)
-    </p>
-  </li>
-</ol>
+</exercise>
 
+<exercise number="4" xml:id="exerc-15_2-4">
+ <statement><p> The backslash is itself a meta-character.  Suppose that
+you want to match a string that contains a backslash
+character.  How do you suppose you would represent the backslash in
+the regular expression?</p></statement>
+</exercise>
 
-</p>
-<p>
-  No other patterns are regular expressions.
-</p>
+<exercise number="5" xml:id="exerc-15_2-5"> 
+ <statement>
+                <p>
+                    Using the notation introduced in this section,
+write a regular expression that could be used to match
+each of the following:
+        <ol marker="(a)">
+            <li>
+                <p>
+                   Any sequence of letters (upper- or lowercase) that
+includes the letter Z (in uppercase).
+                </p>
+            </li>
+            <li>
+                <p>
+                    Any eleven-digit telephone number written in the form<c>(xxx)xxx-xxxx</c>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Any eleven-digit telephone number <em>either</em>
+in the form <c>(xxx)xxx-xxxx</c> or <c>xxx-xxx-xxxx</c>.
+                </p>
+            </li>
+            <li>
+                <p>
+                   A non-negative real number with an optional decimal
+part.  The expression should match numbers such as
+17, 183.9999, 182., 0, 0.001, and 21333.2.
+                </p>
+            </li>
+            <li>
+                <p>
+                    A complete line of  text that contains only letters.
+                </p>
+            </li>
+            <li>
+              <p>
+                 A C++ style one-line comment consisting of <c>//</c> and all the
+following characters up to the end-of-line.
+              </p>
+            </li>
+        </ol>
+                    
+                </p>
             </statement>
-        </definition>
-       <definition
-            xml:id="def-language-gen-by-regex">
-            <title>Language Generated by a Regular Expression</title>
-            <idx>Language Generated by a Regular Expression</idx>
-            <notation>
-                <usage>
-                    <m>L(r)</m> 
-                </usage>
-                <description>A language generated by regular expression <m>r</m>.</description>
-            </notation>
-            <statement>
-                <p>The <term>language generated by a regular expression</term> <m>r</m>, 
-denoted <m>L(r)</m>,
-is defined as follows:
-<ol>
-  <li>
-    <p>
-       <m>L(\Phi) = \emptyset, i.e.\ no strings match \Phi</m>;
-    </p>
-  </li>
-  <li>
-    <p>
-     <m>L(\varep) = \{\varep\}</m>, i.e.\ <m>\varep</m> matches only the 
-empty string;
-    </p>
-  </li>
-  <li>
-    <p>
-    <m>L(a) = \{a\}</m>, i.e.\ <m>a</m> matches only the string <m>a</m>;
-    </p>
-  </li>
-  <li>
-    <p>
-      <m>L(r_1\REOR r_2) = L(r_1) \cup L(r_2)</m>, i.e.\ <m>r_1\REOR r_2</m> matches
-strings that match <m>r_1</m> or <m>r_2</m> or both;
-    </p>
-  </li>
-  <li>
-    <p>
-      <m>L(r_1r_2) = L(r_1)L(r_2)</m>, i.e.\ <m>r_1r_2</m> matches strings of the form 
-``something that matches <m>r_1</m> followed by something that 
-matches <m>r_2</m>";
-    </p>
-  </li>
-  <li>
-    <p>
-      <m>L(r_1^*) = (L(r_1))^*</m>, i.e.\ <m>r_1^*</m> matches sequences of 0
-or more strings each of which matches <m>r_1</m>.
-    </p>
-  </li>
-  <li>
-    <p>
-      <m>L((r_1)) = L(r_1)</m>, i.e.\ <m>(r_1)</m> matches exactly those strings
-matched by <m>r_1</m>.
-    </p>
-  </li>
-</ol>
-</p>
-            </statement>
-        </definition>  
+</exercise>
+
+<exercise number="6" xml:id="exerc-15_2-6"> 
+<statement>
+  <p>
+
+Give a search pattern and a replace pattern that could
+be used to perform the following conversions:
+   <ol marker="(a)">
+    <li>
+      <p>
+        Convert a string that is enclosed in a pair of double quotes to
+the same string with the double quotes replaced by single quotes.
+      </p>
+    </li>
+    <li>
+      <p>
+        Convert seven-digit telephone numbers in the format
+<c>xxx-xxx-xxxx</c> to the format <c>(xxx)xxx-xxxx</c>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Convert C++ one-line comments, consisting of characters
+between <c>//</c> and end-of-line, to C style comments enclosed
+between <c>/*</c> and <c>*/</c>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Convert any number of consecutive spaces and tabs to
+a single space.
+      </p>
+    </li>
+   </ol>
+  </p>
+</statement>
+</exercise>
+
+<exercise number="7" xml:id="exerc-15_2-7"> 
+<statement>
+  <p>In some implementations of ``regular expressions,'' the
+notations <c>\1</c>, <c>\2</c>, and so on can occur
+in a search pattern.  For example, consider the search pattern
+<c>^([a-zA-Z]).*\1$</c>.  Here, <c>\1</c> represents
+a recurrence of the same substring that matched <c>[a-zA-Z]</c>,
+the part of the pattern between the first pair of parentheses.
+The entire pattern, therefore, will match a line of text that
+begins and ends with the same letter.  Using this notation,
+write a pattern that matches all strings in the language
+<m>L=\{a^nba^n | n\ge0\}</m>.  (Later in this chapter, we will
+see that <m>L</m> is <em>not</em> a regular language, so allowing the
+use of <c>\1</c> in a ``regular expression'' means that it's
+not really a regular expression at all!  This notation can add
+a real increase in expressive power to the patterns that contain it.)
+  </p>
+</statement>
+</exercise>
+</exercises>
 </section>
