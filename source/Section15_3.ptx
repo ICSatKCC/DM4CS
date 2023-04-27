@@ -285,6 +285,11 @@ the automaton <m>M=(Q, \Sigma, q_0, \delta, F)</m> can be neatly and helpfully
 captured in a picture called a <term>transition diagram</term>.  
 Consider again the DFA of the two preceding examples.  It
 can be represented pictorially as:
+<figure xml:id="fig-fsa1">
+    <image source="images/fsa1" width="80%">
+        <description>Transition diagram for above DFA</description>
+    </image>
+</figure>
         </p>
 
     </subsection>
