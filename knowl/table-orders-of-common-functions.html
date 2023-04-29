@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">8.6.8<span class="period">.</span></span><span class="space"> </span>Orders of Common FunctionsHere is a list of orders (or classes) of functions that are commonly encountered when analyzing algorithms.  In each case, <span class="process-math">\(c\)</span> is a positive constant and <span class="process-math">\(n\)</span> increases without bound. Functions are listed from slowest growing at the top to fastest growing at the bottom.</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Notation</td>
+<td class="c m b2 r0 l0 t0 lines">Name</td>
+<td class="c m b2 r0 l0 t0 lines">Example</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(O(1)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">Constant time</td>
+<td class="c m b0 r0 l0 t0 lines">No looping; Determining if a binary number is even or odd; Calculating <span class="process-math">\((-1)^n\)</span>
+</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(O(\log n)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">Logarithmic time</td>
+<td class="c m b0 r0 l0 t0 lines">Loops where <span class="process-math">\(n\)</span> is divided by a constant each iteration;</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">Finding an item in a sorted array with a BinarySearch.</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(O(n)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">Linear time</td>
+<td class="c m b0 r0 l0 t0 lines">One loop over all <span class="process-math">\(n\text{;}\)</span> Finding an item in an unsorted list or in an unsorted array</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(O(n\log n)=O(\log n!)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">Linearithmic time</td>
+<td class="c m b0 r0 l0 t0 lines">Algorithms that divide <span class="process-math">\(n\)</span> by a constant, but then need to reassemble all <span class="process-math">\(n\)</span> items in some way;</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">Fastest possible comparison sort; HeapSort and MergeSort</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(O(n^2)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">Quadratic time</td>
+<td class="c m b0 r0 l0 t0 lines">Two nested loops both over <span class="process-math">\(n\text{;}\)</span> Multiplying two <span class="process-math">\(n\)</span>-digit numbers by a simple algorithm;</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">Simple sorting algorithms, such as BubbleSort, SelectionSort, and InsertionSort</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(O(n^c)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">Polynomial time</td>
+<td class="c m b0 r0 l0 t0 lines">
+<span class="process-math">\(c\)</span> nested loops over <span class="process-math">\(n\text{;}\)</span> Matrix multiplication using the standard algorithm.</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">
+<span class="process-math">\(O(c^n)\text{,}\)</span> <span class="process-math">\(c&gt;1\)</span>
+</td>
+<td class="c m b0 r0 l0 t0 lines">Exponential time</td>
+<td class="c m b0 r0 l0 t0 lines">Recursive algorithms that make two or more recursive calls each time;</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">Determining if two logical statements are equivalent using a truth table (<span class="process-math">\(2^n\)</span> rows)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(O(n!)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">Factorial time</td>
+<td class="c m b0 r0 l0 t0 lines">Solving the travelling salesman problem via brute-force search; enumerating all partitions of a set</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(O(n^n)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">
+<span class="process-math">\(n\)</span> to the <span class="process-math">\(n\)</span>
+</td>
+<td class="c m b0 r0 l0 t0 lines">Resulting value of <span class="process-math">\(f(n) = n!\)</span>
+</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure><span class="incontext"><a href="section8_6-Growth-of-Functions.html#table-orders-of-common-functions" class="internal">in-context</a></span>
+</body>
+</html>

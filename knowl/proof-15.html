@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
+<div class="para logical">
+<div class="para">Recall that the event “<span class="process-math">\(X=x\)</span>” corresponds to the subset</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_x = \{ s \in S : X(s) = x
+\}
+\end{equation*}
+</div>
+<div class="para">of the sample space <span class="process-math">\(S\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X) &amp; = \sum_{s \in S} X(s) \cdot P(s) \\
+&amp; = \sum_x \sum_{s : X(s) = x}
+X(s) \cdot P(s) \\
+&amp; = \sum_x \sum_{s : X(s) = x}
+x \cdot P(s) \\
+&amp; = \sum_x \sum_{s \in A_x} x \cdot P(s) \\
+&amp; = \sum_x x \sum_{s \in A_x} P(s) \\
+&amp; = \sum_x x \cdot P \left( A_x \right) \\
+&amp; = \sum_x x \cdot P(X=x) .
+\end{array}
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a href="section3_3-ExpectedValue.html#proof-15" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">In the <a href="" class="xref" data-knowl="./knowl/ex-expected-two-dice-roll.html" title="Example 3.3.6: Expected value of rolling two dice">Example 3.3.6</a>, we used <a href="" class="xref" data-knowl="./knowl/def-expected-value.html" title="Definition 3.3.1: Expected Value">Definition 3.3.1</a> to compute the expected value <span class="process-math">\(\mathbb{E}(X)\)</span> of the random variable <span class="process-math">\(X\)</span> that was defined to be the sum of the results when rolling two fair and independent dice. This was a painful way to compute <span class="process-math">\(\mathbb{E}(X)\text{,}\)</span> because we added all <span class="process-math">\(36\)</span> entries in the matrix. There is a slightly easier way to determine <span class="process-math">\(\mathbb{E}(X)\text{:}\)</span> By looking at the matrix, we see that the value <span class="process-math">\(4\)</span> occurs three times. Thus, the event “<span class="process-math">\(X=4\)</span>” has size <span class="process-math">\(3\text{,}\)</span> i.e., if we consider the subset of the sample space <span class="process-math">\(S\)</span> that corresponds to this event, then this subset has size <span class="process-math">\(3\text{.}\)</span> Similarly, the event “<span class="process-math">\(X=7\)</span>” has size <span class="process-math">\(6\text{,}\)</span> because the value <span class="process-math">\(7\)</span> occurs <span class="process-math">\(6\)</span> times in the matrix. The table below lists the sizes of all non-empty events, together with their probabilities.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-expected-two-dice-roll.html ./knowl/def-expected-value.html">
+\begin{equation*}
+\begin{array}{|c|c|c|} \hline
+\text{event} &amp; \text{size of event} &amp; \text{probability} \\
+\hline
+\hline
+X=2 &amp; 1 &amp; 1/36 \\
+X=3 &amp; 2 &amp; 2/36 \\
+X=4 &amp; 3 &amp; 3/36 \\
+X=5 &amp; 4 &amp; 4/36 \\
+X=6 &amp; 5 &amp; 5/36 \\
+X=7 &amp; 6 &amp; 6/36 \\
+X=8 &amp; 5 &amp; 5/36 \\
+X=9 &amp; 4 &amp; 4/36 \\
+X=10 &amp; 3 &amp; 3/36 \\
+X=11 &amp; 2 &amp; 2/36 \\
+X=12 &amp; 1 &amp; 1/36 \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Based on this, we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-expected-two-dice-roll.html ./knowl/def-expected-value.html">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X) &amp; = 2 \cdot \frac{1}{36} +
+3 \cdot \frac{2}{36} +
+4 \cdot \frac{3}{36} +
+5 \cdot \frac{4}{36} +
+6 \cdot \frac{5}{36} +
+7 \cdot \frac{6}{36} + \\
+&amp; 8 \cdot \frac{5}{36} +
+9 \cdot \frac{4}{36} +
+10 \cdot \frac{3}{36} +
+11 \cdot \frac{2}{36} +
+12 \cdot \frac{1}{36} \\
+&amp; = 7 .
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Even though this is still quite painful, less computation is needed. What we have done is the following: In the definition of <span class="process-math">\(\mathbb{E}(X)\text{,}\)</span> i.e.,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-expected-two-dice-roll.html ./knowl/def-expected-value.html">
+\begin{equation*}
+\mathbb{E}(X)
+= \sum_{(i,j) \in S} X(i,j) \cdot P(i,j) ,
+\end{equation*}
+</div>
+<div class="para">we rearranged the terms in the summation. That is, instead of taking the sum over all elements <span class="process-math">\((i,j)\)</span> in <span class="process-math">\(S\text{,}\)</span> we</div>
+<ul class="disc">
+<li><div class="para">grouped together all outcomes <span class="process-math">\((i,j)\)</span> for which <span class="process-math">\(X(i,j) = i+j\)</span> has the same value, say, <span class="process-math">\(k\text{,}\)</span>
+</div></li>
+<li><div class="para">multiplied this common value <span class="process-math">\(k\)</span> by the probability that <span class="process-math">\(X\)</span> is equal to <span class="process-math">\(k\text{,}\)</span>
+</div></li>
+<li><div class="para">and took the sum of the resulting products over all possible values of <span class="process-math">\(k\text{.}\)</span>
+</div></li>
+</ul>
+<div class="para">This resulted in</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-expected-two-dice-roll.html ./knowl/def-expected-value.html">
+\begin{equation*}
+\mathbb{E}(X) = \sum_{k=2}^{12} k \cdot P(X=k) .
+\end{equation*}
+</div>
+<div class="para">The following theorem states that this can be done for any random variable.</div>
+</div>
+<span class="incontext"><a href="section3_3-ExpectedValue.html#p-1033" class="internal">in-context</a></span>
+</body>
+</html>

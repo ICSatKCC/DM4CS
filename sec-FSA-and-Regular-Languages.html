@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Finite-State Automata and Regular Languages</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Discrete Mathematics for Computer Science">
+<meta property="book:author" content="Ken Levasseur">
+<meta property="book:author" content="Al Doerr">
+<meta property="book:author" content="Michiel Smid">
+<meta property="book:author" content="Oscar Levin">
+<meta property="book:author" content="Charles M. Grinstead">
+<meta property="book:author" content="J. Laurie Snell">
+<meta property="book:author" content="Eric Lehman">
+<meta property="book:author" content="F. Thomson Leighton">
+<meta property="book:author" content="Albert R Meyer">
+<meta property="book:author" content="Jeff Erickson">
+<meta property="book:author" content="Kenneth P. Bogart">
+<meta property="book:author" content="Carol Chritchlow">
+<meta property="book:author" content="David Eck">
+<meta property="book:author" content="OpenDSA Project">
+<meta property="book:author" content="L.J. Miller">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
+<p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="s-finite-state-automata.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_15.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="chapter_16.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(       \newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+      \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
+      \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
+      \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
+      \newcommand{\cis}{\operatorname{cis}} \newcommand{\chr}{\operatorname{char}}
+      \newcommand{\Null}{\operatorname{Null}} \renewcommand{\vec}[1]{\mathbf{#1}}
+      \newcommand{\R}{\mathbb R} 
+  
+      \newcommand{\ab}{\mbox{$\{a,b\}$}}
+\newcommand{\aetc}[2]{\mbox{{${#1}_1{#1}_2\ldots {#1}_{#2}$}}}
+\newcommand{\varep}{\varepsilon}
+\newcommand{\fsafig}[1]{\medskip\centerline{\eps{fsa#1}}\medskip}
+\newcommand{\REOR}{\hbox{$\,|\,$}}
+\newcommand{\POW}{{\mathscr P}}   
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li><div class="toc-item"><a href="dedication-1.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li><div class="toc-item"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_1.html" class="internal"><span class="codenumber">1</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section1_1-set-Notation-and-Relations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Set Notation and Relations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section1_1-set-Notation-and-Relations.html#subsection-1" class="internal"><span class="codenumber">1.1.1</span> <span class="title">The notion of a set</span></a></div></li>
+<li><div class="toc-item"><a href="section1_1-set-Notation-and-Relations.html#ss-subsets" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Subsets</span></a></div></li>
+<li><div class="toc-item"><a href="section1_1-set-Notation-and-Relations.html#exercises-1" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Exercises for Section 1.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section1_2-basic_Set_Operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Basic Set Operations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section1_2-basic_Set_Operations.html#subsection-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Definitions</span></a></div></li>
+<li><div class="toc-item"><a href="section1_2-basic_Set_Operations.html#subsection-4" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Set Operations and their Venn Diagrams</span></a></div></li>
+<li><div class="toc-item"><a href="section1_2-basic_Set_Operations.html#Sage_Note_Sets-1-2" class="internal"><span class="codenumber">1.2.3</span> <span class="title">SageMath Note: Sets</span></a></div></li>
+<li><div class="toc-item"><a href="section1_2-basic_Set_Operations.html#exercises-1-2" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercises for Section 1.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section1_3-cartesian_Products_and_Power_Sets.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Cartesian Products and Power Sets</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section1_3-cartesian_Products_and_Power_Sets.html#Cartesian-products" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Cartesian Products</span></a></div></li>
+<li><div class="toc-item"><a href="section1_3-cartesian_Products_and_Power_Sets.html#power-sets" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Power Sets</span></a></div></li>
+<li><div class="toc-item"><a href="section1_3-cartesian_Products_and_Power_Sets.html#Sage_Note_Sets-1-3" class="internal"><span class="codenumber">1.3.3</span> <span class="title">SageMath Note: Cartesian Products and Power Sets</span></a></div></li>
+<li><div class="toc-item"><a href="section1_3-cartesian_Products_and_Power_Sets.html#exercises-1-3" class="internal"><span class="codenumber">1.3.4</span> <span class="title">EXERCISES FOR SECTION 1.3</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section1_4-binary_Representation_of_Positive_Integers.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Binary Representation of Positive Integers</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section1_4-binary_Representation_of_Positive_Integers.html#ss-grouping-by-twos" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Grouping by Twos</span></a></div></li>
+<li><div class="toc-item"><a href="section1_4-binary_Representation_of_Positive_Integers.html#ss-conversion-algorithm" class="internal"><span class="codenumber">1.4.2</span> <span class="title">A Conversion Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="section1_4-binary_Representation_of_Positive_Integers.html#Sage_Note_Binary-1-4" class="internal"><span class="codenumber">1.4.3</span> <span class="title">SageMath Note: Binary Conversion Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="section1_4-binary_Representation_of_Positive_Integers.html#exercises-1-4" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Exercises for Section 1.4</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section1_5-summation_Notation_and_Generalizations.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Summation Notation and Generalizations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section1_5-summation_Notation_and_Generalizations.html#ss-sums" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Sums</span></a></div></li>
+<li><div class="toc-item"><a href="section1_5-summation_Notation_and_Generalizations.html#ss-generalizations" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Generalizations</span></a></div></li>
+<li><div class="toc-item"><a href="section1_5-summation_Notation_and_Generalizations.html#exercises-1-5" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Exercises for Section 1.5</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_2.html" class="internal"><span class="codenumber">2</span> <span class="title">Combinatorics</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section2_1-the-rule-of-products.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Basic Counting Techniques - The Rule of Products</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section2_1-the-rule-of-products.html#What-is-Combinatorics" class="internal"><span class="codenumber">2.1.1</span> <span class="title">What is Combinatorics?</span></a></div></li>
+<li><div class="toc-item"><a href="section2_1-the-rule-of-products.html#rule-of-products" class="internal"><span class="codenumber">2.1.2</span> <span class="title">The Rule Of Products</span></a></div></li>
+<li><div class="toc-item"><a href="section2_1-the-rule-of-products.html#EXERCISES-FOR-SECTION-2-1" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section2_2-permutations.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Permutations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section2_2-permutations.html#subsection-16" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Ordering Things</span></a></div></li>
+<li><div class="toc-item"><a href="section2_2-permutations.html#exercises-7" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section2_3-partitions-and-law-of-addition.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Partitions of Sets and the Law of Addition</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section2_3-partitions-and-law-of-addition.html#subsection-17" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Partitions</span></a></div></li>
+<li><div class="toc-item"><a href="section2_3-partitions-and-law-of-addition.html#subsection-18" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Addition Laws</span></a></div></li>
+<li><div class="toc-item"><a href="section2_3-partitions-and-law-of-addition.html#exercises-2-3" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercises for Section 2.3</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section2_4-combinations-and-the-binomial-theorem.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Combinations and the Binomial Theorem</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section2_4-combinations-and-the-binomial-theorem.html#combinations" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Combinations</span></a></div></li>
+<li><div class="toc-item"><a href="section2_4-combinations-and-the-binomial-theorem.html#the-binomial-theorem" class="internal"><span class="codenumber">2.4.2</span> <span class="title">The Binomial Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="section2_4-combinations-and-the-binomial-theorem.html#sage-bridge-hands" class="internal"><span class="codenumber">2.4.3</span> <span class="title">SageMath Note</span></a></div></li>
+<li><div class="toc-item"><a href="section2_4-combinations-and-the-binomial-theorem.html#exercises-2-4" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Counting with Repetition or Indistinguishable Objects</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#tuples-with-repetition" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Tuples or Permutations with Repetition</span></a></div></li>
+<li><div class="toc-item"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#combinations-with-repetition" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Combinations with Repetition</span></a></div></li>
+<li><div class="toc-item"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#ordering-indistinguishable-objects" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Ordering Indistinguishable Objects</span></a></div></li>
+<li><div class="toc-item"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#exercises-2-5" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_3.html" class="internal"><span class="codenumber">3</span> <span class="title">Probability</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section3_1-probability.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction to Probability</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section3_1-probability.html#subsec3_1_1-probability-spaces" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Probability Spaces</span></a></div></li>
+<li><div class="toc-item"><a href="section3_1-probability.html#subsec3_1_2-basic-rules-of-probability" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Basic Rules of Probability</span></a></div></li>
+<li><div class="toc-item"><a href="section3_1-probability.html#exercises-11" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Exercises for Section 3.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section3_2-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Conditional Probability, Independence, and Bayes' Rule</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section3_2-Bayes.html#subsec3_2_1-conditional-probability" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Conditional probability</span></a></div></li>
+<li><div class="toc-item"><a href="section3_2-Bayes.html#subsec3_2_2-independent-events" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Independent Events</span></a></div></li>
+<li><div class="toc-item"><a href="section3_2-Bayes.html#subsec3_2_3-random-variables" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Random Variables</span></a></div></li>
+<li><div class="toc-item"><a href="section3_2-Bayes.html#subsec3_2_4-bayes-theorem" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Bayes' Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="section3_2-Bayes.html#exercises-12" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Exercises for Section 3.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section3_3-ExpectedValue.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Expected Value and Variance</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section3_3-ExpectedValue.html#subsec3_3_1-expected-value" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Expected Values</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section3_3-ExpectedValue.html#ssubsec3_3_1_1-comp-expected-value" class="internal"><span class="codenumber">3.3.1.1</span> <span class="title">Comparing the Expected Values of Comparable Random Variables</span></a></div></li>
+<li><div class="toc-item"><a href="section3_3-ExpectedValue.html#ssubsec3_3_1_2-alt-expected-value" class="internal"><span class="codenumber">3.3.1.2</span> <span class="title">An Alternative Expression for the Expected Value</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section3_3-ExpectedValue.html#subsec3_3_2-linearity-of-expectation" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Linearity of Expectation</span></a></div></li>
+<li><div class="toc-item"><a href="section3_3-ExpectedValue.html#subsec3_3_3-geometric-distribution" class="internal"><span class="codenumber">3.3.3</span> <span class="title">The Geometric Distribution</span></a></div></li>
+<li><div class="toc-item"><a href="section3_3-ExpectedValue.html#subsec3_3_4-binomial-distribution" class="internal"><span class="codenumber">3.3.4</span> <span class="title">The Binomial Distribution</span></a></div></li>
+<li><div class="toc-item"><a href="section3_3-ExpectedValue.html#subsec3_3_5-variance" class="internal"><span class="codenumber">3.3.5</span> <span class="title">Variance</span></a></div></li>
+<li><div class="toc-item"><a href="section3_3-ExpectedValue.html#exercises-13" class="internal"><span class="codenumber">3.3.6</span> <span class="title">Exercises for Section 3.3</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter4.html" class="internal"><span class="codenumber">4</span> <span class="title">Logic</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section4_1-propositions-logic-operators.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Propositions and Logical Operators</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section4_1-propositions-logic-operators.html#subsec4_1_1-propositions" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Propositions</span></a></div></li>
+<li><div class="toc-item"><a href="section4_1-propositions-logic-operators.html#subsec4_1_2-logical-operations" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Logical Operations</span></a></div></li>
+<li><div class="toc-item"><a href="section4_1-propositions-logic-operators.html#exercises-4-1" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Exercises for Section 4.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section4_2-truth-tables.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Truth Tables and Propositions Generated by a Set</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section4_2-truth-tables.html#subsec4_2_1-truth-tables" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Truth Tables</span></a></div></li>
+<li><div class="toc-item"><a href="section4_2-truth-tables.html#subsec4_2_2-proposition-generated-by-set" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Propositions Generated by a Set</span></a></div></li>
+<li><div class="toc-item"><a href="section4_2-truth-tables.html#subsec4_2_3-precedence" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Precedence of Logical Operators</span></a></div></li>
+<li><div class="toc-item"><a href="section4_2-truth-tables.html#exercises-4-2" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises for Section 4.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section4_3-equivalence-implication.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Equivalence and Implication</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section4_3-equivalence-implication.html#tautology-contradiction" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Tautologies and Contradictions</span></a></div></li>
+<li><div class="toc-item"><a href="section4_3-equivalence-implication.html#subsection-42" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Equivalence</span></a></div></li>
+<li><div class="toc-item"><a href="section4_3-equivalence-implication.html#subsection-43" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Implication</span></a></div></li>
+<li><div class="toc-item"><a href="section4_3-equivalence-implication.html#subsection-44" class="internal"><span class="codenumber">4.3.4</span> <span class="title">A Universal Operation</span></a></div></li>
+<li><div class="toc-item"><a href="section4_3-equivalence-implication.html#exercises-4-3" class="internal"><span class="codenumber">4.3.5</span> <span class="title">Exercises for Section 4.3</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section4_4-logic-laws.html" class="internal"><span class="codenumber">4.4</span> <span class="title">The Laws of Logic</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section4_4-logic-laws.html#subsection-45" class="internal"><span class="codenumber">4.4.1</span> <span class="title"></span></a></div></li>
+<li><div class="toc-item"><a href="section4_4-logic-laws.html#exercises-4_4" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Exercises for Section 4.4</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section4_5-propositions-over-universe.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Propositions over a Universe</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section4_5-propositions-over-universe.html#subsec4_5_1-propositions-over-a-universe" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Propositions over a Universe</span></a></div></li>
+<li><div class="toc-item"><a href="section4_5-propositions-over-universe.html#ss-truth-sets" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Truth Sets</span></a></div></li>
+<li><div class="toc-item"><a href="section4_5-propositions-over-universe.html#exercises-4_5" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Exercises for Section 4.5</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section4_6-quantifiers.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Quantifiers</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section4_6-quantifiers.html#subsec4_6_1-existential" class="internal"><span class="codenumber">4.6.1</span> <span class="title">The Existential Quantifier</span></a></div></li>
+<li><div class="toc-item"><a href="section4_6-quantifiers.html#subsec4_6_2-universal-quantifier" class="internal"><span class="codenumber">4.6.2</span> <span class="title">The Universal Quantifier</span></a></div></li>
+<li><div class="toc-item"><a href="section4_6-quantifiers.html#ss-negated-quantifiers" class="internal"><span class="codenumber">4.6.3</span> <span class="title">The Negation of Quantified Propositions</span></a></div></li>
+<li><div class="toc-item"><a href="section4_6-quantifiers.html#ss-multiple-quantifiers" class="internal"><span class="codenumber">4.6.4</span> <span class="title">Multiple Quantifiers</span></a></div></li>
+<li><div class="toc-item"><a href="section4_6-quantifiers.html#exercises-4_6" class="internal"><span class="codenumber">4.6.5</span> <span class="title">Exercises for Section 4.6</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter5.html" class="internal"><span class="codenumber">5</span> <span class="title">Proofs</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section5_1-math-systems.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Mathematical Systems and Proofs</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section5_1-math-systems.html#subsection-52" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Mathematical Systems</span></a></div></li>
+<li><div class="toc-item"><a href="section5_1-math-systems.html#subsection-53" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Direct Proof</span></a></div></li>
+<li><div class="toc-item"><a href="section5_1-math-systems.html#sub-indirect-proof" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Indirect Proof</span></a></div></li>
+<li><div class="toc-item"><a href="section5_1-math-systems.html#exercises-5_1" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Exercises for Section 5.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section5_2-induction.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Mathematical Induction</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section5_2-induction.html#subsection-55" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Introduction, First Example</span></a></div></li>
+<li><div class="toc-item"><a href="section5_2-induction.html#subsection-56" class="internal"><span class="codenumber">5.2.2</span> <span class="title">More Examples</span></a></div></li>
+<li><div class="toc-item"><a href="section5_2-induction.html#subsection-57" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Course of Values Induction</span></a></div></li>
+<li><div class="toc-item"><a href="section5_2-induction.html#exercises-5_2" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Exercises for Section 5.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section5_3-proofs-quantifiers.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Proofs of Quantified Statements</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section5_3-proofs-quantifiers.html#ss-proofs-with-quantifiers" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Proofs With Quantifiers</span></a></div></li>
+<li><div class="toc-item"><a href="section5_3-proofs-quantifiers.html#exercises-5_3" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Exercises for Section 5.3</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section5_4-proof-review.html" class="internal"><span class="codenumber">5.4</span> <span class="title">A Review of Methods of Proof</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section5_4-proof-review.html#subsec5_4_1-proof-concepts" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Key Concepts in Proof</span></a></div></li>
+<li><div class="toc-item"><a href="section5_4-proof-review.html#subsec5_4_2-art-of-proving-ifpthenq" class="internal"><span class="codenumber">5.4.2</span> <span class="title">The Art of Proving <span class="process-math">\(P \Rightarrow  C\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="section5_4-proof-review.html#exercises-5_4" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Exercises for Section 5.4</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_6.html" class="internal"><span class="codenumber">6</span> <span class="title">More on Sets</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section6_1-proof-methods-sets.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Methods of Proof for Sets</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section6_1-proof-methods-sets.html#subsec6_1_1-examples-and-counterexamples" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Examples and Counterexamples</span></a></div></li>
+<li><div class="toc-item"><a href="section6_1-proof-methods-sets.html#subsec6_1_2-venn-proofs" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Proof Using Venn Diagrams</span></a></div></li>
+<li><div class="toc-item"><a href="section6_1-proof-methods-sets.html#subsec6_1_3-membership-table-proof" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Proof using Set-Membership Tables</span></a></div></li>
+<li><div class="toc-item"><a href="section6_1-proof-methods-sets.html#subsec6_1_4-proofs-using-definitions-sets" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Proof Using Definitions</span></a></div></li>
+<li><div class="toc-item"><a href="section6_1-proof-methods-sets.html#exercises-24" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Exercises for Section 6.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section6_2-laws-of-set-theory.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Laws of Set Theory</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section6_2-laws-of-set-theory.html#subsection-65" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Tables of Laws</span></a></div></li>
+<li><div class="toc-item"><a href="section6_2-laws-of-set-theory.html#ss-proof-with-theorems" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Proof Using Previously Proven Theorems</span></a></div></li>
+<li><div class="toc-item"><a href="section6_2-laws-of-set-theory.html#ss-proof-sets-contradiction" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Proof Using the Indirect Method/Contradiction</span></a></div></li>
+<li><div class="toc-item"><a href="section6_2-laws-of-set-theory.html#exer-6_2" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Exercises for Section 6.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section6_3-minsets.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Minsets</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section6_3-minsets.html#subsection-68" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Definition of Minsets</span></a></div></li>
+<li><div class="toc-item"><a href="section6_3-minsets.html#subsection-69" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Properties of Minsets</span></a></div></li>
+<li><div class="toc-item"><a href="section6_3-minsets.html#exercises-6_3" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Exercises for Section 6.3</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section6_4-duality-principle.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Duality Principle</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section6_4-duality-principle.html#subsection-70" class="internal"><span class="codenumber">6.4.1</span> <span class="title"></span></a></div></li>
+<li><div class="toc-item"><a href="section6_4-duality-principle.html#exer-6_4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Exercises for Section 6.4</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_7.html" class="internal"><span class="codenumber">7</span> <span class="title">Introduction to Matrix Algebra</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section7_1-basic-matrix-definitions.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Basic Definitions and Operations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section7_1-basic-matrix-definitions.html#subsec7_1_1-order-equality" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Matrix Order and Equality</span></a></div></li>
+<li><div class="toc-item"><a href="section7_1-basic-matrix-definitions.html#ss-matrix-addition-scalarmult" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Matrix Addition and Scalar Multiplication</span></a></div></li>
+<li><div class="toc-item"><a href="section7_1-basic-matrix-definitions.html#ss-matrix-multiplication" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Matrix Multiplication</span></a></div></li>
+<li><div class="toc-item"><a href="section7_1-basic-matrix-definitions.html#exercises-7-1" class="internal"><span class="codenumber">7.1.4</span> <span class="title">Exercises for Section 7.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section7_2-special-matrices.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Special Types of Matrices</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section7_2-special-matrices.html#subsection-74" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Diagonal Matrices</span></a></div></li>
+<li><div class="toc-item"><a href="section7_2-special-matrices.html#subsection-75" class="internal"><span class="codenumber">7.2.2</span> <span class="title">The Identity Matrix and Matrix Inverses</span></a></div></li>
+<li><div class="toc-item"><a href="section7_2-special-matrices.html#exercises-7-2" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Exercises for Section 7.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section7_3-laws-of-matrix-algebra.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Laws of Matrix Algebra</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section7_3-laws-of-matrix-algebra.html#subsection-76" class="internal"><span class="codenumber">7.3.1</span> <span class="title">The Laws</span></a></div></li>
+<li><div class="toc-item"><a href="section7_3-laws-of-matrix-algebra.html#subsection-77" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Commentary</span></a></div></li>
+<li><div class="toc-item"><a href="section7_3-laws-of-matrix-algebra.html#exercises-7-3" class="internal"><span class="codenumber">7.3.3</span> <span class="title">Exercises for Section 7.3</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section7_4-matrix-oddities.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Matrix Oddities</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section7_4-matrix-oddities.html#subsection-78" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Dissimilarities with elementary algebra</span></a></div></li>
+<li><div class="toc-item"><a href="section7_4-matrix-oddities.html#exercises-7_4" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Exercises for Section 7.4</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_8.html" class="internal"><span class="codenumber">8</span> <span class="title">Functions</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section8_1-functions.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Function Fundamentals</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section8_1-functions.html#subsec8_1_1-function-definition-notation" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Function Definition and Notation</span></a></div></li>
+<li><div class="toc-item"><a href="section8_1-functions.html#subsec8_1_2-two-variables" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Functions of Two Variables</span></a></div></li>
+<li><div class="toc-item"><a href="section8_1-functions.html#subsec8_1_3-sage-note-functions" class="internal"><span class="codenumber">8.1.3</span> <span class="title">SageMath Note</span></a></div></li>
+<li><div class="toc-item"><a href="section8_1-functions.html#subsec8_1_4-non-functions" class="internal"><span class="codenumber">8.1.4</span> <span class="title">Non-Functions</span></a></div></li>
+<li><div class="toc-item"><a href="section8_1-functions.html#exercises-8-1" class="internal"><span class="codenumber">8.1.5</span> <span class="title">Exercises for Section 8.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section8_2-properties-of-functions.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Properties of Functions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section8_2-properties-of-functions.html#subsection-83" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Properties</span></a></div></li>
+<li><div class="toc-item"><a href="section8_2-properties-of-functions.html#subsection-84" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Counting</span></a></div></li>
+<li><div class="toc-item"><a href="section8_2-properties-of-functions.html#exercises-8-2" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Exercises for Section 8.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section8_3-function-composition.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Function Composition</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section8_3-function-composition.html#subsec8_3_1-function-equality" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Function Equality</span></a></div></li>
+<li><div class="toc-item"><a href="section8_3-function-composition.html#subsec8_3_2-composition" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Function Composition</span></a></div></li>
+<li><div class="toc-item"><a href="section8_3-function-composition.html#subsec8_3_3-inverse-functions" class="internal"><span class="codenumber">8.3.3</span> <span class="title">Inverse Functions</span></a></div></li>
+<li><div class="toc-item"><a href="section8_3-function-composition.html#exercises-8-3" class="internal"><span class="codenumber">8.3.4</span> <span class="title">Exercises for Section 8.3</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section8_4-recursion.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Introduction to Recursion</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section8_4-recursion.html#subsec8_4_1-binomial-coefficients" class="internal"><span class="codenumber">8.4.1</span> <span class="title">Binomial Coefficients</span></a></div></li>
+<li><div class="toc-item"><a href="section8_4-recursion.html#subsec8_4_2-polynomials-and-their-evaluation" class="internal"><span class="codenumber">8.4.2</span> <span class="title">Polynomials and Their Evaluation</span></a></div></li>
+<li><div class="toc-item"><a href="section8_4-recursion.html#subsec8_4_4-recursive-sequences" class="internal"><span class="codenumber">8.4.3</span> <span class="title">Recursively Defined Sequences</span></a></div></li>
+<li><div class="toc-item"><a href="section8_4-recursion.html#subsec8_4_5-recursion" class="internal"><span class="codenumber">8.4.4</span> <span class="title">Recursion</span></a></div></li>
+<li><div class="toc-item"><a href="section8_4-recursion.html#subsec8_4_6-iteration" class="internal"><span class="codenumber">8.4.5</span> <span class="title">Iteration</span></a></div></li>
+<li><div class="toc-item"><a href="section8_4-recursion.html#subsec8_4_7-induction-and-recursion" class="internal"><span class="codenumber">8.4.6</span> <span class="title">Induction and Recursion</span></a></div></li>
+<li><div class="toc-item"><a href="section8_4-recursion.html#exercises-35" class="internal"><span class="codenumber">8.4.7</span> <span class="title">Exercises for Section 8.4</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section8_5-Sequences.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Sequences</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section8_5-Sequences.html#subsection-94" class="internal"><span class="codenumber">8.5.1</span> <span class="title">Sequences and Ways They Are Defined</span></a></div></li>
+<li><div class="toc-item"><a href="section8_5-Sequences.html#subsection-95" class="internal"><span class="codenumber">8.5.2</span> <span class="title">A Fundamental Problem</span></a></div></li>
+<li><div class="toc-item"><a href="section8_5-Sequences.html#exercises-8-5" class="internal"><span class="codenumber">8.5.3</span> <span class="title">Exercises for Section 8.5</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section8_6-Growth-of-Functions.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Growth of Functions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section8_6-Growth-of-Functions.html#subsec8_6_1-big-o-notation" class="internal"><span class="codenumber">8.6.1</span> <span class="title">Big O Notation</span></a></div></li>
+<li><div class="toc-item"><a href="section8_6-Growth-of-Functions.html#subsec8_6_2-big-o-common" class="internal"><span class="codenumber">8.6.2</span> <span class="title">Big O For Common Functional Forms</span></a></div></li>
+<li><div class="toc-item"><a href="section8_6-Growth-of-Functions.html#subsec8_6_3-big-o-combinations" class="internal"><span class="codenumber">8.6.3</span> <span class="title">Big O For Combinations of Functions</span></a></div></li>
+<li><div class="toc-item"><a href="section8_6-Growth-of-Functions.html#subsec8_6_4-big-omega" class="internal"><span class="codenumber">8.6.4</span> <span class="title">Big Omega</span></a></div></li>
+<li><div class="toc-item"><a href="section8_6-Growth-of-Functions.html#subsec8_6_5-big-theta" class="internal"><span class="codenumber">8.6.5</span> <span class="title">Big Theta</span></a></div></li>
+<li><div class="toc-item"><a href="section8_6-Growth-of-Functions.html#exercises-37" class="internal"><span class="codenumber">8.6.6</span> <span class="title">Exercises for Section 8.6</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_9.html" class="internal"><span class="codenumber">9</span> <span class="title">Algorithms</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section9_1-Algorithms.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Introduction to Algorithms</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section9_1-Algorithms.html#subsec9_1_1-describing-algorithms" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Describing Algorithms</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#subsubsec9_1_1_1-assignments" class="internal"><span class="codenumber">9.1.1.1</span> <span class="title">Assignments</span></a></div></li>
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#subsubsec9_1_1_2-conditionalstep" class="internal"><span class="codenumber">9.1.1.2</span> <span class="title">Conditional steps</span></a></div></li>
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#subsubsec9_1_1_3-loops" class="internal"><span class="codenumber">9.1.1.3</span> <span class="title">Loops</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#subsec9_1_2-factorial-algorithm" class="internal"><span class="codenumber">9.1.2</span> <span class="title">The Factorial Algorithm</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section9_1-Algorithms.html#subsec9_1_3-some-common-algorithms" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Some Common Algorithms</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#subsubsec9_1_3_1-search-algorithms" class="internal"><span class="codenumber">9.1.3.1</span> <span class="title">Search Algorithms</span></a></div></li>
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#subsubsec9_1_3_2-sorting-algorithms" class="internal"><span class="codenumber">9.1.3.2</span> <span class="title">Sorting Algorithms</span></a></div></li>
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#subsubsec9_1_3_3-greedy-algorithms" class="internal"><span class="codenumber">9.1.3.3</span> <span class="title">Greedy Algorithms</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#exercises-9-1" class="internal"><span class="codenumber">9.1.4</span> <span class="title">Exercises for Section 9.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section9_2-Recursive_Algorithms.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Recursive Algorithms</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section9_2-Recursive_Algorithms.html#subsec9_2_1-euclid" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Euclid's Algorithm</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section9_2-Recursive_Algorithms.html#sssec9_2_1_1-modulo" class="internal"><span class="codenumber">9.2.1.1</span> <span class="title">The Modulo Operation</span></a></div></li>
+<li><div class="toc-item"><a href="section9_2-Recursive_Algorithms.html#sssec9_2_1_2-euclids-algorithm" class="internal"><span class="codenumber">9.2.1.2</span> <span class="title">The Euclidean Algorithm</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section9_2-Recursive_Algorithms.html#subsec9_2_2-recursive-searching" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Recursive Searching</span></a></div></li>
+<li><div class="toc-item"><a href="section9_2-Recursive_Algorithms.html#subsec9_2_3-recursive-sorting" class="internal"><span class="codenumber">9.2.3</span> <span class="title">Recursive Sorting</span></a></div></li>
+<li><div class="toc-item"><a href="section9_2-Recursive_Algorithms.html#exercises-39" class="internal"><span class="codenumber">9.2.4</span> <span class="title">Exercises for Section 9.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section9_3-AlgorthmicComplexity.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Algorithmic Complexity</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section9_3-AlgorthmicComplexity.html#subsec9_3_1-basic_operations" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Basic Operations and Input Size</span></a></div></li>
+<li><div class="toc-item"><a href="section9_3-AlgorthmicComplexity.html#subsec9_3_2-running_times" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Analyzing Algorithmic Complexity</span></a></div></li>
+<li><div class="toc-item"><a href="section9_3-AlgorthmicComplexity.html#exercises-40" class="internal"><span class="codenumber">9.3.3</span> <span class="title">Exercises for Section 9.3</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_10.html" class="internal"><span class="codenumber">10</span> <span class="title">Relations</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s-basic-definitions.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Basic Definitions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-basic-definitions.html#subsection-109" class="internal"><span class="codenumber">10.1.1</span> <span class="title">Relations Between Two Sets</span></a></div></li>
+<li><div class="toc-item"><a href="s-basic-definitions.html#subsection-110" class="internal"><span class="codenumber">10.1.2</span> <span class="title">Relations on a Set</span></a></div></li>
+<li><div class="toc-item"><a href="s-basic-definitions.html#subsection-111" class="internal"><span class="codenumber">10.1.3</span> <span class="title">Composition of Relations</span></a></div></li>
+<li><div class="toc-item"><a href="s-basic-definitions.html#exercises-10-1" class="internal"><span class="codenumber">10.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-graphs-of-relations-on-a-set.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Graphs of Relations on a Set</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-graphs-of-relations-on-a-set.html#subsection-112" class="internal"><span class="codenumber">10.2.1</span> <span class="title">Digraphs</span></a></div></li>
+<li><div class="toc-item"><a href="s-graphs-of-relations-on-a-set.html#exercises-10-2" class="internal"><span class="codenumber">10.2.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-properties-of-relations.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Properties of Relations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-properties-of-relations.html#ss-individual-properties" class="internal"><span class="codenumber">10.3.1</span> <span class="title">Individual Properties</span></a></div></li>
+<li><div class="toc-item"><a href="s-properties-of-relations.html#ss-partial-ordering" class="internal"><span class="codenumber">10.3.2</span> <span class="title">Partial Orderings</span></a></div></li>
+<li><div class="toc-item"><a href="s-properties-of-relations.html#ss-equivalence-relations" class="internal"><span class="codenumber">10.3.3</span> <span class="title">Equivalence Relations</span></a></div></li>
+<li><div class="toc-item"><a href="s-properties-of-relations.html#exercises-10-3" class="internal"><span class="codenumber">10.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-matrices-of-relations.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Matrices of Relations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-matrices-of-relations.html#subsection-116" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Representing a Relation with a Matrix</span></a></div></li>
+<li><div class="toc-item"><a href="s-matrices-of-relations.html#subsection-117" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Composition as Matrix Multiplication</span></a></div></li>
+<li><div class="toc-item"><a href="s-matrices-of-relations.html#exercises-10-4" class="internal"><span class="codenumber">10.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-closure-operations-on-relations.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Closure Operations on Relations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-closure-operations-on-relations.html#subsection-118" class="internal"><span class="codenumber">10.5.1</span> <span class="title">Transitive Closure</span></a></div></li>
+<li><div class="toc-item"><a href="s-closure-operations-on-relations.html#subsection-119" class="internal"><span class="codenumber">10.5.2</span> <span class="title">Algorithms for computing transitive closure</span></a></div></li>
+<li><div class="toc-item"><a href="s-closure-operations-on-relations.html#exercises-10-5" class="internal"><span class="codenumber">10.5.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_11.html" class="internal"><span class="codenumber">11</span> <span class="title">Algebraic Structures</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s-Operations.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Operations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-Operations.html#ss-definition-of-operations" class="internal"><span class="codenumber">11.1.1</span> <span class="title">What is an Operation?</span></a></div></li>
+<li><div class="toc-item"><a href="s-Operations.html#ss-operation-properties" class="internal"><span class="codenumber">11.1.2</span> <span class="title">Properties of Operations</span></a></div></li>
+<li><div class="toc-item"><a href="s-Operations.html#ss-operation-tables" class="internal"><span class="codenumber">11.1.3</span> <span class="title">Operation Tables</span></a></div></li>
+<li><div class="toc-item"><a href="s-Operations.html#exercises-11-1" class="internal"><span class="codenumber">11.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-algebraic-systems.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Algebraic Systems</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-algebraic-systems.html#ss-monoids" class="internal"><span class="codenumber">11.2.1</span> <span class="title">Monoids at Two Levels</span></a></div></li>
+<li>
+<div class="toc-item"><a href="s-algebraic-systems.html#ss-levels-of-abstraction" class="internal"><span class="codenumber">11.2.2</span> <span class="title">Levels of Abstraction</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-algebraic-systems.html#sss-concrete-level" class="internal"><span class="codenumber">11.2.2.1</span> <span class="title">The Concrete Level</span></a></div></li>
+<li><div class="toc-item"><a href="s-algebraic-systems.html#sss-axiomatic-level" class="internal"><span class="codenumber">11.2.2.2</span> <span class="title">The Axiomatic Level</span></a></div></li>
+<li><div class="toc-item"><a href="s-algebraic-systems.html#sss-universal-level" class="internal"><span class="codenumber">11.2.2.3</span> <span class="title">The Universal Level</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="s-algebraic-systems.html#ss-groups" class="internal"><span class="codenumber">11.2.3</span> <span class="title">Groups</span></a></div></li>
+<li><div class="toc-item"><a href="s-algebraic-systems.html#exercises-11-2" class="internal"><span class="codenumber">11.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-general-properties-of-groups.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Some General Properties of Groups</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-general-properties-of-groups.html#subsection-126" class="internal"><span class="codenumber">11.3.1</span> <span class="title">First Theorems</span></a></div></li>
+<li><div class="toc-item"><a href="s-general-properties-of-groups.html#subsection-127" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Exponents</span></a></div></li>
+<li><div class="toc-item"><a href="s-general-properties-of-groups.html#exercises-11-3" class="internal"><span class="codenumber">11.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-gcds-and-zsubn.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Greatest Common Divisors and the Integers Modulo <span class="process-math">\(n\)</span></span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-gcds-and-zsubn.html#ss-greatest-common-divisors" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Greatest Common Divisors</span></a></div></li>
+<li><div class="toc-item"><a href="s-gcds-and-zsubn.html#sss-euclidean-algorithm" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Euclidean Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="s-gcds-and-zsubn.html#ss-modular-arithmetic" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Modular Arithmetic</span></a></div></li>
+<li><div class="toc-item"><a href="s-gcds-and-zsubn.html#ss-properties-modular-arithmetic" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Properties of Modular Arithmetic</span></a></div></li>
+<li><div class="toc-item"><a href="s-gcds-and-zsubn.html#ss-sage-modular" class="internal"><span class="codenumber">11.4.5</span> <span class="title">SageMath Note - Modular Arithmetic</span></a></div></li>
+<li><div class="toc-item"><a href="s-gcds-and-zsubn.html#exercises-11-4" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-Subsystems.html" class="internal"><span class="codenumber">11.5</span> <span class="title">Subsystems</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-Subsystems.html#subsection-133" class="internal"><span class="codenumber">11.5.1</span> <span class="title">Definition</span></a></div></li>
+<li><div class="toc-item"><a href="s-Subsystems.html#subsection-134" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Subgroups</span></a></div></li>
+<li><div class="toc-item"><a href="s-Subsystems.html#sage-note-subgroup-finite" class="internal"><span class="codenumber">11.5.3</span> <span class="title">Sage Note - Applying the condition for a subgroup of a finite group</span></a></div></li>
+<li><div class="toc-item"><a href="s-Subsystems.html#subsection-136" class="internal"><span class="codenumber">11.5.4</span> <span class="title">Cyclic Subgroups</span></a></div></li>
+<li><div class="toc-item"><a href="s-Subsystems.html#exercises-11-5" class="internal"><span class="codenumber">11.5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-direct-products.html" class="internal"><span class="codenumber">11.6</span> <span class="title">Direct Products</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-direct-products.html#subsection-137" class="internal"><span class="codenumber">11.6.1</span> <span class="title">Definition</span></a></div></li>
+<li><div class="toc-item"><a href="s-direct-products.html#subsection-138" class="internal"><span class="codenumber">11.6.2</span> <span class="title">Direct Products of Groups</span></a></div></li>
+<li><div class="toc-item"><a href="s-direct-products.html#exercises-11-6" class="internal"><span class="codenumber">11.6.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-isomorphisms.html" class="internal"><span class="codenumber">11.7</span> <span class="title">Isomorphisms</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-isomorphisms.html#ss-group-isomorphisms" class="internal"><span class="codenumber">11.7.1</span> <span class="title">Group Isomorphisms</span></a></div></li>
+<li><div class="toc-item"><a href="s-isomorphisms.html#ss-when-are-groups-not-isomorphic" class="internal"><span class="codenumber">11.7.2</span> <span class="title">Conditions for groups to not be isomorphic</span></a></div></li>
+<li><div class="toc-item"><a href="s-isomorphisms.html#sss-exercises-11-7" class="internal"><span class="codenumber">11.7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_12.html" class="internal"><span class="codenumber">12</span> <span class="title">Boolean Algebra</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s-posets-revisited.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Posets Revisited</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-posets-revisited.html#exercises-12-1" class="internal"><span class="codenumber">12.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-lattices.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Lattices</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-lattices.html#exercises-12-2" class="internal"><span class="codenumber">12.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-boolean-algebras.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Boolean Algebras</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-boolean-algebras.html#exercises-12-3" class="internal"><span class="codenumber">12.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-atoms-of-a-boolean-algebra.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Atoms of a Boolean Algebra</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-atoms-of-a-boolean-algebra.html#exercises-12-4" class="internal"><span class="codenumber">12.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-finite-boolean-algebras-ntuples.html" class="internal"><span class="codenumber">12.5</span> <span class="title">Finite Boolean Algebras as <span class="process-math">\(n\)</span>-tuples of 0's and 1's</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-finite-boolean-algebras-ntuples.html#exercises-12-5" class="internal"><span class="codenumber">12.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-boolean-expressions.html" class="internal"><span class="codenumber">12.6</span> <span class="title">Boolean Expressions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-boolean-expressions.html#exercises-12-6" class="internal"><span class="codenumber">12.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-logic-circuits.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Logic Gates and Circuits</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-logic-circuits.html#exercises-12-7" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises for Section 12.7</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-circuit-minimization.html" class="internal"><span class="codenumber">12.8</span> <span class="title">Logic Circuit Minimization</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-circuit-minimization.html#exercises-12-8" class="internal"><span class="codenumber">12.8</span> <span class="title">Exercises for Section 12.8</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_13.html" class="internal"><span class="codenumber">13</span> <span class="title">Graph Theory</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s-graphs-introduction.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Graphs - General Introduction</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-graphs-introduction.html#subsection-141" class="internal"><span class="codenumber">13.1.1</span> <span class="title">Definitions</span></a></div></li>
+<li><div class="toc-item"><a href="s-graphs-introduction.html#subsection-142" class="internal"><span class="codenumber">13.1.2</span> <span class="title">Subgraphs</span></a></div></li>
+<li><div class="toc-item"><a href="s-graphs-introduction.html#subsection-143" class="internal"><span class="codenumber">13.1.3</span> <span class="title">Graph Isomorphisms</span></a></div></li>
+<li><div class="toc-item"><a href="s-graphs-introduction.html#subsection-144" class="internal"><span class="codenumber">13.1.4</span> <span class="title">Next Steps</span></a></div></li>
+<li><div class="toc-item"><a href="s-graphs-introduction.html#exercises-13-1" class="internal"><span class="codenumber">13.1.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-data-structures-for-graphs.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Data Structures for Graphs</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-data-structures-for-graphs.html#ss-graph-data-structures" class="internal"><span class="codenumber">13.2.1</span> <span class="title">Basic Data Structures</span></a></div></li>
+<li><div class="toc-item"><a href="s-data-structures-for-graphs.html#sss-sage-graphs" class="internal"><span class="codenumber">13.2.2</span> <span class="title">Sage Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="s-data-structures-for-graphs.html#exercises-13-2" class="internal"><span class="codenumber">13.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-Connectivity.html" class="internal"><span class="codenumber">13.3</span> <span class="title">Connectivity</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-Connectivity.html#ss-connectivity-prelim" class="internal"><span class="codenumber">13.3.1</span> <span class="title">Preliminaries</span></a></div></li>
+<li><div class="toc-item"><a href="s-Connectivity.html#ss-adjacency-matrix-method" class="internal"><span class="codenumber">13.3.2</span> <span class="title">Adjacency Matrix Method</span></a></div></li>
+<li><div class="toc-item"><a href="s-Connectivity.html#ss-breadth-first-search" class="internal"><span class="codenumber">13.3.3</span> <span class="title">Breadth-First Search</span></a></div></li>
+<li><div class="toc-item"><a href="s-Connectivity.html#ss-sage-note-search" class="internal"><span class="codenumber">13.3.4</span> <span class="title">SageMath Note - Graph Searching</span></a></div></li>
+<li><div class="toc-item"><a href="s-Connectivity.html#exercises-13-3" class="internal"><span class="codenumber">13.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-traversals.html" class="internal"><span class="codenumber">13.4</span> <span class="title">Traversals: Eulerian and Hamiltonian Graphs</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-traversals.html#ss-eulerian" class="internal"><span class="codenumber">13.4.1</span> <span class="title">Eulerian Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="s-traversals.html#ss-hamiltonian-graphs" class="internal"><span class="codenumber">13.4.2</span> <span class="title">Hamiltonian Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="s-traversals.html#exercises-13-4" class="internal"><span class="codenumber">13.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-graph-optimization.html" class="internal"><span class="codenumber">13.5</span> <span class="title">Graph Optimization</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-graph-optimization.html#ss-weighted-graph" class="internal"><span class="codenumber">13.5.1</span> <span class="title">Weighted Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="s-graph-optimization.html#ss-traveling-salesman-problem" class="internal"><span class="codenumber">13.5.2</span> <span class="title">The Traveling Salesman Problem</span></a></div></li>
+<li><div class="toc-item"><a href="s-graph-optimization.html#ss-networks-and-flows" class="internal"><span class="codenumber">13.5.3</span> <span class="title">Networks and the Maximum Flow Problem</span></a></div></li>
+<li><div class="toc-item"><a href="s-graph-optimization.html#ss-other-optimization" class="internal"><span class="codenumber">13.5.4</span> <span class="title">Other Graph Optimization Problems</span></a></div></li>
+<li><div class="toc-item"><a href="s-graph-optimization.html#exercises-13-5" class="internal"><span class="codenumber">13.5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-planarity-and-colorings.html" class="internal"><span class="codenumber">13.6</span> <span class="title">Planarity and Colorings</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-planarity-and-colorings.html#ss-planarity" class="internal"><span class="codenumber">13.6.1</span> <span class="title">Planar Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="s-planarity-and-colorings.html#ss-graph-coloring" class="internal"><span class="codenumber">13.6.2</span> <span class="title">Graph Coloring</span></a></div></li>
+<li><div class="toc-item"><a href="s-planarity-and-colorings.html#exercises-13-6" class="internal"><span class="codenumber">13.6.3</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="s-planarity-and-colorings.html#references-1" class="internal"><span class="codenumber">13.6.4</span> <span class="title">Further Reading</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_14.html" class="internal"><span class="codenumber">14</span> <span class="title">Trees</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s-what-is-a-tree.html" class="internal"><span class="codenumber">14.1</span> <span class="title">What Is a Tree?</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-what-is-a-tree.html#subsection-159" class="internal"><span class="codenumber">14.1.1</span> <span class="title">Definition</span></a></div></li>
+<li><div class="toc-item"><a href="s-what-is-a-tree.html#subsection-160" class="internal"><span class="codenumber">14.1.2</span> <span class="title">Conditions for a graph to be a tree</span></a></div></li>
+<li><div class="toc-item"><a href="s-what-is-a-tree.html#exercises-14-1" class="internal"><span class="codenumber">14.1.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-spanning-trees.html" class="internal"><span class="codenumber">14.2</span> <span class="title">Spanning Trees</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-spanning-trees.html#subsection-161" class="internal"><span class="codenumber">14.2.1</span> <span class="title">Motivation</span></a></div></li>
+<li><div class="toc-item"><a href="s-spanning-trees.html#subsection-162" class="internal"><span class="codenumber">14.2.2</span> <span class="title">Definition</span></a></div></li>
+<li><div class="toc-item"><a href="s-spanning-trees.html#subsection-163" class="internal"><span class="codenumber">14.2.3</span> <span class="title">Prim's Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="s-spanning-trees.html#exercises-14-2" class="internal"><span class="codenumber">14.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-rooted-trees.html" class="internal"><span class="codenumber">14.3</span> <span class="title">Rooted Trees</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-rooted-trees.html#ss-rooted-trees" class="internal"><span class="codenumber">14.3.1</span> <span class="title">Definition and Terminology</span></a></div></li>
+<li><div class="toc-item"><a href="s-rooted-trees.html#ss-kruskal-algorithm" class="internal"><span class="codenumber">14.3.2</span> <span class="title">Kruskal's Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="s-rooted-trees.html#ss-sage-note-kruskal" class="internal"><span class="codenumber">14.3.3</span> <span class="title">SageMath Note - Implementation of Kruskal's Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="s-rooted-trees.html#exercises-14-3" class="internal"><span class="codenumber">14.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-binary-trees.html" class="internal"><span class="codenumber">14.4</span> <span class="title">Binary Trees</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-binary-trees.html#subsection-167" class="internal"><span class="codenumber">14.4.1</span> <span class="title">Definition of a binary tree</span></a></div></li>
+<li><div class="toc-item"><a href="s-binary-trees.html#ss-traversals" class="internal"><span class="codenumber">14.4.2</span> <span class="title">Traversals of Binary Trees</span></a></div></li>
+<li><div class="toc-item"><a href="s-binary-trees.html#ss-expression-trees" class="internal"><span class="codenumber">14.4.3</span> <span class="title">Expression Trees</span></a></div></li>
+<li><div class="toc-item"><a href="s-binary-trees.html#ss-counting-binary-trees" class="internal"><span class="codenumber">14.4.4</span> <span class="title">Counting Binary Trees</span></a></div></li>
+<li><div class="toc-item"><a href="s-binary-trees.html#ss-sage-note-powerseries" class="internal"><span class="codenumber">14.4.5</span> <span class="title">SageMath Note - Power Series</span></a></div></li>
+<li><div class="toc-item"><a href="s-binary-trees.html#exercises-14-4" class="internal"><span class="codenumber">14.4.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_15.html" class="internal"><span class="codenumber">15</span> <span class="title">Theory of Computation</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s-Languages.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Formal Language Theory</span></a></div>
+<ul class="structural"><li>
+<div class="toc-item"><a href="s-Languages.html#subsec-Languages" class="internal"><span class="codenumber">15.1.1</span> <span class="title">Languages</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-Languages.html#exercises-15-1" class="internal"><span class="codenumber">15.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-regular-expressions-and-apps.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Regular Expressions and Their Applications</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-regular-expressions-and-apps.html#subsec-regular-expressions" class="internal"><span class="codenumber">15.2.1</span> <span class="title">Regular Expressions</span></a></div></li>
+<li><div class="toc-item"><a href="s-regular-expressions-and-apps.html#subsec-regex-applications" class="internal"><span class="codenumber">15.2.2</span> <span class="title">Application: Using Regular Expressions</span></a></div></li>
+<li><div class="toc-item"><a href="s-regular-expressions-and-apps.html#exercises-15-2" class="internal"><span class="codenumber">15.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-finite-state-automata.html" class="internal"><span class="codenumber">15.3</span> <span class="title">Finite-State Automata</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-finite-state-automata.html#subsec-deterministic-fsa" class="internal"><span class="codenumber">15.3.1</span> <span class="title">Deterministic Finite-State Automata</span></a></div></li>
+<li><div class="toc-item"><a href="s-finite-state-automata.html#subsec-non-deterministic-fsa" class="internal"><span class="codenumber">15.3.2</span> <span class="title">Nondeterministic Finite-State Automata</span></a></div></li>
+<li><div class="toc-item"><a href="s-finite-state-automata.html#exercises-15-3" class="internal"><span class="codenumber">15.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="sec-FSA-and-Regular-Languages.html" class="internal"><span class="codenumber">15.4</span> <span class="title">Finite-State Automata and Regular Languages</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-FSA-and-Regular-Languages.html#subsec-every-reg-language-recognized-by-fsa" class="internal"><span class="codenumber">15.4.1</span> <span class="title">All Regular Languages are Recognized by NFAs</span></a></div></li>
+<li><div class="toc-item"><a href="sec-FSA-and-Regular-Languages.html#subsec-every-language-recognized-by-fsa-regular" class="internal"><span class="codenumber">15.4.2</span> <span class="title">Every Language Recognized by an NFA is Regular</span></a></div></li>
+<li><div class="toc-item"><a href="sec-FSA-and-Regular-Languages.html#subsec-non-regular-languages" class="internal"><span class="codenumber">15.4.3</span> <span class="title">Non-regular Languages</span></a></div></li>
+<li><div class="toc-item"><a href="sec-FSA-and-Regular-Languages.html#exercises-15-4" class="internal"><span class="codenumber">15.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_16.html" class="internal"><span class="codenumber">16</span> <span class="title">Recurrence Relations</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s-recurrence-relations.html" class="internal"><span class="codenumber">16.1</span> <span class="title">Recurrence Relations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-recurrence-relations.html#defs-rr" class="internal"><span class="codenumber">16.1.1</span> <span class="title">Definition and Terminology</span></a></div></li>
+<li><div class="toc-item"><a href="s-recurrence-relations.html#ss-solving-recurrence-relations" class="internal"><span class="codenumber">16.1.2</span> <span class="title">Solving Recurrence Relations</span></a></div></li>
+<li><div class="toc-item"><a href="s-recurrence-relations.html#sss-recurrence-relations-obtained-from-solutions" class="internal"><span class="codenumber">16.1.3</span> <span class="title">Recurrence relations obtained from “solutions”</span></a></div></li>
+<li><div class="toc-item"><a href="s-recurrence-relations.html#ss-solution-of-nonhomogeneous-relations" class="internal"><span class="codenumber">16.1.4</span> <span class="title">Solution of Nonhomogeneous Finite Order Linear Relations</span></a></div></li>
+<li><div class="toc-item"><a href="s-recurrence-relations.html#exercises-16-1" class="internal"><span class="codenumber">16.1.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-some-common-rrs.html" class="internal"><span class="codenumber">16.2</span> <span class="title">Some Common Recurrence Relations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-some-common-rrs.html#rr-basic-example" class="internal"><span class="codenumber">16.2.1</span> <span class="title">A First Basic Example</span></a></div></li>
+<li>
+<div class="toc-item"><a href="s-some-common-rrs.html#analysis-of-binary-search" class="internal"><span class="codenumber">16.2.2</span> <span class="title">An Analysis of the Binary Search Algorithm</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-some-common-rrs.html#ss-review-of-logarithms" class="internal"><span class="codenumber">16.2.2.1</span> <span class="title">Review of Logarithms</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="s-some-common-rrs.html#ss-bubblesort-analysis" class="internal"><span class="codenumber">16.2.3</span> <span class="title">Analysis of Bubble Sort and Merge Sort</span></a></div></li>
+<li><div class="toc-item"><a href="s-some-common-rrs.html#ss-derangements" class="internal"><span class="codenumber">16.2.4</span> <span class="title">Derangements</span></a></div></li>
+<li><div class="toc-item"><a href="s-some-common-rrs.html#exercises-16-2" class="internal"><span class="codenumber">16.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-generating-functions.html" class="internal"><span class="codenumber">16.3</span> <span class="title">Generating Functions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-generating-functions.html#ss-what-is-a-generating-function" class="internal"><span class="codenumber">16.3.1</span> <span class="title">Definition</span></a></div></li>
+<li><div class="toc-item"><a href="s-generating-functions.html#ss-solution-of-rr-using-generating-functions" class="internal"><span class="codenumber">16.3.2</span> <span class="title">Solution of a Recurrence Relation Using Generating Functions</span></a></div></li>
+<li><div class="toc-item"><a href="s-generating-functions.html#ops-on-sequences" class="internal"><span class="codenumber">16.3.3</span> <span class="title">Operations on Sequences</span></a></div></li>
+<li><div class="toc-item"><a href="s-generating-functions.html#sss-operations-on-generating-functions" class="internal"><span class="codenumber">16.3.4</span> <span class="title">Operations on Generating Functions</span></a></div></li>
+<li><div class="toc-item"><a href="s-generating-functions.html#ss-closed-form-expressions-for-generating-functions" class="internal"><span class="codenumber">16.3.5</span> <span class="title">Closed Form Expressions for Generating Functions</span></a></div></li>
+<li><div class="toc-item"><a href="s-generating-functions.html#ss-extra-for-experts" class="internal"><span class="codenumber">16.3.6</span> <span class="title">Extra for Experts</span></a></div></li>
+<li><div class="toc-item"><a href="s-generating-functions.html#exercises-77" class="internal"><span class="codenumber">16.3.7</span> <span class="title">Exercises for Section 10.3</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_17.html" class="internal"><span class="codenumber">17</span> <span class="title">Program Correctness</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Section17_1.html" class="internal"><span class="codenumber">17.1</span> <span class="title">Revisiting Inductive Proofs</span></a></div></li>
+<li>
+<div class="toc-item"><a href="Section17_2.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Program Correctness</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Section17_2.html#subsection-194" class="internal"><span class="codenumber">17.2.1</span> <span class="title">Two Exponentiation Algorithms</span></a></div></li>
+<li><div class="toc-item"><a href="Section17_2.html#subsection-195" class="internal"><span class="codenumber">17.2.2</span> <span class="title">Proving the correctness of the fast algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="Section17_2.html#exercises-app-alg1" class="internal"><span class="codenumber">17.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="app-pythonsage.html" class="internal"><span class="codenumber">A</span> <span class="title">Python and SageMath</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="app-python-iterators.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Python Iterators</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="app-python-iterators.html#subsection-196" class="internal"><span class="codenumber">A.1.1</span> <span class="title">Counting Subsets</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="app-pythonsage-dictionaries.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Dictionaries</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="app-pythonsage-dictionaries.html#subsection-197" class="internal"><span class="codenumber">A.2.1</span> <span class="title">Colors of Fruits</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="solutions-1.html" class="internal"><span class="codenumber">B</span> <span class="title">Hints and Solutions to Selected Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">C</span> <span class="title">Notation</span></a></div></li>
+<li><div class="toc-item"><a href="references-2.html" class="internal"><span class="title">References</span></a></div></li>
+<li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-FSA-and-Regular-Languages"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">15.4</span> <span class="title">Finite-State Automata and Regular Languages</span>
+</h2>
+<section class="introduction" id="introduction-78"><div class="para" id="p-5040">We know now that our two models for mechanical language recognition actually recognize the same class of languages. The question still remains: do they recognize the same class of languages as the class generated mechanically by regular expressions? The answer turns out to be ``yes". There are two parts to proving this: first that every language generated can be recognized, and second that every language recognized can be generated.</div></section><section class="subsection" id="subsec-every-reg-language-recognized-by-fsa"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">15.4.1</span> <span class="title">All Regular Languages are Recognized by NFAs</span>
+</h3>
+<article class="theorem theorem-like" id="thm-reg-lang-recog-by-nfa"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.4.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-5041">Every language generated by a regular expression can be recognized by an NFA.</div></article><article class="hiddenproof" id="proof-66"><a href="" data-knowl="" class="id-ref proof-knowl original has-image" data-refid="hk-proof-66"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-66"><article class="hiddenproof"><div class="para" id="p-5042">The proof of this theorem is a nice example of a proof by induction on the structure of regular expressions. The definition of regular expression is inductive: <span class="process-math">\(\Phi\)</span> ,  <span class="process-math">\(\varep\text{,}\)</span> and <span class="process-math">\(a\)</span> are the simplest regular expressions, and then more complicated regular expressions can be built from these. We will show that there are NFAs that accept the languages generated by the simplest regular expressions, and then show how those machines can be put together to form machines that accept languages generated by more complicated regular expressions. Consider the regular expression <span class="process-math">\(\Phi\text{.}\)</span> <span class="process-math">\(L(\Phi) = \{\}\text{.}\)</span> Here is a machine that accepts <span class="process-math">\(\{\}\text{:}\)</span> <figure class="figure figure-like" id="fig-fsa12"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa12.svg" role="img" class="contained" alt="Diagram of an NFA that accepts \(L(\Phi) = \{\}\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div> <div class="para" id="p-5043">Consider the regular expression <span class="process-math">\(\varep\text{.}\)</span> <span class="process-math">\(L(\varep) = \{\varepsilon\}\text{.}\)</span> Here is a machine that accepts <span class="process-math">\(\{\varepsilon\}\text{:}\)</span> <figure class="figure figure-like" id="fig-fsa13"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa13.svg" role="img" class="contained" alt="Diagram of an NFA that accepts \(L(\varep) = \{\varepsilon\}\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div> <div class="para" id="p-5044">Consider the regular expression <span class="process-math">\(a\text{.}\)</span> <span class="process-math">\(L(a) = \{a\}\text{.}\)</span> Here is a machine that accepts <span class="process-math">\(\{a\}\text{:}\)</span> <figure class="figure figure-like" id="fig-fsa14"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa14.svg" role="img" class="contained" alt="Diagram of an NFA that accepts \(L(a) = \{a\}\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div> <div class="para" id="p-5045">Now suppose that you have NFAs that accept the languages generated by the regular expressions <span class="process-math">\(r_1\)</span> and <span class="process-math">\(r_2\text{.}\)</span> Building a machine that accepts <span class="process-math">\(L(r_1 \REOR
+r_2)\)</span> is fairly straightforward: take an NFA <span class="process-math">\(M_1\)</span> that accepts <span class="process-math">\(L(r_1)\)</span> and an NFA <span class="process-math">\(M_2\)</span> that accepts <span class="process-math">\(L(r_2)\text{.}\)</span> Introduce a new state <span class="process-math">\(q_{new}\text{,}\)</span> connect it to the start states of <span class="process-math">\(M_1\)</span> and <span class="process-math">\(M_2\)</span> via <span class="process-math">\(\varepsilon\)</span>-transitions, and designate it as the start state of the new machine. No other transitions are added. The final states of <span class="process-math">\(M_1\)</span> together with the final states of <span class="process-math">\(M_2\)</span> are designated as the final states of the new machine. It should be fairly clear that this new machine accepts exactly those strings accepted by <span class="process-math">\(M_1\)</span> together with those strings accepted by <span class="process-math">\(M_2\text{:}\)</span> any string <span class="process-math">\(w\)</span> that was accepted by <span class="process-math">\(M_1\)</span> will be accepted by the new NFA by starting with an <span class="process-math">\(\varep\)</span>-transition to the old start state of <span class="process-math">\(M_1\)</span> and then following the accepting path through <span class="process-math">\(M_1\text{;}\)</span> similarly, any string accepted by <span class="process-math">\(M_2\)</span> will be accepted by the new machine; these are the only strings that will be accepted by the new machine, as on any input <span class="process-math">\(w\)</span> all the new machine can do is make an <span class="process-math">\(\varep\)</span>-move to <span class="process-math">\(M_1\)</span>'s (or <span class="process-math">\(M_2\)</span>'s) start state, and from there <span class="process-math">\(w\)</span> will only be accepted by the new machine if it is accepted by <span class="process-math">\(M_1\)</span> (or <span class="process-math">\(M_2\)</span>). Thus, the new machine accepts <span class="process-math">\(L(M_1) \cup L(M_2)\text{,}\)</span> which is <span class="process-math">\(L(r_1) \cup L(r_2)\text{,}\)</span> which is exactly the definition of <span class="process-math">\(L(r_1 \REOR r_2)\text{.}\)</span> <figure class="figure figure-like" id="fig-fsa15"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa15.svg" role="img" class="contained" alt="Diagram of an NFA that accepts \(L(r_1 \REOR r_2)\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div> <article class="remark remark-like" id="remark-2"><h5 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">15.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">A pause before we continue:.</span>
+</h5> <div class="para" id="p-5046">Note that for the simplest regular expressions, the machines that we created to accept the languages generated by the regular expressions were in fact DFAs. In our last case above, however, we needed <span class="process-math">\(\varep\)</span>-transitions to build the new machine, and so if we were trying to prove that every regular language could be accepted by a DFA, our proof would be in trouble. THIS DOES NOT MEAN that the statement ``every regular language can be accepted by a DFA" is false, just that we can't prove it using this kind of argument, and would have to find an alternative proof.</div></article> <div class="para" id="p-5047">Suppose you have machines <span class="process-math">\(M_1\)</span> and <span class="process-math">\(M_2\)</span> that accept <span class="process-math">\(L(r_1)\)</span> and <span class="process-math">\(L(r_2)\)</span> respectively. To build a machine that accepts <span class="process-math">\(L(r_1)L(r_2)\)</span> proceed as follows. Make the start state <span class="process-math">\(q_{01}\)</span> of <span class="process-math">\(M_1\)</span> be the start state of the new machine. Make the final states of <span class="process-math">\(M_2\)</span> be the final states of the new machine. Add <span class="process-math">\(\varep\)</span>-transitions from the final states of <span class="process-math">\(M_1\)</span> to the start state <span class="process-math">\(q_{02}\)</span> of <span class="process-math">\(M_2\text{.}\)</span> <figure class="figure figure-like" id="fig-fsa16"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa16.svg" role="img" class="contained" alt="Diagram of an NFA that accepts \(L(r_1)L(r_2)\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div> <div class="para" id="p-5048">It should be fairly clear that this new machine accepts exactly those strings of the form <span class="process-math">\(xy\)</span> where <span class="process-math">\(x\in L(r_1)\)</span> and <span class="process-math">\(y \in L(r_2)\text{:}\)</span> first of all, any string of this form will be accepted because <span class="process-math">\(x\in L(r_1)\)</span> implies there is a path that consumes <span class="process-math">\(x\)</span> from <span class="process-math">\(q_{01}\)</span> to a final state of <span class="process-math">\(M_1\text{;}\)</span> a <span class="process-math">\(\varep\)</span>-transition moves to <span class="process-math">\(q_{02}\text{;}\)</span> then <span class="process-math">\(y \in L(r_2)\)</span> implies there is a path that consumes <span class="process-math">\(y\)</span> from <span class="process-math">\(q_{02}\)</span> to a final state of <span class="process-math">\(M_2\text{;}\)</span> and the final states of <span class="process-math">\(M_2\)</span> are the final states of the new machine, so <span class="process-math">\(xy\)</span> will be accepted. Conversely, suppose <span class="process-math">\(z\)</span> is accepted by the new machine. Since the only final states of the new machine are in the old <span class="process-math">\(M_2\text{,}\)</span> and the only way to get into <span class="process-math">\(M_2\)</span> is to take a <span class="process-math">\(\varep\)</span>-transition from a final state of <span class="process-math">\(M_1\text{,}\)</span> this means that <span class="process-math">\(z=xy\)</span> where <span class="process-math">\(x\)</span> takes the machine from its start state to a final state of <span class="process-math">\(M_1\text{,}\)</span> a <span class="process-math">\(\varep\)</span>-transition occurs, and then <span class="process-math">\(y\)</span> takes the machine from <span class="process-math">\(q_{02}\)</span> to a final state of <span class="process-math">\(M_2\text{.}\)</span> Clearly, <span class="process-math">\(x\in
+L(r_1)\)</span> and <span class="process-math">\(y \in L(r_2)\text{.}\)</span>
+</div> <div class="para" id="p-5049">We leave the construction of an NFA that accepts <span class="process-math">\(L(r^*)\)</span> from an NFA that accepts <span class="process-math">\(L(r)\)</span> as an exercise.</div></article></div></section><section class="subsection" id="subsec-every-language-recognized-by-fsa-regular"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">15.4.2</span> <span class="title">Every Language Recognized by an NFA is Regular</span>
+</h3>
+<article class="theorem theorem-like" id="thm-nfa-recog-reg-langs"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.4.8</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-5050">Every language that is accepted by a DFA or an NFA is generated by a regular expression.</div>
+<div class="para" id="p-5051">Proving this result is actually fairly involved and not very illuminating. Below we will give an illustrative example of how one might actually go about extracting a regular expression from an NFA or a DFA. You can go on to read the proof if you are interested.</div></article><article class="hiddenproof" id="proof-67"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-67"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-67"><article class="hiddenproof"><div class="para" id="p-5052">We prove that the language accepted by a DFA is regular.  The proof for NFAs follows from the equivalence between DFAs and NFAs.</div>
+<div class="para logical" id="p-5053">
+<div class="para">Suppose that  <span class="process-math">\(M\)</span> is a DFA, where  <span class="process-math">\(M=(Q,\Sigma,q_0,\delta,F)\text{.}\)</span>  Let  <span class="process-math">\(n\)</span> be the number of states in  <span class="process-math">\(M\text{,}\)</span> and write <span class="process-math">\(Q=\{q_0,q_1,\dots,q_{n-1}\}\text{.}\)</span>  We want to consider computations in which  <span class="process-math">\(M\)</span> starts in some state  <span class="process-math">\(q_i\text{,}\)</span> reads a string <span class="process-math">\(w\text{,}\)</span> and ends in state  <span class="process-math">\(q_k\text{.}\)</span>  In such a computation,  <span class="process-math">\(M\)</span> might go through a series of intermediates states between  <span class="process-math">\(q_i\)</span> and  <span class="process-math">\(q_k\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+q_i\longrightarrow p_1\longrightarrow p_2 \cdots\longrightarrow p_r\longrightarrow q_k 
+\end{equation*}
+</div>
+<div class="para">We are interested in computations in which all of the intermediate states--- <span class="process-math">\(p_1,p_2,\dots,p_r\)</span>---are in the set <span class="process-math">\(\{q_0,q_1,\dots,q_{j-1}\}\text{,}\)</span> for some number~ <span class="process-math">\(j\text{.}\)</span> We define  <span class="process-math">\(R_{i,j,k}\)</span> to be the set of all strings  <span class="process-math">\(w\)</span> in  <span class="process-math">\(\Sigma^*\)</span> that are consumed by such a computation.  That is,  <span class="process-math">\(w\in R_{i,j,k}\)</span> if and only if when  <span class="process-math">\(M\)</span> starts in state <span class="process-math">\(q_i\)</span> and reads  <span class="process-math">\(w\text{,}\)</span> it ends in state  <span class="process-math">\(q_k\text{,}\)</span> and all the intermediate states between <span class="process-math">\(q_i\)</span> and  <span class="process-math">\(q_k\)</span> are in the set <span class="process-math">\(\{q_0,q_1,\dots,q_{j-1}\}\text{.}\)</span> <span class="process-math">\(R_{i,j,k}\)</span> is a language over  <span class="process-math">\(\Sigma\text{.}\)</span>  We show that  <span class="process-math">\(R_{i,j,k}\)</span> for <span class="process-math">\(0\leq i \lt n , 0\leq j \leq n, 0\leq k lt n\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="p-5054">Consider the language  <span class="process-math">\(R_{i,0,k}\text{.}\)</span>  For  <span class="process-math">\(w\in R_{i,0,k}\text{,}\)</span> the set of allowable intermediate states is empty.  Since there can be no intermediate states, it follows that there can be at most one step in the computation that starts in state  <span class="process-math">\(q_i\text{,}\)</span> reads  <span class="process-math">\(w\text{,}\)</span> and ends in state  <span class="process-math">\(q_k\text{.}\)</span>  So, <span class="process-math">\(|w|\)</span> can be at most one. This means that  <span class="process-math">\(R_{i,0,k}\)</span> is finite, and hence is regular.  (In fact, <span class="process-math">\(R_{i,0,k}=\{a\in\Sigma\st \delta(q_i,a)=q_k\}\text{,}\)</span> for  <span class="process-math">\(i\ne k\text{,}\)</span> and <span class="process-math">\(R_{i,0,i}=\{\varep\}\cup\{a\in\Sigma\st \delta(q_i,a)=q_i\}\text{.}\)</span>  Note that in many cases,  <span class="process-math">\(R_{i,0,k}\)</span> will be the empty set.)</div>
+<div class="para logical" id="p-5055">
+<div class="para">We now proceed by induction on  <span class="process-math">\(j\)</span> to show that  <span class="process-math">\(R_{i,j,k}\)</span> is regular for all  <span class="process-math">\(i\)</span> and  <span class="process-math">\(k\text{.}\)</span> We have proved the base case,  <span class="process-math">\(j=0\text{.}\)</span>  Suppose that <span class="process-math">\(0\leq j \lt n \)</span> we already know that <span class="process-math">\(R_{i,j,k}\)</span> is regular for all  <span class="process-math">\(i\)</span> and all  <span class="process-math">\(k\text{.}\)</span>  We need to show that  <span class="process-math">\(R_{i,j+1,k}\)</span> is regular for all  <span class="process-math">\(i\)</span> and  <span class="process-math">\(k\text{.}\)</span> In fact,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R_{i,j+1,k}=R_{i,j,k}\cup \left( R_{i,j,j}R_{j,j,j}^*R_{j,j,k}\right) 
+\end{equation*}
+</div>
+<div class="para">which is regular because  <span class="process-math">\(R_{i,j,k}\)</span> is regular for all  <span class="process-math">\(i\)</span> and  <span class="process-math">\(k\text{,}\)</span> and because the union, concatenation, and Kleene star of regular languages are regular.</div>
+</div> <div class="para" id="p-5056">To see that the above equation holds, consider a string  <span class="process-math">\(w\in\Sigma^*\text{.}\)</span> Now,  <span class="process-math">\(w\in R_{i,j+1,k}\)</span> if and only if when  <span class="process-math">\(M\)</span> starts in state  <span class="process-math">\(q_i\)</span> and reads  <span class="process-math">\(w\text{,}\)</span> it ends in state  <span class="process-math">\(q_k\text{,}\)</span> with all intermediate states in the computation in the set <span class="process-math">\(\{q_0,q_1,\dots,q_j\}\text{.}\)</span>  Consider such a computation.  There are two cases: Either  <span class="process-math">\(q_j\)</span> occurs as an intermediate state in the computation, or it does not. If it does <em class="emphasis">not</em> occur, then all the intermediate states are in the set <span class="process-math">\(\{q_0,q_1,\dots,q_{j-1}\}\text{,}\)</span> which means that in fact <span class="process-math">\(w\in R_{i,j,k}\text{.}\)</span> If  <span class="process-math">\(q_j\)</span> <em class="emphasis">does</em> occur as an intermediate state in the computation, then we can break the computation into phases, by dividing it at each point where  <span class="process-math">\(q_j\)</span> occurs as an intermediate state.  This breaks  <span class="process-math">\(w\)</span> into a concatenation  <span class="process-math">\(w=xy_1y_2\cdots y_rz\text{.}\)</span> The string  <span class="process-math">\(x\)</span> is consumed in the first phase of the computation, during which  <span class="process-math">\(M\)</span> goes from state  <span class="process-math">\(q_i\)</span> to the first occurrence of  <span class="process-math">\(q_j\text{;}\)</span> since the intermediate states in this computation are in the set <span class="process-math">\(\{q_0,q_1,\dots,q_{j-1}\}, x\in R_{i,j,j}\text{.}\)</span> The string  <span class="process-math">\(z\)</span> is consumed by the last phase of the computation, in which  <span class="process-math">\(M\)</span> goes from the final occurrence of  <span class="process-math">\(q_j\)</span> to  <span class="process-math">\(q_k\text{,}\)</span> so that  <span class="process-math">\(z\in R_{j,j,k}\text{.}\)</span> And each string  <span class="process-math">\(y_t\)</span> is consumed in a phase of the computation in which  <span class="process-math">\(M\)</span> goes from one occurrence of  <span class="process-math">\(q_j\)</span> to the next occurrence of  <span class="process-math">\(q_j\text{,}\)</span> so that  <span class="process-math">\(y_r\in R_{j,j,j}\text{.}\)</span> This means that  <span class="process-math">\(w=xy_1y_2\cdots y_rz\in R_{i,j,j}R_{j,j,j}^*R_{j,j,k}\text{.}\)</span>
+</div>
+<div class="para logical" id="p-5057">
+<div class="para">We now know, in particular, that  <span class="process-math">\(R_{0,n,k}\)</span> is a regular language for all  <span class="process-math">\(k\text{.}\)</span> But  <span class="process-math">\(R_{0,n,k}\)</span> consists of all strings  <span class="process-math">\(w\in\Sigma^*\)</span> such that when  <span class="process-math">\(M\)</span> starts in state  <span class="process-math">\(q_0\)</span> and reads  <span class="process-math">\(w\text{,}\)</span> it ends in state  <span class="process-math">\(q_k\)</span> (with \textbf{no} restriction on the intermediate states in the computation, since every state of  <span class="process-math">\(M\)</span> is in the set \{q_0,q_1,\dots,q_{n-1}\}). To finish the proof that  <span class="process-math">\(L(M)\)</span> is regular, it is only necessary to note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(M)=\bigcup_{q_k\in F} R_{0,n,k} 
+\end{equation*}
+</div>
+<div class="para">which is regular since it is a union of regular languages. This equation is true since a string  <span class="process-math">\(w\)</span> is in  <span class="process-math">\(L(M)\)</span> if and only if when  <span class="process-math">\(M\)</span> starts in state  <span class="process-math">\(q_0\)</span> and reads  <span class="process-math">\(w\text{,}\)</span> in ends in some accepting state  <span class="process-math">\(q_k\in F\text{.}\)</span> This is the same as saying <span class="process-math">\(w\in R_{0,n,k}\)</span> for some  <span class="process-math">\(k\)</span> with  <span class="process-math">\(q_k\in F\text{.}\)</span>
+</div>
+</div></article></div>
+<article class="example example-like" id="ex-extracting-regex-from-fsa"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-ex-extracting-regex-from-fsa"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.4.9</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-extracting-regex-from-fsa"><article class="example example-like"><div class="para" id="p-5058">Consider the DFA shown below: <figure class="figure figure-like" id="fig-fsa17"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa17.svg" role="img" class="contained" alt="Diagram of a DFA to extract regular expression from."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.10<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div> <div class="para" id="p-5059">Note that there is a loop from state <span class="process-math">\(q_2\)</span> back to state <span class="process-math">\(q_2\text{:}\)</span> any number of <span class="process-math">\(a\)</span>'s will keep the machine in state <span class="process-math">\(q_2\text{,}\)</span> and so we label the transition with the regular expression <span class="process-math">\(a^*\text{.}\)</span>  We do the same thing to the transition labeled <span class="process-math">\(b\)</span> from <span class="process-math">\(q_0\text{.}\)</span>  (Note that the result is no longer a DFA, but that doesn't concern us, we're just interested in developing a regular expression.) <figure class="figure figure-like" id="fig-fsa18"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa18.svg" role="img" class="contained" alt="Altered diagram from above."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.11<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div> <div class="para" id="p-5060">Next we note that there is in fact a loop from <span class="process-math">\(q_1\)</span> to <span class="process-math">\(q_1\)</span> via <span class="process-math">\(q_0\text{.}\)</span>  A regular expression that matches the strings that would move around the loop is <span class="process-math">\(ab^*a\text{.}\)</span>  So we add a transition labeled <span class="process-math">\(ab^*a\)</span> from <span class="process-math">\(q_1\)</span> to <span class="process-math">\(q_1\text{,}\)</span> and remove the now-irrelevant <span class="process-math">\(a\)</span>-transition from <span class="process-math">\(q_1\)</span> to <span class="process-math">\(q_0\text{.}\)</span>  (It is irrelevant because it is not part of any other loop from <span class="process-math">\(q_1\)</span> to <span class="process-math">\(q_1\text{.}\)</span>) <figure class="figure figure-like" id="fig-fsa19"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa19.svg" role="img" class="contained" alt="Altered diagram from above."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.12<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div> <div class="para" id="p-5061">Next we note that there is also a loop from <span class="process-math">\(q_1\)</span> to <span class="process-math">\(q_1\)</span> via <span class="process-math">\(q_2\text{.}\)</span>  A regular expression that matches the strings that would move around the loop is <span class="process-math">\(ba^*b\text{.}\)</span>  Since the transitions in the loop are the only transitions to or from <span class="process-math">\(q_2\text{,}\)</span> we simply remove <span class="process-math">\(q_2\)</span> and replace it with a transition from <span class="process-math">\(q_1\)</span> to <span class="process-math">\(q_1\text{.}\)</span> <figure class="figure figure-like" id="fig-fsa20"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa20.svg" role="img" class="contained" alt="Altered diagram from above."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.13<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div> <div class="para" id="p-5062">It is now clear from the diagram that strings of the form <span class="process-math">\(b^*a\)</span> get you to state <span class="process-math">\(q_1\text{,}\)</span> and any number of repetitions of strings that match <span class="process-math">\(ab^*a\)</span> or <span class="process-math">\(ba^*b\)</span> will keep you there.  So the machine accepts <span class="process-math">\(L(b^*a(ab^*a\REOR ba^*b)^*)\text{.}\)</span>
+</div></article></div>
+<div class="para" id="p-5063">We have already seen that if two languages <span class="process-math">\(L_1\)</span> and <span class="process-math">\(L_2\)</span> are regular, then so are <span class="process-math">\(L_1 \cup L_2\text{,}\)</span> <span class="process-math">\(L_1L_2\text{,}\)</span> and <span class="process-math">\(L_1^*\)</span> (and of course <span class="process-math">\(L_2^*\)</span>).  We have not yet seen, however, how the common set operations intersection and complementation affect regularity. Is the complement of a regular language regular?  How about the intersection of two regular languages? <div class="para" id="p-5064"></div> Both of these questions can be answered by thinking of regular languages in terms of their acceptance by DFAs.  Let's consider first the question of complementation.  Suppose we have an arbitrary regular language <span class="process-math">\(L\text{.}\)</span>  We know there is a DFA <span class="process-math">\(M\)</span> that accepts <span class="process-math">\(L\text{.}\)</span> Pause a moment and try to think of a modification that you could make to <span class="process-math">\(M\)</span> that would produce a new machine <span class="process-math">\(M'\)</span> that accepts <span class="process-math">\(\overline{L}\text{....}\)</span> Okay, the obvious thing to try is to make <span class="process-math">\(M'\)</span> be a copy of <span class="process-math">\(M\)</span> with all final states of <span class="process-math">\(M\)</span> becoming non-final states of <span class="process-math">\(M'\)</span> and vice versa.  This is in fact exactly right: <span class="process-math">\(M'\)</span> does in fact accept <span class="process-math">\(\overline{L}\text{.}\)</span>  To verify this, consider an arbitrary string <span class="process-math">\(w\text{.}\)</span>  The transition functions for the two machines <span class="process-math">\(M\)</span> and <span class="process-math">\(M'\)</span> are identical, so <span class="process-math">\(\dstar
+(q_0, w)\)</span> is the same state in both <span class="process-math">\(M\)</span> and <span class="process-math">\(M'\text{;}\)</span> if that state is accepting in <span class="process-math">\(M\)</span> then it is non-accepting in <span class="process-math">\(M'\text{,}\)</span> so if <span class="process-math">\(w\)</span> is accepted by <span class="process-math">\(M\)</span> it is not accepted by <span class="process-math">\(M'\text{;}\)</span> if the state is non-accepting in <span class="process-math">\(M\)</span> then it is accepting in <span class="process-math">\(M'\text{,}\)</span> so if <span class="process-math">\(w\)</span> is not accepted by <span class="process-math">\(M\)</span> then it is accepted by <span class="process-math">\(M'\text{.}\)</span> Thus <span class="process-math">\(M'\)</span> accepts exactly those strings that <span class="process-math">\(M\)</span> does not, and hence accepts <span class="process-math">\(\overline{L}\text{.}\)</span> <div class="para" id="p-5065"></div> It is worth pausing for a moment and looking at the above argument a bit longer.  Would the argument have worked if we had looked at an arbitrary language <span class="process-math">\(L\)</span> and an arbitrary NFA <span class="process-math">\(M\)</span> that accepted <span class="process-math">\(L\text{?}\)</span> That is, if we had built a new machine <span class="process-math">\(M'\)</span> in which the final and non-final states had been switched, would the new NFA <span class="process-math">\(M'\)</span> accept the complement of the language accepted by <span class="process-math">\(M\text{?}\)</span>  The answer is ``not necessarily".  Remember that acceptance in an NFA is determined based on whether or not at least one of the states reached by a string is accepting.  So any string <span class="process-math">\(w\)</span> with the property that <span class="process-math">\(\pstar(q_0, w)\)</span> contains both accepting and non-accepting states of <span class="process-math">\(M\)</span> would be accepted both by <span class="process-math">\(M\)</span> and by <span class="process-math">\(M'\text{.}\)</span> <div class="para" id="p-5066"></div> Now let's turn to the question of intersection.  Given two regular languages <span class="process-math">\(L_1\)</span> and <span class="process-math">\(L_2\text{,}\)</span> is <span class="process-math">\(L_1 \cap L_2\)</span> regular?  Again, it is useful to think in terms of DFAs: given machines <span class="process-math">\(M_1\)</span> and <span class="process-math">\(M_2\)</span> that accept <span class="process-math">\(L_1\)</span> and <span class="process-math">\(L_2\text{,}\)</span> can you use them to build a new machine that accepts <span class="process-math">\(L_1 \cap L_2\text{?}\)</span> The answer is yes, and the idea behind the construction bears some resemblance to that behind the NFA-to-DFA construction. We want a new machine where transitions reflect the transitions of both <span class="process-math">\(M_1\)</span> and <span class="process-math">\(M_2\)</span> simultaneously, and we want to accept a string <span class="process-math">\(w\)</span> only if that those sequences of transitions lead to final states in both <span class="process-math">\(M_1\)</span> and <span class="process-math">\(M_2\text{.}\)</span> So we associate the states of our new machine <span class="process-math">\(M\)</span> with pairs of states from <span class="process-math">\(M_1\)</span> and <span class="process-math">\(M_2\text{.}\)</span>  For each state <span class="process-math">\((q_1,q_2)\)</span> in the new machine and input symbol <span class="process-math">\(a\text{,}\)</span> define <span class="process-math">\(\delta((q_1,q_2),a)\)</span> to be the state <span class="process-math">\((\delta_1(q_1,a), \delta_2(q_2,a))\text{.}\)</span> The start state <span class="process-math">\(q_0\)</span> of <span class="process-math">\(M\)</span> is <span class="process-math">\((q_{01}, q_{02})\text{,}\)</span> where <span class="process-math">\(q_{0i}\)</span> is the start state of <span class="process-math">\(M_i\text{.}\)</span>  The final states of <span class="process-math">\(M\)</span> are the the states of the form <span class="process-math">\((q_{f1},
+q_{f2})\)</span> where <span class="process-math">\(q_{f1}\)</span> is an accepting state of <span class="process-math">\(M_1\)</span> and <span class="process-math">\(q_{f2}\)</span> is an accepting state of <span class="process-math">\(M_2\text{.}\)</span>  You should convince yourself that <span class="process-math">\(M\)</span> accepts a string <span class="process-math">\(x\)</span> iff <span class="process-math">\(x\)</span> is accepted by both <span class="process-math">\(M_1\)</span> and <span class="process-math">\(M_2\text{.}\)</span> <div class="para" id="p-5067"></div> The results of the previous section and the preceding discussion are summarized by the following theorem:</div>
+<article class="theorem theorem-like" id="thm-set-ops-on-reg-lang"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.4.14</span><span class="period">.</span><span class="space"> </span><span class="title">Set Operations on Regular Languages.</span>
+</h4>
+<div class="para logical" id="p-5068"><ul class="disc">
+<li id="li-2232"><div class="para" id="p-5069">The intersection  of two regular languages is a regular language.</div></li>
+<li id="li-2233"><div class="para" id="p-5070">The union of two regular languages is a regular language.</div></li>
+<li id="li-2234"><div class="para" id="p-5071">The concatenation of two regular languages is a regular language.</div></li>
+<li id="li-2235"><div class="para" id="p-5072">The complement of a regular language is a regular language.</div></li>
+<li id="li-2236"><div class="para" id="p-5073">The Kleene closure of a regular language is a regular language.</div></li>
+</ul></div></article></section><section class="subsection" id="subsec-non-regular-languages"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">15.4.3</span> <span class="title">Non-regular Languages</span>
+</h3>
+<div class="para" id="p-5074">The fact that our models for mechanical language-recognition accept exactly the same languages as those generated by our mechanical language-generation system would seem to be a very positive indication that in ``regular" we have in fact managed to isolate whatever characteristic it is that makes a language ``mechanical". Unfortunately, there are languages that we intuitively think of as being mechanically-recognizable (and which we could write C++ programs to recognize) that are not in fact regular.</div>
+<div class="para" id="p-5075">How does one prove that a language is not regular?  We could try proving that there is no DFA or NFA that accepts it, or no regular expression that generates it, but this kind of argument is generally rather difficult to make.  It is hard to rule out all possible automata and all possible regular expressions.  Instead, we will look at a property that all regular languages have; proving that a given language does not have this property then becomes a way of proving that that language is not regular.</div>
+<div class="para" id="p-5076">Consider the language <span class="process-math">\(L = \{ w \in \{a,b\}^*| n_a(w) =2 \bmod{3}, n_b(w) = 2 \bmod{3} \}\text{.}\)</span> Below is a DFA that accepts this language, with states numbered 1 through 9. <figure class="figure figure-like" id="fig-fsa21"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa21.svg" role="img" class="contained" alt="Diagram of DFA that accepts \(L = \{ w \in \{a,b\}^*| n_a(w) =2 \bmod{3}, n_b(w)
+= 2 \bmod{3} \}\) ."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.15<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div>
+<div class="para" id="p-5077">Consider the sequence of states that the machine passes through while processing the string <span class="process-math">\(abbbabb\text{.}\)</span> Note that there is a repeated state (state 2).  We say that <span class="process-math">\(abbbabb\)</span> ``goes through the state 2 twice", meaning that in the course of the string being processed, the machine is in state 2 twice (at least). Call the section of the string that takes you around the loop <span class="process-math">\(y\text{,}\)</span> the preceding section <span class="process-math">\(x\text{,}\)</span> and the rest <span class="process-math">\(z\text{.}\)</span>  Then <span class="process-math">\(xz\)</span> is accepted, <span class="process-math">\(xyyz\)</span> is accepted, <span class="process-math">\(xyyyz\)</span> is accepted, etc. Note that the string <span class="process-math">\(aabb\)</span> cannot be divided this way, because it does not go through the same state twice. Which strings <em class="emphasis">can</em> be divided this way? Any string that goes through the same state twice.  This may include some relatively short strings and must include any string with length greater than or equal to 9, because there are only 9 states in the machine, and so repetition must occur after 9 input symbols at the latest.</div>
+<div class="para logical" id="p-5078">
+<div class="para">More generally, consider an arbitrary DFA <span class="process-math">\(M\text{,}\)</span> and let the number of states in <span class="process-math">\(M\)</span> be <span class="process-math">\(n\text{.}\)</span>  Then any string <span class="process-math">\(w\)</span> that is accepted by <span class="process-math">\(M\)</span> and has <span class="process-math">\(n\)</span> or more symbols must go through the same state twice, and can therefore be broken up into three pieces <span class="process-math">\(x,y,z\)</span> (where <span class="process-math">\(y\)</span> contains at least one symbol) so that <span class="process-math">\(w=xyz\)</span> and</div>
+<ul class="disc">
+<li id="li-2237"><div class="para" id="p-5079">
+<span class="process-math">\(xz\)</span> is accepted by <span class="process-math">\(M\)</span>
+</div></li>
+<li id="li-2238"><div class="para" id="p-5080">
+<span class="process-math">\(xyz\)</span> is accepted by <span class="process-math">\(M\)</span> (after all, we started with <span class="process-math">\(w\)</span> in <span class="process-math">\(L(M)\)</span>)</div></li>
+<li id="li-2239"><div class="para" id="p-5081">
+<span class="process-math">\(xyyz\)</span> is accepted by <span class="process-math">\(M\)</span>
+</div></li>
+<li id="li-2240"><div class="para" id="p-5082">etc.</div></li>
+</ul>
+</div>
+<div class="para" id="p-5083">Note that you can actually say even more: within the first <span class="process-math">\(n\)</span> characters of <span class="process-math">\(w\)</span> you must already get a repeated state, so you can always find an <span class="process-math">\(x,y,z\)</span> as described above where, in addition, the <span class="process-math">\(xy\)</span> portion of <span class="process-math">\(w\)</span> (the portion of <span class="process-math">\(w\)</span> that takes you to and back to a repeated state) contains at most <span class="process-math">\(n\)</span> symbols.</div>
+<div class="para logical" id="p-5084">
+<div class="para">So altogether, if <span class="process-math">\(M\)</span> is an <span class="process-math">\(n\)</span>-state DFA that accepts <span class="process-math">\(L\text{,}\)</span> and <span class="process-math">\(w\)</span> is a string in <span class="process-math">\(L\)</span> whose length is at least <span class="process-math">\(n\text{,}\)</span> then <span class="process-math">\(w\)</span> can be broken down into three pieces <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\text{,}\)</span> <span class="process-math">\(w=xyz\text{,}\)</span> such that</div>
+<ol class="lower-roman">
+<li id="li-2241"><div class="para" id="p-5085">
+<span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> together contain no more than <span class="process-math">\(n\)</span> symbols;</div></li>
+<li id="li-2242"><div class="para" id="p-derived-li-2242">
+<span class="process-math">\(y\)</span> contains at least one symbol;</div></li>
+<li id="li-2243"><div class="para logical" id="p-5086"><ol class="lower-alpha">
+<li id="li-2244"><div class="para" id="p-5087">
+<span class="process-math">\(xz\)</span> is accepted by <span class="process-math">\(M\)</span>
+</div></li>
+<li id="li-2245"><div class="para" id="p-5088">
+<span class="process-math">\(xyz\)</span> is accepted by <span class="process-math">\(M\)</span>
+</div></li>
+<li id="li-2246"><div class="para" id="p-5089">
+<span class="process-math">\(xyyz\)</span> is accepted by <span class="process-math">\(M\)</span>
+</div></li>
+<li id="li-2247"><div class="para" id="p-5090">etc.</div></li>
+</ol></div></li>
+</ol>
+</div>
+<div class="para" id="p-5091">The usually-stated form of this result is the Pumping Lemma:</div>
+<article class="theorem theorem-like" id="thm-pumping-lemma"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.4.16</span><span class="period">.</span><span class="space"> </span><span class="title">Pumping Lemma.</span>
+</h4>
+<div class="para logical" id="p-5092">
+<div class="para">If <span class="process-math">\(L\)</span> is a regular language and <span class="process-math">\(M\)</span> is a DFA that accepts <span class="process-math">\(L\text{,}\)</span> then there is some number <span class="process-math">\(n\gt 0\)</span> such that any string <span class="process-math">\(w\)</span> in <span class="process-math">\(L\)</span> whose length is greater than or equal to <span class="process-math">\(n\)</span> can be broken down into three pieces <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\text{,}\)</span> <span class="process-math">\(w=xyz\text{,}\)</span> such that</div>
+<ol class="lower-roman">
+<li id="li-2248"><div class="para" id="p-5093">
+<span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> together contain no more than <span class="process-math">\(n\)</span> symbols;</div></li>
+<li id="li-2249"><div class="para" id="p-5094">
+<span class="process-math">\(y\)</span> contains at least one symbol;</div></li>
+<li id="li-2250"><div class="para logical" id="p-5095"><ol class="lower-alpha">
+<li id="li-2251"><div class="para" id="p-5096">
+<span class="process-math">\(xz\)</span> is accepted by <span class="process-math">\(M\)</span>
+</div></li>
+<li id="li-2252"><div class="para" id="p-5097">
+<span class="process-math">\(xyz\)</span> is accepted by <span class="process-math">\(M\)</span>
+</div></li>
+<li id="li-2253"><div class="para" id="p-5098">
+<span class="process-math">\(xyyz\)</span> is accepted by <span class="process-math">\(M\)</span>
+</div></li>
+<li id="li-2254"><div class="para" id="p-5099">etc.</div></li>
+</ol></div></li>
+</ol>
+</div></article><div class="para" id="p-5100">Though the Pumping Lemma says something about regular languages, it is not used to prove that languages are regular.  It says ``<em class="emphasis">if</em> a language is regular, then certain things happen", not ``if certain things happen, <em class="emphasis">then</em> you can conclude that the language is regular."  However, the Pumping Lemma is useful for proving that languages are not regular, since the contrapositive of ``if a language is regular then certain things happen" is ``if certain things don't happen then you can conclude that the language is not regular."  So what are the ``certain things"? Basically, the P.L. says that if a language is regular, there is some ``threshold" length for strings, and every string that goes over that threshold can be broken down in a certain way.  Therefore, if we can show that ``there is some threshold length for strings such that every string that goes over that threshold can be broken down in a certain way" is a false assertion about a language, we can conclude that the language is not regular. How do you show that there is no threshold length? Saying a number is a threshold length for a language means that every string in the language that is at least that long can be broken down in the ways described.  So to show that a number is not a threshold value, we have to show that there is some string in the language that is at least that long that cannot be broken down in the appropriate way.</div>
+<article class="theorem theorem-like" id="thm-not-regular"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.4.17</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-5101">
+<span class="process-math">\(\{ a^nb^n \ | \ n \geq 0 \}\)</span> is not regular.</div></article><article class="hiddenproof" id="proof-68"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-68"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-68"><article class="hiddenproof"><div class="para" id="p-5102">We do this by showing that there is no threshold value for the language.  Let <span class="process-math">\(N\)</span> be an arbitrary candidate for threshold value.  We want to show that it is not in fact a threshold value, so we want to find a string in the language whose length is at least <span class="process-math">\(N\)</span> and which can't be broken down in the way described by the Pumping Lemma.  What string should we try to prove unbreakable?  We can't pick strings like <span class="process-math">\(a^{100}b^{100}\)</span> because we're working with an arbitrary <span class="process-math">\(N\)</span> i.e.\ making no assumptions about <span class="process-math">\(N\)</span>'s value; picking <span class="process-math">\(a^{100}b^{100}\)</span> is implicitly assuming that <span class="process-math">\(N\)</span> is no bigger than 200 --- for larger values of <span class="process-math">\(N\text{,}\)</span> <span class="process-math">\(a^{100}b^{100}\)</span> would not be ``a string whose length is at least <span class="process-math">\(N\)</span>".  Whatever string we pick, we <em class="emphasis">have</em> to be sure that its length is at least <span class="process-math">\(N\text{,}\)</span> no matter what number <span class="process-math">\(N\)</span> is.  So we pick, for instance, <span class="process-math">\(w = a^Nb^N\text{.}\)</span>  This string is in the language, and its length is at least <span class="process-math">\(N\text{,}\)</span> no matter what number <span class="process-math">\(N\)</span> is. If we can show that this string can't be broken down as described by the Pumping Lemma, then we'll have shown that <span class="process-math">\(N\)</span> doesn't work as a threshold value, and since <span class="process-math">\(N\)</span> was an arbitrary number, we will have shown that there is no threshold value for <span class="process-math">\(L\)</span> and hence <span class="process-math">\(L\)</span> is not regular.  So let's show that <span class="process-math">\(w =
+a^Nb^N\)</span> can't be broken down appropriately.</div> <div class="para" id="p-5103">We need to show that you can't write <span class="process-math">\(w = a^Nb^N\)</span> as <span class="process-math">\(w=xyz\)</span> where <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> together contain at most <span class="process-math">\(N\)</span> symbols, <span class="process-math">\(y\)</span> isn't empty, and all the strings <span class="process-math">\(xz\text{,}\)</span> <span class="process-math">\(xyyz\text{,}\)</span> <span class="process-math">\(xyyyz\text{,}\)</span> etc.\ are still in <span class="process-math">\(L\text{,}\)</span> i.e.\ of the form <span class="process-math">\(a^nb^n\)</span> for some number~<span class="process-math">\(n\text{.}\)</span>  The best way to do this is to show that any choice for <span class="process-math">\(y\)</span> (with <span class="process-math">\(x\)</span> being whatever precedes it and <span class="process-math">\(z\)</span> being whatever follows) that satisfies the first two requirements fails to satisfy the third.  So what are our possible choices for <span class="process-math">\(y\text{?}\)</span> Well, since <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> together can contain at most <span class="process-math">\(N\)</span> symbols, and <span class="process-math">\(w\)</span> starts with <span class="process-math">\(N\)</span> <span class="process-math">\(a\)</span>'s, both <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> must be made up entirely of <span class="process-math">\(a\)</span>'s; since <span class="process-math">\(y\)</span> can't be empty, it must contain at least one <span class="process-math">\(a\)</span> and (from (i)) no more than <span class="process-math">\(N\)</span> <span class="process-math">\(a\)</span>'s. So the possible choices for <span class="process-math">\(y\)</span> are <span class="process-math">\(y=a^k\)</span> for some <span class="process-math">\(1 \leq k \leq N\text{.}\)</span> We want to show now that none of these choices will satisfy the third requirement by showing that for any value of <span class="process-math">\(k\text{,}\)</span> at least one of the strings <span class="process-math">\(xz\text{,}\)</span> <span class="process-math">\(xyyz\text{,}\)</span> <span class="process-math">\(xyyyz\text{,}\)</span> etc will not be in <span class="process-math">\(L\text{.}\)</span>  No matter what value we try for <span class="process-math">\(k\text{,}\)</span> we don't have to look far for our rogue string: the string <span class="process-math">\(xz\text{,}\)</span> which is <span class="process-math">\(a^Nb^N\)</span> with <span class="process-math">\(k\)</span> <span class="process-math">\(a\)</span>'s deleted from it, looks like <span class="process-math">\(a^{N-k}b^N\text{,}\)</span> which is clearly not of the form <span class="process-math">\(a^nb^n\text{.}\)</span>  So the only <span class="process-math">\(y\)</span>'s that satisfy (i) and (ii) don't satisfy (iii); so <span class="process-math">\(w\)</span> can't be broken down as required; so <span class="process-math">\(N\)</span> is not a threshold value for <span class="process-math">\(L\text{;}\)</span> and since <span class="process-math">\(N\)</span> was an arbitrary number, there is no threshold value for <span class="process-math">\(L\text{;}\)</span> so <span class="process-math">\(L\)</span> is not regular.</div></article></div>
+<div class="para" id="p-5104">The fact that languages like <span class="process-math">\(\{a^nb^n\ | \ n \geq 0\}\)</span> and <span class="process-math">\(\{a^p \ |\ p \mbox{
+is prime}\}\)</span> are not regular is a severe blow to any idea that regular expressions or finite-state automata capture the language-generation or language-recognition capabilities of a computer: They are both languages that we could easily write programs to recognize.  It is not clear how the expressive power of regular expressions could be increased, nor how one might modify the FSA model to obtain a more powerful one.  However, in the next chapter you will be introduced to the concept of a {\em grammar} as a tool for generating languages. The simplest grammars still only produce regular languages, but you will see that more complicated grammars have the power to generate languages far beyond the realm of the regular.</div></section><section class="exercises" id="exercises-15-4"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">15.4.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-575"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-5105">Give a DFA that accepts the intersection of the languages accepted by the machines shown below.  (Suggestion: use the construction discussed in the chapter just before <a href="" class="xref" data-knowl="./knowl/thm-set-ops-on-reg-lang.html" title="Theorem 15.4.14: Set Operations on Regular Languages">Theorem 15.4.14</a>.) <figure class="figure figure-like" id="fig-fsa5ex"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa5ex.svg" role="img" class="contained" alt="Diagram of two DFAs to combine."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.18<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div></article><article class="exercise exercise-like" id="exercise-576"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-5106">Complete the proof of <a href="" class="xref" data-knowl="./knowl/thm-reg-lang-recog-by-nfa.html" title="Theorem 15.4.1">Theorem 15.4.1</a> by showing how to modify a machine that accepts <span class="process-math">\(L(r)\)</span> into a machine that accepts <span class="process-math">\(L(r^*)\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exercise-577"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="p-5107">Using the construction described in <a href="" class="xref" data-knowl="./knowl/thm-reg-lang-recog-by-nfa.html" title="Theorem 15.4.1">Theorem 15.4.1</a>, build an NFA that accepts <span class="process-math">\(L((ab\REOR a)^*(bb))\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exercise-578"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="p-5108">Prove that the reverse of a regular language is regular.</div></article><article class="exercise exercise-like" id="exercise-579"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="p-5109">Show that for any DFA or NFA, there is an NFA with exactly one final state that accepts the same language.</div></article><article class="exercise exercise-like" id="exercise-580"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="p-5110">Suppose we change the model of NFAs to allow NFAs to have multiple start states.  Show that for any ``NFA" with multiple start states, there is an NFA with exactly one start state that accepts the same language.</div></article><article class="exercise exercise-like" id="exercise-581"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para logical" id="p-5111">
+<div class="para">Suppose that <span class="process-math">\(M_1=(Q_1,\Sigma,q_1,\delta_1,F_1)\)</span> and <span class="process-math">\(M_2=(Q_2,\Sigma,q_2,\delta_2,F_2)\)</span> are DFAs over the alphabet <span class="process-math">\(\Sigma\text{.}\)</span>  It is possible to construct a DFA that accepts the langauge <span class="process-math">\(L(M_1)\cap L(M_2)\)</span> in a single step. Define the DFA</div>
+<div class="displaymath process-math">
+\begin{equation*}
+M = (Q_1\times Q_2, \Sigma, (q_1,q_2), \delta, F_1\times F_2)
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\delta\)</span> is the function from <span class="process-math">\((Q_1\times Q_2)\times\Sigma\)</span> to <span class="process-math">\(Q_1\times Q_2\)</span> that is defined by: <span class="process-math">\(\delta((p1,p2),\sigma))=(\delta_1(p_1,\sigma),\delta_2(p_2,\sigma))\text{.}\)</span> Convince yourself that this definition makes sense.  (For example, note that states in <span class="process-math">\(M\)</span> are pairs <span class="process-math">\((p_1,p_2)\)</span> of states, where <span class="process-math">\(p_1\in Q_1\)</span> and <span class="process-math">\(p_2\in Q_2\text{,}\)</span> and note that the start state <span class="process-math">\((q_1,q_2)\)</span> in <span class="process-math">\(M\)</span> is in fact a state in <span class="process-math">\(M\text{.}\)</span>) Prove that <span class="process-math">\(L(M)=L(M_1)\cap L(M_2)\text{,}\)</span> and explain why this shows that the intersection of any two regular languages is regular.  This proof---if you can get past the notation---is more direct than the one outlined above.</div>
+</div></article><article class="exercise exercise-like" id="exercise-582"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para logical" id="p-5112">
+<div class="para">Use the Pumping Lemma to show that the following languages over <span class="process-math">\(\ab\)</span> are not regular.</div>
+<ol class="lower-alpha">
+<li id="li-2255"><div class="para" id="p-derived-li-2255"><span class="process-math">\(\displaystyle L_1 = \{ x |n_a(x) = n_b(x)\}\)</span></div></li>
+<li id="li-2256"><div class="para" id="p-derived-li-2256"><span class="process-math">\(\displaystyle L_2 = \{ xx | x \in \ab^*\}\)</span></div></li>
+<li id="li-2257"><div class="para" id="p-derived-li-2257"><span class="process-math">\(\displaystyle L_3 = \{ xx^R | x \in \ab^*\}\)</span></div></li>
+<li id="li-2258"><div class="para" id="p-derived-li-2258"><span class="process-math">\(\displaystyle L_4 = \{ a^nb^m | n \lt m \}\)</span></div></li>
+</ol>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s-finite-state-automata.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="chapter_16.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+\documentclass[border=3mm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes.gates.logic.US,shapes.gates.logic.IEC,calc}
+\begin{document}
+\thispagestyle{empty}
+\tikzstyle{branch}=[fill,shape=circle,minimum size=15pt,inner sep=0pt]
+\begin{tikzpicture}[label distance=2mm]
+
+    \node (x1) at (0,0) {$x_1$};
+
+    \node[xor gate US, draw, logic gate inputs=nn] at (1,0) (Xor1) {};
+
+    \draw (x1) |- (Not1.input);
+    \draw (Not1.output) -- ([xshift=.5cm]Not1.output) node[above] {$\overline{x_1}$};
+\end{tikzpicture}
+\end{document} 

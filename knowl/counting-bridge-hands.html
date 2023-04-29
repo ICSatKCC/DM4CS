@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">Counting Bridge Hands.</span>
+</h4>
+<div class="para">We saw this example in <a href="section2_4-combinations-and-the-binomial-theorem.html#sage-bridge-hands" class="internal" title="Subsection 2.4.3: SageMath Note">Subsection 2.4.3</a>. Now we have a formula to solve it directly, though it might not seem like the same type of problem at first.</div> <div class="para">In bridge, the location of a hand in relation to the dealer has some bearing on the game. The number of possible hands takes into account the number each player's possible hands depending on the order in which they are dealt. The player in the West position gets their 13 cards first, then the player in the North position gets 13 cards, then the player in the East gets 13 cards and finally the South gets 13 cards. We can apply <a href="" class="xref" data-knowl="./knowl/permutations-of-multisets.html" title="Theorem 2.5.9: Permutations Of Multisets">Theorem 2.5.9</a> to solve this.</div> <div class="para logical">
+<div class="para">In this case we have <span class="process-math">\(n = 52\)</span> items, the cards, and four "types" of items, West's cards, North's cards, East's cards, and South's cards, each with multiplicity 13. To see how we can use the <a href="" class="xref" data-knowl="./knowl/permutations-of-multisets.html" title="Theorem 2.5.9: Permutations Of Multisets">Theorem 2.5.9</a> to solve this: apply some ordering to the entire deck of cards, say the Ace of Hearts is first, the Two of Hearts is second, and so on, for all 52 cards. Then the cards dealt to West correspond to choosing positions for 13 cards (of type West's cards), the cards dealt to North correspond to choosing positions for 13 cards of type North's cards, and so on.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/permutations-of-multisets.html">
+\begin{equation*}
+\binom{52}{13}\binom{39}{13}\binom{26}{13}\binom{13}{13} = \frac{52!}{13!*13!*13!* 13!}
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#counting-bridge-hands" class="internal">in-context</a></span>
+</body>
+</html>

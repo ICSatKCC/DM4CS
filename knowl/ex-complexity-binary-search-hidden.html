@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="example example-like"> <div class="para">Consider the <a href="" class="xref" data-knowl="./knowl/alg-iterative-binary-search.html" title="Algorithm 9.1.12: Iterative Binary Search">Algorithm 9.1.12</a> that finds a target value in a sorted list of <span class="process-math">\(n\)</span> integers. The algorithm calculates the middle position and looks at the element in that position in turn, comparing it to the target. Here too, the size of the problem is the number of integers stored in in the list. The basic operation is to compare an integer's value to that of the target. Assume that it takes a fixed amount of time to do one such comparison.</div> <div class="para">Let us call <span class="process-math">\(c_1\)</span> the amount of time required to compare two integers, <span class="process-math">\(c_2\)</span> the time required to calculate the middle index, <span class="process-math">\(c_3\)</span> the time to reassign either <code class="code-inline tex2jax_ignore">begin</code> or <code class="code-inline tex2jax_ignore">end</code>, and <span class="process-math">\(c_4\)</span> the time taken to initialize <code class="code-inline tex2jax_ignore">loc, begin</code> and <code class="code-inline tex2jax_ignore">end</code>.</div> <div class="para">An important property to remember for this analysis is if <span class="process-math">\(n\)</span> is a power of 2, say <span class="process-math">\(2^m\text{,}\)</span> then <span class="process-math">\(\log_{2}(n) = m\)</span>
+</div> <div class="para">Assume the length of the list is <span class="process-math">\(n = 2^m\text{.}\)</span> At each iteration, the algorithm divides the list in half so the length of the new list is <span class="process-math">\(\frac{2^m}{2}  = 2^{m-1}\text{.}\)</span> This happens until the remaining list has a single element, it has length <span class="process-math">\(1 = 2^0\text{.}\)</span> Therefore, the maximum number of splits that can occur is <span class="process-math">\(m = \log_2(n)\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">The total time to run <code class="code-inline tex2jax_ignore">BinarySearch</code> is therefore approximately <span class="process-math">\((c_1 + c_2 +c_3)\log_2(n) + c_4\text{.}\)</span> <code class="code-inline tex2jax_ignore">BinarySearch</code> has a running time expressed by the function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-big0-common-functions.html">
+\begin{equation*}
+T(n)=(c_1 + c_2 +c_3)\log_2(n) + c_4 \text{.}
+\end{equation*}
+</div>
+<div class="para">The Big O can then be calculated as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-big0-common-functions.html">
+\begin{equation*}
+\begin{array}{c c}
+(c_1 + c_2 +c_3)\log_2(n) + c_4  &amp; (c_1 + c_2 +c_3)\log_2(n) + c_4 \log_2(n) \\
+&amp; \leq (c_1 + c_2+ c_3 + c_4)\log_2(n) \\
+&amp; = O(\log_2(n))
+\end{array}
+\end{equation*}
+</div>
+<div class="para">The asymptotic complexity and running time of <code class="code-inline tex2jax_ignore">BinarySearch</code> is therefore <span class="process-math">\(\log_2(n)\text{.}\)</span> As can be seen in <a href="" class="xref" data-knowl="./knowl/fig-big0-common-functions.html" title="Figure 8.6.7">Figure 8.6.7</a>, this is a far faster algorithm than <span class="process-math">\(O(n)\)</span> <code class="code-inline tex2jax_ignore">LinearSearch</code>.</div>
+</div> <div class="para">The recursive version of BinarySearch <a href="" class="xref" data-knowl="./knowl/alg-recursive-linear-search.html" title="Algorithm 9.2.3: Recursive Linear Search">Algorithm 9.2.3</a> has the same complexity as the iterative version: <span class="process-math">\(\log_2(n)\text{.}\)</span> The only difference is that instead of splitting the list in half and looping, it splits the list in half and makes a recursive call to itself.</div></article></body>
+</html>

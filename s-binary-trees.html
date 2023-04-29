@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Binary Trees</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Discrete Mathematics for Computer Science">
+<meta property="book:author" content="Ken Levasseur">
+<meta property="book:author" content="Al Doerr">
+<meta property="book:author" content="Michiel Smid">
+<meta property="book:author" content="Oscar Levin">
+<meta property="book:author" content="Charles M. Grinstead">
+<meta property="book:author" content="J. Laurie Snell">
+<meta property="book:author" content="Eric Lehman">
+<meta property="book:author" content="F. Thomson Leighton">
+<meta property="book:author" content="Albert R Meyer">
+<meta property="book:author" content="Jeff Erickson">
+<meta property="book:author" content="Kenneth P. Bogart">
+<meta property="book:author" content="Carol Chritchlow">
+<meta property="book:author" content="David Eck">
+<meta property="book:author" content="OpenDSA Project">
+<meta property="book:author" content="L.J. Miller">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
+<p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="s-rooted-trees.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_14.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="chapter_15.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(       \newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+      \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
+      \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
+      \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
+      \newcommand{\cis}{\operatorname{cis}} \newcommand{\chr}{\operatorname{char}}
+      \newcommand{\Null}{\operatorname{Null}} \renewcommand{\vec}[1]{\mathbf{#1}}
+      \newcommand{\R}{\mathbb R} 
+  
+      \newcommand{\ab}{\mbox{$\{a,b\}$}}
+\newcommand{\aetc}[2]{\mbox{{${#1}_1{#1}_2\ldots {#1}_{#2}$}}}
+\newcommand{\varep}{\varepsilon}
+\newcommand{\fsafig}[1]{\medskip\centerline{\eps{fsa#1}}\medskip}
+\newcommand{\REOR}{\hbox{$\,|\,$}}
+\newcommand{\POW}{{\mathscr P}}   
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li><div class="toc-item"><a href="dedication-1.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li><div class="toc-item"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_1.html" class="internal"><span class="codenumber">1</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section1_1-set-Notation-and-Relations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Set Notation and Relations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section1_1-set-Notation-and-Relations.html#subsection-1" class="internal"><span class="codenumber">1.1.1</span> <span class="title">The notion of a set</span></a></div></li>
+<li><div class="toc-item"><a href="section1_1-set-Notation-and-Relations.html#ss-subsets" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Subsets</span></a></div></li>
+<li><div class="toc-item"><a href="section1_1-set-Notation-and-Relations.html#exercises-1" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Exercises for Section 1.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section1_2-basic_Set_Operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Basic Set Operations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section1_2-basic_Set_Operations.html#subsection-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Definitions</span></a></div></li>
+<li><div class="toc-item"><a href="section1_2-basic_Set_Operations.html#subsection-4" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Set Operations and their Venn Diagrams</span></a></div></li>
+<li><div class="toc-item"><a href="section1_2-basic_Set_Operations.html#Sage_Note_Sets-1-2" class="internal"><span class="codenumber">1.2.3</span> <span class="title">SageMath Note: Sets</span></a></div></li>
+<li><div class="toc-item"><a href="section1_2-basic_Set_Operations.html#exercises-1-2" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercises for Section 1.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section1_3-cartesian_Products_and_Power_Sets.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Cartesian Products and Power Sets</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section1_3-cartesian_Products_and_Power_Sets.html#Cartesian-products" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Cartesian Products</span></a></div></li>
+<li><div class="toc-item"><a href="section1_3-cartesian_Products_and_Power_Sets.html#power-sets" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Power Sets</span></a></div></li>
+<li><div class="toc-item"><a href="section1_3-cartesian_Products_and_Power_Sets.html#Sage_Note_Sets-1-3" class="internal"><span class="codenumber">1.3.3</span> <span class="title">SageMath Note: Cartesian Products and Power Sets</span></a></div></li>
+<li><div class="toc-item"><a href="section1_3-cartesian_Products_and_Power_Sets.html#exercises-1-3" class="internal"><span class="codenumber">1.3.4</span> <span class="title">EXERCISES FOR SECTION 1.3</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section1_4-binary_Representation_of_Positive_Integers.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Binary Representation of Positive Integers</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section1_4-binary_Representation_of_Positive_Integers.html#ss-grouping-by-twos" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Grouping by Twos</span></a></div></li>
+<li><div class="toc-item"><a href="section1_4-binary_Representation_of_Positive_Integers.html#ss-conversion-algorithm" class="internal"><span class="codenumber">1.4.2</span> <span class="title">A Conversion Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="section1_4-binary_Representation_of_Positive_Integers.html#Sage_Note_Binary-1-4" class="internal"><span class="codenumber">1.4.3</span> <span class="title">SageMath Note: Binary Conversion Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="section1_4-binary_Representation_of_Positive_Integers.html#exercises-1-4" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Exercises for Section 1.4</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section1_5-summation_Notation_and_Generalizations.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Summation Notation and Generalizations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section1_5-summation_Notation_and_Generalizations.html#ss-sums" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Sums</span></a></div></li>
+<li><div class="toc-item"><a href="section1_5-summation_Notation_and_Generalizations.html#ss-generalizations" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Generalizations</span></a></div></li>
+<li><div class="toc-item"><a href="section1_5-summation_Notation_and_Generalizations.html#exercises-1-5" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Exercises for Section 1.5</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_2.html" class="internal"><span class="codenumber">2</span> <span class="title">Combinatorics</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section2_1-the-rule-of-products.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Basic Counting Techniques - The Rule of Products</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section2_1-the-rule-of-products.html#What-is-Combinatorics" class="internal"><span class="codenumber">2.1.1</span> <span class="title">What is Combinatorics?</span></a></div></li>
+<li><div class="toc-item"><a href="section2_1-the-rule-of-products.html#rule-of-products" class="internal"><span class="codenumber">2.1.2</span> <span class="title">The Rule Of Products</span></a></div></li>
+<li><div class="toc-item"><a href="section2_1-the-rule-of-products.html#EXERCISES-FOR-SECTION-2-1" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section2_2-permutations.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Permutations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section2_2-permutations.html#subsection-16" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Ordering Things</span></a></div></li>
+<li><div class="toc-item"><a href="section2_2-permutations.html#exercises-7" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section2_3-partitions-and-law-of-addition.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Partitions of Sets and the Law of Addition</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section2_3-partitions-and-law-of-addition.html#subsection-17" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Partitions</span></a></div></li>
+<li><div class="toc-item"><a href="section2_3-partitions-and-law-of-addition.html#subsection-18" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Addition Laws</span></a></div></li>
+<li><div class="toc-item"><a href="section2_3-partitions-and-law-of-addition.html#exercises-2-3" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercises for Section 2.3</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section2_4-combinations-and-the-binomial-theorem.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Combinations and the Binomial Theorem</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section2_4-combinations-and-the-binomial-theorem.html#combinations" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Combinations</span></a></div></li>
+<li><div class="toc-item"><a href="section2_4-combinations-and-the-binomial-theorem.html#the-binomial-theorem" class="internal"><span class="codenumber">2.4.2</span> <span class="title">The Binomial Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="section2_4-combinations-and-the-binomial-theorem.html#sage-bridge-hands" class="internal"><span class="codenumber">2.4.3</span> <span class="title">SageMath Note</span></a></div></li>
+<li><div class="toc-item"><a href="section2_4-combinations-and-the-binomial-theorem.html#exercises-2-4" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Counting with Repetition or Indistinguishable Objects</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#tuples-with-repetition" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Tuples or Permutations with Repetition</span></a></div></li>
+<li><div class="toc-item"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#combinations-with-repetition" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Combinations with Repetition</span></a></div></li>
+<li><div class="toc-item"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#ordering-indistinguishable-objects" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Ordering Indistinguishable Objects</span></a></div></li>
+<li><div class="toc-item"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#exercises-2-5" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_3.html" class="internal"><span class="codenumber">3</span> <span class="title">Probability</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section3_1-probability.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction to Probability</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section3_1-probability.html#subsec3_1_1-probability-spaces" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Probability Spaces</span></a></div></li>
+<li><div class="toc-item"><a href="section3_1-probability.html#subsec3_1_2-basic-rules-of-probability" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Basic Rules of Probability</span></a></div></li>
+<li><div class="toc-item"><a href="section3_1-probability.html#exercises-11" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Exercises for Section 3.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section3_2-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Conditional Probability, Independence, and Bayes' Rule</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section3_2-Bayes.html#subsec3_2_1-conditional-probability" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Conditional probability</span></a></div></li>
+<li><div class="toc-item"><a href="section3_2-Bayes.html#subsec3_2_2-independent-events" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Independent Events</span></a></div></li>
+<li><div class="toc-item"><a href="section3_2-Bayes.html#subsec3_2_3-random-variables" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Random Variables</span></a></div></li>
+<li><div class="toc-item"><a href="section3_2-Bayes.html#subsec3_2_4-bayes-theorem" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Bayes' Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="section3_2-Bayes.html#exercises-12" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Exercises for Section 3.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section3_3-ExpectedValue.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Expected Value and Variance</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section3_3-ExpectedValue.html#subsec3_3_1-expected-value" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Expected Values</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section3_3-ExpectedValue.html#ssubsec3_3_1_1-comp-expected-value" class="internal"><span class="codenumber">3.3.1.1</span> <span class="title">Comparing the Expected Values of Comparable Random Variables</span></a></div></li>
+<li><div class="toc-item"><a href="section3_3-ExpectedValue.html#ssubsec3_3_1_2-alt-expected-value" class="internal"><span class="codenumber">3.3.1.2</span> <span class="title">An Alternative Expression for the Expected Value</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section3_3-ExpectedValue.html#subsec3_3_2-linearity-of-expectation" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Linearity of Expectation</span></a></div></li>
+<li><div class="toc-item"><a href="section3_3-ExpectedValue.html#subsec3_3_3-geometric-distribution" class="internal"><span class="codenumber">3.3.3</span> <span class="title">The Geometric Distribution</span></a></div></li>
+<li><div class="toc-item"><a href="section3_3-ExpectedValue.html#subsec3_3_4-binomial-distribution" class="internal"><span class="codenumber">3.3.4</span> <span class="title">The Binomial Distribution</span></a></div></li>
+<li><div class="toc-item"><a href="section3_3-ExpectedValue.html#subsec3_3_5-variance" class="internal"><span class="codenumber">3.3.5</span> <span class="title">Variance</span></a></div></li>
+<li><div class="toc-item"><a href="section3_3-ExpectedValue.html#exercises-13" class="internal"><span class="codenumber">3.3.6</span> <span class="title">Exercises for Section 3.3</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter4.html" class="internal"><span class="codenumber">4</span> <span class="title">Logic</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section4_1-propositions-logic-operators.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Propositions and Logical Operators</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section4_1-propositions-logic-operators.html#subsec4_1_1-propositions" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Propositions</span></a></div></li>
+<li><div class="toc-item"><a href="section4_1-propositions-logic-operators.html#subsec4_1_2-logical-operations" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Logical Operations</span></a></div></li>
+<li><div class="toc-item"><a href="section4_1-propositions-logic-operators.html#exercises-4-1" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Exercises for Section 4.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section4_2-truth-tables.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Truth Tables and Propositions Generated by a Set</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section4_2-truth-tables.html#subsec4_2_1-truth-tables" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Truth Tables</span></a></div></li>
+<li><div class="toc-item"><a href="section4_2-truth-tables.html#subsec4_2_2-proposition-generated-by-set" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Propositions Generated by a Set</span></a></div></li>
+<li><div class="toc-item"><a href="section4_2-truth-tables.html#subsec4_2_3-precedence" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Precedence of Logical Operators</span></a></div></li>
+<li><div class="toc-item"><a href="section4_2-truth-tables.html#exercises-4-2" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises for Section 4.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section4_3-equivalence-implication.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Equivalence and Implication</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section4_3-equivalence-implication.html#tautology-contradiction" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Tautologies and Contradictions</span></a></div></li>
+<li><div class="toc-item"><a href="section4_3-equivalence-implication.html#subsection-42" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Equivalence</span></a></div></li>
+<li><div class="toc-item"><a href="section4_3-equivalence-implication.html#subsection-43" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Implication</span></a></div></li>
+<li><div class="toc-item"><a href="section4_3-equivalence-implication.html#subsection-44" class="internal"><span class="codenumber">4.3.4</span> <span class="title">A Universal Operation</span></a></div></li>
+<li><div class="toc-item"><a href="section4_3-equivalence-implication.html#exercises-4-3" class="internal"><span class="codenumber">4.3.5</span> <span class="title">Exercises for Section 4.3</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section4_4-logic-laws.html" class="internal"><span class="codenumber">4.4</span> <span class="title">The Laws of Logic</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section4_4-logic-laws.html#subsection-45" class="internal"><span class="codenumber">4.4.1</span> <span class="title"></span></a></div></li>
+<li><div class="toc-item"><a href="section4_4-logic-laws.html#exercises-4_4" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Exercises for Section 4.4</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section4_5-propositions-over-universe.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Propositions over a Universe</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section4_5-propositions-over-universe.html#subsec4_5_1-propositions-over-a-universe" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Propositions over a Universe</span></a></div></li>
+<li><div class="toc-item"><a href="section4_5-propositions-over-universe.html#ss-truth-sets" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Truth Sets</span></a></div></li>
+<li><div class="toc-item"><a href="section4_5-propositions-over-universe.html#exercises-4_5" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Exercises for Section 4.5</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section4_6-quantifiers.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Quantifiers</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section4_6-quantifiers.html#subsec4_6_1-existential" class="internal"><span class="codenumber">4.6.1</span> <span class="title">The Existential Quantifier</span></a></div></li>
+<li><div class="toc-item"><a href="section4_6-quantifiers.html#subsec4_6_2-universal-quantifier" class="internal"><span class="codenumber">4.6.2</span> <span class="title">The Universal Quantifier</span></a></div></li>
+<li><div class="toc-item"><a href="section4_6-quantifiers.html#ss-negated-quantifiers" class="internal"><span class="codenumber">4.6.3</span> <span class="title">The Negation of Quantified Propositions</span></a></div></li>
+<li><div class="toc-item"><a href="section4_6-quantifiers.html#ss-multiple-quantifiers" class="internal"><span class="codenumber">4.6.4</span> <span class="title">Multiple Quantifiers</span></a></div></li>
+<li><div class="toc-item"><a href="section4_6-quantifiers.html#exercises-4_6" class="internal"><span class="codenumber">4.6.5</span> <span class="title">Exercises for Section 4.6</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter5.html" class="internal"><span class="codenumber">5</span> <span class="title">Proofs</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section5_1-math-systems.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Mathematical Systems and Proofs</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section5_1-math-systems.html#subsection-52" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Mathematical Systems</span></a></div></li>
+<li><div class="toc-item"><a href="section5_1-math-systems.html#subsection-53" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Direct Proof</span></a></div></li>
+<li><div class="toc-item"><a href="section5_1-math-systems.html#sub-indirect-proof" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Indirect Proof</span></a></div></li>
+<li><div class="toc-item"><a href="section5_1-math-systems.html#exercises-5_1" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Exercises for Section 5.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section5_2-induction.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Mathematical Induction</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section5_2-induction.html#subsection-55" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Introduction, First Example</span></a></div></li>
+<li><div class="toc-item"><a href="section5_2-induction.html#subsection-56" class="internal"><span class="codenumber">5.2.2</span> <span class="title">More Examples</span></a></div></li>
+<li><div class="toc-item"><a href="section5_2-induction.html#subsection-57" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Course of Values Induction</span></a></div></li>
+<li><div class="toc-item"><a href="section5_2-induction.html#exercises-5_2" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Exercises for Section 5.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section5_3-proofs-quantifiers.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Proofs of Quantified Statements</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section5_3-proofs-quantifiers.html#ss-proofs-with-quantifiers" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Proofs With Quantifiers</span></a></div></li>
+<li><div class="toc-item"><a href="section5_3-proofs-quantifiers.html#exercises-5_3" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Exercises for Section 5.3</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section5_4-proof-review.html" class="internal"><span class="codenumber">5.4</span> <span class="title">A Review of Methods of Proof</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section5_4-proof-review.html#subsec5_4_1-proof-concepts" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Key Concepts in Proof</span></a></div></li>
+<li><div class="toc-item"><a href="section5_4-proof-review.html#subsec5_4_2-art-of-proving-ifpthenq" class="internal"><span class="codenumber">5.4.2</span> <span class="title">The Art of Proving <span class="process-math">\(P \Rightarrow  C\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="section5_4-proof-review.html#exercises-5_4" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Exercises for Section 5.4</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_6.html" class="internal"><span class="codenumber">6</span> <span class="title">More on Sets</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section6_1-proof-methods-sets.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Methods of Proof for Sets</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section6_1-proof-methods-sets.html#subsec6_1_1-examples-and-counterexamples" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Examples and Counterexamples</span></a></div></li>
+<li><div class="toc-item"><a href="section6_1-proof-methods-sets.html#subsec6_1_2-venn-proofs" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Proof Using Venn Diagrams</span></a></div></li>
+<li><div class="toc-item"><a href="section6_1-proof-methods-sets.html#subsec6_1_3-membership-table-proof" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Proof using Set-Membership Tables</span></a></div></li>
+<li><div class="toc-item"><a href="section6_1-proof-methods-sets.html#subsec6_1_4-proofs-using-definitions-sets" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Proof Using Definitions</span></a></div></li>
+<li><div class="toc-item"><a href="section6_1-proof-methods-sets.html#exercises-24" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Exercises for Section 6.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section6_2-laws-of-set-theory.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Laws of Set Theory</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section6_2-laws-of-set-theory.html#subsection-65" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Tables of Laws</span></a></div></li>
+<li><div class="toc-item"><a href="section6_2-laws-of-set-theory.html#ss-proof-with-theorems" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Proof Using Previously Proven Theorems</span></a></div></li>
+<li><div class="toc-item"><a href="section6_2-laws-of-set-theory.html#ss-proof-sets-contradiction" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Proof Using the Indirect Method/Contradiction</span></a></div></li>
+<li><div class="toc-item"><a href="section6_2-laws-of-set-theory.html#exer-6_2" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Exercises for Section 6.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section6_3-minsets.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Minsets</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section6_3-minsets.html#subsection-68" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Definition of Minsets</span></a></div></li>
+<li><div class="toc-item"><a href="section6_3-minsets.html#subsection-69" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Properties of Minsets</span></a></div></li>
+<li><div class="toc-item"><a href="section6_3-minsets.html#exercises-6_3" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Exercises for Section 6.3</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section6_4-duality-principle.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Duality Principle</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section6_4-duality-principle.html#subsection-70" class="internal"><span class="codenumber">6.4.1</span> <span class="title"></span></a></div></li>
+<li><div class="toc-item"><a href="section6_4-duality-principle.html#exer-6_4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Exercises for Section 6.4</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_7.html" class="internal"><span class="codenumber">7</span> <span class="title">Introduction to Matrix Algebra</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section7_1-basic-matrix-definitions.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Basic Definitions and Operations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section7_1-basic-matrix-definitions.html#subsec7_1_1-order-equality" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Matrix Order and Equality</span></a></div></li>
+<li><div class="toc-item"><a href="section7_1-basic-matrix-definitions.html#ss-matrix-addition-scalarmult" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Matrix Addition and Scalar Multiplication</span></a></div></li>
+<li><div class="toc-item"><a href="section7_1-basic-matrix-definitions.html#ss-matrix-multiplication" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Matrix Multiplication</span></a></div></li>
+<li><div class="toc-item"><a href="section7_1-basic-matrix-definitions.html#exercises-7-1" class="internal"><span class="codenumber">7.1.4</span> <span class="title">Exercises for Section 7.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section7_2-special-matrices.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Special Types of Matrices</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section7_2-special-matrices.html#subsection-74" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Diagonal Matrices</span></a></div></li>
+<li><div class="toc-item"><a href="section7_2-special-matrices.html#subsection-75" class="internal"><span class="codenumber">7.2.2</span> <span class="title">The Identity Matrix and Matrix Inverses</span></a></div></li>
+<li><div class="toc-item"><a href="section7_2-special-matrices.html#exercises-7-2" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Exercises for Section 7.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section7_3-laws-of-matrix-algebra.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Laws of Matrix Algebra</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section7_3-laws-of-matrix-algebra.html#subsection-76" class="internal"><span class="codenumber">7.3.1</span> <span class="title">The Laws</span></a></div></li>
+<li><div class="toc-item"><a href="section7_3-laws-of-matrix-algebra.html#subsection-77" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Commentary</span></a></div></li>
+<li><div class="toc-item"><a href="section7_3-laws-of-matrix-algebra.html#exercises-7-3" class="internal"><span class="codenumber">7.3.3</span> <span class="title">Exercises for Section 7.3</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section7_4-matrix-oddities.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Matrix Oddities</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section7_4-matrix-oddities.html#subsection-78" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Dissimilarities with elementary algebra</span></a></div></li>
+<li><div class="toc-item"><a href="section7_4-matrix-oddities.html#exercises-7_4" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Exercises for Section 7.4</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_8.html" class="internal"><span class="codenumber">8</span> <span class="title">Functions</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section8_1-functions.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Function Fundamentals</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section8_1-functions.html#subsec8_1_1-function-definition-notation" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Function Definition and Notation</span></a></div></li>
+<li><div class="toc-item"><a href="section8_1-functions.html#subsec8_1_2-two-variables" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Functions of Two Variables</span></a></div></li>
+<li><div class="toc-item"><a href="section8_1-functions.html#subsec8_1_3-sage-note-functions" class="internal"><span class="codenumber">8.1.3</span> <span class="title">SageMath Note</span></a></div></li>
+<li><div class="toc-item"><a href="section8_1-functions.html#subsec8_1_4-non-functions" class="internal"><span class="codenumber">8.1.4</span> <span class="title">Non-Functions</span></a></div></li>
+<li><div class="toc-item"><a href="section8_1-functions.html#exercises-8-1" class="internal"><span class="codenumber">8.1.5</span> <span class="title">Exercises for Section 8.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section8_2-properties-of-functions.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Properties of Functions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section8_2-properties-of-functions.html#subsection-83" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Properties</span></a></div></li>
+<li><div class="toc-item"><a href="section8_2-properties-of-functions.html#subsection-84" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Counting</span></a></div></li>
+<li><div class="toc-item"><a href="section8_2-properties-of-functions.html#exercises-8-2" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Exercises for Section 8.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section8_3-function-composition.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Function Composition</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section8_3-function-composition.html#subsec8_3_1-function-equality" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Function Equality</span></a></div></li>
+<li><div class="toc-item"><a href="section8_3-function-composition.html#subsec8_3_2-composition" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Function Composition</span></a></div></li>
+<li><div class="toc-item"><a href="section8_3-function-composition.html#subsec8_3_3-inverse-functions" class="internal"><span class="codenumber">8.3.3</span> <span class="title">Inverse Functions</span></a></div></li>
+<li><div class="toc-item"><a href="section8_3-function-composition.html#exercises-8-3" class="internal"><span class="codenumber">8.3.4</span> <span class="title">Exercises for Section 8.3</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section8_4-recursion.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Introduction to Recursion</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section8_4-recursion.html#subsec8_4_1-binomial-coefficients" class="internal"><span class="codenumber">8.4.1</span> <span class="title">Binomial Coefficients</span></a></div></li>
+<li><div class="toc-item"><a href="section8_4-recursion.html#subsec8_4_2-polynomials-and-their-evaluation" class="internal"><span class="codenumber">8.4.2</span> <span class="title">Polynomials and Their Evaluation</span></a></div></li>
+<li><div class="toc-item"><a href="section8_4-recursion.html#subsec8_4_4-recursive-sequences" class="internal"><span class="codenumber">8.4.3</span> <span class="title">Recursively Defined Sequences</span></a></div></li>
+<li><div class="toc-item"><a href="section8_4-recursion.html#subsec8_4_5-recursion" class="internal"><span class="codenumber">8.4.4</span> <span class="title">Recursion</span></a></div></li>
+<li><div class="toc-item"><a href="section8_4-recursion.html#subsec8_4_6-iteration" class="internal"><span class="codenumber">8.4.5</span> <span class="title">Iteration</span></a></div></li>
+<li><div class="toc-item"><a href="section8_4-recursion.html#subsec8_4_7-induction-and-recursion" class="internal"><span class="codenumber">8.4.6</span> <span class="title">Induction and Recursion</span></a></div></li>
+<li><div class="toc-item"><a href="section8_4-recursion.html#exercises-35" class="internal"><span class="codenumber">8.4.7</span> <span class="title">Exercises for Section 8.4</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section8_5-Sequences.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Sequences</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section8_5-Sequences.html#subsection-94" class="internal"><span class="codenumber">8.5.1</span> <span class="title">Sequences and Ways They Are Defined</span></a></div></li>
+<li><div class="toc-item"><a href="section8_5-Sequences.html#subsection-95" class="internal"><span class="codenumber">8.5.2</span> <span class="title">A Fundamental Problem</span></a></div></li>
+<li><div class="toc-item"><a href="section8_5-Sequences.html#exercises-8-5" class="internal"><span class="codenumber">8.5.3</span> <span class="title">Exercises for Section 8.5</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section8_6-Growth-of-Functions.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Growth of Functions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section8_6-Growth-of-Functions.html#subsec8_6_1-big-o-notation" class="internal"><span class="codenumber">8.6.1</span> <span class="title">Big O Notation</span></a></div></li>
+<li><div class="toc-item"><a href="section8_6-Growth-of-Functions.html#subsec8_6_2-big-o-common" class="internal"><span class="codenumber">8.6.2</span> <span class="title">Big O For Common Functional Forms</span></a></div></li>
+<li><div class="toc-item"><a href="section8_6-Growth-of-Functions.html#subsec8_6_3-big-o-combinations" class="internal"><span class="codenumber">8.6.3</span> <span class="title">Big O For Combinations of Functions</span></a></div></li>
+<li><div class="toc-item"><a href="section8_6-Growth-of-Functions.html#subsec8_6_4-big-omega" class="internal"><span class="codenumber">8.6.4</span> <span class="title">Big Omega</span></a></div></li>
+<li><div class="toc-item"><a href="section8_6-Growth-of-Functions.html#subsec8_6_5-big-theta" class="internal"><span class="codenumber">8.6.5</span> <span class="title">Big Theta</span></a></div></li>
+<li><div class="toc-item"><a href="section8_6-Growth-of-Functions.html#exercises-37" class="internal"><span class="codenumber">8.6.6</span> <span class="title">Exercises for Section 8.6</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_9.html" class="internal"><span class="codenumber">9</span> <span class="title">Algorithms</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section9_1-Algorithms.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Introduction to Algorithms</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section9_1-Algorithms.html#subsec9_1_1-describing-algorithms" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Describing Algorithms</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#subsubsec9_1_1_1-assignments" class="internal"><span class="codenumber">9.1.1.1</span> <span class="title">Assignments</span></a></div></li>
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#subsubsec9_1_1_2-conditionalstep" class="internal"><span class="codenumber">9.1.1.2</span> <span class="title">Conditional steps</span></a></div></li>
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#subsubsec9_1_1_3-loops" class="internal"><span class="codenumber">9.1.1.3</span> <span class="title">Loops</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#subsec9_1_2-factorial-algorithm" class="internal"><span class="codenumber">9.1.2</span> <span class="title">The Factorial Algorithm</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section9_1-Algorithms.html#subsec9_1_3-some-common-algorithms" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Some Common Algorithms</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#subsubsec9_1_3_1-search-algorithms" class="internal"><span class="codenumber">9.1.3.1</span> <span class="title">Search Algorithms</span></a></div></li>
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#subsubsec9_1_3_2-sorting-algorithms" class="internal"><span class="codenumber">9.1.3.2</span> <span class="title">Sorting Algorithms</span></a></div></li>
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#subsubsec9_1_3_3-greedy-algorithms" class="internal"><span class="codenumber">9.1.3.3</span> <span class="title">Greedy Algorithms</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section9_1-Algorithms.html#exercises-9-1" class="internal"><span class="codenumber">9.1.4</span> <span class="title">Exercises for Section 9.1</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section9_2-Recursive_Algorithms.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Recursive Algorithms</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section9_2-Recursive_Algorithms.html#subsec9_2_1-euclid" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Euclid's Algorithm</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section9_2-Recursive_Algorithms.html#sssec9_2_1_1-modulo" class="internal"><span class="codenumber">9.2.1.1</span> <span class="title">The Modulo Operation</span></a></div></li>
+<li><div class="toc-item"><a href="section9_2-Recursive_Algorithms.html#sssec9_2_1_2-euclids-algorithm" class="internal"><span class="codenumber">9.2.1.2</span> <span class="title">The Euclidean Algorithm</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section9_2-Recursive_Algorithms.html#subsec9_2_2-recursive-searching" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Recursive Searching</span></a></div></li>
+<li><div class="toc-item"><a href="section9_2-Recursive_Algorithms.html#subsec9_2_3-recursive-sorting" class="internal"><span class="codenumber">9.2.3</span> <span class="title">Recursive Sorting</span></a></div></li>
+<li><div class="toc-item"><a href="section9_2-Recursive_Algorithms.html#exercises-39" class="internal"><span class="codenumber">9.2.4</span> <span class="title">Exercises for Section 9.2</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section9_3-AlgorthmicComplexity.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Algorithmic Complexity</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section9_3-AlgorthmicComplexity.html#subsec9_3_1-basic_operations" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Basic Operations and Input Size</span></a></div></li>
+<li><div class="toc-item"><a href="section9_3-AlgorthmicComplexity.html#subsec9_3_2-running_times" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Analyzing Algorithmic Complexity</span></a></div></li>
+<li><div class="toc-item"><a href="section9_3-AlgorthmicComplexity.html#exercises-40" class="internal"><span class="codenumber">9.3.3</span> <span class="title">Exercises for Section 9.3</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_10.html" class="internal"><span class="codenumber">10</span> <span class="title">Relations</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s-basic-definitions.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Basic Definitions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-basic-definitions.html#subsection-109" class="internal"><span class="codenumber">10.1.1</span> <span class="title">Relations Between Two Sets</span></a></div></li>
+<li><div class="toc-item"><a href="s-basic-definitions.html#subsection-110" class="internal"><span class="codenumber">10.1.2</span> <span class="title">Relations on a Set</span></a></div></li>
+<li><div class="toc-item"><a href="s-basic-definitions.html#subsection-111" class="internal"><span class="codenumber">10.1.3</span> <span class="title">Composition of Relations</span></a></div></li>
+<li><div class="toc-item"><a href="s-basic-definitions.html#exercises-10-1" class="internal"><span class="codenumber">10.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-graphs-of-relations-on-a-set.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Graphs of Relations on a Set</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-graphs-of-relations-on-a-set.html#subsection-112" class="internal"><span class="codenumber">10.2.1</span> <span class="title">Digraphs</span></a></div></li>
+<li><div class="toc-item"><a href="s-graphs-of-relations-on-a-set.html#exercises-10-2" class="internal"><span class="codenumber">10.2.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-properties-of-relations.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Properties of Relations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-properties-of-relations.html#ss-individual-properties" class="internal"><span class="codenumber">10.3.1</span> <span class="title">Individual Properties</span></a></div></li>
+<li><div class="toc-item"><a href="s-properties-of-relations.html#ss-partial-ordering" class="internal"><span class="codenumber">10.3.2</span> <span class="title">Partial Orderings</span></a></div></li>
+<li><div class="toc-item"><a href="s-properties-of-relations.html#ss-equivalence-relations" class="internal"><span class="codenumber">10.3.3</span> <span class="title">Equivalence Relations</span></a></div></li>
+<li><div class="toc-item"><a href="s-properties-of-relations.html#exercises-10-3" class="internal"><span class="codenumber">10.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-matrices-of-relations.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Matrices of Relations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-matrices-of-relations.html#subsection-116" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Representing a Relation with a Matrix</span></a></div></li>
+<li><div class="toc-item"><a href="s-matrices-of-relations.html#subsection-117" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Composition as Matrix Multiplication</span></a></div></li>
+<li><div class="toc-item"><a href="s-matrices-of-relations.html#exercises-10-4" class="internal"><span class="codenumber">10.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-closure-operations-on-relations.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Closure Operations on Relations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-closure-operations-on-relations.html#subsection-118" class="internal"><span class="codenumber">10.5.1</span> <span class="title">Transitive Closure</span></a></div></li>
+<li><div class="toc-item"><a href="s-closure-operations-on-relations.html#subsection-119" class="internal"><span class="codenumber">10.5.2</span> <span class="title">Algorithms for computing transitive closure</span></a></div></li>
+<li><div class="toc-item"><a href="s-closure-operations-on-relations.html#exercises-10-5" class="internal"><span class="codenumber">10.5.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_11.html" class="internal"><span class="codenumber">11</span> <span class="title">Algebraic Structures</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s-Operations.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Operations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-Operations.html#ss-definition-of-operations" class="internal"><span class="codenumber">11.1.1</span> <span class="title">What is an Operation?</span></a></div></li>
+<li><div class="toc-item"><a href="s-Operations.html#ss-operation-properties" class="internal"><span class="codenumber">11.1.2</span> <span class="title">Properties of Operations</span></a></div></li>
+<li><div class="toc-item"><a href="s-Operations.html#ss-operation-tables" class="internal"><span class="codenumber">11.1.3</span> <span class="title">Operation Tables</span></a></div></li>
+<li><div class="toc-item"><a href="s-Operations.html#exercises-11-1" class="internal"><span class="codenumber">11.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-algebraic-systems.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Algebraic Systems</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-algebraic-systems.html#ss-monoids" class="internal"><span class="codenumber">11.2.1</span> <span class="title">Monoids at Two Levels</span></a></div></li>
+<li>
+<div class="toc-item"><a href="s-algebraic-systems.html#ss-levels-of-abstraction" class="internal"><span class="codenumber">11.2.2</span> <span class="title">Levels of Abstraction</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-algebraic-systems.html#sss-concrete-level" class="internal"><span class="codenumber">11.2.2.1</span> <span class="title">The Concrete Level</span></a></div></li>
+<li><div class="toc-item"><a href="s-algebraic-systems.html#sss-axiomatic-level" class="internal"><span class="codenumber">11.2.2.2</span> <span class="title">The Axiomatic Level</span></a></div></li>
+<li><div class="toc-item"><a href="s-algebraic-systems.html#sss-universal-level" class="internal"><span class="codenumber">11.2.2.3</span> <span class="title">The Universal Level</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="s-algebraic-systems.html#ss-groups" class="internal"><span class="codenumber">11.2.3</span> <span class="title">Groups</span></a></div></li>
+<li><div class="toc-item"><a href="s-algebraic-systems.html#exercises-11-2" class="internal"><span class="codenumber">11.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-general-properties-of-groups.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Some General Properties of Groups</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-general-properties-of-groups.html#subsection-126" class="internal"><span class="codenumber">11.3.1</span> <span class="title">First Theorems</span></a></div></li>
+<li><div class="toc-item"><a href="s-general-properties-of-groups.html#subsection-127" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Exponents</span></a></div></li>
+<li><div class="toc-item"><a href="s-general-properties-of-groups.html#exercises-11-3" class="internal"><span class="codenumber">11.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-gcds-and-zsubn.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Greatest Common Divisors and the Integers Modulo <span class="process-math">\(n\)</span></span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-gcds-and-zsubn.html#ss-greatest-common-divisors" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Greatest Common Divisors</span></a></div></li>
+<li><div class="toc-item"><a href="s-gcds-and-zsubn.html#sss-euclidean-algorithm" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Euclidean Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="s-gcds-and-zsubn.html#ss-modular-arithmetic" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Modular Arithmetic</span></a></div></li>
+<li><div class="toc-item"><a href="s-gcds-and-zsubn.html#ss-properties-modular-arithmetic" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Properties of Modular Arithmetic</span></a></div></li>
+<li><div class="toc-item"><a href="s-gcds-and-zsubn.html#ss-sage-modular" class="internal"><span class="codenumber">11.4.5</span> <span class="title">SageMath Note - Modular Arithmetic</span></a></div></li>
+<li><div class="toc-item"><a href="s-gcds-and-zsubn.html#exercises-11-4" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-Subsystems.html" class="internal"><span class="codenumber">11.5</span> <span class="title">Subsystems</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-Subsystems.html#subsection-133" class="internal"><span class="codenumber">11.5.1</span> <span class="title">Definition</span></a></div></li>
+<li><div class="toc-item"><a href="s-Subsystems.html#subsection-134" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Subgroups</span></a></div></li>
+<li><div class="toc-item"><a href="s-Subsystems.html#sage-note-subgroup-finite" class="internal"><span class="codenumber">11.5.3</span> <span class="title">Sage Note - Applying the condition for a subgroup of a finite group</span></a></div></li>
+<li><div class="toc-item"><a href="s-Subsystems.html#subsection-136" class="internal"><span class="codenumber">11.5.4</span> <span class="title">Cyclic Subgroups</span></a></div></li>
+<li><div class="toc-item"><a href="s-Subsystems.html#exercises-11-5" class="internal"><span class="codenumber">11.5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-direct-products.html" class="internal"><span class="codenumber">11.6</span> <span class="title">Direct Products</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-direct-products.html#subsection-137" class="internal"><span class="codenumber">11.6.1</span> <span class="title">Definition</span></a></div></li>
+<li><div class="toc-item"><a href="s-direct-products.html#subsection-138" class="internal"><span class="codenumber">11.6.2</span> <span class="title">Direct Products of Groups</span></a></div></li>
+<li><div class="toc-item"><a href="s-direct-products.html#exercises-11-6" class="internal"><span class="codenumber">11.6.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-isomorphisms.html" class="internal"><span class="codenumber">11.7</span> <span class="title">Isomorphisms</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-isomorphisms.html#ss-group-isomorphisms" class="internal"><span class="codenumber">11.7.1</span> <span class="title">Group Isomorphisms</span></a></div></li>
+<li><div class="toc-item"><a href="s-isomorphisms.html#ss-when-are-groups-not-isomorphic" class="internal"><span class="codenumber">11.7.2</span> <span class="title">Conditions for groups to not be isomorphic</span></a></div></li>
+<li><div class="toc-item"><a href="s-isomorphisms.html#sss-exercises-11-7" class="internal"><span class="codenumber">11.7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_12.html" class="internal"><span class="codenumber">12</span> <span class="title">Boolean Algebra</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s-posets-revisited.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Posets Revisited</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-posets-revisited.html#exercises-12-1" class="internal"><span class="codenumber">12.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-lattices.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Lattices</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-lattices.html#exercises-12-2" class="internal"><span class="codenumber">12.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-boolean-algebras.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Boolean Algebras</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-boolean-algebras.html#exercises-12-3" class="internal"><span class="codenumber">12.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-atoms-of-a-boolean-algebra.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Atoms of a Boolean Algebra</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-atoms-of-a-boolean-algebra.html#exercises-12-4" class="internal"><span class="codenumber">12.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-finite-boolean-algebras-ntuples.html" class="internal"><span class="codenumber">12.5</span> <span class="title">Finite Boolean Algebras as <span class="process-math">\(n\)</span>-tuples of 0's and 1's</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-finite-boolean-algebras-ntuples.html#exercises-12-5" class="internal"><span class="codenumber">12.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-boolean-expressions.html" class="internal"><span class="codenumber">12.6</span> <span class="title">Boolean Expressions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-boolean-expressions.html#exercises-12-6" class="internal"><span class="codenumber">12.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-logic-circuits.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Logic Gates and Circuits</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-logic-circuits.html#exercises-12-7" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises for Section 12.7</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-circuit-minimization.html" class="internal"><span class="codenumber">12.8</span> <span class="title">Logic Circuit Minimization</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-circuit-minimization.html#exercises-12-8" class="internal"><span class="codenumber">12.8</span> <span class="title">Exercises for Section 12.8</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_13.html" class="internal"><span class="codenumber">13</span> <span class="title">Graph Theory</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s-graphs-introduction.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Graphs - General Introduction</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-graphs-introduction.html#subsection-141" class="internal"><span class="codenumber">13.1.1</span> <span class="title">Definitions</span></a></div></li>
+<li><div class="toc-item"><a href="s-graphs-introduction.html#subsection-142" class="internal"><span class="codenumber">13.1.2</span> <span class="title">Subgraphs</span></a></div></li>
+<li><div class="toc-item"><a href="s-graphs-introduction.html#subsection-143" class="internal"><span class="codenumber">13.1.3</span> <span class="title">Graph Isomorphisms</span></a></div></li>
+<li><div class="toc-item"><a href="s-graphs-introduction.html#subsection-144" class="internal"><span class="codenumber">13.1.4</span> <span class="title">Next Steps</span></a></div></li>
+<li><div class="toc-item"><a href="s-graphs-introduction.html#exercises-13-1" class="internal"><span class="codenumber">13.1.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-data-structures-for-graphs.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Data Structures for Graphs</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-data-structures-for-graphs.html#ss-graph-data-structures" class="internal"><span class="codenumber">13.2.1</span> <span class="title">Basic Data Structures</span></a></div></li>
+<li><div class="toc-item"><a href="s-data-structures-for-graphs.html#sss-sage-graphs" class="internal"><span class="codenumber">13.2.2</span> <span class="title">Sage Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="s-data-structures-for-graphs.html#exercises-13-2" class="internal"><span class="codenumber">13.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-Connectivity.html" class="internal"><span class="codenumber">13.3</span> <span class="title">Connectivity</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-Connectivity.html#ss-connectivity-prelim" class="internal"><span class="codenumber">13.3.1</span> <span class="title">Preliminaries</span></a></div></li>
+<li><div class="toc-item"><a href="s-Connectivity.html#ss-adjacency-matrix-method" class="internal"><span class="codenumber">13.3.2</span> <span class="title">Adjacency Matrix Method</span></a></div></li>
+<li><div class="toc-item"><a href="s-Connectivity.html#ss-breadth-first-search" class="internal"><span class="codenumber">13.3.3</span> <span class="title">Breadth-First Search</span></a></div></li>
+<li><div class="toc-item"><a href="s-Connectivity.html#ss-sage-note-search" class="internal"><span class="codenumber">13.3.4</span> <span class="title">SageMath Note - Graph Searching</span></a></div></li>
+<li><div class="toc-item"><a href="s-Connectivity.html#exercises-13-3" class="internal"><span class="codenumber">13.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-traversals.html" class="internal"><span class="codenumber">13.4</span> <span class="title">Traversals: Eulerian and Hamiltonian Graphs</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-traversals.html#ss-eulerian" class="internal"><span class="codenumber">13.4.1</span> <span class="title">Eulerian Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="s-traversals.html#ss-hamiltonian-graphs" class="internal"><span class="codenumber">13.4.2</span> <span class="title">Hamiltonian Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="s-traversals.html#exercises-13-4" class="internal"><span class="codenumber">13.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-graph-optimization.html" class="internal"><span class="codenumber">13.5</span> <span class="title">Graph Optimization</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-graph-optimization.html#ss-weighted-graph" class="internal"><span class="codenumber">13.5.1</span> <span class="title">Weighted Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="s-graph-optimization.html#ss-traveling-salesman-problem" class="internal"><span class="codenumber">13.5.2</span> <span class="title">The Traveling Salesman Problem</span></a></div></li>
+<li><div class="toc-item"><a href="s-graph-optimization.html#ss-networks-and-flows" class="internal"><span class="codenumber">13.5.3</span> <span class="title">Networks and the Maximum Flow Problem</span></a></div></li>
+<li><div class="toc-item"><a href="s-graph-optimization.html#ss-other-optimization" class="internal"><span class="codenumber">13.5.4</span> <span class="title">Other Graph Optimization Problems</span></a></div></li>
+<li><div class="toc-item"><a href="s-graph-optimization.html#exercises-13-5" class="internal"><span class="codenumber">13.5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-planarity-and-colorings.html" class="internal"><span class="codenumber">13.6</span> <span class="title">Planarity and Colorings</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-planarity-and-colorings.html#ss-planarity" class="internal"><span class="codenumber">13.6.1</span> <span class="title">Planar Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="s-planarity-and-colorings.html#ss-graph-coloring" class="internal"><span class="codenumber">13.6.2</span> <span class="title">Graph Coloring</span></a></div></li>
+<li><div class="toc-item"><a href="s-planarity-and-colorings.html#exercises-13-6" class="internal"><span class="codenumber">13.6.3</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="s-planarity-and-colorings.html#references-1" class="internal"><span class="codenumber">13.6.4</span> <span class="title">Further Reading</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_14.html" class="internal"><span class="codenumber">14</span> <span class="title">Trees</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s-what-is-a-tree.html" class="internal"><span class="codenumber">14.1</span> <span class="title">What Is a Tree?</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-what-is-a-tree.html#subsection-159" class="internal"><span class="codenumber">14.1.1</span> <span class="title">Definition</span></a></div></li>
+<li><div class="toc-item"><a href="s-what-is-a-tree.html#subsection-160" class="internal"><span class="codenumber">14.1.2</span> <span class="title">Conditions for a graph to be a tree</span></a></div></li>
+<li><div class="toc-item"><a href="s-what-is-a-tree.html#exercises-14-1" class="internal"><span class="codenumber">14.1.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-spanning-trees.html" class="internal"><span class="codenumber">14.2</span> <span class="title">Spanning Trees</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-spanning-trees.html#subsection-161" class="internal"><span class="codenumber">14.2.1</span> <span class="title">Motivation</span></a></div></li>
+<li><div class="toc-item"><a href="s-spanning-trees.html#subsection-162" class="internal"><span class="codenumber">14.2.2</span> <span class="title">Definition</span></a></div></li>
+<li><div class="toc-item"><a href="s-spanning-trees.html#subsection-163" class="internal"><span class="codenumber">14.2.3</span> <span class="title">Prim's Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="s-spanning-trees.html#exercises-14-2" class="internal"><span class="codenumber">14.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-rooted-trees.html" class="internal"><span class="codenumber">14.3</span> <span class="title">Rooted Trees</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-rooted-trees.html#ss-rooted-trees" class="internal"><span class="codenumber">14.3.1</span> <span class="title">Definition and Terminology</span></a></div></li>
+<li><div class="toc-item"><a href="s-rooted-trees.html#ss-kruskal-algorithm" class="internal"><span class="codenumber">14.3.2</span> <span class="title">Kruskal's Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="s-rooted-trees.html#ss-sage-note-kruskal" class="internal"><span class="codenumber">14.3.3</span> <span class="title">SageMath Note - Implementation of Kruskal's Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="s-rooted-trees.html#exercises-14-3" class="internal"><span class="codenumber">14.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="s-binary-trees.html" class="internal"><span class="codenumber">14.4</span> <span class="title">Binary Trees</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-binary-trees.html#subsection-167" class="internal"><span class="codenumber">14.4.1</span> <span class="title">Definition of a binary tree</span></a></div></li>
+<li><div class="toc-item"><a href="s-binary-trees.html#ss-traversals" class="internal"><span class="codenumber">14.4.2</span> <span class="title">Traversals of Binary Trees</span></a></div></li>
+<li><div class="toc-item"><a href="s-binary-trees.html#ss-expression-trees" class="internal"><span class="codenumber">14.4.3</span> <span class="title">Expression Trees</span></a></div></li>
+<li><div class="toc-item"><a href="s-binary-trees.html#ss-counting-binary-trees" class="internal"><span class="codenumber">14.4.4</span> <span class="title">Counting Binary Trees</span></a></div></li>
+<li><div class="toc-item"><a href="s-binary-trees.html#ss-sage-note-powerseries" class="internal"><span class="codenumber">14.4.5</span> <span class="title">SageMath Note - Power Series</span></a></div></li>
+<li><div class="toc-item"><a href="s-binary-trees.html#exercises-14-4" class="internal"><span class="codenumber">14.4.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_15.html" class="internal"><span class="codenumber">15</span> <span class="title">Theory of Computation</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s-Languages.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Formal Language Theory</span></a></div>
+<ul class="structural"><li>
+<div class="toc-item"><a href="s-Languages.html#subsec-Languages" class="internal"><span class="codenumber">15.1.1</span> <span class="title">Languages</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-Languages.html#exercises-15-1" class="internal"><span class="codenumber">15.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-regular-expressions-and-apps.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Regular Expressions and Their Applications</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-regular-expressions-and-apps.html#subsec-regular-expressions" class="internal"><span class="codenumber">15.2.1</span> <span class="title">Regular Expressions</span></a></div></li>
+<li><div class="toc-item"><a href="s-regular-expressions-and-apps.html#subsec-regex-applications" class="internal"><span class="codenumber">15.2.2</span> <span class="title">Application: Using Regular Expressions</span></a></div></li>
+<li><div class="toc-item"><a href="s-regular-expressions-and-apps.html#exercises-15-2" class="internal"><span class="codenumber">15.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-finite-state-automata.html" class="internal"><span class="codenumber">15.3</span> <span class="title">Finite-State Automata</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-finite-state-automata.html#subsec-deterministic-fsa" class="internal"><span class="codenumber">15.3.1</span> <span class="title">Deterministic Finite-State Automata</span></a></div></li>
+<li><div class="toc-item"><a href="s-finite-state-automata.html#subsec-non-deterministic-fsa" class="internal"><span class="codenumber">15.3.2</span> <span class="title">Nondeterministic Finite-State Automata</span></a></div></li>
+<li><div class="toc-item"><a href="s-finite-state-automata.html#exercises-15-3" class="internal"><span class="codenumber">15.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-FSA-and-Regular-Languages.html" class="internal"><span class="codenumber">15.4</span> <span class="title">Finite-State Automata and Regular Languages</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-FSA-and-Regular-Languages.html#subsec-every-reg-language-recognized-by-fsa" class="internal"><span class="codenumber">15.4.1</span> <span class="title">All Regular Languages are Recognized by NFAs</span></a></div></li>
+<li><div class="toc-item"><a href="sec-FSA-and-Regular-Languages.html#subsec-every-language-recognized-by-fsa-regular" class="internal"><span class="codenumber">15.4.2</span> <span class="title">Every Language Recognized by an NFA is Regular</span></a></div></li>
+<li><div class="toc-item"><a href="sec-FSA-and-Regular-Languages.html#subsec-non-regular-languages" class="internal"><span class="codenumber">15.4.3</span> <span class="title">Non-regular Languages</span></a></div></li>
+<li><div class="toc-item"><a href="sec-FSA-and-Regular-Languages.html#exercises-15-4" class="internal"><span class="codenumber">15.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_16.html" class="internal"><span class="codenumber">16</span> <span class="title">Recurrence Relations</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s-recurrence-relations.html" class="internal"><span class="codenumber">16.1</span> <span class="title">Recurrence Relations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-recurrence-relations.html#defs-rr" class="internal"><span class="codenumber">16.1.1</span> <span class="title">Definition and Terminology</span></a></div></li>
+<li><div class="toc-item"><a href="s-recurrence-relations.html#ss-solving-recurrence-relations" class="internal"><span class="codenumber">16.1.2</span> <span class="title">Solving Recurrence Relations</span></a></div></li>
+<li><div class="toc-item"><a href="s-recurrence-relations.html#sss-recurrence-relations-obtained-from-solutions" class="internal"><span class="codenumber">16.1.3</span> <span class="title">Recurrence relations obtained from “solutions”</span></a></div></li>
+<li><div class="toc-item"><a href="s-recurrence-relations.html#ss-solution-of-nonhomogeneous-relations" class="internal"><span class="codenumber">16.1.4</span> <span class="title">Solution of Nonhomogeneous Finite Order Linear Relations</span></a></div></li>
+<li><div class="toc-item"><a href="s-recurrence-relations.html#exercises-16-1" class="internal"><span class="codenumber">16.1.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-some-common-rrs.html" class="internal"><span class="codenumber">16.2</span> <span class="title">Some Common Recurrence Relations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-some-common-rrs.html#rr-basic-example" class="internal"><span class="codenumber">16.2.1</span> <span class="title">A First Basic Example</span></a></div></li>
+<li>
+<div class="toc-item"><a href="s-some-common-rrs.html#analysis-of-binary-search" class="internal"><span class="codenumber">16.2.2</span> <span class="title">An Analysis of the Binary Search Algorithm</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s-some-common-rrs.html#ss-review-of-logarithms" class="internal"><span class="codenumber">16.2.2.1</span> <span class="title">Review of Logarithms</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="s-some-common-rrs.html#ss-bubblesort-analysis" class="internal"><span class="codenumber">16.2.3</span> <span class="title">Analysis of Bubble Sort and Merge Sort</span></a></div></li>
+<li><div class="toc-item"><a href="s-some-common-rrs.html#ss-derangements" class="internal"><span class="codenumber">16.2.4</span> <span class="title">Derangements</span></a></div></li>
+<li><div class="toc-item"><a href="s-some-common-rrs.html#exercises-16-2" class="internal"><span class="codenumber">16.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s-generating-functions.html" class="internal"><span class="codenumber">16.3</span> <span class="title">Generating Functions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s-generating-functions.html#ss-what-is-a-generating-function" class="internal"><span class="codenumber">16.3.1</span> <span class="title">Definition</span></a></div></li>
+<li><div class="toc-item"><a href="s-generating-functions.html#ss-solution-of-rr-using-generating-functions" class="internal"><span class="codenumber">16.3.2</span> <span class="title">Solution of a Recurrence Relation Using Generating Functions</span></a></div></li>
+<li><div class="toc-item"><a href="s-generating-functions.html#ops-on-sequences" class="internal"><span class="codenumber">16.3.3</span> <span class="title">Operations on Sequences</span></a></div></li>
+<li><div class="toc-item"><a href="s-generating-functions.html#sss-operations-on-generating-functions" class="internal"><span class="codenumber">16.3.4</span> <span class="title">Operations on Generating Functions</span></a></div></li>
+<li><div class="toc-item"><a href="s-generating-functions.html#ss-closed-form-expressions-for-generating-functions" class="internal"><span class="codenumber">16.3.5</span> <span class="title">Closed Form Expressions for Generating Functions</span></a></div></li>
+<li><div class="toc-item"><a href="s-generating-functions.html#ss-extra-for-experts" class="internal"><span class="codenumber">16.3.6</span> <span class="title">Extra for Experts</span></a></div></li>
+<li><div class="toc-item"><a href="s-generating-functions.html#exercises-77" class="internal"><span class="codenumber">16.3.7</span> <span class="title">Exercises for Section 10.3</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter_17.html" class="internal"><span class="codenumber">17</span> <span class="title">Program Correctness</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Section17_1.html" class="internal"><span class="codenumber">17.1</span> <span class="title">Revisiting Inductive Proofs</span></a></div></li>
+<li>
+<div class="toc-item"><a href="Section17_2.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Program Correctness</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Section17_2.html#subsection-194" class="internal"><span class="codenumber">17.2.1</span> <span class="title">Two Exponentiation Algorithms</span></a></div></li>
+<li><div class="toc-item"><a href="Section17_2.html#subsection-195" class="internal"><span class="codenumber">17.2.2</span> <span class="title">Proving the correctness of the fast algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="Section17_2.html#exercises-app-alg1" class="internal"><span class="codenumber">17.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="app-pythonsage.html" class="internal"><span class="codenumber">A</span> <span class="title">Python and SageMath</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="app-python-iterators.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Python Iterators</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="app-python-iterators.html#subsection-196" class="internal"><span class="codenumber">A.1.1</span> <span class="title">Counting Subsets</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="app-pythonsage-dictionaries.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Dictionaries</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="app-pythonsage-dictionaries.html#subsection-197" class="internal"><span class="codenumber">A.2.1</span> <span class="title">Colors of Fruits</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="solutions-1.html" class="internal"><span class="codenumber">B</span> <span class="title">Hints and Solutions to Selected Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">C</span> <span class="title">Notation</span></a></div></li>
+<li><div class="toc-item"><a href="references-2.html" class="internal"><span class="title">References</span></a></div></li>
+<li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="s-binary-trees"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">14.4</span> <span class="title">Binary Trees</span>
+</h2>
+<section class="subsection" id="subsection-167"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">14.4.1</span> <span class="title">Definition of a binary tree</span>
+</h3>
+<div class="para" id="p-4744">An <dfn class="terminology">ordered rooted tree</dfn> is a rooted tree whose subtrees are put into a definite order and are, themselves, ordered rooted trees. An empty tree and a single vertex with no descendants (no subtrees) are ordered rooted trees.</div>
+<article class="example example-like" id="ex-ordered-rooted"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-ex-ordered-rooted"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Distinct Ordered Rooted Trees.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-ordered-rooted"><article class="example example-like"> <div class="para" id="p-4745">The trees in <a href="" class="xref" data-knowl="./knowl/fig-ordered-rooted.html" title="Figure 14.4.2">Figure 14.4.2</a> are identical rooted trees, with root 1, but as ordered trees, they are different.</div> <figure class="figure figure-like" id="fig-ordered-rooted"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/fig-ordered-rooted.png" class="contained" alt="Two different ordered rooted trees"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">14.4.2<span class="period">.</span></span><span class="space"> </span>Two different ordered rooted trees</figcaption></figure></article></div>
+<div class="para" id="p-4746">If a tree rooted at <span class="process-math">\(v\)</span> has <span class="process-math">\(p\)</span> subtrees, we would refer to them as the first, second,..., <span class="process-math">\(p^{th}\)</span> subtrees. There is a subtle difference between certain ordered trees and binary trees, which we define next.</div>
+<article class="definition definition-like" id="def-binary-tree"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">14.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Binary Tree.</span>
+</h4>  <div class="para logical" id="p-4747"><ol class="decimal">
+<li id="li-2120"><div class="para" id="p-4748">A tree consisting of no vertices (the empty tree) is a binary tree</div></li>
+<li id="li-2121"><div class="para" id="p-4749">A vertex together with two subtrees that are both binary trees is a binary tree. The subtrees are called the left and right subtrees of the binary tree.</div></li>
+</ol></div></article><div class="para" id="p-4750">The difference between binary trees and ordered trees is that every vertex of a binary tree has exactly two subtrees (one or both of which may be empty), while a vertex of an ordered tree may have any number of subtrees. But there is another significant difference between the two types of structures. The two trees in <a href="" class="xref" data-knowl="./knowl/fig-diff-binary-trees.html" title="Figure 14.4.4">Figure 14.4.4</a> would be considered identical as ordered trees. However, they are different binary trees. Tree (a) has an empty right subtree and Tree (b) has an empty left subtree.</div>
+<figure class="figure figure-like" id="fig-diff-binary-trees"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/fig-diff-binary-trees.png" class="contained" alt="Two different binary trees"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">14.4.4<span class="period">.</span></span><span class="space"> </span>Two different binary trees</figcaption></figure><figure class="list table-like" id="list-12"><figcaption><span class="type">List</span><span class="space"> </span><span class="codenumber">14.4.5<span class="period">.</span></span><span class="space"> </span>Terminology and General Facts about Binary Trees</figcaption><div class="named-list-content"><ol class="lower-alpha">
+<li id="li-2122"><div class="para" id="p-4751"> A vertex of a binary tree with two empty subtrees is called a <dfn class="terminology">leaf</dfn>. All other vertices are called <em class="emphasis">internal vertices</em> .</div></li>
+<li id="li-2123"><div class="para" id="p-4752">The number of leaves in a binary tree can vary from one up to roughly half the number of vertices in the tree (see Exercise 4 of this section).</div></li>
+<li id="li-2124"><div class="para" id="p-4753">The maximum number of vertices at level <span class="process-math">\(k\)</span> of a binary tree is <span class="process-math">\(2^k\)</span> , <span class="process-math">\(k\geq 0\)</span> (see Exercise 6 of this section).</div></li>
+<li id="li-2125"><div class="para" id="p-4754"> A <dfn class="terminology">full binary tree</dfn> is a tree for which each vertex has either zero or two empty subtrees. In other words, each vertex has either two or zero children. See <a href="" class="xref" data-knowl="./knowl/exercise-full-tree.html" title="Exercise 14.4.6.7">Exercise 14.4.6.7</a> of this section for a general fact about full binary trees.</div></li>
+</ol></div></figure></section><section class="subsection" id="ss-traversals"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">14.4.2</span> <span class="title">Traversals of Binary Trees</span>
+</h3>
+<div class="para logical" id="p-4755">
+<div class="para">The traversal of a binary tree consists of visiting each vertex of the tree in some prescribed order. Unlike graph traversals, the consecutive vertices that are visited are not always connected with an edge. The most common binary tree traversals are differentiated by the order in which the root and its subtrees are visited. The three traversals are best described recursively and are:</div>
+<dl class="description-list">
+<dt id="li-2126">Preorder Traversal:</dt>
+<dd><div class="para logical" id="p-4756"><ol class="decimal">
+<li id="li-2127"><div class="para" id="p-4757">Visit the root of the tree.</div></li>
+<li id="li-2128"><div class="para" id="p-4758">Preorder traverse the left subtree.</div></li>
+<li id="li-2129"><div class="para" id="p-4759">Preorder traverse the right subtree.</div></li>
+</ol></div></dd>
+<dt id="li-2130">Inorder Traversal:</dt>
+<dd><div class="para logical" id="p-4760"><ol class="decimal">
+<li id="li-2131"><div class="para" id="p-4761">Inorder traverse the left subtree.</div></li>
+<li id="li-2132"><div class="para" id="p-4762">Visit the root of the tree.</div></li>
+<li id="li-2133"><div class="para" id="p-4763">Inorder traverse the right subtree.</div></li>
+</ol></div></dd>
+<dt id="li-2134">Postorder Traversal:</dt>
+<dd><div class="para logical" id="p-4764"><ol class="decimal">
+<li id="li-2135"><div class="para" id="p-4765">Postorder traverse the left subtree.</div></li>
+<li id="li-2136"><div class="para" id="p-4766">Postorder traverse the right subtree.</div></li>
+<li id="li-2137"><div class="para" id="p-4767">Visit the root of the tree.</div></li>
+</ol></div></dd>
+</dl>
+</div>
+<div class="para" id="p-4768">Any traversal of an empty tree consists of doing nothing.</div>
+<article class="example example-like" id="ex-traversals-example"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-ex-traversals-example"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Traversal Examples.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-traversals-example"><article class="example example-like"> <div class="para logical" id="p-4769">
+<div class="para">For the tree in <a href="" class="xref" data-knowl="./knowl/fig-bin-tree-14-4.html" title="Figure 14.4.7">Figure 14.4.7</a>, the orders in which the vertices are visited are:</div>
+<ul class="disc">
+<li id="li-2138"><div class="para" id="p-4770">A-B-D-E-C-F-G, for the preorder traversal.</div></li>
+<li id="li-2139"><div class="para" id="p-4771">D-B-E-A-F-C-G, for the inorder traversal.</div></li>
+<li id="li-2140"><div class="para" id="p-4772">D-E-B-F-G-C-A, for the postorder traversal.</div></li>
+</ul>
+</div> <figure class="figure figure-like" id="fig-bin-tree-14-4"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fig-bin-tree-14-4.png" class="contained" alt="A Complete Binary Tree to Level 2"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">14.4.7<span class="period">.</span></span><span class="space"> </span>A Complete Binary Tree to Level 2</figcaption></figure></article></div>
+<div class="para" id="p-4773">Binary Tree Sort. Given a collection of integers (or other objects than can be ordered), one technique for sorting is a binary tree sort. If the integers are <span class="process-math">\(a_1\text{,}\)</span> <span class="process-math">\(a_2,
+\ldots \text{,}\)</span> <span class="process-math">\(a_n\text{,}\)</span> <span class="process-math">\(n\geq 1\text{,}\)</span> we first execute the following algorithm that creates a binary tree:</div>
+<article class="algorithm theorem-like" id="alg-bin-sort-maketree"><h4 class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">14.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Binary Sort Tree Creation.</span>
+</h4>
+<div class="para logical" id="p-4774"><ol class="decimal">
+<li id="li-2141"><div class="para" id="p-4775">Insert <span class="process-math">\(a_1\)</span> into the root of the tree.</div></li>
+<li id="li-2142">
+<div class="para" id="p-4776">For k := 2 to n // insert <span class="process-math">\(a_k\)</span> into the tree</div>
+<div class="para logical" id="p-4777"><ol class="lower-alpha">
+<li id="li-2143"><div class="para" id="p-4778">r = <span class="process-math">\(a_1\)</span>
+</div></li>
+<li id="li-2144"><div class="para" id="p-4779">inserted = false</div></li>
+<li id="li-2145">
+<div class="para" id="p-4780">while not(inserted):</div>
+<div class="para" id="p-4781">
+<span class="process-math">\(\quad \)</span>if <span class="process-math">\(a_k &lt; r\text{:}\)</span>
+</div>
+<div class="para" id="p-4782">
+<span class="process-math">\(\quad \quad \quad \)</span>if <span class="process-math">\(r\)</span> has a left child:</div>
+<div class="para" id="p-4783">
+<span class="process-math">\(\quad \quad \quad \quad\)</span>r = left child of <span class="process-math">\(r\)</span>
+</div>
+<div class="para" id="p-4784">
+<span class="process-math">\(\quad \quad \quad\)</span> else:</div>
+<div class="para" id="p-4785">
+<span class="process-math">\(\quad \quad \quad \quad\)</span>make <span class="process-math">\(a_k\)</span> the left child of <span class="process-math">\(r\)</span>
+</div>
+<div class="para" id="p-4786">
+<span class="process-math">\(\quad \quad \quad \quad\)</span>inserted = true</div>
+<div class="para" id="p-4787">
+<span class="process-math">\(\quad \quad\)</span>else:</div>
+<div class="para" id="p-4788">
+<span class="process-math">\(\quad \quad \quad \)</span>if <span class="process-math">\(r\)</span> has a right child:</div>
+<div class="para" id="p-4789">
+<span class="process-math">\(\quad \quad \quad \quad\)</span>r = right child of <span class="process-math">\(r\)</span>
+</div>
+<div class="para" id="p-4790">
+<span class="process-math">\(\quad \quad \quad\)</span> else:</div>
+<div class="para" id="p-4791">
+<span class="process-math">\(\quad \quad \quad \quad\)</span>make <span class="process-math">\(a_k\)</span> the right child of <span class="process-math">\(r\)</span>
+</div>
+<div class="para" id="p-4792">
+<span class="process-math">\(\quad \quad \quad \quad\)</span>inserted = true</div>
+</li>
+</ol></div>
+</li>
+</ol></div></article><div class="para" id="p-4793">If the integers to be sorted are 25, 17, 9, 20, 33, 13, and 30, then the tree that is created is the one in <a href="" class="xref" data-knowl="./knowl/fig-sort-tree.html" title="Figure 14.4.9">Figure 14.4.9</a>. The inorder traversal of this tree is 9, 13, 17, 20, 25, 30, 33, the integers in ascending order. In general, the inorder traversal of the tree that is constructed in the algorithm above will produce a sorted list. The preorder and postorder traversals of the tree have no meaning here.</div>
+<figure class="figure figure-like" id="fig-sort-tree"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fig-sort-tree.png" class="contained" alt="Binary Sorting Tree"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">14.4.9<span class="period">.</span></span><span class="space"> </span>A Binary Sorting Tree</figcaption></figure></section><section class="subsection" id="ss-expression-trees"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">14.4.3</span> <span class="title">Expression Trees</span>
+</h3>
+<div class="para logical" id="p-4794">
+<div class="para">A convenient way to visualize an algebraic expression is by its expression tree. Consider the expression</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-expression-tree-build.html">
+\begin{equation*}
+X = a*b - c/d + e.
+\end{equation*}
+</div>
+<div class="para">Since it is customary to put a precedence on multiplication/divisions, <span class="process-math">\(X\)</span> is evaluated as <span class="process-math">\(((a*b) -(c/d)) + e\text{.}\)</span> Consecutive multiplication/divisions or addition/subtractions are evaluated from left to right. We can analyze <span class="process-math">\(X\)</span> further by noting that it is the sum of two simpler expressions <span class="process-math">\((a*b) - (c/d)\)</span> and <span class="process-math">\(e\text{.}\)</span> The first of these expressions can be broken down further into the difference of the expressions <span class="process-math">\(a*b\)</span> and <span class="process-math">\(c/d\text{.}\)</span> When we decompose any expression into <span class="process-math">\((\textrm{left expression})\textrm{operation}
+(\textrm{right expression})\text{,}\)</span> the expression tree of that expression is the binary tree whose root contains the operation and whose left and right subtrees are the trees of the left and right expressions, respectively. Additionally, a simple variable or a number has an expression tree that is a single vertex containing the variable or number. The evolution of the expression tree for expression <span class="process-math">\(X\)</span> appears in <a href="" class="xref" data-knowl="./knowl/fig-expression-tree-build.html" title="Figure 14.4.10">Figure 14.4.10</a>.</div>
+</div>
+<figure class="figure figure-like" id="fig-expression-tree-build"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/images/fig-expression-tree-build.png" class="contained" alt="Building an Expression Tree"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">14.4.10<span class="period">.</span></span><span class="space"> </span>Building an Expression Tree</figcaption></figure><article class="example example-like" id="ex-expression-tree-examples"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-ex-expression-tree-examples"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.4.11</span><span class="period">.</span><span class="space"> </span><span class="title">Some Expression Trees.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-expression-tree-examples"><article class="example example-like"> <div class="para logical" id="p-4795"><ol class="lower-alpha">
+<li id="li-2146"><div class="para" id="p-4796">If we intend to apply the addition and subtraction operations in <span class="process-math">\(X\)</span> first, we would parenthesize the expression to <span class="process-math">\(a*(b - c)/(d + e)\text{.}\)</span> Its expression tree appears in <a href="" class="xref" data-knowl="./knowl/fig-expression-tree-examples.html" title="Figure 14.4.12">Figure 14.4.12</a>(a).</div></li>
+<li id="li-2147"><div class="para" id="p-4797">The expression trees for <span class="process-math">\(a^2-b^2\)</span> and for <span class="process-math">\((a + b)*(a - b)\)</span> appear in <a href="" class="xref" data-knowl="./knowl/fig-expression-tree-examples.html" title="Figure 14.4.12">Figure 14.4.12</a>(b) and <a href="" class="xref" data-knowl="./knowl/fig-expression-tree-examples.html" title="Figure 14.4.12">Figure 14.4.12</a>(c).</div></li>
+</ol></div> <figure class="figure figure-like" id="fig-expression-tree-examples"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/fig-expression-tree-examples.png" class="contained" alt="Expression Tree Examples"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">14.4.12<span class="period">.</span></span><span class="space"> </span>Expression Tree Examples</figcaption></figure></article></div>
+<div class="para" id="p-4798">The three traversals of an operation tree are all significant. A binary operation applied to a pair of numbers can be written in three ways. One is the familiar infix form, such as <span class="process-math">\(a + b\)</span> for the sum of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span> Another form is prefix, in which the same sum is written <span class="process-math">\(+a b\text{.}\)</span> The final form is postfix, in which the sum is written <span class="process-math">\(a b+\text{.}\)</span> Algebraic expressions involving the four standard arithmetic operations <span class="process-math">\((+,-,*, \text{and}
+/)\)</span> in prefix and postfix form are defined as follows:</div>
+<figure class="list table-like" id="list-13"><figcaption><span class="type">List</span><span class="space"> </span><span class="codenumber">14.4.13<span class="period">.</span></span><span class="space"> </span>Prefix and postfix forms of an algebraic expression</figcaption><div class="named-list-content"><dl class="description-list">
+<dt id="li-2148">Prefix</dt>
+<dd><div class="para logical" id="p-4799"><ol class="lower-alpha">
+<li id="li-2149"><div class="para" id="p-4800">A variable or number is a prefix expression</div></li>
+<li id="li-2150"><div class="para" id="p-4801">Any operation followed by a pair of prefix expressions is a prefix expression.</div></li>
+</ol></div></dd>
+<dt id="li-2151">Postfix</dt>
+<dd><div class="para logical" id="p-4802"><ol class="lower-alpha">
+<li id="li-2152"><div class="para" id="p-4803">A variable or number is a postfix expression</div></li>
+<li id="li-2153"><div class="para" id="p-4804">Any pair of postfix expressions followed by an operation is a postfix expression.</div></li>
+</ol></div></dd>
+</dl></div></figure><div class="para" id="p-4805">The connection between traversals of an expression tree and these forms is simple:</div>
+<div class="para logical" id="p-4806"><ol class="lower-alpha">
+<li id="li-2154"><div class="para" id="p-4807">The preorder traversal of an expression tree will result in the prefix form of the expression.</div></li>
+<li id="li-2155"><div class="para" id="p-4808">The postorder traversal of an expression tree will result in the postfix form of the expression.</div></li>
+<li id="li-2156"><div class="para" id="p-4809">The inorder traversal of an operation tree will not, in general, yield the proper infix form of the expression. If an expression requires parentheses in infix form, an inorder traversal of its expression tree has the effect of removing the parentheses.</div></li>
+</ol></div>
+<article class="example example-like" id="ex-expression-tree-traversal-example"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-expression-tree-traversal-example"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.4.14</span><span class="period">.</span><span class="space"> </span><span class="title">Traversing an Expression Tree.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-expression-tree-traversal-example"><article class="example example-like"> <div class="para" id="p-4810">The preorder traversal of the tree in <a href="" class="xref" data-knowl="./knowl/fig-expression-tree-build.html" title="Figure 14.4.10">Figure 14.4.10</a> is <span class="process-math">\(+-*ab/cd e\text{,}\)</span> which is the prefix version of expression <span class="process-math">\(X\text{.}\)</span> The postorder traversal is <span class="process-math">\(ab*cd/-e+\text{.}\)</span> Note that since the original form of <span class="process-math">\(X\)</span> needed no parentheses, the inorder traversal, <span class="process-math">\(a*b-c/d+e\text{,}\)</span> is the correct infix version.</div></article></div></section><section class="subsection" id="ss-counting-binary-trees"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">14.4.4</span> <span class="title">Counting Binary Trees</span>
+</h3>
+<div class="para" id="p-4811">We close this section with a formula for the number of different binary trees with <span class="process-math">\(n\)</span> vertices. The formula is derived using generating functions. Although the complete details are beyond the scope of this text, we will supply an overview of the derivation in order to illustrate how generating functions are used in advanced combinatorics.</div>
+<div class="para" id="p-4812">Let <span class="process-math">\(B(n)\)</span> be the number of different binary trees of size <span class="process-math">\(n\)</span> (<span class="process-math">\(n\)</span> vertices), <span class="process-math">\(n \geq 0\text{.}\)</span> By our definition of a binary tree, <span class="process-math">\(B(0) = 1\text{.}\)</span> Now consider any positive integer <span class="process-math">\(n + 1\text{,}\)</span> <span class="process-math">\(n \geq 0\text{.}\)</span> A binary tree of size <span class="process-math">\(n
++ 1\)</span> has two subtrees, the sizes of which add up to <span class="process-math">\(n\text{.}\)</span> The possibilities can be broken down into <span class="process-math">\(n + 1\)</span> cases:</div>
+<blockquote class="blockquote" id="blockquote-10">
+<div class="para" id="p-4813">Case 0: Left subtree has size 0; right subtree has size <span class="process-math">\(n\text{.}\)</span>
+</div> <div class="para" id="p-4814">Case 1: Left subtree has size 1; right subtree has size <span class="process-math">\(n - 1\text{.}\)</span>
+</div> <div class="para" id="p-4815">
+<span class="process-math">\(\quad \quad \)</span> <span class="process-math">\(\vdots\)</span>
+</div> <div class="para" id="p-4816">Case <span class="process-math">\(k\text{:}\)</span> Left subtree has size <span class="process-math">\(k\text{;}\)</span> right subtree has size <span class="process-math">\(n - k\text{.}\)</span>
+</div> <div class="para" id="p-4817">
+<span class="process-math">\(\quad \quad \)</span> <span class="process-math">\(\vdots\)</span>
+</div> <div class="para" id="p-4818">Case <span class="process-math">\(n\text{:}\)</span> Left subtree has size <span class="process-math">\(n\text{;}\)</span> right subtree has size 0.</div>
+</blockquote>
+<div class="para logical" id="p-4819">
+<div class="para">In the general Case <span class="process-math">\(k\text{,}\)</span> we can count the number of possibilities by multiplying the number of ways that the left subtree can be filled, <span class="process-math">\(B(k)\text{,}\)</span> by the number of ways that the right subtree can be filled. <span class="process-math">\(B(n-k)\text{.}\)</span> Since the sum of these products equals <span class="process-math">\(B(n + 1)\text{,}\)</span> we obtain the recurrence relation for <span class="process-math">\(n\geq 0\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+B(n+1) &amp;= B(0)B(n)+ B(1)B(n-1)+ \cdots + B(n)B(0)\\
+&amp;=\sum_{k=0}^n B(k) B(n-k)
+\end{split} 
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="p-4820">
+<div class="para">Now take the generating function of both sides of this recurrence relation:</div>
+<div class="displaymath process-math" id="mdn-8">
+\begin{gather}
+\sum_{n=0}^{\infty } B(n+1) z^n= \sum_{n=0}^{\infty } \left(\sum_{k=0}^n B(k)
+B(n-k)\right)z^n\tag{14.4.1}
+\end{gather}
+</div>
+<div class="para">or</div>
+<div class="displaymath process-math" id="mdn-9">
+\begin{gather}
+G(B\uparrow ; z) = G(B*B; z) = G(B; z) ^2\tag{14.4.2}
+\end{gather}
+</div>
+</div>
+<div class="para logical" id="p-4821">
+<div class="para">Recall that <span class="process-math">\(G(B\uparrow;z) =\frac{G(B;z)-B(0)}{z}=\frac{G(B;z)-1}{z}\)</span> If we abbreviate <span class="process-math">\(G(B; z)\)</span> to <span class="process-math">\(G\text{,}\)</span> we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{G-1}{z}= G^2 \Rightarrow z G^2-
+G + 1 = 0
+\end{equation*}
+</div>
+<div class="para">Using the quadratic equation we find two solutions:</div>
+<div class="displaymath process-math" id="mdn-10">
+\begin{gather}
+G_1 = \frac{1+\sqrt{1-4 z}}{2z} \textrm{ and}\tag{14.4.3}\\
+G_2 = \frac{1-\sqrt{1-4 z}}{2z}\tag{14.4.4}
+\end{gather}
+</div>
+</div>
+<div class="para logical" id="p-4822">
+<div class="para">The gap in our derivation occurs here since we don't presume a knowledge of calculus. If we expand <span class="process-math">\(G_1\)</span> as an extended power series, we find</div>
+<div class="displaymath process-math" id="mdn-11">
+\begin{gather}
+G_1 = \frac{1+\sqrt{1-4 z}}{2z}=\frac{1}{z}-1-z-2 z^2-5 z^3-14 z^4-42
+z^5+\cdots\tag{14.4.5}
+\end{gather}
+</div>
+</div>
+<div class="para logical" id="p-4823">
+<div class="para">The coefficients after the first one are all negative and there is a singularity at 0 because of the <span class="process-math">\(\frac{1}{z}\)</span> term. However if we do the same with <span class="process-math">\(G_2\)</span> we get</div>
+<div class="displaymath process-math" id="mdn-12">
+\begin{gather}
+G_2= \frac{1-\sqrt{1-4 z}}{2z} = 1+z+2 z^2+5 z^3+14 z^4+42 z^5+\cdots\tag{14.4.6}
+\end{gather}
+</div>
+</div>
+<div class="para logical" id="p-4824">
+<div class="para">Further analysis leads to a closed form expression for <span class="process-math">\(B(n)\text{,}\)</span> which is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B(n) =
+\frac{1}{n+1}\left(
+\begin{array}{c}
+2n \\
+n \\
+\end{array}
+\right)
+\end{equation*}
+</div>
+<div class="para">This sequence of numbers is often called the <dfn class="terminology">Catalan numbers</dfn>. For more information on the Catalan numbers, see the entry A000108 in The <a class="external" href="https://oeis.org" target="_blank">On-Line Encyclopedia of Integer Sequences</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-16" id="fn-16"><sup> 1 </sup></a>.</div>
+</div></section><section class="subsection" id="ss-sage-note-powerseries"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">14.4.5</span> <span class="title">SageMath Note - Power Series</span>
+</h3>
+<div class="para" id="p-4825">It may be of interest to note how the extended power series expansions of <span class="process-math">\(G_1\)</span> and <span class="process-math">\(G_2\)</span> are determined using Sage. In Sage, one has the capability of being very specific about how algebraic expressions should be interpreted by specifying the underlying ring. This can make working with various algebraic expressions a bit more confusing to the beginner. Here is how to get a Laurent expansion for <span class="process-math">\(G_1\)</span> above.</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-56"><script type="text/x-sage">R.<z>=PowerSeriesRing(ZZ,'z')
+G1=(1+sqrt(1-4*z))/(2*z)
+G1
+</script></pre>
+<div class="para" id="p-4826">The first Sage expression above declares a structure called a <dfn class="terminology">ring</dfn> that contains power series. We are not using that whole structure, just a specific element, <code class="code-inline tex2jax_ignore">
+            G1</code>. So the important thing about this first input is that it establishes <code class="code-inline tex2jax_ignore">z</code> as being a variable associated with power series over the integers. When the second expression defines the value of <code class="code-inline tex2jax_ignore">G1</code> in terms of <code class="code-inline tex2jax_ignore">z</code>, it is automatically converted to a power series.</div>
+<div class="para" id="p-4827">The expansion of <span class="process-math">\(G_2\)</span> uses identical code, and its coefficients are the values of <span class="process-math">\(B(n)\text{.}\)</span>
+</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-57"><script type="text/x-sage">R.<z>=PowerSeriesRing(ZZ,'z')
+G2=(1-sqrt(1-4*z))/(2*z)
+G2
+</script></pre></section><section class="exercises" id="exercises-14-4"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">14.4.6</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-552"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-4828">Draw the expression trees for the following expressions:</div> <div class="para logical" id="p-4829"><ol class="lower-alpha">
+<li id="li-2157"><div class="para" id="p-4830"><span class="process-math">\(\displaystyle a(b + c)\)</span></div></li>
+<li id="li-2158"><div class="para" id="p-4831"><span class="process-math">\(\displaystyle a b + c\)</span></div></li>
+<li id="li-2159"><div class="para" id="p-4832"><span class="process-math">\(\displaystyle a b + a c\)</span></div></li>
+<li id="li-2160"><div class="para" id="p-4833"><span class="process-math">\(\displaystyle b b - 4 a c\)</span></div></li>
+<li id="li-2161"><div class="para" id="p-4834"><span class="process-math">\(\displaystyle \left(\left(a_3 x + a_2\right)x +a_1\right)x + a_0\)</span></div></li>
+</ol></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original has-image" data-refid="hk-answer-251" id="answer-251"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-251"><div class="answer solution-like">
+<figure class="figure figure-like" id="fig-sol-14-4-1-A"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fig-sol-14-4-1-A.png" class="contained" alt="Solution to exercise 14-4-1-A"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">14.4.15<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <figure class="figure figure-like" id="fig-sol-14-4-1-B"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/images/fig-sol-14-4-1-B.png" class="contained" alt="Solution to exercise 14-4-1-B"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">14.4.16<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-553"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-4835">Draw the expression trees for</div> <div class="para logical" id="p-4836"><ol class="lower-alpha">
+<li id="li-2162"><div class="para" id="p-4837"><span class="process-math">\(\displaystyle \frac{x^2-1}{x-1}\)</span></div></li>
+<li id="li-2163"><div class="para" id="p-4838"><span class="process-math">\(\displaystyle x y + x z + y z\)</span></div></li>
+</ol></div></article><article class="exercise exercise-like" id="exercise-554"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="p-4839">Write out the preorder, inorder, and postorder traversals of the trees in Exercise 1 above.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-252" id="answer-252"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-252"><div class="answer solution-like"><div class="para logical" id="p-4840"><div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{cccc}
+&amp; \text{Preorder} &amp; \text{Inorder} &amp; \text{Postorder} \\
+(a) &amp; \cdot a + b c &amp; a\cdot b+c &amp; a b c + \cdot \\
+(b) &amp; +\cdot a b c &amp; a\cdot b+c &amp; a b\cdot c+ \\
+(c) &amp; +\cdot a b\cdot a c &amp; a\cdot b+a\cdot c &amp; a b\cdot a
+c\cdot + \\
+\end{array}
+\end{equation*}
+</div></div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-555"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="p-4841">Verify the formula for <span class="process-math">\(B(n)\text{,}\)</span> <span class="process-math">\(0 \leq n \leq 3\)</span> by drawing all binary trees with three or fewer vertices.</div></article><article class="exercise exercise-like" id="exercise-556"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para logical" id="p-4842"><ol class="lower-alpha">
+<li id="li-2164"><div class="para" id="p-4843">Draw a binary tree with seven vertices and only one leaf.</div></li>
+<li id="li-2165"><div class="para" id="p-4844">Draw a binary tree with seven vertices and as many leaves as possible.</div></li>
+</ol></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original has-image" data-refid="hk-answer-253" id="answer-253"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-253"><div class="answer solution-like"><figure class="figure figure-like" id="fig-sol-14-4-5"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/images/fig-sol-14-4-5.png" class="contained" alt="Solution to exercise 14-4-5"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">14.4.17<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-557"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="p-4845">Prove that the maximum number of vertices at level <span class="process-math">\(k\)</span> of a binary tree is <span class="process-math">\(2^k\)</span> and that a tree with that many vertices at level <span class="process-math">\(k\)</span> must have <span class="process-math">\(2^{k+1}-1\)</span> vertices.</div></article><article class="exercise exercise-like" id="exercise-full-tree"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="p-4846">Prove that if <span class="process-math">\(T\)</span> is a full binary tree, then the number of leaves of <span class="process-math">\(T\)</span> is one more than the number of internal vertices (non-leaves).</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-254" id="answer-254"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-254"><div class="answer solution-like">
+<div class="para" id="p-4847">Solution 1:</div> <div class="para" id="p-4848">Basis: A binary tree consisting of a single vertex, which is a leaf, satisfies the equation <span class="process-math">\(\text{leaves} = \textrm{internal vertices} + 1\)</span>
+</div> <div class="para logical" id="p-4849">
+<div class="para">Induction:Assume that for some <span class="process-math">\(k\geq 1\text{,}\)</span> all full binary trees with <span class="process-math">\(k\)</span> or fewer vertices have one more leaf than internal vertices. Now consider any full binary tree with <span class="process-math">\(k+1\)</span> vertices. Let <span class="process-math">\(T_A\)</span> and <span class="process-math">\(T_B\)</span> be the left and right subtrees of the tree which, by the definition of a full binary tree, must both be full. If <span class="process-math">\(i_A\)</span> and <span class="process-math">\(i_B\)</span> are the numbers of internal vertices in <span class="process-math">\(T_A\)</span> and <span class="process-math">\(T_B\text{,}\)</span> and <span class="process-math">\(j_A\)</span> and <span class="process-math">\(j_B\)</span> are the numbers of leaves, then <span class="process-math">\(j_A=i_A+1 \)</span> and <span class="process-math">\(j_B=i_B+1\text{.}\)</span> Therefore, in the whole tree,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+\textrm{the number of leaves} &amp; =j_A+j_B\\
+&amp;=\left(i_A+1\right)+\left(i_B+1\right)\\
+&amp;=\left(i_A+i_B+1\right)+1\\
+&amp;=(\textrm{number of internal vertices})+1
+\end{split}
+\end{equation*}
+</div>
+</div> <div class="para" id="p-4850">Solution 2:</div> <div class="para" id="p-4851">Imagine building a full binary tree starting with a single vertex. By continuing to add leaves in pairs so that the tree stays full, we can build any full binary tree. Our starting tree satisfies the condition that the number of leaves is one more than the number of internal vertices . By adding a pair of leaves to a full binary tree, an old leaf becomes an internal vertex, increasing the number of internal vertices by one. Although we lose a leaf, the two added leaves create a net increase of one leaf. Therefore, the desired equality is maintained.</div>
+</div></div>
+</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-16"><div class="fn"><code class="code-inline tex2jax_ignore">oeis.org</code></div></div>
+</div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s-rooted-trees.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="chapter_15.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

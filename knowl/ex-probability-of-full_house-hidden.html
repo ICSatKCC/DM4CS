@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="example example-like"> <div class="para">In a standard deck of <span class="process-math">\(52\)</span> cards, each card has a <em class="emphasis">suit</em> and a <em class="emphasis">rank</em>. There are four suits (spades, hearts, clubs, and diamonds), and 13 ranks (Ace, <span class="process-math">\(2,3,4,5,6,7,8,9,10\text{,}\)</span> Jack, Queen, and King). A hand of five cards is called a <em class="emphasis">full house</em>, if three of the cards are of the same rank and the other two cards are also of the same (but necessarily different) rank. For example, the hand: <blockquote class="blockquote"><div class="para">7 of spades , 7 of hearts , 7 of diamonds , Q of spades , Q of clubs</div></blockquote> is a full house, because it consists of three sevens and two Queens.</div> <div class="para logical">
+<div class="para">Assume we get a uniformly random hand of five cards. What is the probability that this hand is a full house? To answer this question, first observe that a hand of five cards is a <em class="emphasis">subset</em> of the set of all <span class="process-math">\(52\)</span> cards. Thus, the sample space is the set <span class="process-math">\(S\)</span> consisting of all <span class="process-math">\(5\)</span>-element subsets of the set of <span class="process-math">\(52\)</span> cards and, therefore,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|S| = {{52} \choose 5} = 2,598,960 .
+\end{equation*}
+</div>
+<div class="para">Each hand of five cards has a probability of <span class="process-math">\(1/|S|\)</span> of being chosen.</div>
+</div> <div class="para logical">
+<div class="para">Since we are interested in the probability of a random hand being a full house, we define the event <span class="process-math">\(A\)</span> to be the set of all elements in <span class="process-math">\(S\)</span> that are full houses. By <a href="" class="xref" data-knowl="./knowl/thm-probability-of-uniform.html" title="Theorem 3.1.17: Probability of Events in a Uniform Distribution">Theorem 3.1.17</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-probability-of-uniform.html ./knowl/rule-of-products.html">
+\begin{equation*}
+P(A) = \frac{|A|}{|S|} . 
+\end{equation*}
+</div>
+<div class="para">Thus, to determine <span class="process-math">\(P(A)\text{,}\)</span> it remains to determine the size of the set <span class="process-math">\(A\text{,}\)</span> i.e., the total number of full houses. For this, we will use the Rule of Products <a href="section2_1-the-rule-of-products.html#rule-of-products" class="internal" title="Subsection 2.1.2: The Rule Of Products">Subsection 2.1.2</a>:</div>
+<ul class="disc">
+<li><div class="para">The procedure is “choose a full house”.</div></li>
+<li><div class="para">First task: Choose the rank of the three cards in the full house. There are <span class="process-math">\(13\)</span> ways to do this.</div></li>
+<li><div class="para">Second task: Choose the suits of these three cards. There are <span class="process-math">\(4 \choose 3\)</span> ways to do this.</div></li>
+<li><div class="para">Third task: Choose the rank of the other two cards in the full house. There are <span class="process-math">\(12\)</span> ways to do this.</div></li>
+<li><div class="para">Fourth task: Choose the suits of these two cards. There are <span class="process-math">\(4 \choose 2\)</span> ways to do this.</div></li>
+</ul>
+<div class="para">Thus, the number of full houses is equal to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-probability-of-uniform.html ./knowl/rule-of-products.html">
+\begin{equation*}
+|A| = 13 \cdot {4 \choose 3} \cdot 12 \cdot {4 \choose 2}
+= 3,744 . 
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">We conclude that the probability of getting a full house is equal to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(A) = \frac{|A|}{|S|} = \frac{3,744}{2,598,960} \approx 0.00144 .
+\end{equation*}
+</div>
+</div></article></body>
+</html>

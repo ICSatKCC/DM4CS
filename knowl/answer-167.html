@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="answer solution-like">
+<h4 class="heading">
+<span class="type">Answer</span><span class="space"> </span><span class="codenumber">10.4.3.9.1</span><span class="period">.</span>
+</h4>
+<div class="para logical"><ol class="lower-alpha">
+<li>
+<div class="para">Reflexive: <span class="process-math">\(M_{ij}=M_{ij}\)</span> for all <span class="process-math">\(i,j\text{,}\)</span> therefore <span class="process-math">\(M_{ij}\leq M_{ij}\)</span>
+</div>
+<div class="para">Antisymmetric: Assume <span class="process-math">\(M_{ij}\leq N_{ij}\)</span> and <span class="process-math">\(N_{ij}\leq M_{ij}\)</span> for all <span class="process-math">\(1\leq i,j\leq n\text{.}\)</span> Therefore, <span class="process-math">\(M_{ij} = N_{ij}\)</span> for all <span class="process-math">\(1\leq i,j\leq n\)</span>  and so <span class="process-math">\(M=N\)</span>
+</div>
+<div class="para">Transitive: Assume <span class="process-math">\(M, N,\)</span> and <span class="process-math">\(T\)</span> are matrices where <span class="process-math">\(M_{ij}\leq N_{ij}\)</span> and <span class="process-math">\(N_{ij}\leq T_{ij}\text{,}\)</span> for all <span class="process-math">\(1\leq i,j\leq n\text{.}\)</span> Then <span class="process-math">\(M_{ij}\leq T_{ij}\)</span> for all <span class="process-math">\(1\leq i,j\leq n\text{,}\)</span> and so <span class="process-math">\(M\leq T\text{.}\)</span>
+</div>
+</li>
+<li>
+<div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+\left(M^2\right)_{ij}&amp;=M_{i1}M_{1j}+M_{i2}M_{2j}+\cdots +M_{in}M_{nj}\\
+&amp;\leq N_{i1}N_{1j}+N_{i2}N_{2j}+\cdots +N_{in}N_{nj}\\
+&amp;=\left(N^2\right)_{ij} \Rightarrow M^2\leq N^2
+\end{split}\text{.}
+\end{equation*}
+</div></div>
+<div class="para">To verify that the converse is not true we need only one example. For <span class="process-math">\(n=2\text{,}\)</span> let <span class="process-math">\(M_{12}=1\)</span> and all other entries equal <span class="process-math">\(0\text{,}\)</span> and let <span class="process-math">\(N\)</span> be the zero matrix. Since <span class="process-math">\(M^2\)</span> and <span class="process-math">\(N^2\)</span> are both the zero matrix, <span class="process-math">\(M^2\leq N^2\text{,}\)</span> but since <span class="process-math">\(M_{12}&gt;N_{12}, M\leq N\)</span> is false.</div>
+</li>
+<li><div class="para">The matrices are defined on the same set <span class="process-math">\(A=\left\{a_1,a_2,\ldots  ,a_n\right\}\text{.}\)</span> Let <span class="process-math">\(c\left(a_i\right), i=1,2,\ldots  ,n\)</span> be the equivalence classes defined by <span class="process-math">\(M\)</span> and let <span class="process-math">\(d\left(a_i\right)\)</span> be those defined by <span class="process-math">\(N\text{.}\)</span> Claim: <span class="process-math">\(c\left(a_i\right)\subseteq d\left(a_i\right)\text{.}\)</span><div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+a_j\in c\left(a_i\right)&amp;\Rightarrow a_i R a_j\\
+&amp;\Rightarrow M_{ij}=1 \Rightarrow N_{ij}=1\\
+&amp;\Rightarrow a_i S a_j\\
+&amp; \Rightarrow a_j \in d\left(a_i\right)\\
+\end{split}
+\end{equation*}
+</div>
+</div></li>
+</ol></div>
+</div>
+<span class="incontext"><a href="s-matrices-of-relations.html#answer-167" class="internal">in-context</a></span>
+</body>
+</html>

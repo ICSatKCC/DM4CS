@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="answer solution-like">
+<div class="para">The outer <span class="process-math">\(i\)</span> loop runs <span class="process-math">\(n\)</span> times.</div> <div class="para">The number of inner <span class="process-math">\(j\)</span> loops varies with <span class="process-math">\(i\text{,}\)</span> each time it makes <span class="process-math">\(n - (i + 1)\)</span> loops. If <span class="process-math">\(i = 0\)</span> it makes <span class="process-math">\(n-1\)</span> loops, if <span class="process-math">\(i = 1\)</span> it makes <span class="process-math">\(n-2\)</span> loops, ..., down to <span class="process-math">\(n-n = 0\)</span> loops. These two loops correspond to the sum of the first <span class="process-math">\(n-1\)</span> integers which is equal to <span class="process-math">\(\frac{(n-1)n}{2}\text{.}\)</span>
+</div> <div class="para">Inside the <span class="process-math">\(j\)</span> loop, there is a comparison and the “swap” does three assignments, making 4 basic operations.</div> <div class="para">So we have <span class="process-math">\(4 * \frac{(n-1)n}{2}= \frac{4n^2 - 4n}{2} = 2n^2 - 2n\)</span> which is a polynomial with <span class="process-math">\(n^2\)</span> as the highest order term. Therefore, BubbleSort is <span class="process-math">\(O(n^2)\)</span>
+</div>
+</div></body>
+</html>

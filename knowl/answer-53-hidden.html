@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="answer solution-like"><div class="para logical"><ol class="lower-alpha">
+<li><div class="para logical">
+<div class="para">The sample space is the products of the combinations of 1 coin flip and two dice rolls. We can use a matrix similar to  <a href="" class="xref" data-knowl="./knowl/ex-rolling-a-die-twice.html" title="Example 3.1.7: Rolling a Die Twice">Example 3.1.7</a> above for the case where the coin flip results in a 0. The product for all entries is 0. Then we can make another matrix of the same size where the coin flip results in a 1. The product is just the product of the two dice rolls</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-rolling-a-die-twice.html">
+\begin{equation*}
+\begin{array}{|c||c|c|c|c|c|c|}
+\hline
+c=0 &amp;1 &amp;2 &amp;3 &amp;4 &amp;5 &amp;6 \\
+\hline
+\hline
+1 &amp;0 &amp; &amp;0 &amp;0 &amp;0 &amp;0 \\
+2 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0 \\
+3 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0 \\
+4 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0 \\
+5 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0 \\
+6 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0  \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Where the coin outcome is = 1:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-rolling-a-die-twice.html">
+\begin{equation*}
+\begin{array}{|c||c|c|c|c|c|c|}
+\hline
+c=1 &amp;1 &amp;2 &amp;3 &amp;4 &amp;5 &amp;6 \\
+\hline
+\hline
+1 &amp;1 &amp;2 &amp;3 &amp;4 &amp;5 &amp;6\\
+2 &amp;2 &amp;4 &amp;6 &amp;8 &amp;10 &amp;12\\
+3 &amp;3 &amp;6 &amp;9 &amp;12 &amp;15 &amp;18 \\
+4 &amp;4 &amp;8 &amp;12 &amp;16 &amp;20 &amp;24\\
+5 &amp;5 &amp;10 &amp;15 &amp;20 &amp;25 &amp;30\\
+6 &amp;6 &amp;12 &amp;18 &amp;24 &amp;30 &amp;36 \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">There are <span class="process-math">\(2 \times 6 \times 6 = 72\)</span> possible outcomes, so <span class="process-math">\(|S| = 72\text{.}\)</span>
+</div></li>
+<li>
+<div class="para logical">
+<div class="para">Using the <span class="process-math">\(A_k\)</span>notation from <a href="" class="xref" data-knowl="./knowl/ex-rolling-a-die-twice.html" title="Example 3.1.7: Rolling a Die Twice">Example 3.1.7</a> above there are 19 different events:  0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 16, 18, 20, 24, 25, 30 ,36.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-rolling-a-die-twice.html">
+\begin{equation*}
+\begin{array}{rlrl}
+P(A_0) &amp;  = \frac{18}{72} &amp; P(A_1) &amp; = \frac{1}{72}\\
+P(A_2) &amp; = \frac{2}{72} &amp; P(A_3) &amp; = \frac{2}{72}\\
+P(A_4) &amp; = \frac{3}{72} &amp; P(A_5) &amp; = \frac{2}{72}\\
+P(A_6) &amp; = \frac{4}{72} &amp; P(A_8) &amp; = \frac{2}{72}\\
+P(A_9) &amp; = \frac{1}{72} &amp; P(A_{10}) &amp; = \frac{2}{72}\\
+P(A_{12}) &amp; = \frac{4}{72} &amp; P(A_{15}) &amp; = \frac{2}{72}\\
+P(A_{16}) &amp; = \frac{1}{72} &amp;
+P(A_{18}) &amp; = \frac{2}{72}\\
+P(A_{20}) &amp; = \frac{2}{72} &amp;
+P(A_{24}) &amp; = \frac{2}{72}\\
+P(A_{25}) &amp; = \frac{1}{72} &amp;
+P(A_{30}) &amp; = \frac{2}{72}\\
+P(A_{36}) &amp; = \frac{1}{72}\\
+\end{array}
+\end{equation*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(i,j,m\)</span> be the outcomes of the coin flip, the first die roll, and the second die roll respectively. The probability function could be defined:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P \left( A_k \right) = \sum_{(i,j,m) \in A_k} P(i,j,m)
+= \sum_{(i,j,m) \in A_k} 1/72
+= |A_k| / 72 .
+\end{equation*}
+</div>
+</div>
+</li>
+</ol></div></div></body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">(By induction): If <span class="process-math">\(n=0\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+b^1 &amp;= b^0\bullet b \textrm{ by the definition of exponentiation}\\
+&amp; =e\bullet b\textrm{ by the basis for exponentiation}\\
+&amp;= b \bullet e\textrm{ by the identity property}\\
+&amp;= b \bullet b^0\textrm{ by the basis for exponentiation}
+\end{split}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Now assume the formula of the lemma is true for some <span class="process-math">\(n\geq 0\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+b^{(n+1)+1} &amp;= b^{(n+1)}\bullet b\textrm{ by the definition of
+exponentiation}\\
+&amp;= \left(b\bullet b^n\right)\bullet b\textrm{ by the induction
+hypothesis}\\
+&amp; = b\bullet \left(b^n\bullet b\right)\textrm{ associativity}\\
+&amp; = b\bullet \left(b^{n+1}\right)\textrm{ definition of
+exponentiation}\\
+\end{split}
+\end{equation*}
+</div>
+</div></article></body>
+</html>

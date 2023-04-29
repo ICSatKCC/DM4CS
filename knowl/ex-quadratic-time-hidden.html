@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math"><article class="example example-like"> <div class="para">Consider the following function written in Python:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-30"><script type="text/x-sage">def NestedLoops(n):
+    sum = 0;
+    for i in range(0,n):
+        for j in range(0,n):
+            sum = sum + 1
+    return sum
+
+NestedLoops(10)
+</script></pre> <div class="para">What is the running time for this function? We can assume that incrementing <code class="code-inline tex2jax_ignore">sum</code> takes constant time; call this time <span class="process-math">\(c\text{.}\)</span> (We can ignore the time required to initialize <code class="code-inline tex2jax_ignore">sum</code>, and to increment the loop counters <code class="code-inline tex2jax_ignore">i</code> and <code class="code-inline tex2jax_ignore">j</code>. In practice, these costs can safely be bundled into time <span class="process-math">\(c\text{.}\)</span>) The total number of increment operations is <span class="process-math">\(n^2\text{.}\)</span> The inner <code class="code-inline tex2jax_ignore">j</code> loop runs <span class="process-math">\(n\)</span> times for each of <span class="process-math">\(n\)</span> values of <code class="code-inline tex2jax_ignore">i</code>, so we have <span class="process-math">\(n*n = n^2\)</span> operations total. Thus, we say that the running time is <span class="process-math">\(T(n) = cn^2\)</span> and the algorithm has quadratic complexity: <span class="process-math">\(T(n) = O(n^2)\text{.}\)</span> Therefore <code class="code-inline tex2jax_ignore">NestedLoops</code> has a quadratic running time.</div></article></body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h3 class="heading"><span class="type">Paragraph</span></h3>
+<div class="para">The previous section starts with an algorithm for singing <em class="emphasis">99 Bottles of Beer on the Wall</em>. We can redefine that as a recursive algorithm: <article class="algorithm theorem-like"><h3 class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">9.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">RecursiveBottlesOfBeer.</span>
+</h3>
+<section class="paragraphs"><h4 class="heading"><span class="title">procedure RecursiveBottlesOfBeer.</span></h4> <div class="para">(<span class="process-math">\(n\text{:}\)</span> number of bottles)</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="l m b0 r0 l0 t0 lines" colspan="3">
+<em class="alert">If</em> n = 0:</td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" colspan="2">
+<em class="alert">Sing:</em>  “No bottles of beer on the wall, no bottles of beer,”</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" colspan="2">
+<em class="alert">Sing:</em>  “Go to the store, buy some more, n bottles of beer on the wall.”</td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines" colspan="3"><em class="alert">Else:</em></td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" colspan="2">
+<em class="alert">Sing:</em>  “n bottles of beer on the wall, n bottles of beer,”</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" colspan="2">
+<em class="alert">Sing:</em>  “Take one down, pass it around, n − 1 bottles of beer on the wall.”</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" colspan="2">
+<em class="alert">RecursiveBottlesOfBeer</em> (n-1)</td>
+</tr>
+</table></div></section></article> This has all the hallmarks of a recursive algorithm, the loop in <a href="" class="xref" data-knowl="./knowl/alg-99-bottles.html" title="Algorithm 9.1.1: BottlesOfBeer">Algorithm 9.1.1</a> the non-recursive version is gone and replaced with a recursive case: the call to <em class="emphasis">RecursiveBottlesOfBeer</em> with a smaller input (n - 1). The base case is where no bottles of beer are left, n = 0, a different verse is sung and there is no recursive call, the recursion stops.</div>
+<span class="incontext"><a href="section9_2-Recursive_Algorithms.html#p-2777" class="internal">in-context</a></span>
+</body>
+</html>
