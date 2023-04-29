@@ -28,7 +28,7 @@
 
   <book xml:id="dm4cs">
     <title>Discrete Mathematics for Computer Science</title>
-    <subtitle>A collection of Discrete Math Topics for Kapi'olani Community College Students</subtitle>
+    <subtitle>An open educational resource.</subtitle>
 
     <xi:include href="./frontmatter.ptx" />
     <!-- These are all the chapter files, section files included there -->
