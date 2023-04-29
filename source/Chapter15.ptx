@@ -17,6 +17,6 @@
 <xi:include href="./Section15_2.ptx" />
 <xi:include href="./Section15_3.ptx" />
 <xi:include href="./Section15_4.ptx" />
-<xi:include href="./Section15_5.ptx" />
-<xi:include href="./Section15_6.ptx" />
+<!--<xi:include href="./Section15_5.ptx" />
+<xi:include href="./Section15_6.ptx" /> -->
  </chapter>

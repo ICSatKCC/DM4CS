@@ -17,6 +17,7 @@
 \newcommand{\varep}{\varepsilon}
 \newcommand{\fsafig}[1]{\medskip\centerline{\eps{fsa#1}}\medskip}
 \newcommand{\REOR}{\hbox{$\,|\,$}}
+\newcommand{\POW}{{\mathscr P}}   % For the power set of a set
     </macros>
     <latex-image-preamble>
       \usepackage{amsmath}
@@ -27,7 +28,7 @@
 
   <book xml:id="dm4cs">
     <title>Discrete Mathematics for Computer Science</title>
-    <subtitle>An example to get you started</subtitle>
+    <subtitle>A collection of Discrete Math Topics for Kapi'olani Community College Students</subtitle>
 
     <xi:include href="./frontmatter.ptx" />
     <!-- These are all the chapter files, section files included there -->

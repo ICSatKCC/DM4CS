@@ -1,313 +1,882 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="s-finite-state-automata">
-<title>Finite-State Automata</title>
-<idx>Finite-State Automata</idx>
-<idx>Finite-State Machines</idx>
-<introduction>
-    <p> We have seen how regular expressions can be used to generate languages mechanically. How
-        might languages be recognized mechanically? The question is of interest because if we can
-        mechanically recognize languages like <m>L= \{</m>all legal C++ programs that will not go
-        into infinite loops on any input<m>\}</m>, then it would be possible to write uber-compilers
-        that can do semantic error-checking like testing for infinite loops, in addition to the
-        syntactic error-checking they currently do. </p>
-    <p> What formalism might we use to model what it means to recognize a language ``mechanically''?
-        We look for inspiration to a language-recognizer with which we are all familiar, and which
-        we've already in fact mentioned: a compiler. Consider how a C++ compiler might handle
-        recognizing a legal <c>if</c> statement. Having seen the word <c>
+    <title>Finite-State Automata</title>
+    <idx>Finite-State Automata</idx>
+    <idx>Finite-State Machines</idx>
+    <introduction>
+        <p> We have seen how regular expressions can be used to generate languages mechanically. How
+            might languages be recognized mechanically? The question is of interest because if we
+            can mechanically recognize languages like <m>L= \{</m>all legal C++ programs that will
+            not go into infinite loops on any input<m>\}</m>, then it would be possible to write
+            uber-compilers that can do semantic error-checking like testing for infinite loops, in
+            addition to the syntactic error-checking they currently do. </p>
+        <p> What formalism might we use to model what it means to recognize a language
+            ``mechanically''? We look for inspiration to a language-recognizer with which we are all
+            familiar, and which we've already in fact mentioned: a compiler. Consider how a C++
+            compiler might handle recognizing a legal <c>if</c> statement. Having seen the word <c>
             if</c>, the compiler will be in a <em>state</em> or <em>phase of its execution</em>
-        where it expects to see a <c>(</c>; in this state, any other character will put the compiler
-        in a ``failure" state. If the compiler does in fact see a <c>(</c> next, it will then be in
-        an ``expecting a boolean condition" state; if it sees a sequence of symbols that make up a
-        legal boolean condition, it will then be in an ``expecting a <c>)</c>" state; and then
-        ``expecting a <c>{</c>' or a legal statement"; and so on. Thus one can think of the compiler
-        as being in a series of states; on seeing a new input symbol, it moves on to a new state;
-        and this sequence of transitions eventually leads to either a ``failure" state (if the <c>if</c>
-        statement is not syntactically correct) or a ``success" state (if the <c>if</c> statement is
-        legal). We isolate these three concepts---states, input-inspired transitions from state to
-        state, and ``accepting" vs ``non-accepting" states---as the key features of a mechanical
-        language-recognizer, and capture them in a model called a <term>finite-state
-            automaton</term>. (Whether this is a successful distillation of the essence of
-        mechanical language recognition remains to be seen; the question will be taken up later in
-        this chapter.) <aside>
-            <title>Automata</title>
-            <p> The term <term>automata</term> is the plural form of <term>automaton</term>. In some
-        texts, <term>machine</term> is used in place of automaton. </p>
-        </aside>
-    </p>
-    <p> A <term>finite-state automaton (FSA)</term><idx>
-            <h>finite-state automaton</h>
-        </idx>, then, is a machine which takes, as input, a
-        finite string of symbols from some alphabet <m>\Sigma</m>. There is a finite set of <term>
-        states</term> in which the machine can find itself. The state it is in before consuming any
-        input is called the <term>start state</term>. Some of the states are <term>accepting</term>
-        or <term>final</term>. If the machine ends in such a state after completely consuming an
-        input string, the string is said to be <term>accepted</term> by the machine. The actual
-        functioning of the machine is described by something called a <term>transition
+            where it expects to see a <c>(</c>; in this state, any other character will put the
+            compiler in a ``failure" state. If the compiler does in fact see a <c>(</c> next, it
+            will then be in an ``expecting a boolean condition" state; if it sees a sequence of
+            symbols that make up a legal boolean condition, it will then be in an ``expecting a <c>)</c>"
+            state; and then ``expecting a <c>{</c>' or a legal statement"; and so on. Thus one can
+            think of the compiler as being in a series of states; on seeing a new input symbol, it
+            moves on to a new state; and this sequence of transitions eventually leads to either a
+            ``failure" state (if the <c>if</c> statement is not syntactically correct) or a
+            ``success" state (if the <c>if</c> statement is legal). We isolate these three
+            concepts---states, input-inspired transitions from state to state, and ``accepting" vs
+            ``non-accepting" states---as the key features of a mechanical language-recognizer, and
+            capture them in a model called a <term>finite-state
+                automaton</term>. (Whether this is a successful distillation of the essence of
+            mechanical language recognition remains to be seen; the question will be taken up later
+            in this chapter.) <aside>
+                <title>Automata</title>
+                <p> The term <term>automata</term> is the plural form of <term>automaton</term>. In
+            some texts, <term>machine</term> is used in place of automaton. </p>
+            </aside>
+        </p>
+        <p> A <term>finite-state automaton (FSA)</term><idx>
+                <h>finite-state automaton</h>
+            </idx>, then, is a machine which takes, as
+            input, a finite string of symbols from some alphabet <m>\Sigma</m>. There is a finite
+            set of <term>
+                states</term> in which the machine can find itself. The state it is in before
+            consuming any input is called the <term>start state</term>. Some of the states are <term>
+            accepting</term> or <term>final</term>. If the machine ends in such a state after
+            completely consuming an input string, the string is said to be <term>accepted</term> by
+            the machine. The actual functioning of the machine is described by something called a <term>transition
             function</term>, which specifies what happens if the machine is in a particular state
-        and looking at a particular input symbol. (``What happens" means ``in which state does the
-        machine end up".) </p>
+            and looking at a particular input symbol. (``What happens" means ``in which state does
+            the machine end up".) </p>
 
-    <example xml:id="ex-transition-funct">
-        <title>A transition function</title>
-        <statement>
-            <p> Below is a table that describes the transition function of a finite-state automaton
-                with states <m>p</m>, <m>q</m>, and <m>r</m>, on inputs <m>0</m> and <m>
+        <example xml:id="ex-transition-funct">
+            <title>A transition function</title>
+            <statement>
+                <p> Below is a table that describes the transition function of a finite-state
+                    automaton with states <m>p</m>, <m>q</m>, and <m>r</m>, on inputs <m>0</m> and <m>
                     1</m>. <table>
-                    <title></title>
-                    <tabular>
-                        <row header="yes" bottom="major">
-                            <cell> </cell>
-                            <cell>
-                                <m>p</m>
-                            </cell>
-                            <cell>
-                                <m>q</m>
-                            </cell>
-                            <cell>
-                                <m>r</m>
-                            </cell>
-                        </row>
-                        <row>
-                            <cell right="major">
-                                <m>0</m>
-                            </cell>
-                            <cell>
-                                <m>p</m>
-                            </cell>
-                            <cell>
-                                <m>q</m>
-                            </cell>
-                            <cell>
-                                <m>r</m>
-                            </cell>
-                        </row>
-                        <row>
-                            <cell right="major">
-                                <m>1</m>
-                            </cell>
-                            <cell>
-                                <m>q</m>
-                            </cell>
-                            <cell>
-                                <m>r</m>
-                            </cell>
-                            <cell>
-                                <m>r</m>
-                            </cell>
-                        </row>
-                    </tabular>
-                </table>
-                The table indicates, for example, that if the FSA were in state <m>p</m> and
-                consumed a <m>1</m>, it would move to state <m>q</m>.</p>
-        </statement>
-    </example>
+                        <title></title>
+                        <tabular>
+                            <row header="yes" bottom="major">
+                                <cell> </cell>
+                                <cell>
+                                    <m>p</m>
+                                </cell>
+                                <cell>
+                                    <m>q</m>
+                                </cell>
+                                <cell>
+                                    <m>r</m>
+                                </cell>
+                            </row>
+                            <row>
+                                <cell right="major">
+                                    <m>0</m>
+                                </cell>
+                                <cell>
+                                    <m>p</m>
+                                </cell>
+                                <cell>
+                                    <m>q</m>
+                                </cell>
+                                <cell>
+                                    <m>r</m>
+                                </cell>
+                            </row>
+                            <row>
+                                <cell right="major">
+                                    <m>1</m>
+                                </cell>
+                                <cell>
+                                    <m>q</m>
+                                </cell>
+                                <cell>
+                                    <m>r</m>
+                                </cell>
+                                <cell>
+                                    <m>r</m>
+                                </cell>
+                            </row>
+                        </tabular>
+                    </table>
+                    The table indicates, for example, that if the FSA were in state <m>p</m> and
+                    consumed a <m>1</m>, it would move to state <m>q</m>.</p>
+            </statement>
+        </example>
 
 
-</introduction>
+    </introduction>
 
-<subsection xml:id="subsec-deterministic-fsa">
-    <title>Deterministic Finite-State Automata</title>
-    <idx>
-        <h>Deterministic Finite-State Automata</h>
-    </idx>
-    <idx>
-        <h>DFSA</h>
-    </idx>
-    <p> FSAs actually come in two flavors depending on what properties you require of the transition
-        function. We will look first at a class of FSAs called deterministic finite-state automata
-        (DFAs). In these machines, the current state of the machine and the current input symbol
-        together determine exactly which state the machine ends up in: for every <m>\lt</m> current
-        state, current input symbol<m>\gt</m> pair, there is exactly one possible next state for the
-        machine. </p>
-    <definition xml:id="def-deterministic-fsa">
-        <title>Deterministic Finite-State Automaton</title>
+    <subsection xml:id="subsec-deterministic-fsa">
+        <title>Deterministic Finite-State Automata</title>
         <idx>
             <h>Deterministic Finite-State Automata</h>
         </idx>
-        <statement>
-            <p>Formally, a <term>deterministic finite-state automaton</term> <m>M</m> is specified by
-                5 components: <m>M=(Q, \Sigma, q_0, \delta, F)</m> where </p>
-            <p>
-                <ul>
-                    <li>
-                        <p>
-                            <m>Q</m> is a finite set of states; </p>
-                    </li>
-                    <li>
-                        <p>
-                            <m>\Sigma</m> is an alphabet called the <em>input alphabet</em>; </p>
-                    </li>
-                    <li>
-                        <p>
-                            <m>q_0 \in Q</m> is a state which is designated as the <em>start
+        <idx>
+            <h>DFA</h>
+        </idx>
+        <p> FSAs actually come in two flavors depending on what properties you require of the
+            transition function. We will look first at a class of FSAs called deterministic
+            finite-state automata (DFAs). In these machines, the current state of the machine and
+            the current input symbol together determine exactly which state the machine ends up in:
+            for every <m>\lt</m> current state, current input symbol<m>\gt</m> pair, there is
+            exactly one possible next state for the machine. </p>
+        <definition xml:id="def-deterministic-fsa">
+            <title>Deterministic Finite-State Automaton</title>
+            <idx>
+                <h>Deterministic Finite-State Automata</h>
+            </idx>
+            <statement>
+                <p>Formally, a <term>deterministic finite-state automaton</term> <m>M</m> is
+                    specified by 5 components: <m>M=(Q, \Sigma, q_0, \delta, F)</m> where </p>
+                <p>
+                    <ul>
+                        <li>
+                            <p>
+                                <m>Q</m> is a finite set of states; </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\Sigma</m> is an alphabet called the <em>input alphabet</em>; </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>q_0 \in Q</m> is a state which is designated as the <em>start
                                 state</em>; </p>
-                    </li>
-                    <li>
-                        <p>
-                            <m>F</m> is a subset of <m>Q</m>; the states in <m>F</m> are states
-                            designated as <em>final</em> or <em>accepting</em> states; </p>
-                    </li>
-                    <li>
-                        <p>
-                            <m>\delta</m> is a transition function that takes <m>\lt</m>state, input
-                            symbol <m>\gt</m> pairs and maps each one to a state: <m>\delta
+                        </li>
+                        <li>
+                            <p>
+                                <m>F</m> is a subset of <m>Q</m>; the states in <m>F</m> are states
+                                designated as <em>final</em> or <em>accepting</em> states; </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\delta</m> is a transition function that takes <m>\lt</m>state,
+                                input symbol <m>\gt</m> pairs and maps each one to a state: <m>\delta
                                 : Q \times
-                                \Sigma \rightarrow Q</m>. <ul>
-                                <li>
-                                    <p> To say <m>\delta(q,a) = q'</m> means that if the machine is
-                            in state <m>q</m> and the input symbol <m>a</m> is consumed, then the
-                            machine will move into state <m>q'</m>. </p>
-                                </li>
-                                <li>
-                                    <p> The function <m>\delta</m> must be a total function, meaning
-                            that <m>\delta(q,a)</m> must be defined for every state <m>q</m> and
-                            every input symbol <m>a</m>. </p>
-                                </li>
-                                <li>
-                                    <p> Recall also that, according to the definition of a function,
-                            there can be only one output for any particular input. This means that
-                            for any given <m>q</m> and <m>a</m>, <m>\delta(q,a)</m> can have only
-                            one value. This is what makes the finite-state automaton <em>
-                            deterministic</em>: given the current state and input symbol, there is
-                            only one possible move the machine can make. </p>
-                                </li>
-                            </ul>
+                                    \Sigma \rightarrow Q</m>. <ul>
+                                    <li>
+                                        <p> To say <m>\delta(q,a) = q'</m> means that if the machine
+                                is in state <m>q</m> and the input symbol <m>a</m> is consumed, then
+                                the machine will move into state <m>q'</m>. </p>
+                                    </li>
+                                    <li>
+                                        <p> The function <m>\delta</m> must be a total function,
+                                meaning that <m>\delta(q,a)</m> must be defined for every state <m>q</m>
+                                and every input symbol <m>a</m>. </p>
+                                    </li>
+                                    <li>
+                                        <p> Recall also that, according to the definition of a
+                                function, there can be only one output for any particular input.
+                                This means that for any given <m>q</m> and <m>a</m>, <m>\delta(q,a)</m>
+                                can have only one value. This is what makes the finite-state
+                                automaton <em>
+                                                deterministic</em>: given the current state and
+                                input symbol, there is only one possible move the machine can make. </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </statement>
+        </definition>
+
+        <example>
+            <p> The transition function described by the table in the preceding example is that of a
+                DFA. If we take <m>p</m> to be the start state and <m>r</m> to be a final state,
+                then the formal description of the resulting machine is <m>M= (\{p,q,r\}, \{0,1\},
+                    p, \delta, \{r\})</m>, where <m>\delta</m> is given by </p>
+
+
+            <sidebyside widths="50% 50%" margins="auto" valign="bottom">
+                <dl>
+                    <li>
+                        <p>
+                            <m>\delta(p,0)=p</m>
+
                         </p>
                     </li>
-                </ul>
-            </p>
-        </statement>
-    </definition>
+                    <li>
+                        <p>
+                            <m>\delta(q,0)=q</m>
 
-    <example>
-        <p> The transition function described by the table in the preceding example is that of a
-            DFA. If we take <m>p</m> to be the start state and <m>r</m> to be a final state, then
-            the formal description of the resulting machine is <m>M= (\{p,q,r\}, \{0,1\},
-                p, \delta, \{r\})</m>, where <m>\delta</m> is given by </p>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\delta(r,0)=r</m>
 
+                        </p>
+                    </li>
+                </dl>
 
-        <sidebyside widths="50% 50%" margins="auto" valign="bottom">
-            <dl>
-                <li>
-                    <p>
-                        <m>\delta(p,0)=p</m>
-
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>\delta(q,0)=q</m>
-
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>\delta(r,0)=r</m>
-
-                    </p>
-                </li>
-            </dl>
-
-            <dl>
-                <li>
-                    <p>
-                        <m>\delta(p,1)=q</m>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>\delta(q,1)=r</m>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>\delta(r,1)=r</m>
-                    </p>
-                </li>
-            </dl>
-        </sidebyside>
-    </example>
-    <p> The transition function <m>\delta</m> describes only individual steps of the machine as
-        individual input symbols are consumed. However, we will often want to refer to``the state
-        the automaton will be in if it starts in state <m>q</m> and consumes input string <m>
+                <dl>
+                    <li>
+                        <p>
+                            <m>\delta(p,1)=q</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\delta(q,1)=r</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\delta(r,1)=r</m>
+                        </p>
+                    </li>
+                </dl>
+            </sidebyside>
+        </example>
+        <p> The transition function <m>\delta</m> describes only individual steps of the machine as
+            individual input symbols are consumed. However, we will often want to refer to``the
+            state the automaton will be in if it starts in state <m>q</m> and consumes input string <m>
             w</m>", where <m>w</m> is a string of input symbols rather than a single symbol.
-        Following the usual practice of using <m>^*</m> to designate ``0 or more", we define <term>
-            <m>\delta^*(q,w)</m>
-        </term> as a convenient shorthand for ``the state that the
-        automaton will be in if it starts in state <m>q</m> and consumes the input string <m>w</m>".
-        For any string, it is easy to see, based on <m>\delta</m>, what steps the machine will make
-        as those symbols are consumed, and what <m>\delta^*(q,w)</m> will be for any <m>q</m> and <m>
-        w</m>. Note that if no input is consumed, a DFA makes no move, and so <m>\delta^*(q,
-        \varepsilon) = q</m> for any state <m>q</m>. <aside><m>
-                \delta^*</m> can be defined formally by saying that \delta^*(q,\varepsilon)=q for
-        every state <m>q</m>, and <m>\delta^*(q,ax)=\delta^*(\delta(q,a),x)</m> for any state <m>q</m>,
-        a\in\Sigma and <m>x\in\Sigma^*</m>. Note that this is a recursive definition.</aside>
-    </p>
+            Following the usual practice of using <m>^*</m> to designate ``0 or more", we define <term>
+                <m>\delta^*(q,w)</m>
+            </term> as a convenient shorthand for ``the state
+            that the automaton will be in if it starts in state <m>q</m> and consumes the input
+            string <m>w</m>". For any string, it is easy to see, based on <m>\delta</m>, what steps
+            the machine will make as those symbols are consumed, and what <m>\delta^*(q,w)</m> will
+            be for any <m>q</m> and <m>
+                w</m>. Note that if no input is consumed, a DFA makes no move, and so <m>\delta^*(q,
+            \varepsilon) = q</m> for any state <m>q</m>. <aside><m>
+                    \delta^*</m> can be defined formally by saying that \delta^*(q,\varepsilon)=q
+            for every state <m>q</m>, and <m>\delta^*(q,ax)=\delta^*(\delta(q,a),x)</m> for any
+            state <m>q</m>, a\in\Sigma and <m>x\in\Sigma^*</m>. Note that this is a recursive
+            definition.</aside>
+        </p>
 
-    <example> Let <m>M</m> be the automaton in the preceding example. Then, for example: <md>
-            <mrow> \delta^*(p, 001)\amp =q \amp \text{ since }\delta(p,0)=p,
-                \delta(p,0)=p,\text{ and }\delta(p,1)=q;</mrow>
-            <mrow> \delta^*(p, 01000) \amp = q \amp</mrow>
-            <mrow>\delta^*(p, 1111) \amp = r \amp</mrow>
-            <mrow> \delta^*(q, 0010) \amp = r \amp</mrow>
-        </md>
-    </example>
-    <p>
-        We have divided the states of a DFA into accepting and non-accepting states, with
-        the idea that some strings will be recognized as ``legal" by the automaton, and
-        some not. Formally:
-    </p>
-    <definition
-        xml:id="def-accepted-language">
-        <title>Language Accepted by M</title>
-        <statement>
-            <p> Let <m>M=(Q, \Sigma, q_0, \delta, F)</m>. A string <m>w \in \Sigma^*</m> is <term>
-                accepted</term> by <m>M</m> iff <m>\delta^*(q_0, w) \in F</m>. (Don't get confused
-                by the notation. Remember, it's just a shorter and neater way of saying ``<m>w \in
-                \Sigma^*</m> is accepted by <m>M</m> if and only if the state that M will end up in
-                if it starts in <m>q_0</m> and consumes <m>w</m> is one of the states in <m>F</m>.") </p>
-            <p> The <term>language accepted by <m>M</m></term>, denoted <m>L(M)</m>, is the set of
-                all strings <m>w \in \Sigma^*</m> that are accepted by <m>M</m>: <m>L(M) = \{
+        <example> Let <m>M</m> be the automaton in the preceding example. Then, for example: <md>
+                <mrow> \delta^*(p, 001)\amp =q \amp \text{ since }\delta(p,0)=p,
+                    \delta(p,0)=p,\text{ and }\delta(p,1)=q;</mrow>
+                <mrow> \delta^*(p, 01000) \amp = q \amp</mrow>
+                <mrow>\delta^*(p, 1111) \amp = r \amp</mrow>
+                <mrow> \delta^*(q, 0010) \amp = r \amp</mrow>
+            </md>
+        </example>
+        <p>
+            We have divided the states of a DFA into accepting and non-accepting states, with
+            the idea that some strings will be recognized as ``legal" by the automaton, and
+            some not. Formally:
+        </p>
+        <definition
+            xml:id="def-language-accepted-by-fsa">
+            <title>Language Accepted by FSA</title>
+            <statement>
+                <p> Let <m>M=(Q, \Sigma, q_0, \delta, F)</m>. A string <m>w \in \Sigma^*</m> is <term>
+                    accepted</term> by <m>M</m> iff <m>\delta^*(q_0, w) \in F</m>. (Don't get
+                    confused by the notation. Remember, it's just a shorter and neater way of saying
+                    ``<m>w \in
+                        \Sigma^*</m> is accepted by <m>M</m> if and only if the state that M will
+                    end up in if it starts in <m>q_0</m> and consumes <m>w</m> is one of the states
+                    in <m>F</m>.") </p>
+                <p> The <term>language accepted by <m>M</m></term>, denoted <m>L(M)</m>, is the set
+                    of all strings <m>w \in \Sigma^*</m> that are accepted by <m>M</m>: <m>L(M) = \{
                     w \in\Sigma^* \ | \ \delta^*(q_0, w) \in F\}</m>. </p>
-        </statement>
-    </definition>
-    <p> Note that we sometimes use a slightly different phrasing and say that a language <m>L</m> is
-        accepted by some machine <m>M</m>. We don't mean by this that <m>L</m> <em>and
-            maybe some other strings</em> are accepted by <m>M</m>; we mean <m>L = L(M)</m>, i.e.\ <m>
-        L</m> is <em>exactly</em> the set of strings accepted by <m>M</m>. </p>
-    <p> It may not be easy, looking at a formal specification of a DFA, to determine what language
-        that automaton accepts. Fortunately, the mathematical description of the automaton <m>M=(Q,
-        \Sigma, q_0, \delta, F)</m> can be neatly and helpfully captured in a picture called a <term>transition
-        diagram</term>. Consider again the DFA of the two preceding examples. It can be represented
-        pictorially as: <figure xml:id="fig-fsa1">
-            <image source="images/fsa1" width="80%">
-                <description>Transition diagram for above DFA</description>
-            </image>
-        </figure>
-        The arrow on the left indicates that <m>p</m> is the start state; double circles indicate
-        that a state is accepting. Looking at this picture, it should be fairly easy to see that the
-        language accepted by the DFA <m>M</m> is <m>L(M) = \{ x \in \{0,1\}^* \ | \
+            </statement>
+        </definition>
+        <p> Note that we sometimes use a slightly different phrasing and say that a language <m>L</m>
+            is accepted by some machine <m>M</m>. We don't mean by this that <m>L</m> <em>and
+                maybe some other strings</em> are accepted by <m>M</m>; we mean <m>L = L(M)</m>,
+            i.e.\ <m>
+                L</m> is <em>exactly</em> the set of strings accepted by <m>M</m>. </p>
+        <p> It may not be easy, looking at a formal specification of a DFA, to determine what
+            language that automaton accepts. Fortunately, the mathematical description of the
+            automaton <m>M=(Q,
+                \Sigma, q_0, \delta, F)</m> can be neatly and helpfully captured in a picture called
+            a <term>transition
+                diagram</term>. Consider again the DFA of the two preceding examples. It can be
+            represented pictorially as: <figure xml:id="fig-fsa1">
+                <image source="images/fsa1" width="80%">
+                    <description>Transition diagram for above DFA</description>
+                </image>
+            </figure>
+            The arrow on the left indicates that <m>p</m> is the start state; double circles
+            indicate that a state is accepting. Looking at this picture, it should be fairly easy to
+            see that the language accepted by the DFA <m>M</m> is <m>L(M) = \{ x \in \{0,1\}^* \ | \
             n_1(x) \geq 2\}</m>. </p>
 
 
-    <example xml:id="find-lang-from-DFA">
-        <statement>
-            <p> Find the language accepted by the DFA shown below (and describe it using a regular
-                expression!) <figure xml:id="fig-fsa2">
-                    <image source="images/fsa2" width="80%">
-                        <description>Transition diagram to find language</description>
+        <example xml:id="find-lang-from-DFA">
+            <statement>
+                <p> Find the language accepted by the DFA shown below (and describe it using a
+                    regular expression!) <figure xml:id="fig-fsa2">
+                        <image source="images/fsa2" width="80%">
+                            <description>Transition diagram to find language</description>
+                        </image>
+                    </figure>
+                    The start state of <m>M</m> is accepting, which means <m>\varep \in L(M)</m>. If <m>
+                    M</m> is in state <m>q_0</m>, a sequence of two <m>a</m>'s or three <m>b</m>'s
+                    will move <m>M</m> back to <m>q_0</m> and hence be accepted. So <m>L(M) =
+                        L((aa | bbb)^*)</m>. </p>
+            </statement>
+        </example>
+        <p>The state <m>q_4</m> in the preceding example is often called a <em>garbage</em> or <em>
+            trap</em> state: it is a non-accepting state which, once reached by the machine, cannot
+            be escaped. It is fairly common to omit such states from transition diagrams. For
+            example, one is likely to see the diagram: <figure xml:id="fig-fsa3">
+                <image source="images/fsa3" width="80%">
+                    <description>Transition diagram omitting trap state</description>
+                </image>
+            </figure>
+        </p>
+
+
+        <p>Note that this cannot be a complete DFA, because a DFA is required to have a transition
+            defined for every state-input pair. The diagram is ``short for" the full diagram: <figure
+                xml:id="fig-fsa4">
+                <image source="images/fsa4" width="80%">
+                    <description>Transition diagram with trap state</description>
+                </image>
+            </figure>
+        </p>
+
+
+        <p>
+            As well as recognizing what language is accepted by a given DFA, we often want to
+            do the reverse and come up with a DFA that accepts a given language.
+            Building DFAs for specified languages is an art, not a science.
+            There is no algorithm that you can apply to produce a DFA from an English-language
+            description of the set of strings the DFA should accept. On the other hand, it
+            is not generally successful, either, to simply write down a half-dozen strings
+            that are in the language and design a DFA to accept those strings---invariably
+            there are strings that are in the language that aren't accepted, and other
+            strings that aren't in the language that are accepted. So how do you go about
+            building DFAs that accept all and only the strings they're supposed to accept?
+            The best advice I can give is to
+            think about relevant characteristics that determine whether a string is in the
+            language or not, and to think about what the possible values or ``states" of
+            those characteristics
+            are; then build a machine that has a state corresponding to each possible
+            combination of values of relevant characteristics, and determine how the
+            consumption of inputs affects those values. I'll illustrate what I mean with a
+            couple of examples.</p>
+
+        <example>
+
+            <p>Find a DFA with input alphabet <m>\Sigma = \ab</m> that accepts the language <m>L=
+                    \{w \in\Sigma^* \ | \ n_a(w) \mbox{ and } n_b(w) \mbox{ are both even } \}</m>.</p>
+
+            <p>The characteristics that determine whether or not a string <m>w</m> is in <m>L</m>
+                are the parity of <m>n_a(w)</m> and <m>n_b(w)</m>. There are four possible
+                combinations of ``values" for these characteristics: both numbers could be even,
+                both could be odd, the first could be odd and the second even, or the first could be
+                even and the second odd. So we build a machine with four states <m>q_1, q_2, q_3,
+                    q_4</m> corresponding to the four cases. We want to set up \delta so that the
+                machine will be in state <m>q_1</m> exactly when it has consumed a string with an
+                even number of <m>a</m>'s and an even number of <m>b</m>'s, in state <m>q_2</m>
+                exactly when it has consumed a string with an odd number of <m>a</m>'s and an odd
+                number of <m>b</m>'s, and so on. </p>
+
+            <p>To do this, we first make the state <m>q_1</m> into our start state, because the DFA
+                will be in the start state after consuming the empty string <m>\varep</m>, and <m>
+                \varep</m> has an even number (zero) of both <m>a</m>'s and <m>b</m>'s. Now we add
+                transitions by reasoning about how the parity of <m>a</m>'s and <m>b</m>'s is
+                changed by additional input. For instance, if the machine is in <m>q_1</m> (meaning
+                an even number of <m>a</m>'s and an even number of <m>b</m>'s have been seen) and a
+                further <m>a</m> is consumed, then we want the machine to move to state <m>q_3</m>,
+                since the machine has now consumed an odd number of <m>a</m>'s and still an even
+                number of <m>b</m>'s. So we add the transition <m>\delta(q_1, a) = q_3</m> to the
+                machine. Similarly, if the machine is in <m>q_2</m> (meaning an odd number of <m>a</m>'s
+                and an odd number of <m>b</m>'s have been seen) and a further <m>b</m> is consumed,
+                then we want the machine to move to state <m>q_3</m> again, since the machine has
+                still consumed an odd number of <m>a</m>'s, and now an even number of <m>b</m>'s. So
+                we add the transition <m>\delta(q_2, b) = q_3</m> to the machine. Similar reasoning
+                produces a total of eight transitions, one for each state-input pair. Finally, we
+                have to decide which states should be final states. The only state that corresponds
+                to the desired criteria for the language <m>L</m> is <m>q_1</m>, so we make <m>q_1</m>
+                a final state. The complete machine is shown below. <figure xml:id="fig-fsa5">
+                    <image source="images/fsa5" width="80%">
+                        <description>Transition diagram from description above</description>
                     </image>
                 </figure>
-                The start state of <m>M</m> is accepting, which means <m>\varep \in L(M)</m>. If <m>
-                M</m> is in state <m>q_0</m>, a sequence of two <m>a</m>'s or three <m>b</m>'s will
-                move <m>M</m> back to <m>q_0</m> and hence be accepted. So <m>L(M) = L((aa\REOR
-                bbb)^*)</m>. </p>
-        </statement>
-    </example>
 
-</subsection>
 
-<!-- below is old stuff save for problems ->
+            </p>
+        </example>
+        <example> Find a DFA with input alphabet <m>\Sigma = \ab</m> that accepts the language <m>L
+                = \{w \in\Sigma^* \ | \ n_a(w) \mbox{ is divisible by 3 } \}</m>. The relevant
+            characteristic here is of course whether or not the number of <m>a</m>'s in a string is
+            divisible by 3, perhaps suggesting a two-state machine. But in fact, there is more than
+            one way for a number to not be divisible by 3: dividing the number by 3 could produce a
+            remainder of either 1 or 2 (a remainder of 0 corresponds to the number in fact being
+            divisible by 3). So we build a machine with three states <m>q_0</m>, <m>q_1</m>, <m>q_2</m>,
+            and add transitions so that the machine will be in state <m>q_0</m> exactly when the
+            number of <m>
+                a</m>'s it has consumed is evenly divisible by 3, in state <m>q_1</m> exactly when
+            the number of <m>a</m>'s it has consumed is equivalent to <m> 1 \bmod{3}</m>, and
+            similarly for <m>q_2</m>. State <m>q_0</m> will be the start state, as <m>\varep</m> has
+            0 <m>a</m>'s and 0 is divisible by 3. The completed machine is shown below. Notice that
+            because the consumption of a <m>b</m> does not affect the only relevant characteristic, <m>
+            b</m>'s do not cause changes of state. <figure xml:id="fig-fsa6">
+                <image source="images/fsa6" width="80%">
+                    <description>Transition diagram that accepts the language <m>L = \{w \in\Sigma^*
+            \ | \
+                            n_a(w) \mbox{ is divisible by 3 } \}</m></description>
+                </image>
+            </figure>
+        </example>
+
+        <example>
+            <p> Find a DFA with input alphabet <m>\Sigma = \ab</m> that accepts the language <m>L =
+                \{w \in\Sigma^* \ | w \mbox{ contains three consecutive a's } \}</m>.</p>
+            <p> Again, it is not quite so simple as making a two-state machine where the states
+                correspond to ``have seen <m>aaa</m>" and ``have not seen <m>aaa</m>". Think
+                dynamically: as you move through the input string, how do you arrive at the goal of
+                having seen three consecutive <m>a</m>'s? You might have seen two consecutive <m>a</m>'s
+                and still need a third, or you might just have seen one <m>a</m> and be looking for
+                two more to come immediately, or you might just have seen a <m>b</m> and be right
+                back at the beginning as far as seeing 3 consecutive <m>a</m>'s goes. So once again
+                there will be three states, with the ``last symbol was not an <m>a</m>'' state being
+                the start state. The complete automaton is shown below. <figure xml:id="fig-fsa7">
+                    <image source="images/fsa7" width="80%">
+                        <description>Transition diagram that accepts the language <m>L = \{w
+                \in\Sigma^* \
+                                | w \mbox{ contains three consecutive a's } \}</m>.</description>
+                    </image>
+                </figure>
+            </p>
+        </example>
+
+    </subsection>
+    <subsection xml:id="subsec-non-deterministic-fsa">
+        <title>Nondeterministic Finite-State Automata</title>
+        <idx>
+            <h>Noneterministic Finite-State Automata</h>
+        </idx>
+        <idx>
+            <h>NDFSA</h>
+        </idx>
+        <idx>
+            <h>NFA</h>
+        </idx>
+
+        <p>As mentioned briefly above, there is an alternative school of though as to what
+            properties should be required of a finite-state automaton's transition function. Recall
+            our motivating example of a C++ compiler and a legal \em <c>if</c> statement. In our
+            description, we had the compiler in an ``expecting a <c>)</c>" state; on seeing a <c>)</c>,
+            the compiler moved into an ``expecting a <c></c> or a legal statement" state. An
+            alternative way to view this would be to say that the compiler, on seeing a <c>)</c>,
+            could move into one of two different states: it could move to an ``expecting a <c>{</c>"
+            state <em>or</em> move to an ``expecting a legal statement" state. Thus, from a single
+            state, on input <c>)</c>, the compiler has multiple moves. This alternative
+            interpretation is not allowed by the DFA model. A second point on which one might
+            question the DFA model is the fact that input must be consumed for the machine to change
+            state. Think of the syntax for C++ function declarations. The return type of a function
+            need not be specified (the default is taken to be <c>int</c>). The start state of the
+            compiler when parsing a function declaration might be ``expecting a return type"; then
+            with no input consumed, the compiler can move to the state ``expecting a legal function
+            name". To model this, it might seem reasonable to allow transitions that do not require
+            the consumption of input (such transitions are called <term><m>\varep</m>-transitions</term>).
+            Again, this is not supported by the DFA abstraction. There is, therefore, a second class
+            of finite-state automata that people study, the class of nondeterministic finite-state
+            automata. </p>
+        <p> A <term>nondeterministic finite-state automaton (NFA)</term> is the same as a
+            deterministic finite-state automaton except that the transition function is no longer a
+            function that maps a state-input pair to a state; rather, it maps a state-input pair or
+            a state-<m>\varep</m> pair to a <em>set</em> of states. No longer do we have <m>\delta(q,a)
+            = q'</m>, meaning that the machine must change to state <m>q'</m> if it is in state <m>q</m>
+            and consumes an <m>a</m>. Rather, we have <m>\partial(q,a) = \{q_1, q_2, \ldots, q_n\}</m>,
+            meaning that if the machine is in state <m>q</m> and consumes an <m>a</m>, it might move
+            directly to any one of the states <m>q_1, \ldots, q_n</m>. Note that the set of next
+            states \partial(q,a) is defined for every state <m>q</m> and every input symbol <m>a</m>,
+            but for some <m>q</m>'s and <m>a</m>'s it could be empty, or contain just one state
+            (there don't <em>have</em> to be multiple next states). The function \<m>partial</m>
+            must also specify whether it is possible for the machine to make any moves without input
+            being consumed, i.e.\ <m>\partial(q, \varepsilon)</m> must be specified for every state <m>
+            q</m>. Again, it is quite possible that <m>\partial(q, \varepsilon)</m> may be empty for
+            some states <m>q</m>: there need not be <m>\varep</m>-transitions out of <m>q</m>. </p>
+
+        <definition xml:id="def-non-deterministic-fsa">
+            <idx>
+                <h>Nondeterministic Finite-State Automata</h>
+            </idx>
+            <statement>
+                <p>Formally, a <term>nondeterministic finite-state automaton</term> <m>M</m> is
+                    specified by 5 components: <m>M=(Q, \Sigma, q_0, \partial, F)</m> where </p>
+                <p>
+                    <ul>
+                        <li>
+                            <p>
+                                <m>Q, \Sigma, q_0 </m> and <m>F</m> are as in the definition of
+                                DFAs; </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\partial</m> is a transition function that takes <m>\lt</m>state,
+                                input symbol<m>\gt</m> pairs and maps each one to a set of states.
+                                To say <m>\partial(q,a) = \{q_1, q_2, \ldots , q_n\}</m> means that
+                                if the machine is in state <m>q</m> and the input symbol <m>a</m> is
+                                consumed, then the machine may move directly into any one of states <m>q_1,
+                                q_2, \ldots , q_n</m>. The function <m>\partial</m> must also be
+                                defined for every <m>\lt</m>state,<m>\varep</m><m>\gt</m> pair. To
+                                say <m>\partial(q,\varep) = \{q_1, q_2, \ldots , q_n\}</m> means
+                                that there are direct <m>\varep</m>-transitions from state <m>q</m>
+                                to each of <m>q_1, q_2, \ldots , q_n</m>. </p>
+                            <p> The formal description of the function <m>\partial</m> is <m>\partial
+                                : Q \times
+                                    (\Sigma \cup \{\varep\}) \rightarrow \POW(Q)</m>. </p>
+                        </li>
+                    </ul>
+                </p>
+                <p>
+
+                </p>
+            </statement>
+        </definition>
+
+        <p> The function <m>\partial</m> describes how the machine functions on zero or one input
+            symbol. As with DFAs, we will often want to refer to the behavior of the machine on a
+            string of inputs, and so we use the notation <m>\partial^*(q,w)</m> as shorthand for
+            ``the set of states in which the machine might be if it starts in state <m>q</m> and
+            consumes input string <m>w</m>". As with DFAs, <m>\partial^*(q,w)</m> is determined by
+            the specification of <m>\partial</m>. Note that for every state <m>q</m>, <m>\partial^*(q,
+            \varep)</m> contains at least <m>q</m>, and may contain additional states if there are
+            (sequences of) <m>\varep</m>-transitions out of <m>q</m>. </p>
+        <p> We do have to think a bit carefully about what it means for an NFA to accept a string <m>
+            w</m>. Suppose <m>\partial^*(q_0,w)</m> contains both accepting and non-accepting
+            states, i.e.\ the machine could end in an accepting state after consuming <m>w</m>, but
+            it might also end in a non-accepting state. Should we consider the machine to accept <m>
+            w</m>, or should we require every state in <m>\partial^*(q_0,w)</m> to be accepting
+            before we admit <m>w</m> to the ranks of the accepted? Think of the C++ compiler again:
+            provided that an <c>if</c> statement fits one of the legal syntax specifications, the
+            compiler will accept it. So we take as the definition of acceptance by an NFA: A string <m>
+            w</m> is accepted by an NFA provided that at least one of the states in <m>
+            \partial^*(q_0,w)</m> is an accepting state. That is, if there is some sequence of steps
+            of the machine that consumes <m>w</m> and leaves the machine in an accepting state, then
+            the machine accepts <m>w</m>. Formally: </p>
+
+        <definition xml:id="def-language-accepted-by-nfa">
+            <title>Language Accepted by NFA</title>
+            <statement>
+                <p> Let <m>M=(Q, \Sigma, q_0, \partial, F)</m> be a nondeterministic finite-state
+                    automaton. The string <m>w \in \Sigma^*</m> is <term>
+                        accepted</term> by <m>M</m> iff <m>\partial^*(q_0, w)</m> contains at least
+                    one state <m>q_F \in F</m>.</p>
+                <p> The <term>language accepted by <m>M</m></term>, denoted <m>L(M)</m>, is the set
+                    of all strings <m>w \in \Sigma^*</m> that are accepted by <m>M</m>: <m>L(M) = \{
+                    w \in\Sigma^*|\partial^*(q_0, w) \cap F \neq \emptyset\}</m>. </p>
+            </statement>
+        </definition>
+
+        <example xml:id="ex-nfa-2nd_last-a">
+            <p> The NFA shown below accepts all strings of <m>a</m>'s and <m>b</m>'s in which the
+                second-to-last symbol is <m>a</m>. <figure xml:id="fig-fsa8">
+                    <image source="images/fsa8" width="80%">
+                        <description>Diagram of an NFA that accepts the language described above.</description>
+                    </image>
+                </figure>
+            </p>
+        </example>
+
+        <p> It should be fairly clear that every language that is accepted by a DFA is also accepted
+            by an NFA. Pictorially, a DFA looks exactly like an NFA (an NFA that doesn't happen to
+            have any <m>\varep</m>-transitions or multiple same-label transitions from any state),
+            though there is slightly more going on behind the scenes. Formally, given the DFA <m>M=(Q,
+            \Sigma, q_0, \delta, F)</m>, you can build an NFA <m>M'=(Q, \Sigma, q_0, \partial, F)</m>
+            where 4 of the 5 components are the same and where every transition <m>\delta(q,a) = q'</m>
+            has been replaced by <m>\partial(q,a) = \{q'\}</m>. </p>
+        <p> But is the reverse true? Can any NFA-recognized language be recognized by a DFA? Look,
+            for example, at the language in <xref ref="ex-nfa-2nd_last-a" />. Can you come up with a
+            DFA that accepts this language? Try it. It's pretty difficult to do. But does that mean
+            that there really is <em>no</em> DFA that accepts the language, or only that we haven't
+            been clever enough to find one? </p>
+        <p>
+            It turns out that the limitation is in fact in our cleverness, and not in the
+            power of DFAs.
+        </p>
+        <theorem xml:id="thm-nfa-accepted-by-dfa">
+            <statement>
+                <p>
+                    Every language that is accepted by an NFA is accepted by a DFA.
+                </p>
+            </statement>
+            <proof>
+                <p> Suppose we are given an NFA <m>N = (P, \Sigma, p_0, \partial, F_p)</m>, and we
+                    want to build a DFA <m>D=(Q, \Sigma, q_0, \delta, F_q)</m> that accepts the same
+                    language. The idea is to make the states in <m>D</m> correspond to {\em subsets}
+                    of <m>N</m>'s states, and then to set up <m>D</m>'s transition function <m>
+                    \delta</m> so that for any string <m>w</m>, <m>\delta^*(q_0, w)</m> corresponds
+                    to <m>\partial^*(p_0,w)</m>; i.e.\ the {\bf single} state that <m>w</m> gets you
+                    to in <m>D</m> corresponds to the {\bf set} of states that <m>w</m> could get
+                    you to in <m>N</m>. If any of those states is accepting in <m>N</m>, <m>w</m>
+                    would be accepted by <m>N</m>, and so the corresponding state in <m>D</m> would
+                    be made accepting as well. </p>
+                <p> So how do we make this work? The first thing to do is to deal with a start state <m>
+                    q_0</m> for <m>D</m>. If we're going to make this state correspond to a subset
+                    of <m>N</m>'s states, what subset should it be? Well, remember (1) that in any
+                    DFA, <m>\delta^*(q_0, \varep) = q_0</m>; and (2) we want to make <m>\delta^*(q_0,
+                    w)</m> correspond to <m>\partial^*(p_0,w)</m> for every <m>w</m>. Putting these
+                    two limitations together tells us that we should make <m>q_0</m> correspond to <m>\partial^*(p_0,
+                    \varep)</m>. So <m>q_0</m> corresponds to the subset of all of <m>N</m>'s states
+                    that can be reached with no input. </p>
+                <p> Now we progressively set up <m>D</m>'s transition function <m>\delta</m> by
+                    repeatedly doing the following: <ul>
+                        <li>
+                            <p> find a state <m>q</m> that has been added to <m>D</m> but whose
+                    out-transitions have not yet been added. (Note that <m>q_0</m> initially fits
+                    this description.) Remember that the state <m>q</m> corresponds to some subset <m>\{p_1,
+                    \ldots , p_n\}</m> of <m>N</m>'s states. </p>
+                        </li>
+                        <li>
+                            <p> for each input symbol <m>a</m>, look at all <m>N</m>'s states that
+                    can be reached from any one of <m>p_1, \ldots , p_n</m> by consuming <m>a</m>
+                    (perhaps making some <m>\varep</m>-transitions as well). That is, look at <m>\partial^*(p_1,a)
+                    \cup \ldots \cup
+                                    \partial^*(p_n,a)</m>. If there is not already a DFA state <m>q'</m>
+                    that corresponds to this subset of <m>N</m>'s states, then add one, and add the
+                    transition <m>\delta(q, a)= q'</m> to <m>D</m>'s transitions. </p>
+                        </li>
+                    </ul>
+                </p>
+                <p> The above process must halt eventually, as there are only a finite number of
+                    states <m>n</m> in the NFA, and therefore there can be at most <m>2^n</m> states
+                    in the DFA, as that is the number of subsets of the NFA's states. The final
+                    states of the new DFA are those where at least one of the associated NFA states
+                    is an accepting state of the NFA. </p>
+                <p> Can we now argue that <m>L(D) = L(N)</m>? We can, if we can argue that <m>
+                    \delta^*(q_0,w)</m> corresponds to <m>\partial^*(p_0,w)</m> for all <m>w
+                    \in\Sigma^*</m>: if this latter property holds, then <m>w \in L(D)</m> iff <m>
+                    \delta^*(q_0,w)</m> is accepting, which we made be so iff <m>\partial^*(p_0,w)</m>
+                    contains an accepting state of <m>N</m>, which happens iff <m>N</m> accepts <m>w</m>
+                    i.e.\ iff <m>w \in L(N)</m>. </p>
+                <p> So can we argue that <m>\delta^*(q_0,w)</m> does in fact correspond to <m>
+                    \partial^*(p_0,w)</m> for all <m>w</m>? We can, using induction on the length of <m>
+                    w</m>. </p>
+                <p> First, a preliminary observation. Suppose <m>w=xa</m>, i.e.\ <m>w</m> is the
+                    string <m>x</m> followed by the single symbol <m>a</m>. How are <m>
+                    \partial^*(p_0,x)</m> and <m>\partial^*(p_0,w)</m> related? Well, recall that <m>
+                    \partial^*(p_0,x)</m> is the set of all states that <m>N</m> can reach when it
+                    starts in <m>p_0</m> and consumes <m>x</m>: <m>\partial^*(p_0,x) = \{p_1,
+                    \ldots, p_n\}</m> for some states <m>p_1, \ldots, p_n</m>. Now, <m>w</m> is just <m>
+                    x</m> with an additional <m>a</m>, so where might <m>N</m> end up if it starts
+                    in <m>p_0</m> and consumes <m>w</m>? We know that <m>x</m> gets <m>N</m> to <m>
+                    p_1</m> or <m>\ldots</m> or <m>p_n</m>, so <m>xa</m> gets <m>N</m> to any state
+                    that can be reached from <m>p_1</m> with an <m>a</m> (and maybe some <m>\varep</m>-transitions),
+                    and to any state that can be reached from <m>p_2</m> with an <m>a</m> (and maybe
+                    some <m>\varep</m>-transitions), etc. Thus, our relationship between <m>
+                    \partial^*(p_0,x)</m> and <m>\partial^*(p_0,w)</m> is that if <m>\partial^*(p_0,x)
+                    = \{p_1, \ldots, p_n\}</m>, then <m>\partial^*(p_0,w) = \partial^*(p_1,a)
+                        \cup \ldots \cup \partial^*(p_n,a)</m>. With this observation in hand, let's
+                    proceed to our proof by induction. </p>
+                <p> We want to prove that <m>\delta^*(q_0,w)</m> corresponds to <m>\partial^*(p_0,w)</m>
+                    for all <m>w \in\Sigma^*</m>. We use induction on the length of <m>w</m>. <ol>
+                        <li>
+                            <p> Base case: Suppose <m>w</m> has length 0. The only string <m>w</m>
+                    with length 0 is <m>\varep</m>, so we want to show that <m>\delta^*(q_0,\varep)</m>
+                    corresponds to <m>\partial^*(p_0,\varep)</m>. Well, <m>\delta^*(q_0, \varep) =
+                    q_0</m>, since in a DFA, <m>\delta^*(q, \varep) = q</m> for any state~ <m>q</m>.
+                    We explicitly made <m>q_0</m> correspond to <m>\partial^*(p_0,\varep)</m>, and
+                    so the property holds for <m>w</m> with length 0. </p>
+                        </li>
+                        <li>
+                            <p> Inductive case: Assume that the desired property holds for some
+                    number <m>n</m>, i.e.\ that <m>\delta^*(q_0,x)</m> corresponds to <m>
+                    \partial^*(p_0,x)</m> for all <m>x</m> with length <m>n</m>. Look at an
+                    arbitrary string <m>w</m> with length <m>n+1</m>. We want to show that <m>
+                    \delta^*(q_0,w)</m> corresponds to <m>\partial^*(p_0,w)</m>. Well, the string <m>
+                    w</m> must look like <m>xa</m> for some string <m>x</m> (whose length is <m>n</m>)
+                    and some symbol <m>a</m>. By our inductive hypothesis, we know <m>
+                    \delta^*(q_0,x)</m> corresponds to <m>\partial^*(p_0,x)</m>. We know <m>
+                    \partial^*(p_0,x)</m> is a set of <m>N</m>'s states, say <m>\partial^*(p_0,x) =
+                    \{p_1, \ldots, p_n\}</m>. </p>
+                            <p> At this point, our subsequent reasoning might be a bit clearer if we
+                    give explicit names to <m>\delta^*(q_0,w)</m> (the state <m>D</m> reaches on
+                    input <m>w</m>) and <m>\delta^*(q_0,x)</m> (the state <m>D</m> reaches on input <m>
+                    x</m>). Call <m>\delta^*(q_0, w)</m> \ <m>q_w</m>, and call <m>\delta^*(q_0,x)</m>
+                    \ <m>q_x</m>. We know, because <m>w=xa</m>, there must be an <m>a</m>-transition
+                    from <m>q_x</m> to <m>q_w</m>. Look at how we added transitions to <m>\delta</m>:
+                    the fact that there is an <m>a</m>-transition from <m>q_x</m> to <m>q_w</m>
+                    means that <m>q_w</m> corresponds to the set <m>\partial^*(p_1,a)
+                                    \cup \ldots \cup \partial^*(p_n,a)</m> of <m>N</m>'s states. By
+                    our preliminary observation, <m>\partial^*(p_1,a) \cup \ldots \cup
+                    \partial^*(p_n,a)</m> is just <m>\partial^*(p_0,w)</m>. So <m>q_w</m> (or <m>
+                    \delta^*(q_0,w)</m>) corresponds to <m>\partial^*(p_0,w)</m>, which is what we
+                    wanted to prove. Since <m>w</m> was an arbitrary string of length <m>n+1</m>, we
+                    have shown that the property holds for <m>n+1</m>. </p>
+                        </li>
+                    </ol>
+                </p>
+                <p>Altogether, we have shown by induction that <m>\delta^*(q_0,w)</m> corresponds to <m>
+                    \partial^*(p_0,w)</m> for all <m>w \in\Sigma^*</m>. As indicated at the very
+                    beginning of this proof, that is enough to prove that <m>L(D)= L(N)</m>. So for
+                    any NFA <m>N</m>, we can find a DFA <m>D</m> that accepts the same language. </p>
+            </proof>
+        </theorem>
+
+
+        <example xml:id="ex-nfa-to-dfa">
+            <p> Consider the NFA shown below. <figure xml:id="fig-fsa9">
+                    <image source="images/fsa9" width="80%">
+                        <description>Diagram of an NFA to convert to DFA.</description>
+                    </image>
+                </figure>
+            </p>
+            <p>We start by looking at <m>\partial^*(p_0, \varep)</m>, and then add transitions and
+                states as described above. <ul>
+                    <li>
+                        <p>
+
+                            <m>\partial^*(p_0, \varep) = \{p_0\}</m> so <m>q_0 = \{p_0\}</m>. </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\delta(q_0,a)</m> will be <m>\partial^*(p_0,a)</m>, which is <m>
+                \{p_0\}</m>, so <m>\delta(q_0,a) = q_0</m>. </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\delta(q_0,b)</m> will be <m>\partial^*(p_0,b)</m>, which is <m>\{p_0,
+                p_1\}</m>, so we need to add a new state <m>q_1 = \{p_0, p_1\}</m> to the DFA; and
+                add <m>\delta(q_0,b) = q_1</m> to the DFA's transition function. </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\delta(q_1,a)</m> will be <m>\partial^*(p_0,a)</m> unioned with <m>
+                \partial^*(p_1,a)</m> since <m>q_1 = \{p_0, p_1\}</m>. Since <m>\partial^*(p_0,a)
+                \cup \partial^*(p_1,a) = \{p_0\} \cup
+                                \{p_2\} = \{p_0,p_2\}</m>, we need to add a new state <m>q_2 =
+                \{p_0, p_2\}</m> to the DFA, and a transition <m>\delta(q_1,a) = q_2</m>. </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\delta(q_1,b)</m> will be <m>\partial^*(p_0,b)</m> unioned with <m>
+                \partial^*(p_1,b)</m>, which gives <m>\{p_0, p_1\} \cup \{p_2\}</m>, which again
+                gives us a new state <m>q_3</m> to add to the DFA, together with the transition <m>\delta(q_1,b)
+                = q_3</m>. </p>
+                    </li>
+                </ul>
+            </p>
+            <p> At this point, our partially-constructed DFA looks as shown below: <figure
+                    xml:id="fig-fsa10">
+                    <image source="images/fsa10" width="80%">
+                        <description>Diagram of an NFA partially converted to a DFA.</description>
+                    </image>
+                </figure>
+            </p>
+            <p> The construction continues as long as there are new states being added, and new
+                transitions from those states that have to be computed. The final DFA is shown
+                below. <figure xml:id="fig-fsa11">
+                    <image source="images/fsa11" width="80%">
+                        <description>Diagram of completed DFA.</description>
+                    </image>
+                </figure>
+            </p>
+        </example>
+
+    </subsection>
+
+    <exercises xml:id="exercises-15-3">
+        <exercise number="1" xml:id="exerc-15_3-1">
+            <statement>
+                <p> Give DFAs that accept the following languages over <m>\Sigma =\ab</m>. <ol
+                        marker="(a)">
+                        <li>
+                            <p>
+                                <m>L_2= L(a^*b^*)</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>L_3= \{ x \ | \ n_a(x)+n_b(x) \mbox{ is even }\}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>L_4= \{ x \ | \ n_a(x) \mbox{ is a multiple of 5 }\}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>L_5= \{ x \ | \ x \mbox{ does not contain the substring }
+                                    abb\}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>L_6= \{ x \ | \ x \mbox{ has no <m>a</m>'s in the even positions}
+                    \}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>L_7 = L(aa^* \REOR aba^*b^*)</m>
+                            </p>
+                        </li>
+                    </ol>
+
+                </p>
+            </statement>
+        </exercise>
+        <exercise number="2" xml:id="exerc-15_3-2">
+            <statement>
+                <p> What languages do the following DFAs accept? <figure xml:id="fig-fsa1ex">
+                        <image source="images/fsa1ex" width="80%">
+                            <description>Transition diagram (a).</description>
+                        </image>
+                    </figure>
+
+                    <figure
+                        xml:id="fig-fsa2ex">
+                        <image source="images/fsa2ex" width="70%">
+                            <description>Transition diagram (b).</description>
+                        </image>
+                    </figure>
+                </p>
+            </statement>
+
+        </exercise>
+        <exercise number="3" xml:id="exerc-15_3-3">
+            <statement>
+                <p> Let <m>\Sigma=\{0,1\}</m>. Give a DFA that accepts the language <me>
+                        L = \{ x \in \Sigma^* \ | \ x \mbox{ is the binary representation of an
+                    integer
+                        divisible by 3}\}.</me>
+                </p>
+            </statement>
+        </exercise>
+
+        <exercise number="4" xml:id="exerc-15_3-4">
+            <statement>
+                <p> What language does the NFA in <xref ref="ex-nfa-to-dfa" /> accept? </p>
+            </statement>
+        </exercise>
+        <exercise number="5" xml:id="exerc-15_3-5">
+            <statement>
+                <p> Give a DFA that accepts the language accepted by the following NFA. <figure
+                        xml:id="fig-fsa3ex">
+                        <image source="images/fsa3ex" width="80%">
+                            <description>NFA diagram for exercise 5.</description>
+                        </image>
+                    </figure>
+                </p>
+            </statement>
+        </exercise>
+        <exercise number="6" xml:id="exerc-15_3-6">
+            <statement>
+                <p> Give a DFA that accepts the language accepted by the following NFA. (Be sure to
+                    note that, for example, it is possible to reach both <m>q_1</m> and <m>q_3</m>
+                    from <m>q_0</m> on consumption of an <m>a</m>, because of the <m>\varep</m>
+                    -transition.)
+  <figure
+                        xml:id="fig-fsa4ex">
+                        <image source="images/fsa4ex" width="80%">
+                            <description>NFA diagram for exercise 6.</description>
+                        </image>
+                    </figure>
+
+                </p>
+            </statement>
+
+        </exercise>
+
+    </exercises>
+
+
+    <!-- below is old stuff save for problems ->
     <definition xml:id="def-finite-state-machine">
         <title>Finite-State Machine</title>
         <idx>Finite-State Machine</idx>
@@ -316,7 +885,8 @@
                 <m>(S, X, Z, w, t)</m>
             </usage>
             <description>A finite-state machine with states <m>S</m>, input alphabet <m>X</m>,
-                output alphabet <m>X</m>, and output function <m>w</m> and next-state function <m>t</m></description>
+                output alphabet <m>X</m>, and output function <m>w</m> and next-state function
+    <m>t</m></description>
         </notation>
         <statement>
             <p>A finite-state machine is defined by a quintet <m>(S, X, Z, w, t)</m> where <ol
@@ -525,7 +1095,8 @@
         <p> A finite-state machine can be designed to add positive integers of any size. Given two
             integers in binary form, <m>a=a_na_{n-1} \cdots a_1a_0</m> and <m>b=b_n b_{n-1}\cdots
             b_1b_0</m>, the machine take as its input sequence the corresponding bits of <m>a</m>
-            and <m>b</m> reading from right to left with a <q>parity bit</q> added <me>a_0b_0\left(a_0+_2b_0\right)
+            and <m>b</m> reading from right to left with a <q>parity bit</q> added
+    <me>a_0b_0\left(a_0+_2b_0\right)
             ,a_1b_1\left(a_1+_2b_1\right) \ldots , a_nb_n\left(a_n+_2b_n\right),111</me></p>
 
         <p>Notice the special input 111 at the end. All possible inputs except the last one must
@@ -685,6 +1256,6 @@
                     </ol>
                 </p>
             </answer>
-        </exercise>
-    </exercises>
+        </exercise> 
+    </exercises> -->
 </section>

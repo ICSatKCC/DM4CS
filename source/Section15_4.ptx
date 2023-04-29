@@ -1,599 +1,727 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec-monoids-and-machines">
-    <title>Monoids and Machines</title>
+<section xml:id="sec-FSA-and-Regular-Languages">
+    <title>Finite-State Automata and Regular Languages</title>
 
     <introduction>
-        <p>
-            In this section, we will see how every finite-state machine has a monoid associated with
-            it and how we can represent any monoid with a finite-state machine.
+        <p>We know now that our two models for mechanical language recognition actually
+            recognize the same class of languages. The question still remains: do they
+            recognize the same class of languages as the class generated mechanically by regular
+            expressions? The answer turns out to be ``yes". There are two parts to proving
+            this: first that every language generated can be recognized, and second that
+            every language recognized can be generated.
         </p>
     </introduction>
 
-    <subsection xml:id="subsec-monoid-of-fsm">
-        <title>The Monoid of a Finite-State Machine</title>
-        <idx>
-            <h>Monoid</h>
-            <h>of a Finite-State Machine</h>
-        </idx>
-
-        <p>For any finite-state machine, the elements of its associated monoid correspond to certain
-            input sequences. Because only a finite number of combinations of states and inputs is
-            possible for a finite-state machine there is only a finite number of input sequences
-            that summarize the machine. This idea is illustrated best with a few examples.</p>
-
-        <p>Consider the parity checker. The following table summarizes the effect on the parity
-            checker of strings in <m>B^1</m> and <m>B^2</m>. The row labeled <q>Even</q> contains
-            the final state and final output as a result of each input string in <m>B^1</m> and <m>
-            B^2</m> when the machine starts in the even state. Similarly, the row labeled <q>Odd</q>
-            contains the same information for input sequences when the machine starts in the odd
-            state. <me>\begin{array}{c|cccccc}
-                \textrm{ Input} \textrm{ String} &amp; 0 &amp; 1 &amp; 00 &amp; 01 &amp; 10 &amp; 11
-            \\
-                \hline
-                \textrm{ Even} &amp; (\textrm{ Even},0) &amp; (\textrm{ Odd},1) &amp; (\textrm{
-            Even},0) &amp; (\textrm{ Odd},1) &amp; (\textrm{ Odd},1) &amp; (\textrm{ Even},0) \\
-            \textrm{ Odd} &amp; (\textrm{ Odd},1) &amp; (\textrm{ Even},1) &amp; (\textrm{ Odd},1)
-            &amp; (\textrm{ Even},1) &amp; (\textrm{ Even},0) &amp; (\textrm{ Odd},1) \\
-                \textrm{ Same} \textrm{ Effect} \textrm{ as} &amp; &amp; &amp; 0 &amp; 1 &amp; 1
-            &amp; 0 \\
-                \end{array}</me></p>
-
-        <p>Note how, as indicated in the last row, the strings in <m>B^2</m> have the same effect as
-            certain strings in <m>B^1</m>. For this reason, we can summarize the machine in terms of
-            how it is affected by strings of length 1. The actual monoid that we will now describe
-            consists of a set of functions, and the operation on the functions will be based on the
-            concatenation operation.</p>
-        <p>Let <m>T_0</m> be the final effect (state and output) on the parity checker of the input
-            0. Similarly, <m>T_1</m> is defined as the final effect on the parity checker of the
-            input 1. More precisely, <me>T_0(\textrm{ even})=(\textrm{ even},0) \quad \textrm{and}
-            \quad T_0(\textrm{ odd})=(\textrm{ odd},1)\textrm{,}</me> while <me>T_1(\textrm{
-            even})=(\textrm{ odd},1) \quad \textrm{and} \quad T_1(\textrm{ odd})=(\textrm{
-            even},0)\textrm{.}</me></p>
-        <p>In general, we define the operation on a set of such functions as follows: if <m>s</m>, <m>
-            t</m> are input sequences and <m>T_s</m> and <m>T_t</m>, are functions as above, then <m>
-            T_s*T_t=T_{st}</m>, that is, the result of the function that summarizes the effect on
-            the machine by the concatenation of <m>s</m> with <m>t</m>. Since, for example, 01 has
-            the same effect on the parity checker as 1, <m>T_0*T_1=T_{01}=T_1</m>. We don't stop our
-            calculation at <m>T_{01}</m> because we want to use the shortest string of inputs to
-            describe the final result. A complete table for the monoid of the parity checker is <m>\begin{array}{c|c}
-            * &amp;
-                \begin{array}{cc}
-                T_0 &amp; T_1 \\
-                \end{array}
-                \\
-                \hline
-
-                \begin{array}{c}
-                T_0 \\
-                T_1 \\
-                \end{array}
-                &amp;
-                \begin{array}{cc}
-                T_0 &amp; T_1 \\
-                T_1 &amp; T_0 \\
-                \end{array}
-                \\
-                \end{array}</m></p>
-        <p>What is the identity of this monoid? The monoid of the parity checker is isomorphic to
-            the monoid <m>\left[\mathbb{Z}_2; +_2\right]</m>.</p>
-
-        <p>This operation may remind you of the composition operation on functions, but there are
-            two principal differences. The domain of <m>T_s</m> is not the codomain of <m>T_t</m>
-            and the functions are read from left to right unlike in composition, where they are
-            normally read from right to left.</p>
-
-        <p>You may have noticed that the output of the parity checker echoes the state of the
-            machine and that we could have looked only at the effect on the machine as the final
-            state. The following example has the same property, hence we will only consider the
-            final state.</p>
-
-        <example xml:id="ex-no-consecutive-ones-monoid">
-            <p>The transition diagram for the machine that recognizes strings in <m>B*</m> that have
-                no consecutive 1's appears in <xref ref="fig-no-11s-machine" text="type-global" />.
-                Note how it is similar to the graph in <xref ref="fig-directed-graph-ex1"
-                    text="type-global" />. Only a <q>reject state</q> has been added, for the case
-                when an input of 1 occurs while in State <m>a</m>. We construct a similar table to
-                the one in the previous example to study the effect of certain strings on this
-                machine. This time, we must include strings of length 3 before we recognize that no <q>new
-                effects</q> can be found.</p>
-
-            <figure xml:id="fig-no-11s-machine">
-                <caption>No Consecutive Ones Monoid
-                </caption>
-                <image width="70%" source="images/fig-no-11s-machine.png">
-                    <description>No Consecutive Ones Monoid</description>
-                </image>
-            </figure>
-
+    <subsection xml:id="subsec-every-reg-language-recognized-by-fsa">
+    <title>All Regular Languages are Recognized by NFAs</title>
+    <idx>
+        <h>Regular Language</h>
+    </idx>
+    <theorem xml:id="thm-reg-lang-recog-by-nfa">
+        <statement>
             <p>
-                <m>\begin{array}{ccccccccccccccc}
-                    \textrm{ Inputs} &amp; 0 &amp; 1 &amp; 00 &amp; 01 &amp; 10 &amp; 11 &amp; 000
-                    &amp; 001 &amp; 010 &amp; 011 &amp; 100 &amp; 101 &amp; 110 &amp; 111 \\
-                    s &amp; b &amp; a &amp; b &amp; a &amp; b &amp; r &amp; b &amp; a &amp; b &amp;
-                    r &amp; b &amp; a &amp; r &amp; r \\
-                    a &amp; b &amp; r &amp; b &amp; a &amp; r &amp; r &amp; b &amp; a &amp; b &amp;
-                    r &amp; r &amp; r &amp; r &amp; r \\
-                    b &amp; b &amp; a &amp; b &amp; a &amp; b &amp; r &amp; b &amp; a &amp; b &amp;
-                    r &amp; b &amp; a &amp; r &amp; r \\
-                    r &amp; r &amp; r &amp; r &amp; r &amp; r &amp; r &amp; r &amp; r &amp; r &amp;
-                    r &amp; r &amp; r &amp; r &amp; r \\
-                    \textrm{ Same} \textrm{ as} &amp; &amp; &amp; 0 &amp; &amp; &amp; &amp; 0 &amp;
-                    01 &amp; 0 &amp; 11 &amp; 10 &amp; 1 &amp; 11 &amp; 11 \\
-                    \end{array}</m>
+                Every language generated by a regular expression can be recognized by an NFA.
             </p>
-
-            <p>The following table summarizes how combinations of the strings <m>0,1,01,10, \textrm{
-                and } 11</m> affect this machine. <me>\begin{array}{c|c}
-                    * &amp;
-                    \begin{array}{ccccc}
-                    T_0 &amp; T_1 &amp; T_{01} &amp; T_{10} &amp; T_{11} \\
-                    \end{array}
-                    \\
-                    \hline
-
-                    \begin{array}{c}
-                    T_0 \\
-                    T_1 \\
-                    T_{01} \\
-                    T_{10} \\
-                    T_{11} \\
-                    \end{array}
-                    &amp;
-                    \begin{array}{ccccc}
-                    T_0 &amp; T_1 &amp; T_{01} &amp; T_{10} &amp; T_{11} \\
-                    T_{10} &amp; T_{11} &amp; T_1 &amp; T_{11} &amp; T_{11} \\
-                    T_0 &amp; T_{11} &amp; T_{01} &amp; T_{11} &amp; T_{11} \\
-                    T_{10} &amp; T_1 &amp; T_1 &amp; T_{10} &amp; T_{11} \\
-                    T_{11} &amp; T_{11} &amp; T_{11} &amp; T_{11} &amp; T_{11} \\
-                    \end{array}
-                    \\
-                    \end{array}</me>
+        </statement>
+        <proof>
+            <p> The proof of this theorem is a nice example of a proof by induction on the structure
+                of regular expressions. The definition of regular expression is inductive: <m>\Phi</m>
+                ,  <m>\varep</m>, and <m>a</m> are the simplest regular expressions, and then more
+                complicated regular expressions can be built from these. We will show that there are
+                NFAs that accept the languages generated by the simplest regular expressions, and
+                then show how those machines can be put together to form machines that accept
+                languages generated by more complicated regular expressions. Consider the regular
+                expression <m>\Phi</m>. <m>L(\Phi) = \{\}</m>. Here is a machine that accepts <m>
+                \{\}</m>: <figure
+                    xml:id="fig-fsa12">
+                    <image source="images/fsa12" width="80%">
+                        <description>Diagram of an NFA that accepts <m>L(\Phi) = \{\}</m>.</description>
+                    </image>
+                </figure>
             </p>
-            <p>All the results in this table can be obtained using the previous table. For example, <me>\begin{array}{c}
-                T_{10}*T_{01}=T_{1001}=T_{100}*T_1=T_{10}*T_1=T_{101}=T_1\\
-                    \textrm{ and} \\
-                    T_{01}*T_{01}=T_{0101}=T_{010}T_1=T_0T_1=T_{01}\\
-                    \end{array}</me>
-            </p>
-
-            <p>Note that none of the elements that we have listed in this table serves as the
-                identity for our operation. This problem can always be remedied by including the
-                function that corresponds to the input of the null string, <m>T_{\lambda }</m>.
-                Since the null string is the identity for concatenation of strings, <m>T_sT_{\lambda
-                }=T_{\lambda }T_s=T_s</m> for all input strings <m>s</m>.</p>
-        </example>
-
-        <example xml:id="ex-unit-time-delay">
-            <title>The Unit-time Delay Machine</title>
-            <p>A finite-state machine called the unit-time delay machine does not echo its current
-                state, but prints its previous state. For this reason, when we find the monoid of
-                the unit-time delay machine, we must consider both state and output. The transition
-                diagram of this machine appears in <xref ref="fig-unit-time-delay"
-                    text="type-global" />.</p>
-
-            <figure xml:id="fig-unit-time-delay">
-                <caption />
-                <image width="70%" source="images/fig-unit-time-delay.png">
-                    <description>Unit time delay graph</description>
-                </image>
-            </figure>
-
-
-            <p>
-                <m>\begin{array}{c|c}
-                    \textrm{ Input} &amp;
-                    \begin{array}{cccccccccc}
-                    &amp;
-                    \begin{array}{cc}
-                    0 &amp; 1 \\
-                    \end{array}
-                    &amp; 00\textrm{ } &amp; 01\textrm{ } &amp; \textrm{ }10\textrm{ } &amp; 11
-                    &amp; 100\textrm{ or}000\textrm{
-                    } &amp; 101\textrm{ or}001 &amp; 110\textrm{ or}101 &amp; 111\textrm{ or}011 \\
-                    \end{array}
-                    \\
-                    \hline
-
-                    \begin{array}{c}
-                    0 \\
-                    1 \\
-                    \textrm{ Same} \textrm{ as} \\
-                    \end{array}
-                    &amp;
-                    \begin{array}{cccccccccc}
-                    (0,0) &amp; (1,0) &amp; (0,0) &amp; (1,0) &amp; (0,1) &amp; (1,1) &amp; (0,0)
-                    &amp; (1,0) &amp; (0,1) &amp; (1,1) \\
-                    (0,1) &amp; (1,1) &amp; (0,0) &amp; (1,0) &amp; (0,1) &amp; (1,1) &amp; (0,0)
-                    &amp; (1,0) &amp; (0,1) &amp; (1,1) \\
-                    &amp; &amp; &amp; &amp; &amp; &amp; 00 &amp; 01 &amp; 10 &amp; 11 \\
-                    \end{array}
-                    \\
-                    \end{array}</m>
-            </p>
-            <p>Again, since no new outcomes were obtained from strings of length 3, only strings of
-                length 2 or less contribute to the monoid of the machine. The table for the strings
-                of positive length shows that we must add <m>T_{\lambda }</m> to obtain a monoid.</p>
-
-            <p>
-                <me>
-                    \begin{array}{c|c}
-                    * &amp;
-                    \begin{array}{cccccc}
-                    T_0 &amp; T_1 &amp; T_{00} &amp; T_{01} &amp; T_{10} &amp; T_{11} \\
-                    \end{array}
-                    \\
-                    \hline
-
-                    \begin{array}{c}
-                    T_0 \\
-                    T_1 \\
-                    T_{00} \\
-                    T_{01} \\
-                    T_{10} \\
-                    T_{11} \\
-                    \end{array}
-                    &amp;
-                    \begin{array}{cccccc}
-                    T_{00} &amp; T_{01} &amp; T_{00} &amp; T_{01} &amp; T_{10} &amp; T_{11} \\
-                    T_{10} &amp; T_{11} &amp; T_{00} &amp; T_{01} &amp; T_{10} &amp; T_{11} \\
-                    T_{00} &amp; T_{01} &amp; T_{00} &amp; T_{01} &amp; T_{10} &amp; T_{11} \\
-                    T_{10} &amp; T_{11} &amp; T_{00} &amp; T_{01} &amp; T_{10} &amp; T_{11} \\
-                    T_{00} &amp; T_{01} &amp; T_{00} &amp; T_{01} &amp; T_{10} &amp; T_{11} \\
-                    T_{10} &amp; T_{11} &amp; T_{00} &amp; T_{01} &amp; T_{10} &amp; T_{11} \\
-                \end{array}
-                    \\
-                    \end{array}</me>.</p>
-        </example>
+            <p> Consider the regular expression <m>\varep</m>. <m>L(\varep) = \{\varepsilon\}</m>.
+                Here is a machine that accepts <m>\{\varepsilon\}</m>:  
+                <figure
+                    xml:id="fig-fsa13">
+                    <image source="images/fsa13" width="80%">
+                        <description>Diagram of an NFA that accepts <m>L(\varep) = \{\varepsilon\}</m>.</description>
+                    </image>
+                </figure> </p>
+            <p> Consider the regular expression <m>a</m>. <m>L(a) = \{a\}</m>. Here is a machine
+                that accepts <m>\{a\}</m>: <figure
+                    xml:id="fig-fsa14">
+                    <image source="images/fsa14" width="80%">
+                        <description>Diagram of an NFA that accepts <m>L(a) = \{a\}</m>.</description>
+                    </image>
+                </figure></p>
+            <p> Now suppose that you have NFAs that accept the languages generated by the regular
+                expressions <m>r_1</m> and <m>r_2</m>. Building a machine that accepts <m>L(r_1 \REOR
+                r_2)</m> is fairly straightforward: take an NFA <m>M_1</m> that accepts <m>L(r_1)</m>
+                and an NFA <m>M_2</m> that accepts <m>L(r_2)</m>. Introduce a new state <m>q_{new}</m>,
+                connect it to the start states of <m>M_1</m> and <m>M_2</m> via <m>\varepsilon</m>-transitions,
+                and designate it as the start state of the new machine. No other transitions are
+                added. The final states of <m>M_1</m> together with the final states of <m>M_2</m>
+                are designated as the final states of the new machine. It should be fairly clear
+                that this new machine accepts exactly those strings accepted by <m>M_1</m> together
+                with those strings accepted by <m>M_2</m>: any string <m>w</m> that was accepted by <m>
+                M_1</m> will be accepted by the new NFA by starting with an <m>\varep</m>-transition
+                to the old start state of <m>M_1</m> and then following the accepting path through <m>
+                M_1</m>; similarly, any string accepted by <m>M_2</m> will be accepted by the new
+                machine; these are the only strings that will be accepted by the new machine, as on
+                any input <m>w</m> all the new machine can do is make an <m>\varep</m>-move to <m>
+                M_1</m>'s (or <m>M_2</m>'s) start state, and from there <m>w</m> will only be
+                accepted by the new machine if it is accepted by <m>M_1</m> (or <m>M_2</m>). Thus,
+                the new machine accepts <m>L(M_1) \cup L(M_2)</m>, which is <m>L(r_1) \cup L(r_2)</m>,
+                which is exactly the definition of <m>L(r_1 \REOR r_2)</m>. 
+                <figure
+                    xml:id="fig-fsa15">
+                    <image source="images/fsa15" width="80%">
+                        <description>Diagram of an NFA that accepts <m>L(r_1 \REOR r_2)</m>.</description>
+                    </image>
+                </figure> </p>
+                <remark> <title>A pause before we continue:</title>
+                <p>
+                    Note that for the simplest regular expressions, the
+                machines that we created to accept the languages generated by the regular
+                expressions were in fact DFAs. In our last case above, however, we needed <m>\varep</m>-transitions
+                to build the new machine, and so if we were trying to prove that every regular
+                language could be accepted by a DFA, our proof would be in trouble. THIS DOES NOT
+                MEAN that the statement ``every regular language can be accepted by a DFA" is false,
+                just that we can't prove it using this kind of argument, and would have to find an
+                alternative proof.
+                </p>    
+                </remark>
+            <p> Suppose you have machines <m>M_1</m> and <m>M_2</m> that accept <m>L(r_1)</m> and <m>
+                L(r_2)</m> respectively. To build a machine that accepts <m>L(r_1)L(r_2)</m> proceed
+                as follows. Make the start state <m>q_{01}</m> of <m>M_1</m> be the start state of
+                the new machine. Make the final states of <m>M_2</m> be the final states of the new
+                machine. Add <m>\varep</m>-transitions from the final states of <m>M_1</m> to the
+                start state <m>q_{02}</m> of <m>M_2</m>.
+                <figure
+                    xml:id="fig-fsa16">
+                    <image source="images/fsa16" width="80%">
+                        <description>Diagram of an NFA that accepts <m>L(r_1)L(r_2)</m>.</description>
+                    </image>
+                </figure> </p>
+            <p> It should be fairly clear that this new machine accepts exactly those strings of the
+                form <m>xy</m> where <m>x\in L(r_1)</m> and <m>y \in L(r_2)</m>: first of all, any
+                string of this form will be accepted because <m>x\in L(r_1)</m> implies there is a
+                path that consumes <m>x</m> from <m>q_{01}</m> to a final state of <m>M_1</m>; a <m>
+                \varep</m>-transition moves to <m>q_{02}</m>; then <m>y \in L(r_2)</m> implies there
+                is a path that consumes <m>y</m> from <m>q_{02}</m> to a final state of <m>M_2</m>;
+                and the final states of <m>M_2</m> are the final states of the new machine, so <m>xy</m>
+                will be accepted. Conversely, suppose <m>z</m> is accepted by the new machine. Since
+                the only final states of the new machine are in the old <m>M_2</m>, and the only way
+                to get into <m>M_2</m> is to take a <m>\varep</m>-transition from a final state of <m>
+                M_1</m>, this means that <m>z=xy</m> where <m>x</m> takes the machine from its start
+                state to a final state of <m>M_1</m>, a <m>\varep</m>-transition occurs, and then <m>
+                y</m> takes the machine from <m>q_{02}</m> to a final state of <m>M_2</m>. Clearly, <m>x\in
+                L(r_1)</m> and <m>y \in L(r_2)</m>. </p>
+            <p> We leave the construction of an NFA that accepts <m>L(r^*)</m> from an NFA that
+                accepts <m>L(r)</m> as an exercise. </p>
+        </proof>
+    </theorem>
 
     </subsection>
 
-    <subsection xml:id="subsec-machine-of-monoid">
-        <title>The Machine of a Monoid</title>
-        <idx>Machine of a Monoid</idx>
-        <p>Any finite monoid <m>[M;*]</m> can be represented in the form of a finite-state machine
-            with input and state sets equal to <m>M</m>. The output of the machine will be ignored
-            here, since it would echo the current state of the machine. Machines of this type are
-            called <term>state machines</term>. It can be shown that whatever can be done with a
-            finite-state machine can be done with a state machine; however, there is a trade-off.
-            Usually, state machines that perform a specific function are more complex than general
-            finite-state machines.</p>
-
-
-        <definition xml:id="def-machine-of-monoid">
-            <title>Machine of a Monoid</title>
-            <idx>Machine of a Monoid</idx>
-            <notation>
-                <usage><m>m(M)</m></usage>
-                <description>The machine of monoid <m>M</m></description>
-            </notation>
-            <statement>
-                <p>If <m>[M;*]</m> is a finite monoid, then the machine of <m>M</m>, denoted <m>m(M)</m>,
-                    is the state machine with state set <m>M</m>, input set <m>M</m>, and next-state
-                    function <m>t : M\times M \to M</m> defined by <m>t(s, x) = s * x</m>.</p>
-            </statement>
-        </definition>
-
-        <example xml:id="ex-15-4-1">
-            <p>We will construct the machine of the monoid <m>\left[\mathbb{Z}_2;+_2\right]</m>. As
-                mentioned above, the state set and the input set are both <m>\mathbb{Z}_2</m>. The
-                next state function is defined by <m>t(s, x) = s +_2 x</m>. The transition diagram
-                for <m>m\left(\mathbb{Z}_2\right)</m> appears in <xref ref="fig-machine-of-z2"
-                    text="type-global" />. Note how it is identical to the transition diagram of the
-                parity checker, which has an associated monoid that was isomorphic to <m>
-                \left[\mathbb{Z}_2;+_2\right].</m>
+    <subsection xml:id="subsec-every-language-recognized-by-fsa-regular">
+    <title>Every Language Recognized by an NFA is Regular</title>
+    <idx>
+        <h>Regular Language</h>
+    </idx>
+    <theorem xml:id="thm-nfa-recog-reg-langs">
+        <statement>
+            <p>
+            Every language that is accepted by a DFA or an NFA is generated by a regular 
+expression.
             </p>
-            <figure xml:id="fig-machine-of-z2">
-                <caption>The machine of <m>[\mathbb{Z}_2;+_2]</m>
-                </caption>
-                <image width="70%" source="images/fig-machine-of-z2.png">
-                    <description>The machine of <m>[\mathbb{Z}_2;+_2]</m></description>
-                </image>
-            </figure>
-        </example>
+        </statement>
+        <p> Proving this result is actually fairly involved and not very illuminating. 
+Below we will give an illustrative example of how one
+might actually go about extracting a regular expression from an NFA or a DFA.
+You can go on to read the proof if you are interested.
+        </p>
+        <proof>
+            <p>
+                We prove that the language accepted by a DFA is regular.  The proof for NFAs
+follows from the equivalence between DFAs and NFAs.
+</p><p>
+Suppose that  <m>M</m> is a DFA, where  <m>M=(Q,\Sigma,q_0,\delta,F)</m>.  Let  <m>n</m> be the
+number of states in  <m>M</m>, and write <m>Q=\{q_0,q_1,\dots,q_{n-1}\}</m>.  We want
+to consider computations in which  <m>M</m> starts in some state  <m>q_i</m>, reads a string
+ <m>w</m>, and ends in state  <m>q_k</m>.  In such a computation,  <m>M</m> might go through a
+series of intermediates states between  <m>q_i</m> and  <m>q_k</m>:
+ <me>q_i\longrightarrow p_1\longrightarrow p_2 \cdots\longrightarrow p_r\longrightarrow q_k </me>
 
-        <example xml:id="ex-transition-examples">
-            <p>The transition diagram of the monoids <m>\left[\mathbb{Z}_2;\times _2\right]</m> and <m>\left[\mathbb{Z}_3;\times
-                _3\right]</m> appear in <xref ref="fig-machine-of-zx2-zx3" text="type-global" />.</p>
-            <figure xml:id="fig-machine-of-zx2-zx3">
-                <caption>The machines of <m>[\mathbb{Z}_2;\times_2]</m> and <m>[\mathbb{Z}_3;
-                    \times_3]</m>
-                </caption>
-                <image width="70%" source="images/fig-machine-of-zx2-zx3.png">
-                    <description>The machines of <m>[\mathbb{Z}_2; \times_2]</m> and <m>
-                        [\mathbb{Z}_3;\times_3]</m></description>
-                </image>
-            </figure>
-        </example>
+We are interested in computations in which all of the intermediate states--- <m>p_1,p_2,\dots,p_r</m>---are
+in the set <m>\{q_0,q_1,\dots,q_{j-1}\}</m>, for some number~ <m>j</m>.
+We define  <m>R_{i,j,k}</m> to be the set of all strings  <m>w</m> in  <m>\Sigma^*</m> that are consumed
+by such a computation.  That is,  <m>w\in R_{i,j,k}</m> if and only if when  <m>M</m> starts in state
+ <m>q_i</m> and reads  <m>w</m>, it ends in state  <m>q_k</m>, and all the intermediate states between
+ <m>q_i</m> and  <m>q_k</m> are in the set <m>\{q_0,q_1,\dots,q_{j-1}\}</m>.
+ <m>R_{i,j,k}</m> is a language over  <m>\Sigma</m>.  We show that  <m>R_{i,j,k}</m> for
+<m>0\leq i \lt n , 0\leq j \leq n, 0\leq k lt n</m>.
+</p><p>
+Consider the language  <m>R_{i,0,k}</m>.  For  <m>w\in R_{i,0,k}</m>, the set of allowable intermediate
+states is empty.  Since there can be no intermediate states,
+it follows that there can be at most one step in the computation that
+starts in state  <m>q_i</m>, reads  <m>w</m>, and ends in state  <m>q_k</m>.  So, <m>|w|</m> can be at most one.
+This means that  <m>R_{i,0,k}</m> is finite, and hence is regular.  (In fact,
+ <m>R_{i,0,k}=\{a\in\Sigma\st \delta(q_i,a)=q_k\}</m>, for  <m>i\ne k</m>, and
+ <m>R_{i,0,i}=\{\varep\}\cup\{a\in\Sigma\st \delta(q_i,a)=q_i\}</m>.  Note that in many
+cases,  <m>R_{i,0,k}</m> will be the empty set.)
+</p><p>
+We now proceed by induction on  <m>j</m> to show that  <m>R_{i,j,k}</m> is regular for all  <m>i</m> and  <m>k</m>.
+We have proved the base case,  <m>j=0</m>.  Suppose that <m>0\leq j \lt n </m> we already know that <m>R_{i,j,k}</m>
+is regular for all  <m>i</m> and all  <m>k</m>.  We need to show that  <m>R_{i,j+1,k}</m> is regular for all  <m>i</m> and  <m>k</m>.
+In fact, 
+ <me>R_{i,j+1,k}=R_{i,j,k}\cup \left( R_{i,j,j}R_{j,j,j}^*R_{j,j,k}\right) </me>
+which is regular because  <m>R_{i,j,k}</m> is regular for all  <m>i</m> and  <m>k</m>, and because the union, concatenation,
+and Kleene star of regular languages are regular.
+</p>
+<p>
+To see that the above equation holds, consider a string  <m>w\in\Sigma^*</m>.
+Now,  <m>w\in R_{i,j+1,k}</m> if and only if when  <m>M</m> starts in state  <m>q_i</m> and reads  <m>w</m>,
+it ends in state  <m>q_k</m>, with all intermediate states in the computation in the set
+ <m>\{q_0,q_1,\dots,q_j\}</m>.  Consider such a computation.  There are two
+cases: Either  <m>q_j</m> occurs as an intermediate state in the computation, or it does not.
+If it does <em>not</em> occur, then all the intermediate states are in the set
+<m>\{q_0,q_1,\dots,q_{j-1}\}</m>, which means that in fact <m>w\in R_{i,j,k}</m>.
+If  <m>q_j</m> <em>does</em> occur as an intermediate state in the computation, then we can break the
+computation into phases, by dividing it at each point where  <m>q_j</m> occurs
+as an intermediate state.  This breaks  <m>w</m> into a concatenation  <m>w=xy_1y_2\cdots y_rz</m>.
+The string  <m>x</m> is consumed in the first phase of the computation, during which  <m>M</m>
+goes from state  <m>q_i</m> to the first occurrence of  <m>q_j</m>; since the intermediate states
+in this computation are in the set <m>\{q_0,q_1,\dots,q_{j-1}\}, x\in R_{i,j,j}</m>.
+The string  <m>z</m> is consumed by the last phase of the computation, in which  <m>M</m>
+goes from the final occurrence of  <m>q_j</m> to  <m>q_k</m>, so that  <m>z\in R_{j,j,k}</m>.
+And each string  <m>y_t</m> is consumed in a phase of the computation in which  <m>M</m> goes
+from one occurrence of  <m>q_j</m> to the next occurrence of  <m>q_j</m>, so that  <m>y_r\in R_{j,j,j}</m>.
+This means that  <m>w=xy_1y_2\cdots y_rz\in R_{i,j,j}R_{j,j,j}^*R_{j,j,k}</m>.
+</p><p>
+We now know, in particular, that  <m>R_{0,n,k}</m> is a regular language for all  <m>k</m>.
+But  <m>R_{0,n,k}</m> consists of all strings  <m>w\in\Sigma^*</m> such that when  <m>M</m> starts
+in state  <m>q_0</m> and reads  <m>w</m>, it ends in state  <m>q_k</m> (with \textbf{no} restriction
+on the intermediate states in the computation, since every state of  <m>M</m> is in
+the set \{q_0,q_1,\dots,q_{n-1}\}).
+To finish the proof that  <m>L(M)</m> is regular, it is only necessary to note that
+ <me>L(M)=\bigcup_{q_k\in F} R_{0,n,k} </me>
+which is regular since it is a union of regular languages.
+This equation is true since
+a string  <m>w</m> is in  <m>L(M)</m> if and only if when  <m>M</m> starts in state  <m>q_0</m> and reads  <m>w</m>,
+in ends in some accepting state  <m>q_k\in F</m>. This is the same as saying
+ <m>w\in R_{0,n,k}</m> for some  <m>k</m> with  <m>q_k\in F</m>.
+            </p>
+        </proof>
+    </theorem>
+    <example xml:id="ex-extracting-regex-from-fsa">
+        <statement>
+            <p>
+                Consider the DFA shown below:
+                    <figure
+                    xml:id="fig-fsa17">
+                    <image source="images/fsa17" width="80%">
+                        <description>Diagram of a DFA to extract regular expression from.</description>
+                    </image>
+                </figure> 
 
-        <example xml:id="ex-15-4-2">
-            <p> Let <m>U</m> be the monoid that we obtained from the unit-time delay machine (<xref
-                    ref="ex-unit-time-delay" text="type-global" />). We have seen that the machine
-                of the monoid of the parity checker is essentially the parity checker. Will we
-                obtain a unit-time delay machine when we construct the machine of <m>U</m>? We can't
-                expect to get exactly the same machine because the unit-time delay machine is not a
-                state machine and the machine of a monoid is a state machine. However, we will see
-                that our new machine is capable of telling us what input was received in the
-                previous time period. The operation table for the monoid serves as a table to define
-                the transition function for the machine. The row headings are the state values,
-                while the column headings are the inputs. If we were to draw a transition diagram
-                with all possible inputs, the diagram would be too difficult to read. Since <m>U</m>
-                is generated by the two elements, <m>T_0</m> and <m>T_1</m>, we will include only
-                those inputs. Suppose that we wanted to read the transition function for the input <m>
-                T_{01}</m>. Since <m>T_{01}=T_0T_1</m>, in any state <m>s, t\left(s, T_{01}\right) =
-                t\left(t\left(s, T_0\right), T_1\right).</m> The transition diagram appears in <xref
-                    ref="fig-15-4-3" text="type-global" />.</p>
 
-            <figure xml:id="fig-15-4-3">
-                <caption>Unit time delay machine
-                </caption>
-                <image width="70%" source="images/fig-15-4-3.png">
-                    <description>Unit time delay machine</description>
-                </image>
-            </figure>
-            <p>If we start reading a string of 0's and 1's while in state <m>T_{\lambda }</m> and
-                are in state <m>T_{ab}</m> at any one time, the input from the previous time period
-                (not the input that sent us into <m>T_{ab}</m>, the one before that) is <m>a</m>. In
-                states <m>T_{\lambda }, T_0</m> and <m>T_1</m>, no previous input exists. </p>
-        </example>
+            </p>
+            <p>
+                Note that there is a loop from state <m>q_2</m> back to state <m>q_2</m>: any number of
+<m>a</m>'s will keep the machine in state <m>q_2</m>, and so we label the transition with
+the regular expression <m>a^*</m>.  We do the same thing to the transition labeled
+<m>b</m> from <m>q_0</m>.  (Note that the result is no longer a DFA, but that doesn't
+concern us, we're just interested in developing a regular expression.)
+<figure
+                    xml:id="fig-fsa18">
+                    <image source="images/fsa18" width="80%">
+                        <description>Altered diagram from above.</description>
+                    </image>
+                </figure> 
+            </p>
+            <p>
+                Next we note that there is in fact a loop from <m>q_1</m> to <m>q_1</m> via <m>q_0</m>.  A
+regular expression that matches the strings that would move around the loop is
+<m>ab^*a</m>.  So we add a transition labeled <m>ab^*a</m> from <m>q_1</m> to
+<m>q_1</m>, and remove the now-irrelevant <m>a</m>-transition from <m>q_1</m> to <m>q_0</m>.  (It is
+irrelevant because it is not part of any other loop from <m>q_1</m> to 
+<m>q_1</m>.)
+
+<figure
+                    xml:id="fig-fsa19">
+                    <image source="images/fsa19" width="80%">
+                        <description>Altered diagram from above.</description>
+                    </image>
+                </figure> 
+            </p>
+            <p>
+                Next we note that there is also a loop from <m>q_1</m> to <m>q_1</m> via <m>q_2</m>.  A
+regular expression that matches the strings that would move around the loop is
+<m>ba^*b</m>.  Since the transitions in the loop are the only transitions to or from
+<m>q_2</m>, we simply remove <m>q_2</m> and replace it with a transition from <m>q_1</m> to
+<m>q_1</m>.
+<figure
+                    xml:id="fig-fsa20">
+                    <image source="images/fsa20" width="80%">
+                        <description>Altered diagram from above.</description>
+                    </image>
+                </figure> 
+            </p>
+            <p>
+                It is now clear from the diagram that strings of the form <m>b^*a</m> get you to
+state <m>q_1</m>, and any number of repetitions of strings that match <m>ab^*a</m> or
+<m>ba^*b</m> will keep you there.  So the machine accepts <m>L(b^*a(ab^*a\REOR ba^*b)^*)</m>. 
+            </p>
+        </statement>
+    </example>
+
+    <p>
+        We have already seen that if two languages <m>L_1</m> and <m>L_2</m> are
+regular, then so are <m>L_1 \cup L_2</m>, <m>L_1L_2</m>, and <m>L_1^*</m> 
+(and of course <m>L_2^*</m>).  We have not yet seen, however, how the 
+common
+set operations intersection and complementation affect regularity.
+Is the complement of a regular language regular?  How about the
+intersection of two regular languages?
+<p></p>
+Both of these questions can be answered by thinking of regular
+languages in terms of their acceptance by DFAs.  Let's consider
+first the question of complementation.  Suppose we have an arbitrary
+regular language <m>L</m>.  We know there is a DFA <m>M</m> that accepts <m>L</m>.
+Pause a moment and try to think of a modification that you could make
+to <m>M</m> that would produce a new machine <m>M'</m> that accepts <m>\overline{L}</m>....
+Okay, the obvious thing to try is to make <m>M'</m> be a copy of <m>M</m> 
+with all final states of <m>M</m> becoming non-final states of <m>M'</m> and
+vice versa.  This is in fact exactly right: <m>M'</m> does in fact accept
+<m>\overline{L}</m>.  To verify this, consider an arbitrary string <m>w</m>.  The
+transition functions for the two machines <m>M</m> and <m>M'</m> are identical, so <m>\dstar
+(q_0, w)</m> is the same state in both <m>M</m> and <m>M'</m>; if that state is
+accepting in <m>M</m> then it is non-accepting in <m>M'</m>, so if <m>w</m> is
+accepted by <m>M</m> it is not accepted by <m>M'</m>; if the state is
+non-accepting in <m>M</m> then it is accepting in <m>M'</m>, so if <m>w</m> is
+not accepted by <m>M</m> then it is accepted by <m>M'</m>. Thus <m>M'</m> accepts
+exactly those strings that <m>M</m> does not, and hence accepts <m>\overline{L}</m>.  
+<p></p>
+It is worth pausing for a moment and looking at the above argument
+a bit longer.  Would the argument have worked if we had looked at an
+arbitrary language <m>L</m> and an arbitrary NFA <m>M</m> that accepted <m>L</m>?
+That is, if we had built a new machine <m>M'</m> in which the final and
+non-final states had been switched, would the new NFA <m>M'</m> accept
+the complement of the language accepted by <m>M</m>?  The answer is
+``not necessarily".  Remember that acceptance in an NFA is determined
+based on whether or not at least one of the states reached by a
+string is accepting.  So any string <m>w</m> with the property that
+<m>\pstar(q_0, w)</m> contains both accepting and non-accepting states of <m>M</m>
+would be accepted both by <m>M</m> and by <m>M'</m>.
+<p></p>
+Now let's turn to the question of intersection.  Given two regular
+languages <m>L_1</m> and <m>L_2</m>, is <m>L_1 \cap L_2</m> regular?  Again, it is
+useful to think in terms of DFAs: given machines <m>M_1</m> and <m>M_2</m>
+that accept <m>L_1</m> and <m>L_2</m>, can you use them to build a new
+machine that accepts <m>L_1 \cap L_2</m>? The answer is yes, and the
+idea behind the construction bears some resemblance to that behind
+the NFA-to-DFA construction.  
+We want a new machine where transitions reflect the transitions
+of both <m>M_1</m> and <m>M_2</m> simultaneously, and we want to accept a
+string <m>w</m> only if that those sequences of transitions lead to 
+final states in both <m>M_1</m> and <m>M_2</m>. So we associate the
+states of our new machine <m>M</m> with pairs of states from <m>M_1</m>
+and <m>M_2</m>.  For each state <m>(q_1,q_2)</m> in the new machine and input symbol <m>a</m>,
+define <m>\delta((q_1,q_2),a)</m> to be the state 
+<m>(\delta_1(q_1,a), \delta_2(q_2,a))</m>.
+The start state <m>q_0</m> of <m>M</m> is
+<m>(q_{01}, q_{02})</m>, where <m>q_{0i}</m> is the start state
+of <m>M_i</m>.  The final states of <m>M</m> are the the states of the form <m>(q_{f1},
+q_{f2})</m> where <m>q_{f1}</m> is an accepting state of <m>M_1</m> and <m>q_{f2}</m> is an
+accepting state of <m>M_2</m>.  You should convince yourself that <m>M</m> accepts a
+string <m>x</m> iff <m>x</m> is accepted by both <m>M_1</m> and <m>M_2</m>.
+<p></p>
+The results of the previous section and the preceding discussion are summarized
+by the following theorem:
+    </p>
+    <theorem xml:id="thm-set-ops-on-reg-lang">
+        <title>Set Operations on Regular Languages</title>
+        
+        <statement>
+            <p>
+                <ul>
+                    <li>
+                        <p>
+                            The intersection  of two
+regular languages is a regular language.  
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The union of two
+regular languages is a regular language.  
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The concatenation of two
+regular languages is a regular language.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+The complement of a regular language is a regular language. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            
+The Kleene closure of a regular language is a regular language.
+                        </p>
+                    </li>
+                </ul>
+            </p>
+        </statement>
+    </theorem>
+    
     </subsection>
 
+<subsection xml:id="subsec-non-regular-languages">
+    <title>Non-regular Languages</title>
+    <p>
+       The fact that our models for mechanical language-recognition accept exactly the
+same languages as those generated by our mechanical language-generation system
+would seem to be a very positive indication that in ``regular" 
+we have in fact managed to
+isolate whatever characteristic it is that makes a language ``mechanical". 
+Unfortunately, there are languages that we intuitively think of as being
+mechanically-recognizable (and which we could write C++ programs to recognize)
+that are not in fact regular. 
+    </p>
+    <p>
+        How does one prove that a language is not regular?  We could try proving that
+there is no DFA or NFA that accepts it, or no regular expression that generates
+it, but this kind of argument is generally rather difficult to make.  It is hard
+to rule out all possible automata and all possible regular expressions.  Instead,
+we will look at a property that all
+regular languages have; proving that a given language does not have this
+property then becomes a way of proving that that language is not regular.
+    </p>
+    <p>
+        Consider the language 
+<m>L = \{ w \in \{a,b\}^*| n_a(w) =2 \bmod{3}, n_b(w) = 2 \bmod{3} \}</m>.  
+Below is a DFA that accepts this language, with states numbered
+1 through 9.
+<figure
+                    xml:id="fig-fsa21">
+                    <image source="images/fsa21" width="80%">
+                        <description>Diagram of DFA that accepts <m>L = \{ w \in \{a,b\}^*| n_a(w) =2 \bmod{3}, n_b(w)
+= 2 \bmod{3} \}</m> .</description>
+                    </image>
+                </figure> 
+    </p>
+   <p>
+    Consider the sequence of states that the machine passes through while
+processing the string <m>abbbabb</m>. Note that there is a repeated state (state
+2).  We say that <m>abbbabb</m> ``goes through the state 2 twice", meaning
+that in the course of the string being processed, the
+machine is in state 2 twice (at least). 
+Call the section of the string that takes you around the loop <m>y</m>, 
+the preceding section <m>x</m>,
+and the rest <m>z</m>.  Then <m>xz</m> is accepted, <m>xyyz</m> is accepted, <m>xyyyz</m> is
+accepted, etc. Note that the string <m>aabb</m> cannot
+be divided this way, because it does not go through the same state twice. 
+Which
+strings <em>can</em> be divided this way?  
+Any string that goes through the same state
+twice.  This may include some relatively short strings and must include any
+string with length greater than or equal to 9, because there are only 9 states in
+the machine, and so repetition must occur after 9 input symbols at the latest.
+   </p> 
+   <p>
+    More generally, consider an arbitrary DFA <m>M</m>, and
+let the number of states in <m>M</m> be <m>n</m>.  Then any string <m>w</m> that is accepted
+by <m>M</m> and has <m>n</m> or more symbols must go through the same state twice, and
+can therefore be broken up into three pieces <m>x,y,z</m> (where <m>y</m> contains at
+least one symbol) so that <m>w=xyz</m> and
+<ul>
+    <li>
+        <p>
+            <m>xz</m> is accepted by <m>M</m>
+        </p>
+    </li>
+
+    <li>
+        <p>
+            <m>xyz</m> is accepted by <m>M</m> (after all, we started with <m>w</m> in <m>L(M)</m>)
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>xyyz</m> is accepted by <m>M</m> 
+        </p>
+    </li>
+    <li>
+        <p>
+            etc.
+        </p>
+    </li>
+</ul>
+   </p>
+   <p>
+    Note that you can actually say even more: within the first <m>n</m> characters of
+<m>w</m> you must already get a repeated state, so you can always find an <m>x,y,z</m> as
+described above where, in addition, the <m>xy</m> portion of <m>w</m> (the portion of <m>w</m>
+that takes you to and back to a repeated state) contains at most <m>n</m> symbols.
+   </p>
+   <p>
+    So altogether, if <m>M</m> is an <m>n</m>-state DFA that accepts <m>L</m>, and <m>w</m> is a string
+in <m>L</m> whose length is at least <m>n</m>, then <m>w</m> can be broken down into three
+pieces <m>x</m>, <m>y</m>, and <m>z</m>, <m>w=xyz</m>, such that
+<ol marker="(i)">
+    <li>
+        <p>
+            <m>x</m> and <m>y</m> together contain no more than <m>n</m> symbols;
+        </p>
+    </li>
+    <li><m>y</m> contains at least one symbol;</li>
+    <li><p><ol>
+        <li>
+            <p>
+                <m>xz</m> is accepted by <m>M</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>xyz</m> is accepted by <m>M</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>xyyz</m> is accepted by <m>M</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                etc.
+            </p>
+        </li>
+    </ol></p></li>
+</ol>
+   </p>
+   <p>
+    The usually-stated form of this result is the Pumping Lemma:
+   </p>
+   <theorem xml:id="thm-pumping-lemma">
+    <title>Pumping Lemma</title>
+    <idx><h>Pumping Lemma</h></idx>
+    
+    <statement>
+        <p>
+            If <m>L</m> is a regular language and <m>M</m> is a DFA that accepts <m>L</m>, then there is some number <m>n\gt 0</m> 
+such that any
+string <m>w</m> in <m>L</m> whose length is greater than or equal to <m>n</m> can
+be broken down into three
+pieces <m>x</m>, <m>y</m>, and <m>z</m>, <m>w=xyz</m>, such that
+<ol marker="(i)">
+    <li>
+        <p>
+            <m>x</m> and <m>y</m> together contain no more than <m>n</m> symbols;
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>y</m> contains at least one symbol;
+        </p>
+    </li>
+    <li>
+        <p>
+            <ol>
+        <li>
+            <p>
+                <m>xz</m> is accepted by <m>M</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>xyz</m> is accepted by <m>M</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>xyyz</m> is accepted by <m>M</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                etc.
+            </p>
+        </li>
+    </ol>
+        </p>
+    </li>
+</ol>
+        </p>
+    </statement>
+   </theorem>
+
+<p>
+    Though the Pumping Lemma says something about regular languages, it is not used
+to prove that languages are regular.  It says ``<em>if</em> a language is regular,
+then certain things happen", not ``if certain things happen, <em>then</em> you can conclude
+that the language is regular."  However, the Pumping Lemma is useful for
+proving that languages are not regular, since the contrapositive of ``if a
+language is regular
+then certain things happen" is ``if certain things don't happen then you can conclude
+that the language is not regular."  So what are the ``certain things"?  
+Basically,
+the P.L. says that if a language is regular, there is some ``threshold" 
+length for
+strings, and every string that goes over that threshold can be broken down in a
+certain way.  Therefore, if we can show that ``there is some threshold length for
+strings such that every string that goes over that threshold can be broken down in a 
+certain way" is a false assertion about a language, we can conclude that the
+language is not regular. How do you show that there is no threshold length? 
+Saying a number is a threshold length for a language means that every string in
+the language that is at least that long can be broken down in the ways
+described.  So to show that a number is not a threshold value, we have to show
+that there is some string in the language that is at least that long that cannot
+be broken down in the appropriate way.
+</p>
+<theorem xml:id="thm-not-regular">
+    <statement>
+        <p>
+            <m>\{ a^nb^n \ | \ n \geq 0 \}</m> is not regular.
+        </p>
+    </statement>
+    <proof>
+        <p>We do this by showing that there is no threshold value for the language.  Let
+<m>N</m> be an arbitrary candidate for threshold value.  We want to show that it is
+not in fact a threshold value, so we want to find a string in the language
+whose length is at least <m>N</m> and which can't be broken down in the way
+described by the Pumping Lemma.  What string should we try to prove
+unbreakable?  We can't pick strings like <m>a^{100}b^{100}</m> because we're
+working with an arbitrary <m>N</m> i.e.\ making no assumptions about <m>N</m>'s value; 
+picking <m>a^{100}b^{100}</m> is implicitly assuming that <m>N</m> is no bigger than 200
+--- for larger values of <m>N</m>, <m>a^{100}b^{100}</m> would not be ``a string whose
+length is at least <m>N</m>".  Whatever string we pick, we <em>have</em> to be sure 
+that its
+length is at least <m>N</m>, no matter what number <m>N</m> is.  So we pick, for instance,
+<m>w = a^Nb^N</m>.  This string is in the language, and its length is at least <m>N</m>,
+no matter what number <m>N</m> is. 
+If we can show that this string can't be broken down as described by the
+Pumping Lemma, then we'll have shown that <m>N</m> doesn't work as a threshold
+value, and since <m>N</m> was an arbitrary number, we will have shown that there is no
+threshold value for <m>L</m> and hence <m>L</m> is not regular.  So let's show that <m>w =
+a^Nb^N</m> can't be broken down appropriately. 
+        </p>
+        <p>
+           We need to show that you can't
+write <m>w = a^Nb^N</m> as <m>w=xyz</m> where <m>x</m> and <m>y</m> together contain at most <m>N</m>
+symbols, <m>y</m> isn't empty, and all the strings <m>xz</m>, <m>xyyz</m>, <m>xyyyz</m>, etc.\ are
+still in <m>L</m>, i.e.\ of the form <m>a^nb^n</m> for some number~<m>n</m>.  The best way to
+do this is to show that any choice for <m>y</m> (with <m>x</m> being whatever precedes it
+and <m>z</m> being whatever follows) that satisfies the first two requirements fails
+to satisfy the third.  So what are our possible choices for <m>y</m>?
+Well, since <m>x</m> and <m>y</m> together can contain at most <m>N</m>
+symbols, and <m>w</m> starts with <m>N</m> <m>a</m>'s, both <m>x</m> and <m>y</m> must be made up
+entirely of <m>a</m>'s; since <m>y</m> can't be empty, it must contain at least one <m>a</m>
+and (from (i)) no more than <m>N</m> <m>a</m>'s. So the possible
+choices for <m>y</m> are <m>y=a^k</m> for some <m>1 \leq k \leq N</m>. We want to show now
+that none of these choices will satisfy the third requirement by showing that
+for any value of <m>k</m>, at least one of the strings <m>xz</m>, <m>xyyz</m>, <m>xyyyz</m>, etc
+will not be in <m>L</m>.  No matter what value we try for <m>k</m>, we don't have to 
+look far for our rogue string: the string
+<m>xz</m>, which is <m>a^Nb^N</m> with <m>k</m> <m>a</m>'s deleted from it, looks like
+<m>a^{N-k}b^N</m>, which is clearly not of the form <m>a^nb^n</m>.  So the only
+<m>y</m>'s that satisfy (i) and (ii) don't satisfy (iii); so <m>w</m> can't be broken
+down as required; so <m>N</m> is not a threshold value for <m>L</m>; and since <m>N</m> was an
+arbitrary number, there is no threshold value for <m>L</m>; so <m>L</m> is not regular. 
+        </p>
+    </proof>
+</theorem>
+<p>
+   The fact that languages like <m>\{a^nb^n\ | \ n \geq 0\}</m> and <m>\{a^p \ |\ p \mbox{
+is prime}\}</m> are not regular is a severe blow to any idea that regular
+expressions or finite-state automata capture the language-generation or
+language-recognition capabilities of a computer: They are both languages that 
+we could easily write programs to recognize.  It is not clear how the expressive
+power of regular expressions could be increased, nor how one might modify the
+FSA model to obtain a more powerful one.  However, 
+in the next chapter you will be
+introduced to the concept of a {\em grammar} as a tool for generating languages. 
+The simplest grammars still only produce regular languages, but you will see
+that more complicated grammars have the power to generate languages far beyond
+the realm of the regular. 
+</p>
+   
+</subsection>
     <exercises xml:id="exercises-15-4">
         <title>Exercises</title>
         <exercise number="1">
-            <statement>
-                <p>For each of the transition diagrams in <xref ref="fig-exercise-15-4-1"
-                        text="type-local" />, write out tables for their associated monoids.
-                    Identify the identity in terms of a string of positive length, if possible.</p>
-                <figure xml:id="fig-exercise-15-4-1">
-                    <caption>Exercise 1
-                    </caption>
-                    <image width="70%" source="images/fig-exercise-15-4-1.png">
-                        <description>Exercise 1 of section 14.4</description>
+            <p>
+                Give a DFA that accepts the intersection of the languages accepted by
+the machines shown below.  (Suggestion: use the construction discussed in the
+chapter just before <xref ref="thm-set-ops-on-reg-lang"/>.)
+            <figure xml:id="fig-fsa5ex">
+                    <image source="images/fsa5ex" width="80%">
+                        <description>Diagram of two DFAs to combine.</description>
                     </image>
                 </figure>
-            </statement>
-            <hint>
-                <p>Where the output echoes the current state, the output can be ignored.</p>
-            </hint>
-            <answer>
-                <p>
-                    <ol marker="(a)">
-                        <li>
-                            <p>
-                                <m>\begin{array}{c|cccccc}
-                                    \textrm{ Input String} &amp; a &amp; b &amp; c &amp; aa &amp; ab
-                                    &amp; ac \\
-                                    \hline
-                                    1 &amp; (a,1) &amp; (a,2) &amp; (c,3) &amp; (a,1) &amp; (a,2)
-                                    &amp; (c,3) \\
-                                    2 &amp; (a,2) &amp; (a,1) &amp; (c,3) &amp; (a,2) &amp; (a,1)
-                                    &amp; (c,3) \\
-                                    3 &amp; (c,3) &amp; (c,3) &amp; (c,3) &amp; (c,3) &amp; (c,3)
-                                    &amp; (c,3) \\
-                                    \end{array}</m>
-
-
-                                <m>\begin{array}{c|cccccc}
-                                    \textrm{ Input String} &amp; ba &amp; bb &amp; bc &amp; ca &amp;
-                                    cb &amp; cc \\
-                                    \hline
-                                    1 &amp; (a,2) &amp; (a,1) &amp; (c,3) &amp; (c,3) &amp; (c,3)
-                                    &amp; (c,3) \\
-                                    2 &amp; (a,1) &amp; (a,2) &amp; (c,3) &amp; (c,3) &amp; (c,3)
-                                    &amp; (c,3) \\
-                                    3 &amp; (c,3) &amp; (c,3) &amp; (c,3) &amp; (c,3) &amp; (c,3)
-                                    &amp; (c,3) \\
-                                    \end{array}</m>
-                            </p>
-
-
-                            <p>We can see that <m>T_aT_a= T_{\textrm{ \textit{aa}}}=T_a</m>, <m>T_aT_b=
-                                T_{\textrm{ \textit{ab}}}= T_b</m>, etc. Therefore, we have the
-                                following monoid: <me>\begin{array}{c|c}
-                                    &amp;
-                                    \begin{array}{ccc}
-                                    T_{a} &amp; T_b &amp; T_b \\
-                                    \end{array}
-                                    \\
-                                    \hline
-
-                                    \begin{array}{c}
-                                    T_a \\
-                                    T_b \\
-                                    T_c \\
-                                    \end{array}
-                                    &amp;
-                                    \begin{array}{ccc}
-                                    T_a &amp; T_b &amp; T_c \\
-                                    T_b &amp; T_a &amp; T_c \\
-                                    T_c &amp; T_c &amp; T_c \\
-                                    \end{array}
-                                    \\
-                                    \end{array}</me>
-
-                            </p>
-
-                            <p>Notice that <m>T_a</m> is the identity of this monoid.</p>
-                        </li>
-                        <li>
-                            <p>
-                                <m>
-                                    \begin{array}{c|cccccc}
-                                    \textrm{Input String} &amp; 1 &amp; 2 &amp; 11 &amp; 12 &amp; 21
-                                    &amp; 22 \\
-                                    \hline
-                                    A &amp; C &amp; B &amp; A &amp; D &amp; D &amp; A \\
-                                    B &amp; D &amp; A &amp; B &amp; C &amp; C &amp; B \\
-                                    C &amp; A &amp; D &amp; C &amp; B &amp; B &amp; C \\
-                                    D &amp; B &amp; C &amp; D &amp; A &amp; A &amp; D \\
-                                    \end{array}</m>
-                            </p>
-                            <p>
-                                <m>
-                                    \begin{array}{c|cccccccc}
-                                    \textrm{Input String} &amp;111 &amp; 112 &amp; 121 &amp; 122
-                                    &amp; 211 &amp; 212 &amp; 221 &amp; 222 \\
-                                    \hline
-                                    A &amp; C &amp; B &amp; B &amp; C &amp; B &amp; C &amp; C &amp;
-                                    B \\
-                                    B &amp; D &amp; A &amp; A &amp; D &amp; A &amp; D &amp; D &amp;
-                                    A \\
-                                    C &amp; B &amp; C &amp; C &amp; B &amp; C &amp; B &amp; B &amp;
-                                    C \\
-                                    D &amp; B &amp; C &amp; C &amp; B &amp; C &amp; B &amp; B &amp;
-                                    C \\
-                                    \end{array}</m>
-                            </p>
-                            <p>We have the following monoid: <me>\begin{array}{c|c}
-                                    &amp;
-                                    \begin{array}{cccc}
-                                    T_1 &amp; T_2 &amp; T_{11} &amp; T_{12} \\
-                                    \end{array}
-                                    \\
-                                    \hline
-
-                                    \begin{array}{c}
-                                    T_1 \\
-                                    T_2 \\
-                                    T_{11} \\
-                                    T_{12} \\
-                                    \end{array}
-                                    &amp;
-                                    \begin{array}{cccc}
-                                    T_{11} &amp; T_{12} &amp; T_1 &amp; T_2 \\
-                                    T_b &amp; T_{11} &amp; T_2 &amp; T_1 \\
-                                    T_1 &amp; T_2 &amp; T_{11} &amp; T_{12} \\
-                                    T_2 &amp; T_1 &amp; T_{12} &amp; T_{11} \\
-                                    \end{array}
-                                    \\
-                                    \end{array}</me>
-                            </p>
-                            <p>Notice that <m>T_{11}</m> is the identity of this monoid. </p>
-                        </li>
-                    </ol>
-                </p>
-            </answer>
+            </p>
         </exercise>
-        <exercise number="2">
-            <statement>
-                <p> What common monoids are isomorphic to the monoids obtained in the previous
-                    exercise?
-</p>
-            </statement>
-        </exercise>
-        <exercise number="3">
-            <statement>
-                <p>Can two finite-state machines with nonisomorphic transition diagrams have
-                    isomorphic monoids?</p>
-            </statement>
-            <answer>
-                <p> Yes, just consider the unit time delay machine of <xref
-                        ref="fig-unit-time-delay" text="type-global" />. Its monoid is described by
-                    the table at the end of Section 14.4 where the <m>T_{\lambda
-                        }</m> row and <m>T_{\lambda }</m> column are omitted. Next consider the
-                    machine in <xref ref="fig-15-4-3" text="type-global" />. The monoid of this
-                    machine is: <me>\begin{array}{c|ccccccc}
-                        &amp; T_{\lambda } &amp; T_0 &amp; T_1 &amp; T_{00} &amp; T_{01} &amp;
-                    T_{10} &amp; T_{11} \\
-                        \hline
-                        T_{\lambda } &amp; T_{\lambda } &amp; T_0 &amp; T_1 &amp; T_{00} &amp;
-                    T_{01} &amp; T_{10} &amp; T_{11} \\
-                        \hline
-                        T_0 &amp; T_0 &amp; T_{00} &amp; T_{01} &amp; T_{00} &amp; T_{01} &amp;
-                    T_{10} &amp; T_{11} \\
-                        T_1 &amp; T_1 &amp; T_{10} &amp; T_{11} &amp; T_{00} &amp; T_{01} &amp;
-                    T_{10} &amp; T_{11} \\
-                        T_{00} &amp; T_{00} &amp; T_{00} &amp; T_{01} &amp; T_{00} &amp; T_{01}
-                    &amp; T_{10} &amp; T_{11} \\
-                        T_{01} &amp; T_{01} &amp; T_{10} &amp; T_{11} &amp; T_{00} &amp; T_{01}
-                    &amp; T_{10} &amp; T_{11} \\
-                        T_{10} &amp; T_{10} &amp; T_{00} &amp; T_{01} &amp; T_{00} &amp; T_{01}
-                    &amp; T_{10} &amp; T_{11} \\
-                        T_{11} &amp; T_{11} &amp; T_{10} &amp; T_{11} &amp; T_{00} &amp; T_{01}
-                    &amp; T_{10} &amp; T_{11} \\
-                        \end{array}</me>
+    <exercise number="2">
+        <p>
+            Complete the proof of <xref ref="thm-reg-lang-recog-by-nfa"/> by showing how to modify a
+machine that accepts <m>L(r)</m> into a machine that accepts <m>L(r^*)</m>.
+        </p>
+    </exercise>
+<exercise number="3">
+    <p>
+        Using the construction described in <xref ref="thm-reg-lang-recog-by-nfa"/>, build an NFA
+that accepts <m>L((ab\REOR a)^*(bb))</m>.
+    </p>
+</exercise>
 
-                </p>
-
-                <p>Hence both of these machines have the same monoid, however, their transition
-                    diagrams are nonisomorphic since the first has two vertices and the
-                    second has seven.</p>
-            </answer>
-        </exercise>
-
-        <exercise number="3">
-            <statement>
-                <p> Draw the transition diagrams for the machines of the following monoids: <ol
-                        marker="(a)">
-                        <li>
-                            <p>
-                                <m>\left[\mathbb{Z}_4;+_4\right]</m>
-                            </p>
-                        </li>
-                        <li>
-                            <p> The direct product of <m>\left[\mathbb{Z}_2;\times _2\right]</m>
-                    with itself.</p>
-                        </li>
-                    </ol>
-                </p>
-            </statement>
-            <answer>
-                <figure xml:id="fig-sol-15-4-1a">
-                    <caption>(a)
-                    </caption>
-                    <image width="70%" source="images/fig-sol-15-4-1a.png">
-                        <description>solution to 14.5.1a</description>
-                    </image>
-                </figure>
-                <figure xml:id="fig-sol-15-4-1b">
-                    <caption>(b)
-                    </caption>
-                    <image width="70%" source="images/fig-sol-15-4-1b.png">
-                        <description>solution to 14.5.1b</description>
-                    </image>
-                </figure>
-            </answer>
-        </exercise>
-        <exercise number="4">
-            <statement>
-                <p>Even though a monoid may be infinite, we can visualize it as an infinite-state
-                    machine provided that it is generated by a finite number of elements. For
-                    example, the monoid <m>B^*</m> is generated by 0 and 1. A section of its
-                    transition diagram can be obtained by allowing input only from the generating
-                    set. The monoid of integers under addition is generated by the set <m>\{-1, 1\}</m>.
-                    The transition diagram for this monoid can be visualized by drawing a small
-                    portion of it, as in <xref ref="fig-exercise-15-4-2a" text="type-local" />. The
-                    same is true for the additive monoid of integers, as seen in <xref
-                        ref="fig-exercise-15-4-2b" text="type-local" />.</p>
-                <figure xml:id="fig-exercise-15-4-2a">
-                    <caption>An infinite machine <m>B^*</m></caption>
-                    <image width="70%" source="images/fig-exercise-15-4-2a.png">
-                        <description>An infinite machine <m>B^*</m></description>
-                    </image>
-                </figure>
-                <figure xml:id="fig-exercise-15-4-2b">
-                    <caption>An infinite machine <m>[\mathbb{Z};+]</m></caption>
-                    <image width="70%" source="images/fig-exercise-15-4-2b.png">
-                        <description>An infinite machine <m>[\mathbb{Z};+]</m></description>
-                    </image>
-                </figure>
-
-                <p>
-                    <ol marker="(a)">
-                        <li>
-                            <p> Draw a transition diagram for <m>\{a, b, c\}</m></p>
-                        </li>
-                        <li>
-                            <p> Draw a transition diagram for <m>[\mathbb{Z}\times
-                                \mathbb{Z};\textrm{componentwise addition}]</m>.</p>
-                        </li>
-                        <li>
-                            <p> Draw a transition diagram for <m>[\mathbb{Z};+]</m> with generating
-                                set <m>\{5,-2\}</m>.</p>
-                        </li>
-                    </ol>
-                </p>
-            </statement>
-        </exercise>
+<exercise number="4">
+    <p>Prove that the reverse of a regular language is regular.</p>
+</exercise>
+<exercise number="5">
+    <p>
+        Show that for any DFA or NFA, there is an NFA with exactly one final
+state that accepts the same language.
+    </p>
+</exercise>
+<exercise number="6">
+    <p>
+        Suppose we change the model of NFAs to allow NFAs to have multiple
+start states.  Show that for any ``NFA" with multiple start states, there is an
+NFA with exactly one start state that accepts the same language.
+    </p>
+</exercise>
+<exercise number="7">
+<p>
+    Suppose that <m>M_1=(Q_1,\Sigma,q_1,\delta_1,F_1)</m> and 
+<m>M_2=(Q_2,\Sigma,q_2,\delta_2,F_2)</m> are DFAs over the alphabet <m>\Sigma</m>.  It is possible
+to construct a DFA that accepts the langauge <m>L(M_1)\cap L(M_2)</m> in a single step.
+Define the DFA 
+<me> M = (Q_1\times Q_2, \Sigma, (q_1,q_2), \delta, F_1\times F_2)</me>
+where <m>\delta</m> is the function from <m>(Q_1\times Q_2)\times\Sigma</m> to <m>Q_1\times Q_2</m>
+that is defined by: <m>\delta((p1,p2),\sigma))=(\delta_1(p_1,\sigma),\delta_2(p_2,\sigma))</m>.
+Convince yourself that this definition makes sense.  (For example, note that
+states in <m>M</m> are pairs <m>(p_1,p_2)</m> of states, where <m>p_1\in Q_1</m> and <m>p_2\in Q_2</m>,
+and note that the start state <m>(q_1,q_2)</m> in <m>M</m> is in fact a state in <m>M</m>.)
+Prove that <m>L(M)=L(M_1)\cap L(M_2)</m>, and explain why this shows that the intersection of
+any two regular languages is regular.  This proof---if you can get past the
+notation---is more direct than the one outlined above.
+</p>    
+</exercise>
+<exercise number="8">
+    <p>Use the Pumping Lemma to show that the following languages over <m>\ab</m> 
+are not regular.
+<ol marker="a)">
+    <li><m>L_1 = \{ x |n_a(x) = n_b(x)\}</m></li>
+        <li><m>L_2 = \{ xx | x \in \ab^*\}</m></li>
+    <li><m>L_3 = \{ xx^R | x \in \ab^*\}</m>
+    </li>
+    <li><m>L_4 = \{ a^nb^m | n \lt m \}</m></li>
+</ol></p>
+</exercise>
     </exercises>
 </section>
