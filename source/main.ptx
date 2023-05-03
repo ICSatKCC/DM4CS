@@ -18,6 +18,14 @@
 \newcommand{\fsafig}[1]{\medskip\centerline{\eps{fsa#1}}\medskip}
 \newcommand{\REOR}{\hbox{$\,|\,$}}
 \newcommand{\POW}{{\mathscr P}}   % For the power set of a set
+\newcommand{\EMPTYSTRING}{\varepsilon}
+\newcommand{\PRODUCES}{\longrightarrow}
+\newcommand{\YIELDS}{\Longrightarrow}
+\newcommand{\YIELDSTAR}{{\Longrightarrow}^*}
+\newcommand{\NT}[1]{\hbox{$\langle$\textit{#1}$\rangle$}}
+\newcommand{\BNFPRODUCES}{\hbox{\texttt{::=}}}
+\newcommand{\BNFALT}{\hbox{$|$}}
+
     </macros>
     <latex-image-preamble>
       \usepackage{amsmath}
