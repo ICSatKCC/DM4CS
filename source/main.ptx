@@ -12,6 +12,18 @@
       \newcommand{\Null}{\operatorname{Null}} \renewcommand{\vec}[1]{\mathbf{#1}}
       \newcommand{\R}{\mathbb R} 
   <!--Added for Foundations of CS (ch 15)-->
+  \newcommand{\N}{{\mathbb N}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\Zpos}{{{\mathbb Z}^+}}
+\newcommand{\SUB}{\subseteq}
+\newcommand{\SUP}{\supseteq}
+\newcommand{\PSUB}{\varsubsetneq}
+\newcommand{\PSUP}{\varsupsetneq}
+\newcommand{\SETDIFF}{\smallsetminus}   % the set difference operator.
+\newcommand{\st}{\,|\,}   % for the | in sets { x | P(x) }
+
       \newcommand{\ab}{\mbox{$\{a,b\}$}}
 \newcommand{\aetc}[2]{\mbox{{${#1}_1{#1}_2\ldots {#1}_{#2}$}}}
 \newcommand{\varep}{\varepsilon}
@@ -19,6 +31,7 @@
 \newcommand{\REOR}{\hbox{$\,|\,$}}
 \newcommand{\POW}{{\mathscr P}}   % For the power set of a set
 \newcommand{\EMPTYSTRING}{\varepsilon}
+<!---for grammars section -->
 \newcommand{\PRODUCES}{\longrightarrow}
 \newcommand{\YIELDS}{\Longrightarrow}
 \newcommand{\YIELDSTAR}{{\Longrightarrow}^*}
