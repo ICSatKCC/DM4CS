@@ -1197,12 +1197,12 @@ string <m>x+y*z</m> according to the grammar <m>G_1</m>, which was given
 at the beginning of this section:
 
 <figure xml:id="fig-parsetree">
-  <image source="images/fig-5-1" width="80%"> <description>Figure showing two different parse tree derivations of the string <m>x+y</m> .</description>
-    <description>(for accessibility)</description>
+  <image source="images/fig-5-1" width="80%">
+     <description>Figure showing two different parse tree derivations of the string <m>x+y*z</m> .</description>
   </image>
 </figure>
 
-\noindent A parse tree is made up of terminal and non-terminal symbols,
+A parse tree is made up of terminal and non-terminal symbols,
 connected by lines.  The start symbol is at the top, or ``root,'' of
 the tree.  Terminal symbols are at the lowest level, or ``leaves,'' of
 the tree.  (For some reason, computer scientists traditionally
@@ -1213,16 +1213,21 @@ with a line joining <m>A</m> to each of the symbols in <m>w</m>.  For
 example, in the left parse tree above, the root,
 <m>E</m>, is connected to the symbols <m>E</m>, <m>+</m>, and <m>E</m>, and this
 corresponds to an application of the production rule
-<m>E\PRODUCES E+E</m>.
+<m>E\PRODUCES E+E</m>.</p>
 
+<p>
 It is customary to draw a parse tree with the string of non-terminals
 in a row across the bottom, and with the rest of the tree built on
 top of that base.  Thus, the two parse trees shown above might
 be drawn as:
+<figure xml:id="fig-parsetree2">
+  <image source="images/fig-5-2" width="80%">
+    <description>Figure showing the same two parse trees as above but with the non-terminals aligned at the bottom.</description>
+ </image>
+</figure>
+</p>
 
-\bigskip
-\centerline{\scaledeps{2.5truein}{fig-5-2}}
-
+<p>
 Given any derivation of a string, it is possible to construct
 a parse tree that shows each of the steps in that derivation.
 However, two different derivations can give rise to the same
@@ -1234,18 +1239,23 @@ rule <m>E\PRODUCES y</m>.  However, if we restrict our attention to left
 derivations, then we find that each parse tree corresponds to
 a unique left derivation and <em>vice versa</em>.  I will state this
 fact as a theorem, without proof.  A similar result holds for
-right derivations.
-
-\begin{theorem}
-Let <m>G</m> be a context-free grammar.  There is a one-to-one correspondence
+right derivations.</p>
+<theorem xml:id="thm-parsetree-leftderiv">
+  <statement>
+    <p>
+      Let <m>G</m> be a context-free grammar.  There is a one-to-one correspondence
 between parse trees and left derivations based on the grammar <m>G</m>.
-\end{theorem}
+    </p>
+  </statement>
+</theorem>
 
-Based on this theorem, we can say that a context-free grammar <m>G</m>
+<p>Based on this theorem, we can say that a context-free grammar <m>G</m>
 is ambiguous if and only if there is a string <m>w\in L(G)</m> which has
-two parse trees.
+two parse trees.</p>
 
 </subsection>
+
+<!-- STOPPED nedd to add parse tree questions and end to chapter no pd automata-->
 
 <exercises xml:id="exercises-15-5">
   <title>Exercises</title>
