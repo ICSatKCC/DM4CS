@@ -66,6 +66,21 @@ This is how the Turing machine computes.  To use a Turing machine,
 you would write some input on its tape, start the machine, and let
 it compute until it halts.  Whatever is written on the tape at that
 time is the output of the computation.</p>
+<p>
+   You might want to visualize a Turing machine as a physical machine 
+   such as in this simple diagram: 
+</p>
+<figure width="80%" xml:id="fig-TM">
+  
+   <image source="images/Turing_machine" width="50%">
+      <description>Basic graphical representation of a Turing machine.</description>
+   </image>
+<caption><url href="https://commons.wikimedia.org/wiki/File:Turing_machine.png">Kevd1337></url>
+   , Public domain, via Wikimedia Commons</caption>
+   
+</figure>
+However, these kinds of diagrams do not tell us anything about the functioning of a particular machine.</p>
+
 
 <p>Although the tape is infinite, only a finite number
 of cells can be non-blank at any given time.  
@@ -179,26 +194,29 @@ For example,
    <description>a simple Turing machine transition diagram</description>
 </image>
 indicates that when the machine is in state <m>q_0</m> and
-reads an <m>a</m>, it writes a <m>b</m>, moves left, and enters state <m>h</m>.</p>
+reads an <m>a</m>, it writes a <m>b</m>, moves left, and enters state <m>h</m>.
+</p>
 
-<!-- STOPPED p230 on foundations -->
-Here, for example, is a transition diagram for a simple Turing machine
-that moves to the right, changing <m>a</m>'s to <m>b</m>'s and \textit{vice
-versa}, until it finds a <m>c</m>.  It leaves blanks (#'s) unchanged.
+
+<p>Here, for example, is a transition diagram for a simple Turing machine
+that moves to the right, changing <m>a</m>'s to <m>b</m>'s and vice
+versa, until it finds a <m>c</m>.  It leaves blanks (#'s) unchanged.
 When and if the machine encounters a <m>c</m>, it moves to the left
 and halts:
+<image source="images/turing2" width="60%">
+   <description>Transition diagram for a simple Turing machine
+      that moves to the right, changing <m>a</m>'s to <m>b</m>'s and vice
+      versa, until it finds a <m>c</m>.</description>
+</image>
+</p>
 
-\medbreak
-\centerline{\eps{turing2}}
-\medbreak
 
-
-To simplify the diagrams, I will leave out any transitions that are
+<p>To simplify the diagrams, I will leave out any transitions that are
 not relevant to the computation that I want the machine to perform.
 You can assume that the action for any omitted transition is
-to write the same symbol that was read, move right, and halt.
+to write the same symbol that was read, move right, and halt.</p>
 
-For example, shown below is a transition diagram for a Turing machine
+<p>For example, shown below is a transition diagram for a Turing machine
 that makes a copy of a string of <m>a</m>'s and <m>b</m>'s.  To use this machine,
 you would write a string of <m>a</m>'s and <m>b</m>'s on its tape, place
 the machine on the first character of the string, and start the
@@ -213,12 +231,11 @@ keep track of which characters it has already copied.  After the
 string has been copied, the machine changes the <m>c</m>'s and <m>d</m>'s
 back to <m>a</m>'s and <m>b</m>'s before halting.
 
-#reakSixByNine
+<image source="images/turing3" width="80%">
+   <description>Transition diagram for Turing machine described above.</description>
+</image></p>
 
-\medbreak
-\centerline{\scaledeps{4 true in}{turing3}}
-\medbreak
-
+<p>
 In this machine, state <m>q_0</m> checks whether the next character
 is an <m>a</m>, a <m>b</m>, or a # (indicating the end of the string).
 States <m>q_1</m> and <m>q_2</m> add an <m>a</m> to the end of the new string,
@@ -233,10 +250,10 @@ character of the input string.  It would be a good idea to work through
 the execution of this machine for a few sample input strings.
 You should also check that it works even for an input string of
 length zero.
+</p>
 
-\medbreak
 
-Our primary interest in Turing machines is as language processors.
+<p>Our primary interest in Turing machines is as language processors.
 Suppose that <m>w</m> is a string over an alphabet <m>\Sigma</m>.  We will assume
 that <m>\Sigma</m> does not contain the blank symbol.  We can use <m>w</m> as
 input to a Turing machine <m>M=(Q,\Lambda,q_0,\delta)</m> provided that
@@ -246,8 +263,9 @@ We place the machine on the cell containing the first character
 of the string, except that if <m>w=\EMPTYSTRING</m> then we simply place the
 machine on a completely blank tape.   Then we start the machine in its 
 initial state, <m>q_0</m>, and see what computation it performs.
-We refer to this setup as ``running <m>M</m> with input <m>w</m>.''
+We refer to this setup as ``running <m>M</m> with input <m>w</m>.''</p>
 
+<p>
 When <m>M</m> is run with input <m>w</m>, it is possible that it will just keep
 running forever without halting.  In that case, it doesn't make
 sense to ask about the output of the computation.  Suppose however
@@ -260,10 +278,10 @@ In addition, if <m>M</m> halts with an entirely blank tape, we say that
 Note that when we run <m>M</m> with input <m>w</m>, one of three things can happen:
 (1)~<m>M</m>~might halt with some string as output; (1)~<m>M</m>~might fail to halt; 
 or (3)~<m>M</m>~might halt in some configuration that doesn't
-count as outputting any string.
+count as outputting any string.</p>
 
-The fact that a Turing machine can produce an output value allows us
-for the first time to deal with computation of \textit{functions}.
+<p>The fact that a Turing machine can produce an output value allows us
+for the first time to deal with computation of <em>functions</em>.
 A function <m>f\colon A\to B</m> takes an input value in the set <m>A</m>
 and produces an output value in the set <m>B</m>.  If the sets are sets
 of strings, we can now ask whether the values of the function can
@@ -271,27 +289,32 @@ be computed by a Turing machine.  That is, is there a Turing machine <m>M</m>
 such that, given any string <m>w</m> in the domain of <m>f</m> as input,
 <m>M</m> will compute as its output the string <m>f(w)</m>.  If this is
 that case, then we say that <m>f</m> is a Turing-computable function.
-#egin{definition} Suppose
-that <m>\Sigma</m> and <m>\Gamma</m> are alphabets that do not contain # and that
-<m>f</m> is a function from <m>\Sigma^*</m> to <m>\Gamma^*</m>.  We say that
-<m>f</m> is <term>Turing-computable</term> if there is a Turing machine
-<m>M=(Q,\Lambda,q_0,\delta)</m> such that <m>\Sigma\SUB\Lambda</m> and <m>\Gamma\SUB\Lambda</m>
-and for each string <m>w\in\Sigma^*</m>, when <m>M</m> is run with input <m>w</m>,
-it halts with output <m>f(w)</m>.  In this case, we say that <m>M</m>
-\nw[none]{computes} the function <m>f</m>.
-\end{definition}
-\noindent For example, let <m>\Sigma=\{a\}</m> and define <m>f\colon\Sigma^*\to\Sigma^*</m>
+<definition xml:id="def-turing-computable">
+   <title>Turing-computable</title>
+   <idx><h>Turing-computable</h></idx>
+   <statement>
+      <p>Suppose
+         that <m>\Sigma</m> and <m>\Gamma</m> are alphabets that do not contain # and that
+         <m>f</m> is a function from <m>\Sigma^*</m> to <m>\Gamma^*</m>.  We say that
+         <m>f</m> is <term>Turing-computable</term> if there is a Turing machine
+         <m>M=(Q,\Lambda,q_0,\delta)</m> such that <m>\Sigma\SUB\Lambda</m> and <m>\Gamma\SUB\Lambda</m>
+         and for each string <m>w\in\Sigma^*</m>, when <m>M</m> is run with input <m>w</m>,
+         it halts with output <m>f(w)</m>.  In this case, we say that <m>M</m>
+         <term>computes</term> the function <m>f</m>.
+      </p>
+   </statement>
+</definition>
+
+ For example, let <m>\Sigma=\{a\}</m> and define <m>f\colon\Sigma^*\to\Sigma^*</m>
 by <m>f(a^n)=a^{2n}</m>, for <m>n\in\N</m>.  Then <m>f</m> is Turing-computable
 since it is computed by this Turing machine:
 
-\medbreak
+<image source="images/turing4" width="90%">
+   <description>Transition diagram for Turing machine <m>f</m> described above.</description>
+</image>
+</p>
 
-#reakSixByNine
-
-\centerline{\scaledeps{4 true in}{turing4}}
-\medbreak
-
-We can also use Turing machines to define ``computable languages.''
+<p>We can also use Turing machines to define ``computable languages.''
 There are actually two different notions of Turing-computability
 for languages.  One is based on the idea of Turing-computability
 for functions.  Suppose that <m>\Sigma</m> is an alphabet and that
@@ -307,17 +330,25 @@ Just run the machine with input <m>w</m>.  It will halt with output <m>\chi_L(w)
 (That is, it will halt and when it does so, the tape will be blank except for
 a 0 or a 1, and the machine will be positioned on the 0 or~1.)
 If the machine halts with output 1, then <m>w\in L</m>.  If the machine halts with
-output 0, then <m>w\not\in L</m>.
-#egin{definition}
-Let <m>\Sigma</m> be an alphabet that does not contain # and let <m>L</m> be a language over <m>\Sigma</m>.
+output 0, then <m>w\not\in L</m>.</p>
+
+<definition xml:id="def-turing-decidable">
+   <title>Turing-decidable</title>
+   <idx><h>Turing-decidable</h></idx>
+   <statement>
+      <p>
+         Let <m>\Sigma</m> be an alphabet that does not contain # and let <m>L</m> be a language over <m>\Sigma</m>.
 We say that <m>L</m> is <term>Turing-decidable</term> if there is a Turing machine
 <m>M=(Q,\Lambda,q_0,\delta)</m> such that <m>\Sigma\SUB\Lambda</m>, <m>\{0,1\}\SUB\Lambda</m>,
 and for each <m>w\in\Sigma^*</m>, when <m>M</m> is run with input <m>w</m>, it halts
 with output <m>\chi_L(w)</m>.  (That is, it halts with output 0 or 1, and
 the output is 0 if <m>w\not\in L</m> and is 1 if <m>w\in L</m>.)  In this case,
-we say that <m>M</m> \nw[none]{decides} the language <m>L</m>.
-\end{definition}
+we say that <m>M</m> <term>decides</term> the language <m>L</m>.
+      </p>
+   </statement>
+</definition>
 
+<p>
 The second notion of computability for languages is based on the
 interesting fact that it is possible for a Turing machine to run
 forever, without ever halting.
@@ -326,16 +357,23 @@ we can ask the question, will <m>M</m> ever halt or will it run forever?  If <m>
 halts on input <m>w</m>, we will say that <m>M</m> ``accepts'' <m>w</m>.  We can then
 look at all the strings over a given alphabet that are accepted by
 a given Turing machine.  This leads to the notion of Turing-acceptable
-languages.
-#egin{definition}
-Let <m>\Sigma</m> be an alphabet that does not contain #, and let <m>L</m> be a language over <m>\Sigma</m>.
+languages.</p>
+
+<definition xml:id="def-turing-acceptable">
+   <title>Turing-acceptable</title>
+   <idx><h>Turing-acceptable</h></idx>
+   <statement>
+      <p>
+         Let <m>\Sigma</m> be an alphabet that does not contain #, and let <m>L</m> be a language over <m>\Sigma</m>.
 We say that <m>L</m> is <term>Turing-acceptable</term> if there is a Turing machine
 <m>M=(Q,\Lambda,q_0,\delta)</m> such that <m>\Sigma\SUB\Lambda</m>, and
 for each <m>w\in\Sigma^*</m>, <m>M</m> halts on input <m>w</m> if and only if <m>w\in L</m>.
-In this case, we say that <m>M</m> \nw[none]{accepts} the language <m>L</m>.
-\end{definition}
+In this case, we say that <m>M</m> <term>accepts</term> the language <m>L</m>.
+      </p>
+   </statement>
+</definition>
 
-It should be clear that any Turing-decidable language is Turing-acceptable.
+<p>It should be clear that any Turing-decidable language is Turing-acceptable.
 In fact, if <m>L</m> is a language over an alphabet <m>\Sigma</m>,
 and if <m>M</m> is a Turing machine that
 decides <m>L</m>, then it is easy to modify <m>M</m> to produce a Turing machine
@@ -343,65 +381,17 @@ that accepts <m>L</m>.  At the point where <m>M</m> enters the halt state with
 output 0, the new machine should enter a new state in which it simply
 moves to the right forever, without ever halting.  Given an input
 <m>w\in\Sigma^*</m>, the modified machine will halt if and only if <m>M</m>
-halts with output 1, that is, if and only if <m>w\in L</m>.
+halts with output 1, that is, if and only if <m>w\in L</m>.</p>
 
 </subsection>
 
+<subsection xml:id="subsec-computability-limits">
+   <title>Computability and The Limits of Computation</title>
+<idx><h>Computability</h></idx>   
+<idx><h>Limits of Computation</h></idx>
 
-#egin{exercises}
-
-\problem Let <m>\Sigma=\{a\}</m>.  Draw a transition diagram for a Turing
-machine that computes the function <m>f\colon\Sigma^*\to\Sigma^*</m> where
-<m>f(a^n)=a^{3n}</m>, for <m>n\in\N</m>. Draw a transition diagram for a Turing
-machine that computes the function <m>f\colon\Sigma^*\to\Sigma^*</m> where
-<m>f(a^n)=a^{3n+1}</m>, for <m>n\in\N</m>.
-
-\problem Let <m>\Sigma=\{a,b\}</m>.
-Draw a transition diagram for a Turing machine that
-computes the function <m>f\colon\Sigma^*\to\Sigma^*</m> where
-<m>f(w)=w^R</m>.
-
-\problem Suppose that <m>\Sigma</m>, <m>\Gamma</m>, and <m>\Xi</m> are alphabets and that
-<m>f\colon\Sigma^*\to\Gamma^*</m> and <m>g\colon\Gamma^*\to\Xi^*</m> are 
-Turing-computable functions.  Show that <m>g\circ f</m> is Turing-computable.
-
-\problem We have defined computability for functions <m>f\colon\Sigma^*\to\Gamma^*</m>,
-where <m>\Sigma</m> and <m>\Gamma</m> are alphabets.  How could Turing machines
-be used to define computable functions from <m>\N</m> to <m>\N\,</m>?
-(Hint: Consider the alphabet <m>\Sigma=\{a\}</m>.)
-
-\problem Let <m>\Sigma</m> be an alphabet and let <m>L</m> be a language over <m>\Sigma</m>.
-Show that <m>L</m> is Turing-decidable if and only if its complement,
-<m>\overline{L}</m>, is Turing-decidable.
-
-\problem Draw a transition diagram for a Turing machine which
-decides the language <m>\{a^nb^n\st n\in\N\}</m>.  (Hint: Change the
-<m>a</m>'s and <m>b</m>'s to \$'s in pairs.)  Explain in general terms how to
-make a Turing machine that decides the language <m>\{a^nb^nc^n\st n\in\N\}</m>.
-
-\problem Draw a transition diagram for a Turing machine which
-decides the language $\{a^nb^m\st n>0<m> and </m>m<m> is a multiple of </m>n\}$.
-(Hint: Erase <m>n</m> <m>b</m>'s at a time.)
-
-\problem Based on your answer to the previous problem and the copying
-machine presented in this section, describe in
-general terms how you would build a Turing machine to decide the
-language <m>\{a^p\st p</m> is a prime number<m>\}</m>.
-
-\problem Let <m>g\colon \{a\}^*\to\{0,1\}^*</m> be the function such that
-for each <m>n\in\N</m>, <m>g(a^n)</m> is the representation of <m>n</m> as a binary
-number.  Draw a transition diagram for a Turing machine that computes <m>g</m>.
-
-
-
-\end{exercises}
-
-
-\section{Computability}\label{S-turing-2}
-
-
-At this point, it would be useful to look at increasingly complex
-Turing machines, which compute increasingly complex functions and languages.
+<p>At this point, it would be useful to look at increasingly complex
+Turing machines, such as those with more tapes, which compute increasingly complex functions and languages.
 Although Turing machines are very simple devices, it turns out that
 they can perform very sophisticated computations.  In fact, any
 computation that can be carried out by a modern digital computer---even
@@ -409,9 +399,9 @@ one with an unlimited amount of memory---can be carried out by
 a Turing machine.  Although it is not something that can be 
 proved, it is widely believed that anything that can reasonably
 be called ``computation'' can be done by a Turing machine.  This
-claim is known as the <term>Church-Turing Thesis</term>.
+claim is known as the <term>Church-Turing Thesis</term><idx><h>Church-Turing Thesis</h></idx>.</p>
 
-We do not have time to look at enough examples to convince you that
+<p>We do not have time to look at enough examples to convince you that
 Turing machines are as powerful as computers, but the proof reduces
 to the fact that computers are actually fairly simple in their basic
 operation.  Everything that a computer does comes down to copying
@@ -421,69 +411,9 @@ It's possible for Turing machines to do all these things.  In fact,
 it's possible to build a Turing machine to simulate the step-by-step
 operation of a given computer.  Doing so proves that the Turing machine
 can do any computation that the computer could do, although it will,
-of course, work much, much more slowly.
+of course, work much, much more slowly.</p>
 
-\medbreak
-
-We can, however, look briefly at some other models of computation
-and see how they compare with Turing machines.  For example, there
-are various ways in which we might try to increase the power of
-a Turing machine.  For example, consider a <term>two-tape Turing machine</term>
-that has two tapes, with a read/write head on each tape.  In each step
-of its computation, a two-tape Turing machine reads the symbols under
-its read/write heads on both tapes.
-Based on these symbols and on its current state, it
-can write a new symbol onto each tape, independently
-move the read/write head on each tape one cell to the left or
-right, and change state.
-
-It might seem that with two tapes available, two-tape Turing machines
-might be able to do computations that are impossible for ordinary
-one-tape machines.  In fact, though, this is not the case.  The reason,
-again, is simulation:  Given any two-tape Turing machine, it is possible
-to build a one-tape Turing machine that simulates the step-by-step
-computation of the two-tape machine.  Let <m>M</m> be a two-tape Turing
-machine.  To simulate <m>M</m> with a one-tape machine, <m>K</m>, we must store
-the contents of both of <m>M</m>'s tapes on one tape, and we must keep
-track of the positions of both of <m>M</m>'s read/write heads.
-Let {\at} and \<m> be symbols that are not in the alphabet of </m>M$.  
-The {\at} will be used to mark the position of a read/write head, and
-the \<m> will be used to delimit the parts of </m>K<m>'s tape that
-represent the two tapes of </m>M$.  For example, suppose that one
-of <m>M</m>'s tapes contains the symbols ``{\tt abb\#\#cca}'' with the
-read/write head on the first {\tt b}, and that the other tape contains
-``{\tt 01\#111\#001}'' with the read/write head on the final {\tt 1}.  This
-configuration would be represented on <m>K</m>'s tape as
-``{\tt\$a{\at}bb\#\#cca\$01\#111\#00{\at}1\$}''.  To simulate one
-step of <m>M</m>'s computation, <m>K</m> must scan its entire tape, looking for
-the {\at}'s and noting the symbol to the right of each {\at}.  Based on
-this information, <m>K</m> can update its tape and its own state to
-reflect <m>M</m>'s new configuration after one step of computation.
-Obviously, <m>K</m> will take more steps than <m>M</m> and it will operate
-much more slowly, but this argument makes it clear that one-tape
-Turing machines can do anything that can be done by two-tape
-machines.
-
-We needn't stop there.  We can imagine <m>n</m>-tape Turing machines, for
-$n>2$.  We might allow a Turing machine to have multiple read/write
-heads that move independently on each tape.  We could even allow
-two or three-dimensional tapes.  None of this makes any difference 
-as far as computational power goes, since each type of Turing machine
-can simulate any of the other types.\footnote{We can also define 
-<term>non-deterministic Turing machines</term> that can have several possible
-actions at each step.  Non-deterministic Turing machines cannot be
-used to compute functions, since a function can have only one possible
-output for any given input.  However, they can be used to accept
-languages.  We say that a non-deterministic Turing machine accepts
-a language <m>L</m> is it is \emph{possible} for the machine to halt
-on input <m>w</m> if and only if <m>w\in L</m>.  The class of languages 
-accepted by non-deterministic Turing machines is the same as the
-class of languages accepted by deterministic Turing machines.
-So, non-determinism does not add any computational power.}
-
-\medbreak
-
-We have used Turing machines to define Turing-acceptable languages
+<p>We have used Turing machines to define Turing-acceptable languages
 and Turing-decidable languages.  The definitions seem to depend
 very much on the peculiarities of Turing machines.  But the same
 classes of languages can be defined in other ways.  For example,
@@ -491,16 +421,16 @@ we could use programs running on an idealized computer, with an
 unlimited amount of memory, to accept or decide languages.  Or we
 could use <m>n</m>-tape Turing machines.  The
 resulting classes of languages would be exactly the same as the
-Turing-acceptable and Turing-decidable languages.
+Turing-acceptable and Turing-decidable languages.</p>
 
-We could look at other ways of specifying languages ``computationally.''
+<p>We could look at other ways of specifying languages ``computationally.''
 One of the most natural is to imagine a Turing machine or computer
 program that runs forever and outputs an infinite list of strings
 over some alphabet <m>\Sigma</m>.  In the case of Turing machines, it's
 convenient to think of a two-tape Turing machine that lists the strings
 on its second tape.  The strings in the list form a language
 over <m>\Sigma</m>.  A language that can be listed in this way is
-said to be \nw[recursively enumerable language]{recursively enumerable}. 
+said to be <idx><h>recursively enumerable language</h></idx> <term>recursively enumerable</term>. 
 Note that we make no
 assumption that the strings must be listed in any particular order,
 and we allow the same string to appear in the output any number of
@@ -511,122 +441,60 @@ describing the Turing-acceptable languages.  The following theorem
 makes this fact official and adds one more way of describing
 the same class of languages:
 
-#egin{theorem}
-Let <m>\Sigma</m> be an alphabet and let <m>L</m> be a language over <m>\Sigma</m>.
+<aside>
+   Discussion of the proof of this theorem can be found in the source document for this section: Section 5.2 of <url href="https://math.hws.edu/FoundationsOfComputation/">Foundations
+   of Computation</url>
+</aside>
+
+<theorem xml:id="thm-turing-equivalence">
+   <statement>
+      <p>
+         Let <m>\Sigma</m> be an alphabet and let <m>L</m> be a language over <m>\Sigma</m>.
 Then the following are equivalent:
-
-\smallskip
-\IItem{1.\ }There is a Turing machine that accepts <m>L</m>.
-
-\smallskip
-\IItem{2.\ }There is a two-tape Turing machine that runs forever, making 
+         <ol>
+            <li>
+               <p>
+                  There is a Turing machine that accepts <m>L</m>.
+               </p>
+            </li>
+            <li>
+               <p>
+                  There is a two-tape Turing machine that runs forever, making 
 a list of strings on its second tape, such that a string <m>w</m> is in 
 the list if and only if <m>w\in L</m>.
-
-\smallskip
-\IItem{3.\ }There is a Turing-computable function <m>f\colon\{a\}^*\to\Sigma^*</m>
+               </p>
+            </li>
+            <li>
+               <p>
+                  There is a Turing-computable function <m>f\colon\{a\}^*\to\Sigma^*</m>
 such that <m>L</m> is the range of the function <m>f</m>.
-\end{theorem}
+               </p>
+            </li>
+         </ol>
+      </p>
+   </statement>
+</theorem>
 
-While I will not give a complete, formal proof of this theorem, it's not
-too hard to see why it is true.  Consider a language that satisfies
-property 3.  We can use the fact that <m>L</m> is the range of a Turing-computable function, <m>f</m>,
-to build a two-tape Turing machine that lists <m>L</m>.  The machine will
-consider each of the strings <m>a^n</m>, for <m>n\in \N</m>, in turn, and it will compute
-<m>f(a^n)</m> for each <m>n</m>.  Once the value of <m>f(a^n)</m> has been computed, it can be copied
-onto the machine's second tape, and the machine can move on to do the same
-with <m>a^{n+1}</m>.  This machine writes all the elements of <m>L</m> 
-(the range of~<m>f</m>) onto its second tape,
-so <m>L</m> satisfies property 2.  Conversely, suppose that
-there is a two-tape Turing machine, <m>M</m>, that lists <m>L</m>.  Define a function
-<m>g\colon\{a\}^*\to\Sigma^*</m> such that for <m>n\in\N</m>, <m>g(a^n)</m> is the <m>(n+1)^{th}</m> item in the
-list produced by <m>M</m>.  Then the range of <m>g</m> is <m>L</m>, and <m>g</m> is Turing-computable
-since it can be computed as follows:  On input <m>a^n</m>, simulate the computation
-of <m>M</m> until it has produced <m>n+1</m> strings, then halt, giving the <m>(n+1)^{th}</m>
-string as output.  This shows that property 2 implies property 3, so these
-properties are in fact equivalent.
+<!-- cut out rest of this section -->
 
-We can also check that property 2 is equivalent to property 1. 
-Suppose that <m>L</m> satisfies property~2. Consider
-a two-tape Turing machine, <m>T</m>, that lists the elements of <m>L</m>.  We must build
-a Turing machine, <m>M</m>, which accepts <m>L</m>. We do this
-as follows:  Given an input <m>w\in\Sigma^*</m>,
-<m>M</m> will simulate the computation of <m>T</m>.  Every time the simulated <m>T</m> produces a string
-in the list, <m>M</m> compares that string to <m>w</m>.  If they are the same, <m>M</m> halts.
-If <m>w\in L</m>, eventually it will be produced by <m>T</m>, so <m>M</m> will eventually halt.
-If <m>w\not\in L</m>, then it will never turn up in the list produced by <m>T</m>, so
-<m>M</m> will never halt.  Thus, <m>M</m> accepts the language <m>L</m>.  This shows that
-property 2 implies property 1.  
 
-The fact that property 1 implies property
-2 is somewhat harder to see.  First, we note that it is possible for a Turing
-machine to generate every possible string in <m>\Sigma^*</m>, one-by-one,
-in some definite order (such
-as order of increasing length, with something like alphabetical order
-for strings of the same length).  Now, suppose that <m>L</m> is Turing-acceptable
-and that <m>M</m> is a Turing machine that accepts <m>L</m>.  We need a two-tape
-Turing machine, <m>T</m> that makes a list of all the elements of <m>L</m>.
-Unfortunately, the following idea does \textit{not} work:  Generate each
-of the elements in <m>\Sigma^*</m> in turn, and see whether <m>M</m> accepts it.
-If so, then add it to the list on the second tape.  It looks like we have a machine that
-lists all the elements of <m>L</m>.  The problem is that the only way for <m>T</m> to
-``see whether <m>M</m> accepts'' a string is to simulate the computation of <m>M</m>.
-Unfortunately, as soon as we try this for any string <m>w</m> that is not in <m>L</m>,
-the computation never ends!  <m>T</m> will get stuck in the simulation and will
-never even move on to the next string.  To avoid this problem, <m>T</m> must simulate
-multiple computations of <m>M</m> at the same time.  <m>T</m> can keep track of
-these computations in different regions of its first tape (separated by \$'s).
-Let the list of all strings in <m>\Sigma^*</m> be <m>x_1</m>, <m>x_2</m>, <m>x_3</m>,~\dots. Then <m>T</m> should
-operate as follows:
-
-\smallskip
-\IItem{1.\ }Set up the simulation of <m>M</m> on input <m>x_1</m>, and simulate one 
-          step of the computation for <m>x_1</m>
-
-\smallskip
-\IItem{2.\ }Set up the simulation of <m>M</m> on input <m>x_2</m>, and simulate one 
-          step of the computation for <m>x_1</m> and one step of the computation for <m>x_2</m>.
-
-\smallskip
-\IItem{3.\ }Set up the simulation of <m>M</m> on input <m>x_3</m>, and simulate one 
-          step of each of the computations, for <m>x_1</m>, <m>x_2</m>, and <m>x_3</m>.
-
-\smallskip
-\IItem{}\dots
-          
-\smallskip
-\IItem{n.\ }Set up the simulation of <m>M</m> on input <m>x_n</m>, and simulate one 
-          step of each of the computations, for <m>x_1</m>, <m>x_2</m>, \dots, <m>x_n</m>.
-
-\noindent and so on.  Each time one of the computations halts, <m>T</m> should
-write the corresponding <m>x_i</m> onto its second tape.  Over the course of
-time, <m>T</m> simulates the computation of <m>M</m> for each input <m>w\in\Sigma^*</m>
-for an arbitrary number of steps.  If <m>w\in L</m>, the simulated computation will
-eventually end and <m>w</m> will appear on <m>T</m>'s second tape.  On the other hand,
-if <m>w\not\in L</m>, then the simulated computation will never end, so <m>w</m> will
-not appear in the list.  So we see that <m>T</m> does in fact make a list of all
-the elements, and only the elements of <m>L</m>.  This completes an outline of
-the proof of the theorem.
-
-\medbreak
-
-Next, we compare Turing machines to a completely different method
-of specifying languages: general grammars.  Suppose <m>G=(V,\Sigma,P,S)</m> is a general
+<p>Next, we compare Turing machines to a completely different method
+of specifying languages: grammars.  Suppose <m>G=(V,\Sigma,P,S)</m> is a general
 grammar and that <m>L</m> is the language
 generated by <m>G</m>.  Then there is a Turing machine, <m>M</m>, that accepts
-the same language, <m>L</m>.  The alphabet for <m>M</m> will be <m>V\cup\Sigma\cup\{\text{\</m>,#}\}<m>,
-where \</m> is a symbol that is not in <m>V\cup\Sigma</m>. (We also assume that # is not in <m>V\cup\Sigma</m>.)
+the same language, <m>L</m>.  The alphabet for <m>M</m> will be <m>V\cup\Sigma\cup\{\text{\$,#}\}</m>,
+where $ is a symbol that is not in <m>V\cup\Sigma</m>. (We also assume that # is not in <m>V\cup\Sigma</m>.)
 Suppose that <m>M</m> is started with input <m>w</m>, where <m>w\in\Sigma^*</m>.
 We have to design <m>M</m> so that it will halt if and only if <m>w\in L</m>.
 The idea is to have <m>M</m> find each string that can be derived
 from the start symbol <m>S</m>.  The strings will be written to <m>M</m>'s tape
-and separated by \$'s.  <m>M</m> can begin by writing the start symbol,
-<m>S</m>, on its tape, separated from <m>w</m> by a~\$.  Then it repeats
+and separated by $'s.  <m>M</m> can begin by writing the start symbol,
+<m>S</m>, on its tape, separated from <m>w</m> by a $.  Then it repeats
 the following process indefinitely:  For each string on the tape
 and for each production rule, <m>x\PRODUCES y</m>, of <m>G</m>, search the
-string for occurrences of <m>x</m>.  When one is found, add a \<m> to the
+string for occurrences of <m>x</m>.  When one is found, add a $ to the
 end of the tape and copy the string to the end of the tape, replacing
-the occurrence of </m>x<m> by </m>y$.  The new string represents the results
+the occurrence of <m>x</m> by <m>y</m>.  The new string represents the results
 of applying the production rule <m>x\PRODUCES y</m> to the string.
 Each time <m>M</m> produces a new string, it compares
 that string to <m>w</m>.  If they are equal, then <m>M</m> halts.  If <m>w</m> is
@@ -643,128 +511,36 @@ fact that, as discussed above, there is a Turing-computable function
 Let <m>M=(Q,\Lambda,q_0,\delta)</m> be a Turing machine that computes
 the function <m>f</m>.  We can build a grammar, <m>G</m>, that imitates the computations
 performed by <m>M</m>.  The idea is that most of the production rules of <m>G</m> will
-imitate steps in the computation of <m>M</m>.  Some additional rules are added
+imitate steps in the computation of <m>M</m>.  Some additional rules (which we won't get into here) must be added
 to get things started, to clean up, and to otherwise bridge the
-conceptual gap between grammars and Turing machines.
+conceptual gap between grammars and Turing machines.</p>
 
-The terminal symbols of <m>G</m> will be the symbols from the alphabet,~<m>\Sigma</m>. 
-For the non-terminal symbols,
-we use: the states of <m>M</m>, every member of <m>\Lambda</m> that is not
-in <m>\Sigma</m>, two special symbols $<<m> and </m>><m>, and two additional
-symbols </m>S<m> and </m>A$.  (We can assume that all
-these symbols are distinct.)  <m>S</m>~will be the start symbol of <m>G</m>.
-As for production rules, we begin with the following three rules:
-#egin{align*}
-   S&\PRODUCES \hbox{$<<m>}q_0A\hbox{</m>>$}\\
-   A&\PRODUCES aA\\
-   A&\PRODUCES\EMPTYSTRING
-\end{align*}
-These rules make it possible to produce any string of the form
-$<<m>{}</m>q_0a^n<m>{}</m>>$.  This is the only role that <m>S</m> and <m>A</m> play
-in the grammar.  Once we've gotten rid of <m>S</m> and <m>A</m>, strings
-of the remaining terminal and non-terminal symbols represent
-configurations of the Turing machine <m>M</m>.  The string will contain
-exactly one of the states of <m>M</m> (which is, remember, one of the
-non-terminal symbols of <m>G</m>). This tells us which state <m>M</m> is
-in.  The position of the state-symbol tells us where
-<m>M</m> is positioned on the tape: the state-symbol is located
-in the string to the left of the symbol on which <m>M</m> is positioned.
-And the special symbols $<<m> and </m>><m> just represent
-the beginning and the end of a portion of the tape of </m>M$.
-So, the initial string $<<m>{}</m>q_0a^n<m>{}</m>><m> represents
-a configuration in which </m>M<m> is in its start state, and
-is positioned on the first </m>a<m> in a string of </m>n<m> </m>a$'s.
-This is the starting configuration of <m>M</m> when it is run
-with input <m>a^n</m>.
+<!--cut out stuff here -->
 
-Now, we need some production
-rules that will allow the grammar to simulate the computations
-performed by <m>M</m>.  For each state <m>q_i</m> and each symbol <m>\sigma\in\Lambda</m>,
-we need a production rule that imitates the transition rule <m>\delta(q_i,\sigma)
-=(\tau,d,q_j)</m>.  If <m>d=R</m>, that is if the machine moves to the right,
-then all we need is the rule
-#egin{align*}
-   q_i\sigma&\PRODUCES \tau q_j
-\end{align*}
-This represents that fact that <m>M</m> converts the <m>\sigma</m> to a <m>\tau</m>,
-moves to the right, and changes to state <m>q_j</m>.  If <m>d=L</m>, that is
-if the machine moves to the left, then we will need several rules---one rule for
-each <m>\lambda\in\Lambda</m>, namely
-#egin{align*}
-   \lambda q_i\sigma&\PRODUCES q_j\lambda\tau
-\end{align*}
-This rule says that <m>M</m> changes the <m>\sigma</m> to a <m>\tau</m>, moves left,
-and changes to state <m>q_j</m>.  The <m>\lambda</m> doesn't affect the
-application of the rule, but is necessary to represent the fact
-that <m>M</m> moves left.
-
-Each application of one of these rules represents one step in
-the computation of <m>M</m>.   There is one remaining requirement for correctly
-simulating <m>M</m>.  Since <m>M</m>'s tape contains an infinite number of cells
-and we are only representing a finite portion of that tape, we need a way
-to add and remove #'s at the ends of the string.  We can use the
-following four rules to do this:
-#egin{align*}
-   \hbox{$<$}&\PRODUCES \hbox{$<<m>#}\\
-   \hbox{</m><$#}&\PRODUCES \hbox{$<<m>}\\
-   \hbox{</m>>$}&\PRODUCES \hbox{#$><m>}\\
-   \hbox{#</m>>$}&\PRODUCES \hbox{$>$}\\
-\end{align*}
-These rules allow blank symbols to appear at the ends of the string
-when they are needed to continue the computation, and to disappear
-from the ends of the string whenever we like.
-
-Now, suppose that <m>w</m> is some element of <m>L</m>.  Then <m>w=f(a^n)</m> for some <m>n\in\N</m>.
-We know that on input <m>a^n</m>, <m>M</m> halts with output <m>w</m>.  If we
-translate the computation of <m>M</m> into the corresponding sequence
-of production rules in <m>G</m>,
-we see that for the grammar <m>G</m>, $<<m>{}</m>q_0a^n<m>{}</m>><m>
-</m>\YIELDSTAR<m> </m><<m>{}</m>hw<m>{}</m>><m>, where </m>h<m> is the halt state of </m>M$.
-Since we already know that <m>S</m> <m>\YIELDSTAR</m> $<<m>{}</m>q_0a^n<m>{}</m>><m>,
-for every </m>n\in\N<m>, we see that in fact </m>S<m> </m>\YIELDSTAR<m> 
-</m><<m>{}</m>hw<m>{}</m>><m> for each </m>w\in L$.  We almost have it! We
-want to show that <m>S</m>~<m>\YIELDSTAR</m>~<m>w</m>.
-If we can just
-get rid of the $<<m>, the </m>h<m>, and the </m>><m>, we will have that
-</m><<m>{}</m>hw<m>{}</m>><m> </m>\YIELDSTAR<m> </m>w<m> and we can then deduce that
-</m>S$~<m>\YIELDSTAR</m>~<m>w</m> for each <m>w\in L</m>, as desired.  We can do this by adding 
-just a few more rules to <m>G</m>.  We want to let the <m>h</m> eliminate the $<<m>,
-move through the </m>w<m>, and then eliminate the </m>>$ along with itself.
-We need the rules
-#egin{align*}
-   \hbox{$<$}h&\PRODUCES h\\
-   h\hbox{$>$}&\PRODUCES \EMPTYSTRING
-\end{align*}
-and, for each <m>\sigma\in\Sigma</m>,
-#egin{align*}
-   h\sigma&\PRODUCES \sigma h
-\end{align*}
-We have constructed <m>G</m> so that it generates every string in <m>L</m>.
-It is not difficult to see that the strings in <m>L</m> are in fact the
-only strings that are generated by <m>G</m>.  That is, <m>L</m> is precisely
-<m>L(G)</m>.
-
-We have now shown, somewhat informally, that a language
+<p>We have now shown, very informally, that a language
 <m>L</m> is Turing-acceptable if and only if there is a grammar <m>G</m>
 that generates <m>L</m>.  Even though Turing machines and grammars
 are very different things, they are equivalent in terms of
 their ability to describe languages.  We state this as a theorem:
-#egin{theorem}
-A language <m>L</m> is Turing acceptable (equivalently, recursively enumerable)
+<theorem xml:id="thm-turing-iff-grammar">
+   <statement>
+      <p>
+         A language <m>L</m> is Turing acceptable (equivalently, recursively enumerable)
 if and only if there is a general grammar that generates <m>L</m>.
-\end{theorem}
+      </p>
+   </statement>
+</theorem>
+</p>
 
-#igskip
-
-In this section, we have been talking mostly about recursively enumerable
+<p>In this section, we have been talking mostly about recursively enumerable
 languages (also known as the Turing-acceptable languages).  What
 about the Turing-decidable languages?  
 We already know that if a language <m>L</m> is Turing-decidable,
 then it is Turing-acceptable.  The converse is not true (although
-we won't be able to prove this until the next section).  However, suppose
+we won't be able to prove this yet).  However, suppose
 that <m>L</m> is a language over the alphabet <m>\Sigma</m> and that both
-<m>L</m> and its complement,  <m>\overline{L}=\Sigma^*\SETDIFF L</m>, are Turing-acceptable.
-Then <m>L</m> is Turing-decidable.
+<m>L</m> and its complement,  <m>\overline{L}=\Sigma^* - L</m>, are Turing-acceptable.
+Then <m>L</m> is Turing-decidable.</p>
 
 For suppose that <m>M</m> is a Turing machine that accepts the language
 <m>L</m> and that <m>M'</m> is a Turing machine that accepts <m>\overline{L}</m>.
@@ -781,7 +557,8 @@ only if <m>w\in L</m>.  If and when the simulated computation of <m>M'</m> halts
 <m>T</m> will halt with output~0; since <m>M</m> accepts <m>L</m>, this will happen if and
 only if <m>w\not\in L</m>.  So, for any <m>w\in\Sigma^*</m>, <m>T</m> halts with the
 desired output.  This means that <m>T</m> does in fact decide the language <m>L</m>.
-
+</p>
+<p>
 It is easy to prove the converse, and the proof is left as an exercise. So
 we see that a language is Turing-decidable if and only if both it and
 its complement are Turing-acceptable.  Since Turing-acceptability can
@@ -792,37 +569,92 @@ We introduced the term ``recursively enumerable''
 as a synonym for Turing-acceptable, to get away from the association with a
 particular form of computation.  Similarly, we define the term ``recursive''
 as a synonym for Turing-decidable.  That is, a language <m>L</m>
-is said to be \nw[recursive language]{recursive} if and only if it
+is said to be <idx>recursive language</idx><term>recursive</term>} if and only if it
 is Turing-decidable.  We then have the theorem:
 
-#egin{theorem}\label{T-re}
-Let <m>\Sigma</m> be an alphabet and let <m>L</m> be a language over <m>\Sigma</m>.
+<theorem xml:id="thm-recursive-language">
+   <statement>
+      <p>
+         Let <m>\Sigma</m> be an alphabet and let <m>L</m> be a language over <m>\Sigma</m>.
 Then <m>L</m> is recursive if and only if both <m>L</m> and its
-complement, <m>\Sigma^*\SETDIFF L</m>, are recursively enumerable.
-\end{theorem}
+complement, <m>\Sigma^* - L</m>, are recursively enumerable.
+      </p>
+   </statement>
+</theorem>
+<!-- STOP HERE NEED to add limits  of comp section -->
+
+</subsection>
+   <title>Exercises</title>
+
+<exercise number="1"> Let <m>\Sigma=\{a\}</m>.  Draw a transition diagram for a Turing
+machine that computes the function <m>f\colon\Sigma^*\to\Sigma^*</m> where
+<m>f(a^n)=a^{3n}</m>, for <m>n\in\N</m>. Draw a transition diagram for a Turing
+machine that computes the function <m>f\colon\Sigma^*\to\Sigma^*</m> where
+<m>f(a^n)=a^{3n+1}</m>, for <m>n\in\N</m>.</exercise>
+
+<exercise number="1"> Let <m>\Sigma=\{a,b\}</m>.
+Draw a transition diagram for a Turing machine that
+computes the function <m>f\colon\Sigma^*\to\Sigma^*</m> where
+<m>f(w)=w^R</m>.</exercise>
+
+<exercise number="2"> Suppose that <m>\Sigma</m>, <m>\Gamma</m>, and <m>\Xi</m> are alphabets and that
+<m>f\colon\Sigma^*\to\Gamma^*</m> and <m>g\colon\Gamma^*\to\Xi^*</m> are 
+Turing-computable functions.  Show that <m>g\circ f</m> is Turing-computable.</exercise>
+
+<exercise number="3"> We have defined computability for functions <m>f\colon\Sigma^*\to\Gamma^*</m>,
+where <m>\Sigma</m> and <m>\Gamma</m> are alphabets.  How could Turing machines
+be used to define computable functions from <m>\N</m> to <m>\N\,</m>?
+(Hint: Consider the alphabet <m>\Sigma=\{a\}</m>.)</exercise>
+
+<exercise number="4"> Let <m>\Sigma</m> be an alphabet and let <m>L</m> be a language over <m>\Sigma</m>.
+Show that <m>L</m> is Turing-decidable if and only if its complement,
+<m>\overline{L}</m>, is Turing-decidable.</exercise>
+
+<exercise number="5"> Draw a transition diagram for a Turing machine which
+decides the language <m>\{a^nb^n\st n\in\N\}</m>.  (Hint: Change the
+<m>a</m>'s and <m>b</m>'s to \$'s in pairs.)  Explain in general terms how to
+make a Turing machine that decides the language <m>\{a^nb^nc^n\st n\in\N\}</m>.</exercise>
+
+<exercise number="6"> Draw a transition diagram for a Turing machine which
+decides the language $\{a^nb^m\st n>0<m> and </m>m<m> is a multiple of </m>n\}$.
+(Hint: Erase <m>n</m> <m>b</m>'s at a time.)</exercise>
+
+<exercise number="7"> Based on your answer to the previous problem and the copying
+machine presented in this section, describe in
+general terms how you would build a Turing machine to decide the
+language <m>\{a^p\st p</m> is a prime number<m>\}</m>.</exercise>
+
+<exercise number="8"> Let <m>g\colon \{a\}^*\to\{0,1\}^*</m> be the function such that
+for each <m>n\in\N</m>, <m>g(a^n)</m> is the representation of <m>n</m> as a binary
+number.  Draw a transition diagram for a Turing machine that computes <m>g</m>.</exercise>
+
+
+</exercises>
+
+
 
 #egin{exercises}
 
-\problem The language $L=\{a^m\st m>0\}<m> is the range of the function
+<exercise number="1"> The language $L=\{a^m\st m>0\}<m> is the range of the function
 </m>f(a^n)=a^{n+1}$.  Design a Turing machine that computes this function,
 and find the grammar that generates the language <m>L</m> by
 imitating the computation of that machine.
 
-\problem Complete the proof of Theorem \ref{T-re} by proving
+<exercise number="1"> Complete the proof of Theorem \ref{T-re} by proving
 the following:  If <m>L</m> is a recursive language over an
 alphabet <m>\Sigma</m>, then both
 <m>L</m> and <m>\Sigma^*\SETDIFF L</m> are recursively enumerable.
 
-\problem Show that a language <m>L</m> over an alphabet <m>\Sigma</m>
+<exercise number="1"> Show that a language <m>L</m> over an alphabet <m>\Sigma</m>
 is recursive if and only if there are grammars <m>G</m>
 and <m>H</m> such that the language generated by <m>G</m> is <m>L</m> and the
 language generated by <m>H</m> is <m>\Sigma^*\SETDIFF L</m>.
 
-\problem This section discusses recursive languages and recursively
+<exercise number="1"> This section discusses recursive languages and recursively
 enumerable languages.  How could one define recursive subsets of
 <m>\N</m> and recursively enumerable subsets of <m>\N</m>?
 
-\problem Give an informal argument to show that a subset <m>X\SUB\N</m> is
+<exercise number="1"> Give an informal argument to show that a subset <m>X\SUB\N</m> is
 recursive if and only if there is a computer program
 that prints out the elements of <m>X</m> {\it in increasing order}.
 
