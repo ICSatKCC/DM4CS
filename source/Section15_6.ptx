@@ -17,7 +17,7 @@ and we have considered how context-free grammars can be used to
 generate context-free languages.  You might wonder whether there is any
 type of automaton that can be used to recognize context-free languages.
 In fact, there is:  The abstract machines known as 
-<term>pushdown automaton</term> that utilize a stack in addition to a finite automaton, can be used to define
+<term>pushdown automata</term> that utilize a stack in addition to a finite automaton, can be used to define
 context-free languages. These and languages that are not context-free (or context-sensitive languages) will not be covered in this text. If you wish to learn more 
 about pushdown automata, non-context-free languages, or general grammars please refer to the
 original source text for this chapter: <url href="https://math.hws.edu/FoundationsOfComputation/">Foundations of Computation</url>, Chapter 4
@@ -31,7 +31,8 @@ original source text for this chapter: <url href="https://math.hws.edu/Foundatio
       that there are limits to what can be done by computing.
     </p>
   </introduction>
-  <p>
+
+
    <subsection xml:id="subsec-turing">
       <title>Turing Machines</title>
       
@@ -69,7 +70,7 @@ time is the output of the computation.</p>
 <p>
    You might want to visualize a Turing machine as a physical machine 
    such as in this simple diagram: 
-</p>
+
 <figure width="80%" xml:id="fig-TM">
   
    <image source="images/Turing_machine" width="50%">
@@ -137,7 +138,7 @@ that makes it visible.  I will always use <m>h</m> to represent the halt
 state.  I will indicate the directions, left and right, with
 <m>L</m> and <m>R</m>, so that <m>\{L,R\}</m> is the set of possible directions of
 motion.  With these conventions, we can give the formal definition of
-a Turing machine as follows:
+a Turing machine as follows:</p>
 
 <definition xml:id="def-turing-machine">
    <title>Turing Machine</title>
@@ -165,7 +166,7 @@ where:
    </li>
    <li>
       <p>
-         <m>\delta\colon (Q\SETDIFF\{h\})\times\Lambda \to \Lambda\times 
+         <m>\delta\colon (Q - \{h\})\times\Lambda \to \Lambda\times 
             \{L,R\}\times Q</m> is the transition function.  The fact that
             <m>\delta(q,\sigma)=(\tau,d,r)</m> means that when the Turing machine is
             in state <m>q</m> and reads the symbol <m>\sigma</m>, it writes the symbol
@@ -288,7 +289,8 @@ of strings, we can now ask whether the values of the function can
 be computed by a Turing machine.  That is, is there a Turing machine <m>M</m>
 such that, given any string <m>w</m> in the domain of <m>f</m> as input,
 <m>M</m> will compute as its output the string <m>f(w)</m>.  If this is
-that case, then we say that <m>f</m> is a Turing-computable function.
+that case, then we say that <m>f</m> is a Turing-computable function.</p>
+
 <definition xml:id="def-turing-computable">
    <title>Turing-computable</title>
    <idx><h>Turing-computable</h></idx>
@@ -305,6 +307,7 @@ that case, then we say that <m>f</m> is a Turing-computable function.
    </statement>
 </definition>
 
+<p>
  For example, let <m>\Sigma=\{a\}</m> and define <m>f\colon\Sigma^*\to\Sigma^*</m>
 by <m>f(a^n)=a^{2n}</m>, for <m>n\in\N</m>.  Then <m>f</m> is Turing-computable
 since it is computed by this Turing machine:
@@ -385,10 +388,9 @@ halts with output 1, that is, if and only if <m>w\in L</m>.</p>
 
 </subsection>
 
-<subsection xml:id="subsec-computability-limits">
-   <title>Computability and The Limits of Computation</title>
+<subsection xml:id="subsec-computability">
+   <title>Computability</title>
 <idx><h>Computability</h></idx>   
-<idx><h>Limits of Computation</h></idx>
 
 <p>At this point, it would be useful to look at increasingly complex
 Turing machines, such as those with more tapes, which compute increasingly complex functions and languages.
@@ -440,11 +442,11 @@ But no---it turns out that we have just found another way of
 describing the Turing-acceptable languages.  The following theorem
 makes this fact official and adds one more way of describing
 the same class of languages:
-
 <aside>
    Discussion of the proof of this theorem can be found in the source document for this section: Section 5.2 of <url href="https://math.hws.edu/FoundationsOfComputation/">Foundations
    of Computation</url>
 </aside>
+</p>
 
 <theorem xml:id="thm-turing-equivalence">
    <statement>
@@ -501,8 +503,9 @@ that string to <m>w</m>.  If they are equal, then <m>M</m> halts.  If <m>w</m> i
 in fact in <m>L</m>, then eventually <m>M</m> will produce the string <m>w</m> and
 will halt.  Conversely, if <m>w</m> is not in <m>L</m>, then <m>M</m> will go on producing
 strings forever without ever finding <m>w</m>, so <m>M</m> will never halt.
-This shows that, in fact, the language <m>L</m> is accepted by <m>M</m>.
+This shows that, in fact, the language <m>L</m> is accepted by <m>M</m>.</p>
 
+<p>
 Conversely, suppose that <m>L</m> is a language over an alphabet <m>\Sigma</m>,
 and that <m>L</m> is Turing-acceptable.  Then it is possible to find a grammar
 <m>G</m> that generates <m>L</m>.  To do this, it's convenient to use the
@@ -522,6 +525,7 @@ conceptual gap between grammars and Turing machines.</p>
 that generates <m>L</m>.  Even though Turing machines and grammars
 are very different things, they are equivalent in terms of
 their ability to describe languages.  We state this as a theorem:
+</p>
 <theorem xml:id="thm-turing-iff-grammar">
    <statement>
       <p>
@@ -530,7 +534,7 @@ if and only if there is a general grammar that generates <m>L</m>.
       </p>
    </statement>
 </theorem>
-</p>
+
 
 <p>In this section, we have been talking mostly about recursively enumerable
 languages (also known as the Turing-acceptable languages).  What
@@ -539,11 +543,12 @@ We already know that if a language <m>L</m> is Turing-decidable,
 then it is Turing-acceptable.  The converse is not true (although
 we won't be able to prove this yet).  However, suppose
 that <m>L</m> is a language over the alphabet <m>\Sigma</m> and that both
-<m>L</m> and its complement,  <m>\overline{L}=\Sigma^* - L</m>, are Turing-acceptable.
+<m>L</m> and its complement,  <m>\bar{L}=\Sigma^* - L</m>, are Turing-acceptable.
 Then <m>L</m> is Turing-decidable.</p>
 
+<p>
 For suppose that <m>M</m> is a Turing machine that accepts the language
-<m>L</m> and that <m>M'</m> is a Turing machine that accepts <m>\overline{L}</m>.
+<m>L</m> and that <m>M'</m> is a Turing machine that accepts <m>\bar{L}</m>.
 We must show that <m>L</m> is Turing-decidable.  That is,
 we have to build a Turing machine <m>T</m> that decides <m>L</m>. For each
 <m>w\in\Sigma^*</m>, when <m>T</m> is run with input <m>w</m>, it should halt with
@@ -558,6 +563,7 @@ only if <m>w\in L</m>.  If and when the simulated computation of <m>M'</m> halts
 only if <m>w\not\in L</m>.  So, for any <m>w\in\Sigma^*</m>, <m>T</m> halts with the
 desired output.  This means that <m>T</m> does in fact decide the language <m>L</m>.
 </p>
+
 <p>
 It is easy to prove the converse, and the proof is left as an exercise. So
 we see that a language is Turing-decidable if and only if both it and
@@ -569,8 +575,8 @@ We introduced the term ``recursively enumerable''
 as a synonym for Turing-acceptable, to get away from the association with a
 particular form of computation.  Similarly, we define the term ``recursive''
 as a synonym for Turing-decidable.  That is, a language <m>L</m>
-is said to be <idx>recursive language</idx><term>recursive</term>} if and only if it
-is Turing-decidable.  We then have the theorem:
+is said to be <idx>recursive language</idx><term>recursive</term> if and only if it
+is Turing-decidable.  We then have the theorem:</p>
 
 <theorem xml:id="thm-recursive-language">
    <statement>
@@ -581,100 +587,26 @@ complement, <m>\Sigma^* - L</m>, are recursively enumerable.
       </p>
    </statement>
 </theorem>
-<!-- STOP HERE NEED to add limits  of comp section -->
+
 
 </subsection>
-   <title>Exercises</title>
 
-<exercise number="1"> Let <m>\Sigma=\{a\}</m>.  Draw a transition diagram for a Turing
-machine that computes the function <m>f\colon\Sigma^*\to\Sigma^*</m> where
-<m>f(a^n)=a^{3n}</m>, for <m>n\in\N</m>. Draw a transition diagram for a Turing
-machine that computes the function <m>f\colon\Sigma^*\to\Sigma^*</m> where
-<m>f(a^n)=a^{3n+1}</m>, for <m>n\in\N</m>.</exercise>
+<!-- limits  of comp section shortened from Foundations of Computation -->
+<subsection xml:id="subsec-limits-of-comp">
+   <title>The Limits of Computation</title> 
+<idx><h>Limits of Computation</h></idx>
 
-<exercise number="1"> Let <m>\Sigma=\{a,b\}</m>.
-Draw a transition diagram for a Turing machine that
-computes the function <m>f\colon\Sigma^*\to\Sigma^*</m> where
-<m>f(w)=w^R</m>.</exercise>
-
-<exercise number="2"> Suppose that <m>\Sigma</m>, <m>\Gamma</m>, and <m>\Xi</m> are alphabets and that
-<m>f\colon\Sigma^*\to\Gamma^*</m> and <m>g\colon\Gamma^*\to\Xi^*</m> are 
-Turing-computable functions.  Show that <m>g\circ f</m> is Turing-computable.</exercise>
-
-<exercise number="3"> We have defined computability for functions <m>f\colon\Sigma^*\to\Gamma^*</m>,
-where <m>\Sigma</m> and <m>\Gamma</m> are alphabets.  How could Turing machines
-be used to define computable functions from <m>\N</m> to <m>\N\,</m>?
-(Hint: Consider the alphabet <m>\Sigma=\{a\}</m>.)</exercise>
-
-<exercise number="4"> Let <m>\Sigma</m> be an alphabet and let <m>L</m> be a language over <m>\Sigma</m>.
-Show that <m>L</m> is Turing-decidable if and only if its complement,
-<m>\overline{L}</m>, is Turing-decidable.</exercise>
-
-<exercise number="5"> Draw a transition diagram for a Turing machine which
-decides the language <m>\{a^nb^n\st n\in\N\}</m>.  (Hint: Change the
-<m>a</m>'s and <m>b</m>'s to \$'s in pairs.)  Explain in general terms how to
-make a Turing machine that decides the language <m>\{a^nb^nc^n\st n\in\N\}</m>.</exercise>
-
-<exercise number="6"> Draw a transition diagram for a Turing machine which
-decides the language $\{a^nb^m\st n>0<m> and </m>m<m> is a multiple of </m>n\}$.
-(Hint: Erase <m>n</m> <m>b</m>'s at a time.)</exercise>
-
-<exercise number="7"> Based on your answer to the previous problem and the copying
-machine presented in this section, describe in
-general terms how you would build a Turing machine to decide the
-language <m>\{a^p\st p</m> is a prime number<m>\}</m>.</exercise>
-
-<exercise number="8"> Let <m>g\colon \{a\}^*\to\{0,1\}^*</m> be the function such that
-for each <m>n\in\N</m>, <m>g(a^n)</m> is the representation of <m>n</m> as a binary
-number.  Draw a transition diagram for a Turing machine that computes <m>g</m>.</exercise>
-
-
-</exercises>
-
-
-
-#egin{exercises}
-
-<exercise number="1"> The language $L=\{a^m\st m>0\}<m> is the range of the function
-</m>f(a^n)=a^{n+1}$.  Design a Turing machine that computes this function,
-and find the grammar that generates the language <m>L</m> by
-imitating the computation of that machine.
-
-<exercise number="1"> Complete the proof of Theorem \ref{T-re} by proving
-the following:  If <m>L</m> is a recursive language over an
-alphabet <m>\Sigma</m>, then both
-<m>L</m> and <m>\Sigma^*\SETDIFF L</m> are recursively enumerable.
-
-<exercise number="1"> Show that a language <m>L</m> over an alphabet <m>\Sigma</m>
-is recursive if and only if there are grammars <m>G</m>
-and <m>H</m> such that the language generated by <m>G</m> is <m>L</m> and the
-language generated by <m>H</m> is <m>\Sigma^*\SETDIFF L</m>.
-
-<exercise number="1"> This section discusses recursive languages and recursively
-enumerable languages.  How could one define recursive subsets of
-<m>\N</m> and recursively enumerable subsets of <m>\N</m>?
-
-<exercise number="1"> Give an informal argument to show that a subset <m>X\SUB\N</m> is
-recursive if and only if there is a computer program
-that prints out the elements of <m>X</m> {\it in increasing order}.
-
-\end{exercises}
-
-
-
-\section{The Limits of Computation}\label{S-turing-3}
-
-Recursively enumerable languages are languages that can be defined by computation.
-We have seen that there are many different models of compu\-tation---Turing machines,
+<p>Recursively enumerable languages are languages that can be defined by computation.
+We have seen that there are many different models of computation---Turing machines,
 two-tape Turing machines, grammars, computer programs---but they all lead
 to the same class of languages.  In fact, every computational method for
 specifying languages that has ever been developed produces only recursively
 enumerable languages.  There is something about these languages---some pattern
 or property---that makes them ``computable,''  and it is some intrinsic
 property of the languages themselves, not some peculiarity of any given
-model of computation.
+model of computation.</p>
 
-This is especially interesting since most languages are not recursively enumerable.
+<p>This is especially interesting since most languages are not recursively enumerable.
 Given an alphabet <m>\Sigma</m>, there are uncountably many languages over <m>\Sigma</m>, but
 only countably many of them are recursively enumerable.  The rest---the vast
 majority---are not recursively enumerable.  What can we say about
@@ -684,18 +616,17 @@ recursively enumerable, then there is no algorithm for listing the members of
 all its members satisfy, but that property can't be computable.  That is, there
 can be no computer program or Turing machine that tests whether a given
 string <m>w</m> has the property, since if there were, then we could write a
-program that lists the members of <m>L</m>.
+program that lists the members of <m>L</m>.</p>
 
-So, even though almost every language is non-recursively-enumerable, it's
+<p>So, even though almost every language is non-recursively-enumerable, it's
 difficult to find a particular language that is not recursively enumerable.
 Nevertheless, in this section we will find one such language.  At that same
 time, we will find an example of a language that is recursively enumerable
 but not recursive.  And we will discover some interesting limitations to
-the power of computation.
+the power of computation.</p>
 
-\medskip
 
-The examples that we will look at in this section involve Turing
+<p>The examples that we will look at in this section involve Turing
 machines that work with other Turing machines as data.  For this to
 work, we need a symbolic representation of Turing machines---a
 representation that can be written on the tape of another Turing
@@ -704,49 +635,49 @@ a Turing machine that can generate Turing machines
 on demand by writing their symbolic representations on its tape.
 We will design a Turing machine <m>G</m> to do this.  And second,
 a Turing machine that can simulate the computation of other
-Turing machines whose descriptions are written on its tape.
+Turing machines whose descriptions are written on its tape.</p>
 
 
-In order to do all this, we must put some limitations on
+<p>In order to do all this, we must put some limitations on
 the states and alphabetic symbols that can be used in the Turing machines
 that we consider.
 Clearly, given any Turing machine, we can change the names of the
 states without changing the behavior of the machine.  So, without any
 loss of generality, we can assume that all states have names chosen
-from the list: <m>h</m>, <m>q</m>, <m>q'</m>, <m>q''</m>, <m>q'''</m>, <m>q''''</m>,~\dots.
+from the list: <m>h</m>, <m>q</m>, <m>q'</m>, <m>q''</m>, <m>q'''</m>, <m>q''''</m>,<m>\dots</m>.
 We assume that <m>h</m> is the halt state and <m>q</m> is the start state.
 Note that there is an infinite number of possible states, but any
 given Turing machine will only use finitely many states from this
-list.  
+list.  </p>
 
-As for the alphabets of the Turing machines, I want to look at
+<p>As for the alphabets of the Turing machines, I want to look at
 Turing machines whose alphabets include the symbols 0, 1, <m>a</m>, and of
-course~#.
+course #.
 These are the symbols that the machines will use for input and output.
 The alphabets can also include other symbols.  We will assume that
 these auxiliary symbols are chosen from the list: <m>a'</m>, <m>a''</m>, <m>a'''</m>,
-<m>a''''</m>,~\dots.  Given a Turing machine whose alphabet includes
+<m>a''''</m>,<m>\dots</m>.  Given a Turing machine whose alphabet includes
 the symbols 0, 1, <m>a</m>, and #, we can rename any other symbols in its
 alphabet using names from this list.  This renaming will not
-affect any of the behavior that we are interested in.
+affect any of the behavior that we are interested in.</p>
 
-Now suppose we have one of these standard Turing machines---one
-whose states are chosen from the list <m>h</m>, <m>q</m>, <m>q'</m>, <m>q''</m>, <m>q'''</m>,~\dots,
+<p>Now suppose we have one of these standard Turing machines---one
+whose states are chosen from the list <m>h</m>, <m>q</m>, <m>q'</m>, <m>q''</m>, <m>q'''</m>,<m>\dots</m>,
 whose start state is <m>q</m>, and whose symbols are chosen from the list
-#, 0, 1, <m>a</m>, <m>a'</m>, <m>a''</m>, <m>a'''</m>,~\dots.  Such a machine can be
+#, 0, 1, <m>a</m>, <m>a'</m>, <m>a''</m>, <m>a'''</m>,<m>\dots</m>.  Such a machine can be
 completely encoded as a string of symbols over the alphabet
-<m>\{h,q,L,R,#,0,1,a,{}',\text{\tt\</m>}\}$.  A transition rule
+<m>\{h,q,L,R,\text{\#},0,1,a,',\text{\$}\}</m>.  A transition rule
 such as <m>\delta(q'',0)=(a''',L,q)</m> can be encoded as a
 string <m>q''0a'''Lq</m>.  To encode a complete machine, simply encode
 each of its transition rules in this way and join them together in a string,
-separated by {\tt\$}'s.  We now have the symbolic representation for
-Turing machines that we need.
+separated by $'s.  We now have the symbolic representation for
+Turing machines that we need.</p>
 
-Note that a string over the alphabet <m>\{h,q,L,R,#,0,1,a,{}',\text{\</m>}\}$
+<p>Note that a string over the alphabet <m>\{h,q,L,R,\text{\#},0,1,a,',\text{\$}\}</m>
 might or might not encode a Turing machine.  However, it is a simple
 matter to check whether such a string is the code for a Turing machine.
 We can imagine the following process:  Generate all the strings over the
-alphabet <m>\{h,q,L,R,#,0,1,a,{}',\text{\</m>}\}$.  Check each string
+alphabet <m>\{h,q,L,R,\text{\#},0,1,a,',\text{\$}\}</m>.  Check each string
 to see whether it encodes a Turing machine.  If so, add the string
 to an output list. In this way, we can generate a list of
 all strings that encode standard Turing machines.  In effect,
@@ -764,9 +695,9 @@ machine to do all these calculations.  In fact, there is
 a Turing machine that, when run with input <m>a^n</m>, will halt with
 the string representation of <m>T_n</m> written on its tape as output.
 The Turing machine that does this is <m>G</m>, the first of the
-two machines that we need.
+two machines that we need.</p>
 
-The second machine that we need will be called <m>U</m>.  It is a
+<p>The second machine that we need will be called <m>U</m>.  It is a
 so-called <term>Universal Turing Machine</term>.  The single Turing machine
 <m>U</m> can simulate the computation of any standard Turing machine, <m>T</m>,
 on any input.  Both the symbolic representation of <m>T</m> and that of
@@ -775,15 +706,15 @@ space.  As <m>U</m> simulates the computation of <m>T</m>, it will need
 some way to keep track of what state <m>T</m> is in and of
 the position of <m>T</m> on its (simulated) tape.  It does this
 by writing the current state of <m>T</m> on its tape, following
-<m>T</m>'s input string, and by adding a special symbol, such as \at,
+<m>T</m>'s input string, and by adding a special symbol, such as <m>@</m>,
 to the input string to mark <m>T</m>'s position.  When <m>U</m> is first
-started, it begins by adding the \at\ to the beginning of the
+started, it begins by adding the <m>@</m>to the beginning of the
 input string and writing a <m>q</m> after the string to represent
 the start state of <m>T</m>.  It is then relatively straightforward
 for <m>U</m> to simulate the computation of <m>T</m>.  For each step
 in the computation of <m>T</m>, it can determine the current state
 of <m>T</m> (which is recorded on <m>U</m>'s tape) and the symbol which
-<m>T</m> is currently reading (which is on <m>U</m>'s tape, after the \at).
+<m>T</m> is currently reading (which is on <m>U</m>'s tape, after the <m>@</m>).
 <m>U</m> searches the symbolic representation of <m>T</m> for the
 rule that tells <m>T</m> what to do in this situation.  Using
 this rule, <m>U</m> can update its representation of <m>T</m>'s state,
@@ -793,30 +724,38 @@ Otherwise, it goes on to simulate the next step in <m>T</m>'s computation.
 Note that when <m>U</m> is given <m>T</m> and an input string <m>w</m> as
 input, <m>U</m> will halt if and only if <m>T</m> halts on input <m>w</m>.
 (Obviously, this is a very inefficient simulation, but we
-are not concerned with efficiency here.)
+are not concerned with efficiency here.)</p>
 
-So, we have our two machines, <m>G</m> and <m>U</m>.
+<p>So, we have our two machines, <m>G</m> and <m>U</m>.
 After all this setup, we are finally in a position to look at
-the major theorem that we have been working towards.
+the major theorem that we have been working towards.</p>
 
-#egin{theorem}
-Let <m>T_0</m>, <m>T_1</m>, <m>T_2</m>, \dots, be the standard Turing machines,
+<theorem xml:id="thm-halting-prob">
+   <statement>
+      <p>
+         Let <m>T_0</m>, <m>T_1</m>, <m>T_2</m>, <m>\dots</m>, be the standard Turing machines,
 as described above.  Let <m>K</m> be the language over the alphabet <m>\{a\}</m>
-defined by <m></m>K=\{a^n\st\,T_n\text{ halts when run with input }a^n\}.<m></m>
+defined by 
+<me>K=\{a^n\st\,T_n\text{ halts when run with input }a^n\}.</me>
+
 Then <m>K</m> is a recursively enumerable language, but <m>K</m> is not
-recursive.  The complement <m></m>\overline{K}=\{a^n\st\,T_n\text{ does
-not halt when run with input }a^n\}.<m></m>
+recursive.  The complement 
+<me>\bar{K}=\{a^n\st\,T_n\text{ does
+not halt when run with input }a^n\}.</me>
 is a language that is not recursively enumerable.
-\end{theorem}
+      </p>
+   </statement>
+</theorem>
 
-First note that if both <m>K</m> and <m>\overline{K}</m> were recursively
-enumerable, then <m>K</m> would be recursive, by Theorem~\ref{T-re}.
+
+<p>First note that if both <m>K</m> and <m>\bar{K}</m> were recursively
+enumerable, then <m>K</m> would be recursive, by <xref ref="thm-recursive-language"/>.
 So, once we show that <m>K</m> is recursively enumerable but not
-recursive, it follows immediately that <m>\overline{K}</m> cannot
+recursive, it follows immediately that <m>\bar{K}</m> cannot
 be recursively enumerable.  That is, the second part of the
-theorem follows from the first.
+theorem follows from the first.</p>
 
-To show that <m>K</m> is recursively enumerable, it suffices to find
+<p>To show that <m>K</m> is recursively enumerable, it suffices to find
 a Turing machine, <m>M</m>, that accepts <m>K</m>.  That is, when run
 with input <m>a^n</m>, for <m>n\in\N</m>, <m>M</m> should halt if and only if
 <m>a^n\in K</m>.  We can build <m>M</m> from the Turing machines <m>G</m> and <m>U</m>
@@ -829,10 +768,10 @@ computation of <m>T_n</m> on input <m>a^n</m>.  This simulation will end
 if and only if <m>T_n</m> halts when run with input <m>a^n</m>, that is, if and only
 if <m>a^n\in K</m>.  The Turing machine <m>M</m> that performs the computation
 we have described accepts the language <m>K</m>.
-This proves that <m>K</m> is recursively enumerable.
+This proves that <m>K</m> is recursively enumerable.</p>
 
-To show that <m>K</m> is not recursive, we need to show that
-there is \textit{no} Turing machine that decides <m>K</m>.  
+<p>To show that <m>K</m> is not recursive, we need to show that
+there is <em>no</em> Turing machine that decides <m>K</m>.  
 Let <m>H</m> be any Turing machine.  We must show that
 no matter what <m>H</m> does, it
 does not decide the language <m>K</m>.  We must do this without
@@ -844,12 +783,12 @@ and will halt with output 0 if <m>a^n\not\in K</m>.  To show that
 <m>H</m> does not decide <m>K</m> we need to show that there is some
 <m>n\in\N</m> such that when <m>H</m> is run with input <m>a^n</m>, 
 <m>H</m> either fails to halt or else halts but gives the wrong 
-output.  Note in particular that we only need to find \textit{one}
+output.  Note in particular that we only need to find <em>one</em>
 <m>n</m> for which <m>H</m> does not give the correct result.
 As we try to find <m>n</m>, we have nothing much to work with
-but <m>H</m> itself.\looseness=-1
+but <m>H</m> itself.</p>
 
-To find <m>n</m>, we construct a Turing machine <m>M</m> that is a simple
+<p>To find <m>n</m>, we construct a Turing machine <m>M</m> that is a simple
 variation on <m>H</m>.  When <m>M</m> is run on any input, it duplicates the behavior
 of <m>H</m> on that input until <m>H</m> halts (if it ever does).  At that point, <m>M</m> should
 check <m>H</m>'s output.  If <m>H</m> has halted with output <m>1</m>, then 
@@ -860,23 +799,23 @@ of the standard Turing machines, say <m>M=T_n</m>.  (If <m>M</m> is not
 already one of these machines, it is because it uses different names
 for its states and symbols.  Renaming the states and symbols will
 produce an equivalent machine with the same behavior as <m>M</m>,
-and we can replace <m>M</m> with this standard machine.)  
+and we can replace <m>M</m> with this standard machine.) </p> 
 
-We now have a Turing machine <m>T_n = M</m> which has the following behavior
+<p>We now have a Turing machine <m>T_n = M</m> which has the following behavior
 when it is run with input <m>a^n</m> (note that the <m>n</m> here is the same <m>n</m> as
 in <m>T_n</m>):
 If <m>H</m> halts with output 1 on input <m>a^n</m>, then <m>T_n</m>
 will fail to halt on input <m>a^n</m>.  If <m>H</m> halts with output 0
 on input <m>a^n</m>, then <m>T_n</m> fails to halt on input <m>a^n</m>.  (What <m>T_n</m>
-might do in other cases is not relevant here.)
+might do in other cases is not relevant here.)</p>
 
-Remember that we are trying to show that <m>H</m> does not decide the language
+<p>Remember that we are trying to show that <m>H</m> does not decide the language
 <m>K</m>.  I claim that, in fact, <m>H</m> does not give the correct answer for <m>a^n</m>.  When <m>H</m>
 is run with input <m>a^n</m>, it is supposed to halt with output 1 if <m>a^n\in K</m>,
 and it is supposed to halt with output 0 if <m>a^n\not\in K</m>.  Recall that
-<m>a^n\in K</m> if and only if <m>T_n</m> halts when run with input <m>a^n</m>.
+<m>a^n\in K</m> if and only if <m>T_n</m> halts when run with input <m>a^n</m>.</p>
 
-Suppose that we run <m>H</m> with input <m>a^n</m>.
+<p>Suppose that we run <m>H</m> with input <m>a^n</m>.
 If <m>H</m> does not halt with output 0 or 1, then it has certainly not given the 
 correct answer for <m>a^n</m>.  Now, suppose that <m>H</m> halts with output 1 on input <m>a^n</m>.
 In this case, by the properties of <m>T_n</m> given above, we know that <m>T_n</m> does not
@@ -893,21 +832,20 @@ an incorrect answer when it is run with the particular input <m>a^n</m>.
 <m>H</m> does not decide <m>K</m>, and since
 <m>H</m> was an arbitrary Turing machine, we see that there is
 no Turing machine at all that decides the language <m>K</m>.  Thus,
-<m>K</m> is not a recursive language, as the theorem claims. 
+<m>K</m> is not a recursive language, as the theorem claims. </p>
 
-\medbreak
 
-To decide the language <m>K</m> would be to solve the following
+<p>To decide the language <m>K</m> would be to solve the following
 problem:  Given a Turing machine <m>T_n</m>, decide whether or
 not <m>T_n</m> will halt when it is run with input <m>a^n</m>.  This
-problem is called the <term>Halting Problem</term>.  We have shown
+problem is called the <term>Halting Problem</term><idx><h>Halting Problem</h></idx>.  We have shown
 that there is no Turing machine that solves this problem.
 Given the equivalence of Turing machines and computer programs,
 we can also say that there is no computer program that
 solves the halting problem.  We say that the halting problem
-is \nw[computational unsolvability]{computationally unsolvable}.
+is <idx><h>computational unsolvability</h></idx><term>computationally unsolvable</term>.</p>
 
-The halting problem is just one
+<p>The halting problem is just one
 of many problems that cannot be solved by Turing machines or
 computer programs.  In fact, almost any interesting yes/no
 question that can be asked about Turing machines or programs
@@ -920,14 +858,77 @@ All these problems are computationally unsolvable in the
 sense that there is no Turing machine or computer program
 that will answer them correctly in all cases. The
 existence of such problems is a real limitation on the
-power of computation.
+power of computation.</p>
 
 
+</subsection>
+<exercises xml:id="exercises-15-6">
+   <title>Exercises</title>
 
+<exercise number="1"> <p>Let <m>\Sigma=\{a\}</m>.  Draw a transition diagram for a Turing
+machine that computes the function <m>f\colon\Sigma^*\to\Sigma^*</m> where
+<m>f(a^n)=a^{3n}</m>, for <m>n\in\N</m>. Draw a transition diagram for a Turing
+machine that computes the function <m>f\colon\Sigma^*\to\Sigma^*</m> where
+<m>f(a^n)=a^{3n+1}</m>, for <m>n\in\N</m>.</p></exercise>
 
+<exercise number="2"> <p>Let <m>\Sigma=\{a,b\}</m>.
+Draw a transition diagram for a Turing machine that
+computes the function <m>f\colon\Sigma^*\to\Sigma^*</m> where
+<m>f(w)=w^R</m>.</p></exercise>
 
+<exercise number="3"> <p>Suppose that <m>\Sigma</m>, <m>\Gamma</m>, and <m>\Xi</m> are alphabets and that
+<m>f\colon\Sigma^*\to\Gamma^*</m> and <m>g\colon\Gamma^*\to\Xi^*</m> are 
+Turing-computable functions.  Show that <m>g\circ f</m> is Turing-computable.</p></exercise>
 
-\endinput
+<exercise number="4"> <p>We have defined computability for functions <m>f\colon\Sigma^*\to\Gamma^*</m>,
+where <m>\Sigma</m> and <m>\Gamma</m> are alphabets.  How could Turing machines
+be used to define computable functions from <m>\N</m> to <m>\N\,</m>?
+(Hint: Consider the alphabet <m>\Sigma=\{a\}</m>.)</p></exercise>
 
-  </p>
+<exercise number="5"> <p>Let <m>\Sigma</m> be an alphabet and let <m>L</m> be a language over <m>\Sigma</m>.
+Show that <m>L</m> is Turing-decidable if and only if its complement,
+<m>\bar{L}</m>, is Turing-decidable.</p></exercise>
+
+<exercise number="6"> <p>Draw a transition diagram for a Turing machine which
+decides the language <m>\{a^nb^n\st n\in\N\}</m>.  (Hint: Change the
+<m>a</m>'s and <m>b</m>'s to \$'s in pairs.)  Explain in general terms how to
+make a Turing machine that decides the language <m>\{a^nb^nc^n\st n\in\N\}</m>.</p></exercise>
+
+<exercise number="7"> <p>Draw a transition diagram for a Turing machine which
+decides the language <m>\{a^nb^m\st n \gt 0</m> and <m>m</m> is a multiple of <m>n\}</m>.
+(Hint: Erase <m>n</m> <m>b</m>'s at a time.)</p></exercise>
+
+<exercise number="8"> <p>Based on your answer to the previous problem and the copying
+machine presented in this section, describe in
+general terms how you would build a Turing machine to decide the
+language <m>\{a^p\st p</m> is a prime number<m>\}</m>.</p></exercise>
+
+<exercise number="9"><p> Let <m>g\colon \{a\}^*\to\{0,1\}^*</m> be the function such that
+for each <m>n\in\N</m>, <m>g(a^n)</m> is the representation of <m>n</m> as a binary
+number.  Draw a transition diagram for a Turing machine that computes <m>g</m>.</p></exercise>
+
+<exercise number="10"><p> The language <m>L=\{a^m\st m \gt 0\}</m> is the range of the function
+<m>f(a^n)=a^{n+1}</m>.  Design a Turing machine that computes this function,
+and find the grammar that generates the language <m>L</m> by
+imitating the computation of that machine.</p></exercise>
+
+<exercise number="11"><p> Complete the proof of <xref ref="thm-recursive-language"/> by proving
+the following:  If <m>L</m> is a recursive language over an
+alphabet <m>\Sigma</m>, then both
+<m>L</m> and <m>\Sigma^* -  L</m> are recursively enumerable.</p></exercise>
+
+<exercise number="12"><p> Show that a language <m>L</m> over an alphabet <m>\Sigma</m>
+is recursive if and only if there are grammars <m>G</m>
+and <m>H</m> such that the language generated by <m>G</m> is <m>L</m> and the
+language generated by <m>H</m> is <m>\Sigma^* -  L</m>.</p></exercise>
+
+<exercise number="13"><p>This section discusses recursive languages and recursively
+enumerable languages.  How could one define recursive subsets of
+<m>\N</m> and recursively enumerable subsets of <m>\N</m>?</p></exercise>
+
+<exercise number="14"><p> Give an informal argument to show that a subset <m>X\SUB\N</m> is
+recursive if and only if there is a computer program
+that prints out the elements of <m>X</m> <em>it in increasing order</em>.</p></exercise>
+
+</exercises>
 </section>
