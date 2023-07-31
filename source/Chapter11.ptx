@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="chapter_11" xmlns:xi="http://www.w3.org/2001/XInclude"><title>Algebraic Structures</title>
-<!-- ADS Chapter 11 -->
+<chapter xml:id="chapter_11" xmlns:xi="http://www.w3.org/2001/XInclude"><title>Linear Algebra</title>
+<!-- From Elementary Linear Algebra by Kuttler -->
+<!-- Elementary Linear Algebra ©2012 by Kenneth Kuttler, used under a Creative Com-mons Attribution(CCBY) 
+    license made possible by funding The Saylor Foundation’s OpenTextbook Challenge in order to be incorporated 
+    into Saylor.org’s collection of open coursesavailable athttp://www.Saylor.org. 
+    Full license terms may be viewed at:http://creativecommons.org/licenses/by/3.0/ -->
 <introduction>
-<p>The primary goal of this chapter is to make the reader aware of what an <em>algebraic system </em>(or just an <em>algebra</em>) is and how algebraic systems can be studied at different levels of abstraction. After describing the concrete, axiomatic, and universal levels, we will introduce one of the most important algebraic systems at the axiomatic level, the group. In this chapter, group theory will be a vehicle for introducing the universal concepts of isomorphism, direct product, subsystem, and generating set. These concepts can be applied to all algebraic systems. The simplicity of group theory will help the reader obtain a good intuitive understanding of these concepts. We will close the chapter with a discussion of how some computer hardware and software systems use the concept of an algebraic system.
-</p></introduction>
+<p>
+    In this chapter, we will review and expand on the topics learned about matrices (<xref ref="chapter_7"/>) in ICS 141. 
+</p>
+<p>
+    If you are interested in further study of Linear Algebra, you may want to go to the original source for the material in this chapter:
+    Elementary Linear Algebra ©2012 by Kenneth Kuttler, used under a Creative Commons Attribution (CCBY) 
+    license made possible by funding The Saylor Foundation's OpenTextbook Challenge in order to be incorporated 
+    into Saylor.org's collection of open courses available at <url href="">http://www.Saylor.org.</url>.
+    Full license terms may be viewed at:<url href="http://creativecommons.org/licenses/by/3.0/">Creative Commons</url>
+</p>
+</introduction>
 <xi:include href="./Section11_1.ptx" />
-<xi:include href="./Section11_2.ptx" />
+<!--<xi:include href="./Section11_2.ptx" />
 <xi:include href="./Section11_3.ptx" />
 <xi:include href="./Section11_4.ptx" />
 <xi:include href="./Section11_5.ptx" />
 <xi:include href="./Section11_6.ptx" />
-<xi:include href="./Section11_7.ptx" />
+<xi:include href="./Section11_7.ptx" />-->
 </chapter>
