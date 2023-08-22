@@ -12,7 +12,69 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">There is one significant property of unary operations.</div>
-<span class="incontext"><a href="s-Operations.html#p-3227" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">A less cumbersome way to represent a linear system is to write it as an <dfn class="terminology">augmented matrix</dfn>. For example the linear system in <a href="" class="xref" data-knowl="./knowl/ex-elementary-operations.html" title="Example 11.1.5">Example 11.1.5</a> can be written as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-elementary-operations.html ./knowl/ex-elementary-operations.html ./knowl/ex-elementary-operations.html ./knowl/ex-elementary-operations.html">
+\begin{equation*}
+\left( \begin{array}{c c c | c}
+1 &amp; 3 &amp; 6 &amp; 25 \\
+2 &amp; 7 &amp; 14 &amp; 58 \\
+0 &amp; 2 &amp; 5 &amp; 19 \\
+\end{array} \right)
+\end{equation*}
+</div>
+<div class="para">It has exactly the same information as the original system but here it is understood there is an <span class="process-math">\(x\)</span> column <span class="process-math">\(\left( \begin{array}{c}
+1 \\
+2 \\
+0 \\
+\end{array} \right)
+\text{,}\)</span> a <span class="process-math">\(y\)</span> column, <span class="process-math">\(\left( \begin{array}{c}
+3 \\
+7 \\
+2 \\
+\end{array} \right)
+\text{,}\)</span> and a <span class="process-math">\(z\)</span> column, <span class="process-math">\(\left( \begin{array}{c}
+6 \\
+14 \\
+5 \\
+\end{array} \right)
+\text{.}\)</span> The rows correspond to the equations in the system. Thus the top row in the augmented matrix corresponds to the equation,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-elementary-operations.html ./knowl/ex-elementary-operations.html ./knowl/ex-elementary-operations.html ./knowl/ex-elementary-operations.html">
+\begin{equation*}
+x + 3y + 6z = 25\text{.}
+\end{equation*}
+</div>
+<div class="para">Now when you replace an equation with a multiple of another equation added to itself, you are just taking a row of this augmented matrix and replacing it with a multiple of another row added to it. Thus the first step in solving <a href="" class="xref" data-knowl="./knowl/ex-elementary-operations.html" title="Example 11.1.5">Example 11.1.5</a> would be to take <span class="process-math">\((-2)\)</span> times the first row of the augmented matrix above and add it to the second row,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-elementary-operations.html ./knowl/ex-elementary-operations.html ./knowl/ex-elementary-operations.html ./knowl/ex-elementary-operations.html">
+\begin{equation*}
+\left( \begin{array}{c c c | c}
+1 &amp; 3 &amp; 6 &amp; 25 \\
+0 &amp; 1 &amp; 2 &amp; 8 \\
+0 &amp; 2 &amp; 5 &amp; 19 \\
+\end{array} \right)
+\end{equation*}
+</div>
+<div class="para"> Note how this corresponds to the first step in solving <a href="" class="xref" data-knowl="./knowl/ex-elementary-operations.html" title="Example 11.1.5">Example 11.1.5</a>. Next take (-2) times the second row and add to the third,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-elementary-operations.html ./knowl/ex-elementary-operations.html ./knowl/ex-elementary-operations.html ./knowl/ex-elementary-operations.html">
+\begin{equation*}
+\left( \begin{array}{c c c | c}
+1 &amp; 3 &amp; 6 &amp; 25 \\
+0 &amp; 1 &amp; 2 &amp; 8 \\
+0 &amp; 0 &amp; 1 &amp; 3 \\
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">This augmented matrix corresponds to the system</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-elementary-operations.html ./knowl/ex-elementary-operations.html ./knowl/ex-elementary-operations.html ./knowl/ex-elementary-operations.html">
+\begin{align*}
+x + 3y + 6z \amp = 25 \\
+y + 2z \amp = 8 \\
+z \amp = 3 
+\end{align*}
+</div>
+<div class="para">which is the same as the second step in solving <a href="" class="xref" data-knowl="./knowl/ex-elementary-operations.html" title="Example 11.1.5">Example 11.1.5</a>. By back substitution you obtain the solution <span class="process-math">\(x = 1\text{,}\)</span> <span class="process-math">\(y = 6\text{,}\)</span> and <span class="process-math">\(z = 3\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="s-Systems-of-Equations.html#p-3227" class="internal">in-context</a></span>
 </body>
 </html>

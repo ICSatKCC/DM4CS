@@ -10,14 +10,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="example example-like">Let <span class="process-math">\(S = \{01, ba\}\text{.}\)</span> Then<div class="displaymath process-math">
+<body class="ignore-math"><article class="example example-like">Let <span class="process-math">\(M\)</span> be the automaton in the preceding example. Then, for example:<div class="displaymath process-math">
 \begin{align*}
-S^0 \amp = \{\varep\}\\
-S^1 \amp \{01, ba\} \\
-S^2 \amp \{0101, 01ba, ba01, baba\}\\
-S^3 \amp = \{010101, 0101ba, 01ba01, 01baba, ba0101, ba01ba, baba01, bababa\}
-\text{ etc, so} \\
-S^* \amp =\{\varep,01,ba,0101,01ba,ba01,baba,010101,0101ba,\ldots\}.
+\delta^*(p, 001)\amp =q \amp \text{ since }\delta(p,0)=p,
+\delta(p,0)=p,\text{ and }\delta(p,1)=q;\\
+\delta^*(p, 01000) \amp = q \amp\\
+\delta^*(p, 1111) \amp = r \amp\\
+\delta^*(q, 0010) \amp = r \amp
 \end{align*}
 </div></article></body>
 </html>

@@ -12,8 +12,25 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Let <span class="process-math">\(\bullet \)</span> and <span class="process-math">\(\diamond\)</span> be binary operations on a set <span class="process-math">\(S\text{.}\)</span> We say that <span class="process-math">\(\diamond\)</span> is right distributive over <span class="process-math">\(\bullet\)</span> if and only if <span class="process-math">\((b \bullet c)\diamond a = (b\diamond a) \bullet (c \diamond a)\)</span> for all <span class="process-math">\(a,b,c\in S\text{.}\)</span>
+<div class="para logical">
+<div class="para">To solve this system replace the second equation by <span class="process-math">\((-2)\)</span> times the first equation added to the second. This yields the system</div>
+<div class="displaymath process-math">
+\begin{align*}
+x + 3y + 6z \amp = 25 \\
+y + 2z \amp = 8 \\
+2y + 5z \amp = 19 
+\end{align*}
 </div>
-<span class="incontext"><a href="s-Operations.html#p-3225" class="internal">in-context</a></span>
+<div class="para">Now take <span class="process-math">\((-2)\)</span> times the second and add to the third. More precisely, replace the third equation with <span class="process-math">\((-2)\)</span> times the second added to the third. This yields the system</div>
+<div class="displaymath process-math">
+\begin{align*}
+x + 3y + 6z \amp = 25 \\
+y + 2z \amp = 8 \\
+z \amp = 3 
+\end{align*}
+</div>
+<div class="para">At this point, you can tell what the solution is. This system has the same solution as the original system and in the above, <span class="process-math">\(z = 3\text{.}\)</span> Then using this in the second equation, it follows <span class="process-math">\(y + 6 = 8\)</span> and so <span class="process-math">\(y = 2\text{.}\)</span> Now using this in the top equation yields <span class="process-math">\(x + 6 + 18 = 25\)</span> and so <span class="process-math">\(x = 1\text{.}\)</span> This process is called <dfn class="terminology">back substitution</dfn>.</div>
+</div>
+<span class="incontext"><a href="s-Systems-of-Equations.html#p-3225" class="internal">in-context</a></span>
 </body>
 </html>

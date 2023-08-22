@@ -10,6 +10,39 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para">If quotient in division is 1, then we get the slowest possible completion. If <span class="process-math">\(a
-= b + r\text{,}\)</span> then working backwards, each remainder would be the sum of the two previous remainders. This described a sequence like the Fibonacci sequence and indeed, the greatest common divisor of two consecutive Fibonacci numbers will take the most steps to reach a final value of 1.</div></div></body>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para logical">
+<div class="para">To solve this system replace the second equation by <span class="process-math">\((-2)\)</span> times the first equation added to the second. This yields the system</div>
+<div class="displaymath process-math">
+\begin{align*}
+x + 3y + 6z \amp = 25 \\
+y + 2z \amp = 8 \\
+2y + 5z \amp = 19 
+\end{align*}
+</div>
+<div class="para">Now take <span class="process-math">\((-2)\)</span> times the second and add to the third. More precisely, replace the third equation with <span class="process-math">\((-2)\)</span> times the second added to the third. This yields the system</div>
+<div class="displaymath process-math">
+\begin{align*}
+x + 3y + 6z \amp = 25 \\
+y + 2z \amp = 8 \\
+z \amp = 3 
+\end{align*}
+</div>
+<div class="para">At this point, you can tell what the solution is. This system has the same solution as the original system and in the above, <span class="process-math">\(z = 3\text{.}\)</span> Then using this in the second equation, it follows <span class="process-math">\(y + 6 = 8\)</span> and so <span class="process-math">\(y = 2\text{.}\)</span> Now using this in the top equation yields <span class="process-math">\(x + 6 + 18 = 25\)</span> and so <span class="process-math">\(x = 1\text{.}\)</span> This process is called <dfn class="terminology">back substitution</dfn>.</div>
+</div> <div class="para logical">
+<div class="para">Alternatively, you could have continued as follows. Add <span class="process-math">\((-2)\)</span> times the bottom equation to the middle and then add <span class="process-math">\((-6)\)</span> times the bottom to the top. This yields</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x + 3y = 7, y = 2, z = 3
+\end{equation*}
+</div>
+<div class="para">Now add <span class="process-math">\((-3)\)</span> times the second to the top. This yields</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x = 1, y = 2, z = 3,
+\end{equation*}
+</div>
+<div class="para">a system which has the same solution set as the original system. This avoided back substitution and led to the same solution set.</div>
+</div>
+</div></body>
 </html>

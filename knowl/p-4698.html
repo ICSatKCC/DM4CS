@@ -12,9 +12,17 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Edges in one solution are: <span class="process-math">\(\{8,7\},\{8,9\},\{8,13\},\{7,6\},\{9,4\},\{13,12\},\{13,14\},\{6,11\},\{6,1\},\{1,2\},\{4,3\},\{4,5\},\{14,15\},
-\textrm{ and } \{5,10\}\)</span>
+<div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(M_1=(Q_1,\Sigma,q_1,\delta_1,F_1)\)</span> and <span class="process-math">\(M_2=(Q_2,\Sigma,q_2,\delta_2,F_2)\)</span> are DFAs over the alphabet <span class="process-math">\(\Sigma\text{.}\)</span> It is possible to construct a DFA that accepts the langauge <span class="process-math">\(L(M_1)\cap L(M_2)\)</span> in a single step. Define the DFA</div>
+<div class="displaymath process-math">
+\begin{equation*}
+M = (Q_1\times Q_2, \Sigma, (q_1,q_2), \delta,
+F_1\times F_2)
+\end{equation*}
 </div>
-<span class="incontext"><a href="s-spanning-trees.html#p-4698" class="internal">in-context</a></span>
+<div class="para">where <span class="process-math">\(\delta\)</span> is the function from <span class="process-math">\((Q_1\times
+Q_2)\times\Sigma\)</span> to <span class="process-math">\(Q_1\times Q_2\)</span> that is defined by: <span class="process-math">\(\delta((p1,p2),\sigma))=(\delta_1(p_1,\sigma),\delta_2(p_2,\sigma))\text{.}\)</span> Convince yourself that this definition makes sense. (For example, note that states in <span class="process-math">\(M\)</span> are pairs <span class="process-math">\((p_1,p_2)\)</span> of states, where <span class="process-math">\(p_1\in Q_1\)</span> and <span class="process-math">\(p_2\in Q_2\text{,}\)</span> and note that the start state <span class="process-math">\((q_1,q_2)\)</span> in <span class="process-math">\(M\)</span> is in fact a state in <span class="process-math">\(M\text{.}\)</span>) Prove that <span class="process-math">\(L(M)=L(M_1)\cap L(M_2)\text{,}\)</span> and explain why this shows that the intersection of any two regular languages is regular. This proof---if you can get past the notation---is more direct than the one outlined above.</div>
+</div>
+<span class="incontext"><a href="sec-FSA-and-Regular-Languages.html#p-4698" class="internal">in-context</a></span>
 </body>
 </html>

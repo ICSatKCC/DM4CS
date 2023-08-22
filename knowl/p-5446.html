@@ -12,9 +12,21 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Consider the situation in which <span class="process-math">\(P_1\text{,}\)</span> <span class="process-math">\(P_2\text{,}\)</span> <span class="process-math">\(\ldots\text{,}\)</span> <span class="process-math">\(P_m\)</span> are <span class="process-math">\(m\)</span> actions that must be taken, each of which results in a well-defined outcome. For each <span class="process-math">\(k = 1,2, . . . ,m\)</span> define <span class="process-math">\(X_k\)</span> to be the set of possible outcomes of <span class="process-math">\(P_k\)</span> . We will assume that each outcome can be quantified in some way and that the quantification of the elements of <span class="process-math">\(X_k\)</span> is defined by the function <span class="process-math">\(Q_k : X_k \to
-\{0, 1,2, . . .\}\text{.}\)</span> Thus, each outcome has a non-negative integer associated with it. Finally, define a frequency function <span class="process-math">\(F_k : \{0, 1, 2, . . .\} \to \{0, 1, 2, . . .\}\)</span> such that <span class="process-math">\(F_k(n)\)</span> is the number of elements of <span class="process-math">\(X_k\)</span> that have a quantification of <span class="process-math">\(n\text{.}\)</span>
+<div class="para logical">
+<div class="para">If we examine a similar relation, <span class="process-math">\(G(k) - 2 ^k G(k - 1),\)</span> <span class="process-math">\(k\geq 1\)</span> with <span class="process-math">\(G(0)
+= 1\text{,}\)</span> a table of values for <span class="process-math">\(G\)</span> suggests a possible solution:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccccc}
+k &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\
+\hline
+G(k) &amp; 1 &amp; 2 &amp; 2^3 &amp; 2^6 &amp; 2^{10} &amp; 2^{15} \\
+\end{array}
+\end{equation*}
 </div>
-<span class="incontext"><a href="s-generating-functions.html#p-5446" class="internal">in-context</a></span>
+<div class="para">The exponent of 2 in <span class="process-math">\(G(k)\)</span> is growing according to the relation <span class="process-math">\(E(k) = E(k - 1) + k,\)</span> with <span class="process-math">\(E(0) = 0\text{.}\)</span> Thus <span class="process-math">\(E(k)=\frac{k(k+1)}{2}\)</span> and <span class="process-math">\(G(k) = 2^{k(k+1)/2}\text{.}\)</span> Note that <span class="process-math">\(G(k)\)</span> could also be written as <span class="process-math">\(2^0
+2^1 2^2 \cdots 2^k\text{,}\)</span> for <span class="process-math">\(k \geq 0\text{,}\)</span> but this is not a closed form expression.</div>
+</div>
+<span class="incontext"><a href="s-some-common-rrs.html#p-5446" class="internal">in-context</a></span>
 </body>
 </html>

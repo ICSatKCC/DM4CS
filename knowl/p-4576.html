@@ -11,8 +11,10 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">4</div>
-<span class="incontext"><a href="s-planarity-and-colorings.html#p-4576" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para">A <dfn class="terminology">nondeterministic finite-state automaton (NFA)</dfn> is the same as a deterministic finite-state automaton except that the transition function is no longer a function that maps a state-input pair to a state; rather, it maps a state-input pair or a state-<span class="process-math">\(\varep\)</span> pair to a <em class="emphasis">set</em> of states. No longer do we have <span class="process-math">\(\delta(q,a)
+= q'\text{,}\)</span> meaning that the machine must change to state <span class="process-math">\(q'\)</span> if it is in state <span class="process-math">\(q\)</span> and consumes an <span class="process-math">\(a\text{.}\)</span> Rather, we have <span class="process-math">\(\partial(q,a) = \{q_1, q_2, \ldots, q_n\}\text{,}\)</span> meaning that if the machine is in state <span class="process-math">\(q\)</span> and consumes an <span class="process-math">\(a\text{,}\)</span> it might move directly to any one of the states <span class="process-math">\(q_1, \ldots, q_n\text{.}\)</span> Note that the set of next states \partial(q,a) is defined for every state <span class="process-math">\(q\)</span> and every input symbol <span class="process-math">\(a\text{,}\)</span> but for some <span class="process-math">\(q\)</span>’s and <span class="process-math">\(a\)</span>’s it could be empty, or contain just one state (there don’t <em class="emphasis">have</em> to be multiple next states). The function \<span class="process-math">\(partial\)</span> must also specify whether it is possible for the machine to make any moves without input being consumed, i.e.\ <span class="process-math">\(\partial(q, \varepsilon)\)</span> must be specified for every state <span class="process-math">\(q\text{.}\)</span> Again, it is quite possible that <span class="process-math">\(\partial(q, \varepsilon)\)</span> may be empty for some states <span class="process-math">\(q\text{:}\)</span> there need not be <span class="process-math">\(\varep\)</span>-transitions out of <span class="process-math">\(q\text{.}\)</span>
+</div>
+<span class="incontext"><a href="s-finite-state-automata.html#p-4576" class="internal">in-context</a></span>
 </body>
 </html>

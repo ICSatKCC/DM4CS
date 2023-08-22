@@ -12,23 +12,9 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">A spreadsheet can be used to arrange data in this way. Although a “flat file” structure is often adequate, there are advantages to clustering some the information. For example the applicant information might be broken into four parts: name, contact information, high school, and application data:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-ApplicantItem &amp; = ((FirstName,MiddleInitial, LastName),\\
-&amp;((StreetAddress,City,State,Zip),\\
-&amp; (HomePhone,CellPhone),EmailAddress),\\
-&amp;HighSchool,\\
-&amp;(Major,ApplicationPaid,(MathSAT,VerbalSAT),\\
-&amp;(Recommendation1,Recommendation2,Recommendation3))
-\end{split}
-\end{equation*}
+<div class="para">If <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are strings in <span class="process-math">\((V\cup\Sigma)^*\)</span> such that <span class="process-math">\(x\YIELDS
+y\text{,}\)</span> then <span class="process-math">\(x\;\YIELDSTAR y\text{.}\)</span>
 </div>
-<div class="para">The first item in each ApplicantItem is a list <span class="process-math">\((FirstName, MiddleInitial,
-LastName)\text{,}\)</span> with each item in that list being a single field of the original flat file. The third item is simply the single high school item from the flat file. The application data is a list and one of its items, is itself a list with the recommendation data for each recommendation the applicant has.</div>
-</div>
-<span class="incontext"><a href="s-rooted-trees.html#p-4719" class="internal">in-context</a></span>
+<span class="incontext"><a href="sec-grammars.html#p-4719" class="internal">in-context</a></span>
 </body>
 </html>

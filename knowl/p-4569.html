@@ -11,17 +11,8 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">(<span class="process-math">\(\Rightarrow\)</span>) Let <span class="process-math">\(G = (V, E)\)</span> be a bipartite graph that is partitioned into two sets, R(ed) and B(lue) that define a 2-coloring. Consider any circuit in <span class="process-math">\(V\text{.}\)</span> If we specify a direction in the circuit and define <span class="process-math">\(f\)</span> on the vertices of the circuit by</div>
-<div class="displaymath process-math">
-\begin{equation*}
-f(u) = \textrm{the next vertex in
-the circuit after } v
-\end{equation*}
-</div>
-<div class="para">Note that <span class="process-math">\(f\)</span> is a bijection. Hence the number of red vertices in the circuit equals the number of blue vertices, and so the length of the circuit must be even.</div>
-</div>
-<span class="incontext"><a href="s-planarity-and-colorings.html#p-4569" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para">As well as recognizing what language is accepted by a given DFA, we often want to do the reverse and come up with a DFA that accepts a given language. Building DFAs for specified languages is an art, not a science. There is no algorithm that you can apply to produce a DFA from an English-language description of the set of strings the DFA should accept. On the other hand, it is not generally successful, either, to simply write down a half-dozen strings that are in the language and design a DFA to accept those strings---invariably there are strings that are in the language that aren’t accepted, and other strings that aren’t in the language that are accepted. So how do you go about building DFAs that accept all and only the strings they’re supposed to accept? The best advice I can give is to think about relevant characteristics that determine whether a string is in the language or not, and to think about what the possible values or ``states" of those characteristics are; then build a machine that has a state corresponding to each possible combination of values of relevant characteristics, and determine how the consumption of inputs affects those values. I’ll illustrate what I mean with a couple of examples.</div>
+<span class="incontext"><a href="s-finite-state-automata.html#p-4569" class="internal">in-context</a></span>
 </body>
 </html>

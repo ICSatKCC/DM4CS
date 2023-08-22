@@ -12,23 +12,44 @@
 </head>
 <body class="ignore-math">
 <article class="definition definition-like"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Operations on Generating Functions.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Operations on Sequences.</span>
 </h4>  <div class="para logical">
-<div class="para">If <span class="process-math">\(G(z)=\sum_{k=0}^{\infty} a_k z^k\)</span> and <span class="process-math">\(H(z) =\sum_{k=0}^{\infty} b_k
-z^k\)</span> are generating functions and <span class="process-math">\(c\)</span> is a real number, then the sum <span class="process-math">\(G
-+ H\text{,}\)</span> scalar product <span class="process-math">\(c G\text{,}\)</span> product <span class="process-math">\(G H\text{,}\)</span> and monomial product <span class="process-math">\(z^p
-G\text{,}\)</span> <span class="process-math">\(p \geq 1\)</span> are generating functions, where</div>
+<div class="para">Let <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> be sequences of numbers and let <span class="process-math">\(c\)</span> be a real number. Define the sum <span class="process-math">\(S + T\text{,}\)</span> the scalar product <span class="process-math">\(c S\text{,}\)</span> the product <span class="process-math">\(S
+T\text{,}\)</span> the convolution <span class="process-math">\(S*T\text{,}\)</span> the pop operation <span class="process-math">\(S\uparrow\)</span> (read “<span class="process-math">\(S\)</span> pop”), and the push operation <span class="process-math">\(S\downarrow\)</span> (read “<span class="process-math">\(S\)</span> push”) term-wise for <span class="process-math">\(k \geq 0\)</span> by</div>
 <div class="displaymath process-math">
 \begin{gather}
-(G + H)(z)=\sum_{k=0}^{\infty} \left(a_k+b_k\right)
-z^k\tag{16.3.9}\\
-(c G)(z)=\sum_{k=0}^{\infty} c a_k z^k\tag{16.3.10}\\
-(G H)(z) = \sum_{k=0}^{\infty} c z^k \textrm{
-where } c_k= \sum_{j=0}^k a_jb_{k-j}\tag{16.3.11}\\
-\left(z^p G\right)(z) = z^p\sum_{k=0}^{\infty} a_k
-z^k=\sum_{k=0}^{\infty} a_k z^{k+p} = \sum_{n=p}^{\infty} a_{n-p} z^n\tag{16.3.12}
+(S + T)(k) = S(k) + T(k)\tag{16.3.3}
 \end{gather}
 </div>
-</div> <div class="para">The last sum is obtained by substituting <span class="process-math">\(n - p\)</span> for <span class="process-math">\(k\)</span> in the previous sum.</div></article><span class="incontext"><a href="s-generating-functions.html#definition-229" class="internal">in-context</a></span>
+<div class="displaymath process-math">
+\begin{gather}
+(c S)(k) = c S(k)\tag{16.3.4}
+\end{gather}
+</div>
+<div class="displaymath process-math">
+\begin{gather}
+(S \cdot T)(k) = S(k)T(k)\tag{16.3.5}
+\end{gather}
+</div>
+<div class="displaymath process-math">
+\begin{gather}
+(S*T)(k) = \sum_{j=0}^k S(j) T(k-j)\tag{16.3.6}
+\end{gather}
+</div>
+<div class="displaymath process-math">
+\begin{gather}
+(S\uparrow )(k) = S(k+1)\tag{16.3.7}
+\end{gather}
+</div>
+<div class="displaymath process-math">
+\begin{align}
+(S\downarrow )(k)=\left\{
+\begin{array}{cc}
+0 &amp; \textrm{ if } k=0 \\
+S(k-1) &amp; \textrm{ if } k&gt;0
+\end{array}\right.\tag{16.3.8}
+\end{align}
+</div>
+</div></article><span class="incontext"><a href="s-generating-functions.html#definition-229" class="internal">in-context</a></span>
 </body>
 </html>

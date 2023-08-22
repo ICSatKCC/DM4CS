@@ -12,22 +12,13 @@
 </head>
 <body class="ignore-math">
 <article class="note remark-like"><h4 class="heading">
-<span class="type">Note</span><span class="space"> </span><span class="codenumber">11.7.11</span><span class="period">.</span>
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">14.2.10</span><span class="period">.</span>
 </h4>
 <div class="para logical"><ol class="lower-alpha">
-<li><div class="para">There could be several different isomorphisms between the same pair of groups. Thus, if you are asked to demonstrate that two groups are isomorphic, your answer need not be unique.</div></li>
-<li><div class="para logical">
-<div class="para">Any application of this definition requires a procedure outlined in <a href="" class="xref" data-knowl="./knowl/fig-steps-iso.html" title="Figure 11.7.10">Figure 11.7.10</a>. The first condition, that an isomorphism be a bijection, reflects the fact that every true statement in the first group should have exactly one corresponding true statement in the second group. This is exactly why we run into difficulty in translating between two natural languages. To see how Condition (b) of the formal definition is consistent with the informal definition, consider the function <span class="process-math">\(L:\mathbb{R}^+\to \mathbb{R}\)</span> defined by <span class="process-math">\(L(x)
-= \log _{10}x\text{.}\)</span> The translation diagram between <span class="process-math">\(\mathbb{R}^+\)</span> and <span class="process-math">\(\mathbb{R}\)</span> for the multiplication problem <span class="process-math">\(a \cdot b\)</span> appears in <a href="" class="xref" data-knowl="./knowl/fig-log-mult-general.html" title="Figure 11.7.12">Figure 11.7.12</a>. We arrive at the same result by computing <span class="process-math">\(L^{-1} (L(a) + L(b))\)</span> as we do by computing <span class="process-math">\(a \cdot b\text{.}\)</span> If we apply the function <span class="process-math">\(L\)</span> to the two results, we get the same image:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-steps-iso.html ./knowl/fig-log-mult-general.html ./knowl/eq-iso.html">
-\begin{gather}
-L(a \cdot b) = L\left(L^{-1}(L(a) +
-L(b))\right) = L(a) + L(b) \tag{11.7.1}
-\end{gather}
-</div>
-<div class="para">since <span class="process-math">\(L\left(L^{-1}(x)\right) = x\text{.}\)</span> Note that <a href="" class="xref" data-knowl="./knowl/eq-iso.html" title="Equation 11.7.1">(11.7.1)</a> is exactly Condition b of the formal definition applied to the two groups <span class="process-math">\(\mathbb{R}^+\)</span> and <span class="process-math">\(\mathbb{R}\text{.}\)</span>
-</div>
-</div></li>
-</ol></div></article><span class="incontext"><a href="s-isomorphisms.html#note-12" class="internal">in-context</a></span>
+<li><div class="para">If more than one minimal spanning tree exists, then the one that is obtained depends on <span class="process-math">\(v_0\)</span> and the means by which <span class="process-math">\(e^*\)</span> is selected in Step 2.</div></li>
+<li><div class="para">Warning: If two minimally weighted bridges exist between <span class="process-math">\(L\)</span> and <span class="process-math">\(R\text{,}\)</span> do not try to speed up the algorithm by adding both of them to <span class="process-math">\(E\)</span>’.</div></li>
+<li><div class="para">That <a href="" class="xref" data-knowl="./knowl/alg-prim.html" title="Algorithm 14.2.9: Prim’s Algorithm">Algorithm 14.2.9</a> yields a minimal spanning tree can be proven by induction with the use of <a href="" class="xref" data-knowl="./knowl/theorem-14-2-1.html" title="Theorem 14.2.6">Theorem 14.2.6</a>.</div></li>
+<li><div class="para">If it is not known whether <span class="process-math">\(G\)</span> is connected, <a href="" class="xref" data-knowl="./knowl/alg-prim.html" title="Algorithm 14.2.9: Prim’s Algorithm">Algorithm 14.2.9</a> can be revised to handle this possibility. The key change (in Step 2.1) would be to determine whether any bridge at all exists between <span class="process-math">\(L\)</span> and <span class="process-math">\(R\text{.}\)</span> The condition of the while loop in Step 2 must also be changed somewhat.</div></li>
+</ol></div></article><span class="incontext"><a href="s-spanning-trees.html#note-12" class="internal">in-context</a></span>
 </body>
 </html>

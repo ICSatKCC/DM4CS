@@ -12,8 +12,21 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">We remind you of the relation on the integers that we call <a href="" class="xref" data-knowl="./knowl/def-congruence-mod-m.html" title="Definition 10.3.13: Congruence Modulo m">Definition 10.3.13</a>. If two numbers, <span class="process-math">\(m\)</span> and <span class="process-math">\(n\text{,}\)</span> differ by a multiple of <span class="process-math">\(n\text{,}\)</span> we say that they are congruent modulo <span class="process-math">\(n\text{,}\)</span> denoted <span class="process-math">\(a \equiv b\pmod{n}\text{.}\)</span> For example, <span class="process-math">\(13 \equiv 38\pmod{5}\)</span> because <span class="process-math">\(13-38
-= -25\text{,}\)</span> which is a multiple of 5.</div>
-<span class="incontext"><a href="s-gcds-and-zsubn.html#p-3439" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">In Chapter 1, we defined the complement of a subset of any universe. This turns out to be a concrete example of the general concept we have just defined, but we will reason through why this is the case here. Let <span class="process-math">\(L = \mathcal{P}(A)\text{,}\)</span> where <span class="process-math">\(A = \{a, b,
+c\}\text{.}\)</span> Then <span class="process-math">\([L; \cup , \cap ]\)</span> is a bounded lattice with <span class="process-math">\(0 = \emptyset\)</span> and <span class="process-math">\(1 = A\text{.}\)</span> To find the complement, if it exists, of <span class="process-math">\(B = \{a, b\} \in L\text{,}\)</span> for example, we want <span class="process-math">\(D\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c}
+\{a,b\} \cap D = \emptyset\\
+and\\
+\{a,b\} \cup D = A\\
+\end{array}
+\end{equation*}
+</div>
+<div class="para">It’s not too difficult to see that <span class="process-math">\(D = \{c\}\text{,}\)</span> since we need to include <span class="process-math">\(c\)</span> to make the first condition true and can’t include <span class="process-math">\(a\)</span> or <span class="process-math">\(b\)</span> if the second condition is to be true. Of course this is precisely how we defined <span class="process-math">\(A^c\)</span> in Chapter 1. Since it can be shown that each element of <span class="process-math">\(L\)</span> has a complement (see Exercise 1), <span class="process-math">\([L; \cup , \cap ]\)</span> is a complemented lattice. Note that if <span class="process-math">\(A\)</span> is any set and <span class="process-math">\(L = \mathcal{P}(A)\text{,}\)</span> then <span class="process-math">\([L; \cup , \cap ]\)</span> is a complemented lattice where the complement of <span class="process-math">\(B \in L\)</span> is <span class="process-math">\(B ^c = A - B\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="s-boolean-algebras.html#p-3439" class="internal">in-context</a></span>
 </body>
 </html>

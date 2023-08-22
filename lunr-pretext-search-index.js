@@ -2094,7 +2094,7 @@ var ptx_lunr_docs = [
   "url": "section3_2-Bayes.html",
   "type": "Section",
   "number": "3.2",
-  "title": "Conditional Probability, Independence, and Bayes' Rule",
+  "title": "Conditional Probability, Independence, and Bayes’ Rule",
   "body": "  Conditional Probability, Independence, and Bayes' Rule  Bayes' Rule Independence  Conditional probability Conditional Probability  Anil Maheshwari has two children. We are told that one of them is a boy. What is the probability that the other child is also a boy? Most people will say that this probability is . We will show below that this is not the correct answer.  Since Anil has two children, the sample space is where, for example, indicates that the youngest child is a boy and the oldest child is a girl. We assume a uniform probability function, so that each outcome has a probability of .  We are given the additional information that one of the two children is a boy, or, to be more precise, that at least one of the two children is a boy. This means that the actual sample space is not , but When asking for the probability that the other child is also a boy, we are really asking for the probability that both children are boys. Since there is only one possibility (out of three) for both children to be boys, it follows that this probability is equal to .  This is an example of a conditional probability : We are asking for the probability of an event (both children are boys) given that another event (at least one of the two children is a boy) occurs.    Conditional Probability conditional probability  Let be a probability space and let and be two events with . The conditional probability  , pronounced as the probability of given , is defined to be   Probability of a second boy  Returning to Anil's two children, we saw that the sample space is and we assumed a uniform probability function. The events we considered are and and we wanted to know . Writing and as subsets of the sample space , we get and Using , it follows that which is the same answer as we got before.  Probability of rolling a three given an odd number is rolled  Assume we roll a fair die, i.e., we choose an element uniformly at random from the sample space Consider the events and  What is the conditional probability ? To determine this probability, we assume that event occurs, i.e., the roll of the die resulted in one of , , and . Given that event occurs, event occurs in one out of these three possibilities. Thus, should be equal to . We are going to verify that this is indeed the answer we get when using : Since and we have   Let us now consider the conditional probability . Thus, we are given that event occurs, i.e., the roll of the die resulted in . Since is an odd integer, event is guaranteed to occur. Therefore, should be equal to . Again, we are going to verify that this is indeed the answer we get when using : This shows that, in general, is not equal to . Observe that this is not surprising. (Do you see why?)   Sum of the conditional probabilities of complements  Let be a probability space and let and be two events with . Then   By definition, we have Since the events and are disjoint, we have, by , By drawing a Venn diagram, you will see that implying that We conclude that    The Law of Total Probability  Let be a probability space and let be an event. Assume that is a sequence of events such that  for all with ,  the events are pairwise disjoint, and  . Then   The assumptions imply that Since the events are pairwise disjoint, it follows from Lemma~\\ref{lemSumPr} that The theorem follows by observing that, from ,    Independent Events Independent events  Consider two events and in a sample space . In this section, we will define the notion of these two events being independent . Intuitively, this should express that (i) the probability that event occurs does not depend on whether or not event occurs, and (ii) the probability that event occurs does not depend on whether or not event occurs. Thus, if we assume that and , then (i) should be equal to the conditional probability , and (ii) should be equal to the conditional probability . As we will show below, the following definition exactly captures this.   Independent Events Independent Events  Let be a probability space and let and be two events. We say that and are independent if  In this definition, it is not assumed that and . If , then and and are independent if and only if Similarly, if , then and are independent if and only if   Independence of Rolling Two Dice  Assume we roll a red die and a blue die; thus, the sample space is where is the result of the red die and is the result of the blue die. We assume a uniform probability function. Thus, each outcome has a probability of .  Let denote the result of the red die and let denote the result of the blue die. Consider the events and Are these events independent?  Since we have .   Since we have .  Since we have .   It follows that and we conclude that and are independent.   As an exercise, you should verify that the events and are not independent.  Now consider the two events and Since , we have On the other hand, and . Thus, and the events and are not independent. This is not surprising: If we know that occurs, then cannot not occur. Thus, the event has an effect on the probability that the event occurs.  Consider two events and in a sample space . If these events are independent, then the probability that occurs does not depend on whether or not occurs. Since whether or not occurs is the same as whether the complement does not or does occur, it should not be a surprise that the events and are independent as well.   Independence of Complements  Let be a probability space and let and be two events. If and are independent, then and are also independent.  To prove that and are independent, we have to show that Using , this is equivalent to showing that Since the events and are disjoint and it follows from that Since and are independent, we have It follows that which is equivalent to .   We have defined the notion of two events being independent. The following definition generalizes this in two ways to sequences of events:   Pairwise and Independent Events Pairwise and Mutually Independent Events  Let be a probability space, let , and let be a sequence of events.   We say that this sequence is pairwise independent if for any two distinct indices and , the events and are independent, i.e.,   We say that this sequence is mutually independent if for all with and all indices ,    Thus, in order to show that the sequence is pairwise independent, we have to verify equalities. On the other hand, to show that this sequence is mutually independent, we have to verify equalities.  For example, if we want to prove that the sequence of three events is mutually independent, then we have to show that   and  Pairwise but not Mutually Independent Coin Flips  Consider flipping a coin three times and assume that the result is a uniformly random element from the sample space where, e.g., indicates that the first two flips result in heads and the third flip results in tails. Define the events  and If we write these events as subsets of the sample space, then we get  and It follows that Thus, the sequence is pairwise independent. Since we have Thus, and, therefore, the sequence is not mutually independent. Of course, this is not surprising: If both events and occur, then event also occurs.   Random Variables Random Variables   A random variable is neither random nor variable.  We have already seen random variables in , even though we did not use that term there. For example, in , we rolled a die twice and were interested in the sum of the results of these two rolls. In other words, we did an experiment (rolling a die twice) and asked for a function of the outcome (the sum of the results of the two rolls).   Random Variable Random Variable  Let be a sample space. A random variable on the sample space is a function .  In the example given above, the sample space is and the random variable is the function defined by for all in .  Note that the term random variable is misleading: A random variable is not random, but a function that assigns, to every outcome in the sample space , a real number . Also, a random variable is not a variable, but a function.  Flipping Three Coins with Random Variables  Assume we flip three coins. The sample space is where, e.g., indicates that the first two coins come up tails and the third coin comes up heads.  Let be the random variable that maps any outcome (i.e., any element of ) to the number of heads in the outcome. Thus, If we define the random variable to be the function that  maps an outcome to if all three coins come up heads or all three coins come up tails, and  maps an outcome to in all other cases,  then we have  Since a random variable is a function , it maps any outcome to a real number . Usually, we just write instead of . Thus, for any outcome in the sample space , we denote the value of the random variable, for this outcome, by . In the example above, we flip three coins and write and   Random variables give rise to events in a natural way. In the three-coin example, corresponds to the event , whereas corresponds to the event . The table below gives some values of the random variables and , together with the corresponding events.  Thus, the event corresponds to the set of all outcomes that are mapped, by the function , to the value :   X = x  Let be a sample space and let be a random variable. For any real number , we define to be the event  Probabilities of Flipping Three Coins with Random Variables  Let us return to the example in which we flip three coins. Assume that the coins are fair and the three flips are mutually independent. Consider again the corresponding random variables and . It should be clear how we determine, for example, the probability that is equal to , which we will write as . Using our interpretation of as being the event , we get Similarly, we get  Consider an arbitrary probability space and let be a random variable. Using and , the probability of the event , i.e., the probability that is equal to , is equal to  We have interpreted as being an event. We extend this to more general statements involving . For example, denotes the event For our three-coin example, the random variable can take each of the values , , , and with a positive probability. As a result, denotes the event or , and we have  In , we have defined the notion of two events being independent. The following definition extends this to random variables.   Independent Random Variables Independent Random Variables  Let be a probability space and let and be two random variables on . We say that and are independent if for all real numbers and , the events and are independent, i.e.,   There are two ways to generalize the notion of two random variables being independent to sequences of random variables:   Pairwise and Mutually Independent Random Variables Pairwise and Mutually Independent Random Variables  Let be a probability space, let , and let be a sequence of random variables on .   We say that this sequence is pairwise independent if for all real numbers , the sequence , , , of events is pairwise independent.  We say that this sequence is mutually independent if for all real numbers , the sequence , , , of events is mutually independent.    Bayes' Theorem Bayes' Theorem      Bayes' theorem is to the theory of probability what the Pythagorean theorem is to geometry.  Sir Harold Jeffreys Bayes' theorem (alternatively Bayes' law or Bayes' rule) describes the probability of an event, based on prior knowledge of conditions that might be related to the event. For example, if cancer is related to age, then, using Bayes' theorem, a person's age can be used to more accurately assess the probability that they have cancer, compared to the assessment of the probability of cancer made without knowledge of the person's age.  One of the many applications of Bayes' theorem is Bayesian inference, a particular approach to statistical inference.   Bayes' Theorem Bayes' Theorem  Let and be events in some probability space , such that and , then:  Probability of having chosen from a particular urn  We have two urns and . contains 2 black balls and 3 white balls. contains 1 black ball and 1 white ball. An urn is chosen at random, then a ball is chosen at random from it. If a black ball is chosen, what is the probability it came from urn ?  Let be the event urn is chosen and be the event a black ball is chosen.  Note that the probability of choosing either urn is and the probability that we chose a black ball from urn is .  Next we need to know the probability of choosing a black ball no matter which urn was chosen. This is the probability of choosing a black ball from either urn.  Calculate the probability urn is where the black ball came from using Bayes' Rule:    Bayes' Theorem can be expanded to calculate the conditional probability from more than two events, .   Generalized Bayes' Theorem Bayes' Theorem (Generalized)  Let be an event and be mutually exclusive events in some probability space , such that and then:   Exercises for Section 3.2   Assume that and are two events with positive probabilities. Show that if , then .   If then the two events are independent.     A coin is tossed three times. What is the probability that exactly two heads occur, given that   the first outcome was a head?    the first outcome was a tail?    the first two outcomes were heads?    the first two outcomes were tails?    the first outcome was a head and the third outcome was a head?        A die is rolled twice. What is the probability that the sum of the faces is greater than 7, given that   the first outcome was a 4?    the first outcome was greater than 3?    the first outcome was a 1?    the first outcome was less than 5?                                A card is drawn at random from a deck of cards. What is the probability that   it is a heart, given that it is red?    it is higher than a 10, given that it is a heart? (Interpret J, Q, K, A as 11, 12, 13, 14.)    it is a jack, given that it is red?       A coin is tossed three times. Consider the following events:   A  Heads on the first toss.    B  Tails on the second.    C  Heads on the third toss.    D  All three outcomes the same (HHH or TTT).    E  Exactly one head turns up.        Which of the following pairs of these events are independent?                          Which of the following triples of these events are independent?                          (1) and (2)    (1)       From a deck of five cards numbered 2, 4, 6, 8, and 10, respectively, a card is drawn at random and replaced. This is done three times. What is the probability that the card numbered 2 was drawn exactly two times, given that the sum of the numbers on the three draws is 12?    A coin is tossed twice. Consider the following events.   A  Heads on the first toss.    B  Heads on the second toss.    C  The two tosses come out the same.      Show that ,~ ,~ are pairwise independent but not independent.    Show that is independent of and but not of .         We have     A and C; and C and B are independent:        Let . Assume that and . Let ,~ , and~ be the events , , . Show that but no two of these events are independent.     We have two urns and . contains 9 black balls and 6 white balls. contains 3 black balls and 1 white ball. An urn is chosen at random, then a ball is chosen at random from it. Let be the event urn is chosen and be the event a white ball is chosen.  Calculate using Bayes' Rule        Suppose that 1% of the patients tested in a hospital are infected with a virus. Furthermore, suppose that when a test for the virus is given, 98% of the patients actually infected with the virus test positive, and that 1% of the patients not infected still test positive for it. What is the probability that:   a patient testing positive is actually infected with the virus?    a patient testing positive is not infected with the virus?    a patient testing negative is infected with the virus?    a patient testing negative is not infected with the virus?       "
 },
 {
@@ -2247,7 +2247,7 @@ var ptx_lunr_docs = [
   "url": "section3_2-Bayes.html#def-bayes-rule",
   "type": "Definition",
   "number": "3.2.17",
-  "title": "Bayes' Theorem.",
+  "title": "Bayes’ Theorem.",
   "body": " Bayes' Theorem Bayes' Theorem  Let and be events in some probability space , such that and , then: "
 },
 {
@@ -2265,7 +2265,7 @@ var ptx_lunr_docs = [
   "url": "section3_2-Bayes.html#def-generalized-bayes-rule",
   "type": "Definition",
   "number": "3.2.19",
-  "title": "Generalized Bayes' Theorem.",
+  "title": "Generalized Bayes’ Theorem.",
   "body": " Generalized Bayes' Theorem Bayes' Theorem (Generalized)  Let be an event and be mutually exclusive events in some probability space , such that and then: "
 },
 {
@@ -2571,7 +2571,7 @@ var ptx_lunr_docs = [
   "url": "section3_3-ExpectedValue.html#thm-bienaymes-Formula",
   "type": "Theorem",
   "number": "3.3.23",
-  "title": "Bienaymé's Formula.",
+  "title": "Bienaymé’s Formula.",
   "body": " Bienaymé's Formula  Bienaymé's Formula   Let be independent random variables on sample space . The variance of the sum is the sum of the variances   "
 },
 {
@@ -6594,7 +6594,7 @@ var ptx_lunr_docs = [
   "url": "section9_2-Recursive_Algorithms.html#alg-euclid",
   "type": "Algorithm",
   "number": "9.2.2",
-  "title": "Euclid's GCD Algorithm.",
+  "title": "Euclid’s GCD Algorithm.",
   "body": "Euclid's GCD Algorithm   procedure Euclid  ( : integers with )   ;    if  :     return:      else:     Euclid        "
 },
 {
@@ -7539,7 +7539,7 @@ var ptx_lunr_docs = [
   "url": "s-closure-operations-on-relations.html#alg-warshall",
   "type": "Algorithm",
   "number": "10.5.8",
-  "title": "Warshall's Algorithm.",
+  "title": "Warshall’s Algorithm.",
   "body": "Warshall's Algorithm  Let be an relation matrix and let be its transitive closure matrix, which is to be computed as matrix using Boolean arithmetic    1.0 W = M 2.0 for k = 1 to n: for i = 1 to n: for j = 1 to n: W[i,j]= W[i,j] + W[i,k] * W[k,j] 3.0 Return W     "
 },
 {
@@ -7615,1318 +7615,382 @@ var ptx_lunr_docs = [
   "body": " The definition of the of refers to the smallest transitive relation that contains as a subset. Show that the intersection of all transitive relations on containing is a transitive relation containing and is precisely . "
 },
 {
-  "id": "s-Operations",
+  "id": "s-Systems-of-Equations",
   "level": "1",
-  "url": "s-Operations.html",
+  "url": "s-Systems-of-Equations.html",
   "type": "Section",
   "number": "11.1",
-  "title": "Operations",
-  "body": " Operations  Operations   One of the first mathematical skills that we all learn is how to add a pair of positive integers. A young child soon recognizes that something is wrong if a sum has two values, particularly if his or her sum is different from the teacher's. In addition, it is unlikely that a child would consider assigning a non-positive value to the sum of two positive integers. In other words, at an early age we probably know that the sum of two positive integers is unique and belongs to the set of positive integers. This is what characterizes all binary operations on a set.    What is an Operation?   Binary Operation  Binary Operation.      generic symbol for a binary operation    Let be a nonempty set. A binary operation on is a rule that assigns to each ordered pair of elements of a unique element of . In other words, a binary operation is a function from the Cartesian Product into .     Some common binary operations  Union and intersection are both binary operations on the power set of any universe. Addition and multiplication are binary operators on the natural numbers. Addition and multiplication are binary operations on the set of 2 by 2 real matrices, . Division is a binary operation on some sets of numbers, such as the positive reals. But on the integers ( ) and even on the real numbers is not defined), division is not a binary operation.       We stress that the image of each ordered pair must be in . This requirement disqualifies subtraction on the natural numbers from consideration as a binary operation, since is not a natural number. Subtraction is a binary operation on the integers.    On Notation. Despite the fact that a binary operation is a function, symbols, not letters, are used to name them. We will use a bullet point symbol, to represent an arbitrary binary operation. We will also use a diamond, , when a second symbol is needed. Another commonly used symbol is an asterisk, , but that tends to be confusing due to its use as the multiplication operator in many programming languages so we will avoid it.      If is a binary operation on and , there are three common ways of denoting the image of the pair . They are: We are all familiar with infix form. For example, is how everyone is taught to write the sum of 2 and 3. But notice how was just described in the previous sentence! The word sum preceded 2 and 3. Orally, prefix form is quite natural to us. The prefix and postfix forms are superior to infix form in some respects. In Chapter 14, we will see that algebraic expressions with more than one operation don't need parentheses if they are in prefix or postfix form. However, due to our familiarity with infix form, we will use it throughout most of the remainder of this book.  Some operations, such as negation of numbers and complementation of sets , are not binary, but unary operators.   Unary Operation  Unary Operation.   Let be a nonempty set. A unary operator on is a rule that assigns to each element of a unique element of . In other words, a unary operator is a function from into .      Properties of Operations  Properties of Operations  Whenever an operation on a set is encountered, there are several properties that should immediately come to mind. To effectively make use of an operation, you should know which of these properties it has. By now, you should be familiar with most of these properties. We will list the most common ones here to refresh your memory and define them for the first time in a general setting.  First we list properties of a single binary operation.   Commutative Property  Commutative Property   Let be a binary operation on a set . We say that is commutative if and only if for all .     Associative Property  Associative Property   Let be a binary operation on a set . We say that is associative if and only if for all .     Identity Property  Identity Property   Let be a binary operation on a set . We say that  has an identity if and only if there exists an element, , in such that for all .    The next property presumes that has the identity property.   Inverse Property  Inverse Property   Let be a binary operation on a set . We say that has the inverse property if and only if for each , there exists such that . We call an inverse of .     Idempotent Property  Idempotent Property   Let be a binary operation on a set . We say that is idempotent if and only if for all .    Now we list properties that apply to two binary operations.   Left Distributive Property  Left Distributive Property   Let and be binary operations on a set . We say that is left distributive over if and only if for all .     Right Distributive Property  Right Distributive Property   Let and be binary operations on a set . We say that is right distributive over if and only if for all .     Distributive Property  Distributive Property   Let and be binary operations on a set . We say that is distributive over if and only if is both left and right distributive over .    There is one significant property of unary operations.   Involution Property  Involution Property   Let be a unary operation on . We say that has the involution property if for all .    Finally, a property of sets, as they relate to operations.   Closure Property  Closure Property   Let be a subset of and let be a binary operation on . We say that is closed under if implies that .    In other words, is closed under if by operating on elements of with , you can't get new elements that are outside of .   Some examples of closure and non-closure     The odd integers are closed under multiplication, but not under addition.    Let be a proposition over and let be the set of propositions over that imply . That is; if . Then is closed under both conjunction and disjunction.    The set of positive integers that are multiples of 5 is closed under both addition and multiplication.      It is important to realize that the properties listed above depend on both the set and the operation(s). Statements such as Multiplication is commutative. or The positive integers are closed. are meaningless on their own. Naturally, if we have established a context in which the missing set or operation is clearly implied, then they would have meaning.    Operation Tables  Operation Tables  If the set on which a binary operation is defined is small, a table is often a good way of describing the operation. For example, we might want to define on by The table for is   The top row and left column of an operation table are the column and row headings, respectively. To determine , find the entry in the row labeled and the column labeled . The following operation table serves to define * on .   Note that , yet . Thus, is not commutative. Commutativity is easy to identify in a table: the table must be symmetric with respect to the diagonal going from the top left to lower right.    Exercises   Determine the properties that the following operations have on the positive integers.   addition    multiplication     defined by     defined by     defined by         Commutative, and associative. Notice that zero is the identity for addition, but it is not a positive integer.    Commutative, associative, and has an identity (1)    Commutative, associative, has an identity (1), and is idempotent    Commutative, associative, and idempotent    None. Notice that , while ; and , while .       Which pairs of operations in Exercise 1 are distributive over one another?    Let be an operation on a set and . Prove that if and are both closed under , then is also closed under , but need not be.    Similarly, . Therefore, . The set of positive integers is closed under addition, and so is the set of negative integers, but . Therefore, their union, the nonzero integers, is not closed under addition.    How can you pick out the identity of an operation from its table?    Define by , the absolute value of . Which properties does have on the set of natural numbers, ?       is commutative since for all     is not associative. Take , , and , then , and .    Zero is the identity for on , since    Each element of inverts itself since .     is not idempotent, since, for , .       "
+  "title": "Systems of Equations",
+  "body": " Systems of Equations  Systems of Equations   In this section we will learn how to solve multiple linear equations with multiple unknowns using matrices.    Elementary Operations  Consider the following example.   Solution Set  Solution Set  Find and such that   The set of ordered pairs, (x, y) which solve both equations is called the solution set .  You can verify that is a solution to the above system. The interesting question is this: If you were not given this information to verify, how could you determine the solution? You can do this by using the following basic operations on the equations, none of which change the set of solutions of the system of equations.    Elementary Operations  Elementary Operations   Elementary operations are those operations consisting of the following.   Interchange the order in which the equations are listed.    Multiply any equation by a nonzero number.    Replace any equation with itself added to a multiple of another equation.       To illustrate the third of these operations on this particular system, consider the following.  The system has the same solution set as the system  To obtain the second system, take the second equation of the first system and add times the first equation to obtain . Now, this clearly shows that and so it follows from the other equation that and so .   Of course a linear system may involve many equations and many variables. The solution set is still the collection of solutions to the equations. In every case, the above operations of do not change the set of solutions to the system of linear equations.    Suppose you have two equations, involving the variables,  where and are expressions involving the variables and and are constants. (In the above example there are only two variables, and and while .) Then the system has the same solution set as Also the system has the same solutions as the system, . The system has the same solution as the system provided .    If solves then it solves the first equation in . Also, it satisfies and so, since it also solves it must solve . Therefore, if solves it must also solve . On the other hand, if it solves the system and , then and so you can subtract these equal quantities from both sides of to obtain showing that it satisfies .  The second assertion of the theorem which says that the system has the same solution as the system, is seen to be true because it involves nothing more than listing the two equations in a different order. They are the same equations.  The third assertion of the theorem which says has the same solution as the system provided is verified as follows: If is a solution of , then it is a solution to because the second system only involves multiplying the equation, by . If is a solution of , then upon multiplying by the number , you find that     Stated simply, the above theorem shows that the elementary operations do not change the solution set of a system of equations.  Here is an example in which there are three equations and three variables. You want to find values for such that each of the given equations are satisfied when these values are plugged in to the equations.    Find the solutions to the system,       To solve this system replace the second equation by times the first equation added to the second. This yields the system Now take times the second and add to the third. More precisely, replace the third equation with times the second added to the third. This yields the system At this point, you can tell what the solution is. This system has the same solution as the original system and in the above, . Then using this in the second equation, it follows and so . Now using this in the top equation yields and so . This process is called back substitution .  Alternatively, you could have continued as follows. Add times the bottom equation to the middle and then add times the bottom to the top. This yields Now add times the second to the top. This yields a system which has the same solution set as the original system. This avoided back substitution and led to the same solution set.       Gauss Elimination  Gauss Elimination  A less cumbersome way to represent a linear system is to write it as an augmented matrix . For example the linear system in can be written as It has exactly the same information as the original system but here it is understood there is an column , a column, , and a column, . The rows correspond to the equations in the system. Thus the top row in the augmented matrix corresponds to the equation, . Now when you replace an equation with a multiple of another equation added to itself, you are just taking a row of this augmented matrix and replacing it with a multiple of another row added to it. Thus the first step in solving would be to take times the first row of the augmented matrix above and add it to the second row,  Note how this corresponds to the first step in solving . Next take (-2) times the second row and add to the third, This augmented matrix corresponds to the system which is the same as the second step in solving . By back substitution you obtain the solution , , and .  In general a linear system is of the form  where the are variables and the and are constants. This system can be represented by the augmented matrix Changes to a system of equations as a result of an elementary operation translate into changes of an augmented matrix resulting from a row operation. Note that implies that the row operations deliver an augmented matrix for a system of equations which has the same solution set as the original system.   Row Operations   Row Operations    The row operations consist of the following   Switch two rows.    Multiply a row by a nonzero number.    Replace a row by a multiple of another row added to it.        Gauss elimination  Gauss Elimination  is a systematic procedure to simplify an augmented matrix to a reduced form. In the following definition, the term  leading entry  refers to the first nonzero entry of a row when scanning the row from left to right.   Echelon Form   Echelon Form    An augmented matrix is in echelon form if   All nonzero rows are above any rows of zeros.    Each leading entry of a row is in a column to the right of the leading entries of any rows above it.       How do you know when to stop doing row operations? You might stop when you have obtained an echelon form as described above, but you certainly should stop doing row operations if you have gotten a matrix in row reduced echelon form described next.   Row Reduced Echelon Form   Row Reduced Echelon Form    An augmented matrix is in row reduced echelon form if   All nonzero rows are above any rows of zeros.    Each leading entry of a row is in a column to the right of the leading entries of any rows above it.    All entries in a column above and below a leading entry are zero.    Each leading entry is a 1, the only nonzero entry in its column.        Matrices in Row Reduced Echelon Form   Here are some matrices which are in row reduced echelon form. .     Matrices in Echelon Form   Here are matrices in echelon form which are not in row reduced echelon form but which are in echelon form.     Matrices not in Echelon Form   Here are matrices which are not in echelon form.     Pivot Positions and Pivot Columns   Pivot Position    Pivot Column    A pivot position in a matrix is the location of a leading entry in an echelon form resulting from the application of row operations to the matrix. A pivot column is a column that contains a pivot position.    For example consider the following.   Putting a Matrix into Row Reduced Echelon Form   Suppose Where are the pivot positions and pivot columns?    Replace the second row by -3 times the first added to the second. This yields This is not in reduced echelon form so replace the bottom row by -4 times the top row added to the bottom. This yields This is still not in reduced echelon form. Replace the bottom row by -1 times the middle row added to the bottom. This yields which is in echelon form, although not in reduced echelon form. Therefore, the pivot positions in the original matrix are the locations corresponding to the first row and first column and the second row and second columns as shown in the following: Thus the pivot columns in the matrix are the first two columns.    The following is the algorithm for obtaining a matrix which is in row reduced echelon form.    This algorithm tells how to start with a matrix and do row operations on it in such a way as to end up with a matrix in row reduced echelon form.   Find the first nonzero column from the left. This is the first pivot column. The position at the top of the first pivot column is the first pivot position. Switch rows if necessary to place a nonzero number in the first pivot position.    Use row operations to zero out the entries below the first pivot position.    Ignore the row containing the most recent pivot position identified and the rows above it. Repeat steps 1 and 2 to the remaining sub-matrix, the rectangular array of numbers obtained from the original matrix by deleting the rows you just ignored. Repeat the process until there are no more rows to modify. The matrix will then be in echelon form.    Moving from right to left, use the nonzero elements in the pivot positions to zero out the elements in the pivot columns which are above the pivots.    Divide each nonzero row by the value of the leading entry. The result will be a matrix in row reduced echelon form.   This row reduction procedure applies to both augmented matrices and non augmented matrices. There is nothing special about the augmented column with respect to the row reduction procedure.      Here is a matrix. Do row reductions till you obtain a matrix in echelon form. Then complete the process by producing one in row reduced echelon form.    The pivot column is the second. Hence the pivot position is the one in the first row and second column. Switch the first two rows to obtain a nonzero entry in this pivot position.   Step two is not necessary because all the entries below the first pivot position in the resulting matrix are zero. Now ignore the top row and the columns to the left of this first pivot position. Thus you apply the same operations to the smaller matrix   The next pivot column is the third corresponding to the first in this smaller matrix and the second pivot position is therefore, the one which is in the second row and third column.  In this case it is not necessary to switch any rows to place a nonzero entry in this position because there is already a nonzero entry there. Multiply the third row of the original matrix by -2 and then add the second row to it. This yields   The next matrix the steps in the algorithm are applied to is   The first pivot column is the first column in this case and no switching of rows is necessary because there is a nonzero entry in the first pivot position. Therefore, the algorithm yields for the next step   Now the algorithm will be applied to the matrix There is only one column and it is nonzero so this single column is the pivot column. Therefore, the algorithm yields the following matrix for the echelon form.   To complete placing the matrix in reduced echelon form, multiply the third row by 3 and add -2 times the fourth row to it. This yields   Next multiply the second row by 3 and take 2 times the fourth row and add to it. Then add the fourth row to the first.   Next work on the fourth column in the same way.   Take times the second row and add to the first.   Finally, divide by the value of the leading entries in the nonzero rows.     The above algorithm is the way a computer would obtain a reduced echelon form for a given matrix. It is not necessary for you to pretend you are a computer but if you like to do so, the algorithm described above will work. The main idea is to do row operations in such a way as to end up with a matrix in echelon form or row reduced echelon form because when this has been done, the resulting augmented matrix will allow you to describe the solutions to the linear system of equations in a meaningful way. When you do row operations until you obtain row reduced echelon form, the process is called the Gauss Jordan method  Gauss Jordan Method  . Otherwise, it is called Gauss elimination .    Give the complete solution to the system of equations, , , and .    The augmented matrix for this system is   Multiply the second row by 2, the first row by 5, and then take (-1) times the first row and add to the second. Then multiply the first row by 1\/5. This yields   Switch the last two rows to get   then take -3 times the top added to 2 times the middle to get .  Multiply bottom by 19 and take the second row times -1 added to the bottom. This gives a row of zeros with -2 at the right end, representing the equation 0x + 0y + 0z = -2 which has no solution so there is no solution to this system of equations. When this happens, the system is called inconsistent . In this case it is very easy to describe the solution set. The system has no solution.    Here is another example based on the use of row operations.    Give the complete solution to the system of equations, , , and .    The augmented matrix of this system is   Replace the last row with 2 times the top row added to 3 times the bottom row combining two row operations. This gives The entry 3 in this sequence of row operations is called the pivot . It is used to create zeros in the other places of the column.  Next take -1 times the middle row and add to the bottom. Here the 1 in the second row is the pivot. This is in reduced echelon form. The equations corresponding to this reduced echelon form are and . Apparently can equal any number. Lets call this number .  In this context is called a parameter .  Therefore, the solution set of this system is , , and where is completely arbitrary. The system has an infinite set of solutions which are given in the above simple way. This is what it is all about, finding the solutions to the system.    There is some terminology connected to this which is useful. Recall how each column corresponds to a variable in the original system of equations. The variables corresponding to a pivot column are called basic variables . The other variables are called free variables . In there was one free variable, , and two basic variables, and . In de- scribing the solution to the system of equations, the free variables are assigned a parameter. In this parameter was . Sometimes there are many free variables and in these cases, you need to use many parameters. Here is another example.    Find the solution to the system       The augmented matrix is   Take -1 times the first row and add to the second. Then take -1 times the first row and add to the third. This yields   Now add the second row to the bottom row This matrix is in echelon form and you see the basic variables are and while the free variables are and . Assign to and to . Then the second row yields the equation, while the top equation yields the equation, and so since , this gives showing that , , , and . One can write this in the form This is another example of a system which has an infinite solution set but this time the solution set depends on two parameters, not one.  Most people find it less confusing in the case of an infinite solution set to first place the augmented matrix in row reduced echelon form rather than just echelon form before seeking to write down the description of the solution. In the above, this means we don't stop with the echelon form above. Instead we first place it in reduced echelon form as follows. Then the solution is from the second row and from the first. Thus letting and , the solution as is given previously.    The number of free variables is always equal to the number of different parameters used to describe the solution. If there are no free variables, then either there is no solution as in the case where row operations yield an echelon form like or there is a unique solution as in the case where row operations yield an echelon form like Also, sometimes there are free variables and no solution as in the following: There are a lot of cases to consider but it is not necessary to make a major production of this. Do row operations till you obtain a matrix in echelon form or reduced echelon form and determine whether there is a solution. If there is, see if there are free variables. In this case, there will be infinitely many solutions. Find them by assigning different parameters to the free variables and obtain the solution. If there are no free variables, then there will be a unique solution which is easily determined once the augmented matrix is in echelon or row reduced echelon form. In every case, the process yields a straightforward way to describe the solutions to the linear system. As indicated above, you are probably less likely to become confused if you place the augmented matrix in row reduced echelon form rather than just echelon form.  In summary,   System of Linear Equations   System of Linear Equations    A system of linear equations is a list of equations, where are numbers, and is a number. The above is a system of equations in the variables, . Nothing is said about the relative size of and . Written more simply in terms of summation notation, the above can be written in the form It is desired to find solving each of the equations listed.    As illustrated above, such a system of linear equations may have a unique solution, no solution, or infinitely many solutions and these are the only three cases which can occur for any linear system. Furthermore, you do exactly the same things to solve any linear system. You write the augmented matrix and do row operations until you get a simpler system in which it is possible to see the solution, usually obtaining a matrix in echelon or reduced echelon form. All is based on the observation that the row operations do not change the solution set. You can have more equations than variables, fewer equations than variables, etc. It doesn't matter. You always set up the augmented matrix and go to work on it.    A system of linear equations is called consistent if there exists a solution. It is called inconsistent if there is no solution.    These are reasonable words to describe the situations of having or not having a solution. If you think of each equation as a condition which must be satisfied by the variables, con- sistent would mean there is some choice of variables which can satisfy all the conditions. Inconsistent would mean there is no choice of the variables which can satisfy each of the conditions.    Exercises   Find the point which lies on both lines, and .   Set up augmented matrix: Add the first line to the second. Divide line two by  So . Backsubstituting: , so . Therefore is the point .    Solve Exercise 1 graphically. That is, graph each line and see where they intersect.     Graph of Exercise 11.1.1   Graph of lines described in Exercise 11.1.1        Find the point of intersection of the two lines and .    Solve Exercise 3 graphically. That is, graph each line and see where they intersect.    Do the three lines, , , and have a common point of intersection? If so, find the point and if not, tell why they don’t have such a common point of intersection   Set up augmented matrix: Add the first line to the third. Add the first line to the second. Add the second line to the third. Divide line two by  So . Backsubstituting to line one: , so . The common intersecting point is .    Do the three planes, , , and have a common point of intersection? If so, find one and if not, tell why there is no such point.    You have a system of equations in two variables, . Explain the geometric significance of   No solution.    A unique solution.    An infinite number of solutions.         No solution. The lines are parallel.    A unique solution. The lines must intersect.    An infinite number of solutions. The lines must be the same line.       If a system of equations has more equations than variables, can it have a solution? If so, give an example and if not, tell why not.    Find such that is the augmented matrix of an inconsistent matrix.   What we want is for one of the rows to be all zeros except for the last term. If we multiply the top row by and add that to the bottom row, we get We want to make an such that the . Solving for , we get 4. which simplifies to , which is inconsistent.    Find such that is the augmented matrix of a consistent matrix.    Determine if the system is consistent. If so, is the solution unique?       We have the corresponding matrix:   Add row 1 to row 4:   Add row 1 to row 3:   Add row 1 to row 2:   Add row 2 to row 3:   Add row 2 to row 4:   Therefore we see that we have a problem because rows 3 and 4 are saying and . Or we could keep going with the row operations and add row 3 to row 4: Add row 2 to row 4: which then definitively shows that the system is not consistent.    Determine if the system is consistent. If so, is the solution unique?        Find the general solution of the system whose augmented matrix is    Adding row 1 to row 3:   Adding row 1 to row 2:   Adding row 2 to row 3:   Multiplying row 3 by :   So , continuing row operations: add row 3 to row 2 So , continuing row operations: add row 2 to row 1 So .  The solution is then     Find the general solution of the system whose augmented matrix is     Give the complete solution to the system of equations, , , and .   We have the corresponding augmented matrix: Add row one to row 2: Add row one to row 3: Multiply row 2 by and row 3 by So.... . Add row 2 to row 3: This shows that is going to be a free variable. Assign to .The top row yields the equation , since , this gives . Solving for we get , so the final solution can be written:     Give the complete solution to the system of equations, , , and .    "
 },
 {
-  "id": "def-binary-operation",
+  "id": "example-164",
   "level": "2",
-  "url": "s-Operations.html#def-binary-operation",
-  "type": "Definition",
-  "number": "11.1.1",
-  "title": "Binary Operation.",
-  "body": " Binary Operation  Binary Operation.      generic symbol for a binary operation    Let be a nonempty set. A binary operation on is a rule that assigns to each ordered pair of elements of a unique element of . In other words, a binary operation is a function from the Cartesian Product into .   "
-},
-{
-  "id": "ex-some-binary-operations",
-  "level": "2",
-  "url": "s-Operations.html#ex-some-binary-operations",
+  "url": "s-Systems-of-Equations.html#example-164",
   "type": "Example",
-  "number": "11.1.2",
-  "title": "Some common binary operations.",
-  "body": " Some common binary operations  Union and intersection are both binary operations on the power set of any universe. Addition and multiplication are binary operators on the natural numbers. Addition and multiplication are binary operations on the set of 2 by 2 real matrices, . Division is a binary operation on some sets of numbers, such as the positive reals. But on the integers ( ) and even on the real numbers is not defined), division is not a binary operation.  "
+  "number": "11.1.1",
+  "title": "Solution Set.",
+  "body": " Solution Set  Solution Set  Find and such that   The set of ordered pairs, (x, y) which solve both equations is called the solution set .  You can verify that is a solution to the above system. The interesting question is this: If you were not given this information to verify, how could you determine the solution? You can do this by using the following basic operations on the equations, none of which change the set of solutions of the system of equations.  "
 },
 {
-  "id": "note-5",
+  "id": "def-elementary-operations",
   "level": "2",
-  "url": "s-Operations.html#note-5",
-  "type": "Note",
+  "url": "s-Systems-of-Equations.html#def-elementary-operations",
+  "type": "Definition",
+  "number": "11.1.2",
+  "title": "Elementary Operations.",
+  "body": " Elementary Operations  Elementary Operations   Elementary operations are those operations consisting of the following.   Interchange the order in which the equations are listed.    Multiply any equation by a nonzero number.    Replace any equation with itself added to a multiple of another equation.     "
+},
+{
+  "id": "ex-some-elementary-operations",
+  "level": "2",
+  "url": "s-Systems-of-Equations.html#ex-some-elementary-operations",
+  "type": "Example",
   "number": "11.1.3",
   "title": "",
-  "body": "    We stress that the image of each ordered pair must be in . This requirement disqualifies subtraction on the natural numbers from consideration as a binary operation, since is not a natural number. Subtraction is a binary operation on the integers.    On Notation. Despite the fact that a binary operation is a function, symbols, not letters, are used to name them. We will use a bullet point symbol, to represent an arbitrary binary operation. We will also use a diamond, , when a second symbol is needed. Another commonly used symbol is an asterisk, , but that tends to be confusing due to its use as the multiplication operator in many programming languages so we will avoid it.     "
+  "body": " To illustrate the third of these operations on this particular system, consider the following.  The system has the same solution set as the system  To obtain the second system, take the second equation of the first system and add times the first equation to obtain . Now, this clearly shows that and so it follows from the other equation that and so .  "
 },
 {
-  "id": "def-unary-operation",
+  "id": "thm-elementary-operations",
   "level": "2",
-  "url": "s-Operations.html#def-unary-operation",
-  "type": "Definition",
+  "url": "s-Systems-of-Equations.html#thm-elementary-operations",
+  "type": "Theorem",
   "number": "11.1.4",
-  "title": "Unary Operation.",
-  "body": " Unary Operation  Unary Operation.   Let be a nonempty set. A unary operator on is a rule that assigns to each element of a unique element of . In other words, a unary operator is a function from into .   "
+  "title": "",
+  "body": "  Suppose you have two equations, involving the variables,  where and are expressions involving the variables and and are constants. (In the above example there are only two variables, and and while .) Then the system has the same solution set as Also the system has the same solutions as the system, . The system has the same solution as the system provided .    If solves then it solves the first equation in . Also, it satisfies and so, since it also solves it must solve . Therefore, if solves it must also solve . On the other hand, if it solves the system and , then and so you can subtract these equal quantities from both sides of to obtain showing that it satisfies .  The second assertion of the theorem which says that the system has the same solution as the system, is seen to be true because it involves nothing more than listing the two equations in a different order. They are the same equations.  The third assertion of the theorem which says has the same solution as the system provided is verified as follows: If is a solution of , then it is a solution to because the second system only involves multiplying the equation, by . If is a solution of , then upon multiplying by the number , you find that    "
 },
 {
-  "id": "def-commutative-property",
+  "id": "ex-elementary-operations",
   "level": "2",
-  "url": "s-Operations.html#def-commutative-property",
-  "type": "Definition",
+  "url": "s-Systems-of-Equations.html#ex-elementary-operations",
+  "type": "Example",
   "number": "11.1.5",
-  "title": "Commutative Property.",
-  "body": " Commutative Property  Commutative Property   Let be a binary operation on a set . We say that is commutative if and only if for all .   "
+  "title": "",
+  "body": "  Find the solutions to the system,       To solve this system replace the second equation by times the first equation added to the second. This yields the system Now take times the second and add to the third. More precisely, replace the third equation with times the second added to the third. This yields the system At this point, you can tell what the solution is. This system has the same solution as the original system and in the above, . Then using this in the second equation, it follows and so . Now using this in the top equation yields and so . This process is called back substitution .  Alternatively, you could have continued as follows. Add times the bottom equation to the middle and then add times the bottom to the top. This yields Now add times the second to the top. This yields a system which has the same solution set as the original system. This avoided back substitution and led to the same solution set.   "
 },
 {
-  "id": "def-associative-property",
+  "id": "p-3227",
   "level": "2",
-  "url": "s-Operations.html#def-associative-property",
+  "url": "s-Systems-of-Equations.html#p-3227",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "augmented matrix "
+},
+{
+  "id": "def-row-operations",
+  "level": "2",
+  "url": "s-Systems-of-Equations.html#def-row-operations",
   "type": "Definition",
   "number": "11.1.6",
-  "title": "Associative Property.",
-  "body": " Associative Property  Associative Property   Let be a binary operation on a set . We say that is associative if and only if for all .   "
+  "title": "Row Operations.",
+  "body": " Row Operations   Row Operations    The row operations consist of the following   Switch two rows.    Multiply a row by a nonzero number.    Replace a row by a multiple of another row added to it.      "
 },
 {
-  "id": "def-identity-property",
+  "id": "p-3233",
   "level": "2",
-  "url": "s-Operations.html#def-identity-property",
+  "url": "s-Systems-of-Equations.html#p-3233",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Gauss elimination  leading entry  "
+},
+{
+  "id": "def-echelon-form",
+  "level": "2",
+  "url": "s-Systems-of-Equations.html#def-echelon-form",
   "type": "Definition",
   "number": "11.1.7",
-  "title": "Identity Property.",
-  "body": " Identity Property  Identity Property   Let be a binary operation on a set . We say that  has an identity if and only if there exists an element, , in such that for all .   "
+  "title": "Echelon Form.",
+  "body": " Echelon Form   Echelon Form    An augmented matrix is in echelon form if   All nonzero rows are above any rows of zeros.    Each leading entry of a row is in a column to the right of the leading entries of any rows above it.      "
 },
 {
-  "id": "def-inverse-property",
+  "id": "def-row-reduced-echelon-form",
   "level": "2",
-  "url": "s-Operations.html#def-inverse-property",
+  "url": "s-Systems-of-Equations.html#def-row-reduced-echelon-form",
   "type": "Definition",
   "number": "11.1.8",
-  "title": "Inverse Property.",
-  "body": " Inverse Property  Inverse Property   Let be a binary operation on a set . We say that has the inverse property if and only if for each , there exists such that . We call an inverse of .   "
+  "title": "Row Reduced Echelon Form.",
+  "body": " Row Reduced Echelon Form   Row Reduced Echelon Form    An augmented matrix is in row reduced echelon form if   All nonzero rows are above any rows of zeros.    Each leading entry of a row is in a column to the right of the leading entries of any rows above it.    All entries in a column above and below a leading entry are zero.    Each leading entry is a 1, the only nonzero entry in its column.      "
 },
 {
-  "id": "def-idempotent-property",
+  "id": "example-row-reduced-echelon-matrices",
   "level": "2",
-  "url": "s-Operations.html#def-idempotent-property",
-  "type": "Definition",
+  "url": "s-Systems-of-Equations.html#example-row-reduced-echelon-matrices",
+  "type": "Example",
   "number": "11.1.9",
-  "title": "Idempotent Property.",
-  "body": " Idempotent Property  Idempotent Property   Let be a binary operation on a set . We say that is idempotent if and only if for all .   "
+  "title": "Matrices in Row Reduced Echelon Form.",
+  "body": " Matrices in Row Reduced Echelon Form   Here are some matrices which are in row reduced echelon form. .   "
 },
 {
-  "id": "def-left-distributive-property",
+  "id": "example-echelon-matrices",
   "level": "2",
-  "url": "s-Operations.html#def-left-distributive-property",
-  "type": "Definition",
+  "url": "s-Systems-of-Equations.html#example-echelon-matrices",
+  "type": "Example",
   "number": "11.1.10",
-  "title": "Left Distributive Property.",
-  "body": " Left Distributive Property  Left Distributive Property   Let and be binary operations on a set . We say that is left distributive over if and only if for all .   "
+  "title": "Matrices in Echelon Form.",
+  "body": " Matrices in Echelon Form   Here are matrices in echelon form which are not in row reduced echelon form but which are in echelon form.   "
 },
 {
-  "id": "def-right-distributive-property",
+  "id": "example-not-echelon-matrices",
   "level": "2",
-  "url": "s-Operations.html#def-right-distributive-property",
-  "type": "Definition",
+  "url": "s-Systems-of-Equations.html#example-not-echelon-matrices",
+  "type": "Example",
   "number": "11.1.11",
-  "title": "Right Distributive Property.",
-  "body": " Right Distributive Property  Right Distributive Property   Let and be binary operations on a set . We say that is right distributive over if and only if for all .   "
+  "title": "Matrices not in Echelon Form.",
+  "body": " Matrices not in Echelon Form   Here are matrices which are not in echelon form.   "
 },
 {
-  "id": "def-distributive-property",
+  "id": "def-pivot",
   "level": "2",
-  "url": "s-Operations.html#def-distributive-property",
+  "url": "s-Systems-of-Equations.html#def-pivot",
   "type": "Definition",
   "number": "11.1.12",
-  "title": "Distributive Property.",
-  "body": " Distributive Property  Distributive Property   Let and be binary operations on a set . We say that is distributive over if and only if is both left and right distributive over .   "
+  "title": "Pivot Positions and Pivot Columns.",
+  "body": " Pivot Positions and Pivot Columns   Pivot Position    Pivot Column    A pivot position in a matrix is the location of a leading entry in an echelon form resulting from the application of row operations to the matrix. A pivot column is a column that contains a pivot position.   "
 },
 {
-  "id": "def-involution-property",
+  "id": "example-170",
   "level": "2",
-  "url": "s-Operations.html#def-involution-property",
-  "type": "Definition",
+  "url": "s-Systems-of-Equations.html#example-170",
+  "type": "Example",
   "number": "11.1.13",
-  "title": "Involution Property.",
-  "body": " Involution Property  Involution Property   Let be a unary operation on . We say that has the involution property if for all .   "
+  "title": "Putting a Matrix into Row Reduced Echelon Form.",
+  "body": " Putting a Matrix into Row Reduced Echelon Form   Suppose Where are the pivot positions and pivot columns?    Replace the second row by -3 times the first added to the second. This yields This is not in reduced echelon form so replace the bottom row by -4 times the top row added to the bottom. This yields This is still not in reduced echelon form. Replace the bottom row by -1 times the middle row added to the bottom. This yields which is in echelon form, although not in reduced echelon form. Therefore, the pivot positions in the original matrix are the locations corresponding to the first row and first column and the second row and second columns as shown in the following: Thus the pivot columns in the matrix are the first two columns.   "
 },
 {
-  "id": "def-closure-property",
+  "id": "alg-row-reduced-echelon",
   "level": "2",
-  "url": "s-Operations.html#def-closure-property",
-  "type": "Definition",
+  "url": "s-Systems-of-Equations.html#alg-row-reduced-echelon",
+  "type": "Algorithm",
   "number": "11.1.14",
-  "title": "Closure Property.",
-  "body": " Closure Property  Closure Property   Let be a subset of and let be a binary operation on . We say that is closed under if implies that .   "
+  "title": "",
+  "body": "  This algorithm tells how to start with a matrix and do row operations on it in such a way as to end up with a matrix in row reduced echelon form.   Find the first nonzero column from the left. This is the first pivot column. The position at the top of the first pivot column is the first pivot position. Switch rows if necessary to place a nonzero number in the first pivot position.    Use row operations to zero out the entries below the first pivot position.    Ignore the row containing the most recent pivot position identified and the rows above it. Repeat steps 1 and 2 to the remaining sub-matrix, the rectangular array of numbers obtained from the original matrix by deleting the rows you just ignored. Repeat the process until there are no more rows to modify. The matrix will then be in echelon form.    Moving from right to left, use the nonzero elements in the pivot positions to zero out the elements in the pivot columns which are above the pivots.    Divide each nonzero row by the value of the leading entry. The result will be a matrix in row reduced echelon form.   This row reduction procedure applies to both augmented matrices and non augmented matrices. There is nothing special about the augmented column with respect to the row reduction procedure.   "
 },
 {
-  "id": "ex-closure",
+  "id": "example-171",
   "level": "2",
-  "url": "s-Operations.html#ex-closure",
+  "url": "s-Systems-of-Equations.html#example-171",
   "type": "Example",
   "number": "11.1.15",
-  "title": "Some examples of closure and non-closure.",
-  "body": " Some examples of closure and non-closure     The odd integers are closed under multiplication, but not under addition.    Let be a proposition over and let be the set of propositions over that imply . That is; if . Then is closed under both conjunction and disjunction.    The set of positive integers that are multiples of 5 is closed under both addition and multiplication.     "
+  "title": "",
+  "body": "  Here is a matrix. Do row reductions till you obtain a matrix in echelon form. Then complete the process by producing one in row reduced echelon form.    The pivot column is the second. Hence the pivot position is the one in the first row and second column. Switch the first two rows to obtain a nonzero entry in this pivot position.   Step two is not necessary because all the entries below the first pivot position in the resulting matrix are zero. Now ignore the top row and the columns to the left of this first pivot position. Thus you apply the same operations to the smaller matrix   The next pivot column is the third corresponding to the first in this smaller matrix and the second pivot position is therefore, the one which is in the second row and third column.  In this case it is not necessary to switch any rows to place a nonzero entry in this position because there is already a nonzero entry there. Multiply the third row of the original matrix by -2 and then add the second row to it. This yields   The next matrix the steps in the algorithm are applied to is   The first pivot column is the first column in this case and no switching of rows is necessary because there is a nonzero entry in the first pivot position. Therefore, the algorithm yields for the next step   Now the algorithm will be applied to the matrix There is only one column and it is nonzero so this single column is the pivot column. Therefore, the algorithm yields the following matrix for the echelon form.   To complete placing the matrix in reduced echelon form, multiply the third row by 3 and add -2 times the fourth row to it. This yields   Next multiply the second row by 3 and take 2 times the fourth row and add to it. Then add the fourth row to the first.   Next work on the fourth column in the same way.   Take times the second row and add to the first.   Finally, divide by the value of the leading entries in the nonzero rows.    "
+},
+{
+  "id": "p-3270",
+  "level": "2",
+  "url": "s-Systems-of-Equations.html#p-3270",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Gauss Jordan method Gauss elimination "
+},
+{
+  "id": "example-172",
+  "level": "2",
+  "url": "s-Systems-of-Equations.html#example-172",
+  "type": "Example",
+  "number": "11.1.16",
+  "title": "",
+  "body": "  Give the complete solution to the system of equations, , , and .    The augmented matrix for this system is   Multiply the second row by 2, the first row by 5, and then take (-1) times the first row and add to the second. Then multiply the first row by 1\/5. This yields   Switch the last two rows to get   then take -3 times the top added to 2 times the middle to get .  Multiply bottom by 19 and take the second row times -1 added to the bottom. This gives a row of zeros with -2 at the right end, representing the equation 0x + 0y + 0z = -2 which has no solution so there is no solution to this system of equations. When this happens, the system is called inconsistent . In this case it is very easy to describe the solution set. The system has no solution.   "
+},
+{
+  "id": "ex-infinite-sols",
+  "level": "2",
+  "url": "s-Systems-of-Equations.html#ex-infinite-sols",
+  "type": "Example",
+  "number": "11.1.17",
+  "title": "",
+  "body": "  Give the complete solution to the system of equations, , , and .    The augmented matrix of this system is   Replace the last row with 2 times the top row added to 3 times the bottom row combining two row operations. This gives The entry 3 in this sequence of row operations is called the pivot . It is used to create zeros in the other places of the column.  Next take -1 times the middle row and add to the bottom. Here the 1 in the second row is the pivot. This is in reduced echelon form. The equations corresponding to this reduced echelon form are and . Apparently can equal any number. Lets call this number .  In this context is called a parameter .  Therefore, the solution set of this system is , , and where is completely arbitrary. The system has an infinite set of solutions which are given in the above simple way. This is what it is all about, finding the solutions to the system.   "
+},
+{
+  "id": "p-3283",
+  "level": "2",
+  "url": "s-Systems-of-Equations.html#p-3283",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "basic variables free variables "
+},
+{
+  "id": "ex-two-parameters",
+  "level": "2",
+  "url": "s-Systems-of-Equations.html#ex-two-parameters",
+  "type": "Example",
+  "number": "11.1.18",
+  "title": "",
+  "body": "  Find the solution to the system       The augmented matrix is   Take -1 times the first row and add to the second. Then take -1 times the first row and add to the third. This yields   Now add the second row to the bottom row This matrix is in echelon form and you see the basic variables are and while the free variables are and . Assign to and to . Then the second row yields the equation, while the top equation yields the equation, and so since , this gives showing that , , , and . One can write this in the form This is another example of a system which has an infinite solution set but this time the solution set depends on two parameters, not one.  Most people find it less confusing in the case of an infinite solution set to first place the augmented matrix in row reduced echelon form rather than just echelon form before seeking to write down the description of the solution. In the above, this means we don't stop with the echelon form above. Instead we first place it in reduced echelon form as follows. Then the solution is from the second row and from the first. Thus letting and , the solution as is given previously.   "
+},
+{
+  "id": "p-3289",
+  "level": "2",
+  "url": "s-Systems-of-Equations.html#p-3289",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "different "
+},
+{
+  "id": "def-system-of-linear-eqs",
+  "level": "2",
+  "url": "s-Systems-of-Equations.html#def-system-of-linear-eqs",
+  "type": "Definition",
+  "number": "11.1.19",
+  "title": "System of Linear Equations.",
+  "body": " System of Linear Equations   System of Linear Equations    A system of linear equations is a list of equations, where are numbers, and is a number. The above is a system of equations in the variables, . Nothing is said about the relative size of and . Written more simply in terms of summation notation, the above can be written in the form It is desired to find solving each of the equations listed.   "
+},
+{
+  "id": "def-consistent-lin-eq",
+  "level": "2",
+  "url": "s-Systems-of-Equations.html#def-consistent-lin-eq",
+  "type": "Definition",
+  "number": "11.1.20",
+  "title": "",
+  "body": "  A system of linear equations is called consistent if there exists a solution. It is called inconsistent if there is no solution.   "
 },
 {
   "id": "exercise-379",
   "level": "2",
-  "url": "s-Operations.html#exercise-379",
+  "url": "s-Systems-of-Equations.html#exercise-379",
   "type": "Exercise",
-  "number": "11.1.4.1",
+  "number": "11.1.3.1",
   "title": "",
-  "body": " Determine the properties that the following operations have on the positive integers.   addition    multiplication     defined by     defined by     defined by         Commutative, and associative. Notice that zero is the identity for addition, but it is not a positive integer.    Commutative, associative, and has an identity (1)    Commutative, associative, has an identity (1), and is idempotent    Commutative, associative, and idempotent    None. Notice that , while ; and , while .     "
+  "body": " Find the point which lies on both lines, and .   Set up augmented matrix: Add the first line to the second. Divide line two by  So . Backsubstituting: , so . Therefore is the point .  "
 },
 {
   "id": "exercise-380",
   "level": "2",
-  "url": "s-Operations.html#exercise-380",
+  "url": "s-Systems-of-Equations.html#exercise-380",
   "type": "Exercise",
-  "number": "11.1.4.2",
+  "number": "11.1.3.2",
   "title": "",
-  "body": " Which pairs of operations in Exercise 1 are distributive over one another?  "
+  "body": " Solve Exercise 1 graphically. That is, graph each line and see where they intersect.     Graph of Exercise 11.1.1   Graph of lines described in Exercise 11.1.1      "
 },
 {
   "id": "exercise-381",
   "level": "2",
-  "url": "s-Operations.html#exercise-381",
+  "url": "s-Systems-of-Equations.html#exercise-381",
   "type": "Exercise",
-  "number": "11.1.4.3",
+  "number": "11.1.3.3",
   "title": "",
-  "body": " Let be an operation on a set and . Prove that if and are both closed under , then is also closed under , but need not be.    Similarly, . Therefore, . The set of positive integers is closed under addition, and so is the set of negative integers, but . Therefore, their union, the nonzero integers, is not closed under addition.  "
+  "body": " Find the point of intersection of the two lines and .  "
 },
 {
   "id": "exercise-382",
   "level": "2",
-  "url": "s-Operations.html#exercise-382",
+  "url": "s-Systems-of-Equations.html#exercise-382",
   "type": "Exercise",
-  "number": "11.1.4.4",
+  "number": "11.1.3.4",
   "title": "",
-  "body": " How can you pick out the identity of an operation from its table?  "
+  "body": " Solve Exercise 3 graphically. That is, graph each line and see where they intersect.  "
 },
 {
   "id": "exercise-383",
   "level": "2",
-  "url": "s-Operations.html#exercise-383",
+  "url": "s-Systems-of-Equations.html#exercise-383",
   "type": "Exercise",
-  "number": "11.1.4.5",
+  "number": "11.1.3.5",
   "title": "",
-  "body": " Define by , the absolute value of . Which properties does have on the set of natural numbers, ?       is commutative since for all     is not associative. Take , , and , then , and .    Zero is the identity for on , since    Each element of inverts itself since .     is not idempotent, since, for , .     "
-},
-{
-  "id": "s-algebraic-systems",
-  "level": "1",
-  "url": "s-algebraic-systems.html",
-  "type": "Section",
-  "number": "11.2",
-  "title": "Algebraic Systems",
-  "body": " Algebraic Systems  Algebraic Systems   An algebraic system is a mathematical system consisting of a set called the domain and one or more operations on the domain. If is the domain and are the operations, denotes the mathematical system. If the context is clear, this notation is abbreviated to .    Monoids at Two Levels  Consider the following two examples of algebraic systems.       The concatenation of and  Let be the set of all finite strings of 0's and 1's including the null (or empty) string, . An algebraic system is obtained by adding the operation of concatenation. The concatenation of two strings is simply the linking of the two strings together in the order indicated. The concatenation of strings with is denoted . For example, and . Note that concatenation is an associative operation and that is the identity for concatenation.  A note on notation: There isn't a standard symbol for concatenation. We have chosen to be consistent with the notation used in Java and Python.    Let be any nonempty set and let be any operation on that is associative and has an identity in .     Our second example is a structure called a monoid (pronounced \"mah-noid\").   Monoid  Monoid   A monoid is a set together with a binary operation with the properties    is associative: , and     has an identity in : such that ,      might seem strange, but we include it to illustrate a point. The algebraic system is a special case of . Most of us are much more comfortable with than with . No doubt, the reason is that the elements in are more concrete. We know what they look like and exactly how they are combined. The description of is so vague that we don't even know what the elements are, much less how they are combined. Why would anyone want to study ? The reason is related to this question: What theorems are of interest in an algebraic system? Answering this question is one of our main objectives in this chapter. Certain properties of algebraic systems are called algebraic properties, and any theorem that says something about the algebraic properties of a system would be of interest. The ability to identify what is algebraic and what isn't is one of the skills that you should learn from this chapter.  Now, back to the question of why we study . Our answer is to illustrate the usefulness of with a theorem about .   A Monoid Theorem   If , are elements of and , then .         The power of this theorem is that it can be applied to any algebraic system that describes. Since is one such system, we can apply to any two strings that commute. For example, 01 and 0101. Although a special case of this theorem could have been proven for , it would not have been any easier to prove, and it would not have given us any insight into other special cases of .   Another Monoid  Consider the set of real matrices, , with the operation of matrix multiplication. In this context, can be interpreted as saying that if , then . One pair of matrices that this theorem applies to is and .     Levels of Abstraction  Levels of Abstraction   One of the fundamental tools in mathematics is abstraction. There are three levels of abstraction that we will identify for algebraic systems: concrete, axiomatic, and universal.    The Concrete Level  Almost all of the mathematics that you have done in the past was at the concrete level. As a rule, if you can give examples of a few typical elements of the domain and describe how the operations act on them, you are describing a concrete algebraic system. Two examples of concrete systems are and . A few others are:   The integers with addition. Of course, addition isn't the only standard operation that we could include. Technically, if we were to add multiplication, we would have a different system.    The subsets of the natural numbers, with union, intersection, and complementation.    The complex numbers with addition and multiplication.       The Axiomatic Level  The next level of abstraction is the axiomatic level. At this level, the elements of the domain are not specified, but certain axioms are stated about the number of operations and their properties. The system that we called is an axiomatic system. Some combinations of axioms are so common that a name is given to any algebraic system to which they apply. Any system with the properties of is called a monoid. The study of would be called monoid theory. The assumptions that we made about , associativity and the existence of an identity, are called the monoid axioms. One of your few brushes with the axiomatic level may have been in your elementary algebra course. Many algebra texts identify the properties of the real numbers with addition and multiplication as the field axioms. The real numbers share these axioms with other concrete systems, all of which are called fields.    The Universal Level  The final level of abstraction is the universal level. There are certain concepts, called universal algebra concepts, that can be applied to the study of all algebraic systems. Although a purely universal approach to algebra would be much too abstract for our purposes, defining concepts at this level should make it easier to organize the various algebraic theories in your own mind. In this chapter, we will consider the concepts of isomorphism, subsystem, and direct product.     Groups  To illustrate the axiomatic level and the universal concepts, we will consider yet another kind of axiomatic system, the group. In Chapter 5 we noted that the simplest equation in matrix algebra that we are often called upon to solve is , where and are known square matrices and is an unknown matrix. To solve this equation, we need the associative, identity, and inverse laws. We call the systems that have these properties groups.   Group  Group    a group with elements and binary operation    A group consists of a nonempty set and a binary operation on satisfying the properties    is associative on : for all .    There exists an identity element, , such that for all .    For all , there exists an inverse; that is, there exist such that .       A group is usually denoted by its set's name, , or occasionally by to emphasize the operation. At the concrete level, most sets have a standard operation associated with them that will form a group. As we will see below, the integers with addition is a group. Therefore, in group theory always stands for .   Generic Symbols  At the axiomatic and universal levels, there are often symbols that have a special meaning attached to them. In group theory, the letter is used to denote the identity element of whatever group is being discussed. A little later, we will prove that the inverse of a group element, , is unique and its inverse is usually denoted and is read inverse. When a concrete group is discussed, these symbols are dropped in favor of concrete symbols. These concrete symbols may or may not be similar to the generic symbols. For example, the identity element of the group of integers is 0, and the inverse of is denoted by , the additive inverse of .  The asterisk and the could also be considered generic symbols since they are used to denote operations on the axiomatic level.    Some concrete groups     The integers with addition is a group. We know that addition is associative. Zero is the identity for addition: for all integers . The additive inverse of any integer is obtained by negating it. Thus the inverse of is .    The integers with multiplication is not a group. Although multiplication is associative and 1 is the identity for multiplication, not all integers have a multiplicative inverse in . For example, the multiplicative inverse of 10 is , but is not an integer.    The power set of any set with the operation of symmetric difference, , is a group. If and are sets, then . We will leave it to the reader to prove that is associative over . The identity of the group is the empty set: . Every set is its own inverse since . Note that is not a group with union or intersection.       Abelian Group  Abelian Group   A group is abelian if its operation is commutative.     Abel  Most of the groups that we will discuss in this book will be abelian. The term abelian is used to honor the Norwegian mathematician N. Abel (1802-29), who helped develop group theory.    Norwegian Stamp honoring Abel   Norwegian Stamp honoring Abel      Exercises   Discuss the analogy between the terms generic and concrete for algebraic systems and the terms generic and trade for prescription drugs.   The terms generic and trade for prescription drugs are analogous to generic and concrete algebraic systems. Generic aspirin, for example, has no name, whereas Bayer, Tylenol, Bufferin, and Anacin are all trade or specific types of aspirins. The same can be said of a generic group where is a nonempty set and is a binary operation on . When examples of typical domain elements can be given along with descriptions of how operations act on them, such as * or , then the system is concrete (has a specific name, as with the aspirin). Generic is a way to describe a general algebraic system, whereas a concrete system has a name or symbols making it distinguishable from other systems.    Discuss the connection between groups and monoids. Is every monoid a group? Is every group a monoid?    Which of the following are groups?    with concatenation (see ).     with matrix addition.     with matrix multiplication.    The positive real numbers, , with multiplication.    The nonzero real numbers, , with multiplication.     with multiplication.    The positive integers with the operation defined by .     The systems in parts b, d, e, and f are groups.    Prove that, , defined by is an associative operation on .    The following problem supplies an example of a non-abelian group. A rook matrix is a matrix that has only 0's and 1's as entries such that each row has exactly one 1 and each column has exactly one 1. The term rook matrix is derived from the fact that each rook matrix represents the placement of rooks on an chessboard such that none of the rooks can attack one another. A rook in chess can move only vertically or horizontally, but not diagonally. Let be the set of rook matrices. There are six rook matrices:    List the rook matrices. They form a group, under matrix multiplication. Write out the multiplication table. Is the group abelian?    Write out the multiplication table for . This is another group. Is it abelian?    How many rook matrices are there? How many rook matrices are there?        Elements are , and , the group is abelian. Operation table is      This group is non-abelian since, for example, and .    4! = 24, .       For each of the following sets, identify the standard operation that results in a group. What is the identity of each group?   The set of all matrices with real entries and nonzero determinants.    The set of matrices with rational entries.       Let . Let be defined (partially) by for all . Write a complete table for so that is a group.   The identity is . , , , and is abelian. (This group is commonly called the Klein-4 group.)    "
-},
-{
-  "id": "def-monoid",
-  "level": "2",
-  "url": "s-algebraic-systems.html#def-monoid",
-  "type": "Definition",
-  "number": "11.2.1",
-  "title": "Monoid.",
-  "body": " Monoid  Monoid   A monoid is a set together with a binary operation with the properties    is associative: , and     has an identity in : such that ,     "
-},
-{
-  "id": "theorem-first-monoid",
-  "level": "2",
-  "url": "s-algebraic-systems.html#theorem-first-monoid",
-  "type": "Theorem",
-  "number": "11.2.2",
-  "title": "A Monoid Theorem.",
-  "body": " A Monoid Theorem   If , are elements of and , then .        "
-},
-{
-  "id": "ex-another-monoid",
-  "level": "2",
-  "url": "s-algebraic-systems.html#ex-another-monoid",
-  "type": "Example",
-  "number": "11.2.3",
-  "title": "Another Monoid.",
-  "body": " Another Monoid  Consider the set of real matrices, , with the operation of matrix multiplication. In this context, can be interpreted as saying that if , then . One pair of matrices that this theorem applies to is and .  "
-},
-{
-  "id": "def-Group",
-  "level": "2",
-  "url": "s-algebraic-systems.html#def-Group",
-  "type": "Definition",
-  "number": "11.2.4",
-  "title": "Group.",
-  "body": " Group  Group    a group with elements and binary operation    A group consists of a nonempty set and a binary operation on satisfying the properties    is associative on : for all .    There exists an identity element, , such that for all .    For all , there exists an inverse; that is, there exist such that .      "
-},
-{
-  "id": "note-6",
-  "level": "2",
-  "url": "s-algebraic-systems.html#note-6",
-  "type": "Note",
-  "number": "11.2.5",
-  "title": "Generic Symbols.",
-  "body": " Generic Symbols  At the axiomatic and universal levels, there are often symbols that have a special meaning attached to them. In group theory, the letter is used to denote the identity element of whatever group is being discussed. A little later, we will prove that the inverse of a group element, , is unique and its inverse is usually denoted and is read inverse. When a concrete group is discussed, these symbols are dropped in favor of concrete symbols. These concrete symbols may or may not be similar to the generic symbols. For example, the identity element of the group of integers is 0, and the inverse of is denoted by , the additive inverse of .  The asterisk and the could also be considered generic symbols since they are used to denote operations on the axiomatic level.  "
-},
-{
-  "id": "ex-some-groups",
-  "level": "2",
-  "url": "s-algebraic-systems.html#ex-some-groups",
-  "type": "Example",
-  "number": "11.2.6",
-  "title": "Some concrete groups.",
-  "body": " Some concrete groups     The integers with addition is a group. We know that addition is associative. Zero is the identity for addition: for all integers . The additive inverse of any integer is obtained by negating it. Thus the inverse of is .    The integers with multiplication is not a group. Although multiplication is associative and 1 is the identity for multiplication, not all integers have a multiplicative inverse in . For example, the multiplicative inverse of 10 is , but is not an integer.    The power set of any set with the operation of symmetric difference, , is a group. If and are sets, then . We will leave it to the reader to prove that is associative over . The identity of the group is the empty set: . Every set is its own inverse since . Note that is not a group with union or intersection.     "
-},
-{
-  "id": "def-abelian-group",
-  "level": "2",
-  "url": "s-algebraic-systems.html#def-abelian-group",
-  "type": "Definition",
-  "number": "11.2.7",
-  "title": "Abelian Group.",
-  "body": " Abelian Group  Abelian Group   A group is abelian if its operation is commutative.   "
-},
-{
-  "id": "fig-stamp-abel",
-  "level": "2",
-  "url": "s-algebraic-systems.html#fig-stamp-abel",
-  "type": "Figure",
-  "number": "11.2.8",
-  "title": "",
-  "body": " Norwegian Stamp honoring Abel   Norwegian Stamp honoring Abel   "
+  "body": " Do the three lines, , , and have a common point of intersection? If so, find the point and if not, tell why they don’t have such a common point of intersection   Set up augmented matrix: Add the first line to the third. Add the first line to the second. Add the second line to the third. Divide line two by  So . Backsubstituting to line one: , so . The common intersecting point is .  "
 },
 {
   "id": "exercise-384",
   "level": "2",
-  "url": "s-algebraic-systems.html#exercise-384",
+  "url": "s-Systems-of-Equations.html#exercise-384",
   "type": "Exercise",
-  "number": "11.2.4.1",
+  "number": "11.1.3.6",
   "title": "",
-  "body": " Discuss the analogy between the terms generic and concrete for algebraic systems and the terms generic and trade for prescription drugs.   The terms generic and trade for prescription drugs are analogous to generic and concrete algebraic systems. Generic aspirin, for example, has no name, whereas Bayer, Tylenol, Bufferin, and Anacin are all trade or specific types of aspirins. The same can be said of a generic group where is a nonempty set and is a binary operation on . When examples of typical domain elements can be given along with descriptions of how operations act on them, such as * or , then the system is concrete (has a specific name, as with the aspirin). Generic is a way to describe a general algebraic system, whereas a concrete system has a name or symbols making it distinguishable from other systems.  "
+  "body": " Do the three planes, , , and have a common point of intersection? If so, find one and if not, tell why there is no such point.  "
 },
 {
   "id": "exercise-385",
   "level": "2",
-  "url": "s-algebraic-systems.html#exercise-385",
+  "url": "s-Systems-of-Equations.html#exercise-385",
   "type": "Exercise",
-  "number": "11.2.4.2",
+  "number": "11.1.3.7",
   "title": "",
-  "body": " Discuss the connection between groups and monoids. Is every monoid a group? Is every group a monoid?  "
+  "body": " You have a system of equations in two variables, . Explain the geometric significance of   No solution.    A unique solution.    An infinite number of solutions.         No solution. The lines are parallel.    A unique solution. The lines must intersect.    An infinite number of solutions. The lines must be the same line.     "
 },
 {
   "id": "exercise-386",
   "level": "2",
-  "url": "s-algebraic-systems.html#exercise-386",
+  "url": "s-Systems-of-Equations.html#exercise-386",
   "type": "Exercise",
-  "number": "11.2.4.3",
+  "number": "11.1.3.8",
   "title": "",
-  "body": " Which of the following are groups?    with concatenation (see ).     with matrix addition.     with matrix multiplication.    The positive real numbers, , with multiplication.    The nonzero real numbers, , with multiplication.     with multiplication.    The positive integers with the operation defined by .     The systems in parts b, d, e, and f are groups.  "
+  "body": " If a system of equations has more equations than variables, can it have a solution? If so, give an example and if not, tell why not.  "
 },
 {
   "id": "exercise-387",
   "level": "2",
-  "url": "s-algebraic-systems.html#exercise-387",
+  "url": "s-Systems-of-Equations.html#exercise-387",
   "type": "Exercise",
-  "number": "11.2.4.4",
+  "number": "11.1.3.9",
   "title": "",
-  "body": " Prove that, , defined by is an associative operation on .  "
+  "body": " Find such that is the augmented matrix of an inconsistent matrix.   What we want is for one of the rows to be all zeros except for the last term. If we multiply the top row by and add that to the bottom row, we get We want to make an such that the . Solving for , we get 4. which simplifies to , which is inconsistent.  "
 },
 {
-  "id": "ex-rook-matrices",
+  "id": "exercise-388",
   "level": "2",
-  "url": "s-algebraic-systems.html#ex-rook-matrices",
+  "url": "s-Systems-of-Equations.html#exercise-388",
   "type": "Exercise",
-  "number": "11.2.4.5",
+  "number": "11.1.3.10",
   "title": "",
-  "body": " The following problem supplies an example of a non-abelian group. A rook matrix is a matrix that has only 0's and 1's as entries such that each row has exactly one 1 and each column has exactly one 1. The term rook matrix is derived from the fact that each rook matrix represents the placement of rooks on an chessboard such that none of the rooks can attack one another. A rook in chess can move only vertically or horizontally, but not diagonally. Let be the set of rook matrices. There are six rook matrices:    List the rook matrices. They form a group, under matrix multiplication. Write out the multiplication table. Is the group abelian?    Write out the multiplication table for . This is another group. Is it abelian?    How many rook matrices are there? How many rook matrices are there?        Elements are , and , the group is abelian. Operation table is      This group is non-abelian since, for example, and .    4! = 24, .     "
+  "body": " Find such that is the augmented matrix of a consistent matrix.  "
 },
 {
   "id": "exercise-389",
   "level": "2",
-  "url": "s-algebraic-systems.html#exercise-389",
+  "url": "s-Systems-of-Equations.html#exercise-389",
   "type": "Exercise",
-  "number": "11.2.4.6",
+  "number": "11.1.3.11",
   "title": "",
-  "body": " For each of the following sets, identify the standard operation that results in a group. What is the identity of each group?   The set of all matrices with real entries and nonzero determinants.    The set of matrices with rational entries.     "
+  "body": " Determine if the system is consistent. If so, is the solution unique?       We have the corresponding matrix:   Add row 1 to row 4:   Add row 1 to row 3:   Add row 1 to row 2:   Add row 2 to row 3:   Add row 2 to row 4:   Therefore we see that we have a problem because rows 3 and 4 are saying and . Or we could keep going with the row operations and add row 3 to row 4: Add row 2 to row 4: which then definitively shows that the system is not consistent.  "
 },
 {
   "id": "exercise-390",
   "level": "2",
-  "url": "s-algebraic-systems.html#exercise-390",
+  "url": "s-Systems-of-Equations.html#exercise-390",
   "type": "Exercise",
-  "number": "11.2.4.7",
+  "number": "11.1.3.12",
   "title": "",
-  "body": " Let . Let be defined (partially) by for all . Write a complete table for so that is a group.   The identity is . , , , and is abelian. (This group is commonly called the Klein-4 group.)  "
-},
-{
-  "id": "s-general-properties-of-groups",
-  "level": "1",
-  "url": "s-general-properties-of-groups.html",
-  "type": "Section",
-  "number": "11.3",
-  "title": "Some General Properties of Groups",
-  "body": " Some General Properties of Groups  Some General Properties of Groups   In this section, we will present some of the most basic theorems of group theory. Keep in mind that each of these theorems tells us something about every group. We will illustrate this point with concrete examples at the close of the section.    First Theorems   Identities are Unique   The identity of a group is unique.    One difficulty that students often encounter is how to get started in proving a theorem like this. The difficulty is certainly not in the theorem's complexity. It's too terse! Before actually starting the proof, we rephrase the theorem so that the implication it states is clear.   Identities are Unique - Rephrased   If is a group and is an identity of , then no other element of is an identity of .    (Indirect): Suppose that , , and is an identity of . We will show that , which is a contradiction, completing the proof.     Next we justify the phrase ... the inverse of an element of a group.   Inverses are Unique   The inverse of any element of a group is unique.    The same problem is encountered here as in the previous theorem. We will leave it to the reader to rephrase this theorem. The proof is also left to the reader to write out in detail. Here is a hint: If and are both inverses of , then you can prove that . If you have difficulty with this proof, note that we have already proven it in a concrete setting in Chapter 5.  As mentioned above, the significance of is that we can refer to the inverse of an element without ambiguity. The notation for the inverse of is usually (note the exception below).   Some Inverses     In any group, is the inverse of the identity , which always is .     is the inverse of , which is always equal to (see below).     is the inverse of .    In a concrete group with an operation that is based on addition, the inverse of is usually written . For example, the inverse of in the group is written . In the group of matrices over the real numbers under matrix addition, the inverse of is written , which equals .       Inverse of Inverse Theorem   If a is an element of group , then .    Again, we rephrase the theorem to make it clear how to proceed.   Inverse of Inverse Theorem (Rephrased)   If has inverse and has inverse , then .         The next theorem gives us a formula for the inverse of . This formula should be familiar. In Chapter 5 we saw that if and are invertible matrices, then .   Inverse of a Product   If and are elements of group , then .    Let . We will prove that inverts . Since we know that the inverse is unique, we will have proved the theorem. Similarly, ; therefore,      Cancellation Laws  Cancellation in Groups   If , , and are elements of group , then     We will prove the left cancellation law. The right law can be proved in exactly the same way. Starting with , we can operate on both and on the left with : Applying the associative property to both sides we get      Linear Equations in a Group  Linear Equations in a Group   If is a group and , the equation has a unique solution, . In addition, the equation has a unique solution, .    We prove the theorem only for , since the second statement is proven identically. By the cancellation law, we can conclude that .  If and are two solutions of the equation , then and, by the cancellation law, . This verifies that is the only solution of .     Our proof of was analogous to solving the concrete equation in the following way: Therefore, by cancelling 4,     Exponents  If is an element of a group , then we establish the notation that In addition, we allow negative exponent and define, for example, Although this should be clear, proving exponentiation properties requires a more precise recursive definition.   Exponentiation in Groups  Exponentiation in Groups   For , define recursively by and if . Also, if , .     Some concrete exponentiations     In the group of positive real numbers with multiplication, and    In a group with addition, we use a different form of notation, reflecting the fact that in addition repeated terms are multiples, not powers. For example, in , is written as , is written as , etc. The inverse of a multiple of such as is written as .      Although we define, for example, , we need to be able to extract the single factor on the left. The following lemma justifies doing precisely that.    Let be a group. If and , then , and hence .    (By induction): If ,   Now assume the formula of the lemma is true for some .     Based on the definitions for exponentiation above, there are several properties that can be proven. They are all identical to the exponentiation properties from elementary algebra.   Properties of Exponentiation   If a is an element of a group , and and are integers,    and hence                We will leave the proofs of these properties to the reader. All three parts can be done by induction. For example the proof of the second part would start by defining the proposition , , to be . The basis is .    Our final theorem is the only one that contains a hypothesis about the group in question. The theorem only applies to finite groups.    If is a finite group, , and is an element of , then there exists a positive integer such that and .    Consider the list . Since there are elements of in this list, there must be some duplication. Suppose that , with . Let . Then Furthermore, since , .    Consider the concrete group . All of the theorems that we have stated in this section except for the last one say something about . Among the facts that we conclude from the theorems about are:   Since the inverse of 5 is , the inverse of is 5.    The inverse of is .    The solution of is .    .    (twenty-eight 3s).       Exercises   Let be a group and be an element of . Define by .   Prove that is a bijection.    On the basis of part a, describe a set of bijections on the set of integers.         is injective: .  is surjective: For all , has the solution .    Functions of the form , where is any integer, are bijections       Rephrase and write out a clear proof.    Prove by induction on that if , are elements of a group , , then . Interpret this result in terms of and .   Basis: ( ) by .  Induction: Assume that for some , We must show that  This can be accomplished as follows:     True or false? If , , are elements of a group , and , then . Explain your answer.    Prove .   In this answer, we will refer to simply as the lemma.     Let be , where is any element of group . First we will prove that is true for all .  Basis: If , Using the definition of the zero exponent, , while . Therefore, is true.  Induction: Assume that for some , ) is true.   If is negative, then is positive and     For , let be for all . The basis for this proof follows directly from the basis for the definition of exponentiation.  Induction: Assume that for some , is true. Then To complete the proof, you need to consider the cases where and\/or are negative.    Let be for all integers .  Basis: and therefore, is true.  Induction; Assume that is true for some 0, Finally, if is negative, we can verify that using many of the same steps as the positive case.       Each of the following facts can be derived by identifying a certain group and then applying one of the theorems of this section to it. For each fact, list the group and the theorem that are used.   is the only solution of .     .    If are matrices over the real numbers, with , then .    There is only one subset of the natural numbers for which for every .       "
-},
-{
-  "id": "theorem-11-3-1",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#theorem-11-3-1",
-  "type": "Theorem",
-  "number": "11.3.1",
-  "title": "Identities are Unique.",
-  "body": " Identities are Unique   The identity of a group is unique.   "
-},
-{
-  "id": "theorem-11-3-1-a",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#theorem-11-3-1-a",
-  "type": "Theorem",
-  "number": "11.3.2",
-  "title": "Identities are Unique - Rephrased.",
-  "body": " Identities are Unique - Rephrased   If is a group and is an identity of , then no other element of is an identity of .    (Indirect): Suppose that , , and is an identity of . We will show that , which is a contradiction, completing the proof.    "
-},
-{
-  "id": "theorem-11-3-2",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#theorem-11-3-2",
-  "type": "Theorem",
-  "number": "11.3.3",
-  "title": "Inverses are Unique.",
-  "body": " Inverses are Unique   The inverse of any element of a group is unique.   "
-},
-{
-  "id": "ex-some-inverses",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#ex-some-inverses",
-  "type": "Example",
-  "number": "11.3.4",
-  "title": "Some Inverses.",
-  "body": " Some Inverses     In any group, is the inverse of the identity , which always is .     is the inverse of , which is always equal to (see below).     is the inverse of .    In a concrete group with an operation that is based on addition, the inverse of is usually written . For example, the inverse of in the group is written . In the group of matrices over the real numbers under matrix addition, the inverse of is written , which equals .     "
-},
-{
-  "id": "theorem-11-3-3",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#theorem-11-3-3",
-  "type": "Theorem",
-  "number": "11.3.5",
-  "title": "Inverse of Inverse Theorem.",
-  "body": " Inverse of Inverse Theorem   If a is an element of group , then .   "
-},
-{
-  "id": "theorem-11-3-3-rephrased",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#theorem-11-3-3-rephrased",
-  "type": "Theorem",
-  "number": "11.3.6",
-  "title": "Inverse of Inverse Theorem (Rephrased).",
-  "body": " Inverse of Inverse Theorem (Rephrased)   If has inverse and has inverse , then .        "
-},
-{
-  "id": "theorem-11-3-4",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#theorem-11-3-4",
-  "type": "Theorem",
-  "number": "11.3.7",
-  "title": "Inverse of a Product.",
-  "body": " Inverse of a Product   If and are elements of group , then .    Let . We will prove that inverts . Since we know that the inverse is unique, we will have proved the theorem. Similarly, ; therefore,    "
-},
-{
-  "id": "theorem-11-3-cancellation",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#theorem-11-3-cancellation",
-  "type": "Theorem",
-  "number": "11.3.8",
-  "title": "Cancellation Laws.",
-  "body": " Cancellation Laws  Cancellation in Groups   If , , and are elements of group , then     We will prove the left cancellation law. The right law can be proved in exactly the same way. Starting with , we can operate on both and on the left with : Applying the associative property to both sides we get    "
-},
-{
-  "id": "theorem-11-3-linear-in-groups",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#theorem-11-3-linear-in-groups",
-  "type": "Theorem",
-  "number": "11.3.9",
-  "title": "Linear Equations in a Group.",
-  "body": " Linear Equations in a Group  Linear Equations in a Group   If is a group and , the equation has a unique solution, . In addition, the equation has a unique solution, .    We prove the theorem only for , since the second statement is proven identically. By the cancellation law, we can conclude that .  If and are two solutions of the equation , then and, by the cancellation law, . This verifies that is the only solution of .   "
-},
-{
-  "id": "note-7",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#note-7",
-  "type": "Note",
-  "number": "11.3.10",
-  "title": "",
-  "body": " Our proof of was analogous to solving the concrete equation in the following way: Therefore, by cancelling 4,  "
-},
-{
-  "id": "def-exponents-in-groups",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#def-exponents-in-groups",
-  "type": "Definition",
-  "number": "11.3.11",
-  "title": "Exponentiation in Groups.",
-  "body": " Exponentiation in Groups  Exponentiation in Groups   For , define recursively by and if . Also, if , .   "
-},
-{
-  "id": "ex-concrete-exponents",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#ex-concrete-exponents",
-  "type": "Example",
-  "number": "11.3.12",
-  "title": "Some concrete exponentiations.",
-  "body": " Some concrete exponentiations     In the group of positive real numbers with multiplication, and    In a group with addition, we use a different form of notation, reflecting the fact that in addition repeated terms are multiples, not powers. For example, in , is written as , is written as , etc. The inverse of a multiple of such as is written as .     "
-},
-{
-  "id": "lemma-11-3-1",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#lemma-11-3-1",
-  "type": "Lemma",
-  "number": "11.3.13",
-  "title": "",
-  "body": "  Let be a group. If and , then , and hence .    (By induction): If ,   Now assume the formula of the lemma is true for some .    "
-},
-{
-  "id": "theorem-11-3-expo-properties",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#theorem-11-3-expo-properties",
-  "type": "Theorem",
-  "number": "11.3.14",
-  "title": "Properties of Exponentiation.",
-  "body": " Properties of Exponentiation   If a is an element of a group , and and are integers,    and hence                We will leave the proofs of these properties to the reader. All three parts can be done by induction. For example the proof of the second part would start by defining the proposition , , to be . The basis is .   "
-},
-{
-  "id": "theorem-11-3-finite",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#theorem-11-3-finite",
-  "type": "Theorem",
-  "number": "11.3.15",
-  "title": "",
-  "body": "  If is a finite group, , and is an element of , then there exists a positive integer such that and .    Consider the list . Since there are elements of in this list, there must be some duplication. Suppose that , with . Let . Then Furthermore, since , .   "
+  "body": " Determine if the system is consistent. If so, is the solution unique?      "
 },
 {
   "id": "exercise-391",
   "level": "2",
-  "url": "s-general-properties-of-groups.html#exercise-391",
+  "url": "s-Systems-of-Equations.html#exercise-391",
   "type": "Exercise",
-  "number": "11.3.3.1",
+  "number": "11.1.3.13",
   "title": "",
-  "body": " Let be a group and be an element of . Define by .   Prove that is a bijection.    On the basis of part a, describe a set of bijections on the set of integers.         is injective: .  is surjective: For all , has the solution .    Functions of the form , where is any integer, are bijections     "
+  "body": " Find the general solution of the system whose augmented matrix is    Adding row 1 to row 3:   Adding row 1 to row 2:   Adding row 2 to row 3:   Multiplying row 3 by :   So , continuing row operations: add row 3 to row 2 So , continuing row operations: add row 2 to row 1 So .  The solution is then   "
 },
 {
   "id": "exercise-392",
   "level": "2",
-  "url": "s-general-properties-of-groups.html#exercise-392",
+  "url": "s-Systems-of-Equations.html#exercise-392",
   "type": "Exercise",
-  "number": "11.3.3.2",
+  "number": "11.1.3.14",
   "title": "",
-  "body": " Rephrase and write out a clear proof.  "
+  "body": " Find the general solution of the system whose augmented matrix is   "
 },
 {
   "id": "exercise-393",
   "level": "2",
-  "url": "s-general-properties-of-groups.html#exercise-393",
+  "url": "s-Systems-of-Equations.html#exercise-393",
   "type": "Exercise",
-  "number": "11.3.3.3",
+  "number": "11.1.3.15",
   "title": "",
-  "body": " Prove by induction on that if , are elements of a group , , then . Interpret this result in terms of and .   Basis: ( ) by .  Induction: Assume that for some , We must show that  This can be accomplished as follows:   "
+  "body": " Give the complete solution to the system of equations, , , and .   We have the corresponding augmented matrix: Add row one to row 2: Add row one to row 3: Multiply row 2 by and row 3 by So.... . Add row 2 to row 3: This shows that is going to be a free variable. Assign to .The top row yields the equation , since , this gives . Solving for we get , so the final solution can be written:   "
 },
 {
   "id": "exercise-394",
   "level": "2",
-  "url": "s-general-properties-of-groups.html#exercise-394",
+  "url": "s-Systems-of-Equations.html#exercise-394",
   "type": "Exercise",
-  "number": "11.3.3.4",
+  "number": "11.1.3.16",
   "title": "",
-  "body": " True or false? If , , are elements of a group , and , then . Explain your answer.  "
-},
-{
-  "id": "exercise-395",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#exercise-395",
-  "type": "Exercise",
-  "number": "11.3.3.5",
-  "title": "",
-  "body": " Prove .   In this answer, we will refer to simply as the lemma.     Let be , where is any element of group . First we will prove that is true for all .  Basis: If , Using the definition of the zero exponent, , while . Therefore, is true.  Induction: Assume that for some , ) is true.   If is negative, then is positive and     For , let be for all . The basis for this proof follows directly from the basis for the definition of exponentiation.  Induction: Assume that for some , is true. Then To complete the proof, you need to consider the cases where and\/or are negative.    Let be for all integers .  Basis: and therefore, is true.  Induction; Assume that is true for some 0, Finally, if is negative, we can verify that using many of the same steps as the positive case.     "
-},
-{
-  "id": "exercise-396",
-  "level": "2",
-  "url": "s-general-properties-of-groups.html#exercise-396",
-  "type": "Exercise",
-  "number": "11.3.3.6",
-  "title": "",
-  "body": " Each of the following facts can be derived by identifying a certain group and then applying one of the theorems of this section to it. For each fact, list the group and the theorem that are used.   is the only solution of .     .    If are matrices over the real numbers, with , then .    There is only one subset of the natural numbers for which for every .     "
-},
-{
-  "id": "s-gcds-and-zsubn",
-  "level": "1",
-  "url": "s-gcds-and-zsubn.html",
-  "type": "Section",
-  "number": "11.4",
-  "title": "Greatest Common Divisors and the Integers Modulo <span class=\"process-math\">\\(n\\)<\/span>",
-  "body": " Greatest Common Divisors and the Integers Modulo   In this section introduce the greatest common divisor operation, and introduce an important family of concrete groups, the integers modulo .    Greatest Common Divisors  We start with a theorem about integer division that is intuitively clear. We leave the proof as an exercise.   The Division Property for Integers  Division Property for Integers   If , , then there exist two unique integers, (the quotient) and (the remainder), such that and .     The division property says that if is divided by , you will obtain a quotient and a remainder, where the remainder is less than . This is a fact that most elementary school students learn when they are introduced to long division. In doing the division problem , you obtain a quotient of 20 and a remainder of 46. This result could either be written or . The latter form is how the division property is normally expressed in higher mathematics.      We now remind the reader of some interchangeable terminology that is used when , i. e., . All of the following say the same thing, just from slightly different points of view.     divides  divides    multiple  is a multiple of    factor  is a factor of    divisor  is a divisor of     We use the notation if divides .    For example and , but .  Caution: Don't confuse the divides symbol with the divided by symbol. The former is vertical while the latter is slanted. Notice however that the statement is related to the fact that is a whole number.   Greatest Common Divisor  Greatest Common Divisor ( )    the greatest common divisor of and    Given two integers, and , not both zero, the greatest common divisor of and is the positive integer such that , , and     A little simpler way to think of is as the largest positive integer that is a divisor of both and . However, our definition is easier to apply in proving properties of greatest common divisors.  For small numbers, a simple way to determine the greatest common divisor is to use factorization. For example if we want the greatest common divisor of 660 and 350, you can factor the two integers: and . Single factors of 2 and 5 are the only ones that appear in both factorizations, so the greatest common divisor is .  Some pairs of integers have no common divisors other than 1. Such pairs are called relatively prime pairs .   Relatively Prime  Relatively Prime   A pair of integers, and , are relatively prime if    For example, and are relatively prime. Notice that neither 128 nor 135 are primes. In general, and need not be prime in order to be relatively prime. However, if you start with a prime, like 23, for example, it will be relatively prime to everything but its multiples. This theorem, which we prove later generalizes this observation.    If is a prime and is any integer such that then      The Euclidean Algorithm  Euclidean Algorithm, The  As early as Euclid's time it was known that factorization wasn't the best way to compute greatest common divisors.  The Euclidean Algorithm is based on the following properties of the greatest common divisor.  To compute , we divide into and get a remainder such that . By the property above, . We repeat the process until we get zero for a remainder. The last nonzero number that is the second entry in our pairs is the greatest common divisor. This is inevitable because the second number in each pair is smaller than the previous one. shows an example of how this calculation can be systematically performed.   A Table to Compute               -  99  53    1  53  46    1  46  7    6  7  4    1  4  3    1  3  1    3  1  0     Here is a Sage computation to verify that . At each line, the value of is divided by the value of . The quotient is placed on the next line along with the new value of , which is the previous ; and the remainder, which is the new value of . Recall that in Sage, a%b is the remainder when dividing b into a .     If you were allowed to pick two numbers less than 100, which would you pick in order to force Euclid to work hardest? Here's a hint: The size of the quotient at each step determines how quickly the numbers decrease.    If quotient in division is 1, then we get the slowest possible completion. If , then working backwards, each remainder would be the sum of the two previous remainders. This described a sequence like the Fibonacci sequence and indeed, the greatest common divisor of two consecutive Fibonacci numbers will take the most steps to reach a final value of 1.    For fixed values of and , consider integers of the form where and can be any two integers. For example if = 36 and = 27, some of these results are tabulated below with values along the left column and the values on top.   Linear combinations of 36 and 27   Linear combinations of 36 and 27    Do you notice any patterns? What is the smallest positive value that you see in this table? How is it connected to 36 and 27?    If and are positive integers, the smallest positive value of is the greatest common divisor of and , .    If , since and , we know that for any integers and , so can't be less than . To show that is exactly the least positive value, we show that can be attained by extending the Euclidean Algorithm. Performing the extended algorithm involves building a table of numbers. The way in which it is built maintains an invariant, and by , we can be sure that the desired values of and are produced. The subjects of invariants and correctness will be covered in depth later in      To illustrate the algorithm, displays how to compute . In the column, you will find 152 and 53, and then the successive remainders from division. So each number in after the first two is the remainder after dividing the number immediately above it into the next number up. To the left of each remainder is the quotient from the division. In this case the third row of the table tells us that . The last nonzero value in is the greatest common divisor.   The extended Euclidean algorithm to compute                     152  1  0       53  0  1    2  46  1       1  7     3    6  4  7       1  3     23    1  1  15       3  0     152     The   and   columns are new. The values of and in each row are maintained so that is equal to the number in the column. Notice that   Invariant in computing                                   The next-to-last equation is what we're looking for in the end! The main problem is to identify how to determine these values after the first two rows. The first two rows in these columns will always be the same. Let's look at the general case of computing . If the and values in rows and are correct, we have In addition, we know that If you substitute the expressions for and from (A) into this last equation and then collect the and terms separately you get or Look closely at the equations for . Their forms are all the same. With a little bit of practice you should be able to compute and values quickly.     Modular Arithmetic  Modular Arithmetic  We remind you of the relation on the integers that we call . If two numbers, and , differ by a multiple of , we say that they are congruent modulo , denoted . For example, because , which is a multiple of 5.   Modular Addition  Modular Addition    the mod sum of and    If is a positive integer, we define addition modulo  ) as follows. If ,     Modular Multiplication  Modular Multiplication    the mod product of and    If is a positive integer, we define multiplication modulo  ) as follows. If ,        The result of doing arithmetic modulo is always an integer between 0 and , by the Division Property. This observation implies that is closed under modulo arithmetic.    It is always true that and . For example, and .    We will use the notation to denote the set .        Properties of Modular Arithmetic   Modular Arithmetic  Properties    Additive Inverses in   If , , then the additive inverse of a is .    , since . Therefore, .    Addition modulo is always commutative and associative; 0 is the identity for and every element of has an additive inverse. These properties can be summarized by noting that for each , is a group.   The Additive Group of Integers Modulo   Integers Modulo  Additive Group     The Additive Group of Integer Modulo    The Additive Group of Integers Modulo is the group with domain and with the operation of mod addition. It is denoted as .    Multiplication modulo is always commutative and associative, and 1 is the identity for .  Notice that the algebraic properties of and on are identical to the properties of addition and multiplication on .  Notice that a group cannot be formed from the whole set with mod multiplication since zero never has a multiplicative inverse. Depending on the value of there may be other restrictions. The following group will be explored in .   The Multiplicative Group of Integers Modulo   Integers Modulo  Multiplicative Group     The Multiplicative Group of Integer Modulo    The Multiplicative Group of Integers Modulo is the group with domain and with the operation of mod multiplication. It is denoted as .     Some Examples     We are all somewhat familiar with since the hours of the day are counted using this group, except for the fact that 12 is used in place of 0. Military time uses the mod 24 system and does begin at 0. If someone started a four-hour trip at hour 21, the time at which she would arrive is . If a satellite orbits the earth every four hours and starts its first orbit at hour 5, it would end its first orbit at time . Its tenth orbit would end at hours on the clock    Virtually all computers represent unsigned integers in binary form with a fixed number of digits. A very small computer might reserve seven bits to store the value of an integer. There are only different values that can be stored in seven bits. Since the smallest value is 0, represented as 0000000, the maximum value will be , represented as 1111111. When a command is given to add two integer values, and the two values have a sum of 128 or more, overflow occurs. For example, if we try to add 56 and 95, the sum is an eight-digit binary integer 10010111. One common procedure is to retain the seven lowest-ordered digits. The result of adding 56 and 95 would be . Integer arithmetic with this computer would actually be modulo 128 arithmetic.        SageMath Note - Modular Arithmetic   SageMath Note  Modular Arithmetic   Sage inherits the basic integer division functions from Python that compute a quotient and remainder in integer division. For example, here is how to divide 561 into 2017 and get the quotient and remainder.   In Sage, is the greatest common divisor function. It can be used in two ways. For the gcd of 2343 and 4319 we can evaluate the expression . If we are working with a fixed modulus that has a value established in your Sage session, the expression to compute the greatest common divisor of and any integer value . The extended Euclidean algorithm can also be called upon with :   Sage has some extremely powerful tool for working with groups. The integers modulo are represented by the expression and the addition and multiplications tables can be generated as follows.   Once we have assigned a value of , we can do calculations by wrapping around the integers 0 through 5. Here is a list containing the mod 6 sum and product, respectively, of 5 and 4:     Exercises   Determine the greatest common divisors of the following pairs of integers without using any computational assistance.    and     and     and    12112 and 0                        12112       Find all possible values of the following, assuming that is a positive integer.                     Calculate:                                                     2    5    0    0    2    2    1    3    0       List the additive inverses of the following elements:   4, 6, 9 in    16, 25, 40 in       In the group , what are:   3(4)?    36(4)?    How could you efficiently compute , ?         1    1    , where ,       Prove that is a group under the operation .    A student is asked to solve the following equations under the requirement that all arithmetic should be done in . List all solutions.    .     .      Since the solutions, if they exist, must come from , substitution is the easiest approach.   1 is the only solution, since and    No solutions, since , and       Determine the solutions of the same equations as in Exercise 5 in .       Write out the operation table for on , and convince your self that this is a group.    Let be the elements of that have inverses with respect to . Convince yourself that is a group under .    Prove that the elements of are those elements such that . You may use in this proof.       Prove the division property, .   Prove by induction on that you can divide any positive integer into . That is, let be For all greater than zero, there exist unique integers and such that . In the induction step, divide into .    Suppose such where and are integer constants. Furthermore, assume that and . Find a formula for and also find a formula for the inverse of .   The given conditions can be converted to a system of linear equations:  If we subtract the first equation from the second, we get . This implies that , and . To get a formula for the inverse of we solve for , using the fact that the multiplicative inverse of 10 (mod 17) is 12. Therefore .    "
-},
-{
-  "id": "th-division-property",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#th-division-property",
-  "type": "Theorem",
-  "number": "11.4.1",
-  "title": "The Division Property for Integers.",
-  "body": " The Division Property for Integers  Division Property for Integers   If , , then there exist two unique integers, (the quotient) and (the remainder), such that and .   "
-},
-{
-  "id": "note-8",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#note-8",
-  "type": "Note",
-  "number": "11.4.2",
-  "title": "",
-  "body": " The division property says that if is divided by , you will obtain a quotient and a remainder, where the remainder is less than . This is a fact that most elementary school students learn when they are introduced to long division. In doing the division problem , you obtain a quotient of 20 and a remainder of 46. This result could either be written or . The latter form is how the division property is normally expressed in higher mathematics.  "
-},
-{
-  "id": "divisability-terms",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#divisability-terms",
-  "type": "List",
-  "number": "11.4.3",
-  "title": "",
-  "body": "   We now remind the reader of some interchangeable terminology that is used when , i. e., . All of the following say the same thing, just from slightly different points of view.     divides  divides    multiple  is a multiple of    factor  is a factor of    divisor  is a divisor of     We use the notation if divides .   "
-},
-{
-  "id": "def-gcd",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#def-gcd",
-  "type": "Definition",
-  "number": "11.4.4",
-  "title": "Greatest Common Divisor.",
-  "body": " Greatest Common Divisor  Greatest Common Divisor ( )    the greatest common divisor of and    Given two integers, and , not both zero, the greatest common divisor of and is the positive integer such that , , and    "
-},
-{
-  "id": "def-def-rel-prime",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#def-def-rel-prime",
-  "type": "Definition",
-  "number": "11.4.5",
-  "title": "Relatively Prime.",
-  "body": " Relatively Prime  Relatively Prime   A pair of integers, and , are relatively prime if   "
-},
-{
-  "id": "th-primes-are-mostly-relprime",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#th-primes-are-mostly-relprime",
-  "type": "Theorem",
-  "number": "11.4.6",
-  "title": "",
-  "body": "  If is a prime and is any integer such that then   "
-},
-{
-  "id": "table-euclidean-example",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#table-euclidean-example",
-  "type": "Table",
-  "number": "11.4.7",
-  "title": "A Table to Compute <span class=\"process-math\">\\(\\gcd(99,53)\\)<\/span>",
-  "body": " A Table to Compute               -  99  53    1  53  46    1  46  7    6  7  4    1  4  3    1  3  1    3  1  0    "
-},
-{
-  "id": "investigation-1",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#investigation-1",
-  "type": "Investigation",
-  "number": "11.4.1",
-  "title": "",
-  "body": "  If you were allowed to pick two numbers less than 100, which would you pick in order to force Euclid to work hardest? Here's a hint: The size of the quotient at each step determines how quickly the numbers decrease.    If quotient in division is 1, then we get the slowest possible completion. If , then working backwards, each remainder would be the sum of the two previous remainders. This described a sequence like the Fibonacci sequence and indeed, the greatest common divisor of two consecutive Fibonacci numbers will take the most steps to reach a final value of 1.   "
-},
-{
-  "id": "fig-integer-linear-comb",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#fig-integer-linear-comb",
-  "type": "Figure",
-  "number": "11.4.8",
-  "title": "",
-  "body": " Linear combinations of 36 and 27   Linear combinations of 36 and 27   "
-},
-{
-  "id": "theorem-11-4-1",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#theorem-11-4-1",
-  "type": "Theorem",
-  "number": "11.4.9",
-  "title": "",
-  "body": "  If and are positive integers, the smallest positive value of is the greatest common divisor of and , .    If , since and , we know that for any integers and , so can't be less than . To show that is exactly the least positive value, we show that can be attained by extending the Euclidean Algorithm. Performing the extended algorithm involves building a table of numbers. The way in which it is built maintains an invariant, and by , we can be sure that the desired values of and are produced. The subjects of invariants and correctness will be covered in depth later in    "
-},
-{
-  "id": "table-x-euclidean-example",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#table-x-euclidean-example",
-  "type": "Table",
-  "number": "11.4.10",
-  "title": "The extended Euclidean algorithm to compute <span class=\"process-math\">\\(\\gcd(152,53)\\)<\/span>",
-  "body": " The extended Euclidean algorithm to compute                     152  1  0       53  0  1    2  46  1       1  7     3    6  4  7       1  3     23    1  1  15       3  0     152    "
-},
-{
-  "id": "table-invariants-11",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#table-invariants-11",
-  "type": "Table",
-  "number": "11.4.11",
-  "title": "Invariant in computing <span class=\"process-math\">\\(\\gcd(152,53)\\)<\/span>",
-  "body": " Invariant in computing                                  "
-},
-{
-  "id": "def-def-modular-addition",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#def-def-modular-addition",
-  "type": "Definition",
-  "number": "11.4.12",
-  "title": "Modular Addition.",
-  "body": " Modular Addition  Modular Addition    the mod sum of and    If is a positive integer, we define addition modulo  ) as follows. If ,   "
-},
-{
-  "id": "def-def-modular-multiplication",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#def-def-modular-multiplication",
-  "type": "Definition",
-  "number": "11.4.13",
-  "title": "Modular Multiplication.",
-  "body": " Modular Multiplication  Modular Multiplication    the mod product of and    If is a positive integer, we define multiplication modulo  ) as follows. If ,   "
-},
-{
-  "id": "note-9",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#note-9",
-  "type": "Note",
-  "number": "11.4.14",
-  "title": "",
-  "body": "    The result of doing arithmetic modulo is always an integer between 0 and , by the Division Property. This observation implies that is closed under modulo arithmetic.    It is always true that and . For example, and .    We will use the notation to denote the set .     "
-},
-{
-  "id": "theorem-modular-add-inverse",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#theorem-modular-add-inverse",
-  "type": "Theorem",
-  "number": "11.4.15",
-  "title": "Additive Inverses in <span class=\"process-math\">\\(\\mathbb{Z}_n\\)<\/span>.",
-  "body": " Additive Inverses in   If , , then the additive inverse of a is .    , since . Therefore, .   "
-},
-{
-  "id": "definition-144",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#definition-144",
-  "type": "Definition",
-  "number": "11.4.16",
-  "title": "The Additive Group of Integers Modulo <span class=\"process-math\">\\(n\\)<\/span>.",
-  "body": " The Additive Group of Integers Modulo   Integers Modulo  Additive Group     The Additive Group of Integer Modulo    The Additive Group of Integers Modulo is the group with domain and with the operation of mod addition. It is denoted as .   "
-},
-{
-  "id": "definition-145",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#definition-145",
-  "type": "Definition",
-  "number": "11.4.17",
-  "title": "The Multiplicative Group of Integers Modulo <span class=\"process-math\">\\(n\\)<\/span>.",
-  "body": " The Multiplicative Group of Integers Modulo   Integers Modulo  Multiplicative Group     The Multiplicative Group of Integer Modulo    The Multiplicative Group of Integers Modulo is the group with domain and with the operation of mod multiplication. It is denoted as .   "
-},
-{
-  "id": "ex-11-4-modular",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#ex-11-4-modular",
-  "type": "Example",
-  "number": "11.4.18",
-  "title": "Some Examples.",
-  "body": " Some Examples     We are all somewhat familiar with since the hours of the day are counted using this group, except for the fact that 12 is used in place of 0. Military time uses the mod 24 system and does begin at 0. If someone started a four-hour trip at hour 21, the time at which she would arrive is . If a satellite orbits the earth every four hours and starts its first orbit at hour 5, it would end its first orbit at time . Its tenth orbit would end at hours on the clock    Virtually all computers represent unsigned integers in binary form with a fixed number of digits. A very small computer might reserve seven bits to store the value of an integer. There are only different values that can be stored in seven bits. Since the smallest value is 0, represented as 0000000, the maximum value will be , represented as 1111111. When a command is given to add two integer values, and the two values have a sum of 128 or more, overflow occurs. For example, if we try to add 56 and 95, the sum is an eight-digit binary integer 10010111. One common procedure is to retain the seven lowest-ordered digits. The result of adding 56 and 95 would be . Integer arithmetic with this computer would actually be modulo 128 arithmetic.     "
-},
-{
-  "id": "exercise-397",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#exercise-397",
-  "type": "Exercise",
-  "number": "11.4.6.1",
-  "title": "",
-  "body": " Determine the greatest common divisors of the following pairs of integers without using any computational assistance.    and     and     and    12112 and 0                        12112     "
-},
-{
-  "id": "exercise-398",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#exercise-398",
-  "type": "Exercise",
-  "number": "11.4.6.2",
-  "title": "",
-  "body": " Find all possible values of the following, assuming that is a positive integer.                   "
-},
-{
-  "id": "exercise-399",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#exercise-399",
-  "type": "Exercise",
-  "number": "11.4.6.3",
-  "title": "",
-  "body": " Calculate:                                                     2    5    0    0    2    2    1    3    0     "
-},
-{
-  "id": "exercise-400",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#exercise-400",
-  "type": "Exercise",
-  "number": "11.4.6.4",
-  "title": "",
-  "body": " List the additive inverses of the following elements:   4, 6, 9 in    16, 25, 40 in     "
-},
-{
-  "id": "exercise-401",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#exercise-401",
-  "type": "Exercise",
-  "number": "11.4.6.5",
-  "title": "",
-  "body": " In the group , what are:   3(4)?    36(4)?    How could you efficiently compute , ?         1    1    , where ,     "
-},
-{
-  "id": "exercise-402",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#exercise-402",
-  "type": "Exercise",
-  "number": "11.4.6.6",
-  "title": "",
-  "body": " Prove that is a group under the operation .  "
-},
-{
-  "id": "exercise-403",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#exercise-403",
-  "type": "Exercise",
-  "number": "11.4.6.7",
-  "title": "",
-  "body": " A student is asked to solve the following equations under the requirement that all arithmetic should be done in . List all solutions.    .     .      Since the solutions, if they exist, must come from , substitution is the easiest approach.   1 is the only solution, since and    No solutions, since , and     "
-},
-{
-  "id": "exercise-404",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#exercise-404",
-  "type": "Exercise",
-  "number": "11.4.6.8",
-  "title": "",
-  "body": " Determine the solutions of the same equations as in Exercise 5 in .  "
-},
-{
-  "id": "exercise_u_n",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#exercise_u_n",
-  "type": "Exercise",
-  "number": "11.4.6.9",
-  "title": "",
-  "body": "    Write out the operation table for on , and convince your self that this is a group.    Let be the elements of that have inverses with respect to . Convince yourself that is a group under .    Prove that the elements of are those elements such that . You may use in this proof.     "
-},
-{
-  "id": "exercise-406",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#exercise-406",
-  "type": "Exercise",
-  "number": "11.4.6.10",
-  "title": "",
-  "body": " Prove the division property, .   Prove by induction on that you can divide any positive integer into . That is, let be For all greater than zero, there exist unique integers and such that . In the induction step, divide into .  "
-},
-{
-  "id": "exercise-407",
-  "level": "2",
-  "url": "s-gcds-and-zsubn.html#exercise-407",
-  "type": "Exercise",
-  "number": "11.4.6.11",
-  "title": "",
-  "body": " Suppose such where and are integer constants. Furthermore, assume that and . Find a formula for and also find a formula for the inverse of .   The given conditions can be converted to a system of linear equations:  If we subtract the first equation from the second, we get . This implies that , and . To get a formula for the inverse of we solve for , using the fact that the multiplicative inverse of 10 (mod 17) is 12. Therefore .  "
-},
-{
-  "id": "s-Subsystems",
-  "level": "1",
-  "url": "s-Subsystems.html",
-  "type": "Section",
-  "number": "11.5",
-  "title": "Subsystems",
-  "body": " Subsystems  Subsystems   Definition  The subsystem is a fundamental concept of algebra at the universal level.   Subsystem  Subsystem    is a subsystem of    If is an algebraic system of a certain kind and is a subset of , then is a subsystem of if is an algebraic system of the same kind as . The usual notation for is a subsystem of is .    Since the definition of a subsystem is at the universal level, we can cite examples of the concept of subsystems at both the axiomatic and concrete level.   Examples of Subsystems     (Axiomatic) If is a group, and is a subset of , then is a subgroup of if is a group.    (Concrete) is a subgroup of . Take the time now to write out the multiplication table of and convince yourself that is a group.    (Concrete) The even integers, is a subgroup of . Convince yourself of this fact.    (Concrete) The set of nonnegative integers is not a subgroup of . All of the group axioms are true for this subset except one: no positive integer has a positive additive inverse. Therefore, the inverse property is not true. Note that every group axiom must be true for a subset to be a subgroup.    (Axiomatic) If is a monoid and is a subset of , then is a submonoid of if is a monoid.    (Concrete) If is the set of strings of 0's and 1's of length zero or more with the operation of concatenation, then two examples of submonoids of are: (i) the set of strings of even length, and (ii) the set of strings that contain no 0's. The set of strings of length less than 50 is not a submonoid because it isn't closed under concatenation. Why isn't the set of strings of length 50 or more a submonoid of ?        Subgroups  For the remainder of this section, we will concentrate on the properties of subgroups. The first order of business is to establish a systematic way of determining whether a subset of a group is a subgroup.   Subgroup Conditions   To determine whether H, a subset of group , is a subgroup, it is sufficient to prove:   H is closed under ; that is, ;    H contains the identity element for ; and    H contains the inverse of each of its elements; that is, .       Our proof consists of verifying that if the three properties above are true, then all the axioms of a group are true for . By Condition (a), can be considered an operation on . The associative, identity, and inverse properties are the axioms that are needed. The identity and inverse properties are true by conditions (b) and (c), respectively, leaving only the associative property. Since, is a group, for all . Certainly, if this equation is true for all choices of three elements from , it will be true for all choices of three elements from , since is a subset of .    For every group with at least two elements, there are at least two subgroups: they are the whole group and . Since these two are automatic, they are not considered very interesting and are called the improper subgroups of the group; is sometimes referred to as the trivial subgroup. All other subgroups, if there are any, are called proper subgroups.  We can apply at both the concrete and axiomatic levels.   Applying Conditions for a Subgroup     (Concrete) We can verify that , as stated in . Whenever you want to discuss a subset, you must find some convenient way of describing its elements. An element of can be described as 2 times an integer; that is, is equivalent to . Now we can verify that the three conditions of are true for 2 . First, if , then there exist such that and . A common error is to write something like and . This would mean that , which is not necessarily true. That is why two different variables are needed to describe and . Returning to our proof, we can add and : . Since is an integer, is an element of . Second, the identity, , belongs to 2 ( ). Finally, if and , and , therefore, . By , . How would this argument change if you were asked to prove that ? or ?    (Concrete) We can prove that is a subgroup of . First, for each ordered pair , is in . This can be checked without too much trouble since . Thus we can conclude that is closed under . Second, . Third, , , , and . Therefore, the inverse of each element of is in .    (Axiomatic) If and are both subgroups of a group , then is a subgroup of . To justify this statement, we have no concrete information to work with, only the facts that and . Our proof that reflects this and is an exercise in applying the definitions of intersection and subgroup, (i) If and are elements of , then and both belong to , and since , must be an element of . Similarly, ; therefore, . (ii) The identity of must belong to both and ; hence it belongs to . (iii) If , then , and since , . Similarly, . Hence, by the theorem, . Now that this fact has been established, we can apply it to any pair of subgroups of any group. For example, since and are both subgroups of , is also a subgroup of . Note that if , must have a factor of 3; that is, there exists such that . In addition, must be even, therefore must be even. There exists such that , therefore . This shows that . The opposite containment can easily be established; therefore, .      Given a finite group, we can apply to obtain a simpler condition for a subset to be a subgroup.   Condition for a Subgroup of Finite Group   Given that is a finite group and is a nonempty subset of , if is closed under , then is a subgroup of .    In this proof, we demonstrate that Conditions (b) and (c) of follow from the closure of under , which is condition (a) of the theorem. First, select any element of ; call it . The powers of : , , are all in by the closure property. By , there exists , , such that ; hence . To prove that (c) is true, we let be any element of . If , then is in since . If , for some between 2 and and Therefore, , which belongs to since .      Sage Note - Applying the condition for a subgroup of a finite group  To determine whether and are subgroups of , we need only write out the addition tables (modulo 15) for these sets. This is easy to do with a bit of Sage code that we include below and then for any modulus and subset, we can generate the body of an addition table. The code is set up for but can be easily adjusted for .   Note that is a subgroup of . Since the interior of the addition table for contains elements that are outside of , is not a subgroup of .    Cyclic Subgroups  One kind of subgroup that merits special mention due to its simplicity is the cyclic subgroup.   Cyclic Subgroup  Cyclic Subgroup  Generator    the cyclic subgroup generated by    If is a group and , the cyclic subgroup generated by , , is the set of all powers of : . We refer to as a generator of subgroup .  A subgroup of a group is cyclic if there exists such that .     Cyclic Group  Cyclic Group   A group is cyclic if there exists such that .     If the operation on is additive, then .    Order of a Group Element  Order of a Group Element    Order of a    The order of an element of group is the number of elements in the cyclic subgroup of generated by . The order of is denoted .        In , .    In , . If is finite, you need list only the positive powers (or multiples) of up to the first occurrence of the identity to obtain all of . In , the multiples of 6 are 6, , , , and . Note that is also , , and . This shows that a cyclic subgroup can have different generators.      If you want to list the cyclic subgroups of a group, the following theorem can save you some time.    If is an element of group , then .    This is an easy way of seeing, for example, that in equals , since .    Exercises   Which of the following subsets of the real numbers is a subgroup of ?   the rational numbers    the positive real numbers                     Only a and c are subgroups.    Describe in simpler terms the following subgroups of :         (be careful)    the only finite subgroup of      Find at least two proper subgroups of , the set of rook matrices (see ).    , , , and are all the proper subgroups of .    Where should you place the following in ?                   Figure for exercise 4   Figure for exercise 4 of Section 11.5         List the cyclic subgroups of and draw an ordering diagram for the relation is a subset of on these subgroups.    Do the same for .    Do the same for .    On the basis of your results in parts a, b, and c, what would you expect if you did the same with ?          , , ,     , , , , ,     , , ,    Based on the ordering diagrams for parts a through c in , we would expect to see an ordering diagram similar to the one for divides on (the divisors of 24) if we were to examine the subgroups of . This is indeed the case.      Figure for exercise 5   Figure for exercise 5 of Section 11.5     Subgroups generated by subsets of a group  The concept of a cyclic subgroup is a special case of the concept that we will discuss here. Let be a group and a nonempty subset of . Define the set recursively by:   If , then .    If , then , and    If , then .       By its definition, has all of the properties needed to be a subgroup of . The only thing that isn't obvious is that the identity of is in . Prove that the identity of is in .    What is in ?    Prove that if and , then . This proves that is contained in every subgroup of that contains ; that is, .    Describe in and in .    If , is a cyclic subgroup of . In terms of and , what is a generator of ?       Prove that if , and , then or .   Use an indirect argument.   Assume that and are subgroups of group , and that, as in , there are elements and . Consider the product . Where could it be placed in the Venn diagram? If we can prove that it must lie in the outer region, , then we have proven that is not closed under and cannot be a subgroup of , Assume that . Since is in , is in and so by closure which is a contradiction. Similarly, .  One way to interpret this theorem is that no group is the union of two groups.    Prove that the order of an element, of a group is the least positive integer, , such that is the identity of the group.    "
-},
-{
-  "id": "def-subsystem",
-  "level": "2",
-  "url": "s-Subsystems.html#def-subsystem",
-  "type": "Definition",
-  "number": "11.5.1",
-  "title": "Subsystem.",
-  "body": " Subsystem  Subsystem    is a subsystem of    If is an algebraic system of a certain kind and is a subset of , then is a subsystem of if is an algebraic system of the same kind as . The usual notation for is a subsystem of is .   "
-},
-{
-  "id": "ex-subsystems",
-  "level": "2",
-  "url": "s-Subsystems.html#ex-subsystems",
-  "type": "Example",
-  "number": "11.5.2",
-  "title": "Examples of Subsystems.",
-  "body": " Examples of Subsystems     (Axiomatic) If is a group, and is a subset of , then is a subgroup of if is a group.    (Concrete) is a subgroup of . Take the time now to write out the multiplication table of and convince yourself that is a group.    (Concrete) The even integers, is a subgroup of . Convince yourself of this fact.    (Concrete) The set of nonnegative integers is not a subgroup of . All of the group axioms are true for this subset except one: no positive integer has a positive additive inverse. Therefore, the inverse property is not true. Note that every group axiom must be true for a subset to be a subgroup.    (Axiomatic) If is a monoid and is a subset of , then is a submonoid of if is a monoid.    (Concrete) If is the set of strings of 0's and 1's of length zero or more with the operation of concatenation, then two examples of submonoids of are: (i) the set of strings of even length, and (ii) the set of strings that contain no 0's. The set of strings of length less than 50 is not a submonoid because it isn't closed under concatenation. Why isn't the set of strings of length 50 or more a submonoid of ?     "
-},
-{
-  "id": "th-subgroup-conditions",
-  "level": "2",
-  "url": "s-Subsystems.html#th-subgroup-conditions",
-  "type": "Theorem",
-  "number": "11.5.3",
-  "title": "Subgroup Conditions.",
-  "body": " Subgroup Conditions   To determine whether H, a subset of group , is a subgroup, it is sufficient to prove:   H is closed under ; that is, ;    H contains the identity element for ; and    H contains the inverse of each of its elements; that is, .       Our proof consists of verifying that if the three properties above are true, then all the axioms of a group are true for . By Condition (a), can be considered an operation on . The associative, identity, and inverse properties are the axioms that are needed. The identity and inverse properties are true by conditions (b) and (c), respectively, leaving only the associative property. Since, is a group, for all . Certainly, if this equation is true for all choices of three elements from , it will be true for all choices of three elements from , since is a subset of .   "
-},
-{
-  "id": "ex-subgroup-proofs",
-  "level": "2",
-  "url": "s-Subsystems.html#ex-subgroup-proofs",
-  "type": "Example",
-  "number": "11.5.4",
-  "title": "Applying Conditions for a Subgroup.",
-  "body": " Applying Conditions for a Subgroup     (Concrete) We can verify that , as stated in . Whenever you want to discuss a subset, you must find some convenient way of describing its elements. An element of can be described as 2 times an integer; that is, is equivalent to . Now we can verify that the three conditions of are true for 2 . First, if , then there exist such that and . A common error is to write something like and . This would mean that , which is not necessarily true. That is why two different variables are needed to describe and . Returning to our proof, we can add and : . Since is an integer, is an element of . Second, the identity, , belongs to 2 ( ). Finally, if and , and , therefore, . By , . How would this argument change if you were asked to prove that ? or ?    (Concrete) We can prove that is a subgroup of . First, for each ordered pair , is in . This can be checked without too much trouble since . Thus we can conclude that is closed under . Second, . Third, , , , and . Therefore, the inverse of each element of is in .    (Axiomatic) If and are both subgroups of a group , then is a subgroup of . To justify this statement, we have no concrete information to work with, only the facts that and . Our proof that reflects this and is an exercise in applying the definitions of intersection and subgroup, (i) If and are elements of , then and both belong to , and since , must be an element of . Similarly, ; therefore, . (ii) The identity of must belong to both and ; hence it belongs to . (iii) If , then , and since , . Similarly, . Hence, by the theorem, . Now that this fact has been established, we can apply it to any pair of subgroups of any group. For example, since and are both subgroups of , is also a subgroup of . Note that if , must have a factor of 3; that is, there exists such that . In addition, must be even, therefore must be even. There exists such that , therefore . This shows that . The opposite containment can easily be established; therefore, .     "
-},
-{
-  "id": "th-subgroup-of-finite-group",
-  "level": "2",
-  "url": "s-Subsystems.html#th-subgroup-of-finite-group",
-  "type": "Theorem",
-  "number": "11.5.5",
-  "title": "Condition for a Subgroup of Finite Group.",
-  "body": " Condition for a Subgroup of Finite Group   Given that is a finite group and is a nonempty subset of , if is closed under , then is a subgroup of .    In this proof, we demonstrate that Conditions (b) and (c) of follow from the closure of under , which is condition (a) of the theorem. First, select any element of ; call it . The powers of : , , are all in by the closure property. By , there exists , , such that ; hence . To prove that (c) is true, we let be any element of . If , then is in since . If , for some between 2 and and Therefore, , which belongs to since .   "
-},
-{
-  "id": "def-cyclic-subgroup",
-  "level": "2",
-  "url": "s-Subsystems.html#def-cyclic-subgroup",
-  "type": "Definition",
-  "number": "11.5.6",
-  "title": "Cyclic Subgroup.",
-  "body": " Cyclic Subgroup  Cyclic Subgroup  Generator    the cyclic subgroup generated by    If is a group and , the cyclic subgroup generated by , , is the set of all powers of : . We refer to as a generator of subgroup .  A subgroup of a group is cyclic if there exists such that .   "
-},
-{
-  "id": "def-cyclic-group",
-  "level": "2",
-  "url": "s-Subsystems.html#def-cyclic-group",
-  "type": "Definition",
-  "number": "11.5.7",
-  "title": "Cyclic Group.",
-  "body": " Cyclic Group  Cyclic Group   A group is cyclic if there exists such that .   "
-},
-{
-  "id": "note-10",
-  "level": "2",
-  "url": "s-Subsystems.html#note-10",
-  "type": "Note",
-  "number": "11.5.8",
-  "title": "",
-  "body": " If the operation on is additive, then .  "
-},
-{
-  "id": "def-order-of-element",
-  "level": "2",
-  "url": "s-Subsystems.html#def-order-of-element",
-  "type": "Definition",
-  "number": "11.5.9",
-  "title": "Order of a Group Element.",
-  "body": " Order of a Group Element  Order of a Group Element    Order of a    The order of an element of group is the number of elements in the cyclic subgroup of generated by . The order of is denoted .   "
-},
-{
-  "id": "ex-11-5-4",
-  "level": "2",
-  "url": "s-Subsystems.html#ex-11-5-4",
-  "type": "Example",
-  "number": "11.5.10",
-  "title": "",
-  "body": "    In , .    In , . If is finite, you need list only the positive powers (or multiples) of up to the first occurrence of the identity to obtain all of . In , the multiples of 6 are 6, , , , and . Note that is also , , and . This shows that a cyclic subgroup can have different generators.     "
-},
-{
-  "id": "th-cyclic-pairs",
-  "level": "2",
-  "url": "s-Subsystems.html#th-cyclic-pairs",
-  "type": "Theorem",
-  "number": "11.5.11",
-  "title": "",
-  "body": "  If is an element of group , then .   "
-},
-{
-  "id": "exercise-408",
-  "level": "2",
-  "url": "s-Subsystems.html#exercise-408",
-  "type": "Exercise",
-  "number": "11.5.5.1",
-  "title": "",
-  "body": " Which of the following subsets of the real numbers is a subgroup of ?   the rational numbers    the positive real numbers                     Only a and c are subgroups.  "
-},
-{
-  "id": "exercise-409",
-  "level": "2",
-  "url": "s-Subsystems.html#exercise-409",
-  "type": "Exercise",
-  "number": "11.5.5.2",
-  "title": "",
-  "body": " Describe in simpler terms the following subgroups of :         (be careful)    the only finite subgroup of    "
-},
-{
-  "id": "exercise-410",
-  "level": "2",
-  "url": "s-Subsystems.html#exercise-410",
-  "type": "Exercise",
-  "number": "11.5.5.3",
-  "title": "",
-  "body": " Find at least two proper subgroups of , the set of rook matrices (see ).    , , , and are all the proper subgroups of .  "
-},
-{
-  "id": "exercise-411",
-  "level": "2",
-  "url": "s-Subsystems.html#exercise-411",
-  "type": "Exercise",
-  "number": "11.5.5.4",
-  "title": "",
-  "body": " Where should you place the following in ?                   Figure for exercise 4   Figure for exercise 4 of Section 11.5    "
-},
-{
-  "id": "exercise-412",
-  "level": "2",
-  "url": "s-Subsystems.html#exercise-412",
-  "type": "Exercise",
-  "number": "11.5.5.5",
-  "title": "",
-  "body": "    List the cyclic subgroups of and draw an ordering diagram for the relation is a subset of on these subgroups.    Do the same for .    Do the same for .    On the basis of your results in parts a, b, and c, what would you expect if you did the same with ?          , , ,     , , , , ,     , , ,    Based on the ordering diagrams for parts a through c in , we would expect to see an ordering diagram similar to the one for divides on (the divisors of 24) if we were to examine the subgroups of . This is indeed the case.      Figure for exercise 5   Figure for exercise 5 of Section 11.5    "
-},
-{
-  "id": "exercise-413",
-  "level": "2",
-  "url": "s-Subsystems.html#exercise-413",
-  "type": "Exercise",
-  "number": "11.5.5.6",
-  "title": "Subgroups generated by subsets of a group.",
-  "body": "Subgroups generated by subsets of a group  The concept of a cyclic subgroup is a special case of the concept that we will discuss here. Let be a group and a nonempty subset of . Define the set recursively by:   If , then .    If , then , and    If , then .       By its definition, has all of the properties needed to be a subgroup of . The only thing that isn't obvious is that the identity of is in . Prove that the identity of is in .    What is in ?    Prove that if and , then . This proves that is contained in every subgroup of that contains ; that is, .    Describe in and in .    If , is a cyclic subgroup of . In terms of and , what is a generator of ?     "
-},
-{
-  "id": "exercise-414",
-  "level": "2",
-  "url": "s-Subsystems.html#exercise-414",
-  "type": "Exercise",
-  "number": "11.5.5.7",
-  "title": "",
-  "body": " Prove that if , and , then or .   Use an indirect argument.   Assume that and are subgroups of group , and that, as in , there are elements and . Consider the product . Where could it be placed in the Venn diagram? If we can prove that it must lie in the outer region, , then we have proven that is not closed under and cannot be a subgroup of , Assume that . Since is in , is in and so by closure which is a contradiction. Similarly, .  One way to interpret this theorem is that no group is the union of two groups.  "
-},
-{
-  "id": "exercise-415",
-  "level": "2",
-  "url": "s-Subsystems.html#exercise-415",
-  "type": "Exercise",
-  "number": "11.5.5.8",
-  "title": "",
-  "body": " Prove that the order of an element, of a group is the least positive integer, , such that is the identity of the group.  "
-},
-{
-  "id": "s-direct-products",
-  "level": "1",
-  "url": "s-direct-products.html",
-  "type": "Section",
-  "number": "11.6",
-  "title": "Direct Products",
-  "body": " Direct Products  Direct Products   Definition  Our second universal algebraic concept lets us look in the opposite direction from subsystems. Direct products allow us to create larger systems. In the following definition, we avoid complicating the notation by not specifying how many operations the systems have.   Direct Product  Direct Product    The direct product of algebraic structures    If , are algebraic systems of the same kind, then the direct product of these systems is , with operations defined below. The elements of are -tuples of the form , where , . The systems , are called the factors of . There are as many operations on as there are in the factors. Each of these operations is defined componentwise:  If ,      A Direct Product of Monoids  Consider the monoids (the set of natural numbers with addition) and (the set of finite strings of 0's and 1's with concatenation). The direct product of with is a monoid. We illustrate its operation, which we will denote by , with examples: Note that our new monoid is not commutative. What is the identity for ?    Concurrent calculation in a direct product   Concurrent calculation in a direct product        On notation. If two or more consecutive factors in a direct product are identical, it is common to combine them using exponential notation. For example, can be written , and can be written . This is purely a notational convenience; no exponentiation is really taking place.    We call the operations in a direct product componentwise operations , and they are indeed operations on . If two -tuples, and , are selected from , the first components of and , and , are operated on with to obtain , the first component of . Note that since is an operation on , is an element of . Similarly, all other components of , as they are defined, belong to their proper sets.    One significant fact about componentwise operations is that the components of the result can all be computed at the same time (concurrently). The time required to compute in a direct product can be reduced to a length of time that is not much longer than the maximum amount of time needed to compute in the factors.    A direct product of algebraic systems is not always an algebraic system of the same type as its factors. This is due to the fact that certain axioms that are true for the factors may not be true for the set of -tuples. This situation does not occur with groups however. You will find that whenever a new type of algebraic system is introduced, call it type , one of the first theorems that is usually proven, if possible, is that the direct product of two or more systems of type is a system of type .        Direct Products of Groups   The Direct Product of Groups is a Group   The direct product of two or more groups is a group; that is, the algebraic properties of a system obtained by taking the direct product of two or more groups includes the group axioms.    We will only present the proof of this theorem for the direct product of two groups. Some slight revisions can be made to produce a proof for any number of factors.  Stating that the direct product of two groups is a group is a short way of saying that if and are groups, then is also a group, where is the componentwise operation on . Associativity of : If , Notice how the associativity property hinges on the associativity in each factor. An identity for : As you might expect, if and are identities for and , respectively, then is the identity for . If , Similarly, .  Inverses in : The inverse of an element is determined componentwise . To verify, we compute : Similarly, .     Some New Groups     If , , the direct product of factors of , is a group with elements. We will take a closer look at . The elements of this group are triples of zeros and ones. Since the operation on is , we will use the symbol + for the operation on . Two of the eight triples in the group are and . Their sum is . One interesting fact about this group is that each element is its own inverse. For example ; therefore . We use the additive notation for the inverse of because we are using a form of addition. Note that is a subgroup of . Write out the addition table for this set and apply . The same can be said for any set consisting of (0, 0, 0) and another element of .    The direct product of the positive real numbers with the integers modulo 4, is an infinite group since one of its factors is infinite. The operations on the factors are multiplication and modular addition, so we will select the neutral symbol for the operation on . If and , then   It would be incorrect to say that is a subgroup of , but there is a subgroup of the direct product that closely resembles . It is . Its table is   Imagine erasing throughout the table and writing in place of . What would you get? We will explore this phenomenon in detail in the next section.  The whole direct product could be visualized as four parallel half-lines labeled 0, 1, 2, and 3 as in . On the th line, the point that lies units to the right of the zero mark would be . The set , which is depicted on the figure is a subgroup of . What cyclic subgroup is it?  The answer: or . There are two different generators.      Visualization of the group    Visualization of the group     A more conventional direct product is , the direct product of two factors of . The operation on is componentwise addition; hence we will use + as the operation symbol for this group. You should be familiar with this operation, since it is identical to addition of matrices. The Cartesian coordinate system can be used to visualize geometrically. We plot the pair on the plane in the usual way: units along the axis and units along the axis. There is a variety of different subgroups of , a few of which are:   , all of the points on the axis;     , all of the points that are on the line 2x - y = 0;    If , . The first two subgroups are special cases of this one, which represents any line that passes through the origin.     , a union of a set of lines that are parallel to .     , which is the only countable subgroup that we have listed.    We will leave it to the reader to verify that these sets are subgroups. We will only point out how the fourth example, call it , is closed under addition. If and and both belong to , then and , where both and are integers. We can determine whether belongs to by deciding whether or not is an integer: Since and are integers, so is . This completes a proof that is closed under the operation of .  Several useful facts can be stated in regards to the direct product of two or more groups. We will combine them into one theorem, which we will present with no proof. Parts a and c were derived for in the proof of .   Properties of Direct Products of Groups   If is a direct product of groups and , then:   The identity of is , where is the identity of .     .     for all .     is abelian if and only if each of the factors is abelian.    lf are subgroups of the corresponding factors, then is a subgroup of .       Not all subgroups of a direct product can be created using part e of . For example, is a subgroup of , but is not a direct product of two subgroups of .   Linked Lists using a Direct Product  Using the identity , in , we can devise a scheme for representing a doubly linked list using only one link field. A doubly linked list is a list in which each node contains a pointer to its immediate successor and its immediate predecessor (see ). If the pointers are -digit binary addresses, then each pointer can be taken as an element of . Lists of this type can be accomplished using cells with only one link. In place of a left and a right pointer, the only link is the value of the sum (left link) + (right link). All standard list operations (merge, insert, delete, traverse, and so on) are possible with this structure, provided that you know the value of the nil pointer and the address, , of the first (i. e., leftmost) cell. Since first is nil, we can recover by adding the value of nil: , which is the address of the second item. Now if we temporarily retain the address, , of the second cell, we can recover the address of the third item. The link field of the second item contains the sum . Therefore   We no longer need the address of the first cell, only the second and third, to recover the fourth address, and so forth.   Doubly Linked Lists   Doubly Linked Lists    The following more formal algorithm uses names that reflects the timing of the visits.  Given a doubly linked list, a traversal of the list is accomplished as follows, where is the address of the first cell. We presume that each item has some information that is represented by and a field called item.link that is the sum of the left and right links.      (1) yesterday =nil    (2) today =first    (3) while :    (3.1)Write(today.info)    (3.2)tomorrow = today.link + yesterday    (3.3)yesterday = today    (3.4)today = tomorrow.     At any point in this algorithm it would be quite easy to insert a cell between today and tomorrow. Can you describe how this would be accomplished?     Exercises   Write out the group table of and find the two proper subgroups of this group.   Table of : The only two proper subgroups are and     List more examples of proper subgroups of that are different from the ones listed in this section.   Algebraic properties of the -cube     The four elements of can be visualized geometrically as the four corners of the 2-cube. Algebraically describe the statements:   Corners and are adjacent.    Corners and are diagonally opposite one another.      The eight elements of can be visualized as the eight corners of the 3-cube. One face contains and the opposite face contains the remaining four elements so that is behind . As in part a, describe statements i and ii algebraically.    If you could imagine a geometric figure similar to the square or cube in dimensions, and its corners were labeled by elements of as in parts a and b, how would statements i and ii be expressed algebraically?         (i) . (ii) .    (i) . (ii) .    (i) has exactly one 1. (ii) has all .          Suppose that you were to be given a group and asked to solve the equation . Without knowing the group, can you anticipate how many solutions there will be?    Answer the same question as part a for the equation .       Which of the following sets are subgroups of ? Give a reason for any negative answers.                                No, 0 is not an element of .    Yes.    No, (0, 0) is not an element of this set.    No, the set is not closed: and is not in the set.    Yes.       Determine the following values in the group :        the identity element           "
-},
-{
-  "id": "def-direct-product",
-  "level": "2",
-  "url": "s-direct-products.html#def-direct-product",
-  "type": "Definition",
-  "number": "11.6.1",
-  "title": "Direct Product.",
-  "body": " Direct Product  Direct Product    The direct product of algebraic structures    If , are algebraic systems of the same kind, then the direct product of these systems is , with operations defined below. The elements of are -tuples of the form , where , . The systems , are called the factors of . There are as many operations on as there are in the factors. Each of these operations is defined componentwise:  If ,    "
-},
-{
-  "id": "ex-product-monoids",
-  "level": "2",
-  "url": "s-direct-products.html#ex-product-monoids",
-  "type": "Example",
-  "number": "11.6.2",
-  "title": "A Direct Product of Monoids.",
-  "body": " A Direct Product of Monoids  Consider the monoids (the set of natural numbers with addition) and (the set of finite strings of 0's and 1's with concatenation). The direct product of with is a monoid. We illustrate its operation, which we will denote by , with examples: Note that our new monoid is not commutative. What is the identity for ?  "
-},
-{
-  "id": "fig-concurrent",
-  "level": "2",
-  "url": "s-direct-products.html#fig-concurrent",
-  "type": "Figure",
-  "number": "11.6.3",
-  "title": "",
-  "body": " Concurrent calculation in a direct product   Concurrent calculation in a direct product   "
-},
-{
-  "id": "note-11",
-  "level": "2",
-  "url": "s-direct-products.html#note-11",
-  "type": "Note",
-  "number": "11.6.4",
-  "title": "",
-  "body": "    On notation. If two or more consecutive factors in a direct product are identical, it is common to combine them using exponential notation. For example, can be written , and can be written . This is purely a notational convenience; no exponentiation is really taking place.    We call the operations in a direct product componentwise operations , and they are indeed operations on . If two -tuples, and , are selected from , the first components of and , and , are operated on with to obtain , the first component of . Note that since is an operation on , is an element of . Similarly, all other components of , as they are defined, belong to their proper sets.    One significant fact about componentwise operations is that the components of the result can all be computed at the same time (concurrently). The time required to compute in a direct product can be reduced to a length of time that is not much longer than the maximum amount of time needed to compute in the factors.    A direct product of algebraic systems is not always an algebraic system of the same type as its factors. This is due to the fact that certain axioms that are true for the factors may not be true for the set of -tuples. This situation does not occur with groups however. You will find that whenever a new type of algebraic system is introduced, call it type , one of the first theorems that is usually proven, if possible, is that the direct product of two or more systems of type is a system of type .     "
-},
-{
-  "id": "theorem-product-of-groups",
-  "level": "2",
-  "url": "s-direct-products.html#theorem-product-of-groups",
-  "type": "Theorem",
-  "number": "11.6.5",
-  "title": "The Direct Product of Groups is a Group.",
-  "body": " The Direct Product of Groups is a Group   The direct product of two or more groups is a group; that is, the algebraic properties of a system obtained by taking the direct product of two or more groups includes the group axioms.    We will only present the proof of this theorem for the direct product of two groups. Some slight revisions can be made to produce a proof for any number of factors.  Stating that the direct product of two groups is a group is a short way of saying that if and are groups, then is also a group, where is the componentwise operation on . Associativity of : If , Notice how the associativity property hinges on the associativity in each factor. An identity for : As you might expect, if and are identities for and , respectively, then is the identity for . If , Similarly, .  Inverses in : The inverse of an element is determined componentwise . To verify, we compute : Similarly, .   "
-},
-{
-  "id": "ex-new-groups-products",
-  "level": "2",
-  "url": "s-direct-products.html#ex-new-groups-products",
-  "type": "Example",
-  "number": "11.6.6",
-  "title": "Some New Groups.",
-  "body": " Some New Groups     If , , the direct product of factors of , is a group with elements. We will take a closer look at . The elements of this group are triples of zeros and ones. Since the operation on is , we will use the symbol + for the operation on . Two of the eight triples in the group are and . Their sum is . One interesting fact about this group is that each element is its own inverse. For example ; therefore . We use the additive notation for the inverse of because we are using a form of addition. Note that is a subgroup of . Write out the addition table for this set and apply . The same can be said for any set consisting of (0, 0, 0) and another element of .    The direct product of the positive real numbers with the integers modulo 4, is an infinite group since one of its factors is infinite. The operations on the factors are multiplication and modular addition, so we will select the neutral symbol for the operation on . If and , then   It would be incorrect to say that is a subgroup of , but there is a subgroup of the direct product that closely resembles . It is . Its table is   Imagine erasing throughout the table and writing in place of . What would you get? We will explore this phenomenon in detail in the next section.  The whole direct product could be visualized as four parallel half-lines labeled 0, 1, 2, and 3 as in . On the th line, the point that lies units to the right of the zero mark would be . The set , which is depicted on the figure is a subgroup of . What cyclic subgroup is it?  The answer: or . There are two different generators.      Visualization of the group    Visualization of the group    "
-},
-{
-  "id": "theorem-direct-product-properties",
-  "level": "2",
-  "url": "s-direct-products.html#theorem-direct-product-properties",
-  "type": "Theorem",
-  "number": "11.6.8",
-  "title": "Properties of Direct Products of Groups.",
-  "body": " Properties of Direct Products of Groups   If is a direct product of groups and , then:   The identity of is , where is the identity of .     .     for all .     is abelian if and only if each of the factors is abelian.    lf are subgroups of the corresponding factors, then is a subgroup of .      "
-},
-{
-  "id": "ex-linked-lists",
-  "level": "2",
-  "url": "s-direct-products.html#ex-linked-lists",
-  "type": "Example",
-  "number": "11.6.9",
-  "title": "Linked Lists using a Direct Product.",
-  "body": " Linked Lists using a Direct Product  Using the identity , in , we can devise a scheme for representing a doubly linked list using only one link field. A doubly linked list is a list in which each node contains a pointer to its immediate successor and its immediate predecessor (see ). If the pointers are -digit binary addresses, then each pointer can be taken as an element of . Lists of this type can be accomplished using cells with only one link. In place of a left and a right pointer, the only link is the value of the sum (left link) + (right link). All standard list operations (merge, insert, delete, traverse, and so on) are possible with this structure, provided that you know the value of the nil pointer and the address, , of the first (i. e., leftmost) cell. Since first is nil, we can recover by adding the value of nil: , which is the address of the second item. Now if we temporarily retain the address, , of the second cell, we can recover the address of the third item. The link field of the second item contains the sum . Therefore   We no longer need the address of the first cell, only the second and third, to recover the fourth address, and so forth.   Doubly Linked Lists   Doubly Linked Lists    The following more formal algorithm uses names that reflects the timing of the visits.  Given a doubly linked list, a traversal of the list is accomplished as follows, where is the address of the first cell. We presume that each item has some information that is represented by and a field called item.link that is the sum of the left and right links.      (1) yesterday =nil    (2) today =first    (3) while :    (3.1)Write(today.info)    (3.2)tomorrow = today.link + yesterday    (3.3)yesterday = today    (3.4)today = tomorrow.     At any point in this algorithm it would be quite easy to insert a cell between today and tomorrow. Can you describe how this would be accomplished?  "
-},
-{
-  "id": "exercise-416",
-  "level": "2",
-  "url": "s-direct-products.html#exercise-416",
-  "type": "Exercise",
-  "number": "11.6.3.1",
-  "title": "",
-  "body": " Write out the group table of and find the two proper subgroups of this group.   Table of : The only two proper subgroups are and   "
-},
-{
-  "id": "exercise-417",
-  "level": "2",
-  "url": "s-direct-products.html#exercise-417",
-  "type": "Exercise",
-  "number": "11.6.3.2",
-  "title": "",
-  "body": " List more examples of proper subgroups of that are different from the ones listed in this section.  "
-},
-{
-  "id": "exercise-n-cube-algebra",
-  "level": "2",
-  "url": "s-direct-products.html#exercise-n-cube-algebra",
-  "type": "Exercise",
-  "number": "11.6.3.3",
-  "title": "Algebraic properties of the <span class=\"process-math\">\\(n\\)<\/span>-cube.",
-  "body": "Algebraic properties of the -cube     The four elements of can be visualized geometrically as the four corners of the 2-cube. Algebraically describe the statements:   Corners and are adjacent.    Corners and are diagonally opposite one another.      The eight elements of can be visualized as the eight corners of the 3-cube. One face contains and the opposite face contains the remaining four elements so that is behind . As in part a, describe statements i and ii algebraically.    If you could imagine a geometric figure similar to the square or cube in dimensions, and its corners were labeled by elements of as in parts a and b, how would statements i and ii be expressed algebraically?         (i) . (ii) .    (i) . (ii) .    (i) has exactly one 1. (ii) has all .     "
-},
-{
-  "id": "exercise-419",
-  "level": "2",
-  "url": "s-direct-products.html#exercise-419",
-  "type": "Exercise",
-  "number": "11.6.3.4",
-  "title": "",
-  "body": "    Suppose that you were to be given a group and asked to solve the equation . Without knowing the group, can you anticipate how many solutions there will be?    Answer the same question as part a for the equation .     "
-},
-{
-  "id": "exercise-420",
-  "level": "2",
-  "url": "s-direct-products.html#exercise-420",
-  "type": "Exercise",
-  "number": "11.6.3.5",
-  "title": "",
-  "body": " Which of the following sets are subgroups of ? Give a reason for any negative answers.                                No, 0 is not an element of .    Yes.    No, (0, 0) is not an element of this set.    No, the set is not closed: and is not in the set.    Yes.     "
-},
-{
-  "id": "exercise-421",
-  "level": "2",
-  "url": "s-direct-products.html#exercise-421",
-  "type": "Exercise",
-  "number": "11.6.3.6",
-  "title": "",
-  "body": " Determine the following values in the group :        the identity element         "
-},
-{
-  "id": "s-isomorphisms",
-  "level": "1",
-  "url": "s-isomorphisms.html",
-  "type": "Section",
-  "number": "11.7",
-  "title": "Isomorphisms",
-  "body": " Isomorphisms  Isomorphisms   The following informal definition of isomorphic systems should be memorized. No matter how technical a discussion about isomorphic systems becomes, keep in mind that this is the essence of the concept.   Isomorphic Systems\/Isomorphism - Informal Version   Two algebraic systems are isomorphic if there exists a translation rule between them so that any true statement in one system can be translated to a true statement in the other.     How to Do Greek Arithmetic  Imagine that you are a six-year-old child who has been reared in an English-speaking family, has moved to Greece, and has been enrolled in a Greek school. Suppose that your new teacher asks the class to do the following addition problem that has been written out in Greek. The natural thing for you to do is to take out your Greek-English\/English-Greek dictionary and translate the Greek words to English, as outlined in After you've solved the problem, you can consult the same dictionary to find the proper Greek word that the teacher wants. Although this is not the recommended method of learning a foreign language, it will surely yield the correct answer to the problem. Mathematically, we may say that the system of Greek integers with addition ( ) is isomorphic to English integers with addition (plus). The problem of translation between natural languages is more difficult than this though, because two complete natural languages are not isomorphic, or at least the isomorphism between them is not contained in a simple dictionary.   Solution of a Greek arithmetic problem   Solution of a Greek arithmetic problem      Software Implementation of Sets  In this example, we will describe how set variables can be implemented on a computer. We will describe the two systems first and then describe the isomorphism between them.  System 1: The power set of with the operation union, . For simplicity, we will only discuss union. However, the other operations are implemented in a similar way.  System 2: Strings of five bits of computer memory with an OR gate. Individual bit values are either zero or one, so the elements of this system can be visualized as sequences of five 0's and 1's. An OR gate, , is a small piece of computer hardware that accepts two bit values at any one time and outputs either a zero or one, depending on the inputs. The output of an OR gate is one, except when the two bit values that it accepts are both zero, in which case the output is zero. The operation on this system actually consists of sequentially inputting the values of two bit strings into the OR gate. The result will be a new string of five 0's and 1's. An alternate method of operating in this system is to use five OR gates and to input corresponding pairs of bits from the input strings into the gates concurrently.   Translation between sets and strings of bits   Translation between sets and strings of bits    The Isomorphism: Since each system has only one operation, it is clear that union and the OR gate translate into one another. The translation between sets and bit strings is easiest to describe by showing how to construct a set from a bit string. If , is a bit string in System 2, the set that it translates to contains the number if and only if equals 1. For example, is translated to the set , while the set is translated to Now imagine that your computer is like the child who knows English and must do a Greek problem. To execute a program that has code that includes the set expression , it will follow the same procedure as the child to obtain the result, as shown in .   Translation of a problem in set theory   Translation of a problem in set theory       Group Isomorphisms   Multiplying without doing multiplication  This isomorphism is between and . Until the 1970s, when the price of calculators dropped, multiplication and exponentiation were performed with an isomorphism between these systems. The isomorphism to ) between the two groups is that is translated into and any positive real number is translated to the logarithm of . To translate back from to , you invert the logarithm function. If base ten logarithms are used, an element of , , will be translated to . In pre-calculator days, the translation was done with a table of logarithms or with a slide rule. An example of how the isomorphism is used appears in .   Multiplication using logarithms   Multiplication using logarithms     The following definition of an isomorphism between two groups is a more formal one that appears in most abstract algebra texts. At first glance, it appears different, it is really a slight variation on the informal definition. It is the common definition because it is easy to apply; that is, given a function, this definition tells you what to do to determine whether that function is an isomorphism.   Group Isomorphism   Isomorphism  Group     is isomorphic to    If and are groups, is an isomorphism from into if:    is a bijection, and     for all     If such a function exists, then we say is isomorphic to , denoted .     Steps in proving that and are isomorphic   Steps in proving that and are isomorphic        There could be several different isomorphisms between the same pair of groups. Thus, if you are asked to demonstrate that two groups are isomorphic, your answer need not be unique.    Any application of this definition requires a procedure outlined in . The first condition, that an isomorphism be a bijection, reflects the fact that every true statement in the first group should have exactly one corresponding true statement in the second group. This is exactly why we run into difficulty in translating between two natural languages. To see how Condition (b) of the formal definition is consistent with the informal definition, consider the function defined by . The translation diagram between and for the multiplication problem appears in . We arrive at the same result by computing as we do by computing . If we apply the function to the two results, we get the same image: since . Note that is exactly Condition b of the formal definition applied to the two groups and .       General Multiplication using logarithms   General Multiplication using logarithms     Consider with matrix multiplication. The group is isomorphic to . Our translation rule is the function defined by . Since groups have only one operation, there is no need to state explicitly that addition is translated to matrix multiplication. That is a bijection is clear from its definition.  If and are any real numbers,   We can apply this translation rule to determine the inverse of a matrix in . We know that is a true statement in . Using to translate this statement, we get or therefore,    The next theorem summarizes some of the general facts about group isomorphisms that are used most often in applications. We leave the proof to the reader.   Properties of Isomorphisms   If and are groups with identities and , respectively, and is an isomorphism from into , then:         for all , and    If is a subgroup of , then is a subgroup of and is isomorphic to .      Is isomorphic to is an on the set of all groups. Therefore, the set of all groups is partitioned into equivalence classes, each equivalence class containing groups that are isomorphic to one another.    Conditions for groups to not be isomorphic  How do you decide that two groups are not isomorphic to one another? The negation of and are isomorphic is that no translation rule between and exists. If and have different cardinalities, then no bijection from into can exist. Hence they are not isomorphic. Given that , it is usually impractical to list all bijections from into and show that none of them satisfy Condition b of the formal definition. The best way to prove that two groups are not isomorphic is to find a true statement about one group that is not true about the other group. We illustrate this method in the following checklist that you can apply to most pairs of non-isomorphic groups in this book.  Assume that and are groups. The following are reasons for and to be not isomorphic.    and do not have the same cardinality. For example, can't be isomorphic to and can't be isomorphic to .     is abelian and is not abelian since is always true in , but would not always be true. We have seen two groups with six elements that apply here. They are and the group of rook matrices (see ). The second group is non-abelian, therefore it can't be isomorphic to .     has a certain kind of subgroup that doesn't have. Part (c) of states that this cannot happen if is isomorphic to . and are not isomorphic since has a subgroup with two elements, , while the proper subgroups of are all infinite (convince yourself of this fact!).    The number of solutions of in is not equal to the number of solutions of in . is not isomorphic to since has two solutions, 0 and 4, while is true for all . If the operation in is defined by a table, then the number of solutions of will be the number of occurrences of in the main diagonal of the table. The equations , can also be used in the same way to identify pairs of non-isomorphic groups.    One of the cyclic subgroups of equals (i. e., is cyclic), while none of 's cyclic subgroups equals (i. e., is noncyclic). This is a special case of Condition c. and are not isomorphic since and is not cyclic.       Exercises   State whether each pair of groups below is isomorphic. For each pair that is, give an isomorphism; for those that are not, give your reason.    and     and     and     with symmetric difference and     and     and with matrix addition     and      and the rook matrices     and          Yes, for is an isomorphism.    No, has a two element subgroup while does not.    No. is countable and is not. Therefore, no bijection can exist between them.    Yes.    No.    Yes, one isomorphism is defined by .    Yes, one isomorphism is defined by .    Yes.    Yes .       If you know two natural languages, show that they are not isomorphic.    Prove that the relation is isomorphic to on groups is transitive.   Consider three groups , , and with operations , respectively. We want to show that if is isomorphic to , and if is isomorphic to , then is isomorphic to .  If we compose with , we get the function , By and , is a bijection, and if , Therefore, is an isomorphism from into , proving that is isomorphic to is transitive.       Write out the operation table for where is the complex number for which . Show that is isomorphic to .    Solve in by first translating the equation to , solving the equation in , and then translating back to .       The two groups and are isomorphic. One isomorphism is partially defined by . Determine the values of , , and .   By (a), must be 1. . Since is a bijection, .    Prove .    Prove that all infinite cyclic groups are isomorphic to .   Let be an infinite cyclic group generated by . Then, using multiplicative notation, . The map defined by is an isomorphism. This is indeed a function, since implies . Otherwise, would have a finite order and would not generate .      is one-to-one, since implies , so .     is onto, since for any , .               Prove that is isomorphic to .    Describe how multiplication of nonzero real numbers can be accomplished doing only additions and translations.       Automorphism  Inner   Prove that if is any group and is some fixed element of , then the function defined by is an isomorphism from into itself. An isomorphism of this type is called an inner automorphism.    It can be shown that there are five non-isomorphic groups of order eight. You should be able to describe at least three of them. Do so without use of tables. Be sure to explain why they are not isomorphic.    , , and . One other is the fourth dihedral group, introduced in Section 15.3.    "
-},
-{
-  "id": "def-isomorphism-informal",
-  "level": "2",
-  "url": "s-isomorphisms.html#def-isomorphism-informal",
-  "type": "Definition",
-  "number": "11.7.1",
-  "title": "Isomorphic Systems\/Isomorphism - Informal Version.",
-  "body": " Isomorphic Systems\/Isomorphism - Informal Version   Two algebraic systems are isomorphic if there exists a translation rule between them so that any true statement in one system can be translated to a true statement in the other.   "
-},
-{
-  "id": "ex-greek-arithmetic",
-  "level": "2",
-  "url": "s-isomorphisms.html#ex-greek-arithmetic",
-  "type": "Example",
-  "number": "11.7.2",
-  "title": "How to Do Greek Arithmetic.",
-  "body": " How to Do Greek Arithmetic  Imagine that you are a six-year-old child who has been reared in an English-speaking family, has moved to Greece, and has been enrolled in a Greek school. Suppose that your new teacher asks the class to do the following addition problem that has been written out in Greek. The natural thing for you to do is to take out your Greek-English\/English-Greek dictionary and translate the Greek words to English, as outlined in After you've solved the problem, you can consult the same dictionary to find the proper Greek word that the teacher wants. Although this is not the recommended method of learning a foreign language, it will surely yield the correct answer to the problem. Mathematically, we may say that the system of Greek integers with addition ( ) is isomorphic to English integers with addition (plus). The problem of translation between natural languages is more difficult than this though, because two complete natural languages are not isomorphic, or at least the isomorphism between them is not contained in a simple dictionary.   Solution of a Greek arithmetic problem   Solution of a Greek arithmetic problem    "
-},
-{
-  "id": "ex-set-isomorphism",
-  "level": "2",
-  "url": "s-isomorphisms.html#ex-set-isomorphism",
-  "type": "Example",
-  "number": "11.7.4",
-  "title": "Software Implementation of Sets.",
-  "body": " Software Implementation of Sets  In this example, we will describe how set variables can be implemented on a computer. We will describe the two systems first and then describe the isomorphism between them.  System 1: The power set of with the operation union, . For simplicity, we will only discuss union. However, the other operations are implemented in a similar way.  System 2: Strings of five bits of computer memory with an OR gate. Individual bit values are either zero or one, so the elements of this system can be visualized as sequences of five 0's and 1's. An OR gate, , is a small piece of computer hardware that accepts two bit values at any one time and outputs either a zero or one, depending on the inputs. The output of an OR gate is one, except when the two bit values that it accepts are both zero, in which case the output is zero. The operation on this system actually consists of sequentially inputting the values of two bit strings into the OR gate. The result will be a new string of five 0's and 1's. An alternate method of operating in this system is to use five OR gates and to input corresponding pairs of bits from the input strings into the gates concurrently.   Translation between sets and strings of bits   Translation between sets and strings of bits    The Isomorphism: Since each system has only one operation, it is clear that union and the OR gate translate into one another. The translation between sets and bit strings is easiest to describe by showing how to construct a set from a bit string. If , is a bit string in System 2, the set that it translates to contains the number if and only if equals 1. For example, is translated to the set , while the set is translated to Now imagine that your computer is like the child who knows English and must do a Greek problem. To execute a program that has code that includes the set expression , it will follow the same procedure as the child to obtain the result, as shown in .   Translation of a problem in set theory   Translation of a problem in set theory    "
-},
-{
-  "id": "ex-log-multiplication",
-  "level": "2",
-  "url": "s-isomorphisms.html#ex-log-multiplication",
-  "type": "Example",
-  "number": "11.7.7",
-  "title": "Multiplying without doing multiplication.",
-  "body": " Multiplying without doing multiplication  This isomorphism is between and . Until the 1970s, when the price of calculators dropped, multiplication and exponentiation were performed with an isomorphism between these systems. The isomorphism to ) between the two groups is that is translated into and any positive real number is translated to the logarithm of . To translate back from to , you invert the logarithm function. If base ten logarithms are used, an element of , , will be translated to . In pre-calculator days, the translation was done with a table of logarithms or with a slide rule. An example of how the isomorphism is used appears in .   Multiplication using logarithms   Multiplication using logarithms    "
-},
-{
-  "id": "def-group-isomorphism",
-  "level": "2",
-  "url": "s-isomorphisms.html#def-group-isomorphism",
-  "type": "Definition",
-  "number": "11.7.9",
-  "title": "Group Isomorphism.",
-  "body": " Group Isomorphism   Isomorphism  Group     is isomorphic to    If and are groups, is an isomorphism from into if:    is a bijection, and     for all     If such a function exists, then we say is isomorphic to , denoted .   "
-},
-{
-  "id": "fig-steps-iso",
-  "level": "2",
-  "url": "s-isomorphisms.html#fig-steps-iso",
-  "type": "Figure",
-  "number": "11.7.10",
-  "title": "",
-  "body": " Steps in proving that and are isomorphic   Steps in proving that and are isomorphic   "
-},
-{
-  "id": "note-12",
-  "level": "2",
-  "url": "s-isomorphisms.html#note-12",
-  "type": "Note",
-  "number": "11.7.11",
-  "title": "",
-  "body": "    There could be several different isomorphisms between the same pair of groups. Thus, if you are asked to demonstrate that two groups are isomorphic, your answer need not be unique.    Any application of this definition requires a procedure outlined in . The first condition, that an isomorphism be a bijection, reflects the fact that every true statement in the first group should have exactly one corresponding true statement in the second group. This is exactly why we run into difficulty in translating between two natural languages. To see how Condition (b) of the formal definition is consistent with the informal definition, consider the function defined by . The translation diagram between and for the multiplication problem appears in . We arrive at the same result by computing as we do by computing . If we apply the function to the two results, we get the same image: since . Note that is exactly Condition b of the formal definition applied to the two groups and .     "
-},
-{
-  "id": "fig-log-mult-general",
-  "level": "2",
-  "url": "s-isomorphisms.html#fig-log-mult-general",
-  "type": "Figure",
-  "number": "11.7.12",
-  "title": "",
-  "body": " General Multiplication using logarithms   General Multiplication using logarithms   "
-},
-{
-  "id": "ex-another-iso-pair",
-  "level": "2",
-  "url": "s-isomorphisms.html#ex-another-iso-pair",
-  "type": "Example",
-  "number": "11.7.13",
-  "title": "",
-  "body": " Consider with matrix multiplication. The group is isomorphic to . Our translation rule is the function defined by . Since groups have only one operation, there is no need to state explicitly that addition is translated to matrix multiplication. That is a bijection is clear from its definition.  If and are any real numbers,   We can apply this translation rule to determine the inverse of a matrix in . We know that is a true statement in . Using to translate this statement, we get or therefore,   "
-},
-{
-  "id": "theorem-isomorphism-properties",
-  "level": "2",
-  "url": "s-isomorphisms.html#theorem-isomorphism-properties",
-  "type": "Theorem",
-  "number": "11.7.14",
-  "title": "Properties of Isomorphisms.",
-  "body": " Properties of Isomorphisms   If and are groups with identities and , respectively, and is an isomorphism from into , then:         for all , and    If is a subgroup of , then is a subgroup of and is isomorphic to .     "
-},
-{
-  "id": "exercise-422",
-  "level": "2",
-  "url": "s-isomorphisms.html#exercise-422",
-  "type": "Exercise",
-  "number": "11.7.3.1",
-  "title": "",
-  "body": " State whether each pair of groups below is isomorphic. For each pair that is, give an isomorphism; for those that are not, give your reason.    and     and     and     with symmetric difference and     and     and with matrix addition     and      and the rook matrices     and          Yes, for is an isomorphism.    No, has a two element subgroup while does not.    No. is countable and is not. Therefore, no bijection can exist between them.    Yes.    No.    Yes, one isomorphism is defined by .    Yes, one isomorphism is defined by .    Yes.    Yes .     "
-},
-{
-  "id": "exercise-423",
-  "level": "2",
-  "url": "s-isomorphisms.html#exercise-423",
-  "type": "Exercise",
-  "number": "11.7.3.2",
-  "title": "",
-  "body": " If you know two natural languages, show that they are not isomorphic.  "
-},
-{
-  "id": "exercise-424",
-  "level": "2",
-  "url": "s-isomorphisms.html#exercise-424",
-  "type": "Exercise",
-  "number": "11.7.3.3",
-  "title": "",
-  "body": " Prove that the relation is isomorphic to on groups is transitive.   Consider three groups , , and with operations , respectively. We want to show that if is isomorphic to , and if is isomorphic to , then is isomorphic to .  If we compose with , we get the function , By and , is a bijection, and if , Therefore, is an isomorphism from into , proving that is isomorphic to is transitive.  "
-},
-{
-  "id": "exercise-425",
-  "level": "2",
-  "url": "s-isomorphisms.html#exercise-425",
-  "type": "Exercise",
-  "number": "11.7.3.4",
-  "title": "",
-  "body": "    Write out the operation table for where is the complex number for which . Show that is isomorphic to .    Solve in by first translating the equation to , solving the equation in , and then translating back to .     "
-},
-{
-  "id": "exercise-426",
-  "level": "2",
-  "url": "s-isomorphisms.html#exercise-426",
-  "type": "Exercise",
-  "number": "11.7.3.5",
-  "title": "",
-  "body": " The two groups and are isomorphic. One isomorphism is partially defined by . Determine the values of , , and .   By (a), must be 1. . Since is a bijection, .  "
-},
-{
-  "id": "exercise-427",
-  "level": "2",
-  "url": "s-isomorphisms.html#exercise-427",
-  "type": "Exercise",
-  "number": "11.7.3.6",
-  "title": "",
-  "body": " Prove .  "
-},
-{
-  "id": "exercise-428",
-  "level": "2",
-  "url": "s-isomorphisms.html#exercise-428",
-  "type": "Exercise",
-  "number": "11.7.3.7",
-  "title": "",
-  "body": " Prove that all infinite cyclic groups are isomorphic to .   Let be an infinite cyclic group generated by . Then, using multiplicative notation, . The map defined by is an isomorphism. This is indeed a function, since implies . Otherwise, would have a finite order and would not generate .      is one-to-one, since implies , so .     is onto, since for any , .          "
-},
-{
-  "id": "exercise-429",
-  "level": "2",
-  "url": "s-isomorphisms.html#exercise-429",
-  "type": "Exercise",
-  "number": "11.7.3.8",
-  "title": "",
-  "body": "    Prove that is isomorphic to .    Describe how multiplication of nonzero real numbers can be accomplished doing only additions and translations.     "
-},
-{
-  "id": "exercise-430",
-  "level": "2",
-  "url": "s-isomorphisms.html#exercise-430",
-  "type": "Exercise",
-  "number": "11.7.3.9",
-  "title": "",
-  "body": " Automorphism  Inner   Prove that if is any group and is some fixed element of , then the function defined by is an isomorphism from into itself. An isomorphism of this type is called an inner automorphism.  "
-},
-{
-  "id": "exercise-431",
-  "level": "2",
-  "url": "s-isomorphisms.html#exercise-431",
-  "type": "Exercise",
-  "number": "11.7.3.10",
-  "title": "",
-  "body": " It can be shown that there are five non-isomorphic groups of order eight. You should be able to describe at least three of them. Do so without use of tables. Be sure to explain why they are not isomorphic.    , , and . One other is the fourth dihedral group, introduced in Section 15.3.  "
+  "body": " Give the complete solution to the system of equations, , , and .  "
 },
 {
   "id": "s-posets-revisited",
@@ -9037,9 +8101,9 @@ var ptx_lunr_docs = [
   "body": " Consider the poset , where .   Find all lower bounds of 10 and 15.    Find the greatest lower bound of 10 and 15.    Find all upper bounds of 10 and 15.    Determine the least upper bound of 10 and 15.    Draw the Hasse diagram for with respect to . Compare this Hasse diagram with that of . Note that the two diagrams are structurally the same.        1, 5    5    30    30    See the Sage cell below with the default input displaying a Hasse diagram for .      "
 },
 {
-  "id": "exercise-433",
+  "id": "exercise-396",
   "level": "2",
-  "url": "s-posets-revisited.html#exercise-433",
+  "url": "s-posets-revisited.html#exercise-396",
   "type": "Exercise",
   "number": "12.1.2",
   "title": "",
@@ -9055,27 +8119,27 @@ var ptx_lunr_docs = [
   "body": " contains Hasse diagrams of posets.   Determine the least upper bound and greatest lower bound of all pairs of elements when they exist. Indicate those pairs that do not have a least upper bound (or a greatest lower bound ).    Find the least and greatest elements when they exist.      Figure for Exercise 3   Section 12.1, Exercise 3        Solution for Hasse diagram (b):       is the least element and is the greatest element.      Partial solution for Hasse diagram (f):    and do not exist.    No greatest element exists, but is the least element.        "
 },
 {
-  "id": "exercise-435",
+  "id": "exercise-398",
   "level": "2",
-  "url": "s-posets-revisited.html#exercise-435",
+  "url": "s-posets-revisited.html#exercise-398",
   "type": "Exercise",
   "number": "12.1.4",
   "title": "",
   "body": " For the poset , what are the greatest lower bound and least upper bound of two elements and ? Are there least and\/or greatest elements?  "
 },
 {
-  "id": "exercise-436",
+  "id": "exercise-399",
   "level": "2",
-  "url": "s-posets-revisited.html#exercise-436",
+  "url": "s-posets-revisited.html#exercise-399",
   "type": "Exercise",
   "number": "12.1.5",
   "title": "",
   "body": "    Prove the second part of , the least upper bound of two elements in a poset is unique, it one exists.    Prove that if a poset has a least element, then that element is unique.      If and are distinct least elements, then   "
 },
 {
-  "id": "exercise-437",
+  "id": "exercise-400",
   "level": "2",
-  "url": "s-posets-revisited.html#exercise-437",
+  "url": "s-posets-revisited.html#exercise-400",
   "type": "Exercise",
   "number": "12.1.6",
   "title": "",
@@ -9136,9 +8200,9 @@ var ptx_lunr_docs = [
   "body": " A Nondistributive Lattice  We now give an example of a lattice where the distributive laws do not hold. Let . We define the partial ordering on by the set The operation tables for and on are:   Since every pair of elements in has both a join and a meet, is a lattice (under divides). Is this lattice distributive? We note that: and . Therefore, for some values of . Thus, this lattice is not distributive.  "
 },
 {
-  "id": "p-3833",
+  "id": "p-3420",
   "level": "2",
-  "url": "s-lattices.html#p-3833",
+  "url": "s-lattices.html#p-3420",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -9154,54 +8218,54 @@ var ptx_lunr_docs = [
   "body": " Nondistributive lattices, the pentagon and diamond lattices   Nondistributive Lattices   "
 },
 {
-  "id": "exercise-438",
+  "id": "exercise-401",
   "level": "2",
-  "url": "s-lattices.html#exercise-438",
+  "url": "s-lattices.html#exercise-401",
   "type": "Exercise",
   "number": "12.2.1",
   "title": "",
   "body": " Let be the set of all propositions generated by and . What are the meet and join operations in this lattice under implication? What are the maximum and minimum elements?  "
 },
 {
-  "id": "exercise-439",
+  "id": "exercise-402",
   "level": "2",
-  "url": "s-lattices.html#exercise-439",
+  "url": "s-lattices.html#exercise-402",
   "type": "Exercise",
   "number": "12.2.2",
   "title": "",
   "body": " Which of the posets in are lattices? Which of the lattices are distributive?  "
 },
 {
-  "id": "exercise-440",
+  "id": "exercise-403",
   "level": "2",
-  "url": "s-lattices.html#exercise-440",
+  "url": "s-lattices.html#exercise-403",
   "type": "Exercise",
   "number": "12.2.3",
   "title": "",
   "body": "    State the commutative laws, associative laws, idempotent laws, and absorption laws for lattices.    Prove laws you stated.     "
 },
 {
-  "id": "exercise-441",
+  "id": "exercise-404",
   "level": "2",
-  "url": "s-lattices.html#exercise-441",
+  "url": "s-lattices.html#exercise-404",
   "type": "Exercise",
   "number": "12.2.4",
   "title": "",
   "body": " Demonstrate that the pentagon lattice is nondistributive.  "
 },
 {
-  "id": "exercise-442",
+  "id": "exercise-405",
   "level": "2",
-  "url": "s-lattices.html#exercise-442",
+  "url": "s-lattices.html#exercise-405",
   "type": "Exercise",
   "number": "12.2.5",
   "title": "",
   "body": " What is a reasonable definition of the term sublattice ?   One reasonable definition would by this: Let be a lattice and let be a nonempty subset of . Then is a sublattice of if and only if is closed under both and  "
 },
 {
-  "id": "exercise-443",
+  "id": "exercise-406",
   "level": "2",
-  "url": "s-lattices.html#exercise-443",
+  "url": "s-lattices.html#exercise-406",
   "type": "Exercise",
   "number": "12.2.6",
   "title": "",
@@ -9334,72 +8398,72 @@ var ptx_lunr_docs = [
   "body": " Contrasting Notational Systems for Boolean Algebra    Generic\/Logic  Set Theory  Arithmetic  Verbal             Join             Meet          - or  Complement             partial ordering    "
 },
 {
-  "id": "exercise-444",
+  "id": "exercise-407",
   "level": "2",
-  "url": "s-boolean-algebras.html#exercise-444",
+  "url": "s-boolean-algebras.html#exercise-407",
   "type": "Exercise",
   "number": "12.3.1",
   "title": "",
   "body": " Determine the complement of each element in . Is this lattice a Boolean algebra? Why?      This lattice is a Boolean algebra since it is a distributive complemented lattice.  "
 },
 {
-  "id": "exercise-445",
+  "id": "exercise-408",
   "level": "2",
-  "url": "s-boolean-algebras.html#exercise-445",
+  "url": "s-boolean-algebras.html#exercise-408",
   "type": "Exercise",
   "number": "12.3.2",
   "title": "",
   "body": "    Determine the complement of each element of in .    Repeat part a using the lattice in .    Repeat part a using the lattice in .    Are the lattices in parts a, b, and c Boolean algebras? Why?     "
 },
 {
-  "id": "exercise-446",
+  "id": "exercise-409",
   "level": "2",
-  "url": "s-boolean-algebras.html#exercise-446",
+  "url": "s-boolean-algebras.html#exercise-409",
   "type": "Exercise",
   "number": "12.3.3",
   "title": "",
   "body": " Determine which of the lattices of of Section 12.1 are Boolean algebras.   a and g.  "
 },
 {
-  "id": "exercise-447",
+  "id": "exercise-410",
   "level": "2",
-  "url": "s-boolean-algebras.html#exercise-447",
+  "url": "s-boolean-algebras.html#exercise-410",
   "type": "Exercise",
   "number": "12.3.4",
   "title": "",
   "body": " Let and .   Prove that is a Boolean algebra.    Write out the operation tables for the Boolean algebra.     "
 },
 {
-  "id": "exercise-448",
+  "id": "exercise-411",
   "level": "2",
-  "url": "s-boolean-algebras.html#exercise-448",
+  "url": "s-boolean-algebras.html#exercise-411",
   "type": "Exercise",
   "number": "12.3.5",
   "title": "",
   "body": " It can be shown that the following statement, , holds for any Boolean algebra : if and only if .   Write the dual, , of the statement .    Write the statement and its dual, , in the language of sets.    Are the statements in part b true for all sets?    Write the statement and its dual, , in the language of logic.    Are the statements in part d true for all propositions?             The dual of is    Yes    The dual of is    Yes     "
 },
 {
-  "id": "exercise-449",
+  "id": "exercise-412",
   "level": "2",
-  "url": "s-boolean-algebras.html#exercise-449",
+  "url": "s-boolean-algebras.html#exercise-412",
   "type": "Exercise",
   "number": "12.3.6",
   "title": "",
   "body": " State the dual of:    .     .     .     "
 },
 {
-  "id": "exercise-450",
+  "id": "exercise-413",
   "level": "2",
-  "url": "s-boolean-algebras.html#exercise-450",
+  "url": "s-boolean-algebras.html#exercise-413",
   "type": "Exercise",
   "number": "12.3.7",
   "title": "",
   "body": " Formulate a definition for isomorphic Boolean algebras.   is isomorphic to if and only if there exists a function such that    is a bijection;               .     "
 },
 {
-  "id": "exercise-451",
+  "id": "exercise-414",
   "level": "2",
-  "url": "s-boolean-algebras.html#exercise-451",
+  "url": "s-boolean-algebras.html#exercise-414",
   "type": "Exercise",
   "number": "12.3.8",
   "title": "",
@@ -9424,9 +8488,9 @@ var ptx_lunr_docs = [
   "body": " Illustration of the atom concept D  Illustration of the atom concept   "
 },
 {
-  "id": "p-3907",
+  "id": "p-3494",
   "level": "2",
-  "url": "s-atoms-of-a-boolean-algebra.html#p-3907",
+  "url": "s-atoms-of-a-boolean-algebra.html#p-3494",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -9496,72 +8560,72 @@ var ptx_lunr_docs = [
   "body": "  All Boolean algebras of order are isomorphic to one another.     Isomorphisms to be combined   Isomorphism to be combined    Every Boolean algebra of order is isomorphic to when . Hence, if and each have elements, they each have atoms. Suppose their sets of atoms are and , respectively. We know there are isomorphisms and , where , . In addition we have an isomorphism, from into , which we ask you to prove in . We can combine these isomorphisms to produce the isomorphism , which proves the corollary.   "
 },
 {
-  "id": "exercise-452",
+  "id": "exercise-415",
   "level": "2",
-  "url": "s-atoms-of-a-boolean-algebra.html#exercise-452",
+  "url": "s-atoms-of-a-boolean-algebra.html#exercise-415",
   "type": "Exercise",
   "number": "12.4.1",
   "title": "",
   "body": "    Show that is an atom of the Boolean algebra .    Repeat part a for the elements 3 and 5 of .    Verify for the Boolean algebra .         For we must show that for each one of the following is true: or . We do this through the following table: For , a similar verification can be performed.    , , , and .     "
 },
 {
-  "id": "exercise-453",
+  "id": "exercise-416",
   "level": "2",
-  "url": "s-atoms-of-a-boolean-algebra.html#exercise-453",
+  "url": "s-atoms-of-a-boolean-algebra.html#exercise-416",
   "type": "Exercise",
   "number": "12.4.2",
   "title": "",
   "body": " Let .   Rewrite the definition of atom for . What does mean in this example?    Find all atoms of .    Verify for .     "
 },
 {
-  "id": "exercise-454",
+  "id": "exercise-417",
   "level": "2",
-  "url": "s-atoms-of-a-boolean-algebra.html#exercise-454",
+  "url": "s-atoms-of-a-boolean-algebra.html#exercise-417",
   "type": "Exercise",
   "number": "12.4.3",
   "title": "",
   "body": " Verify and its corollaries for the Boolean algebras in Exercises 1 and 2 of this section.   If 30 then and is isomorphic to , where and   "
 },
 {
-  "id": "exercise-455",
+  "id": "exercise-418",
   "level": "2",
-  "url": "s-atoms-of-a-boolean-algebra.html#exercise-455",
+  "url": "s-atoms-of-a-boolean-algebra.html#exercise-418",
   "type": "Exercise",
   "number": "12.4.4",
   "title": "",
   "body": " Give an example of a Boolean algebra of order 16 whose elements are certain subsets of the set  "
 },
 {
-  "id": "exercise-456",
+  "id": "exercise-419",
   "level": "2",
-  "url": "s-atoms-of-a-boolean-algebra.html#exercise-456",
+  "url": "s-atoms-of-a-boolean-algebra.html#exercise-419",
   "type": "Exercise",
   "number": "12.4.5",
   "title": "",
   "body": " implies that there do not exist Boolean algebras of orders 3, 5, 6, 7, 9, etc. (orders different from ). Without this corollary, directly show that we cannot have a Boolean algebra of order 3.   Assume that is a Boolean algebra of order 3 where and show that this cannot happen by investigating the possibilities for its operation tables.   Assume that is the third element of a Boolean algebra. Then there is only one possible set of tables for join and meet, all following from required properties of the Boolean algebra. Next, to find the complement of we want such that and . No element satisfies both conditions; hence the lattice is not complemented and cannot be a Boolean algebra. The lack of a complement can also be seen from the ordering diagram from which and must be derived.  "
 },
 {
-  "id": "exercise-457",
+  "id": "exercise-420",
   "level": "2",
-  "url": "s-atoms-of-a-boolean-algebra.html#exercise-457",
+  "url": "s-atoms-of-a-boolean-algebra.html#exercise-420",
   "type": "Exercise",
   "number": "12.4.6",
   "title": "",
   "body": "    There are many different, yet isomorphic, Boolean algebras with two elements. Describe one such Boolean algebra that is derived from a power set, , under . Describe a second that is described from , for some , under divides.    Since the elements of a two-element Boolean algebra must be the greatest and least elements, 1 and 0, the tables for the operations on are determined by the Boolean algebra laws. Write out the operation tables for .     "
 },
 {
-  "id": "exercise-458",
+  "id": "exercise-421",
   "level": "2",
-  "url": "s-atoms-of-a-boolean-algebra.html#exercise-458",
+  "url": "s-atoms-of-a-boolean-algebra.html#exercise-421",
   "type": "Exercise",
   "number": "12.4.7",
   "title": "",
   "body": " Find a Boolean algebra with a countably infinite number of elements.   Let be any countably infinite set, such as the integers. A subset of is cofinite if it is finite or its complement is finite. The set of all cofinite subsets of is:   Countably infinite - this might not be obvious, but here is a hint. Assume . For each finite subset of , map that set to the integer You can do a similar thing to sets that have a finite complement, but map them to negative integers. Only one minor adjustment needs to be made to accommodate both the empty set and .    Closed under union    Closed under intersection, and    Closed under complementation.   Therefore, if , then is a countable Boolean algebra under the usual set operations.  "
 },
 {
-  "id": "exercise-459",
+  "id": "exercise-422",
   "level": "2",
-  "url": "s-atoms-of-a-boolean-algebra.html#exercise-459",
+  "url": "s-atoms-of-a-boolean-algebra.html#exercise-422",
   "type": "Exercise",
   "number": "12.4.8",
   "title": "",
@@ -9591,40 +8655,40 @@ var ptx_lunr_docs = [
   "url": "s-finite-boolean-algebras-ntuples.html",
   "type": "Section",
   "number": "12.5",
-  "title": "Finite Boolean Algebras as <span class=\"process-math\">\\(n\\)<\/span>-tuples of 0's and 1's",
+  "title": "Finite Boolean Algebras as <span class=\"process-math\">\\(n\\)<\/span>-tuples of 0’s and 1’s",
   "body": " Finite Boolean Algebras as -tuples of 0's and 1's  From the previous section we know that all finite Boolean algebras are of order , where is the number of atoms in the algebra. We can therefore completely describe every finite Boolean algebra by the algebra of power sets. Is there a more convenient, or at least an alternate way, of defining finite Boolean algebras? In Chapter 11 we found that we could produce new groups by taking Cartesian products of previously known groups. We imitate this process for Boolean algebras.  The simplest nontrivial Boolean algebra is the Boolean algebra on the set . The ordering on is the natural one, . If we treat 0 and 1 as the truth values false and true, respectively, we see that the Boolean operations and are nothing more than the logical operation with the same symbols. The Boolean operation, , (complementation) is the logical (negation). In fact, this is why these symbols were chosen as the names of the Boolean operations. The operation tables for are simply those of or,  and, and not, which we repeat here.   By and its corollaries, all Boolean algebras of order 2 are isomorphic to this one.  We know that if we form we obtain the set , a set of order 4. We define operations on the natural way, namely componentwise, so that , and . We claim that is a Boolean algebra under the componentwise operations. Hence, is a Boolean algebra of order 4. Since all Boolean algebras of order 4 are isomorphic to one other, we have found a simple way of describing all Boolean algebras of order 4.  It is quite clear that we can describe any Boolean algebra of order 8 by considering and, more generally, any Boolean algebra of order with ( factors).    Exercises      Write out the operation tables for    Draw the Hasse diagram for and compare your results with .    Find the atoms of this Boolean algebra.              The graphs are isomorphic.    (0, 1) and (1,0)          Write out the operation tables for    Draw the Hasse diagram for          List all atoms of .    Describe the atoms of .          , , , and are the atoms.    The -tuples of bits with exactly one 1.       tells us we can think of any finite Boolean algebra in terms of sets. In Chapter 4, we defined minsets and minset normal form . Rephrase these definitions in the language of Boolean algebra. The generalization of minsets are called minterms .    "
 },
 {
-  "id": "exercise-462",
+  "id": "exercise-425",
   "level": "2",
-  "url": "s-finite-boolean-algebras-ntuples.html#exercise-462",
+  "url": "s-finite-boolean-algebras-ntuples.html#exercise-425",
   "type": "Exercise",
   "number": "12.5.1",
   "title": "",
   "body": "    Write out the operation tables for    Draw the Hasse diagram for and compare your results with .    Find the atoms of this Boolean algebra.              The graphs are isomorphic.    (0, 1) and (1,0)     "
 },
 {
-  "id": "exercise-463",
+  "id": "exercise-426",
   "level": "2",
-  "url": "s-finite-boolean-algebras-ntuples.html#exercise-463",
+  "url": "s-finite-boolean-algebras-ntuples.html#exercise-426",
   "type": "Exercise",
   "number": "12.5.2",
   "title": "",
   "body": "    Write out the operation tables for    Draw the Hasse diagram for     "
 },
 {
-  "id": "exercise-464",
+  "id": "exercise-427",
   "level": "2",
-  "url": "s-finite-boolean-algebras-ntuples.html#exercise-464",
+  "url": "s-finite-boolean-algebras-ntuples.html#exercise-427",
   "type": "Exercise",
   "number": "12.5.3",
   "title": "",
   "body": "    List all atoms of .    Describe the atoms of .          , , , and are the atoms.    The -tuples of bits with exactly one 1.     "
 },
 {
-  "id": "exercise-465",
+  "id": "exercise-428",
   "level": "2",
-  "url": "s-finite-boolean-algebras-ntuples.html#exercise-465",
+  "url": "s-finite-boolean-algebras-ntuples.html#exercise-428",
   "type": "Exercise",
   "number": "12.5.4",
   "title": "",
@@ -9676,9 +8740,9 @@ var ptx_lunr_docs = [
   "body": " Minterm Normal Form  Minterm Normal Form  Disjunctive Normal Form  Sum of Products   A Boolean expression generated by is in minterm normal form if it is the join of expressions of the form , where and is a minterm generated by . That is, it is of the form where , and are the minterms generated by .  This form is also known as Disjunctive Normal Form if speaking in logic terminology as it is a disjunction of conjunctions and as a Sum-of-Products if using the arithmetic notation for join and meet .   "
 },
 {
-  "id": "note-13",
+  "id": "note-5",
   "level": "2",
-  "url": "s-boolean-expressions.html#note-13",
+  "url": "s-boolean-expressions.html#note-5",
   "type": "Note",
   "number": "12.6.5",
   "title": "",
@@ -9721,27 +8785,27 @@ var ptx_lunr_docs = [
   "body": " Consider the function defined by .  The minterm normal form for can be obtained by taking the join of minterms that correspond to rows that have an image value of 1. If , then include the minterm where Or, to use alternate notation, include in the expression if and only if  Therefore,   "
 },
 {
-  "id": "exercise-466",
+  "id": "exercise-429",
   "level": "2",
-  "url": "s-boolean-expressions.html#exercise-466",
+  "url": "s-boolean-expressions.html#exercise-429",
   "type": "Exercise",
   "number": "12.6.1",
   "title": "",
   "body": "    Write the 16 possible functions of .    Write out the tables of several of the above Boolean functions to show that they are indeed different.    Determine the minterm normal forms of                                   The truth table for the functions in part (a) are                                 "
 },
 {
-  "id": "exercise-467",
+  "id": "exercise-430",
   "level": "2",
-  "url": "s-boolean-expressions.html#exercise-467",
+  "url": "s-boolean-expressions.html#exercise-430",
   "type": "Exercise",
   "number": "12.6.2",
   "title": "",
   "body": " Consider the Boolean expression on    Simplify this expression using basic Boolean algebra laws.    Write this expression in minterm normal form.    Write out the table for the given function defined by and compare it to the tables of the functions in parts a and b.    How many possible different functions in three variables on are there?    "
 },
 {
-  "id": "exercise-468",
+  "id": "exercise-431",
   "level": "2",
-  "url": "s-boolean-expressions.html#exercise-468",
+  "url": "s-boolean-expressions.html#exercise-431",
   "type": "Exercise",
   "number": "12.6.3",
   "title": "",
@@ -9757,9 +8821,9 @@ var ptx_lunr_docs = [
   "body": " Logic Gates and Circuits  Switching Theory  Logic Gates  Logic Circuits  Early computers relied on many switches to perform the logical operations needed for computation. This was true as late as the 1970's when early personal computers such as the Altair ( ) started to appear. Pioneering computer scientists such as Claude Shannon realized that the operation of these computers could be simplified by making use of an isomorphism between computer circuits and boolean algebra. The term Switching Theory was used at the time. Logical gates realized through increasingly smaller and smaller integrated circuits still perform the same functions as in early computers, but using purely electronic means. In this section, we give examples of some switching circuits. Soon afterward, we will transition to the more modern form of circuits that are studied in Logic Design , where gates replace switches. Our main goal is to give you an overview of how boolean functions correspond to actual computer circuits. We will introduce the common system notation used in logic design and show how it corresponds with the mathematical notation of Boolean algebras. Any computer scientist should be familiar with both systems.   The Altair Computer, an early PC, by Todd Dailey, Creative Commons   Image of an Altair computer from https:\/\/en.wikipedia.org\/wiki\/Altair_8800#\/media\/File:Altair_8800_at_the_Computer_History_Museum,_cropped.jpg at the Computer History Museum    The simplest switching device is the on-off switch. If the switch is closed\/ON, electrical current will pass through it; if it is open\/OFF, current will not pass through it. If we designate ON by 1, and OFF by 0, we can describe electrical circuits containing switches by Boolean expressions with the variables representing the variable states of switches or the variable bits passing through gates.  The electronics involved in these switches take into account whether we are negating a switch or not. For electromagnetic switches, a magnet is used to control whether the switch is open or closed. The magnets themselves may be controlled by simple ON\/OFF switches. There are two types of electromagnetic switches. One is normally open (OFF) when the magnet is not activated, but activating the magnet will close the circuit and the switch is then ON. A separate type of switch corresponds with a negated switch. For that type, the switch is closed (ON) when the magnet is not activated, and when the magnet is activated, the switch opens (turns OFF). We won't be overly concerned with the details of these switches or the electronics corresponding to logical gates. We will simply assume they are available to plug into a circuit. For simplicity, we use the complement symbol on a varible that labels a switch to indicate that it is a switch of the second type, as in .    Representation of a normally OFF switch controlled by variable    Representation of a normally OFF switch     Representation of a normally ON switch controlled by variable    Representation of a normally ON switch     The standard notation used for Boolean algebra operations in switching theory and logic design is for join, instead of ; and for meet, instead of . Complementation is the same in both notational systems, denoted with an overline.  The expression represents the situation in which a series of two switches appears in sequence as in . In order for current to flow through the circuit, both switches must be ON; that is, AND must both have the value 1. Similarly, a pair of parallel switches, as in , is described algebraically by . Here, current flows through this part of the circuit as long as at least one of the switches, OR , is ON.    Two switches in AND configuration realizing    Two switches in AND configuration      Two switches in OR configuration realizing    Two switches in OR configuration     All laws and concepts developed previously for Boolean algebras hold. The only change is purely notational. We make the change in this section solely to introduce the reader to another frequently used system of notation.  Many of the laws of Boolean algebra can be visualized thought switching theory. For example, the distributive law of meet over join is expressed as The switching circuit analogue of the above statement is that the circuits in the two images below are equivalent. In circuit (b), the presence of two 's might represent two electromagnetic switches controlled by the same magnet.    (a)   The first of equivalent switching circuits     (b)   The second of equivalent switching circuits     The circuits in a computer are now composed of large quantities of gates, which serve the same purpose as switches, but can be miniaturized to a great degree. For example, the OR gate, usually drawn as in implements the logical OR function. This happens electronically, but is equivalent to . The AND gate, which is equivalent to two sequential switches is shown in .   An OR gate   An OR gate     An AND gate   An AND gate    The complementation process is represented in a gate diagram by an inverter, as pictured in .   Inverter, or NOT gate   Inverter    When drawing more complex circuits, multiple AND's or OR's are sometimes depicted using a more general gate drawing. For example if we want to depict an OR gate with three inputs that is ON as long as at least one input is ON, we would draw it as in , although this would really be two binary gates, as in . Both diagrams are realizing the boolean expression . Strictly speaking, the gates in represent , but the associative law for join tells us that the grouping doesn't matter.    Simple version of a ternary OR gate   Simple version of a ternary OR gate     A ternary OR gate created with binary OR gates   A ternary OR gate created with binary OR gates     In , we show a few other commonly used gates, XOR, NAND, and NOR, which correspond to the boolean exressions , , and , respectively.          Exercises for Section 12.7   Write the following Boolean expression in the notation of logic design.   Draw the circuit diagram of the expression using only AND, OR, and NOT gates with one or two inputs.        Rewrite the expression from Exercise 1 in two ways: one using only the NOR operation and one using only the NAND operation    Draw a logic circuit using only AND, OR and NOT gates that realizes an XOR gate.    Draw a logic circuit using only AND, OR and NOT gates that realizes the Boolean function on three variables that returns 1 if the majority of inputs are 1 and 0 otherwise.       "
 },
 {
-  "id": "p-4050",
+  "id": "p-3637",
   "level": "2",
-  "url": "s-logic-circuits.html#p-4050",
+  "url": "s-logic-circuits.html#p-3637",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -9901,18 +8965,18 @@ var ptx_lunr_docs = [
   "body": " Rewrite the expression from Exercise 1 in two ways: one using only the NOR operation and one using only the NAND operation  "
 },
 {
-  "id": "exercise-471",
+  "id": "exercise-434",
   "level": "2",
-  "url": "s-logic-circuits.html#exercise-471",
+  "url": "s-logic-circuits.html#exercise-434",
   "type": "Exercise",
   "number": "12.7.3",
   "title": "",
   "body": " Draw a logic circuit using only AND, OR and NOT gates that realizes an XOR gate.  "
 },
 {
-  "id": "exercise-472",
+  "id": "exercise-435",
   "level": "2",
-  "url": "s-logic-circuits.html#exercise-472",
+  "url": "s-logic-circuits.html#exercise-435",
   "type": "Exercise",
   "number": "12.7.4",
   "title": "",
@@ -9955,9 +9019,9 @@ var ptx_lunr_docs = [
   "body": " List the laws of boolean algebra that justify the steps in the simplification of the boolean function in . Some steps use more than one law.      Associative, commutative, and idempotent laws.    Distributive law.    Idempotent and complement laws.    Null and identity laws    Distributive law.    Null and identity laws.     "
 },
 {
-  "id": "exercise-474",
+  "id": "exercise-437",
   "level": "2",
-  "url": "s-circuit-minimization.html#exercise-474",
+  "url": "s-circuit-minimization.html#exercise-437",
   "type": "Exercise",
   "number": "12.8.2",
   "title": "",
@@ -9973,27 +9037,27 @@ var ptx_lunr_docs = [
   "body": " Find a further simplification of the boolean function in , and draw the corresponding gate diagram for the circuit that it realizes.   A simpler boolean expression for the function is .   An even simpler circuit   Figure for exercise 3    "
 },
 {
-  "id": "exercise-476",
+  "id": "exercise-439",
   "level": "2",
-  "url": "s-circuit-minimization.html#exercise-476",
+  "url": "s-circuit-minimization.html#exercise-439",
   "type": "Exercise",
   "number": "12.8.4",
   "title": "",
   "body": " Consider the switching circuit in .   Can this circuit be simplifed?   Figure for exercise 4       Draw the corresponding gate diagram for this circuit.    Construct a table of outputs for each of the eight inputs to this circuit.    Determine the minterm normal of the Boolean function based on the table.    Simplify the circuit as much as possible.     "
 },
 {
-  "id": "exercise-477",
+  "id": "exercise-440",
   "level": "2",
-  "url": "s-circuit-minimization.html#exercise-477",
+  "url": "s-circuit-minimization.html#exercise-440",
   "type": "Exercise",
   "number": "12.8.5",
   "title": "",
   "body": " Consider the circuit in .   Can this circuit be simplifed?   Figure for exercise 3       Trace the inputs though this circuit and determine the Boolean function that it realizes.    Construct a table of outputs for each of the eight inputs to this circuit.    Find the minterm normal form of .    Draw the circuit based on the minterm normal form.    Simplify the circuit algebraically and draw the resulting circuit.     "
 },
 {
-  "id": "exercise-478",
+  "id": "exercise-441",
   "level": "2",
-  "url": "s-circuit-minimization.html#exercise-478",
+  "url": "s-circuit-minimization.html#exercise-441",
   "type": "Exercise",
   "number": "12.8.6",
   "title": "",
@@ -10018,9 +9082,9 @@ var ptx_lunr_docs = [
   "body": " Simple Directed Graph   Graph  Simple Directed   Directed Graph   A simple directed graph consists of a nonempty set of vertices , , and a set of edges , , that is a subset of the set .   "
 },
 {
-  "id": "note-14",
+  "id": "note-6",
   "level": "2",
-  "url": "s-graphs-introduction.html#note-14",
+  "url": "s-graphs-introduction.html#note-6",
   "type": "Note",
   "number": "13.1.2",
   "title": "Some Terminology and Comments.",
@@ -10090,9 +9154,9 @@ var ptx_lunr_docs = [
   "body": " A Labeled Graph  A flowchart is a common example of a simple graph that requires labels for its vertices and some of its edges. is one such example that illustrates how many problems are solved.   A flow chart - an example of a labeled graph   A flow chart - an example of a labeled graph    At the start of the problem-solving process, we are at the vertex labeled Start and at the end (if we are lucky enough to have solved the problem) we will be at the vertex labeled End. The sequence of vertices that we pass through as we move from Start to End is called a path. The Start vertex is called the initial vertex of the path, while the End is called the final, or terminal, vertex. Suppose that the problem is solved after two attempts; then the path that was taken is . An alternate path description would be to list the edges that were used: . This second method of describing a path has the advantage of being applicable for multigraphs. On the graph in , the vertex list does not clearly describe a path between 1 and 3, but is unambiguous.  "
 },
 {
-  "id": "note-15",
+  "id": "note-7",
   "level": "2",
-  "url": "s-graphs-introduction.html#note-15",
+  "url": "s-graphs-introduction.html#note-7",
   "type": "Note",
   "number": "13.1.15",
   "title": "A Summary of Path Notation and Terminology.",
@@ -10234,9 +9298,9 @@ var ptx_lunr_docs = [
   "body": " A graph that shows that is a graphic sequence.   A graph that shows that is a graphic sequence.   "
 },
 {
-  "id": "p-4154",
+  "id": "p-3741",
   "level": "2",
-  "url": "s-graphs-introduction.html#p-4154",
+  "url": "s-graphs-introduction.html#p-3741",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -10252,90 +9316,90 @@ var ptx_lunr_docs = [
   "body": " A Prospectus for the Rest of the Chapter   The question Once you have a graph, what do you do with it? might come to mind. The following list of common questions and comments about graphs is a partial list that will give you an overview of the remainder of the chapter.     How can a graph be represented as a data structure for use on a computer? We will discuss some common data structures that are used to represent graphs in Section 13.2.    Given two vertices in a graph, does there exist a path between them? The existence of a path between any or all pairs of vertices in a graph will be discussed in Section 13.3. A related question is: How many paths of a certain type or length are there between two vertices?    Is there a path (or circuit) that passes through every vertex (or uses every edge) exactly once? Paths of this kind are called traversals. We will discuss traversals in Section 13.4.    Suppose that a cost is associated with the use of each vertex and\/or edge in a path. What is the cheapest path, circuit, or traversal of a given kind? Problems of this kind will be discussed in Section 13.5.    Given the specifications of a graph, or the graph itself, what is the best way to draw the graph? The desire for neatness alone makes this a reasonable question, but there are other motivations. Another goal might be to avoid having edges of the graph cross one another. This is discussed in Section 13.6.    "
 },
 {
-  "id": "exercise-479",
+  "id": "exercise-442",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-479",
+  "url": "s-graphs-introduction.html#exercise-442",
   "type": "Exercise",
   "number": "13.1.5.1",
   "title": "",
   "body": " What is the significance of the fact that there is a path connecting vertex with every other vertex in , as it applies to various situations that it models?   In , computer can communicate with all other computers. In , there are direct roads to and from city to all other cities.  "
 },
 {
-  "id": "exercise-480",
+  "id": "exercise-443",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-480",
+  "url": "s-graphs-introduction.html#exercise-443",
   "type": "Exercise",
   "number": "13.1.5.2",
   "title": "",
   "body": " Using as a starting point, draw a graph that represents the set of strings of 0's and 1's containing no more than two consecutive 1's in any part of the string.  "
 },
 {
-  "id": "exercise-481",
+  "id": "exercise-444",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-481",
+  "url": "s-graphs-introduction.html#exercise-444",
   "type": "Exercise",
   "number": "13.1.5.3",
   "title": "",
   "body": " Draw a directed graph that models the set of strings of 0's and 1's (zero or more of each) where all of the 1's must appear consecutively.    Solution to exercise 3 of Section 13.1   Solution to exercise 3 of Section 13.1    "
 },
 {
-  "id": "exercise-482",
+  "id": "exercise-445",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-482",
+  "url": "s-graphs-introduction.html#exercise-445",
   "type": "Exercise",
   "number": "13.1.5.4",
   "title": "",
   "body": " In the NCAA final-four basketball tournament, the East champion plays the West champion, and the champions from the Mideast and Midwest play. The winners of the two games play for the national championship. Draw the eight different single-elimination tournament graphs that could occur.  "
 },
 {
-  "id": "exercise-483",
+  "id": "exercise-446",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-483",
+  "url": "s-graphs-introduction.html#exercise-446",
   "type": "Exercise",
   "number": "13.1.5.5",
   "title": "",
   "body": " What is the maximum number of edges in an undirected graph with eight vertices?   The maximum number of edges would be .  "
 },
 {
-  "id": "exercise-484",
+  "id": "exercise-447",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-484",
+  "url": "s-graphs-introduction.html#exercise-447",
   "type": "Exercise",
   "number": "13.1.5.6",
   "title": "",
   "body": " Which of the graphs in are isomorphic? What is the correspondence between their vertices?   Which graphs are isomorphic to one another?   Graph for exercise 6 of section 13.1    "
 },
 {
-  "id": "exercise-485",
+  "id": "exercise-448",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-485",
+  "url": "s-graphs-introduction.html#exercise-448",
   "type": "Exercise",
   "number": "13.1.5.7",
   "title": "",
   "body": "    How many edges does a complete tournament graph with vertices have?    How many edges does a single-elimination tournament graph with vertices have?              , each vertex except the champion vertex has an indegree of 1 and the champion vertex has an indegree of zero.     "
 },
 {
-  "id": "exercise-486",
+  "id": "exercise-449",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-486",
+  "url": "s-graphs-introduction.html#exercise-449",
   "type": "Exercise",
   "number": "13.1.5.8",
   "title": "",
   "body": " Draw complete undirected graphs with 1, 2, 3, 4, and 5 vertices. How many edges does a , a complete undirected graph with vertices, have?  "
 },
 {
-  "id": "exercise-487",
+  "id": "exercise-450",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-487",
+  "url": "s-graphs-introduction.html#exercise-450",
   "type": "Exercise",
   "number": "13.1.5.9",
   "title": "",
   "body": " Determine whether the following sequences are graphic. Explain your logic.                                        Not graphic - if the degree of a graph with seven vertices is 6, it is connected to all other vertices and so there cannot be a vertex with degree zero.    Graphic. One graph with this degree sequence is a cycle of length 6.    Not Graphic. The number of vertices with odd degree is odd, which is impossible.    Graphic. A \"wheel graph\" with one vertex connected to all other and the others connected to one another in a cycle has this degree sequence.    Graphic. Pairs of vertices connected only to one another.    Not Graphic. With two vertices having maximal degree, 5, every vertex would need to have a degree of 2 or more, so the 1 in this sequence makes it non-graphic.     "
 },
 {
-  "id": "exercise-488",
+  "id": "exercise-451",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-488",
+  "url": "s-graphs-introduction.html#exercise-451",
   "type": "Exercise",
   "number": "13.1.5.10",
   "title": "",
@@ -10369,9 +9433,9 @@ var ptx_lunr_docs = [
   "body": " Data Structures for Graphs   Graph  Data Structures    In this section, we will describe data structures that are commonly used to represent graphs. In addition we will introduce the basic syntax for graphs in Sage.    Basic Data Structures   Data Structures for Graphs   Assume that we have a graph with vertices that can be indexed by the integers . Here are three different data structures that can be employed to represent graphs.     Adjacency Matrix: As we saw in Chapter 6, the information about edges in a graph can be summarized with an adjacency matrix, , where if and only if vertex is connected to vertex in the graph. Note that this is the same as the adjacency matrix for a relation.    Edge Dictionary: For each vertex in our graph, we maintain a list of edges that initiate at that vertex. If represents the graph's edge information, then we denote by the list of vertices that are terminal vertices of edges initiating at vertex . The exact syntax that would be used can vary. We will use Sage\/Python syntax in our examples.    Edge List: Note that in creating either of the first two data structures, we would presume that a list of edges for the graph exists. A simple way to represent the edges is to maintain this list of ordered pairs, or two element sets, depending on whether the graph is intended to be directed or undirected. We will not work with this data structure here, other than in the first example.      A Very Small Example  We consider the representation of the following graph:   Graph for a Very Small Example   Example Graph to illustrate data structures    The adjacency matrix that represents the graph would be .  The same graph could be represented with the edge dictionary    {1:[2,4],2:[3,4],3:[3],4:[1]} .   Notice the general form of each item in the dictionary: vertex:[list of vertices] .  Finally, a list of edges [(1,2),(1,4),(2,3),(2,4),(3,3),(4,1)] also describes the same graph.   A natural question to ask is: Which data structure should be used in a given situation? For small graphs, it really doesn't make much difference. For larger matrices the edge count would be a consideration. If is large and the number of edges is relatively small, it might use less memory to maintain an edge dictionary or list of edges instead of building an matrix. Some software for working with graphs will make the decision for you.   NCAA Basketball  Consider the tournament graph representing a NCAA Division 1 men's (or women's) college basketball season in the United States. There are approximately 350 teams in Division 1. Suppose we constructed the graph with an edge from team A to team B if A beat B at least once in the season; and we label the edge with the number of wins. Since the average team plays around 30 games in a season, most of which will be against other Division I teams, we could expect around edges in the graph. This would be somewhat reduced by games with lower division teams and cases where two or more wins over the same team produces one edge. Since 5,250 is much smaller than entries in an adjacency matrix, an edge dictionary or edge list would be more compact than an adjacency matrix. Even if we were to use software to create an adjacency matrix, many programs will identify the fact that a matrix such as the one in this example would be sparse and would leave data in list form and use sparse array methods to work with it.     Sage Graphs   SageMath Note  Graphs   The most common way to define a graph in Sage is to use an edge dictionary. Here is how the graph in is generated and then displayed. Notice that we simply wrap the function DiGraph() around the same dictionary expression we identified earlier.   You can get the adjacency matrix of a graph with the adjacency_matrix method.   You can also define a graph based on its adjacency matrix.   The edge list of any directed graph can be easily retrieved. If you replace edges with edge_iterator , you can iterate through the edge list. The third coordinate of the items in the edge is the label of the edge, which is None in this case.   Replacing the wrapper DiGraph() with Graph() creates an undirected graph.   There are many special graphs and graph families that are available in Sage through the graphs module. They are referenced with the prefix graphs. followed by the name and zero or more paramenters inside parentheses. Here are a couple of them, first a complete graph with five vertices.   Here is a wheel graph, named for an obvious pattern of vertices and edges. We assign a name to it first and then show the graph without labeling the vertices.   There are dozens of graph methods, one of which determines the degree sequence of a graph. In this case, it's the wheel graph above.   The degree sequence method is defined within the graphs module, but the prefix graphs. is not needed because the value of w inherits the graphs methods.    Exercises   Estimate the number of vertices and edges in each of the following graphs. Would the graph be considered sparse, so that an adjacency matrix would be inefficient?     Vertices: Cities of the world that are served by at least one airline. Edges: Pairs of cities that are connected by a regular direct flight.    Vertices: ASCII characters. Edges: connect characters that differ in their binary code by exactly two bits.    Vertices: All English words. Edges: An edge connects word to word if is a prefix of .         A rough estimate of the number of vertices in the world airline graph would be the number of cities with population greater than or equal to 100,000. This is estimated to be around 4,100. There are many smaller cities that have airports, but some of the metropolitan areas with clusters of large cities are served by only a few airports. 4,000-5,000 is probably a good guess. As for edges, that's a bit more difficult to estimate. It's certainly not a complete graph. Looking at some medium sized airports such as Manchester, NH, the average number of cities that you can go to directly is in the 50-100 range. So a very rough estimate would be . This is far less than , so an edge list or dictionary of some kind would be more efficient.    The number of ASCII characters is 128. Each character would be connected to others and so there are edges. Comparing this to the , an array is probably the best choice.    The Oxford English Dictionary as approximately a half-million words, although many are obsolete. The number of edges is probably of the same order of magnitude as the number of words, so an edge list or dictionary is probably the best choice.       Each edge of a graph is colored with one of the four colors red, blue, yellow, or green. How could you represent the edges in this graph using a variation of the adjacency matrix structure?    Directed graphs , each with vertex set are represented by the matrices below. Which graphs are isomorphic to one another?               Each graph is isomorphic to itself. In addition, are isomorphic; and are isomorphic to one another.    The following Sage command verifies that the wheel graph with four vertices is isomorphic to the complete graph with four vertices.   A list of all graphs in this the graphs database is available via tab completion. Type \"graphs.\" and then hit the tab key to see which graphs are available. This can be done using the Sage application or SageMathCloud, but not sage cells. Find some other pairs of isomorphic graphs in the database.    "
 },
 {
-  "id": "list-5",
+  "id": "list-4",
   "level": "2",
-  "url": "s-data-structures-for-graphs.html#list-5",
+  "url": "s-data-structures-for-graphs.html#list-4",
   "type": "List",
   "number": "13.2.1",
   "title": "Data Structures for Graphs",
@@ -10396,36 +9460,36 @@ var ptx_lunr_docs = [
   "body": " NCAA Basketball  Consider the tournament graph representing a NCAA Division 1 men's (or women's) college basketball season in the United States. There are approximately 350 teams in Division 1. Suppose we constructed the graph with an edge from team A to team B if A beat B at least once in the season; and we label the edge with the number of wins. Since the average team plays around 30 games in a season, most of which will be against other Division I teams, we could expect around edges in the graph. This would be somewhat reduced by games with lower division teams and cases where two or more wins over the same team produces one edge. Since 5,250 is much smaller than entries in an adjacency matrix, an edge dictionary or edge list would be more compact than an adjacency matrix. Even if we were to use software to create an adjacency matrix, many programs will identify the fact that a matrix such as the one in this example would be sparse and would leave data in list form and use sparse array methods to work with it.  "
 },
 {
-  "id": "exercise-491",
+  "id": "exercise-454",
   "level": "2",
-  "url": "s-data-structures-for-graphs.html#exercise-491",
+  "url": "s-data-structures-for-graphs.html#exercise-454",
   "type": "Exercise",
   "number": "13.2.3.1",
   "title": "",
   "body": " Estimate the number of vertices and edges in each of the following graphs. Would the graph be considered sparse, so that an adjacency matrix would be inefficient?     Vertices: Cities of the world that are served by at least one airline. Edges: Pairs of cities that are connected by a regular direct flight.    Vertices: ASCII characters. Edges: connect characters that differ in their binary code by exactly two bits.    Vertices: All English words. Edges: An edge connects word to word if is a prefix of .         A rough estimate of the number of vertices in the world airline graph would be the number of cities with population greater than or equal to 100,000. This is estimated to be around 4,100. There are many smaller cities that have airports, but some of the metropolitan areas with clusters of large cities are served by only a few airports. 4,000-5,000 is probably a good guess. As for edges, that's a bit more difficult to estimate. It's certainly not a complete graph. Looking at some medium sized airports such as Manchester, NH, the average number of cities that you can go to directly is in the 50-100 range. So a very rough estimate would be . This is far less than , so an edge list or dictionary of some kind would be more efficient.    The number of ASCII characters is 128. Each character would be connected to others and so there are edges. Comparing this to the , an array is probably the best choice.    The Oxford English Dictionary as approximately a half-million words, although many are obsolete. The number of edges is probably of the same order of magnitude as the number of words, so an edge list or dictionary is probably the best choice.     "
 },
 {
-  "id": "exercise-492",
+  "id": "exercise-455",
   "level": "2",
-  "url": "s-data-structures-for-graphs.html#exercise-492",
+  "url": "s-data-structures-for-graphs.html#exercise-455",
   "type": "Exercise",
   "number": "13.2.3.2",
   "title": "",
   "body": " Each edge of a graph is colored with one of the four colors red, blue, yellow, or green. How could you represent the edges in this graph using a variation of the adjacency matrix structure?  "
 },
 {
-  "id": "exercise-493",
+  "id": "exercise-456",
   "level": "2",
-  "url": "s-data-structures-for-graphs.html#exercise-493",
+  "url": "s-data-structures-for-graphs.html#exercise-456",
   "type": "Exercise",
   "number": "13.2.3.3",
   "title": "",
   "body": " Directed graphs , each with vertex set are represented by the matrices below. Which graphs are isomorphic to one another?               Each graph is isomorphic to itself. In addition, are isomorphic; and are isomorphic to one another.  "
 },
 {
-  "id": "exercise-494",
+  "id": "exercise-457",
   "level": "2",
-  "url": "s-data-structures-for-graphs.html#exercise-494",
+  "url": "s-data-structures-for-graphs.html#exercise-457",
   "type": "Exercise",
   "number": "13.2.3.4",
   "title": "",
@@ -10441,9 +9505,9 @@ var ptx_lunr_docs = [
   "body": " Connectivity  Connectivity in Graphs    This section is devoted to a question that, when posed in relation to the graphs that we have examined, seems trivial. That question is: Given two vertices, and , of a graph, is there a path from to ? If , this question is interpreted as asking whether there is a circuit of positive length starting at . Of course, for the graphs we have seen up to now, this question can be answered after a brief examination.    Preliminaries  There are two situations under which a question of this kind is nontrivial. One is where the graph is very large and an examination of the graph could take a considerable amount of time. Anyone who has tried to solve a maze may have run into a similar problem. The second interesting situation is when we want to pose the question to a machine. If only the information on the edges between the vertices is part of the data structure for the graph, how can you put that information together to determine whether two vertices can be connected by a path?   Connectivity Terminology  Let and be vertices of a directed graph. Vertex is connected to vertex if there is a path from to . Two vertices are strongly connected if they are connected in both directions to one another. A graph is connected if, for each pair of distinct vertices, and , is connected to or is connected to . A graph is strongly connected if every pair of its vertices is strongly connected. For an undirected graph, in which edges can be used in either direction, the notions of strongly connected and connected are the same.    Maximal Path Theorem   If a graph has vertices and vertex is connected to vertex , then there exists a path from to of length no more than .    (Indirect): Suppose is connected to , but the shortest path from to has length , where . A vertex list for a path of length will have vertices. This path can be represented as , where and . Note that since there are only vertices in the graph and vertices are listed in the path after , we can apply the pigeonhole principle and be assured that there must be some duplication in the last vertices of the vertex list, which represents a circuit in the path. This means that our path of minimum length can be reduced, which is a contradiction.      Adjacency Matrix Method  Adjacency Matrix Method   Adjacency Matrix Method   Suppose that the information about edges in a graph is stored in an adjacency matrix, . The relation, , that defines is if there is an edge connecting to . Recall that the composition of with itself, , is defined by if there exists a vertex such that and ; that is, is connected to by a path of length 2. We could prove by induction that the relation , , is defined by if and only if there is a path of length from to . Since the transitive closure, , is the union of ,  , we can answer our connectivity question by determining the transitive closure of , which can be done most easily by keeping our relation in matrix form. is significant in our calculations because it tells us that we need only go as far as to determine the matrix of the transitive closure.    The main advantage of the adjacency matrix method is that the transitive closure matrix can answer all questions about the existence of paths between any vertices. If is the matrix of the transitive closure, is connected to if and only if . A directed graph is connected if or for each . A directed graph is strongly connected if its transitive closure matrix has no zeros.  A disadvantage of the adjacency matrix method is that the transitive closure matrix tells us whether a path exists, but not what the path is. The next algorithm will solve this problem.    Breadth-First Search  Breadth-First Search  We will describe the Breadth-First Search Algorithm first with an example.  The football team at Mediocre State University (MSU) has had a bad year, 2 wins and 9 losses. Thirty days after the end of the football season, the university trustees are meeting to decide whether to rehire the head coach; things look bad for him. However, on the day of the meeting, the coach issues the following press release with results from the past year:   Press Release: MSU complete successful season   The Mediocre State University football team compared favorably with national champion Enormous State University this season.     Mediocre State defeated Local A and M.    Local A and M defeated City College.    City College defeated Corn State U.    ... (25 results later)    Tough Tech defeated Enormous State University (ESU).     ...and ESU went on to win the national championship!    The trustees were so impressed that they rehired the coach with a raise! How did the coach come up with such a list?  In reality, such lists exist occasionally and have appeared in newspapers from time to time. Of course they really don't prove anything since each team that defeated MSU in our example above can produce a similar, shorter chain of results. Since college football records are readily available, the coach could have found this list by trial and error. All that he needed to start with was that his team won at least one game. Since ESU lost one game, there was some hope of producing the chain.  The problem of finding this list is equivalent to finding a path in the tournament graph for last year's football season that initiates at MSU and ends at ESU. Such a graph is far from complete and is likely to be represented using edge lists. To make the coach's problem interesting, let's imagine that only the winner of any game remembers the result of the game. The coach's problem has now taken on the flavor of a maze. To reach ESU, he must communicate with the various teams along the path. One way that the coach could have discovered his list in time is by sending the following messages to the coaches of the two teams that MSU defeated during the season:   When this example was first written, we commented that ties should be ignored. Most recent NCAA rules call for a tiebreaker in college football and so ties are no longer an issue. Email was also not common and we described the process in terms of letter, not email messages. Another change is that the coach could also have asked the MSU math department to use Mathematica or Sage to find the path!    The Coach's Letter   Dear Football Coach:  Please follow these directions exactly.     If you are the coach at ESU, contact the coach at MSU now and tell him who sent you this message.    If you are not the coach at ESU and this is the first message of this type that you have received, then:     Remember from whom you received this message.    Forward a copy of this message, signed by you, to each of the coaches whose teams you defeated during the past year.    Ignore this message if you have received one like it already.        Signed,  Coach of MSU     Observations   From the conditions of this message, it should be clear that if everyone cooperates and if coaches participate within a day of receiving the message:     If a path of length exists from MSU to ESU, then the coach will know about it in days.    By making a series of phone calls, the coach can construct a path that he wants by first calling the coach who defeated ESU (the person who sent ESU's coach that message). This coach will know who sent him a letter, and so on. Therefore, the vertex list of the desired path is constructed in reverse order.    If a total of football games were played, no more than messages will be sent out.    If a day passes without any message being sent out, no path from MSU to ESU exists.    This method could be extended to construct a list of all teams that a given team can be connected to. Simply imagine a series of letters like the one above sent by each football coach and targeted at every other coach.     The general problem of finding a path between two vertices in a graph, if one exists, can be solved exactly as we solved the problem above. The following algorithm, commonly called a breadth-first search, uses a stack.   Stacks  A stack is a fundamental data structure in computer science. A common analogy used to describe stacks is of a stack of plates. If you put a plate on the top of a stack and then want to use a plate, it's natural to use that top plate. So the last plate in is the first plate out. Last in, first out is the short description of the rule for stacks. This is contrast with a queue which uses a First in, first out rule.    Breadth-first Search  Breadth-first Search   A broadcasting algorithm for finding a path between vertex and vertex of a graph having vertices. Each item of a list , consists of a Boolean field and an integer field . The sets , , called depth sets, have the property that if , then the shortest path from vertex to vertex is of length . In Step 5, a stack is used to put the vertex list for the path from the vertex to vertex in the proper order. That stack is the output of the algorithm.     Set the value equal to False,              while ) and          for each k in :  for each edge (k,t):  If == False:                        if :               while :  Push onto        Push onto    Push onto           Notes on Breadth-first Search    This algorithm will produce one path from vertex to vertex , if one exists, and that path will be as short as possible. If more than one path of this length exists, then the one that is produced depends on the order in which the edges are examined and the order in which the elements of are examined in Step 4.    The condition is analogous to the condition that no mail is sent in a given stage of the process, in which case MSU cannot be connected to ESU.    This algorithm can be easily revised to find paths to all vertices that can be reached from vertex . Step 5 would be put off until a specific path to a vertex is needed since the information in contains an efficient list of all paths. The algorithm can also be extended further to find paths between any two vertices.      A simple example  Consider the graph below. The existence of a path from vertex 2 to vertex 3 is not difficult to determine by examination. After a few seconds, you should be able to find two paths of length four. will produce one of them.   A simple example of breadth-first search   Example Graph for breadth-first search    Suppose that the edges from each vertex are sorted in ascending order by terminal vertex. For example, the edges from vertex 3 would be in the order . In addition, assume that in the body of Step 4 of the algorithm, the elements of are used in ascending order. Then at the end of Step 4, the value of will be Therefore, the path is produced by the algorithm. Note that if we wanted a path from 2 to 5, the information in produces the path (2, 1, 5) since and . A shortest circuit that initiates at vertex 2 is also available by noting that , , and ; thus the circuit is the output of the algorithm.     SageMath Note - Graph Searching   SageMath Note  Search in a Graph   The following sequence of Sage cells illustrates how searching can be done in graphs.  Generate a random undirected graph with 18 vertices. For each pair of vertices, an edge is included between them with probability 0.2. Since there are potential edges, we expect that there will be approximately edges. The random number generation is seeded first so that the result will always be the same in spite of the random graph function. Changing or removing that first line will let you experiment with different graphs.   Count the number of edges. In this case the number is a bit less than expected.   Find a shortest path from vertex 0 to vertex 8.   Generate a list of vertices that would be reached in a breadth-first search. The expression Gr.breadth_first_search(0) creates an iterator that is convenient for programming. Wrapping list( ) around the expression shows the order in which the vertices are visited with the depth set indicated in the second coordinates.   Generate a list of vertices that would be reached in a depth-first search. In this type of search you travel in one direction away from the starting point until no further new vertices can be reached. We will discuss this search later.     Exercises   Apply to find a path from 5 to 1 in . What would be the final value of ? Assume that the terminal vertices in edge lists and elements of the depth sets are put into ascending order, as we assumed in .         Apply to find a path from to in the road graph in using the edge list in that example. Assume that the elements of the depth sets are put into ascending order.    In a simple undirected graph with no self-loops, what is the maximum number of edges you can have, keeping the graph unconnected? What is the minimum number of edges that will assure that the graph is connected?   If the number of vertices is , there can be vertices with one vertex not connected to any of the others. One more edge and connectivity is assured.    Use a broadcasting algorithm to determine the shortest path from vertex to vertex in the graphs shown in the below. List the depth sets and the stack that is created.   Shortest paths from to ?   Graphs for exercise 13-3-4      Prove (by induction on ) that if the relation on vertices of a graph is defined by if there is an edge connecting to , then , , is defined by if there is a path of length from to .   Basis: Is the relation , defined by if there is a path of length 1 from ? Yes, since if and only if an edge, which is a path of length , connects to .  Induction: Assume that if and only if there is a path of length from to . We must show that if and only if there is a path of length from to .  By the induction hypothesis, there is a path of length from . And by the basis, there is a path of length one from to . If we combine these two paths, we obtain a path of length from to . Of course, if we start with a path of length from to , we have a path of length from to some vertex and a path of length 1 from to . Therefore, .    "
 },
 {
-  "id": "note-16",
+  "id": "note-8",
   "level": "2",
-  "url": "s-Connectivity.html#note-16",
+  "url": "s-Connectivity.html#note-8",
   "type": "Note",
   "number": "13.3.1",
   "title": "Connectivity Terminology.",
@@ -10459,45 +9523,45 @@ var ptx_lunr_docs = [
   "body": " Maximal Path Theorem   If a graph has vertices and vertex is connected to vertex , then there exists a path from to of length no more than .    (Indirect): Suppose is connected to , but the shortest path from to has length , where . A vertex list for a path of length will have vertices. This path can be represented as , where and . Note that since there are only vertices in the graph and vertices are listed in the path after , we can apply the pigeonhole principle and be assured that there must be some duplication in the last vertices of the vertex list, which represents a circuit in the path. This means that our path of minimum length can be reduced, which is a contradiction.   "
 },
 {
-  "id": "algorithm-23",
+  "id": "algorithm-24",
   "level": "2",
-  "url": "s-Connectivity.html#algorithm-23",
+  "url": "s-Connectivity.html#algorithm-24",
   "type": "Algorithm",
   "number": "13.3.3",
   "title": "Adjacency Matrix Method.",
   "body": " Adjacency Matrix Method   Suppose that the information about edges in a graph is stored in an adjacency matrix, . The relation, , that defines is if there is an edge connecting to . Recall that the composition of with itself, , is defined by if there exists a vertex such that and ; that is, is connected to by a path of length 2. We could prove by induction that the relation , , is defined by if and only if there is a path of length from to . Since the transitive closure, , is the union of ,  , we can answer our connectivity question by determining the transitive closure of , which can be done most easily by keeping our relation in matrix form. is significant in our calculations because it tells us that we need only go as far as to determine the matrix of the transitive closure.   "
 },
 {
-  "id": "list-6",
+  "id": "list-5",
   "level": "2",
-  "url": "s-Connectivity.html#list-6",
+  "url": "s-Connectivity.html#list-5",
   "type": "List",
   "number": "13.3.4",
   "title": "Press Release: MSU complete successful season",
   "body": " Press Release: MSU complete successful season   The Mediocre State University football team compared favorably with national champion Enormous State University this season.     Mediocre State defeated Local A and M.    Local A and M defeated City College.    City College defeated Corn State U.    ... (25 results later)    Tough Tech defeated Enormous State University (ESU).     ...and ESU went on to win the national championship!   "
 },
 {
-  "id": "note-17",
+  "id": "note-9",
   "level": "2",
-  "url": "s-Connectivity.html#note-17",
+  "url": "s-Connectivity.html#note-9",
   "type": "Note",
   "number": "13.3.5",
   "title": "",
   "body": " When this example was first written, we commented that ties should be ignored. Most recent NCAA rules call for a tiebreaker in college football and so ties are no longer an issue. Email was also not common and we described the process in terms of letter, not email messages. Another change is that the coach could also have asked the MSU math department to use Mathematica or Sage to find the path!  "
 },
 {
-  "id": "list-7",
+  "id": "list-6",
   "level": "2",
-  "url": "s-Connectivity.html#list-7",
+  "url": "s-Connectivity.html#list-6",
   "type": "List",
   "number": "13.3.6",
-  "title": "The Coach's Letter",
+  "title": "The Coach’s Letter",
   "body": " The Coach's Letter   Dear Football Coach:  Please follow these directions exactly.     If you are the coach at ESU, contact the coach at MSU now and tell him who sent you this message.    If you are not the coach at ESU and this is the first message of this type that you have received, then:     Remember from whom you received this message.    Forward a copy of this message, signed by you, to each of the coaches whose teams you defeated during the past year.    Ignore this message if you have received one like it already.        Signed,  Coach of MSU   "
 },
 {
-  "id": "list-8",
+  "id": "list-7",
   "level": "2",
-  "url": "s-Connectivity.html#list-8",
+  "url": "s-Connectivity.html#list-7",
   "type": "List",
   "number": "13.3.7",
   "title": "Observations",
@@ -10513,9 +9577,9 @@ var ptx_lunr_docs = [
   "body": " Breadth-first Search  Breadth-first Search   A broadcasting algorithm for finding a path between vertex and vertex of a graph having vertices. Each item of a list , consists of a Boolean field and an integer field . The sets , , called depth sets, have the property that if , then the shortest path from vertex to vertex is of length . In Step 5, a stack is used to put the vertex list for the path from the vertex to vertex in the proper order. That stack is the output of the algorithm.     Set the value equal to False,              while ) and          for each k in :  for each edge (k,t):  If == False:                        if :               while :  Push onto        Push onto    Push onto         "
 },
 {
-  "id": "list-9",
+  "id": "list-8",
   "level": "2",
-  "url": "s-Connectivity.html#list-9",
+  "url": "s-Connectivity.html#list-8",
   "type": "List",
   "number": "13.3.9",
   "title": "Notes on Breadth-first Search",
@@ -10531,45 +9595,45 @@ var ptx_lunr_docs = [
   "body": " A simple example  Consider the graph below. The existence of a path from vertex 2 to vertex 3 is not difficult to determine by examination. After a few seconds, you should be able to find two paths of length four. will produce one of them.   A simple example of breadth-first search   Example Graph for breadth-first search    Suppose that the edges from each vertex are sorted in ascending order by terminal vertex. For example, the edges from vertex 3 would be in the order . In addition, assume that in the body of Step 4 of the algorithm, the elements of are used in ascending order. Then at the end of Step 4, the value of will be Therefore, the path is produced by the algorithm. Note that if we wanted a path from 2 to 5, the information in produces the path (2, 1, 5) since and . A shortest circuit that initiates at vertex 2 is also available by noting that , , and ; thus the circuit is the output of the algorithm.  "
 },
 {
-  "id": "exercise-495",
+  "id": "exercise-458",
   "level": "2",
-  "url": "s-Connectivity.html#exercise-495",
+  "url": "s-Connectivity.html#exercise-458",
   "type": "Exercise",
   "number": "13.3.5.1",
   "title": "",
   "body": " Apply to find a path from 5 to 1 in . What would be the final value of ? Assume that the terminal vertices in edge lists and elements of the depth sets are put into ascending order, as we assumed in .       "
 },
 {
-  "id": "exercise-496",
+  "id": "exercise-459",
   "level": "2",
-  "url": "s-Connectivity.html#exercise-496",
+  "url": "s-Connectivity.html#exercise-459",
   "type": "Exercise",
   "number": "13.3.5.2",
   "title": "",
   "body": " Apply to find a path from to in the road graph in using the edge list in that example. Assume that the elements of the depth sets are put into ascending order.  "
 },
 {
-  "id": "exercise-497",
+  "id": "exercise-460",
   "level": "2",
-  "url": "s-Connectivity.html#exercise-497",
+  "url": "s-Connectivity.html#exercise-460",
   "type": "Exercise",
   "number": "13.3.5.3",
   "title": "",
   "body": " In a simple undirected graph with no self-loops, what is the maximum number of edges you can have, keeping the graph unconnected? What is the minimum number of edges that will assure that the graph is connected?   If the number of vertices is , there can be vertices with one vertex not connected to any of the others. One more edge and connectivity is assured.  "
 },
 {
-  "id": "exercise-498",
+  "id": "exercise-461",
   "level": "2",
-  "url": "s-Connectivity.html#exercise-498",
+  "url": "s-Connectivity.html#exercise-461",
   "type": "Exercise",
   "number": "13.3.5.4",
   "title": "",
   "body": " Use a broadcasting algorithm to determine the shortest path from vertex to vertex in the graphs shown in the below. List the depth sets and the stack that is created.   Shortest paths from to ?   Graphs for exercise 13-3-4    "
 },
 {
-  "id": "exercise-499",
+  "id": "exercise-462",
   "level": "2",
-  "url": "s-Connectivity.html#exercise-499",
+  "url": "s-Connectivity.html#exercise-462",
   "type": "Exercise",
   "number": "13.3.5.5",
   "title": "",
@@ -10608,7 +9672,7 @@ var ptx_lunr_docs = [
   "url": "s-traversals.html#th-euler-theorem-koenigsberg-case",
   "type": "Theorem",
   "number": "13.4.3",
-  "title": "Euler's Theorem: Koenigsberg Case.",
+  "title": "Euler’s Theorem: Koenigsberg Case.",
   "body": " Euler's Theorem: Koenigsberg Case   Euler's Theorem  Koenigsberg Case    No walking tour of Koenigsberg can be designed so that each bridge is used exactly once.    The map of Koenigsberg can be represented as an undirected multigraph, as in . The four land masses are the vertices and each edge represents a bridge.  The desired tour is then a path that uses each edge once and only once. Since the path can start and end at two different vertices, there are two remaining vertices that must be intermediate vertices in the path. If is an intermediate vertex, then every time that you visit , you must use two of its incident edges, one to enter and one to exit. Therefore, there must be an even number of edges connecting to the other vertices. Since every vertex in the Koenigsberg graph has an odd number of edges, no tour of the type that is desired is possible.   "
 },
 {
@@ -10635,7 +9699,7 @@ var ptx_lunr_docs = [
   "url": "s-traversals.html#theorem-euler-theorem-general",
   "type": "Theorem",
   "number": "13.4.7",
-  "title": "Euler's Theorem: General Case.",
+  "title": "Euler’s Theorem: General Case.",
   "body": " Euler's Theorem: General Case  Euler's Theorem   An undirected graph has an Eulerian path if and only if it is connected and has either zero or two vertices with an odd degree. If no vertex has an odd degree, then the graph is Eulerian.    It can be proven by induction that the number of vertices in an undirected graph that have an odd degree must be even. We will leave the proof of this fact to the reader as an exercise. The necessity of having either zero or two vertices of odd degree is clear from the proof of the Koenigsberg case of this theorem. Therefore, we will concentrate on proving that this condition is sufficient to ensure that a graph has an Eulerian path. Let be the number of vertices with odd degree.  Phase 1. If , start at any vertex, , and travel along any path, not using any edge twice. Since each vertex has an even degree, this path can always be continued past each vertex that you reach except . The result is a circuit that includes . If , let be either one of the vertices of odd degree. Trace any path starting at using up edges until you can go no further, as in the case. This time, the path that you obtain must end at the other vertex of odd degree that we will call . At the end of Phase 1, we have an initial path that may or may not be Eulerian. If it is not Eulerian, Phase 2 can be repeated until all of the edges have been used. Since the number of unused edges is decreased in any use of Phase 2, an Eulerian path must be obtained in a finite number of steps.  Phase 2. As we enter this phase, we have constructed a path that uses a proper subset of the edges in our graph. We will refer to this path as the current path. Let be the vertices of our graph, the edges, and the edges that have been used in the current path. Consider the graph . Note that every vertex in has an even degree. Select any edge, , from Let and be the vertices that connects. Trace a new path starting at whose first edge is . We can be sure that at least one vertex of the new path is also in the current path since is connected. Starting at , there exists a path in to any vertex in the current path. At some point along this path, which we can consider the start of the new path, we will have intersected the current path. Since the degree of each vertex in is even, any path that we start at can be continued until it is a circuit. Now, we simply augment the current path with this circuit. As we travel along the current path, the first time that we intersect the new path, we travel along it (see ). Once we complete the circuit that is the new path, we resume the traversal of the current path.   Path Augmentation Plan   Path Augmentation Plan    If the result of this phase is an Eulerian path, then we are finished; otherwise, repeat this phase.   "
 },
 {
@@ -10684,9 +9748,9 @@ var ptx_lunr_docs = [
   "body": " Unfortunately, a simple condition doesn't exist that characterizes a Hamiltonian graph. An obvious necessary condition is that the graph be connected; however, there is a connected undirected graph with four vertices that is not Hamiltonian. Can you draw such a graph?  "
 },
 {
-  "id": "note-18",
+  "id": "note-10",
   "level": "2",
-  "url": "s-traversals.html#note-18",
+  "url": "s-traversals.html#note-10",
   "type": "Note",
   "number": "13.4.16",
   "title": "What Is Possible and What Is Impossible?",
@@ -10711,108 +9775,108 @@ var ptx_lunr_docs = [
   "body": " Analog-to-digital Conversion and the Gray Code  Analog-to-digital Conversion  A common problem encountered in engineering is that of analog-to-digital (a-d) conversion, where the reading on a dial, for example, must be converted to a numerical value. In order for this conversion to be done reliably and quickly, one must solve an interesting problem in graph theory. Before this problem is posed, we will make the connection between a-d conversion and the graph problem using a simple example. Suppose a dial can be turned in any direction, and that the positions will be converted to one of the numbers zero through seven as depicted in . The angles from 0 to 360 are divided into eight equal parts, and each part is assigned a number starting with 0 and increasing clockwise. If the dial points in any of these sectors the conversion is to the number of that sector. If the dial is on the boundary, then we will be satisfied with the conversion to either of the numbers in the bordering sectors. This conversion can be thought of as giving an approximate angle of the dial, for if the dial is in sector , then the angle that the dial makes with east is approximately .   Analog-Digital Dial   Analog-Digital Dial    Now that the desired conversion has been identified, we will describe a solution that has one major error in it, and then identify how this problem can be rectified. All digital computers represent numbers in binary form, as a sequence of 0's and 1's called bits, short for binary digits. The binary representations of numbers 0 through 7 are:   The way that we could send those bits to a computer is by coating parts of the back of the dial with a metallic substance, as in . For each of the three concentric circles on the dial there is a small magnet. If a magnet lies under a part of the dial that has been coated with metal, then it will turn a switch ON, whereas the switch stays OFF when no metal is detected above a magnet. Notice how every ON\/OFF combination of the three switches is possible given the way the back of the dial is coated.  If the dial is placed so that the magnets are in the middle of a sector, we expect this method to work well. There is a problem on certain boundaries, however. If the dial is turned so that the magnets are between sectors three and four, for example, then it is unclear what the result will be. This is due to the fact that each magnet will have only a fraction of the required metal above it to turn its switch ON. Due to expected irregularities in the coating of the dial, we can be safe in saying that for each switch either ON or OFF could be the result, and so if the dial is between sectors three and four, any number could be indicated. This problem does not occur between every sector. For example, between sectors 0 and 1, there is only one switch that cannot be predicted. No matter what the outcome is for the units switch in this case, the indicated sector must be either 0 or 1. This consistent with the original objective that a positioning of the dial on a boundary of two sectors should produce the number of either sector.   Coating scheme for the Analog-Digital Dial   Analog-Digital Dial    Is there a way to coat the sectors on the back of the dial so that each of the eight patterns corresponding to the numbers 0 to 7 appears once, and so that between any two adjacent sectors there is only one switch that will have a questionable setting? What we are describing here is a Hamiltonian circuit of the ( ). If one can draw a path along the edges in the 3-cube that starts at any vertex, passes through every other vertex once, and returns to the start, then that sequence of bit patterns can be used to coat the back of the dial so that between every sector there is only one questionable switch. Such a path is not difficult to find, as we will see below.   The 3-cube   The 3-cube    Many A-D conversion problems require many more sectors and switches than this example, and the same kinds of problems can occur. The solution would be to find a path within a much larger yet similar graph. For example, there might be 1,024 sectors with 10 switches, resulting in a graph with 1,024 vertices. Fortunately, our solution will apply to the -cube for any positive value of .  A Hamiltonian circuit of the -cube can be described recursively. The circuit itself, called the Gray Code, is not the only Hamiltonian circuit of the -cube, but it is the easiest to describe. The standard way to write the Gray Code is as a column of strings, where the last string is followed by the first string to complete the circuit.  Basis for the Gray Code ( ): The Gray Code for the 1-cube is . Note that the edge between 0 and 1 is used twice in this circuit. That doesn't violate any rules for Hamiltonian circuits, but can only happen if a graph has two vertices.  Recursive definition of the Gray Code: Given the Gray Code for the -cube, , then is obtained by (1) listing with each string prefixed with 0, and then (2) reversing the list of strings in with each string prefixed with 1. Symbolically, the recursion can be expressed as follows, where is the reverse of list .   The Gray Codes for the 2-cube and 3-cube are   One question might come to mind at this point. If the coatings of the dial no longer in the sequence from 0 to 7, how would you interpret the patterns that are on the back of the dial as numbers from 0 to 7? In Chapter 14 we will see that if the Gray Code is used, this decoding is quite easy.  "
 },
 {
-  "id": "example-212",
+  "id": "example-206",
   "level": "2",
-  "url": "s-traversals.html#example-212",
+  "url": "s-traversals.html#example-206",
   "type": "Example",
   "number": "13.4.22",
   "title": "Applications of the Gray Code.",
   "body": " Applications of the Gray Code  One application of the Gray code was discussed in the Introduction to this book. Another application is in statistics. In a statistical analysis, there is often a variable that depends on several factors, but exactly which factors are significant may not be obvious. For each subset of factors, there would be certain quantities to be calculated. One such quantity is the multiple correlation coefficient for a subset. If the correlation coefficient for a given subset, , is known, then the value for any subset that is obtained by either deleting or adding an element to can be obtained quickly. To calculate the correlation coefficient for each set, we simply travel along , where is the number of factors being studied. The first vertex will always be the string of 0's, which represents the empty set. For each vertex that you visit, the set that it corresponds to contains the factor if the character is a 1.  "
 },
 {
-  "id": "exercise-500",
+  "id": "exercise-463",
   "level": "2",
-  "url": "s-traversals.html#exercise-500",
+  "url": "s-traversals.html#exercise-463",
   "type": "Exercise",
   "number": "13.4.3.1",
   "title": "",
   "body": " Locate a map of New York City and draw a graph that represents its land masses, bridges and tunnels. Is there an Eulerian path through New York? You can do the same with any other city that has at least two land masses.   Using a recent road map, it appears that an Eulerian circuit exists in New York City, not including the small islands that belong to the city. Lowell, Massachusetts, is located at the confluence of the Merrimack and Concord rivers and has several canals flowing through it. No Eulerian path exists for Lowell.  "
 },
 {
-  "id": "exercise-501",
+  "id": "exercise-464",
   "level": "2",
-  "url": "s-traversals.html#exercise-501",
+  "url": "s-traversals.html#exercise-464",
   "type": "Exercise",
   "number": "13.4.3.2",
   "title": "",
   "body": " Which of the drawings in can be drawn without removing your pencil from the paper and without drawing any line twice?     Drawings for exercise 13-4-2    "
 },
 {
-  "id": "exercise-502",
+  "id": "exercise-465",
   "level": "2",
-  "url": "s-traversals.html#exercise-502",
+  "url": "s-traversals.html#exercise-465",
   "type": "Exercise",
   "number": "13.4.3.3",
   "title": "",
   "body": " Write out the Gray Code for the 4-cube.   Gray Code for the 4-cube:   "
 },
 {
-  "id": "exercise-503",
+  "id": "exercise-466",
   "level": "2",
-  "url": "s-traversals.html#exercise-503",
+  "url": "s-traversals.html#exercise-466",
   "type": "Exercise",
   "number": "13.4.3.4",
   "title": "",
   "body": " Find a Hamiltonian circuit for the dodecahedron graph in .  "
 },
 {
-  "id": "exercise-504",
+  "id": "exercise-467",
   "level": "2",
-  "url": "s-traversals.html#exercise-504",
+  "url": "s-traversals.html#exercise-467",
   "type": "Exercise",
   "number": "13.4.3.5",
   "title": "",
   "body": " The Euler Construction Company has been contracted to construct an extra bridge in Koenigsberg so that an Eulerian path through the town exists. Can this be done, and if so, where should the bridge be built?   Any bridge between two land masses will be sufficient. To get an Eulerian circuit, you must add a second bridge that connects the two land masses that were not connected by the first bridge.  "
 },
 {
-  "id": "exercise-505",
+  "id": "exercise-468",
   "level": "2",
-  "url": "s-traversals.html#exercise-505",
+  "url": "s-traversals.html#exercise-468",
   "type": "Exercise",
   "number": "13.4.3.6",
   "title": "",
   "body": " Consider the graphs in . Determine which of the graphs have an Eulerian path, and find an Eulerian path for the graphs that have one.   Graphs for exercise 6   graphs for exercise 13-4-6    "
 },
 {
-  "id": "exercise-506",
+  "id": "exercise-469",
   "level": "2",
-  "url": "s-traversals.html#exercise-506",
+  "url": "s-traversals.html#exercise-469",
   "type": "Exercise",
   "number": "13.4.3.7",
   "title": "",
   "body": " Formulate Euler's theorem for directed graphs.   Let be a directed graph. has an Eulerian circuit if and only if is connected and for all . There exists an Eulerian path from if and only if is connected, , , and for all other vertices in the indegree and outdegree are equal.  "
 },
 {
-  "id": "exercise-507",
+  "id": "exercise-470",
   "level": "2",
-  "url": "s-traversals.html#exercise-507",
+  "url": "s-traversals.html#exercise-470",
   "type": "Exercise",
   "number": "13.4.3.8",
   "title": "",
   "body": " Prove that the number of vertices in an undirected graph with odd degree must be even.   Prove by induction on the number of edges.  "
 },
 {
-  "id": "exercise-508",
+  "id": "exercise-471",
   "level": "2",
-  "url": "s-traversals.html#exercise-508",
+  "url": "s-traversals.html#exercise-471",
   "type": "Exercise",
   "number": "13.4.3.9",
   "title": "",
   "body": "    Under what conditions will a round-robin tournament graph be Eulerian?    Prove that every round-robin tournament graph is Hamiltonian.      A round-robin tournament graph is rarely Eulerian. It will be Eulerian if it has an odd number of vertices and each vertex (team) wins exactly as many times as it loses. Every round-robin tournament graph has a Hamiltonian path. This can be proven by induction on the number of vertices.  "
 },
 {
-  "id": "exercise-509",
+  "id": "exercise-472",
   "level": "2",
-  "url": "s-traversals.html#exercise-509",
+  "url": "s-traversals.html#exercise-472",
   "type": "Exercise",
   "number": "13.4.3.10",
   "title": "",
   "body": " For what values of is the -cube Eulerian?  "
 },
 {
-  "id": "exercise-510",
+  "id": "exercise-473",
   "level": "2",
-  "url": "s-traversals.html#exercise-510",
+  "url": "s-traversals.html#exercise-473",
   "type": "Exercise",
   "number": "13.4.3.11",
   "title": "",
@@ -10972,9 +10036,9 @@ var ptx_lunr_docs = [
   "body": " The Value of a Flow  Value of a Flow    The value of flow    The two values flow into the sink and flow out of the source were proved to be equal in and this common value is called the value of the flow . It is denoted by . The value of a flow represents the amount of material that passes through the network with that flow.   "
 },
 {
-  "id": "p-4429",
+  "id": "p-4016",
   "level": "2",
-  "url": "s-graph-optimization.html#p-4429",
+  "url": "s-graph-optimization.html#p-4016",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -11008,9 +10072,9 @@ var ptx_lunr_docs = [
   "body": " The Ford and Fulkerson Algorithm      Define the flow function by for each edge .    i = 0.    Repeat:     If possible, find a flow augmenting path with respect to .    If a flow augmenting path exists, then:     Determine    Define by             until no flow augmenting path exists.    Terminate with a maximal flow      "
 },
 {
-  "id": "list-10",
+  "id": "list-9",
   "level": "2",
-  "url": "s-graph-optimization.html#list-10",
+  "url": "s-graph-optimization.html#list-9",
   "type": "List",
   "number": "13.5.25",
   "title": "Notes on the Ford and Fulkerson Algorithm",
@@ -11035,99 +10099,99 @@ var ptx_lunr_docs = [
   "body": " A flow augmenting path going against the flow  Consider the network in , where the current flow, , is indicated by a labeling of the edges.   Current Flow   Current Flow    The path is a flow augmenting path that allows us to increase the flow by one unit. Note that is used in the reverse direction, which is allowed because . The value of the new flow that we obtain is 8. This flow must be maximal since the capacities out of the source add up to 8. This maximal flow is defined by .   Updated Flow   Updated Flow    "
 },
 {
-  "id": "exercise-511",
+  "id": "exercise-474",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-511",
+  "url": "s-graph-optimization.html#exercise-474",
   "type": "Exercise",
   "number": "13.5.5.1",
   "title": "",
   "body": " Find the closest neighbor circuit through the six capitals of New England starting at Boston. If you start at a different city, will you get a different circuit?   The circuit would be Boston, Providence, Hartford, Concord, Montpelier, Augusta, Boston. It does matter where you start. If you start in Concord, for example, your mileage will be higher.  "
 },
 {
-  "id": "exercise-512",
+  "id": "exercise-475",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-512",
+  "url": "s-graph-optimization.html#exercise-475",
   "type": "Exercise",
   "number": "13.5.5.2",
   "title": "",
   "body": " Is the estimate in sharp for ? For ?  "
 },
 {
-  "id": "exercise-513",
+  "id": "exercise-476",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-513",
+  "url": "s-graph-optimization.html#exercise-476",
   "type": "Exercise",
   "number": "13.5.5.3",
   "title": "",
   "body": " Given the following sets of points in the unit square, find the shortest circuit that visits all the points and find the circuit that is obtained with the strip algorithm.                              Optimal cost . Phase 1 cost . Phase 2 cost .    Optimal cost Phase 1 cost . Phase 2 cost .       There are 4 points; so we will divide the unit square into two strips.   Optimal Path:    Phase I Path:     Phase II Path: \\quad \\quad          There are 5 points; so we will divide the unit square into three strips.   Optimal Path:    Phase I Path:    Phase II Path:        "
 },
 {
-  "id": "exercise-514",
+  "id": "exercise-477",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-514",
+  "url": "s-graph-optimization.html#exercise-477",
   "type": "Exercise",
   "number": "13.5.5.4",
   "title": "",
   "body": " For , locate points in the unit square for which the strip algorithm works poorly.  "
 },
 {
-  "id": "exercise-515",
+  "id": "exercise-478",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-515",
+  "url": "s-graph-optimization.html#exercise-478",
   "type": "Exercise",
   "number": "13.5.5.5",
   "title": "",
   "body": " Consider the network whose maximum capacities are shown on the following graph.     Figure for Exercise 13-5-5       A function is partially defined on the edges of this network by: , , , and . Define on the rest of the other edges so that is a flow. What is the value of ?    Find a flow augmenting path with respect to for this network. What is the value of the augmented flow?    Is the augmented flow a maximum flow? Explain.          , , , , and .    There are three possible flow-augmenting paths. with flow increase of 1. with flow increase of 1, and with flow increase of 2.    The new flow is never maximal, since another flow-augmenting path will always exist. For example, if is used above, the new flow can be augmented by 2 units with .     "
 },
 {
-  "id": "exercise-516",
+  "id": "exercise-479",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-516",
+  "url": "s-graph-optimization.html#exercise-479",
   "type": "Exercise",
   "number": "13.5.5.6",
   "title": "",
   "body": " Given the following network with capacity function and flow function , find a maximal flow function. The labels on the edges of the network are of the form , where is the capacity of edge and is the used capacity for flow .     Figure for Exercise 13-5-6    "
 },
 {
-  "id": "exercise-517",
+  "id": "exercise-480",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-517",
+  "url": "s-graph-optimization.html#exercise-480",
   "type": "Exercise",
   "number": "13.5.5.7",
   "title": "",
   "body": " Find maximal flows for the following networks.      Figure for Exercise 13-5-7a       Figure for Exercise 13-5-7b        Figure for Exercise 13-5-7c        Value of maximal flow .    Value of maximal flow .    Value of maximal flow . See for one way to got this flow.         Step  Flow-augmenting path  Flow added    1     2    2     3    3     4    4     1    5     2    6     2     "
 },
 {
-  "id": "exercise-518",
+  "id": "exercise-481",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-518",
+  "url": "s-graph-optimization.html#exercise-481",
   "type": "Exercise",
   "number": "13.5.5.8",
   "title": "",
   "body": "    Find two maximal flows for the network in other than the one found in the text.    Describe the set of all maximal flows for the same network.    Prove that if a network has two maximal flows, then it has an infinite number of maximal flows.     "
 },
 {
-  "id": "exercise-519",
+  "id": "exercise-482",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-519",
+  "url": "s-graph-optimization.html#exercise-482",
   "type": "Exercise",
   "number": "13.5.5.9",
   "title": "",
   "body": " Discuss reasons that the closest neighbor algorithm is not used in the unit square version of the Traveling Salesman Problem.   Count the number of comparisons of distances that must be done.   To locate the closest neighbor among the list of other points on the unit square requires a time proportional to . Therefore the time required for the closest-neighbor algorithm with points is proportional to , which is proportional to . Since the strip algorithm takes a time proportional to , it is much faster for large values of .  "
 },
 {
-  "id": "exercise-520",
+  "id": "exercise-483",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-520",
+  "url": "s-graph-optimization.html#exercise-483",
   "type": "Exercise",
   "number": "13.5.5.10",
   "title": "",
   "body": " Explore the possibility of solving the Traveling Salesman Problem in the unit box : .  "
 },
 {
-  "id": "exercise-521",
+  "id": "exercise-484",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-521",
+  "url": "s-graph-optimization.html#exercise-484",
   "type": "Exercise",
   "number": "13.5.5.11",
   "title": "",
@@ -11211,7 +10275,7 @@ var ptx_lunr_docs = [
   "url": "s-planarity-and-colorings.html#theorem-euler-formula",
   "type": "Theorem",
   "number": "13.6.8",
-  "title": "Euler's Formula.",
+  "title": "Euler’s Formula.",
   "body": " Euler's Formula  Euler's Formula   If is a connected planar graph with regions, vertices, and edges, then    We prove Euler's Formula by Induction on , for .  Basis: If , then must be a graph with one vertex, ; and there is one infinite region, . Therefore, , and the basis is true.  Induction: Suppose that has edges, , and that all connected planar graphs with less than edges satisfy . Select any edge that is part of the boundary of the infinite region and call it . Let be the graph obtained from by deleting . illustrates the two different possibilities we need to consider: either is connected or it has two connected components, and .   Two cases in the proof of Euler's Formula   Two cases in the proof of Euler's Formula    If is connected, the induction hypothesis can be applied to it. If has vertices, edges and edges, then and in terms of the corresponding numbers for ,  For the case where is connected, If is not connected, it must consist of two connected components, and , since we started with a connected graph, . We can apply the induction hypothesis to each of the two components to complete the proof. We leave it to the students to do this, with the reminder that in counting regions, and will share the same infinite region.   "
 },
 {
@@ -11305,135 +10369,135 @@ var ptx_lunr_docs = [
   "body": " No Odd Circuits in a Bipartite Graph   An undirected graph is bipartite if and only if it has no circuit of odd length.    ( ) Let be a bipartite graph that is partitioned into two sets, R(ed) and B(lue) that define a 2-coloring. Consider any circuit in . If we specify a direction in the circuit and define on the vertices of the circuit by Note that is a bijection. Hence the number of red vertices in the circuit equals the number of blue vertices, and so the length of the circuit must be even.  ( ) Assume that has no circuit of odd length. For each component of , select any vertex and color it red. Then for every other vertex in the component, find the path of shortest distance from to . If the length of the path is odd, color blue, and if it is even, color red. We claim that this method defines a 2-coloring of . Suppose that it does not define a 2-coloring. Then let and be two vertices with identical colors that are connected with an edge. By the way that we colored , neither nor could equal . We can now construct a circuit with an odd length in . First, we start at and follow the shortest path to . Then follow the edge , and finally, follow the reverse of a shortest path from to . Since and have the same color, the first and third segments of this circuit have lengths that are both odd or even, and the sum of their lengths must be even. The addition of the single edge shows us that this circuit has an odd length. This contradicts our premise.   "
 },
 {
-  "id": "exercise-522",
+  "id": "exercise-485",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-522",
+  "url": "s-planarity-and-colorings.html#exercise-485",
   "type": "Exercise",
   "number": "13.6.3.1",
   "title": "",
   "body": " Apply to prove that once gets to a certain size, a is nonplanar. What is the largest complete planar graph?   can be applied to infer that if , then is nonplanar. A is the largest complete planar graph.  "
 },
 {
-  "id": "exercise-523",
+  "id": "exercise-486",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-523",
+  "url": "s-planarity-and-colorings.html#exercise-486",
   "type": "Exercise",
   "number": "13.6.3.2",
   "title": "",
   "body": " Can you apply to prove that the Three Utilities Puzzle can't be solved?  "
 },
 {
-  "id": "exercise-524",
+  "id": "exercise-487",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-524",
+  "url": "s-planarity-and-colorings.html#exercise-487",
   "type": "Exercise",
   "number": "13.6.3.3",
   "title": "",
   "body": " What are the chromatic numbers of the following graphs?   What are the chromatic numbers?   What are the chromatic numbers?        4    3    3    3    2    4     "
 },
 {
-  "id": "exercise-525",
+  "id": "exercise-488",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-525",
+  "url": "s-planarity-and-colorings.html#exercise-488",
   "type": "Exercise",
   "number": "13.6.3.4",
   "title": "",
   "body": " Prove that if an undirected graph has a subgraph that is a it then its chromatic number is at least 3.  "
 },
 {
-  "id": "exercise-526",
+  "id": "exercise-489",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-526",
+  "url": "s-planarity-and-colorings.html#exercise-489",
   "type": "Exercise",
   "number": "13.6.3.5",
   "title": "",
   "body": " What is , ?   The chromatic number is since every vertex is connected to every other vertex.  "
 },
 {
-  "id": "exercise-527",
+  "id": "exercise-490",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-527",
+  "url": "s-planarity-and-colorings.html#exercise-490",
   "type": "Exercise",
   "number": "13.6.3.6",
   "title": "",
   "body": " What is the chromatic number of the United States?  "
 },
 {
-  "id": "exercise-528",
+  "id": "exercise-491",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-528",
+  "url": "s-planarity-and-colorings.html#exercise-491",
   "type": "Exercise",
   "number": "13.6.3.7",
   "title": "",
   "body": " Complete the proof of .   Suppose that is not connected. Then is made up of 2 components that are planar graphs with less than edges, and . For let be the number of vertices, regions and edges in . By the induction hypothesis, for .  One of the regions, the infinite one, is common to both graphs. Therefore, when we add edge back to the graph, we have , , and .   "
 },
 {
-  "id": "exercise-529",
+  "id": "exercise-492",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-529",
+  "url": "s-planarity-and-colorings.html#exercise-492",
   "type": "Exercise",
   "number": "13.6.3.8",
   "title": "",
   "body": " Use the outline of a proof of to write a complete proof. Be sure to point out where the premise is essential.  "
 },
 {
-  "id": "exercise-530",
+  "id": "exercise-493",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-530",
+  "url": "s-planarity-and-colorings.html#exercise-493",
   "type": "Exercise",
   "number": "13.6.3.9",
   "title": "",
   "body": " Let with , and let be the set of all undirected edges between distinct vertices in . Prove that either or is nonplanar.   Since , either has at least elements. Assume that it is that is larger. Since is greater than , would be nonplanar. Of course, if is larger, then would be nonplanar by the same reasoning. Can you find a graph with ten vertices such that it is planar and its complement is also planar?  "
 },
 {
-  "id": "exercise-531",
+  "id": "exercise-494",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-531",
+  "url": "s-planarity-and-colorings.html#exercise-494",
   "type": "Exercise",
   "number": "13.6.3.10",
   "title": "",
   "body": " Design an algorithm to determine whether a graph is bipartite.  "
 },
 {
-  "id": "exercise-532",
+  "id": "exercise-495",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-532",
+  "url": "s-planarity-and-colorings.html#exercise-495",
   "type": "Exercise",
   "number": "13.6.3.11",
   "title": "",
   "body": " Prove that a bipartite graph with an odd number of vertices greater than or equal to 3 has no Hamiltonian circuit.   Suppose that is bipartite (with colors red and blue), is odd, and is a Hamiltonian circuit. If is red, then would also be red. But then would not be in , a contradiction.  "
 },
 {
-  "id": "exercise-533",
+  "id": "exercise-496",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-533",
+  "url": "s-planarity-and-colorings.html#exercise-496",
   "type": "Exercise",
   "number": "13.6.3.12",
   "title": "",
   "body": " Prove that any graph with a finite number of vertices can be drawn in three dimensions so that no edges intersect.  "
 },
 {
-  "id": "exercise-534",
+  "id": "exercise-497",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-534",
+  "url": "s-planarity-and-colorings.html#exercise-497",
   "type": "Exercise",
   "number": "13.6.3.13",
   "title": "",
   "body": " Suppose you had to color the edges of an undirected graph so that for each vertex, the edges that it is connected to have different colors. How can this problem be transformed into a vertex coloring problem?   Draw a graph with one vertex for each edge, If two edges in the original graph meet at the same vertex, then draw an edge connecting the corresponding vertices in the new graph.  "
 },
 {
-  "id": "exercise-535",
+  "id": "exercise-498",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-535",
+  "url": "s-planarity-and-colorings.html#exercise-498",
   "type": "Exercise",
   "number": "13.6.3.14",
   "title": "",
   "body": "    Suppose the edges of a are colored either red or blue. Prove that there will be either a red (a subset of the vertex set with three vertices connected by red edges) or a blue or both.    Suppose six people are selected at random. Prove that either there exists a subset of three of them with the property that any two people in the subset can communicate in a common language, or there exist three people, no two of whom can communicate in a common language.     "
 },
 {
-  "id": "exercise-536",
+  "id": "exercise-499",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-536",
+  "url": "s-planarity-and-colorings.html#exercise-499",
   "type": "Exercise",
   "number": "13.6.3.15",
   "title": "",
@@ -11521,36 +10585,36 @@ var ptx_lunr_docs = [
   "body": " Given the following vertex sets, draw all possible undirected trees that connect them.                .      The number of trees are: (a) 1, (b) 3, and (c) 16. The trees that connect are:     Solution to exercise 14-1-1    "
 },
 {
-  "id": "exercise-538",
+  "id": "exercise-501",
   "level": "2",
-  "url": "s-what-is-a-tree.html#exercise-538",
+  "url": "s-what-is-a-tree.html#exercise-501",
   "type": "Exercise",
   "number": "14.1.3.2",
   "title": "",
   "body": " Are all trees planar? If they are, can you explain why? If they are not, you should be able to find a nonplanar tree.  "
 },
 {
-  "id": "exercise-539",
+  "id": "exercise-502",
   "level": "2",
-  "url": "s-what-is-a-tree.html#exercise-539",
+  "url": "s-what-is-a-tree.html#exercise-502",
   "type": "Exercise",
   "number": "14.1.3.3",
   "title": "",
   "body": " Prove that if is a simple undirected graph with no self-loops, then is a tree if and only if is connected and .   Use induction on .  "
 },
 {
-  "id": "exercise-540",
+  "id": "exercise-503",
   "level": "2",
-  "url": "s-what-is-a-tree.html#exercise-540",
+  "url": "s-what-is-a-tree.html#exercise-503",
   "type": "Exercise",
   "number": "14.1.3.4",
   "title": "",
   "body": "    Prove that if is a tree and , then is a forest of two trees.    Prove that if ) and are disjoint trees and is an edge that connects a vertex in to a vertex in , then is a tree.     "
 },
 {
-  "id": "exercise-541",
+  "id": "exercise-504",
   "level": "2",
-  "url": "s-what-is-a-tree.html#exercise-541",
+  "url": "s-what-is-a-tree.html#exercise-504",
   "type": "Exercise",
   "number": "14.1.3.5",
   "title": "",
@@ -11584,9 +10648,9 @@ var ptx_lunr_docs = [
   "body": " Spanning Tree  Spanning Tree   Let be a connected undirected graph. A spanning tree for is a spanning subgraph of that is a tree.   "
 },
 {
-  "id": "note-19",
+  "id": "note-11",
   "level": "2",
-  "url": "s-spanning-trees.html#note-19",
+  "url": "s-spanning-trees.html#note-11",
   "type": "Note",
   "number": "14.2.3",
   "title": "",
@@ -11634,13 +10698,13 @@ var ptx_lunr_docs = [
   "url": "s-spanning-trees.html#alg-prim",
   "type": "Algorithm",
   "number": "14.2.9",
-  "title": "Prim's Algorithm.",
+  "title": "Prim’s Algorithm.",
   "body": " Prim's Algorithm  Prim's Algorithm   Let be a connected, weighted, undirected graph, and let be an arbitrary vertex in . The following steps lead to a minimal spanning tree for . and will be sets of vertices and is a set of edges.     (Initialize) ; ; .    (Build the tree) While :     Find , a bridge of minimum weight between and .     ; ;       Terminate with a minimal spanning tree .      "
 },
 {
-  "id": "note-20",
+  "id": "note-12",
   "level": "2",
-  "url": "s-spanning-trees.html#note-20",
+  "url": "s-spanning-trees.html#note-12",
   "type": "Note",
   "number": "14.2.10",
   "title": "",
@@ -11674,54 +10738,54 @@ var ptx_lunr_docs = [
   "body": " The Case for Complete Graphs  The Minimum Diameter Spanning Tree Problem is trivial to solve in a . Select any vertex and construct the spanning tree whose edge set is the set of edges that connect to the other vertices in the . illustrates a solution for .   Minimum diameter spanning tree for    Minimum diameter spanning tree for K_5    "
 },
 {
-  "id": "exercise-542",
+  "id": "exercise-505",
   "level": "2",
-  "url": "s-spanning-trees.html#exercise-542",
+  "url": "s-spanning-trees.html#exercise-505",
   "type": "Exercise",
   "number": "14.2.4.1",
   "title": "",
   "body": " Suppose that after Atlantis University's phone system is in place, a fifth campus is established and that a transmission line can be bought to connect the new campus to any old campus. Is this larger system the most economical one possible with respect to Objective 1? Can you always satisfy Objective 2?   It might not be most economical with respect to Objective 1. You should be able to find an example to illustrate this claim. The new system can always be made most economical with respect to Objective 2 if the old system were designed with that objective in mind.  "
 },
 {
-  "id": "exercise-543",
+  "id": "exercise-506",
   "level": "2",
-  "url": "s-spanning-trees.html#exercise-543",
+  "url": "s-spanning-trees.html#exercise-506",
   "type": "Exercise",
   "number": "14.2.4.2",
   "title": "",
   "body": " Construct a minimal spanning tree for the capital cities in New England (see ).  "
 },
 {
-  "id": "exercise-544",
+  "id": "exercise-507",
   "level": "2",
-  "url": "s-spanning-trees.html#exercise-544",
+  "url": "s-spanning-trees.html#exercise-507",
   "type": "Exercise",
   "number": "14.2.4.3",
   "title": "",
   "body": " Show that the answer to the question posed in is no.   In the figure below, is not a minimal bridge between , but it is part of the minimal spanning tree for this graph.     Solution to exercise 14-2-3    "
 },
 {
-  "id": "exercise-545",
+  "id": "exercise-508",
   "level": "2",
-  "url": "s-spanning-trees.html#exercise-545",
+  "url": "s-spanning-trees.html#exercise-508",
   "type": "Exercise",
   "number": "14.2.4.4",
   "title": "",
   "body": " Find a minimal spanning tree for the following graphs.     Figure for exercise-14-2-4a       Figure for exercise-14-2-4b       Figure for exercise-14-2-4c    "
 },
 {
-  "id": "exercise-546",
+  "id": "exercise-509",
   "level": "2",
-  "url": "s-spanning-trees.html#exercise-546",
+  "url": "s-spanning-trees.html#exercise-509",
   "type": "Exercise",
   "number": "14.2.4.5",
   "title": "",
   "body": " Find a minimum diameter spanning tree for the following graphs.     Figure for exercise-14-2-5a       Figure for exercise-14-2-5b        Edges in one solution are:    Vertices 8 and 9 are centers of the graph. Starting from vertex 8, a minimum diameter spanning tree is The diameter of the tree is 7.     "
 },
 {
-  "id": "exercise-547",
+  "id": "exercise-510",
   "level": "2",
-  "url": "s-spanning-trees.html#exercise-547",
+  "url": "s-spanning-trees.html#exercise-510",
   "type": "Exercise",
   "number": "14.2.4.6",
   "title": "",
@@ -11773,9 +10837,9 @@ var ptx_lunr_docs = [
   "body": " Rooted Tree  Rooted Tree      Basis: A tree with no vertices is a rooted tree (the empty tree).    A single vertex with no children is a rooted tree.    Recursion: Let , , be disjoint rooted trees with roots , , , respectively, and let be a vertex that does not belong to any of these trees. Then a rooted tree, rooted at , is obtained by making the parent of the vertices , , and . We call subtrees of the larger tree.      "
 },
 {
-  "id": "p-4716",
+  "id": "p-4303",
   "level": "2",
-  "url": "s-rooted-trees.html#p-4716",
+  "url": "s-rooted-trees.html#p-4303",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -11800,27 +10864,27 @@ var ptx_lunr_docs = [
   "body": " Tree Structure of Data  One of the keys to working with large amounts of information is to organize it in a consistent, logical way. A data structure is a scheme for organizing data. A simple example of a data structure might be the information a college admissions department might keep on their applicants. Items might look something like this: This structure is called a flat file .  A spreadsheet can be used to arrange data in this way. Although a flat file structure is often adequate, there are advantages to clustering some the information. For example the applicant information might be broken into four parts: name, contact information, high school, and application data: The first item in each ApplicantItem is a list , with each item in that list being a single field of the original flat file. The third item is simply the single high school item from the flat file. The application data is a list and one of its items, is itself a list with the recommendation data for each recommendation the applicant has.  The organization of this data can be visualized with a rooted tree such as the one in .   Applicant Data in a Rooted Tree   Applicant Data in a Rooted Tree    In general, you can represent a data item, , as a rooted tree with as the root and a subtree for each field. Those fields that are more than just one item are roots of further subtrees, while individual items have no further children in the tree.  "
 },
 {
-  "id": "algorithm-29",
-  "level": "2",
-  "url": "s-rooted-trees.html#algorithm-29",
-  "type": "Algorithm",
-  "number": "14.3.8",
-  "title": "Kruskal's Algorithm - Informal Version.",
-  "body": " Kruskal's Algorithm - Informal Version      Sort the edges of in ascending order according to weight. That is, .    Go down the list from Step 1 and add edges to a set (initially empty) of edges so that the set does not form a cycle. When an edge that would create a cycle is encountered, ignore it. Continue examining edges until either edges have been selected or you have come to the end of the edge list. If edges are selected, these edges make up a minimal spanning tree for . If fewer than edges are selected, is not connected.      "
-},
-{
   "id": "algorithm-30",
   "level": "2",
   "url": "s-rooted-trees.html#algorithm-30",
   "type": "Algorithm",
+  "number": "14.3.8",
+  "title": "Kruskal’s Algorithm - Informal Version.",
+  "body": " Kruskal's Algorithm - Informal Version      Sort the edges of in ascending order according to weight. That is, .    Go down the list from Step 1 and add edges to a set (initially empty) of edges so that the set does not form a cycle. When an edge that would create a cycle is encountered, ignore it. Continue examining edges until either edges have been selected or you have come to the end of the edge list. If edges are selected, these edges make up a minimal spanning tree for . If fewer than edges are selected, is not connected.      "
+},
+{
+  "id": "algorithm-31",
+  "level": "2",
+  "url": "s-rooted-trees.html#algorithm-31",
+  "type": "Algorithm",
   "number": "14.3.9",
-  "title": "Kruskal's Algorithm.",
+  "title": "Kruskal’s Algorithm.",
   "body": " Kruskal's Algorithm  Kruskal's Algorithm      Sort the edges of in ascending order according to weight. That is, .       Initialize each vertex in V to be the root of its own rooted tree.    Go down the list of edges until either a spanning tree is completed or the edge list has been exhausted. For each edge , we can determine whether e can be added to the spanning set without forming a cycle by determining whether the root of tree is equal to the root of tree. If the two roots are equal, then ignore e. If the roots are different, then we can add e to the spanning set. In addition, we merge the trees that and belong to. This is accomplished by either making root the parent of root or vice versa.         "
 },
 {
-  "id": "note-21",
+  "id": "note-13",
   "level": "2",
-  "url": "s-rooted-trees.html#note-21",
+  "url": "s-rooted-trees.html#note-13",
   "type": "Note",
   "number": "14.3.10",
   "title": "",
@@ -11845,36 +10909,36 @@ var ptx_lunr_docs = [
   "body": " Spanning tree, SageMath output   SageMath Output - Spanning tree for weighted graph   "
 },
 {
-  "id": "exercise-548",
+  "id": "exercise-511",
   "level": "2",
-  "url": "s-rooted-trees.html#exercise-548",
+  "url": "s-rooted-trees.html#exercise-511",
   "type": "Exercise",
   "number": "14.3.4.1",
   "title": "",
   "body": " Suppose that an undirected tree has diameter and that you would like to select a vertex of the tree as a root so that the resulting rooted tree has the smallest depth possible. How would such a root be selected and what would be the depth of the tree (in terms of )?   Locate any simple path of length and locate the vertex in position on the path. The tree rooted at that vertex will have a depth of , which is minimal.  "
 },
 {
-  "id": "exercise-549",
+  "id": "exercise-512",
   "level": "2",
-  "url": "s-rooted-trees.html#exercise-549",
+  "url": "s-rooted-trees.html#exercise-512",
   "type": "Exercise",
   "number": "14.3.4.2",
   "title": "",
   "body": " Use Kruskal's algorithm to find a minimal spanning tree for the following graphs. In addition to the spanning tree, find the final rooted tree in the algorithm. When you merge two trees in the algorithm, make the root of the tree with the lower vertex number the root of the new tree.   Graph 2(a)   Figure for exercise 14.3.2a       Graph 2(b)   Figure for exercise 14.3.2b     "
 },
 {
-  "id": "exercise-550",
+  "id": "exercise-513",
   "level": "2",
-  "url": "s-rooted-trees.html#exercise-550",
+  "url": "s-rooted-trees.html#exercise-513",
   "type": "Exercise",
   "number": "14.3.4.3",
   "title": "",
   "body": " Suppose that information on buildings is arranged in records with five fields: the name of the building, its location, its owner, its height, and its floor space. The location and owner fields are records that include all of the information that you would expect, such as street, city, and state, together with the owner's name (first, middle, last) in the owner field. Draw a rooted tree to describe this type of record      Solution to exercise 14-3-3    "
 },
 {
-  "id": "exercise-551",
+  "id": "exercise-514",
   "level": "2",
-  "url": "s-rooted-trees.html#exercise-551",
+  "url": "s-rooted-trees.html#exercise-514",
   "type": "Exercise",
   "number": "14.3.4.4",
   "title": "",
@@ -11890,9 +10954,9 @@ var ptx_lunr_docs = [
   "body": "  Binary Trees  Binary Trees   Definition of a binary tree  An ordered rooted tree is a rooted tree whose subtrees are put into a definite order and are, themselves, ordered rooted trees. An empty tree and a single vertex with no descendants (no subtrees) are ordered rooted trees.   Distinct Ordered Rooted Trees  The trees in are identical rooted trees, with root 1, but as ordered trees, they are different.   Two different ordered rooted trees   Two different ordered rooted trees     If a tree rooted at has subtrees, we would refer to them as the first, second,..., subtrees. There is a subtle difference between certain ordered trees and binary trees, which we define next.   Binary Tree  Binary Tree      A tree consisting of no vertices (the empty tree) is a binary tree    A vertex together with two subtrees that are both binary trees is a binary tree. The subtrees are called the left and right subtrees of the binary tree.       The difference between binary trees and ordered trees is that every vertex of a binary tree has exactly two subtrees (one or both of which may be empty), while a vertex of an ordered tree may have any number of subtrees. But there is another significant difference between the two types of structures. The two trees in would be considered identical as ordered trees. However, they are different binary trees. Tree (a) has an empty right subtree and Tree (b) has an empty left subtree.   Two different binary trees   Two different binary trees     Terminology and General Facts about Binary Trees  Full binary tree     Leaf of a binary tree  A vertex of a binary tree with two empty subtrees is called a leaf Leaf, of a binary tree . All other vertices are called internal vertices .    The number of leaves in a binary tree can vary from one up to roughly half the number of vertices in the tree (see Exercise 4 of this section).    The maximum number of vertices at level of a binary tree is , (see Exercise 6 of this section).     Full binary tree  A full binary tree is a tree for which each vertex has either zero or two empty subtrees. In other words, each vertex has either two or zero children. See of this section for a general fact about full binary trees.       Traversals of Binary Trees  Traversals of Binary Trees  The traversal of a binary tree consists of visiting each vertex of the tree in some prescribed order. Unlike graph traversals, the consecutive vertices that are visited are not always connected with an edge. The most common binary tree traversals are differentiated by the order in which the root and its subtrees are visited. The three traversals are best described recursively and are:   Preorder Traversal:     Visit the root of the tree.    Preorder traverse the left subtree.    Preorder traverse the right subtree.       Inorder Traversal:     Inorder traverse the left subtree.    Visit the root of the tree.    Inorder traverse the right subtree.       Postorder Traversal:     Postorder traverse the left subtree.    Postorder traverse the right subtree.    Visit the root of the tree.       Any traversal of an empty tree consists of doing nothing.   Traversal Examples  For the tree in , the orders in which the vertices are visited are:   A-B-D-E-C-F-G, for the preorder traversal.    D-B-E-A-F-C-G, for the inorder traversal.    D-E-B-F-G-C-A, for the postorder traversal.     A Complete Binary Tree to Level 2   A Complete Binary Tree to Level 2     Binary Tree Sort. Given a collection of integers (or other objects than can be ordered), one technique for sorting is a binary tree sort. If the integers are , , , , we first execute the following algorithm that creates a binary tree:   Binary Sort Tree Creation      Insert into the root of the tree.    For k := 2 to n \/\/ insert into the tree     r =    inserted = false    while not(inserted):  if :  if has a left child:  r = left child of  else:  make the left child of   inserted = true  else:  if has a right child:  r = right child of  else:  make the right child of   inserted = true          If the integers to be sorted are 25, 17, 9, 20, 33, 13, and 30, then the tree that is created is the one in . The inorder traversal of this tree is 9, 13, 17, 20, 25, 30, 33, the integers in ascending order. In general, the inorder traversal of the tree that is constructed in the algorithm above will produce a sorted list. The preorder and postorder traversals of the tree have no meaning here.   A Binary Sorting Tree   Binary Sorting Tree      Expression Trees  Expression Tree  A convenient way to visualize an algebraic expression is by its expression tree. Consider the expression Since it is customary to put a precedence on multiplication\/divisions, is evaluated as . Consecutive multiplication\/divisions or addition\/subtractions are evaluated from left to right. We can analyze further by noting that it is the sum of two simpler expressions and . The first of these expressions can be broken down further into the difference of the expressions and . When we decompose any expression into , the expression tree of that expression is the binary tree whose root contains the operation and whose left and right subtrees are the trees of the left and right expressions, respectively. Additionally, a simple variable or a number has an expression tree that is a single vertex containing the variable or number. The evolution of the expression tree for expression appears in .   Building an Expression Tree   Building an Expression Tree     Some Expression Trees     If we intend to apply the addition and subtraction operations in first, we would parenthesize the expression to . Its expression tree appears in (a).    The expression trees for and for appear in (b) and (c).      Expression Tree Examples   Expression Tree Examples     The three traversals of an operation tree are all significant. A binary operation applied to a pair of numbers can be written in three ways. One is the familiar infix form, such as for the sum of and . Another form is prefix, in which the same sum is written . The final form is postfix, in which the sum is written . Algebraic expressions involving the four standard arithmetic operations in prefix and postfix form are defined as follows:   Prefix and postfix forms of an algebraic expression    Prefix     A variable or number is a prefix expression    Any operation followed by a pair of prefix expressions is a prefix expression.       Postfix     A variable or number is a postfix expression    Any pair of postfix expressions followed by an operation is a postfix expression.        The connection between traversals of an expression tree and these forms is simple:     The preorder traversal of an expression tree will result in the prefix form of the expression.    The postorder traversal of an expression tree will result in the postfix form of the expression.    The inorder traversal of an operation tree will not, in general, yield the proper infix form of the expression. If an expression requires parentheses in infix form, an inorder traversal of its expression tree has the effect of removing the parentheses.      Traversing an Expression Tree  The preorder traversal of the tree in is , which is the prefix version of expression . The postorder traversal is . Note that since the original form of needed no parentheses, the inorder traversal, , is the correct infix version.     Counting Binary Trees  Counting Binary Trees  We close this section with a formula for the number of different binary trees with vertices. The formula is derived using generating functions. Although the complete details are beyond the scope of this text, we will supply an overview of the derivation in order to illustrate how generating functions are used in advanced combinatorics.  Let be the number of different binary trees of size ( vertices), . By our definition of a binary tree, . Now consider any positive integer , . A binary tree of size has two subtrees, the sizes of which add up to . The possibilities can be broken down into cases:   Case 0: Left subtree has size 0; right subtree has size .  Case 1: Left subtree has size 1; right subtree has size .      Case : Left subtree has size ; right subtree has size .      Case : Left subtree has size ; right subtree has size 0.   In the general Case , we can count the number of possibilities by multiplying the number of ways that the left subtree can be filled, , by the number of ways that the right subtree can be filled. . Since the sum of these products equals , we obtain the recurrence relation for :   Now take the generating function of both sides of this recurrence relation: or  Recall that If we abbreviate to , we get Using the quadratic equation we find two solutions:   The gap in our derivation occurs here since we don't presume a knowledge of calculus. If we expand as an extended power series, we find  The coefficients after the first one are all negative and there is a singularity at 0 because of the term. However if we do the same with we get  Further analysis leads to a closed form expression for , which is This sequence of numbers is often called the Catalan numbers . For more information on the Catalan numbers, see the entry A000108 in The On-Line Encyclopedia of Integer Sequences .    SageMath Note - Power Series   SageMath Note  Power Series   It may be of interest to note how the extended power series expansions of and are determined using Sage. In Sage, one has the capability of being very specific about how algebraic expressions should be interpreted by specifying the underlying ring. This can make working with various algebraic expressions a bit more confusing to the beginner. Here is how to get a Laurent expansion for above.   The first Sage expression above declares a structure called a ring that contains power series. We are not using that whole structure, just a specific element, G1 . So the important thing about this first input is that it establishes z as being a variable associated with power series over the integers. When the second expression defines the value of G1 in terms of z , it is automatically converted to a power series.  The expansion of uses identical code, and its coefficients are the values of .      Exercises   Draw the expression trees for the following expressions:                                   Solution to exercise 14-4-1-A       Solution to exercise 14-4-1-B      Draw the expression trees for                  Write out the preorder, inorder, and postorder traversals of the trees in Exercise 1 above.        Verify the formula for , by drawing all binary trees with three or fewer vertices.       Draw a binary tree with seven vertices and only one leaf.    Draw a binary tree with seven vertices and as many leaves as possible.         Solution to exercise 14-4-5      Prove that the maximum number of vertices at level of a binary tree is and that a tree with that many vertices at level must have vertices.    Prove that if is a full binary tree, then the number of leaves of is one more than the number of internal vertices (non-leaves).   Solution 1:  Basis: A binary tree consisting of a single vertex, which is a leaf, satisfies the equation  Induction:Assume that for some , all full binary trees with or fewer vertices have one more leaf than internal vertices. Now consider any full binary tree with vertices. Let and be the left and right subtrees of the tree which, by the definition of a full binary tree, must both be full. If and are the numbers of internal vertices in and , and and are the numbers of leaves, then and . Therefore, in the whole tree,   Solution 2:  Imagine building a full binary tree starting with a single vertex. By continuing to add leaves in pairs so that the tree stays full, we can build any full binary tree. Our starting tree satisfies the condition that the number of leaves is one more than the number of internal vertices . By adding a pair of leaves to a full binary tree, an old leaf becomes an internal vertex, increasing the number of internal vertices by one. Although we lose a leaf, the two added leaves create a net increase of one leaf. Therefore, the desired equality is maintained.    "
 },
 {
-  "id": "p-4744",
+  "id": "p-4331",
   "level": "2",
-  "url": "s-binary-trees.html#p-4744",
+  "url": "s-binary-trees.html#p-4331",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -11926,9 +10990,9 @@ var ptx_lunr_docs = [
   "body": " Two different binary trees   Two different binary trees   "
 },
 {
-  "id": "list-12",
+  "id": "list-11",
   "level": "2",
-  "url": "s-binary-trees.html#list-12",
+  "url": "s-binary-trees.html#list-11",
   "type": "List",
   "number": "14.4.5",
   "title": "Terminology and General Facts about Binary Trees",
@@ -11980,9 +11044,9 @@ var ptx_lunr_docs = [
   "body": " Some Expression Trees     If we intend to apply the addition and subtraction operations in first, we would parenthesize the expression to . Its expression tree appears in (a).    The expression trees for and for appear in (b) and (c).      Expression Tree Examples   Expression Tree Examples    "
 },
 {
-  "id": "list-13",
+  "id": "list-12",
   "level": "2",
-  "url": "s-binary-trees.html#list-13",
+  "url": "s-binary-trees.html#list-12",
   "type": "List",
   "number": "14.4.13",
   "title": "Prefix and postfix forms of an algebraic expression",
@@ -11998,72 +11062,72 @@ var ptx_lunr_docs = [
   "body": " Traversing an Expression Tree  The preorder traversal of the tree in is , which is the prefix version of expression . The postorder traversal is . Note that since the original form of needed no parentheses, the inorder traversal, , is the correct infix version.  "
 },
 {
-  "id": "p-4824",
+  "id": "p-4411",
   "level": "2",
-  "url": "s-binary-trees.html#p-4824",
+  "url": "s-binary-trees.html#p-4411",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Catalan numbers "
 },
 {
-  "id": "p-4826",
+  "id": "p-4413",
   "level": "2",
-  "url": "s-binary-trees.html#p-4826",
+  "url": "s-binary-trees.html#p-4413",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "ring "
 },
 {
-  "id": "exercise-552",
+  "id": "exercise-515",
   "level": "2",
-  "url": "s-binary-trees.html#exercise-552",
+  "url": "s-binary-trees.html#exercise-515",
   "type": "Exercise",
   "number": "14.4.6.1",
   "title": "",
   "body": " Draw the expression trees for the following expressions:                                   Solution to exercise 14-4-1-A       Solution to exercise 14-4-1-B    "
 },
 {
-  "id": "exercise-553",
+  "id": "exercise-516",
   "level": "2",
-  "url": "s-binary-trees.html#exercise-553",
+  "url": "s-binary-trees.html#exercise-516",
   "type": "Exercise",
   "number": "14.4.6.2",
   "title": "",
   "body": " Draw the expression trees for                "
 },
 {
-  "id": "exercise-554",
+  "id": "exercise-517",
   "level": "2",
-  "url": "s-binary-trees.html#exercise-554",
+  "url": "s-binary-trees.html#exercise-517",
   "type": "Exercise",
   "number": "14.4.6.3",
   "title": "",
   "body": " Write out the preorder, inorder, and postorder traversals of the trees in Exercise 1 above.      "
 },
 {
-  "id": "exercise-555",
+  "id": "exercise-518",
   "level": "2",
-  "url": "s-binary-trees.html#exercise-555",
+  "url": "s-binary-trees.html#exercise-518",
   "type": "Exercise",
   "number": "14.4.6.4",
   "title": "",
   "body": " Verify the formula for , by drawing all binary trees with three or fewer vertices.  "
 },
 {
-  "id": "exercise-556",
+  "id": "exercise-519",
   "level": "2",
-  "url": "s-binary-trees.html#exercise-556",
+  "url": "s-binary-trees.html#exercise-519",
   "type": "Exercise",
   "number": "14.4.6.5",
   "title": "",
   "body": "    Draw a binary tree with seven vertices and only one leaf.    Draw a binary tree with seven vertices and as many leaves as possible.         Solution to exercise 14-4-5    "
 },
 {
-  "id": "exercise-557",
+  "id": "exercise-520",
   "level": "2",
-  "url": "s-binary-trees.html#exercise-557",
+  "url": "s-binary-trees.html#exercise-520",
   "type": "Exercise",
   "number": "14.4.6.6",
   "title": "",
@@ -12115,9 +11179,9 @@ var ptx_lunr_docs = [
   "body": " String   String       A string with symbols    A finite sequence of symbols from an alphabet is called a string over that alphabet.   "
 },
 {
-  "id": "example-234",
+  "id": "example-228",
   "level": "2",
-  "url": "s-Languages.html#example-234",
+  "url": "s-Languages.html#example-228",
   "type": "Example",
   "number": "15.1.4",
   "title": "",
@@ -12250,9 +11314,9 @@ var ptx_lunr_docs = [
   "body": " Regular Expressions and Their Applications   Regular Expressions  Regular Expressions  Though we have used the term string throughout to refer to a sequence of symbols from an alphabet, an alternative term that is frequently used is word . The analogy seems fairly obvious: strings are made up of ``letters\" from an alphabet, just as words are in human languages like English. In English, however, there are no particular rules specifying which sequences of letters can be used to form legal English words---even unlikely combinations like ghth and ckstr have their place. While some formal languages may simply be random collections of arbitrary strings, more interesting languages are those where the strings in the language all share some common structure: In all of these languages, there are structural rules which determine which sequences of symbols are in the language and which aren't. So despite the terminology of ``alphabet\" and ``word\" in formal language theory, the concepts don't necessarily match ``alphabet\" and ``word\" for human languages. A better parallel is to think of the alphabet in a formal language as corresponding to the words in a human language; the words in a formal language correspond to the sentences in a human language, as there are rules ( grammar rules ) which determine how they can legally be constructed.  One way of describing the grammatical structure of the strings in a language is to use a mathematical formalism called a regular expression . A regular expression is a pattern that ``matches\" strings that have a particular form. For example, consider the language (over alphabet ) . What is the symbol-by-symbol structure of strings in this language? Well, they start with an , followed by zero or more 's or 's or both, followed by an . The regular expression is a pattern that captures this structure and matches any string in ( and have their usual meanings, and designates or .)  Or Notation  Various symbols have been used to represent the ``or'' operation in regular expressions. Both and have been used for this purpose. In this chapter, we use the symbol because it is commonly used in computer implementations of regular expressions.  Conversely, consider the regular expression . This is a pattern that matches any string that either has the form `` followed by zero or more 's or 's or both\" (i.e. any string that starts with an ) or has the form ``zero or more 's or 's or both followed by an \" (i.e. any string that ends with an ). Thus the regular expression generates the language of all strings that start or end (or both) in an : this is the set of strings that match the regular expression.  Here are the formal definitions of a regular expression and the language generated by a regular expression:   Regular Expression  Regular Expression      A regular expression.    Let be an alphabet. Then the following patterns are regular expressions over :    and are regular expressions;     is a regular expression, for each ;    if and are regular expressions, then so are , , and (and of course, and ). As in concatenation of strings, the is often left out of the second expression. (Note: the order of precedence of operators, from lowest to highest, is , , .)     No other patterns are regular expressions.     Language Generated by a Regular Expression  Language Generated by a Regular Expression      A language generated by regular expression .    The language generated by a regular expression  , denoted , is defined as follows:    i.e. no strings match ;     , i.e. matches only the empty string;     , i.e. matches only the string ;     , i.e. matches strings that match or or both;     , i.e. matches strings of the form ``something that matches followed by something that matches \";     , i.e. matches sequences of 0 or more strings each of which matches .     , i.e. matches exactly those strings matched by .       Let , and consider the regular expression . What is ? Well, so , and is the set of all strings of zero or more 's, so . Similarly, . Since , we have , which is the set of all strings of the form ``zero or more 's followed by zero or more 's\".  Let , and consider the regular expression . Since , . Similarly, and . Now and (the last equality is from clause 7 of ), and . So is the set of strings formed by concatenating or or with zero or more pairs of 's.   Regular Language  Regular Language  A language is regular if it is generated by a regular expression.   Clearly the union of two regular languages is regular; likewise, the concatenation of regular languages is regular; and the Kleene closure of a regular language is regular. It is less clear whether the intersection of regular languages is always regular; nor is it clear whether the complement of a regular language is guaranteed to be regular. These are questions that will be taken up in .   Regular languages, then, are languages whose strings' structure can be described in a very formal, mathematical way. The fact that a language can be ``mechanically\" described or generated means that we are likely to be able to get a computer to recognize strings in that language. We will pursue the question of mechanical language recognition in , and subsequently will see that our first attempt to model mechanical language recognition does in fact produce a family of ``machines\" that recognize exactly the regular languages. But first, in the next section, we will look at some practical applications of regular expressions.    Application: Using Regular Expressions  A common operation when editing text is to search for a given string of characters, sometimes with the purpose of replacing it with another string. Many ``search and replace'' search and replace facilities have the option of using regular expressions instead of simple strings of characters. A regular expression describes a language, that is, a set of strings. We can think of a regular expression as a pattern that matches certain strings, namely all the strings in the language described by the regular expression. When a regular expression is used in a search operation, the goal is to find a string that matches the expression. This type of pattern matching  pattern matching is very useful.  The ability to do pattern matching with regular expressions is provided in many text editors. Programming languages often come with libraries for working with regular expressions. Java (as of version 1.4) provides regular expression handling though a package named java.util.regexp . C++ typically provides a header file named regexp.h for the same purpose. In all these applications, many new notations are added to the syntax to make it more convenient to use. The syntax can vary from one implementation to another, but most implementations include the capabilities discussed in this section.  In applications of regular expressions, the alphabet usually includes all the characters on the keyboard. This leads to a problem, because regular expressions actually use two types of symbols: symbols that are members of the alphabet and special symbols such a `` * '' and `` ) '' that are used to construct expressions. These special symbols, which are not part of the language being described but are used in the description, are called meta-characters . The problem is, when the alphabet includes all the available characters, what do we do about meta-characters? If the language that we are describing uses the `` * '' character, for example, how can we represent the Kleene star operation?  The solution is to use a so-called ``escape character,'' which is usually the backslash, \\ . We agree, for example, that the notation \\* refers to the symbol * that is a member of the alphabet, while * by itself is the meta-character that represents the Kleene star operation. Similarly, ( and ) are the meta-characters that are used for grouping, while the corresponding characters in the language are written as \\( and \\) . For example, a regular expression that matches the string a*b repeated any number of times would be written: (a\\*b)* . The backslash is also used to represent certain non-printing characters. For example, a tab is represented as \\t and a new line character is \\n .  We introduce two new common operations on regular expressions and two new meta-characters to represent them. The first operation is represented by the meta-character + : If r is a regular expression, then r+ represents the occurrence of r one or more times. The second operation is represented by ? : The notation r? represents an occurrence of r zero or one times. That is to say, r? represents an optional occurrence of r . Note that these operations are introduced for convenience only and do not represent any real increase in the power. In fact, r+ is exactly equivalent to rr* , and r? is equivalent to (r| ) (except that in applications there is generally no equivalent to ).  To make it easier to deal with the large number of characters in the alphabet, character classes are introduced. A character class consists of a list of characters enclosed between brackets, [ and ] . (The brackets are meta-characters.) A character class matches a single character, which can be any of the characters in the list. For example, [0123456789] matches any one of the digits 0 through 9. The same thing could be expressed as (0|1|2|3|4|5|6|7|8|9) , so once again we have added only convenience, not new representational power. For even more convenience, a hyphen can be included in a character class to indicate a range of characters. This means that [0123456789] could also be written as [0-9] and that the regular expression [a-z] will match any single lowercase letter. A character class can include multiple ranges, so that [a-zA-Z] will match any letter, lower- or uppercase. The period ( . ) is a meta-character that will match any single character, except (in most implementations) for an end-of-line. These notations can, of course, be used in more complex regular expressions. For example, [A-Z][a-zA-Z]* will match any capitalized word, and \\(.*\\) matches any string of characters enclosed in parentheses.  In most implementations, the meta-character ^ can be used in a regular expression to match the beginning of a line of text, so that the expression ^[a-zA-Z]+ will only match a word that occurs at the start of a line. Similarly, $ is used as a meta-character to match the end of a line. Some implementations also have a way of matching beginnings and ends of words. Typically, \\b will match such ``word boundaries.'' Using this notation, the pattern \\band\\b will match the string ``and'' when it occurs as a word, but will not match the a-n-d in the word ``random.'' We are going a bit beyond basic regular expressions here: Previously, we only thought of a regular expression as something that either will match or will not match a given string in its entirety. When we use a regular expression for a search operation, however, we want to find a \\textit substring of a given string that matches the expression. The notations ^ , \\$ and \\ b put a restrictions on where the matching substring can be located in the string.  When regular expressions are used in search-and-replace operations, a regular expression is used for the search pattern. A search is made in a (typically long) string for a substring that matches the pattern, and then the substring is replaced by a specified replacement pattern. The replacement pattern is not used for matching and is not a regular expression. However, it can be more than just a simple string. It's possible to include parts of the substring that is being replaced in the replacement string. The notations \\0,\\1, ..., \\9 are used for this purpose. The first of these, \\0 , stands for the entire substring that is being replaced. The others are only available when parentheses are used in the search pattern. The notation \\1 stands for ``the part of the substring that matched the part of the search pattern beginning with the first ( in the pattern and ending with the matching ) .'' Similarly, \\2 represents whatever matched the part of the search pattern between the second pair of parentheses, and so on.  Suppose, for example, that you would like to search for a name in the form last-name, first-name and replace it with the same name in the form first-name last-name . For example, ``Reeves, Keanu'' should be converted to ``Keanu Reeves''. Assuming that names contain only letters, this could be done using the search pattern ([A-Za-z]+), ([A-Za-z]+) and the replacement pattern \\2 \\1 . When the match is made, the first ([A-Za-z]+) will match ``Reeves,'' so that in the replacement pattern, \\1 represents the substring ``Reeves''. Similarly, \\2 will represent ``Keanu''. Note that the parentheses are included in the search pattern only to specify what parts of the string are represented by \\1 and \\2 . In practice, you might use ^([A-Za-z]+), ([A-Za-z])\\$ as the search pattern to constrain it so that it will only match a complete line of text. By using a ``global'' search-and-replace, you could convert an entire file of names from one format to the other in a single operation.  Regular expressions are a powerful and useful technique that should be part of any computer scientist's toolbox. This section has given you a taste of what they can do, but you should check out the specific capabilities of the regular expression implementation in the tools and programming languages that you use.     Give English-language descriptions of the languages generated by the following regular expressions.                          Give regular expressions over that generate the following languages.                                    Prove that all finite languages are regular.   The backslash is itself a meta-character. Suppose that you want to match a string that contains a backslash character. How do you suppose you would represent the backslash in the regular expression?   Using the notation introduced in this section, write a regular expression that could be used to match each of the following:   Any sequence of letters (upper- or lowercase) that includes the letter Z (in uppercase).    Any eleven-digit telephone number written in the form (xxx)xxx-xxxx .    Any eleven-digit telephone number either in the form (xxx)xxx-xxxx or xxx-xxx-xxxx .    A non-negative real number with an optional decimal part. The expression should match numbers such as 17, 183.9999, 182., 0, 0.001, and 21333.2.    A complete line of text that contains only letters.    A C++ style one-line comment consisting of \/\/ and all the following characters up to the end-of-line.       Give a search pattern and a replace pattern that could be used to perform the following conversions:   Convert a string that is enclosed in a pair of double quotes to the same string with the double quotes replaced by single quotes.    Convert seven-digit telephone numbers in the format xxx-xxx-xxxx to the format (xxx)xxx-xxxx .    Convert C++ one-line comments, consisting of characters between \/\/ and end-of-line, to C style comments enclosed between \/* and *\/ .    Convert any number of consecutive spaces and tabs to a single space.       In some implementations of ``regular expressions,'' the notations \\1 , \\2 , and so on can occur in a search pattern. For example, consider the search pattern ^([a-zA-Z]).*\\1$ . Here, \\1 represents a recurrence of the same substring that matched [a-zA-Z] , the part of the pattern between the first pair of parentheses. The entire pattern, therefore, will match a line of text that begins and ends with the same letter. Using this notation, write a pattern that matches all strings in the language . (Later in this chapter, we will see that is not a regular language, so allowing the use of \\1 in a ``regular expression'' means that it's not really a regular expression at all! This notation can add a real increase in expressive power to the patterns that contain it.)    "
 },
 {
-  "id": "p-4895",
+  "id": "p-4482",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#p-4895",
+  "url": "s-regular-expressions-and-apps.html#p-4482",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -12277,18 +11341,18 @@ var ptx_lunr_docs = [
   "body": " Language Generated by a Regular Expression  Language Generated by a Regular Expression      A language generated by regular expression .    The language generated by a regular expression  , denoted , is defined as follows:    i.e. no strings match ;     , i.e. matches only the empty string;     , i.e. matches only the string ;     , i.e. matches strings that match or or both;     , i.e. matches strings of the form ``something that matches followed by something that matches \";     , i.e. matches sequences of 0 or more strings each of which matches .     , i.e. matches exactly those strings matched by .      "
 },
 {
-  "id": "example-240",
+  "id": "example-234",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#example-240",
+  "url": "s-regular-expressions-and-apps.html#example-234",
   "type": "Example",
   "number": "15.2.3",
   "title": "",
   "body": "Let , and consider the regular expression . What is ? Well, so , and is the set of all strings of zero or more 's, so . Similarly, . Since , we have , which is the set of all strings of the form ``zero or more 's followed by zero or more 's\". "
 },
 {
-  "id": "example-241",
+  "id": "example-235",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#example-241",
+  "url": "s-regular-expressions-and-apps.html#example-235",
   "type": "Example",
   "number": "15.2.4",
   "title": "",
@@ -12304,27 +11368,27 @@ var ptx_lunr_docs = [
   "body": " Regular Language  Regular Language  A language is regular if it is generated by a regular expression.  "
 },
 {
-  "id": "p-4913",
+  "id": "p-4500",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#p-4913",
+  "url": "s-regular-expressions-and-apps.html#p-4500",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "pattern pattern matching "
 },
 {
-  "id": "p-4915",
+  "id": "p-4502",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#p-4915",
+  "url": "s-regular-expressions-and-apps.html#p-4502",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "meta-characters "
 },
 {
-  "id": "p-4918",
+  "id": "p-4505",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#p-4918",
+  "url": "s-regular-expressions-and-apps.html#p-4505",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -12403,18 +11467,18 @@ var ptx_lunr_docs = [
   "body": " Finite-State Automata  Finite-State Automata  Finite-State Machines   We have seen how regular expressions can be used to generate languages mechanically. How might languages be recognized mechanically? The question is of interest because if we can mechanically recognize languages like all legal C++ programs that will not go into infinite loops on any input , then it would be possible to write uber-compilers that can do semantic error-checking like testing for infinite loops, in addition to the syntactic error-checking they currently do.  What formalism might we use to model what it means to recognize a language ``mechanically''? We look for inspiration to a language-recognizer with which we are all familiar, and which we've already in fact mentioned: a compiler. Consider how a C++ compiler might handle recognizing a legal if statement. Having seen the word if , the compiler will be in a state or phase of its execution where it expects to see a ( ; in this state, any other character will put the compiler in a ``failure\" state. If the compiler does in fact see a ( next, it will then be in an ``expecting a boolean condition\" state; if it sees a sequence of symbols that make up a legal boolean condition, it will then be in an ``expecting a ) \" state; and then ``expecting a { ' or a legal statement\"; and so on. Thus one can think of the compiler as being in a series of states; on seeing a new input symbol, it moves on to a new state; and this sequence of transitions eventually leads to either a ``failure\" state (if the if statement is not syntactically correct) or a ``success\" state (if the if statement is legal). We isolate these three concepts---states, input-inspired transitions from state to state, and ``accepting\" vs ``non-accepting\" states---as the key features of a mechanical language-recognizer, and capture them in a model called a finite-state automaton . (Whether this is a successful distillation of the essence of mechanical language recognition remains to be seen; the question will be taken up later in this chapter.)  Automata  The term automata is the plural form of automaton . In some texts, machine is used in place of automaton.    A finite-state automaton (FSA)  finite-state automaton  , then, is a machine which takes, as input, a finite string of symbols from some alphabet . There is a finite set of states in which the machine can find itself. The state it is in before consuming any input is called the start state . Some of the states are accepting or final . If the machine ends in such a state after completely consuming an input string, the string is said to be accepted by the machine. The actual functioning of the machine is described by something called a transition function , which specifies what happens if the machine is in a particular state and looking at a particular input symbol. (``What happens\" means ``in which state does the machine end up\".)   A transition function   Below is a table that describes the transition function of a finite-state automaton with states , , and , on inputs and .                                              The table indicates, for example, that if the FSA were in state and consumed a , it would move to state .      Deterministic Finite-State Automata   Deterministic Finite-State Automata    DFA   FSAs actually come in two flavors depending on what properties you require of the transition function. We will look first at a class of FSAs called deterministic finite-state automata (DFAs). In these machines, the current state of the machine and the current input symbol together determine exactly which state the machine ends up in: for every current state, current input symbol pair, there is exactly one possible next state for the machine.   Deterministic Finite-State Automaton   Deterministic Finite-State Automata    Formally, a deterministic finite-state automaton  is specified by 5 components: where      is a finite set of states;     is an alphabet called the input alphabet ;     is a state which is designated as the start state ;     is a subset of ; the states in are states designated as final or accepting states;     is a transition function that takes state, input symbol pairs and maps each one to a state: .   To say means that if the machine is in state and the input symbol is consumed, then the machine will move into state .    The function must be a total function, meaning that must be defined for every state and every input symbol .    Recall also that, according to the definition of a function, there can be only one output for any particular input. This means that for any given and , can have only one value. This is what makes the finite-state automaton deterministic : given the current state and input symbol, there is only one possible move the machine can make.           The transition function described by the table in the preceding example is that of a DFA. If we take to be the start state and to be a final state, then the formal description of the resulting machine is , where is given by                                       The transition function describes only individual steps of the machine as individual input symbols are consumed. However, we will often want to refer to``the state the automaton will be in if it starts in state and consumes input string \", where is a string of input symbols rather than a single symbol. Following the usual practice of using to designate ``0 or more\", we define   as a convenient shorthand for ``the state that the automaton will be in if it starts in state and consumes the input string \". For any string, it is easy to see, based on , what steps the machine will make as those symbols are consumed, and what will be for any and . Note that if no input is consumed, a DFA makes no move, and so for any state . can be defined formally by saying that \\delta^*(q,\\varepsilon)=q for every state , and for any state , a\\in\\Sigma and . Note that this is a recursive definition.   Let be the automaton in the preceding example. Then, for example:   We have divided the states of a DFA into accepting and non-accepting states, with the idea that some strings will be recognized as ``legal\" by the automaton, and some not. Formally:   Language Accepted by FSA   Let . A string is accepted by iff . (Don't get confused by the notation. Remember, it's just a shorter and neater way of saying `` is accepted by if and only if the state that M will end up in if it starts in and consumes is one of the states in .\")  The language accepted by , denoted , is the set of all strings that are accepted by : .    Note that we sometimes use a slightly different phrasing and say that a language is accepted by some machine . We don't mean by this that  and maybe some other strings are accepted by ; we mean , i.e.\\ is exactly the set of strings accepted by .  It may not be easy, looking at a formal specification of a DFA, to determine what language that automaton accepts. Fortunately, the mathematical description of the automaton can be neatly and helpfully captured in a picture called a transition diagram . Consider again the DFA of the two preceding examples. It can be represented pictorially as:   Transition diagram for above DFA   The arrow on the left indicates that is the start state; double circles indicate that a state is accepting. Looking at this picture, it should be fairly easy to see that the language accepted by the DFA is .    Find the language accepted by the DFA shown below (and describe it using a regular expression!)   Transition diagram to find language   The start state of is accepting, which means . If is in state , a sequence of two 's or three 's will move back to and hence be accepted. So .    The state in the preceding example is often called a garbage or trap state: it is a non-accepting state which, once reached by the machine, cannot be escaped. It is fairly common to omit such states from transition diagrams. For example, one is likely to see the diagram:   Transition diagram omitting trap state     Note that this cannot be a complete DFA, because a DFA is required to have a transition defined for every state-input pair. The diagram is ``short for\" the full diagram:   Transition diagram with trap state     As well as recognizing what language is accepted by a given DFA, we often want to do the reverse and come up with a DFA that accepts a given language. Building DFAs for specified languages is an art, not a science. There is no algorithm that you can apply to produce a DFA from an English-language description of the set of strings the DFA should accept. On the other hand, it is not generally successful, either, to simply write down a half-dozen strings that are in the language and design a DFA to accept those strings---invariably there are strings that are in the language that aren't accepted, and other strings that aren't in the language that are accepted. So how do you go about building DFAs that accept all and only the strings they're supposed to accept? The best advice I can give is to think about relevant characteristics that determine whether a string is in the language or not, and to think about what the possible values or ``states\" of those characteristics are; then build a machine that has a state corresponding to each possible combination of values of relevant characteristics, and determine how the consumption of inputs affects those values. I'll illustrate what I mean with a couple of examples.   Find a DFA with input alphabet that accepts the language .  The characteristics that determine whether or not a string is in are the parity of and . There are four possible combinations of ``values\" for these characteristics: both numbers could be even, both could be odd, the first could be odd and the second even, or the first could be even and the second odd. So we build a machine with four states corresponding to the four cases. We want to set up \\delta so that the machine will be in state exactly when it has consumed a string with an even number of 's and an even number of 's, in state exactly when it has consumed a string with an odd number of 's and an odd number of 's, and so on.  To do this, we first make the state into our start state, because the DFA will be in the start state after consuming the empty string , and has an even number (zero) of both 's and 's. Now we add transitions by reasoning about how the parity of 's and 's is changed by additional input. For instance, if the machine is in (meaning an even number of 's and an even number of 's have been seen) and a further is consumed, then we want the machine to move to state , since the machine has now consumed an odd number of 's and still an even number of 's. So we add the transition to the machine. Similarly, if the machine is in (meaning an odd number of 's and an odd number of 's have been seen) and a further is consumed, then we want the machine to move to state again, since the machine has still consumed an odd number of 's, and now an even number of 's. So we add the transition to the machine. Similar reasoning produces a total of eight transitions, one for each state-input pair. Finally, we have to decide which states should be final states. The only state that corresponds to the desired criteria for the language is , so we make a final state. The complete machine is shown below.   Transition diagram from description above      Find a DFA with input alphabet that accepts the language . The relevant characteristic here is of course whether or not the number of 's in a string is divisible by 3, perhaps suggesting a two-state machine. But in fact, there is more than one way for a number to not be divisible by 3: dividing the number by 3 could produce a remainder of either 1 or 2 (a remainder of 0 corresponds to the number in fact being divisible by 3). So we build a machine with three states , , , and add transitions so that the machine will be in state exactly when the number of 's it has consumed is evenly divisible by 3, in state exactly when the number of 's it has consumed is equivalent to , and similarly for . State will be the start state, as has 0 's and 0 is divisible by 3. The completed machine is shown below. Notice that because the consumption of a does not affect the only relevant characteristic, 's do not cause changes of state.   Transition diagram that accepts the language      Find a DFA with input alphabet that accepts the language .  Again, it is not quite so simple as making a two-state machine where the states correspond to ``have seen \" and ``have not seen \". Think dynamically: as you move through the input string, how do you arrive at the goal of having seen three consecutive 's? You might have seen two consecutive 's and still need a third, or you might just have seen one and be looking for two more to come immediately, or you might just have seen a and be right back at the beginning as far as seeing 3 consecutive 's goes. So once again there will be three states, with the ``last symbol was not an '' state being the start state. The complete automaton is shown below.   Transition diagram that accepts the language .        Nondeterministic Finite-State Automata   Noneterministic Finite-State Automata    NDFSA    NFA   As mentioned briefly above, there is an alternative school of though as to what properties should be required of a finite-state automaton's transition function. Recall our motivating example of a C++ compiler and a legal \\em if statement. In our description, we had the compiler in an ``expecting a ) \" state; on seeing a ) , the compiler moved into an ``expecting a or a legal statement\" state. An alternative way to view this would be to say that the compiler, on seeing a ) , could move into one of two different states: it could move to an ``expecting a { \" state or move to an ``expecting a legal statement\" state. Thus, from a single state, on input ) , the compiler has multiple moves. This alternative interpretation is not allowed by the DFA model. A second point on which one might question the DFA model is the fact that input must be consumed for the machine to change state. Think of the syntax for C++ function declarations. The return type of a function need not be specified (the default is taken to be int ). The start state of the compiler when parsing a function declaration might be ``expecting a return type\"; then with no input consumed, the compiler can move to the state ``expecting a legal function name\". To model this, it might seem reasonable to allow transitions that do not require the consumption of input (such transitions are called -transitions ). Again, this is not supported by the DFA abstraction. There is, therefore, a second class of finite-state automata that people study, the class of nondeterministic finite-state automata.  A nondeterministic finite-state automaton (NFA) is the same as a deterministic finite-state automaton except that the transition function is no longer a function that maps a state-input pair to a state; rather, it maps a state-input pair or a state- pair to a set of states. No longer do we have , meaning that the machine must change to state if it is in state and consumes an . Rather, we have , meaning that if the machine is in state and consumes an , it might move directly to any one of the states . Note that the set of next states \\partial(q,a) is defined for every state and every input symbol , but for some 's and 's it could be empty, or contain just one state (there don't have to be multiple next states). The function \\ must also specify whether it is possible for the machine to make any moves without input being consumed, i.e.\\ must be specified for every state . Again, it is quite possible that may be empty for some states : there need not be -transitions out of .    Nondeterministic Finite-State Automata    Formally, a nondeterministic finite-state automaton  is specified by 5 components: where      and are as in the definition of DFAs;     is a transition function that takes state, input symbol pairs and maps each one to a set of states. To say means that if the machine is in state and the input symbol is consumed, then the machine may move directly into any one of states . The function must also be defined for every state, pair. To say means that there are direct -transitions from state to each of .  The formal description of the function is .         The function describes how the machine functions on zero or one input symbol. As with DFAs, we will often want to refer to the behavior of the machine on a string of inputs, and so we use the notation as shorthand for ``the set of states in which the machine might be if it starts in state and consumes input string \". As with DFAs, is determined by the specification of . Note that for every state , contains at least , and may contain additional states if there are (sequences of) -transitions out of .  We do have to think a bit carefully about what it means for an NFA to accept a string . Suppose contains both accepting and non-accepting states, i.e.\\ the machine could end in an accepting state after consuming , but it might also end in a non-accepting state. Should we consider the machine to accept , or should we require every state in to be accepting before we admit to the ranks of the accepted? Think of the C++ compiler again: provided that an if statement fits one of the legal syntax specifications, the compiler will accept it. So we take as the definition of acceptance by an NFA: A string is accepted by an NFA provided that at least one of the states in is an accepting state. That is, if there is some sequence of steps of the machine that consumes and leaves the machine in an accepting state, then the machine accepts . Formally:   Language Accepted by NFA   Let be a nondeterministic finite-state automaton. The string is accepted by iff contains at least one state .  The language accepted by , denoted , is the set of all strings that are accepted by : .     The NFA shown below accepts all strings of 's and 's in which the second-to-last symbol is .   Diagram of an NFA that accepts the language described above.      It should be fairly clear that every language that is accepted by a DFA is also accepted by an NFA. Pictorially, a DFA looks exactly like an NFA (an NFA that doesn't happen to have any -transitions or multiple same-label transitions from any state), though there is slightly more going on behind the scenes. Formally, given the DFA , you can build an NFA where 4 of the 5 components are the same and where every transition has been replaced by .  But is the reverse true? Can any NFA-recognized language be recognized by a DFA? Look, for example, at the language in . Can you come up with a DFA that accepts this language? Try it. It's pretty difficult to do. But does that mean that there really is no DFA that accepts the language, or only that we haven't been clever enough to find one?  It turns out that the limitation is in fact in our cleverness, and not in the power of DFAs.    Every language that is accepted by an NFA is accepted by a DFA.    Suppose we are given an NFA , and we want to build a DFA that accepts the same language. The idea is to make the states in correspond to {\\em subsets} of 's states, and then to set up 's transition function so that for any string , corresponds to ; i.e.\\ the {\\bf single} state that gets you to in corresponds to the {\\bf set} of states that could get you to in . If any of those states is accepting in , would be accepted by , and so the corresponding state in would be made accepting as well.  So how do we make this work? The first thing to do is to deal with a start state for . If we're going to make this state correspond to a subset of 's states, what subset should it be? Well, remember (1) that in any DFA, ; and (2) we want to make correspond to for every . Putting these two limitations together tells us that we should make correspond to . So corresponds to the subset of all of 's states that can be reached with no input.  Now we progressively set up 's transition function by repeatedly doing the following:   find a state that has been added to but whose out-transitions have not yet been added. (Note that initially fits this description.) Remember that the state corresponds to some subset of 's states.    for each input symbol , look at all 's states that can be reached from any one of by consuming (perhaps making some -transitions as well). That is, look at . If there is not already a DFA state that corresponds to this subset of 's states, then add one, and add the transition to 's transitions.     The above process must halt eventually, as there are only a finite number of states in the NFA, and therefore there can be at most states in the DFA, as that is the number of subsets of the NFA's states. The final states of the new DFA are those where at least one of the associated NFA states is an accepting state of the NFA.  Can we now argue that ? We can, if we can argue that corresponds to for all : if this latter property holds, then iff is accepting, which we made be so iff contains an accepting state of , which happens iff accepts i.e.\\ iff .  So can we argue that does in fact correspond to for all ? We can, using induction on the length of .  First, a preliminary observation. Suppose , i.e.\\ is the string followed by the single symbol . How are and related? Well, recall that is the set of all states that can reach when it starts in and consumes : for some states . Now, is just with an additional , so where might end up if it starts in and consumes ? We know that gets to or or , so gets to any state that can be reached from with an (and maybe some -transitions), and to any state that can be reached from with an (and maybe some -transitions), etc. Thus, our relationship between and is that if , then . With this observation in hand, let's proceed to our proof by induction.  We want to prove that corresponds to for all . We use induction on the length of .   Base case: Suppose has length 0. The only string with length 0 is , so we want to show that corresponds to . Well, , since in a DFA, for any state~ . We explicitly made correspond to , and so the property holds for with length 0.    Inductive case: Assume that the desired property holds for some number , i.e.\\ that corresponds to for all with length . Look at an arbitrary string with length . We want to show that corresponds to . Well, the string must look like for some string (whose length is ) and some symbol . By our inductive hypothesis, we know corresponds to . We know is a set of 's states, say .  At this point, our subsequent reasoning might be a bit clearer if we give explicit names to (the state reaches on input ) and (the state reaches on input ). Call \\ , and call \\ . We know, because , there must be an -transition from to . Look at how we added transitions to : the fact that there is an -transition from to means that corresponds to the set of 's states. By our preliminary observation, is just . So (or ) corresponds to , which is what we wanted to prove. Since was an arbitrary string of length , we have shown that the property holds for .     Altogether, we have shown by induction that corresponds to for all . As indicated at the very beginning of this proof, that is enough to prove that . So for any NFA , we can find a DFA that accepts the same language.     Consider the NFA shown below.   Diagram of an NFA to convert to DFA.     We start by looking at , and then add transitions and states as described above.    so .     will be , which is , so .     will be , which is , so we need to add a new state to the DFA; and add to the DFA's transition function.     will be unioned with since . Since , we need to add a new state to the DFA, and a transition .     will be unioned with , which gives , which again gives us a new state to add to the DFA, together with the transition .     At this point, our partially-constructed DFA looks as shown below:   Diagram of an NFA partially converted to a DFA.     The construction continues as long as there are new states being added, and new transitions from those states that have to be computed. The final DFA is shown below.   Diagram of completed DFA.         Give DFAs that accept the following languages over .                                    What languages do the following DFAs accept?   Transition diagram (a).      Transition diagram (b).       Let . Give a DFA that accepts the language     What language does the NFA in accept?    Give a DFA that accepts the language accepted by the following NFA.   NFA diagram for exercise 5.       Give a DFA that accepts the language accepted by the following NFA. (Be sure to note that, for example, it is possible to reach both and from on consumption of an , because of the -transition.)   NFA diagram for exercise 6.        "
 },
 {
-  "id": "p-4951",
+  "id": "p-4538",
   "level": "2",
-  "url": "s-finite-state-automata.html#p-4951",
+  "url": "s-finite-state-automata.html#p-4538",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "finite-state automaton automata automaton machine "
 },
 {
-  "id": "p-4953",
+  "id": "p-4540",
   "level": "2",
-  "url": "s-finite-state-automata.html#p-4953",
+  "url": "s-finite-state-automata.html#p-4540",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -12439,27 +11503,27 @@ var ptx_lunr_docs = [
   "body": " Deterministic Finite-State Automaton   Deterministic Finite-State Automata    Formally, a deterministic finite-state automaton  is specified by 5 components: where      is a finite set of states;     is an alphabet called the input alphabet ;     is a state which is designated as the start state ;     is a subset of ; the states in are states designated as final or accepting states;     is a transition function that takes state, input symbol pairs and maps each one to a state: .   To say means that if the machine is in state and the input symbol is consumed, then the machine will move into state .    The function must be a total function, meaning that must be defined for every state and every input symbol .    Recall also that, according to the definition of a function, there can be only one output for any particular input. This means that for any given and , can have only one value. This is what makes the finite-state automaton deterministic : given the current state and input symbol, there is only one possible move the machine can make.         "
 },
 {
-  "id": "example-243",
+  "id": "example-237",
   "level": "2",
-  "url": "s-finite-state-automata.html#example-243",
+  "url": "s-finite-state-automata.html#example-237",
   "type": "Example",
   "number": "15.3.4",
   "title": "",
   "body": " The transition function described by the table in the preceding example is that of a DFA. If we take to be the start state and to be a final state, then the formal description of the resulting machine is , where is given by                                      "
 },
 {
-  "id": "p-4973",
+  "id": "p-4560",
   "level": "2",
-  "url": "s-finite-state-automata.html#p-4973",
+  "url": "s-finite-state-automata.html#p-4560",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "  "
 },
 {
-  "id": "example-244",
+  "id": "example-238",
   "level": "2",
-  "url": "s-finite-state-automata.html#example-244",
+  "url": "s-finite-state-automata.html#example-238",
   "type": "Example",
   "number": "15.3.5",
   "title": "",
@@ -12475,9 +11539,9 @@ var ptx_lunr_docs = [
   "body": " Language Accepted by FSA   Let . A string is accepted by iff . (Don't get confused by the notation. Remember, it's just a shorter and neater way of saying `` is accepted by if and only if the state that M will end up in if it starts in and consumes is one of the states in .\")  The language accepted by , denoted , is the set of all strings that are accepted by : .   "
 },
 {
-  "id": "p-4978",
+  "id": "p-4565",
   "level": "2",
-  "url": "s-finite-state-automata.html#p-4978",
+  "url": "s-finite-state-automata.html#p-4565",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -12511,45 +11575,45 @@ var ptx_lunr_docs = [
   "body": "  Transition diagram with trap state   "
 },
 {
-  "id": "example-246",
+  "id": "example-240",
   "level": "2",
-  "url": "s-finite-state-automata.html#example-246",
+  "url": "s-finite-state-automata.html#example-240",
   "type": "Example",
   "number": "15.3.12",
   "title": "",
   "body": " Find a DFA with input alphabet that accepts the language .  The characteristics that determine whether or not a string is in are the parity of and . There are four possible combinations of ``values\" for these characteristics: both numbers could be even, both could be odd, the first could be odd and the second even, or the first could be even and the second odd. So we build a machine with four states corresponding to the four cases. We want to set up \\delta so that the machine will be in state exactly when it has consumed a string with an even number of 's and an even number of 's, in state exactly when it has consumed a string with an odd number of 's and an odd number of 's, and so on.  To do this, we first make the state into our start state, because the DFA will be in the start state after consuming the empty string , and has an even number (zero) of both 's and 's. Now we add transitions by reasoning about how the parity of 's and 's is changed by additional input. For instance, if the machine is in (meaning an even number of 's and an even number of 's have been seen) and a further is consumed, then we want the machine to move to state , since the machine has now consumed an odd number of 's and still an even number of 's. So we add the transition to the machine. Similarly, if the machine is in (meaning an odd number of 's and an odd number of 's have been seen) and a further is consumed, then we want the machine to move to state again, since the machine has still consumed an odd number of 's, and now an even number of 's. So we add the transition to the machine. Similar reasoning produces a total of eight transitions, one for each state-input pair. Finally, we have to decide which states should be final states. The only state that corresponds to the desired criteria for the language is , so we make a final state. The complete machine is shown below.   Transition diagram from description above     "
 },
 {
-  "id": "example-247",
+  "id": "example-241",
   "level": "2",
-  "url": "s-finite-state-automata.html#example-247",
+  "url": "s-finite-state-automata.html#example-241",
   "type": "Example",
   "number": "15.3.14",
   "title": "",
   "body": "Find a DFA with input alphabet that accepts the language . The relevant characteristic here is of course whether or not the number of 's in a string is divisible by 3, perhaps suggesting a two-state machine. But in fact, there is more than one way for a number to not be divisible by 3: dividing the number by 3 could produce a remainder of either 1 or 2 (a remainder of 0 corresponds to the number in fact being divisible by 3). So we build a machine with three states , , , and add transitions so that the machine will be in state exactly when the number of 's it has consumed is evenly divisible by 3, in state exactly when the number of 's it has consumed is equivalent to , and similarly for . State will be the start state, as has 0 's and 0 is divisible by 3. The completed machine is shown below. Notice that because the consumption of a does not affect the only relevant characteristic, 's do not cause changes of state.   Transition diagram that accepts the language    "
 },
 {
-  "id": "example-248",
+  "id": "example-242",
   "level": "2",
-  "url": "s-finite-state-automata.html#example-248",
+  "url": "s-finite-state-automata.html#example-242",
   "type": "Example",
   "number": "15.3.16",
   "title": "",
   "body": " Find a DFA with input alphabet that accepts the language .  Again, it is not quite so simple as making a two-state machine where the states correspond to ``have seen \" and ``have not seen \". Think dynamically: as you move through the input string, how do you arrive at the goal of having seen three consecutive 's? You might have seen two consecutive 's and still need a third, or you might just have seen one and be looking for two more to come immediately, or you might just have seen a and be right back at the beginning as far as seeing 3 consecutive 's goes. So once again there will be three states, with the ``last symbol was not an '' state being the start state. The complete automaton is shown below.   Transition diagram that accepts the language .     "
 },
 {
-  "id": "p-4988",
+  "id": "p-4575",
   "level": "2",
-  "url": "s-finite-state-automata.html#p-4988",
+  "url": "s-finite-state-automata.html#p-4575",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "-transitions "
 },
 {
-  "id": "p-4989",
+  "id": "p-4576",
   "level": "2",
-  "url": "s-finite-state-automata.html#p-4989",
+  "url": "s-finite-state-automata.html#p-4576",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -12661,7 +11725,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "15.4",
   "title": "Finite-State Automata and Regular Languages",
-  "body": " Finite-State Automata and Regular Languages   We know now that our two models for mechanical language recognition actually recognize the same class of languages. The question still remains: do they recognize the same class of languages as the class generated mechanically by regular expressions? The answer turns out to be ``yes\". There are two parts to proving this: first that every language generated can be recognized, and second that every language recognized can be generated.    All Regular Languages are Recognized by NFAs   Regular Language     Every language generated by a regular expression can be recognized by an NFA.    The proof of this theorem is a nice example of a proof by induction on the structure of regular expressions. The definition of regular expression is inductive: , , and are the simplest regular expressions, and then more complicated regular expressions can be built from these. We will show that there are NFAs that accept the languages generated by the simplest regular expressions, and then show how those machines can be put together to form machines that accept languages generated by more complicated regular expressions. Consider the regular expression . . Here is a machine that accepts :   Diagram of an NFA that accepts .     Consider the regular expression . . Here is a machine that accepts :   Diagram of an NFA that accepts .     Consider the regular expression . . Here is a machine that accepts :   Diagram of an NFA that accepts .    Now suppose that you have NFAs that accept the languages generated by the regular expressions and . Building a machine that accepts is fairly straightforward: take an NFA that accepts and an NFA that accepts . Introduce a new state , connect it to the start states of and via -transitions, and designate it as the start state of the new machine. No other transitions are added. The final states of together with the final states of are designated as the final states of the new machine. It should be fairly clear that this new machine accepts exactly those strings accepted by together with those strings accepted by : any string that was accepted by will be accepted by the new NFA by starting with an -transition to the old start state of and then following the accepting path through ; similarly, any string accepted by will be accepted by the new machine; these are the only strings that will be accepted by the new machine, as on any input all the new machine can do is make an -move to 's (or 's) start state, and from there will only be accepted by the new machine if it is accepted by (or ). Thus, the new machine accepts , which is , which is exactly the definition of .   Diagram of an NFA that accepts .      A pause before we continue:  Note that for the simplest regular expressions, the machines that we created to accept the languages generated by the regular expressions were in fact DFAs. In our last case above, however, we needed -transitions to build the new machine, and so if we were trying to prove that every regular language could be accepted by a DFA, our proof would be in trouble. THIS DOES NOT MEAN that the statement ``every regular language can be accepted by a DFA\" is false, just that we can't prove it using this kind of argument, and would have to find an alternative proof.   Suppose you have machines and that accept and respectively. To build a machine that accepts proceed as follows. Make the start state of be the start state of the new machine. Make the final states of be the final states of the new machine. Add -transitions from the final states of to the start state of .   Diagram of an NFA that accepts .     It should be fairly clear that this new machine accepts exactly those strings of the form where and : first of all, any string of this form will be accepted because implies there is a path that consumes from to a final state of ; a -transition moves to ; then implies there is a path that consumes from to a final state of ; and the final states of are the final states of the new machine, so will be accepted. Conversely, suppose is accepted by the new machine. Since the only final states of the new machine are in the old , and the only way to get into is to take a -transition from a final state of , this means that where takes the machine from its start state to a final state of , a -transition occurs, and then takes the machine from to a final state of . Clearly, and .  We leave the construction of an NFA that accepts from an NFA that accepts as an exercise.      Every Language Recognized by an NFA is Regular   Regular Language     Every language that is accepted by a DFA or an NFA is generated by a regular expression.   Proving this result is actually fairly involved and not very illuminating. Below we will give an illustrative example of how one might actually go about extracting a regular expression from an NFA or a DFA. You can go on to read the proof if you are interested.   We prove that the language accepted by a DFA is regular. The proof for NFAs follows from the equivalence between DFAs and NFAs. Suppose that is a DFA, where . Let be the number of states in , and write . We want to consider computations in which starts in some state , reads a string , and ends in state . In such a computation, might go through a series of intermediates states between and : We are interested in computations in which all of the intermediate states--- ---are in the set , for some number~ . We define to be the set of all strings in that are consumed by such a computation. That is, if and only if when starts in state and reads , it ends in state , and all the intermediate states between and are in the set . is a language over . We show that for . Consider the language . For , the set of allowable intermediate states is empty. Since there can be no intermediate states, it follows that there can be at most one step in the computation that starts in state , reads , and ends in state . So, can be at most one. This means that is finite, and hence is regular. (In fact, , for , and . Note that in many cases, will be the empty set.) We now proceed by induction on to show that is regular for all and . We have proved the base case, . Suppose that we already know that is regular for all and all . We need to show that is regular for all and . In fact, which is regular because is regular for all and , and because the union, concatenation, and Kleene star of regular languages are regular.  To see that the above equation holds, consider a string . Now, if and only if when starts in state and reads , it ends in state , with all intermediate states in the computation in the set . Consider such a computation. There are two cases: Either occurs as an intermediate state in the computation, or it does not. If it does not occur, then all the intermediate states are in the set , which means that in fact . If  does occur as an intermediate state in the computation, then we can break the computation into phases, by dividing it at each point where occurs as an intermediate state. This breaks into a concatenation . The string is consumed in the first phase of the computation, during which goes from state to the first occurrence of ; since the intermediate states in this computation are in the set . The string is consumed by the last phase of the computation, in which goes from the final occurrence of to , so that . And each string is consumed in a phase of the computation in which goes from one occurrence of to the next occurrence of , so that . This means that . We now know, in particular, that is a regular language for all . But consists of all strings such that when starts in state and reads , it ends in state (with \\textbf{no} restriction on the intermediate states in the computation, since every state of is in the set \\{q_0,q_1,\\dots,q_{n-1}\\}). To finish the proof that is regular, it is only necessary to note that which is regular since it is a union of regular languages. This equation is true since a string is in if and only if when starts in state and reads , in ends in some accepting state . This is the same as saying for some with .      Consider the DFA shown below:   Diagram of a DFA to extract regular expression from.     Note that there is a loop from state back to state : any number of 's will keep the machine in state , and so we label the transition with the regular expression . We do the same thing to the transition labeled from . (Note that the result is no longer a DFA, but that doesn't concern us, we're just interested in developing a regular expression.)   Altered diagram from above.     Next we note that there is in fact a loop from to via . A regular expression that matches the strings that would move around the loop is . So we add a transition labeled from to , and remove the now-irrelevant -transition from to . (It is irrelevant because it is not part of any other loop from to .)   Altered diagram from above.     Next we note that there is also a loop from to via . A regular expression that matches the strings that would move around the loop is . Since the transitions in the loop are the only transitions to or from , we simply remove and replace it with a transition from to .   Altered diagram from above.     It is now clear from the diagram that strings of the form get you to state , and any number of repetitions of strings that match or will keep you there. So the machine accepts .    We have already seen that if two languages and are regular, then so are , , and (and of course ). We have not yet seen, however, how the common set operations intersection and complementation affect regularity. Is the complement of a regular language regular? How about the intersection of two regular languages? Both of these questions can be answered by thinking of regular languages in terms of their acceptance by DFAs. Let's consider first the question of complementation. Suppose we have an arbitrary regular language . We know there is a DFA that accepts . Pause a moment and try to think of a modification that you could make to that would produce a new machine that accepts .... Okay, the obvious thing to try is to make be a copy of with all final states of becoming non-final states of and vice versa. This is in fact exactly right: does in fact accept . To verify this, consider an arbitrary string . The transition functions for the two machines and are identical, so is the same state in both and ; if that state is accepting in then it is non-accepting in , so if is accepted by it is not accepted by ; if the state is non-accepting in then it is accepting in , so if is not accepted by then it is accepted by . Thus accepts exactly those strings that does not, and hence accepts . It is worth pausing for a moment and looking at the above argument a bit longer. Would the argument have worked if we had looked at an arbitrary language and an arbitrary NFA that accepted ? That is, if we had built a new machine in which the final and non-final states had been switched, would the new NFA accept the complement of the language accepted by ? The answer is ``not necessarily\". Remember that acceptance in an NFA is determined based on whether or not at least one of the states reached by a string is accepting. So any string with the property that contains both accepting and non-accepting states of would be accepted both by and by . Now let's turn to the question of intersection. Given two regular languages and , is regular? Again, it is useful to think in terms of DFAs: given machines and that accept and , can you use them to build a new machine that accepts ? The answer is yes, and the idea behind the construction bears some resemblance to that behind the NFA-to-DFA construction. We want a new machine where transitions reflect the transitions of both and simultaneously, and we want to accept a string only if that those sequences of transitions lead to final states in both and . So we associate the states of our new machine with pairs of states from and . For each state in the new machine and input symbol , define to be the state . The start state of is , where is the start state of . The final states of are the the states of the form where is an accepting state of and is an accepting state of . You should convince yourself that accepts a string iff is accepted by both and . The results of the previous section and the preceding discussion are summarized by the following theorem:   Set Operations on Regular Languages      The intersection of two regular languages is a regular language.    The union of two regular languages is a regular language.    The concatenation of two regular languages is a regular language.    The complement of a regular language is a regular language.    The Kleene closure of a regular language is a regular language.         Non-regular Languages  The fact that our models for mechanical language-recognition accept exactly the same languages as those generated by our mechanical language-generation system would seem to be a very positive indication that in ``regular\" we have in fact managed to isolate whatever characteristic it is that makes a language ``mechanical\". Unfortunately, there are languages that we intuitively think of as being mechanically-recognizable (and which we could write C++ programs to recognize) that are not in fact regular.  How does one prove that a language is not regular? We could try proving that there is no DFA or NFA that accepts it, or no regular expression that generates it, but this kind of argument is generally rather difficult to make. It is hard to rule out all possible automata and all possible regular expressions. Instead, we will look at a property that all regular languages have; proving that a given language does not have this property then becomes a way of proving that that language is not regular.  Consider the language . Below is a DFA that accepts this language, with states numbered 1 through 9.   Diagram of DFA that accepts .     Consider the sequence of states that the machine passes through while processing the string . Note that there is a repeated state (state 2). We say that ``goes through the state 2 twice\", meaning that in the course of the string being processed, the machine is in state 2 twice (at least). Call the section of the string that takes you around the loop , the preceding section , and the rest . Then is accepted, is accepted, is accepted, etc. Note that the string cannot be divided this way, because it does not go through the same state twice. Which strings can be divided this way? Any string that goes through the same state twice. This may include some relatively short strings and must include any string with length greater than or equal to 9, because there are only 9 states in the machine, and so repetition must occur after 9 input symbols at the latest.  More generally, consider an arbitrary DFA , and let the number of states in be . Then any string that is accepted by and has or more symbols must go through the same state twice, and can therefore be broken up into three pieces (where contains at least one symbol) so that and    is accepted by      is accepted by (after all, we started with in )     is accepted by     etc.     Note that you can actually say even more: within the first characters of you must already get a repeated state, so you can always find an as described above where, in addition, the portion of (the portion of that takes you to and back to a repeated state) contains at most symbols.  So altogether, if is an -state DFA that accepts , and is a string in whose length is at least , then can be broken down into three pieces , , and , , such that    and together contain no more than symbols;   contains at least one symbol;     is accepted by      is accepted by      is accepted by     etc.      The usually-stated form of this result is the Pumping Lemma:   Pumping Lemma  Pumping Lemma   If is a regular language and is a DFA that accepts , then there is some number such that any string in whose length is greater than or equal to can be broken down into three pieces , , and , , such that    and together contain no more than symbols;     contains at least one symbol;        is accepted by      is accepted by      is accepted by     etc.          Though the Pumping Lemma says something about regular languages, it is not used to prove that languages are regular. It says `` if a language is regular, then certain things happen\", not ``if certain things happen, then you can conclude that the language is regular.\" However, the Pumping Lemma is useful for proving that languages are not regular, since the contrapositive of ``if a language is regular then certain things happen\" is ``if certain things don't happen then you can conclude that the language is not regular.\" So what are the ``certain things\"? Basically, the P.L. says that if a language is regular, there is some ``threshold\" length for strings, and every string that goes over that threshold can be broken down in a certain way. Therefore, if we can show that ``there is some threshold length for strings such that every string that goes over that threshold can be broken down in a certain way\" is a false assertion about a language, we can conclude that the language is not regular. How do you show that there is no threshold length? Saying a number is a threshold length for a language means that every string in the language that is at least that long can be broken down in the ways described. So to show that a number is not a threshold value, we have to show that there is some string in the language that is at least that long that cannot be broken down in the appropriate way.     is not regular.    We do this by showing that there is no threshold value for the language. Let be an arbitrary candidate for threshold value. We want to show that it is not in fact a threshold value, so we want to find a string in the language whose length is at least and which can't be broken down in the way described by the Pumping Lemma. What string should we try to prove unbreakable? We can't pick strings like because we're working with an arbitrary i.e.\\ making no assumptions about 's value; picking is implicitly assuming that is no bigger than 200 --- for larger values of , would not be ``a string whose length is at least \". Whatever string we pick, we have to be sure that its length is at least , no matter what number is. So we pick, for instance, . This string is in the language, and its length is at least , no matter what number is. If we can show that this string can't be broken down as described by the Pumping Lemma, then we'll have shown that doesn't work as a threshold value, and since was an arbitrary number, we will have shown that there is no threshold value for and hence is not regular. So let's show that can't be broken down appropriately.  We need to show that you can't write as where and together contain at most symbols, isn't empty, and all the strings , , , etc.\\ are still in , i.e.\\ of the form for some number~ . The best way to do this is to show that any choice for (with being whatever precedes it and being whatever follows) that satisfies the first two requirements fails to satisfy the third. So what are our possible choices for ? Well, since and together can contain at most symbols, and starts with  's, both and must be made up entirely of 's; since can't be empty, it must contain at least one and (from (i)) no more than  's. So the possible choices for are for some . We want to show now that none of these choices will satisfy the third requirement by showing that for any value of , at least one of the strings , , , etc will not be in . No matter what value we try for , we don't have to look far for our rogue string: the string , which is with  's deleted from it, looks like , which is clearly not of the form . So the only 's that satisfy (i) and (ii) don't satisfy (iii); so can't be broken down as required; so is not a threshold value for ; and since was an arbitrary number, there is no threshold value for ; so is not regular.    The fact that languages like and are not regular is a severe blow to any idea that regular expressions or finite-state automata capture the language-generation or language-recognition capabilities of a computer: They are both languages that we could easily write programs to recognize. It is not clear how the expressive power of regular expressions could be increased, nor how one might modify the FSA model to obtain a more powerful one. However, in the next chapter you will be introduced to the concept of a {\\em grammar} as a tool for generating languages. The simplest grammars still only produce regular languages, but you will see that more complicated grammars have the power to generate languages far beyond the realm of the regular.    Exercises  Give a DFA that accepts the intersection of the languages accepted by the machines shown below. (Suggestion: use the construction discussed in the chapter just before .)   Diagram of two DFAs to combine.     Complete the proof of by showing how to modify a machine that accepts into a machine that accepts .  Using the construction described in , build an NFA that accepts .  Prove that the reverse of a regular language is regular.  Show that for any DFA or NFA, there is an NFA with exactly one final state that accepts the same language.  Suppose we change the model of NFAs to allow NFAs to have multiple start states. Show that for any ``NFA\" with multiple start states, there is an NFA with exactly one start state that accepts the same language.  Suppose that and are DFAs over the alphabet . It is possible to construct a DFA that accepts the langauge in a single step. Define the DFA where is the function from to that is defined by: . Convince yourself that this definition makes sense. (For example, note that states in are pairs of states, where and , and note that the start state in is in fact a state in .) Prove that , and explain why this shows that the intersection of any two regular languages is regular. This proof---if you can get past the notation---is more direct than the one outlined above.  Use the Pumping Lemma to show that the following languages over are not regular.         "
+  "body": " Finite-State Automata and Regular Languages   We know now that our two models for mechanical language recognition actually recognize the same class of languages. The question still remains: do they recognize the same class of languages as the class generated mechanically by regular expressions? The answer turns out to be ``yes\". There are two parts to proving this: first that every language generated can be recognized, and second that every language recognized can be generated.    All Regular Languages are Recognized by NFAs   Regular Language     Every language generated by a regular expression can be recognized by an NFA.    The proof of this theorem is a nice example of a proof by induction on the structure of regular expressions. The definition of regular expression is inductive: , , and are the simplest regular expressions, and then more complicated regular expressions can be built from these. We will show that there are NFAs that accept the languages generated by the simplest regular expressions, and then show how those machines can be put together to form machines that accept languages generated by more complicated regular expressions. Consider the regular expression . . Here is a machine that accepts :   Diagram of an NFA that accepts .     Consider the regular expression . . Here is a machine that accepts :   Diagram of an NFA that accepts .     Consider the regular expression . . Here is a machine that accepts :   Diagram of an NFA that accepts .    Now suppose that you have NFAs that accept the languages generated by the regular expressions and . Building a machine that accepts is fairly straightforward: take an NFA that accepts and an NFA that accepts . Introduce a new state , connect it to the start states of and via -transitions, and designate it as the start state of the new machine. No other transitions are added. The final states of together with the final states of are designated as the final states of the new machine. It should be fairly clear that this new machine accepts exactly those strings accepted by together with those strings accepted by : any string that was accepted by will be accepted by the new NFA by starting with an -transition to the old start state of and then following the accepting path through ; similarly, any string accepted by will be accepted by the new machine; these are the only strings that will be accepted by the new machine, as on any input all the new machine can do is make an -move to 's (or 's) start state, and from there will only be accepted by the new machine if it is accepted by (or ). Thus, the new machine accepts , which is , which is exactly the definition of .   Diagram of an NFA that accepts .      A pause before we continue:  Note that for the simplest regular expressions, the machines that we created to accept the languages generated by the regular expressions were in fact DFAs. In our last case above, however, we needed -transitions to build the new machine, and so if we were trying to prove that every regular language could be accepted by a DFA, our proof would be in trouble. THIS DOES NOT MEAN that the statement ``every regular language can be accepted by a DFA\" is false, just that we can't prove it using this kind of argument, and would have to find an alternative proof.   Suppose you have machines and that accept and respectively. To build a machine that accepts proceed as follows. Make the start state of be the start state of the new machine. Make the final states of be the final states of the new machine. Add -transitions from the final states of to the start state of .   Diagram of an NFA that accepts .     It should be fairly clear that this new machine accepts exactly those strings of the form where and : first of all, any string of this form will be accepted because implies there is a path that consumes from to a final state of ; a -transition moves to ; then implies there is a path that consumes from to a final state of ; and the final states of are the final states of the new machine, so will be accepted. Conversely, suppose is accepted by the new machine. Since the only final states of the new machine are in the old , and the only way to get into is to take a -transition from a final state of , this means that where takes the machine from its start state to a final state of , a -transition occurs, and then takes the machine from to a final state of . Clearly, and .  We leave the construction of an NFA that accepts from an NFA that accepts as an exercise.      Every Language Recognized by an NFA is Regular   Regular Language     Every language that is accepted by a DFA or an NFA is generated by a regular expression.   Proving this result is actually fairly involved and not very illuminating. Below we will give an illustrative example of how one might actually go about extracting a regular expression from an NFA or a DFA. You can go on to read the proof if you are interested.   We prove that the language accepted by a DFA is regular. The proof for NFAs follows from the equivalence between DFAs and NFAs.  Suppose that is a DFA, where . Let be the number of states in , and write . We want to consider computations in which starts in some state , reads a string , and ends in state . In such a computation, might go through a series of intermediates states between and : We are interested in computations in which all of the intermediate states--- ---are in the set , for some number~ . We define to be the set of all strings in that are consumed by such a computation. That is, if and only if when starts in state and reads , it ends in state , and all the intermediate states between and are in the set . is a language over . We show that for .  Consider the language . For , the set of allowable intermediate states is empty. Since there can be no intermediate states, it follows that there can be at most one step in the computation that starts in state , reads , and ends in state . So, can be at most one. This means that is finite, and hence is regular. (In fact, , for , and . Note that in many cases, will be the empty set.)  We now proceed by induction on to show that is regular for all and . We have proved the base case, . Suppose that we already know that is regular for all and all . We need to show that is regular for all and . In fact, which is regular because is regular for all and , and because the union, concatenation, and Kleene star of regular languages are regular.  To see that the above equation holds, consider a string . Now, if and only if when starts in state and reads , it ends in state , with all intermediate states in the computation in the set . Consider such a computation. There are two cases: Either occurs as an intermediate state in the computation, or it does not. If it does not occur, then all the intermediate states are in the set , which means that in fact . If  does occur as an intermediate state in the computation, then we can break the computation into phases, by dividing it at each point where occurs as an intermediate state. This breaks into a concatenation . The string is consumed in the first phase of the computation, during which goes from state to the first occurrence of ; since the intermediate states in this computation are in the set . The string is consumed by the last phase of the computation, in which goes from the final occurrence of to , so that . And each string is consumed in a phase of the computation in which goes from one occurrence of to the next occurrence of , so that . This means that .  We now know, in particular, that is a regular language for all . But consists of all strings such that when starts in state and reads , it ends in state (with \\textbf{no} restriction on the intermediate states in the computation, since every state of is in the set \\{q_0,q_1,\\dots,q_{n-1}\\}). To finish the proof that is regular, it is only necessary to note that which is regular since it is a union of regular languages. This equation is true since a string is in if and only if when starts in state and reads , in ends in some accepting state . This is the same as saying for some with .      Consider the DFA shown below:   Diagram of a DFA to extract regular expression from.     Note that there is a loop from state back to state : any number of 's will keep the machine in state , and so we label the transition with the regular expression . We do the same thing to the transition labeled from . (Note that the result is no longer a DFA, but that doesn't concern us, we're just interested in developing a regular expression.)   Altered diagram from above.     Next we note that there is in fact a loop from to via . A regular expression that matches the strings that would move around the loop is . So we add a transition labeled from to , and remove the now-irrelevant -transition from to . (It is irrelevant because it is not part of any other loop from to .)   Altered diagram from above.     Next we note that there is also a loop from to via . A regular expression that matches the strings that would move around the loop is . Since the transitions in the loop are the only transitions to or from , we simply remove and replace it with a transition from to .   Altered diagram from above.     It is now clear from the diagram that strings of the form get you to state , and any number of repetitions of strings that match or will keep you there. So the machine accepts .    We have already seen that if two languages and are regular, then so are , , and (and of course ). We have not yet seen, however, how the common set operations intersection and complementation affect regularity. Is the complement of a regular language regular? How about the intersection of two regular languages? Both of these questions can be answered by thinking of regular languages in terms of their acceptance by DFAs. Let's consider first the question of complementation. Suppose we have an arbitrary regular language . We know there is a DFA that accepts . Pause a moment and try to think of a modification that you could make to that would produce a new machine that accepts .... Okay, the obvious thing to try is to make be a copy of with all final states of becoming non-final states of and vice versa. This is in fact exactly right: does in fact accept . To verify this, consider an arbitrary string . The transition functions for the two machines and are identical, so is the same state in both and ; if that state is accepting in then it is non-accepting in , so if is accepted by it is not accepted by ; if the state is non-accepting in then it is accepting in , so if is not accepted by then it is accepted by . Thus accepts exactly those strings that does not, and hence accepts . It is worth pausing for a moment and looking at the above argument a bit longer. Would the argument have worked if we had looked at an arbitrary language and an arbitrary NFA that accepted ? That is, if we had built a new machine in which the final and non-final states had been switched, would the new NFA accept the complement of the language accepted by ? The answer is ``not necessarily\". Remember that acceptance in an NFA is determined based on whether or not at least one of the states reached by a string is accepting. So any string with the property that contains both accepting and non-accepting states of would be accepted both by and by . Now let's turn to the question of intersection. Given two regular languages and , is regular? Again, it is useful to think in terms of DFAs: given machines and that accept and , can you use them to build a new machine that accepts ? The answer is yes, and the idea behind the construction bears some resemblance to that behind the NFA-to-DFA construction. We want a new machine where transitions reflect the transitions of both and simultaneously, and we want to accept a string only if that those sequences of transitions lead to final states in both and . So we associate the states of our new machine with pairs of states from and . For each state in the new machine and input symbol , define to be the state . The start state of is , where is the start state of . The final states of are the the states of the form where is an accepting state of and is an accepting state of . You should convince yourself that accepts a string iff is accepted by both and . The results of the previous section and the preceding discussion are summarized by the following theorem:   Set Operations on Regular Languages      The intersection of two regular languages is a regular language.    The union of two regular languages is a regular language.    The concatenation of two regular languages is a regular language.    The complement of a regular language is a regular language.    The Kleene closure of a regular language is a regular language.         Non-regular Languages  The fact that our models for mechanical language-recognition accept exactly the same languages as those generated by our mechanical language-generation system would seem to be a very positive indication that in ``regular\" we have in fact managed to isolate whatever characteristic it is that makes a language ``mechanical\". Unfortunately, there are languages that we intuitively think of as being mechanically-recognizable (and which we could write C++ programs to recognize) that are not in fact regular.  How does one prove that a language is not regular? We could try proving that there is no DFA or NFA that accepts it, or no regular expression that generates it, but this kind of argument is generally rather difficult to make. It is hard to rule out all possible automata and all possible regular expressions. Instead, we will look at a property that all regular languages have; proving that a given language does not have this property then becomes a way of proving that that language is not regular.  Consider the language . Below is a DFA that accepts this language, with states numbered 1 through 9.   Diagram of DFA that accepts .     Consider the sequence of states that the machine passes through while processing the string . Note that there is a repeated state (state 2). We say that ``goes through the state 2 twice\", meaning that in the course of the string being processed, the machine is in state 2 twice (at least). Call the section of the string that takes you around the loop , the preceding section , and the rest . Then is accepted, is accepted, is accepted, etc. Note that the string cannot be divided this way, because it does not go through the same state twice. Which strings can be divided this way? Any string that goes through the same state twice. This may include some relatively short strings and must include any string with length greater than or equal to 9, because there are only 9 states in the machine, and so repetition must occur after 9 input symbols at the latest.  More generally, consider an arbitrary DFA , and let the number of states in be . Then any string that is accepted by and has or more symbols must go through the same state twice, and can therefore be broken up into three pieces (where contains at least one symbol) so that and    is accepted by      is accepted by (after all, we started with in )     is accepted by     etc.     Note that you can actually say even more: within the first characters of you must already get a repeated state, so you can always find an as described above where, in addition, the portion of (the portion of that takes you to and back to a repeated state) contains at most symbols.  So altogether, if is an -state DFA that accepts , and is a string in whose length is at least , then can be broken down into three pieces , , and , , such that    and together contain no more than symbols;   contains at least one symbol;       is accepted by      is accepted by      is accepted by     etc.        The usually-stated form of this result is the Pumping Lemma:   Pumping Lemma   Pumping Lemma    If is a regular language and is a DFA that accepts , then there is some number such that any string in whose length is greater than or equal to can be broken down into three pieces , , and , , such that    and together contain no more than symbols;     contains at least one symbol;        is accepted by      is accepted by      is accepted by     etc.          Though the Pumping Lemma says something about regular languages, it is not used to prove that languages are regular. It says `` if a language is regular, then certain things happen\", not ``if certain things happen, then you can conclude that the language is regular.\" However, the Pumping Lemma is useful for proving that languages are not regular, since the contrapositive of ``if a language is regular then certain things happen\" is ``if certain things don't happen then you can conclude that the language is not regular.\" So what are the ``certain things\"? Basically, the P.L. says that if a language is regular, there is some ``threshold\" length for strings, and every string that goes over that threshold can be broken down in a certain way. Therefore, if we can show that ``there is some threshold length for strings such that every string that goes over that threshold can be broken down in a certain way\" is a false assertion about a language, we can conclude that the language is not regular. How do you show that there is no threshold length? Saying a number is a threshold length for a language means that every string in the language that is at least that long can be broken down in the ways described. So to show that a number is not a threshold value, we have to show that there is some string in the language that is at least that long that cannot be broken down in the appropriate way.     is not regular.    We do this by showing that there is no threshold value for the language. Let be an arbitrary candidate for threshold value. We want to show that it is not in fact a threshold value, so we want to find a string in the language whose length is at least and which can't be broken down in the way described by the Pumping Lemma. What string should we try to prove unbreakable? We can't pick strings like because we're working with an arbitrary i.e.\\ making no assumptions about 's value; picking is implicitly assuming that is no bigger than 200 --- for larger values of , would not be ``a string whose length is at least \". Whatever string we pick, we have to be sure that its length is at least , no matter what number is. So we pick, for instance, . This string is in the language, and its length is at least , no matter what number is. If we can show that this string can't be broken down as described by the Pumping Lemma, then we'll have shown that doesn't work as a threshold value, and since was an arbitrary number, we will have shown that there is no threshold value for and hence is not regular. So let's show that can't be broken down appropriately.  We need to show that you can't write as where and together contain at most symbols, isn't empty, and all the strings , , , etc.\\ are still in , i.e.\\ of the form for some number~ . The best way to do this is to show that any choice for (with being whatever precedes it and being whatever follows) that satisfies the first two requirements fails to satisfy the third. So what are our possible choices for ? Well, since and together can contain at most symbols, and starts with  's, both and must be made up entirely of 's; since can't be empty, it must contain at least one and (from (i)) no more than  's. So the possible choices for are for some . We want to show now that none of these choices will satisfy the third requirement by showing that for any value of , at least one of the strings , , , etc will not be in . No matter what value we try for , we don't have to look far for our rogue string: the string , which is with  's deleted from it, looks like , which is clearly not of the form . So the only 's that satisfy (i) and (ii) don't satisfy (iii); so can't be broken down as required; so is not a threshold value for ; and since was an arbitrary number, there is no threshold value for ; so is not regular.    The fact that languages like and are not regular is a severe blow to any idea that regular expressions or finite-state automata capture the language-generation or language-recognition capabilities of a computer: They are both languages that we could easily write programs to recognize. It is not clear how the expressive power of regular expressions could be increased, nor how one might modify the FSA model to obtain a more powerful one. However, in the next chapter you will be introduced to the concept of a {\\em grammar} as a tool for generating languages. The simplest grammars still only produce regular languages, but you will see that more complicated grammars have the power to generate languages far beyond the realm of the regular.    Exercises  Give a DFA that accepts the intersection of the languages accepted by the machines shown below. (Suggestion: use the construction discussed in the chapter just before .)   Diagram of two DFAs to combine.     Complete the proof of by showing how to modify a machine that accepts into a machine that accepts .  Using the construction described in , build an NFA that accepts .  Prove that the reverse of a regular language is regular.  Show that for any DFA or NFA, there is an NFA with exactly one final state that accepts the same language.  Suppose we change the model of NFAs to allow NFAs to have multiple start states. Show that for any ``NFA\" with multiple start states, there is an NFA with exactly one start state that accepts the same language.  Suppose that and are DFAs over the alphabet . It is possible to construct a DFA that accepts the langauge in a single step. Define the DFA where is the function from to that is defined by: . Convince yourself that this definition makes sense. (For example, note that states in are pairs of states, where and , and note that the start state in is in fact a state in .) Prove that , and explain why this shows that the intersection of any two regular languages is regular. This proof---if you can get past the notation---is more direct than the one outlined above.  Use the Pumping Lemma to show that the following languages over are not regular.                "
 },
 {
   "id": "thm-reg-lang-recog-by-nfa",
@@ -12679,7 +11743,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "15.4.8",
   "title": "",
-  "body": "  Every language that is accepted by a DFA or an NFA is generated by a regular expression.   Proving this result is actually fairly involved and not very illuminating. Below we will give an illustrative example of how one might actually go about extracting a regular expression from an NFA or a DFA. You can go on to read the proof if you are interested.   We prove that the language accepted by a DFA is regular. The proof for NFAs follows from the equivalence between DFAs and NFAs. Suppose that is a DFA, where . Let be the number of states in , and write . We want to consider computations in which starts in some state , reads a string , and ends in state . In such a computation, might go through a series of intermediates states between and : We are interested in computations in which all of the intermediate states--- ---are in the set , for some number~ . We define to be the set of all strings in that are consumed by such a computation. That is, if and only if when starts in state and reads , it ends in state , and all the intermediate states between and are in the set . is a language over . We show that for . Consider the language . For , the set of allowable intermediate states is empty. Since there can be no intermediate states, it follows that there can be at most one step in the computation that starts in state , reads , and ends in state . So, can be at most one. This means that is finite, and hence is regular. (In fact, , for , and . Note that in many cases, will be the empty set.) We now proceed by induction on to show that is regular for all and . We have proved the base case, . Suppose that we already know that is regular for all and all . We need to show that is regular for all and . In fact, which is regular because is regular for all and , and because the union, concatenation, and Kleene star of regular languages are regular.  To see that the above equation holds, consider a string . Now, if and only if when starts in state and reads , it ends in state , with all intermediate states in the computation in the set . Consider such a computation. There are two cases: Either occurs as an intermediate state in the computation, or it does not. If it does not occur, then all the intermediate states are in the set , which means that in fact . If  does occur as an intermediate state in the computation, then we can break the computation into phases, by dividing it at each point where occurs as an intermediate state. This breaks into a concatenation . The string is consumed in the first phase of the computation, during which goes from state to the first occurrence of ; since the intermediate states in this computation are in the set . The string is consumed by the last phase of the computation, in which goes from the final occurrence of to , so that . And each string is consumed in a phase of the computation in which goes from one occurrence of to the next occurrence of , so that . This means that . We now know, in particular, that is a regular language for all . But consists of all strings such that when starts in state and reads , it ends in state (with \\textbf{no} restriction on the intermediate states in the computation, since every state of is in the set \\{q_0,q_1,\\dots,q_{n-1}\\}). To finish the proof that is regular, it is only necessary to note that which is regular since it is a union of regular languages. This equation is true since a string is in if and only if when starts in state and reads , in ends in some accepting state . This is the same as saying for some with .   "
+  "body": "  Every language that is accepted by a DFA or an NFA is generated by a regular expression.   Proving this result is actually fairly involved and not very illuminating. Below we will give an illustrative example of how one might actually go about extracting a regular expression from an NFA or a DFA. You can go on to read the proof if you are interested.   We prove that the language accepted by a DFA is regular. The proof for NFAs follows from the equivalence between DFAs and NFAs.  Suppose that is a DFA, where . Let be the number of states in , and write . We want to consider computations in which starts in some state , reads a string , and ends in state . In such a computation, might go through a series of intermediates states between and : We are interested in computations in which all of the intermediate states--- ---are in the set , for some number~ . We define to be the set of all strings in that are consumed by such a computation. That is, if and only if when starts in state and reads , it ends in state , and all the intermediate states between and are in the set . is a language over . We show that for .  Consider the language . For , the set of allowable intermediate states is empty. Since there can be no intermediate states, it follows that there can be at most one step in the computation that starts in state , reads , and ends in state . So, can be at most one. This means that is finite, and hence is regular. (In fact, , for , and . Note that in many cases, will be the empty set.)  We now proceed by induction on to show that is regular for all and . We have proved the base case, . Suppose that we already know that is regular for all and all . We need to show that is regular for all and . In fact, which is regular because is regular for all and , and because the union, concatenation, and Kleene star of regular languages are regular.  To see that the above equation holds, consider a string . Now, if and only if when starts in state and reads , it ends in state , with all intermediate states in the computation in the set . Consider such a computation. There are two cases: Either occurs as an intermediate state in the computation, or it does not. If it does not occur, then all the intermediate states are in the set , which means that in fact . If  does occur as an intermediate state in the computation, then we can break the computation into phases, by dividing it at each point where occurs as an intermediate state. This breaks into a concatenation . The string is consumed in the first phase of the computation, during which goes from state to the first occurrence of ; since the intermediate states in this computation are in the set . The string is consumed by the last phase of the computation, in which goes from the final occurrence of to , so that . And each string is consumed in a phase of the computation in which goes from one occurrence of to the next occurrence of , so that . This means that .  We now know, in particular, that is a regular language for all . But consists of all strings such that when starts in state and reads , it ends in state (with \\textbf{no} restriction on the intermediate states in the computation, since every state of is in the set \\{q_0,q_1,\\dots,q_{n-1}\\}). To finish the proof that is regular, it is only necessary to note that which is regular since it is a union of regular languages. This equation is true since a string is in if and only if when starts in state and reads , in ends in some accepting state . This is the same as saying for some with .   "
 },
 {
   "id": "ex-extracting-regex-from-fsa",
@@ -12715,7 +11779,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "15.4.16",
   "title": "Pumping Lemma.",
-  "body": " Pumping Lemma  Pumping Lemma   If is a regular language and is a DFA that accepts , then there is some number such that any string in whose length is greater than or equal to can be broken down into three pieces , , and , , such that    and together contain no more than symbols;     contains at least one symbol;        is accepted by      is accepted by      is accepted by     etc.         "
+  "body": " Pumping Lemma   Pumping Lemma    If is a regular language and is a DFA that accepts , then there is some number such that any string in whose length is greater than or equal to can be broken down into three pieces , , and , , such that    and together contain no more than symbols;     contains at least one symbol;        is accepted by      is accepted by      is accepted by     etc.         "
 },
 {
   "id": "thm-not-regular",
@@ -12727,76 +11791,787 @@ var ptx_lunr_docs = [
   "body": "   is not regular.    We do this by showing that there is no threshold value for the language. Let be an arbitrary candidate for threshold value. We want to show that it is not in fact a threshold value, so we want to find a string in the language whose length is at least and which can't be broken down in the way described by the Pumping Lemma. What string should we try to prove unbreakable? We can't pick strings like because we're working with an arbitrary i.e.\\ making no assumptions about 's value; picking is implicitly assuming that is no bigger than 200 --- for larger values of , would not be ``a string whose length is at least \". Whatever string we pick, we have to be sure that its length is at least , no matter what number is. So we pick, for instance, . This string is in the language, and its length is at least , no matter what number is. If we can show that this string can't be broken down as described by the Pumping Lemma, then we'll have shown that doesn't work as a threshold value, and since was an arbitrary number, we will have shown that there is no threshold value for and hence is not regular. So let's show that can't be broken down appropriately.  We need to show that you can't write as where and together contain at most symbols, isn't empty, and all the strings , , , etc.\\ are still in , i.e.\\ of the form for some number~ . The best way to do this is to show that any choice for (with being whatever precedes it and being whatever follows) that satisfies the first two requirements fails to satisfy the third. So what are our possible choices for ? Well, since and together can contain at most symbols, and starts with  's, both and must be made up entirely of 's; since can't be empty, it must contain at least one and (from (i)) no more than  's. So the possible choices for are for some . We want to show now that none of these choices will satisfy the third requirement by showing that for any value of , at least one of the strings , , , etc will not be in . No matter what value we try for , we don't have to look far for our rogue string: the string , which is with  's deleted from it, looks like , which is clearly not of the form . So the only 's that satisfy (i) and (ii) don't satisfy (iii); so can't be broken down as required; so is not a threshold value for ; and since was an arbitrary number, there is no threshold value for ; so is not regular.   "
 },
 {
-  "id": "exercise-575",
+  "id": "exercise-538",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-575",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-538",
   "type": "Exercise",
   "number": "15.4.4.1",
   "title": "",
   "body": "Give a DFA that accepts the intersection of the languages accepted by the machines shown below. (Suggestion: use the construction discussed in the chapter just before .)   Diagram of two DFAs to combine.    "
 },
 {
-  "id": "exercise-576",
+  "id": "exercise-539",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-576",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-539",
   "type": "Exercise",
   "number": "15.4.4.2",
   "title": "",
   "body": "Complete the proof of by showing how to modify a machine that accepts into a machine that accepts . "
 },
 {
-  "id": "exercise-577",
+  "id": "exercise-540",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-577",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-540",
   "type": "Exercise",
   "number": "15.4.4.3",
   "title": "",
   "body": "Using the construction described in , build an NFA that accepts . "
 },
 {
-  "id": "exercise-578",
+  "id": "exercise-541",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-578",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-541",
   "type": "Exercise",
   "number": "15.4.4.4",
   "title": "",
   "body": "Prove that the reverse of a regular language is regular. "
 },
 {
-  "id": "exercise-579",
+  "id": "exercise-542",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-579",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-542",
   "type": "Exercise",
   "number": "15.4.4.5",
   "title": "",
   "body": "Show that for any DFA or NFA, there is an NFA with exactly one final state that accepts the same language. "
 },
 {
-  "id": "exercise-580",
+  "id": "exercise-543",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-580",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-543",
   "type": "Exercise",
   "number": "15.4.4.6",
   "title": "",
   "body": "Suppose we change the model of NFAs to allow NFAs to have multiple start states. Show that for any ``NFA\" with multiple start states, there is an NFA with exactly one start state that accepts the same language. "
 },
 {
-  "id": "exercise-581",
+  "id": "exercise-544",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-581",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-544",
   "type": "Exercise",
   "number": "15.4.4.7",
   "title": "",
   "body": "Suppose that and are DFAs over the alphabet . It is possible to construct a DFA that accepts the langauge in a single step. Define the DFA where is the function from to that is defined by: . Convince yourself that this definition makes sense. (For example, note that states in are pairs of states, where and , and note that the start state in is in fact a state in .) Prove that , and explain why this shows that the intersection of any two regular languages is regular. This proof---if you can get past the notation---is more direct than the one outlined above. "
 },
 {
-  "id": "exercise-582",
+  "id": "exercise-545",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-582",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-545",
   "type": "Exercise",
   "number": "15.4.4.8",
   "title": "",
-  "body": "Use the Pumping Lemma to show that the following languages over are not regular.       "
+  "body": "Use the Pumping Lemma to show that the following languages over are not regular.              "
+},
+{
+  "id": "sec-grammars",
+  "level": "1",
+  "url": "sec-grammars.html",
+  "type": "Section",
+  "number": "15.5",
+  "title": "Grammars",
+  "body": " Grammars   Grammars    Both natural languages, such as English and the artificial languages used for programming have a structure known as grammar or syntax. In order to form legal sentences or programs, the parts of the language must be fit together according to certain rules. For natural languages, the rules are somewhat informal (although high-school English teachers might have us believe differently). For programming languages, the rules are absolute, and programs that violate the rules will be rejected by a compiler.  In this section, we will study formal grammars and languages defined by them. The languages we look at will, for the most part, be toy languages, compared to natural languages or even to programming languages, but the ideas and techniques are basic to any study of language. In fact, many of the ideas arose almost simultaneously in the 1950s in the work of linguists who were studying natural language and programmers who were looking for ways to specify the syntax of programming languages.  The grammars in this section are generative grammars  Generative Grammars  . A generative grammar is a set of rules that can be used to generate all the legal strings in a language. We will also consider the closely related idea of parsing . To parse a string means to determine how that string can be generated according to the rules.  This section is a continuation of the preceding section. Like a regular expression, a grammar is a way to specify a possibly infinite language with a finite amount of information. In fact, we will see that every regular language can be specified by a certain simple type of grammar. We will also see that some languages that can be specified by grammars are not regular.    Context-free Grammars   Context-free Grammar   In its most general form, a grammar is a set of rewriting rules   Rewriting Rule  . A rewriting rule specifies that a certain string of symbols can be substituted for all or part of another string. If and are strings, then is a rewriting rule that specifies that the string can be replaced by the string . The symbol   is read can be rewritten as. Rewriting rules are also called production rules  Production Rule or productions , and      Produces, as in  can also be read as produces. For example, if we consider strings over the alphabet , then the production rule can be applied to the string to give the string . The substring in the string has been replaced with .  In a context-free grammar , every rewriting rule has the form , where is single symbol and is a string of zero or more symbols. The symbols that occur on the left-hand sides of production rules in a context-free grammar are called non-terminal symbols  non-terminal symbol  .  The grammar is context-free in the sense that can be substituted for wherever occurs in a string, regardless of the surrounding context in which occurs.  By convention, the non-terminal symbols are usually uppercase letters. The strings on the right-hand sides of the production rules can include non-terminal symbols as well as other symbols, which are called terminal symbol  terminal symbols . By convention, the terminal symbols are usually lowercase letters. Here are some typical production rules that might occur in context-free grammars: In the last rule in this list, represents the empty string, as usual. For example, this rule could be applied to the string to produce the string . The first occurrence of the symbol in has been replaced by the empty string---which is just another way of saying that the symbol has been dropped from the string.  In every context-free grammar, one of the non-terminal symbols is designated as the start symbol of the grammar. The start symbol is often, though not always, denoted by . When the grammar is used to generate strings in a language, the idea is to start with a string consisting of nothing but the start symbol. Then a sequence of production rules is applied. Each application of a production rule to the string transforms the string to a new string. If and when this process produces a string that consists purely of terminal symbols, the process ends. That string of terminal symbols is one of the strings in the language generated by the grammar. In fact, the language consists precisely of all strings of terminal symbols that can be produced in this way.  As a simple example, consider a grammar that has three production rules: In this example, is the only non-terminal symbol, and the terminal symbols are and . Starting from the string , we can apply any of the three rules of the grammar to produce either , , or . Since the string contains no non-terminals, we see that is one of the strings in the language generated by this grammar. The strings and are not in that language, since they contain the non-terminal symbol , but we can continue to apply production rules to these strings. From , for example, we can obtain , , or . From , we go on to obtain , , or . The strings and are in the language generated by the grammar. It's not hard to see that any string of and that ends with a can be generated by this grammar, and that these are the only strings that can be generated. That is, the language generated by this grammar is the regular language specified by the regular expression .  It's time to give some formal definitions of the concepts which we have been discussing.   Context-free Grammar   A context-free grammar is a 4-tuple , where:    is a finite set of symbols. The elements of are the non-terminal symbols of the grammar.     is a finite set of symbols such that . The elements of are the terminal symbols of the grammar.     is a set of production rules. Each rule is of the form where is one of the symbols in and is a string in the language .     . is the start symbol of the grammar.       Even though this is the formal definition, grammars are often specified informally simply by listing the set of production rules. When this is done it is assumed, unless otherwise specified, that the non-terminal symbols are just the symbols that occur on the left-hand sides of production rules of the grammar. The terminal symbols are all the other symbols that occur on the right-hand sides of production rules. The start symbol is the symbol that occurs on the left-hand side of the first production rule in the list. Thus, the list of production rules specifies a grammar where is , is , and is the start symbol. , of course, is a set containing the six production rules in the list.  Let be a context-free grammar. Suppose that and are strings in the language . The notation    Yields, as in String can be obtained from a string by applying one production rule in  is used to express the fact that can be obtained from by applying one of the production rules in . To be more exact, we say that if and only if there is a production rule in the grammar and two strings and in the language such that and . The fact that is just a way of saying that occurs somewhere in . When the production rule is applied to substitute for in , the result is , which is . Note that either or or both can be the empty string.  If a string can be obtained from a string by applying a sequence of zero or more production rules, we write    Yields in zero or more steps.  . In most cases, the   in the notations and will be omitted, assuming that the grammar in question is understood. Note that is a relation on the set . The relation is the reflexive, transitive closure of that relation. (This explains the use of   , which is usually used to denote the transitive, but not necessarily reflexive, closure of a relation. In this case, is reflexive as well as transitive since is true for any string .) For example, using the grammar that is defined by the above list of production rules, we have From this, it follows that . The relation is read yields or produces while can be read yields in zero or more steps or produces in zero or more steps. The following theorem states some simple facts about the relations and :    Let be the context-free grammar . Then:   If and are strings in such that , then .    If , , and are strings in such that and , then .    If and are strings in such that , and if and are any strings in , then .    If and are strings in such that , and if and are any strings in , then .       Parts 1 and 2 follow from the fact that is the transitive closure of . Part 4 follows easily from Part 3. (I leave this as an exercise.) To prove Part 3, suppose that , , , and are strings such that . By definition, this means that there exist strings and and a production rule such that and . But then we also have and . These two equations, along with the existence of the production rule show, by definition, that .    We can use to give a formal definition of the language generated by a context-free grammar:   Context-free Language   Suppose that is a context-free grammar. Then the language generated by is the language over the alphabet defined by That is, contains any string of terminal symbols that can be obtained by starting with the string consisting of the start symbol, , and applying a sequence of production rules.  A language is said to be a context-free language if there is a context-free grammar such that is . Note that there might be many different context-free grammars that generate the same context-free language. Two context-free grammars that generate the same language are said to be equivalent grammars  equivalent .    Suppose is a context-free grammar with start symbol and suppose . By definition, this means that there is a sequence of one or more applications of production rules which produces the string from . This sequence has the form . Such a sequence is called a derivation of (in the grammar ). Note that might have more than one derivation. That is, it might be possible to produce in several different ways.  Consider the language . We already know that is not a regular language. However, it is a context-free language. That is, there is a context-free grammar such that is the language generated by . This gives us our first theorem about grammars:    Let be the language . Let be the context-free grammar where , and consists of the productions Then , so that is a context-free language. In particular, there exist context-free languages which are not regular.    To show that , we must show both that and that . To show that , let be an arbitrary element of . By definition of , for some . We show that by induction on . In the case where , we have . Now, since can be produced from the start symbol by an application of the rule , so our claim is true for . Now, suppose that and that we already know that . We must show that . Since , we also have, by , that . That is, . Combining this with the production rule , we see that . This means that , as we wanted to show. This completes the proof that .  To show that , suppose that . That is, . We must show that for some . Since , there is a derivation , where . We first prove by induction on that in any derivation , we must have either or . Consider the case . Suppose . Then, we must have that is a rule in the grammar, so must be either or . Since and , is of the required form. Next, consider the inductive case. Suppose that and we already know that in any derivation , we must have or . Suppose that . We know by induction that or , but since and contains no non-terminal symbols, we must have . Since is obtained by applying one of the production rules or to~ , is either or . That is, is either or , as we wanted to show. This completes the induction. Turning back to , we see that must be of the form or of the form . But since , it can contain no non-terminal symbols, so must be of the form , as we wanted to show. This completes the proof that .    I have given a very formal and detailed proof of this theorem, to show how it can be done and to show how induction plays a role in many proofs about grammars. However, a more informal proof of the theorem would probably be acceptable and might even be more convincing. To show that , we could just note that the derivation demonstrates that . On the other hand, it is clear that every derivation for this grammar must be of this form, so every string in is of the form .    For another example, consider the language . Let's try to design a grammar that generates this language. This is similar to the previous example, but now we want to include strings that contain more than . The production rule always produces the same number of and . Can we modify this idea to produce more than ?  One approach would be to produce a string containing just as many as , and then to add some extra . A rule that can generate any number of is . After applying the rule for a while, we want to move to a new state in which we apply the rule . We can get to the new state by applying a rule that changes the into an . We still need a way to finish the process, which means getting rid of all non-terminal symbols in the string. For this, we can use the rule . Putting these rules together, we get the grammar This grammar does indeed generate the language . With slight variations on this grammar, we can produce other related languages. For example, if we replace the rule with , we get the language .  There are other ways to generate the language . For example, the extra non-terminal symbol, , is not really necessary, if we allow to sometimes produce a single without a . This leads to the grammar (But note that the rule would not work in place of , since it would allow the production of strings in which an can follow a , and there are no such strings in the language .) And here are two more grammars that generate this language:      Consider another variation on the language , in which the and can occur in any order, but the number of is still equal to the number of . This language can be defined as . This language includes strings such as , , and .  Let's start with the grammar containing the rules and . We can try adding the rule . Every string that can be generated using these three rules is in the language . However, not every string in can be generated. A derivation that starts with can only produce strings that begin with and end with . A derivation that starts with can only generate strings that begin with and end with . There is no way to generate the strings or , which are in the language . But we shall see that any string in that begins and ends with the same letter can be written in the form where and are shorter strings in . To produce strings of this form, we need one more rule, . The complete set of production rules for the language is    It's easy to see that every string that can be generated using these rules is in , since each rule introduces the same number of as . But we also need to check that every string in can be generated by these rules. This can be done by induction on the length of , using the second form of the principle of mathematical induction. In the base case, and . In this case, since in one step. Suppose , where , and suppose that we already know that for any with , . To finish the induction we must show, based on this induction hypothesis, that .  Suppose that the first and last characters of are different. Then is either of the form or of the form , for some string . Let's assume that is of the form . (The case where is of the form is handled in a similar way.) Since has the same number of and and since has one fewer than and one fewer than , must also have the same number of as . That is . But , so by the induction hypothesis, . So we have . By , we get then . Combining this with the fact that , we get that , that is, . This proves that .  Finally, suppose that the first and last characters of are the same. Let's say that begins and ends with . (The case where begins and ends with is handled in a similar way.) I claim that can be written in the form where and and neither nor is the empty string. This will finish the induction, since we will then have by the induction hypothesis that and , and we can derive from by first applying the rule and then using the first on the right-hand side to derive and the second to derive .  It only remains to figure out how to divide into two strings and which are both in . The technique that is used is one that is more generally useful. Suppose that , where each is either or . Consider the sequence of integers , , , where for each , is the number of in minus the number of in . Since , . Since , . And since , we must have . Furthermore the difference between and is either or , for .  Since and and the value of goes up or down by 1 when increases by 1, must be zero for some between 1 and . That is, cannot get from 1 to unless it passes through zero. Let be a number between 1 and such that . Let and let . Note that . The fact that means that the string has the same number of and , so . It follows automatically that also. Since is strictly between 1 and , neither nor is the empty string. This is all that we needed to show to finish the proof that .  The basic idea of this proof is that if contains the same number of as , then an at the beginning of must have a matching  somewhere in . This matches the in the sense that the corresponding is zero, and the marks the end of a string which contains the same number of as . For example, in the string , the at the beginning of the string is matched by the third , since is the shortest prefix of that has an equal number of and .     Balanced Parentheses  Closely related to this idea of matching and is the idea of balanced parentheses . Consider a string made up of parentheses, such as (()(()))(()) . The parentheses in this sample string are balanced because each left parenthesis has a matching right parenthesis, and the matching pairs are properly nested. A careful definition uses the sort of integer sequence introduced in the above proof. Let be a string of parentheses. Write , where each is either ( or ) . Define a sequence of integers , , , , where is the number of left parentheses in minus the number of right parentheses. We say that the parentheses in are balanced if and for all . The fact that says that contains the same number of left parentheses as right parentheses. The fact the means that the nesting of pairs of parentheses is correct: You can't have a right parenthesis unless it is balanced by a left parenthesis in the preceding part of the string. The language that consists of all balanced strings of parentheses is context-free. It is generated by the grammar The proof is similar to the preceding proof about strings of and . (It might seem that I've made an awfully big fuss about matching and balancing. The reason is that this is one of the few things that we can do with context-free languages that we can't do with regular languages.)   Before leaving this section, we should look at a few more general results. Since we know that most operations on regular languages produce languages that are also regular, we can ask whether a similar result holds for context-free languages. We will see later that the intersection of two context-free languages is not necessarily context-free. Also, the complement of a context-free language is not necessarily context-free. However, some other operations on context-free languages do produce context-free languages.    Suppose that and are context-free languages. Then the languages , , and are also context-free.    I will prove only the first claim of the theorem, that is context-free. In the exercises for this section, you are asked to construct grammars for and (without giving formal proofs that your answers are correct).  Let and be context-free grammars such that and . We can assume that , since otherwise we could simply rename the non-terminal symbols in . The idea of the proof is that to generate a string in , we first decide whether we want a string in or a string in . Once that decision is made, to make a string in , we use production rules from , while to make a string in , we use rules from . We have to design a grammar, , to represent this process.  Let be a symbol that is not in any of the alphabets , , , or . will be the start symbol of . The production rules for consist of all the production rules from and together with two new rules: Formally, is defined to be the grammar Suppose that . That is , so there is a derivation . Since every rule from is also a rule in , if follows that . Combining this with the fact that , we have that , and . This shows that . In an exactly similar way, we can show that . Thus, .  It remains to show that . Suppose . Then there is a derivation . This derivation must begin with an application of one of the rules or , since these are the only rules in which appears. If the first rule applied in the derivation is , then the remainder of the derivation shows that . Starting from , the only rules that can be applied are rules from , so in fact we have . This shows that . Similarly, if the first rule applied in the derivation is , then . In any case, . This proves that .    Finally, we should clarify the relationship between context-free languages and regular languages. We have already seen that there are context-free languages which are not regular. On the other hand, it turns out that every regular language is context-free. That is, given any regular language, there is a context-free grammar that generates that language. This means that any syntax that can be expressed by a regular expression, by a DFA, or by an NFA could also be expressed by a context-free grammar. In fact, we only need a certain restricted type of context-free grammar to duplicate the power of regular expressions.   Right-Regular Grammar   A right-regular grammar regular grammar is a context-free grammar in which the right-hand side of every production rule has one of the following forms: the empty string; a string consisting of a single non-terminal symbol; or a string consisting of a single terminal symbol followed by a single non-terminal symbol.    Examples of the types of production rule that are allowed in a right-regular grammar are , , and . The idea of the proof is that given a right-regular grammar, we can build a corresponding and vice-versa . The states of the correspond to the non-terminal symbols of the grammar. The start symbol of the grammar corresponds to the starting state of the NFA. A production rule of the form corresponds to a transition in the NFA from state to state while reading the symbol . A production rule of the form corresponds to an -transition from state to state in the NFA. And a production rule of the form exists in the grammar if and only if is a final state in the NFA. With this correspondence, a derivation of a string in the grammar corresponds to an execution path through the NFA as it accepts the string . I won't give a complete proof here. You are welcome to work through the details if you want. But the important fact is:    A language is regular if and only if there is a right-regular grammar such that . In particular, every regular language is context-free.       Backus-Naur Form   Backus-Naur Form   Context-free grammars are used to describe some aspects of the syntax of programming languages. However, the notation that is used for grammars in the context of programming languages is somewhat different from the notation introduced in the preceding section. The notation that is used is called Backus-Naur Form or BNF. It is named after computer scientists John Backus and Peter Naur, who developed the notation. Actually, several variations of BNF exist. I will discuss one of them here. BNF can be used to describe the syntax of natural languages, as well as programming languages, and some of the examples in this section will deal with the syntax of English.  Like context-free grammars, BNF grammars make use of production rules, non-terminals, and terminals. The non-terminals are usually given meaningful, multi-character names. Here, I will follow a common practice of enclosing non-terminals in angle brackets, so that they can be easily distinguished. For example, and could be non-terminals in a BNF grammar for English, while and might be used in a BNF grammar for a programming language. Note that a BNF non-terminal usually represents a meaningful syntactic category , that is, a certain type of building block in the syntax of the language that is being described, such as an adverb, a prepositional phrase, or a variable declaration statement. The terminals of a BNF grammar are the things that actually appear in the language that is being described. In the case of natural language, the terminals are individual words.  In BNF production rules, I will use the symbol in place of the that is used in context-free grammars. BNF production rules are more powerful than the production rules in context-free grammars. That is, one BNF rule might be equivalent to several context-free grammar rules. As for context-free grammars, the left-hand side of a BNF production rule is a single non-terminal symbol. The right hand side can include terminals and non-terminals, and can also use the following notations, which should remind you of notations used in regular expressions:   A vertical bar, , indicates a choice of alternatives. For example, indicates that the non-terminal can be replaced by any one of the terminal symbols .    Items enclosed in brackets are optional. For example, says that can be replaced either by  ; or by  = ; . (The symbols = and ; are terminal symbols in this rule.)    Items enclosed between [ and ] can be repeated zero or more times. (This has the same effect as a in a regular expression.) For example, says that an consists of a followed optionally by any number of additional 's. That is, the non-terminal can be replaced by or by or by , and so on.    Parentheses can be used as usual, for grouping.     All these notations can be expressed in a context-free grammar by introducing additional production rules. For example, the BNF rule is equivalent to the two rules, and . A rule that contains an optional item can also be replaced by two rules. For example, can be replaced by the two rules In context-free grammars, repetition can be expressed by using a recursive rule such as , in which the same non-terminal symbol appears both on the left-hand side and on the right-hand side of the rule. BNF-style notation using [ and ] can be eliminated by replacing it with a new non-terminal symbol and adding a recursive rule to allow that symbol to repeat zero or more times. For example, the production rule can be replaced by three rules using a new non-terminal symbol to represent a string of zero or more 's:    As an example of a complete BNF grammar, let's look at a BNF grammar for a very small subset of English. The start symbol for the grammar is , and the terminal symbols are English words. All the sentences that can be produced from this grammar are syntactically correct English sentences, although you wouldn't encounter many of them in conversation. Here is the grammar: This grammar can generate sentences such as A dog chases the cat and the cat hides and The man loves a woman who runs. The second sentence, for example, is generated by the derivation    BNF is most often used to specify the syntax of programming languages. Most programming languages are not, in fact, context-free languages, and BNF is not capable of expressing all aspects of their syntax. For example, BNF cannot express the fact that a variable must be declared before it is used or the fact that the number of actual parameters in a subroutine call statement must match the number of formal parameters in the declaration of the subroutine. So BNF is used to express the context-free aspects of the syntax of a programming language, and other restrictions on the syntax---such as the rule about declaring a variable before it is used---are expressed using informal English descriptions.  When BNF is applied to programming languages, the terminal symbols are generally tokens, which are the minimal meaningful units in a program. For example, the pair of symbols constitute a single token, as does a string such as \"Hello World\" . Every number is represented by a single token. (The actual value of the number is stored as a so-called attribute of the token, but the value plays no role in the context-free syntax of the language.) I will use the symbol to represent a numerical token. Similarly, every variable name, subroutine name, or other identifier in the program is represented by the same token, which I will denote as . One final complication: Some symbols used in programs, such as ] and ( , are also used with a special meaning in BNF grammars. When such a symbol occurs as a terminal symbol, I will enclose it in double quotes. For example, in the BNF production rule the and are terminal symbols in the language that is being described, rather than the BNF notation for an optional item. With this notation, here is part of a BNF grammar that describes statements in the Java programming language: The non-terminals , , and would, of course, have to be defined by other production rules in the grammar. Here is a set of rules that define simple expressions, made up of numbers, identifiers, parentheses and the arithmetic operators and : The first rule says that an is a sequence of one or more 's, separated by plus or minus signs. The second rule defines a to be a sequence of one or more , separated by multiplication or division operators. The last rule says that a can be either an identifier or a number or an enclosed in parentheses. This small BNF grammar can generate expressions such as and . The latter expression is made up of three terms: , , and . The first of these terms is made up of two factors, and . The factor consists of the expression inside a pair of parentheses.  The nice thing about this grammar is that the precedence rules for the operators are implicit in the grammar. For example, according to the grammar, the expression is seen as + where the first term is and the second term is . The occurs as a group, which must be evaluated before the result is added to . Parentheses can change the order of evaluation. For example, is generated by the grammar as a single of the form . The first is . When is evaluated, the value of is computed first and then multiplied by . This is an example of how a grammar that describes the syntax of a language can also reflect its meaning.  Although this section has not introduced any really new ideas or theoretical results, I hope it has demonstrated how context-free grammars can be applied in practice.     Parsing and Parse Trees  Suppose that is a grammar for the language . That is, . The grammar can be used to generate strings in the language~ . In practice, though, we often start with a string which might or might not be in~ , and the problem is to determine whether the string is in the language and, if so, how it can be generated by . The goal is to find a derivation of the string, using the production rules of the grammar, or to show that no such derivation exists. This is known as parsing the string. When the string is a computer program or a sentence in a natural language, parsing the string is an essential step in determining its meaning.  As an example that we will use throughout this section, consider the language that consists of arithmetic expressions containing parentheses, the binary operators and , and the variables , , and . Strings in this language include , , and . Here is a context-free grammar that generates this language: Call the grammar described by these production rules . The grammar says that , , and are expressions, and that you can make new expressions by adding two expressions, by multiplying two expressions, and by enclosing an expression in parentheses. (Later, we'll look at other grammars for the same language---ones that turn out to have certain advantages over .)  Consider the string . To show that this string is in the language , we can exhibit a derivation of the string from the start symbol . For example: This derivation shows that the string is in fact in . Now, this string has many other derivations. At each step in the derivation, there can be a lot of freedom about which rule in the grammar to apply next. Some of this freedom is clearly not very meaningful. When faced with the string in the above example, the order in which we replace the with the variables , , and doesn't much matter. To cut out some of this meaningless freedom, we could agree that in each step of a derivation, the non-terminal symbol that is replaced is the leftmost non-terminal symbol in the string. A derivation in which this is true is called a left derivation . The following left derivation of the string uses the same production rules as the previous derivation, but it applies them in a different order: It shouldn't be too hard to convince yourself that any string that has a derivation has a left derivation (which can be obtained by changing the order in which production rules are applied).  We have seen that the same string might have several different derivations. We might ask whether it can have several different left derivations. The answer is that it depends on the grammar. A context-free grammar is said to be ambiguous  grammar, ambiguous if there is a string such that has more than one left derivation according to the grammar .  Our example grammar is ambiguous. In fact, in addition to the left derivation given above, the string has the alternative left derivation In this left derivation of the string , the first production rule that is applied is . The first on the right-hand side eventually yields while the second yields . In the previous left derivation, the first production rule that was applied was , with the first on the right yielding and the second yielding . If we think in terms of arithmetic expressions, the two left derivations lead to two different interpretations of the expression . In one interpretation, the is a unit that is multiplied by . In the second interpretation, the is a unit that is added to . The second interpretation is the one that is correct according to the usual rules of arithmetic. However, the grammar allows either interpretation. The ambiguity of the grammar allows the string to be parsed in two essentially different ways, and only one of the parsings is consistent with the meaning of the string. Of course, the grammar for English is also ambiguous. In a famous example, it's impossible to tell whether a pretty girls' camp is meant to describe a pretty camp for girls or a camp for pretty girls.  When dealing with artificial languages such as programming languages, it's better to avoid ambiguity. The grammar is perfectly correct in that it generates the correct set of strings, but in a practical situation where we are interested in the meaning of the strings, is not the right grammar for the job. There are other grammars that generate the same language as . Some of them are unambiguous grammars that better reflect the meaning of the strings in the language. For example, the language is also generated by the BNF grammar This grammar can be translated into a standard context-free grammar, which I will call : The language generated by consists of all legal arithmetic expressions made up of parentheses, the operators and , and the variables , , and . That is, . However, is an unambiguous grammar. Consider, for example, the string . Using the grammar , the only left derivation for this string is: There is no choice about the first step in this derivation, since the only production rule with on the left-hand side is . Similarly, the second step is forced by the fact that there is only one rule for rewriting a . In the third step, we must replace an . There are four ways to rewrite , but only one way to produce the that begins the string , so we apply the rule . Now, we have to decide what to do with the in . There two rules for rewriting , and . However, the first of these rules introduces a non-terminal, , which does not match the string we are trying to parse. So, the only choice is to apply the production rule . In the next step of the derivation, we must apply the rule in order to account for the in the string . Similarly, each of the remaining steps in the left derivation is forced.  The fact that is an unambiguous grammar means that at each step in a left derivation for a string , there is only one production rule that can be applied which will lead ultimately to a correct derivation of~ . However, actually satisfies a much stronger property: at each step in the left derivation of , we can tell which production rule has to be applied by looking ahead at the next symbol in~ . We say that is an LL(1) grammar . (This notation means that we can read a string from L eft to right and construct a L eft derivation of the string by looking ahead at most 1 character in the string.) Given an LL(1) grammar for a language, it is fairly straightforward to write a computer program that can parse strings in that language. If the language is a programming language, then parsing is one of the essential steps in translating a computer program into machine language. LL(1) grammars and parsing programs that use them are often studied in courses in programming languages and the theory of compilers.  Not every unambiguous context-free grammar is an LL(1) grammar. Consider, for example, the following grammar, which I will call : This grammar generates the same language as and , and it is unambiguous. However, it is not possible to construct a left derivation for a string according to the grammar by looking ahead one character in the string at each step. The first step in any left derivation must be either or . But how can we decide which of these is the correct first step? Consider the strings and , which are both in the language . For the string , the first step in a left derivation must be , while the first step in a left derivation of must be . However, the first seven characters of the strings are identical, so clearly looking even seven characters ahead is not enough to tell us which production rule to apply. In fact, similar examples show that looking ahead any given finite number of characters is not enough.  However, there is an alternative parsing procedure that will work for . This alternative method of parsing a string produces a right derivation of the string, that is, a derivation in which at each step, the non-terminal symbol that is replaced is the rightmost non-terminal symbol in the string. Here, for example, is a right derivation of the string according to the grammar : The parsing method that produces this right derivation produces it from bottom to top. That is, it begins with the string and works backward to the start symbol , generating the steps of the right derivation in reverse order. The method works because is what is called an LR(1) grammar . That is, roughly, it is possible to read a string from L eft to right and produce a R ight derivation of the string, by looking ahead at most 1 symbol at each step. Although LL(1) grammars are easier for people to work with, LR(1) grammars turn out to be very suitable for machine processing, and they are used as the basis for the parsing process in many compilers.  LR(1) parsing uses a shift\/reduce algorithm. Imagine a cursor or current position that moves through the string that is being parsed. We can visualize the cursor as a vertical bar, so for the string , we start with the configuration . A shift operation simply moves the cursor one symbol to the right. For example, a shift operation would convert to , and a second shift operation would convert that to . In a reduce operation, one or more symbols immediately to the left of the cursor are recognized as the right-hand side of one of the production rules in the grammar. These symbols are removed and replaced by the left-hand side of the production rule. For example, in the configuration , the to the left of the cursor is the right-hand side of the production rule , so we can apply a reduce operation and replace the with , giving . This first reduce operation corresponds to the last step in the right derivation of the string, . Now the can be recognized as the right-hand side of the production rule , so we can replace the with , giving . This corresponds to the next-to-last step in the right derivation, .  At this point, we have the configuration . The could be the right-hand side of the production rule . However, it could also conceivably come from the rule . How do we know whether to reduce the to at this point or to wait for a to come along so that we can reduce ? We can decide by looking ahead at the next character after the cursor. Since this character is a rather than a , we should choose the reduce operation that replaces with , giving . What makes an LR(1) grammar is the fact that we can always decide what operation to apply by looking ahead at most one symbol past the cursor.  After a few more shift and reduce operations, the configuration becomes , which we can reduce to by applying the production rules and . Now, faced with , we must once again decide between a shift operation and a reduce operation that applies the rule . In this case, since the next character is a rather than a , we apply the shift operation, giving . From there we get, in succession, , , , and finally . At this point, we have reduced the entire string to the start symbol of the grammar. The very last step, the reduction of to corresponds to the first step of the right derivation, .  In summary, LR(1) parsing transforms a string into the start symbol of the grammar by a sequence of shift and reduce operations. Each reduce operation corresponds to a step in a right derivation of the string, and these steps are generated in reverse order. Because the steps in the derivation are generated from bottom to top, LR(1) parsing is a type of bottom-up parsing . LL(1) parsing, on the other hand, generates the steps in a left derivation from top to bottom and so is a type of top-down parsing .  Although the language generated by a context-free grammar is defined in terms of derivations, there is another way of presenting the generation of a string that is often more useful. A parse tree displays the generation of a string from the start symbol of a grammar as a two dimensional diagram. Here are two parse trees that show two derivations of the string according to the grammar , which was given at the beginning of this section:   Figure showing two different parse tree derivations of the string .   A parse tree is made up of terminal and non-terminal symbols, connected by lines. The start symbol is at the top, or root, of the tree. Terminal symbols are at the lowest level, or leaves, of the tree. (For some reason, computer scientists traditionally draw trees with leaves at the bottom and root at the top.) A production rule is represented in a parse tree by the symbol lying above all the symbols in , with a line joining to each of the symbols in . For example, in the left parse tree above, the root, , is connected to the symbols , , and , and this corresponds to an application of the production rule .  It is customary to draw a parse tree with the string of non-terminals in a row across the bottom, and with the rest of the tree built on top of that base. Thus, the two parse trees shown above might be drawn as:   Figure showing the same two parse trees as above but with the non-terminals aligned at the bottom.     Given any derivation of a string, it is possible to construct a parse tree that shows each of the steps in that derivation. However, two different derivations can give rise to the same parse tree, since the parse tree does not show the order in which production rules are applied. For example, the parse tree on the left, above, does not show whether the production rule is applied before or after the production rule . However, if we restrict our attention to left derivations, then we find that each parse tree corresponds to a unique left derivation and vice versa . I will state this fact as a theorem, without proof. A similar result holds for right derivations.    Let be a context-free grammar. There is a one-to-one correspondence between parse trees and left derivations based on the grammar .    Based on this theorem, we can say that a context-free grammar is ambiguous if and only if there is a string which has two parse trees.    Exercises  One of the examples in this section was a grammar for a subset of English. Give five more examples of sentences that can be generated from that grammar. Your examples should, collectively, use all the rules of the grammar.  Rewrite the example BNF grammar for a subset of English as a context-free grammar.  Write a single BNF production rule that is equivalent to the following context-free grammar:   Write a BNF production rule that specifies the syntax of real numbers, as they appear in programming languages such as Java and C. Real numbers can include a sign, a decimal point and an exponential part. Some examples are: 17.3, .73, 23.1e67, 1.34E 12, +0.2, 100E+100  Variable references in the Java programming language can be rather complicated. Some examples include:      . Write a BNF production rule for Java variables. You can use the token ident and the non-terminal in your rule.  Use BNF to express the syntax of the try catch statement in the Java programming language.  Give a BNF grammar for compound propositions made up of propositional variables, parentheses, and the logical operators , , and . Use the non-terminal symbol to represent a propositional variable. You do not have to give a definition of .   Show that each of the following grammars is ambiguous by finding a string that has two left derivations according to the grammar:               There are many answers to these.                   Consider the string . Find a left derivation of this string according to each of the grammars , , and , as given in this section.  Draw a parse tree for the string according to each of the grammars , , and , as given in this section.  Draw three different parse trees for the string based on the grammar given in part a) of exercise 1.  Suppose that the string has the following parse tree, according to some grammar :  parse tree for string     List five production rules that must be rules in the grammar , given that this is a valid parse tree.   Give a left derivation for the string according to the grammar .   Give a right derivation for the string according to the grammar .     Show the full sequence of shift and reduce operations that are used in the LR(1) parsing of the string according to the grammar , and give the corresponding right derivation of the string.  This section showed how to use LL(1) and LR(1) parsing to find a derivation of a string in the language generated by some grammar . How is it possible to use LL(1) or LR(1) parsing to determine for an arbitrary string whether ? Give an example.   "
+},
+{
+  "id": "p-4702",
+  "level": "2",
+  "url": "sec-grammars.html#p-4702",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "generative grammars parsing "
+},
+{
+  "id": "p-4704",
+  "level": "2",
+  "url": "sec-grammars.html#p-4704",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "rewriting rules production rules productions "
+},
+{
+  "id": "p-4705",
+  "level": "2",
+  "url": "sec-grammars.html#p-4705",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "context-free grammar non-terminal symbols terminal symbols "
+},
+{
+  "id": "p-4707",
+  "level": "2",
+  "url": "sec-grammars.html#p-4707",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "start symbol "
+},
+{
+  "id": "def-context-free-grammar",
+  "level": "2",
+  "url": "sec-grammars.html#def-context-free-grammar",
+  "type": "Definition",
+  "number": "15.5.1",
+  "title": "Context-free Grammar.",
+  "body": " Context-free Grammar   A context-free grammar is a 4-tuple , where:    is a finite set of symbols. The elements of are the non-terminal symbols of the grammar.     is a finite set of symbols such that . The elements of are the terminal symbols of the grammar.     is a set of production rules. Each rule is of the form where is one of the symbols in and is a string in the language .     . is the start symbol of the grammar.      "
+},
+{
+  "id": "thm-context-free-grammar",
+  "level": "2",
+  "url": "sec-grammars.html#thm-context-free-grammar",
+  "type": "Theorem",
+  "number": "15.5.2",
+  "title": "",
+  "body": "  Let be the context-free grammar . Then:   If and are strings in such that , then .    If , , and are strings in such that and , then .    If and are strings in such that , and if and are any strings in , then .    If and are strings in such that , and if and are any strings in , then .       Parts 1 and 2 follow from the fact that is the transitive closure of . Part 4 follows easily from Part 3. (I leave this as an exercise.) To prove Part 3, suppose that , , , and are strings such that . By definition, this means that there exist strings and and a production rule such that and . But then we also have and . These two equations, along with the existence of the production rule show, by definition, that .   "
+},
+{
+  "id": "def-context-free-language",
+  "level": "2",
+  "url": "sec-grammars.html#def-context-free-language",
+  "type": "Definition",
+  "number": "15.5.3",
+  "title": "Context-free Language.",
+  "body": " Context-free Language   Suppose that is a context-free grammar. Then the language generated by is the language over the alphabet defined by That is, contains any string of terminal symbols that can be obtained by starting with the string consisting of the start symbol, , and applying a sequence of production rules.  A language is said to be a context-free language if there is a context-free grammar such that is . Note that there might be many different context-free grammars that generate the same context-free language. Two context-free grammars that generate the same language are said to be equivalent grammars  equivalent .   "
+},
+{
+  "id": "p-4727",
+  "level": "2",
+  "url": "sec-grammars.html#p-4727",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "derivation "
+},
+{
+  "id": "thm-non-regular-context-free",
+  "level": "2",
+  "url": "sec-grammars.html#thm-non-regular-context-free",
+  "type": "Theorem",
+  "number": "15.5.4",
+  "title": "",
+  "body": "  Let be the language . Let be the context-free grammar where , and consists of the productions Then , so that is a context-free language. In particular, there exist context-free languages which are not regular.    To show that , we must show both that and that . To show that , let be an arbitrary element of . By definition of , for some . We show that by induction on . In the case where , we have . Now, since can be produced from the start symbol by an application of the rule , so our claim is true for . Now, suppose that and that we already know that . We must show that . Since , we also have, by , that . That is, . Combining this with the production rule , we see that . This means that , as we wanted to show. This completes the proof that .  To show that , suppose that . That is, . We must show that for some . Since , there is a derivation , where . We first prove by induction on that in any derivation , we must have either or . Consider the case . Suppose . Then, we must have that is a rule in the grammar, so must be either or . Since and , is of the required form. Next, consider the inductive case. Suppose that and we already know that in any derivation , we must have or . Suppose that . We know by induction that or , but since and contains no non-terminal symbols, we must have . Since is obtained by applying one of the production rules or to~ , is either or . That is, is either or , as we wanted to show. This completes the induction. Turning back to , we see that must be of the form or of the form . But since , it can contain no non-terminal symbols, so must be of the form , as we wanted to show. This completes the proof that .   "
+},
+{
+  "id": "example-246",
+  "level": "2",
+  "url": "sec-grammars.html#example-246",
+  "type": "Example",
+  "number": "15.5.5",
+  "title": "",
+  "body": "  For another example, consider the language . Let's try to design a grammar that generates this language. This is similar to the previous example, but now we want to include strings that contain more than . The production rule always produces the same number of and . Can we modify this idea to produce more than ?  One approach would be to produce a string containing just as many as , and then to add some extra . A rule that can generate any number of is . After applying the rule for a while, we want to move to a new state in which we apply the rule . We can get to the new state by applying a rule that changes the into an . We still need a way to finish the process, which means getting rid of all non-terminal symbols in the string. For this, we can use the rule . Putting these rules together, we get the grammar This grammar does indeed generate the language . With slight variations on this grammar, we can produce other related languages. For example, if we replace the rule with , we get the language .  There are other ways to generate the language . For example, the extra non-terminal symbol, , is not really necessary, if we allow to sometimes produce a single without a . This leads to the grammar (But note that the rule would not work in place of , since it would allow the production of strings in which an can follow a , and there are no such strings in the language .) And here are two more grammars that generate this language:   "
+},
+{
+  "id": "example-247",
+  "level": "2",
+  "url": "sec-grammars.html#example-247",
+  "type": "Example",
+  "number": "15.5.6",
+  "title": "",
+  "body": "  Consider another variation on the language , in which the and can occur in any order, but the number of is still equal to the number of . This language can be defined as . This language includes strings such as , , and .  Let's start with the grammar containing the rules and . We can try adding the rule . Every string that can be generated using these three rules is in the language . However, not every string in can be generated. A derivation that starts with can only produce strings that begin with and end with . A derivation that starts with can only generate strings that begin with and end with . There is no way to generate the strings or , which are in the language . But we shall see that any string in that begins and ends with the same letter can be written in the form where and are shorter strings in . To produce strings of this form, we need one more rule, . The complete set of production rules for the language is    It's easy to see that every string that can be generated using these rules is in , since each rule introduces the same number of as . But we also need to check that every string in can be generated by these rules. This can be done by induction on the length of , using the second form of the principle of mathematical induction. In the base case, and . In this case, since in one step. Suppose , where , and suppose that we already know that for any with , . To finish the induction we must show, based on this induction hypothesis, that .  Suppose that the first and last characters of are different. Then is either of the form or of the form , for some string . Let's assume that is of the form . (The case where is of the form is handled in a similar way.) Since has the same number of and and since has one fewer than and one fewer than , must also have the same number of as . That is . But , so by the induction hypothesis, . So we have . By , we get then . Combining this with the fact that , we get that , that is, . This proves that .  Finally, suppose that the first and last characters of are the same. Let's say that begins and ends with . (The case where begins and ends with is handled in a similar way.) I claim that can be written in the form where and and neither nor is the empty string. This will finish the induction, since we will then have by the induction hypothesis that and , and we can derive from by first applying the rule and then using the first on the right-hand side to derive and the second to derive .  It only remains to figure out how to divide into two strings and which are both in . The technique that is used is one that is more generally useful. Suppose that , where each is either or . Consider the sequence of integers , , , where for each , is the number of in minus the number of in . Since , . Since , . And since , we must have . Furthermore the difference between and is either or , for .  Since and and the value of goes up or down by 1 when increases by 1, must be zero for some between 1 and . That is, cannot get from 1 to unless it passes through zero. Let be a number between 1 and such that . Let and let . Note that . The fact that means that the string has the same number of and , so . It follows automatically that also. Since is strictly between 1 and , neither nor is the empty string. This is all that we needed to show to finish the proof that .  The basic idea of this proof is that if contains the same number of as , then an at the beginning of must have a matching  somewhere in . This matches the in the sense that the corresponding is zero, and the marks the end of a string which contains the same number of as . For example, in the string , the at the beginning of the string is matched by the third , since is the shortest prefix of that has an equal number of and .   "
+},
+{
+  "id": "example-248",
+  "level": "2",
+  "url": "sec-grammars.html#example-248",
+  "type": "Example",
+  "number": "15.5.7",
+  "title": "Balanced Parentheses.",
+  "body": " Balanced Parentheses  Closely related to this idea of matching and is the idea of balanced parentheses . Consider a string made up of parentheses, such as (()(()))(()) . The parentheses in this sample string are balanced because each left parenthesis has a matching right parenthesis, and the matching pairs are properly nested. A careful definition uses the sort of integer sequence introduced in the above proof. Let be a string of parentheses. Write , where each is either ( or ) . Define a sequence of integers , , , , where is the number of left parentheses in minus the number of right parentheses. We say that the parentheses in are balanced if and for all . The fact that says that contains the same number of left parentheses as right parentheses. The fact the means that the nesting of pairs of parentheses is correct: You can't have a right parenthesis unless it is balanced by a left parenthesis in the preceding part of the string. The language that consists of all balanced strings of parentheses is context-free. It is generated by the grammar The proof is similar to the preceding proof about strings of and . (It might seem that I've made an awfully big fuss about matching and balancing. The reason is that this is one of the few things that we can do with context-free languages that we can't do with regular languages.)  "
+},
+{
+  "id": "thm-context-free-operations",
+  "level": "2",
+  "url": "sec-grammars.html#thm-context-free-operations",
+  "type": "Theorem",
+  "number": "15.5.8",
+  "title": "",
+  "body": "  Suppose that and are context-free languages. Then the languages , , and are also context-free.    I will prove only the first claim of the theorem, that is context-free. In the exercises for this section, you are asked to construct grammars for and (without giving formal proofs that your answers are correct).  Let and be context-free grammars such that and . We can assume that , since otherwise we could simply rename the non-terminal symbols in . The idea of the proof is that to generate a string in , we first decide whether we want a string in or a string in . Once that decision is made, to make a string in , we use production rules from , while to make a string in , we use rules from . We have to design a grammar, , to represent this process.  Let be a symbol that is not in any of the alphabets , , , or . will be the start symbol of . The production rules for consist of all the production rules from and together with two new rules: Formally, is defined to be the grammar Suppose that . That is , so there is a derivation . Since every rule from is also a rule in , if follows that . Combining this with the fact that , we have that , and . This shows that . In an exactly similar way, we can show that . Thus, .  It remains to show that . Suppose . Then there is a derivation . This derivation must begin with an application of one of the rules or , since these are the only rules in which appears. If the first rule applied in the derivation is , then the remainder of the derivation shows that . Starting from , the only rules that can be applied are rules from , so in fact we have . This shows that . Similarly, if the first rule applied in the derivation is , then . In any case, . This proves that .   "
+},
+{
+  "id": "def-right-regular-grammar",
+  "level": "2",
+  "url": "sec-grammars.html#def-right-regular-grammar",
+  "type": "Definition",
+  "number": "15.5.9",
+  "title": "Right-Regular Grammar.",
+  "body": " Right-Regular Grammar   A right-regular grammar regular grammar is a context-free grammar in which the right-hand side of every production rule has one of the following forms: the empty string; a string consisting of a single non-terminal symbol; or a string consisting of a single terminal symbol followed by a single non-terminal symbol.   "
+},
+{
+  "id": "thm-every-regular-context-free",
+  "level": "2",
+  "url": "sec-grammars.html#thm-every-regular-context-free",
+  "type": "Theorem",
+  "number": "15.5.10",
+  "title": "",
+  "body": "  A language is regular if and only if there is a right-regular grammar such that . In particular, every regular language is context-free.   "
+},
+{
+  "id": "p-4755",
+  "level": "2",
+  "url": "sec-grammars.html#p-4755",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Backus-Naur Form "
+},
+{
+  "id": "p-4756",
+  "level": "2",
+  "url": "sec-grammars.html#p-4756",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "syntactic category "
+},
+{
+  "id": "example-249",
+  "level": "2",
+  "url": "sec-grammars.html#example-249",
+  "type": "Example",
+  "number": "15.5.11",
+  "title": "",
+  "body": " As an example of a complete BNF grammar, let's look at a BNF grammar for a very small subset of English. The start symbol for the grammar is , and the terminal symbols are English words. All the sentences that can be produced from this grammar are syntactically correct English sentences, although you wouldn't encounter many of them in conversation. Here is the grammar: This grammar can generate sentences such as A dog chases the cat and the cat hides and The man loves a woman who runs. The second sentence, for example, is generated by the derivation   "
+},
+{
+  "id": "p-4768",
+  "level": "2",
+  "url": "sec-grammars.html#p-4768",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "parsing "
+},
+{
+  "id": "p-4770",
+  "level": "2",
+  "url": "sec-grammars.html#p-4770",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "left derivation "
+},
+{
+  "id": "p-4771",
+  "level": "2",
+  "url": "sec-grammars.html#p-4771",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "ambiguous "
+},
+{
+  "id": "p-4774",
+  "level": "2",
+  "url": "sec-grammars.html#p-4774",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "LL(1) grammar L L 1 "
+},
+{
+  "id": "p-4776",
+  "level": "2",
+  "url": "sec-grammars.html#p-4776",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "right derivation LR(1) grammar L R 1 "
+},
+{
+  "id": "p-4777",
+  "level": "2",
+  "url": "sec-grammars.html#p-4777",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "shift\/reduce "
+},
+{
+  "id": "p-4780",
+  "level": "2",
+  "url": "sec-grammars.html#p-4780",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "bottom-up parsing top-down parsing "
+},
+{
+  "id": "p-4781",
+  "level": "2",
+  "url": "sec-grammars.html#p-4781",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "parse tree "
+},
+{
+  "id": "fig-parsetree2",
+  "level": "2",
+  "url": "sec-grammars.html#fig-parsetree2",
+  "type": "Figure",
+  "number": "15.5.13",
+  "title": "",
+  "body": "  Figure showing the same two parse trees as above but with the non-terminals aligned at the bottom.   "
+},
+{
+  "id": "thm-parsetree-leftderiv",
+  "level": "2",
+  "url": "sec-grammars.html#thm-parsetree-leftderiv",
+  "type": "Theorem",
+  "number": "15.5.14",
+  "title": "",
+  "body": "  Let be a context-free grammar. There is a one-to-one correspondence between parse trees and left derivations based on the grammar .   "
+},
+{
+  "id": "exercise-546",
+  "level": "2",
+  "url": "sec-grammars.html#exercise-546",
+  "type": "Exercise",
+  "number": "15.5.4.1",
+  "title": "",
+  "body": "One of the examples in this section was a grammar for a subset of English. Give five more examples of sentences that can be generated from that grammar. Your examples should, collectively, use all the rules of the grammar. "
+},
+{
+  "id": "exercise-547",
+  "level": "2",
+  "url": "sec-grammars.html#exercise-547",
+  "type": "Exercise",
+  "number": "15.5.4.2",
+  "title": "",
+  "body": "Rewrite the example BNF grammar for a subset of English as a context-free grammar. "
+},
+{
+  "id": "exercise-548",
+  "level": "2",
+  "url": "sec-grammars.html#exercise-548",
+  "type": "Exercise",
+  "number": "15.5.4.3",
+  "title": "",
+  "body": "Write a single BNF production rule that is equivalent to the following context-free grammar:  "
+},
+{
+  "id": "exercise-549",
+  "level": "2",
+  "url": "sec-grammars.html#exercise-549",
+  "type": "Exercise",
+  "number": "15.5.4.4",
+  "title": "",
+  "body": "Write a BNF production rule that specifies the syntax of real numbers, as they appear in programming languages such as Java and C. Real numbers can include a sign, a decimal point and an exponential part. Some examples are: 17.3, .73, 23.1e67, 1.34E 12, +0.2, 100E+100 "
+},
+{
+  "id": "exercise-550",
+  "level": "2",
+  "url": "sec-grammars.html#exercise-550",
+  "type": "Exercise",
+  "number": "15.5.4.5",
+  "title": "",
+  "body": "Variable references in the Java programming language can be rather complicated. Some examples include:      . Write a BNF production rule for Java variables. You can use the token ident and the non-terminal in your rule. "
+},
+{
+  "id": "exercise-551",
+  "level": "2",
+  "url": "sec-grammars.html#exercise-551",
+  "type": "Exercise",
+  "number": "15.5.4.6",
+  "title": "",
+  "body": "Use BNF to express the syntax of the try catch statement in the Java programming language. "
+},
+{
+  "id": "exercise-552",
+  "level": "2",
+  "url": "sec-grammars.html#exercise-552",
+  "type": "Exercise",
+  "number": "15.5.4.7",
+  "title": "",
+  "body": "Give a BNF grammar for compound propositions made up of propositional variables, parentheses, and the logical operators , , and . Use the non-terminal symbol to represent a propositional variable. You do not have to give a definition of . "
+},
+{
+  "id": "exercise-553",
+  "level": "2",
+  "url": "sec-grammars.html#exercise-553",
+  "type": "Exercise",
+  "number": "15.5.4.8",
+  "title": "",
+  "body": " Show that each of the following grammars is ambiguous by finding a string that has two left derivations according to the grammar:               There are many answers to these.                  "
+},
+{
+  "id": "exercise-554",
+  "level": "2",
+  "url": "sec-grammars.html#exercise-554",
+  "type": "Exercise",
+  "number": "15.5.4.9",
+  "title": "",
+  "body": "Consider the string . Find a left derivation of this string according to each of the grammars , , and , as given in this section. "
+},
+{
+  "id": "exercise-555",
+  "level": "2",
+  "url": "sec-grammars.html#exercise-555",
+  "type": "Exercise",
+  "number": "15.5.4.10",
+  "title": "",
+  "body": "Draw a parse tree for the string according to each of the grammars , , and , as given in this section. "
+},
+{
+  "id": "exercise-556",
+  "level": "2",
+  "url": "sec-grammars.html#exercise-556",
+  "type": "Exercise",
+  "number": "15.5.4.11",
+  "title": "",
+  "body": "Draw three different parse trees for the string based on the grammar given in part a) of exercise 1. "
+},
+{
+  "id": "exercise-557",
+  "level": "2",
+  "url": "sec-grammars.html#exercise-557",
+  "type": "Exercise",
+  "number": "15.5.4.12",
+  "title": "",
+  "body": "Suppose that the string has the following parse tree, according to some grammar :  parse tree for string     List five production rules that must be rules in the grammar , given that this is a valid parse tree.   Give a left derivation for the string according to the grammar .   Give a right derivation for the string according to the grammar .    "
+},
+{
+  "id": "exercise-558",
+  "level": "2",
+  "url": "sec-grammars.html#exercise-558",
+  "type": "Exercise",
+  "number": "15.5.4.13",
+  "title": "",
+  "body": "Show the full sequence of shift and reduce operations that are used in the LR(1) parsing of the string according to the grammar , and give the corresponding right derivation of the string. "
+},
+{
+  "id": "exercise-559",
+  "level": "2",
+  "url": "sec-grammars.html#exercise-559",
+  "type": "Exercise",
+  "number": "15.5.4.14",
+  "title": "",
+  "body": "This section showed how to use LL(1) and LR(1) parsing to find a derivation of a string in the language generated by some grammar . How is it possible to use LL(1) or LR(1) parsing to determine for an arbitrary string whether ? Give an example. "
+},
+{
+  "id": "sec-turing-machines-comp",
+  "level": "1",
+  "url": "sec-turing-machines-comp.html",
+  "type": "Section",
+  "number": "15.6",
+  "title": "Turing Machines and Computability",
+  "body": " Turing Machines and Computability   Turing Machine  Computability   In , we saw that there is a neat correspondence between regular expressions and finite automata. That is, a language is generated by a regular expression if and only if that language is accepted by a finite automaton.  In , we introduced the class of context-free languages, and we have considered how context-free grammars can be used to generate context-free languages. You might wonder whether there is any type of automaton that can be used to recognize context-free languages. In fact, there is: The abstract machines known as pushdown automata that utilize a stack in addition to a finite automaton, can be used to define context-free languages. These and languages that are not context-free (or context-sensitive languages) will not be covered in this text. If you wish to learn more about pushdown automata, non-context-free languages, or general grammars please refer to the original source text for this chapter: Foundations of Computation , Chapter 4  We saw hints in the previous sections that ``computation'' is a more general concept than we might have thought. In this chapter, we will see that computer programs are equivalent, in terms of their computational power, to a particularly simple model of computation known as a Turing machine . We shall also see that there are limits to what can be done by computing.    Turing Machines  Historically, the theoretical study of computing began before computers existed. One of the early models of computation was developed in the 1930s by the British mathematician, Alan Turing, who was interested in studying the theoretical abilities and limitations of computation. His model for computation is a very simple abstract computing machine which has come to be known as a Turing machine . While Turing machines are not applicable in the same way that regular expressions, finite-state automata, and grammars are applicable, their use as a fundamental model for computation means that every computer scientist should be familiar with them, at least in a general way.  A Turing machine is really not much more complicated than a finite-state automaton or a pushdown automaton. In fact, Turing machines can be shown to be equivalent in their computational power to pushdown automata with two independent stacks. Like a FSA, a Turing machine has a finite number of possible states, and it changes from state to state as it computes. However, a Turing machine also has an infinitely long tape that it can use for input and output. The tape extends to infinity in both directions. The tape is divided into cells , which are in one-to-one correspondence with the integers, . Each cell can either be blank or it can hold a symbol from a specified alphabet. The Turing machine can move back and forth along this tape, reading and writing symbols and changing state. It can read only one cell at a time, and possibly write a new value in that cell. After doing this, it can change state and it can move by one cell either to the left or to the right. This is how the Turing machine computes. To use a Turing machine, you would write some input on its tape, start the machine, and let it compute until it halts. Whatever is written on the tape at that time is the output of the computation.  You might want to visualize a Turing machine as a physical machine such as in this simple diagram:   Basic graphical representation of a Turing machine.   Kevd1337> , Public domain, via Wikimedia Commons  However, these kinds of diagrams do not tell us anything about the functioning of a particular machine.  Although the tape is infinite, only a finite number of cells can be non-blank at any given time. If you don't like the idea of an infinite tape, you can think of a finite tape that can be extended to an arbitrarily large size as the Turing machine computes: If the Turing machine gets to either end of the tape, it will pause and wait politely until you add a new section of tape. In other words, it's not important that the Turing machine have an infinite amount of memory, only that it can use as much memory as it needs for a given computation, up to any arbitrarily large size. In this way, a Turing machine is like a computer that can ask you to buy it a new disk drive whenever it needs more storage space to continue a computation. The tape of a Turing machine can be used to store arbitrarily large amounts of information in a straightforward way. Although we can imagine using an arbitrary amount of memory with a computer, it's not so easy. Computers aren't set up to keep track of unlimited amounts of data. If you think about how it might be done, you probably won't come with anything better than an infinite tape. (The problem is that computers use integer-valued addresses to keep track of data locations. If a limit is put on the number of bits in an address, then only a fixed, finite amount of data can be addressed. If no limit is put on the number of bits in an address, then we are right back to the problem of storing an arbitrarily large piece of data---just to represent an address!)  A given Turing machine has a fixed, finite set of states. One of these states is designated as the start state . This is the state in which the Turing machine begins a computation. Another special state is the halt state . The Turing machine's computation ends when it enters its halt state. It is possible that a computation might never end because the machine never enters the halt state. This is analogous to an infinite loop in a computer program.  At each step in its computation, the Turing machine reads the contents of the tape cell where it is located. Depending on its state and the symbol that it reads, the machine writes a symbol (possibly the same symbol) to the cell, moves one cell either to the left or to the right, and (possibly) changes its state. The output symbol, direction of motion, and new state are determined by the current state and the input symbol. Note that either the input symbol, the output symbol, or both, can be blank. A Turing machine has a fixed set of rules that tell it how to compute. Each rule specifies the output symbol, direction of motion, and new state for some combination of current state and input symbol. The machine has a rule for every possible combination of current state and input symbol, except that there are no rules for what happens if the current state is the halt state. Of course, once the machine enters the halt state, its computation is complete and the machine simply stops.  I will use the character # to represent a blank in a way that makes it visible. I will always use to represent the halt state. I will indicate the directions, left and right, with and , so that is the set of possible directions of motion. With these conventions, we can give the formal definition of a Turing machine as follows:   Turing Machine  Turing Machine   A Turing machine is a 4-tuple , where:    is a finite set of states, including the halt state, .     is an alphabet which includes the blank symbol, #.     is the start state.     is the transition function. The fact that means that when the Turing machine is in state and reads the symbol , it writes the symbol , moves one cell in the direction , and enters state .       Even though this is the formal definition, it's easier to work with a transition diagram representation of Turing machines. The transition diagram for a Turing machine is similar to the transition diagram for a DFA. However, there are no ``accepting'' states (only a halt state). Furthermore, there must be a way to specify the output symbol and the direction of motion for each step of the computation. We do this by labeling arrows with notations of the form and , where and are symbols in the Turing machine's alphabet. For example,  a simple Turing machine transition diagram  indicates that when the machine is in state and reads an , it writes a , moves left, and enters state .  Here, for example, is a transition diagram for a simple Turing machine that moves to the right, changing 's to 's and vice versa, until it finds a . It leaves blanks (#'s) unchanged. When and if the machine encounters a , it moves to the left and halts:  Transition diagram for a simple Turing machine that moves to the right, changing 's to 's and vice versa, until it finds a .    To simplify the diagrams, I will leave out any transitions that are not relevant to the computation that I want the machine to perform. You can assume that the action for any omitted transition is to write the same symbol that was read, move right, and halt.  For example, shown below is a transition diagram for a Turing machine that makes a copy of a string of 's and 's. To use this machine, you would write a string of 's and 's on its tape, place the machine on the first character of the string, and start the machine in its start state,~ . When the machine halts, there will be two copies of the string on the tape, separated by a blank. The machine will be positioned on the first character of the leftmost copy of the string. Note that this machine uses 's and 's in addition to 's and 's. While it is copying the input string, it temporarily changes the 's and 's that it has copied to 's and 's, respectively. In this way it can keep track of which characters it has already copied. After the string has been copied, the machine changes the 's and 's back to 's and 's before halting.  Transition diagram for Turing machine described above.   In this machine, state checks whether the next character is an , a , or a # (indicating the end of the string). States and add an to the end of the new string, and states and do the same thing with a . States and return the machine to the next character in the input string. When the end of the input string is reached, state will move the machine back to the start of the input string, changing 's and 's back to 's and 's as it goes. Finally, when the machine hits the # that precedes the input string, it moves to the right and halts. This leave it back at the first character of the input string. It would be a good idea to work through the execution of this machine for a few sample input strings. You should also check that it works even for an input string of length zero.  Our primary interest in Turing machines is as language processors. Suppose that is a string over an alphabet . We will assume that does not contain the blank symbol. We can use as input to a Turing machine provided that . To use as input for , we will write on 's tape and assume that the remainder of the tape is blank. We place the machine on the cell containing the first character of the string, except that if then we simply place the machine on a completely blank tape. Then we start the machine in its initial state, , and see what computation it performs. We refer to this setup as ``running with input .''  When is run with input , it is possible that it will just keep running forever without halting. In that case, it doesn't make sense to ask about the output of the computation. Suppose however that does halt on input . Suppose, furthermore, that when halts, its tape is blank except for a string of non-blank symbols, and that the machine is located on the first character of . In this case, we will say that `` halts with output .'' In addition, if halts with an entirely blank tape, we say that `` halts with output .'' Note that when we run with input , one of three things can happen: (1)~ ~might halt with some string as output; (1)~ ~might fail to halt; or (3)~ ~might halt in some configuration that doesn't count as outputting any string.  The fact that a Turing machine can produce an output value allows us for the first time to deal with computation of functions . A function takes an input value in the set and produces an output value in the set . If the sets are sets of strings, we can now ask whether the values of the function can be computed by a Turing machine. That is, is there a Turing machine such that, given any string in the domain of as input, will compute as its output the string . If this is that case, then we say that is a Turing-computable function.   Turing-computable  Turing-computable   Suppose that and are alphabets that do not contain # and that is a function from to . We say that is Turing-computable if there is a Turing machine such that and and for each string , when is run with input , it halts with output . In this case, we say that  computes the function .    For example, let and define by , for . Then is Turing-computable since it is computed by this Turing machine:  Transition diagram for Turing machine described above.    We can also use Turing machines to define ``computable languages.'' There are actually two different notions of Turing-computability for languages. One is based on the idea of Turing-computability for functions. Suppose that is an alphabet and that . The characteristic function of is the function defined by the fact that if and if . Note that given the function , can be obtained as the set . Given a language , we can ask whether the corresponding function is Turing-computable. If so, then we can use a Turing machine to decide whether or not a given string is in . Just run the machine with input . It will halt with output . (That is, it will halt and when it does so, the tape will be blank except for a 0 or a 1, and the machine will be positioned on the 0 or~1.) If the machine halts with output 1, then . If the machine halts with output 0, then .   Turing-decidable  Turing-decidable   Let be an alphabet that does not contain # and let be a language over . We say that is Turing-decidable if there is a Turing machine such that , , and for each , when is run with input , it halts with output . (That is, it halts with output 0 or 1, and the output is 0 if and is 1 if .) In this case, we say that  decides the language .    The second notion of computability for languages is based on the interesting fact that it is possible for a Turing machine to run forever, without ever halting. Whenever we run a Turing machine with input , we can ask the question, will ever halt or will it run forever? If halts on input , we will say that ``accepts'' . We can then look at all the strings over a given alphabet that are accepted by a given Turing machine. This leads to the notion of Turing-acceptable languages.   Turing-acceptable  Turing-acceptable   Let be an alphabet that does not contain #, and let be a language over . We say that is Turing-acceptable if there is a Turing machine such that , and for each , halts on input if and only if . In this case, we say that  accepts the language .    It should be clear that any Turing-decidable language is Turing-acceptable. In fact, if is a language over an alphabet , and if is a Turing machine that decides , then it is easy to modify to produce a Turing machine that accepts . At the point where enters the halt state with output 0, the new machine should enter a new state in which it simply moves to the right forever, without ever halting. Given an input , the modified machine will halt if and only if halts with output 1, that is, if and only if .    Computability  Computability  At this point, it would be useful to look at increasingly complex Turing machines, such as those with more tapes, which compute increasingly complex functions and languages. Although Turing machines are very simple devices, it turns out that they can perform very sophisticated computations. In fact, any computation that can be carried out by a modern digital computer---even one with an unlimited amount of memory---can be carried out by a Turing machine. Although it is not something that can be proved, it is widely believed that anything that can reasonably be called ``computation'' can be done by a Turing machine. This claim is known as the Church-Turing Thesis Church-Turing Thesis .  We do not have time to look at enough examples to convince you that Turing machines are as powerful as computers, but the proof reduces to the fact that computers are actually fairly simple in their basic operation. Everything that a computer does comes down to copying data from one place to another, making simple comparisons between two pieces of data, and performing some basic arithmetic operations. It's possible for Turing machines to do all these things. In fact, it's possible to build a Turing machine to simulate the step-by-step operation of a given computer. Doing so proves that the Turing machine can do any computation that the computer could do, although it will, of course, work much, much more slowly.  We have used Turing machines to define Turing-acceptable languages and Turing-decidable languages. The definitions seem to depend very much on the peculiarities of Turing machines. But the same classes of languages can be defined in other ways. For example, we could use programs running on an idealized computer, with an unlimited amount of memory, to accept or decide languages. Or we could use -tape Turing machines. The resulting classes of languages would be exactly the same as the Turing-acceptable and Turing-decidable languages.  We could look at other ways of specifying languages ``computationally.'' One of the most natural is to imagine a Turing machine or computer program that runs forever and outputs an infinite list of strings over some alphabet . In the case of Turing machines, it's convenient to think of a two-tape Turing machine that lists the strings on its second tape. The strings in the list form a language over . A language that can be listed in this way is said to be recursively enumerable language  recursively enumerable . Note that we make no assumption that the strings must be listed in any particular order, and we allow the same string to appear in the output any number of times. Clearly, a recursively enumerable language is ``computable'' in some sense. Perhaps we have found a new type of computable language. But no---it turns out that we have just found another way of describing the Turing-acceptable languages. The following theorem makes this fact official and adds one more way of describing the same class of languages: Discussion of the proof of this theorem can be found in the source document for this section: Section 5.2 of Foundations of Computation      Let be an alphabet and let be a language over . Then the following are equivalent:   There is a Turing machine that accepts .    There is a two-tape Turing machine that runs forever, making a list of strings on its second tape, such that a string is in the list if and only if .    There is a Turing-computable function such that is the range of the function .        Next, we compare Turing machines to a completely different method of specifying languages: grammars. Suppose is a general grammar and that is the language generated by . Then there is a Turing machine, , that accepts the same language, . The alphabet for will be , where $ is a symbol that is not in . (We also assume that # is not in .) Suppose that is started with input , where . We have to design so that it will halt if and only if . The idea is to have find each string that can be derived from the start symbol . The strings will be written to 's tape and separated by $'s. can begin by writing the start symbol, , on its tape, separated from by a $. Then it repeats the following process indefinitely: For each string on the tape and for each production rule, , of , search the string for occurrences of . When one is found, add a $ to the end of the tape and copy the string to the end of the tape, replacing the occurrence of by . The new string represents the results of applying the production rule to the string. Each time produces a new string, it compares that string to . If they are equal, then halts. If is in fact in , then eventually will produce the string and will halt. Conversely, if is not in , then will go on producing strings forever without ever finding , so will never halt. This shows that, in fact, the language is accepted by .  Conversely, suppose that is a language over an alphabet , and that is Turing-acceptable. Then it is possible to find a grammar that generates . To do this, it's convenient to use the fact that, as discussed above, there is a Turing-computable function such that is the range of~ . Let be a Turing machine that computes the function . We can build a grammar, , that imitates the computations performed by . The idea is that most of the production rules of will imitate steps in the computation of . Some additional rules (which we won't get into here) must be added to get things started, to clean up, and to otherwise bridge the conceptual gap between grammars and Turing machines.   We have now shown, very informally, that a language is Turing-acceptable if and only if there is a grammar that generates . Even though Turing machines and grammars are very different things, they are equivalent in terms of their ability to describe languages. We state this as a theorem:    A language is Turing acceptable (equivalently, recursively enumerable) if and only if there is a general grammar that generates .    In this section, we have been talking mostly about recursively enumerable languages (also known as the Turing-acceptable languages). What about the Turing-decidable languages? We already know that if a language is Turing-decidable, then it is Turing-acceptable. The converse is not true (although we won't be able to prove this yet). However, suppose that is a language over the alphabet and that both and its complement, , are Turing-acceptable. Then is Turing-decidable.  For suppose that is a Turing machine that accepts the language and that is a Turing machine that accepts . We must show that is Turing-decidable. That is, we have to build a Turing machine that decides . For each , when is run with input , it should halt with output 1 if and with output if . To do this, will simulate the computation of both and on input . (It will simulate one step in the computation of , then one step in the computation of , then one step of , then one step of , and so on.) If and when the simulated computation of halts, then will halt with output~1; since accepts , this will happen if and only if . If and when the simulated computation of halts, then will halt with output~0; since accepts , this will happen if and only if . So, for any , halts with the desired output. This means that does in fact decide the language .  It is easy to prove the converse, and the proof is left as an exercise. So we see that a language is Turing-decidable if and only if both it and its complement are Turing-acceptable. Since Turing-acceptability can be defined using other forms of computation besides Turing machines, so can Turing-decidability. For example, a language is Turing-decidable if and only if both it and its complement can be generated by general grammars. We introduced the term ``recursively enumerable'' as a synonym for Turing-acceptable, to get away from the association with a particular form of computation. Similarly, we define the term ``recursive'' as a synonym for Turing-decidable. That is, a language is said to be recursive language recursive if and only if it is Turing-decidable. We then have the theorem:    Let be an alphabet and let be a language over . Then is recursive if and only if both and its complement, , are recursively enumerable.       The Limits of Computation  Limits of Computation  Recursively enumerable languages are languages that can be defined by computation. We have seen that there are many different models of computation---Turing machines, two-tape Turing machines, grammars, computer programs---but they all lead to the same class of languages. In fact, every computational method for specifying languages that has ever been developed produces only recursively enumerable languages. There is something about these languages---some pattern or property---that makes them ``computable,'' and it is some intrinsic property of the languages themselves, not some peculiarity of any given model of computation.  This is especially interesting since most languages are not recursively enumerable. Given an alphabet , there are uncountably many languages over , but only countably many of them are recursively enumerable. The rest---the vast majority---are not recursively enumerable. What can we say about all these non-recursively-enumerable languages? If the language is not recursively enumerable, then there is no algorithm for listing the members of . It might be possible to define by specifying some property that all its members satisfy, but that property can't be computable. That is, there can be no computer program or Turing machine that tests whether a given string has the property, since if there were, then we could write a program that lists the members of .  So, even though almost every language is non-recursively-enumerable, it's difficult to find a particular language that is not recursively enumerable. Nevertheless, in this section we will find one such language. At that same time, we will find an example of a language that is recursively enumerable but not recursive. And we will discover some interesting limitations to the power of computation.  The examples that we will look at in this section involve Turing machines that work with other Turing machines as data. For this to work, we need a symbolic representation of Turing machines---a representation that can be written on the tape of another Turing machine. This will let us create two machines: First, a Turing machine that can generate Turing machines on demand by writing their symbolic representations on its tape. We will design a Turing machine to do this. And second, a Turing machine that can simulate the computation of other Turing machines whose descriptions are written on its tape.  In order to do all this, we must put some limitations on the states and alphabetic symbols that can be used in the Turing machines that we consider. Clearly, given any Turing machine, we can change the names of the states without changing the behavior of the machine. So, without any loss of generality, we can assume that all states have names chosen from the list: , , , , , , . We assume that is the halt state and is the start state. Note that there is an infinite number of possible states, but any given Turing machine will only use finitely many states from this list.  As for the alphabets of the Turing machines, I want to look at Turing machines whose alphabets include the symbols 0, 1, , and of course #. These are the symbols that the machines will use for input and output. The alphabets can also include other symbols. We will assume that these auxiliary symbols are chosen from the list: , , , , . Given a Turing machine whose alphabet includes the symbols 0, 1, , and #, we can rename any other symbols in its alphabet using names from this list. This renaming will not affect any of the behavior that we are interested in.  Now suppose we have one of these standard Turing machines---one whose states are chosen from the list , , , , , , whose start state is , and whose symbols are chosen from the list #, 0, 1, , , , , . Such a machine can be completely encoded as a string of symbols over the alphabet . A transition rule such as can be encoded as a string . To encode a complete machine, simply encode each of its transition rules in this way and join them together in a string, separated by $'s. We now have the symbolic representation for Turing machines that we need.  Note that a string over the alphabet might or might not encode a Turing machine. However, it is a simple matter to check whether such a string is the code for a Turing machine. We can imagine the following process: Generate all the strings over the alphabet . Check each string to see whether it encodes a Turing machine. If so, add the string to an output list. In this way, we can generate a list of all strings that encode standard Turing machines. In effect, the standard Turing machines, or at least their symbolic representations, form a recursively enumerable set. Let be the machine encoded by the first string in this list of standard Turing machines; let be the machine encoded by the second string; let be the machine encoded by the third string; and so on. The list , , ,~\\dots, includes every standard Turing machine. Furthermore, given , we can find the symbolic representation for by generating strings in the list until we have strings. Furthermore---and this is the essential point---we can use a Turing machine to do all these calculations. In fact, there is a Turing machine that, when run with input , will halt with the string representation of written on its tape as output. The Turing machine that does this is , the first of the two machines that we need.  The second machine that we need will be called . It is a so-called Universal Turing Machine . The single Turing machine can simulate the computation of any standard Turing machine, , on any input. Both the symbolic representation of and that of the input string are written to 's tape, separated by a space. As simulates the computation of , it will need some way to keep track of what state is in and of the position of on its (simulated) tape. It does this by writing the current state of on its tape, following 's input string, and by adding a special symbol, such as , to the input string to mark 's position. When is first started, it begins by adding the to the beginning of the input string and writing a after the string to represent the start state of . It is then relatively straightforward for to simulate the computation of . For each step in the computation of , it can determine the current state of (which is recorded on 's tape) and the symbol which is currently reading (which is on 's tape, after the ). searches the symbolic representation of for the rule that tells what to do in this situation. Using this rule, can update its representation of 's state, position, and tape to reflect the result of applying the rule. If the new state of is the halt state, then also halts. Otherwise, it goes on to simulate the next step in 's computation. Note that when is given and an input string as input, will halt if and only if halts on input . (Obviously, this is a very inefficient simulation, but we are not concerned with efficiency here.)  So, we have our two machines, and . After all this setup, we are finally in a position to look at the major theorem that we have been working towards.    Let , , , , be the standard Turing machines, as described above. Let be the language over the alphabet defined by Then is a recursively enumerable language, but is not recursive. The complement is a language that is not recursively enumerable.    First note that if both and were recursively enumerable, then would be recursive, by . So, once we show that is recursively enumerable but not recursive, it follows immediately that cannot be recursively enumerable. That is, the second part of the theorem follows from the first.  To show that is recursively enumerable, it suffices to find a Turing machine, , that accepts . That is, when run with input , for , should halt if and only if . We can build from the Turing machines and which were introduced above. When started with input , should proceed as follows: First copy the input. Run on the first copy of . This will produce a symbolic description of the Turing machine . Now run to simulate the computation of on input . This simulation will end if and only if halts when run with input , that is, if and only if . The Turing machine that performs the computation we have described accepts the language . This proves that is recursively enumerable.  To show that is not recursive, we need to show that there is no Turing machine that decides . Let be any Turing machine. We must show that no matter what does, it does not decide the language . We must do this without knowing anything more about that the fact that is it a Turing machine. To say that decides would mean that for any , when is run with input , will halt with output 1 if and will halt with output 0 if . To show that does not decide we need to show that there is some such that when is run with input , either fails to halt or else halts but gives the wrong output. Note in particular that we only need to find one  for which does not give the correct result. As we try to find , we have nothing much to work with but itself.  To find , we construct a Turing machine that is a simple variation on . When is run on any input, it duplicates the behavior of on that input until halts (if it ever does). At that point, should check 's output. If has halted with output , then should go into an infinite loop, so that never halts in this case. Otherwise, if the output of is not , then should halt. Now, we can assume that is one of the standard Turing machines, say . (If is not already one of these machines, it is because it uses different names for its states and symbols. Renaming the states and symbols will produce an equivalent machine with the same behavior as , and we can replace with this standard machine.)  We now have a Turing machine which has the following behavior when it is run with input (note that the here is the same as in ): If halts with output 1 on input , then will fail to halt on input . If halts with output 0 on input , then fails to halt on input . (What might do in other cases is not relevant here.)  Remember that we are trying to show that does not decide the language . I claim that, in fact, does not give the correct answer for . When is run with input , it is supposed to halt with output 1 if , and it is supposed to halt with output 0 if . Recall that if and only if halts when run with input .  Suppose that we run with input . If does not halt with output 0 or 1, then it has certainly not given the correct answer for . Now, suppose that halts with output 1 on input . In this case, by the properties of given above, we know that does not halt on input . But that means, by definition of , that . By halting with output 1 in this case, has given the wrong answer for . Finally, suppose that halts with output 0 on input . We then know that halts on input . But that means that . Again, by halting with output 0 in this case, has given the wrong answer for . So, in no case will give the correct answer for . This means that does not decide the language , because gives an incorrect answer when it is run with the particular input . does not decide , and since was an arbitrary Turing machine, we see that there is no Turing machine at all that decides the language . Thus, is not a recursive language, as the theorem claims.  To decide the language would be to solve the following problem: Given a Turing machine , decide whether or not will halt when it is run with input . This problem is called the Halting Problem Halting Problem . We have shown that there is no Turing machine that solves this problem. Given the equivalence of Turing machines and computer programs, we can also say that there is no computer program that solves the halting problem. We say that the halting problem is computational unsolvability computationally unsolvable .  The halting problem is just one of many problems that cannot be solved by Turing machines or computer programs. In fact, almost any interesting yes\/no question that can be asked about Turing machines or programs is in this class: Does this Turing machine halt for all possible inputs in ? Given this input, will this program ever halt? Do these two programs (or Turing machines) have the same output for each possible input? Will this Turing machine ever halt if it is started on a blank tape? All these problems are computationally unsolvable in the sense that there is no Turing machine or computer program that will answer them correctly in all cases. The existence of such problems is a real limitation on the power of computation.    Exercises  Let . Draw a transition diagram for a Turing machine that computes the function where , for . Draw a transition diagram for a Turing machine that computes the function where , for .  Let . Draw a transition diagram for a Turing machine that computes the function where .  Suppose that , , and are alphabets and that and are Turing-computable functions. Show that is Turing-computable.  We have defined computability for functions , where and are alphabets. How could Turing machines be used to define computable functions from to ? (Hint: Consider the alphabet .)  Let be an alphabet and let be a language over . Show that is Turing-decidable if and only if its complement, , is Turing-decidable.  Draw a transition diagram for a Turing machine which decides the language . (Hint: Change the 's and 's to \\$'s in pairs.) Explain in general terms how to make a Turing machine that decides the language .  Draw a transition diagram for a Turing machine which decides the language and is a multiple of . (Hint: Erase  's at a time.)  Based on your answer to the previous problem and the copying machine presented in this section, describe in general terms how you would build a Turing machine to decide the language is a prime number .  Let be the function such that for each , is the representation of as a binary number. Draw a transition diagram for a Turing machine that computes .  The language is the range of the function . Design a Turing machine that computes this function, and find the grammar that generates the language by imitating the computation of that machine.  Complete the proof of by proving the following: If is a recursive language over an alphabet , then both and are recursively enumerable.  Show that a language over an alphabet is recursive if and only if there are grammars and such that the language generated by is and the language generated by is .  This section discusses recursive languages and recursively enumerable languages. How could one define recursive subsets of and recursively enumerable subsets of ?  Give an informal argument to show that a subset is recursive if and only if there is a computer program that prints out the elements of  it in increasing order .   "
+},
+{
+  "id": "p-4809",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#p-4809",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "pushdown automata "
+},
+{
+  "id": "p-4810",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#p-4810",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Turing machine "
+},
+{
+  "id": "p-4811",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#p-4811",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Turing machine "
+},
+{
+  "id": "p-4812",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#p-4812",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "tape cells "
+},
+{
+  "id": "fig-TM",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#fig-TM",
+  "type": "Figure",
+  "number": "15.6.1",
+  "title": "",
+  "body": "  Basic graphical representation of a Turing machine.   Kevd1337> , Public domain, via Wikimedia Commons  "
+},
+{
+  "id": "p-4815",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#p-4815",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "start state halt state "
+},
+{
+  "id": "p-4816",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#p-4816",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "rules "
+},
+{
+  "id": "def-turing-machine",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#def-turing-machine",
+  "type": "Definition",
+  "number": "15.6.2",
+  "title": "Turing Machine.",
+  "body": " Turing Machine  Turing Machine   A Turing machine is a 4-tuple , where:    is a finite set of states, including the halt state, .     is an alphabet which includes the blank symbol, #.     is the start state.     is the transition function. The fact that means that when the Turing machine is in state and reads the symbol , it writes the symbol , moves one cell in the direction , and enters state .      "
+},
+{
+  "id": "def-turing-computable",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#def-turing-computable",
+  "type": "Definition",
+  "number": "15.6.3",
+  "title": "Turing-computable.",
+  "body": " Turing-computable  Turing-computable   Suppose that and are alphabets that do not contain # and that is a function from to . We say that is Turing-computable if there is a Turing machine such that and and for each string , when is run with input , it halts with output . In this case, we say that  computes the function .   "
+},
+{
+  "id": "p-4833",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#p-4833",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "characteristic function "
+},
+{
+  "id": "def-turing-decidable",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#def-turing-decidable",
+  "type": "Definition",
+  "number": "15.6.4",
+  "title": "Turing-decidable.",
+  "body": " Turing-decidable  Turing-decidable   Let be an alphabet that does not contain # and let be a language over . We say that is Turing-decidable if there is a Turing machine such that , , and for each , when is run with input , it halts with output . (That is, it halts with output 0 or 1, and the output is 0 if and is 1 if .) In this case, we say that  decides the language .   "
+},
+{
+  "id": "def-turing-acceptable",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#def-turing-acceptable",
+  "type": "Definition",
+  "number": "15.6.5",
+  "title": "Turing-acceptable.",
+  "body": " Turing-acceptable  Turing-acceptable   Let be an alphabet that does not contain #, and let be a language over . We say that is Turing-acceptable if there is a Turing machine such that , and for each , halts on input if and only if . In this case, we say that  accepts the language .   "
+},
+{
+  "id": "p-4838",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#p-4838",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Church-Turing Thesis "
+},
+{
+  "id": "p-4841",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#p-4841",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "recursively enumerable "
+},
+{
+  "id": "thm-turing-equivalence",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#thm-turing-equivalence",
+  "type": "Theorem",
+  "number": "15.6.6",
+  "title": "",
+  "body": "  Let be an alphabet and let be a language over . Then the following are equivalent:   There is a Turing machine that accepts .    There is a two-tape Turing machine that runs forever, making a list of strings on its second tape, such that a string is in the list if and only if .    There is a Turing-computable function such that is the range of the function .      "
+},
+{
+  "id": "thm-turing-iff-grammar",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#thm-turing-iff-grammar",
+  "type": "Theorem",
+  "number": "15.6.7",
+  "title": "",
+  "body": "  A language is Turing acceptable (equivalently, recursively enumerable) if and only if there is a general grammar that generates .   "
+},
+{
+  "id": "p-4852",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#p-4852",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "recursive "
+},
+{
+  "id": "thm-recursive-language",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#thm-recursive-language",
+  "type": "Theorem",
+  "number": "15.6.8",
+  "title": "",
+  "body": "  Let be an alphabet and let be a language over . Then is recursive if and only if both and its complement, , are recursively enumerable.   "
+},
+{
+  "id": "p-4862",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#p-4862",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Universal Turing Machine "
+},
+{
+  "id": "thm-halting-prob",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#thm-halting-prob",
+  "type": "Theorem",
+  "number": "15.6.9",
+  "title": "",
+  "body": "  Let , , , , be the standard Turing machines, as described above. Let be the language over the alphabet defined by Then is a recursively enumerable language, but is not recursive. The complement is a language that is not recursively enumerable.   "
+},
+{
+  "id": "p-4872",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#p-4872",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Halting Problem computationally unsolvable "
+},
+{
+  "id": "exercise-560",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#exercise-560",
+  "type": "Exercise",
+  "number": "15.6.4.1",
+  "title": "",
+  "body": "Let . Draw a transition diagram for a Turing machine that computes the function where , for . Draw a transition diagram for a Turing machine that computes the function where , for . "
+},
+{
+  "id": "exercise-561",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#exercise-561",
+  "type": "Exercise",
+  "number": "15.6.4.2",
+  "title": "",
+  "body": "Let . Draw a transition diagram for a Turing machine that computes the function where . "
+},
+{
+  "id": "exercise-562",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#exercise-562",
+  "type": "Exercise",
+  "number": "15.6.4.3",
+  "title": "",
+  "body": "Suppose that , , and are alphabets and that and are Turing-computable functions. Show that is Turing-computable. "
+},
+{
+  "id": "exercise-563",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#exercise-563",
+  "type": "Exercise",
+  "number": "15.6.4.4",
+  "title": "",
+  "body": "We have defined computability for functions , where and are alphabets. How could Turing machines be used to define computable functions from to ? (Hint: Consider the alphabet .) "
+},
+{
+  "id": "exercise-564",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#exercise-564",
+  "type": "Exercise",
+  "number": "15.6.4.5",
+  "title": "",
+  "body": "Let be an alphabet and let be a language over . Show that is Turing-decidable if and only if its complement, , is Turing-decidable. "
+},
+{
+  "id": "exercise-565",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#exercise-565",
+  "type": "Exercise",
+  "number": "15.6.4.6",
+  "title": "",
+  "body": "Draw a transition diagram for a Turing machine which decides the language . (Hint: Change the 's and 's to \\$'s in pairs.) Explain in general terms how to make a Turing machine that decides the language . "
+},
+{
+  "id": "exercise-566",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#exercise-566",
+  "type": "Exercise",
+  "number": "15.6.4.7",
+  "title": "",
+  "body": "Draw a transition diagram for a Turing machine which decides the language and is a multiple of . (Hint: Erase  's at a time.) "
+},
+{
+  "id": "exercise-567",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#exercise-567",
+  "type": "Exercise",
+  "number": "15.6.4.8",
+  "title": "",
+  "body": "Based on your answer to the previous problem and the copying machine presented in this section, describe in general terms how you would build a Turing machine to decide the language is a prime number . "
+},
+{
+  "id": "exercise-568",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#exercise-568",
+  "type": "Exercise",
+  "number": "15.6.4.9",
+  "title": "",
+  "body": "Let be the function such that for each , is the representation of as a binary number. Draw a transition diagram for a Turing machine that computes . "
+},
+{
+  "id": "exercise-569",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#exercise-569",
+  "type": "Exercise",
+  "number": "15.6.4.10",
+  "title": "",
+  "body": "The language is the range of the function . Design a Turing machine that computes this function, and find the grammar that generates the language by imitating the computation of that machine. "
+},
+{
+  "id": "exercise-570",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#exercise-570",
+  "type": "Exercise",
+  "number": "15.6.4.11",
+  "title": "",
+  "body": "Complete the proof of by proving the following: If is a recursive language over an alphabet , then both and are recursively enumerable. "
+},
+{
+  "id": "exercise-571",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#exercise-571",
+  "type": "Exercise",
+  "number": "15.6.4.12",
+  "title": "",
+  "body": "Show that a language over an alphabet is recursive if and only if there are grammars and such that the language generated by is and the language generated by is . "
+},
+{
+  "id": "exercise-572",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#exercise-572",
+  "type": "Exercise",
+  "number": "15.6.4.13",
+  "title": "",
+  "body": "This section discusses recursive languages and recursively enumerable languages. How could one define recursive subsets of and recursively enumerable subsets of ? "
+},
+{
+  "id": "exercise-573",
+  "level": "2",
+  "url": "sec-turing-machines-comp.html#exercise-573",
+  "type": "Exercise",
+  "number": "15.6.4.14",
+  "title": "",
+  "body": "Give an informal argument to show that a subset is recursive if and only if there is a computer program that prints out the elements of  it in increasing order . "
 },
 {
   "id": "s-recurrence-relations",
@@ -12844,9 +12619,9 @@ var ptx_lunr_docs = [
   "body": " Some Finite Order Linear Relations     The Fibonacci sequence is defined by the second-order linear relation because    The relation is a third-order linear relation. In this case, .    The relation can be written as . Therefore, it is a first-order linear relation.     "
 },
 {
-  "id": "table-54",
+  "id": "table-50",
   "level": "2",
-  "url": "s-recurrence-relations.html#table-54",
+  "url": "s-recurrence-relations.html#table-50",
   "type": "Table",
   "number": "16.1.5",
   "title": "",
@@ -12979,9 +12754,9 @@ var ptx_lunr_docs = [
   "body": " Solution of a Nonhomogeneous Second Order Recurrence Relation  Consider with and .     From , we know that . Caution:Don't apply the initial conditions to until you add !    Since the right-hand side is a linear polynomial, is linear; that is, .    Substitution into the recurrence relation yields:  Two polynomials are equal only if their coefficients are equal. Therefore,     Use the general solution and the initial conditions to get a final solution:    Therefore, .     "
 },
 {
-  "id": "note-22",
+  "id": "note-14",
   "level": "2",
-  "url": "s-recurrence-relations.html#note-22",
+  "url": "s-recurrence-relations.html#note-14",
   "type": "Note",
   "number": "16.1.20",
   "title": "A quick note on interest rates.",
@@ -13024,153 +12799,153 @@ var ptx_lunr_docs = [
   "body": " Examples of matching bases     If , the characteristic roots are 4 and 5. Since 5 matches the base of the right side, will take the form .    If the only characteristic root is 3, but it is a double root (multiplicity 2). Therefore, the form of the particular solution is .    If , the characteristic roots are and 4. The form of the particular solution will be .    If , the characteristic roots are 1 and 8. If the right-hand side is a polynomial, as it is in this case, then the exponential factor can be introduced. The particular solution will take the form .     "
 },
 {
-  "id": "exercise-583",
+  "id": "exercise-574",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-583",
+  "url": "s-recurrence-relations.html#exercise-574",
   "type": "Exercise",
   "number": "16.1.5.1",
   "title": "",
   "body": "  , ,      "
 },
 {
-  "id": "exercise-584",
+  "id": "exercise-575",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-584",
+  "url": "s-recurrence-relations.html#exercise-575",
   "type": "Exercise",
   "number": "16.1.5.2",
   "title": "",
   "body": "  , ,  "
 },
 {
-  "id": "exercise-585",
+  "id": "exercise-576",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-585",
+  "url": "s-recurrence-relations.html#exercise-576",
   "type": "Exercise",
   "number": "16.1.5.3",
   "title": "",
   "body": " ,      "
 },
 {
-  "id": "exercise-586",
+  "id": "exercise-577",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-586",
+  "url": "s-recurrence-relations.html#exercise-577",
   "type": "Exercise",
   "number": "16.1.5.4",
   "title": "",
   "body": "  , ,  "
 },
 {
-  "id": "exercise-587",
+  "id": "exercise-578",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-587",
+  "url": "s-recurrence-relations.html#exercise-578",
   "type": "Exercise",
   "number": "16.1.5.5",
   "title": "",
   "body": "        "
 },
 {
-  "id": "exercise-588",
+  "id": "exercise-579",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-588",
+  "url": "s-recurrence-relations.html#exercise-579",
   "type": "Exercise",
   "number": "16.1.5.6",
   "title": "",
   "body": " , ,  "
 },
 {
-  "id": "exercise-589",
+  "id": "exercise-580",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-589",
+  "url": "s-recurrence-relations.html#exercise-580",
   "type": "Exercise",
   "number": "16.1.5.7",
   "title": "",
   "body": "        "
 },
 {
-  "id": "exercise-590",
+  "id": "exercise-581",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-590",
+  "url": "s-recurrence-relations.html#exercise-581",
   "type": "Exercise",
   "number": "16.1.5.8",
   "title": "",
   "body": "    "
 },
 {
-  "id": "exercise-591",
+  "id": "exercise-582",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-591",
+  "url": "s-recurrence-relations.html#exercise-582",
   "type": "Exercise",
   "number": "16.1.5.9",
   "title": "",
   "body": "        "
 },
 {
-  "id": "exercise-592",
+  "id": "exercise-583",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-592",
+  "url": "s-recurrence-relations.html#exercise-583",
   "type": "Exercise",
   "number": "16.1.5.10",
   "title": "",
   "body": "  , ,  "
 },
 {
-  "id": "exercise-593",
+  "id": "exercise-584",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-593",
+  "url": "s-recurrence-relations.html#exercise-584",
   "type": "Exercise",
   "number": "16.1.5.11",
   "title": "",
   "body": "  , ,      "
 },
 {
-  "id": "exercise-594",
+  "id": "exercise-585",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-594",
+  "url": "s-recurrence-relations.html#exercise-585",
   "type": "Exercise",
   "number": "16.1.5.12",
   "title": "",
   "body": " Find a closed form expression for in .  "
 },
 {
-  "id": "exercise-595",
+  "id": "exercise-586",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-595",
+  "url": "s-recurrence-relations.html#exercise-586",
   "type": "Exercise",
   "number": "16.1.5.13",
   "title": "",
   "body": "    Find a closed form expression for the terms of the Fibonacci sequence (see ).    The sequence was defined by = the number of strings of zeros and ones with length having no consecutive zeros ( (c)). Its recurrence relation is the same as that of the Fibonacci sequence. Determine a closed form expression for , .         The characteristic equation is , which has solutions and , It is useful to point out that and . The general solution is . Using the initial conditions, we obtain the system: and . The solution to this system is and   Therefore the final solution is          "
 },
 {
-  "id": "exercise-596",
+  "id": "exercise-587",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-596",
+  "url": "s-recurrence-relations.html#exercise-587",
   "type": "Exercise",
   "number": "16.1.5.14",
   "title": "",
   "body": " If , , then can be described with the recurrence relation . For each of the following sequences that are defined using a summation, find a closed form expression:      ,    ,    ,     ,     "
 },
 {
-  "id": "exercise-597",
+  "id": "exercise-588",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-597",
+  "url": "s-recurrence-relations.html#exercise-588",
   "type": "Exercise",
   "number": "16.1.5.15",
   "title": "",
   "body": " Let be the number of ways that the set , , can be partitioned into two nonempty subsets.     Find a recurrence relation for . (Hint: It will be a first-order linear relation.)    Solve the recurrence relation.         For each two-block partition of , there are two partitions we can create when we add , but there is one additional two-block partition to count for which one block is . Therefore,          "
 },
 {
-  "id": "exercise-598",
+  "id": "exercise-589",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-598",
+  "url": "s-recurrence-relations.html#exercise-589",
   "type": "Exercise",
   "number": "16.1.5.16",
   "title": "",
   "body": " If you were to deposit a certain amount of money at the end of each year for a number of years, this sequence of payments would be called an annuity (see ).   Find a closed form expression for the balance or value of an annuity that consists of payments of dollars at a rate of interest of . Note that for a normal annuity, the first payment is made after one year.    With an interest rate of 5.5 percent, how much would you need to deposit into an annuity to have a value of one million dollars after 18 years?    The payment of a loan is a form of annuity in which the initial value is some negative amount (the amount of the loan) and the annuity ends when the value is raised to zero. How much could you borrow if you can afford to pay $5,000 per year for 25 years at 11 percent interest?    "
 },
 {
-  "id": "exercise-599",
+  "id": "exercise-590",
   "level": "2",
-  "url": "s-recurrence-relations.html#exercise-599",
+  "url": "s-recurrence-relations.html#exercise-590",
   "type": "Exercise",
   "number": "16.1.5.17",
   "title": "",
@@ -13231,9 +13006,9 @@ var ptx_lunr_docs = [
   "body": " How logarithms with different bases are related   Let , . Then for all , . Therefore, if , base b logarithms can be computed from base 2 logarithms by dividing by the positive scaling factor . If , this scaling factor is negative.    By an analogue of , . Therefore, if we take the base 2 logarithm of both sides of this equality we get: Finally, divide both sides of the last equation by .   "
 },
 {
-  "id": "note-23",
+  "id": "note-15",
   "level": "2",
-  "url": "s-some-common-rrs.html#note-23",
+  "url": "s-some-common-rrs.html#note-15",
   "type": "Note",
   "number": "16.2.6",
   "title": "",
@@ -13258,72 +13033,72 @@ var ptx_lunr_docs = [
   "body": " Derangement   A derangement of a nonempty set is a permutation of (i.e., a bijection from into ) such that for all .   "
 },
 {
-  "id": "exercise-600",
+  "id": "exercise-591",
   "level": "2",
-  "url": "s-some-common-rrs.html#exercise-600",
+  "url": "s-some-common-rrs.html#exercise-591",
   "type": "Exercise",
   "number": "16.2.5.1",
   "title": "",
   "body": " Solve the following recurrence relations. Indicate whether your solution is an improvement over iteration.      , .     , .     , , .          !    , an improvement.     !, no improvement.     "
 },
 {
-  "id": "exercise-601",
+  "id": "exercise-592",
   "level": "2",
-  "url": "s-some-common-rrs.html#exercise-601",
+  "url": "s-some-common-rrs.html#exercise-592",
   "type": "Exercise",
   "number": "16.2.5.2",
   "title": "",
   "body": " Prove that if , . (Hint: Consider the cases of odd and even separately.)  "
 },
 {
-  "id": "exercise-602",
+  "id": "exercise-593",
   "level": "2",
-  "url": "s-some-common-rrs.html#exercise-602",
+  "url": "s-some-common-rrs.html#exercise-593",
   "type": "Exercise",
   "number": "16.2.5.3",
   "title": "",
   "body": " Solve as completely as possible:     , .    , .     , . (Hint: Write in octal form.)                         "
 },
 {
-  "id": "exercise-603",
+  "id": "exercise-594",
   "level": "2",
-  "url": "s-some-common-rrs.html#exercise-603",
+  "url": "s-some-common-rrs.html#exercise-594",
   "type": "Exercise",
   "number": "16.2.5.4",
   "title": "",
   "body": " Prove by induction that if , , and , , then .   Prove by induction on .  "
 },
 {
-  "id": "exercise-604",
+  "id": "exercise-595",
   "level": "2",
-  "url": "s-some-common-rrs.html#exercise-604",
+  "url": "s-some-common-rrs.html#exercise-595",
   "type": "Exercise",
   "number": "16.2.5.5",
   "title": "",
   "body": " Use the substitution to solve for , with , , and .   The indicated substitution yields . Since , for all . Therefore .  "
 },
 {
-  "id": "exercise-605",
+  "id": "exercise-596",
   "level": "2",
-  "url": "s-some-common-rrs.html#exercise-605",
+  "url": "s-some-common-rrs.html#exercise-596",
   "type": "Exercise",
   "number": "16.2.5.6",
   "title": "",
   "body": " Use the substitution to solve for , with .  "
 },
 {
-  "id": "exercise-606",
+  "id": "exercise-597",
   "level": "2",
-  "url": "s-some-common-rrs.html#exercise-606",
+  "url": "s-some-common-rrs.html#exercise-597",
   "type": "Exercise",
   "number": "16.2.5.7",
   "title": "",
   "body": " Solve as completely as possible:      , , .     , , .         A good approximation to the solution of this recurrence relation is based on the following observation: is a power of a power of two; that is, is , where , then . By applying this recurrence relation times we obtain . Going back to the original form of , or . We would expect that in general, is . We do not see any elementary method for arriving at an exact solution.    Suppose that is a positive integer with . Then can be written in binary form, with and is equal to the sum  . If , then we can estimate this sum to be between and . Therefore, .     "
 },
 {
-  "id": "exercise-607",
+  "id": "exercise-598",
   "level": "2",
-  "url": "s-some-common-rrs.html#exercise-607",
+  "url": "s-some-common-rrs.html#exercise-598",
   "type": "Exercise",
   "number": "16.2.5.8",
   "title": "",
@@ -13357,18 +13132,18 @@ var ptx_lunr_docs = [
   "body": " First Examples     If , , then We can get a closed form expression for by observing that . Therefore, .    Finite sequences have generating functions. For example, the sequence of binomial coefficients , , , , has generating function by application of the binomial formula.    If , . Note that the index that is used in the summation has no significance. Also, note that the lower limit of the summation could start at 1 since .     "
 },
 {
-  "id": "p-5351",
+  "id": "p-5126",
   "level": "2",
-  "url": "s-generating-functions.html#p-5351",
+  "url": "s-generating-functions.html#p-5126",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "partial fractions decomposition "
 },
 {
-  "id": "definition-226",
+  "id": "definition-211",
   "level": "2",
-  "url": "s-generating-functions.html#definition-226",
+  "url": "s-generating-functions.html#definition-211",
   "type": "Definition",
   "number": "16.3.3",
   "title": "Operations on Sequences.",
@@ -13402,9 +13177,9 @@ var ptx_lunr_docs = [
   "body": " Multiple Pop and Push  Multiple Pop and Push:    Multiple pop operation on     Multiple push operation on    If S is a sequence of numbers and a positive integer greater than 1, define Similarly, define    "
 },
 {
-  "id": "definition-228",
+  "id": "definition-213",
   "level": "2",
-  "url": "s-generating-functions.html#definition-228",
+  "url": "s-generating-functions.html#definition-213",
   "type": "Definition",
   "number": "16.3.7",
   "title": "Operations on Generating Functions.",
@@ -13483,90 +13258,90 @@ var ptx_lunr_docs = [
   "body": " Distribution of a Committee  Suppose that an organization is divided into three geographic sections, A, B, and C. Suppose that an executive committee of 11 members must be selected so that no more than 5 members from any one section are on the committee and that Sections A, B, and C must have minimums of 3, 2, and 2 members, respectively, on the committee. Looking only at the number of members from each section on the committee, how many ways can the committee be made up? One example of a valid committee would be 4 A's, 4 B's, and 3 C's.  Let be the action of deciding how many members (not who) from Section A will serve on the committee. and . The frequency function, , is defined by if , with otherwise. is then . Similarly, . Since the committee must have 11 members, our answer will be the coefficient of in , which is 10.   "
 },
 {
-  "id": "exercise-608",
+  "id": "exercise-599",
   "level": "2",
-  "url": "s-generating-functions.html#exercise-608",
+  "url": "s-generating-functions.html#exercise-599",
   "type": "Exercise",
   "number": "16.3.7.1",
   "title": "",
   "body": " What sequences have the following generating functions?     1                                             "
 },
 {
-  "id": "exercise-609",
+  "id": "exercise-600",
   "level": "2",
-  "url": "s-generating-functions.html#exercise-609",
+  "url": "s-generating-functions.html#exercise-600",
   "type": "Exercise",
   "number": "16.3.7.2",
   "title": "",
   "body": " What sequences have the following generating functions?                          "
 },
 {
-  "id": "exercise-610",
+  "id": "exercise-601",
   "level": "2",
-  "url": "s-generating-functions.html#exercise-610",
+  "url": "s-generating-functions.html#exercise-601",
   "type": "Exercise",
   "number": "16.3.7.3",
   "title": "",
   "body": " Find closed form expressions for the generating functions of the following sequences:          , where for , with and .    The Fibonacci sequence: , , with .                         "
 },
 {
-  "id": "exercise-611",
+  "id": "exercise-602",
   "level": "2",
-  "url": "s-generating-functions.html#exercise-611",
+  "url": "s-generating-functions.html#exercise-602",
   "type": "Exercise",
   "number": "16.3.7.4",
   "title": "",
   "body": " Find closed form expressions for the generating functions of the following sequences:      for and for .     , where for , with and .     , where for , with .     "
 },
 {
-  "id": "exercise-612",
+  "id": "exercise-603",
   "level": "2",
-  "url": "s-generating-functions.html#exercise-612",
+  "url": "s-generating-functions.html#exercise-603",
   "type": "Exercise",
   "number": "16.3.7.5",
   "title": "",
   "body": " For each of the following expressions, find the partial fraction decomposition and identify the sequence having the expression as a generating function.                                         "
 },
 {
-  "id": "exercise-613",
+  "id": "exercise-604",
   "level": "2",
-  "url": "s-generating-functions.html#exercise-613",
+  "url": "s-generating-functions.html#exercise-604",
   "type": "Exercise",
   "number": "16.3.7.6",
   "title": "",
   "body": " Find the partial fraction decompositions and identify the sequence having the following expressions:                     "
 },
 {
-  "id": "exercise-614",
+  "id": "exercise-605",
   "level": "2",
-  "url": "s-generating-functions.html#exercise-614",
+  "url": "s-generating-functions.html#exercise-605",
   "type": "Exercise",
   "number": "16.3.7.7",
   "title": "",
   "body": " Given that and , what is the term of the generating function of each of the following sequences:                                                  "
 },
 {
-  "id": "exercise-615",
+  "id": "exercise-606",
   "level": "2",
-  "url": "s-generating-functions.html#exercise-615",
+  "url": "s-generating-functions.html#exercise-606",
   "type": "Exercise",
   "number": "16.3.7.8",
   "title": "",
   "body": " Given that and , what is the term of the generating function of each of the following sequences:                          "
 },
 {
-  "id": "exercise-616",
+  "id": "exercise-607",
   "level": "2",
-  "url": "s-generating-functions.html#exercise-616",
+  "url": "s-generating-functions.html#exercise-607",
   "type": "Exercise",
   "number": "16.3.7.9",
   "title": "",
   "body": " A game is played by rolling a die five times. For the roll, one point is added to your score if you roll a number higher than . Otherwise, your score is zero for that roll. For example, the sequence of rolls gives you a total score of three; while a sequence of 1,2,3,4,5 gives you a score of zero. Of the possible sequences of rolls, how many give you a score of zero?, of one? of five?   Coefficients of through in     "
 },
 {
-  "id": "exercise-617",
+  "id": "exercise-608",
   "level": "2",
-  "url": "s-generating-functions.html#exercise-617",
+  "url": "s-generating-functions.html#exercise-608",
   "type": "Exercise",
   "number": "16.3.7.10",
   "title": "",
@@ -13636,27 +13411,27 @@ var ptx_lunr_docs = [
   "body": " The Invariant Relation Theorem   Given a loop within an algorithm, if is a relation with the properties     R is true before entering the loop    the truth of R is maintained in any iteration of the loop    the condition for exiting the loop will always be reached in a finite number of iterations.     then R will be true upon exiting the loop.    The condition that the loop ends in a finite number of iterations lets us apply mathematical induction with the induction variable being the number of iterations. We leave the details to the reader.   "
 },
 {
-  "id": "exercise-618",
+  "id": "exercise-609",
   "level": "2",
-  "url": "Section17_2.html#exercise-618",
+  "url": "Section17_2.html#exercise-609",
   "type": "Exercise",
   "number": "17.2.3.1",
   "title": "",
   "body": " How are the pre and post values in the slow exponentiation algorithm related? What is the invariant relation between the variables in the slow algorithm?  "
 },
 {
-  "id": "exercise-619",
+  "id": "exercise-610",
   "level": "2",
-  "url": "Section17_2.html#exercise-619",
+  "url": "Section17_2.html#exercise-610",
   "type": "Exercise",
   "number": "17.2.3.2",
   "title": "",
   "body": " Verify the correctness of the following algorithm to compute the greatest common divisor of two integers that are not both zero.    The invariant of this algorithm is .  "
 },
 {
-  "id": "exercise-620",
+  "id": "exercise-611",
   "level": "2",
-  "url": "Section17_2.html#exercise-620",
+  "url": "Section17_2.html#exercise-611",
   "type": "Exercise",
   "number": "17.2.3.3",
   "title": "",
@@ -13708,36 +13483,36 @@ var ptx_lunr_docs = [
   "body": "References   Many of the references listed here were used in preparing the original 1980's version of this book. In most cases, the mathematics that they contain is still worth reading for further background. Many can be found online, in university libraries or used bookstores. A few references more current references have been added.   Allenby, R.B.J.T, Rings, Fields and Groups , Edward Arnold, 1983.  Appel, K., and W. Haken, Every Planar Map Is 4-colorable , Bull, Am. Math. Soc. 82 (1976): 711-12.  Arbib, M. A., A. J. Kfoury, and R. N. Moll, A Basis for Theoretical Computer Science , New York: Springer-Verlag, 1981.  Austin, A. Keith, An Elementary Approach to NP-Completeness American Math. Monthly 90 (1983): 398-99.  Beardwood, J., J. H. Halton, and J. M. Hammersley, The Shortest Path Through Many Points Proc. Cambridge Phil. Soc. 55 (1959): 299-327.  Ben-Ari, M, Principles of Concurrent Programming , Englewood Cliffs, NJ: Prentice-Hall, 1982.  Berge, C, The Theory of Graphs and Its Applications , New York: Wiley, 1962.  Bogart, Kenneth P, Combinatorics Through Guided Discovery , 2005. This book may be freely downloaded and redestributed under the terms of the GNU Free Documentation License (FDL), as published by the Free Software Foundation.  Bronson, Richard, Matrix Methods , New York: Academic Press, 1969.  Busacker, Robert G., and Thomas L. Saaty, Finite Graphs and Networks , New York: McGraw-Hill, 1965.  Connell, Ian, Modern Algebra, A Constructive Introduction , New York: North-Holland, 1982.  Denning, Peter J., Jack B. Dennis, and Joseph L. Qualitz, Machines, Languages, and Computation , Englewood Cliffs, NJ: Prentice-Hall, 1978.  Denning, Peter J, Multigrids and Hypercubes . American Scientist 75 (1987): 234-238.  Dornhoff, L. L., and F. E. Hohn, Applied Modern Algebra , New York: Macmillan, 1978.  Even, S, Graph Algorithms , Potomac, MD: Computer Science Press, 1979.  Fisher, J. L, Application-Oriented Algebra , New York: Harper and Row, 1977.  Ford, L. R., Jr., and D. R. Fulkerson, Flows in Networks , Princeton, NJ: Princeton Univesity Press, 1962.  Fraleigh, John B, A First Course in Abstract Algebra , 3rd ed. Reading, MA: Addison-Wesley, 1982.  Gallian, Joseph A, Contemporary Abstract Algebra , D.C. Heath, 1986.  Gallian, Joseph A, Group Theory and the Design of a Letter-Facing Machine , American Math. Monthly 84 (1977): 285-287.  Hamming, R. W, Coding and Information Theory , Englewood Cliffs, NJ: Prentice-Hall, 1980.  Hill, F. J., and G. R. Peterson, Switching Theory and Logical Design , 2nd ed. New York: Wiley, 1974.  Hofstadter, D. R, Godel, Escher, Bach: An Eternal Golden Braid , New York: Basic Books, 1979.  Hohn, F. E, Applied Boolean Algebra , 2nd ed. New York: Macmillan, 1966.  Hopcroft, J. E., and J. D. Ullman, Formal Languages and Their Relation to Automata , Reading, MA: Addison-Wesley, 1969.  Hu, T. C, Combinatorial Algorithms , Reading, MA: Addison-Wesley, 1982.  Knuth, D. E, The Art of Computer Programming. Vol. 1, Fundamental Algorithms , 2nd ed. Reading, MA: Addison-Wesley, 1973.  Knuth, D. E, The Art of Computer Programming. Vol. 2, Seminumerical Algorithms , 2nd ed., Reading, MA: Addison-Wesley, 1981.  Knuth, D. E, The Art of Computer Programming. Vol. 3, Sorting and Searching , Reading, MA: Addison-Wesley, 1973.  Knuth, D. E, The Art of Computer Programming. Vol. 4A, Combinatorial Algorithms, Part 1 , Upper Saddle River, New Jersey: Addison-Wesley, 2011. https:\/\/www-cs-faculty.stanford.edu\/~knuth\/taocp.html  Kulisch, U. W., and Miranker, W. L, Computer Arithmetic in Theory and Practice , New York: Academic Press, 1981.  Lipson, J. D, Elements of Algebra and Algebraic Computing , Reading, MA: Addison-Wesley, 1981.  Liu, C. L, Elements of Discrete Mathematics , New York: McGraw-Hill, 1977.  O'Donnell, Analysis of Boolean Functions . A book about Fourier analysis of boolean functions that is being developed online in a blog.  Ore, O, Graphs and Their Uses , New York: Random House, 1963.  Parry, R. T., and H. Pferrer, The Infamous Traveling-Salesman Problem: A Practical Approach Byte 6 (July 1981): 252-90.  Pless, V, Introduction to the Theory of Error-Correcting Codes , New York: Wiley-Interscience, 1982.  Purdom, P. W., and C. A. Brown, The Analysis of Algorithms , Holt, Rinehart, and Winston, 1985.  Quine, W. V, The Ways of Paradox and Other Essays , New York: Random House, 1966.  Ralston, A, The First Course in Computer Science Needs a Mathematics Corequisite , Communications of the ACM 27-10 (1984): 1002-1005.  Solow, Daniel, How to Read and Do Proofs , New York: Wiley, 1982.  Sopowit, K. J., E. M. Reingold, and D. A. Plaisted The Traveling Salesman Problem and Minimum Matching in the Unit Square . SIAM J. Computing , 1983, 12 , 144 56.  Standish, T. A, Data Structure Techniques , Reading, MA: Addison-Wesley, 1980.  Stoll, Robert R, Sets, Logic and Axiomatic Theories , San Francisco: W. H. Freeman, 1961.  Strang, G, Linear Algebra and Its Applications , 2nd ed. New York: Academic Press, 1980.  Tucker, Alan C, Applied Combinatorics , 2nd ed. New York: John Wiley and Sons, 1984.  Wand, Mitchell, Induction, Recursion, and Programming , New York: North-Holland, 1980.  Warshall, S, A Theorem on Boolean Matrices Journal of the Association of Computing Machinery, 1962, 11-12.  Weisstein, Eric W. Strassen Formulas , MathWorld--A Wolfram Web Resource, http:\/\/mathworld.wolfram.com\/StrassenFormulas.html.  Wilf, Herbert S, Some Examples of Combinatorial Averaging , American Math. Monthly 92 (1985).  Wilf, Herbert S. generatingfunctionology , A K Peters\/CRC Press, 2005 The 1990 edition of this book is available at https:\/\/www.math.upenn.edu\/~wilf\/DownldGF.html  Winograd, S, On the Time Required to Perform Addition , J. Assoc. Comp. Mach. 12 (1965): 277-85.  Wilson, R., Four Colors Suffice - How the Map Problem Was Solved Princeton, NJ: Princeton U. Press, 2013.  "
 },
 {
-  "id": "note-24",
+  "id": "note-16",
   "level": "2",
-  "url": "references-2.html#note-24",
+  "url": "references-2.html#note-16",
   "type": "Note",
   "number": "8.1",
   "title": "",
   "body": "This book may be freely downloaded and redestributed under the terms of the GNU Free Documentation License (FDL), as published by the Free Software Foundation. "
 },
 {
-  "id": "note-25",
+  "id": "note-17",
   "level": "2",
-  "url": "references-2.html#note-25",
+  "url": "references-2.html#note-17",
   "type": "Note",
   "number": "30.1",
   "title": "",
   "body": "https:\/\/www-cs-faculty.stanford.edu\/~knuth\/taocp.html "
 },
 {
-  "id": "note-26",
+  "id": "note-18",
   "level": "2",
-  "url": "references-2.html#note-26",
+  "url": "references-2.html#note-18",
   "type": "Note",
   "number": "34.1",
   "title": "",
   "body": "A book about Fourier analysis of boolean functions that is being developed online in a blog. "
 },
 {
-  "id": "note-27",
+  "id": "note-19",
   "level": "2",
-  "url": "references-2.html#note-27",
+  "url": "references-2.html#note-19",
   "type": "Note",
   "number": "51.1",
   "title": "",

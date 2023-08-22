@@ -12,9 +12,12 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">
-<span class="process-math">\(\delta(q_0,b)\)</span> will be <span class="process-math">\(\partial^*(p_0,b)\text{,}\)</span> which is <span class="process-math">\(\{p_0,
-p_1\}\text{,}\)</span> so we need to add a new state <span class="process-math">\(q_1 = \{p_0, p_1\}\)</span> to the DFA; and add <span class="process-math">\(\delta(q_0,b) = q_1\)</span> to the DFA's transition function.</div>
-<span class="incontext"><a href="s-finite-state-automata.html#p-5023" class="internal">in-context</a></span>
+<div class="para logical"><ol class="lower-alpha">
+<li><div class="para">For each two-block partition of <span class="process-math">\(\{1,2,\dots, n-1\}\text{,}\)</span> there are two partitions we can create when we add <span class="process-math">\(n\text{,}\)</span> but there is one additional two-block partition to count for which one block is <span class="process-math">\(\{n\}\text{.}\)</span> Therefore, <span class="process-math">\(D(n)=2D(n-1)+1 \textrm{ for } n \geq 2
+\textrm{ and } D(1)=0.\)</span>
+</div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle D(n)=2^{n-1}-1\)</span></div></li>
+</ol></div>
+<span class="incontext"><a href="s-recurrence-relations.html#p-5023" class="internal">in-context</a></span>
 </body>
 </html>

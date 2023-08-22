@@ -13,61 +13,11 @@
 <body class="ignore-math">
 <div class="answer solution-like">
 <h4 class="heading">
-<span class="type">Answer</span><span class="space"> </span><span class="codenumber">12.4.5.1</span><span class="period">.</span>
+<span class="type">Answer</span><span class="space"> </span><span class="codenumber">13.4.3.7.1</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">Assume that <span class="process-math">\(x \neq 0 \textrm{ or } 1\)</span> is the third element of a Boolean algebra. Then there is only one possible set of tables for join and meet, all following from required properties of the Boolean algebra.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{array}{lr}
-\begin{array}{c|c}
-\lor &amp;
-\begin{array}{ccc}
-0 &amp; x &amp; 1 \\
-\end{array}
-\\
-\hline
-\begin{array}{c}
-0 \\
-x \\
-1 \\
-\end{array}
-&amp;
-\begin{array}{ccc}
-0 &amp; x &amp; 1 \\
-x &amp; x &amp; 1 \\
-1 &amp; 1 &amp; 1 \\
-\end{array}
-\\
-\end{array}
-&amp;
-\begin{array}{c|c}
-\land &amp;
-\begin{array}{ccc}
-0 &amp; x &amp; 1 \\
-\end{array}
-\\
-\hline
-\begin{array}{c}
-0 \\
-x \\
-1 \\
-\end{array}
-&amp;
-\begin{array}{ccc}
-0 &amp; 0 &amp; 0 \\
-0 &amp; x &amp; x \\
-0 &amp; x &amp; 1 \\
-\end{array}
-\\
-\end{array}
-\end{array}
-\end{equation*}
+<div class="para">Let <span class="process-math">\(G=(V,E)\)</span> be a directed graph. <span class="process-math">\(G\)</span> has an Eulerian circuit if and only if <span class="process-math">\(G\)</span> is connected and <span class="process-math">\(indeg(v)= outdeg(v)\)</span> for all <span class="process-math">\(v \in V\text{.}\)</span> There exists an Eulerian path from <span class="process-math">\(v_1 \textrm{ to } v_2\)</span> if and only if <span class="process-math">\(G\)</span> is connected, <span class="process-math">\(indeg(v_1)=outdeg(v_1)-1\text{,}\)</span> <span class="process-math">\(indeg(v_2)=
+outdeg(v_2)+1\text{,}\)</span> and for all other vertices in <span class="process-math">\(V\)</span> the indegree and outdegree are equal.</div>
 </div>
-<div class="para">Next, to find the complement of <span class="process-math">\(x\)</span> we want <span class="process-math">\(y\)</span> such that <span class="process-math">\(x \land y
-= 0\)</span> and <span class="process-math">\(x \lor y = 1\text{.}\)</span> No element satisfies both conditions; hence the lattice is not complemented and cannot be a Boolean algebra. The lack of a complement can also be seen from the ordering diagram from which <span class="process-math">\(\land\)</span> and <span class="process-math">\(\lor\)</span> must be derived.</div>
-</div>
-</div>
-<span class="incontext"><a href="s-atoms-of-a-boolean-algebra.html#answer-207" class="internal">in-context</a></span>
+<span class="incontext"><a href="s-traversals.html#answer-207" class="internal">in-context</a></span>
 </body>
 </html>

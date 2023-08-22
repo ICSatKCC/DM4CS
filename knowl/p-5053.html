@@ -11,18 +11,9 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">Suppose that  <span class="process-math">\(M\)</span> is a DFA, where  <span class="process-math">\(M=(Q,\Sigma,q_0,\delta,F)\text{.}\)</span>  Let  <span class="process-math">\(n\)</span> be the number of states in  <span class="process-math">\(M\text{,}\)</span> and write <span class="process-math">\(Q=\{q_0,q_1,\dots,q_{n-1}\}\text{.}\)</span>  We want to consider computations in which  <span class="process-math">\(M\)</span> starts in some state  <span class="process-math">\(q_i\text{,}\)</span> reads a string <span class="process-math">\(w\text{,}\)</span> and ends in state  <span class="process-math">\(q_k\text{.}\)</span>  In such a computation,  <span class="process-math">\(M\)</span> might go through a series of intermediates states between  <span class="process-math">\(q_i\)</span> and  <span class="process-math">\(q_k\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-q_i\longrightarrow p_1\longrightarrow p_2 \cdots\longrightarrow p_r\longrightarrow q_k 
-\end{equation*}
-</div>
-<div class="para">We are interested in computations in which all of the intermediate states--- <span class="process-math">\(p_1,p_2,\dots,p_r\)</span>---are in the set <span class="process-math">\(\{q_0,q_1,\dots,q_{j-1}\}\text{,}\)</span> for some number~ <span class="process-math">\(j\text{.}\)</span> We define  <span class="process-math">\(R_{i,j,k}\)</span> to be the set of all strings  <span class="process-math">\(w\)</span> in  <span class="process-math">\(\Sigma^*\)</span> that are consumed by such a computation.  That is,  <span class="process-math">\(w\in R_{i,j,k}\)</span> if and only if when  <span class="process-math">\(M\)</span> starts in state <span class="process-math">\(q_i\)</span> and reads  <span class="process-math">\(w\text{,}\)</span> it ends in state  <span class="process-math">\(q_k\text{,}\)</span> and all the intermediate states between <span class="process-math">\(q_i\)</span> and  <span class="process-math">\(q_k\)</span> are in the set <span class="process-math">\(\{q_0,q_1,\dots,q_{j-1}\}\text{.}\)</span> <span class="process-math">\(R_{i,j,k}\)</span> is a language over  <span class="process-math">\(\Sigma\text{.}\)</span>  We show that  <span class="process-math">\(R_{i,j,k}\)</span> for <span class="process-math">\(0\leq i \lt n , 0\leq j \leq n, 0\leq k lt n\text{.}\)</span>
-</div>
-</div>
-<span class="incontext"><a href="sec-FSA-and-Regular-Languages.html#p-5053" class="internal">in-context</a></span>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<div class="para">Let <span class="process-math">\(b&gt;0\text{,}\)</span> <span class="process-math">\(b \neq 1\text{.}\)</span> Then for all <span class="process-math">\(a &gt;0\text{,}\)</span> <span class="process-math">\(\log_b a =
+\frac{\log_2a}{\log_2b}\text{.}\)</span> Therefore, if <span class="process-math">\(b &gt; 1\text{,}\)</span> base b logarithms can be computed from base 2 logarithms by dividing by the positive scaling factor <span class="process-math">\(\log_2b\text{.}\)</span> If <span class="process-math">\(b &lt; 1\text{,}\)</span> this scaling factor is negative.</div>
+<span class="incontext"><a href="s-some-common-rrs.html#p-5053" class="internal">in-context</a></span>
 </body>
 </html>

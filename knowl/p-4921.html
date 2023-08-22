@@ -12,7 +12,23 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Suppose, for example, that you would like to search for a name in the form <em class="emphasis">last-name, first-name</em> and replace it with the same name in the form <em class="emphasis">first-name last-name</em>. For example, ``Reeves, Keanu'' should be converted to ``Keanu Reeves''. Assuming that names contain only letters, this could be done using the search pattern <code class="code-inline tex2jax_ignore">([A-Za-z]+), ([A-Za-z]+)</code> and the replacement pattern <code class="code-inline tex2jax_ignore">\2 \1</code>.  When the match is made, the first <code class="code-inline tex2jax_ignore">([A-Za-z]+)</code> will match ``Reeves,'' so that in the replacement pattern, <code class="code-inline tex2jax_ignore">\1</code> represents the substring ``Reeves''. Similarly, <code class="code-inline tex2jax_ignore">\2</code> will represent ``Keanu''.  Note that the parentheses are included in the search pattern <em class="emphasis">only</em> to specify what parts of the string are represented by <code class="code-inline tex2jax_ignore">\1</code> and <code class="code-inline tex2jax_ignore">\2</code>. In practice, you might use <code class="code-inline tex2jax_ignore">^([A-Za-z]+), ([A-Za-z])\$</code> as the search pattern to constrain it so that it will only match a complete line of text.  By using a ``global'' search-and-replace, you could convert an entire file of names from one format to the other in a single operation.</div>
-<span class="incontext"><a href="s-regular-expressions-and-apps.html#p-4921" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Although this algorithm is valid for all values of <span class="process-math">\(n\text{,}\)</span> there are limits to the size of <span class="process-math">\(n\)</span> for which the algorithm is feasible. Using just a pencil and paper, we can always solve second-order equations. The quadratic formula for the roots of <span class="process-math">\(a x^2 + b
+x + c = 0\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x=\frac{-b\pm \sqrt{b^2-4 a c}}{2 a}
+\end{equation*}
+</div>
+<div class="para">The solutions of <span class="process-math">\(a^2+
+C_1a + C_2 = 0\)</span> are then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{2}\left(-C_1+\sqrt{C_1{}^2-4
+C_2}\right)\textrm{ and }\frac{1}{2}\left(-C_1-\sqrt{C_1{}^2-4 C_2}\right)
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="s-recurrence-relations.html#p-4921" class="internal">in-context</a></span>
 </body>
 </html>

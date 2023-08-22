@@ -12,8 +12,30 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">(by contradiction): We can assume that <span class="process-math">\(G\)</span> has at least seven vertices, for otherwise the degree of any vertex is at most 5. Suppose that <span class="process-math">\(G\)</span> is a connected planar graph and each vertex has a degree of 6 or more. Then, since each edge contributes to the degree of two vertices, <span class="process-math">\(e\geq \frac{6v}{2}=3v\text{.}\)</span> However, <a href="" class="xref" data-knowl="./knowl/theorem-edge-bound.html" title="Theorem 13.6.10: A Bound on Edges of a Planar Graph">Theorem 13.6.10</a> states that the <span class="process-math">\(e\leq
-3v-6 &lt; 3v\text{,}\)</span> which is a contradiction.</div>
-<span class="incontext"><a href="s-planarity-and-colorings.html#p-4544" class="internal">in-context</a></span>
+<div class="para logical"><ul class="disc">
+<li><div class="para">
+<span class="process-math">\(Q\)</span> is a finite set of states;</div></li>
+<li><div class="para">
+<span class="process-math">\(\Sigma\)</span> is an alphabet called the <em class="emphasis">input alphabet</em>;</div></li>
+<li><div class="para">
+<span class="process-math">\(q_0 \in Q\)</span> is a state which is designated as the <em class="emphasis">start state</em>;</div></li>
+<li><div class="para">
+<span class="process-math">\(F\)</span> is a subset of <span class="process-math">\(Q\text{;}\)</span> the states in <span class="process-math">\(F\)</span> are states designated as <em class="emphasis">final</em> or <em class="emphasis">accepting</em> states;</div></li>
+<li><div class="para logical">
+<div class="para">
+<span class="process-math">\(\delta\)</span> is a transition function that takes <span class="process-math">\(\lt\)</span>state, input symbol <span class="process-math">\(\gt\)</span> pairs and maps each one to a state: <span class="process-math">\(\delta
+: Q \times
+\Sigma \rightarrow Q\text{.}\)</span>
+</div>
+<ul class="circle">
+<li><div class="para">To say <span class="process-math">\(\delta(q,a) = q'\)</span> means that if the machine is in state <span class="process-math">\(q\)</span> and the input symbol <span class="process-math">\(a\)</span> is consumed, then the machine will move into state <span class="process-math">\(q'\text{.}\)</span>
+</div></li>
+<li><div class="para">The function <span class="process-math">\(\delta\)</span> must be a total function, meaning that <span class="process-math">\(\delta(q,a)\)</span> must be defined for every state <span class="process-math">\(q\)</span> and every input symbol <span class="process-math">\(a\text{.}\)</span>
+</div></li>
+<li><div class="para">Recall also that, according to the definition of a function, there can be only one output for any particular input. This means that for any given <span class="process-math">\(q\)</span> and <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(\delta(q,a)\)</span> can have only one value. This is what makes the finite-state automaton <em class="emphasis">deterministic</em>: given the current state and input symbol, there is only one possible move the machine can make.</div></li>
+</ul>
+</div></li>
+</ul></div>
+<span class="incontext"><a href="s-finite-state-automata.html#p-4544" class="internal">in-context</a></span>
 </body>
 </html>

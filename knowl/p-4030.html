@@ -13,11 +13,40 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical"><ol class="lower-roman">
-<li><div class="para"><span class="process-math">\(\displaystyle g_1\left(x_1,x_2\right)=f_{15}\left(x_1,x_2\right)\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle g_2\left(x_1,x_2\right)=f_{12}\left(x_1,x_2\right)\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle g_3\left(x_1,x_2\right)=f_{12}\left(x_1,x_2\right)\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle g_4\left(x_1,x_2\right)=f_{16}\left(x_1,x_2\right)\)</span></div></li>
+<li><div class="para logical">
+<div class="para">Determine</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+d &amp; = \min \{\{w(e) - f_i(e) \mid e
+\text{ is used in the forward
+direction}\},\\
+&amp; \quad \quad \quad \{f_i(e) \mid e
+\text{ is used in the reverse
+direction}\}\}\\
+\\
+\end{split}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Define <span class="process-math">\(f_{i+1}\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{cc}
+f_{i+1}(e) = f_i(e) &amp; \text{if } e
+\text{ is not part of the flow augmenting
+path} \\
+f_{i+1}(e)=f_i(e)+d &amp; \text{if } e
+\text{ is used in the forward direction} \\
+f_{i+1}(e)=f_i(e)-d &amp; \text{if } e
+\text{ is used in the reverse direction} \\
+\end{array}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle i = i + 1\)</span></div></li>
 </ol></div>
-<span class="incontext"><a href="s-boolean-expressions.html#p-4030" class="internal">in-context</a></span>
+<span class="incontext"><a href="s-graph-optimization.html#p-4030" class="internal">in-context</a></span>
 </body>
 </html>

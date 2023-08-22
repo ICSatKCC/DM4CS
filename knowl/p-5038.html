@@ -11,10 +11,27 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Give a DFA that accepts the language accepted by the following NFA. <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa3ex.svg" role="img" class="contained" alt="NFA diagram for exercise 5."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.3.29<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">In the worst case, the algorithm must be executed with a list that is roughly half as large as in the previous execution. If we assume that Step 1 takes one time unit and <span class="process-math">\(T(n)\)</span> is the worst-case time for a list of <span class="process-math">\(n\)</span> items, then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-bin-search-recursion.html">
+\begin{gather}
+T(n)= 1 + T (\lfloor n/2
+\rfloor ), \quad n&gt;0\tag{16.2.1}
+\end{gather}
 </div>
-<span class="incontext"><a href="s-finite-state-automata.html#p-5038" class="internal">in-context</a></span>
+<div class="para">For simplicity, we will assume that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-bin-search-recursion.html">
+\begin{gather}
+T(0) = 0\tag{16.2.2}
+\end{gather}
+</div>
+<div class="para">even though the conditions of Step 1 must be evaluated as false if <span class="process-math">\(n
+= 0\text{.}\)</span> You might wonder why <span class="process-math">\(n/2\)</span> is truncated in <a href="" class="xref" data-knowl="./knowl/eq-bin-search-recursion.html" title="Equation 16.2.1">(16.2.1)</a>. If <span class="process-math">\(n\)</span> is odd, then <span class="process-math">\(n = 2
+k + 1\)</span> for some <span class="process-math">\(k\geq 0\text{,}\)</span> the middle of the list will be the <span class="process-math">\((k
++ 1)^{st}\)</span> item, and no matter what half of the list the search is directed to, the reduced list will have <span class="process-math">\(k = \lfloor n/2\rfloor\)</span> items. On the other hand, if <span class="process-math">\(n\)</span> is even, then <span class="process-math">\(n
+= 2 k\)</span> for <span class="process-math">\(k&gt;0\text{.}\)</span> The middle of the list will be the <span class="process-math">\(k^{th}\)</span> item, and the worst case will occur if we are directed to the <span class="process-math">\(k\)</span> items that come after the middle (the <span class="process-math">\((k + 1)^{st}\)</span> through <span class="process-math">\((2k)^{th}\)</span> items). Again the reduced list has <span class="process-math">\(\lfloor n/2 \rfloor\)</span> items.</div>
+</div>
+<span class="incontext"><a href="s-some-common-rrs.html#p-5038" class="internal">in-context</a></span>
 </body>
 </html>

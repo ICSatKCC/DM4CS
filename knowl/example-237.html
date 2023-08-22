@@ -12,15 +12,26 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.1.11</span><span class="period">.</span>
-</h4>Let <span class="process-math">\(\Sigma =
-\{0,1\}\text{.}\)</span> Then the following are all languages over <span class="process-math">\(\Sigma\text{:}\)</span> <ul class="disc">
-<li><div class="para"><span class="process-math">\(\displaystyle L_1 = \{011, 1010,111\}\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle L_2 = \{0, 10, 110, 1110, 11110, \ldots\}\)</span></div></li>
-<li><div class="para">
-<span class="process-math">\(L_3 = \{x \in \Sigma^* \ | \ n_0(x) = n_1(x) \}\text{,}\)</span> where the notation \nw{<span class="process-math">\(n_0(x)\)</span>} stands for the number of 0's in the string <span class="process-math">\(x\text{,}\)</span> and similarly for <span class="process-math">\(n_1(x)\)</span>
-</div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle L_4 = \{x| x \mbox{ represents a multiple of 5 in binary}\}\)</span></div></li>
-</ul></article><span class="incontext"><a href="s-Languages.html#example-237" class="internal">in-context</a></span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.3.4</span><span class="period">.</span>
+</h4>
+<div class="para">The transition function described by the table in the preceding example is that of a DFA. If we take <span class="process-math">\(p\)</span> to be the start state and <span class="process-math">\(r\)</span> to be a final state, then the formal description of the resulting machine is <span class="process-math">\(M= (\{p,q,r\}, \{0,1\},
+p, \delta, \{r\})\text{,}\)</span> where <span class="process-math">\(\delta\)</span> is given by</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:50%;"><dl class="description-list">
+<dt></dt>
+<dd><div class="para"><span class="process-math">\(\displaystyle \delta(p,0)=p\)</span></div></dd>
+<dt></dt>
+<dd><div class="para"><span class="process-math">\(\displaystyle \delta(q,0)=q\)</span></div></dd>
+<dt></dt>
+<dd><div class="para"><span class="process-math">\(\displaystyle \delta(r,0)=r\)</span></div></dd>
+</dl></div>
+<div class="sbspanel bottom" style="width:50%;"><dl class="description-list">
+<dt></dt>
+<dd><div class="para"><span class="process-math">\(\displaystyle \delta(p,1)=q\)</span></div></dd>
+<dt></dt>
+<dd><div class="para"><span class="process-math">\(\displaystyle \delta(q,1)=r\)</span></div></dd>
+<dt></dt>
+<dd><div class="para"><span class="process-math">\(\displaystyle \delta(r,1)=r\)</span></div></dd>
+</dl></div>
+</div></div></article><span class="incontext"><a href="s-finite-state-automata.html#example-237" class="internal">in-context</a></span>
 </body>
 </html>

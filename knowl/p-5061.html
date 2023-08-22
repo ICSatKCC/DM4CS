@@ -11,10 +11,28 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Next we note that there is also a loop from <span class="process-math">\(q_1\)</span> to <span class="process-math">\(q_1\)</span> via <span class="process-math">\(q_2\text{.}\)</span>  A regular expression that matches the strings that would move around the loop is <span class="process-math">\(ba^*b\text{.}\)</span>  Since the transitions in the loop are the only transitions to or from <span class="process-math">\(q_2\text{,}\)</span> we simply remove <span class="process-math">\(q_2\)</span> and replace it with a transition from <span class="process-math">\(q_1\)</span> to <span class="process-math">\(q_1\text{.}\)</span> <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa20.svg" role="img" class="contained" alt="Altered diagram from above."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.13<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">The first term of this expression is a geometric sum, which can be written in closed form. Let <span class="process-math">\(x\)</span> be that sum:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c}
+x =a + a b + a b^2+\cdots + a b^r \\
+b x= \textrm{ }a b + a b^2+\cdots + a b^r + a b^{r+1}
+\end{array}
+\end{equation*}
 </div>
-<span class="incontext"><a href="sec-FSA-and-Regular-Languages.html#p-5061" class="internal">in-context</a></span>
+<div class="para">We’ve multiplied each term of <span class="process-math">\(x\)</span> by <span class="process-math">\(b\)</span> and aligned the identical terms in <span class="process-math">\(x\)</span> and <span class="process-math">\(bx\text{.}\)</span> Now if we subtract the two equations,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x - b x = a -
+a b ^{r+1} \Rightarrow x(1-b) = a\left(1-b^{r+1}\right)
+\end{equation*}
+</div>
+<div class="para">Therefore, <span class="process-math">\(x =
+a\frac{b^{r+1}-1}{b-1}\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="s-some-common-rrs.html#p-5061" class="internal">in-context</a></span>
 </body>
 </html>

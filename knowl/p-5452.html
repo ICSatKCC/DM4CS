@@ -11,10 +11,24 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Let <span class="process-math">\(P_A\)</span> be the action of deciding how many members (not who) from Section A will serve on the committee. <span class="process-math">\(X_A= \{3, 4, 5\}\)</span> and <span class="process-math">\(Q_A(k)=k\text{.}\)</span> The frequency function, <span class="process-math">\(F_A\)</span> , is defined by <span class="process-math">\(F_A(k)=1\)</span> if <span class="process-math">\(k\in X_k\)</span> , with <span class="process-math">\(F_A(k)=0\)</span> otherwise. <span class="process-math">\(G\left(F_A;z\right)\)</span> is then <span class="process-math">\(z^3+
-z^4+z^5\)</span> . Similarly, <span class="process-math">\(G\left(F_B;z\right) =z^2+ z^3+ z ^4 + z^5=
-G\left(F_C ;z\right)\text{.}\)</span> Since the committee must have 11 members, our answer will be the coefficient of <span class="process-math">\(z^{11}\)</span> in <span class="process-math">\(G\left(F_A;z\right)G\left(F_B;z\right)G\left(F_C;z\right)\text{,}\)</span> which is 10.</div>
-<span class="incontext"><a href="s-generating-functions.html#p-5452" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">
+<em class="emphasis">Solution to <a href="" class="xref" data-knowl="./knowl/eq-bin-search-recursion.html" title="Equation 16.2.1">(16.2.1)</a> and <a href="" class="xref" data-knowl="./knowl/eq-bin-search-basis.html" title="Equation 16.2.2">(16.2.2)</a>.</em> To determine <span class="process-math">\(T(n)\text{,}\)</span> the easiest case is when <span class="process-math">\(n\)</span> is a power of two. If we compute <span class="process-math">\(T \left(2^m\right)\text{,}\)</span> <span class="process-math">\(m\geq
+0\)</span> , by iteration, our results are</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-bin-search-recursion.html ./knowl/eq-bin-search-basis.html">
+\begin{equation*}
+\begin{array}{c}
+T(1) = 1 + T(0) = 1\\
+T(2) = 1 + T(1) = 2\\
+T(4) = 1 + T(2) = 3\\
+T(8) = 1 + T(4) = 4\\
+\end{array}
+\end{equation*}
+</div>
+<div class="para">The pattern that is established makes it clear that <span class="process-math">\(T\left(2^m\right)
+= m + 1\text{.}\)</span> This result would seem to indicate that every time you double the size of your list, the search time increases by only one unit.</div>
+</div>
+<span class="incontext"><a href="s-some-common-rrs.html#p-5452" class="internal">in-context</a></span>
 </body>
 </html>

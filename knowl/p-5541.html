@@ -12,7 +12,16 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Suppose we want to count the number of subsets of <span class="process-math">\(\{0,1,2,...,9\}\)</span> that contain no adjacent elements.  First, we will define our universe and its power set.  The plan will be to define a function that determines whether a subset is "valid" in the sense that it contains no adjacent elements.  Then we will iterate over the subsets, counting the valid ones.  We know that the number of all subsets will be 2 raised to the number of elements in <span class="process-math">\(U\text{,}\)</span> which would be <span class="process-math">\(2^{10}=1024\text{,}\)</span> but let's check.</div>
-<span class="incontext"><a href="app-python-iterators.html#p-5541" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(V(n) = S(n) - 2S (n - 1) - 3S (n - 2)\text{,}\)</span> <span class="process-math">\(n \geq 2\text{,}\)</span> with <span class="process-math">\(V(0)
+= 0\)</span> and <span class="process-math">\(V(1) = 0\text{.}\)</span> Therefore,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+G(V;z) = 0 + 0z
++\sum_{n=2}^{\infty} (S(n) - 2S (n - 1) - 3S (n - 2)) z^n= 0
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="s-generating-functions.html#p-5541" class="internal">in-context</a></span>
 </body>
 </html>

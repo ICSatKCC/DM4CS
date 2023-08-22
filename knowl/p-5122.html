@@ -11,9 +11,22 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Note: We will shorten the name of this class of relations to <span class="process-math">\(n^{\textrm{th}}\)</span> order linear relations. Therefore, in further discussions, <span class="process-math">\(S(k)
-+ 2k S(k - 1) = 0\)</span> would not be considered a first-order linear relation.</div>
-<span class="incontext"><a href="s-recurrence-relations.html#p-5122" class="internal">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(S_n = 3^n\text{,}\)</span><span class="process-math">\(n \geq 0\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+G(S;z) &amp;= 1 + 3z + 9z^2 + 27z^3 +\cdots \\
+&amp; =\sum_{n=0}^{\infty} 3^n z^n\\
+&amp;=\sum_{n=0}^{\infty} (3 z)^n\\
+\end{split}
+\end{equation*}
+</div>
+<div class="para">We can get a closed form expression for <span class="process-math">\(G(S;z)\)</span> by observing that <span class="process-math">\(G(S;z) - 3z G(S;z) = 1\text{.}\)</span> Therefore, <span class="process-math">\(G(S;z)
+=\frac{1}{1-3 z}\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="s-generating-functions.html#p-5122" class="internal">in-context</a></span>
 </body>
 </html>

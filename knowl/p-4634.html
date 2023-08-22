@@ -12,8 +12,9 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">
-<span class="process-math">\((4) \Rightarrow (1)\)</span> Assume that <span class="process-math">\(G\)</span> contains no cycles and that the addition of an edge creates a cycle. All that we need to prove to verify that <span class="process-math">\(G\)</span> is a tree is that <span class="process-math">\(G\)</span> is connected. If it is not connected, then select any two vertices that are not connected. If we add an edge to connect them, the fact that a cycle is created implies that a second path between the two vertices can be found which is in the original graph, which is a contradiction.</div>
-<span class="incontext"><a href="s-what-is-a-tree.html#p-4634" class="internal">in-context</a></span>
+<div class="para">Suppose you have machines <span class="process-math">\(M_1\)</span> and <span class="process-math">\(M_2\)</span> that accept <span class="process-math">\(L(r_1)\)</span> and <span class="process-math">\(L(r_2)\)</span> respectively. To build a machine that accepts <span class="process-math">\(L(r_1)L(r_2)\)</span> proceed as follows. Make the start state <span class="process-math">\(q_{01}\)</span> of <span class="process-math">\(M_1\)</span> be the start state of the new machine. Make the final states of <span class="process-math">\(M_2\)</span> be the final states of the new machine. Add <span class="process-math">\(\varep\)</span>-transitions from the final states of <span class="process-math">\(M_1\)</span> to the start state <span class="process-math">\(q_{02}\)</span> of <span class="process-math">\(M_2\text{.}\)</span> <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa16.svg" role="img" class="contained" alt="Diagram of an NFA that accepts \(L(r_1)L(r_2)\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div>
+<span class="incontext"><a href="sec-FSA-and-Regular-Languages.html#p-4634" class="internal">in-context</a></span>
 </body>
 </html>

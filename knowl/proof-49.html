@@ -11,46 +11,10 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
-<div class="para logical">
-<div class="para">Let <span class="process-math">\(a \in L\)</span> and assume to the contrary that <span class="process-math">\(a\)</span> has two complements, namely <span class="process-math">\(a_1\)</span> and <span class="process-math">\(a_2\text{.}\)</span> Then by the definition of complement,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{array}{c}
-a \land a_1 = 0\textrm{ and }a \lor a_1 = 1, \\
-and\\
-a \land a_2 = 0\textrm{ and }a \lor a_2 = 1, \\
-\end{array}
-\end{equation*}
-</div>
-<div class="para">.</div>
-</div> <div class="para logical">
-<div class="para">Then</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-a_1 &amp; =a_1 \land \pmb{1} = a_1 \land \left(a \lor a_2\right)\\
-&amp;=\left(a_1 \land a\right) \lor \left(a_1 \land a_2\right)\\
-&amp;=\pmb{0} \lor \left(a_1 \land a_2\right)\\
-&amp;=a_1 \land a_2\\
-\\
-\end{split}
-\end{equation*}
-</div>
-<div class="para">On the other hand,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-a_2 &amp;= a_2 \land \pmb{1} = a_2 \land \left(a \lor a_1\right)\\
-&amp;= \left(a_2 \land a\right) \lor \left(a_2 \land a_1\right)\\
-&amp;= \pmb{0} \lor \left(a_2 \land a_1\right)\\
-&amp;= a_2 \land a_1\\
-&amp;= a_1 \land a_2\\
-\\
-\end{split}
-\end{equation*}
-</div>
-<div class="para">Hence <span class="process-math">\(a_1 = a_2\text{,}\)</span> which contradicts the assumption that <span class="process-math">\(a\)</span> has two different complements.</div>
-</div></article><span class="incontext"><a href="s-boolean-algebras.html#proof-49" class="internal">in-context</a></span>
+<article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
+<div class="para">Let <span class="process-math">\(p_1= \left(e_1, e_2, \ldots , e_m \right)\)</span> and <span class="process-math">\(p_2=\left(f_1,f_2,\ldots
+, f_n\right)\)</span> be two different simple paths from <span class="process-math">\(v_a\)</span> to <span class="process-math">\(v_b\text{.}\)</span> The first step we will take is to delete from <span class="process-math">\(p_1\)</span> and <span class="process-math">\(p_2\)</span> the initial edges that are identical. That is, if <span class="process-math">\(e_1= f_1\text{,}\)</span> <span class="process-math">\(e_2= f_2,
+\dots \text{,}\)</span> <span class="process-math">\(e_{j}= f_j\text{,}\)</span> and <span class="process-math">\(e_{j+1}\neq f_{j+1}\)</span> delete the first <span class="process-math">\(j\)</span> edges of both paths. Once this is done, both paths start at the same vertex, call it <span class="process-math">\(v_c\text{,}\)</span> and both still end at <span class="process-math">\(v_b\text{.}\)</span> Now we construct a cycle by starting at <span class="process-math">\(v_c\)</span> and following what is left of <span class="process-math">\(p_1\)</span> until we first meet what is left of <span class="process-math">\(p_2\text{.}\)</span> If this first meeting occurs at vertex <span class="process-math">\(v_d\text{,}\)</span> then the remainder of the cycle is completed by following the portion of the reverse of <span class="process-math">\(p_2\)</span> that starts at <span class="process-math">\(v_d\)</span> and ends at <span class="process-math">\(v_c\text{.}\)</span>
+</div></article><span class="incontext"><a href="s-what-is-a-tree.html#proof-49" class="internal">in-context</a></span>
 </body>
 </html>

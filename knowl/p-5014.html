@@ -12,23 +12,21 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">We want to prove that <span class="process-math">\(\delta^*(q_0,w)\)</span> corresponds to <span class="process-math">\(\partial^*(p_0,w)\)</span> for all <span class="process-math">\(w \in\Sigma^*\text{.}\)</span> We use induction on the length of <span class="process-math">\(w\text{.}\)</span>
-</div>
-<ol class="decimal">
-<li><div class="para">Base case: Suppose <span class="process-math">\(w\)</span> has length 0. The only string <span class="process-math">\(w\)</span> with length 0 is <span class="process-math">\(\varep\text{,}\)</span> so we want to show that <span class="process-math">\(\delta^*(q_0,\varep)\)</span> corresponds to <span class="process-math">\(\partial^*(p_0,\varep)\text{.}\)</span> Well, <span class="process-math">\(\delta^*(q_0, \varep) =
-q_0\text{,}\)</span> since in a DFA, <span class="process-math">\(\delta^*(q, \varep) = q\)</span> for any state~ <span class="process-math">\(q\text{.}\)</span> We explicitly made <span class="process-math">\(q_0\)</span> correspond to <span class="process-math">\(\partial^*(p_0,\varep)\text{,}\)</span> and so the property holds for <span class="process-math">\(w\)</span> with length 0.</div></li>
-<li>
-<div class="para">Inductive case: Assume that the desired property holds for some number <span class="process-math">\(n\text{,}\)</span> i.e.\ that <span class="process-math">\(\delta^*(q_0,x)\)</span> corresponds to <span class="process-math">\(\partial^*(p_0,x)\)</span> for all <span class="process-math">\(x\)</span> with length <span class="process-math">\(n\text{.}\)</span> Look at an arbitrary string <span class="process-math">\(w\)</span> with length <span class="process-math">\(n+1\text{.}\)</span> We want to show that <span class="process-math">\(\delta^*(q_0,w)\)</span> corresponds to <span class="process-math">\(\partial^*(p_0,w)\text{.}\)</span> Well, the string <span class="process-math">\(w\)</span> must look like <span class="process-math">\(xa\)</span> for some string <span class="process-math">\(x\)</span> (whose length is <span class="process-math">\(n\)</span>) and some symbol <span class="process-math">\(a\text{.}\)</span> By our inductive hypothesis, we know <span class="process-math">\(\delta^*(q_0,x)\)</span> corresponds to <span class="process-math">\(\partial^*(p_0,x)\text{.}\)</span> We know <span class="process-math">\(\partial^*(p_0,x)\)</span> is a set of <span class="process-math">\(N\)</span>'s states, say <span class="process-math">\(\partial^*(p_0,x) =
-\{p_1, \ldots, p_n\}\text{.}\)</span>
-</div>
-<div class="para">At this point, our subsequent reasoning might be a bit clearer if we give explicit names to <span class="process-math">\(\delta^*(q_0,w)\)</span> (the state <span class="process-math">\(D\)</span> reaches on input <span class="process-math">\(w\)</span>) and <span class="process-math">\(\delta^*(q_0,x)\)</span> (the state <span class="process-math">\(D\)</span> reaches on input <span class="process-math">\(x\)</span>). Call <span class="process-math">\(\delta^*(q_0, w)\)</span> \ <span class="process-math">\(q_w\text{,}\)</span> and call <span class="process-math">\(\delta^*(q_0,x)\)</span> \ <span class="process-math">\(q_x\text{.}\)</span> We know, because <span class="process-math">\(w=xa\text{,}\)</span> there must be an <span class="process-math">\(a\)</span>-transition from <span class="process-math">\(q_x\)</span> to <span class="process-math">\(q_w\text{.}\)</span> Look at how we added transitions to <span class="process-math">\(\delta\text{:}\)</span> the fact that there is an <span class="process-math">\(a\)</span>-transition from <span class="process-math">\(q_x\)</span> to <span class="process-math">\(q_w\)</span> means that <span class="process-math">\(q_w\)</span> corresponds to the set <span class="process-math">\(\partial^*(p_1,a)
-\cup \ldots \cup \partial^*(p_n,a)\)</span> of <span class="process-math">\(N\)</span>'s states. By our preliminary observation, <span class="process-math">\(\partial^*(p_1,a) \cup \ldots \cup
-\partial^*(p_n,a)\)</span> is just <span class="process-math">\(\partial^*(p_0,w)\text{.}\)</span> So <span class="process-math">\(q_w\)</span> (or <span class="process-math">\(\delta^*(q_0,w)\)</span>) corresponds to <span class="process-math">\(\partial^*(p_0,w)\text{,}\)</span> which is what we wanted to prove. Since <span class="process-math">\(w\)</span> was an arbitrary string of length <span class="process-math">\(n+1\text{,}\)</span> we have shown that the property holds for <span class="process-math">\(n+1\text{.}\)</span>
-</div>
-</li>
-</ol>
-</div>
-<span class="incontext"><a href="s-finite-state-automata.html#p-5014" class="internal">in-context</a></span>
+<div class="para logical"><ol class="lower-alpha">
+<li><div class="para">
+<span class="process-math">\(S(n) =\sum_{j=1}^n j\text{,}\)</span> <span class="process-math">\(n\geq 1\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(Q(n) = \sum_{j=1}^n j^2\text{,}\)</span> <span class="process-math">\(n\geq 1\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(P(n) =\)</span><span class="process-math">\(\sum_{j=1}^n \left(\frac{1}{2}\right)^j\text{,}\)</span> <span class="process-math">\(n\geq
+0\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(T(n)= \sum_{j=1}^n j^3\text{,}\)</span> <span class="process-math">\(n\geq 1\)</span>
+</div></li>
+</ol></div>
+<span class="incontext"><a href="s-recurrence-relations.html#p-5014" class="internal">in-context</a></span>
 </body>
 </html>

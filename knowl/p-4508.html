@@ -11,8 +11,8 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Prove that if a network has two maximal flows, then it has an infinite number of maximal flows.</div>
-<span class="incontext"><a href="s-graph-optimization.html#p-4508" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para">Suppose, for example, that you would like to search for a name in the form <em class="emphasis">last-name, first-name</em> and replace it with the same name in the form <em class="emphasis">first-name last-name</em>. For example, ``Reeves, Keanu’’ should be converted to ``Keanu Reeves’’. Assuming that names contain only letters, this could be done using the search pattern <code class="code-inline tex2jax_ignore">([A-Za-z]+), ([A-Za-z]+)</code> and the replacement pattern <code class="code-inline tex2jax_ignore">\2 \1</code>.  When the match is made, the first <code class="code-inline tex2jax_ignore">([A-Za-z]+)</code> will match ``Reeves,’’ so that in the replacement pattern, <code class="code-inline tex2jax_ignore">\1</code> represents the substring ``Reeves’’. Similarly, <code class="code-inline tex2jax_ignore">\2</code> will represent ``Keanu’’.  Note that the parentheses are included in the search pattern <em class="emphasis">only</em> to specify what parts of the string are represented by <code class="code-inline tex2jax_ignore">\1</code> and <code class="code-inline tex2jax_ignore">\2</code>. In practice, you might use <code class="code-inline tex2jax_ignore">^([A-Za-z]+), ([A-Za-z])\$</code> as the search pattern to constrain it so that it will only match a complete line of text.  By using a ``global’’ search-and-replace, you could convert an entire file of names from one format to the other in a single operation.</div>
+<span class="incontext"><a href="s-regular-expressions-and-apps.html#p-4508" class="internal">in-context</a></span>
 </body>
 </html>

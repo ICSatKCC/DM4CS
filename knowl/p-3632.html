@@ -12,25 +12,35 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">If <span class="process-math">\(G = G_1\times G_2 \times \cdots \times G_n\)</span> is a direct product of <span class="process-math">\(n\)</span> groups and <span class="process-math">\(\left(a_1,
-a_2 , \dots , a_n\right) \in G\text{,}\)</span> then:</div>
-<ol class="lower-alpha">
-<li><div class="para">The identity of <span class="process-math">\(G\)</span> is <span class="process-math">\(\left(e_1, e_2 , . . . , e_n\right)\text{,}\)</span> where <span class="process-math">\(e_k\)</span> is the identity of <span class="process-math">\(G_k\text{.}\)</span>
+<div class="para logical"><ol class="lower-alpha">
+<li><div class="para">The number of elements in the domain of <span class="process-math">\(f\)</span> is <span class="process-math">\(16=4^2=\left| B\right| ^2\)</span>
 </div></li>
-<li><div class="para"><span class="process-math">\(\left(a_1, a_2 , . . . , a_n\right) {}^{-1}= \left(a_1{}^{-1},
-a_2{}^{-1} , . . . , a_n{}^{-1}\right)\text{.}\)</span></div></li>
-<li><div class="para">
-<span class="process-math">\(\left(a_1, a_2 , . . . , a_n\right) {}^m= \left(a_1{}^m, a_2{}^m
-, . . . , a_n{}^m\right)\)</span> for all <span class="process-math">\(m\in \mathbb{Z}\text{.}\)</span>
-</div></li>
-<li><div class="para">
-<span class="process-math">\(G\)</span> is abelian if and only if each of the factors <span class="process-math">\(G_1, G_2,
-\ldots , G_n\)</span> is abelian.</div></li>
-<li><div class="para">lf <span class="process-math">\(H_1, H_2, \ldots , H_n\)</span> are subgroups of the corresponding factors, then <span class="process-math">\(H_1\times H_2 \times \cdots \times H_n\)</span> is a subgroup of <span class="process-math">\(G\text{.}\)</span>
-</div></li>
-</ol>
+<li><div class="para">With two variables, there are <span class="process-math">\(4^3 = 256\)</span> different Boolean functions. With three variables, there are <span class="process-math">\(4^8=65536\)</span> different Boolean functions.</div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle f\left(x_1,x_2\right)=\left(1\land \overline{x_1}\land \overline{x_2}\right)\lor
+\left(1\land \overline{x_1}\land x_2\right)\lor \left(1\land
+x_1\land \overline{x_2}\right)\lor \left(0\land x_1\land x_2\right)\)</span></div></li>
+<li><div class="para logical">
+<div class="para">Consider <span class="process-math">\(f:B^2\to B\text{,}\)</span> defined by <span class="process-math">\(f(0,0)=0\text{,}\)</span> <span class="process-math">\(f(0,1)=1\text{,}\)</span> <span class="process-math">\(f(1,0)=a\text{,}\)</span> <span class="process-math">\(f(1,1)=a\text{,}\)</span> and <span class="process-math">\(f(0,a)=b\text{,}\)</span> with the images of all other pairs in <span class="process-math">\(B^2\)</span> defined arbitrarily. This function is not a Boolean function. If we assume that it is Boolean function then <span class="process-math">\(f\)</span> can be computed with a Boolean expression <span class="process-math">\(M\left(x_1,x_2\right)\text{.}\)</span> This expression can be put into minterm normal form: <span class="process-math">\(M\left(x_1,x_2\right)=\left(c_1\land \overline{x_1}\land
+\overline{x_2}\right)\lor \left(c_2\land \overline{x_1}\land x_2\right)\lor
+\left(c_3\land
+x_1\land \overline{x_2}\right)\lor \left(c_4\land x_1\land x_2\right)\)</span>
 </div>
-<span class="incontext"><a href="s-direct-products.html#p-3632" class="internal">in-context</a></span>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c}
+f(0,0)=0 \Rightarrow M(0,0)=0 \Rightarrow c_1= 0\\
+f(0,1)=1 \Rightarrow M(0,0)=1 \Rightarrow c_2= 1\\
+f(1,0)=a \Rightarrow M(0,0)=a \Rightarrow c_3= a\\
+f(1,1)=a \Rightarrow M(0,0)=a \Rightarrow c_4= a\\
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Therefore, <span class="process-math">\(M\left(x_1,x_2\right)=\left(\overline{x_1}\land
+x_2\right)\lor \left(a\land x_1\land \overline{x_2}\right)\lor \left(a\land x_1\land
+x_2\right)\)</span> and so, using this formula, <span class="process-math">\(M(0,a)=\left(\bar{0}\land a\right)\lor
+\left(a\land 0\land \bar{a}\right)\lor (a\land 0\land a)=a\)</span> This contradicts <span class="process-math">\(f(0,a)=b\text{,}\)</span> and so <span class="process-math">\(f\)</span> is not a Boolean function.</div>
+</div></li>
+</ol></div>
+<span class="incontext"><a href="s-boolean-expressions.html#p-3632" class="internal">in-context</a></span>
 </body>
 </html>

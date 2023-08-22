@@ -11,8 +11,38 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Visit the root of the tree.</div>
-<span class="incontext"><a href="s-binary-trees.html#p-4762" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">All these notations can be expressed in a context-free grammar by introducing additional production rules.  For example, the BNF rule “<span class="process-math">\(\langle sign \rangle ::= + | -\)</span>” is equivalent to the two rules, “<span class="process-math">\(\langle sign \rangle ::= + \)</span>” and “<span class="process-math">\(\langle sign \rangle ::= - \)</span>”.  A rule that contains an optional item can also be replaced by two rules.  For example,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle declaration \rangle ::=\ \langle type \rangle \langle variable \rangle
+[ = \langle expression \rangle ] ;
+\end{equation*}
+</div>
+<div class="para">can be replaced by the two rules</div>
+<div class="displaymath process-math">
+\begin{align*}
+\langle declaration \rangle \amp ::=\ \langle type \rangle \langle variable \rangle ;\\
+\langle declaration \rangle \amp ::=\ \langle type \rangle \langle variable \rangle
+= \langle expression \rangle  ;
+\end{align*}
+</div>
+<div class="para">In context-free grammars, repetition can be expressed by using a recursive rule such as “<span class="process-math">\(S\PRODUCES aS\)</span>”, in which the same non-terminal symbol appears both on the left-hand side and on the right-hand side of the rule.  BNF-style notation using “[” and “]<span class="process-math">\(\dots\)</span>” can be eliminated by replacing it with a new non-terminal symbol and adding a recursive rule to allow that symbol to repeat zero or more times. For example, the production rule</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle integer \rangle ::=\ \langle digit \rangle [ \langle digit \rangle ]\dots
+\end{equation*}
+</div>
+<div class="para">can be replaced by three rules using a new non-terminal symbol <span class="process-math">\(\langle digit{\text -}list \rangle\)</span> to represent a string of zero or more <span class="process-math">\(\langle digit \rangle\)</span>’s:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\langle integer \rangle \amp ::= \langle digit \rangle \langle digit{\text -}list \rangle \\
+\langle digit{\text -}list \rangle \amp ::= \langle digit \rangle \langle digit{\text -}list \rangle \\
+\langle digit{\text -}list \rangle \amp ::= \EMPTYSTRING 
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="sec-grammars.html#p-4762" class="internal">in-context</a></span>
 </body>
 </html>

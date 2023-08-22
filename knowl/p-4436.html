@@ -12,60 +12,19 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical"><ol class="decimal">
-<li><div class="para">Define the flow function <span class="process-math">\(f_0\)</span> by <span class="process-math">\(f_0(e)=0\)</span> for each edge <span class="process-math">\(e
-\in E\text{.}\)</span>
-</div></li>
-<li><div class="para">i = 0.</div></li>
-<li>
-<div class="para">Repeat:</div>
-<div class="para logical"><ol class="lower-alpha">
-<li><div class="para">If possible, find a flow augmenting path with respect to <span class="process-math">\(f_i\text{.}\)</span>
-</div></li>
-<li>
-<div class="para">If a flow augmenting path exists, then:</div>
-<div class="para logical"><ol class="lower-roman">
-<li><div class="para logical">
-<div class="para">Determine</div>
+<div class="para logical">
+<div class="para">Induction:Assume that for some <span class="process-math">\(k\geq 1\text{,}\)</span> all full binary trees with <span class="process-math">\(k\)</span> or fewer vertices have one more leaf than internal vertices. Now consider any full binary tree with <span class="process-math">\(k+1\)</span> vertices. Let <span class="process-math">\(T_A\)</span> and <span class="process-math">\(T_B\)</span> be the left and right subtrees of the tree which, by the definition of a full binary tree, must both be full. If <span class="process-math">\(i_A\)</span> and <span class="process-math">\(i_B\)</span> are the numbers of internal vertices in <span class="process-math">\(T_A\)</span> and <span class="process-math">\(T_B\text{,}\)</span> and <span class="process-math">\(j_A\)</span> and <span class="process-math">\(j_B\)</span> are the numbers of leaves, then <span class="process-math">\(j_A=i_A+1 \)</span> and <span class="process-math">\(j_B=i_B+1\text{.}\)</span> Therefore, in the whole tree,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{split}
-d &amp; = \min \{\{w(e) - f_i(e) \mid e
-\text{ is used in the forward
-direction}\},\\
-&amp; \quad \quad \quad \{f_i(e) \mid e
-\text{ is used in the reverse
-direction}\}\}\\
-\\
+\textrm{the number of leaves} &amp; =j_A+j_B\\
+&amp;=\left(i_A+1\right)+\left(i_B+1\right)\\
+&amp;=\left(i_A+i_B+1\right)+1\\
+&amp;=(\textrm{number of internal vertices})+1
 \end{split}
 \end{equation*}
 </div>
-</div></li>
-<li><div class="para logical">
-<div class="para">Define <span class="process-math">\(f_{i+1}\)</span> by</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{array}{cc}
-f_{i+1}(e) = f_i(e) &amp; \text{if } e
-\text{ is not part of the flow augmenting
-path} \\
-f_{i+1}(e)=f_i(e)+d &amp; \text{if } e
-\text{ is used in the forward direction} \\
-f_{i+1}(e)=f_i(e)-d &amp; \text{if } e
-\text{ is used in the reverse direction} \\
-\end{array}
-\end{equation*}
 </div>
-</div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle i = i + 1\)</span></div></li>
-</ol></div>
-</li>
-</ol></div>
-<div class="para">until no flow augmenting path exists.</div>
-</li>
-<li><div class="para">Terminate with a maximal flow <span class="process-math">\(f_i\)</span>
-</div></li>
-</ol></div>
-<span class="incontext"><a href="s-graph-optimization.html#p-4436" class="internal">in-context</a></span>
+<span class="incontext"><a href="s-binary-trees.html#p-4436" class="internal">in-context</a></span>
 </body>
 </html>

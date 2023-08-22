@@ -14,6 +14,33 @@
 <article class="li"><h5 class="heading">
 <span class="type">Item</span><span class="space"> </span><span class="codenumber">d</span><span class="period">.</span>
 </h5>
-<div class="para">If it is not known whether <span class="process-math">\(G\)</span> is connected, <a href="" class="xref" data-knowl="./knowl/alg-prim.html" title="Algorithm 14.2.9: Prim's Algorithm">Algorithm 14.2.9</a> can be revised to handle this possibility. The key change (in Step 2.1) would be to determine whether any bridge at all exists between <span class="process-math">\(L\)</span> and <span class="process-math">\(R\text{.}\)</span> The condition of the while loop in Step 2 must also be changed somewhat.</div></article><span class="incontext"><a href="s-spanning-trees.html#li-2100" class="internal">in-context</a></span>
+<div class="para">Use the general solution <span class="process-math">\(T(k) =b_12^k+ b_25^k+8+2k\)</span> and the initial conditions to get a final solution: <span class="process-math">\(\quad\)</span> <span class="process-math">\(\left\{
+\begin{array}{c}
+T(0)=1 \\
+T(1)=2 \\
+\end{array}
+\right\}\textrm{ }\Rightarrow \left\{
+\begin{array}{c}
+b_1+ b_2+8=1 \\
+2b_1+5b_2+10=2 \\
+\end{array}
+\right\}\textrm{ }\\
+\\
+\quad \quad \Rightarrow \left\{
+\begin{array}{c}
+b_1+b_2=-7 \\
+2b_1+5b_2=-8 \\
+\end{array}
+\right\}\\
+\\
+\quad \quad \Rightarrow \left\{
+\begin{array}{c}
+b_1=-9 \\
+b_2=2 \\
+\end{array}
+\right\}\textrm{ }\)</span>
+</div>
+<div class="para">Therefore, <span class="process-math">\(T(k) =-9\cdot 2^k+ 2\cdot 5^k+8+2k\text{.}\)</span>
+</div></article><span class="incontext"><a href="s-recurrence-relations.html#li-2100" class="internal">in-context</a></span>
 </body>
 </html>

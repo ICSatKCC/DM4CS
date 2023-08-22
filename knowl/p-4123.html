@@ -12,7 +12,14 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Suppose that a path between two vertices has an edge list <span class="process-math">\((e_1, e_2 , . . . ,e_n)\text{.}\)</span> A <dfn class="terminology">subpath</dfn> of this graph is any portion of the path described by one or more consecutive edges in the edge list. For example, <span class="process-math">\((3, \textrm{No}, 4)\)</span> is a subpath of <span class="process-math">\((1,2,3, \textrm{No}, 4, 3, \text{Yes})\text{.}\)</span> Any path is its own subpath; however, we call it an improper subpath of itself. All other nonempty subpaths are called proper subpaths.</div>
-<span class="incontext"><a href="s-graphs-introduction.html#p-4123" class="internal">in-context</a></span>
+<div class="para logical"><ol class="lower-alpha">
+<li><div class="para">Let <span class="process-math">\(r\)</span> be the number of regions in <span class="process-math">\(G\text{.}\)</span> For each region, count the number of edges that comprise its border. The sum of these counts must be at least <span class="process-math">\(3r\text{.}\)</span> Recall that we are working with simple graphs here, so a region made by two edges connecting the same two vertices is not possible.</div></li>
+<li><div class="para">Based on (a), infer that the number of edges in <span class="process-math">\(G\)</span> must be at least <span class="process-math">\(\frac{3 r}{2}\text{.}\)</span>
+</div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle e\geq \frac{3r}{2}\text{ }\Rightarrow \text{ }r\leq \frac{2e}{3}\)</span></div></li>
+<li><div class="para">Substitute <span class="process-math">\(\frac{2e}{3}\)</span> for <span class="process-math">\(r\)</span> in Euler’s Formula to obtain an inequality that is equivalent to <a href="" class="xref" data-knowl="./knowl/edge-bound.html" title="Equation 13.6.2">(13.6.2)</a>
+</div></li>
+</ol></div>
+<span class="incontext"><a href="s-planarity-and-colorings.html#p-4123" class="internal">in-context</a></span>
 </body>
 </html>

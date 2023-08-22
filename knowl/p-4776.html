@@ -11,8 +11,27 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">For k := 2 to n // insert <span class="process-math">\(a_k\)</span> into the tree</div>
-<span class="incontext"><a href="s-binary-trees.html#p-4776" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">However, there is an alternative parsing procedure that will work for <span class="process-math">\(G_3\text{.}\)</span>  This alternative method of parsing a string produces a <dfn class="terminology">right derivation</dfn> of the string, that is, a derivation in which at each step, the non-terminal symbol that is replaced is the rightmost non-terminal symbol in the string.  Here, for example, is a right derivation of the string <span class="process-math">\((x+y)*z\)</span> according to the grammar <span class="process-math">\(G_3\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+E \amp \YIELDS T \\
+\amp \YIELDS T*F \\
+\amp \YIELDS T*z \\
+\amp \YIELDS F * z \\
+\amp \YIELDS (E) * z \\
+\amp \YIELDS (E+T) * z \\
+\amp \YIELDS (E+F) * z \\
+\amp \YIELDS (E+y) * z \\
+\amp \YIELDS (T+y) * z \\
+\amp \YIELDS (F+y) * z \\
+\amp \YIELDS (x+y) * z 
+\end{align*}
+</div>
+<div class="para">The parsing method that produces this right derivation produces it from “bottom to top.”  That is, it begins with the string <span class="process-math">\((x+y)*z\)</span> and works backward to the start symbol <span class="process-math">\(E\text{,}\)</span> generating the steps of the right derivation in reverse order. The method works because <span class="process-math">\(G_3\)</span> is what is called an <dfn class="terminology">LR(1) grammar</dfn>.  That is, roughly, it is possible to read a string from <dfn class="terminology">L</dfn>eft to right and produce a <dfn class="terminology">R</dfn>ight derivation of the string, by looking ahead at most <dfn class="terminology">1</dfn> symbol at each step.  Although LL(1) grammars are easier for people to work with, LR(1) grammars turn out to be very suitable for machine processing, and they are used as the basis for the parsing process in many compilers.</div>
+</div>
+<span class="incontext"><a href="sec-grammars.html#p-4776" class="internal">in-context</a></span>
 </body>
 </html>

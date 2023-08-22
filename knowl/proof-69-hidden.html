@@ -10,15 +10,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
-<div class="para">By an analogue of <a href="" class="xref" data-knowl="./knowl/eq-log-prop-5.html" title="Equation 16.2.8">(16.2.8)</a>, <span class="process-math">\(a=b^{\log_b a}\text{.}\)</span> Therefore, if we take the base 2 logarithm of both sides of this equality we get:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-log-prop-5.html">
-\begin{equation*}
-\log_2 a = \log_2 \left(b^{\log_b a}\right) \Rightarrow \log_2 a
-=\log_b a \cdot \log_2 b
-\end{equation*}
-</div>
-<div class="para">Finally, divide both sides of the last equation by <span class="process-math">\(\log_2b\text{.}\)</span>
-</div>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">Parts 1 and 2 follow from the fact that <span class="process-math">\(\YIELDSTAR\)</span> is the transitive closure of <span class="process-math">\(\YIELDS\text{.}\)</span> Part 4 follows easily from Part 3. (I leave this as an exercise.) To prove Part 3, suppose that <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> <span class="process-math">\(s\text{,}\)</span> and <span class="process-math">\(t\)</span> are strings such that <span class="process-math">\(x\YIELDS
+y\text{.}\)</span> By definition, this means that there exist strings <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> and a production rule <span class="process-math">\(A\PRODUCES w\)</span> such that <span class="process-math">\(x=uAv\)</span> and <span class="process-math">\(y=uwv\text{.}\)</span> But then we also have <span class="process-math">\(sxt=suAvt\)</span> and <span class="process-math">\(syt=suwvt\text{.}\)</span> These two equations, along with the existence of the production rule <span class="process-math">\(A\PRODUCES w\)</span> show, by definition, that <span class="process-math">\(sxt\YIELDS
+syt\text{.}\)</span>
 </div></article></body>
 </html>

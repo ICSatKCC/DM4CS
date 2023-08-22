@@ -9,21 +9,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
 <body class="ignore-math">
 <article class="exercise exercise-like"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span>
 </h4>
-<div class="para">Find closed form expressions for the generating functions of the following sequences:</div> <div class="para logical"><ol class="lower-alpha">
-<li><div class="para"><span class="process-math">\(\displaystyle V(n) = 9^n\)</span></div></li>
-<li><div class="para">
-<span class="process-math">\(P\text{,}\)</span> where <span class="process-math">\(P(k) - 6 P(k - 1) + 5 P(k - 2) = 0\)</span> for <span class="process-math">\(k
-\geq 2\text{,}\)</span> with <span class="process-math">\(P(0) = 2\)</span> and <span class="process-math">\(P(1) = 2\text{.}\)</span>
-</div></li>
-<li><div class="para">The Fibonacci sequence: <span class="process-math">\(F(k + 2) = F(k + 1) + F(k)\text{,}\)</span> <span class="process-math">\(k \geq
-0\text{,}\)</span> with <span class="process-math">\(F(0) = F(1) = 1\text{.}\)</span>
-</div></li>
-</ol></div>
-<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-268-hidden.html" title="Answer 16.3.7.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><span class="incontext"><a href="s-generating-functions.html#exercise-610" class="internal">in-context</a></span>
+<div class="para">Verify the correctness of the following algorithm to compute the greatest common divisor of two integers that are not both zero.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-56"><script type="text/x-sage">def gcd(a,b):
+r0=a
+r1=b
+while r1 !=0:
+t= r0 % r1
+r0=r1
+r1=t
+return r0
+gcd(1001,154) #test
+</script></pre>
+<div class="solutions"><a href="" class="hint-knowl original" data-knowl="./knowl/hint-18-hidden.html" title="Hint 17.2.3.2.1"><span class="type">Hint</span><span class="period">.</span></a></div></article><span class="incontext"><a href="Section17_2.html#exercise-610" class="internal">in-context</a></span>
 </body>
 </html>
