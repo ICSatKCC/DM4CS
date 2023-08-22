@@ -10,7 +10,6 @@
       \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
       \newcommand{\cis}{\operatorname{cis}} \newcommand{\chr}{\operatorname{char}}
       \newcommand{\Null}{\operatorname{Null}} \renewcommand{\vec}[1]{\mathbf{#1}}
-      \newcommand{\R}{\mathbb R} 
   <!--Added for Foundations of CS (ch 15)-->
   \newcommand{\N}{{\mathbb N}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -44,6 +43,8 @@
       \usepackage{amsmath}
       \usepackage{pgf, tikz}
       \usetikzlibrary{arrows, automata}
+    \usepackage{pgfplots}
+
     </latex-image-preamble>
   </docinfo>
 

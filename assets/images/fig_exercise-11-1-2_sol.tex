@@ -1,0 +1,14 @@
+\documentclass[border=3mm]{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\begin{document}
+\thispagestyle{empty}
+\tikzstyle{branch}=[fill,shape=circle,minimum size=5pt,inner sep=0pt]
+\begin{tikzpicture}[label distance=2mm]
+        \begin{axis}[axis lines=middle,axis equal,grid=both]
+        \addplot coordinates{(-3,1) (6,-2)};
+        \end{axis}
+
+\end{tikzpicture}
+\end{document} 

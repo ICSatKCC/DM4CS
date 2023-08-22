@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="s-Systems-of-Equations">
+<section xml:id="s-Systems-of-Equations" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Systems of Equations</title>
 	<idx>Systems of Equations</idx>
 
@@ -73,13 +73,16 @@
 
 		<theorem xml:id="thm-elementary-operations">
 			<statement>
-				<p> Suppose you have two equations, involving the variables, <me>(x_1 , · · · , x_n )</me>
+				<p> Suppose you have two equations, involving the variables, <me>(x_1 , · · · , x_n
+						)</me>
                         <me>E_1
-					= f_1 , E_2 = f_2</me> where <m>E_1</m> and <m>E_2</m> are expressions involving
-					the variables and <m>f_1</m> and <m>f_2</m> are constants. (In the above example
-					there are only two variables, <m>x</m> and <m>y</m> and <m>E_1 = x + y</m> while <m>E_2
-					= 2x - y</m>.) Then the system <m>E_1 = f_1, E_2 = f_2</m> has the same solution
-					set as <me> E_1 = f_1, E_2 + aE_1 = f_2 + a f_1</me> Also the system <m>E_1 =
+						= f_1 , E_2 = f_2</me> where <m>E_1</m> and <m>E_2</m> are expressions
+					involving the variables and <m>f_1</m> and <m>f_2</m> are constants. (In the
+					above example there are only two variables, <m>x</m> and <m>y</m> and <m>E_1 = x
+					+ y</m> while <m>E_2
+						= 2x - y</m>.) Then the system <m>E_1 = f_1, E_2 = f_2</m> has the same
+					solution set as <me> E_1 = f_1, E_2 + aE_1 = f_2 + a f_1</me> Also the system <m>E_1
+					=
 						f_1 , E_2 = f_2</m> has the same solutions as the system, <m>E_2 = f_2 , E_1
 					=
 						f_1</m>. The system <m>E_1 = f_1 , E_2 = f_2</m> has the same solution as
@@ -87,28 +90,34 @@
 			</statement>
 			<proof>
 				<p> If <m>(x_1, · · · , x_n)</m> solves <m>E_1 = f_1, E_2 = f_2</m> then it solves
-				the first equation in <m>E_1 =
+					the first equation in <m>E_1 =
 						f_1, E_2 + aE_1 = f_2 + a f_1 </m>. Also, it satisfies <m> aE_1 = a f_1</m>
-				and so, since it also solves <m>E_2 = f_2</m> it must solve <m>E_2 + aE_1 = f_2 + a
-				f_1 </m>. Therefore, if <m>(x_1, · · · , x_n )</m> solves <m>E_1 = f_1, E_2 = f_2</m>
-				 it must also solve<m> E_2 + aE_1 = f_2 + a f_1</m>. On the other hand, if it solves
-				the system <m>E_1 = f_1</m> and <m>E_2 + aE_1 = f_2 + a f_1</m> , then <m>aE_1 = a
-				f_1</m> and so you can subtract these equal quantities from both sides of <m>E_2
-				+aE_1 = f_2 +a f_1</m> to obtain <m>E_2 = f_2</m> showing that it satisfies <m>E_1 =
-				f_1 , E_2 = f_2</m> .</p>
-				
-				<p>The second assertion of the theorem which says that
-				the system <m>E_1 = f_1 , E_2 = f_2</m> has the same solution as the system, <m>E_2
-						= f_2 , E_1 = f_1</m> is seen to be true because it involves nothing more
-				than listing the two equations in a different order. They are the same equations.</p>
+					and so, since it also solves <m>E_2 = f_2</m> it must solve <m>E_2 + aE_1 = f_2
+						+ a
+						f_1 </m>. Therefore, if <m>(x_1, · · · , x_n )</m> solves <m>E_1 = f_1, E_2
+						= f_2</m> it must also solve<m> E_2 + aE_1 = f_2 + a f_1</m>. On the other
+					hand, if it solves the system <m>E_1 = f_1</m> and <m>E_2 + aE_1 = f_2 + a f_1</m>
+					, then <m>aE_1 = a
+						f_1</m> and so you can subtract these equal quantities from both sides of <m>E_2
+					+aE_1 = f_2 +a f_1</m> to obtain <m>E_2 = f_2</m> showing that it satisfies <m>E_1
+					=
+						f_1 , E_2 = f_2</m> .</p>
 
-				<p>The third assertion of the theorem which says <m>E_1 = f_1 , E_2 = f_2</m> has the same
-				solution as the system <m>E_1 = f_1, aE_2 = a f_2</m> provided <m>a\neq 0</m> is
-				verified as follows: If <m>(x_1 , · · · , x_n )</m> is a solution of <m>E_1 = f_1 ,
-				E_2 = f_2</m> , then it is a solution to <m>E_1 = f_1 , aE_2 = a f_2</m> because the
-				second system only involves multiplying the equation, <m>E_2 = f_2</m> by <m>a</m>.
-				If <m>(x_1, · · · , x_n)</m> is a solution of <m>E_1 = f_1 , aE_2 = a f_2</m>, then
-				upon multiplying <m>aE_2 = a f_2</m> by the number <m>1/a</m>, you find that <m>E_2
+				<p>The second assertion of the theorem which says that the system <m>E_1 = f_1 , E_2
+					= f_2</m> has the same solution as the system, <m>E_2
+						= f_2 , E_1 = f_1</m> is seen to be true because it involves nothing more
+					than listing the two equations in a different order. They are the same
+					equations.</p>
+
+				<p>The third assertion of the theorem which says <m>E_1 = f_1 , E_2 = f_2</m> has
+					the same solution as the system <m>E_1 = f_1, aE_2 = a f_2</m> provided <m>a\neq
+					0</m> is verified as follows: If <m>(x_1 , · · · , x_n )</m> is a solution of <m>E_1
+					= f_1 ,
+						E_2 = f_2</m> , then it is a solution to <m>E_1 = f_1 , aE_2 = a f_2</m>
+					because the second system only involves multiplying the equation, <m>E_2 = f_2</m>
+					by <m>a</m>. If <m>(x_1, · · · , x_n)</m> is a solution of <m>E_1 = f_1 , aE_2 =
+					a f_2</m>, then upon multiplying <m>aE_2 = a f_2</m> by the number <m>1/a</m>,
+					you find that <m>E_2
 						= f_2. \Box</m>
 				</p>
 			</proof>
@@ -152,9 +161,9 @@
 				<p> Alternatively, you could have continued as follows. Add <m>(-2)</m> times the
 					bottom equation to the middle and then add <m>(-6)</m> times the bottom to the
 					top. This yields <me>x + 3y = 7, y = 2, z = 3</me> Now add <m>(-3)</m> times the
-					second to the top. This yields <me>x = 1, y = 2, z = 3,</me> a system which
-					has the same solution set as the original system. This avoided back substitution 
-					and led to the same solution set. </p>
+					second to the top. This yields <me>x = 1, y = 2, z = 3,</me> a system which has
+					the same solution set as the original system. This avoided back substitution and
+					led to the same solution set. </p>
 			</solution>
 		</example>
 	</subsection>
@@ -171,7 +180,8 @@
 		<title>Gauss Elimination</title>
 		<idx>Gauss Elimination</idx>
 		<p>A less cumbersome way to represent a linear system is to write it as an <term>augmented
-			matrix</term>. For example the linear system in <xref ref="ex-elementary-operations"/> can be written as <me>
+			matrix</term>. For example the linear system in <xref ref="ex-elementary-operations" />
+			can be written as <me>
 				\left( \begin{array}{c c c | c}
 				1 &amp; 3 &amp; 6 &amp; 25 \\
 				2 &amp; 7 &amp; 14 &amp; 58 \\
@@ -230,8 +240,7 @@
 			</md> which is the same as the second step in
 			solving <xref ref="ex-elementary-operations" />. By back substitution you obtain the
 			solution <m>x = 1</m>, <m>y = 6</m>, and <m>z = 3</m>. </p>
-			<p> In general a linear system is of the form
-		<!--  <md>
+		<p> In general a linear system is of the form <!--  <md>
 				<mrow> a_{11}x_1 + \dots + a_{1n}x_n \amp = b_1 </mrow>
 				<mrow> \vdots \dots \vdots \amp = \vdots </mrow>
 				<mrow> a_m1x_1 + \dots + a_{mn}x_n \amp = b_m </mrow>
@@ -239,16 +248,16 @@
 			<me>
 				\begin{array}{c c c c c c}
 				a_{11}x_1 + &amp;\dots &amp; + a_{1n}x_n &amp; = b_1 \\
-				 &amp;\vdots &amp; &amp; \vdots \\
+				&amp;\vdots &amp; &amp; \vdots \\
 				a_{m1}x_1 + &amp;\dots &amp; + a_{mn}X_n &amp; = b_m \\
 				\end{array}
 </me>
 			where the <m>
-			x_i</m> are variables and the <m>a_{ij}</m> and <m>b_i</m> are constants. This system
-			can be represented by the augmented matrix <me>
+				x_i</m> are variables and the <m>a_{ij}</m> and <m>b_i</m> are constants. This
+			system can be represented by the augmented matrix <me>
 				\left( \begin{array}{c c c | c}
 				a_{11} &amp; \dots &amp; a_{1n} &amp; b_1 \\
-				 &amp; \vdots &amp;  &amp; \vdots \\
+				&amp; \vdots &amp; &amp; \vdots \\
 				a_{m1} &amp; \dots &amp; a_{mn} &amp; b_m \\
 				\end{array} \right).
 </me>
@@ -284,8 +293,10 @@
 			</statement>
 		</definition>
 		<p>
-			<term>Gauss elimination</term><idx><h>Gauss Elimination</h></idx> is a systematic procedure to simplify an augmented matrix
-			to a reduced form. In the following definition, the term <term>
+			<term>Gauss elimination</term><idx>
+				<h>Gauss Elimination</h>
+			</idx> is a systematic procedure to simplify an
+			augmented matrix to a reduced form. In the following definition, the term <term>
 				<q>leading entry</q>
 			</term> refers to the first nonzero entry of a row
 			when scanning the row from left to right. </p>
@@ -324,7 +335,7 @@
 				<h>Row Reduced Echelon Form</h>
 			</idx>
 			<statement>
-		
+
 				<p> An augmented matrix is in <term>row reduced echelon form</term> if <ol>
 						<li>
 							<p>
@@ -398,8 +409,7 @@
 		<example xml:id="example-not-echelon-matrices">
 			<title>Matrices not in Echelon Form</title>
 			<statement>
-				<p>Here are matrices which are not in echelon form. 
-					<me>\left(
+				<p>Here are matrices which are not in echelon form. <me>\left(
 						\begin{array}{cccc}
 						0 \amp 0 \amp 0\amp 0\\
 						1 \amp 2 \amp 3\amp 3\\
@@ -463,8 +473,8 @@
 						0 \amp -4 \amp -8 \amp -6\\
 						4 \amp 4 \amp 4 \amp 10\\
 						\end{array}
-						\right)</me> This is not in reduced echelon form so replace the bottom row by
-					-4 times the top row added to the bottom. This yields <me>A = \left(
+						\right)</me> This is not in reduced echelon form so replace the bottom row
+					by -4 times the top row added to the bottom. This yields <me>A = \left(
 					\begin{array}{cccc}
 						1 \amp 2 \amp 3 \amp 4\\
 						0 \amp -4 \amp -8 \amp -6\\
@@ -492,57 +502,62 @@
 		</example>
 		<p>
 			The following is the algorithm for obtaining a matrix which is in row reduced echelon
-form.
+			form.
 		</p>
 		<algorithm xml:id="alg-row-reduced-echelon">
 			<statement>
-				<p>This algorithm tells how to start with a matrix and do row operations on it in such a
-					way as to end up with a matrix in row reduced echelon form.
-					<ol>
+				<p>This algorithm tells how to start with a matrix and do row operations on it in
+					such a way as to end up with a matrix in row reduced echelon form. <ol>
 						<li>
-							<p>Find the first nonzero column from the left. This is the first pivot column. The
-								position at the top of the first pivot column is the first pivot position. Switch rows if
+							<p>Find the first nonzero column from the left. This is the first pivot
+					column. The
+								position at the top of the first pivot column is the first pivot
+					position. Switch rows if
 								necessary to place a nonzero number in the first pivot position.
 							</p>
 						</li>
 						<li>
 							<p>
-								Use row operations to zero out the entries below the first pivot position.
+								Use row operations to zero out the entries below the first pivot
+					position.
 							</p>
 						</li>
 						<li>
 							<p>
-								Ignore the row containing the most recent pivot position identified and the rows above
-it. Repeat steps 1 and 2 to the remaining sub-matrix, the rectangular array of numbers
-obtained from the original matrix by deleting the rows you just ignored. Repeat the
-process until there are no more rows to modify. The matrix will then be in echelon
-form.
+								Ignore the row containing the most recent pivot position identified
+					and the rows above
+								it. Repeat steps 1 and 2 to the remaining sub-matrix, the
+								rectangular array of numbers
+								obtained from the original matrix by deleting the rows you just
+					ignored. Repeat the
+								process until there are no more rows to modify. The matrix will then
+					be in echelon
+								form.
 							</p>
 						</li>
 						<li>
 							<p>
-								Moving from right to left, use the nonzero elements in the pivot positions to zero out
+								Moving from right to left, use the nonzero elements in the pivot
+					positions to zero out
 								the elements in the pivot columns which are above the pivots.
 							</p>
 						</li>
 						<li>
 							<p>
-								Divide each nonzero row by the value of the leading entry. The result will be a matrix
-in row reduced echelon form.
+								Divide each nonzero row by the value of the leading entry. The
+								result will be a matrix
+								in row reduced echelon form.
 							</p>
 						</li>
 					</ol>
-					This row reduction procedure applies to both augmented matrices and non augmented
-matrices. There is nothing special about the augmented column with respect to the row
-reduction procedure.
-				</p>
+					This row reduction procedure applies to both augmented matrices and non
+					augmented matrices. There is nothing special about the augmented column with
+					respect to the row reduction procedure. </p>
 			</statement>
 		</algorithm>
 		<example>
 			<statement>
-				<p>
-					Here is a matrix.
-					<me>\left(
+				<p> Here is a matrix. <me>\left(
 						\begin{array}{ccccc}
 						0 \amp 0 \amp 2 \amp 3 \amp 2\\
 						0 \amp 1 \amp 1 \amp 4 \amp 3\\
@@ -550,126 +565,111 @@ reduction procedure.
 						0 \amp 0 \amp 0 \amp 0 \amp 0\\
 						0 \amp 0 \amp 0 \amp 2 \amp 1\\
 						\end{array}
-						\right)</me> 
-						Do row reductions till you obtain a matrix in echelon form. Then complete the process by
-producing one in row reduced echelon form.
-				</p>
+						\right)</me> Do row reductions till you obtain a matrix in echelon form.
+					Then complete the process by producing one in row reduced echelon form. </p>
 			</statement>
 			<solution>
-				<p>
-					The pivot column is the second. Hence the pivot position is the one in the first row and
-second column. Switch the first two rows to obtain a nonzero entry in this pivot position.
-<me>\left(
-	\begin{array}{ccccc}
-	0 \amp 1 \amp 1 \amp 4 \amp 3\\
-	0 \amp 0 \amp 2 \amp 3 \amp 2\\
-	0 \amp 0 \amp 1 \amp 2 \amp 2\\
-	0 \amp 0 \amp 0 \amp 0 \amp 0\\
-	0 \amp 0 \amp 0 \amp 2 \amp 1\\
-	\end{array}
-	\right)</me> </p>
-	<p>
-	Step two is not necessary because all the entries below the first pivot position in the resulting
-matrix are zero. Now ignore the top row and the columns to the left of this first pivot
-position. Thus you apply the same operations to the smaller matrix
-
-<me>\left(
-	\begin{array}{ccc}
-	2 \amp 3 \amp 2\\
-	1 \amp 2 \amp 2\\
-    0 \amp 0 \amp 0\\
-	0 \amp 2 \amp 1\\
-	\end{array}
-	\right)</me> </p>
-	<p>
-	The next pivot column is the third corresponding to the first in this smaller matrix and the
-second pivot position is therefore, the one which is in the second row and third column. </p>
-<p> In this case it is not necessary to switch any rows to place a nonzero entry in this position
-because there is already a nonzero entry there. Multiply the third row of the original matrix
-by -2 and then add the second row to it. This yields
-<me>\left(
-	\begin{array}{ccccc}
-	0 \amp 1 \amp 1 \amp 4 \amp 3\\
-	0 \amp 0 \amp 2 \amp 3 \amp 2\\
-	0 \amp 0 \amp 0 \amp -1 \amp -2\\
-	0 \amp 0 \amp 0 \amp 0 \amp 0\\
-	0 \amp 0 \amp 0 \amp 2 \amp 1\\
-	\end{array}
-	\right)</me>
+				<p> The pivot column is the second. Hence the pivot position is the one in the first
+					row and second column. Switch the first two rows to obtain a nonzero entry in
+					this pivot position. <me>\left(
+						\begin{array}{ccccc}
+						0 \amp 1 \amp 1 \amp 4 \amp 3\\
+						0 \amp 0 \amp 2 \amp 3 \amp 2\\
+						0 \amp 0 \amp 1 \amp 2 \amp 2\\
+						0 \amp 0 \amp 0 \amp 0 \amp 0\\
+						0 \amp 0 \amp 0 \amp 2 \amp 1\\
+						\end{array}
+						\right)</me>
+				</p>
+				<p> Step two is not necessary because all the entries below the first pivot position
+					in the resulting matrix are zero. Now ignore the top row and the columns to the
+					left of this first pivot position. Thus you apply the same operations to the
+					smaller matrix <me>\left(
+						\begin{array}{ccc}
+						2 \amp 3 \amp 2\\
+						1 \amp 2 \amp 2\\
+						0 \amp 0 \amp 0\\
+						0 \amp 2 \amp 1\\
+						\end{array}
+						\right)</me>
 				</p>
 				<p>
-					The next matrix the steps in the algorithm are applied to is
-					<me>\left(
-						\begin{array}{cc}
+					The next pivot column is the third corresponding to the first in this smaller
+					matrix and the
+					second pivot position is therefore, the one which is in the second row and third
+					column. </p>
+				<p> In this case it is not necessary to switch any rows to place a nonzero entry in
+					this position because there is already a nonzero entry there. Multiply the third
+					row of the original matrix by -2 and then add the second row to it. This yields <me>\left(
+					\begin{array}{ccccc}
+						0 \amp 1 \amp 1 \amp 4 \amp 3\\
+						0 \amp 0 \amp 2 \amp 3 \amp 2\\
+						0 \amp 0 \amp 0 \amp -1 \amp -2\\
+						0 \amp 0 \amp 0 \amp 0 \amp 0\\
+						0 \amp 0 \amp 0 \amp 2 \amp 1\\
+						\end{array}
+						\right)</me>
+				</p>
+				<p> The next matrix the steps in the algorithm are applied to is <me>\left(
+					\begin{array}{cc}
 						-1 \amp -2\\
 						0 \amp 0\\
 						2 \amp 1\\
 						\end{array}
 						\right)</me>
 				</p>
-				<p>
-					The first pivot column is the first column in this case and no switching of rows is necessary
-because there is a nonzero entry in the first pivot position. Therefore, the algorithm yields
-for the next step
-<me>\left(
-	\begin{array}{ccccc}
-	0 \amp 1 \amp 1 \amp 4 \amp 3\\
-	0 \amp 0 \amp 2 \amp 3 \amp 2\\
-	0 \amp 0 \amp 0 \amp -1 \amp -2\\
-	0 \amp 0 \amp 0 \amp 0 \amp 0\\
-	0 \amp 0 \amp 0 \amp 0 \amp -3\\
-	\end{array}
-	\right)</me>
+				<p> The first pivot column is the first column in this case and no switching of rows
+					is necessary because there is a nonzero entry in the first pivot position.
+					Therefore, the algorithm yields for the next step <me>\left(
+						\begin{array}{ccccc}
+						0 \amp 1 \amp 1 \amp 4 \amp 3\\
+						0 \amp 0 \amp 2 \amp 3 \amp 2\\
+						0 \amp 0 \amp 0 \amp -1 \amp -2\\
+						0 \amp 0 \amp 0 \amp 0 \amp 0\\
+						0 \amp 0 \amp 0 \amp 0 \amp -3\\
+						\end{array}
+						\right)</me>
 				</p>
-				<p>
-					Now the algorithm will be applied to the matrix
-					<me>\left(
+				<p> Now the algorithm will be applied to the matrix <me>\left(
 						\begin{array}{c}
 						0\\
 						-3\\
 						\end{array}
+						\right)</me> There is only one column and it is nonzero so this single
+					column is the pivot column. Therefore, the algorithm yields the following matrix
+					for the echelon form. <me>\left(
+						\begin{array}{ccccc}
+						0 \amp 1 \amp 1 \amp 4 \amp 3\\
+						0 \amp 0 \amp 2 \amp 3 \amp 2\\
+						0 \amp 0 \amp 0 \amp -1 \amp -2\\
+						0 \amp 0 \amp 0 \amp 0 \amp -3\\
+						0 \amp 0 \amp 0 \amp 0 \amp 0\\
+						\end{array}
 						\right)</me>
-						There is only one column and it is nonzero so this single column is the pivot column.
-Therefore, the algorithm yields the following matrix for the echelon form.
-<me>\left(
-	\begin{array}{ccccc}
-	0 \amp 1 \amp 1 \amp 4 \amp 3\\
-	0 \amp 0 \amp 2 \amp 3 \amp 2\\
-	0 \amp 0 \amp 0 \amp -1 \amp -2\\
-	0 \amp 0 \amp 0 \amp 0 \amp -3\\
-	0 \amp 0 \amp 0 \amp 0 \amp 0\\
-	\end{array}
-	\right)</me>
 				</p>
-				<p>
-					To complete placing the matrix in reduced echelon form, multiply the third row by 3 and
-add -2 times the fourth row to it. This yields
-<me>\left(
-	\begin{array}{ccccc}
-	0 \amp 1 \amp 1 \amp 4 \amp 3\\
-	0 \amp 0 \amp 2 \amp 3 \amp 2\\
-	0 \amp 0 \amp 0 \amp -3 \amp 0\\
-	0 \amp 0 \amp 0 \amp 0 \amp -3\\
-	0 \amp 0 \amp 0 \amp 0 \amp 0\\
-	\end{array}
-	\right)</me>
+				<p> To complete placing the matrix in reduced echelon form, multiply the third row
+					by 3 and add -2 times the fourth row to it. This yields <me>\left(
+					\begin{array}{ccccc}
+						0 \amp 1 \amp 1 \amp 4 \amp 3\\
+						0 \amp 0 \amp 2 \amp 3 \amp 2\\
+						0 \amp 0 \amp 0 \amp -3 \amp 0\\
+						0 \amp 0 \amp 0 \amp 0 \amp -3\\
+						0 \amp 0 \amp 0 \amp 0 \amp 0\\
+						\end{array}
+						\right)</me>
 				</p>
-				<p>
-					Next multiply the second row by 3 and take 2 times the fourth row and add to it. Then add
-the fourth row to the first.
-<me>\left(
-	\begin{array}{ccccc}
-	0 \amp 1 \amp 1 \amp 4 \amp 0\\
-	0 \amp 0 \amp 6 \amp 9 \amp 0\\
-	0 \amp 0 \amp 0 \amp -3 \amp 0\\
-	0 \amp 0 \amp 0 \amp 0 \amp -3\\
-	0 \amp 0 \amp 0 \amp 0 \amp 0\\
-	\end{array}
-	\right)</me>
+				<p> Next multiply the second row by 3 and take 2 times the fourth row and add to it.
+					Then add the fourth row to the first. <me>\left(
+						\begin{array}{ccccc}
+						0 \amp 1 \amp 1 \amp 4 \amp 0\\
+						0 \amp 0 \amp 6 \amp 9 \amp 0\\
+						0 \amp 0 \amp 0 \amp -3 \amp 0\\
+						0 \amp 0 \amp 0 \amp 0 \amp -3\\
+						0 \amp 0 \amp 0 \amp 0 \amp 0\\
+						\end{array}
+						\right)</me>
 				</p>
-				<p>
-					Next work on the fourth column in the same way.
-					<me>\left(
+				<p> Next work on the fourth column in the same way. <me>\left(
 						\begin{array}{ccccc}
 						0 \amp 3 \amp 3 \amp 0 \amp 0\\
 						0 \amp 0 \amp 6 \amp 0 \amp 0\\
@@ -679,10 +679,8 @@ the fourth row to the first.
 						\end{array}
 						\right)</me>
 				</p>
-				<p>
-					Take <m>-1/2</m> times the second row and add to the first.
-					<me>\left(
-						\begin{array}{ccccc}
+				<p> Take <m>-1/2</m> times the second row and add to the first. <me>\left(
+					\begin{array}{ccccc}
 						0 \amp 3 \amp 0 \amp 0 \amp 0\\
 						0 \amp 0 \amp 6 \amp 0 \amp 0\\
 						0 \amp 0 \amp 0 \amp -3 \amp 0\\
@@ -691,10 +689,8 @@ the fourth row to the first.
 						\end{array}
 						\right)</me>
 				</p>
-				<p>
-					Finally, divide by the value of the leading entries in the nonzero rows.
-					<me>\left(
-						\begin{array}{ccccc}
+				<p> Finally, divide by the value of the leading entries in the nonzero rows. <me>\left(
+					\begin{array}{ccccc}
 						0 \amp 1 \amp 0 \amp 0 \amp 0\\
 						0 \amp 0 \amp 1 \amp 0 \amp 0\\
 						0 \amp 0 \amp 0 \amp 1 \amp 0\\
@@ -705,28 +701,25 @@ the fourth row to the first.
 				</p>
 			</solution>
 		</example>
-		<p>
-			The above algorithm is the way a computer would obtain a reduced echelon form for
-a given matrix. It is not necessary for you to pretend you are a computer but if you like
-to do so, the algorithm described above will work. The main idea is to do row operations
-in such a way as to end up with a matrix in echelon form or row reduced echelon form
-because when this has been done, the resulting augmented matrix will allow you to describe
-the solutions to the linear system of equations in a meaningful way. When you do row
-operations until you obtain row reduced echelon form, the process is called the <term>Gauss
-Jordan method</term><idx><h>Gauss Jordan Method</h></idx>. Otherwise, it is called <term>Gauss elimination</term>.
-		</p>
+		<p> The above algorithm is the way a computer would obtain a reduced echelon form for a
+			given matrix. It is not necessary for you to pretend you are a computer but if you like
+			to do so, the algorithm described above will work. The main idea is to do row operations
+			in such a way as to end up with a matrix in echelon form or row reduced echelon form
+			because when this has been done, the resulting augmented matrix will allow you to
+			describe the solutions to the linear system of equations in a meaningful way. When you
+			do row operations until you obtain row reduced echelon form, the process is called the <term>Gauss
+			Jordan method</term><idx>
+				<h>Gauss Jordan Method</h>
+			</idx>. Otherwise, it is called <term>Gauss
+			elimination</term>. </p>
 
 		<example>
 			<statement>
-				<p>
-					Give the complete solution to the system of equations, <m>5x+10y-7z = -2</m>,
-<m>2x + 4y - 3z = -1</m>, and <m>3x + 6y + 5z = 9</m>.
-				</p>
+				<p> Give the complete solution to the system of equations, <m>5x+10y-7z = -2</m>, <m>2x
+					+ 4y - 3z = -1</m>, and <m>3x + 6y + 5z = 9</m>. </p>
 			</statement>
 			<solution>
-				<p>
-					The augmented matrix for this system is
-					<me>\left(
+				<p> The augmented matrix for this system is <me>\left(
 						\begin{array}{cccc}
 						2 \amp 4 \amp -3 \amp -1\\
 						5 \amp 10 \amp -7 \amp -2\\
@@ -734,21 +727,16 @@ Jordan method</term><idx><h>Gauss Jordan Method</h></idx>. Otherwise, it is call
 						\end{array}
 						\right)</me>
 				</p>
-				<p>
-					Multiply the second row by 2, the first row by 5, and then take (-1) times the first row and
-add to the second. Then multiply the first row by 1/5. This yields
-
-<me>\left(
-	\begin{array}{cccc}
-	2 \amp 4 \amp -3 \amp -1\\
-	0 \amp 0 \amp 1 \amp 1\\
-	3 \amp 6 \amp 5 \amp 9\\
-	\end{array}
-	\right)</me>
+				<p> Multiply the second row by 2, the first row by 5, and then take (-1) times the
+					first row and add to the second. Then multiply the first row by 1/5. This yields <me>\left(
+					\begin{array}{cccc}
+						2 \amp 4 \amp -3 \amp -1\\
+						0 \amp 0 \amp 1 \amp 1\\
+						3 \amp 6 \amp 5 \amp 9\\
+						\end{array}
+						\right)</me>
 				</p>
-				<p>
-					Switch the last two rows to get
-					<me>\left(
+				<p> Switch the last two rows to get <me>\left(
 						\begin{array}{cccc}
 						2 \amp 4 \amp -3 \amp -1\\
 						3 \amp 6 \amp 5 \amp 9\\
@@ -756,180 +744,703 @@ add to the second. Then multiply the first row by 1/5. This yields
 						\end{array}
 						\right)</me>
 				</p>
-				<p>
-					then take -3 times the top added to 2 times the middle to get
-					<me>\left(
-						\begin{array}{cccc}
+				<p> then take -3 times the top added to 2 times the middle to get <me>\left(
+					\begin{array}{cccc}
 						-6 \amp -12 \amp 9 \amp 3\\
 						0 \amp 0 \amp 19 \amp 21\\
 						0 \amp 0 \amp 1 \amp 1\\
 						\end{array}
-						\right)</me>.
-				</p>
-				<p>
-					Multiply bottom by 19 and take the second row times -1 added to the bottom. This gives
-					<me>\left(
+						\right)</me>. </p>
+				<p> Multiply bottom by 19 and take the second row times -1 added to the bottom. This
+					gives <me>\left(
 						\begin{array}{cccc}
 						-6 \amp -12 \amp 9 \amp 3\\
 						0 \amp 0 \amp 19 \amp 21\\
 						0 \amp 0 \amp 0 \amp -2\\
 						\end{array}
-						\right)</me> a row of zeros with -2 at the right end, representing the equation 0x + 0y + 0z = -2 which
-						has no solution so there is no solution to this system of equations. When this happens, the
-						system is called <term>inconsistent</term>. In this case it is very easy to describe the solution set. The
-						system has no solution.
-				</p>
+						\right)</me> a row of zeros with -2 at the right end, representing the
+					equation 0x + 0y + 0z = -2 which has no solution so there is no solution to this
+					system of equations. When this happens, the system is called <term>inconsistent</term>.
+					In this case it is very easy to describe the solution set. The system has no
+					solution. </p>
 			</solution>
 		</example>
 		<p>
 			Here is another example based on the use of row operations.
 		</p>
-		<example>
+		<example xml:id="ex-infinite-sols">
 			<statement>
-				<p>
-					Give the complete solution to the system of equations, <m>3x - y - 5z = 9</m>,
-<m>y - 10z = 0</m>, and <m>-2x + y = -6</m>.
+				<p> Give the complete solution to the system of equations, <m>3x - y - 5z = 9</m>, <m>y
+					- 10z = 0</m>, and <m>-2x + y = -6</m>. </p>
+			</statement>
+			<solution>
+				<p> The augmented matrix of this system is <me>\left(
+						\begin{array}{cccc}
+						3 \amp -1 \amp -5 \amp 9\\
+						0 \amp 1 \amp -10 \amp 0\\
+						-2 \amp 1 \amp 0 \amp -6\\
+						\end{array}
+						\right)</me>
+				</p>
+				<p> Replace the last row with 2 times the top row added to 3 times the bottom row
+					combining two row operations. This gives <me>\left(
+						\begin{array}{cccc}
+						3 \amp -1 \amp -5 \amp 9\\
+						0 \amp 1 \amp -10 \amp 0\\
+						0 \amp 1 \amp -10 \amp 0\\
+						\end{array}
+						\right)</me> The entry 3 in this sequence of row operations is called the <term>
+					pivot</term>. It is used to create zeros in the other places of the column. </p>
+				<p> Next take -1 times the middle row and add to the bottom. Here the 1 in the
+					second row is the pivot. <me>\left(
+						\begin{array}{cccc}
+						3 \amp -1 \amp -5 \amp 9\\
+						0 \amp 1 \amp -10 \amp 0\\
+						0 \amp 0 \amp 0 \amp 0\\
+						\end{array}
+						\right)</me> This is in reduced echelon form. The equations corresponding to
+					this reduced echelon form are <m>y = 10z</m> and <m>x = 3 + 5z</m>. Apparently <m>
+					z</m> can equal any number. Lets call this number <m>t</m>. <aside>
+						<p> In this context <m>t</m> is called a <term>parameter</term>. </p>
+					</aside>
+					Therefore, the solution set of this system is <m>x = 3 + 5t</m>, <m>y = 10t</m>,
+					and <m>z = t</m> where <m>t</m> is completely arbitrary. The system has an
+					infinite set of solutions which are given in the above simple way. This is what
+					it is all about, finding the solutions to the system. </p>
+			</solution>
+		</example>
+		<p> There is some terminology connected to this which is useful. Recall how each column
+			corresponds to a variable in the original system of equations. The variables
+			corresponding to a pivot column are called <term>basic variables</term>. The other
+			variables are called <term>free variables</term>. In <xref ref="ex-infinite-sols" />
+			there was one free variable, <m>z</m>, and two basic variables, <m>x</m> and <m>y</m>.
+			In de- scribing the solution to the system of equations, the free variables are assigned
+			a parameter. In <xref ref="ex-infinite-sols" /> this parameter was <m>t</m>. Sometimes
+			there are many free variables and in these cases, you need to use many parameters. Here
+			is another example. </p>
+
+		<example xml:id="ex-two-parameters">
+			<statement>
+				<p> Find the solution to the system <me>
+						x + 2y - z + w = 3
+					</me>
+					<me>
+						x + y - z + w = 1
+					</me>
+					<me>
+						x + 3y - z + w = 5
+					</me>
 				</p>
 			</statement>
 			<solution>
-				<p>
-					The augmented matrix of this system is
-					<me>\left(
-						\begin{array}{cccc}
-						3 \amp -1 \amp -5 \amp 9\\
-						0 \amp 0 \amp 19 \amp 21\\
-						0 \amp 0 \amp 0 \amp -2\\
+				<p> The augmented matrix is <me>\left(
+						\begin{array}{ccccc}
+						1 \amp 2 \amp -1 \amp 1 \amp 3\\
+						1 \amp 1 \amp -1 \amp 1 \amp 1\\
+						1 \amp 3 \amp -1 \amp 1 \amp 5\\
 						\end{array}
-						\right)</me> 
+						\right)</me>
 				</p>
-				<!-- Stopped here in Example on p 66 -->
+				<p> Take -1 times the first row and add to the second. Then take -1 times the first
+					row and add to the third. This yields <me>\left(
+						\begin{array}{ccccc}
+						1 \amp 2 \amp -1 \amp 1 \amp 3\\
+						0 \amp -1 \amp 0 \amp 0 \amp -2\\
+						0 \amp 1 \amp 0 \amp 0 \amp 2\\
+						\end{array}
+						\right)</me>
+				</p>
+				<p> Now add the second row to the bottom row <me>\left(
+						\begin{array}{ccccc}
+						1 \amp 2 \amp -1 \amp 1 \amp 3\\
+						0 \amp -1 \amp 0 \amp 0 \amp -2\\
+						0 \amp 0 \amp 0 \amp 0 \amp 0\\
+						\end{array}
+						\right)</me> This matrix is in echelon form and you see the basic variables
+					are <m>x</m> and <m>y</m> while the free variables are <m>z</m> and <m>w</m>.
+					Assign <m>s</m> to <m>z</m> and <m>t</m> to <m>w</m>. Then the second row yields
+					the equation, <m>y = 2</m> while the top equation yields the equation, <m>x + 2y
+					- s + t = 3</m> and so since <m>y = 2</m>, this gives <m>x + 4 - s + t = 3</m>
+					showing that <m>x = -1 + s - t</m>, <m>y = 2</m>, <m>z = s</m>, and <m>w = t</m>.
+					One can write this in the form <me>\left(
+						\begin{array}{c}
+						x\\
+						y\\
+						z\\
+						w\\
+						\end{array}
+						\right) = \left(
+						\begin{array}{c}
+						-1 + s - t\\
+						2\\
+						s\\
+						t\\
+						\end{array}
+						\right) </me> This is another example of a system which has an infinite
+					solution set but this time the solution set depends on two parameters, not one. </p>
+				<p> Most people find it less confusing in the case of an infinite solution set to
+					first place the augmented matrix in row reduced echelon form rather than just
+					echelon form before seeking to write down the description of the solution. In
+					the above, this means we don't stop with the echelon form above. Instead we
+					first place it in reduced echelon form as follows. <me>\left(
+					\begin{array}{ccccc}
+						1 \amp 0 \amp -1 \amp 1 \amp -1\\
+						0 \amp 1 \amp 0 \amp 0 \amp 2\\
+						0 \amp 0 \amp 0 \amp 0 \amp 0\\
+						\end{array}
+						\right)</me> Then the solution is <m>y = 2</m> from the second row and <m>x
+						= -1 + z - w</m> from the first. Thus letting <m>z = s</m> and <m>w = t</m>,
+					the solution as is given previously. </p>
 			</solution>
 		</example>
+		<p> The number of free variables is always equal to the number of <term>different</term>
+			parameters used to describe the solution. If there are no free variables, then either
+			there is no solution as in the case where row operations yield an echelon form like <me>\left(
+			\begin{array}{ccc}
+				1 \amp 2 \amp 3 \\
+				0 \amp 4 \amp -2\\
+				0 \amp 0 \amp 1\\
+				\end{array}
+				\right)</me> or there is a unique solution as in the case where row operations yield
+			an echelon form like <me>\left(
+				\begin{array}{cccc}
+				1 \amp 2 \amp 2 \amp 3 \\
+				0 \amp 4 \amp 3 \amp -2\\
+				0 \amp 0 \amp 4 \amp 1\\
+				\end{array}
+				\right).</me> Also, sometimes there are free variables and no solution as in the
+			following: <me>\left(
+				\begin{array}{cccc}
+				1 \amp 2 \amp 2 \amp 3 \\
+				0 \amp 4 \amp 3 \amp -2\\
+				0 \amp 0 \amp 0 \amp 1\\
+				\end{array}
+				\right).</me> There are a lot of cases to consider but it is not necessary to make a
+			major production of this. Do row operations till you obtain a matrix in echelon form or
+			reduced echelon form and determine whether there is a solution. If there is, see if
+			there are free variables. In this case, there will be infinitely many solutions. Find
+			them by assigning different parameters to the free variables and obtain the solution. If
+			there are no free variables, then there will be a unique solution which is easily
+			determined once the augmented matrix is in echelon or row reduced echelon form. In every
+			case, the process yields a straightforward way to describe the solutions to the linear
+			system. As indicated above, you are probably less likely to become confused if you place
+			the augmented matrix in row reduced echelon form rather than just echelon form. </p>
+		<p>
+			In summary,
+		</p>
+		<definition xml:id="def-system-of-linear-eqs">
+			<title>System of Linear Equations</title>
+			<idx>
+				<h>System of Linear Equations</h>
+			</idx>
+			<statement>
+				<p> A <term>system of linear equations</term> is a list of equations, <me>
+					\begin{array}{c c c c c c}
+						a_{11}x_1 + a_{12}x_2 + &amp;\dots &amp; + a_{1n}x_n &amp; = b_1 \\
+						a_{21}x_1 + a_{22}x_2 + &amp;\dots &amp; + a_{2n}x_n &amp; = b_2 \\
+					&amp;\vdots &amp; &amp; \vdots \\
+						a_{m1}x_1 + a_{m2}x_2 +&amp;\dots &amp; + a_{mn}X_n &amp; = b_m \\
+					\end{array}
+					</me>
+					where <m>a_{ij} </m> are numbers, and <m>b_j</m> is a number. The above is a
+					system of <m>m</m> equations in the <m>n</m> variables, <m>x_1 , x_2, \dots, x_n</m>
+					. Nothing is said about the relative size of <m>m</m> and <m>n</m>. Written more
+					simply in terms of summation notation, the above can be written in the form <me>
+					\displaystylesum_{j=1}^n a_{ij}x_j = f_i, i = 1,2,3,\dots,m
+					</me> It
+					is desired to find<m> (x_1 ,\dots , x_n )</m> solving each of the equations
+					listed. </p>
+			</statement>
+		</definition>
+
+		<p>
+			As illustrated above, such a system of linear equations may have a unique solution, no
+			solution, or infinitely many solutions and these are the only three cases which can
+			occur for
+			any linear system. Furthermore, you do exactly the same things to solve any linear
+			system.
+			You write the augmented matrix and do row operations until you get a simpler system in
+			which it is possible to see the solution, usually obtaining a matrix in echelon or
+			reduced
+			echelon form. All is based on the observation that the row operations do not change the
+			solution set. You can have more equations than variables, fewer equations than
+			variables,
+			etc. It doesn't matter. You always set up the augmented matrix and go to work on it.
+		</p>
+		<definition xml:id="def-consistent-lin-eq">
+			<statement>
+				<p> A system of linear equations is called <term>consistent</term> if there exists a
+					solution. It is called <term>inconsistent</term> if there is no solution. </p>
+			</statement>
+		</definition>
+
+		<p>
+			These are reasonable words to describe the situations of having or not having a
+			solution.
+			If you think of each equation as a condition which must be satisfied by the variables,
+			con-
+			sistent would mean there is some choice of variables which can satisfy all the
+			conditions.
+			Inconsistent would mean there is no choice of the variables which can satisfy each of
+			the
+			conditions.
+		</p>
 	</subsection>
 
 	<exercises xml:id="exercises-11-1">
 		<title>Exercises</title>
 		<exercise number="1">
 			<statement>
-				<p> Determine the properties that the following operations have on the positive
-					integers. <ol marker="(a)">
-						<li>
-							<p> addition</p>
-						</li>
-						<li>
-							<p> multiplication</p>
-						</li>
-						<li>
-							<p>
-								<m>M</m> defined by <m>a M b = \textrm{ larger} \textrm{ of } a
-					\textrm{ and } b</m></p>
-						</li>
-						<li>
-							<p>
-								<m>m</m> defined by <m>a m b = \textrm{ smaller} \textrm{ of } a
-					\textrm{ and } b</m></p>
-						</li>
-						<li>
-							<p>
-								<m>@</m> defined by <m>a @ b = a^b</m></p>
-						</li>
-					</ol>
-				</p>
+				<p>Find the point <m>(x, y )</m> which lies on both lines, <m>x + 3y = 1</m> and <m>4x
+					- y = 3</m>. </p>
 			</statement>
 			<answer>
-				<p>
-					<ol marker="(a)">
-						<li>
-							<p>Commutative, and associative. Notice that zero is the identity for
-								addition, but it is not a positive integer.</p>
-						</li>
-						<li>
-							<p> Commutative, associative, and has an identity (1)</p>
-						</li>
-						<li>
-							<p> Commutative, associative, has an identity (1), and is idempotent</p>
-						</li>
-						<li>
-							<p> Commutative, associative, and idempotent</p>
-						</li>
-						<li>
-							<p> None. Notice that <m>2 @ (3 @ 3) = 512</m>, while <m>(2 @ 3) @ 3 =
-									64</m>; and <m>a @ 1 = a</m>, while <m>1 @ a = 1</m>.</p>
-						</li>
-					</ol>
-				</p>
+				<p> Set up augmented matrix: <me>\left(
+						\begin{array}{ccc}
+						1 \amp 3 \amp 1\\
+						4 \amp -1 \amp 3\\
+						\end{array}
+						\right).</me> Add <m>-4 *</m> the first line to the second. <me>\left(
+					\begin{array}{ccc}
+						1 \amp 3 \amp 1\\
+						0 \amp -13 \amp -1\\
+						\end{array}
+						\right).</me> Divide line two by <m>-13</m>
+						<me>\left(
+						\begin{array}{ccc}
+						1 \amp 3 \amp 1\\
+						0 \amp 1 \amp 1/13\\
+						\end{array}
+						\right).</me> So <m>y = 1/13</m>. Backsubstituting: <m>x + 3(1/13) = 1</m>,
+					so <m>x = 10/13</m>. Therefore <m>(x, y) </m> is the point <m>(10/13,1/13)</m>. </p>
 			</answer>
 		</exercise>
 		<exercise number="2">
 			<statement>
-				<p>Which pairs of operations in Exercise 1 are distributive over one another?</p>
-			</statement>
-		</exercise>
-		<exercise number="3">
-			<statement>
-				<p>Let <m>\bullet </m> be an operation on a set <m>S</m> and <m>A, B \subseteq S</m>.
-					Prove that if <m>A</m> and <m>B</m> are both closed under <m>\bullet </m>, then <m>A\cap
-					B</m> is also closed under <m>\bullet </m>, but <m>A \cup B</m> need not be.</p>
+				<p>Solve Exercise 1 graphically. That is, graph each line and see where they
+					intersect.</p>
 			</statement>
 			<answer>
 				<p>
-					<me>
-						\begin{split}
-						a, b \in A \cap B &amp; \Rightarrow a, b \in A \textrm{ by the definition of
-					intersection}\\
-						&amp; \Rightarrow a\bullet b \in A\textrm{ by the closure of } A \textrm{
-					with respect to } \bullet
-						\end{split}
-</me>
-					Similarly, <m>a, b \in A \cap B \Rightarrow a\bullet b \in B</m>. Therefore, <m>a
-					\bullet b \in A \cap B</m>. The set of positive integers is closed under
-					addition, and so is the set of negative integers, but <m>1 + -1 - 0</m>.
-					Therefore, their union, the nonzero integers, is not closed under addition.</p>
+					<figure>
+						<caption>Graph of Exercise 11.1.1</caption>
+						<image xml:id="fig-exercise-11-1-2_sol" width="100%">
+							<description>Graph of lines described in Exercise 11.1.1</description>
+							<latex-image>
+								<xi:include parse="text" href="./tikz-fig-exercise-11.1.2_soln.tex" />
+							</latex-image>
+						</image>
+					</figure>
+				</p>
 			</answer>
+		</exercise>
+		<exercise number="3">
+			<statement>
+				<p> Find the point of intersection of the two lines <m>3x + y = 3</m> and <m>x + 2y
+						= 1</m>.</p>
+			</statement>
 		</exercise>
 		<exercise number="4">
 			<statement>
-				<p> How can you pick out the identity of an operation from its table?</p>
+				<p> Solve Exercise 3 graphically. That is, graph each line and see where they
+					intersect.</p>
 			</statement>
 		</exercise>
 		<exercise number="5">
 			<statement>
-				<p> Define <m>a \bullet b</m> by <m>\lvert a - b \rvert</m>, the absolute value of <m>a
-					- b</m>. Which properties does <m>\bullet </m> have on the set of natural
-					numbers, <m>\mathbb{N}</m>?</p>
+				<p> Do the three lines, <m>x + 2y = 1</m>, <m>2x - y = 1</m>, and <m>4x + 3y = 3</m>
+					have a common point of intersection? If so, find the point and if not, tell why
+					they don’t have such a common point of intersection</p>
 			</statement>
 			<answer>
-				<p>
-					<ol marker="(a)">
+				<p>Set up augmented matrix: <me>\left(
+						\begin{array}{ccc}
+						1 \amp 2 \amp 1\\
+						2 \amp -1 \amp 1\\
+						4 \amp 3 \amp 3\\
+						\end{array}
+						\right).</me> Add <m>-4 *</m> the first line to the third. <me>\left(
+					\begin{array}{ccc}
+						1 \amp 2 \amp 1\\
+						2 \amp -1 \amp 1\\
+						0 \amp -5 \amp -1\\
+						\end{array}
+						\right).</me> Add <m>-2 *</m> the first line to the second. <me>\left(
+					\begin{array}{ccc}
+						1 \amp 2 \amp 1\\
+						0 \amp -5 \amp -1\\
+						0 \amp -5 \amp -1\\
+						\end{array}
+						\right).</me> Add <m>-1 *</m> the second line to the third. <me>\left(
+					\begin{array}{ccc}
+						1 \amp 2 \amp 1\\
+						0 \amp -5 \amp -1\\
+						0 \amp 0 \amp 0\\
+						\end{array}
+						\right).</me> Divide line two by <m>-5</m>
+						<me>\left(
+						\begin{array}{ccc}
+						1 \amp 2 \amp 1\\
+						0 \amp 1 \amp 1/5\\
+						0 \amp 0 \amp 0\\
+						\end{array}
+						\right).</me> So <m>y = 1/5</m>. Backsubstituting to line one: <m>x + 2(1/5)
+					= 1</m>, so <m>x = 3/5</m>. The common intersecting point is <m>(3/5, 1/5)</m>. </p>
+			</answer>
+		</exercise>
+		<exercise number="6">
+			<statement>
+				<p> Do the three planes, <m>x + y -3z = 2</m>, <m>2x + y + z = 1</m>, and <m>3x + 2y
+					- 2z = 0</m> have a common point of intersection? If so, find one and if not,
+					tell why there is no such point.</p>
+			</statement>
+		</exercise>
+		<exercise number="7">
+			<statement>
+				<p> You have a system of <m>k</m> equations in two variables, <m>k \geq 2</m>.
+					Explain the geometric significance of <ol>
 						<li>
 							<p>
-								<m>\bullet </m> is commutative since <m>\left| a-b\right| =\left|
-								b-a\right|</m> for all <m>a, b \in \mathbb{N}</m></p>
+								No solution.
+							</p>
 						</li>
 						<li>
 							<p>
-								<m>\bullet </m> is not associative. Take <m>a = 1</m>, <m>b = 2</m>,
-								and <m>c = 3</m>, then <m>(a \bullet b) \bullet c =\left| \left|
-								1-2\right| -3\right| =2</m> , and <m>a \bullet (b \bullet c) =
-									\left| 1-\left| 2-3\right| \right| = 0</m>.</p>
-						</li>
-						<li>
-							<p> Zero is the identity for <m>\bullet </m> on <m>\mathbb{N}</m>, since <m>a\bullet
-								0=\left| a - 0\right| = a = \left| 0-a\right| = 0 \bullet a.</m></p>
-						</li>
-						<li>
-							<p> Each element of <m>\mathbb{N}</m> inverts itself since <m>a \bullet
-								a=\left| a-a\right| = 0</m>.</p>
+								A unique solution.
+							</p>
 						</li>
 						<li>
 							<p>
-								<m>\bullet </m> is not idempotent, since, for <m>a\neq 0</m>, <m>a
-								\bullet a =0 \neq a</m>.</p>
+								An infinite number of solutions.
+							</p>
 						</li>
 					</ol>
 				</p>
-			</answer>
+			</statement>
+			<solution>
+				<p>
+					<ol>
+						<li>
+							<p>
+								No solution. The lines are parallel.
+							</p>
+						</li>
+						<li>
+							<p>
+								A unique solution. The lines must intersect.
+							</p>
+						</li>
+						<li>
+							<p>
+								An infinite number of solutions. The lines must be the same line.
+							</p>
+						</li>
+					</ol>
+				</p>
+			</solution>
 		</exercise>
+		<exercise number="8">
+			<statement>
+				<p> If a system of equations has more equations than variables, can it have a
+					solution? If
+					so, give an example and if not, tell why not.</p>
+			</statement>
+		</exercise>
+		<exercise number="9">
+		<statement>
+			<p> Find <m>h</m> such that <me>\left(
+					\begin{array}{cc|c}
+					2 \amp h \amp 4\\
+					3 \amp 6 \amp 7\\
 
+					\end{array}
+					\right).</me> is the augmented matrix of an inconsistent matrix. </p>
+		</statement>
+		<solution>
+			<p> What we want is for one of the rows to be all zeros except for the last term. If we
+				multiply the top row by <m>-3/2</m> and add that to the bottom row, we get <me>\left(
+				\begin{array}{cc|c}
+					2 \amp h \amp 4\\
+					0 \amp 6 +(-3/2 * h) \amp -1\\
+
+					\end{array}
+					\right).</me> We want to make an <m>h</m> such that the <m>6 +(-3/2 * h) = 0</m>.
+				Solving for <m>h</m>, we get 4. <me>\left(
+					\begin{array}{cc|c}
+					2 \amp 4 \amp 4\\
+					0 \amp 6 +(-3/2 * 4) \amp -1\\
+
+					\end{array}
+					\right) </me> which simplifies to <me>\left(
+					\begin{array}{cc|c}
+					2 \amp 4 \amp 4\\
+					0 \amp 0 \amp -1\\
+
+					\end{array}
+					\right)</me>, which is inconsistent. </p>
+		</solution>
+
+		</exercise>
+		<exercise number="10">
+			<statement>
+				<p> Find <m>h</m> such that <me>\left(
+						\begin{array}{cc|c}
+						2 \amp h \amp 4\\
+						3 \amp 6 \amp 7\\
+
+						\end{array}
+						\right).</me> is the augmented matrix of a consistent matrix. </p>
+			</statement>
+		</exercise>
+		<exercise number="11">
+			<statement>
+				<p> Determine if the system is consistent. If so, is the solution unique? <me>
+						x + 2y + z - w = 2
+					</me>
+			<me>
+						x - y + z + w = 1
+					</me>
+			<me>
+						2x + y -z = 1
+					</me>
+			<me>
+						4x + 2y + z = 5
+					</me>
+				</p>
+			</statement>
+			<solution>
+				<p> We have the corresponding matrix: <me>\left(
+						\begin{array}{cccc|c}
+						1 \amp 2 \amp 1 \amp -1 \amp 2 \\
+						1 \amp -1 \amp 1 \amp 1 \amp 1\\
+						2 \amp 1 \amp -1 \amp 0 \amp 1\\
+						4 \amp 2 \amp 1 \amp 0 \amp 5\\
+						\end{array}
+						\right).</me>
+
+				</p>
+				<p> Add <m>-4 * </m> row 1 to row 4: <me>\left(
+						\begin{array}{ccccc}
+						1 \amp 2 \amp 1 \amp -1 \amp 2 \\
+						1 \amp -1 \amp 1 \amp 1 \amp 1\\
+						2 \amp 1 \amp -1 \amp 0 \amp 1\\
+						0 \amp -6 \amp -3 \amp 4 \amp -3\\
+						\end{array}
+						\right).</me>
+
+				</p>
+				<p> Add <m>-2 * </m> row 1 to row 3: <me>\left(
+						\begin{array}{ccccc}
+						1 \amp 2 \amp 1 \amp -1 \amp 2 \\
+						1 \amp -1 \amp 1 \amp 1 \amp 1\\
+						0 \amp -3 \amp -3 \amp 2 \amp -3\\
+						0 \amp -6 \amp -3 \amp 4 \amp -3\\
+						\end{array}
+						\right).</me>
+
+				</p>
+				<p> Add <m>-1 * </m> row 1 to row 2: <me>\left(
+						\begin{array}{ccccc}
+						1 \amp 2 \amp 1 \amp -1 \amp 2 \\
+						0 \amp -3 \amp 0 \amp 2 \amp -1\\
+						0 \amp -3 \amp -3 \amp 2 \amp -3\\
+						0 \amp -6 \amp -3 \amp 4 \amp -3\\
+						\end{array}
+						\right).</me>
+
+				</p>
+				<p> Add <m>-1 * </m> row 2 to row 3: <me>\left(
+						\begin{array}{ccccc}
+						1 \amp 2 \amp 1 \amp -1 \amp 2 \\
+						0 \amp -3 \amp 0 \amp 2 \amp -1\\
+						0 \amp 0 \amp -3 \amp 0 \amp -2\\
+						0 \amp -6 \amp -3 \amp 4 \amp -3\\
+						\end{array}
+						\right).</me>
+
+				</p>
+				<p> Add <m>-2 * </m> row 2 to row 4: <me>\left(
+						\begin{array}{ccccc}
+						1 \amp 2 \amp 1 \amp -1 \amp 2 \\
+						0 \amp -3 \amp 0 \amp 2 \amp -1\\
+						0 \amp 0 \amp -3 \amp 0 \amp -2\\
+						0 \amp 0 \amp -3 \amp 0 \amp 1\\
+						\end{array}
+						\right).</me>
+
+				</p>
+				<p> Therefore we see that we have a problem because rows 3 and 4 are saying <m>-3z=
+					-2</m> and <m>-3z = 1</m>. Or we could keep going with the row operations and
+					add <m>-1 * </m>row 3 to row 4: Add <m>-2 * </m> row 2 to row 4: <me>\left(
+					\begin{array}{ccccc}
+						1 \amp 2 \amp 1 \amp -1 \amp 2 \\
+						0 \amp -3 \amp 0 \amp 2 \amp -1\\
+						0 \amp 0 \amp -3 \amp 0 \amp -2\\
+						0 \amp 0 \amp 0 \amp 0 \amp 3\\
+						\end{array}
+						\right)</me> which then definitively shows that the system is not
+					consistent. </p>
+			</solution>
+
+		</exercise>
+		<exercise number="12">
+			<statement>
+				<p> Determine if the system is consistent. If so, is the solution unique? <me>
+						x + 2y + z - w = 2
+					</me>
+			<me>
+						x - y + z + w = 0
+					</me>
+			<me>
+						2x + y -z = 1
+					</me>
+			<me>
+						4x + 2y + z = 3
+					</me>
+				</p>
+			</statement>
+		</exercise>
+		<exercise number="13">
+			<statement>
+				<p> Find the general solution of the system whose augmented matrix is <me>\left(
+					\begin{array}{ccc|c}
+						1 \amp 2 \amp 0 \amp 2 \\
+						1 \amp 3 \amp 4 \amp 2 \\
+						1 \amp 0 \amp 2 \amp 1 \\
+						\end{array}
+						\right).</me>
+				</p>
+			</statement>
+			<solution>
+				<p> Adding <m>-1 * </m> row 1 to row 3: <me>\left(
+						\begin{array}{ccc|c}
+						1 \amp 2 \amp 0 \amp 2 \\
+						1 \amp 3 \amp 4 \amp 2 \\
+						0 \amp -2 \amp 2 \amp -1 \\
+						\end{array}
+						\right).</me>
+
+				</p>
+				<p> Adding <m>-1 * </m> row 1 to row 2: <me>\left(
+						\begin{array}{ccc|c}
+						1 \amp 2 \amp 0 \amp 2 \\
+						0 \amp 1 \amp 4 \amp 0 \\
+						0 \amp -2 \amp 2 \amp -1 \\
+						\end{array}
+						\right).</me>
+
+				</p>
+				<p> Adding <m>2 * </m> row 2 to row 3: <me>\left(
+						\begin{array}{ccc|c}
+						1 \amp 2 \amp 0 \amp 2 \\
+						0 \amp 1 \amp 4 \amp 0 \\
+						0 \amp 0 \amp 10 \amp -1 \\
+						\end{array}
+						\right).</me>
+
+				</p>
+				<p> Multiplying row 3 by <m>1/10</m>: <me>\left(
+						\begin{array}{ccc|c}
+						1 \amp 2 \amp 0 \amp 2 \\
+						0 \amp 1 \amp 4 \amp 0 \\
+						0 \amp 0 \amp 1 \amp -1/10 \\
+						\end{array}
+						\right).</me>
+
+				</p>
+				<p> So <m>z = -1/10</m>, continuing row operations: add <m>-4 *</m> row 3 to row 2 <me>\left(
+					\begin{array}{ccc|c}
+						1 \amp 2 \amp 0 \amp 2 \\
+						0 \amp 1 \amp 0 \amp 4/10 \\
+						0 \amp 0 \amp 1 \amp -1/10 \\
+						\end{array}
+						\right).</me> So <m>y = 4/10 = 2/5</m>, continuing row operations: add <m>-2
+					*</m> row 2 to row 1 <me>\left(
+						\begin{array}{ccc|c}
+						1 \amp 0 \amp 0 \amp -8/10 \\
+						0 \amp 1 \amp 0 \amp 4/10 \\
+						0 \amp 0 \amp 1 \amp -1/10 \\
+						\end{array}
+						\right).</me> So <m>x = -8/10 = -4/5</m>. </p>
+				<p> The solution is then <m>x = -4/5, y = 2/5, z = -1/10</m>
+				</p>
+			</solution>
+
+		</exercise>
+		<exercise number="14">
+			<statement>
+				<p> Find the general solution of the system whose augmented matrix is <me>\left(
+					\begin{array}{ccc|c}
+						1 \amp 2 \amp 0 \amp 2 \\
+						2 \amp 0 \amp 1 \amp 1 \\
+						3 \amp 2 \amp 1 \amp 3 \\
+						\end{array}
+						\right).</me>
+				</p>
+			</statement>
+		</exercise>
+		<exercise number="15">
+			<statement>
+				<p> Give the complete solution to the system of equations, <m>7x + 14y + 15z = 22</m>
+					, <m>2x +
+						4y + 3z = 5</m>, and <m>3x + 6y + 10z = 13</m>. </p>
+			</statement>
+			<solution>
+				<p> We have the corresponding augmented matrix: <me>\left(
+						\begin{array}{ccc|c}
+						7 \amp 14 \amp 15 \amp 22\\
+						2 \amp 4 \amp 3 \amp 5\\
+						3 \amp 6 \amp 10 \amp 13\\
+						\end{array}
+						\right).</me> Add <m>-2 * </m> row one to <m>7 * </m> row 2: <me>\left(
+					\begin{array}{ccc|c}
+						7 \amp 14 \amp 15 \amp 22\\
+						0 \amp 0 \amp -9 \amp -9\\
+						3 \amp 6 \amp 10 \amp 13\\
+						\end{array}
+						\right).</me> Add <m>-3 * </m> row one to <m>7 * </m> row 3: <me>\left(
+					\begin{array}{ccc|c}
+						7 \amp 14 \amp 15 \amp 22\\
+						0 \amp 0 \amp -9 \amp -9\\
+						0 \amp 0 \amp 25 \amp 25\\
+						\end{array}
+						\right).</me> Multiply row 2 by <m>-1/9</m> and row 3 by <m>1/25</m><me>\left(
+					\begin{array}{ccc|c}
+						7 \amp 14 \amp 15 \amp 22\\
+						0 \amp 0 \amp 1 \amp 1\\
+						0 \amp 0 \amp 1 \amp 1\\
+						\end{array}
+						\right).</me> So.... <m>z = 1</m>. Add <m>-1 * </m> row 2 to row 3: <me>\left(
+					\begin{array}{ccc|c}
+						7 \amp 14 \amp 15 \amp 22\\
+						0 \amp 0 \amp 1 \amp 1\\
+						0 \amp 0 \amp 0 \amp 0\\
+						\end{array}
+						\right).</me> This shows that <m>y</m> is going to be a free variable.
+					Assign <m>s</m> to <m>y</m>.The top row yields the equation <m>7x + 14s + 15z =
+					22</m>, since <m>z = 1</m>, this gives <m>7x + 14s + 15 = 22</m>. Solving for <m>
+					x</m> we get <m>x = 1 - 2s </m>, so the final solution can be written: <me>\left(
+					\begin{array}{c}
+						x\\
+						y\\
+						z\\
+						\end{array}
+						\right) = \left(
+						\begin{array}{c}
+						1 - 2s\\
+						s\\
+						1\\
+						\end{array}
+						\right) </me>
+				</p>
+			</solution>
+
+		</exercise>
+		<exercise number="16">
+			<statement>
+				<p> Give the complete solution to the system of equations, <m>3x - y + 4z = 6</m> , <m>
+					y + 8z = 0</m>, and <m>-2x + y = -4</m>. </p>
+			</statement>
+		</exercise>
 	</exercises>
 </section>
