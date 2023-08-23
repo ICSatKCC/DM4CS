@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="chapter_16" xmlns:xi="http://www.w3.org/2001/XInclude"><title>Recurrence Relations</title>
-<introduction>
-<p>The goal of this chapter is to discuss recurrence relations. Recurrence relations are a recursive framework essential in computer science. We will concentrate on methods of solving recurrence relations, including an introduction to generating
-functions.
-</p></introduction>
-<xi:include href="./Section16_1.ptx" />
-<xi:include href="./Section16_2.ptx" />
-<xi:include href="./Section16_3.ptx" />
-
+<chapter xml:id="chapter_16_trees" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Trees</title>
+    <introduction>
+        <p>In this chapter we will study the class of graphs called trees. Trees are frequently used
+            in both mathematics and the sciences. Our solution of <xref ref="lunch-possibilies1"
+                text="type-global" /> is one simple instance. Since they are often used to
+            illustrate or prove other concepts, a poor understanding of trees can be a serious
+            handicap. For this reason, our ultimate goals are to: (1) define the various common
+            types of trees, (2) identify some basic properties of trees, and (3) discuss some of the
+            common applications of trees. </p>
+    </introduction>
+    <xi:include href="./Section16_1.ptx" />
+    <xi:include href="./Section16_2.ptx" />
+    <xi:include href="./Section16_3.ptx" />
+    <xi:include href="./Section16_4.ptx" />
 </chapter>

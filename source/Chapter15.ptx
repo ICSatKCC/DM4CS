@@ -1,22 +1,28 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<chapter xml:id="chapter_15" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <!-- This chapter is a modification of Chapters 3, 4, and 5 of Foundations of Computation -->
-  <!-- Authors Carol Critchlow (critchlo@hws.edu) David Eck (eck@hws.edu, math.hws.edu/eck) -->
-  <!-- Creative Commons Attribution-Noncommercial-ShareAlike 4.0 License.-->
-<title>Theory of Computation</title>
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="chapter_15_graphs" xmlns:xi="http://www.w3.org/2001/XInclude"><title>Graph Theory</title>
 <introduction>
-  <!-- TODO  add Turing -->
-<p>In this chapter we will study <em>languages</em>,<em>formal language theory</em>, <em>grammars</em>, <em>Turing Machines</em>, and
-  <em>computability</em>.
-  Our intent is to examine the question of how, and which, languages
-  can be mechanically generated and recognized; and, ultimately, to see
-  what this tells us about what computers can and can't do.</p>
-</introduction>
-
+           <poem>
+                <title>Bipartite</title>
+                <idx><h>Bipartitie</h><h>a Limerick</h></idx>
+                <idx>Howlett,Chris</idx>
+                <author>Chris Howlett, The Omnificent English Dictionary In Limerick Form</author>
+               <stanza>
+                    <line>Draw some lines joining dots in set <m>A</m></line>
+                    <line>To some dots in set <m>B</m>. Then we say</line>
+                    <line>It's <term>bipartite</term> if we</line>
+                    <line>Have no <q><m>B</m></q> joined to <q><m>B</m></q></line>
+                    <line>And no <q><m>A</m></q> joined to <q><m>A</m></q>. That okay?</line>
+               </stanza>
+            </poem>
+<p>This chapter has three principal goals. First, we will identify the basic components of a graph and some of the features that many graphs have. Second, we will discuss some of the questions that are most commonly asked of graphs. Third, we want to make the reader aware of how graphs
+are used. In <xref ref="Section15_1.ptx"/>, we will discuss these topics in general, and in later sections we will take a closer look
+at selected topics in graph theory.</p>
+<p><xref ref="chapter_16_trees"/> will continue our discussion with an examination of trees, a special type of graph.
+</p></introduction>
 <xi:include href="./Section15_1.ptx" />
 <xi:include href="./Section15_2.ptx" />
 <xi:include href="./Section15_3.ptx" />
 <xi:include href="./Section15_4.ptx" />
 <xi:include href="./Section15_5.ptx" />
 <xi:include href="./Section15_6.ptx" />
- </chapter>
+</chapter>

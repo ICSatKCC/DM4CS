@@ -1,0 +1,1431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-grammars">
+  <title>Grammars</title>
+  <idx>
+    <h>Grammars</h>
+  </idx>
+  <introduction>
+    <p>
+      Both natural languages, such as English and the
+      artificial languages used for programming have a structure
+      known as grammar or syntax. In order to form legal sentences
+      or programs, the parts of the language must be fit together
+      according to certain rules. For natural languages, the
+      rules are somewhat informal (although high-school English
+      teachers might have us believe differently). For programming
+      languages, the rules are absolute, and programs that violate
+      the rules will be rejected by a compiler.
+    </p>
+
+    <p> In this section, we will study formal grammars and languages defined by them. The languages
+      we look at will, for the most part, be <q>toy</q> languages, compared to natural languages or
+      even to programming languages, but the ideas and techniques are basic to any study of
+      language. In fact, many of the ideas arose almost simultaneously in the 1950s in the work of
+      linguists who were studying natural language and programmers who were looking for ways to
+      specify the syntax of programming languages. </p>
+
+    <p> The grammars in this section are <term>generative grammars</term><idx>
+        <h>Generative Grammars</h>
+      </idx>. A generative grammar is a set of rules that can be
+      used to generate all the legal strings in a language. We will also consider the closely
+      related idea of <term>parsing</term>. To parse a string means to determine how that string can
+      be generated according to the rules. </p>
+    <p>
+      This section is a continuation of the preceding section.
+      Like a regular expression, a grammar is a way to specify a possibly
+      infinite language with a finite amount of information. In fact,
+      we will see that every regular language can be specified
+      by a certain simple type of grammar. We will also see that some languages
+      that can be specified by grammars are not regular.
+    </p>
+  </introduction>
+  <subsection xml:id="subsec-context-free-grammars">
+    <title>Context-free Grammars</title>
+    <idx>
+      <h>Context-free Grammar</h>
+    </idx>
+    <p> In its most general form, a grammar is a set of <term>rewriting rules</term> <idx>
+        <h>Rewriting
+          Rule</h>
+      </idx>. A rewriting rule specifies that a certain string of symbols can be
+      substituted for all or part of another string. If <m>w</m> and <m>u</m> are strings, then <m>w\PRODUCES
+      u</m> is a rewriting rule that specifies that the string <m>w</m> can be replaced by the
+      string <m>u</m>. The symbol <q>
+        <m>\PRODUCES</m>
+      </q> is read <q>can be rewritten as.</q> Rewriting rules are also
+      called <term>production rules</term> <idx>Production Rule</idx> or <term>
+        productions</term>, and <q>
+        <m>\PRODUCES</m>
+      </q> <notation>
+        <usage><m>\PRODUCES</m></usage>
+        <description>Produces, as in <m>A\PRODUCES ab</m></description>
+      </notation> can also be
+      read as <q>produces.</q> For example, if we consider strings over the alphabet <m>\{a,b,c\}</m>,
+      then the production rule <m>aba\PRODUCES cc</m> can be applied to the string <m>abbabac</m> to
+      give the string <m>abbccc</m>. The substring <m>aba</m> in the string <m>abbabac</m> has been
+      replaced with <m>cc</m>. </p>
+
+    <p> In a <term>context-free grammar</term>, every rewriting rule has the form <m>A\PRODUCES w</m>,
+      where <m>A</m> is single symbol and <m>w</m> is a string of zero or more symbols. The symbols
+      that occur on the left-hand sides of production rules in a context-free grammar are called <term>non-terminal
+      symbols</term><idx>
+        <h>non-terminal symbol</h>
+      </idx>. <aside>
+        <p> The grammar is <q>context-free</q> in the sense that <m>w</m> can be substituted for <m>
+      A</m> wherever <m>A</m> occurs in a string, regardless of the surrounding context in which <m>
+      A</m> occurs. </p>
+      </aside>By convention, the non-terminal symbols are usually uppercase
+      letters. The strings on the right-hand sides of the production rules can include non-terminal
+      symbols as well as other symbols, which are called <idx>terminal symbol</idx> <term>terminal
+      symbols</term>. By convention, the terminal symbols are usually lowercase letters. Here are
+      some typical production rules that might occur in context-free grammars: <md>
+        <mrow> A\amp \PRODUCES aAbB\</mrow>
+        <mrow>S \amp \PRODUCES SS</mrow>
+        <mrow> C\amp \PRODUCES Acc</mrow>
+        <mrow> B\amp \PRODUCES b</mrow>
+        <mrow>A \amp \PRODUCES\EMPTYSTRING</mrow>
+      </md> In the last rule in this list, <m>
+      \EMPTYSTRING</m> represents the empty string, as usual. For example, this rule could be
+      applied to the string <m>aBaAcA</m> to produce the string <m>aBacA</m>. The first occurrence
+      of the symbol <m>A</m> in <m>aBaAcA</m> has been replaced by the empty string---which is just
+      another way of saying that the symbol has been dropped from the string. </p>
+
+    <p> In every context-free grammar, one of the non-terminal symbols is designated as the <term>start
+      symbol</term> of the grammar. The start symbol is often, though not always, denoted by <m>S</m>.
+      When the grammar is used to generate strings in a language, the idea is to start with a string
+      consisting of nothing but the start symbol. Then a sequence of production rules is applied.
+      Each application of a production rule to the string transforms the string to a new string. If
+      and when this process produces a string that consists purely of terminal symbols, the process
+      ends. That string of terminal symbols is one of the strings in the language generated by the
+      grammar. In fact, the language consists precisely of all strings of terminal symbols that can
+      be produced in this way. </p>
+
+    <p> As a simple example, consider a grammar that has three production rules: <md>
+        <mrow>S\PRODUCES aS</mrow>
+        <mrow> S\PRODUCES bS </mrow>
+        <mrow> S\PRODUCES b </mrow>
+      </md> In this example, <m>S</m> is the only non-terminal
+      symbol, and the terminal symbols are <m>a</m> and <m>b</m>. Starting from the string <m>S</m>,
+      we can apply any of the three rules of the grammar to produce either <m>aS</m> , <m>bS</m>, or <m>
+      b</m>. Since the string <m>b</m> contains no non-terminals, we see that <m>
+        b</m> is one of the strings in the language generated by this grammar. The strings <m>aS</m>
+      and <m>bS</m> are not in that language, since they contain the non-terminal symbol <m>S</m>,
+      but we can continue to apply production rules to these strings. From <m>aS</m>, for example,
+      we can obtain <m>aaS</m>, <m>abS</m>, or <m>ab</m>. From <m>abS</m>, we go on to obtain <m>
+      abaS</m>, <m>abbS</m>, or <m>abb</m>. The strings <m>ab</m> and <m>abb</m> are in the language
+      generated by the grammar. It's not hard to see that any string of <m>a\text{'s}</m> and <m>b\text{'s}</m>
+      that ends with a <m>b</m> can be generated by this grammar, and that these are the only
+      strings that can be generated. That is, the language generated by this grammar is the regular
+      language specified by the regular expression <m>(a\REOR b)^{*}b</m>. </p>
+    <p>
+      It's time to give some formal definitions of the concepts which
+      we have been discussing.
+    </p>
+    <definition xml:id="def-context-free-grammar">
+      <title>Context-free Grammar</title>
+      <statement>
+        <p> A <term>context-free grammar</term> is a 4-tuple <m>(V,\Sigma,P,S)</m>, where: <ol>
+            <li>
+              <p>
+                <m>V</m> is a finite set of symbols. The elements of <m>V</m> are the non-terminal
+          symbols of the grammar. </p>
+            </li>
+            <li>
+              <p>
+                <m>\Sigma</m> is a finite set of symbols such that <m>V\cap\Sigma=\emptyset</m>. The
+          elements of <m>\Sigma</m> are the terminal symbols of the grammar. </p>
+            </li>
+            <li>
+              <p>
+                <m>P</m> is a set of production rules. Each rule is of the form <m>A\PRODUCES w</m>
+          where <m>A</m> is one of the symbols in <m>V</m> and <m>w</m> is a string in the language <m>
+          (V\cup\Sigma)^*</m>. </p>
+            </li>
+            <li>
+              <p>
+                <m>S\in V</m>. <m>S</m> is the start symbol of the grammar. </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+    <p> Even though this is the formal definition, grammars are often specified informally simply by
+      listing the set of production rules. When this is done it is assumed, unless otherwise
+      specified, that the non-terminal symbols are just the symbols that occur on the left-hand
+      sides of production rules of the grammar. The terminal symbols are all the other symbols that
+      occur on the right-hand sides of production rules. The start symbol is the symbol that occurs
+      on the left-hand side of the first production rule in the list. Thus, the list of production
+      rules <md>
+        <mrow> T\amp\PRODUCES TT </mrow>
+        <mrow>T \amp \PRODUCES A</mrow>
+        <mrow>A \amp \PRODUCES aAa </mrow>
+        <mrow>A \amp \PRODUCES bB </mrow>
+        <mrow>B \amp \PRODUCES bB </mrow>
+        <mrow>B \amp \PRODUCES \EMPTYSTRING </mrow>
+      </md> specifies a grammar <m>
+      G=(V,\Sigma,P,T)</m> where <m>V</m> is <m>\{T,A,B\}</m>, <m>\Sigma</m> is <m>\{a,b\}</m>, and <m>
+      T</m> is the start symbol. <m>P</m>, of course, is a set containing the six production rules
+      in the list. </p>
+
+
+    <p> Let <m>G=(V,\Sigma,P,S)</m> be a context-free grammar. Suppose that <m>x</m> and <m>y</m>
+      are strings in the language <m>(V\cup\Sigma)^*</m>. The notation <m>x\YIELDS_G y</m> <notation>
+        <usage><m>\YIELDS</m></usage>
+        <description>Yields, as in <m>x\YIELDS_G y.</m>String <m>y</m> can be obtained from a string <m>
+      x</m> by applying one production rule in <m>G</m></description>
+      </notation>is used to
+      express the fact that <m>y</m> can be obtained from <m>x</m> by applying one of the production
+      rules in <m>P</m>. To be more exact, we say that <m>x\YIELDS_G y</m> if and only if there is a
+      production rule <m>A\PRODUCES w</m> in the grammar and two strings <m>u</m> and <m>v</m> in
+      the language <m>(V\cup\Sigma)^*</m> such that <m>x=uAv</m> and <m>y=uwv</m>. The fact that <m>
+      x=uAv</m> is just a way of saying that <m>A</m> occurs somewhere in <m>x</m>. When the
+      production rule <m>A\PRODUCES w</m> is applied to substitute <m>w</m> for <m>A</m> in <m>uAv</m>,
+      the result is <m>uwv</m>, which is <m>y</m>. Note that either <m>u</m> or <m>v</m> or both can
+      be the empty string. </p>
+
+    <p> If a string <m>y</m> can be obtained from a string <m>x</m> by applying a sequence of zero
+      or more production rules, we write <m>x\YIELDS_G^* y</m> <notation>
+        <usage><m>\YIELDS_G^*</m></usage>
+        <description>Yields in zero or more steps.</description>
+      </notation>. In most cases,
+      the <q>
+        <m>G</m>
+      </q> in the notations <m>\YIELDS_G</m> and <m>\YIELDS_G^*</m> will be omitted,
+      assuming that the grammar in question is understood. Note that <m>\YIELDS</m> is a relation on
+      the set <m>(V\cup\Sigma)^*</m>. The relation <m>\YIELDSTAR</m> is the reflexive, transitive
+      closure of that relation. (This explains the use of <q>
+        <m>*</m>
+      </q>, which is usually used to denote the transitive, but not necessarily
+      reflexive, closure of a relation. In this case, <m>
+        \YIELDSTAR</m> is reflexive as well as transitive since <m>x\;\YIELDSTAR x</m> is true for
+      any string <m>x</m>.) For example, using the grammar that is defined by the above list of
+      production rules, we have <md>
+        <mrow> aTB\amp \YIELDS aTTB</mrow>
+        <mrow> \amp \YIELDS aTAB </mrow>
+        <mrow> \amp \YIELDS aTAbB </mrow>
+        <mrow> \amp \YIELDS aTbBbB</mrow>
+        <mrow> \amp \YIELDS aTbbB</mrow>
+      </md> From this, it follows that <m>aTB\;\YIELDSTAR
+      aTbbB</m>. The relation <m>\YIELDS</m> is read <q>yields</q> or <q>produces</q> while <m>
+      \YIELDSTAR</m> can be read <q>yields in zero or more steps</q> or <q>produces in zero or more
+      steps.</q> The following theorem states some simple facts about the relations <m>\YIELDS</m>
+      and <m>
+        \YIELDSTAR</m>:</p>
+
+    <theorem xml:id="thm-context-free-grammar">
+      <statement>
+        <p> Let <m>G</m> be the context-free grammar <m>(V,\Sigma,P,S)</m>. Then: <ol>
+            <li>
+              <p> If <m>x</m> and <m>y</m> are strings in <m>(V\cup\Sigma)^*</m> such that <m>x\YIELDS
+          y</m>, then <m>x\;\YIELDSTAR y</m>. </p>
+            </li>
+            <li>
+              <p> If <m>x</m>, <m>y</m>, and <m>z</m> are strings in <m>(V\cup\Sigma)^*</m> such
+          that <m>x\;\YIELDSTAR y</m> and <m>y\;\YIELDSTAR z</m>, then <m>x\;\YIELDSTAR z</m>. </p>
+            </li>
+            <li>
+              <p> If <m>x</m> and <m>y</m> are strings in <m>(V\cup\Sigma)^*</m> such that <m>x\YIELDS
+          y</m>, and if <m>s</m> and <m>t</m> are any strings in <m>(V\cup\Sigma)^*</m>, then <m>sxt\YIELDS
+          syt</m>. </p>
+            </li>
+            <li>
+              <p> If <m>x</m> and <m>y</m> are strings in <m>(V\cup\Sigma)^*</m> such that <m>x\;\YIELDSTAR
+          y</m>, and if <m>s</m> and <m>t</m> are any strings in <m>(V\cup\Sigma)^*</m>, then <m>sxt\;\YIELDSTAR
+          syt</m>. </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p> Parts 1 and 2 follow from the fact that <m>\YIELDSTAR</m> is the transitive closure of <m>
+          \YIELDS</m>. Part 4 follows easily from Part 3. (I leave this as an exercise.) To prove
+          Part 3, suppose that <m>x</m>, <m>y</m>, <m>s</m>, and <m>t</m> are strings such that <m>x\YIELDS
+          y</m>. By definition, this means that there exist strings <m>u</m> and <m>v</m> and a
+          production rule <m>A\PRODUCES w</m> such that <m>x=uAv</m> and <m>y=uwv</m>. But then we
+          also have <m>sxt=suAvt</m> and <m>syt=suwvt</m>. These two equations, along with the
+          existence of the production rule <m>A\PRODUCES w</m> show, by definition, that <m>sxt\YIELDS
+          syt</m>.</p>
+      </proof>
+    </theorem>
+
+    <p> We can use <m>\YIELDSTAR</m> to give a formal definition of the language generated by a
+      context-free grammar: </p>
+
+    <definition xml:id="def-context-free-language">
+      <title>Context-free Language</title>
+      <statement>
+        <p> Suppose that <m>G=(V,\Sigma,P,S)</m> is a context-free grammar. Then the language
+          generated by <m>G</m> is the language <m>L(G)</m> over the alphabet <m>\Sigma</m> defined
+          by 
+          <me>L(G)=\{w\in \Sigma^* | S\YIELDS_G^* w\}</me> 
+          That is, <m>L(G)</m> contains any
+          string of terminal symbols that can be obtained by starting with the string consisting of
+          the start symbol, <m>S</m>, and applying a sequence of production rules. </p>
+        <p> A language <m>L</m> is said to be a <term>context-free language</term> if there is a
+          context-free grammar <m>G</m> such that <m>L(G)</m> is <m>L</m>. Note that there might be
+          many different context-free grammars that generate the same context-free language. Two
+          context-free grammars that generate the same language are said to be <idx>equivalent
+          grammars</idx> <term>equivalent</term>. </p>
+      </statement>
+    </definition>
+
+
+    <p> Suppose <m>G</m> is a context-free grammar with start symbol <m>S</m> and suppose <m>w\in
+      L(G)</m>. By definition, this means that there is a sequence of one or more applications of
+      production rules which produces the string <m>w</m> from <m>S</m>. This sequence has the form <m>S\YIELDS
+      x_1\YIELDS x_2\YIELDS\cdots\YIELDS w</m>. Such a sequence is called a <term>derivation</term> of <m>w</m>
+      (in the grammar <m>G</m>). Note that <m>w</m> might have more than one derivation. That is, it
+      might be possible to produce <m>w</m> in several different ways. </p>
+
+    <p> Consider the language <m>L=\{a^nb^n| n\in\N\}</m>. We already know that <m>L</m> is not a
+      regular language. However, it is a context-free language. That is, there is a context-free
+      grammar such that <m>L</m> is the language generated by <m>G</m>. This gives us our first
+      theorem about grammars: </p>
+      
+      <theorem xml:id="thm-non-regular-context-free">
+        <statement>
+          <p> Let <m>L</m> be the language <m>L=\{a^nb^n| n\in\N\}</m>. Let <m>G</m> be the
+      context-free grammar <m>(V,\Sigma,P,S)</m> where <m>V=\{S\}</m>, <m>\Sigma=\{a,b\}</m> and <m>
+      P</m> consists of the productions <md>
+              <mrow>S \amp \PRODUCES aSb </mrow>
+              <mrow>S \amp \PRODUCES \EMPTYSTRING </mrow>
+            </md> Then <m>L=L(G)</m>, so
+      that <m>L</m> is a context-free language. In particular, there exist context-free languages
+      which are not regular.</p>
+        </statement>
+        <proof>
+          <p> To show that <m>L=L(G)</m>, we must show both that <m>L\SUB L(G)</m> and that <m>L(G)\SUB
+      L</m>. To show that <m>L\SUB L(G)</m>, let <m>w</m> be an arbitrary element of <m>L</m>. By
+      definition of <m>L</m>, <m>w=a^nb^n</m> for some <m>n\in\N</m>. We show that <m>w\in L(G)</m>
+      by induction on <m>n</m>. In the case where <m>n=0</m>, we have <m>w=\EMPTYSTRING</m>. Now, <m>\EMPTYSTRING\in
+      L(G)</m> since <m>\EMPTYSTRING</m> can be produced from the start symbol <m>S</m> by an
+      application of the rule <m>S\PRODUCES\EMPTYSTRING</m>, so our claim is true for <m>n=0</m>.
+      Now, suppose that <m>k\in\N</m> and that we already know that <m>a^kb^k\in L(G)</m>. We must
+      show that <m>a^{k+1}b^{k+1}\in L(G)</m>. Since <m>S\;\YIELDSTAR a^kb^k</m>, we also have, by
+      <xref ref="thm-context-free-grammar"/>, that <m>aSb\;\YIELDSTAR aa^kb^kb</m>. That is, <m>aSb\;\YIELDSTAR
+      a^{k+1}b^{k+1}</m>. Combining this with the production rule <m>S\PRODUCES aSb</m>, we see that <m>S\;\YIELDSTAR
+      a^{k+1}b^{k+1}</m>. This means that <m>a^{k+1}b^{k+1}\in L(G)</m>, as we wanted to show. This
+      completes the proof that <m>L\SUB L(G)</m>. </p>
+
+          <p> To show that <m>L(G)\SUB L</m>, suppose that <m>w\in L(G)</m>. That is, <m>S\;\YIELDSTAR
+      w</m>. We must show that <m>w=a^nb^n</m> for some <m>n</m>. Since <m>S\;\YIELDSTAR w</m>,
+      there is a derivation <m>S\YIELDS x_0\YIELDS x_1\YIELDS</m><m>\cdots</m><m>\YIELDS x_n</m>, where <m>w=x_n</m>.
+      We first prove by induction on <m>n</m> that in any derivation <m>S\YIELDS x_0\YIELDS
+      x_1\YIELDS</m><m>\cdots</m><m>\YIELDS x_n</m>, we must have either <m>x_n=a^nb^n</m> or <m>
+      x_n=a^{n+1}Sb^{n+1}</m>. Consider the case <m>n=0</m>. Suppose <m>S\YIELDS x_0</m>. Then, we
+      must have that <m>S\PRODUCES x_0</m> is a rule in the grammar, so <m>x_0</m> must be either <m>
+      \EMPTYSTRING</m> or <m>aSb</m>. Since <m>\EMPTYSTRING=a^0b^0</m> and <m>aSb=a^{0+1}Sb^{0+1}</m>
+      , <m>x_0</m> is of the required form. Next, consider the inductive case. Suppose that <m>k\gt
+      1</m> and we already know that in any derivation <m>S\YIELDS x_0\YIELDS
+      x_1\YIELDS\cdots\YIELDS x_k</m>, we must have <m>x_k=a^kb^k</m> or <m>x=a^{k+1}Sb^{k+1}</m>.
+      Suppose that <m>S\YIELDS x_0\YIELDS x_1\YIELDS</m><m>\cdots</m><m>\YIELDS x_k\YIELDS x_{k+1}</m>. We know by
+      induction that <m>x_k=a^kb^k</m> or <m>x=a^{k+1}Sb^{k+1}</m>, but since <m>x_k\YIELDS x_{k+1}</m>
+      and <m>a^kb^k</m> contains no non-terminal symbols, we must have <m>x_k=a^{k+1}Sb^{k+1}</m>.
+      Since <m>x_{k+1}</m> is obtained by applying one of the production rules <m>
+      S\PRODUCES\EMPTYSTRING</m> or <m>S\PRODUCES aSb</m> to~<m>x_k</m>, <m>x_{k+1}</m> is either <m>a^{k+1}\EMPTYSTRING
+      b^{k+1}</m> or <m>a^{k+1}aSbb^{k+1}</m>. That is, <m>x_{k+1}</m> is either <m>a^{k+1}b^{k+1}</m>
+      or <m>a^{k+2}Sb^{k+2}</m>, as we wanted to show. This completes the induction. Turning back to <m>
+      w</m>, we see that <m>w</m> must be of the form <m>a^nb^n</m> or of the form <m>a^nSb^n</m>.
+      But since <m>w\in L(G)</m>, it can contain no non-terminal symbols, so <m>w</m> must be of the
+      form <m>a^nb^n</m>, as we wanted to show. This completes the proof that <m>L(G)\SUB L</m>. </p>
+        </proof>
+      </theorem>
+
+    <p> I have given a very formal and detailed proof of this theorem, to show how it can be done
+      and to show how induction plays a role in many proofs about grammars. However, a more informal
+      proof of the theorem would probably be acceptable and might even be more convincing. To show
+      that <m>L\SUB L(G)</m>, we could just note that the derivation <m>S\YIELDS aSb\YIELDS
+      a^2Sb^2\YIELDS</m><m>\cdots</m><m>\YIELDS a^nSb^n\YIELDS a^nb^n</m> demonstrates that <m>a^nb^n\in L</m>. On
+      the other hand, it is clear that every derivation for this grammar must be of this form, so
+      every string in <m>L(G)</m> is of the form <m>a^nb^n</m>. </p>
+
+    <example> <!-- Example 17.5.5 -->
+      <p> For another example, consider the language <m>\{a^nb^m| n\ge m\ge0\}</m>. Let's try to
+        design a grammar that generates this language. This is similar to the previous example, but
+        now we want to include strings that contain more <m>a\text{'s}</m> than <m>b\text{'s}</m>. The production
+        rule <m>S\PRODUCES aSb</m> always produces the same number of <m>a\text{'s}</m> and <m>b\text{'s}</m>. Can
+        we modify this idea to produce more <m>a\text{'s}</m> than <m>b\text{'s}</m>? </p>
+
+      <p> One approach would be to produce a string containing just as many <m>a\text{'s}</m> as <m>b\text{'s}</m>,
+        and then to add some extra <m>a\text{'s}</m>. A rule that can generate any number of <m>a\text{'s}</m> is <m>A\PRODUCES
+        aA</m>. After applying the rule <m>S\PRODUCES aSb</m> for a while, we want to move to a new
+        state in which we apply the rule <m>A\PRODUCES aA</m>. We can get to the new state by
+        applying a rule <m>S\PRODUCES A</m> that changes the <m>S</m> into an <m>A</m>. We still
+        need a way to finish the process, which means getting rid of all non-terminal symbols in the
+        string. For this, we can use the rule <m>A\PRODUCES\EMPTYSTRING</m>. Putting these rules
+        together, we get the grammar 
+        <md>
+          <mrow>S \amp \PRODUCES aSb</mrow>
+          <mrow>S \amp \PRODUCES A </mrow>
+          <mrow>A \amp \PRODUCES aA </mrow>
+          <mrow>A \amp \PRODUCES \EMPTYSTRING </mrow>
+        </md> 
+        This grammar does indeed generate
+        the language <m>\{a^nb^m| n\ge m\ge 0\}</m>. With slight variations on this grammar, we
+        can produce other related languages. For example, if we replace the rule <m>A\PRODUCES
+        \EMPTYSTRING</m> with <m>A\PRODUCES a</m>, we get the language <m>\{a^nb^m| n \gt m\ge 0\}</m>
+        .
+</p>
+      <p>There are other ways to generate the language <m>\{a^nb^m| n\ge m\ge 0\}</m>. For
+        example, the extra non-terminal symbol, <m>A</m>, is not really necessary, if we allow <m>S</m>
+        to sometimes produce a single <m>a</m> without a <m>b</m>. This leads to the grammar 
+        <md>
+          <mrow>S \amp \PRODUCES aSb </mrow>
+          <mrow>S \amp \PRODUCES aS </mrow>
+          <mrow>S \amp \PRODUCES \EMPTYSTRING </mrow>
+        </md>
+        (But note that the rule <m>S\PRODUCES Sa</m> would not work in place of 
+        <m>S\PRODUCES aS</m>, since it would allow the production
+        of strings in which an <m>a</m> can follow a <m>b</m>, and there are no such strings in the
+        language <m>\{a^nb^m| n\ge m\ge 0\}</m>.) And here are two more grammars that generate
+        this language: 
+        <md>
+          <mrow> S\amp\PRODUCES AB \amp\qquad S\amp\PRODUCES ASb </mrow>
+          <mrow> A\amp\PRODUCES aA \amp\qquad A\amp\PRODUCES aA </mrow>
+          <mrow> B\amp\PRODUCES aBb \amp\qquad S\amp\PRODUCES\EMPTYSTRING </mrow>
+          <mrow> A\amp\PRODUCES \EMPTYSTRING \amp\qquad A\amp\PRODUCES\EMPTYSTRING </mrow>
+          <mrow> B\amp\PRODUCES \EMPTYSTRING \amp\qquad \amp</mrow>
+        </md>
+      </p>
+    </example>
+
+
+    <example> <!-- Example 17.5.6 -->
+      <p> Consider another variation on the language <m>\{a^nb^n| n\in\N\}</m>, in which the <m>a\text{'s}</m>
+        and <m>b\text{'s}</m> can occur in any order, but the number of <m>a\text{'s}</m> is still equal to the
+        number of <m>b\text{'s}</m>. This language can be defined as <m>L=\{w\in\{a,b\}^*| n_a(w) = n_b(w)\}</m>. 
+        This language includes strings such as <m>abbaab</m>, <m>baab</m>, and <m>
+        bbbaaa</m>. </p>
+      <p> Let's start with the grammar containing the rules <m>S\PRODUCES aSb</m> and <m>
+        S\PRODUCES\EMPTYSTRING</m>. We can try adding the rule <m>S\PRODUCES bSa</m>. Every string
+        that can be generated using these three rules is in the language <m>L</m>. However, not
+        every string in <m>L</m> can be generated. A derivation that starts with <m>S\YIELDS aSb</m>
+        can only produce strings that begin with <m>a</m> and end with <m>b</m>. A derivation that
+        starts with <m>S\YIELDS bSa</m> can only generate strings that begin with <m>b</m> and end
+        with <m>a</m>. There is no way to generate the strings <m>baab</m> or <m>abbbabaaba</m>,
+        which are in the language <m>L</m>. But we shall see that any string in <m>L</m> that begins
+        and ends with the same letter can be written in the form <m>xy</m> where <m>x</m> and <m>y</m>
+        are shorter strings in <m>L</m>. To produce strings of this form, we need one more rule, <m>S\PRODUCES
+        SS</m>. The complete set of production rules for the language <m>L</m> is <md>
+          <mrow> S\amp\PRODUCES aSb </mrow>
+          <mrow> S\amp\PRODUCES bSa </mrow>
+          <mrow> S\amp\PRODUCES SS </mrow>
+          <mrow> S\amp\PRODUCES \EMPTYSTRING </mrow>
+        </md>
+      </p>
+      <proof>
+        <p> It's easy to see that every string that can be generated using these rules is in <m>L</m>,
+          since each rule introduces the same number of <m>a\text{'s}</m> as <m>b\text{'s}</m>. But we also need
+          to check that every string <m>w</m> in <m>L</m> can be generated by these rules. This can
+          be done by induction on the length of <m>w</m>, using the second form of the principle of
+          mathematical induction. In the base case, <m>|w|=0</m> and <m>w=\EMPTYSTRING</m>. In this
+          case, <m>w\in L</m> since <m>S\YIELDS\EMPTYSTRING</m> in one step. Suppose <m>|w|=k</m>,
+          where <m>k\gt 0</m>, and suppose that we already know that for any <m>x\in L</m> with <m>|x|
+          \lt k</m>, <m>S\;\YIELDSTAR x</m>. To finish the induction we must show, based on this
+          induction hypothesis, that <m>S\;\YIELDSTAR w</m>. </p>
+        <p> Suppose that the first and last characters of <m>w</m> are different. Then <m>w</m> is
+          either of the form <m>axb</m> or of the form <m>bxa</m>, for some string <m>x</m>. Let's
+          assume that <m>w</m> is of the form <m>axb</m>. (The case where <m>w</m> is of the form <m>
+          bxa</m> is handled in a similar way.) Since <m>w</m> has the same number of <m>a\text{'s}</m> and <m>
+          b\text{'s}</m> and since <m>x</m> has one fewer <m>a</m> than <m>w</m> and one fewer <m>b</m>
+          than <m>w</m>, <m>x</m> must also have the same number of <m>a\text{'s}</m> as <m>b\text{'s}</m>. That
+          is <m>x\in L</m>. But <m>|x|=|w|-2 \lt k</m>, so by the induction hypothesis, <m>x\in L(G)</m>.
+          So we have <m>S\;\YIELDSTAR x</m>. By <xref ref="thm-context-free-grammar" />, we get then <m>aSb\;\YIELDSTAR
+          axb</m>. Combining this with the fact that <m>S\YIELDS aSb</m>, we get that <m>S\;\YIELDSTAR
+          axb</m>, that is, <m>S\;\YIELDSTAR w</m>. This proves that <m>w\in L(G)</m>. </p>
+
+        <p> Finally, suppose that the first and last characters of <m>w</m> are the same. Let's say
+          that <m>w</m> begins and ends with <m>a</m>. (The case where <m>w</m> begins and ends with <m>
+          b</m> is handled in a similar way.) I claim that <m>w</m> can be written in the form <m>xy</m>
+          where <m>x\in L(G)</m> and <m>y\in L(G)</m> and neither <m>x</m> nor <m>y</m> is the empty
+          string. This will finish the induction, since we will then have by the induction
+          hypothesis that <m>S\;\YIELDSTAR x</m> and <m>S\;\YIELDSTAR y</m>, and we can derive <m>xy</m>
+          from <m>S</m> by first applying the rule <m>S\PRODUCES SS</m> and then using the first <m>
+          S</m> on the right-hand side to derive <m>x</m> and the second to derive <m>y</m>. </p>
+
+        <p> It only remains to figure out how to divide <m>w</m> into two strings <m>x</m> and <m>y</m>
+          which are both in <m>L(G)</m>. The technique that is used is one that is more generally
+          useful. Suppose that <m>w=c_1c_2\cdots c_k</m>, where each <m>c_i</m> is either <m>a</m>
+          or <m>b</m>. Consider the sequence of integers <m>r_1</m>, <m>r_2</m>, <m>\dots</m>, <m>r_k</m>
+          where for each <m>i = 1, 2, \dots, k</m>, <m>r_i</m> is the number of <m>a\text{'s}</m> in <m>c_1c_2\cdots
+          c_i</m> minus the number of <m>b\text{'s}</m> in <m>c_1c_2\cdots c_i</m>. Since <m>c_1=a</m>, <m>
+          r_1=1</m>. Since <m>w\in L</m>, <m>r_k=0</m>. And since <m>c_k=a</m>, we must have <m>r_{k-1}=
+          r_k-1 = -1</m>. Furthermore the difference between <m>r_{i+1}</m> and <m>r_i</m> is either <m>
+          1</m> or <m>-1</m>, for <m>i=1,2,\dots,k-1</m>. </p>
+
+        <p> Since <m>r_1=1</m> and <m>r_{k-1}=-1</m> and the value of <m>r_i</m> goes up or down by
+          1 when <m>i</m> increases by 1, <m>r_i</m> must be zero for some <m>i</m> between 1 and <m>
+          k-1</m>. That is, <m>r_i</m> cannot get from 1 to <m>-1</m> unless it passes through zero.
+          Let <m>i</m> be a number between 1 and <m>k-1</m> such that <m>r_i=0</m>. Let <m>x=c_1c_2\cdots
+          c_i</m> and let <m>y=c_{i+1}c_{i+2}\cdots c_k</m>. Note that <m>xy=w</m>. The fact that <m>
+          r_i=0</m> means that the string <m>c_1c_2\cdots c_i</m> has the same number of <m>a\text{'s}</m>
+          and <m>b\text{'s}</m>, so <m>x\in L(G)</m>. It follows automatically that <m>y\in L(G)</m> also.
+          Since <m>i</m> is strictly between 1 and <m>k-1</m>, neither <m>x</m> nor <m>y</m> is the
+          empty string. This is all that we needed to show to finish the proof that <m>L=L(G)</m>. </p>
+
+        <p> The basic idea of this proof is that if <m>w</m> contains the same number of <m>a\text{'s}</m>
+          as <m>b\text{'s}</m>, then an <m>a</m> at the beginning of <m>w</m> must have a <q>matching</q> <m>
+          b</m> somewhere in <m>w</m>. This <m>b</m> matches the <m>a</m> in the sense that the
+          corresponding <m>r_i</m> is zero, and the <m>b</m> marks the end of a string <m>x</m>
+          which contains the same number of <m>a\text{'s}</m> as <m>b\text{'s}</m>. For example, in the string <m>
+          aababbabba</m>, the <m>a</m> at the beginning of the string is matched by the third <m>b</m>,
+          since <m>aababb</m> is the shortest prefix of <m>aababbabba</m> that has an equal number
+          of <m>a\text{'s}</m> and <m>b\text{'s}</m>. </p>
+      </proof>
+    </example>
+
+    <example>
+      <title>Balanced Parentheses</title>
+      <p> Closely related to this idea of matching <m>a\text{'s}</m> and <m>b\text{'s}</m> is the idea of <term>balanced
+        parentheses</term>. Consider a string made up of parentheses, such as <c>(()(()))(())</c>.
+        The parentheses in this sample string are balanced because each left parenthesis has a
+        matching right parenthesis, and the matching pairs are properly nested. A careful definition
+        uses the sort of integer sequence introduced in the above proof. Let <m>w</m> be a string of
+        parentheses. Write <m>w=c_1c_2\cdots c_n</m>, where each <m>c_i</m> is either <c>(</c> or
+        <c>)</c>. Define a sequence of integers <m>r_1</m>, <m>r_2</m>, <m>\dots</m>,<m>r_n</m>, where <m>
+        r_i</m> is the number of left parentheses in <m>c_1c_2\cdots c_i</m> minus the number of
+        right parentheses. We say that the parentheses in <m>w</m> are balanced if <m>r_n=0</m> and <m>
+        r_i\ge0</m> for all <m>i=1,2,\dots,n</m>. The fact that <m>r_n=0</m> says that <m>w</m>
+        contains the same number of left parentheses as right parentheses. The fact the <m>r_i\ge0</m>
+        means that the nesting of pairs of parentheses is correct: You can't have a right
+        parenthesis unless it is balanced by a left parenthesis in the preceding part of the string.
+        The language that consists of all balanced strings of parentheses is context-free. It is
+        generated by the grammar <md>
+          <mrow> S\amp\PRODUCES (\,S\,)</mrow>
+          <mrow> S\amp\PRODUCES SS </mrow>
+          <mrow> S\amp\PRODUCES \EMPTYSTRING </mrow>
+        </md> The proof is similar to the
+        preceding proof about strings of <m>a\text{'s}</m> and <m>b\text{'s}</m>. (It might seem that I've made an
+        awfully big fuss about matching and balancing. The reason is that this is one of the few
+        things that we can do with context-free languages that we can't do with regular languages.) </p>
+
+    </example>
+    <p>
+      Before leaving this section, we should look at a few more
+      general results. Since we know that most operations on regular
+      languages produce languages that are also regular, we can
+      ask whether a similar result holds for context-free languages.
+      We will see later that the intersection of two context-free
+      languages is not necessarily context-free. Also, the
+      complement of a context-free language is not necessarily
+      context-free. However, some other operations on context-free
+      languages do produce context-free languages.
+</p>
+    <theorem xml:id="thm-context-free-operations">
+      <statement>
+        <p> Suppose that <m>L</m> and <m>M</m> are context-free languages. Then the languages <m>L\cup
+          M</m>, <m>LM</m>, and <m>L^*</m> are also context-free. </p>
+      </statement>
+      <proof>
+        <p> I will prove only the first claim of the theorem, that <m>L\cup M</m> is context-free.
+          In the exercises for this section, you are asked to construct grammars for <m>LM</m> and <m>
+          L^*</m> (without giving formal proofs that your answers are correct). </p>
+        <p> Let <m>G=(V,\Sigma,P,S)</m> and <m>H=(W,\Gamma,Q,T)</m> be context-free grammars such
+          that <m>L=L(G)</m> and <m>M=L(H)</m>. We can assume that <m>W\cap V=\emptyset</m>, since
+          otherwise we could simply rename the non-terminal symbols in <m>W</m>. The idea of the
+          proof is that to generate a string in <m>L\cup M</m>, we first decide whether we want a
+          string in <m>L</m> or a string in <m>M</m>. Once that decision is made, to make a string
+          in <m>L</m>, we use production rules from <m>G</m>, while to make a string in <m>M</m>, we
+          use rules from <m>H</m>. We have to design a grammar, <m>K</m>, to represent this process. </p>
+        <p> Let <m>R</m> be a symbol that is not in any of the alphabets <m>V</m>, <m>W</m>, <m>
+          \Sigma</m>, or <m>\Gamma</m>. <m>R</m> will be the start symbol of <m>K</m>. The
+          production rules for <m>K</m> consist of all the production rules from <m>G</m> and <m>H</m>
+          together with two new rules: <md>
+            <mrow> R\PRODUCES S</mrow>
+            <mrow> R\PRODUCES T </mrow>
+          </md> Formally, <m>K</m> is defined to be the
+          grammar <me>
+            (V\cup W\cup\{R\},
+            P\cup Q\cup \{R\PRODUCES S, R\PRODUCES T\},
+            \Sigma\cup\Gamma, R)
+</me>
+          Suppose that <m>w\in L</m>. That is <m>w\in L(G)</m>, so there is a derivation <m>
+          S\YIELDS_G^*w</m>. Since every rule from <m>G</m> is also a rule in <m>K</m>, if follows
+          that <m>S\YIELDS_K^* w</m>. Combining this with the fact that <m>R\YIELDS_K S</m>, we have
+          that <m>R\YIELDS_K^* w</m>, and <m>w\in L(K)</m>. This shows that <m>L\SUB L(K)</m>. In an
+          exactly similar way, we can show that <m>M\SUB L(K)</m>. Thus, <m>L\cup M\SUB L(K)</m>. </p>
+        <p> It remains to show that <m>L(K)\SUB L\cup M</m>. Suppose <m>w\in L(K)</m>. Then there is
+          a derivation <m>R\YIELDS_K^*w</m>. This derivation must begin with an application of one
+          of the rules <m>R\PRODUCES S</m> or <m>R\PRODUCES T</m>, since these are the only rules in
+          which <m>R</m> appears. If the first rule applied in the derivation is <m>R\PRODUCES S</m>,
+          then the remainder of the derivation shows that <m>S\YIELDS_K^*w</m>. Starting from <m>S</m>,
+          the only rules that can be applied are rules from <m>G</m>, so in fact we have <m>
+          S\YIELDS_G^*w</m>. This shows that <m>w\in L</m>. Similarly, if the first rule applied in
+          the derivation <m>R\YIELDS_K^*w</m> is <m>R\PRODUCES T</m>, then <m>w\in M</m>. In any
+          case, <m>w\in L\cup M</m>. This proves that <m>L(K)\SUB L\cup M</m>. </p>
+      </proof>
+    </theorem>
+    <p>
+      Finally, we should clarify the relationship between context-free
+      languages and regular languages. We have already seen that
+      there are context-free languages which are not regular.
+      On the other hand, it turns out that every regular language
+      is context-free. That is, given any regular language, there
+      is a context-free grammar that generates that language. This
+      means that any syntax that can be expressed by a regular expression,
+      by a DFA, or by an NFA could also be expressed by a context-free
+      grammar. In fact, we only need a certain restricted type of
+      context-free grammar to duplicate the power of regular expressions.
+</p>
+    <definition xml:id="def-right-regular-grammar">
+    <title>Right-Regular Grammar</title>
+      <statement>
+        <p> A <term>right-regular grammar</term><idx>regular grammar</idx> is a context-free grammar
+          in which the right-hand side of every production rule has one of the following forms: the
+          empty string; a string consisting of a single non-terminal symbol; or a string consisting
+          of a single terminal symbol followed by a single non-terminal symbol. </p>
+          </statement>
+    </definition>
+        <p> Examples of the types of production rule that are allowed in a right-regular grammar are <m>
+          A\PRODUCES\EMPTYSTRING</m>, <m>B\PRODUCES C</m>, and <m>D\PRODUCES aE</m>. The idea of the
+          proof is that given a right-regular grammar, we can build a corresponding <m>NFA</m> and
+          <em>vice-versa</em>. The states of the <m>NFA</m> correspond to the non-terminal symbols
+          of the grammar. The start symbol of the grammar corresponds to the starting state of the
+          NFA. A production rule of the form <m>A\PRODUCES bC</m> corresponds to a transition in the
+          NFA from state <m>A</m> to state <m>C</m> while reading the symbol <m>b</m>. A production
+          rule of the form <m>A\PRODUCES B</m> corresponds to an <m>\EMPTYSTRING</m>-transition from
+          state <m>A</m> to state <m>B</m> in the NFA. And a production rule of the form <m>
+          A\PRODUCES\EMPTYSTRING</m> exists in the grammar if and only if <m>A</m> is a final state
+          in the NFA. With this correspondence, a derivation of a string <m>w</m> in the grammar
+          corresponds to an execution path through the NFA as it accepts the string <m>w</m>. I
+          won't give a complete proof here. You are welcome to work through the details if you want.
+          But the important fact is:
+          </p>
+          <theorem xml:id="thm-every-regular-context-free">
+            <statement>
+              <p> A language <m>L</m> is regular if and only if there is a right-regular grammar <m>
+          G</m> such that <m>L=L(G)</m>. In particular, every regular language is context-free. </p>
+            </statement>
+          </theorem>
+  </subsection>
+
+<!-- subsec 17.5.2  BNF -->
+ <subsection xml:id="subsec-bnf">
+    <title>Backus-Naur Form</title>
+    <idx>
+      <h>Backus-Naur Form</h>
+    </idx>
+    <p>Context-free grammars are used to describe some aspects of
+the syntax of programming languages.  However, the notation
+that is used for grammars in the context of programming languages
+is somewhat different from the notation introduced in the
+preceding section.  The notation that is used is called
+<term>Backus-Naur Form</term> or BNF.  It is named after computer
+scientists John Backus and Peter Naur, who developed the
+notation.  Actually, several variations of BNF exist.
+I will discuss one of them here.  BNF can be used to describe
+the syntax of natural languages, as well as programming languages,
+and some of the examples in this section will deal with the
+syntax of English.
+    </p>
+
+<p>Like context-free grammars, BNF grammars make use of production rules, non-terminals,
+and terminals.  The non-terminals are usually given meaningful,
+multi-character names.  Here, I will follow a common practice
+of enclosing non-terminals in angle brackets, so that they can
+be easily distinguished.  For example, <m>\langle noun \rangle</m> and <m>\langle sentence \rangle</m>
+could be non-terminals in a BNF grammar for English, while
+<m>\langle program \rangle</m> and <m>\langle if{\text -}statement \rangle</m> might be used in a BNF grammar
+for a programming language.  Note that a BNF non-terminal
+usually represents a meaningful <term>syntactic category</term>,
+that is, a certain type of building block in the syntax of
+the language that is being described, such as an adverb,
+a prepositional phrase, or a variable declaration statement.
+The terminals of a BNF grammar are the things that actually
+appear in the language that is being described.  In the case
+of natural language, the terminals are individual words.</p>
+
+<p>In BNF production rules, I will use the symbol <q><m>::=</m></q>
+in place of the <q><m>\PRODUCES</m></q> that is used in context-free grammars.
+BNF production rules are more powerful than the production rules in
+context-free grammars.  That is, one BNF rule might be equivalent to 
+several context-free grammar rules.  As for context-free grammars,
+the left-hand side of a BNF production rule is a single 
+non-terminal symbol.  The right hand side can include terminals
+and non-terminals, and can also use the following notations,
+which should remind you of notations used in regular expressions:
+<ul>
+  <li>
+    <p> A vertical bar, <m>\BNFALT</m>, indicates a choice of
+   alternatives.  For example,
+   <me>
+    \langle digit \rangle ::=\ 0 \BNFALT\ 1 \BNFALT\ 2
+          \BNFALT\ 3 \BNFALT\ 4 \BNFALT\ 5 \BNFALT\ 6 \BNFALT\ 7
+          \BNFALT\ 8 \BNFALT\ 9
+   </me>
+   indicates that the non-terminal <m>\langle digit \rangle</m> can be replaced
+by any one of the terminal symbols <m>0, 1, \dots,9</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Items enclosed in brackets are optional.  For example,
+      <me>
+        \langle declaration \rangle ::= \langle type \rangle \,\langle variable \rangle 
+                 [ = \langle expression \rangle ] ;
+      </me>
+      says that <m>\langle declaration \rangle</m> can be replaced either
+by <q><m>\langle type \rangle</m> <m>\langle variable \rangle</m>;</q> 
+or by <q><m>\langle type \rangle</m> <m>\langle variable \rangle</m>
+= <m>\langle expression \rangle</m>;</q>.
+(The symbols <q>=</q> and <q>;</q> are terminal symbols in this rule.)
+    </p>
+  </li>
+  <li>
+    <p>
+      Items enclosed between <q>[</q> and <q>]<m>\dots</m></q>
+ can be repeated zero or more times.  (This has the same effect
+as a <q><m>*</m></q> in a regular expression.)  For example,
+<me>
+  \langle integer \rangle ::=\ \langle digit \rangle [ \langle digit \rangle ]\dots
+</me>
+says that an <m>\langle integer \rangle</m> consists of a <m>\langle digit \rangle</m> followed
+optionally by any number of additional <m>\langle digit \rangle</m>'s.  That is,
+the non-terminal <m>\langle integer \rangle</m> can be replaced by <m>\langle digit \rangle</m> or
+by <m>\langle digit \rangle</m><m>\langle digit \rangle</m> or by <m>\langle digit \rangle</m><m>\langle digit \rangle</m><m>\langle digit \rangle</m>, and
+so on.
+    </p>
+  </li>
+  <li>
+    <p>
+      Parentheses can be used as usual, for grouping. 
+    </p>
+  </li>
+</ul>
+</p>
+
+<p>All these notations can be expressed in a context-free grammar
+by introducing additional production rules.  For example, the
+BNF rule <q><m>\langle sign \rangle ::= + | -</m></q> is equivalent
+to the two rules, <q><m>\langle sign \rangle ::= + </m></q>
+and <q><m>\langle sign \rangle ::= - </m></q>.  A rule that contains an
+optional item can also be replaced by two rules.  For example,
+<me>
+  \langle declaration \rangle ::=\ \langle type \rangle \langle variable \rangle
+                 [ = \langle expression \rangle ] ;
+</me>
+can be replaced by the two rules
+<md>
+  <mrow> \langle declaration \rangle \amp ::=\ \langle type \rangle \langle variable \rangle ;</mrow>
+  <mrow> \langle declaration \rangle \amp ::=\ \langle type \rangle \langle variable \rangle
+                  = \langle expression \rangle  ;</mrow>
+</md>
+In context-free grammars, repetition can be expressed by
+using a recursive rule such as <q><m>S\PRODUCES aS</m></q>, in which the
+same non-terminal symbol appears both on the left-hand side and on the right-hand
+side of the rule.  BNF-style notation using <q>[</q> and <q>]<m>\dots</m></q> can
+be eliminated by replacing it with a new non-terminal symbol and adding
+a recursive rule to allow that symbol to repeat zero or more times.
+For example, the production rule
+<me>
+  \langle integer \rangle ::=\ \langle digit \rangle [ \langle digit \rangle ]\dots
+</me>
+can be replaced by three rules using a new non-terminal symbol
+<m>\langle digit{\text -}list \rangle</m> to represent a string of zero or more <m>\langle digit \rangle</m>'s:
+<md>
+  <mrow> \langle integer \rangle \amp ::= \langle digit \rangle \langle digit{\text -}list \rangle </mrow>
+  <mrow> \langle digit{\text -}list \rangle \amp ::= \langle digit \rangle \langle digit{\text -}list \rangle </mrow>
+  <mrow> \langle digit{\text -}list \rangle \amp ::= \EMPTYSTRING </mrow>
+</md>
+
+</p>
+<example>
+<p>As an example of a complete BNF grammar, let's look at a BNF grammar for a very small
+subset of English.  The start symbol for the grammar
+is <m>\langle sentence \rangle</m>, and the terminal symbols are English words.
+All the sentences that can be produced from this grammar
+are syntactically correct English sentences, although you wouldn't
+encounter many of them in conversation.  Here is the grammar:
+
+
+<md>
+  <mrow> \langle sentence \rangle \amp ::=\ \langle simple{\text -}sentence \rangle [ and \langle simple{\text -}sentence \rangle ]\dots </mrow>
+  <mrow> \langle simple{\text -}sentence \rangle  \amp ::=\ \langle noun{\text -}part \rangle \langle verb{\text -}part \rangle </mrow>
+  <mrow> \langle noun{\text -}part \rangle \amp ::=\ \langle article \rangle \langle noun \rangle [ who \langle verb{\text -}part \rangle ]\dots </mrow>
+  <mrow> \langle verb{\text -}part \rangle \amp ::=\ \langle intransitive{\text -}verb \rangle \BNFALT\ ( \langle transitive{\text -}verb \rangle \langle noun{\text -}part \rangle ) </mrow>
+  <mrow> \langle article \rangle \amp ::=\ the \BNFALT\ a </mrow>
+  <mrow> \langle noun \rangle \amp ::=\ man \BNFALT\ woman \BNFALT\ dog  \BNFALT\ cat  \BNFALT\ computer </mrow>
+  <mrow> \langle intransitive{\text -}verb \rangle \amp ::=\ runs \BNFALT\ jumps \BNFALT\ hides </mrow>
+  <mrow> \langle transitive{\text -}verb \rangle \amp ::=\ knows \BNFALT\ loves \BNFALT\ chases  \BNFALT\ owns </mrow>
+</md>
+
+This grammar can generate sentences such as <q>A dog chases the cat and
+the cat hides</q> and <q>The man loves a woman who runs.</q>
+The second sentence, for example, is generated by the derivation
+<md>
+  <mrow> \langle sentence \rangle\ \amp \YIELDS\ \langle simple{\text -}sentence \rangle </mrow>
+  <mrow> \amp \YIELDS\ \langle noun{\text -}part \rangle\ \langle verb{\text -}part \rangle</mrow>
+  <mrow> \amp \YIELDS\ \langle article \rangle\ \langle noun \rangle\ \langle verb{\text -}part \rangle </mrow>
+  <mrow> \amp \YIELDS\ \mbox{the}\ \langle noun \rangle\ \langle verb{\text -}part \rangle</mrow>
+  <mrow> \amp \YIELDS\ \mbox{the}\ \mbox{man}\ \langle verb{\text -}part \rangle </mrow>
+  <mrow> \amp \YIELDS\ \mbox{the}\ \mbox{man}\ \langle transitive{\text -}verb \rangle\ \langle noun{\text -}part \rangle</mrow>
+  <mrow> \amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \langle noun{\text -}part \rangle </mrow>
+  <mrow> \amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \langle article \rangle
+              \ \langle noun \rangle\ \mbox{who}\ \langle verb{\text -}part \rangle </mrow>
+  <mrow> \amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \mbox{a}
+              \ \langle noun \rangle\ \mbox{who}\ \langle verb{\text -}part \rangle</mrow>
+  <mrow> \amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \mbox{a}
+              \ \mbox{woman}\ \mbox{who}\ \langle verb{\text -}part \rangle</mrow>
+  <mrow> \amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \mbox{a}
+              \ \mbox{woman}\ \mbox{who}\ \langle intransitive{\text -}verb \rangle</mrow>
+  <mrow> \amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \mbox{a}
+              \ \mbox{woman}\ \mbox{who}\ \mbox{runs}</mrow>
+</md>
+</p>
+  
+</example>
+<p>
+BNF is most often used to specify the syntax of programming languages.
+Most programming languages are not, in fact, context-free languages, and
+BNF is not capable of expressing all aspects of their syntax.
+For example, BNF cannot express the fact that a variable must
+be declared before it is used or the fact that the number of
+actual parameters in a subroutine call statement must match the number
+of formal parameters in the declaration of the subroutine.
+So BNF is used to express the context-free aspects of the syntax
+of a programming language, and other restrictions on the syntax---such
+as the rule about declaring a variable before it is used---are expressed
+using informal English descriptions.
+</p>
+<p>When BNF is applied to programming languages, the terminal symbols
+are generally <q>tokens,</q> which are the minimal meaningful units in
+a program.  For example, the pair of symbols <m>\lt =</m> constitute a
+single token, as does a string such as <c>"Hello World"</c>.
+Every number is represented by a single token.  (The actual value
+of the number is stored as a so-called <q>attribute</q> of the token,
+but the value plays no role in the context-free syntax of the
+language.) I will use the
+symbol <m>\textbf{number}</m> to represent a numerical token.
+Similarly, every variable name, subroutine name, or other identifier
+in the program is represented by the same token, which I will denote
+as <m>\textbf{ident}</m>.  One final complication:  Some symbols
+used in programs, such as <q>]</q> and <q>(</q>, are also used with
+a special meaning in BNF grammars.  When such a symbol occurs as
+a terminal symbol, I will enclose it in double quotes.  For
+example, in the BNF production rule
+<me>
+  \langle array{\text -}reference \rangle ::=\ 
+   \textbf{ident } \text{"[" } \langle expression \rangle \text{ "]"} 
+</me>
+the <q><m>[</m></q> and <q><m>]</m></q> are terminal symbols in the language
+that is being described, rather than the BNF notation for an
+optional item.  With this notation, here is part of a BNF
+grammar that describes statements in the Java programming
+language:
+
+<md>
+  <mrow>\langle statement \rangle \amp ::=\ \langle block{\text -}statement \rangle \BNFALT\ \langle if{\text -}statement \rangle </mrow>
+   <mrow> \amp \,\BNFALT\ \langle while{\text -}statement\rangle  \BNFALT\ \langle assignment{\text -}statement \rangle</mrow>
+  <mrow> \amp \,  \BNFALT\ \langle null{\text -}statement \rangle
+</mrow>
+<mrow> \langle block{\text -}statement \rangle\amp ::=\ \{ [ \langle statement \rangle ]\dots\ \}</mrow>
+<mrow> \langle if{\text -}statement \rangle \amp ::=\ if \text{"("} \langle condition \rangle \text{")"}  \langle statement \rangle [ else \langle statement \rangle~] </mrow>
+<mrow> \langle while{\text -}statement \rangle \amp ::=\ while \text{"("}  \langle condition \rangle \text{")"} \langle statement \rangle </mrow>
+<mrow> \langle assignment{\text -}statement \rangle \amp  ::=\ \langle variable \rangle = \langle expression \rangle ; </mrow>
+<mrow> \langle null{\text -}statement \rangle\amp ::=\ \EMPTYSTRING </mrow>
+</md>
+The non-terminals <m>\langle condition \rangle</m>, <m>\langle variable \rangle</m>, and 
+<m>\langle expression \rangle</m> would, of course, have to be defined by other
+production rules in the grammar.  Here is a set of rules that
+define simple expressions, made up of numbers, identifiers,
+parentheses and the arithmetic operators <m> +, -, *</m> and <m>/</m>:
+
+<md>
+  <mrow>\langle expression \rangle \amp ::=\ \langle term \rangle [ \,[ + | - ] \langle term \rangle ]\dots</mrow>
+  <mrow>\langle term \rangle \amp ::=\ \langle factor \rangle [ \, [ * | / ] \langle factor \rangle ]\dots </mrow>
+  <mrow>\langle factor \rangle  \amp ::=\ \textbf{ident} | \textbf{number} | \text{"}(\text{"}\langle expression \rangle \text{"})\text{"}</mrow>
+</md>
+The first rule says that an <m>\langle expression \rangle</m> is a sequence of
+one or more <m>\langle term \rangle</m>'s, separated by plus or minus signs.
+The second rule defines a <m>\langle term \rangle</m> to be a sequence of one or more
+<m>\langle factors \rangle</m>, separated by multiplication or division operators.
+The last rule says that a <m>\langle factor \rangle</m> can be either an identifier
+or a number or an <m>\langle expression \rangle</m> enclosed in parentheses.
+This small BNF grammar can generate expressions 
+such as <q><m>3*5</m></q> and <me> x*(x+1) - 3/(z+2*(3-x)) + 7</me>.
+The latter expression is made up of three terms: <m>x*(x+1)</m>,
+<m>3/(z+2*(3-x))</m>, and <m>7</m>.  The first of these terms is made
+up of two factors, <m>x</m> and <m>(x+1)</m>.  The factor <m>(x+1)</m> consists
+of the expression <m>x+1</m> inside a pair of parentheses.</p>
+
+<p>The nice thing about this grammar is that the precedence rules
+for the operators are implicit in the grammar.  For example, according
+to the grammar, the expression <m>3+5*7</m> is seen as <m>\langle term \rangle</m> + <m>\langle term \rangle</m>
+where the first term is <m>3</m> and the second term is <m>5*7</m>.
+The <m>5*7</m> occurs as a group, which must be evaluated before the
+result is added to <m>3</m>.  Parentheses can change the order of
+evaluation.  For example, <m>(3+5)*7</m> is generated by the grammar
+as a single <m>\langle term \rangle</m> of the form <m><m>\langle factor \rangle * \langle factor \rangle</m></m>.
+The first <m>\langle factor \rangle</m> is <m>(3+5)</m>.  When <m>(3+5)*7</m> is evaluated,
+the value of <m>(3+5)</m> is computed first and then multiplied
+by <m>7</m>.  This is an example of how a grammar that describes
+the syntax of a language can also reflect its meaning.</p>
+
+
+
+<p>Although this section has not introduced any really new ideas
+or theoretical results, I hope it has demonstrated how 
+context-free grammars can be applied in practice. </p> 
+
+ </subsection>  
+<!--  END OF BNF Exercises at end  -->
+<subsection xml:id="subsec-parsing">
+  <title>Parsing and Parse Trees</title>
+  <p>Suppose that <m>G</m> is a grammar for the language <m>L</m>.  That is, 
+<m>L=L(G)</m>.  The grammar <m>G</m> can be used to generate strings in
+the language~<m>L</m>.  In practice, though, we often start with a string
+which might or might not be in~<m>L</m>, and the problem is
+to determine whether the string is in the language and, if so,
+how it can be generated by <m>G</m>.  The goal is to find a derivation
+of the string, using the production rules of the grammar, or to
+show that no such derivation exists.  This is known as <term>parsing</term>
+the string.  When the string is a computer program or a sentence
+in a natural language, parsing the string is an essential step
+in determining its meaning.</p>
+
+<p>As an example that we will use throughout
+this section, consider the language that consists of arithmetic
+expressions containing parentheses, the binary operators <m>+</m> and <m>*</m>,
+and the variables <m>x</m>, <m>y</m>, and <m>z</m>.  Strings in this language
+include <m>x</m>, <m>x+y*z</m>, and <m>((x+y)*y)+z*z</m>.  Here is a context-free
+grammar that generates this language:
+<md>
+  <mrow>E \amp \PRODUCES E+E</mrow>
+  <mrow>E \amp \PRODUCES E*E</mrow>
+  <mrow>E \amp \PRODUCES (E)</mrow>
+  <mrow>E \amp \PRODUCES x</mrow>
+  <mrow>E \amp \PRODUCES y</mrow>
+  <mrow>E \amp \PRODUCES z</mrow>
+</md>
+Call the grammar described by these production rules <m>G_1</m>.
+The grammar <m>G_1</m> says that <m>x</m>, <m>y</m>, and <m>z</m> are expressions, and that
+you can make new expressions by adding two expressions, by multiplying
+two expressions, and by enclosing an expression in parentheses.
+(Later, we'll look at other grammars for the same language---ones that
+turn out to have certain advantages over <m>G_1</m>.) </p>
+
+<p>
+  Consider the string <m>x+y*z</m>.  To show that this string is in the
+language <m>L(G_1)</m>, we can exhibit a derivation of the string
+from the start symbol <m>E</m>.  For example:
+<md>
+  <mrow> E\amp \YIELDS E+E</mrow>
+   <mrow> \amp \YIELDS E+E*E</mrow>
+   <mrow> \amp \YIELDS E+y*E</mrow>
+   <mrow> \amp \YIELDS x+y*E</mrow>
+   <mrow> \amp \YIELDS x+y*z</mrow>
+</md>
+This derivation shows that the string <m>x+y*z</m> is in fact in <m>L(G_1)</m>.
+Now, this string has many other derivations.  At each step in the
+derivation, there can be a lot of freedom about which rule in the
+grammar to apply next.  Some of this freedom is clearly not very
+meaningful.  When faced with the string <m>E+E*E</m> in the above example,
+the order in which we replace the <m>E\text{'}s</m> with the variables <m>x</m>, <m>y</m>,
+and <m>z</m> doesn't much matter.  To cut out some of this meaningless
+freedom, we could agree that in each step of a derivation, the
+non-terminal symbol that is replaced is the leftmost non-terminal
+symbol in the string.  A derivation in which this is true is
+called a <term>left derivation</term>.  The following left derivation
+of the string <m>x+y*z</m> uses the same production rules as the previous
+derivation, but it applies them in a different order:
+<md>
+  <mrow> E\amp \YIELDS E+E</mrow>
+   <mrow> \amp \YIELDS x+E</mrow>
+   <mrow> \amp \YIELDS x+E*E</mrow>
+   <mrow> \amp \YIELDS x+y*E</mrow>
+   <mrow> \amp \YIELDS x+y*z</mrow>
+</md>
+
+It shouldn't be too hard to convince yourself that any string that
+has a derivation has a left derivation (which can be obtained
+by changing the order in which production rules are applied).
+</p>
+
+<p>We have seen that the same string might have several different derivations.
+We might ask whether it can have several different left derivations.
+The answer is that it depends on the grammar.  A context-free
+grammar <m>G</m> is said to be <term>ambiguous</term>  <idx>grammar, ambiguous
+</idx>
+if there is a string <m>w\in L(G)</m> such that <m>w</m> has more than one
+left derivation according to the grammar <m>G</m>.</p>
+
+<p>Our example grammar <m>G_1</m> is ambiguous.  In fact, in addition to the
+left derivation given above, the string <m>x+y*z</m> has the alternative
+left derivation
+<md>
+  <mrow> E\amp \YIELDS E*E</mrow>
+   <mrow> \amp \YIELDS E+E*E</mrow>
+   <mrow> \amp \YIELDS x+E*E</mrow>
+   <mrow> \amp \YIELDS x+y*E</mrow>
+   <mrow> \amp \YIELDS x+y*z</mrow>
+</md>
+In this left derivation of the string <m>x+y*z</m>, the first production
+rule that is applied is <m>E\PRODUCES E*E</m>.  The first <m>E</m> on the right-hand
+side eventually yields <q><m>x+y</m></q> while the second yields <q><m>z</m></q>.
+In the previous left derivation, the first production rule that was
+applied was <m>E\PRODUCES E+E</m>, with the first <m>E</m> on the right yielding
+<q><m>x</m></q> and the second <m>E</m> yielding <q><m>y*z</m></q>.  If we think in terms
+of arithmetic expressions, the two left derivations lead to
+two different interpretations of the expression <m>x+y*z</m>.  In one
+interpretation, the <m>x+y</m> is a unit that is multiplied by <m>z</m>.
+In the second interpretation, the <m>y*z</m> is a unit that is added to <m>x</m>.
+The second interpretation is the one that is correct according to
+the usual rules of arithmetic.  However, the grammar allows either
+interpretation.  The ambiguity of the grammar allows the string to
+be parsed in two essentially different ways, and only one of the
+parsings is consistent with the meaning of the string.  Of course,
+the grammar for English is also ambiguous.  In a famous example,
+it's impossible to tell whether a <q>pretty girls' camp</q> is
+meant to describe a pretty camp for girls or a camp for pretty girls.</p>
+
+<p>
+When dealing with artificial languages such as programming languages,
+it's better to avoid ambiguity.
+The grammar <m>G_1</m> is perfectly correct in that it generates the correct
+set of strings, but in a practical situation where we are interested
+in the meaning of the strings, <m>G_1</m> is not the right grammar for
+the job.  There are other grammars that generate the same language
+as <m>G_1</m>.  Some of them are unambiguous grammars that better reflect
+the meaning of the strings in the language.  For example, the
+language <m>L(G_1)</m> is also generated by the BNF grammar
+<md>
+  <mrow>E \amp ::= T\ [\ +\ T\ ]\dots</mrow>
+  <mrow>T  \amp ::= F\ [\ *\ F\ ]\dots</mrow>
+  <mrow>F \amp ::= \text{<q>(</q>}\ E\ \text{<q>)</q>}\ \BNFALT\ x\ \BNFALT\ y\ \BNFALT\ z</mrow>
+</md> 
+This grammar can be translated into a standard context-free grammar, which
+I will call <m>G_2</m>:
+<md>
+  <mrow>E \amp \PRODUCES TA</mrow>
+  <mrow>A \amp\PRODUCES +TA </mrow>
+  <mrow>A \amp \PRODUCES \EMPTYSTRING </mrow>
+  <mrow>T \amp \PRODUCES FB</mrow>
+  <mrow>B \amp \PRODUCES *FB</mrow>
+  <mrow>B \amp \PRODUCES \EMPTYSTRING </mrow>
+  <mrow>F \amp \PRODUCES (E)</mrow>
+  <mrow>F \amp \PRODUCES x</mrow>
+  <mrow>F \amp \PRODUCES y</mrow>
+  <mrow>F \amp \PRODUCES z</mrow>
+</md>
+The language generated by
+<m>G_2</m> consists of all legal arithmetic expressions made up of 
+parentheses, the operators <m>+</m> and <m>-</m>, and the variables <m>x</m>, <m>y</m>,
+and <m>z</m>.  That is, <m>L(G_2)=L(G_1)</m>.  However, <m>G_2</m> is an unambiguous
+grammar.  Consider, for example, the string <m>x+y*z</m>.  Using the
+grammar <m>G_2</m>, the only left derivation for this string is:
+<md>
+  <mrow>E \amp \YIELDS TA</mrow>
+  <mrow> \amp \YIELDS FBA</mrow>
+  <mrow> \amp \YIELDS xBA</mrow>
+  <mrow> \amp \YIELDS xA</mrow>
+  <mrow> \amp \YIELDS x+TA</mrow>
+  <mrow> \amp \YIELDS x+FBA</mrow>
+  <mrow> \amp \YIELDS x+yBA</mrow>
+  <mrow> \amp \YIELDS x+y*FBA</mrow>
+  <mrow> \amp \YIELDS x+y*zBA</mrow>
+  <mrow> \amp \YIELDS x+y*zA</mrow>
+  <mrow> \amp \YIELDS x+y*z</mrow>
+</md>
+There is no choice about the first step in this derivation, since the
+only production rule with <m>E</m> on the left-hand side is <m>E\PRODUCES TA</m>.
+Similarly, the second step is forced by the fact that there is only
+one rule for rewriting a <m>T</m>.  In the third step, we must replace
+an <m>F</m>.  There are four ways to rewrite <m>F</m>, but only one way to produce
+the <m>x</m> that begins the string <m>x+y*z</m>, so we apply the rule <m>F\PRODUCES x</m>.
+Now, we have to decide what to do with the <m>B</m> in <m>xBA</m>.  There two rules
+for rewriting <m>B</m>, <m>B\PRODUCES *FB</m> and <m>B\PRODUCES\EMPTYSTRING</m>.  However,
+the first of these rules introduces a non-terminal, <m>*</m>, which does not
+match the string we are trying to parse.  So, the only choice is to
+apply the production rule <m>B\PRODUCES\EMPTYSTRING</m>.  In the next step
+of the derivation, we must apply the rule <m>A\PRODUCES +TA</m> in order to 
+account for the <m>+</m> in the string <m>x+y*z</m>.  Similarly, each of the 
+remaining steps in the left derivation is forced.</p>
+
+
+<p>The fact that <m>G_2</m> is an unambiguous grammar means that at each
+step in a left derivation for a string <m>w</m>, there is only one production
+rule that can be applied which will lead ultimately to a correct
+derivation of~<m>w</m>.  However, <m>G_2</m> actually satisfies a much stronger
+property:  at each step in the left derivation of <m>w</m>, we can tell which
+production rule has to be applied by looking ahead at the next
+symbol in~<m>w</m>.  We say that <m>G_2</m> is an <term>LL(1) grammar</term>.
+(This notation means that we can read a string from <term>L</term>eft to
+right and construct a <term>L</term>eft derivation of the string by
+looking ahead at most <term>1</term> character in the string.)
+Given an LL(1) grammar for a language, it is fairly straightforward
+to write a computer program that can parse strings in that language.
+If the language is a programming language, then parsing is one of the
+essential steps in translating a computer program into machine language.
+LL(1) grammars and parsing programs that use them are often studied
+in courses in programming languages and the theory of compilers.</p>
+
+<p>
+  Not every unambiguous context-free grammar is an LL(1) grammar.  Consider, for
+  example, the following grammar, which I will call <m>G_3</m>:
+  <md>
+    <mrow>E \amp \PRODUCES E + T</mrow>
+    <mrow>E \amp \PRODUCES T</mrow>
+    <mrow>T \amp \PRODUCES T * F</mrow>
+    <mrow>T \amp \PRODUCES F</mrow>
+    <mrow>F \amp \PRODUCES (E)</mrow>
+    <mrow>F \amp \PRODUCES x</mrow>
+    <mrow>F \amp \PRODUCES y</mrow>
+    <mrow>F \amp \PRODUCES z</mrow>
+  </md>
+  This grammar generates the same language as <m>G_1</m> and <m>G_2</m>,
+  and it is unambiguous.  However, it is not possible to construct
+  a left derivation for a string according to the grammar <m>G_3</m> by
+  looking ahead one character in the string at each step.  
+  The first step in any left derivation must be either
+  <m>E\YIELDS E+T</m> or <m>E\YIELDS T</m>.  But how can we decide which of
+  these is the correct first step?
+  Consider the strings <m>(x+y)*z</m> and <m>(x+y)*z+z*x</m>, which are both
+  in the language <m>L(G_3)</m>.  For the string <m>(x+y)*z</m>, the
+  first step in a left derivation must be <m>E\YIELDS T</m>, while 
+  the first step in a left derivation of <m>(x+y)*z+z*x</m> must be
+  <m>E\YIELDS E+T</m>.  However, the first seven characters of the strings
+  are identical, so clearly looking even seven characters ahead is not
+  enough to tell us which production rule to apply.  In fact,
+  similar examples show that looking ahead any given finite number of
+  characters is not enough. 
+</p>
+
+<p>
+However, there is an alternative parsing procedure that will work
+for <m>G_3</m>.  This alternative method of parsing a string produces
+a <term>right derivation</term> of the string, that is, a derivation in
+which at each step, the non-terminal symbol that is replaced is
+the rightmost non-terminal symbol in the string.  Here, for example,
+is a right derivation of the string <m>(x+y)*z</m> according to the
+grammar <m>G_3</m>:
+<md>
+  <mrow>E \amp \YIELDS T </mrow>
+  <mrow> \amp \YIELDS T*F </mrow>
+  <mrow> \amp \YIELDS T*z </mrow>
+  <mrow> \amp \YIELDS F * z </mrow>
+  <mrow> \amp \YIELDS (E) * z </mrow>
+  <mrow> \amp \YIELDS (E+T) * z </mrow>
+  <mrow> \amp \YIELDS (E+F) * z </mrow>
+  <mrow> \amp \YIELDS (E+y) * z </mrow>
+  <mrow> \amp \YIELDS (T+y) * z </mrow>
+  <mrow> \amp \YIELDS (F+y) * z </mrow>
+  <mrow> \amp \YIELDS (x+y) * z </mrow>
+</md>
+The parsing method that produces this right derivation produces
+it from <q>bottom to top.</q>  That is, it begins with
+the string <m>(x+y)*z</m> and works backward to the start symbol <m>E</m>,
+generating the steps of the right derivation in reverse order.
+The method works because <m>G_3</m> is what is called an
+<term>LR(1) grammar</term>.  That is, roughly, it is possible to read
+a string from <term>L</term>eft to right and produce a <term>R</term>ight
+derivation of the string, by looking ahead at most <term>1</term> symbol at
+each step.  Although LL(1) grammars are easier for people to work
+with, LR(1) grammars turn out to be very suitable for machine
+processing, and they are used as the basis for the parsing
+process in many compilers.</p>
+
+<p>
+LR(1) parsing uses a <term>shift/reduce</term> algorithm.  Imagine a
+cursor or current position that moves through the string that
+is being parsed.  We can visualize the cursor as a vertical
+bar, so for the string <m>(x+y)*z</m>, we start with the
+configuration <m>|(x+y)*z</m>.  A <em>shift</em> operation simply
+moves the cursor one symbol to the right.  For example,
+a shift operation would convert <m>|(x+y)*z</m> to <m>(|x+y)*z</m>,
+and a second shift operation would convert that to
+<m>(x|+y)*z</m>.  In a reduce
+operation, one or more symbols immediately to the left of
+the cursor are recognized as the right-hand side of one of
+the production rules in the grammar.  These symbols are removed
+and replaced by the left-hand side of the production rule.
+For example, in the configuration <m>(x|+y)*z</m>, the <m>x</m> to the left
+of the cursor is the right-hand side of the production rule
+<m>F\PRODUCES x</m>, so we can apply a reduce operation and replace
+the <m>x</m> with <m>F</m>, giving <m>(F|+y)*z</m>.  This first reduce operation
+corresponds to the last step in the right derivation of the
+string, <m>(F+y)*z\YIELDS (x+y)*z</m>.  Now the <m>F</m> can be recognized
+as the right-hand side of the production rule <m>T\PRODUCES F</m>,
+so we can replace the <m>F</m> with <m>T</m>, giving <m>(T|+y)*z</m>.
+This corresponds to the next-to-last step in the right
+derivation, <m>(T+y)*z\YIELDS (F+y)*z</m>.</p>
+
+<p>
+At this point, we have the configuration <m>(T|+y)*z</m>.  The <m>T</m>
+could be the right-hand side of the production rule <m>E\PRODUCES T</m>.
+However, it could also conceivably come from the rule <m>T\PRODUCES T*F</m>.
+How do we know whether to reduce the <m>T</m> to <m>E</m> at this point or to
+wait for a <m>*F</m> to come along so that we can reduce <m>T*F\,</m>?
+We can decide by looking ahead at the next character after the
+cursor.  Since this character is a <m>+</m> rather than a <m>*</m>,
+we should choose the reduce operation that replaces <m>T</m> with <m>E</m>,
+giving <m>(E|+y)*z</m>.  What makes <m>G_3</m> an LR(1) grammar is the fact
+that we can always decide what operation to apply by looking
+ahead at most one symbol past the cursor.</p>
+<p>
+After a few more shift and reduce operations, the configuration
+becomes <m>(E)|*z</m>, which we can reduce to <m>T|*z</m> by applying the
+production rules <m>F\PRODUCES (E)</m> and <m>T\PRODUCES F</m>.
+Now, faced with <m>T|*z</m>, we must once again decide between
+a shift operation and a reduce operation that applies the
+rule <m>E\PRODUCES T</m>.  In this case, since the next character is
+a <m>*</m> rather than a <m>+</m>, we apply the shift operation, giving
+<m>T*|z</m>.  From there we get, in succession, <m>T*z|</m>,
+<m>T*F|</m>, <m>T|/</m>, and finally <m>E|</m>.  At this point, we have reduced
+the entire string <m>(x+y)*z</m> to the start symbol of the grammar.
+The very last step, the reduction of <m>T</m> to <m>E</m> corresponds to
+the first step of the right derivation, <m>E\YIELDS T</m>.</p>
+
+<p>
+In summary, LR(1) parsing transforms a string into the
+start symbol of the grammar by a sequence of shift and
+reduce operations.  Each reduce operation corresponds to a
+step in a right derivation of the string, and these steps
+are generated in reverse order.  Because the steps in the
+derivation are generated from <q>bottom to top,</q> LR(1)
+parsing is a type of <term>bottom-up parsing</term>.  LL(1) parsing,
+on the other hand, generates the steps in a left derivation
+from <q>top to bottom</q> and so is a type of <term>top-down parsing</term>.</p>
+
+<p>
+Although the language generated by a context-free grammar
+is defined in terms of derivations, there is another way of
+presenting the generation of a string that is often more useful.
+A <term>parse tree</term> displays the generation of a string from
+the start symbol of a grammar as a two dimensional diagram.
+Here are two parse trees that show two derivations of the
+string <m>x+y*z</m> according to the grammar <m>G_1</m>, which was given
+at the beginning of this section:
+
+<figure xml:id="fig-parsetree">
+  <image source="images/fig-5-1" width="80%">
+     <description>Figure showing two different parse tree derivations of the string <m>x+y*z</m> .</description>
+  </image>
+</figure>
+
+A parse tree is made up of terminal and non-terminal symbols,
+connected by lines.  The start symbol is at the top, or <q>root,</q> of
+the tree.  Terminal symbols are at the lowest level, or <q>leaves,</q> of
+the tree.  (For some reason, computer scientists traditionally
+draw trees with leaves at the bottom and root at the top.)
+A production rule <m>A\PRODUCES w</m> is represented
+in a parse tree by the symbol <m>A</m> lying above all the symbols in <m>w</m>,
+with a line joining <m>A</m> to each of the symbols in <m>w</m>.  For
+example, in the left parse tree above, the root,
+<m>E</m>, is connected to the symbols <m>E</m>, <m>+</m>, and <m>E</m>, and this
+corresponds to an application of the production rule
+<m>E\PRODUCES E+E</m>.</p>
+
+<p>
+It is customary to draw a parse tree with the string of non-terminals
+in a row across the bottom, and with the rest of the tree built on
+top of that base.  Thus, the two parse trees shown above might
+be drawn as:
+<figure xml:id="fig-parsetree2">
+  <image source="images/fig-5-2" width="80%">
+    <description>Figure showing the same two parse trees as above but with the non-terminals aligned at the bottom.</description>
+ </image>
+</figure>
+</p>
+
+<p>
+Given any derivation of a string, it is possible to construct
+a parse tree that shows each of the steps in that derivation.
+However, two different derivations can give rise to the same
+parse tree, since the parse tree does not show the order in
+which production rules are applied.  For example, the parse
+tree on the left, above, does not show whether the production
+rule <m>E\PRODUCES x</m> is applied before or after the production
+rule <m>E\PRODUCES y</m>.  However, if we restrict our attention to left
+derivations, then we find that each parse tree corresponds to
+a unique left derivation and <em>vice versa</em>.  I will state this
+fact as a theorem, without proof.  A similar result holds for
+right derivations.</p>
+<theorem xml:id="thm-parsetree-leftderiv">
+  <statement>
+    <p>
+      Let <m>G</m> be a context-free grammar.  There is a one-to-one correspondence
+between parse trees and left derivations based on the grammar <m>G</m>.
+    </p>
+  </statement>
+</theorem>
+
+<p>Based on this theorem, we can say that a context-free grammar <m>G</m>
+is ambiguous if and only if there is a string <m>w\in L(G)</m> which has
+two parse trees.</p>
+
+</subsection>
+
+
+
+<exercises xml:id="exercises-17-5">
+  <title>Exercises</title>
+  <exercise number="1"> <p>One of the examples in this section was a grammar for
+a subset of English.  Give five more examples of sentences that
+can be generated from that grammar.  Your examples should, collectively,
+use all the rules of the grammar.</p>
+  </exercise>
+
+<exercise number="2">
+  <p>Rewrite the example BNF grammar for a subset of English as
+a context-free grammar.</p>
+</exercise>
+  
+
+<exercise number="3">
+ <p>
+  Write a single BNF production rule that is equivalent to
+the following context-free grammar:
+<md>
+  <mrow> S \amp \PRODUCES aSa</mrow>
+  <mrow>S  \amp \PRODUCES bB</mrow>
+  <mrow>B \amp \PRODUCES bB </mrow>
+  <mrow>B \amp \PRODUCES \EMPTYSTRING</mrow>
+</md>
+ </p> 
+</exercise>
+
+<exercise number="4">
+  <p>Write a BNF production rule that specifies the syntax of
+real numbers, as they appear in programming languages such as Java and C.  
+Real numbers can include a sign, a decimal point and an exponential part.
+Some examples are:  17.3, .73, 23.1e67, <m>-</m>1.34E<m>-</m>12, +0.2, 100E+100</p>
+</exercise>
+
+<exercise number="5">
+  <p>Variable references in the Java programming language can be 
+rather complicated.  Some examples include:
+<m>x,</m> <m>list.next,</m> <m>A[7],</m> <m>a.b.c,</m> <m>S[i+1].grid[r][c].red,</m> <m>\dots</m>.
+Write a BNF production rule for Java variables.
+You can use the token <em>ident</em> and the non-terminal
+<m>\langle expression \rangle</m> in your rule.</p>
+</exercise>
+<exercise number="6">
+  <p>Use BNF to express the syntax of the try<m>\dots</m> catch statement in the
+Java programming language.</p>
+</exercise>
+<exercise number="7">
+  <p>Give a BNF grammar for compound propositions made up
+of propositional variables, parentheses, and the logical operators
+<m>\land</m>, <m>\lor</m>, and <m>\neg</m>.  Use the non-terminal symbol <m>\langle pv \rangle</m> to represent
+a propositional variable.  You do not have to give a definition of
+<m>\langle pv \rangle</m>.</p>
+</exercise>  
+
+
+<exercise number="8"><statement>
+<p> Show that each of the following grammars is ambiguous by finding
+a string that has two left derivations according to the grammar:
+<ol>
+  <li>
+    <p>
+      <md>
+        <mrow> S \amp \PRODUCES SS </mrow>
+      <mrow> S \amp  \PRODUCES aSb</mrow>
+      <mrow> S \amp \PRODUCES bSa </mrow>
+      <mrow> S \amp\PRODUCES\EMPTYSTRING  </mrow>
+      </md>
+    </p>
+  </li>
+  <li>
+    <p>
+      <md>
+        <mrow> S \amp \PRODUCES ASb </mrow>
+        <mrow>  S \amp \PRODUCES \EMPTYSTRING</mrow>
+        <mrow>A \amp \PRODUCES aA</mrow>
+        <mrow> A \amp\PRODUCES a </mrow>
+       </md>
+    </p>
+  </li>
+</ol>
+  </p>
+</statement>
+  <answer>
+    <p> There are many answers to these.
+    <ol>
+      <li>
+        <p>
+           <m>abab </m>
+          <md>
+            <mrow>S \amp \YIELDS SS </mrow>
+            <mrow> \amp \YIELDS aSbS </mrow>
+            <mrow> \amp \YIELDS aSb </mrow>
+            <mrow> \amp \YIELDS abaSb </mrow>
+            <mrow> \amp \YIELDS abab </mrow>
+          </md>
+          <md>
+            <mrow>S \amp \YIELDS aSb </mrow>
+            <mrow> \amp \YIELDS abSab </mrow>
+            <mrow> \amp \YIELDS abab </mrow>
+          </md>
+        </p>
+      </li>
+      <li>
+        <p>
+           <m>aab</m>
+          <md>
+            <mrow>S \amp \YIELDS ASb </mrow>
+            <mrow> \amp \YIELDS aASb </mrow>
+            <mrow> \amp \YIELDS aaSb </mrow>
+            <mrow> \amp \YIELDS aab </mrow>
+          </md>
+          <md>
+            <mrow>S \amp \YIELDS ASb </mrow>
+            <mrow> \amp \YIELDS Ab </mrow>
+            <mrow> \amp \YIELDS aAb </mrow>
+            <mrow> \amp \YIELDS aab </mrow>
+          </md>
+        </p>
+      </li>
+    </ol>
+    </p>
+  </answer>
+</exercise>
+
+<exercise number="9"><p> Consider the string <m>z+(x+y)*x</m>.  Find a left derivation
+of this string according to each of the grammars <m>G_1</m>, <m>G_2</m>, and
+<m>G_3</m>, as given in this section.</p></exercise>
+
+<exercise number="10"> <p>Draw a parse tree for the string <m>(x+y)*z*x</m> according to
+each of the grammars <m>G_1</m>, <m>G_2</m>, and <m>G_3</m>, as given in this section.</p></exercise>
+
+<exercise number="11"> <p>Draw three different parse trees for the string
+<m>ababbaab</m> based on the grammar given in part a) of exercise 1.</p></exercise>
+
+<exercise number="12"> <p>Suppose that the string <m>abbcabac</m> has the following parse
+tree, according to some grammar <m>G</m>:
+<image source="images/fig-5-3" width="50%">
+  <description>parse tree for string <m>abbcabac</m></description>
+</image>
+<ol>
+  <li>
+    <p>
+      List five production rules that must be rules in the grammar <m>G</m>,
+given that this is a valid parse tree.
+    </p>
+  </li>
+  <li><p>
+    Give a left derivation for the string <m>abbcabac</m> according to the
+grammar <m>G</m>.
+  </p></li>
+  <li>
+    <p>
+      Give a right derivation for the string <m>abbcabac</m> according to the
+grammar <m>G</m>.
+    </p>
+  </li>
+</ol>
+</p></exercise>
+
+<exercise number="13"><p> Show the full sequence of shift and reduce operations
+that are used in the LR(1) parsing of the string <m>x+(y)*z</m> according
+to the grammar <m>G_3</m>, and give the corresponding right derivation
+of the string.</p></exercise>
+
+<exercise number="14"> <p>This section showed how to use LL(1) and LR(1) parsing to
+find a derivation of a string in the language <m>L(G)</m> generated by
+some grammar <m>G</m>.  How is it possible to use LL(1) or LR(1) parsing
+to determine for an arbitrary string <m>w</m> whether <m>w\in L(G)\,</m>?
+Give an example.</p></exercise>
+
+</exercises>
+</section>

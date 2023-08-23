@@ -10,7 +10,7 @@
         <p>The topic of spanning trees is motivated by a graph-optimization problem.</p>
 
 
-        <p>A graph of Atlantis University (<xref ref="fig-atlantis-14" text="type-global" />) shows
+        <p>A graph of Atlantis University (<xref ref="fig-atlantis-16" text="type-global" />) shows
             that there are four campuses in the system. A new secure communications system is being
             installed and the objective is to allow for communication between any two campuses; to
             achieve this objective, the university must buy direct lines between certain pairs of
@@ -19,10 +19,10 @@
             is due to the fact that two campuses can communicate over any number of lines. To
             minimize costs, the university wants to buy a minimum number of lines.</p>
 
-        <figure xml:id="fig-atlantis-14">
+        <figure xml:id="fig-atlantis-16">
             <caption>Atlantis University Graph
             </caption>
-            <image width="100%" source="images/fig-atlantis-14.png">
+            <image width="100%" source="images/fig-atlantis-16.png">
                 <description>Atlantis University Graph</description>
             </image>
         </figure>
@@ -53,11 +53,11 @@
         </p>
         <p>Typically, these objectives are not compatible; that is, you cannot always simultaneously
             achieve these objectives. In the case of the Atlantis university system, the solution
-            with respect to Objective 1 is indicated with solid lines in <xref ref="fig-atlantis-14"
+            with respect to Objective 1 is indicated with solid lines in <xref ref="fig-atlantis-16"
                 text="type-global" />. There are four solutions to the problem with respect to
             Objective 2: any tree in which one campus is directly connected to the other three. One
             solution with respect to Objective 2 is indicated with dotted lines in <xref
-                ref="fig-atlantis-14" text="type-global" />. After satisfying the conditions of
+                ref="fig-atlantis-16" text="type-global" />. After satisfying the conditions of
             Objective 2, it would seem reasonable to select the cheapest of the four trees.</p>
 
     </subsection>
@@ -127,7 +127,7 @@
         </definition>
 
 
-        <theorem xml:id="theorem-14-2-1">
+        <theorem xml:id="theorem-16-2-1">
             <statement>
                 <p>Let <m>G = (V, E, w)</m> be a weighted connected undirected graph. Let <m>V</m>
                     be partitioned into two sets <m>L</m> and <m>R</m>. If <m>e^*</m> is a bridge of
@@ -147,21 +147,21 @@
         <example xml:id="ex-some-bridges">
             <title>Some Bridges</title>
             <p> The bridges between the vertex sets <m>\{a, b, c\}</m> and <m>\{d, e\}</m> in <xref
-                    ref="fig-bridges-14" text="type-global" /> are the edges <m>\{b, d\}</m> and <m>\{c,
+                    ref="fig-bridges-16" text="type-global" /> are the edges <m>\{b, d\}</m> and <m>\{c,
                 e\}</m>. According to the theorem above, a minimal spanning tree that includes <m>\{b,
                 d\}</m> exists. By examination, you should be able to see that this is true. Is it
                 true that only the bridges of minimal weight can be part of a minimal spanning tree?</p>
-            <figure xml:id="fig-bridges-14">
+            <figure xml:id="fig-bridges-16">
                 <caption>Bridges between two sets
                 </caption>
-                <image width="100%" source="images/fig-bridges-14.png">
+                <image width="100%" source="images/fig-bridges-16.png">
                     <description>Bridges between two sets</description>
                 </image>
             </figure>
         </example>
 
 
-        <p><xref ref="theorem-14-2-1" text="type-global" /> essentially tells us that a minimal
+        <p><xref ref="theorem-16-2-1" text="type-global" /> essentially tells us that a minimal
             spanning tree can be constructed recursively by continually adding minimally weighted
             bridges to a set of edges.</p>
 
@@ -220,7 +220,7 @@
                     <li>
                         <p> That <xref ref="alg-prim" text="type-global" /> yields a minimal
                             spanning tree can be proven by induction with the use of <xref
-                                ref="theorem-14-2-1" text="type-global" />.</p>
+                                ref="theorem-16-2-1" text="type-global" />.</p>
                     </li>
                     <li>
                         <p> If it is not known whether <m>G</m> is connected, <xref ref="alg-prim"
@@ -235,7 +235,7 @@
 
         <example xml:id="ex-an-example">
             <title>A Small Example</title>
-            <p>Consider the graph in <xref ref="fig-weighted-graph-14" text="type-global" />. If we
+            <p>Consider the graph in <xref ref="fig-weighted-graph-16" text="type-global" />. If we
                 apply <xref ref="alg-prim" text="title" /> starting at <m>a</m>, we obtain the
                 following edge list in the order given: <m>\{a, f\}, \{f, e\}, \{e, c\}, \{c, d\},
                 \{f, b\}, \{b, g\}</m>. The total of the weights of these edges is 20. The method
@@ -243,9 +243,9 @@
                 weighted bridge exists is to order all bridges alphabetically by the vertex in <m>L</m>
                 and then, if further ties exist, by the vertex in <m>R</m>. The first vertex in that
                 order is selected in Step 2.1 of the algorithm.</p>
-            <figure xml:id="fig-weighted-graph-14">
+            <figure xml:id="fig-weighted-graph-16">
                 <caption>A small weighted graph</caption>
-                <image width="80%" source="images/fig-weighted-graph-14.png">
+                <image width="80%" source="images/fig-weighted-graph-16.png">
                     <description>A weighted graph</description>
                 </image>
             </figure>
@@ -287,7 +287,7 @@
             graph is used to construct the spanning tree. </p>
     </subsection>
 
-    <exercises xml:id="exercises-14-2">
+    <exercises xml:id="exercises-16-2">
         <title>Exercises</title>
         <exercise number="1">
             <statement>
@@ -320,10 +320,10 @@
                 <p> In the figure below, <m>\{1,2\}</m> is not a minimal bridge between <m>L=\{1,4\}
                     \textrm{ and } R=\{2,3\}</m>, but it is part of the minimal spanning tree for
                     this graph.</p>
-                <figure xml:id="fig-sol-e-14-2-3">
+                <figure xml:id="fig-sol-e-16-2-3">
                     <caption />
-                    <image width="80%" source="images/fig-sol-e-14-2-3.png">
-                        <description>Solution to exercise 14-2-3</description>
+                    <image width="80%" source="images/fig-sol-e-16-2-3.png">
+                        <description>Solution to exercise 16-2-3</description>
                     </image>
                 </figure>
             </answer>
@@ -332,22 +332,22 @@
         <exercise number="4">
             <statement>
                 <p> Find a minimal spanning tree for the following graphs.</p>
-                <figure xml:id="fig-exercise-14-2-4a">
+                <figure xml:id="fig-exercise-16-2-4a">
                     <caption />
-                    <image width="80%" source="images/fig-exercise-14-2-4a.png">
-                        <description>Figure for exercise-14-2-4a</description>
+                    <image width="80%" source="images/fig-exercise-16-2-4a.png">
+                        <description>Figure for exercise-16-2-4a</description>
                     </image>
                 </figure>
-                <figure xml:id="fig-exercise-14-2-4b">
+                <figure xml:id="fig-exercise-16-2-4b">
                     <caption />
-                    <image width="80%" source="images/fig-exercise-14-2-4b.png">
-                        <description>Figure for exercise-14-2-4b</description>
+                    <image width="80%" source="images/fig-exercise-16-2-4b.png">
+                        <description>Figure for exercise-16-2-4b</description>
                     </image>
                 </figure>
-                <figure xml:id="fig-exercise-14-2-4c">
+                <figure xml:id="fig-exercise-16-2-4c">
                     <caption />
-                    <image width="70%" source="images/fig-exercise-14-2-4c.png">
-                        <description>Figure for exercise-14-2-4c</description>
+                    <image width="70%" source="images/fig-exercise-16-2-4c.png">
+                        <description>Figure for exercise-16-2-4c</description>
                     </image>
                 </figure>
 
@@ -356,16 +356,16 @@
         <exercise number="5">
             <statement>
                 <p> Find a minimum diameter spanning tree for the following graphs.</p>
-                <figure xml:id="fig-exercise-14-2-5a">
+                <figure xml:id="fig-exercise-16-2-5a">
                     <caption />
-                    <image width="80%" source="images/fig-exercise-14-2-5a.png">
-                        <description>Figure for exercise-14-2-5a</description>
+                    <image width="80%" source="images/fig-exercise-16-2-5a.png">
+                        <description>Figure for exercise-16-2-5a</description>
                     </image>
                 </figure>
-                <figure xml:id="fig-exercise-14-2-5b">
+                <figure xml:id="fig-exercise-16-2-5b">
                     <caption />
-                    <image width="80%" source="images/fig-exercise-14-2-5b.png">
-                        <description>Figure for exercise-14-2-5b</description>
+                    <image width="80%" source="images/fig-exercise-16-2-5b.png">
+                        <description>Figure for exercise-16-2-5b</description>
                     </image>
                 </figure>
             </statement>

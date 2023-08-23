@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="s-Languages">
+    <!-- Foundations of Computation Ch 3.1-->
+    <title>Formal Language Theory</title>
+    <idx>Languages</idx>
+    <idx>
+        <h>Formal Languages</h>
+    </idx>
+
+    <subsection xml:id="subsec-Languages">
+        <title>Languages</title>
+        <p> In formal language theory, an alphabet is a finite, non-empty
+        set. The elements of the set are called symbols. A finite sequence of symbols <m>a_1a_2\ldots
+        a_n</m> from an alphabet is called a string over that alphabet. </p>
+        <definition
+            xml:id="def-alphabet">
+            <title>Alphabet</title>
+            <idx>Alphabet</idx>
+            <notation>
+                <usage>
+                    <m>\Sigma = \{0,1}</m>
+                </usage>
+                <description>An alphabet with two elements, 0 and 1.</description>
+            </notation>
+            <statement>
+                <p> An alphabet is a finite, non-empty set. It is customary to use <m>\Sigma</m> to
+        denote an alphabet.</p>
+            </statement>
+        </definition>
+        <definition
+            xml:id="def-symbol">
+            <title>Symbol</title>
+            <idx>
+                <h>Symbol</h>
+            </idx>
+            <statement>
+                <p>The elements of an alphabet are called symbols.
+                </p>
+            </statement>
+        </definition>
+        <definition
+            xml:id="def-string">
+            <title>String</title>
+            <idx>
+                <h>String</h>
+            </idx>
+            <notation>
+                <usage>
+                    <m>a_1 a_2 \ldots a_n</m>
+                </usage>
+                <description>A string with <m>n</m> symbols</description>
+            </notation>
+            <statement>
+                <p> A finite sequence of symbols <m>a_1 a_2 \ldots a_n</m> from an alphabet is
+        called a string over that alphabet. </p>
+            </statement>
+        </definition>
+
+        <example>
+            <m>\Sigma = \{0,1\}</m> is an alphabet, and <m>011</m>, <m>1010</m>, and <m>1</m> are
+        all strings over <m>\Sigma</m>. </example>
+
+        <p> Note that strings really are <em>sequences</em>
+        of symbols, which implies that order matters. Thus <m>011</m>, <m>101</m>, and <m>110</m>
+        are all different strings, though they are made up of the same symbols. The strings <m>
+        x=\aetc{a}{n}</m> and <m>
+                y=\aetc{b}{m}</m> are <em>equal</em> only if <m>m=n</m> (i.e.\ the strings contain
+        the same number of symbols) and <m>a_i=b_i</m> for all <m>1 \leq i \leq n</m>.</p>
+
+        <p>Just as
+        there are operations defined on numbers, truth values, sets,
+            and other mathematical entities, there are operations defined on
+            strings. Some important operations are:
+        </p>
+        <definition
+            xml:id="def-string-length">
+            <title>Length</title>
+            <notation>
+                <usage>
+                    <m>|x|</m>
+                </usage>
+                <description>The length of string <m>x</m></description>
+            </notation>
+
+            <statement>
+                <p> The length of a string <m>x</m> is the number of symbols in it. The notation for
+        the length of <m>x</m> is <m>|x|</m>. Note that this is consistent with other uses of <m>|\
+                        |</m>, all of which involve some notion of size: <m>|number|</m> measures
+        how big a number is (in terms of its distance from 0); <m>|set|</m> measures the size of a
+        set (in terms of the number of elements).</p>
+
+                <p>We will occasionally refer to a <em>length-n string</em>. This is a slightly
+        awkward, but concise, shorthand for ``a string whose length is <m>n</m>".</p>
+            </statement>
+        </definition>
+
+        <definition
+            xml:id="def-string-concatenation">
+            <title>Concatenation</title>
+            <notation>
+                <usage>
+                    <m>xy</m>
+                </usage>
+                <description>The concatenation of string <m>x</m> and string <m>y</m>.</description>
+            </notation>
+
+            <statement>
+                <p> The concatenation of two strings <m>x=a_1
+                        a_2\ldots a_m</m> and <m>y=b_1b_2\ldots b_n</m> is the sequence of symbols <m>a_1\ldots
+        a_mb_1\ldots b_n</m>. </p>
+        
+        <p>Sometimes <m>\cdot</m> is used to denote concatenation, but it is far
+        more usual to see the concatenation of <m>x</m> and <m>y</m> denoted by <m>xy</m> than by <m>x\cdot
+        y</m>. You can easily convince yourself that concatenation is associative (i.e. <m>(xy)z =
+        x(yz)</m> for all strings <m>x,y</m> and <m>z</m>.) Concatenation is not commutative (i.e.
+        it is not always true that <m>xy = yx</m>: for example, if <m>
+                        x=a</m> and <m>y=b</m> then <m>xy=ab</m> while <m>yx=ba</m> and, as
+        discussed above, these strings are not equal.)</p>
+            </statement>
+        </definition>
+        <definition
+            xml:id="def-string-reversal">
+            <title>Reversal</title>
+            <notation>
+                <usage>
+                    <m>x^R</m>
+                </usage>
+                <description>The reverse of string <m>x</m>.</description>
+            </notation>
+
+            <statement>
+                <p> The reverse of a string <m>x=a_1a_2\ldots a_n</m> is the string <m>x^R =
+        a_na_{n-1}\ldots a_2a_1</m>.</p>
+            </statement>
+        </definition>
+
+        <example
+            xml:id="ex-string-ops">
+            <title>String Operations</title>
+            <p> Let <m>\Sigma = \{a,b\}</m> , <m>x=a</m>, <m>y=abaa</m>, and <m>z=bab</m>. </p>
+                <p>Then <m>|x|
+        = 1</m>, <m>|y| = 4</m>, and <m>
+                    |z|=3</m>. </p>
+                    <p>Also, <m>xx = aa</m>, <m>xy = aabaa</m>, <m>xz = abab</m>, and <m>zx
+                    = baba</m>.</p>
+                    <p> Finally, <m>x^R = a</m>, <m>y^R= aaba</m>, and <m>z^R=bab</m>.</p>
+        </example>
+
+        <p>
+        By the way, the previous example illustrates a naming convention standard throughout
+        language theory texts: if a letter is intended to represent a single symbol in an alphabet,
+        the convention is to use a letter from the beginning of the English alphabet <m>( a,
+                b, c, d )</m>; if a letter is intended to represent a string, the convention is to
+        use a letter from the end of the English alphabet <m>( u, v, \text{etc})</m>. </p>
+        <p> In set
+        theory, we have a special symbol to designate the set that contains no elements. Similarly,
+        language theory has a special symbol <m>\varepsilon</m> which is used to represent the <em>empty
+        string</em>, the string with no symbols in it. (Some texts use the symbol <m>\lambda</m>
+        instead.) It is worth noting that <m>|\varep| = 0</m>, that <m>\varep^R = \varep</m>, and
+        that <m>\varep \cdot x = x \cdot \varep = x</m> for all strings <m>x</m>. (This last fact
+        may appear a bit confusing. Remember that <m>\varep</m> is not a symbol in a string with
+        length 1, but rather the name given to the string made up of 0 symbols. Pasting those 0
+        symbols onto the front or back of a string <m>x</m> still produces <m>x</m>.) </p>
+        <p> The
+        set of all strings over an alphabet <m>\Sigma</m> is denoted <m>\Sigma^*</m>. (In language
+        theory, the symbol <m>^*</m> is typically used to denote ``zero or more'', so <m>\Sigma^*</m>
+        is the set of strings made up of zero or more symbols from <m>\Sigma</m>.) Note that while
+        an alphabet <m>\Sigma</m> is by definition a <em>finite</em> set of symbols, and strings are
+        by definition <em>finite</em> sequences of those symbols, the set <m>\Sigma^*</m> is always <em>
+        infinite</em>. Why is this? Suppose <m>\Sigma</m> contains <m>n</m> elements. Then there is
+        one string over <m>\Sigma</m> with 0 symbols, <m>n</m> strings with 1 symbol, <m>n^2</m>
+        strings with 2 symbols (since there are <m>n</m> choices for the first symbol and <m>n</m>
+        choices for the second), <m>n^3</m> strings with 3 symbols, etc. </p>
+
+        <example
+            xml:id="ex-strings-over-alphabet">
+            <title>Set of all Strings over an Alphabet</title>
+            <p> If <m>\Sigma = \{1\}</m>, then <m>\Sigma^* = \{\varep,
+                    1, 11, 111, \ldots\}</m>.</p>
+                    <p> If <m>\Sigma = \ab</m>, then <m>\Sigma^* = \{
+                    \varep, a, b, aa, ab, ba, bb, aaa, aab, \ldots\}</m>. </p>
+        </example>
+<p>
+        Note that <m>\Sigma^*</m> is <em>countably</em> infinite: if we list the strings as in the
+        preceding example (length-0 strings, length-1 strings in ``alphabetical" order, length-2
+        strings similarly ordered, etc) then any string over <m>\Sigma</m> will eventually appear.
+        (In fact, if <m>|\Sigma| = n \geq 2</m> and <m>x \in \Sigma^*</m> has length <m>k</m>, then <m>
+        x</m> will appear on the list within the first <m>\frac{n^{k+1} -
+                1}{n-1}</m> entries.)</p>
+
+<p> We now come to the definition of a <em>language</em> in
+        the formal language theoretical sense.</p>
+
+        <definition xml:id="def-language">
+            <title>Languages over an Alphabet</title>
+
+            <statement>
+                <p> A language over an alphabet <m>\Sigma</m> is a subset of <m>\Sigma^*</m>. Thus,
+        a language over <m>\Sigma</m> is an element of <m>{\cal P}(\Sigma^*)</m>, the power set of <m>
+        \Sigma^*</m>.</p>
+            </statement>
+        </definition>
+<p> In other words, any set of
+        strings (over alphabet <m>\Sigma</m>) constitutes a language (over alphabet <m>\Sigma</m>).</p>
+        
+        <example xml:id="ex-languages-over-set">
+            <title>Languages over a set</title>
+        
+        <p>
+        Let <m>\Sigma =
+                \{0,1\}</m>. Then the following are all languages over <m>\Sigma</m>: 
+                <md>
+                    <mrow>L_1 \amp = \{011, 1010,111\} </mrow>
+                    <mrow> L_2 \amp = \{0, 10, 110, 1110, 11110, \ldots\} </mrow>
+                    <mrow> L_3 \amp = \{x \in \Sigma^* \ | \ n_0(x) = n_1(x) \} </mrow>
+                    <mrow> \amp\text{where the notation } n_0(x) \text{ stands for the number of 0's in the string } x </mrow>
+                    <mrow> \amp \text{and similarly for } n_1(x)</mrow>
+                    <mrow> L_4 \amp = \{x| x \mbox{ represents a multiple of 5 in binary}\} </mrow>
+                </md>
+           </p>
+        </example>
+
+        <p>
+        Note that languages can be either finite or infinite. Because <m>\Sigma^*</m> is infinite,
+        it clearly has an infinite number of subsets, and so there are an infinite number of
+        languages over <m>\Sigma</m>. But are there countably or uncountably many such languages? </p>
+
+        <theorem
+            xml:id="thm-number-of-languages">
+            <statement>
+                <p> For any alphabet <m>\Sigma</m>, the number of languages over <m>\Sigma</m> is
+        uncountable. </p>
+            </statement>
+        </theorem>
+       <p>This fact is an immediate
+        consequence of the result, proved in a previous chapter, that the power set of a countably
+        infinite set is uncountable. Since the elements of <m>{\cal P}(\Sigma)</m> are exactly the
+        languages over <m>
+                \Sigma</m>, there are uncountably many such languages. </p>
+        
+       <p> Languages are sets
+        and therefore, as for any sets, it makes sense to talk about the union, intersection, and
+        complement of languages. (When taking the complement of a language over an alphabet <m>
+        \Sigma</m>, we always consider the univeral set to be <m>\Sigma^*</m>, the set of all
+        strings over <m>\Sigma</m>.) Because languages are sets of strings, there are additional
+        operations that can be defined on languages, operations that would be meaningless on more
+        general sets. For example, the idea of concatenation can be extended from strings to
+        languages. </p> 
+        
+        <p>For two sets of strings <m>S</m> and <m>T</m>, we define the <em>
+        concatenation</em> of <m>S</m> and <m>T</m> (denoted <m>S\cdot T</m> or just <m>ST</m>) to
+        be the set <m>ST = \{ st \ | \ s \in S \land t\in T \}</m>. For example, if <m>S = \{ab, aab\}</m> 
+        and <m>T=\{\varep, 110, 1010\}</m>, then <m>ST = \{ab, ab110, ab1010, aab, aab110, aab1010\}</m>. 
+        Note in particular that <m>ab \in
+        ST</m>, because <m>ab \in S</m>, <m>\varep \in T</m>, and <m>ab \cdot \varep = ab</m>.
+        Because concatenation of sets is defined in terms of the concatenation of the strings that
+        the sets contain, concatenation of sets is associative and not commutative. (This can easily
+        be verified.) </p> 
+        
+        <p>When a set <m>S</m> is concatenated with itself, the notation <m>SS</m>
+        is usually scrapped in favour of <m>S^2</m>; if <m>S^2</m> is concatenated with <m>S</m>, we
+        write <m>S^3</m> for the resulting set, etc. So <m>S^2</m> is the set of all strings formed
+        by concatenating two (possibly different, possibly identical) strings from <m>S</m>, <m>S^3</m>
+        is the set of strings formed by concatenating three strings from <m>S</m>, etc. Extending
+        this notation, we take <m>S^1</m> to be the set of strings formed from one string in <m>S</m>
+        (i.e.\ <m>S^1</m> is <m>S</m> itself), and <m>S^0</m> to be the set of strings formed from
+        zero strings in <m>S</m> (i.e.\ <m>S^0 = \{\varep\}</m>). If we take the union <m>S^0 \cup
+        S^1 \cup S^2 \cup \ldots</m>, then the resulting set is the set of all strings formed by
+        concatenating zero or more strings from <m>S</m>, and is denoted <m>S^*</m>. The set <m>S^*</m>
+        is called the <em>Kleene closure</em> of <m>S</m>, and the <m>^*</m> operator is called the <em>Kleene
+        star</em> operator.</p>
+        
+        <example xml:id="ex-kleene-closure">
+            <title>Kleene Closure of a set</title>
+        <p>
+        Let <m>S = \{01, ba\}</m>. Then 
+        <md>
+                <mrow> S^0 \amp = \{\varep\}</mrow>
+                <mrow>S^1 \amp = \{01, ba\} </mrow>
+                <mrow>S^2 \amp = \{0101, 01ba, ba01, baba\}</mrow>
+                <mrow> S^3 \amp = \{010101, 0101ba, 01ba01, 01baba, ba0101, ba01ba, baba01, bababa\}</mrow>
+        <mrow>\text{ etc, so} \amp </mrow>
+                <mrow>S^* \amp =\{\varep,01,ba,0101,01ba,ba01,baba,010101,0101ba,\ldots\}.</mrow>
+            </md>
+        </p>
+        </example>
+         <p>Note that this is the second time we have seen the notation <m>something^*</m>.
+        We have previously seen that for an alphabet <m>\Sigma</m>, <m>\Sigma^*</m> is defined to be
+        the set of all strings over <m>\Sigma</m>. If you think of <m>\Sigma</m> as being a set of
+        length-1 strings, and take its Kleene closure, the result is once again the set of all
+        strings over <m>\Sigma</m>, and so the two notions of <m>^*</m> coincide. </p>
+        
+        <example xml:id="ex-sigma-star">
+            <title><m>\Sigma^*</m></title>>
+            
+        
+         Let <m>\Sigma = \ab</m>. Then 
+         <md>
+            <mrow> \Sigma^0 \amp = \{\varep\} </mrow>
+            <mrow> \Sigma^1 \amp = \ab </mrow>
+            <mrow> \Sigma^2 \amp = \{aa, ab, ba, bb\}</mrow>
+            <mrow> \Sigma^3 \amp = \{aaa, aab, aba, abb, baa, bab, bba, bbb\} </mrow>
+            <mrow> \text{etc, so} \amp </mrow>
+            <mrow> \Sigma^* \amp =\{\varep,a,b,aa,ab,ba,bb,aaa,aab,aba,abb,baa,bab,\ldots\}. </mrow>
+         </md>        
+        </example>
+
+        <exercises xml:id="exercises-17-1">
+
+        <exercise number="1" xml:id="exerc-17_1-1">
+            <statement>
+                <p>
+                    Let <m>S = \{\varep, ab, abab\}</m> and <m>T = \{aa, aba, abba,
+        abbba, \ldots\}</m>. Find the following: 
+        <ol marker="(a)">
+            <li>
+                <p>
+                   <m>S^2</m> 
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>S^3</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>S^*</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>ST</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>TS</m>
+                </p>
+            </li>
+        </ol>
+                    
+                </p>
+            </statement>
+            
+        </exercise>
+        <exercise number="2" xml:id="exerc-17_1-2">
+        <statement>
+            <p>
+                 The <em>reverse</em> of a language <m>L</m> is defined to be <m>L^R = \{ x^R \ | \ x \in L\}</m>. Find <m>
+        S^R</m> and <m>T^R</m> for the <m>S</m> and <m>T</m> in the preceding problem.
+            </p>
+        </statement>
+            
+        </exercise>
+            <exercise number="3" xml:id="exerc-17_1-3">
+                <statement>
+                    <p>Give an example of a language <m>L</m> such that <m>L=L^*</m>.</p>
+                </statement>
+            </exercise>
+        </exercises>
+ </subsection>
+
+</section>

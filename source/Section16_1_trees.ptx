@@ -232,7 +232,7 @@
 
     </subsection>
 
-    <exercises xml:id="exercises-14-1">
+    <exercises xml:id="exercises-16-1">
         <title>Exercises</title>
 
         <exercise number="1" xml:id="exercise-trees">
@@ -262,10 +262,10 @@
             <answer>
                 <p> The number of trees are: (a) 1, (b) 3, and (c) 16. The trees that connect <m>V_c</m>
                     are:</p>
-                <figure xml:id="fig-sol-14-1-1">
+                <figure xml:id="fig-sol-16-1-1">
                     <caption />
-                    <image width="100%" source="images/fig-sol-14-1-1.png">
-                        <description>Solution to exercise 14-1-1</description>
+                    <image width="100%" source="images/fig-sol-16-1-1.png">
+                        <description>Solution to exercise 16-1-1</description>
                     </image>
                 </figure>
             </answer>

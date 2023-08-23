@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="chapter_14" xmlns:xi="http://www.w3.org/2001/XInclude"><title>Trees</title>
-<introduction>
-<p>In this chapter we will study the class of graphs called trees. Trees are frequently used in both mathematics and the sciences. Our solution of <xref ref="lunch-possibilies1" text="type-global"/> is one simple instance. Since they are often used to illustrate or prove other concepts, a poor understanding of trees can be a serious handicap. For this reason, our ultimate goals are to: (1) define the various common types of trees, (2) identify some basic properties of trees, and (3) discuss some of the common applications of trees.
-</p></introduction>
-<xi:include href="./Section14_1.ptx" />
-<xi:include href="./Section14_2.ptx" />
-<xi:include href="./Section14_3.ptx" />
-<xi:include href="./Section14_4.ptx" />
+<chapter xml:id="chapter_14_prog_corr" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Program Correctness</title>
+    <introduction>
+        <p>The goal of this chapter is to introduce the process of verifying the correctness of
+            computer algorithms and programs. Often this involves using induction, so the first
+            section will review writing inductive proofs. The following sections will cover the
+            basics of proving correctness.
+</p>
+    </introduction>
+    <xi:include href="./Section14_1_corr.ptx" />
+    <xi:include href="./Section14_2_corr.ptx" />
+    <!-- <xi:include href="./Section16_3.ptx" /> -->
+
 </chapter>

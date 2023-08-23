@@ -154,7 +154,7 @@
         <p>Any traversal of an empty tree consists of doing nothing.</p>
         <example xml:id="ex-traversals-example">
             <title>Traversal Examples</title>
-            <p>For the tree in <xref ref="fig-bin-tree-14-4" text="type-global" />, the orders in
+            <p>For the tree in <xref ref="fig-bin-tree-16-4" text="type-global" />, the orders in
                 which the vertices are visited are:<ul>
                     <li>
                         <p>A-B-D-E-C-F-G, for the preorder traversal.</p>
@@ -166,10 +166,10 @@
                         <p>D-E-B-F-G-C-A, for the postorder traversal.</p>
                     </li>
                 </ul></p>
-            <figure xml:id="fig-bin-tree-14-4">
+            <figure xml:id="fig-bin-tree-16-4">
                 <caption>A Complete Binary Tree to Level 2
                 </caption>
-                <image width="80%" source="images/fig-bin-tree-14-4.png">
+                <image width="80%" source="images/fig-bin-tree-16-4.png">
                     <description>A Complete Binary Tree to Level 2</description>
                 </image>
             </figure>
@@ -483,7 +483,7 @@
         advantage of Sage's capabilities in this area.</p> -->
     </subsection>
 
-    <exercises xml:id="exercises-14-4">
+    <exercises xml:id="exercises-16-4">
         <title>Exercises</title>
         <exercise number="1">
             <statement>
@@ -519,16 +519,16 @@
                 </p>
             </statement>
             <answer>
-                <figure xml:id="fig-sol-14-4-1-A">
+                <figure xml:id="fig-sol-16-4-1-A">
                     <caption />
-                    <image width="80%" source="images/fig-sol-14-4-1-A.png">
-                        <description>Solution to exercise 14-4-1-A</description>
+                    <image width="80%" source="images/fig-sol-16-4-1-A.png">
+                        <description>Solution to exercise 16-4-1-A</description>
                     </image>
                 </figure>
-                <figure xml:id="fig-sol-14-4-1-B">
+                <figure xml:id="fig-sol-16-4-1-B">
                     <caption />
-                    <image width="70%" source="images/fig-sol-14-4-1-B.png">
-                        <description>Solution to exercise 14-4-1-B</description>
+                    <image width="70%" source="images/fig-sol-16-4-1-B.png">
+                        <description>Solution to exercise 16-4-1-B</description>
                     </image>
                 </figure>
             </answer>
@@ -591,10 +591,10 @@
                 </p>
             </statement>
             <answer>
-                <figure xml:id="fig-sol-14-4-5">
+                <figure xml:id="fig-sol-16-4-5">
                     <caption />
-                    <image width="90%" source="images/fig-sol-14-4-5.png">
-                        <description>Solution to exercise 14-4-5</description>
+                    <image width="90%" source="images/fig-sol-16-4-5.png">
+                        <description>Solution to exercise 16-4-5</description>
                     </image>
                 </figure>
             </answer>

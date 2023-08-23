@@ -11,10 +11,10 @@
     </introduction>
     <subsection xml:id="ss-rooted-trees">
         <title>Definition and Terminology</title>
-        <figure xml:id="fig-rooted-tree-14-3">
+        <figure xml:id="fig-rooted-tree-16-3">
             <caption>A Rooted Tree
             </caption>
-            <image width="100%" source="images/fig-rooted-tree-14-3.png">
+            <image width="100%" source="images/fig-rooted-tree-16-3.png">
                 <description>A Rooted Tree</description>
             </image>
         </figure>
@@ -24,7 +24,7 @@
             <introduction>
                 <p>What differentiates rooted trees from undirected trees is that a rooted tree
                     contains a distinguished vertex, called the root. Consider the tree in <xref
-                        ref="fig-rooted-tree-14-3" text="type-global" />. Vertex <m>A</m> has been
+                        ref="fig-rooted-tree-16-3" text="type-global" />. Vertex <m>A</m> has been
                     designated the root of the tree. If we choose any other vertex in the tree, such
                     as <m>M</m>, we know that there is a unique path from <m>A</m> to <m>M</m>. The
                     vertices on this path, <m>(A, D, K, M)</m>, are described in genealogical terms:</p>
@@ -46,7 +46,7 @@
             <conclusion>
                 <p>These genealogical relationships are often easier to visualize if the tree is
                     rewritten so that children are positioned below their parents, as in <xref
-                        ref="fig-rooted-tree-14-3-redrawn" text="type-global" />.</p>
+                        ref="fig-rooted-tree-16-3-redrawn" text="type-global" />.</p>
                 <p>With this format, it is easy to see that each vertex in the tree can be thought
                     of as the root of a tree that contains, in addition to itself, all of its
                     descendants. For example, <m>D</m> is the root of a tree that contains <m>D</m>, <m>
@@ -56,10 +56,10 @@
                     a formal definition of a rooted tree.</p>
             </conclusion>
         </list>
-        <figure xml:id="fig-rooted-tree-14-3-redrawn">
+        <figure xml:id="fig-rooted-tree-16-3-redrawn">
             <caption>A Rooted Tree, redrawn
             </caption>
-            <image width="100%" source="images/fig-rooted-tree-14-3-redrawn.png">
+            <image width="100%" source="images/fig-rooted-tree-16-3-redrawn.png">
                 <description>A Rooted Tree, redrawn</description>
             </image>
         </figure>
@@ -95,7 +95,7 @@
         <p>The <term>level of a vertex</term><idx>Level of a vertex</idx> of a rooted tree is the
             number of edges that separate the vertex from the root. The level of the root is zero.
             The depth of a tree is the maximum level of the vertices in the tree. The depth of a
-            tree in <xref ref="fig-rooted-tree-14-3-redrawn" text="type-global" /> is three, which
+            tree in <xref ref="fig-rooted-tree-16-3-redrawn" text="type-global" /> is three, which
             is the level of the vertices <m>L</m> and <m>M</m>. The vertices <m>E</m>, <m>F</m>, <m>
             G</m>, <m>H</m>, <m>I</m>, <m>J</m>, and <m>K</m> have level two. <m>B</m>, <m>C</m>,
             and <m>D</m> are at level one and <m>A</m> has level zero.</p>
@@ -324,7 +324,7 @@
 
     </subsection>
 
-    <exercises xml:id="exercises-14-3">
+    <exercises xml:id="exercises-16-3">
         <title>Exercises</title>
 
         <exercise number="1">
@@ -348,18 +348,18 @@
                     lower vertex number the root of the new tree.</p>
                 <figure >
                     <caption>Graph 2(a)</caption>
-                    <image xml:id="fig-exercise-14-3-2a" width="100%">
-                     <description>Figure for exercise 14.3.2a</description>
-                    <!-- <image width="100%" source="images/fig-exercise-14-3-2a.png"> -->
-                        <latex-image><xi:include parse="text" href="./tikz-fig-exercise-14.3.2.tex" />
+                    <image xml:id="fig-exercise-16-3-2a" width="100%">
+                     <description>Figure for exercise 16.3.2a</description>
+                    <!-- <image width="100%" source="images/fig-exercise-16-3-2a.png"> -->
+                        <latex-image><xi:include parse="text" href="./tikz-fig-exercise-16.3.2.tex" />
                         </latex-image>
                     </image>
                 </figure>
                 <figure>
                     <caption>Graph 2(b)</caption>
-                    <image xml:id="fig-exercise-14-3-2b" width="100%">
-                     <description>Figure for exercise 14.3.2b</description>
-                        <latex-image><xi:include parse="text" href="./tikz-fig-exercise-14.3.2b.tex" />
+                    <image xml:id="fig-exercise-16-3-2b" width="100%">
+                     <description>Figure for exercise 16.3.2b</description>
+                        <latex-image><xi:include parse="text" href="./tikz-fig-exercise-16.3.2b.tex" />
                         </latex-image>
                     </image>
                 </figure>
@@ -377,10 +377,10 @@
                     Draw a rooted tree to describe this type of record</p>
             </statement>
             <answer>
-                <figure xml:id="fig-solution-14-3-3">
+                <figure xml:id="fig-solution-16-3-3">
                     <caption />
-                    <image width="100%" source="images/fig-solution-14-3-3.png">
-                        <description>Solution to exercise 14-3-3</description>
+                    <image width="100%" source="images/fig-solution-16-3-3.png">
+                        <description>Solution to exercise 16-3-3</description>
                     </image>
                 </figure>
             </answer>
