@@ -10,8 +10,8 @@
             types of trees, (2) identify some basic properties of trees, and (3) discuss some of the
             common applications of trees. </p>
     </introduction>
-    <xi:include href="./Section16_1.ptx" />
-    <xi:include href="./Section16_2.ptx" />
-    <xi:include href="./Section16_3.ptx" />
-    <xi:include href="./Section16_4.ptx" />
+    <xi:include href="./Section16_1_trees.ptx" />
+    <xi:include href="./Section16_2_trees.ptx" />
+    <xi:include href="./Section16_3_trees.ptx" />
+    <xi:include href="./Section16_4_trees.ptx" />
 </chapter>
