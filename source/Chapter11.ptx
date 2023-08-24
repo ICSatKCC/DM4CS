@@ -18,10 +18,7 @@
 </p>
 </introduction>
 <xi:include href="./Section11_1.ptx" />
-<!--<xi:include href="./Section11_2.ptx" />
+<xi:include href="./Section11_2.ptx" />
 <xi:include href="./Section11_3.ptx" />
 <xi:include href="./Section11_4.ptx" />
-<xi:include href="./Section11_5.ptx" />
-<xi:include href="./Section11_6.ptx" />
-<xi:include href="./Section11_7.ptx" />-->
 </chapter>
