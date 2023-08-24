@@ -13,8 +13,8 @@
         <p> What formalism might we use to model what it means to recognize a language
             ``mechanically''? We look for inspiration to a language-recognizer with which we are all
             familiar, and which we've already in fact mentioned: a compiler. Consider how a C++
-            compiler might handle recognizing a legal <c>if</c> statement. Having seen the word <c>
-            if</c>, the compiler will be in a <em>state</em> or <em>phase of its execution</em>
+            compiler might handle recognizing a legal <c>if</c> statement. Having seen the word 
+            <c>if</c>, the compiler will be in a <em>state</em> or <em>phase of its execution</em>
             where it expects to see a <c>(</c>; in this state, any other character will put the
             compiler in a ``failure" state. If the compiler does in fact see a <c>(</c> next, it
             will then be in an ``expecting a boolean condition" state; if it sees a sequence of

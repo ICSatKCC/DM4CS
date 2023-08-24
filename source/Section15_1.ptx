@@ -504,7 +504,7 @@
                 <li>
                     <p>How can a graph be represented as a data structure for use on a computer? We
                         will discuss some common data structures that are
-                        used to represent graphs in Section 15.2.</p>
+                        used to represent graphs in <xref ref="s-data-structures-for-graphs"/>.</p>
                 </li>
                 <li>
                     <p>Given two vertices in a graph, does there exist a path between them? The
