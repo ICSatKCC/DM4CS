@@ -13,19 +13,11 @@
 <body class="ignore-math">
 <div class="displaymath process-math">
 \begin{align*}
-E \amp \YIELDS T \\
-\amp \YIELDS T*F \\
-\amp \YIELDS T*z \\
-\amp \YIELDS F * z \\
-\amp \YIELDS (E) * z \\
-\amp \YIELDS (E+T) * z \\
-\amp \YIELDS (E+F) * z \\
-\amp \YIELDS (E+y) * z \\
-\amp \YIELDS (T+y) * z \\
-\amp \YIELDS (F+y) * z \\
-\amp \YIELDS (x+y) * z 
+E \amp ::= T\ [\ +\ T\ ]\dots\\
+T  \amp ::= F\ [\ *\ F\ ]\dots\\
+F \amp ::= \text{}\ E\ \text{}\ \BNFALT\ x\ \BNFALT\ y\ \BNFALT\ z
 \end{align*}
 </div>
-<span class="incontext"><a href="sec-grammars.html#md-35" class="internal">in-context</a></span>
+<span class="incontext"><a href="sec-grammars.html#md-31" class="internal">in-context</a></span>
 </body>
 </html>

@@ -12,7 +12,26 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para"><span class="process-math">\(\displaystyle (S\downarrow )(n)=\max (0,n-1)\)</span></div>
-<span class="incontext"><a href="s-generating-functions.html#p-5165" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">There are other ways to generate the language <span class="process-math">\(\{a^nb^m| n\ge m\ge 0\}\text{.}\)</span> For example, the extra non-terminal symbol, <span class="process-math">\(A\text{,}\)</span> is not really necessary, if we allow <span class="process-math">\(S\)</span> to sometimes produce a single <span class="process-math">\(a\)</span> without a <span class="process-math">\(b\text{.}\)</span> This leads to the grammar</div>
+<div class="displaymath process-math">
+\begin{align*}
+S \amp \PRODUCES aSb \\
+S \amp \PRODUCES aS \\
+S \amp \PRODUCES \EMPTYSTRING 
+\end{align*}
+</div>
+<div class="para">(But note that the rule <span class="process-math">\(S\PRODUCES Sa\)</span> would not work in place of <span class="process-math">\(S\PRODUCES aS\text{,}\)</span> since it would allow the production of strings in which an <span class="process-math">\(a\)</span> can follow a <span class="process-math">\(b\text{,}\)</span> and there are no such strings in the language <span class="process-math">\(\{a^nb^m| n\ge m\ge 0\}\text{.}\)</span>) And here are two more grammars that generate this language:</div>
+<div class="displaymath process-math">
+\begin{align*}
+S\amp\PRODUCES AB \amp\qquad S\amp\PRODUCES ASb \\
+A\amp\PRODUCES aA \amp\qquad A\amp\PRODUCES aA \\
+B\amp\PRODUCES aBb \amp\qquad S\amp\PRODUCES\EMPTYSTRING \\
+A\amp\PRODUCES \EMPTYSTRING \amp\qquad A\amp\PRODUCES\EMPTYSTRING \\
+B\amp\PRODUCES \EMPTYSTRING \amp\qquad \amp
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="sec-grammars.html#p-5165" class="internal">in-context</a></span>
 </body>
 </html>

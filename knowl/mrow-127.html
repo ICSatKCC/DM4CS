@@ -13,11 +13,11 @@
 <body class="ignore-math">
 <div class="displaymath process-math">
 \begin{align*}
-\langle expression \rangle \amp ::=\ \langle term \rangle [ \,[ + | - ] \langle term \rangle ]\dots\\
-\langle term \rangle \amp ::=\ \langle factor \rangle [ \, [ * | / ] \langle factor \rangle ]\dots \\
-\langle factor \rangle  \amp ::=\ \textbf{ident} | \textbf{number} | \text{"}(\text{"}\langle expression \rangle \text{"})\text{"}
+\langle integer \rangle \amp ::= \langle digit \rangle \langle digit{\text -}list \rangle \\
+\langle digit{\text -}list \rangle \amp ::= \langle digit \rangle \langle digit{\text -}list \rangle \\
+\langle digit{\text -}list \rangle \amp ::= \EMPTYSTRING 
 \end{align*}
 </div>
-<span class="incontext"><a href="sec-grammars.html#md-26" class="internal">in-context</a></span>
+<span class="incontext"><a href="sec-grammars.html#md-22" class="internal">in-context</a></span>
 </body>
 </html>

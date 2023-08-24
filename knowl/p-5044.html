@@ -11,24 +11,10 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para logical">
-<div class="para">For those who prefer to see a numeric example, suppose <span class="process-math">\(n = 21\text{.}\)</span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para">The construction continues as long as there are new states being added, and new transitions from those states that have to be computed. The final DFA is shown below. <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa11.svg" role="img" class="contained" alt="Diagram of completed DFA."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">17.3.26<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
 </div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-T(21) &amp;= T(10101) \\
-&amp; = 1 + T(1010) \\
-&amp; = 1 + (1 + T(101)) \\
-&amp; = 1 + (1 + (1 + T(10))) \\
-&amp; = 1 + (1 + (1 + (1 + T(1))))\\
-&amp; = 1 + (1 + (1 + (1 + (1 +T(0)))))\\
-&amp; = 5
-\end{split}
-\end{equation*}
-</div>
-</div>
-<span class="incontext"><a href="s-some-common-rrs.html#p-5044" class="internal">in-context</a></span>
+<span class="incontext"><a href="s-finite-state-automata.html#p-5044" class="internal">in-context</a></span>
 </body>
 </html>

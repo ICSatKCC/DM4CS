@@ -11,11 +11,20 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Thus, if <span class="process-math">\(n\)</span> is a power of 2, <span class="process-math">\(T(n) = n \log_2 n\text{.}\)</span> Now if, for some <span class="process-math">\(r \geq 2\)</span> , <span class="process-math">\(2^{r-1}\leq n\leq 2^r\text{,}\)</span> then <span class="process-math">\((r-1)2^{r-1}\leq
-T(n) &lt; r 2^r\text{.}\)</span> This can be proved by induction on <span class="process-math">\(r\text{.}\)</span> As <span class="process-math">\(n\)</span> increases from <span class="process-math">\(2^{r-1}\)</span> to <span class="process-math">\(2^r\text{,}\)</span> <span class="process-math">\(T(n)\)</span> increases from <span class="process-math">\((r-1)2^{r-1}\)</span> to <span class="process-math">\(r 2^r\)</span> and is slightly larger than <span class="process-math">\(\left\lfloor n \log_2n\right\rfloor\text{.}\)</span> The discrepancy is small enough so that <span class="process-math">\(T_e(n)=\left\lfloor n \log
-_2n\right\rfloor\)</span> can be considered a solution of <a href="" class="xref" data-knowl="./knowl/eq-bubble-r.html" title="Equation 16.2.9">(16.2.9)</a> and <a href="" class="xref" data-knowl="./knowl/eq-bubble-b.html" title="Equation 16.2.10">(16.2.10)</a> for the purposes of comparing the merge sort with other algorithms. <a href="" class="xref" data-knowl="./knowl/table-sort-analysis.html" title="Table 16.2.7: Comparison of Times for Bubble Sort and Merge Sort">Table 16.2.7</a> compares <span class="process-math">\(B(n)\)</span> with <span class="process-math">\(T_e(n)\)</span> for selected values of <span class="process-math">\(n\text{.}\)</span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(M\)</span> is a DFA, where <span class="process-math">\(M=(Q,\Sigma,q_0,\delta,F)\text{.}\)</span> Let <span class="process-math">\(n\)</span> be the number of states in <span class="process-math">\(M\text{,}\)</span> and write <span class="process-math">\(Q=\{q_0,q_1,\dots,q_{n-1}\}\text{.}\)</span> We want to consider computations in which <span class="process-math">\(M\)</span> starts in some state <span class="process-math">\(q_i\text{,}\)</span> reads a string <span class="process-math">\(w\text{,}\)</span> and ends in state <span class="process-math">\(q_k\text{.}\)</span> In such a computation, <span class="process-math">\(M\)</span> might go through a series of intermediates states between <span class="process-math">\(q_i\)</span> and <span class="process-math">\(q_k\text{:}\)</span>
 </div>
-<span class="incontext"><a href="s-some-common-rrs.html#p-5070" class="internal">in-context</a></span>
+<div class="displaymath process-math">
+\begin{equation*}
+q_i\longrightarrow p_1\longrightarrow p_2 \cdots\longrightarrow
+p_r\longrightarrow q_k 
+\end{equation*}
+</div>
+<div class="para">We are interested in computations in which all of the intermediate states--- <span class="process-math">\(p_1,p_2,\dots,p_r\)</span>---are in the set <span class="process-math">\(\{q_0,q_1,\dots,q_{j-1}\}\text{,}\)</span> for some number~ <span class="process-math">\(j\text{.}\)</span> We define <span class="process-math">\(R_{i,j,k}\)</span> to be the set of all strings <span class="process-math">\(w\)</span> in <span class="process-math">\(\Sigma^*\)</span> that are consumed by such a computation. That is, <span class="process-math">\(w\in R_{i,j,k}\)</span> if and only if when <span class="process-math">\(M\)</span> starts in state <span class="process-math">\(q_i\)</span> and reads <span class="process-math">\(w\text{,}\)</span> it ends in state <span class="process-math">\(q_k\text{,}\)</span> and all the intermediate states between <span class="process-math">\(q_i\)</span> and <span class="process-math">\(q_k\)</span> are in the set <span class="process-math">\(\{q_0,q_1,\dots,q_{j-1}\}\text{.}\)</span> <span class="process-math">\(R_{i,j,k}\)</span> is a language over <span class="process-math">\(\Sigma\text{.}\)</span> We show that <span class="process-math">\(R_{i,j,k}\)</span> for <span class="process-math">\(0\leq i \lt n , 0\leq j \leq n, 0\leq k lt
+n\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="sec-FSA-and-Regular-Languages.html#p-5070" class="internal">in-context</a></span>
 </body>
 </html>

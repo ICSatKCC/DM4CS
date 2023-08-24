@@ -10,12 +10,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="answer solution-like"><div class="para">
-<span class="process-math">\(\begin{array}{ccccccc}
-k &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 \\
-V[k].\text{found} &amp; T &amp; T &amp; T &amp; F &amp; F &amp; T \\
-V[k].\text{from} &amp; 2 &amp; 5 &amp; 6 &amp; * &amp; * &amp; 5 \\
-\text{Depth} \text{Set} &amp; 2 &amp; 1 &amp; 2 &amp; * &amp; * &amp; 1 \\
-\end{array}\)</span> <span class="process-math">\(\text{(*} = \text{undefined})\)</span>
-</div></div></body>
+<body class="ignore-math"><div class="answer solution-like"><div class="para logical"><ol class="lower-alpha">
+<li><div class="para">For each two-block partition of <span class="process-math">\(\{1,2,\dots, n-1\}\text{,}\)</span> there are two partitions we can create when we add <span class="process-math">\(n\text{,}\)</span> but there is one additional two-block partition to count for which one block is <span class="process-math">\(\{n\}\text{.}\)</span> Therefore, <span class="process-math">\(D(n)=2D(n-1)+1 \textrm{ for } n \geq 2
+\textrm{ and } D(1)=0.\)</span>
+</div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle D(n)=2^{n-1}-1\)</span></div></li>
+</ol></div></div></body>
 </html>

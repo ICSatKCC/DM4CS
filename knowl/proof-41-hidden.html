@@ -10,5 +10,43 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><div class="para">The map of Koenigsberg can be represented as an undirected multigraph, as in <a href="" class="xref" data-knowl="./knowl/fig-konigsberg-multigraph.html" title="Figure 13.4.2">Figure 13.4.2</a>. The four land masses are the vertices and each edge represents a bridge.</div> <div class="para">The desired tour is then a path that uses each edge once and only once. Since the path can start and end at two different vertices, there are two remaining vertices that must be intermediate vertices in the path. If <span class="process-math">\(x\)</span> is an intermediate vertex, then every time that you visit <span class="process-math">\(x\text{,}\)</span> you must use two of its incident edges, one to enter and one to exit. Therefore, there must be an even number of edges connecting <span class="process-math">\(x\)</span> to the other vertices. Since every vertex in the Koenigsberg graph has an odd number of edges, no tour of the type that is desired is possible.</div></article></body>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">We prove (a) by induction and leave the proof of (b) to the reader.</div> <div class="para logical">
+<div class="para">Basis:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+G(S\uparrow;z) &amp;= \sum_{k=0}^{\infty} S(k+1) z^k\\
+&amp; =\sum_{k=1}^{\infty} S(k) z^{k-1}\\
+&amp; =\left.\left(\sum_{k=1}^{\infty} S(k) z^k\right)\right/z\\
+&amp; =\left.\left(S(0)+\sum_{k=1}^{\infty} S(k) z^k-S(0)\right)\right/z\\
+&amp; =(G(S;z)-S(0))/z
+\end{split}
+\end{equation*}
+</div>
+<div class="para">Therefore, part (a) is true for <span class="process-math">\(p=1\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Induction: Suppose that for some <span class="process-math">\(p\geq 1\text{,}\)</span> the statement in part (a) is true:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+G(S\uparrow (p+1);z) &amp;= G((S\uparrow p)\uparrow ;z)\\
+&amp; = (G(S\uparrow p ;z)-(S\uparrow p)(0))/z \textrm{ by the basis}\\
+&amp; = \frac{\frac{\left(G(S;z)-\sum_{k=0}^{p-1} S(k)
+z^k\right)}{z^p}-S(p)}{z}
+\end{split}
+\end{equation*}
+</div>
+<div class="para">by the induction hypothesis. Now write <span class="process-math">\(S(p)\)</span> in the last expression above as <span class="process-math">\(\left(S(p)z^p \right)/z^p\)</span> so that it fits into the finite summation:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+G(S\uparrow (p+1);z) &amp; =\left.\left(\frac{G(S;z)-\sum_{k=0}^p S(k)
+z^k}{z^p}\right)\right/z\\
+&amp; = \left(G(S;z)-\sum_{k=0}^p S(k) z^k\right)/z^{p+1}
+\end{split}
+\end{equation*}
+</div>
+</div> <div class="para">Therefore the statement is true for <span class="process-math">\(p+1\text{.}\)</span>
+</div></article></body>
 </html>

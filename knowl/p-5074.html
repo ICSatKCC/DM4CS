@@ -11,24 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(D(n)\)</span> be the number of derangements of <span class="process-math">\(\{1, 2, . . . , n\}\text{.}\)</span> Our answer will come from discovering a recurrence relation on <span class="process-math">\(D\text{.}\)</span> Suppose that <span class="process-math">\(n \geq 3\text{.}\)</span> If we are to construct a derangement of <span class="process-math">\(\{1, 2, \dots , n\}\text{,}\)</span> <span class="process-math">\(f\text{,}\)</span> then <span class="process-math">\(f(n)
-= k \neq n\text{.}\)</span> Thus, the image of <span class="process-math">\(n\)</span> can be selected in <span class="process-math">\(n-1\)</span> different ways. No matter which of the <span class="process-math">\(n -1\)</span> choices we make, we can complete the definition of <span class="process-math">\(f\)</span> in one of two ways. First, we can decide to make <span class="process-math">\(f(k) = n\text{,}\)</span> leaving <span class="process-math">\(D(n
--2)\)</span> ways of completing the definition of <span class="process-math">\(f\text{,}\)</span> since <span class="process-math">\(f\)</span> will be a derangement of <span class="process-math">\(\{1, 2, \dots ,n\} - \{n, k\}\text{.}\)</span> Second, if we decide to select <span class="process-math">\(f(k)\neq
-n\text{,}\)</span> each of the <span class="process-math">\(D(n - 1)\)</span> derangements of <span class="process-math">\(\{1, 2,\dots ,n-1\}\)</span> can be used to define <span class="process-math">\(f\text{.}\)</span> If <span class="process-math">\(g\)</span> is a derangement of <span class="process-math">\(\{1, 2, \dots , n-1\}\)</span> such that <span class="process-math">\(g(p) = k\text{,}\)</span> then define f by</div>
+<div class="para">We now know, in particular, that <span class="process-math">\(R_{0,n,k}\)</span> is a regular language for all <span class="process-math">\(k\text{.}\)</span> But <span class="process-math">\(R_{0,n,k}\)</span> consists of all strings <span class="process-math">\(w\in\Sigma^*\)</span> such that when <span class="process-math">\(M\)</span> starts in state <span class="process-math">\(q_0\)</span> and reads <span class="process-math">\(w\text{,}\)</span> it ends in state <span class="process-math">\(q_k\)</span> (with \textbf{no} restriction on the intermediate states in the computation, since every state of <span class="process-math">\(M\)</span> is in the set \{q_0,q_1,\dots,q_{n-1}\}). To finish the proof that <span class="process-math">\(L(M)\)</span> is regular, it is only necessary to note that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-f(j)=\left\{
-\begin{array}{cc}
-n &amp; \textrm{ if } j = p \\
-k &amp; \textrm{ if } j = n \\
-g(j) &amp; \textrm{ otherwise } \\
-\end{array}
-\right.
+L(M)=\bigcup_{q_k\in F} R_{0,n,k} 
 \end{equation*}
 </div>
+<div class="para">which is regular since it is a union of regular languages. This equation is true since a string <span class="process-math">\(w\)</span> is in <span class="process-math">\(L(M)\)</span> if and only if when <span class="process-math">\(M\)</span> starts in state <span class="process-math">\(q_0\)</span> and reads <span class="process-math">\(w\text{,}\)</span> in ends in some accepting state <span class="process-math">\(q_k\in F\text{.}\)</span> This is the same as saying <span class="process-math">\(w\in R_{0,n,k}\)</span> for some <span class="process-math">\(k\)</span> with <span class="process-math">\(q_k\in
+F\text{.}\)</span>
 </div>
-<span class="incontext"><a href="s-some-common-rrs.html#p-5074" class="internal">in-context</a></span>
+</div>
+<span class="incontext"><a href="sec-FSA-and-Regular-Languages.html#p-5074" class="internal">in-context</a></span>
 </body>
 </html>

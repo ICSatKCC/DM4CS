@@ -11,34 +11,10 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical"><ol class="lower-alpha">
-<li><div class="para"><span class="process-math">\(\displaystyle B^{(h)}(k)=b_1(1.08){}^k\)</span></div></li>
-<li><div class="para">
-<span class="process-math">\(B^{(p)}(k)\)</span> should be of the form <span class="process-math">\(d 2^k\text{.}\)</span>
-</div></li>
-<li><div class="para logical">
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-d 2^k = 1.08d 2^{k-1}+2^k &amp; \Rightarrow (2d) 2^{k-1} = 1.08d
-2^{k-1}+ 2\cdot 2^{k-1}\\
-&amp; \Rightarrow 2d = 1.08 d + 2\\
-&amp;\Rightarrow .92d = 2 \\
-&amp;\Rightarrow d= 2.174 \textrm{ to the nearest thousandth})
-\end{split}
-\end{equation*}
+<h3 class="heading"><span class="type">Paragraph</span></h3>
+<div class="para">What formalism might we use to model what it means to recognize a language ``mechanically’’? We look for inspiration to a language-recognizer with which we are all familiar, and which we’ve already in fact mentioned: a compiler. Consider how a C++ compiler might handle recognizing a legal <code class="code-inline tex2jax_ignore">if</code> statement. Having seen the word <code class="code-inline tex2jax_ignore">if</code>, the compiler will be in a <em class="emphasis">state</em> or <em class="emphasis">phase of its execution</em> where it expects to see a <code class="code-inline tex2jax_ignore">(</code>; in this state, any other character will put the compiler in a ``failure" state. If the compiler does in fact see a <code class="code-inline tex2jax_ignore">(</code> next, it will then be in an ``expecting a boolean condition" state; if it sees a sequence of symbols that make up a legal boolean condition, it will then be in an ``expecting a <code class="code-inline tex2jax_ignore">)</code>" state; and then ``expecting a <code class="code-inline tex2jax_ignore">{</code>’ or a legal statement"; and so on. Thus one can think of the compiler as being in a series of states; on seeing a new input symbol, it moves on to a new state; and this sequence of transitions eventually leads to either a ``failure" state (if the <code class="code-inline tex2jax_ignore">if</code> statement is not syntactically correct) or a ``success" state (if the <code class="code-inline tex2jax_ignore">if</code> statement is legal). We isolate these three concepts---states, input-inspired transitions from state to state, and ``accepting" vs ``non-accepting" states---as the key features of a mechanical language-recognizer, and capture them in a model called a <dfn class="terminology">finite-state automaton</dfn>. (Whether this is a successful distillation of the essence of mechanical language recognition remains to be seen; the question will be taken up later in this chapter.) <aside class="aside aside-like"><h3 class="heading"><span class="title">Automata.</span></h3>
+<div class="para">The term <dfn class="terminology">automata</dfn> is the plural form of <dfn class="terminology">automaton</dfn>. In some texts, <dfn class="terminology">machine</dfn> is used in place of automaton.</div></aside>
 </div>
-<div class="para">Therefore <span class="process-math">\(B^{(p)}(k)=2.174\cdot 2^k\text{.}\)</span>
-</div>
-</div></li>
-<li>
-<div class="para"><span class="process-math">\(B(0) = 1 \Rightarrow \textrm{ }b_1+2.174 = 1\\ \\ \textrm{
-}\Rightarrow \textrm{ }b_1= -1.174\)</span></div>
-<div class="para">Therefore, <span class="process-math">\(B(k) = -1.174\cdot 1.08^k+ 2.174\cdot 2^k\text{.}\)</span>
-</div>
-</li>
-</ol></div>
-<span class="incontext"><a href="s-recurrence-relations.html#p-4968" class="internal">in-context</a></span>
+<span class="incontext"><a href="s-finite-state-automata.html#p-4968" class="internal">in-context</a></span>
 </body>
 </html>

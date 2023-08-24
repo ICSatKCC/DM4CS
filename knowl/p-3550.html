@@ -12,9 +12,37 @@
 </head>
 <body class="ignore-math">
 <h3 class="heading"><span class="type">Paragraph</span></h3>
-<div class="para">It is quite clear that we can describe any Boolean algebra of order 8 by considering <span class="process-math">\(B_2\times
-B_2\times B_2=B_2^3\)</span> and, more generally, any Boolean algebra of order <span class="process-math">\(2^n\)</span> with <span class="process-math">\(B_2^n=B_2\times
-B_2\times \cdots \times B_2\)</span> (<span class="process-math">\(n\)</span> factors).</div>
+<div class="para logical">
+<div class="para">The simplest nontrivial Boolean algebra is the Boolean algebra on the set <span class="process-math">\(B_2=\{0, 1\}\text{.}\)</span> The ordering on <span class="process-math">\(B_2\)</span> is the natural one, <span class="process-math">\(0 \leq
+0, 0\leq 1, 1\leq 1\text{.}\)</span> If we treat 0 and 1 as the truth values “false” and “true,” respectively, we see that the Boolean operations <span class="process-math">\(\lor (\textrm{join})\)</span> and <span class="process-math">\(\land
+(\textrm{meet})\)</span> are nothing more than the logical operation with the same symbols. The Boolean operation, <span class="process-math">\(-\text{,}\)</span> (complementation) is the logical <span class="process-math">\(\neg\)</span> (negation). In fact, this is why these symbols were chosen as the names of the Boolean operations. The operation tables for <span class="process-math">\(\left[B_2;\lor ,\land, - \right]\)</span> are simply those of “or,” “and,” and “not,” which we repeat here.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{lcr}
+\begin{array}{c|cc}
+\lor &amp; 0 &amp; 1 \\
+\hline
+0 &amp; 0 &amp; 1 \\D
+1 &amp; 1 &amp; 1 \\
+\end{array}
+&amp;
+\begin{array}{c|cc}
+\land &amp; 0 &amp; 1 \\
+\hline
+0 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 1 \\
+\end{array}
+&amp;
+\begin{array}{c|c}
+u &amp; \overset{-}{u} \\
+\hline
+0 &amp; 1 \\
+1 &amp; 0 \\
+\end{array}
+\end{array}
+\end{equation*}
+</div>
+</div>
 <span class="incontext"><a href="s-finite-boolean-algebras-ntuples.html#p-3550" class="internal">in-context</a></span>
 </body>
 </html>

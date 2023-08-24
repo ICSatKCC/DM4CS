@@ -11,10 +11,28 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Use the substitution <span class="process-math">\(G(n) =T(n)^2\)</span> to solve <span class="process-math">\(T(n)^2-T(n-1)^2=1\)</span> for <span class="process-math">\(n
-\geq 1\text{,}\)</span> with <span class="process-math">\(T(0) = 10\text{.}\)</span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">So altogether, if <span class="process-math">\(M\)</span> is an <span class="process-math">\(n\)</span>-state DFA that accepts <span class="process-math">\(L\text{,}\)</span> and <span class="process-math">\(w\)</span> is a string in <span class="process-math">\(L\)</span> whose length is at least <span class="process-math">\(n\text{,}\)</span> then <span class="process-math">\(w\)</span> can be broken down into three pieces <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\text{,}\)</span> <span class="process-math">\(w=xyz\text{,}\)</span> such that</div>
+<ol class="lower-roman">
+<li><div class="para">
+<span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> together contain no more than <span class="process-math">\(n\)</span> symbols;</div></li>
+<li><div class="para">
+<span class="process-math">\(y\)</span> contains at least one symbol;</div></li>
+<li><div class="para logical"><ol class="lower-alpha">
+<li><div class="para">
+<span class="process-math">\(xz\)</span> is accepted by <span class="process-math">\(M\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(xyz\)</span> is accepted by <span class="process-math">\(M\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(xyyz\)</span> is accepted by <span class="process-math">\(M\)</span>
+</div></li>
+<li><div class="para">etc.</div></li>
+</ol></div></li>
+</ol>
 </div>
-<span class="incontext"><a href="s-some-common-rrs.html#p-5101" class="internal">in-context</a></span>
+<span class="incontext"><a href="sec-FSA-and-Regular-Languages.html#p-5101" class="internal">in-context</a></span>
 </body>
 </html>

@@ -12,20 +12,24 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">One of the keys to working with large amounts of information is to organize it in a consistent, logical way. A <dfn class="terminology">data structure</dfn> is a scheme for organizing data. A simple example of a data structure might be the information a college admissions department might keep on their applicants. Items might look something like this:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-ApplicantItem &amp; = (FirstName,MiddleInitial,LastName,StreetAddress,\\
-&amp; City,State,Zip,HomePhone,CellPhone,EmailAddress,\\
-&amp; HighSchool,Major,ApplicationPaid,MathSAT,VerbalSAT,\\
-&amp; Recommendation1,Recommendation2,Recommendation3)
-\end{split}
-\end{equation*}
+<div class="para logical"><ul class="disc">
+<li><div class="para"><span class="process-math">\(\displaystyle S = Empty Stack\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle k=j\)</span></div></li>
+<li>
+<div class="para">while <span class="process-math">\(V_k.\text{from} \neq i\text{:}\)</span>
 </div>
-<div class="para">This structure is called a “flat file”.</div>
+<div class="para">
+<span class="process-math">\(\quad\)</span>Push <span class="process-math">\(k\)</span> onto <span class="process-math">\(S\)</span>
 </div>
-<span class="incontext"><a href="s-rooted-trees.html#p-4305" class="internal">in-context</a></span>
+<div class="para">
+<span class="process-math">\(\quad\)</span> <span class="process-math">\(k = V_k.\text{from}\)</span>
+</div>
+</li>
+<li><div class="para">Push <span class="process-math">\(k\)</span> onto <span class="process-math">\(S\)</span>
+</div></li>
+<li><div class="para">Push <span class="process-math">\(i\)</span> onto <span class="process-math">\(S\)</span>
+</div></li>
+</ul></div>
+<span class="incontext"><a href="s-Connectivity.html#p-4305" class="internal">in-context</a></span>
 </body>
 </html>

@@ -12,43 +12,21 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical"><ol class="lower-alpha">
-<li><div class="para">r = <span class="process-math">\(a_1\)</span>
-</div></li>
-<li><div class="para">inserted = false</div></li>
-<li>
-<div class="para">while not(inserted):</div>
-<div class="para">
-<span class="process-math">\(\quad \)</span>if <span class="process-math">\(a_k &lt; r\text{:}\)</span>
+<div class="para logical">
+<div class="para">Recursive definition of the Gray Code: Given the Gray Code for the <span class="process-math">\(n\)</span>-cube, <span class="process-math">\(n
+\geq 1\text{,}\)</span> then <span class="process-math">\(G_{n+1}\)</span> is obtained by (1) listing <span class="process-math">\(G_n\)</span> with each string prefixed with 0, and then (2) reversing the list of strings in <span class="process-math">\(G_n\)</span> with each string prefixed with 1. Symbolically, the recursion can be expressed as follows, where <span class="process-math">\(G_n^r\)</span> is the reverse of list <span class="process-math">\(G_n\text{.}\)</span>
 </div>
-<div class="para">
-<span class="process-math">\(\quad \quad \quad \)</span>if <span class="process-math">\(r\)</span> has a left child:</div>
-<div class="para">
-<span class="process-math">\(\quad \quad \quad \quad\)</span>r = left child of <span class="process-math">\(r\)</span>
+<div class="displaymath process-math">
+\begin{equation*}
+G_{n+1}=\left(
+\begin{array}{c}
+0 G_n \\
+1 G_n^r \\
+\end{array}
+\right)
+\end{equation*}
 </div>
-<div class="para">
-<span class="process-math">\(\quad \quad \quad\)</span> else:</div>
-<div class="para">
-<span class="process-math">\(\quad \quad \quad \quad\)</span>make <span class="process-math">\(a_k\)</span> the left child of <span class="process-math">\(r\)</span>
 </div>
-<div class="para">
-<span class="process-math">\(\quad \quad \quad \quad\)</span>inserted = true</div>
-<div class="para">
-<span class="process-math">\(\quad \quad\)</span>else:</div>
-<div class="para">
-<span class="process-math">\(\quad \quad \quad \)</span>if <span class="process-math">\(r\)</span> has a right child:</div>
-<div class="para">
-<span class="process-math">\(\quad \quad \quad \quad\)</span>r = right child of <span class="process-math">\(r\)</span>
-</div>
-<div class="para">
-<span class="process-math">\(\quad \quad \quad\)</span> else:</div>
-<div class="para">
-<span class="process-math">\(\quad \quad \quad \quad\)</span>make <span class="process-math">\(a_k\)</span> the right child of <span class="process-math">\(r\)</span>
-</div>
-<div class="para">
-<span class="process-math">\(\quad \quad \quad \quad\)</span>inserted = true</div>
-</li>
-</ol></div>
-<span class="incontext"><a href="s-binary-trees.html#p-4364" class="internal">in-context</a></span>
+<span class="incontext"><a href="s-traversals.html#p-4364" class="internal">in-context</a></span>
 </body>
 </html>

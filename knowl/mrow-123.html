@@ -13,16 +13,11 @@
 <body class="ignore-math">
 <div class="displaymath process-math">
 \begin{align*}
-\langle statement \rangle \amp ::=\ \langle block{\text -}statement \rangle \BNFALT\ \langle if{\text -}statement \rangle \\
-\amp \,\BNFALT\ \langle while{\text -}statement\rangle  \BNFALT\ \langle assignment{\text -}statement \rangle\\
-\amp \,  \BNFALT\ \langle null{\text -}statement \rangle\\
-\langle block{\text -}statement \rangle\amp ::=\ \{ [ \langle statement \rangle ]\dots\ \}\\
-\langle if{\text -}statement \rangle \amp ::=\ if \text{"("} \langle condition \rangle \text{")"}  \langle statement \rangle [ else \langle statement \rangle~] \\
-\langle while{\text -}statement \rangle \amp ::=\ while \text{"("}  \langle condition \rangle \text{")"} \langle statement \rangle \\
-\langle assignment{\text -}statement \rangle \amp  ::=\ \langle variable \rangle = \langle expression \rangle ; \\
-\langle null{\text -}statement \rangle\amp ::=\ \EMPTYSTRING 
+\langle declaration \rangle \amp ::=\ \langle type \rangle \langle variable \rangle ;\\
+\langle declaration \rangle \amp ::=\ \langle type \rangle \langle variable \rangle
+= \langle expression \rangle  ;
 \end{align*}
 </div>
-<span class="incontext"><a href="sec-grammars.html#md-25" class="internal">in-context</a></span>
+<span class="incontext"><a href="sec-grammars.html#md-21" class="internal">in-context</a></span>
 </body>
 </html>

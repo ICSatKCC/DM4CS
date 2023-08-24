@@ -11,20 +11,21 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(C(n) = S(n) + T(n) + U(n) = 9 \cdot 5^n + 4 + 3(-1)^n\text{.}\)</span> Then</div>
+<div class="para">As an example that we will use throughout this section, consider the language that consists of arithmetic expressions containing parentheses, the binary operators <span class="process-math">\(+\)</span> and <span class="process-math">\(*\text{,}\)</span> and the variables <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\text{.}\)</span>  Strings in this language include <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(x+y*z\text{,}\)</span> and <span class="process-math">\(((x+y)*y)+z*z\text{.}\)</span>  Here is a context-free grammar that generates this language:</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-G(C;z) &amp; = G(S;z) + G(T;z) + G(U;z)\\
-&amp; = \frac{9}{1-5z} + \frac{4}{1-z}+ \frac{3}{1+z}\\
-&amp; = -\frac{14 z^2+34z-16}{5 z^3-z^2-5 z+1}
-\end{split}
-\end{equation*}
+\begin{align*}
+E \amp \PRODUCES E+E\\
+E \amp \PRODUCES E*E\\
+E \amp \PRODUCES (E)\\
+E \amp \PRODUCES x\\
+E \amp \PRODUCES y\\
+E \amp \PRODUCES z
+\end{align*}
 </div>
-<div class="para">.</div>
+<div class="para">Call the grammar described by these production rules <span class="process-math">\(G_1\text{.}\)</span> The grammar <span class="process-math">\(G_1\)</span> says that <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\)</span> are expressions, and that you can make new expressions by adding two expressions, by multiplying two expressions, and by enclosing an expression in parentheses. (Later, we’ll look at other grammars for the same language---ones that turn out to have certain advantages over <span class="process-math">\(G_1\text{.}\)</span>)</div>
 </div>
-<span class="incontext"><a href="s-generating-functions.html#p-5199" class="internal">in-context</a></span>
+<span class="incontext"><a href="sec-grammars.html#p-5199" class="internal">in-context</a></span>
 </body>
 </html>

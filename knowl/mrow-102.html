@@ -13,16 +13,12 @@
 <body class="ignore-math">
 <div class="displaymath process-math">
 \begin{align*}
-\langle sentence \rangle \amp ::=\ \langle simple{\text -}sentence \rangle [ and \langle simple{\text -}sentence \rangle ]\dots \\
-\langle simple{\text -}sentence \rangle  \amp ::=\ \langle noun{\text -}part \rangle \langle verb{\text -}part \rangle \\
-\langle noun{\text -}part \rangle \amp ::=\ \langle article \rangle \langle noun \rangle [ who \langle verb{\text -}part \rangle ]\dots \\
-\langle verb{\text -}part \rangle \amp ::=\ \langle intransitive{\text -}verb \rangle \BNFALT\ ( \langle transitive{\text -}verb \rangle \langle noun{\text -}part \rangle ) \\
-\langle article \rangle \amp ::=\ the \BNFALT\ a \\
-\langle noun \rangle \amp ::=\ man \BNFALT\ woman \BNFALT\ dog  \BNFALT\ cat  \BNFALT\ computer \\
-\langle intransitive{\text -}verb \rangle \amp ::=\ runs \BNFALT\ jumps \BNFALT\ hides \\
-\langle transitive{\text -}verb \rangle \amp ::=\ knows \BNFALT\ loves \BNFALT\ chases  \BNFALT\ owns 
+S \amp \PRODUCES aSb\\
+S \amp \PRODUCES A \\
+A \amp \PRODUCES aA \\
+A \amp \PRODUCES \EMPTYSTRING 
 \end{align*}
 </div>
-<span class="incontext"><a href="sec-grammars.html#md-23" class="internal">in-context</a></span>
+<span class="incontext"><a href="sec-grammars.html#md-15" class="internal">in-context</a></span>
 </body>
 </html>

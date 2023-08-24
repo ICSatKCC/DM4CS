@@ -12,18 +12,29 @@
 </head>
 <body class="ignore-math">
 <article class="exercise exercise-like"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8<span class="period">.</span></span>
 </h4>
-<div class="para">Solve the following recurrence relations. Indicate whether your solution is an improvement over iteration.</div> <div class="para logical"><ol class="lower-alpha">
-<li><div class="para">
-<span class="process-math">\(n S(n) - S(n - 1) = 0\text{,}\)</span> <span class="process-math">\(S(0) = 1\text{.}\)</span>
-</div></li>
-<li><div class="para">
-<span class="process-math">\(T(k) + 3k T(k - 1) = 0\text{,}\)</span> <span class="process-math">\(T(0) = 1\text{.}\)</span>
-</div></li>
-<li><div class="para">
-<span class="process-math">\(U(k) -\frac{k-1}{k}U(k - 1) = 0\text{,}\)</span> <span class="process-math">\(k \geq 2\text{,}\)</span> <span class="process-math">\(U(1) = 1\)</span> .</div></li>
-</ol></div>
-<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-241-hidden.html" title="Answer 16.2.5.1.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><span class="incontext"><a href="s-some-common-rrs.html#exercise-591" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Show that each of the following grammars is ambiguous by finding a string that has two left derivations according to the grammar:</div>
+<ol class="lower-alpha">
+<li><div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+S \amp \PRODUCES SS \\
+S \amp  \PRODUCES aSb\\
+S \amp \PRODUCES bSa \\
+S \amp\PRODUCES\EMPTYSTRING  
+\end{align*}
+</div></div></li>
+<li><div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+S \amp \PRODUCES ASb \\
+S \amp \PRODUCES \EMPTYSTRING\\
+A \amp \PRODUCES aA\\
+A \amp\PRODUCES a 
+\end{align*}
+</div></div></li>
+</ol>
+</div>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-249-hidden.html" title="Answer 17.5.4.8.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><span class="incontext"><a href="sec-grammars.html#exercise-591" class="internal">in-context</a></span>
 </body>
 </html>

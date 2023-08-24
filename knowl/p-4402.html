@@ -11,10 +11,22 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">
-<span class="process-math">\(\quad \quad \)</span> <span class="process-math">\(\vdots\)</span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical"><ol class="lower-alpha">
+<li><div class="para logical">
+<div class="para"><span class="process-math">\(v_k= \textrm{ the closest vertex in } V_{k-1}
+\textrm{ to }
+v_{k-1}\text{:}\)</span></div>
+<div class="displaymath process-math">
+\begin{equation*}
+w\left(v_{k-1} , v _k\right) = \min
+\left(w\left(v_{k-1} ,v\right) \mid v \in V_{k-1}\right)
+\end{equation*}
 </div>
-<span class="incontext"><a href="s-binary-trees.html#p-4402" class="internal">in-context</a></span>
+<div class="para">In case of a tie for closest, <span class="process-math">\(v_k\)</span> may be chosen arbitrarily.</div>
+</div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle V_k= V_{k-1} - \left\{v_k \right\}\)</span></div></li>
+</ol></div>
+<span class="incontext"><a href="s-graph-optimization.html#p-4402" class="internal">in-context</a></span>
 </body>
 </html>

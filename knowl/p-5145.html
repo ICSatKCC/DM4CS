@@ -12,7 +12,20 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">From this example, we see that there are several skills that must be mastered in order to work with generating functions. You must be able to:</div>
-<span class="incontext"><a href="s-generating-functions.html#p-5145" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Even though this is the formal definition, grammars are often specified informally simply by listing the set of production rules. When this is done it is assumed, unless otherwise specified, that the non-terminal symbols are just the symbols that occur on the left-hand sides of production rules of the grammar. The terminal symbols are all the other symbols that occur on the right-hand sides of production rules. The start symbol is the symbol that occurs on the left-hand side of the first production rule in the list. Thus, the list of production rules</div>
+<div class="displaymath process-math">
+\begin{align*}
+T\amp\PRODUCES TT \\
+T \amp \PRODUCES A\\
+A \amp \PRODUCES aAa \\
+A \amp \PRODUCES bB \\
+B \amp \PRODUCES bB \\
+B \amp \PRODUCES \EMPTYSTRING 
+\end{align*}
+</div>
+<div class="para">specifies a grammar <span class="process-math">\(G=(V,\Sigma,P,T)\)</span> where <span class="process-math">\(V\)</span> is <span class="process-math">\(\{T,A,B\}\text{,}\)</span> <span class="process-math">\(\Sigma\)</span> is <span class="process-math">\(\{a,b\}\text{,}\)</span> and <span class="process-math">\(T\)</span> is the start symbol. <span class="process-math">\(P\text{,}\)</span> of course, is a set containing the six production rules in the list.</div>
+</div>
+<span class="incontext"><a href="sec-grammars.html#p-5145" class="internal">in-context</a></span>
 </body>
 </html>

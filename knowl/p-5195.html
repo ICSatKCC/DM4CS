@@ -11,41 +11,45 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical"><ol class="lower-alpha">
-<li><div class="para">If <span class="process-math">\(S(n) = 9\cdot 5^n\text{,}\)</span> <span class="process-math">\(n \geq 0\text{,}\)</span> <span class="process-math">\(G(S;z)\)</span> is an infinite geometric series with <span class="process-math">\(a = 9\)</span> and <span class="process-math">\(r = 5z\text{.}\)</span>Therefore, <span class="process-math">\(G(S;z)
-= \frac{9}{1 - 5z}\text{.}\)</span>
-</div></li>
-<li><div class="para">If <span class="process-math">\(T(n) = 4\text{,}\)</span> <span class="process-math">\(n \geq\)</span>0, then <span class="process-math">\(G(T;z) = 4/(1 - z)\text{.}\)</span>
-</div></li>
-<li><div class="para">If <span class="process-math">\(U(n) = 3(-1)^n\text{,}\)</span> then <span class="process-math">\(G(U;z) = 3/(1 + z)\text{.}\)</span>
-</div></li>
-<li>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(C(n) = S(n) + T(n) + U(n) = 9 \cdot 5^n + 4 + 3(-1)^n\text{.}\)</span> Then</div>
+<div class="para">When BNF is applied to programming languages, the terminal symbols are generally “tokens,” which are the minimal meaningful units in a program.  For example, the pair of symbols <span class="process-math">\(\lt =\)</span> constitute a single token, as does a string such as <code class="code-inline tex2jax_ignore">"Hello World"</code>. Every number is represented by a single token.  (The actual value of the number is stored as a so-called “attribute” of the token, but the value plays no role in the context-free syntax of the language.) I will use the symbol <span class="process-math">\(\textbf{number}\)</span> to represent a numerical token. Similarly, every variable name, subroutine name, or other identifier in the program is represented by the same token, which I will denote as <span class="process-math">\(\textbf{ident}\text{.}\)</span>  One final complication:  Some symbols used in programs, such as “]” and “(”, are also used with a special meaning in BNF grammars.  When such a symbol occurs as a terminal symbol, I will enclose it in double quotes.  For example, in the BNF production rule</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\begin{split}
-G(C;z) &amp; = G(S;z) + G(T;z) + G(U;z)\\
-&amp; = \frac{9}{1-5z} + \frac{4}{1-z}+ \frac{3}{1+z}\\
-&amp; = -\frac{14 z^2+34z-16}{5 z^3-z^2-5 z+1}
-\end{split}
+\langle array{\text -}reference \rangle ::=\ 
+\textbf{ident } \text{"[" } \langle expression \rangle \text{ "]"} 
 \end{equation*}
 </div>
-<div class="para">.</div>
+<div class="para">the “<span class="process-math">\([\)</span>” and “<span class="process-math">\(]\)</span>” are terminal symbols in the language that is being described, rather than the BNF notation for an optional item.  With this notation, here is part of a BNF grammar that describes statements in the Java programming language:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\langle statement \rangle \amp ::=\ \langle block{\text -}statement \rangle \BNFALT\ \langle if{\text -}statement \rangle \\
+\amp \,\BNFALT\ \langle while{\text -}statement\rangle  \BNFALT\ \langle assignment{\text -}statement \rangle\\
+\amp \,  \BNFALT\ \langle null{\text -}statement \rangle\\
+\langle block{\text -}statement \rangle\amp ::=\ \{ [ \langle statement \rangle ]\dots\ \}\\
+\langle if{\text -}statement \rangle \amp ::=\ if \text{"("} \langle condition \rangle \text{")"}  \langle statement \rangle [ else \langle statement \rangle~] \\
+\langle while{\text -}statement \rangle \amp ::=\ while \text{"("}  \langle condition \rangle \text{")"} \langle statement \rangle \\
+\langle assignment{\text -}statement \rangle \amp  ::=\ \langle variable \rangle = \langle expression \rangle ; \\
+\langle null{\text -}statement \rangle\amp ::=\ \EMPTYSTRING 
+\end{align*}
 </div>
-<div class="para">Given a choice between the last form of <span class="process-math">\(G(C;z)\)</span> and the previous sum of three fractions, we would prefer leaving it as a sum of three functions. As we saw in an earlier example, a partial fractions decomposition of a fraction such as the last expression requires some effort to produce.</div>
-</li>
-<li><div class="para">If <span class="process-math">\(G(Q;z) = 34/(2 - 3z)\text{,}\)</span> then <span class="process-math">\(Q\)</span> can be determined by multiplying the numerator and denominator by 1/2 to obtain <span class="process-math">\(\frac{17}{1-\frac{3}{2}z}\text{.}\)</span> We recognize this fraction as the sum of the infinite geometric series with <span class="process-math">\(a = 17\)</span> and <span class="process-math">\(r = \frac{3}{2}z\text{.}\)</span> Therefore <span class="process-math">\(Q(n) = 17(3/2)^n\text{.}\)</span>
-</div></li>
-<li><div class="para">If <span class="process-math">\(G(A;z) = (1 + z)^3\)</span> , then we expand <span class="process-math">\((1 + z)^3\)</span> to <span class="process-math">\(1 +
-3z + 3z^2 + z^{3}\)</span> . Therefore <span class="process-math">\(A(0) = 1\text{,}\)</span> <span class="process-math">\(A(1) = 3\)</span> <span class="process-math">\(A(2)=
-3\text{,}\)</span> <span class="process-math">\(A(3) = 1\text{,}\)</span> and, since there are no higher-powered terms, <span class="process-math">\(A(n)
-= 0\text{,}\)</span> <span class="process-math">\(n \geq 4\text{.}\)</span> A more concise way of describing <span class="process-math">\(A\)</span> is <span class="process-math">\(A(k)
-= \binom{3}{k} \text{,}\)</span> since <span class="process-math">\(\binom{n}{k} \)</span> is interpreted as 0 of <span class="process-math">\(k
-&gt; n\text{.}\)</span>
-</div></li>
-</ol></div>
-<span class="incontext"><a href="s-generating-functions.html#p-5195" class="internal">in-context</a></span>
+<div class="para">The non-terminals <span class="process-math">\(\langle condition \rangle\text{,}\)</span> <span class="process-math">\(\langle variable \rangle\text{,}\)</span> and <span class="process-math">\(\langle expression \rangle\)</span> would, of course, have to be defined by other production rules in the grammar.  Here is a set of rules that define simple expressions, made up of numbers, identifiers, parentheses and the arithmetic operators <span class="process-math">\(+, -, *\)</span> and <span class="process-math">\(/\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\langle expression \rangle \amp ::=\ \langle term \rangle [ \,[ + | - ] \langle term \rangle ]\dots\\
+\langle term \rangle \amp ::=\ \langle factor \rangle [ \, [ * | / ] \langle factor \rangle ]\dots \\
+\langle factor \rangle  \amp ::=\ \textbf{ident} | \textbf{number} | \text{"}(\text{"}\langle expression \rangle \text{"})\text{"}
+\end{align*}
+</div>
+<div class="para">The first rule says that an <span class="process-math">\(\langle expression \rangle\)</span> is a sequence of one or more <span class="process-math">\(\langle term \rangle\)</span>’s, separated by plus or minus signs. The second rule defines a <span class="process-math">\(\langle term \rangle\)</span> to be a sequence of one or more <span class="process-math">\(\langle factors \rangle\text{,}\)</span> separated by multiplication or division operators. The last rule says that a <span class="process-math">\(\langle factor \rangle\)</span> can be either an identifier or a number or an <span class="process-math">\(\langle expression \rangle\)</span> enclosed in parentheses. This small BNF grammar can generate expressions such as “<span class="process-math">\(3*5\)</span>” and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x*(x+1) - 3/(z+2*(3-x)) + 7\text{.}
+\end{equation*}
+</div>
+<div class="para">The latter expression is made up of three terms: <span class="process-math">\(x*(x+1)\text{,}\)</span> <span class="process-math">\(3/(z+2*(3-x))\text{,}\)</span> and <span class="process-math">\(7\text{.}\)</span>  The first of these terms is made up of two factors, <span class="process-math">\(x\)</span> and <span class="process-math">\((x+1)\text{.}\)</span>  The factor <span class="process-math">\((x+1)\)</span> consists of the expression <span class="process-math">\(x+1\)</span> inside a pair of parentheses.</div>
+</div>
+<span class="incontext"><a href="sec-grammars.html#p-5195" class="internal">in-context</a></span>
 </body>
 </html>

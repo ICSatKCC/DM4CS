@@ -11,56 +11,8 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para logical"><ol class="lower-alpha">
-<li><div class="para logical">
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-\sum_{n=2}^{\infty} S_n z^n &amp;=\sum_{n=0}^{\infty} S_n
-z^n - S(0)-S(1)z\\
-&amp;= G(S;z)-3-z
-\end{split}
-\end{equation*}
-</div>
-<div class="para">since <span class="process-math">\(S(0)=3\)</span> and <span class="process-math">\(S(1)=1\text{.}\)</span>
-</div>
-</div></li>
-<li><div class="para logical"><div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-\sum_{n=2}^{\infty} S(n-1) z^n
-&amp;=z\left(\sum_{n=2}^{\infty} S(n-1) z^{n-1}\right)\\
-&amp; =z\left(\sum_{n=1}^{\infty} S(n) z^n\right)\\
-&amp; = z\left(\sum_{n=0}^{\infty} S(n) z^n-S(0)\right)\\
-&amp;= z(G(S;z)-3)
-\end{split}
-\end{equation*}
-</div></div></li>
-<li>
-<div class="para logical"><div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-\sum_{n=2}^{\infty} S(n-2) z^n &amp; =
-z^2\left(\sum_{n=2}^{\infty} S(n-2) z^{n-2}\right)\\
-&amp; =z^2G(S;z)
-\end{split}
-\end{equation*}
-</div></div>
-<div class="para logical">
-<div class="para">Therefore,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-&amp;(G(S;z)-3-z)-2z(G(S;z)-3)-3z^2G(S;z)=0\\
-&amp; \Rightarrow G(S;z)-2z G(S;z)-3z^2G(S;z)=3 - 5z\\
-&amp;\Rightarrow G(S;z)=\frac{3-5z}{1-2z-3z^2}
-\end{split}
-\end{equation*}
-</div>
-</div>
-</li>
-</ol></div>
-<span class="incontext"><a href="s-generating-functions.html#p-5131" class="internal">in-context</a></span>
+<h3 class="heading"><span class="type">Paragraph</span></h3>
+<div class="para">In this section, we will study formal grammars and languages defined by them. The languages we look at will, for the most part, be “toy” languages, compared to natural languages or even to programming languages, but the ideas and techniques are basic to any study of language. In fact, many of the ideas arose almost simultaneously in the 1950s in the work of linguists who were studying natural language and programmers who were looking for ways to specify the syntax of programming languages.</div>
+<span class="incontext"><a href="sec-grammars.html#p-5131" class="internal">in-context</a></span>
 </body>
 </html>

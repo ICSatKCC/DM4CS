@@ -11,10 +11,14 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">The function <span class="process-math">\(\partial\)</span> describes how the machine functions on zero or one input symbol. As with DFAs, we will often want to refer to the behavior of the machine on a string of inputs, and so we use the notation <span class="process-math">\(\partial^*(q,w)\)</span> as shorthand for ``the set of states in which the machine might be if it starts in state <span class="process-math">\(q\)</span> and consumes input string <span class="process-math">\(w\)</span>". As with DFAs, <span class="process-math">\(\partial^*(q,w)\)</span> is determined by the specification of <span class="process-math">\(\partial\text{.}\)</span> Note that for every state <span class="process-math">\(q\text{,}\)</span> <span class="process-math">\(\partial^*(q,
-\varep)\)</span> contains at least <span class="process-math">\(q\text{,}\)</span> and may contain additional states if there are (sequences of) <span class="process-math">\(\varep\)</span>-transitions out of <span class="process-math">\(q\text{.}\)</span>
-</div>
-<span class="incontext"><a href="s-finite-state-automata.html#p-4583" class="internal">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para">Let <span class="process-math">\(V\)</span> be a set of 64 vertices, one for each square on a chess board. We can index the elements of <span class="process-math">\(V\)</span> by <span class="process-math">\(\quad \quad\)</span><span class="process-math">\(v_{i
+j}\)</span> = the square on the row <span class="process-math">\(i\text{,}\)</span> column <span class="process-math">\(j\text{.}\)</span> Connect vertices in <span class="process-math">\(V\)</span> according to whether or not you can move a knight from one square to another. Using our indexing of <span class="process-math">\(V\text{,}\)</span> <span class="process-math">\(\quad
+\quad\)</span><span class="process-math">\(\left(v_{i j}, v_{k l}\right)\in E\text{ if and only if }
+\begin{array}{c}
+|i-k|+|j-l|=3 \\
+\text{and } |i-k|\cdot |j-l|=2 \\
+\end{array}\)</span> <span class="process-math">\((V, E)\)</span> is a bipartite graph. The usual coloring of a chessboard is valid 2-coloring.</div>
+<span class="incontext"><a href="s-planarity-and-colorings.html#p-4583" class="internal">in-context</a></span>
 </body>
 </html>

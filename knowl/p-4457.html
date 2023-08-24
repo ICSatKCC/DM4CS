@@ -11,8 +11,49 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">The set of all strings over an alphabet <span class="process-math">\(\Sigma\)</span> is denoted <span class="process-math">\(\Sigma^*\text{.}\)</span> (In language theory, the symbol <span class="process-math">\(^*\)</span> is typically used to denote ``zero or more’’, so <span class="process-math">\(\Sigma^*\)</span> is the set of strings made up of zero or more symbols from <span class="process-math">\(\Sigma\text{.}\)</span>) Note that while an alphabet <span class="process-math">\(\Sigma\)</span> is by definition a <em class="emphasis">finite</em> set of symbols, and strings are by definition <em class="emphasis">finite</em> sequences of those symbols, the set <span class="process-math">\(\Sigma^*\)</span> is always <em class="emphasis">infinite</em>. Why is this? Suppose <span class="process-math">\(\Sigma\)</span> contains <span class="process-math">\(n\)</span> elements. Then there is one string over <span class="process-math">\(\Sigma\)</span> with 0 symbols, <span class="process-math">\(n\)</span> strings with 1 symbol, <span class="process-math">\(n^2\)</span> strings with 2 symbols (since there are <span class="process-math">\(n\)</span> choices for the first symbol and <span class="process-math">\(n\)</span> choices for the second), <span class="process-math">\(n^3\)</span> strings with 3 symbols, etc.</div>
-<span class="incontext"><a href="s-Languages.html#p-4457" class="internal">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical"><ol class="lower-alpha">
+<li><div class="para">If possible, find a flow augmenting path with respect to <span class="process-math">\(f_i\text{.}\)</span>
+</div></li>
+<li>
+<div class="para">If a flow augmenting path exists, then:</div>
+<div class="para logical"><ol class="lower-roman">
+<li><div class="para logical">
+<div class="para">Determine</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+d &amp; = \min \{\{w(e) - f_i(e) \mid e
+\text{ is used in the forward
+direction}\},\\
+&amp; \quad \quad \quad \{f_i(e) \mid e
+\text{ is used in the reverse
+direction}\}\}\\
+\\
+\end{split}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Define <span class="process-math">\(f_{i+1}\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{cc}
+f_{i+1}(e) = f_i(e) &amp; \text{if } e
+\text{ is not part of the flow augmenting
+path} \\
+f_{i+1}(e)=f_i(e)+d &amp; \text{if } e
+\text{ is used in the forward direction} \\
+f_{i+1}(e)=f_i(e)-d &amp; \text{if } e
+\text{ is used in the reverse direction} \\
+\end{array}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle i = i + 1\)</span></div></li>
+</ol></div>
+</li>
+</ol></div>
+<span class="incontext"><a href="s-graph-optimization.html#p-4457" class="internal">in-context</a></span>
 </body>
 </html>

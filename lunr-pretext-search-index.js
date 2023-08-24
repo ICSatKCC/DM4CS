@@ -7993,6 +7993,33 @@ var ptx_lunr_docs = [
   "body": " Give the complete solution to the system of equations, , , and .  "
 },
 {
+  "id": "Section11_2",
+  "level": "1",
+  "url": "Section11_2.html",
+  "type": "Section",
+  "number": "11.2",
+  "title": "Revisiting Matrix Arithmetic",
+  "body": " Revisiting Matrix Arithmetic   Under Construction!  "
+},
+{
+  "id": "Section11_3",
+  "level": "1",
+  "url": "Section11_3.html",
+  "type": "Section",
+  "number": "11.3",
+  "title": "Matrix Inverses",
+  "body": " Matrix Inverses   Under Construction!  "
+},
+{
+  "id": "Section11_4",
+  "level": "1",
+  "url": "Section11_4.html",
+  "type": "Section",
+  "number": "11.4",
+  "title": "Matrix Determinants",
+  "body": " Matrix Determinants   Under Construction!  "
+},
+{
   "id": "s-posets-revisited",
   "level": "1",
   "url": "s-posets-revisited.html",
@@ -8200,9 +8227,9 @@ var ptx_lunr_docs = [
   "body": " A Nondistributive Lattice  We now give an example of a lattice where the distributive laws do not hold. Let . We define the partial ordering on by the set The operation tables for and on are:   Since every pair of elements in has both a join and a meet, is a lattice (under divides). Is this lattice distributive? We note that: and . Therefore, for some values of . Thus, this lattice is not distributive.  "
 },
 {
-  "id": "p-3420",
+  "id": "p-3423",
   "level": "2",
-  "url": "s-lattices.html#p-3420",
+  "url": "s-lattices.html#p-3423",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -8488,9 +8515,9 @@ var ptx_lunr_docs = [
   "body": " Illustration of the atom concept D  Illustration of the atom concept   "
 },
 {
-  "id": "p-3494",
+  "id": "p-3497",
   "level": "2",
-  "url": "s-atoms-of-a-boolean-algebra.html#p-3494",
+  "url": "s-atoms-of-a-boolean-algebra.html#p-3497",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -8821,9 +8848,9 @@ var ptx_lunr_docs = [
   "body": " Logic Gates and Circuits  Switching Theory  Logic Gates  Logic Circuits  Early computers relied on many switches to perform the logical operations needed for computation. This was true as late as the 1970's when early personal computers such as the Altair ( ) started to appear. Pioneering computer scientists such as Claude Shannon realized that the operation of these computers could be simplified by making use of an isomorphism between computer circuits and boolean algebra. The term Switching Theory was used at the time. Logical gates realized through increasingly smaller and smaller integrated circuits still perform the same functions as in early computers, but using purely electronic means. In this section, we give examples of some switching circuits. Soon afterward, we will transition to the more modern form of circuits that are studied in Logic Design , where gates replace switches. Our main goal is to give you an overview of how boolean functions correspond to actual computer circuits. We will introduce the common system notation used in logic design and show how it corresponds with the mathematical notation of Boolean algebras. Any computer scientist should be familiar with both systems.   The Altair Computer, an early PC, by Todd Dailey, Creative Commons   Image of an Altair computer from https:\/\/en.wikipedia.org\/wiki\/Altair_8800#\/media\/File:Altair_8800_at_the_Computer_History_Museum,_cropped.jpg at the Computer History Museum    The simplest switching device is the on-off switch. If the switch is closed\/ON, electrical current will pass through it; if it is open\/OFF, current will not pass through it. If we designate ON by 1, and OFF by 0, we can describe electrical circuits containing switches by Boolean expressions with the variables representing the variable states of switches or the variable bits passing through gates.  The electronics involved in these switches take into account whether we are negating a switch or not. For electromagnetic switches, a magnet is used to control whether the switch is open or closed. The magnets themselves may be controlled by simple ON\/OFF switches. There are two types of electromagnetic switches. One is normally open (OFF) when the magnet is not activated, but activating the magnet will close the circuit and the switch is then ON. A separate type of switch corresponds with a negated switch. For that type, the switch is closed (ON) when the magnet is not activated, and when the magnet is activated, the switch opens (turns OFF). We won't be overly concerned with the details of these switches or the electronics corresponding to logical gates. We will simply assume they are available to plug into a circuit. For simplicity, we use the complement symbol on a varible that labels a switch to indicate that it is a switch of the second type, as in .    Representation of a normally OFF switch controlled by variable    Representation of a normally OFF switch     Representation of a normally ON switch controlled by variable    Representation of a normally ON switch     The standard notation used for Boolean algebra operations in switching theory and logic design is for join, instead of ; and for meet, instead of . Complementation is the same in both notational systems, denoted with an overline.  The expression represents the situation in which a series of two switches appears in sequence as in . In order for current to flow through the circuit, both switches must be ON; that is, AND must both have the value 1. Similarly, a pair of parallel switches, as in , is described algebraically by . Here, current flows through this part of the circuit as long as at least one of the switches, OR , is ON.    Two switches in AND configuration realizing    Two switches in AND configuration      Two switches in OR configuration realizing    Two switches in OR configuration     All laws and concepts developed previously for Boolean algebras hold. The only change is purely notational. We make the change in this section solely to introduce the reader to another frequently used system of notation.  Many of the laws of Boolean algebra can be visualized thought switching theory. For example, the distributive law of meet over join is expressed as The switching circuit analogue of the above statement is that the circuits in the two images below are equivalent. In circuit (b), the presence of two 's might represent two electromagnetic switches controlled by the same magnet.    (a)   The first of equivalent switching circuits     (b)   The second of equivalent switching circuits     The circuits in a computer are now composed of large quantities of gates, which serve the same purpose as switches, but can be miniaturized to a great degree. For example, the OR gate, usually drawn as in implements the logical OR function. This happens electronically, but is equivalent to . The AND gate, which is equivalent to two sequential switches is shown in .   An OR gate   An OR gate     An AND gate   An AND gate    The complementation process is represented in a gate diagram by an inverter, as pictured in .   Inverter, or NOT gate   Inverter    When drawing more complex circuits, multiple AND's or OR's are sometimes depicted using a more general gate drawing. For example if we want to depict an OR gate with three inputs that is ON as long as at least one input is ON, we would draw it as in , although this would really be two binary gates, as in . Both diagrams are realizing the boolean expression . Strictly speaking, the gates in represent , but the associative law for join tells us that the grouping doesn't matter.    Simple version of a ternary OR gate   Simple version of a ternary OR gate     A ternary OR gate created with binary OR gates   A ternary OR gate created with binary OR gates     In , we show a few other commonly used gates, XOR, NAND, and NOR, which correspond to the boolean exressions , , and , respectively.          Exercises for Section 12.7   Write the following Boolean expression in the notation of logic design.   Draw the circuit diagram of the expression using only AND, OR, and NOT gates with one or two inputs.        Rewrite the expression from Exercise 1 in two ways: one using only the NOR operation and one using only the NAND operation    Draw a logic circuit using only AND, OR and NOT gates that realizes an XOR gate.    Draw a logic circuit using only AND, OR and NOT gates that realizes the Boolean function on three variables that returns 1 if the majority of inputs are 1 and 0 otherwise.       "
 },
 {
-  "id": "p-3637",
+  "id": "p-3640",
   "level": "2",
-  "url": "s-logic-circuits.html#p-3637",
+  "url": "s-logic-circuits.html#p-3640",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -9064,38 +9091,902 @@ var ptx_lunr_docs = [
   "body": " Consider the Boolean function     Simplify algebraically.    Draw the gate diagram based on the simplified version of .     "
 },
 {
+  "id": "s-recurrence-relations",
+  "level": "1",
+  "url": "s-recurrence-relations.html",
+  "type": "Section",
+  "number": "13.1",
+  "title": "Recurrence Relations",
+  "body": " Recurrence Relations   In this section we will begin our study of recurrence relations and their solutions. Our primary focus will be on the class of finite order linear recurrence relations with constant coefficients (shortened to finite order linear relations). First, we will examine closed form expressions from which these relations arise. Second, we will present an algorithm for solving them. In later sections we will consider some other common relations ( ) and introduce an additional tool for studying recurrence relations: generating functions ( ).      Definition and Terminology   Recurrence Relation  Recurrence Relation   Let be a sequence of numbers. A recurrence relation on is a formula that relates all but a finite number of terms of to previous terms of . That is, there is a in the domain of such that if , then is expressed in terms of some (and possibly all) of the terms that precede . If the domain of is , the terms are not defined by the recurrence formula.Their values are the initial conditions (or boundary conditions, or basis) that complete the definition of .     Some Examples of Recurrence Relations     The Fibonacci sequence is defined by the recurrence relation , with the initial conditions and . The recurrence relation is called a second-order relation because depends on the two previous terms of . Recall that the sequence in Section 8.2, , can be defined with the same recurrence relation, but with different initial conditions.    The relation is a third-order recurrence relation. If values of , , and are specified, then is completely defined.    The recurrence relation , , with has infinite order. To determine when is even, you must go back terms. Since grows unbounded with , no finite order can be given to .        Solving Recurrence Relations   Recurrence Relations  Solving   Sequences are often most easily defined with a recurrence relation; however, the calculation of terms by directly applying a recurrence relation can be time-consuming. The process of determining a closed form expression for the terms of a sequence from its recurrence relation is called solving the relation. There is no single technique or algorithm that can be used to solve all recurrence relations. In fact, some recurrence relations cannot be solved. The relation that defines above is one such example. Most of the recurrence relations that you are likely to encounter in the future are classified as finite order linear recurrence relations with constant coefficients. This class is the one that we will spend most of our time with in this chapter.   Order Linear Recurrence Relation  Order of a Recurrence Relation   Let be a sequence of numbers with domain . An order linear recurrence relation on with constant coefficients is a recurrence relation that can be written in the form where are constants and is a numeric function that is defined for .    Note: We will shorten the name of this class of relations to order linear relations. Therefore, in further discussions, would not be considered a first-order linear relation.   Some Finite Order Linear Relations     The Fibonacci sequence is defined by the second-order linear relation because    The relation is a third-order linear relation. In this case, .    The relation can be written as . Therefore, it is a first-order linear relation.        Recurrence relations obtained from solutions  Recurrence relations obtained from solutions  Before giving an algorithm for solving finite order linear relations, we will examine recurrence relations that arise from certain closed form expressions. The closed form expressions are selected so that we will obtain finite order linear relations from them. This approach may seem a bit contrived, but if you were to write down a few simple algebraic expressions, chances are that most of them would be similar to the ones we are about to examine.  For our first example, consider , defined by , . If , . Therefore, satisfies the first order linear relation and the initial condition serves as an initial condition for .  As a second example, consider , . Quite a bit more algebraic manipulation is required to get our result:                                                   .             .                           The recurrence relation that we have just obtained, defined for , together with the initial conditions and , define .  summarizes our results together with a few other examples that we will let the reader derive. Based on these results, we might conjecture that any closed form expression for a sequence that combines exponential expressions and polynomial expressions will be solutions of finite order linear relations. Not only is this true, but the converse is true: a finite order linear relation defines a closed form expression that is similar to the ones that were just examined. The only additional information that is needed is a set of initial conditions.   Recurrence relations obtained from given sequences    Closed Form Expression  Recurrence Relation                                                              Homogeneous Recurrence Relation  Homogeneous Recurrence Relation.   An order linear relation is homogeneous if for all . For each recurrence relation , the associated homogeneous relation is      First Order Homogeneous Recurrence Relations  is a first-order homogeneous relation. Since it can also be written as , it should be no surprise that it arose from an expression that involves powers of 2. More generally, you would expect that the solution of would involve . Actually, the solution is , where the value of is given by the initial condition.    A Second Order Example  Consider the second-order homogeneous relation together with the initial conditions and . From our discussion above, we can predict that the solution to this relation involves terms of the form , where and are nonzero constants that must be determined. If the solution were to equal this quantity exactly, then Substitute these expressions into the recurrence relation to get Each term on the left-hand side of this equation has a factor of , which is nonzero. Dividing through by this common factor yields  Therefore, the only possible values of are 3 and 4. Equation is called the characteristic equation of the recurrence relation. The fact is that our original recurrence relation is true for any sequence of the form , where and are real numbers. This set of sequences is called the general solution of the recurrence relation. If we didn't have initial conditions for , we would stop here. The initial conditions make it possible for us to find definite values for and .   The solution of this set of simultaneous equations is and and so the solution is .    Characteristic Equation  Characteristic Equation  Characteristic Roots   The characteristic equation of the homogeneous order linear relation is the th degree polynomial equation The left-hand side of this equation is called the characteristic polynomial. The roots of the characteristic polynomial are called the characteristic roots of the equation.     Some characteristic equations     The characteristic equation of is .    The characteristic equation of is Note that the absence of a term means that there is not an term appearing in the characteristic equation.       Algorithm for Solving Homogeneous Finite-order Linear Relations      Write out the characteristic equation of the relation , which is .    Find all roots of the characteristic equation, the characteristic roots.    If there are distinct characteristic roots, , then the general solution of the recurrence relation is . If there are fewer than characteristic roots, then at least one root is a multiple root. If is a double root, then the term is replaced with In general, if is a root of multiplicity , then the term is replaced with .    If initial conditions are given, we get linear equations in unknowns (the from Step 3) by substitution. If possible, solve these equations to determine a final form for .       Although this algorithm is valid for all values of , there are limits to the size of for which the algorithm is feasible. Using just a pencil and paper, we can always solve second-order equations. The quadratic formula for the roots of is The solutions of are then   Although cubic and quartic formulas exist, they are too lengthy to introduce here. For this reason, the only higher-order relations ( ) that you could be expected to solve by hand are ones for which there is an easy factorization of the characteristic polynomial.   A solution using the algorithm  Suppose that is defined by , with and . We can solve this recurrence relation with :     Note that we have written the recurrence relation in nonstandard form. To avoid errors in this easy step, you might consider a rearrangement of the equation to, in this case, . Therefore, the characteristic equation is .    The characteristic roots are and . These roots can be just as easily obtained by factoring the characteristic polynomial into .    The general solution of the recurrence relation is .      The simultaneous equations have the solution and . Therefore, .      Here is one rule that might come in handy: If the coefficients of the characteristic polynomial are all integers, with the constant term equal to , then the only possible rational characteristic roots are divisors of (both positive and negative).  With the aid of a computer (or possibly only a calculator), we can increase . Approximations of the characteristic roots can be obtained by any of several well-known methods, some of which are part of standard software packages. There is no general rule that specifies the values of for which numerical approximations will be feasible. The accuracy that you get will depend on the relation that you try to solve. (See Exercise 17 of this section.)   Solution of a Third Order Recurrence Relation  Solve , where , , and .     The characteristic equation is .    The only rational roots that we can attempt are . By checking these, we obtain the three roots 1, 2, and .    The general solution is . The first term can simply be written .    You can solve this system by elimination to obtain , , and . Therefore,        Solution with a Double Characteristic Root  Solve , where and .     Characteristic equation: .    . Therefore, there is a double characteristic root, 4.    General solution: .       Therefore .        Solution of Nonhomogeneous Finite Order Linear Relations   Nonhomogeneous of Finite Order Linear Relations  Solution   Our algorithm for nonhomogeneous relations will not be as complete as for the homogeneous case. This is due to the fact that different right-hand sides ( 's) call for different rules in obtaining a particular solution.   Algorithm for Solving Nonhomogeneous Finite-order Linear Relations   To solve the recurrence relation     Write the associated homogeneous relation and find its general solution (Steps (a) through (c) of ). Call this the homogeneous solution, .    Start to obtain what is called a particular solution, of the recurrence relation by taking an educated guess at the form of a particular solution. For a large class of right-hand sides, this is not really a guess, since the particular solution is often the same type of function as (see ).    Substitute your guess from Step 2 into the recurrence relation. If you made a good guess, you should be able to determine the unknown coefficients of your guess. If you made a wrong guess, it should be apparent from the result of this substitution, so go back to Step 2.    The general solution of the recurrence relation is the sum of the homogeneous and particular solutions. If no conditions are given, then you are finished. If initial conditions are given, they will translate to linear equations in unknowns and solve the system to get a complete solution.        Particular solutions for given right-hand sides    Right Hand Side,  Form of Particular Solution,    Constant,  Constant,    Linear Function,  Linear Function,    degree polynomial,  degree polynomial,    exponential function,  exponential function,      Solution of a Nonhomogeneous First Order Recurrence Relation  Solve , with .     The associated homogeneous relation, has the characteristic equation ; therefore, . The homogeneous solution is .    Since the right-hand side is a constant, we guess that the particular solution will be a constant, .    If we substitute into the recurrence relation, we get , or . Therefore, .    The general solution of the recurrence relation is The initial condition will give us one equation to solve in order to determine . Therefore, and .       Solution of a Nonhomogeneous Second Order Recurrence Relation  Consider with and .     From , we know that . Caution:Don't apply the initial conditions to until you add !    Since the right-hand side is a linear polynomial, is linear; that is, .    Substitution into the recurrence relation yields:  Two polynomials are equal only if their coefficients are equal. Therefore,     Use the general solution and the initial conditions to get a final solution:    Therefore, .       A quick note on interest rates  When a quantity, such as a savings account balance, is increased by some fixed percent, it is most easily computed with a multiplier. In the case of an increase, the multiplier is 1.08 because any original amount , has added to it, so that the new balance is .  Another example is that if the interest rate is , the multiplier would be 1.035. This presumes that the interest is applied at the end of year for annual interest, often called simple interest . If the interest is applied monthly, and we assume a simplifed case where each month has the same length, the multiplier after every month would be . After a year passes, this multiplier would be applied 12 times, which is the same as multiplying by . That increase from 1.035 to 1.03557 is the effect of compound interest .    A Sort of Annuity  Suppose you open a savings account that pays an annual interest rate of . In addition, suppose you decide to deposit one dollar when you open the account, and you intend to double your deposit each year. Let be your balance after years. can be described by the relation , with . If, instead of doubling the deposit each year, you deposited a constant amount, , the term would be replaced with . A sequence of regular deposits such as this is called a simple annuity.  Returning to the original situation,          should be of the form .    Therefore .       Therefore, .       Matching Roots  Find the general solution to .     The characteristic roots of the associated homogeneous relation are and 4. Therefore, .    A function of the form will not be a particular solution of the nonhomogeneous relation since it solves the associated homogeneous relation. When the right-hand side involves an exponential function with a base that equals a characteristic root,you should multiply your guess at a particular solution by . Our guess at would then be . See for a more complete description of this rule.    Substitute into the recurrence relation for : Each term on the left-hand side has a factor of  Therefore, .    The general solution to the recurrence relation is        When the base of right-hand side is equal to a characteristic root  If the right-hand side of a nonhomogeneous relation involves an exponential with base , and is also a characteristic root of multiplicity , then multiply your guess at a particular solution as prescribed in by , where is the index of the sequence.    Examples of matching bases     If , the characteristic roots are 4 and 5. Since 5 matches the base of the right side, will take the form .    If the only characteristic root is 3, but it is a double root (multiplicity 2). Therefore, the form of the particular solution is .    If , the characteristic roots are and 4. The form of the particular solution will be .    If , the characteristic roots are 1 and 8. If the right-hand side is a polynomial, as it is in this case, then the exponential factor can be introduced. The particular solution will take the form .      We conclude this section with a comment on the situation in which the characteristic equation gives rise to complex roots. If we restrict the coefficients of our finite order linear relations to real numbers, or even to integers, we can still encounter characteristic equations whose roots are complex. Here, we will simply take the time to point out that our algorithms are still valid with complex characteristic roots, but the customary method for expressing the solutions of these relations is different. Since an understanding of these representations requires some background in complex numbers, we will simply suggest that an interested reader can refer to a more advanced treatment of recurrence relations (see also difference equations).    Exercises    Solve the following sets of recurrence relations and initial conditions:     , ,         , ,    ,         , ,             , ,                            , ,     , ,         Find a closed form expression for in .       Find a closed form expression for the terms of the Fibonacci sequence (see ).    The sequence was defined by = the number of strings of zeros and ones with length having no consecutive zeros ( (c)). Its recurrence relation is the same as that of the Fibonacci sequence. Determine a closed form expression for , .         The characteristic equation is , which has solutions and , It is useful to point out that and . The general solution is . Using the initial conditions, we obtain the system: and . The solution to this system is and   Therefore the final solution is            If , , then can be described with the recurrence relation . For each of the following sequences that are defined using a summation, find a closed form expression:      ,    ,    ,     ,       Let be the number of ways that the set , , can be partitioned into two nonempty subsets.     Find a recurrence relation for . (Hint: It will be a first-order linear relation.)    Solve the recurrence relation.         For each two-block partition of , there are two partitions we can create when we add , but there is one additional two-block partition to count for which one block is . Therefore,            If you were to deposit a certain amount of money at the end of each year for a number of years, this sequence of payments would be called an annuity (see ).   Find a closed form expression for the balance or value of an annuity that consists of payments of dollars at a rate of interest of . Note that for a normal annuity, the first payment is made after one year.    With an interest rate of 5.5 percent, how much would you need to deposit into an annuity to have a value of one million dollars after 18 years?    The payment of a loan is a form of annuity in which the initial value is some negative amount (the amount of the loan) and the annuity ends when the value is raised to zero. How much could you borrow if you can afford to pay $5,000 per year for 25 years at 11 percent interest?      Suppose that is a small positive number. Consider the recurrence relation , with initial conditions and . If is small enough, we might consider approximating the relation by replacing with 1 and with 0. Solve the original relation and its approximation. Let a be the solution of the approximation. Compare closed form expressions for and . Their forms are very different because the characteristic roots of the original relation were close together and the approximation resulted in one double characteristic root.If characteristic roots of a relation are relatively far apart, this problem will not occur. For example, compare the general solutions of and .     "
+},
+{
+  "id": "def-recurrence-relation",
+  "level": "2",
+  "url": "s-recurrence-relations.html#def-recurrence-relation",
+  "type": "Definition",
+  "number": "13.1.1",
+  "title": "Recurrence Relation.",
+  "body": " Recurrence Relation  Recurrence Relation   Let be a sequence of numbers. A recurrence relation on is a formula that relates all but a finite number of terms of to previous terms of . That is, there is a in the domain of such that if , then is expressed in terms of some (and possibly all) of the terms that precede . If the domain of is , the terms are not defined by the recurrence formula.Their values are the initial conditions (or boundary conditions, or basis) that complete the definition of .   "
+},
+{
+  "id": "ex-some-recurrence-relations",
+  "level": "2",
+  "url": "s-recurrence-relations.html#ex-some-recurrence-relations",
+  "type": "Example",
+  "number": "13.1.2",
+  "title": "Some Examples of Recurrence Relations.",
+  "body": " Some Examples of Recurrence Relations     The Fibonacci sequence is defined by the recurrence relation , with the initial conditions and . The recurrence relation is called a second-order relation because depends on the two previous terms of . Recall that the sequence in Section 8.2, , can be defined with the same recurrence relation, but with different initial conditions.    The relation is a third-order recurrence relation. If values of , , and are specified, then is completely defined.    The recurrence relation , , with has infinite order. To determine when is even, you must go back terms. Since grows unbounded with , no finite order can be given to .     "
+},
+{
+  "id": "def-n-th-order-rr",
+  "level": "2",
+  "url": "s-recurrence-relations.html#def-n-th-order-rr",
+  "type": "Definition",
+  "number": "13.1.3",
+  "title": "<span class=\"process-math\">\\(n^{th}\\)<\/span> Order Linear Recurrence Relation.",
+  "body": " Order Linear Recurrence Relation  Order of a Recurrence Relation   Let be a sequence of numbers with domain . An order linear recurrence relation on with constant coefficients is a recurrence relation that can be written in the form where are constants and is a numeric function that is defined for .   "
+},
+{
+  "id": "ex-some-finite-order-rr",
+  "level": "2",
+  "url": "s-recurrence-relations.html#ex-some-finite-order-rr",
+  "type": "Example",
+  "number": "13.1.4",
+  "title": "Some Finite Order Linear Relations.",
+  "body": " Some Finite Order Linear Relations     The Fibonacci sequence is defined by the second-order linear relation because    The relation is a third-order linear relation. In this case, .    The relation can be written as . Therefore, it is a first-order linear relation.     "
+},
+{
+  "id": "table-47",
+  "level": "2",
+  "url": "s-recurrence-relations.html#table-47",
+  "type": "Table",
+  "number": "13.1.5",
+  "title": "",
+  "body": "                                                 .             .                          "
+},
+{
+  "id": "table-reverse-solutions-rr",
+  "level": "2",
+  "url": "s-recurrence-relations.html#table-reverse-solutions-rr",
+  "type": "Table",
+  "number": "13.1.6",
+  "title": "Recurrence relations obtained from given sequences",
+  "body": " Recurrence relations obtained from given sequences    Closed Form Expression  Recurrence Relation                                                            "
+},
+{
+  "id": "def-homogeneous-recurrence-relation",
+  "level": "2",
+  "url": "s-recurrence-relations.html#def-homogeneous-recurrence-relation",
+  "type": "Definition",
+  "number": "13.1.7",
+  "title": "Homogeneous Recurrence Relation.",
+  "body": " Homogeneous Recurrence Relation  Homogeneous Recurrence Relation.   An order linear relation is homogeneous if for all . For each recurrence relation , the associated homogeneous relation is    "
+},
+{
+  "id": "ex-first-order-homogeneous-rr",
+  "level": "2",
+  "url": "s-recurrence-relations.html#ex-first-order-homogeneous-rr",
+  "type": "Example",
+  "number": "13.1.8",
+  "title": "First Order Homogeneous Recurrence Relations.",
+  "body": " First Order Homogeneous Recurrence Relations  is a first-order homogeneous relation. Since it can also be written as , it should be no surprise that it arose from an expression that involves powers of 2. More generally, you would expect that the solution of would involve . Actually, the solution is , where the value of is given by the initial condition.  "
+},
+{
+  "id": "ex-second-order-rr",
+  "level": "2",
+  "url": "s-recurrence-relations.html#ex-second-order-rr",
+  "type": "Example",
+  "number": "13.1.9",
+  "title": "A Second Order Example.",
+  "body": " A Second Order Example  Consider the second-order homogeneous relation together with the initial conditions and . From our discussion above, we can predict that the solution to this relation involves terms of the form , where and are nonzero constants that must be determined. If the solution were to equal this quantity exactly, then Substitute these expressions into the recurrence relation to get Each term on the left-hand side of this equation has a factor of , which is nonzero. Dividing through by this common factor yields  Therefore, the only possible values of are 3 and 4. Equation is called the characteristic equation of the recurrence relation. The fact is that our original recurrence relation is true for any sequence of the form , where and are real numbers. This set of sequences is called the general solution of the recurrence relation. If we didn't have initial conditions for , we would stop here. The initial conditions make it possible for us to find definite values for and .   The solution of this set of simultaneous equations is and and so the solution is .  "
+},
+{
+  "id": "def-characteristic-equation",
+  "level": "2",
+  "url": "s-recurrence-relations.html#def-characteristic-equation",
+  "type": "Definition",
+  "number": "13.1.10",
+  "title": "Characteristic Equation.",
+  "body": " Characteristic Equation  Characteristic Equation  Characteristic Roots   The characteristic equation of the homogeneous order linear relation is the th degree polynomial equation The left-hand side of this equation is called the characteristic polynomial. The roots of the characteristic polynomial are called the characteristic roots of the equation.   "
+},
+{
+  "id": "ex-some-char-equations",
+  "level": "2",
+  "url": "s-recurrence-relations.html#ex-some-char-equations",
+  "type": "Example",
+  "number": "13.1.11",
+  "title": "Some characteristic equations.",
+  "body": " Some characteristic equations     The characteristic equation of is .    The characteristic equation of is Note that the absence of a term means that there is not an term appearing in the characteristic equation.     "
+},
+{
+  "id": "algorithm-linear-homogeneous-recurrence-relations",
+  "level": "2",
+  "url": "s-recurrence-relations.html#algorithm-linear-homogeneous-recurrence-relations",
+  "type": "Algorithm",
+  "number": "13.1.12",
+  "title": "Algorithm for Solving Homogeneous Finite-order Linear Relations.",
+  "body": " Algorithm for Solving Homogeneous Finite-order Linear Relations      Write out the characteristic equation of the relation , which is .    Find all roots of the characteristic equation, the characteristic roots.    If there are distinct characteristic roots, , then the general solution of the recurrence relation is . If there are fewer than characteristic roots, then at least one root is a multiple root. If is a double root, then the term is replaced with In general, if is a root of multiplicity , then the term is replaced with .    If initial conditions are given, we get linear equations in unknowns (the from Step 3) by substitution. If possible, solve these equations to determine a final form for .      "
+},
+{
+  "id": "ex-hrr-solution-example-1",
+  "level": "2",
+  "url": "s-recurrence-relations.html#ex-hrr-solution-example-1",
+  "type": "Example",
+  "number": "13.1.13",
+  "title": "A solution using the algorithm.",
+  "body": " A solution using the algorithm  Suppose that is defined by , with and . We can solve this recurrence relation with :     Note that we have written the recurrence relation in nonstandard form. To avoid errors in this easy step, you might consider a rearrangement of the equation to, in this case, . Therefore, the characteristic equation is .    The characteristic roots are and . These roots can be just as easily obtained by factoring the characteristic polynomial into .    The general solution of the recurrence relation is .      The simultaneous equations have the solution and . Therefore, .     "
+},
+{
+  "id": "ex-hrr-solution-example-2",
+  "level": "2",
+  "url": "s-recurrence-relations.html#ex-hrr-solution-example-2",
+  "type": "Example",
+  "number": "13.1.14",
+  "title": "Solution of a Third Order Recurrence Relation.",
+  "body": " Solution of a Third Order Recurrence Relation  Solve , where , , and .     The characteristic equation is .    The only rational roots that we can attempt are . By checking these, we obtain the three roots 1, 2, and .    The general solution is . The first term can simply be written .    You can solve this system by elimination to obtain , , and . Therefore,      "
+},
+{
+  "id": "ex-hrr-solution-example-3",
+  "level": "2",
+  "url": "s-recurrence-relations.html#ex-hrr-solution-example-3",
+  "type": "Example",
+  "number": "13.1.15",
+  "title": "Solution with a Double Characteristic Root.",
+  "body": " Solution with a Double Characteristic Root  Solve , where and .     Characteristic equation: .    . Therefore, there is a double characteristic root, 4.    General solution: .       Therefore .     "
+},
+{
+  "id": "algorithm-linear-nonhomogeneous-recurrence-relations",
+  "level": "2",
+  "url": "s-recurrence-relations.html#algorithm-linear-nonhomogeneous-recurrence-relations",
+  "type": "Algorithm",
+  "number": "13.1.16",
+  "title": "Algorithm for Solving Nonhomogeneous Finite-order Linear Relations.",
+  "body": " Algorithm for Solving Nonhomogeneous Finite-order Linear Relations   To solve the recurrence relation     Write the associated homogeneous relation and find its general solution (Steps (a) through (c) of ). Call this the homogeneous solution, .    Start to obtain what is called a particular solution, of the recurrence relation by taking an educated guess at the form of a particular solution. For a large class of right-hand sides, this is not really a guess, since the particular solution is often the same type of function as (see ).    Substitute your guess from Step 2 into the recurrence relation. If you made a good guess, you should be able to determine the unknown coefficients of your guess. If you made a wrong guess, it should be apparent from the result of this substitution, so go back to Step 2.    The general solution of the recurrence relation is the sum of the homogeneous and particular solutions. If no conditions are given, then you are finished. If initial conditions are given, they will translate to linear equations in unknowns and solve the system to get a complete solution.      "
+},
+{
+  "id": "tab-particular-sols",
+  "level": "2",
+  "url": "s-recurrence-relations.html#tab-particular-sols",
+  "type": "Table",
+  "number": "13.1.17",
+  "title": "Particular solutions for given right-hand sides",
+  "body": " Particular solutions for given right-hand sides    Right Hand Side,  Form of Particular Solution,    Constant,  Constant,    Linear Function,  Linear Function,    degree polynomial,  degree polynomial,    exponential function,  exponential function,    "
+},
+{
+  "id": "ex-nhrr-solution-example-1",
+  "level": "2",
+  "url": "s-recurrence-relations.html#ex-nhrr-solution-example-1",
+  "type": "Example",
+  "number": "13.1.18",
+  "title": "Solution of a Nonhomogeneous First Order Recurrence Relation.",
+  "body": " Solution of a Nonhomogeneous First Order Recurrence Relation  Solve , with .     The associated homogeneous relation, has the characteristic equation ; therefore, . The homogeneous solution is .    Since the right-hand side is a constant, we guess that the particular solution will be a constant, .    If we substitute into the recurrence relation, we get , or . Therefore, .    The general solution of the recurrence relation is The initial condition will give us one equation to solve in order to determine . Therefore, and .     "
+},
+{
+  "id": "ex-nhrr-solution-example-2",
+  "level": "2",
+  "url": "s-recurrence-relations.html#ex-nhrr-solution-example-2",
+  "type": "Example",
+  "number": "13.1.19",
+  "title": "Solution of a Nonhomogeneous Second Order Recurrence Relation.",
+  "body": " Solution of a Nonhomogeneous Second Order Recurrence Relation  Consider with and .     From , we know that . Caution:Don't apply the initial conditions to until you add !    Since the right-hand side is a linear polynomial, is linear; that is, .    Substitution into the recurrence relation yields:  Two polynomials are equal only if their coefficients are equal. Therefore,     Use the general solution and the initial conditions to get a final solution:    Therefore, .     "
+},
+{
+  "id": "note-6",
+  "level": "2",
+  "url": "s-recurrence-relations.html#note-6",
+  "type": "Note",
+  "number": "13.1.20",
+  "title": "A quick note on interest rates.",
+  "body": " A quick note on interest rates  When a quantity, such as a savings account balance, is increased by some fixed percent, it is most easily computed with a multiplier. In the case of an increase, the multiplier is 1.08 because any original amount , has added to it, so that the new balance is .  Another example is that if the interest rate is , the multiplier would be 1.035. This presumes that the interest is applied at the end of year for annual interest, often called simple interest . If the interest is applied monthly, and we assume a simplifed case where each month has the same length, the multiplier after every month would be . After a year passes, this multiplier would be applied 12 times, which is the same as multiplying by . That increase from 1.035 to 1.03557 is the effect of compound interest .  "
+},
+{
+  "id": "ex-a-novel-annuity",
+  "level": "2",
+  "url": "s-recurrence-relations.html#ex-a-novel-annuity",
+  "type": "Example",
+  "number": "13.1.21",
+  "title": "A Sort of Annuity.",
+  "body": " A Sort of Annuity  Suppose you open a savings account that pays an annual interest rate of . In addition, suppose you decide to deposit one dollar when you open the account, and you intend to double your deposit each year. Let be your balance after years. can be described by the relation , with . If, instead of doubling the deposit each year, you deposited a constant amount, , the term would be replaced with . A sequence of regular deposits such as this is called a simple annuity.  Returning to the original situation,          should be of the form .    Therefore .       Therefore, .     "
+},
+{
+  "id": "ex-matching-roots",
+  "level": "2",
+  "url": "s-recurrence-relations.html#ex-matching-roots",
+  "type": "Example",
+  "number": "13.1.22",
+  "title": "Matching Roots.",
+  "body": " Matching Roots  Find the general solution to .     The characteristic roots of the associated homogeneous relation are and 4. Therefore, .    A function of the form will not be a particular solution of the nonhomogeneous relation since it solves the associated homogeneous relation. When the right-hand side involves an exponential function with a base that equals a characteristic root,you should multiply your guess at a particular solution by . Our guess at would then be . See for a more complete description of this rule.    Substitute into the recurrence relation for : Each term on the left-hand side has a factor of  Therefore, .    The general solution to the recurrence relation is      "
+},
+{
+  "id": "obs-matching-base",
+  "level": "2",
+  "url": "s-recurrence-relations.html#obs-matching-base",
+  "type": "Observation",
+  "number": "13.1.23",
+  "title": "When the base of right-hand side is equal to a characteristic root.",
+  "body": " When the base of right-hand side is equal to a characteristic root  If the right-hand side of a nonhomogeneous relation involves an exponential with base , and is also a characteristic root of multiplicity , then multiply your guess at a particular solution as prescribed in by , where is the index of the sequence.  "
+},
+{
+  "id": "ex-base-match",
+  "level": "2",
+  "url": "s-recurrence-relations.html#ex-base-match",
+  "type": "Example",
+  "number": "13.1.24",
+  "title": "Examples of matching bases.",
+  "body": " Examples of matching bases     If , the characteristic roots are 4 and 5. Since 5 matches the base of the right side, will take the form .    If the only characteristic root is 3, but it is a double root (multiplicity 2). Therefore, the form of the particular solution is .    If , the characteristic roots are and 4. The form of the particular solution will be .    If , the characteristic roots are 1 and 8. If the right-hand side is a polynomial, as it is in this case, then the exponential factor can be introduced. The particular solution will take the form .     "
+},
+{
+  "id": "exercise-442",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-442",
+  "type": "Exercise",
+  "number": "13.1.5.1",
+  "title": "",
+  "body": "  , ,      "
+},
+{
+  "id": "exercise-443",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-443",
+  "type": "Exercise",
+  "number": "13.1.5.2",
+  "title": "",
+  "body": "  , ,  "
+},
+{
+  "id": "exercise-444",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-444",
+  "type": "Exercise",
+  "number": "13.1.5.3",
+  "title": "",
+  "body": " ,      "
+},
+{
+  "id": "exercise-445",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-445",
+  "type": "Exercise",
+  "number": "13.1.5.4",
+  "title": "",
+  "body": "  , ,  "
+},
+{
+  "id": "exercise-446",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-446",
+  "type": "Exercise",
+  "number": "13.1.5.5",
+  "title": "",
+  "body": "        "
+},
+{
+  "id": "exercise-447",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-447",
+  "type": "Exercise",
+  "number": "13.1.5.6",
+  "title": "",
+  "body": " , ,  "
+},
+{
+  "id": "exercise-448",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-448",
+  "type": "Exercise",
+  "number": "13.1.5.7",
+  "title": "",
+  "body": "        "
+},
+{
+  "id": "exercise-449",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-449",
+  "type": "Exercise",
+  "number": "13.1.5.8",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "exercise-450",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-450",
+  "type": "Exercise",
+  "number": "13.1.5.9",
+  "title": "",
+  "body": "        "
+},
+{
+  "id": "exercise-451",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-451",
+  "type": "Exercise",
+  "number": "13.1.5.10",
+  "title": "",
+  "body": "  , ,  "
+},
+{
+  "id": "exercise-452",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-452",
+  "type": "Exercise",
+  "number": "13.1.5.11",
+  "title": "",
+  "body": "  , ,      "
+},
+{
+  "id": "exercise-453",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-453",
+  "type": "Exercise",
+  "number": "13.1.5.12",
+  "title": "",
+  "body": " Find a closed form expression for in .  "
+},
+{
+  "id": "exercise-454",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-454",
+  "type": "Exercise",
+  "number": "13.1.5.13",
+  "title": "",
+  "body": "    Find a closed form expression for the terms of the Fibonacci sequence (see ).    The sequence was defined by = the number of strings of zeros and ones with length having no consecutive zeros ( (c)). Its recurrence relation is the same as that of the Fibonacci sequence. Determine a closed form expression for , .         The characteristic equation is , which has solutions and , It is useful to point out that and . The general solution is . Using the initial conditions, we obtain the system: and . The solution to this system is and   Therefore the final solution is          "
+},
+{
+  "id": "exercise-455",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-455",
+  "type": "Exercise",
+  "number": "13.1.5.14",
+  "title": "",
+  "body": " If , , then can be described with the recurrence relation . For each of the following sequences that are defined using a summation, find a closed form expression:      ,    ,    ,     ,     "
+},
+{
+  "id": "exercise-456",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-456",
+  "type": "Exercise",
+  "number": "13.1.5.15",
+  "title": "",
+  "body": " Let be the number of ways that the set , , can be partitioned into two nonempty subsets.     Find a recurrence relation for . (Hint: It will be a first-order linear relation.)    Solve the recurrence relation.         For each two-block partition of , there are two partitions we can create when we add , but there is one additional two-block partition to count for which one block is . Therefore,          "
+},
+{
+  "id": "exercise-457",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-457",
+  "type": "Exercise",
+  "number": "13.1.5.16",
+  "title": "",
+  "body": " If you were to deposit a certain amount of money at the end of each year for a number of years, this sequence of payments would be called an annuity (see ).   Find a closed form expression for the balance or value of an annuity that consists of payments of dollars at a rate of interest of . Note that for a normal annuity, the first payment is made after one year.    With an interest rate of 5.5 percent, how much would you need to deposit into an annuity to have a value of one million dollars after 18 years?    The payment of a loan is a form of annuity in which the initial value is some negative amount (the amount of the loan) and the annuity ends when the value is raised to zero. How much could you borrow if you can afford to pay $5,000 per year for 25 years at 11 percent interest?    "
+},
+{
+  "id": "exercise-458",
+  "level": "2",
+  "url": "s-recurrence-relations.html#exercise-458",
+  "type": "Exercise",
+  "number": "13.1.5.17",
+  "title": "",
+  "body": " Suppose that is a small positive number. Consider the recurrence relation , with initial conditions and . If is small enough, we might consider approximating the relation by replacing with 1 and with 0. Solve the original relation and its approximation. Let a be the solution of the approximation. Compare closed form expressions for and . Their forms are very different because the characteristic roots of the original relation were close together and the approximation resulted in one double characteristic root.If characteristic roots of a relation are relatively far apart, this problem will not occur. For example, compare the general solutions of and .  "
+},
+{
+  "id": "s-some-common-rrs",
+  "level": "1",
+  "url": "s-some-common-rrs.html",
+  "type": "Section",
+  "number": "13.2",
+  "title": "Some Common Recurrence Relations",
+  "body": " Some Common Recurrence Relations    In this section we intend to examine a variety of recurrence relations that are not finite-order linear with constant coefficients. For each part of this section, we will consider a concrete example, present a solution, and, if possible, examine a more general form of the original relation.    A First Basic Example  Consider the homogeneous first-order linear relation without constant coefficients, , , with initial condition . Upon close examination of this relation, we see that the th term is times the term, which is a property of factorial. is a solution of this relation, for if , In addition, since , the initial condition is satisfied. It should be pointed out that from a computational point of view, our solution really isn't much of an improvement since the exact calculation of takes multiplications.  If we examine a similar relation,  with , a table of values for suggests a possible solution: The exponent of 2 in is growing according to the relation with . Thus and . Note that could also be written as , for , but this is not a closed form expression.  In general, the relation for with , where is a function that is defined for all , has the solution  This product form of is not a closed form expression because as grows, the number of multiplications grow. Thus, it is really not a true solution. Often, as for above, a closed form expression can be derived from the product form.    An Analysis of the Binary Search Algorithm   Suppose you intend to use a binary search algorithm (see ) on lists of zero or more sorted items, and that the items are stored in an array, so that you have easy access to each item. A natural question to ask is How much time will it take to complete the search? When a question like this is asked, the time we refer to is often the so-called worst-case time. That is, if we were to search through items, what is the longest amount of time that we will need to complete the search? In order to make an analysis such as this independent of the computer to be used, time is measured by counting the number of steps that are executed. Each step (or sequence of steps) is assigned an absolute time, or weight; therefore, our answer will not be in seconds, but in absolute time units. If the steps in two different algorithms are assigned weights that are consistent, then analyses of the algorithms can be used to compare their relative efficiencies. There are two major steps that must be executed in a call of the binary search algorithm:     If the lower index is less than or equal to the upper index, then the middle of the list is located and its key is compared to the value that you are searching for.    In the worst case, the algorithm must be executed with a list that is roughly half as large as in the previous execution. If we assume that Step 1 takes one time unit and is the worst-case time for a list of items, then For simplicity, we will assume that even though the conditions of Step 1 must be evaluated as false if . You might wonder why is truncated in . If is odd, then for some , the middle of the list will be the item, and no matter what half of the list the search is directed to, the reduced list will have items. On the other hand, if is even, then for . The middle of the list will be the item, and the worst case will occur if we are directed to the items that come after the middle (the through items). Again the reduced list has items.     Solution to and . To determine , the easiest case is when is a power of two. If we compute , , by iteration, our results are The pattern that is established makes it clear that . This result would seem to indicate that every time you double the size of your list, the search time increases by only one unit.  A more complete solution can be obtained if we represent in binary form. For each , there exists a non-negative integer such that For example, if , ; therefore, . If satisfies \\ , its binary representation requires digits. For example, = .  In general, . where . Note that in this form, is easy to describe: it is the digit binary number  Therefore, .  From the pattern that we've just established, reduces to . A formal inductive proof of this statement is possible. However, we expect that most readers would be satisfied with the argument above. Any skeptics are invited to provide the inductive proof.  For those who prefer to see a numeric example, suppose .   Our general conclusion is that the solution to and is that for , , where .  A less cumbersome statement of this fact is that . For example, .    Review of Logarithms  Logarithms  Any discussion of logarithms must start by establishing a base, which can be any positive number other than 1. With the exception of , our base will be 2. We will see that the use of a different base (10 and are the other common ones) only has the effect of multiplying each logarithm by a constant. Therefore, the base that you use really isn't very important. Our choice of base 2 logarithms is convenient for the problems that we are considering.   Base 2 logarithm  Logarithm, base 2   The base 2 logarithm of a positive number represents an exponent and is defined by the following equivalence for any positive real numbers . .     Plot of the logarithm, bases 2, function   Plot of the logarithm, bases 2, function    For example, because and because . A graph of the function in shows that if , the ; that is, when increases, also increases. However, if we move from to , only increases from 10 to 11. This slow rate of increase of the logarithm function is an important point to remember. An algorithm acting on pieces of data that can be executed in time units can handle significantly larger sets of data than an algorithm that can be executed in or time units. The graph of would show the same behavior.  A few more properties that we will use in subsequent discussions involving logarithms are summarized in the following theorem.   Fundamental Properties of Logarithms   Logarithms  Properties    Let and be positive real numbers, and a real number.      Logarithms base   Logarithm  General Base     Logarithm, base of    If , , then for ,     How logarithms with different bases are related   Let , . Then for all , . Therefore, if , base b logarithms can be computed from base 2 logarithms by dividing by the positive scaling factor . If , this scaling factor is negative.    By an analogue of , . Therefore, if we take the base 2 logarithm of both sides of this equality we get: Finally, divide both sides of the last equation by .      and .     Returning to the binary search algorithm, we can derive the final expression for using the properties of logarithms, including that the logarithm function is increasing so that inequalities are maintained when taking logarithms of numbers.     We can apply several of these properties of logarithms to get an alternate expression for :   If the time that was assigned to Step 1 of the binary search algorithm is changed, we wouldn't expect the form of the solution to be very different. If with , then .  A further generalization would be to add a coefficient to : with , where , and is not quite as simple to derive. First, if we consider values of that are powers of 2: If is not a power of 2, by reasoning that is identical to what we used to and , where .  The first term of this expression is a geometric sum, which can be written in closed form. Let be that sum: We've multiplied each term of by and aligned the identical terms in and . Now if we subtract the two equations, Therefore, .  A closed form expression for is      Analysis of Bubble Sort and Merge Sort  Bubble Sort  Merge Sort  The efficiency of any search algorithm such as the binary search relies on fact that the search list is sorted according to a key value and that the search is based on the key value. There are several methods for sorting a list. One example is the bubble sort. You might be familiar with this one since it is a popular first sorting algorithm. A time analysis of the algorithm shows that if is the worst-case time needed to complete the bubble sort on items, then and . The solution of this relation is a quadratic function . The growth rate of a quadratic function such as this one is controlled by its squared term. Any other terms are dwarfed by it as gets large. For the bubble sort, this means that if we double the size of the list that we are to sort, changes to and so becomes . Therefore, the time needed to do a bubble sort is quadrupled. One alternative to bubble sort is the merge sort. Here is a simple version of this algorithm for sorting , . If , the list is sorted trivially. If then:     Divide into and .    Sort and using a merge sort.    Merge the sorted lists and into one sorted list. If the sort is to be done in descending order of key values, you continue to choose the higher key value from the fronts of and and place them in the back of .     Note that will always have items and will have items; thus, if is odd, gets one more item than . We will assume that the time required to perform Step 1 of the algorithm is insignificant compared to the other steps; therefore, we will assign a time value of zero to this step. Step 3 requires roughly comparisons and movements of items from and to ; thus, its time is proportional to . For this reason, we will assume that Step 3 takes time units. Since Step 2 requires time units, with the initial condition   Instead of an exact solution of these equations, we will be content with an estimate for . First, consider the case of , :   Thus, if is a power of 2, . Now if, for some , , then . This can be proved by induction on . As increases from to , increases from to and is slightly larger than . The discrepancy is small enough so that can be considered a solution of and for the purposes of comparing the merge sort with other algorithms. compares with for selected values of .   Comparison of Times for Bubble Sort and Merge Sort    n          10  45  34    50  1225  283    100  4950  665    500  124750  4483    1000  499500  9966       Derangements  Derangement  A derangement is a permutation on a set that has no fixed points . Here is a formal definition:   Derangement   A derangement of a nonempty set is a permutation of (i.e., a bijection from into ) such that for all .    If , an interesting question might be How many derangements are there of ? We know that our answer is bounded above by . We can also expect our answer to be quite a bit smaller than since is the image of itself for of the permutations of .  Let be the number of derangements of . Our answer will come from discovering a recurrence relation on . Suppose that . If we are to construct a derangement of , , then . Thus, the image of can be selected in different ways. No matter which of the choices we make, we can complete the definition of in one of two ways. First, we can decide to make , leaving ways of completing the definition of , since will be a derangement of . Second, if we decide to select , each of the derangements of can be used to define . If is a derangement of such that , then define f by   Note that with our second construction of , , while in the first construction, . Therefore, no derangement of with can be constructed by both methods.  To recap our result, we see that is determined by first choosing one of images of and then constructing the remainder of in one of ways. Therefore,   This homogeneous second-order linear relation with variable coefficients, together with the initial conditions and , completely defines . Instead of deriving a solution of this relation by analytical methods, we will give an empirical derivation of an approximation of . Since the derangements of are drawn from a pool of permutations, we will see what percentage of these permutations are derangements by listing the values of , , and . The results we observe will indicate that as grows, hardly changes at all. If this quotient is computed to eight decimal places, for , . The reciprocal of this number, which seems to be tending toward, is, to eight places, 2.7182818. This number appears in so many places in mathematics that it has its own name, . An approximate solution of our recurrence relation on is then .     Exercises   Solve the following recurrence relations. Indicate whether your solution is an improvement over iteration.      , .     , .     , , .          !    , an improvement.     !, no improvement.       Prove that if , . (Hint: Consider the cases of odd and even separately.)    Solve as completely as possible:     , .    , .     , . (Hint: Write in octal form.)                           Prove by induction that if , , and , , then .   Prove by induction on .    Use the substitution to solve for , with , , and .   The indicated substitution yields . Since , for all . Therefore .    Use the substitution to solve for , with .    Solve as completely as possible:      , , .     , , .         A good approximation to the solution of this recurrence relation is based on the following observation: is a power of a power of two; that is, is , where , then . By applying this recurrence relation times we obtain . Going back to the original form of , or . We would expect that in general, is . We do not see any elementary method for arriving at an exact solution.    Suppose that is a positive integer with . Then can be written in binary form, with and is equal to the sum  . If , then we can estimate this sum to be between and . Therefore, .       Suppose Step 1 of the merge sort algorithm did take a significant amount of time. Assume it takes 0.1 time unit, independent of the value of .     Write out a new recurrence relation for that takes this factor into account.    Solve for , .    Assuming the solution for powers of 2 is a good estimate for all , compare your result to the solution in the text. As gets large, is there really much difference?       "
+},
+{
+  "id": "def-log-base-2",
+  "level": "2",
+  "url": "s-some-common-rrs.html#def-log-base-2",
+  "type": "Definition",
+  "number": "13.2.1",
+  "title": "Base 2 logarithm.",
+  "body": " Base 2 logarithm  Logarithm, base 2   The base 2 logarithm of a positive number represents an exponent and is defined by the following equivalence for any positive real numbers . .   "
+},
+{
+  "id": "fig-log-2-plot",
+  "level": "2",
+  "url": "s-some-common-rrs.html#fig-log-2-plot",
+  "type": "Figure",
+  "number": "13.2.2",
+  "title": "",
+  "body": " Plot of the logarithm, bases 2, function   Plot of the logarithm, bases 2, function   "
+},
+{
+  "id": "theorem-log-properties",
+  "level": "2",
+  "url": "s-some-common-rrs.html#theorem-log-properties",
+  "type": "Theorem",
+  "number": "13.2.3",
+  "title": "Fundamental Properties of Logarithms.",
+  "body": " Fundamental Properties of Logarithms   Logarithms  Properties    Let and be positive real numbers, and a real number.    "
+},
+{
+  "id": "def-logarithm-general-base",
+  "level": "2",
+  "url": "s-some-common-rrs.html#def-logarithm-general-base",
+  "type": "Definition",
+  "number": "13.2.4",
+  "title": "Logarithms base <span class=\"process-math\">\\(b\\)<\/span>.",
+  "body": " Logarithms base   Logarithm  General Base     Logarithm, base of    If , , then for ,   "
+},
+{
+  "id": "theorem-logs-related",
+  "level": "2",
+  "url": "s-some-common-rrs.html#theorem-logs-related",
+  "type": "Theorem",
+  "number": "13.2.5",
+  "title": "How logarithms with different bases are related.",
+  "body": " How logarithms with different bases are related   Let , . Then for all , . Therefore, if , base b logarithms can be computed from base 2 logarithms by dividing by the positive scaling factor . If , this scaling factor is negative.    By an analogue of , . Therefore, if we take the base 2 logarithm of both sides of this equality we get: Finally, divide both sides of the last equation by .   "
+},
+{
+  "id": "note-7",
+  "level": "2",
+  "url": "s-some-common-rrs.html#note-7",
+  "type": "Note",
+  "number": "13.2.6",
+  "title": "",
+  "body": "  and .  "
+},
+{
+  "id": "table-sort-analysis",
+  "level": "2",
+  "url": "s-some-common-rrs.html#table-sort-analysis",
+  "type": "Table",
+  "number": "13.2.7",
+  "title": "Comparison of Times for Bubble Sort and Merge Sort",
+  "body": " Comparison of Times for Bubble Sort and Merge Sort    n          10  45  34    50  1225  283    100  4950  665    500  124750  4483    1000  499500  9966    "
+},
+{
+  "id": "def-derangement",
+  "level": "2",
+  "url": "s-some-common-rrs.html#def-derangement",
+  "type": "Definition",
+  "number": "13.2.8",
+  "title": "Derangement.",
+  "body": " Derangement   A derangement of a nonempty set is a permutation of (i.e., a bijection from into ) such that for all .   "
+},
+{
+  "id": "exercise-459",
+  "level": "2",
+  "url": "s-some-common-rrs.html#exercise-459",
+  "type": "Exercise",
+  "number": "13.2.5.1",
+  "title": "",
+  "body": " Solve the following recurrence relations. Indicate whether your solution is an improvement over iteration.      , .     , .     , , .          !    , an improvement.     !, no improvement.     "
+},
+{
+  "id": "exercise-460",
+  "level": "2",
+  "url": "s-some-common-rrs.html#exercise-460",
+  "type": "Exercise",
+  "number": "13.2.5.2",
+  "title": "",
+  "body": " Prove that if , . (Hint: Consider the cases of odd and even separately.)  "
+},
+{
+  "id": "exercise-461",
+  "level": "2",
+  "url": "s-some-common-rrs.html#exercise-461",
+  "type": "Exercise",
+  "number": "13.2.5.3",
+  "title": "",
+  "body": " Solve as completely as possible:     , .    , .     , . (Hint: Write in octal form.)                         "
+},
+{
+  "id": "exercise-462",
+  "level": "2",
+  "url": "s-some-common-rrs.html#exercise-462",
+  "type": "Exercise",
+  "number": "13.2.5.4",
+  "title": "",
+  "body": " Prove by induction that if , , and , , then .   Prove by induction on .  "
+},
+{
+  "id": "exercise-463",
+  "level": "2",
+  "url": "s-some-common-rrs.html#exercise-463",
+  "type": "Exercise",
+  "number": "13.2.5.5",
+  "title": "",
+  "body": " Use the substitution to solve for , with , , and .   The indicated substitution yields . Since , for all . Therefore .  "
+},
+{
+  "id": "exercise-464",
+  "level": "2",
+  "url": "s-some-common-rrs.html#exercise-464",
+  "type": "Exercise",
+  "number": "13.2.5.6",
+  "title": "",
+  "body": " Use the substitution to solve for , with .  "
+},
+{
+  "id": "exercise-465",
+  "level": "2",
+  "url": "s-some-common-rrs.html#exercise-465",
+  "type": "Exercise",
+  "number": "13.2.5.7",
+  "title": "",
+  "body": " Solve as completely as possible:      , , .     , , .         A good approximation to the solution of this recurrence relation is based on the following observation: is a power of a power of two; that is, is , where , then . By applying this recurrence relation times we obtain . Going back to the original form of , or . We would expect that in general, is . We do not see any elementary method for arriving at an exact solution.    Suppose that is a positive integer with . Then can be written in binary form, with and is equal to the sum  . If , then we can estimate this sum to be between and . Therefore, .     "
+},
+{
+  "id": "exercise-466",
+  "level": "2",
+  "url": "s-some-common-rrs.html#exercise-466",
+  "type": "Exercise",
+  "number": "13.2.5.8",
+  "title": "",
+  "body": " Suppose Step 1 of the merge sort algorithm did take a significant amount of time. Assume it takes 0.1 time unit, independent of the value of .     Write out a new recurrence relation for that takes this factor into account.    Solve for , .    Assuming the solution for powers of 2 is a good estimate for all , compare your result to the solution in the text. As gets large, is there really much difference?     "
+},
+{
+  "id": "s-generating-functions",
+  "level": "1",
+  "url": "s-generating-functions.html",
+  "type": "Section",
+  "number": "13.3",
+  "title": "Generating Functions",
+  "body": " Generating Functions  Generating Functions    This section contains an introduction to the topic of generating functions and how they are used to solve recurrence relations, among other problems. Methods that employ generating functions are based on the concept that you can take a problem involving sequences and translate it into a problem involving generating functions. Once you've solved the new problem, a translation back to sequences gives you a solution of the original problem.  This section covers:   The definition of a generating function.    Solution of a recurrence relation using generating functions to identify the skills needed to use generating functions.    An introduction and\/or review of the skills identified in point 2.    Some applications of generating functions.      Definition   Generating Function of a Sequence  Generating Function       The generating function of a sequence with terms , is the infinite sum The domain and codomain of generating functions will not be of any concern to us since we will only be performing algebraic operations on them.     First Examples     If , , then We can get a closed form expression for by observing that . Therefore, .    Finite sequences have generating functions. For example, the sequence of binomial coefficients , , , , has generating function by application of the binomial formula.    If , . Note that the index that is used in the summation has no significance. Also, note that the lower limit of the summation could start at 1 since .        Solution of a Recurrence Relation Using Generating Functions  We illustrate the use of generating functions by solving , , with and .     Translate the recurrence relation into an equation about generating functions.  Let , , with and . Therefore,     Solve for the generating function of the unknown sequence, .   Close examination of the three sums above shows:      since and .            Therefore,        Determine the sequence whose generating function is the one we got in Step 2.  For our example, we need to know one general fact about the closed form expression of an exponential sequence (a proof will be given later):   Now, in order to recognize in our example, we must write our closed form expression for as a sum of terms like above. Note that the denominator of can be factored: If you look at this last expression for closely, you can imagine how it could be the result of addition of two fractions, where and are two real numbers that must be determined. Starting on the right of , it should be clear that the sum, for any and , would look like the left-hand side. The process of finding values of and that make true is called the partial fractions decomposition of the left-hand side:   Therefore, and   We can apply to each term of :     is the generating function for    is the generating function for .     Therefore, .     From this example, we see that there are several skills that must be mastered in order to work with generating functions. You must be able to:     Manipulate summation expressions and their indices (in Step 2).    Solve algebraic equations and manipulate algebraic expressions, including partial function decompositions (Steps 2 and 3).    Identify sequences with their generating functions (Steps 1 and 3).     We will concentrate on the last skill first, a proficiency in the other skills is a product of doing as many exercises and reading as many examples as possible.  First, we will identify the operations on sequences and on generating functions.    Operations on Sequences   Operations on Sequences   Sequences  Operations on,     pop     push     Convolution of sequences and    Let and be sequences of numbers and let be a real number. Define the sum , the scalar product , the product , the convolution , the pop operation (read pop ), and the push operation (read push ) term-wise for by          If one imagines a sequence to be a matrix with one row and an infinite number of columns, and are exactly as in matrix addition and scalar multiplication. There is no obvious similarity between the other operations and matrix operations.  The pop and push operations can be understood by imagining a sequence to be an infinite stack of numbers with at the top, next, etc., as in a. The sequence is obtained by popping S(0) from the stack, leaving a stack as in b, with S(1) at the top, S(2) next, etc. The sequence is obtained by placing a zero at the top of the stack, resulting in a stack as in c. Keep these figures in mind when we discuss the pop and push operations.   Stack interpretation of pop and push operation   Stack interpretation of pop and push operation     Some Sequence Operations  If , , , and :                                                                        Note that .   Multiple Pop and Push  Multiple Pop and Push:    Multiple pop operation on     Multiple push operation on    If S is a sequence of numbers and a positive integer greater than 1, define Similarly, define     In general, and     Operations on Generating Functions   Generating Functions  Operations on,    Operations on Generating Functions   Generating Functions  Operations on,    If and are generating functions and is a real number, then the sum , scalar product , product , and monomial product , are generating functions, where   The last sum is obtained by substituting for in the previous sum.     Some operations on generating functions  If and then      Note: , and from .   Now we establish the connection between the operations on sequences and generating functions. Let and be sequences and let be a real number.  In words, says that the generating function of the sum of two sequences equals the sum of the generating functions of those sequences. Take the time to write out the other four identities in your own words. From the previous examples, these identities should be fairly obvious, with the possible exception of the last two. We will prove as part of the next theorem and leave the proof of to the interested reader. Note that there is no operation on generating functions that is related to sequence multiplication; that is, cannot be simplified.   Generating functions related to Pop and Push   If ,           .       We prove (a) by induction and leave the proof of (b) to the reader.  Basis: Therefore, part (a) is true for .  Induction: Suppose that for some , the statement in part (a) is true: by the induction hypothesis. Now write in the last expression above as so that it fits into the finite summation:   Therefore the statement is true for .      Closed Form Expressions for Generating Functions   Generating Functions  Closed form expressions for   The most basic tool used to express generating functions in closed form is the closed form expression for the geometric series, which is an expression of the form . It can either be terminated or extended infinitely.  Finite Geometric Series:   Infinite Geometric Series:   Restrictions: and represent constants and the right sides of the two equations apply under the following conditions:     must not equal 1 in the finite case. Note that if .    In the infinite case, the absolute value of must be less than 1.     These restrictions don't come into play with generating functions. We could derive by noting that if , , then (See Exercise 10 of Section 8.3). An alternative derivation was used in Section 8.4. We will take the same steps to derive . Let . Then    Generating Functions involving Geometric Sums     If , , is an infinite geometric series with and .Therefore, .    If , 0, then .    If , then .    Let . Then .  Given a choice between the last form of and the previous sum of three fractions, we would prefer leaving it as a sum of three functions. As we saw in an earlier example, a partial fractions decomposition of a fraction such as the last expression requires some effort to produce.    If , then can be determined by multiplying the numerator and denominator by 1\/2 to obtain . We recognize this fraction as the sum of the infinite geometric series with and . Therefore .    If , then we expand to . Therefore ,  , , and, since there are no higher-powered terms, , . A more concise way of describing is , since is interpreted as 0 of .      lists some closed form expressions for the generating functions of some common sequences.   Closed Form Expressions of some Generating Functions            Sequence  Generating Function                                                              Another Complete Solution  Solve , , with and . The solution will be derived using the same steps that were used earlier in this section, with one variation.     Translate to an equation about generating functions. First, we change the index of the recurrence relation by substituting for . The result is , . Now, if , then is the zero sequence, which has a zero generating function. Furthermore, . Therefore,    We want to now solve the following equation for : Multiply by : Expand and collect all terms involving on one side of the equation: Therefore,    Determine S from its generating function. thus a partial fraction decomposition of would be: Therefore, and . The solution of this set of equations is and . . In conclusion, since , .       An Application to Counting  Let and let be the set of all strings of length zero or more that can be made using each of the elements of zero or more times. By the generalized rule of products, there are such strings that have length , , Suppose that is the set of strings of length with the property that all of the 's and 's precede all of the 's, 's, and 's. Thus , but . Let . A closed form expression for can be obtained by recognizing as the convolution of two sequences. To illustrate our point, we will consider the calculation of .  Note that if a string belongs to , it starts with characters from and is followed by characters from . Let be the number of strings of 's and 's with length and let be the number of strings of 's, 's, and 's with length . By the generalized rule of products, and . Among the strings in are the ones that start with two 's and 's and end with 's, 's, and 's. There are such strings. By the law of addition, Note that the sixth term of R is the sixth term of the convolution of with , . Think about the general situation for a while and it should be clear that . Now, our course of action will be to:     Determine the generating functions of and ,    Multiply and to obtain \\, and    Determine on the basis of .        , and         To recognize from , we must do a partial fractions decomposition: Therefore, and . The solution of this pair of equations is and . Since , which is the sum of the generating functions of and ,   For example, . Naturally, this equals the sum that we get from . To put this number in perspective, the total number of strings of length 6 with no restrictions is , and . Therefore approximately 13 percent of the strings of length 6 satisfy the conditions of the problem.        Extra for Experts  The remainder of this section is intended for readers who have had, or who intend to take, a course in combinatorics. We do not advise that it be included in a typical course. The method that was used in the previous example is a very powerful one and can be used to solve many problems in combinatorics. We close this section with a general description of the problems that can be solved in this way, followed by some examples.  Consider the situation in which , , , are actions that must be taken, each of which results in a well-defined outcome. For each define to be the set of possible outcomes of . We will assume that each outcome can be quantified in some way and that the quantification of the elements of is defined by the function . Thus, each outcome has a non-negative integer associated with it. Finally, define a frequency function such that is the number of elements of that have a quantification of .  Now, based on these assumptions, we can define the problems that can be solved. If a process is defined as a sequence of actions as above, and if the outcome of , which would be an element of , is quantified by then the frequency function, , for is the convolution of the frequency functions for , , , , which has a generating function equal to the product of the generating functions of the frequency functions , , , . That is,    Rolling Two Dice  Suppose that you roll a die two times and add up the numbers on the top face for each roll. Since the faces on the die represent the integers 1 through 6, the sum must be between 2 and 12. How many ways can any one of these sums be obtained? Obviously, 2 can be obtained only one way, with two 1's. There are two sequences that yield a sum of 3: 1-2 and 2-1. To obtain all of the frequencies with which the numbers 2 through 12 can be obtained, we set up the situation as follows. For ; is the rolling of the die for the time. and is defined by . Since each number appears on a die exactly once, the frequency function is if , and otherwise. The process of rolling the die two times is quantified by adding up the ; that is, . The generating function for the frequency function of rolling the die two times is then   Now, to get , just read the coefficient of . For example, the coefficient of is 4, so there are four ways to roll a total of 5.  To apply this method, the crucial step is to decompose a large process in the proper way so that it fits into the general situation that we've described.    Distribution of a Committee  Suppose that an organization is divided into three geographic sections, A, B, and C. Suppose that an executive committee of 11 members must be selected so that no more than 5 members from any one section are on the committee and that Sections A, B, and C must have minimums of 3, 2, and 2 members, respectively, on the committee. Looking only at the number of members from each section on the committee, how many ways can the committee be made up? One example of a valid committee would be 4 A's, 4 B's, and 3 C's.  Let be the action of deciding how many members (not who) from Section A will serve on the committee. and . The frequency function, , is defined by if , with otherwise. is then . Similarly, . Since the committee must have 11 members, our answer will be the coefficient of in , which is 10.      Exercises for Section 10.3   What sequences have the following generating functions?     1                                               What sequences have the following generating functions?                            Find closed form expressions for the generating functions of the following sequences:          , where for , with and .    The Fibonacci sequence: , , with .                           Find closed form expressions for the generating functions of the following sequences:      for and for .     , where for , with and .     , where for , with .       For each of the following expressions, find the partial fraction decomposition and identify the sequence having the expression as a generating function.                                           Find the partial fraction decompositions and identify the sequence having the following expressions:                       Given that and , what is the term of the generating function of each of the following sequences:                                                    Given that and , what is the term of the generating function of each of the following sequences:                            A game is played by rolling a die five times. For the roll, one point is added to your score if you roll a number higher than . Otherwise, your score is zero for that roll. For example, the sequence of rolls gives you a total score of three; while a sequence of 1,2,3,4,5 gives you a score of zero. Of the possible sequences of rolls, how many give you a score of zero?, of one? of five?   Coefficients of through in       Suppose that you roll a die ten times in a row and record the square of each number that you roll. How many ways could the sum of the squares of your rolls equal 40? What is the most common outcome?    "
+},
+{
+  "id": "def-generating-function",
+  "level": "2",
+  "url": "s-generating-functions.html#def-generating-function",
+  "type": "Definition",
+  "number": "13.3.1",
+  "title": "Generating Function of a Sequence.",
+  "body": " Generating Function of a Sequence  Generating Function       The generating function of a sequence with terms , is the infinite sum The domain and codomain of generating functions will not be of any concern to us since we will only be performing algebraic operations on them.   "
+},
+{
+  "id": "ex-first-gf-examples",
+  "level": "2",
+  "url": "s-generating-functions.html#ex-first-gf-examples",
+  "type": "Example",
+  "number": "13.3.2",
+  "title": "First Examples.",
+  "body": " First Examples     If , , then We can get a closed form expression for by observing that . Therefore, .    Finite sequences have generating functions. For example, the sequence of binomial coefficients , , , , has generating function by application of the binomial formula.    If , . Note that the index that is used in the summation has no significance. Also, note that the lower limit of the summation could start at 1 since .     "
+},
+{
+  "id": "p-3932",
+  "level": "2",
+  "url": "s-generating-functions.html#p-3932",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "partial fractions decomposition "
+},
+{
+  "id": "definition-159",
+  "level": "2",
+  "url": "s-generating-functions.html#definition-159",
+  "type": "Definition",
+  "number": "13.3.3",
+  "title": "Operations on Sequences.",
+  "body": " Operations on Sequences   Sequences  Operations on,     pop     push     Convolution of sequences and    Let and be sequences of numbers and let be a real number. Define the sum , the scalar product , the product , the convolution , the pop operation (read pop ), and the push operation (read push ) term-wise for by         "
+},
+{
+  "id": "fig-pop-push",
+  "level": "2",
+  "url": "s-generating-functions.html#fig-pop-push",
+  "type": "Figure",
+  "number": "13.3.4",
+  "title": "",
+  "body": " Stack interpretation of pop and push operation   Stack interpretation of pop and push operation   "
+},
+{
+  "id": "ex-some-sequence-operations",
+  "level": "2",
+  "url": "s-generating-functions.html#ex-some-sequence-operations",
+  "type": "Example",
+  "number": "13.3.5",
+  "title": "Some Sequence Operations.",
+  "body": " Some Sequence Operations  If , , , and :                                                                       "
+},
+{
+  "id": "def-multiple-pop-and-push",
+  "level": "2",
+  "url": "s-generating-functions.html#def-multiple-pop-and-push",
+  "type": "Definition",
+  "number": "13.3.6",
+  "title": "Multiple Pop and Push.",
+  "body": " Multiple Pop and Push  Multiple Pop and Push:    Multiple pop operation on     Multiple push operation on    If S is a sequence of numbers and a positive integer greater than 1, define Similarly, define    "
+},
+{
+  "id": "definition-161",
+  "level": "2",
+  "url": "s-generating-functions.html#definition-161",
+  "type": "Definition",
+  "number": "13.3.7",
+  "title": "Operations on Generating Functions.",
+  "body": " Operations on Generating Functions   Generating Functions  Operations on,    If and are generating functions and is a real number, then the sum , scalar product , product , and monomial product , are generating functions, where   The last sum is obtained by substituting for in the previous sum.   "
+},
+{
+  "id": "ex-some-gf-operations",
+  "level": "2",
+  "url": "s-generating-functions.html#ex-some-gf-operations",
+  "type": "Example",
+  "number": "13.3.8",
+  "title": "Some operations on generating functions.",
+  "body": " Some operations on generating functions  If and then      Note: , and from .  "
+},
+{
+  "id": "gf-of-pop-push",
+  "level": "2",
+  "url": "s-generating-functions.html#gf-of-pop-push",
+  "type": "Theorem",
+  "number": "13.3.9",
+  "title": "Generating functions related to Pop and Push.",
+  "body": " Generating functions related to Pop and Push   If ,           .       We prove (a) by induction and leave the proof of (b) to the reader.  Basis: Therefore, part (a) is true for .  Induction: Suppose that for some , the statement in part (a) is true: by the induction hypothesis. Now write in the last expression above as so that it fits into the finite summation:   Therefore the statement is true for .   "
+},
+{
+  "id": "ex-geometric-sums",
+  "level": "2",
+  "url": "s-generating-functions.html#ex-geometric-sums",
+  "type": "Example",
+  "number": "13.3.10",
+  "title": "Generating Functions involving Geometric Sums.",
+  "body": " Generating Functions involving Geometric Sums     If , , is an infinite geometric series with and .Therefore, .    If , 0, then .    If , then .    Let . Then .  Given a choice between the last form of and the previous sum of three fractions, we would prefer leaving it as a sum of three functions. As we saw in an earlier example, a partial fractions decomposition of a fraction such as the last expression requires some effort to produce.    If , then can be determined by multiplying the numerator and denominator by 1\/2 to obtain . We recognize this fraction as the sum of the infinite geometric series with and . Therefore .    If , then we expand to . Therefore ,  , , and, since there are no higher-powered terms, , . A more concise way of describing is , since is interpreted as 0 of .     "
+},
+{
+  "id": "table-gf-closed-form",
+  "level": "2",
+  "url": "s-generating-functions.html#table-gf-closed-form",
+  "type": "Table",
+  "number": "13.3.11",
+  "title": "Closed Form Expressions of some Generating Functions",
+  "body": " Closed Form Expressions of some Generating Functions            Sequence  Generating Function                                                            "
+},
+{
+  "id": "ex-another-complete-solution",
+  "level": "2",
+  "url": "s-generating-functions.html#ex-another-complete-solution",
+  "type": "Example",
+  "number": "13.3.12",
+  "title": "Another Complete Solution.",
+  "body": " Another Complete Solution  Solve , , with and . The solution will be derived using the same steps that were used earlier in this section, with one variation.     Translate to an equation about generating functions. First, we change the index of the recurrence relation by substituting for . The result is , . Now, if , then is the zero sequence, which has a zero generating function. Furthermore, . Therefore,    We want to now solve the following equation for : Multiply by : Expand and collect all terms involving on one side of the equation: Therefore,    Determine S from its generating function. thus a partial fraction decomposition of would be: Therefore, and . The solution of this set of equations is and . . In conclusion, since , .     "
+},
+{
+  "id": "example-counting-application",
+  "level": "2",
+  "url": "s-generating-functions.html#example-counting-application",
+  "type": "Example",
+  "number": "13.3.13",
+  "title": "An Application to Counting.",
+  "body": " An Application to Counting  Let and let be the set of all strings of length zero or more that can be made using each of the elements of zero or more times. By the generalized rule of products, there are such strings that have length , , Suppose that is the set of strings of length with the property that all of the 's and 's precede all of the 's, 's, and 's. Thus , but . Let . A closed form expression for can be obtained by recognizing as the convolution of two sequences. To illustrate our point, we will consider the calculation of .  Note that if a string belongs to , it starts with characters from and is followed by characters from . Let be the number of strings of 's and 's with length and let be the number of strings of 's, 's, and 's with length . By the generalized rule of products, and . Among the strings in are the ones that start with two 's and 's and end with 's, 's, and 's. There are such strings. By the law of addition, Note that the sixth term of R is the sixth term of the convolution of with , . Think about the general situation for a while and it should be clear that . Now, our course of action will be to:     Determine the generating functions of and ,    Multiply and to obtain \\, and    Determine on the basis of .        , and         To recognize from , we must do a partial fractions decomposition: Therefore, and . The solution of this pair of equations is and . Since , which is the sum of the generating functions of and ,   For example, . Naturally, this equals the sum that we get from . To put this number in perspective, the total number of strings of length 6 with no restrictions is , and . Therefore approximately 13 percent of the strings of length 6 satisfy the conditions of the problem.     "
+},
+{
+  "id": "ex-dice-roll",
+  "level": "2",
+  "url": "s-generating-functions.html#ex-dice-roll",
+  "type": "Example",
+  "number": "13.3.14",
+  "title": "Rolling Two Dice.",
+  "body": " Rolling Two Dice  Suppose that you roll a die two times and add up the numbers on the top face for each roll. Since the faces on the die represent the integers 1 through 6, the sum must be between 2 and 12. How many ways can any one of these sums be obtained? Obviously, 2 can be obtained only one way, with two 1's. There are two sequences that yield a sum of 3: 1-2 and 2-1. To obtain all of the frequencies with which the numbers 2 through 12 can be obtained, we set up the situation as follows. For ; is the rolling of the die for the time. and is defined by . Since each number appears on a die exactly once, the frequency function is if , and otherwise. The process of rolling the die two times is quantified by adding up the ; that is, . The generating function for the frequency function of rolling the die two times is then   Now, to get , just read the coefficient of . For example, the coefficient of is 4, so there are four ways to roll a total of 5.  To apply this method, the crucial step is to decompose a large process in the proper way so that it fits into the general situation that we've described.  "
+},
+{
+  "id": "ex-committee-distribution",
+  "level": "2",
+  "url": "s-generating-functions.html#ex-committee-distribution",
+  "type": "Example",
+  "number": "13.3.15",
+  "title": "Distribution of a Committee.",
+  "body": " Distribution of a Committee  Suppose that an organization is divided into three geographic sections, A, B, and C. Suppose that an executive committee of 11 members must be selected so that no more than 5 members from any one section are on the committee and that Sections A, B, and C must have minimums of 3, 2, and 2 members, respectively, on the committee. Looking only at the number of members from each section on the committee, how many ways can the committee be made up? One example of a valid committee would be 4 A's, 4 B's, and 3 C's.  Let be the action of deciding how many members (not who) from Section A will serve on the committee. and . The frequency function, , is defined by if , with otherwise. is then . Similarly, . Since the committee must have 11 members, our answer will be the coefficient of in , which is 10.   "
+},
+{
+  "id": "exercise-467",
+  "level": "2",
+  "url": "s-generating-functions.html#exercise-467",
+  "type": "Exercise",
+  "number": "13.3.7.1",
+  "title": "",
+  "body": " What sequences have the following generating functions?     1                                             "
+},
+{
+  "id": "exercise-468",
+  "level": "2",
+  "url": "s-generating-functions.html#exercise-468",
+  "type": "Exercise",
+  "number": "13.3.7.2",
+  "title": "",
+  "body": " What sequences have the following generating functions?                          "
+},
+{
+  "id": "exercise-469",
+  "level": "2",
+  "url": "s-generating-functions.html#exercise-469",
+  "type": "Exercise",
+  "number": "13.3.7.3",
+  "title": "",
+  "body": " Find closed form expressions for the generating functions of the following sequences:          , where for , with and .    The Fibonacci sequence: , , with .                         "
+},
+{
+  "id": "exercise-470",
+  "level": "2",
+  "url": "s-generating-functions.html#exercise-470",
+  "type": "Exercise",
+  "number": "13.3.7.4",
+  "title": "",
+  "body": " Find closed form expressions for the generating functions of the following sequences:      for and for .     , where for , with and .     , where for , with .     "
+},
+{
+  "id": "exercise-471",
+  "level": "2",
+  "url": "s-generating-functions.html#exercise-471",
+  "type": "Exercise",
+  "number": "13.3.7.5",
+  "title": "",
+  "body": " For each of the following expressions, find the partial fraction decomposition and identify the sequence having the expression as a generating function.                                         "
+},
+{
+  "id": "exercise-472",
+  "level": "2",
+  "url": "s-generating-functions.html#exercise-472",
+  "type": "Exercise",
+  "number": "13.3.7.6",
+  "title": "",
+  "body": " Find the partial fraction decompositions and identify the sequence having the following expressions:                     "
+},
+{
+  "id": "exercise-473",
+  "level": "2",
+  "url": "s-generating-functions.html#exercise-473",
+  "type": "Exercise",
+  "number": "13.3.7.7",
+  "title": "",
+  "body": " Given that and , what is the term of the generating function of each of the following sequences:                                                  "
+},
+{
+  "id": "exercise-474",
+  "level": "2",
+  "url": "s-generating-functions.html#exercise-474",
+  "type": "Exercise",
+  "number": "13.3.7.8",
+  "title": "",
+  "body": " Given that and , what is the term of the generating function of each of the following sequences:                          "
+},
+{
+  "id": "exercise-475",
+  "level": "2",
+  "url": "s-generating-functions.html#exercise-475",
+  "type": "Exercise",
+  "number": "13.3.7.9",
+  "title": "",
+  "body": " A game is played by rolling a die five times. For the roll, one point is added to your score if you roll a number higher than . Otherwise, your score is zero for that roll. For example, the sequence of rolls gives you a total score of three; while a sequence of 1,2,3,4,5 gives you a score of zero. Of the possible sequences of rolls, how many give you a score of zero?, of one? of five?   Coefficients of through in     "
+},
+{
+  "id": "exercise-476",
+  "level": "2",
+  "url": "s-generating-functions.html#exercise-476",
+  "type": "Exercise",
+  "number": "13.3.7.10",
+  "title": "",
+  "body": " Suppose that you roll a die ten times in a row and record the square of each number that you roll. How many ways could the sum of the squares of your rolls equal 40? What is the most common outcome?  "
+},
+{
+  "id": "Section14_1",
+  "level": "1",
+  "url": "Section14_1.html",
+  "type": "Section",
+  "number": "14.1",
+  "title": "Revisiting Inductive Proofs",
+  "body": " Revisiting Inductive Proofs   Under Construction!  "
+},
+{
+  "id": "Section14_2",
+  "level": "1",
+  "url": "Section14_2.html",
+  "type": "Section",
+  "number": "14.2",
+  "title": "Program Correctness",
+  "body": " Program Correctness    Under Construction!    Two Exponentiation Algorithms  Consider the following algorithm implemented in Sage to compute , given an arbitrary integer , non-negative exponent , and a modulus , . The default sample evaluation computes , but you can edit the final line for other inputs.    It should be fairly clear that this algorithm will successfully compute since it mimics the basic definition of exponentiation. However, this algorithm is highly inefficient. The algorithm that is most commonly used for the task of exponentiation is the following one, also implemented in Sage.   The only difficulty with the \"fast algorithm\" is that it might not be so obvious that it always works. When implemented, it can be verified by example, but an even more rigorous verification can be done using the Invariant Relation Theorem. Before stating the theorem, we define some terminology.    Proving the correctness of the fast algorithm   Pre and Post Values    pre and post values of a variable    Given a variable , the pre value of , denoted , is the value before an iteration of a loop. The post value, denoted , is the value after the iteration.     Pre and post values in the fast exponentiation algorithm  In the fast exponentiation algorithm, the relationships between the pre and post values of the three variables are as follows.       Invariant Relation   Given an algorithm's inputs and a set of variables that are used in the algorithm, an invariant relation is a set of one or more equations that are true prior to entering a loop and remain true in every iteration of the loop.     Invariant Relation for Fast Exponentiation   We claim that the invariant relation in the fast algorithm is . We will prove that this is indeed true below.     The Invariant Relation Theorem   Given a loop within an algorithm, if is a relation with the properties     R is true before entering the loop    the truth of R is maintained in any iteration of the loop    the condition for exiting the loop will always be reached in a finite number of iterations.     then R will be true upon exiting the loop.    The condition that the loop ends in a finite number of iterations lets us apply mathematical induction with the induction variable being the number of iterations. We leave the details to the reader.    We can verify the correctness of the fast exponentiation algorithm using the Invariant Relation Theorem. First we note that prior to entering the loop, . Assuming the relation is true at the start of any iteration, that is , then Finally, the value of will decrease to zero in a finite number of steps because the number of binary digits of decreases by one with each iteration. At the end of the loop, which verifies the correctness of the algorithm.    Exercises   How are the pre and post values in the slow exponentiation algorithm related? What is the invariant relation between the variables in the slow algorithm?    Verify the correctness of the following algorithm to compute the greatest common divisor of two integers that are not both zero.    The invariant of this algorithm is .    Verify the correctness of the in Chapter 1.    "
+},
+{
+  "id": "def-pre-post-values",
+  "level": "2",
+  "url": "Section14_2.html#def-pre-post-values",
+  "type": "Definition",
+  "number": "14.2.1",
+  "title": "Pre and Post Values.",
+  "body": " Pre and Post Values    pre and post values of a variable    Given a variable , the pre value of , denoted , is the value before an iteration of a loop. The post value, denoted , is the value after the iteration.   "
+},
+{
+  "id": "ex-pre-post-fast",
+  "level": "2",
+  "url": "Section14_2.html#ex-pre-post-fast",
+  "type": "Example",
+  "number": "14.2.2",
+  "title": "Pre and post values in the fast exponentiation algorithm.",
+  "body": " Pre and post values in the fast exponentiation algorithm  In the fast exponentiation algorithm, the relationships between the pre and post values of the three variables are as follows.     "
+},
+{
+  "id": "def-invariant-relation",
+  "level": "2",
+  "url": "Section14_2.html#def-invariant-relation",
+  "type": "Definition",
+  "number": "14.2.3",
+  "title": "Invariant Relation.",
+  "body": " Invariant Relation   Given an algorithm's inputs and a set of variables that are used in the algorithm, an invariant relation is a set of one or more equations that are true prior to entering a loop and remain true in every iteration of the loop.   "
+},
+{
+  "id": "ex-invariant-fast-expo",
+  "level": "2",
+  "url": "Section14_2.html#ex-invariant-fast-expo",
+  "type": "Example",
+  "number": "14.2.4",
+  "title": "Invariant Relation for Fast Exponentiation.",
+  "body": " Invariant Relation for Fast Exponentiation   We claim that the invariant relation in the fast algorithm is . We will prove that this is indeed true below.   "
+},
+{
+  "id": "th-invariant-relation-theorem",
+  "level": "2",
+  "url": "Section14_2.html#th-invariant-relation-theorem",
+  "type": "Theorem",
+  "number": "14.2.5",
+  "title": "The Invariant Relation Theorem.",
+  "body": " The Invariant Relation Theorem   Given a loop within an algorithm, if is a relation with the properties     R is true before entering the loop    the truth of R is maintained in any iteration of the loop    the condition for exiting the loop will always be reached in a finite number of iterations.     then R will be true upon exiting the loop.    The condition that the loop ends in a finite number of iterations lets us apply mathematical induction with the induction variable being the number of iterations. We leave the details to the reader.   "
+},
+{
+  "id": "exercise-477",
+  "level": "2",
+  "url": "Section14_2.html#exercise-477",
+  "type": "Exercise",
+  "number": "14.2.3.1",
+  "title": "",
+  "body": " How are the pre and post values in the slow exponentiation algorithm related? What is the invariant relation between the variables in the slow algorithm?  "
+},
+{
+  "id": "exercise-478",
+  "level": "2",
+  "url": "Section14_2.html#exercise-478",
+  "type": "Exercise",
+  "number": "14.2.3.2",
+  "title": "",
+  "body": " Verify the correctness of the following algorithm to compute the greatest common divisor of two integers that are not both zero.    The invariant of this algorithm is .  "
+},
+{
+  "id": "exercise-479",
+  "level": "2",
+  "url": "Section14_2.html#exercise-479",
+  "type": "Exercise",
+  "number": "14.2.3.3",
+  "title": "",
+  "body": " Verify the correctness of the in Chapter 1.  "
+},
+{
   "id": "s-graphs-introduction",
   "level": "1",
   "url": "s-graphs-introduction.html",
   "type": "Section",
-  "number": "13.1",
+  "number": "15.1",
   "title": "Graphs - General Introduction",
-  "body": " Graphs - General Introduction   Definitions  Recall that we introduced directed graphs in as a tool to visualize relations on a set. Here is a formal definition.   Simple Directed Graph   Graph  Simple Directed   Directed Graph   A simple directed graph consists of a nonempty set of vertices , , and a set of edges , , that is a subset of the set .     Some Terminology and Comments  Each edge is an ordered pair of elements from the vertex set. The first entry is the initial vertex of the edge and the second entry is the terminal vertex . Despite the set terminology in this definition, we often think of a graph as a picture, an aid in visualizing a situation. In Chapter 6, we introduced this concept to help understand relations on sets. Although those relations were principally of a mathematical nature, it remains true that when we see a graph, it tells us how the elements of a set are related to one another. We have chosen not to allow a graph with an empty vertex set, the so-called empty graph. There are both advantages and disadvantages to allowing the empty graph, so you may encounter it in other references.    A Simple Directed Graph  is an example of a simple directed graph. In set terms, this graph is , where and . Note how each edge is labeled either 0 or 1. There are often reasons for labeling even simple graphs. Some labels are to help make a graph easier to discuss; others are more significant. We will discuss the significance of the labels on this graph later.   A directed graph   A directed graph      In certain cases there may be a need for more than one edge between two vertices, and we need to expand the class of directed graphs.   Multigraph  Multigraph   Graph  Multigraph    A multigraph is a set of vertices with a set of edges that can contain more than one edge between the vertices.    One important point to keep in mind is that if we identify a graph as being a multigraph, it isn't necessary that there are two or more edges between some of the vertices. It is only just allowed . In other words, every simple graph is a multigraph. This is analogous to how a rectangle is a more general geometric figure than a square, but a square is still considered a rectangle.   A Multigraph  A common occurrence of a multigraph is a road map. The cities and towns on the map can be thought of as vertices, while the roads are the edges. It is not uncommon to have more than one road connecting two cities. In order to give clear travel directions, we name or number roads so that there is no ambiguity. We use the same method to describe the edges of the multigraph in . There is no question what is; however, referring to the edge would be ambiguous.   A directed multigraph   A directed multigraph     There are cases where the order of the vertices is not significant and so we use a different mathematical model for this situation:   Undirected Graph  Undirected Graph   Graph  Undirected    An undirected graph consists of a set , called a vertex set, and a set of two-element subsets of , called the edge set. The two-element subsets are drawn as lines connecting the vertices. It is customary to not allow self loops in undirected graphs.     An Undirected Graph  A network of computers can be described easily using a graph. describes a network of five computers, , , , , and . An edge between any two vertices indicates that direct two-way communication is possible between the two computers. Note that the edges of this graph are not directed. This is due to the fact that the relation that is being displayed is symmetric (i.e., if can communicate with , then can communicate with ). Although directed edges could be used here, it would simply clutter the graph.    Communications Map   Trefoil image     Island Road Map     This undirected graph, in set terms, is and  There are several other situations for which this graph can serve as a model. One of them is to interpret the vertices as cities and the edges as roads, an abstraction of a map such as the one in . Another interpretation is as an abstraction of the floor plan of a house. See . Vertex represents the outside of the house; all others represent rooms. Two vertices are connected if there is a door between them.    Complete Undirected Graph  Complete Undirected Graph.    A complete undirected graph with vertices    A complete undirected graph on vertices is an undirected graph with the property that each pair of distinct vertices are connected to one another. Such a graph is usually denoted by .     A Labeled Graph  A flowchart is a common example of a simple graph that requires labels for its vertices and some of its edges. is one such example that illustrates how many problems are solved.   A flow chart - an example of a labeled graph   A flow chart - an example of a labeled graph    At the start of the problem-solving process, we are at the vertex labeled Start and at the end (if we are lucky enough to have solved the problem) we will be at the vertex labeled End. The sequence of vertices that we pass through as we move from Start to End is called a path. The Start vertex is called the initial vertex of the path, while the End is called the final, or terminal, vertex. Suppose that the problem is solved after two attempts; then the path that was taken is . An alternate path description would be to list the edges that were used: . This second method of describing a path has the advantage of being applicable for multigraphs. On the graph in , the vertex list does not clearly describe a path between 1 and 3, but is unambiguous.    A Summary of Path Notation and Terminology  If and are two vertices of a graph, then a path between and describes a motion from and along edges of the graph. Vertex is called the initial vertex of the path and is called the terminal vertex. A path between and can always be described by its edge list, the list of edges that were used: , where: (1) the initial vertex of is ; (2) the terminal vertex of is the initial vertex of , ; and (3) the terminal vertex of is . The number of edges in the edge list is the path length . A path on a simple graph can also be described by a vertex list. A path of length will have a list of vertices , , , where, for , is an edge on the graph. A circuit is a path that terminates at its initial vertex.  Suppose that a path between two vertices has an edge list . A subpath of this graph is any portion of the path described by one or more consecutive edges in the edge list. For example, is a subpath of . Any path is its own subpath; however, we call it an improper subpath of itself. All other nonempty subpaths are called proper subpaths.  A path or circuit is simple if it contains no proper subpath that is a circuit. This is the same as saying that a path or circuit is simple if it does not visit any vertex more than once except for the common initial and terminal vertex in the circuit. In the problem-solving method described in , the path that you take is simple only if you reach a solution on the first try.     Subgraphs  Intuitively, you could probably predict what the term subgraph means. A graph contained within a graph, right? But since a graph involves two sets, vertices and edges, does it involve a subset of both of these sets, or just one of them? The answer is it could be either. There are different types of subgraphs. The two that we will define below will meet most of our future needs in discussing the theory of graphs.   Subgraph  Subgraph  Induced Subgraph  Spanning Subgraph   Let be a graph of any kind: directed, directed multigraph, or undirected. is a subgraph of if and only if and the vertices of are in . You create a subgraph of by removing zero or more vertices and all edges that include the removed vertices and then you possibly remove some other edges.  If the only removed edges are those that include the removed vertices, then we say that is an induced subgraph . Finally, is a spanning subgraph of if , or, in other words, no vertices are removed from , only edges.     Some subgraphs  Consider the graph, , in the top row of . The other three graphs in that figure are all subgraphs of . The graph in the bottom left was created by first removing vertex 5 and all edges connecting it. In addition, we have removed the edge . That removed edge disqualifies the graph from being an induced subgraph. The graphs in the bottom center and right are both spanning subgraphs. The one on the bottom right is a tree, and is referred to as a spanning subtree. Spanning subtrees will be discussed in .   A graph and a few of its subgraphs   A image of a graph and a few of its subgraphs      One set of subgraphs of any graph is the connected components of a graph. For simplicity, we will define them for undirected graphs. Given a graph , consider the relation is connected to on . We interprete this relation so that each vertex is connected to itself, and any two distinct vertices are related if there is a path along edges of the graph from one to the other. It shouldn't be too difficult to convince yourself that this is an equivalence relation on .   Connected Component  Connected Component   Given a graph , let be the relation is connected to on . Then the connected components of are the induced subgraphs of each with a vertex set that is an equivalence class with respect to .     If you ignore the duplicate names of vertices in the four graphs of , and consider the whole figure as one large graph, then there are four connected components in that graph. It's as simple as that! It's harder to describe precisely than to understand the concept.   From the examples we've seen so far, we can see that although a graph can be defined, in short, as a collection of vertices and edges, an integral part of most graphs is the labeling of the vertices and edges that allows us to interpret the graph as a model for some situation. We continue with a few more examples to illustrate this point.   A Graph as a Model for a Set of Strings  Suppose that you would like to mechanically describe the set of strings of 0's and 1's having no consecutive 1's. One way to visualize a string of this kind is with the graph in . Consider any path starting at vertex . If the label on each graph is considered to be the output to a printer, then the output will have no consecutive 1's. For example, the path that is described by the vertex list would result in an output of . Conversely, any string with no consecutive 1's determines a path starting at s.    A Tournament Graph  Suppose that four teams compete in a round-robin sporting event; that is, each team meets every other team once, and each game is played until a winner is determined. If the teams are named A, B, C, and D, we can define the relation on the set of teams by if beat . For one set of results, the graph of might look like .   Round-robin tournament graph with four vertices   Round-robin tournament graph with four vertices     There are many types of tournaments and they all can be modeled by different types of graphs.   Tournament Graph  Tournament Graph      A tournament graph is a directed graph with the property that no edge connects a vertex to itself, and between any two vertices there is at most one edge.    A complete (or round-robin) tournament graph is a tournament graph with the property that between any two distinct vertices there is exactly one edge.    A single-elimination tournament graph is a tournament graph with the properties that: (i) one vertex (the champion) has no edge terminating at it and at least one edge initiating from it; (ii) every other vertex is the terminal vertex of exactly one edge; and (iii) there is a path from the champion vertex to every other vertex.        Graph of a Single Elimination Tournament  The major league baseball championship is decided with a single-elimination tournament, where each game is actually a series of games. From 1969 to 1994, the two divisional champions in the American League (East and West) competed in a series of games. The loser is eliminated and the winner competed against the winner of the National League series (which is decided as in the American League). The tournament graph of the 1983 championship is in   A single elimination tournament graph   A single elimination tournament graph       Graph Isomorphisms  Next, we establish the relation is isomorphic to, a form of equality on graphs. The graphs in obviously share some similarities, such as the number of vertices and the number of edges. It happens that they are even more similar than just that. If the letters , , , and in the left graph are replaced with the numbers 1,3,4, and 2, respectively, and the vertices are moved around so that they have the same position as the graph on the right, you get the graph on the right.   Isomorphic Graphs   Isomorphic Graphs    Here is a more precise definition that reflects the fact that the actual positioning (or embedding) of vertices isn't an essential part of a graph.   Isomorphic Graphs  Isomorphic Graphs   Two graphs and are isomorphic if there exists a bijection such that if and only if . For multigraphs, we add that the number of edges connecting to must equal the number of edges from to .    The most significant local characteristic of a vertex within a graph is its degree. Collectively, the degrees can partially characterize a graph.   Degree of a vertex  Degree    degree, indegree and outdegree of vertex       Let be a vertex of an undirected graph. The degree of , denoted , is the number of edges that connect to the other vertices in the graph.    If is a vertex of a directed graph, then the outdegree of , denoted , is the number of edges of the graph that initiate at . The indegree of , denoted , is the number of edges that terminate at .        Degree Sequence of a Graph  Degree Sequence of a Graph   The degree sequence of an undirected graph is the non-increasing sequence of its vertex degrees.     Some degrees   An undirected graph        The degrees of vertices 1 through 5 in are 2, 3, 4, 1, and 2, respectively. The degree sequence of the graph is .    In a tournament graph, is the number of wins for and is the number of losses. In a complete (round-robin) tournament graph with vertices, for each vertex.       Graphic Sequence  Graphic Sequence   A finite nonincreasing sequence of integers is a graphic if there exists an undirected graph with vertices having the sequence as its degree sequence.    For example, is graphic because the degrees of the graph in match these numbers. There is no connection between the vertex number and its degree in this graph.   A graph that shows that is a graphic sequence.   A graph that shows that is a graphic sequence.    See for more details on what are also referred to as graphical degree sequences , including an algorithm for determining whether or not a sequence is graphic.    Next Steps   A Prospectus for the Rest of the Chapter   The question Once you have a graph, what do you do with it? might come to mind. The following list of common questions and comments about graphs is a partial list that will give you an overview of the remainder of the chapter.     How can a graph be represented as a data structure for use on a computer? We will discuss some common data structures that are used to represent graphs in Section 13.2.    Given two vertices in a graph, does there exist a path between them? The existence of a path between any or all pairs of vertices in a graph will be discussed in Section 13.3. A related question is: How many paths of a certain type or length are there between two vertices?    Is there a path (or circuit) that passes through every vertex (or uses every edge) exactly once? Paths of this kind are called traversals. We will discuss traversals in Section 13.4.    Suppose that a cost is associated with the use of each vertex and\/or edge in a path. What is the cheapest path, circuit, or traversal of a given kind? Problems of this kind will be discussed in Section 13.5.    Given the specifications of a graph, or the graph itself, what is the best way to draw the graph? The desire for neatness alone makes this a reasonable question, but there are other motivations. Another goal might be to avoid having edges of the graph cross one another. This is discussed in Section 13.6.       Exercises   What is the significance of the fact that there is a path connecting vertex with every other vertex in , as it applies to various situations that it models?   In , computer can communicate with all other computers. In , there are direct roads to and from city to all other cities.    Using as a starting point, draw a graph that represents the set of strings of 0's and 1's containing no more than two consecutive 1's in any part of the string.    Draw a directed graph that models the set of strings of 0's and 1's (zero or more of each) where all of the 1's must appear consecutively.    Solution to exercise 3 of Section 13.1   Solution to exercise 3 of Section 13.1      In the NCAA final-four basketball tournament, the East champion plays the West champion, and the champions from the Mideast and Midwest play. The winners of the two games play for the national championship. Draw the eight different single-elimination tournament graphs that could occur.    What is the maximum number of edges in an undirected graph with eight vertices?   The maximum number of edges would be .    Which of the graphs in are isomorphic? What is the correspondence between their vertices?   Which graphs are isomorphic to one another?   Graph for exercise 6 of section 13.1         How many edges does a complete tournament graph with vertices have?    How many edges does a single-elimination tournament graph with vertices have?              , each vertex except the champion vertex has an indegree of 1 and the champion vertex has an indegree of zero.       Draw complete undirected graphs with 1, 2, 3, 4, and 5 vertices. How many edges does a , a complete undirected graph with vertices, have?    Determine whether the following sequences are graphic. Explain your logic.                                        Not graphic - if the degree of a graph with seven vertices is 6, it is connected to all other vertices and so there cannot be a vertex with degree zero.    Graphic. One graph with this degree sequence is a cycle of length 6.    Not Graphic. The number of vertices with odd degree is odd, which is impossible.    Graphic. A \"wheel graph\" with one vertex connected to all other and the others connected to one another in a cycle has this degree sequence.    Graphic. Pairs of vertices connected only to one another.    Not Graphic. With two vertices having maximal degree, 5, every vertex would need to have a degree of 2 or more, so the 1 in this sequence makes it non-graphic.          Based on observations you might have made in exercise 9, describe as many characteristics as you can about graphic sequences of length .    Consider the two graphs in . Notice that they have the same degree sequences, . Explain why the two graphs are not isomorphic.      Two graphs with the same degree sequences   Two graphs with the same degree sequences      Draw a plan for the rooms of a house so that models connectedness of the rooms. That is, is an edge if and only if a door connects rooms and .    How many subgraphs are there of a , . How many of them are spanning graphs?    "
+  "body": " Graphs - General Introduction   Definitions  Recall that we introduced directed graphs in as a tool to visualize relations on a set. Here is a formal definition.   Simple Directed Graph   Graph  Simple Directed   Directed Graph   A simple directed graph consists of a nonempty set of vertices , , and a set of edges , , that is a subset of the set .     Some Terminology and Comments  Each edge is an ordered pair of elements from the vertex set. The first entry is the initial vertex of the edge and the second entry is the terminal vertex . Despite the set terminology in this definition, we often think of a graph as a picture, an aid in visualizing a situation. In Chapter 6, we introduced this concept to help understand relations on sets. Although those relations were principally of a mathematical nature, it remains true that when we see a graph, it tells us how the elements of a set are related to one another. We have chosen not to allow a graph with an empty vertex set, the so-called empty graph. There are both advantages and disadvantages to allowing the empty graph, so you may encounter it in other references.    A Simple Directed Graph  is an example of a simple directed graph. In set terms, this graph is , where and . Note how each edge is labeled either 0 or 1. There are often reasons for labeling even simple graphs. Some labels are to help make a graph easier to discuss; others are more significant. We will discuss the significance of the labels on this graph later.   A directed graph   A directed graph      In certain cases there may be a need for more than one edge between two vertices, and we need to expand the class of directed graphs.   Multigraph  Multigraph   Graph  Multigraph    A multigraph is a set of vertices with a set of edges that can contain more than one edge between the vertices.    One important point to keep in mind is that if we identify a graph as being a multigraph, it isn't necessary that there are two or more edges between some of the vertices. It is only just allowed . In other words, every simple graph is a multigraph. This is analogous to how a rectangle is a more general geometric figure than a square, but a square is still considered a rectangle.   A Multigraph  A common occurrence of a multigraph is a road map. The cities and towns on the map can be thought of as vertices, while the roads are the edges. It is not uncommon to have more than one road connecting two cities. In order to give clear travel directions, we name or number roads so that there is no ambiguity. We use the same method to describe the edges of the multigraph in . There is no question what is; however, referring to the edge would be ambiguous.   A directed multigraph   A directed multigraph     There are cases where the order of the vertices is not significant and so we use a different mathematical model for this situation:   Undirected Graph  Undirected Graph   Graph  Undirected    An undirected graph consists of a set , called a vertex set, and a set of two-element subsets of , called the edge set. The two-element subsets are drawn as lines connecting the vertices. It is customary to not allow self loops in undirected graphs.     An Undirected Graph  A network of computers can be described easily using a graph. describes a network of five computers, , , , , and . An edge between any two vertices indicates that direct two-way communication is possible between the two computers. Note that the edges of this graph are not directed. This is due to the fact that the relation that is being displayed is symmetric (i.e., if can communicate with , then can communicate with ). Although directed edges could be used here, it would simply clutter the graph.    Communications Map   Trefoil image     Island Road Map     This undirected graph, in set terms, is and  There are several other situations for which this graph can serve as a model. One of them is to interpret the vertices as cities and the edges as roads, an abstraction of a map such as the one in . Another interpretation is as an abstraction of the floor plan of a house. See . Vertex represents the outside of the house; all others represent rooms. Two vertices are connected if there is a door between them.    Complete Undirected Graph  Complete Undirected Graph.    A complete undirected graph with vertices    A complete undirected graph on vertices is an undirected graph with the property that each pair of distinct vertices are connected to one another. Such a graph is usually denoted by .     A Labeled Graph  A flowchart is a common example of a simple graph that requires labels for its vertices and some of its edges. is one such example that illustrates how many problems are solved.   A flow chart - an example of a labeled graph   A flow chart - an example of a labeled graph    At the start of the problem-solving process, we are at the vertex labeled Start and at the end (if we are lucky enough to have solved the problem) we will be at the vertex labeled End. The sequence of vertices that we pass through as we move from Start to End is called a path. The Start vertex is called the initial vertex of the path, while the End is called the final, or terminal, vertex. Suppose that the problem is solved after two attempts; then the path that was taken is . An alternate path description would be to list the edges that were used: . This second method of describing a path has the advantage of being applicable for multigraphs. On the graph in , the vertex list does not clearly describe a path between 1 and 3, but is unambiguous.    A Summary of Path Notation and Terminology  If and are two vertices of a graph, then a path between and describes a motion from and along edges of the graph. Vertex is called the initial vertex of the path and is called the terminal vertex. A path between and can always be described by its edge list, the list of edges that were used: , where: (1) the initial vertex of is ; (2) the terminal vertex of is the initial vertex of , ; and (3) the terminal vertex of is . The number of edges in the edge list is the path length . A path on a simple graph can also be described by a vertex list. A path of length will have a list of vertices , , , where, for , is an edge on the graph. A circuit is a path that terminates at its initial vertex.  Suppose that a path between two vertices has an edge list . A subpath of this graph is any portion of the path described by one or more consecutive edges in the edge list. For example, is a subpath of . Any path is its own subpath; however, we call it an improper subpath of itself. All other nonempty subpaths are called proper subpaths.  A path or circuit is simple if it contains no proper subpath that is a circuit. This is the same as saying that a path or circuit is simple if it does not visit any vertex more than once except for the common initial and terminal vertex in the circuit. In the problem-solving method described in , the path that you take is simple only if you reach a solution on the first try.     Subgraphs  Intuitively, you could probably predict what the term subgraph means. A graph contained within a graph, right? But since a graph involves two sets, vertices and edges, does it involve a subset of both of these sets, or just one of them? The answer is it could be either. There are different types of subgraphs. The two that we will define below will meet most of our future needs in discussing the theory of graphs.   Subgraph  Subgraph  Induced Subgraph  Spanning Subgraph   Let be a graph of any kind: directed, directed multigraph, or undirected. is a subgraph of if and only if and the vertices of are in . You create a subgraph of by removing zero or more vertices and all edges that include the removed vertices and then you possibly remove some other edges.  If the only removed edges are those that include the removed vertices, then we say that is an induced subgraph . Finally, is a spanning subgraph of if , or, in other words, no vertices are removed from , only edges.     Some subgraphs  Consider the graph, , in the top row of . The other three graphs in that figure are all subgraphs of . The graph in the bottom left was created by first removing vertex 5 and all edges connecting it. In addition, we have removed the edge . That removed edge disqualifies the graph from being an induced subgraph. The graphs in the bottom center and right are both spanning subgraphs. The one on the bottom right is a tree, and is referred to as a spanning subtree. Spanning subtrees will be discussed in .   A graph and a few of its subgraphs   A image of a graph and a few of its subgraphs      One set of subgraphs of any graph is the connected components of a graph. For simplicity, we will define them for undirected graphs. Given a graph , consider the relation is connected to on . We interprete this relation so that each vertex is connected to itself, and any two distinct vertices are related if there is a path along edges of the graph from one to the other. It shouldn't be too difficult to convince yourself that this is an equivalence relation on .   Connected Component  Connected Component   Given a graph , let be the relation is connected to on . Then the connected components of are the induced subgraphs of each with a vertex set that is an equivalence class with respect to .     If you ignore the duplicate names of vertices in the four graphs of , and consider the whole figure as one large graph, then there are four connected components in that graph. It's as simple as that! It's harder to describe precisely than to understand the concept.   From the examples we've seen so far, we can see that although a graph can be defined, in short, as a collection of vertices and edges, an integral part of most graphs is the labeling of the vertices and edges that allows us to interpret the graph as a model for some situation. We continue with a few more examples to illustrate this point.   A Graph as a Model for a Set of Strings  Suppose that you would like to mechanically describe the set of strings of 0's and 1's having no consecutive 1's. One way to visualize a string of this kind is with the graph in . Consider any path starting at vertex . If the label on each graph is considered to be the output to a printer, then the output will have no consecutive 1's. For example, the path that is described by the vertex list would result in an output of . Conversely, any string with no consecutive 1's determines a path starting at s.    A Tournament Graph  Suppose that four teams compete in a round-robin sporting event; that is, each team meets every other team once, and each game is played until a winner is determined. If the teams are named A, B, C, and D, we can define the relation on the set of teams by if beat . For one set of results, the graph of might look like .   Round-robin tournament graph with four vertices   Round-robin tournament graph with four vertices     There are many types of tournaments and they all can be modeled by different types of graphs.   Tournament Graph  Tournament Graph      A tournament graph is a directed graph with the property that no edge connects a vertex to itself, and between any two vertices there is at most one edge.    A complete (or round-robin) tournament graph is a tournament graph with the property that between any two distinct vertices there is exactly one edge.    A single-elimination tournament graph is a tournament graph with the properties that: (i) one vertex (the champion) has no edge terminating at it and at least one edge initiating from it; (ii) every other vertex is the terminal vertex of exactly one edge; and (iii) there is a path from the champion vertex to every other vertex.        Graph of a Single Elimination Tournament  The major league baseball championship is decided with a single-elimination tournament, where each game is actually a series of games. From 1969 to 1994, the two divisional champions in the American League (East and West) competed in a series of games. The loser is eliminated and the winner competed against the winner of the National League series (which is decided as in the American League). The tournament graph of the 1983 championship is in   A single elimination tournament graph   A single elimination tournament graph       Graph Isomorphisms  Next, we establish the relation is isomorphic to, a form of equality on graphs. The graphs in obviously share some similarities, such as the number of vertices and the number of edges. It happens that they are even more similar than just that. If the letters , , , and in the left graph are replaced with the numbers 1,3,4, and 2, respectively, and the vertices are moved around so that they have the same position as the graph on the right, you get the graph on the right.   Isomorphic Graphs   Isomorphic Graphs    Here is a more precise definition that reflects the fact that the actual positioning (or embedding) of vertices isn't an essential part of a graph.   Isomorphic Graphs  Isomorphic Graphs   Two graphs and are isomorphic if there exists a bijection such that if and only if . For multigraphs, we add that the number of edges connecting to must equal the number of edges from to .    The most significant local characteristic of a vertex within a graph is its degree. Collectively, the degrees can partially characterize a graph.   Degree of a vertex  Degree    degree, indegree and outdegree of vertex       Let be a vertex of an undirected graph. The degree of , denoted , is the number of edges that connect to the other vertices in the graph.    If is a vertex of a directed graph, then the outdegree of , denoted , is the number of edges of the graph that initiate at . The indegree of , denoted , is the number of edges that terminate at .        Degree Sequence of a Graph  Degree Sequence of a Graph   The degree sequence of an undirected graph is the non-increasing sequence of its vertex degrees.     Some degrees   An undirected graph        The degrees of vertices 1 through 5 in are 2, 3, 4, 1, and 2, respectively. The degree sequence of the graph is .    In a tournament graph, is the number of wins for and is the number of losses. In a complete (round-robin) tournament graph with vertices, for each vertex.       Graphic Sequence  Graphic Sequence   A finite nonincreasing sequence of integers is a graphic if there exists an undirected graph with vertices having the sequence as its degree sequence.    For example, is graphic because the degrees of the graph in match these numbers. There is no connection between the vertex number and its degree in this graph.   A graph that shows that is a graphic sequence.   A graph that shows that is a graphic sequence.    See for more details on what are also referred to as graphical degree sequences , including an algorithm for determining whether or not a sequence is graphic.    Next Steps   A Prospectus for the Rest of the Chapter   The question Once you have a graph, what do you do with it? might come to mind. The following list of common questions and comments about graphs is a partial list that will give you an overview of the remainder of the chapter.     How can a graph be represented as a data structure for use on a computer? We will discuss some common data structures that are used to represent graphs in .    Given two vertices in a graph, does there exist a path between them? The existence of a path between any or all pairs of vertices in a graph will be discussed in . A related question is: How many paths of a certain type or length are there between two vertices?    Is there a path (or circuit) that passes through every vertex (or uses every edge) exactly once? Paths of this kind are called traversals. We will discuss traversals in .    Suppose that a cost is associated with the use of each vertex and\/or edge in a path. What is the cheapest path, circuit, or traversal of a given kind? Problems of this kind will be discussed in .    Given the specifications of a graph, or the graph itself, what is the best way to draw the graph? The desire for neatness alone makes this a reasonable question, but there are other motivations. Another goal might be to avoid having edges of the graph cross one another. This is discussed in .       Exercises   What is the significance of the fact that there is a path connecting vertex with every other vertex in , as it applies to various situations that it models?   In , computer can communicate with all other computers. In , there are direct roads to and from city to all other cities.    Using as a starting point, draw a graph that represents the set of strings of 0's and 1's containing no more than two consecutive 1's in any part of the string.    Draw a directed graph that models the set of strings of 0's and 1's (zero or more of each) where all of the 1's must appear consecutively.    Solution to exercise 3 of Section 15.1   Solution to exercise 3 of Section 15.1      In the NCAA final-four basketball tournament, the East champion plays the West champion, and the champions from the Mideast and Midwest play. The winners of the two games play for the national championship. Draw the eight different single-elimination tournament graphs that could occur.    What is the maximum number of edges in an undirected graph with eight vertices?   The maximum number of edges would be .    Which of the graphs in are isomorphic? What is the correspondence between their vertices?   Which graphs are isomorphic to one another?   Graph for exercise 6 of section 15.1         How many edges does a complete tournament graph with vertices have?    How many edges does a single-elimination tournament graph with vertices have?              , each vertex except the champion vertex has an indegree of 1 and the champion vertex has an indegree of zero.       Draw complete undirected graphs with 1, 2, 3, 4, and 5 vertices. How many edges does a , a complete undirected graph with vertices, have?    Determine whether the following sequences are graphic. Explain your logic.                                        Not graphic - if the degree of a graph with seven vertices is 6, it is connected to all other vertices and so there cannot be a vertex with degree zero.    Graphic. One graph with this degree sequence is a cycle of length 6.    Not Graphic. The number of vertices with odd degree is odd, which is impossible.    Graphic. A \"wheel graph\" with one vertex connected to all other and the others connected to one another in a cycle has this degree sequence.    Graphic. Pairs of vertices connected only to one another.    Not Graphic. With two vertices having maximal degree, 5, every vertex would need to have a degree of 2 or more, so the 1 in this sequence makes it non-graphic.          Based on observations you might have made in exercise 9, describe as many characteristics as you can about graphic sequences of length .    Consider the two graphs in . Notice that they have the same degree sequences, . Explain why the two graphs are not isomorphic.      Two graphs with the same degree sequences   Two graphs with the same degree sequences      Draw a plan for the rooms of a house so that models connectedness of the rooms. That is, is an edge if and only if a door connects rooms and .    How many subgraphs are there of a , . How many of them are spanning graphs?    "
 },
 {
   "id": "def-simple-directed-graph",
   "level": "2",
   "url": "s-graphs-introduction.html#def-simple-directed-graph",
   "type": "Definition",
-  "number": "13.1.1",
+  "number": "15.1.1",
   "title": "Simple Directed Graph.",
   "body": " Simple Directed Graph   Graph  Simple Directed   Directed Graph   A simple directed graph consists of a nonempty set of vertices , , and a set of edges , , that is a subset of the set .   "
 },
 {
-  "id": "note-6",
+  "id": "note-8",
   "level": "2",
-  "url": "s-graphs-introduction.html#note-6",
+  "url": "s-graphs-introduction.html#note-8",
   "type": "Note",
-  "number": "13.1.2",
+  "number": "15.1.2",
   "title": "Some Terminology and Comments.",
   "body": " Some Terminology and Comments  Each edge is an ordered pair of elements from the vertex set. The first entry is the initial vertex of the edge and the second entry is the terminal vertex . Despite the set terminology in this definition, we often think of a graph as a picture, an aid in visualizing a situation. In Chapter 6, we introduced this concept to help understand relations on sets. Although those relations were principally of a mathematical nature, it remains true that when we see a graph, it tells us how the elements of a set are related to one another. We have chosen not to allow a graph with an empty vertex set, the so-called empty graph. There are both advantages and disadvantages to allowing the empty graph, so you may encounter it in other references.  "
 },
 {
-  "id": "ex-13-1",
+  "id": "ex-15-1",
   "level": "2",
-  "url": "s-graphs-introduction.html#ex-13-1",
+  "url": "s-graphs-introduction.html#ex-15-1",
   "type": "Example",
-  "number": "13.1.3",
+  "number": "15.1.3",
   "title": "A Simple Directed Graph.",
   "body": " A Simple Directed Graph  is an example of a simple directed graph. In set terms, this graph is , where and . Note how each edge is labeled either 0 or 1. There are often reasons for labeling even simple graphs. Some labels are to help make a graph easier to discuss; others are more significant. We will discuss the significance of the labels on this graph later.   A directed graph   A directed graph     "
 },
@@ -9104,16 +9995,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#def-multigraph",
   "type": "Definition",
-  "number": "13.1.5",
+  "number": "15.1.5",
   "title": "Multigraph.",
   "body": " Multigraph  Multigraph   Graph  Multigraph    A multigraph is a set of vertices with a set of edges that can contain more than one edge between the vertices.   "
 },
 {
-  "id": "ex-multigraph-13-1",
+  "id": "ex-multigraph-15-1",
   "level": "2",
-  "url": "s-graphs-introduction.html#ex-multigraph-13-1",
+  "url": "s-graphs-introduction.html#ex-multigraph-15-1",
   "type": "Example",
-  "number": "13.1.6",
+  "number": "15.1.6",
   "title": "A Multigraph.",
   "body": " A Multigraph  A common occurrence of a multigraph is a road map. The cities and towns on the map can be thought of as vertices, while the roads are the edges. It is not uncommon to have more than one road connecting two cities. In order to give clear travel directions, we name or number roads so that there is no ambiguity. We use the same method to describe the edges of the multigraph in . There is no question what is; however, referring to the edge would be ambiguous.   A directed multigraph   A directed multigraph    "
 },
@@ -9122,7 +10013,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#def-undirected-graph",
   "type": "Definition",
-  "number": "13.1.8",
+  "number": "15.1.8",
   "title": "Undirected Graph.",
   "body": " Undirected Graph  Undirected Graph   Graph  Undirected    An undirected graph consists of a set , called a vertex set, and a set of two-element subsets of , called the edge set. The two-element subsets are drawn as lines connecting the vertices. It is customary to not allow self loops in undirected graphs.   "
 },
@@ -9131,7 +10022,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#ex-undirected-1",
   "type": "Example",
-  "number": "13.1.9",
+  "number": "15.1.9",
   "title": "An Undirected Graph.",
   "body": " An Undirected Graph  A network of computers can be described easily using a graph. describes a network of five computers, , , , , and . An edge between any two vertices indicates that direct two-way communication is possible between the two computers. Note that the edges of this graph are not directed. This is due to the fact that the relation that is being displayed is symmetric (i.e., if can communicate with , then can communicate with ). Although directed edges could be used here, it would simply clutter the graph.    Communications Map   Trefoil image     Island Road Map     This undirected graph, in set terms, is and  There are several other situations for which this graph can serve as a model. One of them is to interpret the vertices as cities and the edges as roads, an abstraction of a map such as the one in . Another interpretation is as an abstraction of the floor plan of a house. See . Vertex represents the outside of the house; all others represent rooms. Two vertices are connected if there is a door between them.  "
 },
@@ -9140,25 +10031,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#def-complete-undirected-graph",
   "type": "Definition",
-  "number": "13.1.12",
+  "number": "15.1.12",
   "title": "Complete Undirected Graph.",
   "body": " Complete Undirected Graph  Complete Undirected Graph.    A complete undirected graph with vertices    A complete undirected graph on vertices is an undirected graph with the property that each pair of distinct vertices are connected to one another. Such a graph is usually denoted by .   "
 },
 {
-  "id": "ex-labeled-graph-13-1",
+  "id": "ex-labeled-graph-15-1",
   "level": "2",
-  "url": "s-graphs-introduction.html#ex-labeled-graph-13-1",
+  "url": "s-graphs-introduction.html#ex-labeled-graph-15-1",
   "type": "Example",
-  "number": "13.1.13",
+  "number": "15.1.13",
   "title": "A Labeled Graph.",
   "body": " A Labeled Graph  A flowchart is a common example of a simple graph that requires labels for its vertices and some of its edges. is one such example that illustrates how many problems are solved.   A flow chart - an example of a labeled graph   A flow chart - an example of a labeled graph    At the start of the problem-solving process, we are at the vertex labeled Start and at the end (if we are lucky enough to have solved the problem) we will be at the vertex labeled End. The sequence of vertices that we pass through as we move from Start to End is called a path. The Start vertex is called the initial vertex of the path, while the End is called the final, or terminal, vertex. Suppose that the problem is solved after two attempts; then the path that was taken is . An alternate path description would be to list the edges that were used: . This second method of describing a path has the advantage of being applicable for multigraphs. On the graph in , the vertex list does not clearly describe a path between 1 and 3, but is unambiguous.  "
 },
 {
-  "id": "note-7",
+  "id": "note-9",
   "level": "2",
-  "url": "s-graphs-introduction.html#note-7",
+  "url": "s-graphs-introduction.html#note-9",
   "type": "Note",
-  "number": "13.1.15",
+  "number": "15.1.15",
   "title": "A Summary of Path Notation and Terminology.",
   "body": " A Summary of Path Notation and Terminology  If and are two vertices of a graph, then a path between and describes a motion from and along edges of the graph. Vertex is called the initial vertex of the path and is called the terminal vertex. A path between and can always be described by its edge list, the list of edges that were used: , where: (1) the initial vertex of is ; (2) the terminal vertex of is the initial vertex of , ; and (3) the terminal vertex of is . The number of edges in the edge list is the path length . A path on a simple graph can also be described by a vertex list. A path of length will have a list of vertices , , , where, for , is an edge on the graph. A circuit is a path that terminates at its initial vertex.  Suppose that a path between two vertices has an edge list . A subpath of this graph is any portion of the path described by one or more consecutive edges in the edge list. For example, is a subpath of . Any path is its own subpath; however, we call it an improper subpath of itself. All other nonempty subpaths are called proper subpaths.  A path or circuit is simple if it contains no proper subpath that is a circuit. This is the same as saying that a path or circuit is simple if it does not visit any vertex more than once except for the common initial and terminal vertex in the circuit. In the problem-solving method described in , the path that you take is simple only if you reach a solution on the first try.  "
 },
@@ -9167,7 +10058,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#def-subgraph",
   "type": "Definition",
-  "number": "13.1.16",
+  "number": "15.1.16",
   "title": "Subgraph.",
   "body": " Subgraph  Subgraph  Induced Subgraph  Spanning Subgraph   Let be a graph of any kind: directed, directed multigraph, or undirected. is a subgraph of if and only if and the vertices of are in . You create a subgraph of by removing zero or more vertices and all edges that include the removed vertices and then you possibly remove some other edges.  If the only removed edges are those that include the removed vertices, then we say that is an induced subgraph . Finally, is a spanning subgraph of if , or, in other words, no vertices are removed from , only edges.   "
 },
@@ -9176,7 +10067,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#ex-subgraphs",
   "type": "Example",
-  "number": "13.1.17",
+  "number": "15.1.17",
   "title": "Some subgraphs.",
   "body": " Some subgraphs  Consider the graph, , in the top row of . The other three graphs in that figure are all subgraphs of . The graph in the bottom left was created by first removing vertex 5 and all edges connecting it. In addition, we have removed the edge . That removed edge disqualifies the graph from being an induced subgraph. The graphs in the bottom center and right are both spanning subgraphs. The one on the bottom right is a tree, and is referred to as a spanning subtree. Spanning subtrees will be discussed in .   A graph and a few of its subgraphs   A image of a graph and a few of its subgraphs     "
 },
@@ -9185,7 +10076,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#def-connected-component",
   "type": "Definition",
-  "number": "13.1.19",
+  "number": "15.1.19",
   "title": "Connected Component.",
   "body": " Connected Component  Connected Component   Given a graph , let be the relation is connected to on . Then the connected components of are the induced subgraphs of each with a vertex set that is an equivalence class with respect to .   "
 },
@@ -9194,25 +10085,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#ex-connected-components",
   "type": "Example",
-  "number": "13.1.20",
+  "number": "15.1.20",
   "title": "",
   "body": " If you ignore the duplicate names of vertices in the four graphs of , and consider the whole figure as one large graph, then there are four connected components in that graph. It's as simple as that! It's harder to describe precisely than to understand the concept.  "
 },
 {
-  "id": "ex-string-model-13-1",
+  "id": "ex-string-model-15-1",
   "level": "2",
-  "url": "s-graphs-introduction.html#ex-string-model-13-1",
+  "url": "s-graphs-introduction.html#ex-string-model-15-1",
   "type": "Example",
-  "number": "13.1.21",
+  "number": "15.1.21",
   "title": "A Graph as a Model for a Set of Strings.",
   "body": " A Graph as a Model for a Set of Strings  Suppose that you would like to mechanically describe the set of strings of 0's and 1's having no consecutive 1's. One way to visualize a string of this kind is with the graph in . Consider any path starting at vertex . If the label on each graph is considered to be the output to a printer, then the output will have no consecutive 1's. For example, the path that is described by the vertex list would result in an output of . Conversely, any string with no consecutive 1's determines a path starting at s.  "
 },
 {
-  "id": "ex-tournament-graph-13-1",
+  "id": "ex-tournament-graph-15-1",
   "level": "2",
-  "url": "s-graphs-introduction.html#ex-tournament-graph-13-1",
+  "url": "s-graphs-introduction.html#ex-tournament-graph-15-1",
   "type": "Example",
-  "number": "13.1.22",
+  "number": "15.1.22",
   "title": "A Tournament Graph.",
   "body": " A Tournament Graph  Suppose that four teams compete in a round-robin sporting event; that is, each team meets every other team once, and each game is played until a winner is determined. If the teams are named A, B, C, and D, we can define the relation on the set of teams by if beat . For one set of results, the graph of might look like .   Round-robin tournament graph with four vertices   Round-robin tournament graph with four vertices    "
 },
@@ -9221,25 +10112,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#def-tournament-graph",
   "type": "Definition",
-  "number": "13.1.24",
+  "number": "15.1.24",
   "title": "Tournament Graph.",
   "body": " Tournament Graph  Tournament Graph      A tournament graph is a directed graph with the property that no edge connects a vertex to itself, and between any two vertices there is at most one edge.    A complete (or round-robin) tournament graph is a tournament graph with the property that between any two distinct vertices there is exactly one edge.    A single-elimination tournament graph is a tournament graph with the properties that: (i) one vertex (the champion) has no edge terminating at it and at least one edge initiating from it; (ii) every other vertex is the terminal vertex of exactly one edge; and (iii) there is a path from the champion vertex to every other vertex.      "
 },
 {
-  "id": "ex-single-elimination-13-1",
+  "id": "ex-single-elimination-15-1",
   "level": "2",
-  "url": "s-graphs-introduction.html#ex-single-elimination-13-1",
+  "url": "s-graphs-introduction.html#ex-single-elimination-15-1",
   "type": "Example",
-  "number": "13.1.25",
+  "number": "15.1.25",
   "title": "Graph of a Single Elimination Tournament.",
   "body": " Graph of a Single Elimination Tournament  The major league baseball championship is decided with a single-elimination tournament, where each game is actually a series of games. From 1969 to 1994, the two divisional champions in the American League (East and West) competed in a series of games. The loser is eliminated and the winner competed against the winner of the National League series (which is decided as in the American League). The tournament graph of the 1983 championship is in   A single elimination tournament graph   A single elimination tournament graph    "
 },
 {
-  "id": "fig-isomorphic-graphs-13-1",
+  "id": "fig-isomorphic-graphs-15-1",
   "level": "2",
-  "url": "s-graphs-introduction.html#fig-isomorphic-graphs-13-1",
+  "url": "s-graphs-introduction.html#fig-isomorphic-graphs-15-1",
   "type": "Figure",
-  "number": "13.1.27",
+  "number": "15.1.27",
   "title": "",
   "body": " Isomorphic Graphs   Isomorphic Graphs   "
 },
@@ -9248,7 +10139,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#def-isomorphic-graphs",
   "type": "Definition",
-  "number": "13.1.28",
+  "number": "15.1.28",
   "title": "Isomorphic Graphs.",
   "body": " Isomorphic Graphs  Isomorphic Graphs   Two graphs and are isomorphic if there exists a bijection such that if and only if . For multigraphs, we add that the number of edges connecting to must equal the number of edges from to .   "
 },
@@ -9257,7 +10148,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#def-degree-of-a-vertex",
   "type": "Definition",
-  "number": "13.1.29",
+  "number": "15.1.29",
   "title": "Degree of a vertex.",
   "body": " Degree of a vertex  Degree    degree, indegree and outdegree of vertex       Let be a vertex of an undirected graph. The degree of , denoted , is the number of edges that connect to the other vertices in the graph.    If is a vertex of a directed graph, then the outdegree of , denoted , is the number of edges of the graph that initiate at . The indegree of , denoted , is the number of edges that terminate at .      "
 },
@@ -9266,16 +10157,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#def-degree-sequence",
   "type": "Definition",
-  "number": "13.1.30",
+  "number": "15.1.30",
   "title": "Degree Sequence of a Graph.",
   "body": " Degree Sequence of a Graph  Degree Sequence of a Graph   The degree sequence of an undirected graph is the non-increasing sequence of its vertex degrees.   "
 },
 {
-  "id": "ex-degrees-13-1",
+  "id": "ex-degrees-15-1",
   "level": "2",
-  "url": "s-graphs-introduction.html#ex-degrees-13-1",
+  "url": "s-graphs-introduction.html#ex-degrees-15-1",
   "type": "Example",
-  "number": "13.1.31",
+  "number": "15.1.31",
   "title": "Some degrees.",
   "body": " Some degrees   An undirected graph        The degrees of vertices 1 through 5 in are 2, 3, 4, 1, and 2, respectively. The degree sequence of the graph is .    In a tournament graph, is the number of wins for and is the number of losses. In a complete (round-robin) tournament graph with vertices, for each vertex.     "
 },
@@ -9284,7 +10175,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#def-graphic-sequence",
   "type": "Definition",
-  "number": "13.1.33",
+  "number": "15.1.33",
   "title": "Graphic Sequence.",
   "body": " Graphic Sequence  Graphic Sequence   A finite nonincreasing sequence of integers is a graphic if there exists an undirected graph with vertices having the sequence as its degree sequence.   "
 },
@@ -9293,14 +10184,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#fig-degree-sequence-example",
   "type": "Figure",
-  "number": "13.1.34",
+  "number": "15.1.34",
   "title": "",
   "body": " A graph that shows that is a graphic sequence.   A graph that shows that is a graphic sequence.   "
 },
 {
-  "id": "p-3741",
+  "id": "p-4171",
   "level": "2",
-  "url": "s-graphs-introduction.html#p-3741",
+  "url": "s-graphs-introduction.html#p-4171",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -9311,106 +10202,106 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#list-graph-prospectus",
   "type": "List",
-  "number": "13.1.35",
+  "number": "15.1.35",
   "title": "A Prospectus for the Rest of the Chapter",
-  "body": " A Prospectus for the Rest of the Chapter   The question Once you have a graph, what do you do with it? might come to mind. The following list of common questions and comments about graphs is a partial list that will give you an overview of the remainder of the chapter.     How can a graph be represented as a data structure for use on a computer? We will discuss some common data structures that are used to represent graphs in Section 13.2.    Given two vertices in a graph, does there exist a path between them? The existence of a path between any or all pairs of vertices in a graph will be discussed in Section 13.3. A related question is: How many paths of a certain type or length are there between two vertices?    Is there a path (or circuit) that passes through every vertex (or uses every edge) exactly once? Paths of this kind are called traversals. We will discuss traversals in Section 13.4.    Suppose that a cost is associated with the use of each vertex and\/or edge in a path. What is the cheapest path, circuit, or traversal of a given kind? Problems of this kind will be discussed in Section 13.5.    Given the specifications of a graph, or the graph itself, what is the best way to draw the graph? The desire for neatness alone makes this a reasonable question, but there are other motivations. Another goal might be to avoid having edges of the graph cross one another. This is discussed in Section 13.6.    "
+  "body": " A Prospectus for the Rest of the Chapter   The question Once you have a graph, what do you do with it? might come to mind. The following list of common questions and comments about graphs is a partial list that will give you an overview of the remainder of the chapter.     How can a graph be represented as a data structure for use on a computer? We will discuss some common data structures that are used to represent graphs in .    Given two vertices in a graph, does there exist a path between them? The existence of a path between any or all pairs of vertices in a graph will be discussed in . A related question is: How many paths of a certain type or length are there between two vertices?    Is there a path (or circuit) that passes through every vertex (or uses every edge) exactly once? Paths of this kind are called traversals. We will discuss traversals in .    Suppose that a cost is associated with the use of each vertex and\/or edge in a path. What is the cheapest path, circuit, or traversal of a given kind? Problems of this kind will be discussed in .    Given the specifications of a graph, or the graph itself, what is the best way to draw the graph? The desire for neatness alone makes this a reasonable question, but there are other motivations. Another goal might be to avoid having edges of the graph cross one another. This is discussed in .    "
 },
 {
-  "id": "exercise-442",
+  "id": "exercise-480",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-442",
+  "url": "s-graphs-introduction.html#exercise-480",
   "type": "Exercise",
-  "number": "13.1.5.1",
+  "number": "15.1.5.1",
   "title": "",
   "body": " What is the significance of the fact that there is a path connecting vertex with every other vertex in , as it applies to various situations that it models?   In , computer can communicate with all other computers. In , there are direct roads to and from city to all other cities.  "
 },
 {
-  "id": "exercise-443",
+  "id": "exercise-481",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-443",
+  "url": "s-graphs-introduction.html#exercise-481",
   "type": "Exercise",
-  "number": "13.1.5.2",
+  "number": "15.1.5.2",
   "title": "",
   "body": " Using as a starting point, draw a graph that represents the set of strings of 0's and 1's containing no more than two consecutive 1's in any part of the string.  "
 },
 {
-  "id": "exercise-444",
+  "id": "exercise-482",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-444",
+  "url": "s-graphs-introduction.html#exercise-482",
   "type": "Exercise",
-  "number": "13.1.5.3",
+  "number": "15.1.5.3",
   "title": "",
-  "body": " Draw a directed graph that models the set of strings of 0's and 1's (zero or more of each) where all of the 1's must appear consecutively.    Solution to exercise 3 of Section 13.1   Solution to exercise 3 of Section 13.1    "
+  "body": " Draw a directed graph that models the set of strings of 0's and 1's (zero or more of each) where all of the 1's must appear consecutively.    Solution to exercise 3 of Section 15.1   Solution to exercise 3 of Section 15.1    "
 },
 {
-  "id": "exercise-445",
+  "id": "exercise-483",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-445",
+  "url": "s-graphs-introduction.html#exercise-483",
   "type": "Exercise",
-  "number": "13.1.5.4",
+  "number": "15.1.5.4",
   "title": "",
   "body": " In the NCAA final-four basketball tournament, the East champion plays the West champion, and the champions from the Mideast and Midwest play. The winners of the two games play for the national championship. Draw the eight different single-elimination tournament graphs that could occur.  "
 },
 {
-  "id": "exercise-446",
+  "id": "exercise-484",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-446",
+  "url": "s-graphs-introduction.html#exercise-484",
   "type": "Exercise",
-  "number": "13.1.5.5",
+  "number": "15.1.5.5",
   "title": "",
   "body": " What is the maximum number of edges in an undirected graph with eight vertices?   The maximum number of edges would be .  "
 },
 {
-  "id": "exercise-447",
+  "id": "exercise-485",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-447",
+  "url": "s-graphs-introduction.html#exercise-485",
   "type": "Exercise",
-  "number": "13.1.5.6",
+  "number": "15.1.5.6",
   "title": "",
-  "body": " Which of the graphs in are isomorphic? What is the correspondence between their vertices?   Which graphs are isomorphic to one another?   Graph for exercise 6 of section 13.1    "
+  "body": " Which of the graphs in are isomorphic? What is the correspondence between their vertices?   Which graphs are isomorphic to one another?   Graph for exercise 6 of section 15.1    "
 },
 {
-  "id": "exercise-448",
+  "id": "exercise-486",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-448",
+  "url": "s-graphs-introduction.html#exercise-486",
   "type": "Exercise",
-  "number": "13.1.5.7",
+  "number": "15.1.5.7",
   "title": "",
   "body": "    How many edges does a complete tournament graph with vertices have?    How many edges does a single-elimination tournament graph with vertices have?              , each vertex except the champion vertex has an indegree of 1 and the champion vertex has an indegree of zero.     "
 },
 {
-  "id": "exercise-449",
+  "id": "exercise-487",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-449",
+  "url": "s-graphs-introduction.html#exercise-487",
   "type": "Exercise",
-  "number": "13.1.5.8",
+  "number": "15.1.5.8",
   "title": "",
   "body": " Draw complete undirected graphs with 1, 2, 3, 4, and 5 vertices. How many edges does a , a complete undirected graph with vertices, have?  "
 },
 {
-  "id": "exercise-450",
+  "id": "exercise-488",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-450",
+  "url": "s-graphs-introduction.html#exercise-488",
   "type": "Exercise",
-  "number": "13.1.5.9",
+  "number": "15.1.5.9",
   "title": "",
   "body": " Determine whether the following sequences are graphic. Explain your logic.                                        Not graphic - if the degree of a graph with seven vertices is 6, it is connected to all other vertices and so there cannot be a vertex with degree zero.    Graphic. One graph with this degree sequence is a cycle of length 6.    Not Graphic. The number of vertices with odd degree is odd, which is impossible.    Graphic. A \"wheel graph\" with one vertex connected to all other and the others connected to one another in a cycle has this degree sequence.    Graphic. Pairs of vertices connected only to one another.    Not Graphic. With two vertices having maximal degree, 5, every vertex would need to have a degree of 2 or more, so the 1 in this sequence makes it non-graphic.     "
 },
 {
-  "id": "exercise-451",
+  "id": "exercise-489",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-451",
+  "url": "s-graphs-introduction.html#exercise-489",
   "type": "Exercise",
-  "number": "13.1.5.10",
+  "number": "15.1.5.10",
   "title": "",
   "body": "    Based on observations you might have made in exercise 9, describe as many characteristics as you can about graphic sequences of length .    Consider the two graphs in . Notice that they have the same degree sequences, . Explain why the two graphs are not isomorphic.      Two graphs with the same degree sequences   Two graphs with the same degree sequences    "
 },
 {
-  "id": "exercise-house-13-1",
+  "id": "exercise-house-15-1",
   "level": "2",
-  "url": "s-graphs-introduction.html#exercise-house-13-1",
+  "url": "s-graphs-introduction.html#exercise-house-15-1",
   "type": "Exercise",
-  "number": "13.1.5.11",
+  "number": "15.1.5.11",
   "title": "",
   "body": " Draw a plan for the rooms of a house so that models connectedness of the rooms. That is, is an edge if and only if a door connects rooms and .  "
 },
@@ -9419,7 +10310,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graphs-introduction.html#exercise-subgraphs",
   "type": "Exercise",
-  "number": "13.1.5.12",
+  "number": "15.1.5.12",
   "title": "",
   "body": " How many subgraphs are there of a , . How many of them are spanning graphs?  "
 },
@@ -9428,7 +10319,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s-data-structures-for-graphs.html",
   "type": "Section",
-  "number": "13.2",
+  "number": "15.2",
   "title": "Data Structures for Graphs",
   "body": " Data Structures for Graphs   Graph  Data Structures    In this section, we will describe data structures that are commonly used to represent graphs. In addition we will introduce the basic syntax for graphs in Sage.    Basic Data Structures   Data Structures for Graphs   Assume that we have a graph with vertices that can be indexed by the integers . Here are three different data structures that can be employed to represent graphs.     Adjacency Matrix: As we saw in Chapter 6, the information about edges in a graph can be summarized with an adjacency matrix, , where if and only if vertex is connected to vertex in the graph. Note that this is the same as the adjacency matrix for a relation.    Edge Dictionary: For each vertex in our graph, we maintain a list of edges that initiate at that vertex. If represents the graph's edge information, then we denote by the list of vertices that are terminal vertices of edges initiating at vertex . The exact syntax that would be used can vary. We will use Sage\/Python syntax in our examples.    Edge List: Note that in creating either of the first two data structures, we would presume that a list of edges for the graph exists. A simple way to represent the edges is to maintain this list of ordered pairs, or two element sets, depending on whether the graph is intended to be directed or undirected. We will not work with this data structure here, other than in the first example.      A Very Small Example  We consider the representation of the following graph:   Graph for a Very Small Example   Example Graph to illustrate data structures    The adjacency matrix that represents the graph would be .  The same graph could be represented with the edge dictionary    {1:[2,4],2:[3,4],3:[3],4:[1]} .   Notice the general form of each item in the dictionary: vertex:[list of vertices] .  Finally, a list of edges [(1,2),(1,4),(2,3),(2,4),(3,3),(4,1)] also describes the same graph.   A natural question to ask is: Which data structure should be used in a given situation? For small graphs, it really doesn't make much difference. For larger matrices the edge count would be a consideration. If is large and the number of edges is relatively small, it might use less memory to maintain an edge dictionary or list of edges instead of building an matrix. Some software for working with graphs will make the decision for you.   NCAA Basketball  Consider the tournament graph representing a NCAA Division 1 men's (or women's) college basketball season in the United States. There are approximately 350 teams in Division 1. Suppose we constructed the graph with an edge from team A to team B if A beat B at least once in the season; and we label the edge with the number of wins. Since the average team plays around 30 games in a season, most of which will be against other Division I teams, we could expect around edges in the graph. This would be somewhat reduced by games with lower division teams and cases where two or more wins over the same team produces one edge. Since 5,250 is much smaller than entries in an adjacency matrix, an edge dictionary or edge list would be more compact than an adjacency matrix. Even if we were to use software to create an adjacency matrix, many programs will identify the fact that a matrix such as the one in this example would be sparse and would leave data in list form and use sparse array methods to work with it.     Sage Graphs   SageMath Note  Graphs   The most common way to define a graph in Sage is to use an edge dictionary. Here is how the graph in is generated and then displayed. Notice that we simply wrap the function DiGraph() around the same dictionary expression we identified earlier.   You can get the adjacency matrix of a graph with the adjacency_matrix method.   You can also define a graph based on its adjacency matrix.   The edge list of any directed graph can be easily retrieved. If you replace edges with edge_iterator , you can iterate through the edge list. The third coordinate of the items in the edge is the label of the edge, which is None in this case.   Replacing the wrapper DiGraph() with Graph() creates an undirected graph.   There are many special graphs and graph families that are available in Sage through the graphs module. They are referenced with the prefix graphs. followed by the name and zero or more paramenters inside parentheses. Here are a couple of them, first a complete graph with five vertices.   Here is a wheel graph, named for an obvious pattern of vertices and edges. We assign a name to it first and then show the graph without labeling the vertices.   There are dozens of graph methods, one of which determines the degree sequence of a graph. In this case, it's the wheel graph above.   The degree sequence method is defined within the graphs module, but the prefix graphs. is not needed because the value of w inherits the graphs methods.    Exercises   Estimate the number of vertices and edges in each of the following graphs. Would the graph be considered sparse, so that an adjacency matrix would be inefficient?     Vertices: Cities of the world that are served by at least one airline. Edges: Pairs of cities that are connected by a regular direct flight.    Vertices: ASCII characters. Edges: connect characters that differ in their binary code by exactly two bits.    Vertices: All English words. Edges: An edge connects word to word if is a prefix of .         A rough estimate of the number of vertices in the world airline graph would be the number of cities with population greater than or equal to 100,000. This is estimated to be around 4,100. There are many smaller cities that have airports, but some of the metropolitan areas with clusters of large cities are served by only a few airports. 4,000-5,000 is probably a good guess. As for edges, that's a bit more difficult to estimate. It's certainly not a complete graph. Looking at some medium sized airports such as Manchester, NH, the average number of cities that you can go to directly is in the 50-100 range. So a very rough estimate would be . This is far less than , so an edge list or dictionary of some kind would be more efficient.    The number of ASCII characters is 128. Each character would be connected to others and so there are edges. Comparing this to the , an array is probably the best choice.    The Oxford English Dictionary as approximately a half-million words, although many are obsolete. The number of edges is probably of the same order of magnitude as the number of words, so an edge list or dictionary is probably the best choice.       Each edge of a graph is colored with one of the four colors red, blue, yellow, or green. How could you represent the edges in this graph using a variation of the adjacency matrix structure?    Directed graphs , each with vertex set are represented by the matrices below. Which graphs are isomorphic to one another?               Each graph is isomorphic to itself. In addition, are isomorphic; and are isomorphic to one another.    The following Sage command verifies that the wheel graph with four vertices is isomorphic to the complete graph with four vertices.   A list of all graphs in this the graphs database is available via tab completion. Type \"graphs.\" and then hit the tab key to see which graphs are available. This can be done using the Sage application or SageMathCloud, but not sage cells. Find some other pairs of isomorphic graphs in the database.    "
 },
@@ -9437,7 +10328,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-data-structures-for-graphs.html#list-4",
   "type": "List",
-  "number": "13.2.1",
+  "number": "15.2.1",
   "title": "Data Structures for Graphs",
   "body": " Data Structures for Graphs   Assume that we have a graph with vertices that can be indexed by the integers . Here are three different data structures that can be employed to represent graphs.     Adjacency Matrix: As we saw in Chapter 6, the information about edges in a graph can be summarized with an adjacency matrix, , where if and only if vertex is connected to vertex in the graph. Note that this is the same as the adjacency matrix for a relation.    Edge Dictionary: For each vertex in our graph, we maintain a list of edges that initiate at that vertex. If represents the graph's edge information, then we denote by the list of vertices that are terminal vertices of edges initiating at vertex . The exact syntax that would be used can vary. We will use Sage\/Python syntax in our examples.    Edge List: Note that in creating either of the first two data structures, we would presume that a list of edges for the graph exists. A simple way to represent the edges is to maintain this list of ordered pairs, or two element sets, depending on whether the graph is intended to be directed or undirected. We will not work with this data structure here, other than in the first example.    "
 },
@@ -9446,7 +10337,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-data-structures-for-graphs.html#ex-data-structure-sample",
   "type": "Example",
-  "number": "13.2.2",
+  "number": "15.2.2",
   "title": "A Very Small Example.",
   "body": " A Very Small Example  We consider the representation of the following graph:   Graph for a Very Small Example   Example Graph to illustrate data structures    The adjacency matrix that represents the graph would be .  The same graph could be represented with the edge dictionary    {1:[2,4],2:[3,4],3:[3],4:[1]} .   Notice the general form of each item in the dictionary: vertex:[list of vertices] .  Finally, a list of edges [(1,2),(1,4),(2,3),(2,4),(3,3),(4,1)] also describes the same graph.  "
 },
@@ -9455,43 +10346,43 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-data-structures-for-graphs.html#ex-ncaa-bb",
   "type": "Example",
-  "number": "13.2.4",
+  "number": "15.2.4",
   "title": "NCAA Basketball.",
   "body": " NCAA Basketball  Consider the tournament graph representing a NCAA Division 1 men's (or women's) college basketball season in the United States. There are approximately 350 teams in Division 1. Suppose we constructed the graph with an edge from team A to team B if A beat B at least once in the season; and we label the edge with the number of wins. Since the average team plays around 30 games in a season, most of which will be against other Division I teams, we could expect around edges in the graph. This would be somewhat reduced by games with lower division teams and cases where two or more wins over the same team produces one edge. Since 5,250 is much smaller than entries in an adjacency matrix, an edge dictionary or edge list would be more compact than an adjacency matrix. Even if we were to use software to create an adjacency matrix, many programs will identify the fact that a matrix such as the one in this example would be sparse and would leave data in list form and use sparse array methods to work with it.  "
 },
 {
-  "id": "exercise-454",
+  "id": "exercise-492",
   "level": "2",
-  "url": "s-data-structures-for-graphs.html#exercise-454",
+  "url": "s-data-structures-for-graphs.html#exercise-492",
   "type": "Exercise",
-  "number": "13.2.3.1",
+  "number": "15.2.3.1",
   "title": "",
   "body": " Estimate the number of vertices and edges in each of the following graphs. Would the graph be considered sparse, so that an adjacency matrix would be inefficient?     Vertices: Cities of the world that are served by at least one airline. Edges: Pairs of cities that are connected by a regular direct flight.    Vertices: ASCII characters. Edges: connect characters that differ in their binary code by exactly two bits.    Vertices: All English words. Edges: An edge connects word to word if is a prefix of .         A rough estimate of the number of vertices in the world airline graph would be the number of cities with population greater than or equal to 100,000. This is estimated to be around 4,100. There are many smaller cities that have airports, but some of the metropolitan areas with clusters of large cities are served by only a few airports. 4,000-5,000 is probably a good guess. As for edges, that's a bit more difficult to estimate. It's certainly not a complete graph. Looking at some medium sized airports such as Manchester, NH, the average number of cities that you can go to directly is in the 50-100 range. So a very rough estimate would be . This is far less than , so an edge list or dictionary of some kind would be more efficient.    The number of ASCII characters is 128. Each character would be connected to others and so there are edges. Comparing this to the , an array is probably the best choice.    The Oxford English Dictionary as approximately a half-million words, although many are obsolete. The number of edges is probably of the same order of magnitude as the number of words, so an edge list or dictionary is probably the best choice.     "
 },
 {
-  "id": "exercise-455",
+  "id": "exercise-493",
   "level": "2",
-  "url": "s-data-structures-for-graphs.html#exercise-455",
+  "url": "s-data-structures-for-graphs.html#exercise-493",
   "type": "Exercise",
-  "number": "13.2.3.2",
+  "number": "15.2.3.2",
   "title": "",
   "body": " Each edge of a graph is colored with one of the four colors red, blue, yellow, or green. How could you represent the edges in this graph using a variation of the adjacency matrix structure?  "
 },
 {
-  "id": "exercise-456",
+  "id": "exercise-494",
   "level": "2",
-  "url": "s-data-structures-for-graphs.html#exercise-456",
+  "url": "s-data-structures-for-graphs.html#exercise-494",
   "type": "Exercise",
-  "number": "13.2.3.3",
+  "number": "15.2.3.3",
   "title": "",
   "body": " Directed graphs , each with vertex set are represented by the matrices below. Which graphs are isomorphic to one another?               Each graph is isomorphic to itself. In addition, are isomorphic; and are isomorphic to one another.  "
 },
 {
-  "id": "exercise-457",
+  "id": "exercise-495",
   "level": "2",
-  "url": "s-data-structures-for-graphs.html#exercise-457",
+  "url": "s-data-structures-for-graphs.html#exercise-495",
   "type": "Exercise",
-  "number": "13.2.3.4",
+  "number": "15.2.3.4",
   "title": "",
   "body": " The following Sage command verifies that the wheel graph with four vertices is isomorphic to the complete graph with four vertices.   A list of all graphs in this the graphs database is available via tab completion. Type \"graphs.\" and then hit the tab key to see which graphs are available. This can be done using the Sage application or SageMathCloud, but not sage cells. Find some other pairs of isomorphic graphs in the database.  "
 },
@@ -9500,34 +10391,34 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s-Connectivity.html",
   "type": "Section",
-  "number": "13.3",
+  "number": "15.3",
   "title": "Connectivity",
-  "body": " Connectivity  Connectivity in Graphs    This section is devoted to a question that, when posed in relation to the graphs that we have examined, seems trivial. That question is: Given two vertices, and , of a graph, is there a path from to ? If , this question is interpreted as asking whether there is a circuit of positive length starting at . Of course, for the graphs we have seen up to now, this question can be answered after a brief examination.    Preliminaries  There are two situations under which a question of this kind is nontrivial. One is where the graph is very large and an examination of the graph could take a considerable amount of time. Anyone who has tried to solve a maze may have run into a similar problem. The second interesting situation is when we want to pose the question to a machine. If only the information on the edges between the vertices is part of the data structure for the graph, how can you put that information together to determine whether two vertices can be connected by a path?   Connectivity Terminology  Let and be vertices of a directed graph. Vertex is connected to vertex if there is a path from to . Two vertices are strongly connected if they are connected in both directions to one another. A graph is connected if, for each pair of distinct vertices, and , is connected to or is connected to . A graph is strongly connected if every pair of its vertices is strongly connected. For an undirected graph, in which edges can be used in either direction, the notions of strongly connected and connected are the same.    Maximal Path Theorem   If a graph has vertices and vertex is connected to vertex , then there exists a path from to of length no more than .    (Indirect): Suppose is connected to , but the shortest path from to has length , where . A vertex list for a path of length will have vertices. This path can be represented as , where and . Note that since there are only vertices in the graph and vertices are listed in the path after , we can apply the pigeonhole principle and be assured that there must be some duplication in the last vertices of the vertex list, which represents a circuit in the path. This means that our path of minimum length can be reduced, which is a contradiction.      Adjacency Matrix Method  Adjacency Matrix Method   Adjacency Matrix Method   Suppose that the information about edges in a graph is stored in an adjacency matrix, . The relation, , that defines is if there is an edge connecting to . Recall that the composition of with itself, , is defined by if there exists a vertex such that and ; that is, is connected to by a path of length 2. We could prove by induction that the relation , , is defined by if and only if there is a path of length from to . Since the transitive closure, , is the union of ,  , we can answer our connectivity question by determining the transitive closure of , which can be done most easily by keeping our relation in matrix form. is significant in our calculations because it tells us that we need only go as far as to determine the matrix of the transitive closure.    The main advantage of the adjacency matrix method is that the transitive closure matrix can answer all questions about the existence of paths between any vertices. If is the matrix of the transitive closure, is connected to if and only if . A directed graph is connected if or for each . A directed graph is strongly connected if its transitive closure matrix has no zeros.  A disadvantage of the adjacency matrix method is that the transitive closure matrix tells us whether a path exists, but not what the path is. The next algorithm will solve this problem.    Breadth-First Search  Breadth-First Search  We will describe the Breadth-First Search Algorithm first with an example.  The football team at Mediocre State University (MSU) has had a bad year, 2 wins and 9 losses. Thirty days after the end of the football season, the university trustees are meeting to decide whether to rehire the head coach; things look bad for him. However, on the day of the meeting, the coach issues the following press release with results from the past year:   Press Release: MSU complete successful season   The Mediocre State University football team compared favorably with national champion Enormous State University this season.     Mediocre State defeated Local A and M.    Local A and M defeated City College.    City College defeated Corn State U.    ... (25 results later)    Tough Tech defeated Enormous State University (ESU).     ...and ESU went on to win the national championship!    The trustees were so impressed that they rehired the coach with a raise! How did the coach come up with such a list?  In reality, such lists exist occasionally and have appeared in newspapers from time to time. Of course they really don't prove anything since each team that defeated MSU in our example above can produce a similar, shorter chain of results. Since college football records are readily available, the coach could have found this list by trial and error. All that he needed to start with was that his team won at least one game. Since ESU lost one game, there was some hope of producing the chain.  The problem of finding this list is equivalent to finding a path in the tournament graph for last year's football season that initiates at MSU and ends at ESU. Such a graph is far from complete and is likely to be represented using edge lists. To make the coach's problem interesting, let's imagine that only the winner of any game remembers the result of the game. The coach's problem has now taken on the flavor of a maze. To reach ESU, he must communicate with the various teams along the path. One way that the coach could have discovered his list in time is by sending the following messages to the coaches of the two teams that MSU defeated during the season:   When this example was first written, we commented that ties should be ignored. Most recent NCAA rules call for a tiebreaker in college football and so ties are no longer an issue. Email was also not common and we described the process in terms of letter, not email messages. Another change is that the coach could also have asked the MSU math department to use Mathematica or Sage to find the path!    The Coach's Letter   Dear Football Coach:  Please follow these directions exactly.     If you are the coach at ESU, contact the coach at MSU now and tell him who sent you this message.    If you are not the coach at ESU and this is the first message of this type that you have received, then:     Remember from whom you received this message.    Forward a copy of this message, signed by you, to each of the coaches whose teams you defeated during the past year.    Ignore this message if you have received one like it already.        Signed,  Coach of MSU     Observations   From the conditions of this message, it should be clear that if everyone cooperates and if coaches participate within a day of receiving the message:     If a path of length exists from MSU to ESU, then the coach will know about it in days.    By making a series of phone calls, the coach can construct a path that he wants by first calling the coach who defeated ESU (the person who sent ESU's coach that message). This coach will know who sent him a letter, and so on. Therefore, the vertex list of the desired path is constructed in reverse order.    If a total of football games were played, no more than messages will be sent out.    If a day passes without any message being sent out, no path from MSU to ESU exists.    This method could be extended to construct a list of all teams that a given team can be connected to. Simply imagine a series of letters like the one above sent by each football coach and targeted at every other coach.     The general problem of finding a path between two vertices in a graph, if one exists, can be solved exactly as we solved the problem above. The following algorithm, commonly called a breadth-first search, uses a stack.   Stacks  A stack is a fundamental data structure in computer science. A common analogy used to describe stacks is of a stack of plates. If you put a plate on the top of a stack and then want to use a plate, it's natural to use that top plate. So the last plate in is the first plate out. Last in, first out is the short description of the rule for stacks. This is contrast with a queue which uses a First in, first out rule.    Breadth-first Search  Breadth-first Search   A broadcasting algorithm for finding a path between vertex and vertex of a graph having vertices. Each item of a list , consists of a Boolean field and an integer field . The sets , , called depth sets, have the property that if , then the shortest path from vertex to vertex is of length . In Step 5, a stack is used to put the vertex list for the path from the vertex to vertex in the proper order. That stack is the output of the algorithm.     Set the value equal to False,              while ) and          for each k in :  for each edge (k,t):  If == False:                        if :               while :  Push onto        Push onto    Push onto           Notes on Breadth-first Search    This algorithm will produce one path from vertex to vertex , if one exists, and that path will be as short as possible. If more than one path of this length exists, then the one that is produced depends on the order in which the edges are examined and the order in which the elements of are examined in Step 4.    The condition is analogous to the condition that no mail is sent in a given stage of the process, in which case MSU cannot be connected to ESU.    This algorithm can be easily revised to find paths to all vertices that can be reached from vertex . Step 5 would be put off until a specific path to a vertex is needed since the information in contains an efficient list of all paths. The algorithm can also be extended further to find paths between any two vertices.      A simple example  Consider the graph below. The existence of a path from vertex 2 to vertex 3 is not difficult to determine by examination. After a few seconds, you should be able to find two paths of length four. will produce one of them.   A simple example of breadth-first search   Example Graph for breadth-first search    Suppose that the edges from each vertex are sorted in ascending order by terminal vertex. For example, the edges from vertex 3 would be in the order . In addition, assume that in the body of Step 4 of the algorithm, the elements of are used in ascending order. Then at the end of Step 4, the value of will be Therefore, the path is produced by the algorithm. Note that if we wanted a path from 2 to 5, the information in produces the path (2, 1, 5) since and . A shortest circuit that initiates at vertex 2 is also available by noting that , , and ; thus the circuit is the output of the algorithm.     SageMath Note - Graph Searching   SageMath Note  Search in a Graph   The following sequence of Sage cells illustrates how searching can be done in graphs.  Generate a random undirected graph with 18 vertices. For each pair of vertices, an edge is included between them with probability 0.2. Since there are potential edges, we expect that there will be approximately edges. The random number generation is seeded first so that the result will always be the same in spite of the random graph function. Changing or removing that first line will let you experiment with different graphs.   Count the number of edges. In this case the number is a bit less than expected.   Find a shortest path from vertex 0 to vertex 8.   Generate a list of vertices that would be reached in a breadth-first search. The expression Gr.breadth_first_search(0) creates an iterator that is convenient for programming. Wrapping list( ) around the expression shows the order in which the vertices are visited with the depth set indicated in the second coordinates.   Generate a list of vertices that would be reached in a depth-first search. In this type of search you travel in one direction away from the starting point until no further new vertices can be reached. We will discuss this search later.     Exercises   Apply to find a path from 5 to 1 in . What would be the final value of ? Assume that the terminal vertices in edge lists and elements of the depth sets are put into ascending order, as we assumed in .         Apply to find a path from to in the road graph in using the edge list in that example. Assume that the elements of the depth sets are put into ascending order.    In a simple undirected graph with no self-loops, what is the maximum number of edges you can have, keeping the graph unconnected? What is the minimum number of edges that will assure that the graph is connected?   If the number of vertices is , there can be vertices with one vertex not connected to any of the others. One more edge and connectivity is assured.    Use a broadcasting algorithm to determine the shortest path from vertex to vertex in the graphs shown in the below. List the depth sets and the stack that is created.   Shortest paths from to ?   Graphs for exercise 13-3-4      Prove (by induction on ) that if the relation on vertices of a graph is defined by if there is an edge connecting to , then , , is defined by if there is a path of length from to .   Basis: Is the relation , defined by if there is a path of length 1 from ? Yes, since if and only if an edge, which is a path of length , connects to .  Induction: Assume that if and only if there is a path of length from to . We must show that if and only if there is a path of length from to .  By the induction hypothesis, there is a path of length from . And by the basis, there is a path of length one from to . If we combine these two paths, we obtain a path of length from to . Of course, if we start with a path of length from to , we have a path of length from to some vertex and a path of length 1 from to . Therefore, .    "
+  "body": " Connectivity  Connectivity in Graphs    This section is devoted to a question that, when posed in relation to the graphs that we have examined, seems trivial. That question is: Given two vertices, and , of a graph, is there a path from to ? If , this question is interpreted as asking whether there is a circuit of positive length starting at . Of course, for the graphs we have seen up to now, this question can be answered after a brief examination.    Preliminaries  There are two situations under which a question of this kind is nontrivial. One is where the graph is very large and an examination of the graph could take a considerable amount of time. Anyone who has tried to solve a maze may have run into a similar problem. The second interesting situation is when we want to pose the question to a machine. If only the information on the edges between the vertices is part of the data structure for the graph, how can you put that information together to determine whether two vertices can be connected by a path?   Connectivity Terminology  Let and be vertices of a directed graph. Vertex is connected to vertex if there is a path from to . Two vertices are strongly connected if they are connected in both directions to one another. A graph is connected if, for each pair of distinct vertices, and , is connected to or is connected to . A graph is strongly connected if every pair of its vertices is strongly connected. For an undirected graph, in which edges can be used in either direction, the notions of strongly connected and connected are the same.    Maximal Path Theorem   If a graph has vertices and vertex is connected to vertex , then there exists a path from to of length no more than .    (Indirect): Suppose is connected to , but the shortest path from to has length , where . A vertex list for a path of length will have vertices. This path can be represented as , where and . Note that since there are only vertices in the graph and vertices are listed in the path after , we can apply the pigeonhole principle and be assured that there must be some duplication in the last vertices of the vertex list, which represents a circuit in the path. This means that our path of minimum length can be reduced, which is a contradiction.      Adjacency Matrix Method  Adjacency Matrix Method   Adjacency Matrix Method   Suppose that the information about edges in a graph is stored in an adjacency matrix, . The relation, , that defines is if there is an edge connecting to . Recall that the composition of with itself, , is defined by if there exists a vertex such that and ; that is, is connected to by a path of length 2. We could prove by induction that the relation , , is defined by if and only if there is a path of length from to . Since the transitive closure, , is the union of ,  , we can answer our connectivity question by determining the transitive closure of , which can be done most easily by keeping our relation in matrix form. is significant in our calculations because it tells us that we need only go as far as to determine the matrix of the transitive closure.    The main advantage of the adjacency matrix method is that the transitive closure matrix can answer all questions about the existence of paths between any vertices. If is the matrix of the transitive closure, is connected to if and only if . A directed graph is connected if or for each . A directed graph is strongly connected if its transitive closure matrix has no zeros.  A disadvantage of the adjacency matrix method is that the transitive closure matrix tells us whether a path exists, but not what the path is. The next algorithm will solve this problem.    Breadth-First Search  Breadth-First Search  We will describe the Breadth-First Search Algorithm first with an example.  The football team at Mediocre State University (MSU) has had a bad year, 2 wins and 9 losses. Thirty days after the end of the football season, the university trustees are meeting to decide whether to rehire the head coach; things look bad for him. However, on the day of the meeting, the coach issues the following press release with results from the past year:   Press Release: MSU complete successful season   The Mediocre State University football team compared favorably with national champion Enormous State University this season.     Mediocre State defeated Local A and M.    Local A and M defeated City College.    City College defeated Corn State U.    ... (25 results later)    Tough Tech defeated Enormous State University (ESU).     ...and ESU went on to win the national championship!    The trustees were so impressed that they rehired the coach with a raise! How did the coach come up with such a list?  In reality, such lists exist occasionally and have appeared in newspapers from time to time. Of course they really don't prove anything since each team that defeated MSU in our example above can produce a similar, shorter chain of results. Since college football records are readily available, the coach could have found this list by trial and error. All that he needed to start with was that his team won at least one game. Since ESU lost one game, there was some hope of producing the chain.  The problem of finding this list is equivalent to finding a path in the tournament graph for last year's football season that initiates at MSU and ends at ESU. Such a graph is far from complete and is likely to be represented using edge lists. To make the coach's problem interesting, let's imagine that only the winner of any game remembers the result of the game. The coach's problem has now taken on the flavor of a maze. To reach ESU, he must communicate with the various teams along the path. One way that the coach could have discovered his list in time is by sending the following messages to the coaches of the two teams that MSU defeated during the season:   When this example was first written, we commented that ties should be ignored. Most recent NCAA rules call for a tiebreaker in college football and so ties are no longer an issue. Email was also not common and we described the process in terms of letter, not email messages. Another change is that the coach could also have asked the MSU math department to use Mathematica or Sage to find the path!    The Coach's Letter   Dear Football Coach:  Please follow these directions exactly.     If you are the coach at ESU, contact the coach at MSU now and tell him who sent you this message.    If you are not the coach at ESU and this is the first message of this type that you have received, then:     Remember from whom you received this message.    Forward a copy of this message, signed by you, to each of the coaches whose teams you defeated during the past year.    Ignore this message if you have received one like it already.        Signed,  Coach of MSU     Observations   From the conditions of this message, it should be clear that if everyone cooperates and if coaches participate within a day of receiving the message:     If a path of length exists from MSU to ESU, then the coach will know about it in days.    By making a series of phone calls, the coach can construct a path that he wants by first calling the coach who defeated ESU (the person who sent ESU's coach that message). This coach will know who sent him a letter, and so on. Therefore, the vertex list of the desired path is constructed in reverse order.    If a total of football games were played, no more than messages will be sent out.    If a day passes without any message being sent out, no path from MSU to ESU exists.    This method could be extended to construct a list of all teams that a given team can be connected to. Simply imagine a series of letters like the one above sent by each football coach and targeted at every other coach.     The general problem of finding a path between two vertices in a graph, if one exists, can be solved exactly as we solved the problem above. The following algorithm, commonly called a breadth-first search, uses a stack.   Stacks  A stack is a fundamental data structure in computer science. A common analogy used to describe stacks is of a stack of plates. If you put a plate on the top of a stack and then want to use a plate, it's natural to use that top plate. So the last plate in is the first plate out. Last in, first out is the short description of the rule for stacks. This is contrast with a queue which uses a First in, first out rule.    Breadth-first Search  Breadth-first Search   A broadcasting algorithm for finding a path between vertex and vertex of a graph having vertices. Each item of a list , consists of a Boolean field and an integer field . The sets , , called depth sets, have the property that if , then the shortest path from vertex to vertex is of length . In Step 5, a stack is used to put the vertex list for the path from the vertex to vertex in the proper order. That stack is the output of the algorithm.     Set the value equal to False,              while ) and          for each k in :  for each edge (k,t):  If == False:                        if :               while :  Push onto        Push onto    Push onto           Notes on Breadth-first Search    This algorithm will produce one path from vertex to vertex , if one exists, and that path will be as short as possible. If more than one path of this length exists, then the one that is produced depends on the order in which the edges are examined and the order in which the elements of are examined in Step 4.    The condition is analogous to the condition that no mail is sent in a given stage of the process, in which case MSU cannot be connected to ESU.    This algorithm can be easily revised to find paths to all vertices that can be reached from vertex . Step 5 would be put off until a specific path to a vertex is needed since the information in contains an efficient list of all paths. The algorithm can also be extended further to find paths between any two vertices.      A simple example  Consider the graph below. The existence of a path from vertex 2 to vertex 3 is not difficult to determine by examination. After a few seconds, you should be able to find two paths of length four. will produce one of them.   A simple example of breadth-first search   Example Graph for breadth-first search    Suppose that the edges from each vertex are sorted in ascending order by terminal vertex. For example, the edges from vertex 3 would be in the order . In addition, assume that in the body of Step 4 of the algorithm, the elements of are used in ascending order. Then at the end of Step 4, the value of will be Therefore, the path is produced by the algorithm. Note that if we wanted a path from 2 to 5, the information in produces the path (2, 1, 5) since and . A shortest circuit that initiates at vertex 2 is also available by noting that , , and ; thus the circuit is the output of the algorithm.     SageMath Note - Graph Searching   SageMath Note  Search in a Graph   The following sequence of Sage cells illustrates how searching can be done in graphs.  Generate a random undirected graph with 18 vertices. For each pair of vertices, an edge is included between them with probability 0.2. Since there are potential edges, we expect that there will be approximately edges. The random number generation is seeded first so that the result will always be the same in spite of the random graph function. Changing or removing that first line will let you experiment with different graphs.   Count the number of edges. In this case the number is a bit less than expected.   Find a shortest path from vertex 0 to vertex 8.   Generate a list of vertices that would be reached in a breadth-first search. The expression Gr.breadth_first_search(0) creates an iterator that is convenient for programming. Wrapping list( ) around the expression shows the order in which the vertices are visited with the depth set indicated in the second coordinates.   Generate a list of vertices that would be reached in a depth-first search. In this type of search you travel in one direction away from the starting point until no further new vertices can be reached. We will discuss this search later.     Exercises   Apply to find a path from 5 to 1 in . What would be the final value of ? Assume that the terminal vertices in edge lists and elements of the depth sets are put into ascending order, as we assumed in .         Apply to find a path from to in the road graph in using the edge list in that example. Assume that the elements of the depth sets are put into ascending order.    In a simple undirected graph with no self-loops, what is the maximum number of edges you can have, keeping the graph unconnected? What is the minimum number of edges that will assure that the graph is connected?   If the number of vertices is , there can be vertices with one vertex not connected to any of the others. One more edge and connectivity is assured.    Use a broadcasting algorithm to determine the shortest path from vertex to vertex in the graphs shown in the below. List the depth sets and the stack that is created.   Shortest paths from to ?   Graphs for exercise 15-3-4      Prove (by induction on ) that if the relation on vertices of a graph is defined by if there is an edge connecting to , then , , is defined by if there is a path of length from to .   Basis: Is the relation , defined by if there is a path of length 1 from ? Yes, since if and only if an edge, which is a path of length , connects to .  Induction: Assume that if and only if there is a path of length from to . We must show that if and only if there is a path of length from to .  By the induction hypothesis, there is a path of length from . And by the basis, there is a path of length one from to . If we combine these two paths, we obtain a path of length from to . Of course, if we start with a path of length from to , we have a path of length from to some vertex and a path of length 1 from to . Therefore, .    "
 },
 {
-  "id": "note-8",
+  "id": "note-10",
   "level": "2",
-  "url": "s-Connectivity.html#note-8",
+  "url": "s-Connectivity.html#note-10",
   "type": "Note",
-  "number": "13.3.1",
+  "number": "15.3.1",
   "title": "Connectivity Terminology.",
   "body": " Connectivity Terminology  Let and be vertices of a directed graph. Vertex is connected to vertex if there is a path from to . Two vertices are strongly connected if they are connected in both directions to one another. A graph is connected if, for each pair of distinct vertices, and , is connected to or is connected to . A graph is strongly connected if every pair of its vertices is strongly connected. For an undirected graph, in which edges can be used in either direction, the notions of strongly connected and connected are the same.  "
 },
 {
-  "id": "theorem-13-3-1",
+  "id": "theorem-15-3-1",
   "level": "2",
-  "url": "s-Connectivity.html#theorem-13-3-1",
+  "url": "s-Connectivity.html#theorem-15-3-1",
   "type": "Theorem",
-  "number": "13.3.2",
+  "number": "15.3.2",
   "title": "Maximal Path Theorem.",
   "body": " Maximal Path Theorem   If a graph has vertices and vertex is connected to vertex , then there exists a path from to of length no more than .    (Indirect): Suppose is connected to , but the shortest path from to has length , where . A vertex list for a path of length will have vertices. This path can be represented as , where and . Note that since there are only vertices in the graph and vertices are listed in the path after , we can apply the pigeonhole principle and be assured that there must be some duplication in the last vertices of the vertex list, which represents a circuit in the path. This means that our path of minimum length can be reduced, which is a contradiction.   "
 },
 {
-  "id": "algorithm-24",
+  "id": "algorithm-26",
   "level": "2",
-  "url": "s-Connectivity.html#algorithm-24",
+  "url": "s-Connectivity.html#algorithm-26",
   "type": "Algorithm",
-  "number": "13.3.3",
+  "number": "15.3.3",
   "title": "Adjacency Matrix Method.",
   "body": " Adjacency Matrix Method   Suppose that the information about edges in a graph is stored in an adjacency matrix, . The relation, , that defines is if there is an edge connecting to . Recall that the composition of with itself, , is defined by if there exists a vertex such that and ; that is, is connected to by a path of length 2. We could prove by induction that the relation , , is defined by if and only if there is a path of length from to . Since the transitive closure, , is the union of ,  , we can answer our connectivity question by determining the transitive closure of , which can be done most easily by keeping our relation in matrix form. is significant in our calculations because it tells us that we need only go as far as to determine the matrix of the transitive closure.   "
 },
@@ -9536,16 +10427,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Connectivity.html#list-5",
   "type": "List",
-  "number": "13.3.4",
+  "number": "15.3.4",
   "title": "Press Release: MSU complete successful season",
   "body": " Press Release: MSU complete successful season   The Mediocre State University football team compared favorably with national champion Enormous State University this season.     Mediocre State defeated Local A and M.    Local A and M defeated City College.    City College defeated Corn State U.    ... (25 results later)    Tough Tech defeated Enormous State University (ESU).     ...and ESU went on to win the national championship!   "
 },
 {
-  "id": "note-9",
+  "id": "note-11",
   "level": "2",
-  "url": "s-Connectivity.html#note-9",
+  "url": "s-Connectivity.html#note-11",
   "type": "Note",
-  "number": "13.3.5",
+  "number": "15.3.5",
   "title": "",
   "body": " When this example was first written, we commented that ties should be ignored. Most recent NCAA rules call for a tiebreaker in college football and so ties are no longer an issue. Email was also not common and we described the process in terms of letter, not email messages. Another change is that the coach could also have asked the MSU math department to use Mathematica or Sage to find the path!  "
 },
@@ -9554,7 +10445,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Connectivity.html#list-6",
   "type": "List",
-  "number": "13.3.6",
+  "number": "15.3.6",
   "title": "The Coach’s Letter",
   "body": " The Coach's Letter   Dear Football Coach:  Please follow these directions exactly.     If you are the coach at ESU, contact the coach at MSU now and tell him who sent you this message.    If you are not the coach at ESU and this is the first message of this type that you have received, then:     Remember from whom you received this message.    Forward a copy of this message, signed by you, to each of the coaches whose teams you defeated during the past year.    Ignore this message if you have received one like it already.        Signed,  Coach of MSU   "
 },
@@ -9563,7 +10454,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Connectivity.html#list-7",
   "type": "List",
-  "number": "13.3.7",
+  "number": "15.3.7",
   "title": "Observations",
   "body": " Observations   From the conditions of this message, it should be clear that if everyone cooperates and if coaches participate within a day of receiving the message:     If a path of length exists from MSU to ESU, then the coach will know about it in days.    By making a series of phone calls, the coach can construct a path that he wants by first calling the coach who defeated ESU (the person who sent ESU's coach that message). This coach will know who sent him a letter, and so on. Therefore, the vertex list of the desired path is constructed in reverse order.    If a total of football games were played, no more than messages will be sent out.    If a day passes without any message being sent out, no path from MSU to ESU exists.    This method could be extended to construct a list of all teams that a given team can be connected to. Simply imagine a series of letters like the one above sent by each football coach and targeted at every other coach.    "
 },
@@ -9572,7 +10463,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Connectivity.html#alg-breadth-first",
   "type": "Algorithm",
-  "number": "13.3.8",
+  "number": "15.3.8",
   "title": "Breadth-first Search.",
   "body": " Breadth-first Search  Breadth-first Search   A broadcasting algorithm for finding a path between vertex and vertex of a graph having vertices. Each item of a list , consists of a Boolean field and an integer field . The sets , , called depth sets, have the property that if , then the shortest path from vertex to vertex is of length . In Step 5, a stack is used to put the vertex list for the path from the vertex to vertex in the proper order. That stack is the output of the algorithm.     Set the value equal to False,              while ) and          for each k in :  for each edge (k,t):  If == False:                        if :               while :  Push onto        Push onto    Push onto         "
 },
@@ -9581,7 +10472,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Connectivity.html#list-8",
   "type": "List",
-  "number": "13.3.9",
+  "number": "15.3.9",
   "title": "Notes on Breadth-first Search",
   "body": " Notes on Breadth-first Search    This algorithm will produce one path from vertex to vertex , if one exists, and that path will be as short as possible. If more than one path of this length exists, then the one that is produced depends on the order in which the edges are examined and the order in which the elements of are examined in Step 4.    The condition is analogous to the condition that no mail is sent in a given stage of the process, in which case MSU cannot be connected to ESU.    This algorithm can be easily revised to find paths to all vertices that can be reached from vertex . Step 5 would be put off until a specific path to a vertex is needed since the information in contains an efficient list of all paths. The algorithm can also be extended further to find paths between any two vertices.    "
 },
@@ -9590,52 +10481,52 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Connectivity.html#ex-search-example",
   "type": "Example",
-  "number": "13.3.10",
+  "number": "15.3.10",
   "title": "A simple example.",
   "body": " A simple example  Consider the graph below. The existence of a path from vertex 2 to vertex 3 is not difficult to determine by examination. After a few seconds, you should be able to find two paths of length four. will produce one of them.   A simple example of breadth-first search   Example Graph for breadth-first search    Suppose that the edges from each vertex are sorted in ascending order by terminal vertex. For example, the edges from vertex 3 would be in the order . In addition, assume that in the body of Step 4 of the algorithm, the elements of are used in ascending order. Then at the end of Step 4, the value of will be Therefore, the path is produced by the algorithm. Note that if we wanted a path from 2 to 5, the information in produces the path (2, 1, 5) since and . A shortest circuit that initiates at vertex 2 is also available by noting that , , and ; thus the circuit is the output of the algorithm.  "
 },
 {
-  "id": "exercise-458",
+  "id": "exercise-496",
   "level": "2",
-  "url": "s-Connectivity.html#exercise-458",
+  "url": "s-Connectivity.html#exercise-496",
   "type": "Exercise",
-  "number": "13.3.5.1",
+  "number": "15.3.5.1",
   "title": "",
   "body": " Apply to find a path from 5 to 1 in . What would be the final value of ? Assume that the terminal vertices in edge lists and elements of the depth sets are put into ascending order, as we assumed in .       "
 },
 {
-  "id": "exercise-459",
+  "id": "exercise-497",
   "level": "2",
-  "url": "s-Connectivity.html#exercise-459",
+  "url": "s-Connectivity.html#exercise-497",
   "type": "Exercise",
-  "number": "13.3.5.2",
+  "number": "15.3.5.2",
   "title": "",
   "body": " Apply to find a path from to in the road graph in using the edge list in that example. Assume that the elements of the depth sets are put into ascending order.  "
 },
 {
-  "id": "exercise-460",
+  "id": "exercise-498",
   "level": "2",
-  "url": "s-Connectivity.html#exercise-460",
+  "url": "s-Connectivity.html#exercise-498",
   "type": "Exercise",
-  "number": "13.3.5.3",
+  "number": "15.3.5.3",
   "title": "",
   "body": " In a simple undirected graph with no self-loops, what is the maximum number of edges you can have, keeping the graph unconnected? What is the minimum number of edges that will assure that the graph is connected?   If the number of vertices is , there can be vertices with one vertex not connected to any of the others. One more edge and connectivity is assured.  "
 },
 {
-  "id": "exercise-461",
+  "id": "exercise-499",
   "level": "2",
-  "url": "s-Connectivity.html#exercise-461",
+  "url": "s-Connectivity.html#exercise-499",
   "type": "Exercise",
-  "number": "13.3.5.4",
+  "number": "15.3.5.4",
   "title": "",
-  "body": " Use a broadcasting algorithm to determine the shortest path from vertex to vertex in the graphs shown in the below. List the depth sets and the stack that is created.   Shortest paths from to ?   Graphs for exercise 13-3-4    "
+  "body": " Use a broadcasting algorithm to determine the shortest path from vertex to vertex in the graphs shown in the below. List the depth sets and the stack that is created.   Shortest paths from to ?   Graphs for exercise 15-3-4    "
 },
 {
-  "id": "exercise-462",
+  "id": "exercise-500",
   "level": "2",
-  "url": "s-Connectivity.html#exercise-462",
+  "url": "s-Connectivity.html#exercise-500",
   "type": "Exercise",
-  "number": "13.3.5.5",
+  "number": "15.3.5.5",
   "title": "",
   "body": " Prove (by induction on ) that if the relation on vertices of a graph is defined by if there is an edge connecting to , then , , is defined by if there is a path of length from to .   Basis: Is the relation , defined by if there is a path of length 1 from ? Yes, since if and only if an edge, which is a path of length , connects to .  Induction: Assume that if and only if there is a path of length from to . We must show that if and only if there is a path of length from to .  By the induction hypothesis, there is a path of length from . And by the basis, there is a path of length one from to . If we combine these two paths, we obtain a path of length from to . Of course, if we start with a path of length from to , we have a path of length from to some vertex and a path of length 1 from to . Therefore, .  "
 },
@@ -9644,16 +10535,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s-traversals.html",
   "type": "Section",
-  "number": "13.4",
+  "number": "15.4",
   "title": "Traversals: Eulerian and Hamiltonian Graphs",
-  "body": " Traversals: Eulerian and Hamiltonian Graphs  Traversals of Graphs   The subject of graph traversals has a long history. In fact, the solution by Leonhard Euler (Switzerland, 1707-83) of the Koenigsberg Bridge Problem is considered by many to represent the birth of graph theory.    Eulerian Graphs    A map of Koenigsberg, circa 1735   A map of Koenigsberg     A multigraph for the bridges of Koenigsberg     A map of the Prussian city of Koenigsberg (circa 1735) in shows that there were seven bridges connecting the four land masses that made up the city. The legend of this problem states that the citizens of Koenigsberg searched in vain for a walking tour that passed over each bridge exactly once. No one could design such a tour and the search was abruptly abandoned with the publication of Euler's Theorem.   Euler's Theorem: Koenigsberg Case   Euler's Theorem  Koenigsberg Case    No walking tour of Koenigsberg can be designed so that each bridge is used exactly once.    The map of Koenigsberg can be represented as an undirected multigraph, as in . The four land masses are the vertices and each edge represents a bridge.  The desired tour is then a path that uses each edge once and only once. Since the path can start and end at two different vertices, there are two remaining vertices that must be intermediate vertices in the path. If is an intermediate vertex, then every time that you visit , you must use two of its incident edges, one to enter and one to exit. Therefore, there must be an even number of edges connecting to the other vertices. Since every vertex in the Koenigsberg graph has an odd number of edges, no tour of the type that is desired is possible.    As is typical of most mathematicians, Euler wasn't satisfied with solving only the Koenigsberg problem. His original theorem, which is paraphrased below, concerned the existence of paths and circuits like those sought in Koenigsberg. These paths and circuits have become associated with Euler's name.   Eulerian Paths, Circuits, Graphs  Eulerian Paths, Circuits, Graphs   An Eulerian path through a graph is a path whose edge list contains each edge of the graph exactly once. If the path is a circuit, then it is called an Eulerian circuit. An Eulerian graph is a graph that possesses a Eulerian circuit.     An Eulerian Graph  Without tracing any paths, we can be sure that the graph below has an Eulerian circuit because all vertices have an even degree. This follows from the following theorem.   An Eulerian graph   An Eulerian graph      Euler's Theorem: General Case  Euler's Theorem   An undirected graph has an Eulerian path if and only if it is connected and has either zero or two vertices with an odd degree. If no vertex has an odd degree, then the graph is Eulerian.    It can be proven by induction that the number of vertices in an undirected graph that have an odd degree must be even. We will leave the proof of this fact to the reader as an exercise. The necessity of having either zero or two vertices of odd degree is clear from the proof of the Koenigsberg case of this theorem. Therefore, we will concentrate on proving that this condition is sufficient to ensure that a graph has an Eulerian path. Let be the number of vertices with odd degree.  Phase 1. If , start at any vertex, , and travel along any path, not using any edge twice. Since each vertex has an even degree, this path can always be continued past each vertex that you reach except . The result is a circuit that includes . If , let be either one of the vertices of odd degree. Trace any path starting at using up edges until you can go no further, as in the case. This time, the path that you obtain must end at the other vertex of odd degree that we will call . At the end of Phase 1, we have an initial path that may or may not be Eulerian. If it is not Eulerian, Phase 2 can be repeated until all of the edges have been used. Since the number of unused edges is decreased in any use of Phase 2, an Eulerian path must be obtained in a finite number of steps.  Phase 2. As we enter this phase, we have constructed a path that uses a proper subset of the edges in our graph. We will refer to this path as the current path. Let be the vertices of our graph, the edges, and the edges that have been used in the current path. Consider the graph . Note that every vertex in has an even degree. Select any edge, , from Let and be the vertices that connects. Trace a new path starting at whose first edge is . We can be sure that at least one vertex of the new path is also in the current path since is connected. Starting at , there exists a path in to any vertex in the current path. At some point along this path, which we can consider the start of the new path, we will have intersected the current path. Since the degree of each vertex in is even, any path that we start at can be continued until it is a circuit. Now, we simply augment the current path with this circuit. As we travel along the current path, the first time that we intersect the new path, we travel along it (see ). Once we complete the circuit that is the new path, we resume the traversal of the current path.   Path Augmentation Plan   Path Augmentation Plan    If the result of this phase is an Eulerian path, then we are finished; otherwise, repeat this phase.     Complete Eulerian Graphs  The complete undirected graphs , . .., are Eulerian. If , then is not Eulerian.     Hamiltonian Graphs  To search for a path that uses every vertex of a graph exactly once seems to be a natural next problem after you have considered Eulerian graphs.The Irish mathematician Sir William Rowan Hamilton (1805-65) is given credit for first defining such paths. He is also credited with discovering the quaternions, for which he was honored by the Irish government with a postage stamp in 2005.   Irish stamp honoring Sir William Rowan Hamilton   Irish stamp honoring Sir William Rowan Hamilton     Hamiltonian Path, Circuit, and Graphs  Hamiltonian Paths, Circuits, and Graphs   A Hamiltonian path through a graph is a path whose vertex list contains each vertex of the graph exactly once, except if the path is a circuit, in which case the initial vertex appears a second time as the terminal vertex. If the path is a circuit, then it is called a Hamiltonian circuit. A Hamiltonian graph is a graph that possesses a Hamiltonian circuit.     The Original Hamiltonian Graph  shows a graph that is Hamiltonian. In fact, it is the graph that Hamilton used as an example to pose the question of existence of Hamiltonian paths in 1859. In its original form, the puzzle that was posed to readers was called Around the World. The vertices were labeled with names of major cities of the world and the object was to complete a tour of these cities. The graph is also referred to as the dodecahedron graph, where vertices correspond with the corners of a dodecahedron and the edges are the edges of the solid that connect the corners.    A Dodecahedron   A Dodecahedron     The Dodecahedron Graph   The Dodecahedron Graph       Unfortunately, a simple condition doesn't exist that characterizes a Hamiltonian graph. An obvious necessary condition is that the graph be connected; however, there is a connected undirected graph with four vertices that is not Hamiltonian. Can you draw such a graph?    What Is Possible and What Is Impossible?  The search for a Hamiltonian path in a graph is typical of many simple-sounding problems in graph theory that have proven to be very difficult to solve. Although there are simple algorithms for conducting the search, they are impractical for large problems because they take such a long time to complete as graph size increases. Currently, every algorithm to search for a Hamiltonian path in a graph takes a time that grows at a rate that is greater than any polynomial as a function of the number of vertices. Rates of this type are called super-polynomial . That is, if is the time it takes to search a graph of vertices, and is any polynomial, then for all but possibly a finite number of positive values for .  It is an unproven but widely held belief that no faster algorithm exists to search for Hamiltonian paths in general graphs. To sum up, the problem of determining whether a graph is Hamiltonian is theoretically possible; however, for large graphs we consider it a practical impossibility. Many of the problems we will discuss in the next section, particularly the Traveling Salesman Problem, are thought to be impossible in the same sense.    The -cube  N-cube    the -cube    Let , and let be the set of strings of 0's and 1's with length . The -cube is the undirected graph with a vertex for each string in and an edge connecting each pair of strings that differ in exactly one position. The -cube is normally denoted .    The -cube is among the graphs that are defined within the graphs package of SageMath and is created with the expression graphs.CubeGraph(n) .    Analog-to-digital Conversion and the Gray Code  Analog-to-digital Conversion  A common problem encountered in engineering is that of analog-to-digital (a-d) conversion, where the reading on a dial, for example, must be converted to a numerical value. In order for this conversion to be done reliably and quickly, one must solve an interesting problem in graph theory. Before this problem is posed, we will make the connection between a-d conversion and the graph problem using a simple example. Suppose a dial can be turned in any direction, and that the positions will be converted to one of the numbers zero through seven as depicted in . The angles from 0 to 360 are divided into eight equal parts, and each part is assigned a number starting with 0 and increasing clockwise. If the dial points in any of these sectors the conversion is to the number of that sector. If the dial is on the boundary, then we will be satisfied with the conversion to either of the numbers in the bordering sectors. This conversion can be thought of as giving an approximate angle of the dial, for if the dial is in sector , then the angle that the dial makes with east is approximately .   Analog-Digital Dial   Analog-Digital Dial    Now that the desired conversion has been identified, we will describe a solution that has one major error in it, and then identify how this problem can be rectified. All digital computers represent numbers in binary form, as a sequence of 0's and 1's called bits, short for binary digits. The binary representations of numbers 0 through 7 are:   The way that we could send those bits to a computer is by coating parts of the back of the dial with a metallic substance, as in . For each of the three concentric circles on the dial there is a small magnet. If a magnet lies under a part of the dial that has been coated with metal, then it will turn a switch ON, whereas the switch stays OFF when no metal is detected above a magnet. Notice how every ON\/OFF combination of the three switches is possible given the way the back of the dial is coated.  If the dial is placed so that the magnets are in the middle of a sector, we expect this method to work well. There is a problem on certain boundaries, however. If the dial is turned so that the magnets are between sectors three and four, for example, then it is unclear what the result will be. This is due to the fact that each magnet will have only a fraction of the required metal above it to turn its switch ON. Due to expected irregularities in the coating of the dial, we can be safe in saying that for each switch either ON or OFF could be the result, and so if the dial is between sectors three and four, any number could be indicated. This problem does not occur between every sector. For example, between sectors 0 and 1, there is only one switch that cannot be predicted. No matter what the outcome is for the units switch in this case, the indicated sector must be either 0 or 1. This consistent with the original objective that a positioning of the dial on a boundary of two sectors should produce the number of either sector.   Coating scheme for the Analog-Digital Dial   Analog-Digital Dial    Is there a way to coat the sectors on the back of the dial so that each of the eight patterns corresponding to the numbers 0 to 7 appears once, and so that between any two adjacent sectors there is only one switch that will have a questionable setting? What we are describing here is a Hamiltonian circuit of the ( ). If one can draw a path along the edges in the 3-cube that starts at any vertex, passes through every other vertex once, and returns to the start, then that sequence of bit patterns can be used to coat the back of the dial so that between every sector there is only one questionable switch. Such a path is not difficult to find, as we will see below.   The 3-cube   The 3-cube    Many A-D conversion problems require many more sectors and switches than this example, and the same kinds of problems can occur. The solution would be to find a path within a much larger yet similar graph. For example, there might be 1,024 sectors with 10 switches, resulting in a graph with 1,024 vertices. Fortunately, our solution will apply to the -cube for any positive value of .  A Hamiltonian circuit of the -cube can be described recursively. The circuit itself, called the Gray Code, is not the only Hamiltonian circuit of the -cube, but it is the easiest to describe. The standard way to write the Gray Code is as a column of strings, where the last string is followed by the first string to complete the circuit.  Basis for the Gray Code ( ): The Gray Code for the 1-cube is . Note that the edge between 0 and 1 is used twice in this circuit. That doesn't violate any rules for Hamiltonian circuits, but can only happen if a graph has two vertices.  Recursive definition of the Gray Code: Given the Gray Code for the -cube, , then is obtained by (1) listing with each string prefixed with 0, and then (2) reversing the list of strings in with each string prefixed with 1. Symbolically, the recursion can be expressed as follows, where is the reverse of list .   The Gray Codes for the 2-cube and 3-cube are   One question might come to mind at this point. If the coatings of the dial no longer in the sequence from 0 to 7, how would you interpret the patterns that are on the back of the dial as numbers from 0 to 7? In Chapter 14 we will see that if the Gray Code is used, this decoding is quite easy.    Applications of the Gray Code  One application of the Gray code was discussed in the Introduction to this book. Another application is in statistics. In a statistical analysis, there is often a variable that depends on several factors, but exactly which factors are significant may not be obvious. For each subset of factors, there would be certain quantities to be calculated. One such quantity is the multiple correlation coefficient for a subset. If the correlation coefficient for a given subset, , is known, then the value for any subset that is obtained by either deleting or adding an element to can be obtained quickly. To calculate the correlation coefficient for each set, we simply travel along , where is the number of factors being studied. The first vertex will always be the string of 0's, which represents the empty set. For each vertex that you visit, the set that it corresponds to contains the factor if the character is a 1.   The 3-cube and its generalization, the -cube, play a role in the design of a multiprocessor called a hypercube. A multiprocessor is a computer that consists of several independent processors that can operate simultaneously and are connected to one another by a network of connections. In a hypercube with processors, the processors are numbered 0 to . Two processors are connected if their binary representations differ in exactly one bit. The hypercube has proven to be the best possible network for certain problems requiring the use of a supercomputer.    Exercises   Locate a map of New York City and draw a graph that represents its land masses, bridges and tunnels. Is there an Eulerian path through New York? You can do the same with any other city that has at least two land masses.   Using a recent road map, it appears that an Eulerian circuit exists in New York City, not including the small islands that belong to the city. Lowell, Massachusetts, is located at the confluence of the Merrimack and Concord rivers and has several canals flowing through it. No Eulerian path exists for Lowell.    Which of the drawings in can be drawn without removing your pencil from the paper and without drawing any line twice?     Drawings for exercise 13-4-2      Write out the Gray Code for the 4-cube.   Gray Code for the 4-cube:     Find a Hamiltonian circuit for the dodecahedron graph in .    The Euler Construction Company has been contracted to construct an extra bridge in Koenigsberg so that an Eulerian path through the town exists. Can this be done, and if so, where should the bridge be built?   Any bridge between two land masses will be sufficient. To get an Eulerian circuit, you must add a second bridge that connects the two land masses that were not connected by the first bridge.    Consider the graphs in . Determine which of the graphs have an Eulerian path, and find an Eulerian path for the graphs that have one.   Graphs for exercise 6   graphs for exercise 13-4-6      Formulate Euler's theorem for directed graphs.   Let be a directed graph. has an Eulerian circuit if and only if is connected and for all . There exists an Eulerian path from if and only if is connected, , , and for all other vertices in the indegree and outdegree are equal.    Prove that the number of vertices in an undirected graph with odd degree must be even.   Prove by induction on the number of edges.       Under what conditions will a round-robin tournament graph be Eulerian?    Prove that every round-robin tournament graph is Hamiltonian.      A round-robin tournament graph is rarely Eulerian. It will be Eulerian if it has an odd number of vertices and each vertex (team) wins exactly as many times as it loses. Every round-robin tournament graph has a Hamiltonian path. This can be proven by induction on the number of vertices.    For what values of is the -cube Eulerian?    A particular set of dominoes has 21 tiles: . Is it possible to lay all 21 tiles in a line so that each adjacent pair of tile ends matches (that is, each 1 abuts a 1, and so on)?   No, such a line does not exist. The dominoes with two different numbers correspond with edges in a . See corresponding dominos and edges in . Dominos with two equal numbers could be held back and inserted into the line created with the other dominoes if such a line exists. For example, if were part of the line, could be inserted between those two dominoes. The line we want exists if and only if there exists an Eulerian path in a . Since all six vertices of a have odd degree no such path exists.   Correspondence between a line of dominos and a path in a    Four dominos lay end-to-end with numbers on abutting ends matching. They correspond with four connecting edges in a .      "
+  "body": " Traversals: Eulerian and Hamiltonian Graphs  Traversals of Graphs   The subject of graph traversals has a long history. In fact, the solution by Leonhard Euler (Switzerland, 1707-83) of the Koenigsberg Bridge Problem is considered by many to represent the birth of graph theory.    Eulerian Graphs    A map of Koenigsberg, circa 1735   A map of Koenigsberg     A multigraph for the bridges of Koenigsberg     A map of the Prussian city of Koenigsberg (circa 1735) in shows that there were seven bridges connecting the four land masses that made up the city. The legend of this problem states that the citizens of Koenigsberg searched in vain for a walking tour that passed over each bridge exactly once. No one could design such a tour and the search was abruptly abandoned with the publication of Euler's Theorem.   Euler's Theorem: Koenigsberg Case   Euler's Theorem  Koenigsberg Case    No walking tour of Koenigsberg can be designed so that each bridge is used exactly once.    The map of Koenigsberg can be represented as an undirected multigraph, as in . The four land masses are the vertices and each edge represents a bridge.  The desired tour is then a path that uses each edge once and only once. Since the path can start and end at two different vertices, there are two remaining vertices that must be intermediate vertices in the path. If is an intermediate vertex, then every time that you visit , you must use two of its incident edges, one to enter and one to exit. Therefore, there must be an even number of edges connecting to the other vertices. Since every vertex in the Koenigsberg graph has an odd number of edges, no tour of the type that is desired is possible.    As is typical of most mathematicians, Euler wasn't satisfied with solving only the Koenigsberg problem. His original theorem, which is paraphrased below, concerned the existence of paths and circuits like those sought in Koenigsberg. These paths and circuits have become associated with Euler's name.   Eulerian Paths, Circuits, Graphs  Eulerian Paths, Circuits, Graphs   An Eulerian path through a graph is a path whose edge list contains each edge of the graph exactly once. If the path is a circuit, then it is called an Eulerian circuit. An Eulerian graph is a graph that possesses a Eulerian circuit.     An Eulerian Graph  Without tracing any paths, we can be sure that the graph below has an Eulerian circuit because all vertices have an even degree. This follows from the following theorem.   An Eulerian graph   An Eulerian graph      Euler's Theorem: General Case  Euler's Theorem   An undirected graph has an Eulerian path if and only if it is connected and has either zero or two vertices with an odd degree. If no vertex has an odd degree, then the graph is Eulerian.    It can be proven by induction that the number of vertices in an undirected graph that have an odd degree must be even. We will leave the proof of this fact to the reader as an exercise. The necessity of having either zero or two vertices of odd degree is clear from the proof of the Koenigsberg case of this theorem. Therefore, we will concentrate on proving that this condition is sufficient to ensure that a graph has an Eulerian path. Let be the number of vertices with odd degree.  Phase 1. If , start at any vertex, , and travel along any path, not using any edge twice. Since each vertex has an even degree, this path can always be continued past each vertex that you reach except . The result is a circuit that includes . If , let be either one of the vertices of odd degree. Trace any path starting at using up edges until you can go no further, as in the case. This time, the path that you obtain must end at the other vertex of odd degree that we will call . At the end of Phase 1, we have an initial path that may or may not be Eulerian. If it is not Eulerian, Phase 2 can be repeated until all of the edges have been used. Since the number of unused edges is decreased in any use of Phase 2, an Eulerian path must be obtained in a finite number of steps.  Phase 2. As we enter this phase, we have constructed a path that uses a proper subset of the edges in our graph. We will refer to this path as the current path. Let be the vertices of our graph, the edges, and the edges that have been used in the current path. Consider the graph . Note that every vertex in has an even degree. Select any edge, , from Let and be the vertices that connects. Trace a new path starting at whose first edge is . We can be sure that at least one vertex of the new path is also in the current path since is connected. Starting at , there exists a path in to any vertex in the current path. At some point along this path, which we can consider the start of the new path, we will have intersected the current path. Since the degree of each vertex in is even, any path that we start at can be continued until it is a circuit. Now, we simply augment the current path with this circuit. As we travel along the current path, the first time that we intersect the new path, we travel along it (see ). Once we complete the circuit that is the new path, we resume the traversal of the current path.   Path Augmentation Plan   Path Augmentation Plan    If the result of this phase is an Eulerian path, then we are finished; otherwise, repeat this phase.     Complete Eulerian Graphs  The complete undirected graphs , . .., are Eulerian. If , then is not Eulerian.     Hamiltonian Graphs  To search for a path that uses every vertex of a graph exactly once seems to be a natural next problem after you have considered Eulerian graphs.The Irish mathematician Sir William Rowan Hamilton (1805-65) is given credit for first defining such paths. He is also credited with discovering the quaternions, for which he was honored by the Irish government with a postage stamp in 2005.   Irish stamp honoring Sir William Rowan Hamilton   Irish stamp honoring Sir William Rowan Hamilton     Hamiltonian Path, Circuit, and Graphs  Hamiltonian Paths, Circuits, and Graphs   A Hamiltonian path through a graph is a path whose vertex list contains each vertex of the graph exactly once, except if the path is a circuit, in which case the initial vertex appears a second time as the terminal vertex. If the path is a circuit, then it is called a Hamiltonian circuit. A Hamiltonian graph is a graph that possesses a Hamiltonian circuit.     The Original Hamiltonian Graph  shows a graph that is Hamiltonian. In fact, it is the graph that Hamilton used as an example to pose the question of existence of Hamiltonian paths in 1859. In its original form, the puzzle that was posed to readers was called Around the World. The vertices were labeled with names of major cities of the world and the object was to complete a tour of these cities. The graph is also referred to as the dodecahedron graph, where vertices correspond with the corners of a dodecahedron and the edges are the edges of the solid that connect the corners.    A Dodecahedron   A Dodecahedron     The Dodecahedron Graph   The Dodecahedron Graph       Unfortunately, a simple condition doesn't exist that characterizes a Hamiltonian graph. An obvious necessary condition is that the graph be connected; however, there is a connected undirected graph with four vertices that is not Hamiltonian. Can you draw such a graph?    What Is Possible and What Is Impossible?  The search for a Hamiltonian path in a graph is typical of many simple-sounding problems in graph theory that have proven to be very difficult to solve. Although there are simple algorithms for conducting the search, they are impractical for large problems because they take such a long time to complete as graph size increases. Currently, every algorithm to search for a Hamiltonian path in a graph takes a time that grows at a rate that is greater than any polynomial as a function of the number of vertices. Rates of this type are called super-polynomial . That is, if is the time it takes to search a graph of vertices, and is any polynomial, then for all but possibly a finite number of positive values for .  It is an unproven but widely held belief that no faster algorithm exists to search for Hamiltonian paths in general graphs. To sum up, the problem of determining whether a graph is Hamiltonian is theoretically possible; however, for large graphs we consider it a practical impossibility. Many of the problems we will discuss in the next section, particularly the Traveling Salesman Problem, are thought to be impossible in the same sense.    The -cube  N-cube    the -cube    Let , and let be the set of strings of 0's and 1's with length . The -cube is the undirected graph with a vertex for each string in and an edge connecting each pair of strings that differ in exactly one position. The -cube is normally denoted .    The -cube is among the graphs that are defined within the graphs package of SageMath and is created with the expression graphs.CubeGraph(n) .    Analog-to-digital Conversion and the Gray Code  Analog-to-digital Conversion  A common problem encountered in engineering is that of analog-to-digital (a-d) conversion, where the reading on a dial, for example, must be converted to a numerical value. In order for this conversion to be done reliably and quickly, one must solve an interesting problem in graph theory. Before this problem is posed, we will make the connection between a-d conversion and the graph problem using a simple example. Suppose a dial can be turned in any direction, and that the positions will be converted to one of the numbers zero through seven as depicted in . The angles from 0 to 360 are divided into eight equal parts, and each part is assigned a number starting with 0 and increasing clockwise. If the dial points in any of these sectors the conversion is to the number of that sector. If the dial is on the boundary, then we will be satisfied with the conversion to either of the numbers in the bordering sectors. This conversion can be thought of as giving an approximate angle of the dial, for if the dial is in sector , then the angle that the dial makes with east is approximately .   Analog-Digital Dial   Analog-Digital Dial    Now that the desired conversion has been identified, we will describe a solution that has one major error in it, and then identify how this problem can be rectified. All digital computers represent numbers in binary form, as a sequence of 0's and 1's called bits, short for binary digits. The binary representations of numbers 0 through 7 are:   The way that we could send those bits to a computer is by coating parts of the back of the dial with a metallic substance, as in . For each of the three concentric circles on the dial there is a small magnet. If a magnet lies under a part of the dial that has been coated with metal, then it will turn a switch ON, whereas the switch stays OFF when no metal is detected above a magnet. Notice how every ON\/OFF combination of the three switches is possible given the way the back of the dial is coated.  If the dial is placed so that the magnets are in the middle of a sector, we expect this method to work well. There is a problem on certain boundaries, however. If the dial is turned so that the magnets are between sectors three and four, for example, then it is unclear what the result will be. This is due to the fact that each magnet will have only a fraction of the required metal above it to turn its switch ON. Due to expected irregularities in the coating of the dial, we can be safe in saying that for each switch either ON or OFF could be the result, and so if the dial is between sectors three and four, any number could be indicated. This problem does not occur between every sector. For example, between sectors 0 and 1, there is only one switch that cannot be predicted. No matter what the outcome is for the units switch in this case, the indicated sector must be either 0 or 1. This consistent with the original objective that a positioning of the dial on a boundary of two sectors should produce the number of either sector.   Coating scheme for the Analog-Digital Dial   Analog-Digital Dial    Is there a way to coat the sectors on the back of the dial so that each of the eight patterns corresponding to the numbers 0 to 7 appears once, and so that between any two adjacent sectors there is only one switch that will have a questionable setting? What we are describing here is a Hamiltonian circuit of the ( ). If one can draw a path along the edges in the 3-cube that starts at any vertex, passes through every other vertex once, and returns to the start, then that sequence of bit patterns can be used to coat the back of the dial so that between every sector there is only one questionable switch. Such a path is not difficult to find, as we will see below.   The 3-cube   The 3-cube    Many A-D conversion problems require many more sectors and switches than this example, and the same kinds of problems can occur. The solution would be to find a path within a much larger yet similar graph. For example, there might be 1,024 sectors with 10 switches, resulting in a graph with 1,024 vertices. Fortunately, our solution will apply to the -cube for any positive value of .  A Hamiltonian circuit of the -cube can be described recursively. The circuit itself, called the Gray Code, is not the only Hamiltonian circuit of the -cube, but it is the easiest to describe. The standard way to write the Gray Code is as a column of strings, where the last string is followed by the first string to complete the circuit.  Basis for the Gray Code ( ): The Gray Code for the 1-cube is . Note that the edge between 0 and 1 is used twice in this circuit. That doesn't violate any rules for Hamiltonian circuits, but can only happen if a graph has two vertices.  Recursive definition of the Gray Code: Given the Gray Code for the -cube, , then is obtained by (1) listing with each string prefixed with 0, and then (2) reversing the list of strings in with each string prefixed with 1. Symbolically, the recursion can be expressed as follows, where is the reverse of list .   The Gray Codes for the 2-cube and 3-cube are   One question might come to mind at this point. If the coatings of the dial no longer in the sequence from 0 to 7, how would you interpret the patterns that are on the back of the dial as numbers from 0 to 7? In Chapter 14 we will see that if the Gray Code is used, this decoding is quite easy.    Applications of the Gray Code  One application of the Gray code was discussed in the Introduction to this book. Another application is in statistics. In a statistical analysis, there is often a variable that depends on several factors, but exactly which factors are significant may not be obvious. For each subset of factors, there would be certain quantities to be calculated. One such quantity is the multiple correlation coefficient for a subset. If the correlation coefficient for a given subset, , is known, then the value for any subset that is obtained by either deleting or adding an element to can be obtained quickly. To calculate the correlation coefficient for each set, we simply travel along , where is the number of factors being studied. The first vertex will always be the string of 0's, which represents the empty set. For each vertex that you visit, the set that it corresponds to contains the factor if the character is a 1.   The 3-cube and its generalization, the -cube, play a role in the design of a multiprocessor called a hypercube. A multiprocessor is a computer that consists of several independent processors that can operate simultaneously and are connected to one another by a network of connections. In a hypercube with processors, the processors are numbered 0 to . Two processors are connected if their binary representations differ in exactly one bit. The hypercube has proven to be the best possible network for certain problems requiring the use of a supercomputer.    Exercises   Locate a map of New York City and draw a graph that represents its land masses, bridges and tunnels. Is there an Eulerian path through New York? You can do the same with any other city that has at least two land masses.   Using a recent road map, it appears that an Eulerian circuit exists in New York City, not including the small islands that belong to the city. Lowell, Massachusetts, is located at the confluence of the Merrimack and Concord rivers and has several canals flowing through it. No Eulerian path exists for Lowell.    Which of the drawings in can be drawn without removing your pencil from the paper and without drawing any line twice?     Drawings for exercise 15-4-2      Write out the Gray Code for the 4-cube.   Gray Code for the 4-cube:     Find a Hamiltonian circuit for the dodecahedron graph in .    The Euler Construction Company has been contracted to construct an extra bridge in Koenigsberg so that an Eulerian path through the town exists. Can this be done, and if so, where should the bridge be built?   Any bridge between two land masses will be sufficient. To get an Eulerian circuit, you must add a second bridge that connects the two land masses that were not connected by the first bridge.    Consider the graphs in . Determine which of the graphs have an Eulerian path, and find an Eulerian path for the graphs that have one.   Graphs for exercise 6   graphs for exercise 15-4-6      Formulate Euler's theorem for directed graphs.   Let be a directed graph. has an Eulerian circuit if and only if is connected and for all . There exists an Eulerian path from if and only if is connected, , , and for all other vertices in the indegree and outdegree are equal.    Prove that the number of vertices in an undirected graph with odd degree must be even.   Prove by induction on the number of edges.       Under what conditions will a round-robin tournament graph be Eulerian?    Prove that every round-robin tournament graph is Hamiltonian.      A round-robin tournament graph is rarely Eulerian. It will be Eulerian if it has an odd number of vertices and each vertex (team) wins exactly as many times as it loses. Every round-robin tournament graph has a Hamiltonian path. This can be proven by induction on the number of vertices.    For what values of is the -cube Eulerian?    A particular set of dominoes has 21 tiles: . Is it possible to lay all 21 tiles in a line so that each adjacent pair of tile ends matches (that is, each 1 abuts a 1, and so on)?   No, such a line does not exist. The dominoes with two different numbers correspond with edges in a . See corresponding dominos and edges in . Dominos with two equal numbers could be held back and inserted into the line created with the other dominoes if such a line exists. For example, if were part of the line, could be inserted between those two dominoes. The line we want exists if and only if there exists an Eulerian path in a . Since all six vertices of a have odd degree no such path exists.   Correspondence between a line of dominos and a path in a    Four dominos lay end-to-end with numbers on abutting ends matching. They correspond with four connecting edges in a .      "
 },
 {
   "id": "fig-konigsberg-map",
   "level": "2",
   "url": "s-traversals.html#fig-konigsberg-map",
   "type": "Figure",
-  "number": "13.4.1",
+  "number": "15.4.1",
   "title": "",
   "body": " A map of Koenigsberg, circa 1735   A map of Koenigsberg   "
 },
@@ -9662,7 +10553,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-traversals.html#fig-konigsberg-multigraph",
   "type": "Figure",
-  "number": "13.4.2",
+  "number": "15.4.2",
   "title": "",
   "body": " A multigraph for the bridges of Koenigsberg   "
 },
@@ -9671,7 +10562,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-traversals.html#th-euler-theorem-koenigsberg-case",
   "type": "Theorem",
-  "number": "13.4.3",
+  "number": "15.4.3",
   "title": "Euler’s Theorem: Koenigsberg Case.",
   "body": " Euler's Theorem: Koenigsberg Case   Euler's Theorem  Koenigsberg Case    No walking tour of Koenigsberg can be designed so that each bridge is used exactly once.    The map of Koenigsberg can be represented as an undirected multigraph, as in . The four land masses are the vertices and each edge represents a bridge.  The desired tour is then a path that uses each edge once and only once. Since the path can start and end at two different vertices, there are two remaining vertices that must be intermediate vertices in the path. If is an intermediate vertex, then every time that you visit , you must use two of its incident edges, one to enter and one to exit. Therefore, there must be an even number of edges connecting to the other vertices. Since every vertex in the Koenigsberg graph has an odd number of edges, no tour of the type that is desired is possible.   "
 },
@@ -9680,7 +10571,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-traversals.html#def-eulerian-paths-circuits-graphs",
   "type": "Definition",
-  "number": "13.4.4",
+  "number": "15.4.4",
   "title": "Eulerian Paths, Circuits, Graphs.",
   "body": " Eulerian Paths, Circuits, Graphs  Eulerian Paths, Circuits, Graphs   An Eulerian path through a graph is a path whose edge list contains each edge of the graph exactly once. If the path is a circuit, then it is called an Eulerian circuit. An Eulerian graph is a graph that possesses a Eulerian circuit.   "
 },
@@ -9689,7 +10580,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-traversals.html#ex-an-eulerian-graph",
   "type": "Example",
-  "number": "13.4.5",
+  "number": "15.4.5",
   "title": "An Eulerian Graph.",
   "body": " An Eulerian Graph  Without tracing any paths, we can be sure that the graph below has an Eulerian circuit because all vertices have an even degree. This follows from the following theorem.   An Eulerian graph   An Eulerian graph    "
 },
@@ -9698,7 +10589,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-traversals.html#theorem-euler-theorem-general",
   "type": "Theorem",
-  "number": "13.4.7",
+  "number": "15.4.7",
   "title": "Euler’s Theorem: General Case.",
   "body": " Euler's Theorem: General Case  Euler's Theorem   An undirected graph has an Eulerian path if and only if it is connected and has either zero or two vertices with an odd degree. If no vertex has an odd degree, then the graph is Eulerian.    It can be proven by induction that the number of vertices in an undirected graph that have an odd degree must be even. We will leave the proof of this fact to the reader as an exercise. The necessity of having either zero or two vertices of odd degree is clear from the proof of the Koenigsberg case of this theorem. Therefore, we will concentrate on proving that this condition is sufficient to ensure that a graph has an Eulerian path. Let be the number of vertices with odd degree.  Phase 1. If , start at any vertex, , and travel along any path, not using any edge twice. Since each vertex has an even degree, this path can always be continued past each vertex that you reach except . The result is a circuit that includes . If , let be either one of the vertices of odd degree. Trace any path starting at using up edges until you can go no further, as in the case. This time, the path that you obtain must end at the other vertex of odd degree that we will call . At the end of Phase 1, we have an initial path that may or may not be Eulerian. If it is not Eulerian, Phase 2 can be repeated until all of the edges have been used. Since the number of unused edges is decreased in any use of Phase 2, an Eulerian path must be obtained in a finite number of steps.  Phase 2. As we enter this phase, we have constructed a path that uses a proper subset of the edges in our graph. We will refer to this path as the current path. Let be the vertices of our graph, the edges, and the edges that have been used in the current path. Consider the graph . Note that every vertex in has an even degree. Select any edge, , from Let and be the vertices that connects. Trace a new path starting at whose first edge is . We can be sure that at least one vertex of the new path is also in the current path since is connected. Starting at , there exists a path in to any vertex in the current path. At some point along this path, which we can consider the start of the new path, we will have intersected the current path. Since the degree of each vertex in is even, any path that we start at can be continued until it is a circuit. Now, we simply augment the current path with this circuit. As we travel along the current path, the first time that we intersect the new path, we travel along it (see ). Once we complete the circuit that is the new path, we resume the traversal of the current path.   Path Augmentation Plan   Path Augmentation Plan    If the result of this phase is an Eulerian path, then we are finished; otherwise, repeat this phase.   "
 },
@@ -9707,7 +10598,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-traversals.html#ex-complete-eulerian",
   "type": "Example",
-  "number": "13.4.9",
+  "number": "15.4.9",
   "title": "Complete Eulerian Graphs.",
   "body": " Complete Eulerian Graphs  The complete undirected graphs , . .., are Eulerian. If , then is not Eulerian.  "
 },
@@ -9716,7 +10607,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-traversals.html#fig-hamilton-stamp",
   "type": "Figure",
-  "number": "13.4.10",
+  "number": "15.4.10",
   "title": "",
   "body": " Irish stamp honoring Sir William Rowan Hamilton   Irish stamp honoring Sir William Rowan Hamilton   "
 },
@@ -9725,7 +10616,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-traversals.html#def-hamiltonian-path-circuit-graph",
   "type": "Definition",
-  "number": "13.4.11",
+  "number": "15.4.11",
   "title": "Hamiltonian Path, Circuit, and Graphs.",
   "body": " Hamiltonian Path, Circuit, and Graphs  Hamiltonian Paths, Circuits, and Graphs   A Hamiltonian path through a graph is a path whose vertex list contains each vertex of the graph exactly once, except if the path is a circuit, in which case the initial vertex appears a second time as the terminal vertex. If the path is a circuit, then it is called a Hamiltonian circuit. A Hamiltonian graph is a graph that possesses a Hamiltonian circuit.   "
 },
@@ -9734,7 +10625,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-traversals.html#ex-dodec-graph",
   "type": "Example",
-  "number": "13.4.12",
+  "number": "15.4.12",
   "title": "The Original Hamiltonian Graph.",
   "body": " The Original Hamiltonian Graph  shows a graph that is Hamiltonian. In fact, it is the graph that Hamilton used as an example to pose the question of existence of Hamiltonian paths in 1859. In its original form, the puzzle that was posed to readers was called Around the World. The vertices were labeled with names of major cities of the world and the object was to complete a tour of these cities. The graph is also referred to as the dodecahedron graph, where vertices correspond with the corners of a dodecahedron and the edges are the edges of the solid that connect the corners.    A Dodecahedron   A Dodecahedron     The Dodecahedron Graph   The Dodecahedron Graph     "
 },
@@ -9743,16 +10634,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-traversals.html#problem-1",
   "type": "Problem",
-  "number": "13.4.15",
+  "number": "15.4.15",
   "title": "",
   "body": " Unfortunately, a simple condition doesn't exist that characterizes a Hamiltonian graph. An obvious necessary condition is that the graph be connected; however, there is a connected undirected graph with four vertices that is not Hamiltonian. Can you draw such a graph?  "
 },
 {
-  "id": "note-10",
+  "id": "note-12",
   "level": "2",
-  "url": "s-traversals.html#note-10",
+  "url": "s-traversals.html#note-12",
   "type": "Note",
-  "number": "13.4.16",
+  "number": "15.4.16",
   "title": "What Is Possible and What Is Impossible?",
   "body": " What Is Possible and What Is Impossible?  The search for a Hamiltonian path in a graph is typical of many simple-sounding problems in graph theory that have proven to be very difficult to solve. Although there are simple algorithms for conducting the search, they are impractical for large problems because they take such a long time to complete as graph size increases. Currently, every algorithm to search for a Hamiltonian path in a graph takes a time that grows at a rate that is greater than any polynomial as a function of the number of vertices. Rates of this type are called super-polynomial . That is, if is the time it takes to search a graph of vertices, and is any polynomial, then for all but possibly a finite number of positive values for .  It is an unproven but widely held belief that no faster algorithm exists to search for Hamiltonian paths in general graphs. To sum up, the problem of determining whether a graph is Hamiltonian is theoretically possible; however, for large graphs we consider it a practical impossibility. Many of the problems we will discuss in the next section, particularly the Traveling Salesman Problem, are thought to be impossible in the same sense.  "
 },
@@ -9761,7 +10652,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-traversals.html#def-n-cube",
   "type": "Definition",
-  "number": "13.4.17",
+  "number": "15.4.17",
   "title": "The <span class=\"process-math\">\\(n\\)<\/span>-cube.",
   "body": " The -cube  N-cube    the -cube    Let , and let be the set of strings of 0's and 1's with length . The -cube is the undirected graph with a vertex for each string in and an edge connecting each pair of strings that differ in exactly one position. The -cube is normally denoted .   "
 },
@@ -9770,115 +10661,115 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-traversals.html#ex-intro-a-to-d",
   "type": "Example",
-  "number": "13.4.18",
+  "number": "15.4.18",
   "title": "Analog-to-digital Conversion and the Gray Code.",
   "body": " Analog-to-digital Conversion and the Gray Code  Analog-to-digital Conversion  A common problem encountered in engineering is that of analog-to-digital (a-d) conversion, where the reading on a dial, for example, must be converted to a numerical value. In order for this conversion to be done reliably and quickly, one must solve an interesting problem in graph theory. Before this problem is posed, we will make the connection between a-d conversion and the graph problem using a simple example. Suppose a dial can be turned in any direction, and that the positions will be converted to one of the numbers zero through seven as depicted in . The angles from 0 to 360 are divided into eight equal parts, and each part is assigned a number starting with 0 and increasing clockwise. If the dial points in any of these sectors the conversion is to the number of that sector. If the dial is on the boundary, then we will be satisfied with the conversion to either of the numbers in the bordering sectors. This conversion can be thought of as giving an approximate angle of the dial, for if the dial is in sector , then the angle that the dial makes with east is approximately .   Analog-Digital Dial   Analog-Digital Dial    Now that the desired conversion has been identified, we will describe a solution that has one major error in it, and then identify how this problem can be rectified. All digital computers represent numbers in binary form, as a sequence of 0's and 1's called bits, short for binary digits. The binary representations of numbers 0 through 7 are:   The way that we could send those bits to a computer is by coating parts of the back of the dial with a metallic substance, as in . For each of the three concentric circles on the dial there is a small magnet. If a magnet lies under a part of the dial that has been coated with metal, then it will turn a switch ON, whereas the switch stays OFF when no metal is detected above a magnet. Notice how every ON\/OFF combination of the three switches is possible given the way the back of the dial is coated.  If the dial is placed so that the magnets are in the middle of a sector, we expect this method to work well. There is a problem on certain boundaries, however. If the dial is turned so that the magnets are between sectors three and four, for example, then it is unclear what the result will be. This is due to the fact that each magnet will have only a fraction of the required metal above it to turn its switch ON. Due to expected irregularities in the coating of the dial, we can be safe in saying that for each switch either ON or OFF could be the result, and so if the dial is between sectors three and four, any number could be indicated. This problem does not occur between every sector. For example, between sectors 0 and 1, there is only one switch that cannot be predicted. No matter what the outcome is for the units switch in this case, the indicated sector must be either 0 or 1. This consistent with the original objective that a positioning of the dial on a boundary of two sectors should produce the number of either sector.   Coating scheme for the Analog-Digital Dial   Analog-Digital Dial    Is there a way to coat the sectors on the back of the dial so that each of the eight patterns corresponding to the numbers 0 to 7 appears once, and so that between any two adjacent sectors there is only one switch that will have a questionable setting? What we are describing here is a Hamiltonian circuit of the ( ). If one can draw a path along the edges in the 3-cube that starts at any vertex, passes through every other vertex once, and returns to the start, then that sequence of bit patterns can be used to coat the back of the dial so that between every sector there is only one questionable switch. Such a path is not difficult to find, as we will see below.   The 3-cube   The 3-cube    Many A-D conversion problems require many more sectors and switches than this example, and the same kinds of problems can occur. The solution would be to find a path within a much larger yet similar graph. For example, there might be 1,024 sectors with 10 switches, resulting in a graph with 1,024 vertices. Fortunately, our solution will apply to the -cube for any positive value of .  A Hamiltonian circuit of the -cube can be described recursively. The circuit itself, called the Gray Code, is not the only Hamiltonian circuit of the -cube, but it is the easiest to describe. The standard way to write the Gray Code is as a column of strings, where the last string is followed by the first string to complete the circuit.  Basis for the Gray Code ( ): The Gray Code for the 1-cube is . Note that the edge between 0 and 1 is used twice in this circuit. That doesn't violate any rules for Hamiltonian circuits, but can only happen if a graph has two vertices.  Recursive definition of the Gray Code: Given the Gray Code for the -cube, , then is obtained by (1) listing with each string prefixed with 0, and then (2) reversing the list of strings in with each string prefixed with 1. Symbolically, the recursion can be expressed as follows, where is the reverse of list .   The Gray Codes for the 2-cube and 3-cube are   One question might come to mind at this point. If the coatings of the dial no longer in the sequence from 0 to 7, how would you interpret the patterns that are on the back of the dial as numbers from 0 to 7? In Chapter 14 we will see that if the Gray Code is used, this decoding is quite easy.  "
 },
 {
-  "id": "example-206",
+  "id": "example-229",
   "level": "2",
-  "url": "s-traversals.html#example-206",
+  "url": "s-traversals.html#example-229",
   "type": "Example",
-  "number": "13.4.22",
+  "number": "15.4.22",
   "title": "Applications of the Gray Code.",
   "body": " Applications of the Gray Code  One application of the Gray code was discussed in the Introduction to this book. Another application is in statistics. In a statistical analysis, there is often a variable that depends on several factors, but exactly which factors are significant may not be obvious. For each subset of factors, there would be certain quantities to be calculated. One such quantity is the multiple correlation coefficient for a subset. If the correlation coefficient for a given subset, , is known, then the value for any subset that is obtained by either deleting or adding an element to can be obtained quickly. To calculate the correlation coefficient for each set, we simply travel along , where is the number of factors being studied. The first vertex will always be the string of 0's, which represents the empty set. For each vertex that you visit, the set that it corresponds to contains the factor if the character is a 1.  "
 },
 {
-  "id": "exercise-463",
+  "id": "exercise-501",
   "level": "2",
-  "url": "s-traversals.html#exercise-463",
+  "url": "s-traversals.html#exercise-501",
   "type": "Exercise",
-  "number": "13.4.3.1",
+  "number": "15.4.3.1",
   "title": "",
   "body": " Locate a map of New York City and draw a graph that represents its land masses, bridges and tunnels. Is there an Eulerian path through New York? You can do the same with any other city that has at least two land masses.   Using a recent road map, it appears that an Eulerian circuit exists in New York City, not including the small islands that belong to the city. Lowell, Massachusetts, is located at the confluence of the Merrimack and Concord rivers and has several canals flowing through it. No Eulerian path exists for Lowell.  "
 },
 {
-  "id": "exercise-464",
+  "id": "exercise-502",
   "level": "2",
-  "url": "s-traversals.html#exercise-464",
+  "url": "s-traversals.html#exercise-502",
   "type": "Exercise",
-  "number": "13.4.3.2",
+  "number": "15.4.3.2",
   "title": "",
-  "body": " Which of the drawings in can be drawn without removing your pencil from the paper and without drawing any line twice?     Drawings for exercise 13-4-2    "
+  "body": " Which of the drawings in can be drawn without removing your pencil from the paper and without drawing any line twice?     Drawings for exercise 15-4-2    "
 },
 {
-  "id": "exercise-465",
+  "id": "exercise-503",
   "level": "2",
-  "url": "s-traversals.html#exercise-465",
+  "url": "s-traversals.html#exercise-503",
   "type": "Exercise",
-  "number": "13.4.3.3",
+  "number": "15.4.3.3",
   "title": "",
   "body": " Write out the Gray Code for the 4-cube.   Gray Code for the 4-cube:   "
 },
 {
-  "id": "exercise-466",
+  "id": "exercise-504",
   "level": "2",
-  "url": "s-traversals.html#exercise-466",
+  "url": "s-traversals.html#exercise-504",
   "type": "Exercise",
-  "number": "13.4.3.4",
+  "number": "15.4.3.4",
   "title": "",
   "body": " Find a Hamiltonian circuit for the dodecahedron graph in .  "
 },
 {
-  "id": "exercise-467",
+  "id": "exercise-505",
   "level": "2",
-  "url": "s-traversals.html#exercise-467",
+  "url": "s-traversals.html#exercise-505",
   "type": "Exercise",
-  "number": "13.4.3.5",
+  "number": "15.4.3.5",
   "title": "",
   "body": " The Euler Construction Company has been contracted to construct an extra bridge in Koenigsberg so that an Eulerian path through the town exists. Can this be done, and if so, where should the bridge be built?   Any bridge between two land masses will be sufficient. To get an Eulerian circuit, you must add a second bridge that connects the two land masses that were not connected by the first bridge.  "
 },
 {
-  "id": "exercise-468",
+  "id": "exercise-506",
   "level": "2",
-  "url": "s-traversals.html#exercise-468",
+  "url": "s-traversals.html#exercise-506",
   "type": "Exercise",
-  "number": "13.4.3.6",
+  "number": "15.4.3.6",
   "title": "",
-  "body": " Consider the graphs in . Determine which of the graphs have an Eulerian path, and find an Eulerian path for the graphs that have one.   Graphs for exercise 6   graphs for exercise 13-4-6    "
+  "body": " Consider the graphs in . Determine which of the graphs have an Eulerian path, and find an Eulerian path for the graphs that have one.   Graphs for exercise 6   graphs for exercise 15-4-6    "
 },
 {
-  "id": "exercise-469",
+  "id": "exercise-507",
   "level": "2",
-  "url": "s-traversals.html#exercise-469",
+  "url": "s-traversals.html#exercise-507",
   "type": "Exercise",
-  "number": "13.4.3.7",
+  "number": "15.4.3.7",
   "title": "",
   "body": " Formulate Euler's theorem for directed graphs.   Let be a directed graph. has an Eulerian circuit if and only if is connected and for all . There exists an Eulerian path from if and only if is connected, , , and for all other vertices in the indegree and outdegree are equal.  "
 },
 {
-  "id": "exercise-470",
+  "id": "exercise-508",
   "level": "2",
-  "url": "s-traversals.html#exercise-470",
+  "url": "s-traversals.html#exercise-508",
   "type": "Exercise",
-  "number": "13.4.3.8",
+  "number": "15.4.3.8",
   "title": "",
   "body": " Prove that the number of vertices in an undirected graph with odd degree must be even.   Prove by induction on the number of edges.  "
 },
 {
-  "id": "exercise-471",
+  "id": "exercise-509",
   "level": "2",
-  "url": "s-traversals.html#exercise-471",
+  "url": "s-traversals.html#exercise-509",
   "type": "Exercise",
-  "number": "13.4.3.9",
+  "number": "15.4.3.9",
   "title": "",
   "body": "    Under what conditions will a round-robin tournament graph be Eulerian?    Prove that every round-robin tournament graph is Hamiltonian.      A round-robin tournament graph is rarely Eulerian. It will be Eulerian if it has an odd number of vertices and each vertex (team) wins exactly as many times as it loses. Every round-robin tournament graph has a Hamiltonian path. This can be proven by induction on the number of vertices.  "
 },
 {
-  "id": "exercise-472",
+  "id": "exercise-510",
   "level": "2",
-  "url": "s-traversals.html#exercise-472",
+  "url": "s-traversals.html#exercise-510",
   "type": "Exercise",
-  "number": "13.4.3.10",
+  "number": "15.4.3.10",
   "title": "",
   "body": " For what values of is the -cube Eulerian?  "
 },
 {
-  "id": "exercise-473",
+  "id": "exercise-511",
   "level": "2",
-  "url": "s-traversals.html#exercise-473",
+  "url": "s-traversals.html#exercise-511",
   "type": "Exercise",
-  "number": "13.4.3.11",
+  "number": "15.4.3.11",
   "title": "",
   "body": " A particular set of dominoes has 21 tiles: . Is it possible to lay all 21 tiles in a line so that each adjacent pair of tile ends matches (that is, each 1 abuts a 1, and so on)?   No, such a line does not exist. The dominoes with two different numbers correspond with edges in a . See corresponding dominos and edges in . Dominos with two equal numbers could be held back and inserted into the line created with the other dominoes if such a line exists. For example, if were part of the line, could be inserted between those two dominoes. The line we want exists if and only if there exists an Eulerian path in a . Since all six vertices of a have odd degree no such path exists.   Correspondence between a line of dominos and a path in a    Four dominos lay end-to-end with numbers on abutting ends matching. They correspond with four connecting edges in a .    "
 },
@@ -9887,16 +10778,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s-graph-optimization.html",
   "type": "Section",
-  "number": "13.5",
+  "number": "15.5",
   "title": "Graph Optimization",
-  "body": " Graph Optimization  Graph Optimization   The common thread that connects all of the problems in this section is the desire to optimize (maximize or minimize) a quantity that is associated with a graph. We will concentrate most of our attention on two of these problems, the Traveling Salesman Problem and the Maximum Flow Problem. At the close of this section, we will discuss some other common optimization problems.    Weighted Graphs   Weighted Graph  Weighted Graph   A weighted graph, , is a graph together with a weight function . If , is the weight on edge .    As you will see in our examples, is often a cost associated with the edge ; therefore, most weights will be positive.   A Distance Graph  Let be the set of six capital cities in New England: Boston, Augusta, Hartford, Providence, Concord, and Montpelier. Let be ; that is, is a complete unordered graph. An example of a weight function on this graph is .  Many road maps define distance functions as in the following table.   Distances between capital cities in New England    --  Augusta  Boston  Concord  Hartford  Montpelier  Providence    Augusta, ME  --  165  148  266  190  208    Boston, MA  165  --  75  103  192  43    Concord, NH  148  75  --  142  117  109    Hartford, CT  266  103  142  --  204  70    Montpelier, VT  190  192  117  204  --  223    Providence, RI  208  43  109  70  223  --        The Traveling Salesman Problem  Traveling Salesman Problem, The  The Traveling Salesman Problem is, given a weighted graph, to find a circuit that visits every vertex at least once and minimizes the sum of the weights, . Any such circuit is called an optimal path.  Some statements of the Traveling Salesman Problem require that the circuit be Hamiltonian. In many applications, the graph in question will be complete and this restriction presents no problem. If the weight on each edge is constant, for example, , then an optimal path would be any Hamiltonian circuit.   The problem of a Boston salesman  The Traveling Salesman Problem gets its name from the situation of a salesman who wants to minimize the number of miles that he travels in visiting his customers. For example, if a salesman from Boston must visit the other capital cities of New England, then the problem is to find a circuit in the weighted graph of . Note that distance and cost are clearly related in this case. In addition, tolls and traffic congestion might also be taken into account.   The search for an efficient algorithm that solves the Traveling Salesman has occupied researchers for years. If the graph in question is complete, there are different circuits. As gets large, it is impossible to check every possible circuit. The most efficient algorithms for solving the Traveling Salesman Problem take an amount of time that is proportional to . Since this quantity grows so quickly, we can't expect to have the time to solve the Traveling Salesman Problem for large values of . Most of the useful algorithms that have been developed have to be heuristic; that is, they find a circuit that should be close to the optimal one. One such algorithm is the closest neighbor algorithm, one of the earliest attempts at solving the Traveling Salesman Problem. The general idea behind this algorithm is, starting at any vertex, to visit the closest neighbor to the starting point. At each vertex, the next vertex that is visited is the closest one that has not been reached. This shortsighted approach typifies heuristic algorithms called greedy algorithms, which attempt to solve a minimization (maximization) problem by minimizing (maximizing) the quantity associated with only the first step.   The Closest Neighbor Algorithm  Closest Neighbor Algorithm   Let be a complete weighted graph with . The closest neighbor circuit through G starting at is , defined by the steps:      .    For       : In case of a tie for closest, may be chosen arbitrarily.                  The cost of the closest neighbor circuit is     A small example  The closest neighbor circuit starting at A in is , with a cost of 29. The optimal path is , with a cost of 27.   A small example   A small weighted graph     Although the closest neighbor circuit is often not optimal, we may be satisfied if it is close to optimal. If and are the costs of optimal and closest neighbor circuits in a graph, then it is always the case that or . We can assess how good the closest neighbor algorithm is by determining how small the quantity gets. If it is always near 1, then the algorithm is good. However, if there are graphs for which it is large, then the algorithm may be discarded. Note that in , . A 7 percent increase in cost may or may not be considered significant, depending on the situation.   The One-way Street  A salesman must make stops at vertices A, B, and C, which are all on the same one-way street. The graph in is weighted by the function equal to the time it takes to drive from vertex to vertex .   Traveling a one-way street   A small directed weighted graph    Note that if is down the one-way street from , then . The values of , and are 20 and 32, respectively. Verify that is 32 by using the closest neighbor algorithm. The value of is significant in this case since our salesman would spend 60 percent more time on the road if he used the closest neighbor algorithm.   A more general result relating to the closest neighbor algorithm presumes that the graph in question is complete and that the weight function satisfies the conditions      for all , in the vertex set, and     for all , , in the vertex set.     The first condition is called the symmetry condition and the second is the triangle inequality.    If is a complete weighted graph that satisfies the symmetry and triangle inequality conditions, then     If , then this theorem says that can be no larger than twice the size of ; however, it doesn't say that the closest neighbor circuit will necessarily be that far from an optimal circuit. The quantity is called an upper bound for the ratio . It tells us only that things can't be any worse than the upper bound. Certainly, there are many graphs with eight vertices such that the optimal and closest neighbor circuits are the same. What is left unstated in this theorem is whether there are graphs for which the quantities are equal. If there are such graphs, we say that the upper bound is sharp.  The value of in Example is 1.6, which is greater than ; however, the weight function in this example does not satisfy the conditions of the theorem.    The Unit Square Problem  Suppose a robot is programmed to weld joints on square metal plates. Each plate must be welded at prescribed points on the square. To minimize the time it takes to complete the job, the total distance that a robot's arm moves should be minimized. Let be the distance between and . Assume that before each plate can be welded, the arm must be positioned at a certain point . Given a list of points, we want to put them in order so that is as small as possible.   The type of problem that is outlined in the example above is of such importance that it is one of the most studied version of the Traveling Salesman Problem. What follows is the usual statement of the problem. Let , and let , the unit square. Given pairs of real numbers in that represent the vertices of a , find a circuit of the graph that minimizes the sum of the distances traveled in traversing the circuit.  Since the problem calls for a circuit, it doesn't matter which vertex we start at; assume that we will start at . Once the problem is solved, we can always change our starting position. A function can most efficiently describe a circuit in this problem. Every bijection with describes a circuit There are such bijections. Since a circuit and its reversal have the same associated cost, there are cases to consider. An examination of all possible cases is not feasible for large values of .  One popular heuristic algorithm is the strip algorithm:   The Strip Algorithm   Given points in the unit square:  Phase 1:   Divide the square into vertical strips, as in . Let d be the width of each strip. If a point lies on a boundary between two strips, consider it part of the left-hand strip.    Starting from the left, find the first strip that contains one of the points. Locate the starting point by selecting the first point that is encountered in that strip as you travel from bottom to top. We will assume that the first point is    Alternate traveling up and down the strips that contain vertices until all of the vertices have been reached.    Return to the starting point.    Phase 2:   Shift all strips units to the right (creating a small strip on the left).    Repeat Steps 1.2 through 1.4 of Phase 1 with the new strips.    When the two phases are complete, choose the shorter of the two circuits obtained.     The Strip Algorithm   The Strip Algorithm    Step may need a bit more explanation. How do you travel up or down a strip? In most cases, the vertices in a strip will be vertically distributed so that the order in which they are visited is obvious. In some cases, however, the order might not be clear, as in the third strip in Phase I of . Within a strip, the order in which you visit the points (if you are going up the strip) is determined thusly: precedes if or if and . In traveling down a strip, replace with .  The selection of strips was made in a 1959 paper by Beardwood, Halton, and Hammersley. It balances the problems that arise if the number of strips is too small or too large. If the square is divided into too few strips, some strips may be packed with vertices so that visiting them would require excessive horizontal motion. If too many strips are used, excessive vertical motion tends to be the result. An update on what is known about this algorithm is contained in .  Since the construction of a circuit in the square consists of sorting the given points, it should come as no surprise that the strip algorithm requires a time that is roughly a multiple of time units when points are to be visited.  The worst case that has been encountered with this algorithm is one in which the circuit obtained has a total distance of approximately (see Sopowit et al.).    Networks and the Maximum Flow Problem  Networks   Network  Network   A network is a simple weighted directed graph that contains two distinguished vertices called the source and the sink with the properties that the indegree of the source and outdegree of the sink are both zero, and source is connected to sink. The weight function on a network is the capacity function, which has positive weights.    An example of a real situation that can be represented by a network is a city's water system. A reservoir would be the source, while a distribution point in the city to all of the users would be the sink. The system of pumps and pipes that carries the water from source to sink makes up the remaining network. We can assume that the water that passes through a pipe in one minute is controlled by a pump and the maximum rate is determined by the size of the pipe and the strength of the pump. This maximum rate of flow through a pipe is called its capacity and is the information that the weight function of a network contains.   A City Water System  Consider the system that is illustrated in . The numbers that appear next to each pipe indicate the capacity of that pipe in thousands of gallons per minute. This map can be drawn in the form of a network, as in .   City Water System   City Water System     Flow Diagram for a City's Water Network   City Water Network    Although the material passing through this network is water, networks can also represent the flow of other materials, such as automobiles, electricity, bits, telephone calls, or patients in a health system.    The Maximum Flow Problem   The Maximum Flow Problem is derived from the objective of moving the maximum amount of water or other material from the source to the sink. To measure this amount, we define a flow as a function such that (1) the flow of material through any edge is nonnegative and no larger than its capacity: , for all ; and (2) for each vertex other than the source and sink, the total amount of material that is directed into a vertex is equal to the total amount that is directed out: The summation on the left of represents the sum of the flows through each edge in that has as a terminal vertex. The right-hand side indicates that you should add all of the flows through edges that initiate at .     Flow out of Source equals Flow in Sink   If is a flow, then     Subtract the right-hand side of from the left-hand side. The result is: Now sum up these differences for each vertex in . The result is   Now observe that if an edge connects two vertices in , its flow appears as both a positive and a negative term in . This means that the only positive terms that are not cancelled out are the flows into the sink. In addition, the only negative terms that remain are the flows out of the source. Therefore,     The Value of a Flow  Value of a Flow    The value of flow    The two values flow into the sink and flow out of the source were proved to be equal in and this common value is called the value of the flow . It is denoted by . The value of a flow represents the amount of material that passes through the network with that flow.    Since the Maximum Flow Problem consists of maximizing the amount of material that passes through a given network, it is equivalent to finding a flow with the largest possible value. Any such flow is called a maximal flow Maximal flow .  For the network in , one flow is , defined by , , , , and . The value of , , is 45. Since the total flow into the sink can be no larger than 50 ( ), we can tell that is not very far from the solution. Can you improve on at all? The sum of the capacities into the sink can't always be obtained by a flow. The same is true for the sum of the capacities out of the source. In this case, the sum of the capacities out of the source is 60, which obviously can't be reached in this network.  A solution of the Maximum Flow Problem for this network is the maximal flow , where , , , , and , with . This solution is not unique. In fact, there is an infinite number of maximal flows for this problem.  There have been several algorithms developed to solve the Maximal Flow Problem. One of these is the Ford and Fulkerson Algorithm (FFA). The FFA consists of repeatedly finding paths in a network called flow augmenting paths until no improvement can be made in the flow that has been obtained.   Flow Augmenting Path  Flow Augmenting Path   Given a flow in a network , a flow augmenting path with respect to is a simple path from the source to the sink using edges both in their forward and their reverse directions such that for each edge in the path, if is used in its forward direction and if is used in the reverse direction.     Augmenting City Water Flow  For in , a flow augmenting path would be since , , and .  These positive differences represent unused capacities, and the smallest value represents the amount of flow that can be added to each edge in the path. Note that by adding 5 to each edge in our path, we obtain , which is maximal. If an edge with a positive flow is used in its reverse direction, it is contributing a movement of material that is counterproductive to the objective of maximizing flow. This is why the algorithm directs us to decrease the flow through that edge.    The Ford and Fulkerson Algorithm      Define the flow function by for each edge .    i = 0.    Repeat:     If possible, find a flow augmenting path with respect to .    If a flow augmenting path exists, then:     Determine    Define by             until no flow augmenting path exists.    Terminate with a maximal flow        Notes on the Ford and Fulkerson Algorithm    It should be clear that every flow augmenting path leads to a flow of increased value and that none of the capacities of the network can be violated.    The depth-first search should be used to find flow augmenting paths since it is far more efficient than the breadth-first search in this situation. The depth-first search differs from the breadth-first algorithm in that you sequentially visit vertices until you reach a dead end and then backtrack.    There have been networks discovered for which the FFA does not terminate in a finite number of steps. These examples all have irrational capacities. It has been proven that if all capacities are positive integers, the FFA terminates in a finite number of steps. See Ford and Fulkerson, Even, or Berge for details.    When you use the FFA to solve the Maximum Flow Problem by hand it is convenient to label each edge of the network with the fraction .      Depth-First Search for a Flow Augmenting Path   This is a depth-first search for the Sink Initiating at the Source. Let be the set of directed edges that can be used in producing a flow augmenting path. Add to the network a vertex called start and the edge     vertex set of the network.    source Move along the edge     while is not equal to start or sink:     if an edge in exists that takes you from to another vertex in :  .                  A flow augmenting path going against the flow  Consider the network in , where the current flow, , is indicated by a labeling of the edges.   Current Flow   Current Flow    The path is a flow augmenting path that allows us to increase the flow by one unit. Note that is used in the reverse direction, which is allowed because . The value of the new flow that we obtain is 8. This flow must be maximal since the capacities out of the source add up to 8. This maximal flow is defined by .   Updated Flow   Updated Flow       Other Graph Optimization Problems     The Minimum Spanning Tree Problem: Given a weighted graph, , find a subset of with the properties that is connected and the sum of the weights of edges in is as small as possible. We will discuss this problem in Chapter 10.    The Minimum Matching Problem: Given an undirected weighted graph, , with an even number of vertices, pair up the vertices so that each pair is connected by an edge and the sum of these edges is as small as possible. A unit square version of this problem has been studied extensively. See for details on what is known about this version of the problem.     Center of a Graph  The Graph Center Problem: Given a connected, undirected, weighted graph, find a vertex (called a center) in the graph with the property that the distance from the center to every other vertex is as small as possible. As small as possible is normally interpreted as minimizing the maximum distance from the center to a vertex.       Exercises   Find the closest neighbor circuit through the six capitals of New England starting at Boston. If you start at a different city, will you get a different circuit?   The circuit would be Boston, Providence, Hartford, Concord, Montpelier, Augusta, Boston. It does matter where you start. If you start in Concord, for example, your mileage will be higher.    Is the estimate in sharp for ? For ?    Given the following sets of points in the unit square, find the shortest circuit that visits all the points and find the circuit that is obtained with the strip algorithm.                              Optimal cost . Phase 1 cost . Phase 2 cost .    Optimal cost Phase 1 cost . Phase 2 cost .       There are 4 points; so we will divide the unit square into two strips.   Optimal Path:    Phase I Path:     Phase II Path: \\quad \\quad          There are 5 points; so we will divide the unit square into three strips.   Optimal Path:    Phase I Path:    Phase II Path:          For , locate points in the unit square for which the strip algorithm works poorly.    Consider the network whose maximum capacities are shown on the following graph.     Figure for Exercise 13-5-5       A function is partially defined on the edges of this network by: , , , and . Define on the rest of the other edges so that is a flow. What is the value of ?    Find a flow augmenting path with respect to for this network. What is the value of the augmented flow?    Is the augmented flow a maximum flow? Explain.          , , , , and .    There are three possible flow-augmenting paths. with flow increase of 1. with flow increase of 1, and with flow increase of 2.    The new flow is never maximal, since another flow-augmenting path will always exist. For example, if is used above, the new flow can be augmented by 2 units with .       Given the following network with capacity function and flow function , find a maximal flow function. The labels on the edges of the network are of the form , where is the capacity of edge and is the used capacity for flow .     Figure for Exercise 13-5-6      Find maximal flows for the following networks.      Figure for Exercise 13-5-7a       Figure for Exercise 13-5-7b        Figure for Exercise 13-5-7c        Value of maximal flow .    Value of maximal flow .    Value of maximal flow . See for one way to got this flow.         Step  Flow-augmenting path  Flow added    1     2    2     3    3     4    4     1    5     2    6     2          Find two maximal flows for the network in other than the one found in the text.    Describe the set of all maximal flows for the same network.    Prove that if a network has two maximal flows, then it has an infinite number of maximal flows.       Discuss reasons that the closest neighbor algorithm is not used in the unit square version of the Traveling Salesman Problem.   Count the number of comparisons of distances that must be done.   To locate the closest neighbor among the list of other points on the unit square requires a time proportional to . Therefore the time required for the closest-neighbor algorithm with points is proportional to , which is proportional to . Since the strip algorithm takes a time proportional to , it is much faster for large values of .    Explore the possibility of solving the Traveling Salesman Problem in the unit box : .    Devise a closest neighbor algorithm for matching points in the unit square.    "
+  "body": " Graph Optimization  Graph Optimization   The common thread that connects all of the problems in this section is the desire to optimize (maximize or minimize) a quantity that is associated with a graph. We will concentrate most of our attention on two of these problems, the Traveling Salesman Problem and the Maximum Flow Problem. At the close of this section, we will discuss some other common optimization problems.    Weighted Graphs   Weighted Graph  Weighted Graph   A weighted graph, , is a graph together with a weight function . If , is the weight on edge .    As you will see in our examples, is often a cost associated with the edge ; therefore, most weights will be positive.   A Distance Graph  Let be the set of six capital cities in New England: Boston, Augusta, Hartford, Providence, Concord, and Montpelier. Let be ; that is, is a complete unordered graph. An example of a weight function on this graph is .  Many road maps define distance functions as in the following table.   Distances between capital cities in New England    --  Augusta  Boston  Concord  Hartford  Montpelier  Providence    Augusta, ME  --  165  148  266  190  208    Boston, MA  165  --  75  103  192  43    Concord, NH  148  75  --  142  117  109    Hartford, CT  266  103  142  --  204  70    Montpelier, VT  190  192  117  204  --  223    Providence, RI  208  43  109  70  223  --        The Traveling Salesman Problem  Traveling Salesman Problem, The  The Traveling Salesman Problem is, given a weighted graph, to find a circuit that visits every vertex at least once and minimizes the sum of the weights, . Any such circuit is called an optimal path.  Some statements of the Traveling Salesman Problem require that the circuit be Hamiltonian. In many applications, the graph in question will be complete and this restriction presents no problem. If the weight on each edge is constant, for example, , then an optimal path would be any Hamiltonian circuit.   The problem of a Boston salesman  The Traveling Salesman Problem gets its name from the situation of a salesman who wants to minimize the number of miles that he travels in visiting his customers. For example, if a salesman from Boston must visit the other capital cities of New England, then the problem is to find a circuit in the weighted graph of . Note that distance and cost are clearly related in this case. In addition, tolls and traffic congestion might also be taken into account.   The search for an efficient algorithm that solves the Traveling Salesman has occupied researchers for years. If the graph in question is complete, there are different circuits. As gets large, it is impossible to check every possible circuit. The most efficient algorithms for solving the Traveling Salesman Problem take an amount of time that is proportional to . Since this quantity grows so quickly, we can't expect to have the time to solve the Traveling Salesman Problem for large values of . Most of the useful algorithms that have been developed have to be heuristic; that is, they find a circuit that should be close to the optimal one. One such algorithm is the closest neighbor algorithm, one of the earliest attempts at solving the Traveling Salesman Problem. The general idea behind this algorithm is, starting at any vertex, to visit the closest neighbor to the starting point. At each vertex, the next vertex that is visited is the closest one that has not been reached. This shortsighted approach typifies heuristic algorithms called greedy algorithms, which attempt to solve a minimization (maximization) problem by minimizing (maximizing) the quantity associated with only the first step.   The Closest Neighbor Algorithm  Closest Neighbor Algorithm   Let be a complete weighted graph with . The closest neighbor circuit through G starting at is , defined by the steps:      .    For       : In case of a tie for closest, may be chosen arbitrarily.                  The cost of the closest neighbor circuit is     A small example  The closest neighbor circuit starting at A in is , with a cost of 29. The optimal path is , with a cost of 27.   A small example   A small weighted graph     Although the closest neighbor circuit is often not optimal, we may be satisfied if it is close to optimal. If and are the costs of optimal and closest neighbor circuits in a graph, then it is always the case that or . We can assess how good the closest neighbor algorithm is by determining how small the quantity gets. If it is always near 1, then the algorithm is good. However, if there are graphs for which it is large, then the algorithm may be discarded. Note that in , . A 7 percent increase in cost may or may not be considered significant, depending on the situation.   The One-way Street  A salesman must make stops at vertices A, B, and C, which are all on the same one-way street. The graph in is weighted by the function equal to the time it takes to drive from vertex to vertex .   Traveling a one-way street   A small directed weighted graph    Note that if is down the one-way street from , then . The values of , and are 20 and 32, respectively. Verify that is 32 by using the closest neighbor algorithm. The value of is significant in this case since our salesman would spend 60 percent more time on the road if he used the closest neighbor algorithm.   A more general result relating to the closest neighbor algorithm presumes that the graph in question is complete and that the weight function satisfies the conditions      for all , in the vertex set, and     for all , , in the vertex set.     The first condition is called the symmetry condition and the second is the triangle inequality.    If is a complete weighted graph that satisfies the symmetry and triangle inequality conditions, then     If , then this theorem says that can be no larger than twice the size of ; however, it doesn't say that the closest neighbor circuit will necessarily be that far from an optimal circuit. The quantity is called an upper bound for the ratio . It tells us only that things can't be any worse than the upper bound. Certainly, there are many graphs with eight vertices such that the optimal and closest neighbor circuits are the same. What is left unstated in this theorem is whether there are graphs for which the quantities are equal. If there are such graphs, we say that the upper bound is sharp.  The value of in Example is 1.6, which is greater than ; however, the weight function in this example does not satisfy the conditions of the theorem.    The Unit Square Problem  Suppose a robot is programmed to weld joints on square metal plates. Each plate must be welded at prescribed points on the square. To minimize the time it takes to complete the job, the total distance that a robot's arm moves should be minimized. Let be the distance between and . Assume that before each plate can be welded, the arm must be positioned at a certain point . Given a list of points, we want to put them in order so that is as small as possible.   The type of problem that is outlined in the example above is of such importance that it is one of the most studied version of the Traveling Salesman Problem. What follows is the usual statement of the problem. Let , and let , the unit square. Given pairs of real numbers in that represent the vertices of a , find a circuit of the graph that minimizes the sum of the distances traveled in traversing the circuit.  Since the problem calls for a circuit, it doesn't matter which vertex we start at; assume that we will start at . Once the problem is solved, we can always change our starting position. A function can most efficiently describe a circuit in this problem. Every bijection with describes a circuit There are such bijections. Since a circuit and its reversal have the same associated cost, there are cases to consider. An examination of all possible cases is not feasible for large values of .  One popular heuristic algorithm is the strip algorithm:   The Strip Algorithm   Given points in the unit square:  Phase 1:   Divide the square into vertical strips, as in . Let d be the width of each strip. If a point lies on a boundary between two strips, consider it part of the left-hand strip.    Starting from the left, find the first strip that contains one of the points. Locate the starting point by selecting the first point that is encountered in that strip as you travel from bottom to top. We will assume that the first point is    Alternate traveling up and down the strips that contain vertices until all of the vertices have been reached.    Return to the starting point.    Phase 2:   Shift all strips units to the right (creating a small strip on the left).    Repeat Steps 1.2 through 1.4 of Phase 1 with the new strips.    When the two phases are complete, choose the shorter of the two circuits obtained.     The Strip Algorithm   The Strip Algorithm    Step may need a bit more explanation. How do you travel up or down a strip? In most cases, the vertices in a strip will be vertically distributed so that the order in which they are visited is obvious. In some cases, however, the order might not be clear, as in the third strip in Phase I of . Within a strip, the order in which you visit the points (if you are going up the strip) is determined thusly: precedes if or if and . In traveling down a strip, replace with .  The selection of strips was made in a 1959 paper by Beardwood, Halton, and Hammersley. It balances the problems that arise if the number of strips is too small or too large. If the square is divided into too few strips, some strips may be packed with vertices so that visiting them would require excessive horizontal motion. If too many strips are used, excessive vertical motion tends to be the result. An update on what is known about this algorithm is contained in .  Since the construction of a circuit in the square consists of sorting the given points, it should come as no surprise that the strip algorithm requires a time that is roughly a multiple of time units when points are to be visited.  The worst case that has been encountered with this algorithm is one in which the circuit obtained has a total distance of approximately (see Sopowit et al.).    Networks and the Maximum Flow Problem  Networks   Network  Network   A network is a simple weighted directed graph that contains two distinguished vertices called the source and the sink with the properties that the indegree of the source and outdegree of the sink are both zero, and source is connected to sink. The weight function on a network is the capacity function, which has positive weights.    An example of a real situation that can be represented by a network is a city's water system. A reservoir would be the source, while a distribution point in the city to all of the users would be the sink. The system of pumps and pipes that carries the water from source to sink makes up the remaining network. We can assume that the water that passes through a pipe in one minute is controlled by a pump and the maximum rate is determined by the size of the pipe and the strength of the pump. This maximum rate of flow through a pipe is called its capacity and is the information that the weight function of a network contains.   A City Water System  Consider the system that is illustrated in . The numbers that appear next to each pipe indicate the capacity of that pipe in thousands of gallons per minute. This map can be drawn in the form of a network, as in .   City Water System   City Water System     Flow Diagram for a City's Water Network   City Water Network    Although the material passing through this network is water, networks can also represent the flow of other materials, such as automobiles, electricity, bits, telephone calls, or patients in a health system.    The Maximum Flow Problem   The Maximum Flow Problem is derived from the objective of moving the maximum amount of water or other material from the source to the sink. To measure this amount, we define a flow as a function such that (1) the flow of material through any edge is nonnegative and no larger than its capacity: , for all ; and (2) for each vertex other than the source and sink, the total amount of material that is directed into a vertex is equal to the total amount that is directed out: The summation on the left of represents the sum of the flows through each edge in that has as a terminal vertex. The right-hand side indicates that you should add all of the flows through edges that initiate at .     Flow out of Source equals Flow in Sink   If is a flow, then     Subtract the right-hand side of from the left-hand side. The result is: Now sum up these differences for each vertex in . The result is   Now observe that if an edge connects two vertices in , its flow appears as both a positive and a negative term in . This means that the only positive terms that are not cancelled out are the flows into the sink. In addition, the only negative terms that remain are the flows out of the source. Therefore,     The Value of a Flow  Value of a Flow    The value of flow    The two values flow into the sink and flow out of the source were proved to be equal in and this common value is called the value of the flow . It is denoted by . The value of a flow represents the amount of material that passes through the network with that flow.    Since the Maximum Flow Problem consists of maximizing the amount of material that passes through a given network, it is equivalent to finding a flow with the largest possible value. Any such flow is called a maximal flow Maximal flow .  For the network in , one flow is , defined by , , , , and . The value of , , is 45. Since the total flow into the sink can be no larger than 50 ( ), we can tell that is not very far from the solution. Can you improve on at all? The sum of the capacities into the sink can't always be obtained by a flow. The same is true for the sum of the capacities out of the source. In this case, the sum of the capacities out of the source is 60, which obviously can't be reached in this network.  A solution of the Maximum Flow Problem for this network is the maximal flow , where , , , , and , with . This solution is not unique. In fact, there is an infinite number of maximal flows for this problem.  There have been several algorithms developed to solve the Maximal Flow Problem. One of these is the Ford and Fulkerson Algorithm (FFA). The FFA consists of repeatedly finding paths in a network called flow augmenting paths until no improvement can be made in the flow that has been obtained.   Flow Augmenting Path  Flow Augmenting Path   Given a flow in a network , a flow augmenting path with respect to is a simple path from the source to the sink using edges both in their forward and their reverse directions such that for each edge in the path, if is used in its forward direction and if is used in the reverse direction.     Augmenting City Water Flow  For in , a flow augmenting path would be since , , and .  These positive differences represent unused capacities, and the smallest value represents the amount of flow that can be added to each edge in the path. Note that by adding 5 to each edge in our path, we obtain , which is maximal. If an edge with a positive flow is used in its reverse direction, it is contributing a movement of material that is counterproductive to the objective of maximizing flow. This is why the algorithm directs us to decrease the flow through that edge.    The Ford and Fulkerson Algorithm      Define the flow function by for each edge .    i = 0.    Repeat:     If possible, find a flow augmenting path with respect to .    If a flow augmenting path exists, then:     Determine    Define by             until no flow augmenting path exists.    Terminate with a maximal flow        Notes on the Ford and Fulkerson Algorithm    It should be clear that every flow augmenting path leads to a flow of increased value and that none of the capacities of the network can be violated.    The depth-first search should be used to find flow augmenting paths since it is far more efficient than the breadth-first search in this situation. The depth-first search differs from the breadth-first algorithm in that you sequentially visit vertices until you reach a dead end and then backtrack.    There have been networks discovered for which the FFA does not terminate in a finite number of steps. These examples all have irrational capacities. It has been proven that if all capacities are positive integers, the FFA terminates in a finite number of steps. See Ford and Fulkerson, Even, or Berge for details.    When you use the FFA to solve the Maximum Flow Problem by hand it is convenient to label each edge of the network with the fraction .      Depth-First Search for a Flow Augmenting Path   This is a depth-first search for the Sink Initiating at the Source. Let be the set of directed edges that can be used in producing a flow augmenting path. Add to the network a vertex called start and the edge     vertex set of the network.    source Move along the edge     while is not equal to start or sink:     if an edge in exists that takes you from to another vertex in :  .                  A flow augmenting path going against the flow  Consider the network in , where the current flow, , is indicated by a labeling of the edges.   Current Flow   Current Flow    The path is a flow augmenting path that allows us to increase the flow by one unit. Note that is used in the reverse direction, which is allowed because . The value of the new flow that we obtain is 8. This flow must be maximal since the capacities out of the source add up to 8. This maximal flow is defined by .   Updated Flow   Updated Flow       Other Graph Optimization Problems     The Minimum Spanning Tree Problem: Given a weighted graph, , find a subset of with the properties that is connected and the sum of the weights of edges in is as small as possible. We will discuss this problem in Chapter 10.    The Minimum Matching Problem: Given an undirected weighted graph, , with an even number of vertices, pair up the vertices so that each pair is connected by an edge and the sum of these edges is as small as possible. A unit square version of this problem has been studied extensively. See for details on what is known about this version of the problem.     Center of a Graph  The Graph Center Problem: Given a connected, undirected, weighted graph, find a vertex (called a center) in the graph with the property that the distance from the center to every other vertex is as small as possible. As small as possible is normally interpreted as minimizing the maximum distance from the center to a vertex.       Exercises   Find the closest neighbor circuit through the six capitals of New England starting at Boston. If you start at a different city, will you get a different circuit?   The circuit would be Boston, Providence, Hartford, Concord, Montpelier, Augusta, Boston. It does matter where you start. If you start in Concord, for example, your mileage will be higher.    Is the estimate in sharp for ? For ?    Given the following sets of points in the unit square, find the shortest circuit that visits all the points and find the circuit that is obtained with the strip algorithm.                              Optimal cost . Phase 1 cost . Phase 2 cost .    Optimal cost Phase 1 cost . Phase 2 cost .       There are 4 points; so we will divide the unit square into two strips.   Optimal Path:    Phase I Path:     Phase II Path: \\quad \\quad          There are 5 points; so we will divide the unit square into three strips.   Optimal Path:    Phase I Path:    Phase II Path:          For , locate points in the unit square for which the strip algorithm works poorly.    Consider the network whose maximum capacities are shown on the following graph.     Figure for Exercise 15-5-5       A function is partially defined on the edges of this network by: , , , and . Define on the rest of the other edges so that is a flow. What is the value of ?    Find a flow augmenting path with respect to for this network. What is the value of the augmented flow?    Is the augmented flow a maximum flow? Explain.          , , , , and .    There are three possible flow-augmenting paths. with flow increase of 1. with flow increase of 1, and with flow increase of 2.    The new flow is never maximal, since another flow-augmenting path will always exist. For example, if is used above, the new flow can be augmented by 2 units with .       Given the following network with capacity function and flow function , find a maximal flow function. The labels on the edges of the network are of the form , where is the capacity of edge and is the used capacity for flow .     Figure for Exercise 15-5-6      Find maximal flows for the following networks.      Figure for Exercise 15-5-7a       Figure for Exercise 15-5-7b        Figure for Exercise 15-5-7c        Value of maximal flow .    Value of maximal flow .    Value of maximal flow . See for one way to got this flow.         Step  Flow-augmenting path  Flow added    1     2    2     3    3     4    4     1    5     2    6     2          Find two maximal flows for the network in other than the one found in the text.    Describe the set of all maximal flows for the same network.    Prove that if a network has two maximal flows, then it has an infinite number of maximal flows.       Discuss reasons that the closest neighbor algorithm is not used in the unit square version of the Traveling Salesman Problem.   Count the number of comparisons of distances that must be done.   To locate the closest neighbor among the list of other points on the unit square requires a time proportional to . Therefore the time required for the closest-neighbor algorithm with points is proportional to , which is proportional to . Since the strip algorithm takes a time proportional to , it is much faster for large values of .    Explore the possibility of solving the Traveling Salesman Problem in the unit box : .    Devise a closest neighbor algorithm for matching points in the unit square.    "
 },
 {
   "id": "def-weighted-graph",
   "level": "2",
   "url": "s-graph-optimization.html#def-weighted-graph",
   "type": "Definition",
-  "number": "13.5.1",
+  "number": "15.5.1",
   "title": "Weighted Graph.",
   "body": " Weighted Graph  Weighted Graph   A weighted graph, , is a graph together with a weight function . If , is the weight on edge .   "
 },
@@ -9905,7 +10796,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#ex-distance-graph",
   "type": "Example",
-  "number": "13.5.2",
+  "number": "15.5.2",
   "title": "A Distance Graph.",
   "body": " A Distance Graph  Let be the set of six capital cities in New England: Boston, Augusta, Hartford, Providence, Concord, and Montpelier. Let be ; that is, is a complete unordered graph. An example of a weight function on this graph is .  Many road maps define distance functions as in the following table.   Distances between capital cities in New England    --  Augusta  Boston  Concord  Hartford  Montpelier  Providence    Augusta, ME  --  165  148  266  190  208    Boston, MA  165  --  75  103  192  43    Concord, NH  148  75  --  142  117  109    Hartford, CT  266  103  142  --  204  70    Montpelier, VT  190  192  117  204  --  223    Providence, RI  208  43  109  70  223  --     "
 },
@@ -9914,7 +10805,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#ex-boston-salesman",
   "type": "Example",
-  "number": "13.5.4",
+  "number": "15.5.4",
   "title": "The problem of a Boston salesman.",
   "body": " The problem of a Boston salesman  The Traveling Salesman Problem gets its name from the situation of a salesman who wants to minimize the number of miles that he travels in visiting his customers. For example, if a salesman from Boston must visit the other capital cities of New England, then the problem is to find a circuit in the weighted graph of . Note that distance and cost are clearly related in this case. In addition, tolls and traffic congestion might also be taken into account.  "
 },
@@ -9923,7 +10814,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#alg-closest-neighbor",
   "type": "Algorithm",
-  "number": "13.5.5",
+  "number": "15.5.5",
   "title": "The Closest Neighbor Algorithm.",
   "body": " The Closest Neighbor Algorithm  Closest Neighbor Algorithm   Let be a complete weighted graph with . The closest neighbor circuit through G starting at is , defined by the steps:      .    For       : In case of a tie for closest, may be chosen arbitrarily.                  The cost of the closest neighbor circuit is   "
 },
@@ -9932,7 +10823,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#ex-tsp-small-example",
   "type": "Example",
-  "number": "13.5.6",
+  "number": "15.5.6",
   "title": "A small example.",
   "body": " A small example  The closest neighbor circuit starting at A in is , with a cost of 29. The optimal path is , with a cost of 27.   A small example   A small weighted graph    "
 },
@@ -9941,25 +10832,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#ex-one-way-street",
   "type": "Example",
-  "number": "13.5.8",
+  "number": "15.5.8",
   "title": "The One-way Street.",
   "body": " The One-way Street  A salesman must make stops at vertices A, B, and C, which are all on the same one-way street. The graph in is weighted by the function equal to the time it takes to drive from vertex to vertex .   Traveling a one-way street   A small directed weighted graph    Note that if is down the one-way street from , then . The values of , and are 20 and 32, respectively. Verify that is 32 by using the closest neighbor algorithm. The value of is significant in this case since our salesman would spend 60 percent more time on the road if he used the closest neighbor algorithm.  "
 },
 {
-  "id": "th-cn-theorem-13-5",
+  "id": "th-cn-theorem-15-5",
   "level": "2",
-  "url": "s-graph-optimization.html#th-cn-theorem-13-5",
+  "url": "s-graph-optimization.html#th-cn-theorem-15-5",
   "type": "Theorem",
-  "number": "13.5.10",
+  "number": "15.5.10",
   "title": "",
   "body": "  If is a complete weighted graph that satisfies the symmetry and triangle inequality conditions, then   "
 },
 {
-  "id": "observation-3",
+  "id": "observation-4",
   "level": "2",
-  "url": "s-graph-optimization.html#observation-3",
+  "url": "s-graph-optimization.html#observation-4",
   "type": "Observation",
-  "number": "13.5.11",
+  "number": "15.5.11",
   "title": "",
   "body": " If , then this theorem says that can be no larger than twice the size of ; however, it doesn't say that the closest neighbor circuit will necessarily be that far from an optimal circuit. The quantity is called an upper bound for the ratio . It tells us only that things can't be any worse than the upper bound. Certainly, there are many graphs with eight vertices such that the optimal and closest neighbor circuits are the same. What is left unstated in this theorem is whether there are graphs for which the quantities are equal. If there are such graphs, we say that the upper bound is sharp.  The value of in Example is 1.6, which is greater than ; however, the weight function in this example does not satisfy the conditions of the theorem.  "
 },
@@ -9968,7 +10859,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#ex-unit-square",
   "type": "Example",
-  "number": "13.5.12",
+  "number": "15.5.12",
   "title": "The Unit Square Problem.",
   "body": " The Unit Square Problem  Suppose a robot is programmed to weld joints on square metal plates. Each plate must be welded at prescribed points on the square. To minimize the time it takes to complete the job, the total distance that a robot's arm moves should be minimized. Let be the distance between and . Assume that before each plate can be welded, the arm must be positioned at a certain point . Given a list of points, we want to put them in order so that is as small as possible.  "
 },
@@ -9977,7 +10868,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#alg-strip-algorithm",
   "type": "Heuristic",
-  "number": "13.5.13",
+  "number": "15.5.13",
   "title": "The Strip Algorithm.",
   "body": " The Strip Algorithm   Given points in the unit square:  Phase 1:   Divide the square into vertical strips, as in . Let d be the width of each strip. If a point lies on a boundary between two strips, consider it part of the left-hand strip.    Starting from the left, find the first strip that contains one of the points. Locate the starting point by selecting the first point that is encountered in that strip as you travel from bottom to top. We will assume that the first point is    Alternate traveling up and down the strips that contain vertices until all of the vertices have been reached.    Return to the starting point.    Phase 2:   Shift all strips units to the right (creating a small strip on the left).    Repeat Steps 1.2 through 1.4 of Phase 1 with the new strips.    When the two phases are complete, choose the shorter of the two circuits obtained.   "
 },
@@ -9986,7 +10877,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#fig-strip-alg-tsp",
   "type": "Figure",
-  "number": "13.5.14",
+  "number": "15.5.14",
   "title": "",
   "body": " The Strip Algorithm   The Strip Algorithm   "
 },
@@ -9995,7 +10886,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#def-network",
   "type": "Definition",
-  "number": "13.5.15",
+  "number": "15.5.15",
   "title": "Network.",
   "body": " Network  Network   A network is a simple weighted directed graph that contains two distinguished vertices called the source and the sink with the properties that the indegree of the source and outdegree of the sink are both zero, and source is connected to sink. The weight function on a network is the capacity function, which has positive weights.   "
 },
@@ -10004,7 +10895,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#ex-city-water",
   "type": "Example",
-  "number": "13.5.16",
+  "number": "15.5.16",
   "title": "A City Water System.",
   "body": " A City Water System  Consider the system that is illustrated in . The numbers that appear next to each pipe indicate the capacity of that pipe in thousands of gallons per minute. This map can be drawn in the form of a network, as in .   City Water System   City Water System     Flow Diagram for a City's Water Network   City Water Network    Although the material passing through this network is water, networks can also represent the flow of other materials, such as automobiles, electricity, bits, telephone calls, or patients in a health system.  "
 },
@@ -10013,7 +10904,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#problem-maximal-flow",
   "type": "Problem",
-  "number": "13.5.19",
+  "number": "15.5.19",
   "title": "The Maximum Flow Problem.",
   "body": " The Maximum Flow Problem   The Maximum Flow Problem is derived from the objective of moving the maximum amount of water or other material from the source to the sink. To measure this amount, we define a flow as a function such that (1) the flow of material through any edge is nonnegative and no larger than its capacity: , for all ; and (2) for each vertex other than the source and sink, the total amount of material that is directed into a vertex is equal to the total amount that is directed out: The summation on the left of represents the sum of the flows through each edge in that has as a terminal vertex. The right-hand side indicates that you should add all of the flows through edges that initiate at .   "
 },
@@ -10022,7 +10913,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#theorem-flow-inout",
   "type": "Theorem",
-  "number": "13.5.20",
+  "number": "15.5.20",
   "title": "Flow out of Source equals Flow in Sink.",
   "body": " Flow out of Source equals Flow in Sink   If is a flow, then     Subtract the right-hand side of from the left-hand side. The result is: Now sum up these differences for each vertex in . The result is   Now observe that if an edge connects two vertices in , its flow appears as both a positive and a negative term in . This means that the only positive terms that are not cancelled out are the flows into the sink. In addition, the only negative terms that remain are the flows out of the source. Therefore,   "
 },
@@ -10031,14 +10922,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#def-value-of-flow",
   "type": "Definition",
-  "number": "13.5.21",
+  "number": "15.5.21",
   "title": "The Value of a Flow.",
   "body": " The Value of a Flow  Value of a Flow    The value of flow    The two values flow into the sink and flow out of the source were proved to be equal in and this common value is called the value of the flow . It is denoted by . The value of a flow represents the amount of material that passes through the network with that flow.   "
 },
 {
-  "id": "p-4016",
+  "id": "p-4446",
   "level": "2",
-  "url": "s-graph-optimization.html#p-4016",
+  "url": "s-graph-optimization.html#p-4446",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -10049,7 +10940,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#def-flow-augmenting-path",
   "type": "Definition",
-  "number": "13.5.22",
+  "number": "15.5.22",
   "title": "Flow Augmenting Path.",
   "body": " Flow Augmenting Path  Flow Augmenting Path   Given a flow in a network , a flow augmenting path with respect to is a simple path from the source to the sink using edges both in their forward and their reverse directions such that for each edge in the path, if is used in its forward direction and if is used in the reverse direction.   "
 },
@@ -10058,7 +10949,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#example-water-augmenting",
   "type": "Example",
-  "number": "13.5.23",
+  "number": "15.5.23",
   "title": "Augmenting City Water Flow.",
   "body": " Augmenting City Water Flow  For in , a flow augmenting path would be since , , and .  These positive differences represent unused capacities, and the smallest value represents the amount of flow that can be added to each edge in the path. Note that by adding 5 to each edge in our path, we obtain , which is maximal. If an edge with a positive flow is used in its reverse direction, it is contributing a movement of material that is counterproductive to the objective of maximizing flow. This is why the algorithm directs us to decrease the flow through that edge.  "
 },
@@ -10067,7 +10958,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#alg-ford-fulkerson",
   "type": "Algorithm",
-  "number": "13.5.24",
+  "number": "15.5.24",
   "title": "The Ford and Fulkerson Algorithm.",
   "body": " The Ford and Fulkerson Algorithm      Define the flow function by for each edge .    i = 0.    Repeat:     If possible, find a flow augmenting path with respect to .    If a flow augmenting path exists, then:     Determine    Define by             until no flow augmenting path exists.    Terminate with a maximal flow      "
 },
@@ -10076,7 +10967,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#list-9",
   "type": "List",
-  "number": "13.5.25",
+  "number": "15.5.25",
   "title": "Notes on the Ford and Fulkerson Algorithm",
   "body": " Notes on the Ford and Fulkerson Algorithm    It should be clear that every flow augmenting path leads to a flow of increased value and that none of the capacities of the network can be violated.    The depth-first search should be used to find flow augmenting paths since it is far more efficient than the breadth-first search in this situation. The depth-first search differs from the breadth-first algorithm in that you sequentially visit vertices until you reach a dead end and then backtrack.    There have been networks discovered for which the FFA does not terminate in a finite number of steps. These examples all have irrational capacities. It has been proven that if all capacities are positive integers, the FFA terminates in a finite number of steps. See Ford and Fulkerson, Even, or Berge for details.    When you use the FFA to solve the Maximum Flow Problem by hand it is convenient to label each edge of the network with the fraction .    "
 },
@@ -10085,7 +10976,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#alg-depth-first-search",
   "type": "Algorithm",
-  "number": "13.5.26",
+  "number": "15.5.26",
   "title": "Depth-First Search for a Flow Augmenting Path.",
   "body": " Depth-First Search for a Flow Augmenting Path   This is a depth-first search for the Sink Initiating at the Source. Let be the set of directed edges that can be used in producing a flow augmenting path. Add to the network a vertex called start and the edge     vertex set of the network.    source Move along the edge     while is not equal to start or sink:     if an edge in exists that takes you from to another vertex in :  .                "
 },
@@ -10094,106 +10985,106 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-graph-optimization.html#ex-fap-1",
   "type": "Example",
-  "number": "13.5.27",
+  "number": "15.5.27",
   "title": "A flow augmenting path going against the flow.",
   "body": " A flow augmenting path going against the flow  Consider the network in , where the current flow, , is indicated by a labeling of the edges.   Current Flow   Current Flow    The path is a flow augmenting path that allows us to increase the flow by one unit. Note that is used in the reverse direction, which is allowed because . The value of the new flow that we obtain is 8. This flow must be maximal since the capacities out of the source add up to 8. This maximal flow is defined by .   Updated Flow   Updated Flow    "
 },
 {
-  "id": "exercise-474",
+  "id": "exercise-512",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-474",
+  "url": "s-graph-optimization.html#exercise-512",
   "type": "Exercise",
-  "number": "13.5.5.1",
+  "number": "15.5.5.1",
   "title": "",
   "body": " Find the closest neighbor circuit through the six capitals of New England starting at Boston. If you start at a different city, will you get a different circuit?   The circuit would be Boston, Providence, Hartford, Concord, Montpelier, Augusta, Boston. It does matter where you start. If you start in Concord, for example, your mileage will be higher.  "
 },
 {
-  "id": "exercise-475",
+  "id": "exercise-513",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-475",
+  "url": "s-graph-optimization.html#exercise-513",
   "type": "Exercise",
-  "number": "13.5.5.2",
+  "number": "15.5.5.2",
   "title": "",
   "body": " Is the estimate in sharp for ? For ?  "
 },
 {
-  "id": "exercise-476",
+  "id": "exercise-514",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-476",
+  "url": "s-graph-optimization.html#exercise-514",
   "type": "Exercise",
-  "number": "13.5.5.3",
+  "number": "15.5.5.3",
   "title": "",
   "body": " Given the following sets of points in the unit square, find the shortest circuit that visits all the points and find the circuit that is obtained with the strip algorithm.                              Optimal cost . Phase 1 cost . Phase 2 cost .    Optimal cost Phase 1 cost . Phase 2 cost .       There are 4 points; so we will divide the unit square into two strips.   Optimal Path:    Phase I Path:     Phase II Path: \\quad \\quad          There are 5 points; so we will divide the unit square into three strips.   Optimal Path:    Phase I Path:    Phase II Path:        "
 },
 {
-  "id": "exercise-477",
+  "id": "exercise-515",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-477",
+  "url": "s-graph-optimization.html#exercise-515",
   "type": "Exercise",
-  "number": "13.5.5.4",
+  "number": "15.5.5.4",
   "title": "",
   "body": " For , locate points in the unit square for which the strip algorithm works poorly.  "
 },
 {
-  "id": "exercise-478",
+  "id": "exercise-516",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-478",
+  "url": "s-graph-optimization.html#exercise-516",
   "type": "Exercise",
-  "number": "13.5.5.5",
+  "number": "15.5.5.5",
   "title": "",
-  "body": " Consider the network whose maximum capacities are shown on the following graph.     Figure for Exercise 13-5-5       A function is partially defined on the edges of this network by: , , , and . Define on the rest of the other edges so that is a flow. What is the value of ?    Find a flow augmenting path with respect to for this network. What is the value of the augmented flow?    Is the augmented flow a maximum flow? Explain.          , , , , and .    There are three possible flow-augmenting paths. with flow increase of 1. with flow increase of 1, and with flow increase of 2.    The new flow is never maximal, since another flow-augmenting path will always exist. For example, if is used above, the new flow can be augmented by 2 units with .     "
+  "body": " Consider the network whose maximum capacities are shown on the following graph.     Figure for Exercise 15-5-5       A function is partially defined on the edges of this network by: , , , and . Define on the rest of the other edges so that is a flow. What is the value of ?    Find a flow augmenting path with respect to for this network. What is the value of the augmented flow?    Is the augmented flow a maximum flow? Explain.          , , , , and .    There are three possible flow-augmenting paths. with flow increase of 1. with flow increase of 1, and with flow increase of 2.    The new flow is never maximal, since another flow-augmenting path will always exist. For example, if is used above, the new flow can be augmented by 2 units with .     "
 },
 {
-  "id": "exercise-479",
+  "id": "exercise-517",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-479",
+  "url": "s-graph-optimization.html#exercise-517",
   "type": "Exercise",
-  "number": "13.5.5.6",
+  "number": "15.5.5.6",
   "title": "",
-  "body": " Given the following network with capacity function and flow function , find a maximal flow function. The labels on the edges of the network are of the form , where is the capacity of edge and is the used capacity for flow .     Figure for Exercise 13-5-6    "
+  "body": " Given the following network with capacity function and flow function , find a maximal flow function. The labels on the edges of the network are of the form , where is the capacity of edge and is the used capacity for flow .     Figure for Exercise 15-5-6    "
 },
 {
-  "id": "exercise-480",
+  "id": "exercise-518",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-480",
+  "url": "s-graph-optimization.html#exercise-518",
   "type": "Exercise",
-  "number": "13.5.5.7",
+  "number": "15.5.5.7",
   "title": "",
-  "body": " Find maximal flows for the following networks.      Figure for Exercise 13-5-7a       Figure for Exercise 13-5-7b        Figure for Exercise 13-5-7c        Value of maximal flow .    Value of maximal flow .    Value of maximal flow . See for one way to got this flow.         Step  Flow-augmenting path  Flow added    1     2    2     3    3     4    4     1    5     2    6     2     "
+  "body": " Find maximal flows for the following networks.      Figure for Exercise 15-5-7a       Figure for Exercise 15-5-7b        Figure for Exercise 15-5-7c        Value of maximal flow .    Value of maximal flow .    Value of maximal flow . See for one way to got this flow.         Step  Flow-augmenting path  Flow added    1     2    2     3    3     4    4     1    5     2    6     2     "
 },
 {
-  "id": "exercise-481",
+  "id": "exercise-519",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-481",
+  "url": "s-graph-optimization.html#exercise-519",
   "type": "Exercise",
-  "number": "13.5.5.8",
+  "number": "15.5.5.8",
   "title": "",
   "body": "    Find two maximal flows for the network in other than the one found in the text.    Describe the set of all maximal flows for the same network.    Prove that if a network has two maximal flows, then it has an infinite number of maximal flows.     "
 },
 {
-  "id": "exercise-482",
+  "id": "exercise-520",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-482",
+  "url": "s-graph-optimization.html#exercise-520",
   "type": "Exercise",
-  "number": "13.5.5.9",
+  "number": "15.5.5.9",
   "title": "",
   "body": " Discuss reasons that the closest neighbor algorithm is not used in the unit square version of the Traveling Salesman Problem.   Count the number of comparisons of distances that must be done.   To locate the closest neighbor among the list of other points on the unit square requires a time proportional to . Therefore the time required for the closest-neighbor algorithm with points is proportional to , which is proportional to . Since the strip algorithm takes a time proportional to , it is much faster for large values of .  "
 },
 {
-  "id": "exercise-483",
+  "id": "exercise-521",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-483",
+  "url": "s-graph-optimization.html#exercise-521",
   "type": "Exercise",
-  "number": "13.5.5.10",
+  "number": "15.5.5.10",
   "title": "",
   "body": " Explore the possibility of solving the Traveling Salesman Problem in the unit box : .  "
 },
 {
-  "id": "exercise-484",
+  "id": "exercise-522",
   "level": "2",
-  "url": "s-graph-optimization.html#exercise-484",
+  "url": "s-graph-optimization.html#exercise-522",
   "type": "Exercise",
-  "number": "13.5.5.11",
+  "number": "15.5.5.11",
   "title": "",
   "body": " Devise a closest neighbor algorithm for matching points in the unit square.  "
 },
@@ -10202,7 +11093,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s-planarity-and-colorings.html",
   "type": "Section",
-  "number": "13.6",
+  "number": "15.6",
   "title": "Planarity and Colorings",
   "body": " Planarity and Colorings   The topics in this section are related to how graphs are drawn.  Planarity: Can a given graph be drawn in a plane so that no edges intersect? Certainly, it is natural to avoid intersections, but up to now we haven't gone out of our way to do so.  Colorings: Suppose that each vertex in an undirected graph is to be colored so that no two vertices that are connected by an edge have the same color. How many colors are needed? This question is motivated by the problem of drawing a map so that no two bordering countries are colored the same. A similar question can be asked for coloring edges.    Planar Graphs   Planar Graph\/Plane Graph  Planar Graph  Plane Graph   A graph is planar if it can be drawn in a plane so that no edges cross. If a graph is drawn so that no edges intersect, it is a plane graph, and such a drawing is a planar embedding of the graph.     A Planar Graph  The graph in (a) is planar but not a plane graph. The same graph is drawn as a plane graph in (b).   A Planar Graph   A Planar Graph        In discussing planarity, we need only consider simple undirected graphs with no self-loops. All other graphs can be treated as such since all of the edges that relate any two vertices can be considered as one package that clearly can be drawn in a plane.    Can you think of a graph that is not planar? How would you prove that it isn't planar? Proving the nonexistence of something is usually more difficult than proving its existence. This case is no exception. Intuitively, we would expect that sparse graphs would be planar and dense graphs would be nonplanar. will verify that dense graphs are indeed nonplanar.    The topic of planarity is a result of trying to restrict a graph to two dimensions. Is there an analogous topic for three dimensions? What graphs can be drawn in one dimension?      Path Graph  Path Graph    a path graph of length    A path graph of length , denoted , is an undirected graph with vertices having edges , .     Graphs in other dimensions  If a graph has only a finite number of vertices, it can always be drawn in three dimensions with no edge crossings. Is this also true for all graphs with an infinite number of vertices? The only one-dimensional graphs are graphs consisting of a single vertex, and path graphs, as shown in .    One dimensional graphs   One dimensional graphs    Three Utilities Puzzle A discussion of planarity is not complete without mentioning the famous Three Utilities Puzzle. The object of the puzzle is to supply three houses, A, B, and C, with the three utilities, gas, electric, and water. The constraint that makes this puzzle impossible to solve is that no utility lines may intersect. There is no planar embedding of the graph in , which is commonly denoted . This graph is one of two fundamental nonplanar graphs. The Kuratowski Reduction Theorem states that if a graph is nonplanar then it contains either a or a . Containment is in the sense that if you start with a nonplanar graph you can always perform a sequence of edge deletions and contractions (shrinking an edge so that the two vertices connecting it coincide) to produce one of the two graphs.   The Three Utilities Puzzle   The Three Utilities Puzzle    A planar graph divides the plane into one or more regions. Two points on the plane lie in the same region if you can draw a curve connecting the two points that does not pass through an edge. One of these regions will be of infinite area. Each point on the plane is either a vertex, a point on an edge, or a point in a region. A remarkable fact about the geography of planar graphs is the following theorem that is attributed to Euler.   Experiment: Jot down a graph right now and count the number of vertices, regions, and edges that you have. If is not 2, then your graph is either nonplanar or not connected.    Euler's Formula  Euler's Formula   If is a connected planar graph with regions, vertices, and edges, then    We prove Euler's Formula by Induction on , for .  Basis: If , then must be a graph with one vertex, ; and there is one infinite region, . Therefore, , and the basis is true.  Induction: Suppose that has edges, , and that all connected planar graphs with less than edges satisfy . Select any edge that is part of the boundary of the infinite region and call it . Let be the graph obtained from by deleting . illustrates the two different possibilities we need to consider: either is connected or it has two connected components, and .   Two cases in the proof of Euler's Formula   Two cases in the proof of Euler's Formula    If is connected, the induction hypothesis can be applied to it. If has vertices, edges and edges, then and in terms of the corresponding numbers for ,  For the case where is connected, If is not connected, it must consist of two connected components, and , since we started with a connected graph, . We can apply the induction hypothesis to each of the two components to complete the proof. We leave it to the students to do this, with the reminder that in counting regions, and will share the same infinite region.     A Bound on Edges of a Planar Graph   If is a connected planar graph with vertices, , and edges, then     (Outline of a Proof)     Let be the number of regions in . For each region, count the number of edges that comprise its border. The sum of these counts must be at least . Recall that we are working with simple graphs here, so a region made by two edges connecting the same two vertices is not possible.    Based on (a), infer that the number of edges in must be at least .         Substitute for in Euler's Formula to obtain an inequality that is equivalent to        One implication of is that the number of edges in a connected planar graph will never be larger than three times its number of vertices (as long as it has at least three vertices). Since the maximum number of edges in a graph with vertices is a quadratic function of , as increases, planar graphs are more and more sparse.   The following theorem will be useful as we turn to graph coloring.   A Vertex of Degree Five   If is a connected planar graph, then it has a vertex with degree 5 or less.    (by contradiction): We can assume that has at least seven vertices, for otherwise the degree of any vertex is at most 5. Suppose that is a connected planar graph and each vertex has a degree of 6 or more. Then, since each edge contributes to the degree of two vertices, . However, states that the , which is a contradiction.      Graph Coloring   A 3-coloring of Euler Island   A 3-coloring of Euler Island    The map of Euler Island in shows that there are seven towns on the island. Suppose that a cartographer must produce a colored map in which no two towns that share a boundary have the same color. To keep costs down, she wants to minimize the number of different colors that appear on the map. How many colors are sufficient? For Euler Island, the answer is three. Although it might not be obvious, this is a graph problem. We can represent the map with a graph, where the vertices are countries and an edge between two vertices indicates that the two corresponding countries share a boundary of positive length. This problem motivates a more general problem.   Graph Coloring  Graph Coloring  Chromatic Number    the chromatic number of    Given an undirected graph , find a coloring function  from into a set of colors such that and has the smallest possible cardinality. The cardinality of is called the chromatic number of , .       A coloring function onto an -element set is called an -coloring.    In terms of this general problem, the chromatic number of the graph of Euler Island is three. To see that no more than three colors are needed, we need only display a 3-coloring: , , and . This coloring is not unique. The next smallest set of colors would be of two colors, and you should be able to convince yourself that no 2-coloring exists for this graph.     In the mid-nineteenth century, it became clear that the typical planar graph had a chromatic number of no more than 4. At that point, mathematicians attacked the Four-Color Conjecture, which is that if is any planar graph, then its chromatic number is no more than 4. Although the conjecture is quite easy to state, it took over 100 years, until 1976, to prove the conjecture in the affirmative.   The Four-Color Theorem  Four-Color Theorem   If is a planar graph, then .    A proof of the Four-Color Theorem is beyond the scope of this text, but we can prove a theorem that is only 25 percent inferior.   The Five-Color Theorem  Five-Color Theorem   If is a planar graph, then .    The number 5 is not a sharp upper bound for because of the Four-Color Theorem.  This is a proof by Induction on the Number of Vertices in the Graph.  Basis: Clearly, a graph with one vertex has a chromatic number of 1.  Induction: Assume that all planar graphs with vertices have a chromatic number of 5 or less. Let be a planar graph. By , there exists a vertex with . Let be the planar graph obtained by deleting and all edges that connect to other vertices in . By the induction hypothesis, has a 5-coloring. Assume that the colors used are red, white, blue, green, and yellow.  If , then we can produce a 5-coloring of by selecting a color that is not used in coloring the vertices that are connected to with an edge in .  If , then we can use the same approach if the five vertices that are adjacent to are not all colored differently. We are now left with the possibility that , , , , and are all connected to by an edge and they are all colored differently. Assume that they are colored red, white blue, yellow, and green, respectively, as in .     Figure used in the proof of the five color theorem    Starting at in , suppose we try to construct a path that passes through only red and blue vertices. This can either be accomplished or it can't be accomplished. If it can't be done, consider all paths that start at , and go through only red and blue vertices. If we exchange the colors of the vertices in these paths, including we still have a 5-coloring of . Since is now blue, we can color the central vertex, , red.  Finally, suppose that is connected to using only red and blue vertices. Then a path from to by using red and blue vertices followed by the edges and completes a circuit that either encloses or encloses and . Therefore, no path from to exists using only white and yellow vertices. We can then repeat the same process as in the previous paragraph with and , which will allow us to color v white.     Bipartite Graph  Bipartite Graph.   A bipartite graph is a graph that has a 2-coloring. Equivalently, a graph is bipartite if its vertices can be partitioned into two nonempty subsets so that no edge connects vertices from the same subset.     A Few Examples     The graph of the Three Utilities Puzzle is bipartite. The vertices are partitioned into the utilities and the homes. Of course a 2-coloring of the graph is to color the utilities red and the homes blue.    For , the -cube is bipartite. A coloring would be to color all strings with an even number of 1's red and the strings with an odd number of 1's blue. By the definition of the -cube, two strings that have the same color couldn't be connected since they would need to differ in at least two positions.    Let be a set of 64 vertices, one for each square on a chess board. We can index the elements of by = the square on the row , column . Connect vertices in according to whether or not you can move a knight from one square to another. Using our indexing of ,  is a bipartite graph. The usual coloring of a chessboard is valid 2-coloring.      How can you recognize whether a graph is bipartite? Unlike planarity, there is a nice equivalent condition for a graph to be bipartite.   No Odd Circuits in a Bipartite Graph   An undirected graph is bipartite if and only if it has no circuit of odd length.    ( ) Let be a bipartite graph that is partitioned into two sets, R(ed) and B(lue) that define a 2-coloring. Consider any circuit in . If we specify a direction in the circuit and define on the vertices of the circuit by Note that is a bijection. Hence the number of red vertices in the circuit equals the number of blue vertices, and so the length of the circuit must be even.  ( ) Assume that has no circuit of odd length. For each component of , select any vertex and color it red. Then for every other vertex in the component, find the path of shortest distance from to . If the length of the path is odd, color blue, and if it is even, color red. We claim that this method defines a 2-coloring of . Suppose that it does not define a 2-coloring. Then let and be two vertices with identical colors that are connected with an edge. By the way that we colored , neither nor could equal . We can now construct a circuit with an odd length in . First, we start at and follow the shortest path to . Then follow the edge , and finally, follow the reverse of a shortest path from to . Since and have the same color, the first and third segments of this circuit have lengths that are both odd or even, and the sum of their lengths must be even. The addition of the single edge shows us that this circuit has an odd length. This contradicts our premise.      Exercises   Apply to prove that once gets to a certain size, a is nonplanar. What is the largest complete planar graph?   can be applied to infer that if , then is nonplanar. A is the largest complete planar graph.    Can you apply to prove that the Three Utilities Puzzle can't be solved?    What are the chromatic numbers of the following graphs?   What are the chromatic numbers?   What are the chromatic numbers?        4    3    3    3    2    4       Prove that if an undirected graph has a subgraph that is a it then its chromatic number is at least 3.    What is , ?   The chromatic number is since every vertex is connected to every other vertex.    What is the chromatic number of the United States?    Complete the proof of .   Suppose that is not connected. Then is made up of 2 components that are planar graphs with less than edges, and . For let be the number of vertices, regions and edges in . By the induction hypothesis, for .  One of the regions, the infinite one, is common to both graphs. Therefore, when we add edge back to the graph, we have , , and .     Use the outline of a proof of to write a complete proof. Be sure to point out where the premise is essential.    Let with , and let be the set of all undirected edges between distinct vertices in . Prove that either or is nonplanar.   Since , either has at least elements. Assume that it is that is larger. Since is greater than , would be nonplanar. Of course, if is larger, then would be nonplanar by the same reasoning. Can you find a graph with ten vertices such that it is planar and its complement is also planar?    Design an algorithm to determine whether a graph is bipartite.    Prove that a bipartite graph with an odd number of vertices greater than or equal to 3 has no Hamiltonian circuit.   Suppose that is bipartite (with colors red and blue), is odd, and is a Hamiltonian circuit. If is red, then would also be red. But then would not be in , a contradiction.    Prove that any graph with a finite number of vertices can be drawn in three dimensions so that no edges intersect.    Suppose you had to color the edges of an undirected graph so that for each vertex, the edges that it is connected to have different colors. How can this problem be transformed into a vertex coloring problem?   Draw a graph with one vertex for each edge, If two edges in the original graph meet at the same vertex, then draw an edge connecting the corresponding vertices in the new graph.       Suppose the edges of a are colored either red or blue. Prove that there will be either a red (a subset of the vertex set with three vertices connected by red edges) or a blue or both.    Suppose six people are selected at random. Prove that either there exists a subset of three of them with the property that any two people in the subset can communicate in a common language, or there exist three people, no two of whom can communicate in a common language.        Mesh Graph  Let be a positive integer, and let be positive integers greater than or equal to two. The mesh graph  has vertices of the form where . Two vertices and are adjacent if and only if . In other words, two adjacent vertices must differ in only one coordinate and by a difference of 1.     What is the chromatic number of ?    For what pairs does have a Hamiltonian circuit?    For what triples does have a Hamiltonian circuit?        Further Reading     "
 },
@@ -10211,7 +11102,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#def-planar-graph",
   "type": "Definition",
-  "number": "13.6.1",
+  "number": "15.6.1",
   "title": "Planar Graph\/Plane Graph.",
   "body": " Planar Graph\/Plane Graph  Planar Graph  Plane Graph   A graph is planar if it can be drawn in a plane so that no edges cross. If a graph is drawn so that no edges intersect, it is a plane graph, and such a drawing is a planar embedding of the graph.   "
 },
@@ -10220,7 +11111,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#ex-planar-graph",
   "type": "Example",
-  "number": "13.6.2",
+  "number": "15.6.2",
   "title": "A Planar Graph.",
   "body": " A Planar Graph  The graph in (a) is planar but not a plane graph. The same graph is drawn as a plane graph in (b).   A Planar Graph   A Planar Graph    "
 },
@@ -10229,16 +11120,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#def-def-path-graph",
   "type": "Definition",
-  "number": "13.6.4",
+  "number": "15.6.4",
   "title": "Path Graph.",
   "body": " Path Graph  Path Graph    a path graph of length    A path graph of length , denoted , is an undirected graph with vertices having edges , .   "
 },
 {
-  "id": "observation-4",
+  "id": "observation-5",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#observation-4",
+  "url": "s-planarity-and-colorings.html#observation-5",
   "type": "Observation",
-  "number": "13.6.5",
+  "number": "15.6.5",
   "title": "Graphs in other dimensions.",
   "body": " Graphs in other dimensions  If a graph has only a finite number of vertices, it can always be drawn in three dimensions with no edge crossings. Is this also true for all graphs with an infinite number of vertices? The only one-dimensional graphs are graphs consisting of a single vertex, and path graphs, as shown in .  "
 },
@@ -10247,7 +11138,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#fig-path-graphs",
   "type": "Figure",
-  "number": "13.6.6",
+  "number": "15.6.6",
   "title": "",
   "body": " One dimensional graphs   One dimensional graphs   "
 },
@@ -10256,7 +11147,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#fig-utilities-puzzle",
   "type": "Figure",
-  "number": "13.6.7",
+  "number": "15.6.7",
   "title": "",
   "body": " The Three Utilities Puzzle   The Three Utilities Puzzle   "
 },
@@ -10265,7 +11156,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#activity-1",
   "type": "Activity",
-  "number": "13.6.1",
+  "number": "15.6.1",
   "title": "",
   "body": " Experiment: Jot down a graph right now and count the number of vertices, regions, and edges that you have. If is not 2, then your graph is either nonplanar or not connected.  "
 },
@@ -10274,7 +11165,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#theorem-euler-formula",
   "type": "Theorem",
-  "number": "13.6.8",
+  "number": "15.6.8",
   "title": "Euler’s Formula.",
   "body": " Euler's Formula  Euler's Formula   If is a connected planar graph with regions, vertices, and edges, then    We prove Euler's Formula by Induction on , for .  Basis: If , then must be a graph with one vertex, ; and there is one infinite region, . Therefore, , and the basis is true.  Induction: Suppose that has edges, , and that all connected planar graphs with less than edges satisfy . Select any edge that is part of the boundary of the infinite region and call it . Let be the graph obtained from by deleting . illustrates the two different possibilities we need to consider: either is connected or it has two connected components, and .   Two cases in the proof of Euler's Formula   Two cases in the proof of Euler's Formula    If is connected, the induction hypothesis can be applied to it. If has vertices, edges and edges, then and in terms of the corresponding numbers for ,  For the case where is connected, If is not connected, it must consist of two connected components, and , since we started with a connected graph, . We can apply the induction hypothesis to each of the two components to complete the proof. We leave it to the students to do this, with the reminder that in counting regions, and will share the same infinite region.   "
 },
@@ -10283,7 +11174,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#theorem-edge-bound",
   "type": "Theorem",
-  "number": "13.6.10",
+  "number": "15.6.10",
   "title": "A Bound on Edges of a Planar Graph.",
   "body": " A Bound on Edges of a Planar Graph   If is a connected planar graph with vertices, , and edges, then     (Outline of a Proof)     Let be the number of regions in . For each region, count the number of edges that comprise its border. The sum of these counts must be at least . Recall that we are working with simple graphs here, so a region made by two edges connecting the same two vertices is not possible.    Based on (a), infer that the number of edges in must be at least .         Substitute for in Euler's Formula to obtain an inequality that is equivalent to      "
 },
@@ -10292,7 +11183,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#remark-1",
   "type": "Remark",
-  "number": "13.6.11",
+  "number": "15.6.11",
   "title": "",
   "body": " One implication of is that the number of edges in a connected planar graph will never be larger than three times its number of vertices (as long as it has at least three vertices). Since the maximum number of edges in a graph with vertices is a quadratic function of , as increases, planar graphs are more and more sparse.  "
 },
@@ -10301,7 +11192,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#theorem-degree-5",
   "type": "Theorem",
-  "number": "13.6.12",
+  "number": "15.6.12",
   "title": "A Vertex of Degree Five.",
   "body": " A Vertex of Degree Five   If is a connected planar graph, then it has a vertex with degree 5 or less.    (by contradiction): We can assume that has at least seven vertices, for otherwise the degree of any vertex is at most 5. Suppose that is a connected planar graph and each vertex has a degree of 6 or more. Then, since each edge contributes to the degree of two vertices, . However, states that the , which is a contradiction.   "
 },
@@ -10310,7 +11201,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#fig-euler-island",
   "type": "Figure",
-  "number": "13.6.13",
+  "number": "15.6.13",
   "title": "",
   "body": " A 3-coloring of Euler Island   A 3-coloring of Euler Island   "
 },
@@ -10319,7 +11210,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#def-graph-coloring",
   "type": "Definition",
-  "number": "13.6.14",
+  "number": "15.6.14",
   "title": "Graph Coloring.",
   "body": " Graph Coloring  Graph Coloring  Chromatic Number    the chromatic number of    Given an undirected graph , find a coloring function  from into a set of colors such that and has the smallest possible cardinality. The cardinality of is called the chromatic number of , .   "
 },
@@ -10328,7 +11219,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#theorem-four-color-theorem",
   "type": "Theorem",
-  "number": "13.6.15",
+  "number": "15.6.15",
   "title": "The Four-Color Theorem.",
   "body": " The Four-Color Theorem  Four-Color Theorem   If is a planar graph, then .   "
 },
@@ -10337,7 +11228,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#theorem-five-color-theorem",
   "type": "Theorem",
-  "number": "13.6.16",
+  "number": "15.6.16",
   "title": "The Five-Color Theorem.",
   "body": " The Five-Color Theorem  Five-Color Theorem   If is a planar graph, then .    The number 5 is not a sharp upper bound for because of the Four-Color Theorem.  This is a proof by Induction on the Number of Vertices in the Graph.  Basis: Clearly, a graph with one vertex has a chromatic number of 1.  Induction: Assume that all planar graphs with vertices have a chromatic number of 5 or less. Let be a planar graph. By , there exists a vertex with . Let be the planar graph obtained by deleting and all edges that connect to other vertices in . By the induction hypothesis, has a 5-coloring. Assume that the colors used are red, white, blue, green, and yellow.  If , then we can produce a 5-coloring of by selecting a color that is not used in coloring the vertices that are connected to with an edge in .  If , then we can use the same approach if the five vertices that are adjacent to are not all colored differently. We are now left with the possibility that , , , , and are all connected to by an edge and they are all colored differently. Assume that they are colored red, white blue, yellow, and green, respectively, as in .     Figure used in the proof of the five color theorem    Starting at in , suppose we try to construct a path that passes through only red and blue vertices. This can either be accomplished or it can't be accomplished. If it can't be done, consider all paths that start at , and go through only red and blue vertices. If we exchange the colors of the vertices in these paths, including we still have a 5-coloring of . Since is now blue, we can color the central vertex, , red.  Finally, suppose that is connected to using only red and blue vertices. Then a path from to by using red and blue vertices followed by the edges and completes a circuit that either encloses or encloses and . Therefore, no path from to exists using only white and yellow vertices. We can then repeat the same process as in the previous paragraph with and , which will allow us to color v white.   "
 },
@@ -10346,7 +11237,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#def-bipartite-graph",
   "type": "Definition",
-  "number": "13.6.18",
+  "number": "15.6.18",
   "title": "Bipartite Graph.",
   "body": " Bipartite Graph  Bipartite Graph.   A bipartite graph is a graph that has a 2-coloring. Equivalently, a graph is bipartite if its vertices can be partitioned into two nonempty subsets so that no edge connects vertices from the same subset.   "
 },
@@ -10355,7 +11246,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#ex-bipartite",
   "type": "Example",
-  "number": "13.6.19",
+  "number": "15.6.19",
   "title": "A Few Examples.",
   "body": " A Few Examples     The graph of the Three Utilities Puzzle is bipartite. The vertices are partitioned into the utilities and the homes. Of course a 2-coloring of the graph is to color the utilities red and the homes blue.    For , the -cube is bipartite. A coloring would be to color all strings with an even number of 1's red and the strings with an odd number of 1's blue. By the definition of the -cube, two strings that have the same color couldn't be connected since they would need to differ in at least two positions.    Let be a set of 64 vertices, one for each square on a chess board. We can index the elements of by = the square on the row , column . Connect vertices in according to whether or not you can move a knight from one square to another. Using our indexing of ,  is a bipartite graph. The usual coloring of a chessboard is valid 2-coloring.     "
 },
@@ -10364,142 +11255,142 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-planarity-and-colorings.html#theorem-no-odd",
   "type": "Theorem",
-  "number": "13.6.20",
+  "number": "15.6.20",
   "title": "No Odd Circuits in a Bipartite Graph.",
   "body": " No Odd Circuits in a Bipartite Graph   An undirected graph is bipartite if and only if it has no circuit of odd length.    ( ) Let be a bipartite graph that is partitioned into two sets, R(ed) and B(lue) that define a 2-coloring. Consider any circuit in . If we specify a direction in the circuit and define on the vertices of the circuit by Note that is a bijection. Hence the number of red vertices in the circuit equals the number of blue vertices, and so the length of the circuit must be even.  ( ) Assume that has no circuit of odd length. For each component of , select any vertex and color it red. Then for every other vertex in the component, find the path of shortest distance from to . If the length of the path is odd, color blue, and if it is even, color red. We claim that this method defines a 2-coloring of . Suppose that it does not define a 2-coloring. Then let and be two vertices with identical colors that are connected with an edge. By the way that we colored , neither nor could equal . We can now construct a circuit with an odd length in . First, we start at and follow the shortest path to . Then follow the edge , and finally, follow the reverse of a shortest path from to . Since and have the same color, the first and third segments of this circuit have lengths that are both odd or even, and the sum of their lengths must be even. The addition of the single edge shows us that this circuit has an odd length. This contradicts our premise.   "
 },
 {
-  "id": "exercise-485",
+  "id": "exercise-523",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-485",
+  "url": "s-planarity-and-colorings.html#exercise-523",
   "type": "Exercise",
-  "number": "13.6.3.1",
+  "number": "15.6.3.1",
   "title": "",
   "body": " Apply to prove that once gets to a certain size, a is nonplanar. What is the largest complete planar graph?   can be applied to infer that if , then is nonplanar. A is the largest complete planar graph.  "
 },
 {
-  "id": "exercise-486",
+  "id": "exercise-524",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-486",
+  "url": "s-planarity-and-colorings.html#exercise-524",
   "type": "Exercise",
-  "number": "13.6.3.2",
+  "number": "15.6.3.2",
   "title": "",
   "body": " Can you apply to prove that the Three Utilities Puzzle can't be solved?  "
 },
 {
-  "id": "exercise-487",
+  "id": "exercise-525",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-487",
+  "url": "s-planarity-and-colorings.html#exercise-525",
   "type": "Exercise",
-  "number": "13.6.3.3",
+  "number": "15.6.3.3",
   "title": "",
   "body": " What are the chromatic numbers of the following graphs?   What are the chromatic numbers?   What are the chromatic numbers?        4    3    3    3    2    4     "
 },
 {
-  "id": "exercise-488",
+  "id": "exercise-526",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-488",
+  "url": "s-planarity-and-colorings.html#exercise-526",
   "type": "Exercise",
-  "number": "13.6.3.4",
+  "number": "15.6.3.4",
   "title": "",
   "body": " Prove that if an undirected graph has a subgraph that is a it then its chromatic number is at least 3.  "
 },
 {
-  "id": "exercise-489",
+  "id": "exercise-527",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-489",
+  "url": "s-planarity-and-colorings.html#exercise-527",
   "type": "Exercise",
-  "number": "13.6.3.5",
+  "number": "15.6.3.5",
   "title": "",
   "body": " What is , ?   The chromatic number is since every vertex is connected to every other vertex.  "
 },
 {
-  "id": "exercise-490",
+  "id": "exercise-528",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-490",
+  "url": "s-planarity-and-colorings.html#exercise-528",
   "type": "Exercise",
-  "number": "13.6.3.6",
+  "number": "15.6.3.6",
   "title": "",
   "body": " What is the chromatic number of the United States?  "
 },
 {
-  "id": "exercise-491",
+  "id": "exercise-529",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-491",
+  "url": "s-planarity-and-colorings.html#exercise-529",
   "type": "Exercise",
-  "number": "13.6.3.7",
+  "number": "15.6.3.7",
   "title": "",
   "body": " Complete the proof of .   Suppose that is not connected. Then is made up of 2 components that are planar graphs with less than edges, and . For let be the number of vertices, regions and edges in . By the induction hypothesis, for .  One of the regions, the infinite one, is common to both graphs. Therefore, when we add edge back to the graph, we have , , and .   "
 },
 {
-  "id": "exercise-492",
+  "id": "exercise-530",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-492",
+  "url": "s-planarity-and-colorings.html#exercise-530",
   "type": "Exercise",
-  "number": "13.6.3.8",
+  "number": "15.6.3.8",
   "title": "",
   "body": " Use the outline of a proof of to write a complete proof. Be sure to point out where the premise is essential.  "
 },
 {
-  "id": "exercise-493",
+  "id": "exercise-531",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-493",
+  "url": "s-planarity-and-colorings.html#exercise-531",
   "type": "Exercise",
-  "number": "13.6.3.9",
+  "number": "15.6.3.9",
   "title": "",
   "body": " Let with , and let be the set of all undirected edges between distinct vertices in . Prove that either or is nonplanar.   Since , either has at least elements. Assume that it is that is larger. Since is greater than , would be nonplanar. Of course, if is larger, then would be nonplanar by the same reasoning. Can you find a graph with ten vertices such that it is planar and its complement is also planar?  "
 },
 {
-  "id": "exercise-494",
+  "id": "exercise-532",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-494",
+  "url": "s-planarity-and-colorings.html#exercise-532",
   "type": "Exercise",
-  "number": "13.6.3.10",
+  "number": "15.6.3.10",
   "title": "",
   "body": " Design an algorithm to determine whether a graph is bipartite.  "
 },
 {
-  "id": "exercise-495",
+  "id": "exercise-533",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-495",
+  "url": "s-planarity-and-colorings.html#exercise-533",
   "type": "Exercise",
-  "number": "13.6.3.11",
+  "number": "15.6.3.11",
   "title": "",
   "body": " Prove that a bipartite graph with an odd number of vertices greater than or equal to 3 has no Hamiltonian circuit.   Suppose that is bipartite (with colors red and blue), is odd, and is a Hamiltonian circuit. If is red, then would also be red. But then would not be in , a contradiction.  "
 },
 {
-  "id": "exercise-496",
+  "id": "exercise-534",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-496",
+  "url": "s-planarity-and-colorings.html#exercise-534",
   "type": "Exercise",
-  "number": "13.6.3.12",
+  "number": "15.6.3.12",
   "title": "",
   "body": " Prove that any graph with a finite number of vertices can be drawn in three dimensions so that no edges intersect.  "
 },
 {
-  "id": "exercise-497",
+  "id": "exercise-535",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-497",
+  "url": "s-planarity-and-colorings.html#exercise-535",
   "type": "Exercise",
-  "number": "13.6.3.13",
+  "number": "15.6.3.15",
   "title": "",
   "body": " Suppose you had to color the edges of an undirected graph so that for each vertex, the edges that it is connected to have different colors. How can this problem be transformed into a vertex coloring problem?   Draw a graph with one vertex for each edge, If two edges in the original graph meet at the same vertex, then draw an edge connecting the corresponding vertices in the new graph.  "
 },
 {
-  "id": "exercise-498",
+  "id": "exercise-536",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-498",
+  "url": "s-planarity-and-colorings.html#exercise-536",
   "type": "Exercise",
-  "number": "13.6.3.14",
+  "number": "15.6.3.14",
   "title": "",
   "body": "    Suppose the edges of a are colored either red or blue. Prove that there will be either a red (a subset of the vertex set with three vertices connected by red edges) or a blue or both.    Suppose six people are selected at random. Prove that either there exists a subset of three of them with the property that any two people in the subset can communicate in a common language, or there exist three people, no two of whom can communicate in a common language.     "
 },
 {
-  "id": "exercise-499",
+  "id": "exercise-537",
   "level": "2",
-  "url": "s-planarity-and-colorings.html#exercise-499",
+  "url": "s-planarity-and-colorings.html#exercise-537",
   "type": "Exercise",
-  "number": "13.6.3.15",
+  "number": "15.6.3.15",
   "title": "",
   "body": "  Mesh Graph  Let be a positive integer, and let be positive integers greater than or equal to two. The mesh graph  has vertices of the form where . Two vertices and are adjacent if and only if . In other words, two adjacent vertices must differ in only one coordinate and by a difference of 1.     What is the chromatic number of ?    For what pairs does have a Hamiltonian circuit?    For what triples does have a Hamiltonian circuit?     "
 },
@@ -10508,16 +11399,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s-what-is-a-tree.html",
   "type": "Section",
-  "number": "14.1",
+  "number": "16.1",
   "title": "What Is a Tree?",
-  "body": " What Is a Tree?  What Is a Tree?   Definition  What distinguishes trees from other types of graphs is the absence of certain paths called cycles. Recall that a path is a sequence of consecutive edges in a graph, and a circuit is a path that begins and ends at the same vertex.   Cycle  Cycle    A cycle with edges.    A cycle is a circuit whose edge list contains no duplicates. It is customary to use to denote a cycle with edges.    The simplest example of a cycle in an undirected graph is a pair of vertices with two edges connecting them. Since trees are cycle-free, we can rule out all multigraphs having at least one pair of vertices connected with two or more edges from consideration as trees.  Trees can either be undirected or directed graphs. We will concentrate on the undirected variety in this chapter.   Tree  Tree   An undirected graph is a tree if it is connected and contains no cycles or self-loops.     Some trees and non-trees   Some trees and some non-trees   Some trees and some non-trees       Graphs i, ii and iii in are all trees, while graphs iv, v, and vi are not trees.    A is a tree. However, if , a is not a tree.    In a loose sense, a botanical tree is a mathematical tree. There are usually no cycles in the branch structure of a botanical tree.    The structures of some chemical compounds are modeled by a tree. For example, butane consists of four carbon atoms and ten hydrogen atoms, where an edge between two atoms represents a bond between them. A bond is a force that keeps two atoms together. The same set of atoms can be linked together in a different tree structure to give us the compound isobutane . There are some compounds whose graphs are not trees. One example is benzene .       Butane   Structure of Butane     Isobutane   Structure of Isobutane     Benzene   Structure of Benzene      One type of graph that is not a tree, but is closely related, is a forest.   Forest  Forest.   A forest is an undirected graph whose components are all trees.     A forest  The top half of can be viewed as a forest of three trees. Graph (vi) in this figure is also a forest.     Conditions for a graph to be a tree  We will now examine several conditions that are equivalent to the one that defines a tree. The following theorem will be used as a tool in proving that the conditions are equivalent.    Let be an undirected graph with no self-loops, and let . If two different simple paths exist between and , then there exists a cycle in .    Let and be two different simple paths from to . The first step we will take is to delete from and the initial edges that are identical. That is, if , , , and delete the first edges of both paths. Once this is done, both paths start at the same vertex, call it , and both still end at . Now we construct a cycle by starting at and following what is left of until we first meet what is left of . If this first meeting occurs at vertex , then the remainder of the cycle is completed by following the portion of the reverse of that starts at and ends at .     Equivalent Conditions for a Graph to be a Tree   Let be an undirected graph with no self-loops and . The following are all equivalent:      is a tree.    For each pair of distinct vertices in , there exists a unique simple path between them.     is connected, and if , then is disconnected.     contains no cycles, but by adding one edge, you create a cycle.     is connected and .       Proof Strategy. Most of this theorem can be proven by proving the following chain of implications: , , , and . Once these implications have been demonstrated, the transitive closure of on establishes the equivalence of the first four conditions. The proof that Statement 5 is equivalent to the first four can be done by induction, which we will leave to the reader.  (Indirect). Assume that is a tree and that there exists a pair of vertices between which there is either no path or there are at least two distinct paths. Both of these possibilities contradict the premise that is a tree. If no path exists, is disconnected, and if two paths exist, a cycle can be obtained by .  . We now use Statement 2 as a premise. Since each pair of vertices in are connected by exactly one path, is connected. Now if we select any edge in , it connects two vertices, and . By (2), there is no simple path connecting to other than . Therefore, no path at all can exist between and in . Hence is disconnected.  . Now we will assume that Statement 3 is true. We must show that has no cycles and that adding an edge to creates a cycle. We will use an indirect proof for this part. Since (4) is a conjunction, by DeMorgan's Law its negation is a disjunction and we must consider two cases. First, suppose that has a cycle. Then the deletion of any edge in the cycle keeps the graph connected, which contradicts (3). The second case is that the addition of an edge to does not create a cycle. Then there are two distinct paths between the vertices that the new edge connects. By , a cycle can then be created, which is a contradiction.  Assume that contains no cycles and that the addition of an edge creates a cycle. All that we need to prove to verify that is a tree is that is connected. If it is not connected, then select any two vertices that are not connected. If we add an edge to connect them, the fact that a cycle is created implies that a second path between the two vertices can be found which is in the original graph, which is a contradiction.    The usual definition of a directed tree is based on whether the associated undirected graph, which is created by erasing its directional arrows, is a tree. In Section 10.3 we will introduce the rooted tree, which is a special type of directed tree.    Exercises   Given the following vertex sets, draw all possible undirected trees that connect them.                .      The number of trees are: (a) 1, (b) 3, and (c) 16. The trees that connect are:     Solution to exercise 14-1-1      Are all trees planar? If they are, can you explain why? If they are not, you should be able to find a nonplanar tree.    Prove that if is a simple undirected graph with no self-loops, then is a tree if and only if is connected and .   Use induction on .       Prove that if is a tree and , then is a forest of two trees.    Prove that if ) and are disjoint trees and is an edge that connects a vertex in to a vertex in , then is a tree.          Prove that any tree with at least two vertices has at least two vertices of degree 1.    Prove that if a tree has vertices, , and is not a path graph, , then it has at least three vertices of degree 1.         Assume that is a tree with , and all but possibly one vertex in has degree two or more.     The proof of this part is similar to part a in that we can infer , using the fact that a non-chain tree has at least one vertex of degree three or more.       "
+  "body": " What Is a Tree?  What Is a Tree?   Definition  What distinguishes trees from other types of graphs is the absence of certain paths called cycles. Recall that a path is a sequence of consecutive edges in a graph, and a circuit is a path that begins and ends at the same vertex.   Cycle  Cycle    A cycle with edges.    A cycle is a circuit whose edge list contains no duplicates. It is customary to use to denote a cycle with edges.    The simplest example of a cycle in an undirected graph is a pair of vertices with two edges connecting them. Since trees are cycle-free, we can rule out all multigraphs having at least one pair of vertices connected with two or more edges from consideration as trees.  Trees can either be undirected or directed graphs. We will concentrate on the undirected variety in this chapter.   Tree  Tree   An undirected graph is a tree if it is connected and contains no cycles or self-loops.     Some trees and non-trees   Some trees and some non-trees   Some trees and some non-trees       Graphs i, ii and iii in are all trees, while graphs iv, v, and vi are not trees.    A is a tree. However, if , a is not a tree.    In a loose sense, a botanical tree is a mathematical tree. There are usually no cycles in the branch structure of a botanical tree.    The structures of some chemical compounds are modeled by a tree. For example, butane consists of four carbon atoms and ten hydrogen atoms, where an edge between two atoms represents a bond between them. A bond is a force that keeps two atoms together. The same set of atoms can be linked together in a different tree structure to give us the compound isobutane . There are some compounds whose graphs are not trees. One example is benzene .       Butane   Structure of Butane     Isobutane   Structure of Isobutane     Benzene   Structure of Benzene      One type of graph that is not a tree, but is closely related, is a forest.   Forest  Forest.   A forest is an undirected graph whose components are all trees.     A forest  The top half of can be viewed as a forest of three trees. Graph (vi) in this figure is also a forest.     Conditions for a graph to be a tree  We will now examine several conditions that are equivalent to the one that defines a tree. The following theorem will be used as a tool in proving that the conditions are equivalent.    Let be an undirected graph with no self-loops, and let . If two different simple paths exist between and , then there exists a cycle in .    Let and be two different simple paths from to . The first step we will take is to delete from and the initial edges that are identical. That is, if , , , and delete the first edges of both paths. Once this is done, both paths start at the same vertex, call it , and both still end at . Now we construct a cycle by starting at and following what is left of until we first meet what is left of . If this first meeting occurs at vertex , then the remainder of the cycle is completed by following the portion of the reverse of that starts at and ends at .     Equivalent Conditions for a Graph to be a Tree   Let be an undirected graph with no self-loops and . The following are all equivalent:      is a tree.    For each pair of distinct vertices in , there exists a unique simple path between them.     is connected, and if , then is disconnected.     contains no cycles, but by adding one edge, you create a cycle.     is connected and .       Proof Strategy. Most of this theorem can be proven by proving the following chain of implications: , , , and . Once these implications have been demonstrated, the transitive closure of on establishes the equivalence of the first four conditions. The proof that Statement 5 is equivalent to the first four can be done by induction, which we will leave to the reader.  (Indirect). Assume that is a tree and that there exists a pair of vertices between which there is either no path or there are at least two distinct paths. Both of these possibilities contradict the premise that is a tree. If no path exists, is disconnected, and if two paths exist, a cycle can be obtained by .  . We now use Statement 2 as a premise. Since each pair of vertices in are connected by exactly one path, is connected. Now if we select any edge in , it connects two vertices, and . By (2), there is no simple path connecting to other than . Therefore, no path at all can exist between and in . Hence is disconnected.  . Now we will assume that Statement 3 is true. We must show that has no cycles and that adding an edge to creates a cycle. We will use an indirect proof for this part. Since (4) is a conjunction, by DeMorgan's Law its negation is a disjunction and we must consider two cases. First, suppose that has a cycle. Then the deletion of any edge in the cycle keeps the graph connected, which contradicts (3). The second case is that the addition of an edge to does not create a cycle. Then there are two distinct paths between the vertices that the new edge connects. By , a cycle can then be created, which is a contradiction.  Assume that contains no cycles and that the addition of an edge creates a cycle. All that we need to prove to verify that is a tree is that is connected. If it is not connected, then select any two vertices that are not connected. If we add an edge to connect them, the fact that a cycle is created implies that a second path between the two vertices can be found which is in the original graph, which is a contradiction.    The usual definition of a directed tree is based on whether the associated undirected graph, which is created by erasing its directional arrows, is a tree. In Section 10.3 we will introduce the rooted tree, which is a special type of directed tree.    Exercises   Given the following vertex sets, draw all possible undirected trees that connect them.                .      The number of trees are: (a) 1, (b) 3, and (c) 16. The trees that connect are:     Solution to exercise 16-1-1      Are all trees planar? If they are, can you explain why? If they are not, you should be able to find a nonplanar tree.    Prove that if is a simple undirected graph with no self-loops, then is a tree if and only if is connected and .   Use induction on .       Prove that if is a tree and , then is a forest of two trees.    Prove that if ) and are disjoint trees and is an edge that connects a vertex in to a vertex in , then is a tree.          Prove that any tree with at least two vertices has at least two vertices of degree 1.    Prove that if a tree has vertices, , and is not a path graph, , then it has at least three vertices of degree 1.         Assume that is a tree with , and all but possibly one vertex in has degree two or more.     The proof of this part is similar to part a in that we can infer , using the fact that a non-chain tree has at least one vertex of degree three or more.       "
 },
 {
   "id": "def-cycle",
   "level": "2",
   "url": "s-what-is-a-tree.html#def-cycle",
   "type": "Definition",
-  "number": "14.1.1",
+  "number": "16.1.1",
   "title": "Cycle.",
   "body": " Cycle  Cycle    A cycle with edges.    A cycle is a circuit whose edge list contains no duplicates. It is customary to use to denote a cycle with edges.   "
 },
@@ -10526,7 +11417,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-what-is-a-tree.html#def-tree",
   "type": "Definition",
-  "number": "14.1.2",
+  "number": "16.1.2",
   "title": "Tree.",
   "body": " Tree  Tree   An undirected graph is a tree if it is connected and contains no cycles or self-loops.   "
 },
@@ -10535,7 +11426,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-what-is-a-tree.html#ex-some-trees",
   "type": "Example",
-  "number": "14.1.3",
+  "number": "16.1.3",
   "title": "Some trees and non-trees.",
   "body": " Some trees and non-trees   Some trees and some non-trees   Some trees and some non-trees       Graphs i, ii and iii in are all trees, while graphs iv, v, and vi are not trees.    A is a tree. However, if , a is not a tree.    In a loose sense, a botanical tree is a mathematical tree. There are usually no cycles in the branch structure of a botanical tree.    The structures of some chemical compounds are modeled by a tree. For example, butane consists of four carbon atoms and ten hydrogen atoms, where an edge between two atoms represents a bond between them. A bond is a force that keeps two atoms together. The same set of atoms can be linked together in a different tree structure to give us the compound isobutane . There are some compounds whose graphs are not trees. One example is benzene .       Butane   Structure of Butane     Isobutane   Structure of Isobutane     Benzene   Structure of Benzene     "
 },
@@ -10544,7 +11435,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-what-is-a-tree.html#def-forest",
   "type": "Definition",
-  "number": "14.1.8",
+  "number": "16.1.8",
   "title": "Forest.",
   "body": " Forest  Forest.   A forest is an undirected graph whose components are all trees.   "
 },
@@ -10553,7 +11444,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-what-is-a-tree.html#ex-a-forest",
   "type": "Example",
-  "number": "14.1.9",
+  "number": "16.1.9",
   "title": "A forest.",
   "body": " A forest  The top half of can be viewed as a forest of three trees. Graph (vi) in this figure is also a forest.  "
 },
@@ -10562,7 +11453,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-what-is-a-tree.html#lemma-two-paths",
   "type": "Lemma",
-  "number": "14.1.10",
+  "number": "16.1.10",
   "title": "",
   "body": "  Let be an undirected graph with no self-loops, and let . If two different simple paths exist between and , then there exists a cycle in .    Let and be two different simple paths from to . The first step we will take is to delete from and the initial edges that are identical. That is, if , , , and delete the first edges of both paths. Once this is done, both paths start at the same vertex, call it , and both still end at . Now we construct a cycle by starting at and following what is left of until we first meet what is left of . If this first meeting occurs at vertex , then the remainder of the cycle is completed by following the portion of the reverse of that starts at and ends at .   "
 },
@@ -10571,7 +11462,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-what-is-a-tree.html#theorem-tree-conditions",
   "type": "Theorem",
-  "number": "14.1.11",
+  "number": "16.1.11",
   "title": "Equivalent Conditions for a Graph to be a Tree.",
   "body": " Equivalent Conditions for a Graph to be a Tree   Let be an undirected graph with no self-loops and . The following are all equivalent:      is a tree.    For each pair of distinct vertices in , there exists a unique simple path between them.     is connected, and if , then is disconnected.     contains no cycles, but by adding one edge, you create a cycle.     is connected and .       Proof Strategy. Most of this theorem can be proven by proving the following chain of implications: , , , and . Once these implications have been demonstrated, the transitive closure of on establishes the equivalence of the first four conditions. The proof that Statement 5 is equivalent to the first four can be done by induction, which we will leave to the reader.  (Indirect). Assume that is a tree and that there exists a pair of vertices between which there is either no path or there are at least two distinct paths. Both of these possibilities contradict the premise that is a tree. If no path exists, is disconnected, and if two paths exist, a cycle can be obtained by .  . We now use Statement 2 as a premise. Since each pair of vertices in are connected by exactly one path, is connected. Now if we select any edge in , it connects two vertices, and . By (2), there is no simple path connecting to other than . Therefore, no path at all can exist between and in . Hence is disconnected.  . Now we will assume that Statement 3 is true. We must show that has no cycles and that adding an edge to creates a cycle. We will use an indirect proof for this part. Since (4) is a conjunction, by DeMorgan's Law its negation is a disjunction and we must consider two cases. First, suppose that has a cycle. Then the deletion of any edge in the cycle keeps the graph connected, which contradicts (3). The second case is that the addition of an edge to does not create a cycle. Then there are two distinct paths between the vertices that the new edge connects. By , a cycle can then be created, which is a contradiction.  Assume that contains no cycles and that the addition of an edge creates a cycle. All that we need to prove to verify that is a tree is that is connected. If it is not connected, then select any two vertices that are not connected. If we add an edge to connect them, the fact that a cycle is created implies that a second path between the two vertices can be found which is in the original graph, which is a contradiction.   "
 },
@@ -10580,43 +11471,43 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-what-is-a-tree.html#exercise-trees",
   "type": "Exercise",
-  "number": "14.1.3.1",
+  "number": "16.1.3.1",
   "title": "",
-  "body": " Given the following vertex sets, draw all possible undirected trees that connect them.                .      The number of trees are: (a) 1, (b) 3, and (c) 16. The trees that connect are:     Solution to exercise 14-1-1    "
+  "body": " Given the following vertex sets, draw all possible undirected trees that connect them.                .      The number of trees are: (a) 1, (b) 3, and (c) 16. The trees that connect are:     Solution to exercise 16-1-1    "
 },
 {
-  "id": "exercise-501",
+  "id": "exercise-539",
   "level": "2",
-  "url": "s-what-is-a-tree.html#exercise-501",
+  "url": "s-what-is-a-tree.html#exercise-539",
   "type": "Exercise",
-  "number": "14.1.3.2",
+  "number": "16.1.3.2",
   "title": "",
   "body": " Are all trees planar? If they are, can you explain why? If they are not, you should be able to find a nonplanar tree.  "
 },
 {
-  "id": "exercise-502",
+  "id": "exercise-540",
   "level": "2",
-  "url": "s-what-is-a-tree.html#exercise-502",
+  "url": "s-what-is-a-tree.html#exercise-540",
   "type": "Exercise",
-  "number": "14.1.3.3",
+  "number": "16.1.3.3",
   "title": "",
   "body": " Prove that if is a simple undirected graph with no self-loops, then is a tree if and only if is connected and .   Use induction on .  "
 },
 {
-  "id": "exercise-503",
+  "id": "exercise-541",
   "level": "2",
-  "url": "s-what-is-a-tree.html#exercise-503",
+  "url": "s-what-is-a-tree.html#exercise-541",
   "type": "Exercise",
-  "number": "14.1.3.4",
+  "number": "16.1.3.4",
   "title": "",
   "body": "    Prove that if is a tree and , then is a forest of two trees.    Prove that if ) and are disjoint trees and is an edge that connects a vertex in to a vertex in , then is a tree.     "
 },
 {
-  "id": "exercise-504",
+  "id": "exercise-542",
   "level": "2",
-  "url": "s-what-is-a-tree.html#exercise-504",
+  "url": "s-what-is-a-tree.html#exercise-542",
   "type": "Exercise",
-  "number": "14.1.3.5",
+  "number": "16.1.3.5",
   "title": "",
   "body": "    Prove that any tree with at least two vertices has at least two vertices of degree 1.    Prove that if a tree has vertices, , and is not a path graph, , then it has at least three vertices of degree 1.         Assume that is a tree with , and all but possibly one vertex in has degree two or more.     The proof of this part is similar to part a in that we can infer , using the fact that a non-chain tree has at least one vertex of degree three or more.     "
 },
@@ -10625,16 +11516,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s-spanning-trees.html",
   "type": "Section",
-  "number": "14.2",
+  "number": "16.2",
   "title": "Spanning Trees",
-  "body": " Spanning Trees  Spanning Trees   Motivation  The topic of spanning trees is motivated by a graph-optimization problem.  A graph of Atlantis University ( ) shows that there are four campuses in the system. A new secure communications system is being installed and the objective is to allow for communication between any two campuses; to achieve this objective, the university must buy direct lines between certain pairs of campuses. Let be the graph with a vertex for each campus and an edge for each direct line. Total communication is equivalent to being a connected graph. This is due to the fact that two campuses can communicate over any number of lines. To minimize costs, the university wants to buy a minimum number of lines.   Atlantis University Graph   Atlantis University Graph    The solutions to this problem are all trees. Any graph that satisfies the requirements of the university must be connected, and if a cycle does exist, any line in the cycle can be deleted, reducing the cost. Each of the sixteen trees that can be drawn to connect the vertices North, South, East, and West (see ) solves the problem as it is stated. Note that in each case, three direct lines must be purchased. There are two considerations that can help reduce the number of solutions that would be considered.     Objective 1: Given that the cost of each line depends on certain factors, such as the distance between the campuses, select a tree whose cost is as low as possible.    Objective 2: Suppose that communication over multiple lines is noisier as the number of lines increases. Select a tree with the property that the maximum number of lines that any pair of campuses must use to communicate with is as small as possible.     Typically, these objectives are not compatible; that is, you cannot always simultaneously achieve these objectives. In the case of the Atlantis university system, the solution with respect to Objective 1 is indicated with solid lines in . There are four solutions to the problem with respect to Objective 2: any tree in which one campus is directly connected to the other three. One solution with respect to Objective 2 is indicated with dotted lines in . After satisfying the conditions of Objective 2, it would seem reasonable to select the cheapest of the four trees.    Definition   Spanning Tree  Spanning Tree   Let be a connected undirected graph. A spanning tree for is a spanning subgraph of that is a tree.        If is a spanning tree, .    The significance of a spanning tree is that it is a minimal spanning set. A smaller set would not span the graph, while a larger set would have a cycle, which has an edge that is superfluous.      For the remainder of this section, we will discuss two of the many topics that relate to spanning trees. The first is the problem of finding Minimal Spanning Trees, which addresses Objective 1 above. The second is the problem of finding Minimum Diameter Spanning Trees, which addresses Objective 2.   Minimal Spanning Tree  Minimal Spanning Tree   Given a weighted connected undirected graph , a minimal spanning tree is a spanning tree for which is as small as possible.      Prim's Algorithm  Unlike many of the graph-optimization problems that we've examined, a solution to this problem can be obtained efficiently. It is a situation in which a greedy algorithm works.   Bridge  Bridge   Let be an undirected graph and let be a partition of . A bridge between and is an edge in that connects a vertex in to a vertex in .      Let be a weighted connected undirected graph. Let be partitioned into two sets and . If is a bridge of least weight between and , then there exists a minimal spanning tree for that includes .    Suppose that no minimal spanning tree including exists. Let be a minimal spanning tree. If we add to , a cycle is created, and this cycle must contain another bridge, , between and . Since , we can delete and the new tree, which includes must also be a minimal spanning tree.     Some Bridges  The bridges between the vertex sets and in are the edges and . According to the theorem above, a minimal spanning tree that includes exists. By examination, you should be able to see that this is true. Is it true that only the bridges of minimal weight can be part of a minimal spanning tree?   Bridges between two sets   Bridges between two sets     essentially tells us that a minimal spanning tree can be constructed recursively by continually adding minimally weighted bridges to a set of edges.   Prim's Algorithm  Prim's Algorithm   Let be a connected, weighted, undirected graph, and let be an arbitrary vertex in . The following steps lead to a minimal spanning tree for . and will be sets of vertices and is a set of edges.     (Initialize) ; ; .    (Build the tree) While :     Find , a bridge of minimum weight between and .     ; ;       Terminate with a minimal spanning tree .           If more than one minimal spanning tree exists, then the one that is obtained depends on and the means by which is selected in Step 2.    Warning: If two minimally weighted bridges exist between and , do not try to speed up the algorithm by adding both of them to '.    That yields a minimal spanning tree can be proven by induction with the use of .    If it is not known whether is connected, can be revised to handle this possibility. The key change (in Step 2.1) would be to determine whether any bridge at all exists between and . The condition of the while loop in Step 2 must also be changed somewhat.       A Small Example  Consider the graph in . If we apply starting at , we obtain the following edge list in the order given: . The total of the weights of these edges is 20. The method that we have used (in Step 2.1) to select a bridge when more than one minimally weighted bridge exists is to order all bridges alphabetically by the vertex in and then, if further ties exist, by the vertex in . The first vertex in that order is selected in Step 2.1 of the algorithm.   A small weighted graph   A weighted graph      Minimum Diameter Spanning Tree  Minimum Diameter Spanning Tree   Given a connected undirected graph , find a spanning tree of such that the longest path in is as short as possible.     The Case for Complete Graphs  The Minimum Diameter Spanning Tree Problem is trivial to solve in a . Select any vertex and construct the spanning tree whose edge set is the set of edges that connect to the other vertices in the . illustrates a solution for .   Minimum diameter spanning tree for    Minimum diameter spanning tree for K_5     For incomplete graphs, a two-stage algorithm is needed. In short, the first step is to locate a center of the graph. The maximum distance from a center to any other vertex is as small as possible. Once a center is located, a breadth-first search of the graph is used to construct the spanning tree.    Exercises   Suppose that after Atlantis University's phone system is in place, a fifth campus is established and that a transmission line can be bought to connect the new campus to any old campus. Is this larger system the most economical one possible with respect to Objective 1? Can you always satisfy Objective 2?   It might not be most economical with respect to Objective 1. You should be able to find an example to illustrate this claim. The new system can always be made most economical with respect to Objective 2 if the old system were designed with that objective in mind.    Construct a minimal spanning tree for the capital cities in New England (see ).    Show that the answer to the question posed in is no.   In the figure below, is not a minimal bridge between , but it is part of the minimal spanning tree for this graph.     Solution to exercise 14-2-3      Find a minimal spanning tree for the following graphs.     Figure for exercise-14-2-4a       Figure for exercise-14-2-4b       Figure for exercise-14-2-4c      Find a minimum diameter spanning tree for the following graphs.     Figure for exercise-14-2-5a       Figure for exercise-14-2-5b        Edges in one solution are:    Vertices 8 and 9 are centers of the graph. Starting from vertex 8, a minimum diameter spanning tree is The diameter of the tree is 7.       In each of the following parts justify your answer with either a proof or a counterexample.     Suppose a weighted undirected graph had distinct edge weights. Is it possible that no minimal spanning tree includes the edge of minimal weight?    Suppose a weighted undirected graph had distinct edge weights. Is it possible that every minimal spanning tree includes the edge of maximal weight? If true, under what conditions would it happen?       "
+  "body": " Spanning Trees  Spanning Trees   Motivation  The topic of spanning trees is motivated by a graph-optimization problem.  A graph of Atlantis University ( ) shows that there are four campuses in the system. A new secure communications system is being installed and the objective is to allow for communication between any two campuses; to achieve this objective, the university must buy direct lines between certain pairs of campuses. Let be the graph with a vertex for each campus and an edge for each direct line. Total communication is equivalent to being a connected graph. This is due to the fact that two campuses can communicate over any number of lines. To minimize costs, the university wants to buy a minimum number of lines.   Atlantis University Graph   Atlantis University Graph    The solutions to this problem are all trees. Any graph that satisfies the requirements of the university must be connected, and if a cycle does exist, any line in the cycle can be deleted, reducing the cost. Each of the sixteen trees that can be drawn to connect the vertices North, South, East, and West (see ) solves the problem as it is stated. Note that in each case, three direct lines must be purchased. There are two considerations that can help reduce the number of solutions that would be considered.     Objective 1: Given that the cost of each line depends on certain factors, such as the distance between the campuses, select a tree whose cost is as low as possible.    Objective 2: Suppose that communication over multiple lines is noisier as the number of lines increases. Select a tree with the property that the maximum number of lines that any pair of campuses must use to communicate with is as small as possible.     Typically, these objectives are not compatible; that is, you cannot always simultaneously achieve these objectives. In the case of the Atlantis university system, the solution with respect to Objective 1 is indicated with solid lines in . There are four solutions to the problem with respect to Objective 2: any tree in which one campus is directly connected to the other three. One solution with respect to Objective 2 is indicated with dotted lines in . After satisfying the conditions of Objective 2, it would seem reasonable to select the cheapest of the four trees.    Definition   Spanning Tree  Spanning Tree   Let be a connected undirected graph. A spanning tree for is a spanning subgraph of that is a tree.        If is a spanning tree, .    The significance of a spanning tree is that it is a minimal spanning set. A smaller set would not span the graph, while a larger set would have a cycle, which has an edge that is superfluous.      For the remainder of this section, we will discuss two of the many topics that relate to spanning trees. The first is the problem of finding Minimal Spanning Trees, which addresses Objective 1 above. The second is the problem of finding Minimum Diameter Spanning Trees, which addresses Objective 2.   Minimal Spanning Tree  Minimal Spanning Tree   Given a weighted connected undirected graph , a minimal spanning tree is a spanning tree for which is as small as possible.      Prim's Algorithm  Unlike many of the graph-optimization problems that we've examined, a solution to this problem can be obtained efficiently. It is a situation in which a greedy algorithm works.   Bridge  Bridge   Let be an undirected graph and let be a partition of . A bridge between and is an edge in that connects a vertex in to a vertex in .      Let be a weighted connected undirected graph. Let be partitioned into two sets and . If is a bridge of least weight between and , then there exists a minimal spanning tree for that includes .    Suppose that no minimal spanning tree including exists. Let be a minimal spanning tree. If we add to , a cycle is created, and this cycle must contain another bridge, , between and . Since , we can delete and the new tree, which includes must also be a minimal spanning tree.     Some Bridges  The bridges between the vertex sets and in are the edges and . According to the theorem above, a minimal spanning tree that includes exists. By examination, you should be able to see that this is true. Is it true that only the bridges of minimal weight can be part of a minimal spanning tree?   Bridges between two sets   Bridges between two sets     essentially tells us that a minimal spanning tree can be constructed recursively by continually adding minimally weighted bridges to a set of edges.   Prim's Algorithm  Prim's Algorithm   Let be a connected, weighted, undirected graph, and let be an arbitrary vertex in . The following steps lead to a minimal spanning tree for . and will be sets of vertices and is a set of edges.     (Initialize) ; ; .    (Build the tree) While :     Find , a bridge of minimum weight between and .     ; ;       Terminate with a minimal spanning tree .           If more than one minimal spanning tree exists, then the one that is obtained depends on and the means by which is selected in Step 2.    Warning: If two minimally weighted bridges exist between and , do not try to speed up the algorithm by adding both of them to '.    That yields a minimal spanning tree can be proven by induction with the use of .    If it is not known whether is connected, can be revised to handle this possibility. The key change (in Step 2.1) would be to determine whether any bridge at all exists between and . The condition of the while loop in Step 2 must also be changed somewhat.       A Small Example  Consider the graph in . If we apply starting at , we obtain the following edge list in the order given: . The total of the weights of these edges is 20. The method that we have used (in Step 2.1) to select a bridge when more than one minimally weighted bridge exists is to order all bridges alphabetically by the vertex in and then, if further ties exist, by the vertex in . The first vertex in that order is selected in Step 2.1 of the algorithm.   A small weighted graph   A weighted graph      Minimum Diameter Spanning Tree  Minimum Diameter Spanning Tree   Given a connected undirected graph , find a spanning tree of such that the longest path in is as short as possible.     The Case for Complete Graphs  The Minimum Diameter Spanning Tree Problem is trivial to solve in a . Select any vertex and construct the spanning tree whose edge set is the set of edges that connect to the other vertices in the . illustrates a solution for .   Minimum diameter spanning tree for    Minimum diameter spanning tree for K_5     For incomplete graphs, a two-stage algorithm is needed. In short, the first step is to locate a center of the graph. The maximum distance from a center to any other vertex is as small as possible. Once a center is located, a breadth-first search of the graph is used to construct the spanning tree.    Exercises   Suppose that after Atlantis University's phone system is in place, a fifth campus is established and that a transmission line can be bought to connect the new campus to any old campus. Is this larger system the most economical one possible with respect to Objective 1? Can you always satisfy Objective 2?   It might not be most economical with respect to Objective 1. You should be able to find an example to illustrate this claim. The new system can always be made most economical with respect to Objective 2 if the old system were designed with that objective in mind.    Construct a minimal spanning tree for the capital cities in New England (see ).    Show that the answer to the question posed in is no.   In the figure below, is not a minimal bridge between , but it is part of the minimal spanning tree for this graph.     Solution to exercise 16-2-3      Find a minimal spanning tree for the following graphs.     Figure for exercise-16-2-4a       Figure for exercise-16-2-4b       Figure for exercise-16-2-4c      Find a minimum diameter spanning tree for the following graphs.     Figure for exercise-16-2-5a       Figure for exercise-16-2-5b        Edges in one solution are:    Vertices 8 and 9 are centers of the graph. Starting from vertex 8, a minimum diameter spanning tree is The diameter of the tree is 7.       In each of the following parts justify your answer with either a proof or a counterexample.     Suppose a weighted undirected graph had distinct edge weights. Is it possible that no minimal spanning tree includes the edge of minimal weight?    Suppose a weighted undirected graph had distinct edge weights. Is it possible that every minimal spanning tree includes the edge of maximal weight? If true, under what conditions would it happen?       "
 },
 {
-  "id": "fig-atlantis-14",
+  "id": "fig-atlantis-16",
   "level": "2",
-  "url": "s-spanning-trees.html#fig-atlantis-14",
+  "url": "s-spanning-trees.html#fig-atlantis-16",
   "type": "Figure",
-  "number": "14.2.1",
+  "number": "16.2.1",
   "title": "",
   "body": " Atlantis University Graph   Atlantis University Graph   "
 },
@@ -10643,16 +11534,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-spanning-trees.html#def-spanning-tree",
   "type": "Definition",
-  "number": "14.2.2",
+  "number": "16.2.2",
   "title": "Spanning Tree.",
   "body": " Spanning Tree  Spanning Tree   Let be a connected undirected graph. A spanning tree for is a spanning subgraph of that is a tree.   "
 },
 {
-  "id": "note-11",
+  "id": "note-13",
   "level": "2",
-  "url": "s-spanning-trees.html#note-11",
+  "url": "s-spanning-trees.html#note-13",
   "type": "Note",
-  "number": "14.2.3",
+  "number": "16.2.3",
   "title": "",
   "body": "    If is a spanning tree, .    The significance of a spanning tree is that it is a minimal spanning set. A smaller set would not span the graph, while a larger set would have a cycle, which has an edge that is superfluous.     "
 },
@@ -10661,7 +11552,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-spanning-trees.html#def-min-spanning-tree",
   "type": "Definition",
-  "number": "14.2.4",
+  "number": "16.2.4",
   "title": "Minimal Spanning Tree.",
   "body": " Minimal Spanning Tree  Minimal Spanning Tree   Given a weighted connected undirected graph , a minimal spanning tree is a spanning tree for which is as small as possible.   "
 },
@@ -10670,16 +11561,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-spanning-trees.html#def-bridge",
   "type": "Definition",
-  "number": "14.2.5",
+  "number": "16.2.5",
   "title": "Bridge.",
   "body": " Bridge  Bridge   Let be an undirected graph and let be a partition of . A bridge between and is an edge in that connects a vertex in to a vertex in .   "
 },
 {
-  "id": "theorem-14-2-1",
+  "id": "theorem-16-2-1",
   "level": "2",
-  "url": "s-spanning-trees.html#theorem-14-2-1",
+  "url": "s-spanning-trees.html#theorem-16-2-1",
   "type": "Theorem",
-  "number": "14.2.6",
+  "number": "16.2.6",
   "title": "",
   "body": "  Let be a weighted connected undirected graph. Let be partitioned into two sets and . If is a bridge of least weight between and , then there exists a minimal spanning tree for that includes .    Suppose that no minimal spanning tree including exists. Let be a minimal spanning tree. If we add to , a cycle is created, and this cycle must contain another bridge, , between and . Since , we can delete and the new tree, which includes must also be a minimal spanning tree.   "
 },
@@ -10688,7 +11579,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-spanning-trees.html#ex-some-bridges",
   "type": "Example",
-  "number": "14.2.7",
+  "number": "16.2.7",
   "title": "Some Bridges.",
   "body": " Some Bridges  The bridges between the vertex sets and in are the edges and . According to the theorem above, a minimal spanning tree that includes exists. By examination, you should be able to see that this is true. Is it true that only the bridges of minimal weight can be part of a minimal spanning tree?   Bridges between two sets   Bridges between two sets    "
 },
@@ -10697,16 +11588,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-spanning-trees.html#alg-prim",
   "type": "Algorithm",
-  "number": "14.2.9",
+  "number": "16.2.9",
   "title": "Prim’s Algorithm.",
   "body": " Prim's Algorithm  Prim's Algorithm   Let be a connected, weighted, undirected graph, and let be an arbitrary vertex in . The following steps lead to a minimal spanning tree for . and will be sets of vertices and is a set of edges.     (Initialize) ; ; .    (Build the tree) While :     Find , a bridge of minimum weight between and .     ; ;       Terminate with a minimal spanning tree .      "
 },
 {
-  "id": "note-12",
+  "id": "note-14",
   "level": "2",
-  "url": "s-spanning-trees.html#note-12",
+  "url": "s-spanning-trees.html#note-14",
   "type": "Note",
-  "number": "14.2.10",
+  "number": "16.2.10",
   "title": "",
   "body": "    If more than one minimal spanning tree exists, then the one that is obtained depends on and the means by which is selected in Step 2.    Warning: If two minimally weighted bridges exist between and , do not try to speed up the algorithm by adding both of them to '.    That yields a minimal spanning tree can be proven by induction with the use of .    If it is not known whether is connected, can be revised to handle this possibility. The key change (in Step 2.1) would be to determine whether any bridge at all exists between and . The condition of the while loop in Step 2 must also be changed somewhat.     "
 },
@@ -10715,7 +11606,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-spanning-trees.html#ex-an-example",
   "type": "Example",
-  "number": "14.2.11",
+  "number": "16.2.11",
   "title": "A Small Example.",
   "body": " A Small Example  Consider the graph in . If we apply starting at , we obtain the following edge list in the order given: . The total of the weights of these edges is 20. The method that we have used (in Step 2.1) to select a bridge when more than one minimally weighted bridge exists is to order all bridges alphabetically by the vertex in and then, if further ties exist, by the vertex in . The first vertex in that order is selected in Step 2.1 of the algorithm.   A small weighted graph   A weighted graph    "
 },
@@ -10724,7 +11615,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-spanning-trees.html#def-min-diameter-spanning-tree",
   "type": "Definition",
-  "number": "14.2.13",
+  "number": "16.2.13",
   "title": "Minimum Diameter Spanning Tree.",
   "body": " Minimum Diameter Spanning Tree  Minimum Diameter Spanning Tree   Given a connected undirected graph , find a spanning tree of such that the longest path in is as short as possible.   "
 },
@@ -10733,61 +11624,61 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-spanning-trees.html#ex-min-diameter-k5",
   "type": "Example",
-  "number": "14.2.14",
+  "number": "16.2.14",
   "title": "The Case for Complete Graphs.",
   "body": " The Case for Complete Graphs  The Minimum Diameter Spanning Tree Problem is trivial to solve in a . Select any vertex and construct the spanning tree whose edge set is the set of edges that connect to the other vertices in the . illustrates a solution for .   Minimum diameter spanning tree for    Minimum diameter spanning tree for K_5    "
 },
 {
-  "id": "exercise-505",
+  "id": "exercise-543",
   "level": "2",
-  "url": "s-spanning-trees.html#exercise-505",
+  "url": "s-spanning-trees.html#exercise-543",
   "type": "Exercise",
-  "number": "14.2.4.1",
+  "number": "16.2.4.1",
   "title": "",
   "body": " Suppose that after Atlantis University's phone system is in place, a fifth campus is established and that a transmission line can be bought to connect the new campus to any old campus. Is this larger system the most economical one possible with respect to Objective 1? Can you always satisfy Objective 2?   It might not be most economical with respect to Objective 1. You should be able to find an example to illustrate this claim. The new system can always be made most economical with respect to Objective 2 if the old system were designed with that objective in mind.  "
 },
 {
-  "id": "exercise-506",
+  "id": "exercise-544",
   "level": "2",
-  "url": "s-spanning-trees.html#exercise-506",
+  "url": "s-spanning-trees.html#exercise-544",
   "type": "Exercise",
-  "number": "14.2.4.2",
+  "number": "16.2.4.2",
   "title": "",
   "body": " Construct a minimal spanning tree for the capital cities in New England (see ).  "
 },
 {
-  "id": "exercise-507",
+  "id": "exercise-545",
   "level": "2",
-  "url": "s-spanning-trees.html#exercise-507",
+  "url": "s-spanning-trees.html#exercise-545",
   "type": "Exercise",
-  "number": "14.2.4.3",
+  "number": "16.2.4.3",
   "title": "",
-  "body": " Show that the answer to the question posed in is no.   In the figure below, is not a minimal bridge between , but it is part of the minimal spanning tree for this graph.     Solution to exercise 14-2-3    "
+  "body": " Show that the answer to the question posed in is no.   In the figure below, is not a minimal bridge between , but it is part of the minimal spanning tree for this graph.     Solution to exercise 16-2-3    "
 },
 {
-  "id": "exercise-508",
+  "id": "exercise-546",
   "level": "2",
-  "url": "s-spanning-trees.html#exercise-508",
+  "url": "s-spanning-trees.html#exercise-546",
   "type": "Exercise",
-  "number": "14.2.4.4",
+  "number": "16.2.4.4",
   "title": "",
-  "body": " Find a minimal spanning tree for the following graphs.     Figure for exercise-14-2-4a       Figure for exercise-14-2-4b       Figure for exercise-14-2-4c    "
+  "body": " Find a minimal spanning tree for the following graphs.     Figure for exercise-16-2-4a       Figure for exercise-16-2-4b       Figure for exercise-16-2-4c    "
 },
 {
-  "id": "exercise-509",
+  "id": "exercise-547",
   "level": "2",
-  "url": "s-spanning-trees.html#exercise-509",
+  "url": "s-spanning-trees.html#exercise-547",
   "type": "Exercise",
-  "number": "14.2.4.5",
+  "number": "16.2.4.5",
   "title": "",
-  "body": " Find a minimum diameter spanning tree for the following graphs.     Figure for exercise-14-2-5a       Figure for exercise-14-2-5b        Edges in one solution are:    Vertices 8 and 9 are centers of the graph. Starting from vertex 8, a minimum diameter spanning tree is The diameter of the tree is 7.     "
+  "body": " Find a minimum diameter spanning tree for the following graphs.     Figure for exercise-16-2-5a       Figure for exercise-16-2-5b        Edges in one solution are:    Vertices 8 and 9 are centers of the graph. Starting from vertex 8, a minimum diameter spanning tree is The diameter of the tree is 7.     "
 },
 {
-  "id": "exercise-510",
+  "id": "exercise-548",
   "level": "2",
-  "url": "s-spanning-trees.html#exercise-510",
+  "url": "s-spanning-trees.html#exercise-548",
   "type": "Exercise",
-  "number": "14.2.4.6",
+  "number": "16.2.4.6",
   "title": "",
   "body": " In each of the following parts justify your answer with either a proof or a counterexample.     Suppose a weighted undirected graph had distinct edge weights. Is it possible that no minimal spanning tree includes the edge of minimal weight?    Suppose a weighted undirected graph had distinct edge weights. Is it possible that every minimal spanning tree includes the edge of maximal weight? If true, under what conditions would it happen?     "
 },
@@ -10796,16 +11687,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s-rooted-trees.html",
   "type": "Section",
-  "number": "14.3",
+  "number": "16.3",
   "title": "Rooted Trees",
-  "body": " Rooted Trees  Rooted Trees   In the next two sections, we will discuss rooted trees. Our primary foci will be on general rooted trees and on a special case, ordered binary trees.    Definition and Terminology   A Rooted Tree   A Rooted Tree     Informal Definition and Terminology   What differentiates rooted trees from undirected trees is that a rooted tree contains a distinguished vertex, called the root. Consider the tree in . Vertex has been designated the root of the tree. If we choose any other vertex in the tree, such as , we know that there is a unique path from to . The vertices on this path, , are described in genealogical terms:     is a child of (so is )    is 's parent.    , , and are 's ancestors.    , , and are descendants of .     These genealogical relationships are often easier to visualize if the tree is rewritten so that children are positioned below their parents, as in .  With this format, it is easy to see that each vertex in the tree can be thought of as the root of a tree that contains, in addition to itself, all of its descendants. For example, is the root of a tree that contains , , , and . Furthermore, is the root of a tree that contains , , and . Finally, and are roots of trees that contain only themselves. From this observation, we can give a formal definition of a rooted tree.     A Rooted Tree, redrawn   A Rooted Tree, redrawn     Rooted Tree  Rooted Tree      Basis: A tree with no vertices is a rooted tree (the empty tree).    A single vertex with no children is a rooted tree.    Recursion: Let , , be disjoint rooted trees with roots , , , respectively, and let be a vertex that does not belong to any of these trees. Then a rooted tree, rooted at , is obtained by making the parent of the vertices , , and . We call subtrees of the larger tree.       The level of a vertex Level of a vertex of a rooted tree is the number of edges that separate the vertex from the root. The level of the root is zero. The depth of a tree is the maximum level of the vertices in the tree. The depth of a tree in is three, which is the level of the vertices and . The vertices , , , , , , and have level two. , , and are at level one and has level zero.   A Decision Tree  is a rooted tree with Start as the root. It is an example of what is called a decision tree.    Tree Structure of Data  One of the keys to working with large amounts of information is to organize it in a consistent, logical way. A data structure is a scheme for organizing data. A simple example of a data structure might be the information a college admissions department might keep on their applicants. Items might look something like this: This structure is called a flat file .  A spreadsheet can be used to arrange data in this way. Although a flat file structure is often adequate, there are advantages to clustering some the information. For example the applicant information might be broken into four parts: name, contact information, high school, and application data: The first item in each ApplicantItem is a list , with each item in that list being a single field of the original flat file. The third item is simply the single high school item from the flat file. The application data is a list and one of its items, is itself a list with the recommendation data for each recommendation the applicant has.  The organization of this data can be visualized with a rooted tree such as the one in .   Applicant Data in a Rooted Tree   Applicant Data in a Rooted Tree    In general, you can represent a data item, , as a rooted tree with as the root and a subtree for each field. Those fields that are more than just one item are roots of further subtrees, while individual items have no further children in the tree.     Kruskal's Algorithm  An alternate algorithm for constructing a minimal spanning tree uses a forest of rooted trees. First we will describe the algorithm in its simplest terms. Afterward, we will describe how rooted trees are used to implement the algorithm. Finally, we will demonstrate the SageMath implementation of the algorithm. In all versions of this algorithm, assume that is a weighted undirected graph with and .   Kruskal's Algorithm - Informal Version      Sort the edges of in ascending order according to weight. That is, .    Go down the list from Step 1 and add edges to a set (initially empty) of edges so that the set does not form a cycle. When an edge that would create a cycle is encountered, ignore it. Continue examining edges until either edges have been selected or you have come to the end of the edge list. If edges are selected, these edges make up a minimal spanning tree for . If fewer than edges are selected, is not connected.       Step 1 can be accomplished using one of any number of standard sorting routines. Using the most efficient sorting routine, the time required to perform this step is proportional to . The second step of the algorithm, also of time complexity, is the one that uses a forest of rooted trees to test for whether an edge should be added to the spanning set.   Kruskal's Algorithm  Kruskal's Algorithm      Sort the edges of in ascending order according to weight. That is, .       Initialize each vertex in V to be the root of its own rooted tree.    Go down the list of edges until either a spanning tree is completed or the edge list has been exhausted. For each edge , we can determine whether e can be added to the spanning set without forming a cycle by determining whether the root of tree is equal to the root of tree. If the two roots are equal, then ignore e. If the roots are different, then we can add e to the spanning set. In addition, we merge the trees that and belong to. This is accomplished by either making root the parent of root or vice versa.              Since we start the Kruskal's algorithm with trees and each addition of an edge decreases the number of trees by one, we end the algorithm with one rooted tree, provided a spanning tree exists.    The rooted tree that we develop in the algorithm is not the spanning tree itself.        SageMath Note - Implementation of Kruskal's Algorithm   SageMath Note  Kruskal's Algorithm   Kruskal's algorithm has been implemented in Sage. We illustrate how the spanning tree for a weighted graph in can be generated. First, we create such a graph  We will create a graph using a list of triples of the form . The method tells Sage to consider the labels as weights.    Weighed graph, SageMath output   SageMath Output - Weighted Graph    Next, we load the kruskal function and use it to generate the list of edges in a spanning tree of .   To see the resulting tree with the same embedding as , we generate a graph from the spanning tree edges. Next, we set the positions of the vertices to be the same as in the graph. Finally, we plot the tree.    Spanning tree, SageMath output   SageMath Output - Spanning tree for weighted graph      Exercises   Suppose that an undirected tree has diameter and that you would like to select a vertex of the tree as a root so that the resulting rooted tree has the smallest depth possible. How would such a root be selected and what would be the depth of the tree (in terms of )?   Locate any simple path of length and locate the vertex in position on the path. The tree rooted at that vertex will have a depth of , which is minimal.    Use Kruskal's algorithm to find a minimal spanning tree for the following graphs. In addition to the spanning tree, find the final rooted tree in the algorithm. When you merge two trees in the algorithm, make the root of the tree with the lower vertex number the root of the new tree.   Graph 2(a)   Figure for exercise 14.3.2a       Graph 2(b)   Figure for exercise 14.3.2b       Suppose that information on buildings is arranged in records with five fields: the name of the building, its location, its owner, its height, and its floor space. The location and owner fields are records that include all of the information that you would expect, such as street, city, and state, together with the owner's name (first, middle, last) in the owner field. Draw a rooted tree to describe this type of record      Solution to exercise 14-3-3      Step through Kruskal's Algorthm by hand to verify that the example of a minimal spanning tree using Sage in is correct.    "
+  "body": " Rooted Trees  Rooted Trees   In the next two sections, we will discuss rooted trees. Our primary foci will be on general rooted trees and on a special case, ordered binary trees.    Definition and Terminology   A Rooted Tree   A Rooted Tree     Informal Definition and Terminology   What differentiates rooted trees from undirected trees is that a rooted tree contains a distinguished vertex, called the root. Consider the tree in . Vertex has been designated the root of the tree. If we choose any other vertex in the tree, such as , we know that there is a unique path from to . The vertices on this path, , are described in genealogical terms:     is a child of (so is )    is 's parent.    , , and are 's ancestors.    , , and are descendants of .     These genealogical relationships are often easier to visualize if the tree is rewritten so that children are positioned below their parents, as in .  With this format, it is easy to see that each vertex in the tree can be thought of as the root of a tree that contains, in addition to itself, all of its descendants. For example, is the root of a tree that contains , , , and . Furthermore, is the root of a tree that contains , , and . Finally, and are roots of trees that contain only themselves. From this observation, we can give a formal definition of a rooted tree.     A Rooted Tree, redrawn   A Rooted Tree, redrawn     Rooted Tree  Rooted Tree      Basis: A tree with no vertices is a rooted tree (the empty tree).    A single vertex with no children is a rooted tree.    Recursion: Let , , be disjoint rooted trees with roots , , , respectively, and let be a vertex that does not belong to any of these trees. Then a rooted tree, rooted at , is obtained by making the parent of the vertices , , and . We call subtrees of the larger tree.       The level of a vertex Level of a vertex of a rooted tree is the number of edges that separate the vertex from the root. The level of the root is zero. The depth of a tree is the maximum level of the vertices in the tree. The depth of a tree in is three, which is the level of the vertices and . The vertices , , , , , , and have level two. , , and are at level one and has level zero.   A Decision Tree  is a rooted tree with Start as the root. It is an example of what is called a decision tree.    Tree Structure of Data  One of the keys to working with large amounts of information is to organize it in a consistent, logical way. A data structure is a scheme for organizing data. A simple example of a data structure might be the information a college admissions department might keep on their applicants. Items might look something like this: This structure is called a flat file .  A spreadsheet can be used to arrange data in this way. Although a flat file structure is often adequate, there are advantages to clustering some the information. For example the applicant information might be broken into four parts: name, contact information, high school, and application data: The first item in each ApplicantItem is a list , with each item in that list being a single field of the original flat file. The third item is simply the single high school item from the flat file. The application data is a list and one of its items, is itself a list with the recommendation data for each recommendation the applicant has.  The organization of this data can be visualized with a rooted tree such as the one in .   Applicant Data in a Rooted Tree   Applicant Data in a Rooted Tree    In general, you can represent a data item, , as a rooted tree with as the root and a subtree for each field. Those fields that are more than just one item are roots of further subtrees, while individual items have no further children in the tree.     Kruskal's Algorithm  An alternate algorithm for constructing a minimal spanning tree uses a forest of rooted trees. First we will describe the algorithm in its simplest terms. Afterward, we will describe how rooted trees are used to implement the algorithm. Finally, we will demonstrate the SageMath implementation of the algorithm. In all versions of this algorithm, assume that is a weighted undirected graph with and .   Kruskal's Algorithm - Informal Version      Sort the edges of in ascending order according to weight. That is, .    Go down the list from Step 1 and add edges to a set (initially empty) of edges so that the set does not form a cycle. When an edge that would create a cycle is encountered, ignore it. Continue examining edges until either edges have been selected or you have come to the end of the edge list. If edges are selected, these edges make up a minimal spanning tree for . If fewer than edges are selected, is not connected.       Step 1 can be accomplished using one of any number of standard sorting routines. Using the most efficient sorting routine, the time required to perform this step is proportional to . The second step of the algorithm, also of time complexity, is the one that uses a forest of rooted trees to test for whether an edge should be added to the spanning set.   Kruskal's Algorithm  Kruskal's Algorithm      Sort the edges of in ascending order according to weight. That is, .       Initialize each vertex in V to be the root of its own rooted tree.    Go down the list of edges until either a spanning tree is completed or the edge list has been exhausted. For each edge , we can determine whether e can be added to the spanning set without forming a cycle by determining whether the root of tree is equal to the root of tree. If the two roots are equal, then ignore e. If the roots are different, then we can add e to the spanning set. In addition, we merge the trees that and belong to. This is accomplished by either making root the parent of root or vice versa.              Since we start the Kruskal's algorithm with trees and each addition of an edge decreases the number of trees by one, we end the algorithm with one rooted tree, provided a spanning tree exists.    The rooted tree that we develop in the algorithm is not the spanning tree itself.        SageMath Note - Implementation of Kruskal's Algorithm   SageMath Note  Kruskal's Algorithm   Kruskal's algorithm has been implemented in Sage. We illustrate how the spanning tree for a weighted graph in can be generated. First, we create such a graph  We will create a graph using a list of triples of the form . The method tells Sage to consider the labels as weights.    Weighed graph, SageMath output   SageMath Output - Weighted Graph    Next, we load the kruskal function and use it to generate the list of edges in a spanning tree of .   To see the resulting tree with the same embedding as , we generate a graph from the spanning tree edges. Next, we set the positions of the vertices to be the same as in the graph. Finally, we plot the tree.    Spanning tree, SageMath output   SageMath Output - Spanning tree for weighted graph      Exercises   Suppose that an undirected tree has diameter and that you would like to select a vertex of the tree as a root so that the resulting rooted tree has the smallest depth possible. How would such a root be selected and what would be the depth of the tree (in terms of )?   Locate any simple path of length and locate the vertex in position on the path. The tree rooted at that vertex will have a depth of , which is minimal.    Use Kruskal's algorithm to find a minimal spanning tree for the following graphs. In addition to the spanning tree, find the final rooted tree in the algorithm. When you merge two trees in the algorithm, make the root of the tree with the lower vertex number the root of the new tree.   Graph 2(a)   Figure for exercise 16.3.2a       Graph 2(b)   Figure for exercise 16.3.2b       Suppose that information on buildings is arranged in records with five fields: the name of the building, its location, its owner, its height, and its floor space. The location and owner fields are records that include all of the information that you would expect, such as street, city, and state, together with the owner's name (first, middle, last) in the owner field. Draw a rooted tree to describe this type of record      Solution to exercise 16-3-3      Step through Kruskal's Algorthm by hand to verify that the example of a minimal spanning tree using Sage in is correct.    "
 },
 {
-  "id": "fig-rooted-tree-14-3",
+  "id": "fig-rooted-tree-16-3",
   "level": "2",
-  "url": "s-rooted-trees.html#fig-rooted-tree-14-3",
+  "url": "s-rooted-trees.html#fig-rooted-tree-16-3",
   "type": "Figure",
-  "number": "14.3.1",
+  "number": "16.3.1",
   "title": "",
   "body": " A Rooted Tree   A Rooted Tree   "
 },
@@ -10814,16 +11705,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-rooted-trees.html#list-rooted-tree-terms",
   "type": "List",
-  "number": "14.3.2",
+  "number": "16.3.2",
   "title": "Informal Definition and Terminology",
   "body": " Informal Definition and Terminology   What differentiates rooted trees from undirected trees is that a rooted tree contains a distinguished vertex, called the root. Consider the tree in . Vertex has been designated the root of the tree. If we choose any other vertex in the tree, such as , we know that there is a unique path from to . The vertices on this path, , are described in genealogical terms:     is a child of (so is )    is 's parent.    , , and are 's ancestors.    , , and are descendants of .     These genealogical relationships are often easier to visualize if the tree is rewritten so that children are positioned below their parents, as in .  With this format, it is easy to see that each vertex in the tree can be thought of as the root of a tree that contains, in addition to itself, all of its descendants. For example, is the root of a tree that contains , , , and . Furthermore, is the root of a tree that contains , , and . Finally, and are roots of trees that contain only themselves. From this observation, we can give a formal definition of a rooted tree.   "
 },
 {
-  "id": "fig-rooted-tree-14-3-redrawn",
+  "id": "fig-rooted-tree-16-3-redrawn",
   "level": "2",
-  "url": "s-rooted-trees.html#fig-rooted-tree-14-3-redrawn",
+  "url": "s-rooted-trees.html#fig-rooted-tree-16-3-redrawn",
   "type": "Figure",
-  "number": "14.3.3",
+  "number": "16.3.3",
   "title": "",
   "body": " A Rooted Tree, redrawn   A Rooted Tree, redrawn   "
 },
@@ -10832,14 +11723,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-rooted-trees.html#def-rooted-tree",
   "type": "Definition",
-  "number": "14.3.4",
+  "number": "16.3.4",
   "title": "Rooted Tree.",
   "body": " Rooted Tree  Rooted Tree      Basis: A tree with no vertices is a rooted tree (the empty tree).    A single vertex with no children is a rooted tree.    Recursion: Let , , be disjoint rooted trees with roots , , , respectively, and let be a vertex that does not belong to any of these trees. Then a rooted tree, rooted at , is obtained by making the parent of the vertices , , and . We call subtrees of the larger tree.      "
 },
 {
-  "id": "p-4303",
+  "id": "p-4733",
   "level": "2",
-  "url": "s-rooted-trees.html#p-4303",
+  "url": "s-rooted-trees.html#p-4733",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -10850,7 +11741,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-rooted-trees.html#ex-decision-tree",
   "type": "Example",
-  "number": "14.3.5",
+  "number": "16.3.5",
   "title": "A Decision Tree.",
   "body": " A Decision Tree  is a rooted tree with Start as the root. It is an example of what is called a decision tree.  "
 },
@@ -10859,34 +11750,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-rooted-trees.html#ex-data-structures",
   "type": "Example",
-  "number": "14.3.6",
+  "number": "16.3.6",
   "title": "Tree Structure of Data.",
   "body": " Tree Structure of Data  One of the keys to working with large amounts of information is to organize it in a consistent, logical way. A data structure is a scheme for organizing data. A simple example of a data structure might be the information a college admissions department might keep on their applicants. Items might look something like this: This structure is called a flat file .  A spreadsheet can be used to arrange data in this way. Although a flat file structure is often adequate, there are advantages to clustering some the information. For example the applicant information might be broken into four parts: name, contact information, high school, and application data: The first item in each ApplicantItem is a list , with each item in that list being a single field of the original flat file. The third item is simply the single high school item from the flat file. The application data is a list and one of its items, is itself a list with the recommendation data for each recommendation the applicant has.  The organization of this data can be visualized with a rooted tree such as the one in .   Applicant Data in a Rooted Tree   Applicant Data in a Rooted Tree    In general, you can represent a data item, , as a rooted tree with as the root and a subtree for each field. Those fields that are more than just one item are roots of further subtrees, while individual items have no further children in the tree.  "
 },
 {
-  "id": "algorithm-30",
+  "id": "algorithm-32",
   "level": "2",
-  "url": "s-rooted-trees.html#algorithm-30",
+  "url": "s-rooted-trees.html#algorithm-32",
   "type": "Algorithm",
-  "number": "14.3.8",
+  "number": "16.3.8",
   "title": "Kruskal’s Algorithm - Informal Version.",
   "body": " Kruskal's Algorithm - Informal Version      Sort the edges of in ascending order according to weight. That is, .    Go down the list from Step 1 and add edges to a set (initially empty) of edges so that the set does not form a cycle. When an edge that would create a cycle is encountered, ignore it. Continue examining edges until either edges have been selected or you have come to the end of the edge list. If edges are selected, these edges make up a minimal spanning tree for . If fewer than edges are selected, is not connected.      "
 },
 {
-  "id": "algorithm-31",
+  "id": "algorithm-33",
   "level": "2",
-  "url": "s-rooted-trees.html#algorithm-31",
+  "url": "s-rooted-trees.html#algorithm-33",
   "type": "Algorithm",
-  "number": "14.3.9",
+  "number": "16.3.9",
   "title": "Kruskal’s Algorithm.",
   "body": " Kruskal's Algorithm  Kruskal's Algorithm      Sort the edges of in ascending order according to weight. That is, .       Initialize each vertex in V to be the root of its own rooted tree.    Go down the list of edges until either a spanning tree is completed or the edge list has been exhausted. For each edge , we can determine whether e can be added to the spanning set without forming a cycle by determining whether the root of tree is equal to the root of tree. If the two roots are equal, then ignore e. If the roots are different, then we can add e to the spanning set. In addition, we merge the trees that and belong to. This is accomplished by either making root the parent of root or vice versa.         "
 },
 {
-  "id": "note-13",
+  "id": "note-15",
   "level": "2",
-  "url": "s-rooted-trees.html#note-13",
+  "url": "s-rooted-trees.html#note-15",
   "type": "Note",
-  "number": "14.3.10",
+  "number": "16.3.10",
   "title": "",
   "body": "    Since we start the Kruskal's algorithm with trees and each addition of an edge decreases the number of trees by one, we end the algorithm with one rooted tree, provided a spanning tree exists.    The rooted tree that we develop in the algorithm is not the spanning tree itself.     "
 },
@@ -10895,7 +11786,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-rooted-trees.html#sage_graph",
   "type": "Figure",
-  "number": "14.3.11",
+  "number": "16.3.11",
   "title": "",
   "body": " Weighed graph, SageMath output   SageMath Output - Weighted Graph   "
 },
@@ -10904,43 +11795,43 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-rooted-trees.html#sage_spanning_tree",
   "type": "Figure",
-  "number": "14.3.12",
+  "number": "16.3.12",
   "title": "",
   "body": " Spanning tree, SageMath output   SageMath Output - Spanning tree for weighted graph   "
 },
 {
-  "id": "exercise-511",
+  "id": "exercise-549",
   "level": "2",
-  "url": "s-rooted-trees.html#exercise-511",
+  "url": "s-rooted-trees.html#exercise-549",
   "type": "Exercise",
-  "number": "14.3.4.1",
+  "number": "16.3.4.1",
   "title": "",
   "body": " Suppose that an undirected tree has diameter and that you would like to select a vertex of the tree as a root so that the resulting rooted tree has the smallest depth possible. How would such a root be selected and what would be the depth of the tree (in terms of )?   Locate any simple path of length and locate the vertex in position on the path. The tree rooted at that vertex will have a depth of , which is minimal.  "
 },
 {
-  "id": "exercise-512",
+  "id": "exercise-550",
   "level": "2",
-  "url": "s-rooted-trees.html#exercise-512",
+  "url": "s-rooted-trees.html#exercise-550",
   "type": "Exercise",
-  "number": "14.3.4.2",
+  "number": "16.3.4.2",
   "title": "",
-  "body": " Use Kruskal's algorithm to find a minimal spanning tree for the following graphs. In addition to the spanning tree, find the final rooted tree in the algorithm. When you merge two trees in the algorithm, make the root of the tree with the lower vertex number the root of the new tree.   Graph 2(a)   Figure for exercise 14.3.2a       Graph 2(b)   Figure for exercise 14.3.2b     "
+  "body": " Use Kruskal's algorithm to find a minimal spanning tree for the following graphs. In addition to the spanning tree, find the final rooted tree in the algorithm. When you merge two trees in the algorithm, make the root of the tree with the lower vertex number the root of the new tree.   Graph 2(a)   Figure for exercise 16.3.2a       Graph 2(b)   Figure for exercise 16.3.2b     "
 },
 {
-  "id": "exercise-513",
+  "id": "exercise-551",
   "level": "2",
-  "url": "s-rooted-trees.html#exercise-513",
+  "url": "s-rooted-trees.html#exercise-551",
   "type": "Exercise",
-  "number": "14.3.4.3",
+  "number": "16.3.4.3",
   "title": "",
-  "body": " Suppose that information on buildings is arranged in records with five fields: the name of the building, its location, its owner, its height, and its floor space. The location and owner fields are records that include all of the information that you would expect, such as street, city, and state, together with the owner's name (first, middle, last) in the owner field. Draw a rooted tree to describe this type of record      Solution to exercise 14-3-3    "
+  "body": " Suppose that information on buildings is arranged in records with five fields: the name of the building, its location, its owner, its height, and its floor space. The location and owner fields are records that include all of the information that you would expect, such as street, city, and state, together with the owner's name (first, middle, last) in the owner field. Draw a rooted tree to describe this type of record      Solution to exercise 16-3-3    "
 },
 {
-  "id": "exercise-514",
+  "id": "exercise-552",
   "level": "2",
-  "url": "s-rooted-trees.html#exercise-514",
+  "url": "s-rooted-trees.html#exercise-552",
   "type": "Exercise",
-  "number": "14.3.4.4",
+  "number": "16.3.4.4",
   "title": "",
   "body": " Step through Kruskal's Algorthm by hand to verify that the example of a minimal spanning tree using Sage in is correct.  "
 },
@@ -10949,14 +11840,14 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s-binary-trees.html",
   "type": "Section",
-  "number": "14.4",
+  "number": "16.4",
   "title": "Binary Trees",
-  "body": "  Binary Trees  Binary Trees   Definition of a binary tree  An ordered rooted tree is a rooted tree whose subtrees are put into a definite order and are, themselves, ordered rooted trees. An empty tree and a single vertex with no descendants (no subtrees) are ordered rooted trees.   Distinct Ordered Rooted Trees  The trees in are identical rooted trees, with root 1, but as ordered trees, they are different.   Two different ordered rooted trees   Two different ordered rooted trees     If a tree rooted at has subtrees, we would refer to them as the first, second,..., subtrees. There is a subtle difference between certain ordered trees and binary trees, which we define next.   Binary Tree  Binary Tree      A tree consisting of no vertices (the empty tree) is a binary tree    A vertex together with two subtrees that are both binary trees is a binary tree. The subtrees are called the left and right subtrees of the binary tree.       The difference between binary trees and ordered trees is that every vertex of a binary tree has exactly two subtrees (one or both of which may be empty), while a vertex of an ordered tree may have any number of subtrees. But there is another significant difference between the two types of structures. The two trees in would be considered identical as ordered trees. However, they are different binary trees. Tree (a) has an empty right subtree and Tree (b) has an empty left subtree.   Two different binary trees   Two different binary trees     Terminology and General Facts about Binary Trees  Full binary tree     Leaf of a binary tree  A vertex of a binary tree with two empty subtrees is called a leaf Leaf, of a binary tree . All other vertices are called internal vertices .    The number of leaves in a binary tree can vary from one up to roughly half the number of vertices in the tree (see Exercise 4 of this section).    The maximum number of vertices at level of a binary tree is , (see Exercise 6 of this section).     Full binary tree  A full binary tree is a tree for which each vertex has either zero or two empty subtrees. In other words, each vertex has either two or zero children. See of this section for a general fact about full binary trees.       Traversals of Binary Trees  Traversals of Binary Trees  The traversal of a binary tree consists of visiting each vertex of the tree in some prescribed order. Unlike graph traversals, the consecutive vertices that are visited are not always connected with an edge. The most common binary tree traversals are differentiated by the order in which the root and its subtrees are visited. The three traversals are best described recursively and are:   Preorder Traversal:     Visit the root of the tree.    Preorder traverse the left subtree.    Preorder traverse the right subtree.       Inorder Traversal:     Inorder traverse the left subtree.    Visit the root of the tree.    Inorder traverse the right subtree.       Postorder Traversal:     Postorder traverse the left subtree.    Postorder traverse the right subtree.    Visit the root of the tree.       Any traversal of an empty tree consists of doing nothing.   Traversal Examples  For the tree in , the orders in which the vertices are visited are:   A-B-D-E-C-F-G, for the preorder traversal.    D-B-E-A-F-C-G, for the inorder traversal.    D-E-B-F-G-C-A, for the postorder traversal.     A Complete Binary Tree to Level 2   A Complete Binary Tree to Level 2     Binary Tree Sort. Given a collection of integers (or other objects than can be ordered), one technique for sorting is a binary tree sort. If the integers are , , , , we first execute the following algorithm that creates a binary tree:   Binary Sort Tree Creation      Insert into the root of the tree.    For k := 2 to n \/\/ insert into the tree     r =    inserted = false    while not(inserted):  if :  if has a left child:  r = left child of  else:  make the left child of   inserted = true  else:  if has a right child:  r = right child of  else:  make the right child of   inserted = true          If the integers to be sorted are 25, 17, 9, 20, 33, 13, and 30, then the tree that is created is the one in . The inorder traversal of this tree is 9, 13, 17, 20, 25, 30, 33, the integers in ascending order. In general, the inorder traversal of the tree that is constructed in the algorithm above will produce a sorted list. The preorder and postorder traversals of the tree have no meaning here.   A Binary Sorting Tree   Binary Sorting Tree      Expression Trees  Expression Tree  A convenient way to visualize an algebraic expression is by its expression tree. Consider the expression Since it is customary to put a precedence on multiplication\/divisions, is evaluated as . Consecutive multiplication\/divisions or addition\/subtractions are evaluated from left to right. We can analyze further by noting that it is the sum of two simpler expressions and . The first of these expressions can be broken down further into the difference of the expressions and . When we decompose any expression into , the expression tree of that expression is the binary tree whose root contains the operation and whose left and right subtrees are the trees of the left and right expressions, respectively. Additionally, a simple variable or a number has an expression tree that is a single vertex containing the variable or number. The evolution of the expression tree for expression appears in .   Building an Expression Tree   Building an Expression Tree     Some Expression Trees     If we intend to apply the addition and subtraction operations in first, we would parenthesize the expression to . Its expression tree appears in (a).    The expression trees for and for appear in (b) and (c).      Expression Tree Examples   Expression Tree Examples     The three traversals of an operation tree are all significant. A binary operation applied to a pair of numbers can be written in three ways. One is the familiar infix form, such as for the sum of and . Another form is prefix, in which the same sum is written . The final form is postfix, in which the sum is written . Algebraic expressions involving the four standard arithmetic operations in prefix and postfix form are defined as follows:   Prefix and postfix forms of an algebraic expression    Prefix     A variable or number is a prefix expression    Any operation followed by a pair of prefix expressions is a prefix expression.       Postfix     A variable or number is a postfix expression    Any pair of postfix expressions followed by an operation is a postfix expression.        The connection between traversals of an expression tree and these forms is simple:     The preorder traversal of an expression tree will result in the prefix form of the expression.    The postorder traversal of an expression tree will result in the postfix form of the expression.    The inorder traversal of an operation tree will not, in general, yield the proper infix form of the expression. If an expression requires parentheses in infix form, an inorder traversal of its expression tree has the effect of removing the parentheses.      Traversing an Expression Tree  The preorder traversal of the tree in is , which is the prefix version of expression . The postorder traversal is . Note that since the original form of needed no parentheses, the inorder traversal, , is the correct infix version.     Counting Binary Trees  Counting Binary Trees  We close this section with a formula for the number of different binary trees with vertices. The formula is derived using generating functions. Although the complete details are beyond the scope of this text, we will supply an overview of the derivation in order to illustrate how generating functions are used in advanced combinatorics.  Let be the number of different binary trees of size ( vertices), . By our definition of a binary tree, . Now consider any positive integer , . A binary tree of size has two subtrees, the sizes of which add up to . The possibilities can be broken down into cases:   Case 0: Left subtree has size 0; right subtree has size .  Case 1: Left subtree has size 1; right subtree has size .      Case : Left subtree has size ; right subtree has size .      Case : Left subtree has size ; right subtree has size 0.   In the general Case , we can count the number of possibilities by multiplying the number of ways that the left subtree can be filled, , by the number of ways that the right subtree can be filled. . Since the sum of these products equals , we obtain the recurrence relation for :   Now take the generating function of both sides of this recurrence relation: or  Recall that If we abbreviate to , we get Using the quadratic equation we find two solutions:   The gap in our derivation occurs here since we don't presume a knowledge of calculus. If we expand as an extended power series, we find  The coefficients after the first one are all negative and there is a singularity at 0 because of the term. However if we do the same with we get  Further analysis leads to a closed form expression for , which is This sequence of numbers is often called the Catalan numbers . For more information on the Catalan numbers, see the entry A000108 in The On-Line Encyclopedia of Integer Sequences .    SageMath Note - Power Series   SageMath Note  Power Series   It may be of interest to note how the extended power series expansions of and are determined using Sage. In Sage, one has the capability of being very specific about how algebraic expressions should be interpreted by specifying the underlying ring. This can make working with various algebraic expressions a bit more confusing to the beginner. Here is how to get a Laurent expansion for above.   The first Sage expression above declares a structure called a ring that contains power series. We are not using that whole structure, just a specific element, G1 . So the important thing about this first input is that it establishes z as being a variable associated with power series over the integers. When the second expression defines the value of G1 in terms of z , it is automatically converted to a power series.  The expansion of uses identical code, and its coefficients are the values of .      Exercises   Draw the expression trees for the following expressions:                                   Solution to exercise 14-4-1-A       Solution to exercise 14-4-1-B      Draw the expression trees for                  Write out the preorder, inorder, and postorder traversals of the trees in Exercise 1 above.        Verify the formula for , by drawing all binary trees with three or fewer vertices.       Draw a binary tree with seven vertices and only one leaf.    Draw a binary tree with seven vertices and as many leaves as possible.         Solution to exercise 14-4-5      Prove that the maximum number of vertices at level of a binary tree is and that a tree with that many vertices at level must have vertices.    Prove that if is a full binary tree, then the number of leaves of is one more than the number of internal vertices (non-leaves).   Solution 1:  Basis: A binary tree consisting of a single vertex, which is a leaf, satisfies the equation  Induction:Assume that for some , all full binary trees with or fewer vertices have one more leaf than internal vertices. Now consider any full binary tree with vertices. Let and be the left and right subtrees of the tree which, by the definition of a full binary tree, must both be full. If and are the numbers of internal vertices in and , and and are the numbers of leaves, then and . Therefore, in the whole tree,   Solution 2:  Imagine building a full binary tree starting with a single vertex. By continuing to add leaves in pairs so that the tree stays full, we can build any full binary tree. Our starting tree satisfies the condition that the number of leaves is one more than the number of internal vertices . By adding a pair of leaves to a full binary tree, an old leaf becomes an internal vertex, increasing the number of internal vertices by one. Although we lose a leaf, the two added leaves create a net increase of one leaf. Therefore, the desired equality is maintained.    "
+  "body": "  Binary Trees  Binary Trees   Definition of a binary tree  An ordered rooted tree is a rooted tree whose subtrees are put into a definite order and are, themselves, ordered rooted trees. An empty tree and a single vertex with no descendants (no subtrees) are ordered rooted trees.   Distinct Ordered Rooted Trees  The trees in are identical rooted trees, with root 1, but as ordered trees, they are different.   Two different ordered rooted trees   Two different ordered rooted trees     If a tree rooted at has subtrees, we would refer to them as the first, second,..., subtrees. There is a subtle difference between certain ordered trees and binary trees, which we define next.   Binary Tree  Binary Tree      A tree consisting of no vertices (the empty tree) is a binary tree    A vertex together with two subtrees that are both binary trees is a binary tree. The subtrees are called the left and right subtrees of the binary tree.       The difference between binary trees and ordered trees is that every vertex of a binary tree has exactly two subtrees (one or both of which may be empty), while a vertex of an ordered tree may have any number of subtrees. But there is another significant difference between the two types of structures. The two trees in would be considered identical as ordered trees. However, they are different binary trees. Tree (a) has an empty right subtree and Tree (b) has an empty left subtree.   Two different binary trees   Two different binary trees     Terminology and General Facts about Binary Trees  Full binary tree     Leaf of a binary tree  A vertex of a binary tree with two empty subtrees is called a leaf Leaf, of a binary tree . All other vertices are called internal vertices .    The number of leaves in a binary tree can vary from one up to roughly half the number of vertices in the tree (see Exercise 4 of this section).    The maximum number of vertices at level of a binary tree is , (see Exercise 6 of this section).     Full binary tree  A full binary tree is a tree for which each vertex has either zero or two empty subtrees. In other words, each vertex has either two or zero children. See of this section for a general fact about full binary trees.       Traversals of Binary Trees  Traversals of Binary Trees  The traversal of a binary tree consists of visiting each vertex of the tree in some prescribed order. Unlike graph traversals, the consecutive vertices that are visited are not always connected with an edge. The most common binary tree traversals are differentiated by the order in which the root and its subtrees are visited. The three traversals are best described recursively and are:   Preorder Traversal:     Visit the root of the tree.    Preorder traverse the left subtree.    Preorder traverse the right subtree.       Inorder Traversal:     Inorder traverse the left subtree.    Visit the root of the tree.    Inorder traverse the right subtree.       Postorder Traversal:     Postorder traverse the left subtree.    Postorder traverse the right subtree.    Visit the root of the tree.       Any traversal of an empty tree consists of doing nothing.   Traversal Examples  For the tree in , the orders in which the vertices are visited are:   A-B-D-E-C-F-G, for the preorder traversal.    D-B-E-A-F-C-G, for the inorder traversal.    D-E-B-F-G-C-A, for the postorder traversal.     A Complete Binary Tree to Level 2   A Complete Binary Tree to Level 2     Binary Tree Sort. Given a collection of integers (or other objects than can be ordered), one technique for sorting is a binary tree sort. If the integers are , , , , we first execute the following algorithm that creates a binary tree:   Binary Sort Tree Creation      Insert into the root of the tree.    For k := 2 to n \/\/ insert into the tree     r =    inserted = false    while not(inserted):  if :  if has a left child:  r = left child of  else:  make the left child of   inserted = true  else:  if has a right child:  r = right child of  else:  make the right child of   inserted = true          If the integers to be sorted are 25, 17, 9, 20, 33, 13, and 30, then the tree that is created is the one in . The inorder traversal of this tree is 9, 13, 17, 20, 25, 30, 33, the integers in ascending order. In general, the inorder traversal of the tree that is constructed in the algorithm above will produce a sorted list. The preorder and postorder traversals of the tree have no meaning here.   A Binary Sorting Tree   Binary Sorting Tree      Expression Trees  Expression Tree  A convenient way to visualize an algebraic expression is by its expression tree. Consider the expression Since it is customary to put a precedence on multiplication\/divisions, is evaluated as . Consecutive multiplication\/divisions or addition\/subtractions are evaluated from left to right. We can analyze further by noting that it is the sum of two simpler expressions and . The first of these expressions can be broken down further into the difference of the expressions and . When we decompose any expression into , the expression tree of that expression is the binary tree whose root contains the operation and whose left and right subtrees are the trees of the left and right expressions, respectively. Additionally, a simple variable or a number has an expression tree that is a single vertex containing the variable or number. The evolution of the expression tree for expression appears in .   Building an Expression Tree   Building an Expression Tree     Some Expression Trees     If we intend to apply the addition and subtraction operations in first, we would parenthesize the expression to . Its expression tree appears in (a).    The expression trees for and for appear in (b) and (c).      Expression Tree Examples   Expression Tree Examples     The three traversals of an operation tree are all significant. A binary operation applied to a pair of numbers can be written in three ways. One is the familiar infix form, such as for the sum of and . Another form is prefix, in which the same sum is written . The final form is postfix, in which the sum is written . Algebraic expressions involving the four standard arithmetic operations in prefix and postfix form are defined as follows:   Prefix and postfix forms of an algebraic expression    Prefix     A variable or number is a prefix expression    Any operation followed by a pair of prefix expressions is a prefix expression.       Postfix     A variable or number is a postfix expression    Any pair of postfix expressions followed by an operation is a postfix expression.        The connection between traversals of an expression tree and these forms is simple:     The preorder traversal of an expression tree will result in the prefix form of the expression.    The postorder traversal of an expression tree will result in the postfix form of the expression.    The inorder traversal of an operation tree will not, in general, yield the proper infix form of the expression. If an expression requires parentheses in infix form, an inorder traversal of its expression tree has the effect of removing the parentheses.      Traversing an Expression Tree  The preorder traversal of the tree in is , which is the prefix version of expression . The postorder traversal is . Note that since the original form of needed no parentheses, the inorder traversal, , is the correct infix version.     Counting Binary Trees  Counting Binary Trees  We close this section with a formula for the number of different binary trees with vertices. The formula is derived using generating functions. Although the complete details are beyond the scope of this text, we will supply an overview of the derivation in order to illustrate how generating functions are used in advanced combinatorics.  Let be the number of different binary trees of size ( vertices), . By our definition of a binary tree, . Now consider any positive integer , . A binary tree of size has two subtrees, the sizes of which add up to . The possibilities can be broken down into cases:   Case 0: Left subtree has size 0; right subtree has size .  Case 1: Left subtree has size 1; right subtree has size .      Case : Left subtree has size ; right subtree has size .      Case : Left subtree has size ; right subtree has size 0.   In the general Case , we can count the number of possibilities by multiplying the number of ways that the left subtree can be filled, , by the number of ways that the right subtree can be filled. . Since the sum of these products equals , we obtain the recurrence relation for :   Now take the generating function of both sides of this recurrence relation: or  Recall that If we abbreviate to , we get Using the quadratic equation we find two solutions:   The gap in our derivation occurs here since we don't presume a knowledge of calculus. If we expand as an extended power series, we find  The coefficients after the first one are all negative and there is a singularity at 0 because of the term. However if we do the same with we get  Further analysis leads to a closed form expression for , which is This sequence of numbers is often called the Catalan numbers . For more information on the Catalan numbers, see the entry A000108 in The On-Line Encyclopedia of Integer Sequences .    SageMath Note - Power Series   SageMath Note  Power Series   It may be of interest to note how the extended power series expansions of and are determined using Sage. In Sage, one has the capability of being very specific about how algebraic expressions should be interpreted by specifying the underlying ring. This can make working with various algebraic expressions a bit more confusing to the beginner. Here is how to get a Laurent expansion for above.   The first Sage expression above declares a structure called a ring that contains power series. We are not using that whole structure, just a specific element, G1 . So the important thing about this first input is that it establishes z as being a variable associated with power series over the integers. When the second expression defines the value of G1 in terms of z , it is automatically converted to a power series.  The expansion of uses identical code, and its coefficients are the values of .      Exercises   Draw the expression trees for the following expressions:                                   Solution to exercise 16-4-1-A       Solution to exercise 16-4-1-B      Draw the expression trees for                  Write out the preorder, inorder, and postorder traversals of the trees in Exercise 1 above.        Verify the formula for , by drawing all binary trees with three or fewer vertices.       Draw a binary tree with seven vertices and only one leaf.    Draw a binary tree with seven vertices and as many leaves as possible.         Solution to exercise 16-4-5      Prove that the maximum number of vertices at level of a binary tree is and that a tree with that many vertices at level must have vertices.    Prove that if is a full binary tree, then the number of leaves of is one more than the number of internal vertices (non-leaves).   Solution 1:  Basis: A binary tree consisting of a single vertex, which is a leaf, satisfies the equation  Induction:Assume that for some , all full binary trees with or fewer vertices have one more leaf than internal vertices. Now consider any full binary tree with vertices. Let and be the left and right subtrees of the tree which, by the definition of a full binary tree, must both be full. If and are the numbers of internal vertices in and , and and are the numbers of leaves, then and . Therefore, in the whole tree,   Solution 2:  Imagine building a full binary tree starting with a single vertex. By continuing to add leaves in pairs so that the tree stays full, we can build any full binary tree. Our starting tree satisfies the condition that the number of leaves is one more than the number of internal vertices . By adding a pair of leaves to a full binary tree, an old leaf becomes an internal vertex, increasing the number of internal vertices by one. Although we lose a leaf, the two added leaves create a net increase of one leaf. Therefore, the desired equality is maintained.    "
 },
 {
-  "id": "p-4331",
+  "id": "p-4761",
   "level": "2",
-  "url": "s-binary-trees.html#p-4331",
+  "url": "s-binary-trees.html#p-4761",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -10967,7 +11858,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-binary-trees.html#ex-ordered-rooted",
   "type": "Example",
-  "number": "14.4.1",
+  "number": "16.4.1",
   "title": "Distinct Ordered Rooted Trees.",
   "body": " Distinct Ordered Rooted Trees  The trees in are identical rooted trees, with root 1, but as ordered trees, they are different.   Two different ordered rooted trees   Two different ordered rooted trees    "
 },
@@ -10976,7 +11867,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-binary-trees.html#def-binary-tree",
   "type": "Definition",
-  "number": "14.4.3",
+  "number": "16.4.3",
   "title": "Binary Tree.",
   "body": " Binary Tree  Binary Tree      A tree consisting of no vertices (the empty tree) is a binary tree    A vertex together with two subtrees that are both binary trees is a binary tree. The subtrees are called the left and right subtrees of the binary tree.      "
 },
@@ -10985,7 +11876,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-binary-trees.html#fig-diff-binary-trees",
   "type": "Figure",
-  "number": "14.4.4",
+  "number": "16.4.4",
   "title": "",
   "body": " Two different binary trees   Two different binary trees   "
 },
@@ -10994,7 +11885,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-binary-trees.html#list-11",
   "type": "List",
-  "number": "14.4.5",
+  "number": "16.4.5",
   "title": "Terminology and General Facts about Binary Trees",
   "body": " Terminology and General Facts about Binary Trees  Full binary tree     Leaf of a binary tree  A vertex of a binary tree with two empty subtrees is called a leaf Leaf, of a binary tree . All other vertices are called internal vertices .    The number of leaves in a binary tree can vary from one up to roughly half the number of vertices in the tree (see Exercise 4 of this section).    The maximum number of vertices at level of a binary tree is , (see Exercise 6 of this section).     Full binary tree  A full binary tree is a tree for which each vertex has either zero or two empty subtrees. In other words, each vertex has either two or zero children. See of this section for a general fact about full binary trees.    "
 },
@@ -11003,7 +11894,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-binary-trees.html#ex-traversals-example",
   "type": "Example",
-  "number": "14.4.6",
+  "number": "16.4.6",
   "title": "Traversal Examples.",
   "body": " Traversal Examples  For the tree in , the orders in which the vertices are visited are:   A-B-D-E-C-F-G, for the preorder traversal.    D-B-E-A-F-C-G, for the inorder traversal.    D-E-B-F-G-C-A, for the postorder traversal.     A Complete Binary Tree to Level 2   A Complete Binary Tree to Level 2    "
 },
@@ -11012,7 +11903,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-binary-trees.html#alg-bin-sort-maketree",
   "type": "Algorithm",
-  "number": "14.4.8",
+  "number": "16.4.8",
   "title": "Binary Sort Tree Creation.",
   "body": " Binary Sort Tree Creation      Insert into the root of the tree.    For k := 2 to n \/\/ insert into the tree     r =    inserted = false    while not(inserted):  if :  if has a left child:  r = left child of  else:  make the left child of   inserted = true  else:  if has a right child:  r = right child of  else:  make the right child of   inserted = true         "
 },
@@ -11021,7 +11912,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-binary-trees.html#fig-sort-tree",
   "type": "Figure",
-  "number": "14.4.9",
+  "number": "16.4.9",
   "title": "",
   "body": " A Binary Sorting Tree   Binary Sorting Tree   "
 },
@@ -11030,7 +11921,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-binary-trees.html#fig-expression-tree-build",
   "type": "Figure",
-  "number": "14.4.10",
+  "number": "16.4.10",
   "title": "",
   "body": " Building an Expression Tree   Building an Expression Tree   "
 },
@@ -11039,7 +11930,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-binary-trees.html#ex-expression-tree-examples",
   "type": "Example",
-  "number": "14.4.11",
+  "number": "16.4.11",
   "title": "Some Expression Trees.",
   "body": " Some Expression Trees     If we intend to apply the addition and subtraction operations in first, we would parenthesize the expression to . Its expression tree appears in (a).    The expression trees for and for appear in (b) and (c).      Expression Tree Examples   Expression Tree Examples    "
 },
@@ -11048,7 +11939,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-binary-trees.html#list-12",
   "type": "List",
-  "number": "14.4.13",
+  "number": "16.4.13",
   "title": "Prefix and postfix forms of an algebraic expression",
   "body": " Prefix and postfix forms of an algebraic expression    Prefix     A variable or number is a prefix expression    Any operation followed by a pair of prefix expressions is a prefix expression.       Postfix     A variable or number is a postfix expression    Any pair of postfix expressions followed by an operation is a postfix expression.       "
 },
@@ -11057,79 +11948,79 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-binary-trees.html#ex-expression-tree-traversal-example",
   "type": "Example",
-  "number": "14.4.14",
+  "number": "16.4.14",
   "title": "Traversing an Expression Tree.",
   "body": " Traversing an Expression Tree  The preorder traversal of the tree in is , which is the prefix version of expression . The postorder traversal is . Note that since the original form of needed no parentheses, the inorder traversal, , is the correct infix version.  "
 },
 {
-  "id": "p-4411",
+  "id": "p-4841",
   "level": "2",
-  "url": "s-binary-trees.html#p-4411",
+  "url": "s-binary-trees.html#p-4841",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Catalan numbers "
 },
 {
-  "id": "p-4413",
+  "id": "p-4843",
   "level": "2",
-  "url": "s-binary-trees.html#p-4413",
+  "url": "s-binary-trees.html#p-4843",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "ring "
 },
 {
-  "id": "exercise-515",
+  "id": "exercise-553",
   "level": "2",
-  "url": "s-binary-trees.html#exercise-515",
+  "url": "s-binary-trees.html#exercise-553",
   "type": "Exercise",
-  "number": "14.4.6.1",
+  "number": "16.4.6.1",
   "title": "",
-  "body": " Draw the expression trees for the following expressions:                                   Solution to exercise 14-4-1-A       Solution to exercise 14-4-1-B    "
+  "body": " Draw the expression trees for the following expressions:                                   Solution to exercise 16-4-1-A       Solution to exercise 16-4-1-B    "
 },
 {
-  "id": "exercise-516",
+  "id": "exercise-554",
   "level": "2",
-  "url": "s-binary-trees.html#exercise-516",
+  "url": "s-binary-trees.html#exercise-554",
   "type": "Exercise",
-  "number": "14.4.6.2",
+  "number": "16.4.6.2",
   "title": "",
   "body": " Draw the expression trees for                "
 },
 {
-  "id": "exercise-517",
+  "id": "exercise-555",
   "level": "2",
-  "url": "s-binary-trees.html#exercise-517",
+  "url": "s-binary-trees.html#exercise-555",
   "type": "Exercise",
-  "number": "14.4.6.3",
+  "number": "16.4.6.3",
   "title": "",
   "body": " Write out the preorder, inorder, and postorder traversals of the trees in Exercise 1 above.      "
 },
 {
-  "id": "exercise-518",
+  "id": "exercise-556",
   "level": "2",
-  "url": "s-binary-trees.html#exercise-518",
+  "url": "s-binary-trees.html#exercise-556",
   "type": "Exercise",
-  "number": "14.4.6.4",
+  "number": "16.4.6.4",
   "title": "",
   "body": " Verify the formula for , by drawing all binary trees with three or fewer vertices.  "
 },
 {
-  "id": "exercise-519",
+  "id": "exercise-557",
   "level": "2",
-  "url": "s-binary-trees.html#exercise-519",
+  "url": "s-binary-trees.html#exercise-557",
   "type": "Exercise",
-  "number": "14.4.6.5",
+  "number": "16.4.6.5",
   "title": "",
-  "body": "    Draw a binary tree with seven vertices and only one leaf.    Draw a binary tree with seven vertices and as many leaves as possible.         Solution to exercise 14-4-5    "
+  "body": "    Draw a binary tree with seven vertices and only one leaf.    Draw a binary tree with seven vertices and as many leaves as possible.         Solution to exercise 16-4-5    "
 },
 {
-  "id": "exercise-520",
+  "id": "exercise-558",
   "level": "2",
-  "url": "s-binary-trees.html#exercise-520",
+  "url": "s-binary-trees.html#exercise-558",
   "type": "Exercise",
-  "number": "14.4.6.6",
+  "number": "16.4.6.6",
   "title": "",
   "body": " Prove that the maximum number of vertices at level of a binary tree is and that a tree with that many vertices at level must have vertices.  "
 },
@@ -11138,7 +12029,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-binary-trees.html#exercise-full-tree",
   "type": "Exercise",
-  "number": "14.4.6.7",
+  "number": "16.4.6.7",
   "title": "",
   "body": " Prove that if is a full binary tree, then the number of leaves of is one more than the number of internal vertices (non-leaves).   Solution 1:  Basis: A binary tree consisting of a single vertex, which is a leaf, satisfies the equation  Induction:Assume that for some , all full binary trees with or fewer vertices have one more leaf than internal vertices. Now consider any full binary tree with vertices. Let and be the left and right subtrees of the tree which, by the definition of a full binary tree, must both be full. If and are the numbers of internal vertices in and , and and are the numbers of leaves, then and . Therefore, in the whole tree,   Solution 2:  Imagine building a full binary tree starting with a single vertex. By continuing to add leaves in pairs so that the tree stays full, we can build any full binary tree. Our starting tree satisfies the condition that the number of leaves is one more than the number of internal vertices . By adding a pair of leaves to a full binary tree, an old leaf becomes an internal vertex, increasing the number of internal vertices by one. Although we lose a leaf, the two added leaves create a net increase of one leaf. Therefore, the desired equality is maintained.  "
 },
@@ -11147,7 +12038,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s-Languages.html",
   "type": "Section",
-  "number": "15.1",
+  "number": "17.1",
   "title": "Formal Language Theory",
   "body": "  Formal Language Theory  Languages   Formal Languages    Languages  In formal language theory, an alphabet is a finite, non-empty set. The elements of the set are called symbols. A finite sequence of symbols from an alphabet is called a string over that alphabet.   Alphabet  Alphabet      An alphabet with two elements, 0 and 1.    An alphabet is a finite, non-empty set. It is customary to use to denote an alphabet.     Symbol   Symbol    The elements of an alphabet are called symbols.     String   String       A string with symbols    A finite sequence of symbols from an alphabet is called a string over that alphabet.     is an alphabet, and , , and are all strings over .  Note that strings really are sequences of symbols, which implies that order matters. Thus , , and are all different strings, though they are made up of the same symbols. The strings and are equal only if (i.e.\\ the strings contain the same number of symbols) and for all .  Just as there are operations defined on numbers, truth values, sets, and other mathematical entities, there are operations defined on strings. Some important operations are:   Length      The length of string    The length of a string is the number of symbols in it. The notation for the length of is . Note that this is consistent with other uses of , all of which involve some notion of size: measures how big a number is (in terms of its distance from 0); measures the size of a set (in terms of the number of elements).  We will occasionally refer to a length-n string . This is a slightly awkward, but concise, shorthand for ``a string whose length is \".     Concatenation      The concatenation of string and string .    The concatenation of two strings and is the sequence of symbols .  Sometimes is used to denote concatenation, but it is far more usual to see the concatenation of and denoted by than by . You can easily convince yourself that concatenation is associative (i.e. for all strings and .) Concatenation is not commutative (i.e. it is not always true that : for example, if and then while and, as discussed above, these strings are not equal.)     Reversal      The reverse of string .    The reverse of a string is the string .     String Operations  Let , , , and .  Then , , and .  Also, , , , and .  Finally, , , and .   By the way, the previous example illustrates a naming convention standard throughout language theory texts: if a letter is intended to represent a single symbol in an alphabet, the convention is to use a letter from the beginning of the English alphabet ; if a letter is intended to represent a string, the convention is to use a letter from the end of the English alphabet .  In set theory, we have a special symbol to designate the set that contains no elements. Similarly, language theory has a special symbol which is used to represent the empty string , the string with no symbols in it. (Some texts use the symbol instead.) It is worth noting that , that , and that for all strings . (This last fact may appear a bit confusing. Remember that is not a symbol in a string with length 1, but rather the name given to the string made up of 0 symbols. Pasting those 0 symbols onto the front or back of a string still produces .)  The set of all strings over an alphabet is denoted . (In language theory, the symbol is typically used to denote ``zero or more'', so is the set of strings made up of zero or more symbols from .) Note that while an alphabet is by definition a finite set of symbols, and strings are by definition finite sequences of those symbols, the set is always infinite . Why is this? Suppose contains elements. Then there is one string over with 0 symbols, strings with 1 symbol, strings with 2 symbols (since there are choices for the first symbol and choices for the second), strings with 3 symbols, etc.   Set of all Strings over an Alphabet  If , then .  If , then .   Note that is countably infinite: if we list the strings as in the preceding example (length-0 strings, length-1 strings in ``alphabetical\" order, length-2 strings similarly ordered, etc) then any string over will eventually appear. (In fact, if and has length , then will appear on the list within the first entries.)  We now come to the definition of a language in the formal language theoretical sense.   Languages over an Alphabet   A language over an alphabet is a subset of . Thus, a language over is an element of , the power set of .    In other words, any set of strings (over alphabet ) constitutes a language (over alphabet ).   Languages over a set  Let . Then the following are all languages over :    Note that languages can be either finite or infinite. Because is infinite, it clearly has an infinite number of subsets, and so there are an infinite number of languages over . But are there countably or uncountably many such languages?    For any alphabet , the number of languages over is uncountable.    This fact is an immediate consequence of the result, proved in a previous chapter, that the power set of a countably infinite set is uncountable. Since the elements of are exactly the languages over , there are uncountably many such languages.  Languages are sets and therefore, as for any sets, it makes sense to talk about the union, intersection, and complement of languages. (When taking the complement of a language over an alphabet , we always consider the univeral set to be , the set of all strings over .) Because languages are sets of strings, there are additional operations that can be defined on languages, operations that would be meaningless on more general sets. For example, the idea of concatenation can be extended from strings to languages.  For two sets of strings and , we define the concatenation of and (denoted or just ) to be the set . For example, if and , then . Note in particular that , because , , and . Because concatenation of sets is defined in terms of the concatenation of the strings that the sets contain, concatenation of sets is associative and not commutative. (This can easily be verified.)  When a set is concatenated with itself, the notation is usually scrapped in favour of ; if is concatenated with , we write for the resulting set, etc. So is the set of all strings formed by concatenating two (possibly different, possibly identical) strings from , is the set of strings formed by concatenating three strings from , etc. Extending this notation, we take to be the set of strings formed from one string in (i.e.\\ is itself), and to be the set of strings formed from zero strings in (i.e.\\ ). If we take the union , then the resulting set is the set of all strings formed by concatenating zero or more strings from , and is denoted . The set is called the Kleene closure of , and the operator is called the Kleene star operator.   Kleene Closure of a set  Let . Then    Note that this is the second time we have seen the notation . We have previously seen that for an alphabet , is defined to be the set of all strings over . If you think of as being a set of length-1 strings, and take its Kleene closure, the result is once again the set of all strings over , and so the two notions of coincide.   > Let . Then     Let and . Find the following:                               The reverse of a language is defined to be . Find and for the and in the preceding problem.    Give an example of a language such that .     "
 },
@@ -11156,7 +12047,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Languages.html#def-alphabet",
   "type": "Definition",
-  "number": "15.1.1",
+  "number": "17.1.1",
   "title": "Alphabet.",
   "body": " Alphabet  Alphabet      An alphabet with two elements, 0 and 1.    An alphabet is a finite, non-empty set. It is customary to use to denote an alphabet.   "
 },
@@ -11165,7 +12056,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Languages.html#def-symbol",
   "type": "Definition",
-  "number": "15.1.2",
+  "number": "17.1.2",
   "title": "Symbol.",
   "body": " Symbol   Symbol    The elements of an alphabet are called symbols.   "
 },
@@ -11174,16 +12065,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Languages.html#def-string",
   "type": "Definition",
-  "number": "15.1.3",
+  "number": "17.1.3",
   "title": "String.",
   "body": " String   String       A string with symbols    A finite sequence of symbols from an alphabet is called a string over that alphabet.   "
 },
 {
-  "id": "example-228",
+  "id": "example-251",
   "level": "2",
-  "url": "s-Languages.html#example-228",
+  "url": "s-Languages.html#example-251",
   "type": "Example",
-  "number": "15.1.4",
+  "number": "17.1.4",
   "title": "",
   "body": " is an alphabet, and , , and are all strings over . "
 },
@@ -11192,7 +12083,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Languages.html#def-string-length",
   "type": "Definition",
-  "number": "15.1.5",
+  "number": "17.1.5",
   "title": "Length.",
   "body": " Length      The length of string    The length of a string is the number of symbols in it. The notation for the length of is . Note that this is consistent with other uses of , all of which involve some notion of size: measures how big a number is (in terms of its distance from 0); measures the size of a set (in terms of the number of elements).  We will occasionally refer to a length-n string . This is a slightly awkward, but concise, shorthand for ``a string whose length is \".   "
 },
@@ -11201,7 +12092,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Languages.html#def-string-concatenation",
   "type": "Definition",
-  "number": "15.1.6",
+  "number": "17.1.6",
   "title": "Concatenation.",
   "body": " Concatenation      The concatenation of string and string .    The concatenation of two strings and is the sequence of symbols .  Sometimes is used to denote concatenation, but it is far more usual to see the concatenation of and denoted by than by . You can easily convince yourself that concatenation is associative (i.e. for all strings and .) Concatenation is not commutative (i.e. it is not always true that : for example, if and then while and, as discussed above, these strings are not equal.)   "
 },
@@ -11210,7 +12101,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Languages.html#def-string-reversal",
   "type": "Definition",
-  "number": "15.1.7",
+  "number": "17.1.7",
   "title": "Reversal.",
   "body": " Reversal      The reverse of string .    The reverse of a string is the string .   "
 },
@@ -11219,7 +12110,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Languages.html#ex-string-ops",
   "type": "Example",
-  "number": "15.1.8",
+  "number": "17.1.8",
   "title": "String Operations.",
   "body": " String Operations  Let , , , and .  Then , , and .  Also, , , , and .  Finally, , , and .  "
 },
@@ -11228,7 +12119,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Languages.html#ex-strings-over-alphabet",
   "type": "Example",
-  "number": "15.1.9",
+  "number": "17.1.9",
   "title": "Set of all Strings over an Alphabet.",
   "body": " Set of all Strings over an Alphabet  If , then .  If , then .  "
 },
@@ -11237,7 +12128,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Languages.html#def-language",
   "type": "Definition",
-  "number": "15.1.10",
+  "number": "17.1.10",
   "title": "Languages over an Alphabet.",
   "body": " Languages over an Alphabet   A language over an alphabet is a subset of . Thus, a language over is an element of , the power set of .   "
 },
@@ -11246,7 +12137,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Languages.html#ex-languages-over-set",
   "type": "Example",
-  "number": "15.1.11",
+  "number": "17.1.11",
   "title": "Languages over a set.",
   "body": " Languages over a set  Let . Then the following are all languages over :   "
 },
@@ -11255,7 +12146,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Languages.html#thm-number-of-languages",
   "type": "Theorem",
-  "number": "15.1.12",
+  "number": "17.1.12",
   "title": "",
   "body": "  For any alphabet , the number of languages over is uncountable.   "
 },
@@ -11264,7 +12155,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Languages.html#ex-kleene-closure",
   "type": "Example",
-  "number": "15.1.13",
+  "number": "17.1.13",
   "title": "Kleene Closure of a set.",
   "body": " Kleene Closure of a set  Let . Then   "
 },
@@ -11273,34 +12164,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-Languages.html#ex-sigma-star",
   "type": "Example",
-  "number": "15.1.14",
+  "number": "17.1.14",
   "title": "<span class=\"process-math\">\\(\\Sigma^*\\)<\/span>.",
   "body": " > Let . Then  "
 },
 {
-  "id": "exerc-15_1-1",
+  "id": "exerc-17_1-1",
   "level": "2",
-  "url": "s-Languages.html#exerc-15_1-1",
+  "url": "s-Languages.html#exerc-17_1-1",
   "type": "Exercise",
-  "number": "15.1.1.1",
+  "number": "17.1.1.1",
   "title": "",
   "body": " Let and . Find the following:                             "
 },
 {
-  "id": "exerc-15_1-2",
+  "id": "exerc-17_1-2",
   "level": "2",
-  "url": "s-Languages.html#exerc-15_1-2",
+  "url": "s-Languages.html#exerc-17_1-2",
   "type": "Exercise",
-  "number": "15.1.1.2",
+  "number": "17.1.1.2",
   "title": "",
   "body": " The reverse of a language is defined to be . Find and for the and in the preceding problem.  "
 },
 {
-  "id": "exerc-15_1-3",
+  "id": "exerc-17_1-3",
   "level": "2",
-  "url": "s-Languages.html#exerc-15_1-3",
+  "url": "s-Languages.html#exerc-17_1-3",
   "type": "Exercise",
-  "number": "15.1.1.3",
+  "number": "17.1.1.3",
   "title": "",
   "body": " Give an example of a language such that .  "
 },
@@ -11309,14 +12200,14 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s-regular-expressions-and-apps.html",
   "type": "Section",
-  "number": "15.2",
+  "number": "17.2",
   "title": "Regular Expressions and Their Applications",
-  "body": " Regular Expressions and Their Applications   Regular Expressions  Regular Expressions  Though we have used the term string throughout to refer to a sequence of symbols from an alphabet, an alternative term that is frequently used is word . The analogy seems fairly obvious: strings are made up of ``letters\" from an alphabet, just as words are in human languages like English. In English, however, there are no particular rules specifying which sequences of letters can be used to form legal English words---even unlikely combinations like ghth and ckstr have their place. While some formal languages may simply be random collections of arbitrary strings, more interesting languages are those where the strings in the language all share some common structure: In all of these languages, there are structural rules which determine which sequences of symbols are in the language and which aren't. So despite the terminology of ``alphabet\" and ``word\" in formal language theory, the concepts don't necessarily match ``alphabet\" and ``word\" for human languages. A better parallel is to think of the alphabet in a formal language as corresponding to the words in a human language; the words in a formal language correspond to the sentences in a human language, as there are rules ( grammar rules ) which determine how they can legally be constructed.  One way of describing the grammatical structure of the strings in a language is to use a mathematical formalism called a regular expression . A regular expression is a pattern that ``matches\" strings that have a particular form. For example, consider the language (over alphabet ) . What is the symbol-by-symbol structure of strings in this language? Well, they start with an , followed by zero or more 's or 's or both, followed by an . The regular expression is a pattern that captures this structure and matches any string in ( and have their usual meanings, and designates or .)  Or Notation  Various symbols have been used to represent the ``or'' operation in regular expressions. Both and have been used for this purpose. In this chapter, we use the symbol because it is commonly used in computer implementations of regular expressions.  Conversely, consider the regular expression . This is a pattern that matches any string that either has the form `` followed by zero or more 's or 's or both\" (i.e. any string that starts with an ) or has the form ``zero or more 's or 's or both followed by an \" (i.e. any string that ends with an ). Thus the regular expression generates the language of all strings that start or end (or both) in an : this is the set of strings that match the regular expression.  Here are the formal definitions of a regular expression and the language generated by a regular expression:   Regular Expression  Regular Expression      A regular expression.    Let be an alphabet. Then the following patterns are regular expressions over :    and are regular expressions;     is a regular expression, for each ;    if and are regular expressions, then so are , , and (and of course, and ). As in concatenation of strings, the is often left out of the second expression. (Note: the order of precedence of operators, from lowest to highest, is , , .)     No other patterns are regular expressions.     Language Generated by a Regular Expression  Language Generated by a Regular Expression      A language generated by regular expression .    The language generated by a regular expression  , denoted , is defined as follows:    i.e. no strings match ;     , i.e. matches only the empty string;     , i.e. matches only the string ;     , i.e. matches strings that match or or both;     , i.e. matches strings of the form ``something that matches followed by something that matches \";     , i.e. matches sequences of 0 or more strings each of which matches .     , i.e. matches exactly those strings matched by .       Let , and consider the regular expression . What is ? Well, so , and is the set of all strings of zero or more 's, so . Similarly, . Since , we have , which is the set of all strings of the form ``zero or more 's followed by zero or more 's\".  Let , and consider the regular expression . Since , . Similarly, and . Now and (the last equality is from clause 7 of ), and . So is the set of strings formed by concatenating or or with zero or more pairs of 's.   Regular Language  Regular Language  A language is regular if it is generated by a regular expression.   Clearly the union of two regular languages is regular; likewise, the concatenation of regular languages is regular; and the Kleene closure of a regular language is regular. It is less clear whether the intersection of regular languages is always regular; nor is it clear whether the complement of a regular language is guaranteed to be regular. These are questions that will be taken up in .   Regular languages, then, are languages whose strings' structure can be described in a very formal, mathematical way. The fact that a language can be ``mechanically\" described or generated means that we are likely to be able to get a computer to recognize strings in that language. We will pursue the question of mechanical language recognition in , and subsequently will see that our first attempt to model mechanical language recognition does in fact produce a family of ``machines\" that recognize exactly the regular languages. But first, in the next section, we will look at some practical applications of regular expressions.    Application: Using Regular Expressions  A common operation when editing text is to search for a given string of characters, sometimes with the purpose of replacing it with another string. Many ``search and replace'' search and replace facilities have the option of using regular expressions instead of simple strings of characters. A regular expression describes a language, that is, a set of strings. We can think of a regular expression as a pattern that matches certain strings, namely all the strings in the language described by the regular expression. When a regular expression is used in a search operation, the goal is to find a string that matches the expression. This type of pattern matching  pattern matching is very useful.  The ability to do pattern matching with regular expressions is provided in many text editors. Programming languages often come with libraries for working with regular expressions. Java (as of version 1.4) provides regular expression handling though a package named java.util.regexp . C++ typically provides a header file named regexp.h for the same purpose. In all these applications, many new notations are added to the syntax to make it more convenient to use. The syntax can vary from one implementation to another, but most implementations include the capabilities discussed in this section.  In applications of regular expressions, the alphabet usually includes all the characters on the keyboard. This leads to a problem, because regular expressions actually use two types of symbols: symbols that are members of the alphabet and special symbols such a `` * '' and `` ) '' that are used to construct expressions. These special symbols, which are not part of the language being described but are used in the description, are called meta-characters . The problem is, when the alphabet includes all the available characters, what do we do about meta-characters? If the language that we are describing uses the `` * '' character, for example, how can we represent the Kleene star operation?  The solution is to use a so-called ``escape character,'' which is usually the backslash, \\ . We agree, for example, that the notation \\* refers to the symbol * that is a member of the alphabet, while * by itself is the meta-character that represents the Kleene star operation. Similarly, ( and ) are the meta-characters that are used for grouping, while the corresponding characters in the language are written as \\( and \\) . For example, a regular expression that matches the string a*b repeated any number of times would be written: (a\\*b)* . The backslash is also used to represent certain non-printing characters. For example, a tab is represented as \\t and a new line character is \\n .  We introduce two new common operations on regular expressions and two new meta-characters to represent them. The first operation is represented by the meta-character + : If r is a regular expression, then r+ represents the occurrence of r one or more times. The second operation is represented by ? : The notation r? represents an occurrence of r zero or one times. That is to say, r? represents an optional occurrence of r . Note that these operations are introduced for convenience only and do not represent any real increase in the power. In fact, r+ is exactly equivalent to rr* , and r? is equivalent to (r| ) (except that in applications there is generally no equivalent to ).  To make it easier to deal with the large number of characters in the alphabet, character classes are introduced. A character class consists of a list of characters enclosed between brackets, [ and ] . (The brackets are meta-characters.) A character class matches a single character, which can be any of the characters in the list. For example, [0123456789] matches any one of the digits 0 through 9. The same thing could be expressed as (0|1|2|3|4|5|6|7|8|9) , so once again we have added only convenience, not new representational power. For even more convenience, a hyphen can be included in a character class to indicate a range of characters. This means that [0123456789] could also be written as [0-9] and that the regular expression [a-z] will match any single lowercase letter. A character class can include multiple ranges, so that [a-zA-Z] will match any letter, lower- or uppercase. The period ( . ) is a meta-character that will match any single character, except (in most implementations) for an end-of-line. These notations can, of course, be used in more complex regular expressions. For example, [A-Z][a-zA-Z]* will match any capitalized word, and \\(.*\\) matches any string of characters enclosed in parentheses.  In most implementations, the meta-character ^ can be used in a regular expression to match the beginning of a line of text, so that the expression ^[a-zA-Z]+ will only match a word that occurs at the start of a line. Similarly, $ is used as a meta-character to match the end of a line. Some implementations also have a way of matching beginnings and ends of words. Typically, \\b will match such ``word boundaries.'' Using this notation, the pattern \\band\\b will match the string ``and'' when it occurs as a word, but will not match the a-n-d in the word ``random.'' We are going a bit beyond basic regular expressions here: Previously, we only thought of a regular expression as something that either will match or will not match a given string in its entirety. When we use a regular expression for a search operation, however, we want to find a \\textit substring of a given string that matches the expression. The notations ^ , \\$ and \\ b put a restrictions on where the matching substring can be located in the string.  When regular expressions are used in search-and-replace operations, a regular expression is used for the search pattern. A search is made in a (typically long) string for a substring that matches the pattern, and then the substring is replaced by a specified replacement pattern. The replacement pattern is not used for matching and is not a regular expression. However, it can be more than just a simple string. It's possible to include parts of the substring that is being replaced in the replacement string. The notations \\0,\\1, ..., \\9 are used for this purpose. The first of these, \\0 , stands for the entire substring that is being replaced. The others are only available when parentheses are used in the search pattern. The notation \\1 stands for ``the part of the substring that matched the part of the search pattern beginning with the first ( in the pattern and ending with the matching ) .'' Similarly, \\2 represents whatever matched the part of the search pattern between the second pair of parentheses, and so on.  Suppose, for example, that you would like to search for a name in the form last-name, first-name and replace it with the same name in the form first-name last-name . For example, ``Reeves, Keanu'' should be converted to ``Keanu Reeves''. Assuming that names contain only letters, this could be done using the search pattern ([A-Za-z]+), ([A-Za-z]+) and the replacement pattern \\2 \\1 . When the match is made, the first ([A-Za-z]+) will match ``Reeves,'' so that in the replacement pattern, \\1 represents the substring ``Reeves''. Similarly, \\2 will represent ``Keanu''. Note that the parentheses are included in the search pattern only to specify what parts of the string are represented by \\1 and \\2 . In practice, you might use ^([A-Za-z]+), ([A-Za-z])\\$ as the search pattern to constrain it so that it will only match a complete line of text. By using a ``global'' search-and-replace, you could convert an entire file of names from one format to the other in a single operation.  Regular expressions are a powerful and useful technique that should be part of any computer scientist's toolbox. This section has given you a taste of what they can do, but you should check out the specific capabilities of the regular expression implementation in the tools and programming languages that you use.     Give English-language descriptions of the languages generated by the following regular expressions.                          Give regular expressions over that generate the following languages.                                    Prove that all finite languages are regular.   The backslash is itself a meta-character. Suppose that you want to match a string that contains a backslash character. How do you suppose you would represent the backslash in the regular expression?   Using the notation introduced in this section, write a regular expression that could be used to match each of the following:   Any sequence of letters (upper- or lowercase) that includes the letter Z (in uppercase).    Any eleven-digit telephone number written in the form (xxx)xxx-xxxx .    Any eleven-digit telephone number either in the form (xxx)xxx-xxxx or xxx-xxx-xxxx .    A non-negative real number with an optional decimal part. The expression should match numbers such as 17, 183.9999, 182., 0, 0.001, and 21333.2.    A complete line of text that contains only letters.    A C++ style one-line comment consisting of \/\/ and all the following characters up to the end-of-line.       Give a search pattern and a replace pattern that could be used to perform the following conversions:   Convert a string that is enclosed in a pair of double quotes to the same string with the double quotes replaced by single quotes.    Convert seven-digit telephone numbers in the format xxx-xxx-xxxx to the format (xxx)xxx-xxxx .    Convert C++ one-line comments, consisting of characters between \/\/ and end-of-line, to C style comments enclosed between \/* and *\/ .    Convert any number of consecutive spaces and tabs to a single space.       In some implementations of ``regular expressions,'' the notations \\1 , \\2 , and so on can occur in a search pattern. For example, consider the search pattern ^([a-zA-Z]).*\\1$ . Here, \\1 represents a recurrence of the same substring that matched [a-zA-Z] , the part of the pattern between the first pair of parentheses. The entire pattern, therefore, will match a line of text that begins and ends with the same letter. Using this notation, write a pattern that matches all strings in the language . (Later in this chapter, we will see that is not a regular language, so allowing the use of \\1 in a ``regular expression'' means that it's not really a regular expression at all! This notation can add a real increase in expressive power to the patterns that contain it.)    "
+  "body": " Regular Expressions and Their Applications   Regular Expressions  Regular Expressions  Though we have used the term string throughout to refer to a sequence of symbols from an alphabet, an alternative term that is frequently used is word . The analogy seems fairly obvious: strings are made up of ``letters\" from an alphabet, just as words are in human languages like English. In English, however, there are no particular rules specifying which sequences of letters can be used to form legal English words---even unlikely combinations like ghth and ckstr have their place. While some formal languages may simply be random collections of arbitrary strings, more interesting languages are those where the strings in the language all share some common structure: In all of these languages, there are structural rules which determine which sequences of symbols are in the language and which aren't. So despite the terminology of ``alphabet\" and ``word\" in formal language theory, the concepts don't necessarily match ``alphabet\" and ``word\" for human languages. A better parallel is to think of the alphabet in a formal language as corresponding to the words in a human language; the words in a formal language correspond to the sentences in a human language, as there are rules ( grammar rules ) which determine how they can legally be constructed.  One way of describing the grammatical structure of the strings in a language is to use a mathematical formalism called a regular expression . A regular expression is a pattern that ``matches\" strings that have a particular form. For example, consider the language (over alphabet ) . What is the symbol-by-symbol structure of strings in this language? Well, they start with an , followed by zero or more 's or 's or both, followed by an . The regular expression is a pattern that captures this structure and matches any string in ( and have their usual meanings, and designates or .)  Or Notation  Various symbols have been used to represent the ``or'' operation in regular expressions. Both and have been used for this purpose. In this chapter, we use the symbol because it is commonly used in computer implementations of regular expressions.  Conversely, consider the regular expression . This is a pattern that matches any string that either has the form `` followed by zero or more 's or 's or both\" (i.e. any string that starts with an ) or has the form ``zero or more 's or 's or both followed by an \" (i.e. any string that ends with an ). Thus the regular expression generates the language of all strings that start or end (or both) in an : this is the set of strings that match the regular expression.  Here are the formal definitions of a regular expression and the language generated by a regular expression:   Regular Expression  Regular Expression      A regular expression.    Let be an alphabet. Then the following patterns are regular expressions over :    and are regular expressions;     is a regular expression, for each ;    if and are regular expressions, then so are , , and (and of course, and ). As in concatenation of strings, the is often left out of the second expression. (Note: the order of precedence of operators, from lowest to highest, is , , .)     No other patterns are regular expressions.     Language Generated by a Regular Expression  Language Generated by a Regular Expression      A language generated by regular expression .    The language generated by a regular expression  , denoted , is defined as follows:    i.e. no strings match ;     , i.e. matches only the empty string;     , i.e. matches only the string ;     , i.e. matches strings that match or or both;     , i.e. matches strings of the form ``something that matches followed by something that matches \";     , i.e. matches sequences of 0 or more strings each of which matches .     , i.e. matches exactly those strings matched by .       Let , and consider the regular expression . What is ? Well, so , and is the set of all strings of zero or more 's, so . Similarly, . Since , we have , which is the set of all strings of the form ``zero or more 's followed by zero or more 's\".  Let , and consider the regular expression . Since , . Similarly, and . Now and (the last equality is from clause 7 of ), and . So is the set of strings formed by concatenating or or with zero or more pairs of 's.   Regular Language  Regular Language  A language is regular if it is generated by a regular expression.   Clearly the union of two regular languages is regular; likewise, the concatenation of regular languages is regular; and the Kleene closure of a regular language is regular. It is less clear whether the intersection of regular languages is always regular; nor is it clear whether the complement of a regular language is guaranteed to be regular. These are questions that will be taken up in .  Regular languages, then, are languages whose strings' structure can be described in a very formal, mathematical way. The fact that a language can be ``mechanically\" described or generated means that we are likely to be able to get a computer to recognize strings in that language. We will pursue the question of mechanical language recognition in , and subsequently will see that our first attempt to model mechanical language recognition does in fact produce a family of ``machines\" that recognize exactly the regular languages. But first, in the next section, we will look at some practical applications of regular expressions.    Application: Using Regular Expressions  A common operation when editing text is to search for a given string of characters, sometimes with the purpose of replacing it with another string. Many ``search and replace'' search and replace facilities have the option of using regular expressions instead of simple strings of characters. A regular expression describes a language, that is, a set of strings. We can think of a regular expression as a pattern that matches certain strings, namely all the strings in the language described by the regular expression. When a regular expression is used in a search operation, the goal is to find a string that matches the expression. This type of pattern matching  pattern matching is very useful.  The ability to do pattern matching with regular expressions is provided in many text editors. Programming languages often come with libraries for working with regular expressions. Java (as of version 1.4) provides regular expression handling though a package named java.util.regexp . C++ typically provides a header file named regexp.h for the same purpose. In all these applications, many new notations are added to the syntax to make it more convenient to use. The syntax can vary from one implementation to another, but most implementations include the capabilities discussed in this section.  In applications of regular expressions, the alphabet usually includes all the characters on the keyboard. This leads to a problem, because regular expressions actually use two types of symbols: symbols that are members of the alphabet and special symbols such a `` * '' and `` ) '' that are used to construct expressions. These special symbols, which are not part of the language being described but are used in the description, are called meta-characters . The problem is, when the alphabet includes all the available characters, what do we do about meta-characters? If the language that we are describing uses the `` * '' character, for example, how can we represent the Kleene star operation?  The solution is to use a so-called ``escape character,'' which is usually the backslash, \\ . We agree, for example, that the notation \\* refers to the symbol * that is a member of the alphabet, while * by itself is the meta-character that represents the Kleene star operation. Similarly, ( and ) are the meta-characters that are used for grouping, while the corresponding characters in the language are written as \\( and \\) . For example, a regular expression that matches the string a*b repeated any number of times would be written: (a\\*b)* . The backslash is also used to represent certain non-printing characters. For example, a tab is represented as \\t and a new line character is \\n .  We introduce two new common operations on regular expressions and two new meta-characters to represent them. The first operation is represented by the meta-character + : If r is a regular expression, then r+ represents the occurrence of r one or more times. The second operation is represented by ? : The notation r? represents an occurrence of r zero or one times. That is to say, r? represents an optional occurrence of r . Note that these operations are introduced for convenience only and do not represent any real increase in the power. In fact, r+ is exactly equivalent to rr* , and r? is equivalent to (r| ) (except that in applications there is generally no equivalent to ).  To make it easier to deal with the large number of characters in the alphabet, character classes are introduced. A character class consists of a list of characters enclosed between brackets, [ and ] . (The brackets are meta-characters.) A character class matches a single character, which can be any of the characters in the list. For example, [0123456789] matches any one of the digits 0 through 9. The same thing could be expressed as (0|1|2|3|4|5|6|7|8|9) , so once again we have added only convenience, not new representational power. For even more convenience, a hyphen can be included in a character class to indicate a range of characters. This means that [0123456789] could also be written as [0-9] and that the regular expression [a-z] will match any single lowercase letter. A character class can include multiple ranges, so that [a-zA-Z] will match any letter, lower- or uppercase. The period ( . ) is a meta-character that will match any single character, except (in most implementations) for an end-of-line. These notations can, of course, be used in more complex regular expressions. For example, [A-Z][a-zA-Z]* will match any capitalized word, and \\(.*\\) matches any string of characters enclosed in parentheses.  In most implementations, the meta-character ^ can be used in a regular expression to match the beginning of a line of text, so that the expression ^[a-zA-Z]+ will only match a word that occurs at the start of a line. Similarly, $ is used as a meta-character to match the end of a line. Some implementations also have a way of matching beginnings and ends of words. Typically, \\b will match such ``word boundaries.'' Using this notation, the pattern \\band\\b will match the string ``and'' when it occurs as a word, but will not match the a-n-d in the word ``random.'' We are going a bit beyond basic regular expressions here: Previously, we only thought of a regular expression as something that either will match or will not match a given string in its entirety. When we use a regular expression for a search operation, however, we want to find a \\textit substring of a given string that matches the expression. The notations ^ , \\$ and \\ b put a restrictions on where the matching substring can be located in the string.  When regular expressions are used in search-and-replace operations, a regular expression is used for the search pattern. A search is made in a (typically long) string for a substring that matches the pattern, and then the substring is replaced by a specified replacement pattern. The replacement pattern is not used for matching and is not a regular expression. However, it can be more than just a simple string. It's possible to include parts of the substring that is being replaced in the replacement string. The notations \\0,\\1, ..., \\9 are used for this purpose. The first of these, \\0 , stands for the entire substring that is being replaced. The others are only available when parentheses are used in the search pattern. The notation \\1 stands for ``the part of the substring that matched the part of the search pattern beginning with the first ( in the pattern and ending with the matching ) .'' Similarly, \\2 represents whatever matched the part of the search pattern between the second pair of parentheses, and so on.  Suppose, for example, that you would like to search for a name in the form last-name, first-name and replace it with the same name in the form first-name last-name . For example, ``Reeves, Keanu'' should be converted to ``Keanu Reeves''. Assuming that names contain only letters, this could be done using the search pattern ([A-Za-z]+), ([A-Za-z]+) and the replacement pattern \\2 \\1 . When the match is made, the first ([A-Za-z]+) will match ``Reeves,'' so that in the replacement pattern, \\1 represents the substring ``Reeves''. Similarly, \\2 will represent ``Keanu''. Note that the parentheses are included in the search pattern only to specify what parts of the string are represented by \\1 and \\2 . In practice, you might use ^([A-Za-z]+), ([A-Za-z])\\$ as the search pattern to constrain it so that it will only match a complete line of text. By using a ``global'' search-and-replace, you could convert an entire file of names from one format to the other in a single operation.  Regular expressions are a powerful and useful technique that should be part of any computer scientist's toolbox. This section has given you a taste of what they can do, but you should check out the specific capabilities of the regular expression implementation in the tools and programming languages that you use.     Give English-language descriptions of the languages generated by the following regular expressions.                          Give regular expressions over that generate the following languages.                                    Prove that all finite languages are regular.   The backslash is itself a meta-character. Suppose that you want to match a string that contains a backslash character. How do you suppose you would represent the backslash in the regular expression?   Using the notation introduced in this section, write a regular expression that could be used to match each of the following:   Any sequence of letters (upper- or lowercase) that includes the letter Z (in uppercase).    Any eleven-digit telephone number written in the form (xxx)xxx-xxxx .    Any eleven-digit telephone number either in the form (xxx)xxx-xxxx or xxx-xxx-xxxx .    A non-negative real number with an optional decimal part. The expression should match numbers such as 17, 183.9999, 182., 0, 0.001, and 21333.2.    A complete line of text that contains only letters.    A C++ style one-line comment consisting of \/\/ and all the following characters up to the end-of-line.       Give a search pattern and a replace pattern that could be used to perform the following conversions:   Convert a string that is enclosed in a pair of double quotes to the same string with the double quotes replaced by single quotes.    Convert seven-digit telephone numbers in the format xxx-xxx-xxxx to the format (xxx)xxx-xxxx .    Convert C++ one-line comments, consisting of characters between \/\/ and end-of-line, to C style comments enclosed between \/* and *\/ .    Convert any number of consecutive spaces and tabs to a single space.       In some implementations of ``regular expressions,'' the notations \\1 , \\2 , and so on can occur in a search pattern. For example, consider the search pattern ^([a-zA-Z]).*\\1$ . Here, \\1 represents a recurrence of the same substring that matched [a-zA-Z] , the part of the pattern between the first pair of parentheses. The entire pattern, therefore, will match a line of text that begins and ends with the same letter. Using this notation, write a pattern that matches all strings in the language . (Later in this chapter, we will see that is not a regular language, so allowing the use of \\1 in a ``regular expression'' means that it's not really a regular expression at all! This notation can add a real increase in expressive power to the patterns that contain it.)    "
 },
 {
-  "id": "p-4482",
+  "id": "p-4912",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#p-4482",
+  "url": "s-regular-expressions-and-apps.html#p-4912",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -11327,7 +12218,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-regular-expressions-and-apps.html#def-regex",
   "type": "Definition",
-  "number": "15.2.1",
+  "number": "17.2.1",
   "title": "Regular Expression.",
   "body": " Regular Expression  Regular Expression      A regular expression.    Let be an alphabet. Then the following patterns are regular expressions over :    and are regular expressions;     is a regular expression, for each ;    if and are regular expressions, then so are , , and (and of course, and ). As in concatenation of strings, the is often left out of the second expression. (Note: the order of precedence of operators, from lowest to highest, is , , .)     No other patterns are regular expressions.   "
 },
@@ -11336,25 +12227,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-regular-expressions-and-apps.html#def-language-gen-by-regex",
   "type": "Definition",
-  "number": "15.2.2",
+  "number": "17.2.2",
   "title": "Language Generated by a Regular Expression.",
   "body": " Language Generated by a Regular Expression  Language Generated by a Regular Expression      A language generated by regular expression .    The language generated by a regular expression  , denoted , is defined as follows:    i.e. no strings match ;     , i.e. matches only the empty string;     , i.e. matches only the string ;     , i.e. matches strings that match or or both;     , i.e. matches strings of the form ``something that matches followed by something that matches \";     , i.e. matches sequences of 0 or more strings each of which matches .     , i.e. matches exactly those strings matched by .      "
 },
 {
-  "id": "example-234",
+  "id": "example-257",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#example-234",
+  "url": "s-regular-expressions-and-apps.html#example-257",
   "type": "Example",
-  "number": "15.2.3",
+  "number": "17.2.3",
   "title": "",
   "body": "Let , and consider the regular expression . What is ? Well, so , and is the set of all strings of zero or more 's, so . Similarly, . Since , we have , which is the set of all strings of the form ``zero or more 's followed by zero or more 's\". "
 },
 {
-  "id": "example-235",
+  "id": "example-258",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#example-235",
+  "url": "s-regular-expressions-and-apps.html#example-258",
   "type": "Example",
-  "number": "15.2.4",
+  "number": "17.2.4",
   "title": "",
   "body": "Let , and consider the regular expression . Since , . Similarly, and . Now and (the last equality is from clause 7 of ), and . So is the set of strings formed by concatenating or or with zero or more pairs of 's. "
 },
@@ -11363,97 +12254,97 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-regular-expressions-and-apps.html#def-regular-language",
   "type": "Definition",
-  "number": "15.2.5",
+  "number": "17.2.5",
   "title": "Regular Language.",
   "body": " Regular Language  Regular Language  A language is regular if it is generated by a regular expression.  "
 },
 {
-  "id": "p-4500",
+  "id": "p-4930",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#p-4500",
+  "url": "s-regular-expressions-and-apps.html#p-4930",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "pattern pattern matching "
 },
 {
-  "id": "p-4502",
+  "id": "p-4932",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#p-4502",
+  "url": "s-regular-expressions-and-apps.html#p-4932",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "meta-characters "
 },
 {
-  "id": "p-4505",
+  "id": "p-4935",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#p-4505",
+  "url": "s-regular-expressions-and-apps.html#p-4935",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "character classes "
 },
 {
-  "id": "exerc-15_2-1",
+  "id": "exerc-17_2-1",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#exerc-15_2-1",
+  "url": "s-regular-expressions-and-apps.html#exerc-17_2-1",
   "type": "Exercise",
-  "number": "15.2.3.1",
+  "number": "17.2.3.1",
   "title": "",
   "body": " Give English-language descriptions of the languages generated by the following regular expressions.                        "
 },
 {
-  "id": "exerc-15_2-2",
+  "id": "exerc-17_2-2",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#exerc-15_2-2",
+  "url": "s-regular-expressions-and-apps.html#exerc-17_2-2",
   "type": "Exercise",
-  "number": "15.2.3.2",
+  "number": "17.2.3.2",
   "title": "",
   "body": " Give regular expressions over that generate the following languages.                                  "
 },
 {
-  "id": "exerc-15_2-3",
+  "id": "exerc-17_2-3",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#exerc-15_2-3",
+  "url": "s-regular-expressions-and-apps.html#exerc-17_2-3",
   "type": "Exercise",
-  "number": "15.2.3.3",
+  "number": "17.2.3.3",
   "title": "",
   "body": " Prove that all finite languages are regular.  "
 },
 {
-  "id": "exerc-15_2-4",
+  "id": "exerc-17_2-4",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#exerc-15_2-4",
+  "url": "s-regular-expressions-and-apps.html#exerc-17_2-4",
   "type": "Exercise",
-  "number": "15.2.3.4",
+  "number": "17.2.3.4",
   "title": "",
   "body": "The backslash is itself a meta-character. Suppose that you want to match a string that contains a backslash character. How do you suppose you would represent the backslash in the regular expression? "
 },
 {
-  "id": "exerc-15_2-5",
+  "id": "exerc-17_2-5",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#exerc-15_2-5",
+  "url": "s-regular-expressions-and-apps.html#exerc-17_2-5",
   "type": "Exercise",
-  "number": "15.2.3.5",
+  "number": "17.2.3.5",
   "title": "",
   "body": " Using the notation introduced in this section, write a regular expression that could be used to match each of the following:   Any sequence of letters (upper- or lowercase) that includes the letter Z (in uppercase).    Any eleven-digit telephone number written in the form (xxx)xxx-xxxx .    Any eleven-digit telephone number either in the form (xxx)xxx-xxxx or xxx-xxx-xxxx .    A non-negative real number with an optional decimal part. The expression should match numbers such as 17, 183.9999, 182., 0, 0.001, and 21333.2.    A complete line of text that contains only letters.    A C++ style one-line comment consisting of \/\/ and all the following characters up to the end-of-line.     "
 },
 {
-  "id": "exerc-15_2-6",
+  "id": "exerc-17_2-6",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#exerc-15_2-6",
+  "url": "s-regular-expressions-and-apps.html#exerc-17_2-6",
   "type": "Exercise",
-  "number": "15.2.3.6",
+  "number": "17.2.3.6",
   "title": "",
   "body": " Give a search pattern and a replace pattern that could be used to perform the following conversions:   Convert a string that is enclosed in a pair of double quotes to the same string with the double quotes replaced by single quotes.    Convert seven-digit telephone numbers in the format xxx-xxx-xxxx to the format (xxx)xxx-xxxx .    Convert C++ one-line comments, consisting of characters between \/\/ and end-of-line, to C style comments enclosed between \/* and *\/ .    Convert any number of consecutive spaces and tabs to a single space.     "
 },
 {
-  "id": "exerc-15_2-7",
+  "id": "exerc-17_2-7",
   "level": "2",
-  "url": "s-regular-expressions-and-apps.html#exerc-15_2-7",
+  "url": "s-regular-expressions-and-apps.html#exerc-17_2-7",
   "type": "Exercise",
-  "number": "15.2.3.7",
+  "number": "17.2.3.7",
   "title": "",
   "body": " In some implementations of ``regular expressions,'' the notations \\1 , \\2 , and so on can occur in a search pattern. For example, consider the search pattern ^([a-zA-Z]).*\\1$ . Here, \\1 represents a recurrence of the same substring that matched [a-zA-Z] , the part of the pattern between the first pair of parentheses. The entire pattern, therefore, will match a line of text that begins and ends with the same letter. Using this notation, write a pattern that matches all strings in the language . (Later in this chapter, we will see that is not a regular language, so allowing the use of \\1 in a ``regular expression'' means that it's not really a regular expression at all! This notation can add a real increase in expressive power to the patterns that contain it.)  "
 },
@@ -11462,23 +12353,23 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s-finite-state-automata.html",
   "type": "Section",
-  "number": "15.3",
+  "number": "17.3",
   "title": "Finite-State Automata",
   "body": " Finite-State Automata  Finite-State Automata  Finite-State Machines   We have seen how regular expressions can be used to generate languages mechanically. How might languages be recognized mechanically? The question is of interest because if we can mechanically recognize languages like all legal C++ programs that will not go into infinite loops on any input , then it would be possible to write uber-compilers that can do semantic error-checking like testing for infinite loops, in addition to the syntactic error-checking they currently do.  What formalism might we use to model what it means to recognize a language ``mechanically''? We look for inspiration to a language-recognizer with which we are all familiar, and which we've already in fact mentioned: a compiler. Consider how a C++ compiler might handle recognizing a legal if statement. Having seen the word if , the compiler will be in a state or phase of its execution where it expects to see a ( ; in this state, any other character will put the compiler in a ``failure\" state. If the compiler does in fact see a ( next, it will then be in an ``expecting a boolean condition\" state; if it sees a sequence of symbols that make up a legal boolean condition, it will then be in an ``expecting a ) \" state; and then ``expecting a { ' or a legal statement\"; and so on. Thus one can think of the compiler as being in a series of states; on seeing a new input symbol, it moves on to a new state; and this sequence of transitions eventually leads to either a ``failure\" state (if the if statement is not syntactically correct) or a ``success\" state (if the if statement is legal). We isolate these three concepts---states, input-inspired transitions from state to state, and ``accepting\" vs ``non-accepting\" states---as the key features of a mechanical language-recognizer, and capture them in a model called a finite-state automaton . (Whether this is a successful distillation of the essence of mechanical language recognition remains to be seen; the question will be taken up later in this chapter.)  Automata  The term automata is the plural form of automaton . In some texts, machine is used in place of automaton.    A finite-state automaton (FSA)  finite-state automaton  , then, is a machine which takes, as input, a finite string of symbols from some alphabet . There is a finite set of states in which the machine can find itself. The state it is in before consuming any input is called the start state . Some of the states are accepting or final . If the machine ends in such a state after completely consuming an input string, the string is said to be accepted by the machine. The actual functioning of the machine is described by something called a transition function , which specifies what happens if the machine is in a particular state and looking at a particular input symbol. (``What happens\" means ``in which state does the machine end up\".)   A transition function   Below is a table that describes the transition function of a finite-state automaton with states , , and , on inputs and .                                              The table indicates, for example, that if the FSA were in state and consumed a , it would move to state .      Deterministic Finite-State Automata   Deterministic Finite-State Automata    DFA   FSAs actually come in two flavors depending on what properties you require of the transition function. We will look first at a class of FSAs called deterministic finite-state automata (DFAs). In these machines, the current state of the machine and the current input symbol together determine exactly which state the machine ends up in: for every current state, current input symbol pair, there is exactly one possible next state for the machine.   Deterministic Finite-State Automaton   Deterministic Finite-State Automata    Formally, a deterministic finite-state automaton  is specified by 5 components: where      is a finite set of states;     is an alphabet called the input alphabet ;     is a state which is designated as the start state ;     is a subset of ; the states in are states designated as final or accepting states;     is a transition function that takes state, input symbol pairs and maps each one to a state: .   To say means that if the machine is in state and the input symbol is consumed, then the machine will move into state .    The function must be a total function, meaning that must be defined for every state and every input symbol .    Recall also that, according to the definition of a function, there can be only one output for any particular input. This means that for any given and , can have only one value. This is what makes the finite-state automaton deterministic : given the current state and input symbol, there is only one possible move the machine can make.           The transition function described by the table in the preceding example is that of a DFA. If we take to be the start state and to be a final state, then the formal description of the resulting machine is , where is given by                                       The transition function describes only individual steps of the machine as individual input symbols are consumed. However, we will often want to refer to``the state the automaton will be in if it starts in state and consumes input string \", where is a string of input symbols rather than a single symbol. Following the usual practice of using to designate ``0 or more\", we define   as a convenient shorthand for ``the state that the automaton will be in if it starts in state and consumes the input string \". For any string, it is easy to see, based on , what steps the machine will make as those symbols are consumed, and what will be for any and . Note that if no input is consumed, a DFA makes no move, and so for any state . can be defined formally by saying that \\delta^*(q,\\varepsilon)=q for every state , and for any state , a\\in\\Sigma and . Note that this is a recursive definition.   Let be the automaton in the preceding example. Then, for example:   We have divided the states of a DFA into accepting and non-accepting states, with the idea that some strings will be recognized as ``legal\" by the automaton, and some not. Formally:   Language Accepted by FSA   Let . A string is accepted by iff . (Don't get confused by the notation. Remember, it's just a shorter and neater way of saying `` is accepted by if and only if the state that M will end up in if it starts in and consumes is one of the states in .\")  The language accepted by , denoted , is the set of all strings that are accepted by : .    Note that we sometimes use a slightly different phrasing and say that a language is accepted by some machine . We don't mean by this that  and maybe some other strings are accepted by ; we mean , i.e.\\ is exactly the set of strings accepted by .  It may not be easy, looking at a formal specification of a DFA, to determine what language that automaton accepts. Fortunately, the mathematical description of the automaton can be neatly and helpfully captured in a picture called a transition diagram . Consider again the DFA of the two preceding examples. It can be represented pictorially as:   Transition diagram for above DFA   The arrow on the left indicates that is the start state; double circles indicate that a state is accepting. Looking at this picture, it should be fairly easy to see that the language accepted by the DFA is .    Find the language accepted by the DFA shown below (and describe it using a regular expression!)   Transition diagram to find language   The start state of is accepting, which means . If is in state , a sequence of two 's or three 's will move back to and hence be accepted. So .    The state in the preceding example is often called a garbage or trap state: it is a non-accepting state which, once reached by the machine, cannot be escaped. It is fairly common to omit such states from transition diagrams. For example, one is likely to see the diagram:   Transition diagram omitting trap state     Note that this cannot be a complete DFA, because a DFA is required to have a transition defined for every state-input pair. The diagram is ``short for\" the full diagram:   Transition diagram with trap state     As well as recognizing what language is accepted by a given DFA, we often want to do the reverse and come up with a DFA that accepts a given language. Building DFAs for specified languages is an art, not a science. There is no algorithm that you can apply to produce a DFA from an English-language description of the set of strings the DFA should accept. On the other hand, it is not generally successful, either, to simply write down a half-dozen strings that are in the language and design a DFA to accept those strings---invariably there are strings that are in the language that aren't accepted, and other strings that aren't in the language that are accepted. So how do you go about building DFAs that accept all and only the strings they're supposed to accept? The best advice I can give is to think about relevant characteristics that determine whether a string is in the language or not, and to think about what the possible values or ``states\" of those characteristics are; then build a machine that has a state corresponding to each possible combination of values of relevant characteristics, and determine how the consumption of inputs affects those values. I'll illustrate what I mean with a couple of examples.   Find a DFA with input alphabet that accepts the language .  The characteristics that determine whether or not a string is in are the parity of and . There are four possible combinations of ``values\" for these characteristics: both numbers could be even, both could be odd, the first could be odd and the second even, or the first could be even and the second odd. So we build a machine with four states corresponding to the four cases. We want to set up \\delta so that the machine will be in state exactly when it has consumed a string with an even number of 's and an even number of 's, in state exactly when it has consumed a string with an odd number of 's and an odd number of 's, and so on.  To do this, we first make the state into our start state, because the DFA will be in the start state after consuming the empty string , and has an even number (zero) of both 's and 's. Now we add transitions by reasoning about how the parity of 's and 's is changed by additional input. For instance, if the machine is in (meaning an even number of 's and an even number of 's have been seen) and a further is consumed, then we want the machine to move to state , since the machine has now consumed an odd number of 's and still an even number of 's. So we add the transition to the machine. Similarly, if the machine is in (meaning an odd number of 's and an odd number of 's have been seen) and a further is consumed, then we want the machine to move to state again, since the machine has still consumed an odd number of 's, and now an even number of 's. So we add the transition to the machine. Similar reasoning produces a total of eight transitions, one for each state-input pair. Finally, we have to decide which states should be final states. The only state that corresponds to the desired criteria for the language is , so we make a final state. The complete machine is shown below.   Transition diagram from description above      Find a DFA with input alphabet that accepts the language . The relevant characteristic here is of course whether or not the number of 's in a string is divisible by 3, perhaps suggesting a two-state machine. But in fact, there is more than one way for a number to not be divisible by 3: dividing the number by 3 could produce a remainder of either 1 or 2 (a remainder of 0 corresponds to the number in fact being divisible by 3). So we build a machine with three states , , , and add transitions so that the machine will be in state exactly when the number of 's it has consumed is evenly divisible by 3, in state exactly when the number of 's it has consumed is equivalent to , and similarly for . State will be the start state, as has 0 's and 0 is divisible by 3. The completed machine is shown below. Notice that because the consumption of a does not affect the only relevant characteristic, 's do not cause changes of state.   Transition diagram that accepts the language      Find a DFA with input alphabet that accepts the language .  Again, it is not quite so simple as making a two-state machine where the states correspond to ``have seen \" and ``have not seen \". Think dynamically: as you move through the input string, how do you arrive at the goal of having seen three consecutive 's? You might have seen two consecutive 's and still need a third, or you might just have seen one and be looking for two more to come immediately, or you might just have seen a and be right back at the beginning as far as seeing 3 consecutive 's goes. So once again there will be three states, with the ``last symbol was not an '' state being the start state. The complete automaton is shown below.   Transition diagram that accepts the language .        Nondeterministic Finite-State Automata   Noneterministic Finite-State Automata    NDFSA    NFA   As mentioned briefly above, there is an alternative school of though as to what properties should be required of a finite-state automaton's transition function. Recall our motivating example of a C++ compiler and a legal \\em if statement. In our description, we had the compiler in an ``expecting a ) \" state; on seeing a ) , the compiler moved into an ``expecting a or a legal statement\" state. An alternative way to view this would be to say that the compiler, on seeing a ) , could move into one of two different states: it could move to an ``expecting a { \" state or move to an ``expecting a legal statement\" state. Thus, from a single state, on input ) , the compiler has multiple moves. This alternative interpretation is not allowed by the DFA model. A second point on which one might question the DFA model is the fact that input must be consumed for the machine to change state. Think of the syntax for C++ function declarations. The return type of a function need not be specified (the default is taken to be int ). The start state of the compiler when parsing a function declaration might be ``expecting a return type\"; then with no input consumed, the compiler can move to the state ``expecting a legal function name\". To model this, it might seem reasonable to allow transitions that do not require the consumption of input (such transitions are called -transitions ). Again, this is not supported by the DFA abstraction. There is, therefore, a second class of finite-state automata that people study, the class of nondeterministic finite-state automata.  A nondeterministic finite-state automaton (NFA) is the same as a deterministic finite-state automaton except that the transition function is no longer a function that maps a state-input pair to a state; rather, it maps a state-input pair or a state- pair to a set of states. No longer do we have , meaning that the machine must change to state if it is in state and consumes an . Rather, we have , meaning that if the machine is in state and consumes an , it might move directly to any one of the states . Note that the set of next states \\partial(q,a) is defined for every state and every input symbol , but for some 's and 's it could be empty, or contain just one state (there don't have to be multiple next states). The function \\ must also specify whether it is possible for the machine to make any moves without input being consumed, i.e.\\ must be specified for every state . Again, it is quite possible that may be empty for some states : there need not be -transitions out of .    Nondeterministic Finite-State Automata    Formally, a nondeterministic finite-state automaton  is specified by 5 components: where      and are as in the definition of DFAs;     is a transition function that takes state, input symbol pairs and maps each one to a set of states. To say means that if the machine is in state and the input symbol is consumed, then the machine may move directly into any one of states . The function must also be defined for every state, pair. To say means that there are direct -transitions from state to each of .  The formal description of the function is .         The function describes how the machine functions on zero or one input symbol. As with DFAs, we will often want to refer to the behavior of the machine on a string of inputs, and so we use the notation as shorthand for ``the set of states in which the machine might be if it starts in state and consumes input string \". As with DFAs, is determined by the specification of . Note that for every state , contains at least , and may contain additional states if there are (sequences of) -transitions out of .  We do have to think a bit carefully about what it means for an NFA to accept a string . Suppose contains both accepting and non-accepting states, i.e.\\ the machine could end in an accepting state after consuming , but it might also end in a non-accepting state. Should we consider the machine to accept , or should we require every state in to be accepting before we admit to the ranks of the accepted? Think of the C++ compiler again: provided that an if statement fits one of the legal syntax specifications, the compiler will accept it. So we take as the definition of acceptance by an NFA: A string is accepted by an NFA provided that at least one of the states in is an accepting state. That is, if there is some sequence of steps of the machine that consumes and leaves the machine in an accepting state, then the machine accepts . Formally:   Language Accepted by NFA   Let be a nondeterministic finite-state automaton. The string is accepted by iff contains at least one state .  The language accepted by , denoted , is the set of all strings that are accepted by : .     The NFA shown below accepts all strings of 's and 's in which the second-to-last symbol is .   Diagram of an NFA that accepts the language described above.      It should be fairly clear that every language that is accepted by a DFA is also accepted by an NFA. Pictorially, a DFA looks exactly like an NFA (an NFA that doesn't happen to have any -transitions or multiple same-label transitions from any state), though there is slightly more going on behind the scenes. Formally, given the DFA , you can build an NFA where 4 of the 5 components are the same and where every transition has been replaced by .  But is the reverse true? Can any NFA-recognized language be recognized by a DFA? Look, for example, at the language in . Can you come up with a DFA that accepts this language? Try it. It's pretty difficult to do. But does that mean that there really is no DFA that accepts the language, or only that we haven't been clever enough to find one?  It turns out that the limitation is in fact in our cleverness, and not in the power of DFAs.    Every language that is accepted by an NFA is accepted by a DFA.    Suppose we are given an NFA , and we want to build a DFA that accepts the same language. The idea is to make the states in correspond to {\\em subsets} of 's states, and then to set up 's transition function so that for any string , corresponds to ; i.e.\\ the {\\bf single} state that gets you to in corresponds to the {\\bf set} of states that could get you to in . If any of those states is accepting in , would be accepted by , and so the corresponding state in would be made accepting as well.  So how do we make this work? The first thing to do is to deal with a start state for . If we're going to make this state correspond to a subset of 's states, what subset should it be? Well, remember (1) that in any DFA, ; and (2) we want to make correspond to for every . Putting these two limitations together tells us that we should make correspond to . So corresponds to the subset of all of 's states that can be reached with no input.  Now we progressively set up 's transition function by repeatedly doing the following:   find a state that has been added to but whose out-transitions have not yet been added. (Note that initially fits this description.) Remember that the state corresponds to some subset of 's states.    for each input symbol , look at all 's states that can be reached from any one of by consuming (perhaps making some -transitions as well). That is, look at . If there is not already a DFA state that corresponds to this subset of 's states, then add one, and add the transition to 's transitions.     The above process must halt eventually, as there are only a finite number of states in the NFA, and therefore there can be at most states in the DFA, as that is the number of subsets of the NFA's states. The final states of the new DFA are those where at least one of the associated NFA states is an accepting state of the NFA.  Can we now argue that ? We can, if we can argue that corresponds to for all : if this latter property holds, then iff is accepting, which we made be so iff contains an accepting state of , which happens iff accepts i.e.\\ iff .  So can we argue that does in fact correspond to for all ? We can, using induction on the length of .  First, a preliminary observation. Suppose , i.e.\\ is the string followed by the single symbol . How are and related? Well, recall that is the set of all states that can reach when it starts in and consumes : for some states . Now, is just with an additional , so where might end up if it starts in and consumes ? We know that gets to or or , so gets to any state that can be reached from with an (and maybe some -transitions), and to any state that can be reached from with an (and maybe some -transitions), etc. Thus, our relationship between and is that if , then . With this observation in hand, let's proceed to our proof by induction.  We want to prove that corresponds to for all . We use induction on the length of .   Base case: Suppose has length 0. The only string with length 0 is , so we want to show that corresponds to . Well, , since in a DFA, for any state~ . We explicitly made correspond to , and so the property holds for with length 0.    Inductive case: Assume that the desired property holds for some number , i.e.\\ that corresponds to for all with length . Look at an arbitrary string with length . We want to show that corresponds to . Well, the string must look like for some string (whose length is ) and some symbol . By our inductive hypothesis, we know corresponds to . We know is a set of 's states, say .  At this point, our subsequent reasoning might be a bit clearer if we give explicit names to (the state reaches on input ) and (the state reaches on input ). Call \\ , and call \\ . We know, because , there must be an -transition from to . Look at how we added transitions to : the fact that there is an -transition from to means that corresponds to the set of 's states. By our preliminary observation, is just . So (or ) corresponds to , which is what we wanted to prove. Since was an arbitrary string of length , we have shown that the property holds for .     Altogether, we have shown by induction that corresponds to for all . As indicated at the very beginning of this proof, that is enough to prove that . So for any NFA , we can find a DFA that accepts the same language.     Consider the NFA shown below.   Diagram of an NFA to convert to DFA.     We start by looking at , and then add transitions and states as described above.    so .     will be , which is , so .     will be , which is , so we need to add a new state to the DFA; and add to the DFA's transition function.     will be unioned with since . Since , we need to add a new state to the DFA, and a transition .     will be unioned with , which gives , which again gives us a new state to add to the DFA, together with the transition .     At this point, our partially-constructed DFA looks as shown below:   Diagram of an NFA partially converted to a DFA.     The construction continues as long as there are new states being added, and new transitions from those states that have to be computed. The final DFA is shown below.   Diagram of completed DFA.         Give DFAs that accept the following languages over .                                    What languages do the following DFAs accept?   Transition diagram (a).      Transition diagram (b).       Let . Give a DFA that accepts the language     What language does the NFA in accept?    Give a DFA that accepts the language accepted by the following NFA.   NFA diagram for exercise 5.       Give a DFA that accepts the language accepted by the following NFA. (Be sure to note that, for example, it is possible to reach both and from on consumption of an , because of the -transition.)   NFA diagram for exercise 6.        "
 },
 {
-  "id": "p-4538",
+  "id": "p-4968",
   "level": "2",
-  "url": "s-finite-state-automata.html#p-4538",
+  "url": "s-finite-state-automata.html#p-4968",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "finite-state automaton automata automaton machine "
 },
 {
-  "id": "p-4540",
+  "id": "p-4970",
   "level": "2",
-  "url": "s-finite-state-automata.html#p-4540",
+  "url": "s-finite-state-automata.html#p-4970",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -11489,7 +12380,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-finite-state-automata.html#ex-transition-funct",
   "type": "Example",
-  "number": "15.3.1",
+  "number": "17.3.1",
   "title": "A transition function.",
   "body": " A transition function   Below is a table that describes the transition function of a finite-state automaton with states , , and , on inputs and .                                              The table indicates, for example, that if the FSA were in state and consumed a , it would move to state .   "
 },
@@ -11498,34 +12389,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-finite-state-automata.html#def-deterministic-fsa",
   "type": "Definition",
-  "number": "15.3.3",
+  "number": "17.3.3",
   "title": "Deterministic Finite-State Automaton.",
   "body": " Deterministic Finite-State Automaton   Deterministic Finite-State Automata    Formally, a deterministic finite-state automaton  is specified by 5 components: where      is a finite set of states;     is an alphabet called the input alphabet ;     is a state which is designated as the start state ;     is a subset of ; the states in are states designated as final or accepting states;     is a transition function that takes state, input symbol pairs and maps each one to a state: .   To say means that if the machine is in state and the input symbol is consumed, then the machine will move into state .    The function must be a total function, meaning that must be defined for every state and every input symbol .    Recall also that, according to the definition of a function, there can be only one output for any particular input. This means that for any given and , can have only one value. This is what makes the finite-state automaton deterministic : given the current state and input symbol, there is only one possible move the machine can make.         "
 },
 {
-  "id": "example-237",
+  "id": "example-260",
   "level": "2",
-  "url": "s-finite-state-automata.html#example-237",
+  "url": "s-finite-state-automata.html#example-260",
   "type": "Example",
-  "number": "15.3.4",
+  "number": "17.3.4",
   "title": "",
   "body": " The transition function described by the table in the preceding example is that of a DFA. If we take to be the start state and to be a final state, then the formal description of the resulting machine is , where is given by                                      "
 },
 {
-  "id": "p-4560",
+  "id": "p-4990",
   "level": "2",
-  "url": "s-finite-state-automata.html#p-4560",
+  "url": "s-finite-state-automata.html#p-4990",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "  "
 },
 {
-  "id": "example-238",
+  "id": "example-261",
   "level": "2",
-  "url": "s-finite-state-automata.html#example-238",
+  "url": "s-finite-state-automata.html#example-261",
   "type": "Example",
-  "number": "15.3.5",
+  "number": "17.3.5",
   "title": "",
   "body": "Let be the automaton in the preceding example. Then, for example:  "
 },
@@ -11534,14 +12425,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-finite-state-automata.html#def-language-accepted-by-fsa",
   "type": "Definition",
-  "number": "15.3.6",
+  "number": "17.3.6",
   "title": "Language Accepted by FSA.",
   "body": " Language Accepted by FSA   Let . A string is accepted by iff . (Don't get confused by the notation. Remember, it's just a shorter and neater way of saying `` is accepted by if and only if the state that M will end up in if it starts in and consumes is one of the states in .\")  The language accepted by , denoted , is the set of all strings that are accepted by : .   "
 },
 {
-  "id": "p-4565",
+  "id": "p-4995",
   "level": "2",
-  "url": "s-finite-state-automata.html#p-4565",
+  "url": "s-finite-state-automata.html#p-4995",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -11552,7 +12443,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-finite-state-automata.html#find-lang-from-DFA",
   "type": "Example",
-  "number": "15.3.8",
+  "number": "17.3.8",
   "title": "",
   "body": "  Find the language accepted by the DFA shown below (and describe it using a regular expression!)   Transition diagram to find language   The start state of is accepting, which means . If is in state , a sequence of two 's or three 's will move back to and hence be accepted. So .   "
 },
@@ -11561,7 +12452,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-finite-state-automata.html#fig-fsa3",
   "type": "Figure",
-  "number": "15.3.10",
+  "number": "17.3.10",
   "title": "",
   "body": "  Transition diagram omitting trap state   "
 },
@@ -11570,50 +12461,50 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-finite-state-automata.html#fig-fsa4",
   "type": "Figure",
-  "number": "15.3.11",
+  "number": "17.3.11",
   "title": "",
   "body": "  Transition diagram with trap state   "
 },
 {
-  "id": "example-240",
+  "id": "example-263",
   "level": "2",
-  "url": "s-finite-state-automata.html#example-240",
+  "url": "s-finite-state-automata.html#example-263",
   "type": "Example",
-  "number": "15.3.12",
+  "number": "17.3.12",
   "title": "",
   "body": " Find a DFA with input alphabet that accepts the language .  The characteristics that determine whether or not a string is in are the parity of and . There are four possible combinations of ``values\" for these characteristics: both numbers could be even, both could be odd, the first could be odd and the second even, or the first could be even and the second odd. So we build a machine with four states corresponding to the four cases. We want to set up \\delta so that the machine will be in state exactly when it has consumed a string with an even number of 's and an even number of 's, in state exactly when it has consumed a string with an odd number of 's and an odd number of 's, and so on.  To do this, we first make the state into our start state, because the DFA will be in the start state after consuming the empty string , and has an even number (zero) of both 's and 's. Now we add transitions by reasoning about how the parity of 's and 's is changed by additional input. For instance, if the machine is in (meaning an even number of 's and an even number of 's have been seen) and a further is consumed, then we want the machine to move to state , since the machine has now consumed an odd number of 's and still an even number of 's. So we add the transition to the machine. Similarly, if the machine is in (meaning an odd number of 's and an odd number of 's have been seen) and a further is consumed, then we want the machine to move to state again, since the machine has still consumed an odd number of 's, and now an even number of 's. So we add the transition to the machine. Similar reasoning produces a total of eight transitions, one for each state-input pair. Finally, we have to decide which states should be final states. The only state that corresponds to the desired criteria for the language is , so we make a final state. The complete machine is shown below.   Transition diagram from description above     "
 },
 {
-  "id": "example-241",
+  "id": "example-264",
   "level": "2",
-  "url": "s-finite-state-automata.html#example-241",
+  "url": "s-finite-state-automata.html#example-264",
   "type": "Example",
-  "number": "15.3.14",
+  "number": "17.3.14",
   "title": "",
   "body": "Find a DFA with input alphabet that accepts the language . The relevant characteristic here is of course whether or not the number of 's in a string is divisible by 3, perhaps suggesting a two-state machine. But in fact, there is more than one way for a number to not be divisible by 3: dividing the number by 3 could produce a remainder of either 1 or 2 (a remainder of 0 corresponds to the number in fact being divisible by 3). So we build a machine with three states , , , and add transitions so that the machine will be in state exactly when the number of 's it has consumed is evenly divisible by 3, in state exactly when the number of 's it has consumed is equivalent to , and similarly for . State will be the start state, as has 0 's and 0 is divisible by 3. The completed machine is shown below. Notice that because the consumption of a does not affect the only relevant characteristic, 's do not cause changes of state.   Transition diagram that accepts the language    "
 },
 {
-  "id": "example-242",
+  "id": "example-265",
   "level": "2",
-  "url": "s-finite-state-automata.html#example-242",
+  "url": "s-finite-state-automata.html#example-265",
   "type": "Example",
-  "number": "15.3.16",
+  "number": "17.3.16",
   "title": "",
   "body": " Find a DFA with input alphabet that accepts the language .  Again, it is not quite so simple as making a two-state machine where the states correspond to ``have seen \" and ``have not seen \". Think dynamically: as you move through the input string, how do you arrive at the goal of having seen three consecutive 's? You might have seen two consecutive 's and still need a third, or you might just have seen one and be looking for two more to come immediately, or you might just have seen a and be right back at the beginning as far as seeing 3 consecutive 's goes. So once again there will be three states, with the ``last symbol was not an '' state being the start state. The complete automaton is shown below.   Transition diagram that accepts the language .     "
 },
 {
-  "id": "p-4575",
+  "id": "p-5005",
   "level": "2",
-  "url": "s-finite-state-automata.html#p-4575",
+  "url": "s-finite-state-automata.html#p-5005",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "-transitions "
 },
 {
-  "id": "p-4576",
+  "id": "p-5006",
   "level": "2",
-  "url": "s-finite-state-automata.html#p-4576",
+  "url": "s-finite-state-automata.html#p-5006",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -11624,7 +12515,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-finite-state-automata.html#def-non-deterministic-fsa",
   "type": "Definition",
-  "number": "15.3.18",
+  "number": "17.3.18",
   "title": "",
   "body": "  Nondeterministic Finite-State Automata    Formally, a nondeterministic finite-state automaton  is specified by 5 components: where      and are as in the definition of DFAs;     is a transition function that takes state, input symbol pairs and maps each one to a set of states. To say means that if the machine is in state and the input symbol is consumed, then the machine may move directly into any one of states . The function must also be defined for every state, pair. To say means that there are direct -transitions from state to each of .  The formal description of the function is .        "
 },
@@ -11633,7 +12524,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-finite-state-automata.html#def-language-accepted-by-nfa",
   "type": "Definition",
-  "number": "15.3.19",
+  "number": "17.3.19",
   "title": "Language Accepted by NFA.",
   "body": " Language Accepted by NFA   Let be a nondeterministic finite-state automaton. The string is accepted by iff contains at least one state .  The language accepted by , denoted , is the set of all strings that are accepted by : .   "
 },
@@ -11642,7 +12533,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-finite-state-automata.html#ex-nfa-2nd_last-a",
   "type": "Example",
-  "number": "15.3.20",
+  "number": "17.3.20",
   "title": "",
   "body": " The NFA shown below accepts all strings of 's and 's in which the second-to-last symbol is .   Diagram of an NFA that accepts the language described above.     "
 },
@@ -11651,7 +12542,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-finite-state-automata.html#thm-nfa-accepted-by-dfa",
   "type": "Theorem",
-  "number": "15.3.22",
+  "number": "17.3.22",
   "title": "",
   "body": "  Every language that is accepted by an NFA is accepted by a DFA.    Suppose we are given an NFA , and we want to build a DFA that accepts the same language. The idea is to make the states in correspond to {\\em subsets} of 's states, and then to set up 's transition function so that for any string , corresponds to ; i.e.\\ the {\\bf single} state that gets you to in corresponds to the {\\bf set} of states that could get you to in . If any of those states is accepting in , would be accepted by , and so the corresponding state in would be made accepting as well.  So how do we make this work? The first thing to do is to deal with a start state for . If we're going to make this state correspond to a subset of 's states, what subset should it be? Well, remember (1) that in any DFA, ; and (2) we want to make correspond to for every . Putting these two limitations together tells us that we should make correspond to . So corresponds to the subset of all of 's states that can be reached with no input.  Now we progressively set up 's transition function by repeatedly doing the following:   find a state that has been added to but whose out-transitions have not yet been added. (Note that initially fits this description.) Remember that the state corresponds to some subset of 's states.    for each input symbol , look at all 's states that can be reached from any one of by consuming (perhaps making some -transitions as well). That is, look at . If there is not already a DFA state that corresponds to this subset of 's states, then add one, and add the transition to 's transitions.     The above process must halt eventually, as there are only a finite number of states in the NFA, and therefore there can be at most states in the DFA, as that is the number of subsets of the NFA's states. The final states of the new DFA are those where at least one of the associated NFA states is an accepting state of the NFA.  Can we now argue that ? We can, if we can argue that corresponds to for all : if this latter property holds, then iff is accepting, which we made be so iff contains an accepting state of , which happens iff accepts i.e.\\ iff .  So can we argue that does in fact correspond to for all ? We can, using induction on the length of .  First, a preliminary observation. Suppose , i.e.\\ is the string followed by the single symbol . How are and related? Well, recall that is the set of all states that can reach when it starts in and consumes : for some states . Now, is just with an additional , so where might end up if it starts in and consumes ? We know that gets to or or , so gets to any state that can be reached from with an (and maybe some -transitions), and to any state that can be reached from with an (and maybe some -transitions), etc. Thus, our relationship between and is that if , then . With this observation in hand, let's proceed to our proof by induction.  We want to prove that corresponds to for all . We use induction on the length of .   Base case: Suppose has length 0. The only string with length 0 is , so we want to show that corresponds to . Well, , since in a DFA, for any state~ . We explicitly made correspond to , and so the property holds for with length 0.    Inductive case: Assume that the desired property holds for some number , i.e.\\ that corresponds to for all with length . Look at an arbitrary string with length . We want to show that corresponds to . Well, the string must look like for some string (whose length is ) and some symbol . By our inductive hypothesis, we know corresponds to . We know is a set of 's states, say .  At this point, our subsequent reasoning might be a bit clearer if we give explicit names to (the state reaches on input ) and (the state reaches on input ). Call \\ , and call \\ . We know, because , there must be an -transition from to . Look at how we added transitions to : the fact that there is an -transition from to means that corresponds to the set of 's states. By our preliminary observation, is just . So (or ) corresponds to , which is what we wanted to prove. Since was an arbitrary string of length , we have shown that the property holds for .     Altogether, we have shown by induction that corresponds to for all . As indicated at the very beginning of this proof, that is enough to prove that . So for any NFA , we can find a DFA that accepts the same language.   "
 },
@@ -11660,61 +12551,61 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s-finite-state-automata.html#ex-nfa-to-dfa",
   "type": "Example",
-  "number": "15.3.23",
+  "number": "17.3.23",
   "title": "",
   "body": " Consider the NFA shown below.   Diagram of an NFA to convert to DFA.     We start by looking at , and then add transitions and states as described above.    so .     will be , which is , so .     will be , which is , so we need to add a new state to the DFA; and add to the DFA's transition function.     will be unioned with since . Since , we need to add a new state to the DFA, and a transition .     will be unioned with , which gives , which again gives us a new state to add to the DFA, together with the transition .     At this point, our partially-constructed DFA looks as shown below:   Diagram of an NFA partially converted to a DFA.     The construction continues as long as there are new states being added, and new transitions from those states that have to be computed. The final DFA is shown below.   Diagram of completed DFA.     "
 },
 {
-  "id": "exerc-15_3-1",
+  "id": "exerc-17_3-1",
   "level": "2",
-  "url": "s-finite-state-automata.html#exerc-15_3-1",
+  "url": "s-finite-state-automata.html#exerc-17_3-1",
   "type": "Exercise",
-  "number": "15.3.3.1",
+  "number": "17.3.3.1",
   "title": "",
   "body": " Give DFAs that accept the following languages over .                                  "
 },
 {
-  "id": "exerc-15_3-2",
+  "id": "exerc-17_3-2",
   "level": "2",
-  "url": "s-finite-state-automata.html#exerc-15_3-2",
+  "url": "s-finite-state-automata.html#exerc-17_3-2",
   "type": "Exercise",
-  "number": "15.3.3.2",
+  "number": "17.3.3.2",
   "title": "",
   "body": " What languages do the following DFAs accept?   Transition diagram (a).      Transition diagram (b).     "
 },
 {
-  "id": "exerc-15_3-3",
+  "id": "exerc-17_3-3",
   "level": "2",
-  "url": "s-finite-state-automata.html#exerc-15_3-3",
+  "url": "s-finite-state-automata.html#exerc-17_3-3",
   "type": "Exercise",
-  "number": "15.3.3.3",
+  "number": "17.3.3.3",
   "title": "",
   "body": " Let . Give a DFA that accepts the language   "
 },
 {
-  "id": "exerc-15_3-4",
+  "id": "exerc-17_3-4",
   "level": "2",
-  "url": "s-finite-state-automata.html#exerc-15_3-4",
+  "url": "s-finite-state-automata.html#exerc-17_3-4",
   "type": "Exercise",
-  "number": "15.3.3.4",
+  "number": "17.3.3.4",
   "title": "",
   "body": " What language does the NFA in accept?  "
 },
 {
-  "id": "exerc-15_3-5",
+  "id": "exerc-17_3-5",
   "level": "2",
-  "url": "s-finite-state-automata.html#exerc-15_3-5",
+  "url": "s-finite-state-automata.html#exerc-17_3-5",
   "type": "Exercise",
-  "number": "15.3.3.5",
+  "number": "17.3.3.5",
   "title": "",
   "body": " Give a DFA that accepts the language accepted by the following NFA.   NFA diagram for exercise 5.     "
 },
 {
-  "id": "exerc-15_3-6",
+  "id": "exerc-17_3-6",
   "level": "2",
-  "url": "s-finite-state-automata.html#exerc-15_3-6",
+  "url": "s-finite-state-automata.html#exerc-17_3-6",
   "type": "Exercise",
-  "number": "15.3.3.6",
+  "number": "17.3.3.6",
   "title": "",
   "body": " Give a DFA that accepts the language accepted by the following NFA. (Be sure to note that, for example, it is possible to reach both and from on consumption of an , because of the -transition.)   NFA diagram for exercise 6.     "
 },
@@ -11723,7 +12614,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-FSA-and-Regular-Languages.html",
   "type": "Section",
-  "number": "15.4",
+  "number": "17.4",
   "title": "Finite-State Automata and Regular Languages",
   "body": " Finite-State Automata and Regular Languages   We know now that our two models for mechanical language recognition actually recognize the same class of languages. The question still remains: do they recognize the same class of languages as the class generated mechanically by regular expressions? The answer turns out to be ``yes\". There are two parts to proving this: first that every language generated can be recognized, and second that every language recognized can be generated.    All Regular Languages are Recognized by NFAs   Regular Language     Every language generated by a regular expression can be recognized by an NFA.    The proof of this theorem is a nice example of a proof by induction on the structure of regular expressions. The definition of regular expression is inductive: , , and are the simplest regular expressions, and then more complicated regular expressions can be built from these. We will show that there are NFAs that accept the languages generated by the simplest regular expressions, and then show how those machines can be put together to form machines that accept languages generated by more complicated regular expressions. Consider the regular expression . . Here is a machine that accepts :   Diagram of an NFA that accepts .     Consider the regular expression . . Here is a machine that accepts :   Diagram of an NFA that accepts .     Consider the regular expression . . Here is a machine that accepts :   Diagram of an NFA that accepts .    Now suppose that you have NFAs that accept the languages generated by the regular expressions and . Building a machine that accepts is fairly straightforward: take an NFA that accepts and an NFA that accepts . Introduce a new state , connect it to the start states of and via -transitions, and designate it as the start state of the new machine. No other transitions are added. The final states of together with the final states of are designated as the final states of the new machine. It should be fairly clear that this new machine accepts exactly those strings accepted by together with those strings accepted by : any string that was accepted by will be accepted by the new NFA by starting with an -transition to the old start state of and then following the accepting path through ; similarly, any string accepted by will be accepted by the new machine; these are the only strings that will be accepted by the new machine, as on any input all the new machine can do is make an -move to 's (or 's) start state, and from there will only be accepted by the new machine if it is accepted by (or ). Thus, the new machine accepts , which is , which is exactly the definition of .   Diagram of an NFA that accepts .      A pause before we continue:  Note that for the simplest regular expressions, the machines that we created to accept the languages generated by the regular expressions were in fact DFAs. In our last case above, however, we needed -transitions to build the new machine, and so if we were trying to prove that every regular language could be accepted by a DFA, our proof would be in trouble. THIS DOES NOT MEAN that the statement ``every regular language can be accepted by a DFA\" is false, just that we can't prove it using this kind of argument, and would have to find an alternative proof.   Suppose you have machines and that accept and respectively. To build a machine that accepts proceed as follows. Make the start state of be the start state of the new machine. Make the final states of be the final states of the new machine. Add -transitions from the final states of to the start state of .   Diagram of an NFA that accepts .     It should be fairly clear that this new machine accepts exactly those strings of the form where and : first of all, any string of this form will be accepted because implies there is a path that consumes from to a final state of ; a -transition moves to ; then implies there is a path that consumes from to a final state of ; and the final states of are the final states of the new machine, so will be accepted. Conversely, suppose is accepted by the new machine. Since the only final states of the new machine are in the old , and the only way to get into is to take a -transition from a final state of , this means that where takes the machine from its start state to a final state of , a -transition occurs, and then takes the machine from to a final state of . Clearly, and .  We leave the construction of an NFA that accepts from an NFA that accepts as an exercise.      Every Language Recognized by an NFA is Regular   Regular Language     Every language that is accepted by a DFA or an NFA is generated by a regular expression.   Proving this result is actually fairly involved and not very illuminating. Below we will give an illustrative example of how one might actually go about extracting a regular expression from an NFA or a DFA. You can go on to read the proof if you are interested.   We prove that the language accepted by a DFA is regular. The proof for NFAs follows from the equivalence between DFAs and NFAs.  Suppose that is a DFA, where . Let be the number of states in , and write . We want to consider computations in which starts in some state , reads a string , and ends in state . In such a computation, might go through a series of intermediates states between and : We are interested in computations in which all of the intermediate states--- ---are in the set , for some number~ . We define to be the set of all strings in that are consumed by such a computation. That is, if and only if when starts in state and reads , it ends in state , and all the intermediate states between and are in the set . is a language over . We show that for .  Consider the language . For , the set of allowable intermediate states is empty. Since there can be no intermediate states, it follows that there can be at most one step in the computation that starts in state , reads , and ends in state . So, can be at most one. This means that is finite, and hence is regular. (In fact, , for , and . Note that in many cases, will be the empty set.)  We now proceed by induction on to show that is regular for all and . We have proved the base case, . Suppose that we already know that is regular for all and all . We need to show that is regular for all and . In fact, which is regular because is regular for all and , and because the union, concatenation, and Kleene star of regular languages are regular.  To see that the above equation holds, consider a string . Now, if and only if when starts in state and reads , it ends in state , with all intermediate states in the computation in the set . Consider such a computation. There are two cases: Either occurs as an intermediate state in the computation, or it does not. If it does not occur, then all the intermediate states are in the set , which means that in fact . If  does occur as an intermediate state in the computation, then we can break the computation into phases, by dividing it at each point where occurs as an intermediate state. This breaks into a concatenation . The string is consumed in the first phase of the computation, during which goes from state to the first occurrence of ; since the intermediate states in this computation are in the set . The string is consumed by the last phase of the computation, in which goes from the final occurrence of to , so that . And each string is consumed in a phase of the computation in which goes from one occurrence of to the next occurrence of , so that . This means that .  We now know, in particular, that is a regular language for all . But consists of all strings such that when starts in state and reads , it ends in state (with \\textbf{no} restriction on the intermediate states in the computation, since every state of is in the set \\{q_0,q_1,\\dots,q_{n-1}\\}). To finish the proof that is regular, it is only necessary to note that which is regular since it is a union of regular languages. This equation is true since a string is in if and only if when starts in state and reads , in ends in some accepting state . This is the same as saying for some with .      Consider the DFA shown below:   Diagram of a DFA to extract regular expression from.     Note that there is a loop from state back to state : any number of 's will keep the machine in state , and so we label the transition with the regular expression . We do the same thing to the transition labeled from . (Note that the result is no longer a DFA, but that doesn't concern us, we're just interested in developing a regular expression.)   Altered diagram from above.     Next we note that there is in fact a loop from to via . A regular expression that matches the strings that would move around the loop is . So we add a transition labeled from to , and remove the now-irrelevant -transition from to . (It is irrelevant because it is not part of any other loop from to .)   Altered diagram from above.     Next we note that there is also a loop from to via . A regular expression that matches the strings that would move around the loop is . Since the transitions in the loop are the only transitions to or from , we simply remove and replace it with a transition from to .   Altered diagram from above.     It is now clear from the diagram that strings of the form get you to state , and any number of repetitions of strings that match or will keep you there. So the machine accepts .    We have already seen that if two languages and are regular, then so are , , and (and of course ). We have not yet seen, however, how the common set operations intersection and complementation affect regularity. Is the complement of a regular language regular? How about the intersection of two regular languages? Both of these questions can be answered by thinking of regular languages in terms of their acceptance by DFAs. Let's consider first the question of complementation. Suppose we have an arbitrary regular language . We know there is a DFA that accepts . Pause a moment and try to think of a modification that you could make to that would produce a new machine that accepts .... Okay, the obvious thing to try is to make be a copy of with all final states of becoming non-final states of and vice versa. This is in fact exactly right: does in fact accept . To verify this, consider an arbitrary string . The transition functions for the two machines and are identical, so is the same state in both and ; if that state is accepting in then it is non-accepting in , so if is accepted by it is not accepted by ; if the state is non-accepting in then it is accepting in , so if is not accepted by then it is accepted by . Thus accepts exactly those strings that does not, and hence accepts . It is worth pausing for a moment and looking at the above argument a bit longer. Would the argument have worked if we had looked at an arbitrary language and an arbitrary NFA that accepted ? That is, if we had built a new machine in which the final and non-final states had been switched, would the new NFA accept the complement of the language accepted by ? The answer is ``not necessarily\". Remember that acceptance in an NFA is determined based on whether or not at least one of the states reached by a string is accepting. So any string with the property that contains both accepting and non-accepting states of would be accepted both by and by . Now let's turn to the question of intersection. Given two regular languages and , is regular? Again, it is useful to think in terms of DFAs: given machines and that accept and , can you use them to build a new machine that accepts ? The answer is yes, and the idea behind the construction bears some resemblance to that behind the NFA-to-DFA construction. We want a new machine where transitions reflect the transitions of both and simultaneously, and we want to accept a string only if that those sequences of transitions lead to final states in both and . So we associate the states of our new machine with pairs of states from and . For each state in the new machine and input symbol , define to be the state . The start state of is , where is the start state of . The final states of are the the states of the form where is an accepting state of and is an accepting state of . You should convince yourself that accepts a string iff is accepted by both and . The results of the previous section and the preceding discussion are summarized by the following theorem:   Set Operations on Regular Languages      The intersection of two regular languages is a regular language.    The union of two regular languages is a regular language.    The concatenation of two regular languages is a regular language.    The complement of a regular language is a regular language.    The Kleene closure of a regular language is a regular language.         Non-regular Languages  The fact that our models for mechanical language-recognition accept exactly the same languages as those generated by our mechanical language-generation system would seem to be a very positive indication that in ``regular\" we have in fact managed to isolate whatever characteristic it is that makes a language ``mechanical\". Unfortunately, there are languages that we intuitively think of as being mechanically-recognizable (and which we could write C++ programs to recognize) that are not in fact regular.  How does one prove that a language is not regular? We could try proving that there is no DFA or NFA that accepts it, or no regular expression that generates it, but this kind of argument is generally rather difficult to make. It is hard to rule out all possible automata and all possible regular expressions. Instead, we will look at a property that all regular languages have; proving that a given language does not have this property then becomes a way of proving that that language is not regular.  Consider the language . Below is a DFA that accepts this language, with states numbered 1 through 9.   Diagram of DFA that accepts .     Consider the sequence of states that the machine passes through while processing the string . Note that there is a repeated state (state 2). We say that ``goes through the state 2 twice\", meaning that in the course of the string being processed, the machine is in state 2 twice (at least). Call the section of the string that takes you around the loop , the preceding section , and the rest . Then is accepted, is accepted, is accepted, etc. Note that the string cannot be divided this way, because it does not go through the same state twice. Which strings can be divided this way? Any string that goes through the same state twice. This may include some relatively short strings and must include any string with length greater than or equal to 9, because there are only 9 states in the machine, and so repetition must occur after 9 input symbols at the latest.  More generally, consider an arbitrary DFA , and let the number of states in be . Then any string that is accepted by and has or more symbols must go through the same state twice, and can therefore be broken up into three pieces (where contains at least one symbol) so that and    is accepted by      is accepted by (after all, we started with in )     is accepted by     etc.     Note that you can actually say even more: within the first characters of you must already get a repeated state, so you can always find an as described above where, in addition, the portion of (the portion of that takes you to and back to a repeated state) contains at most symbols.  So altogether, if is an -state DFA that accepts , and is a string in whose length is at least , then can be broken down into three pieces , , and , , such that    and together contain no more than symbols;   contains at least one symbol;       is accepted by      is accepted by      is accepted by     etc.        The usually-stated form of this result is the Pumping Lemma:   Pumping Lemma   Pumping Lemma    If is a regular language and is a DFA that accepts , then there is some number such that any string in whose length is greater than or equal to can be broken down into three pieces , , and , , such that    and together contain no more than symbols;     contains at least one symbol;        is accepted by      is accepted by      is accepted by     etc.          Though the Pumping Lemma says something about regular languages, it is not used to prove that languages are regular. It says `` if a language is regular, then certain things happen\", not ``if certain things happen, then you can conclude that the language is regular.\" However, the Pumping Lemma is useful for proving that languages are not regular, since the contrapositive of ``if a language is regular then certain things happen\" is ``if certain things don't happen then you can conclude that the language is not regular.\" So what are the ``certain things\"? Basically, the P.L. says that if a language is regular, there is some ``threshold\" length for strings, and every string that goes over that threshold can be broken down in a certain way. Therefore, if we can show that ``there is some threshold length for strings such that every string that goes over that threshold can be broken down in a certain way\" is a false assertion about a language, we can conclude that the language is not regular. How do you show that there is no threshold length? Saying a number is a threshold length for a language means that every string in the language that is at least that long can be broken down in the ways described. So to show that a number is not a threshold value, we have to show that there is some string in the language that is at least that long that cannot be broken down in the appropriate way.     is not regular.    We do this by showing that there is no threshold value for the language. Let be an arbitrary candidate for threshold value. We want to show that it is not in fact a threshold value, so we want to find a string in the language whose length is at least and which can't be broken down in the way described by the Pumping Lemma. What string should we try to prove unbreakable? We can't pick strings like because we're working with an arbitrary i.e.\\ making no assumptions about 's value; picking is implicitly assuming that is no bigger than 200 --- for larger values of , would not be ``a string whose length is at least \". Whatever string we pick, we have to be sure that its length is at least , no matter what number is. So we pick, for instance, . This string is in the language, and its length is at least , no matter what number is. If we can show that this string can't be broken down as described by the Pumping Lemma, then we'll have shown that doesn't work as a threshold value, and since was an arbitrary number, we will have shown that there is no threshold value for and hence is not regular. So let's show that can't be broken down appropriately.  We need to show that you can't write as where and together contain at most symbols, isn't empty, and all the strings , , , etc.\\ are still in , i.e.\\ of the form for some number~ . The best way to do this is to show that any choice for (with being whatever precedes it and being whatever follows) that satisfies the first two requirements fails to satisfy the third. So what are our possible choices for ? Well, since and together can contain at most symbols, and starts with  's, both and must be made up entirely of 's; since can't be empty, it must contain at least one and (from (i)) no more than  's. So the possible choices for are for some . We want to show now that none of these choices will satisfy the third requirement by showing that for any value of , at least one of the strings , , , etc will not be in . No matter what value we try for , we don't have to look far for our rogue string: the string , which is with  's deleted from it, looks like , which is clearly not of the form . So the only 's that satisfy (i) and (ii) don't satisfy (iii); so can't be broken down as required; so is not a threshold value for ; and since was an arbitrary number, there is no threshold value for ; so is not regular.    The fact that languages like and are not regular is a severe blow to any idea that regular expressions or finite-state automata capture the language-generation or language-recognition capabilities of a computer: They are both languages that we could easily write programs to recognize. It is not clear how the expressive power of regular expressions could be increased, nor how one might modify the FSA model to obtain a more powerful one. However, in the next chapter you will be introduced to the concept of a {\\em grammar} as a tool for generating languages. The simplest grammars still only produce regular languages, but you will see that more complicated grammars have the power to generate languages far beyond the realm of the regular.    Exercises  Give a DFA that accepts the intersection of the languages accepted by the machines shown below. (Suggestion: use the construction discussed in the chapter just before .)   Diagram of two DFAs to combine.     Complete the proof of by showing how to modify a machine that accepts into a machine that accepts .  Using the construction described in , build an NFA that accepts .  Prove that the reverse of a regular language is regular.  Show that for any DFA or NFA, there is an NFA with exactly one final state that accepts the same language.  Suppose we change the model of NFAs to allow NFAs to have multiple start states. Show that for any ``NFA\" with multiple start states, there is an NFA with exactly one start state that accepts the same language.  Suppose that and are DFAs over the alphabet . It is possible to construct a DFA that accepts the langauge in a single step. Define the DFA where is the function from to that is defined by: . Convince yourself that this definition makes sense. (For example, note that states in are pairs of states, where and , and note that the start state in is in fact a state in .) Prove that , and explain why this shows that the intersection of any two regular languages is regular. This proof---if you can get past the notation---is more direct than the one outlined above.  Use the Pumping Lemma to show that the following languages over are not regular.                "
 },
@@ -11732,7 +12623,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-FSA-and-Regular-Languages.html#thm-reg-lang-recog-by-nfa",
   "type": "Theorem",
-  "number": "15.4.1",
+  "number": "17.4.1",
   "title": "",
   "body": "  Every language generated by a regular expression can be recognized by an NFA.    The proof of this theorem is a nice example of a proof by induction on the structure of regular expressions. The definition of regular expression is inductive: , , and are the simplest regular expressions, and then more complicated regular expressions can be built from these. We will show that there are NFAs that accept the languages generated by the simplest regular expressions, and then show how those machines can be put together to form machines that accept languages generated by more complicated regular expressions. Consider the regular expression . . Here is a machine that accepts :   Diagram of an NFA that accepts .     Consider the regular expression . . Here is a machine that accepts :   Diagram of an NFA that accepts .     Consider the regular expression . . Here is a machine that accepts :   Diagram of an NFA that accepts .    Now suppose that you have NFAs that accept the languages generated by the regular expressions and . Building a machine that accepts is fairly straightforward: take an NFA that accepts and an NFA that accepts . Introduce a new state , connect it to the start states of and via -transitions, and designate it as the start state of the new machine. No other transitions are added. The final states of together with the final states of are designated as the final states of the new machine. It should be fairly clear that this new machine accepts exactly those strings accepted by together with those strings accepted by : any string that was accepted by will be accepted by the new NFA by starting with an -transition to the old start state of and then following the accepting path through ; similarly, any string accepted by will be accepted by the new machine; these are the only strings that will be accepted by the new machine, as on any input all the new machine can do is make an -move to 's (or 's) start state, and from there will only be accepted by the new machine if it is accepted by (or ). Thus, the new machine accepts , which is , which is exactly the definition of .   Diagram of an NFA that accepts .      A pause before we continue:  Note that for the simplest regular expressions, the machines that we created to accept the languages generated by the regular expressions were in fact DFAs. In our last case above, however, we needed -transitions to build the new machine, and so if we were trying to prove that every regular language could be accepted by a DFA, our proof would be in trouble. THIS DOES NOT MEAN that the statement ``every regular language can be accepted by a DFA\" is false, just that we can't prove it using this kind of argument, and would have to find an alternative proof.   Suppose you have machines and that accept and respectively. To build a machine that accepts proceed as follows. Make the start state of be the start state of the new machine. Make the final states of be the final states of the new machine. Add -transitions from the final states of to the start state of .   Diagram of an NFA that accepts .     It should be fairly clear that this new machine accepts exactly those strings of the form where and : first of all, any string of this form will be accepted because implies there is a path that consumes from to a final state of ; a -transition moves to ; then implies there is a path that consumes from to a final state of ; and the final states of are the final states of the new machine, so will be accepted. Conversely, suppose is accepted by the new machine. Since the only final states of the new machine are in the old , and the only way to get into is to take a -transition from a final state of , this means that where takes the machine from its start state to a final state of , a -transition occurs, and then takes the machine from to a final state of . Clearly, and .  We leave the construction of an NFA that accepts from an NFA that accepts as an exercise.   "
 },
@@ -11741,7 +12632,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-FSA-and-Regular-Languages.html#thm-nfa-recog-reg-langs",
   "type": "Theorem",
-  "number": "15.4.8",
+  "number": "17.4.8",
   "title": "",
   "body": "  Every language that is accepted by a DFA or an NFA is generated by a regular expression.   Proving this result is actually fairly involved and not very illuminating. Below we will give an illustrative example of how one might actually go about extracting a regular expression from an NFA or a DFA. You can go on to read the proof if you are interested.   We prove that the language accepted by a DFA is regular. The proof for NFAs follows from the equivalence between DFAs and NFAs.  Suppose that is a DFA, where . Let be the number of states in , and write . We want to consider computations in which starts in some state , reads a string , and ends in state . In such a computation, might go through a series of intermediates states between and : We are interested in computations in which all of the intermediate states--- ---are in the set , for some number~ . We define to be the set of all strings in that are consumed by such a computation. That is, if and only if when starts in state and reads , it ends in state , and all the intermediate states between and are in the set . is a language over . We show that for .  Consider the language . For , the set of allowable intermediate states is empty. Since there can be no intermediate states, it follows that there can be at most one step in the computation that starts in state , reads , and ends in state . So, can be at most one. This means that is finite, and hence is regular. (In fact, , for , and . Note that in many cases, will be the empty set.)  We now proceed by induction on to show that is regular for all and . We have proved the base case, . Suppose that we already know that is regular for all and all . We need to show that is regular for all and . In fact, which is regular because is regular for all and , and because the union, concatenation, and Kleene star of regular languages are regular.  To see that the above equation holds, consider a string . Now, if and only if when starts in state and reads , it ends in state , with all intermediate states in the computation in the set . Consider such a computation. There are two cases: Either occurs as an intermediate state in the computation, or it does not. If it does not occur, then all the intermediate states are in the set , which means that in fact . If  does occur as an intermediate state in the computation, then we can break the computation into phases, by dividing it at each point where occurs as an intermediate state. This breaks into a concatenation . The string is consumed in the first phase of the computation, during which goes from state to the first occurrence of ; since the intermediate states in this computation are in the set . The string is consumed by the last phase of the computation, in which goes from the final occurrence of to , so that . And each string is consumed in a phase of the computation in which goes from one occurrence of to the next occurrence of , so that . This means that .  We now know, in particular, that is a regular language for all . But consists of all strings such that when starts in state and reads , it ends in state (with \\textbf{no} restriction on the intermediate states in the computation, since every state of is in the set \\{q_0,q_1,\\dots,q_{n-1}\\}). To finish the proof that is regular, it is only necessary to note that which is regular since it is a union of regular languages. This equation is true since a string is in if and only if when starts in state and reads , in ends in some accepting state . This is the same as saying for some with .   "
 },
@@ -11750,7 +12641,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-FSA-and-Regular-Languages.html#ex-extracting-regex-from-fsa",
   "type": "Example",
-  "number": "15.4.9",
+  "number": "17.4.9",
   "title": "",
   "body": "  Consider the DFA shown below:   Diagram of a DFA to extract regular expression from.     Note that there is a loop from state back to state : any number of 's will keep the machine in state , and so we label the transition with the regular expression . We do the same thing to the transition labeled from . (Note that the result is no longer a DFA, but that doesn't concern us, we're just interested in developing a regular expression.)   Altered diagram from above.     Next we note that there is in fact a loop from to via . A regular expression that matches the strings that would move around the loop is . So we add a transition labeled from to , and remove the now-irrelevant -transition from to . (It is irrelevant because it is not part of any other loop from to .)   Altered diagram from above.     Next we note that there is also a loop from to via . A regular expression that matches the strings that would move around the loop is . Since the transitions in the loop are the only transitions to or from , we simply remove and replace it with a transition from to .   Altered diagram from above.     It is now clear from the diagram that strings of the form get you to state , and any number of repetitions of strings that match or will keep you there. So the machine accepts .   "
 },
@@ -11759,7 +12650,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-FSA-and-Regular-Languages.html#thm-set-ops-on-reg-lang",
   "type": "Theorem",
-  "number": "15.4.14",
+  "number": "17.4.14",
   "title": "Set Operations on Regular Languages.",
   "body": " Set Operations on Regular Languages      The intersection of two regular languages is a regular language.    The union of two regular languages is a regular language.    The concatenation of two regular languages is a regular language.    The complement of a regular language is a regular language.    The Kleene closure of a regular language is a regular language.      "
 },
@@ -11768,7 +12659,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-FSA-and-Regular-Languages.html#fig-fsa21",
   "type": "Figure",
-  "number": "15.4.15",
+  "number": "17.4.15",
   "title": "",
   "body": "  Diagram of DFA that accepts .   "
 },
@@ -11777,7 +12668,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-FSA-and-Regular-Languages.html#thm-pumping-lemma",
   "type": "Theorem",
-  "number": "15.4.16",
+  "number": "17.4.16",
   "title": "Pumping Lemma.",
   "body": " Pumping Lemma   Pumping Lemma    If is a regular language and is a DFA that accepts , then there is some number such that any string in whose length is greater than or equal to can be broken down into three pieces , , and , , such that    and together contain no more than symbols;     contains at least one symbol;        is accepted by      is accepted by      is accepted by     etc.         "
 },
@@ -11786,79 +12677,79 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-FSA-and-Regular-Languages.html#thm-not-regular",
   "type": "Theorem",
-  "number": "15.4.17",
+  "number": "17.4.17",
   "title": "",
   "body": "   is not regular.    We do this by showing that there is no threshold value for the language. Let be an arbitrary candidate for threshold value. We want to show that it is not in fact a threshold value, so we want to find a string in the language whose length is at least and which can't be broken down in the way described by the Pumping Lemma. What string should we try to prove unbreakable? We can't pick strings like because we're working with an arbitrary i.e.\\ making no assumptions about 's value; picking is implicitly assuming that is no bigger than 200 --- for larger values of , would not be ``a string whose length is at least \". Whatever string we pick, we have to be sure that its length is at least , no matter what number is. So we pick, for instance, . This string is in the language, and its length is at least , no matter what number is. If we can show that this string can't be broken down as described by the Pumping Lemma, then we'll have shown that doesn't work as a threshold value, and since was an arbitrary number, we will have shown that there is no threshold value for and hence is not regular. So let's show that can't be broken down appropriately.  We need to show that you can't write as where and together contain at most symbols, isn't empty, and all the strings , , , etc.\\ are still in , i.e.\\ of the form for some number~ . The best way to do this is to show that any choice for (with being whatever precedes it and being whatever follows) that satisfies the first two requirements fails to satisfy the third. So what are our possible choices for ? Well, since and together can contain at most symbols, and starts with  's, both and must be made up entirely of 's; since can't be empty, it must contain at least one and (from (i)) no more than  's. So the possible choices for are for some . We want to show now that none of these choices will satisfy the third requirement by showing that for any value of , at least one of the strings , , , etc will not be in . No matter what value we try for , we don't have to look far for our rogue string: the string , which is with  's deleted from it, looks like , which is clearly not of the form . So the only 's that satisfy (i) and (ii) don't satisfy (iii); so can't be broken down as required; so is not a threshold value for ; and since was an arbitrary number, there is no threshold value for ; so is not regular.   "
 },
 {
-  "id": "exercise-538",
+  "id": "exercise-576",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-538",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-576",
   "type": "Exercise",
-  "number": "15.4.4.1",
+  "number": "17.4.4.1",
   "title": "",
   "body": "Give a DFA that accepts the intersection of the languages accepted by the machines shown below. (Suggestion: use the construction discussed in the chapter just before .)   Diagram of two DFAs to combine.    "
 },
 {
-  "id": "exercise-539",
+  "id": "exercise-577",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-539",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-577",
   "type": "Exercise",
-  "number": "15.4.4.2",
+  "number": "17.4.4.2",
   "title": "",
   "body": "Complete the proof of by showing how to modify a machine that accepts into a machine that accepts . "
 },
 {
-  "id": "exercise-540",
+  "id": "exercise-578",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-540",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-578",
   "type": "Exercise",
-  "number": "15.4.4.3",
+  "number": "17.4.4.3",
   "title": "",
   "body": "Using the construction described in , build an NFA that accepts . "
 },
 {
-  "id": "exercise-541",
+  "id": "exercise-579",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-541",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-579",
   "type": "Exercise",
-  "number": "15.4.4.4",
+  "number": "17.4.4.4",
   "title": "",
   "body": "Prove that the reverse of a regular language is regular. "
 },
 {
-  "id": "exercise-542",
+  "id": "exercise-580",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-542",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-580",
   "type": "Exercise",
-  "number": "15.4.4.5",
+  "number": "17.4.4.5",
   "title": "",
   "body": "Show that for any DFA or NFA, there is an NFA with exactly one final state that accepts the same language. "
 },
 {
-  "id": "exercise-543",
+  "id": "exercise-581",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-543",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-581",
   "type": "Exercise",
-  "number": "15.4.4.6",
+  "number": "17.4.4.6",
   "title": "",
   "body": "Suppose we change the model of NFAs to allow NFAs to have multiple start states. Show that for any ``NFA\" with multiple start states, there is an NFA with exactly one start state that accepts the same language. "
 },
 {
-  "id": "exercise-544",
+  "id": "exercise-582",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-544",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-582",
   "type": "Exercise",
-  "number": "15.4.4.7",
+  "number": "17.4.4.7",
   "title": "",
   "body": "Suppose that and are DFAs over the alphabet . It is possible to construct a DFA that accepts the langauge in a single step. Define the DFA where is the function from to that is defined by: . Convince yourself that this definition makes sense. (For example, note that states in are pairs of states, where and , and note that the start state in is in fact a state in .) Prove that , and explain why this shows that the intersection of any two regular languages is regular. This proof---if you can get past the notation---is more direct than the one outlined above. "
 },
 {
-  "id": "exercise-545",
+  "id": "exercise-583",
   "level": "2",
-  "url": "sec-FSA-and-Regular-Languages.html#exercise-545",
+  "url": "sec-FSA-and-Regular-Languages.html#exercise-583",
   "type": "Exercise",
-  "number": "15.4.4.8",
+  "number": "17.4.4.8",
   "title": "",
   "body": "Use the Pumping Lemma to show that the following languages over are not regular.              "
 },
@@ -11867,41 +12758,41 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-grammars.html",
   "type": "Section",
-  "number": "15.5",
+  "number": "17.5",
   "title": "Grammars",
   "body": " Grammars   Grammars    Both natural languages, such as English and the artificial languages used for programming have a structure known as grammar or syntax. In order to form legal sentences or programs, the parts of the language must be fit together according to certain rules. For natural languages, the rules are somewhat informal (although high-school English teachers might have us believe differently). For programming languages, the rules are absolute, and programs that violate the rules will be rejected by a compiler.  In this section, we will study formal grammars and languages defined by them. The languages we look at will, for the most part, be toy languages, compared to natural languages or even to programming languages, but the ideas and techniques are basic to any study of language. In fact, many of the ideas arose almost simultaneously in the 1950s in the work of linguists who were studying natural language and programmers who were looking for ways to specify the syntax of programming languages.  The grammars in this section are generative grammars  Generative Grammars  . A generative grammar is a set of rules that can be used to generate all the legal strings in a language. We will also consider the closely related idea of parsing . To parse a string means to determine how that string can be generated according to the rules.  This section is a continuation of the preceding section. Like a regular expression, a grammar is a way to specify a possibly infinite language with a finite amount of information. In fact, we will see that every regular language can be specified by a certain simple type of grammar. We will also see that some languages that can be specified by grammars are not regular.    Context-free Grammars   Context-free Grammar   In its most general form, a grammar is a set of rewriting rules   Rewriting Rule  . A rewriting rule specifies that a certain string of symbols can be substituted for all or part of another string. If and are strings, then is a rewriting rule that specifies that the string can be replaced by the string . The symbol   is read can be rewritten as. Rewriting rules are also called production rules  Production Rule or productions , and      Produces, as in  can also be read as produces. For example, if we consider strings over the alphabet , then the production rule can be applied to the string to give the string . The substring in the string has been replaced with .  In a context-free grammar , every rewriting rule has the form , where is single symbol and is a string of zero or more symbols. The symbols that occur on the left-hand sides of production rules in a context-free grammar are called non-terminal symbols  non-terminal symbol  .  The grammar is context-free in the sense that can be substituted for wherever occurs in a string, regardless of the surrounding context in which occurs.  By convention, the non-terminal symbols are usually uppercase letters. The strings on the right-hand sides of the production rules can include non-terminal symbols as well as other symbols, which are called terminal symbol  terminal symbols . By convention, the terminal symbols are usually lowercase letters. Here are some typical production rules that might occur in context-free grammars: In the last rule in this list, represents the empty string, as usual. For example, this rule could be applied to the string to produce the string . The first occurrence of the symbol in has been replaced by the empty string---which is just another way of saying that the symbol has been dropped from the string.  In every context-free grammar, one of the non-terminal symbols is designated as the start symbol of the grammar. The start symbol is often, though not always, denoted by . When the grammar is used to generate strings in a language, the idea is to start with a string consisting of nothing but the start symbol. Then a sequence of production rules is applied. Each application of a production rule to the string transforms the string to a new string. If and when this process produces a string that consists purely of terminal symbols, the process ends. That string of terminal symbols is one of the strings in the language generated by the grammar. In fact, the language consists precisely of all strings of terminal symbols that can be produced in this way.  As a simple example, consider a grammar that has three production rules: In this example, is the only non-terminal symbol, and the terminal symbols are and . Starting from the string , we can apply any of the three rules of the grammar to produce either , , or . Since the string contains no non-terminals, we see that is one of the strings in the language generated by this grammar. The strings and are not in that language, since they contain the non-terminal symbol , but we can continue to apply production rules to these strings. From , for example, we can obtain , , or . From , we go on to obtain , , or . The strings and are in the language generated by the grammar. It's not hard to see that any string of and that ends with a can be generated by this grammar, and that these are the only strings that can be generated. That is, the language generated by this grammar is the regular language specified by the regular expression .  It's time to give some formal definitions of the concepts which we have been discussing.   Context-free Grammar   A context-free grammar is a 4-tuple , where:    is a finite set of symbols. The elements of are the non-terminal symbols of the grammar.     is a finite set of symbols such that . The elements of are the terminal symbols of the grammar.     is a set of production rules. Each rule is of the form where is one of the symbols in and is a string in the language .     . is the start symbol of the grammar.       Even though this is the formal definition, grammars are often specified informally simply by listing the set of production rules. When this is done it is assumed, unless otherwise specified, that the non-terminal symbols are just the symbols that occur on the left-hand sides of production rules of the grammar. The terminal symbols are all the other symbols that occur on the right-hand sides of production rules. The start symbol is the symbol that occurs on the left-hand side of the first production rule in the list. Thus, the list of production rules specifies a grammar where is , is , and is the start symbol. , of course, is a set containing the six production rules in the list.  Let be a context-free grammar. Suppose that and are strings in the language . The notation    Yields, as in String can be obtained from a string by applying one production rule in  is used to express the fact that can be obtained from by applying one of the production rules in . To be more exact, we say that if and only if there is a production rule in the grammar and two strings and in the language such that and . The fact that is just a way of saying that occurs somewhere in . When the production rule is applied to substitute for in , the result is , which is . Note that either or or both can be the empty string.  If a string can be obtained from a string by applying a sequence of zero or more production rules, we write    Yields in zero or more steps.  . In most cases, the   in the notations and will be omitted, assuming that the grammar in question is understood. Note that is a relation on the set . The relation is the reflexive, transitive closure of that relation. (This explains the use of   , which is usually used to denote the transitive, but not necessarily reflexive, closure of a relation. In this case, is reflexive as well as transitive since is true for any string .) For example, using the grammar that is defined by the above list of production rules, we have From this, it follows that . The relation is read yields or produces while can be read yields in zero or more steps or produces in zero or more steps. The following theorem states some simple facts about the relations and :    Let be the context-free grammar . Then:   If and are strings in such that , then .    If , , and are strings in such that and , then .    If and are strings in such that , and if and are any strings in , then .    If and are strings in such that , and if and are any strings in , then .       Parts 1 and 2 follow from the fact that is the transitive closure of . Part 4 follows easily from Part 3. (I leave this as an exercise.) To prove Part 3, suppose that , , , and are strings such that . By definition, this means that there exist strings and and a production rule such that and . But then we also have and . These two equations, along with the existence of the production rule show, by definition, that .    We can use to give a formal definition of the language generated by a context-free grammar:   Context-free Language   Suppose that is a context-free grammar. Then the language generated by is the language over the alphabet defined by That is, contains any string of terminal symbols that can be obtained by starting with the string consisting of the start symbol, , and applying a sequence of production rules.  A language is said to be a context-free language if there is a context-free grammar such that is . Note that there might be many different context-free grammars that generate the same context-free language. Two context-free grammars that generate the same language are said to be equivalent grammars  equivalent .    Suppose is a context-free grammar with start symbol and suppose . By definition, this means that there is a sequence of one or more applications of production rules which produces the string from . This sequence has the form . Such a sequence is called a derivation of (in the grammar ). Note that might have more than one derivation. That is, it might be possible to produce in several different ways.  Consider the language . We already know that is not a regular language. However, it is a context-free language. That is, there is a context-free grammar such that is the language generated by . This gives us our first theorem about grammars:    Let be the language . Let be the context-free grammar where , and consists of the productions Then , so that is a context-free language. In particular, there exist context-free languages which are not regular.    To show that , we must show both that and that . To show that , let be an arbitrary element of . By definition of , for some . We show that by induction on . In the case where , we have . Now, since can be produced from the start symbol by an application of the rule , so our claim is true for . Now, suppose that and that we already know that . We must show that . Since , we also have, by , that . That is, . Combining this with the production rule , we see that . This means that , as we wanted to show. This completes the proof that .  To show that , suppose that . That is, . We must show that for some . Since , there is a derivation , where . We first prove by induction on that in any derivation , we must have either or . Consider the case . Suppose . Then, we must have that is a rule in the grammar, so must be either or . Since and , is of the required form. Next, consider the inductive case. Suppose that and we already know that in any derivation , we must have or . Suppose that . We know by induction that or , but since and contains no non-terminal symbols, we must have . Since is obtained by applying one of the production rules or to~ , is either or . That is, is either or , as we wanted to show. This completes the induction. Turning back to , we see that must be of the form or of the form . But since , it can contain no non-terminal symbols, so must be of the form , as we wanted to show. This completes the proof that .    I have given a very formal and detailed proof of this theorem, to show how it can be done and to show how induction plays a role in many proofs about grammars. However, a more informal proof of the theorem would probably be acceptable and might even be more convincing. To show that , we could just note that the derivation demonstrates that . On the other hand, it is clear that every derivation for this grammar must be of this form, so every string in is of the form .    For another example, consider the language . Let's try to design a grammar that generates this language. This is similar to the previous example, but now we want to include strings that contain more than . The production rule always produces the same number of and . Can we modify this idea to produce more than ?  One approach would be to produce a string containing just as many as , and then to add some extra . A rule that can generate any number of is . After applying the rule for a while, we want to move to a new state in which we apply the rule . We can get to the new state by applying a rule that changes the into an . We still need a way to finish the process, which means getting rid of all non-terminal symbols in the string. For this, we can use the rule . Putting these rules together, we get the grammar This grammar does indeed generate the language . With slight variations on this grammar, we can produce other related languages. For example, if we replace the rule with , we get the language .  There are other ways to generate the language . For example, the extra non-terminal symbol, , is not really necessary, if we allow to sometimes produce a single without a . This leads to the grammar (But note that the rule would not work in place of , since it would allow the production of strings in which an can follow a , and there are no such strings in the language .) And here are two more grammars that generate this language:      Consider another variation on the language , in which the and can occur in any order, but the number of is still equal to the number of . This language can be defined as . This language includes strings such as , , and .  Let's start with the grammar containing the rules and . We can try adding the rule . Every string that can be generated using these three rules is in the language . However, not every string in can be generated. A derivation that starts with can only produce strings that begin with and end with . A derivation that starts with can only generate strings that begin with and end with . There is no way to generate the strings or , which are in the language . But we shall see that any string in that begins and ends with the same letter can be written in the form where and are shorter strings in . To produce strings of this form, we need one more rule, . The complete set of production rules for the language is    It's easy to see that every string that can be generated using these rules is in , since each rule introduces the same number of as . But we also need to check that every string in can be generated by these rules. This can be done by induction on the length of , using the second form of the principle of mathematical induction. In the base case, and . In this case, since in one step. Suppose , where , and suppose that we already know that for any with , . To finish the induction we must show, based on this induction hypothesis, that .  Suppose that the first and last characters of are different. Then is either of the form or of the form , for some string . Let's assume that is of the form . (The case where is of the form is handled in a similar way.) Since has the same number of and and since has one fewer than and one fewer than , must also have the same number of as . That is . But , so by the induction hypothesis, . So we have . By , we get then . Combining this with the fact that , we get that , that is, . This proves that .  Finally, suppose that the first and last characters of are the same. Let's say that begins and ends with . (The case where begins and ends with is handled in a similar way.) I claim that can be written in the form where and and neither nor is the empty string. This will finish the induction, since we will then have by the induction hypothesis that and , and we can derive from by first applying the rule and then using the first on the right-hand side to derive and the second to derive .  It only remains to figure out how to divide into two strings and which are both in . The technique that is used is one that is more generally useful. Suppose that , where each is either or . Consider the sequence of integers , , , where for each , is the number of in minus the number of in . Since , . Since , . And since , we must have . Furthermore the difference between and is either or , for .  Since and and the value of goes up or down by 1 when increases by 1, must be zero for some between 1 and . That is, cannot get from 1 to unless it passes through zero. Let be a number between 1 and such that . Let and let . Note that . The fact that means that the string has the same number of and , so . It follows automatically that also. Since is strictly between 1 and , neither nor is the empty string. This is all that we needed to show to finish the proof that .  The basic idea of this proof is that if contains the same number of as , then an at the beginning of must have a matching  somewhere in . This matches the in the sense that the corresponding is zero, and the marks the end of a string which contains the same number of as . For example, in the string , the at the beginning of the string is matched by the third , since is the shortest prefix of that has an equal number of and .     Balanced Parentheses  Closely related to this idea of matching and is the idea of balanced parentheses . Consider a string made up of parentheses, such as (()(()))(()) . The parentheses in this sample string are balanced because each left parenthesis has a matching right parenthesis, and the matching pairs are properly nested. A careful definition uses the sort of integer sequence introduced in the above proof. Let be a string of parentheses. Write , where each is either ( or ) . Define a sequence of integers , , , , where is the number of left parentheses in minus the number of right parentheses. We say that the parentheses in are balanced if and for all . The fact that says that contains the same number of left parentheses as right parentheses. The fact the means that the nesting of pairs of parentheses is correct: You can't have a right parenthesis unless it is balanced by a left parenthesis in the preceding part of the string. The language that consists of all balanced strings of parentheses is context-free. It is generated by the grammar The proof is similar to the preceding proof about strings of and . (It might seem that I've made an awfully big fuss about matching and balancing. The reason is that this is one of the few things that we can do with context-free languages that we can't do with regular languages.)   Before leaving this section, we should look at a few more general results. Since we know that most operations on regular languages produce languages that are also regular, we can ask whether a similar result holds for context-free languages. We will see later that the intersection of two context-free languages is not necessarily context-free. Also, the complement of a context-free language is not necessarily context-free. However, some other operations on context-free languages do produce context-free languages.    Suppose that and are context-free languages. Then the languages , , and are also context-free.    I will prove only the first claim of the theorem, that is context-free. In the exercises for this section, you are asked to construct grammars for and (without giving formal proofs that your answers are correct).  Let and be context-free grammars such that and . We can assume that , since otherwise we could simply rename the non-terminal symbols in . The idea of the proof is that to generate a string in , we first decide whether we want a string in or a string in . Once that decision is made, to make a string in , we use production rules from , while to make a string in , we use rules from . We have to design a grammar, , to represent this process.  Let be a symbol that is not in any of the alphabets , , , or . will be the start symbol of . The production rules for consist of all the production rules from and together with two new rules: Formally, is defined to be the grammar Suppose that . That is , so there is a derivation . Since every rule from is also a rule in , if follows that . Combining this with the fact that , we have that , and . This shows that . In an exactly similar way, we can show that . Thus, .  It remains to show that . Suppose . Then there is a derivation . This derivation must begin with an application of one of the rules or , since these are the only rules in which appears. If the first rule applied in the derivation is , then the remainder of the derivation shows that . Starting from , the only rules that can be applied are rules from , so in fact we have . This shows that . Similarly, if the first rule applied in the derivation is , then . In any case, . This proves that .    Finally, we should clarify the relationship between context-free languages and regular languages. We have already seen that there are context-free languages which are not regular. On the other hand, it turns out that every regular language is context-free. That is, given any regular language, there is a context-free grammar that generates that language. This means that any syntax that can be expressed by a regular expression, by a DFA, or by an NFA could also be expressed by a context-free grammar. In fact, we only need a certain restricted type of context-free grammar to duplicate the power of regular expressions.   Right-Regular Grammar   A right-regular grammar regular grammar is a context-free grammar in which the right-hand side of every production rule has one of the following forms: the empty string; a string consisting of a single non-terminal symbol; or a string consisting of a single terminal symbol followed by a single non-terminal symbol.    Examples of the types of production rule that are allowed in a right-regular grammar are , , and . The idea of the proof is that given a right-regular grammar, we can build a corresponding and vice-versa . The states of the correspond to the non-terminal symbols of the grammar. The start symbol of the grammar corresponds to the starting state of the NFA. A production rule of the form corresponds to a transition in the NFA from state to state while reading the symbol . A production rule of the form corresponds to an -transition from state to state in the NFA. And a production rule of the form exists in the grammar if and only if is a final state in the NFA. With this correspondence, a derivation of a string in the grammar corresponds to an execution path through the NFA as it accepts the string . I won't give a complete proof here. You are welcome to work through the details if you want. But the important fact is:    A language is regular if and only if there is a right-regular grammar such that . In particular, every regular language is context-free.       Backus-Naur Form   Backus-Naur Form   Context-free grammars are used to describe some aspects of the syntax of programming languages. However, the notation that is used for grammars in the context of programming languages is somewhat different from the notation introduced in the preceding section. The notation that is used is called Backus-Naur Form or BNF. It is named after computer scientists John Backus and Peter Naur, who developed the notation. Actually, several variations of BNF exist. I will discuss one of them here. BNF can be used to describe the syntax of natural languages, as well as programming languages, and some of the examples in this section will deal with the syntax of English.  Like context-free grammars, BNF grammars make use of production rules, non-terminals, and terminals. The non-terminals are usually given meaningful, multi-character names. Here, I will follow a common practice of enclosing non-terminals in angle brackets, so that they can be easily distinguished. For example, and could be non-terminals in a BNF grammar for English, while and might be used in a BNF grammar for a programming language. Note that a BNF non-terminal usually represents a meaningful syntactic category , that is, a certain type of building block in the syntax of the language that is being described, such as an adverb, a prepositional phrase, or a variable declaration statement. The terminals of a BNF grammar are the things that actually appear in the language that is being described. In the case of natural language, the terminals are individual words.  In BNF production rules, I will use the symbol in place of the that is used in context-free grammars. BNF production rules are more powerful than the production rules in context-free grammars. That is, one BNF rule might be equivalent to several context-free grammar rules. As for context-free grammars, the left-hand side of a BNF production rule is a single non-terminal symbol. The right hand side can include terminals and non-terminals, and can also use the following notations, which should remind you of notations used in regular expressions:   A vertical bar, , indicates a choice of alternatives. For example, indicates that the non-terminal can be replaced by any one of the terminal symbols .    Items enclosed in brackets are optional. For example, says that can be replaced either by  ; or by  = ; . (The symbols = and ; are terminal symbols in this rule.)    Items enclosed between [ and ] can be repeated zero or more times. (This has the same effect as a in a regular expression.) For example, says that an consists of a followed optionally by any number of additional 's. That is, the non-terminal can be replaced by or by or by , and so on.    Parentheses can be used as usual, for grouping.     All these notations can be expressed in a context-free grammar by introducing additional production rules. For example, the BNF rule is equivalent to the two rules, and . A rule that contains an optional item can also be replaced by two rules. For example, can be replaced by the two rules In context-free grammars, repetition can be expressed by using a recursive rule such as , in which the same non-terminal symbol appears both on the left-hand side and on the right-hand side of the rule. BNF-style notation using [ and ] can be eliminated by replacing it with a new non-terminal symbol and adding a recursive rule to allow that symbol to repeat zero or more times. For example, the production rule can be replaced by three rules using a new non-terminal symbol to represent a string of zero or more 's:    As an example of a complete BNF grammar, let's look at a BNF grammar for a very small subset of English. The start symbol for the grammar is , and the terminal symbols are English words. All the sentences that can be produced from this grammar are syntactically correct English sentences, although you wouldn't encounter many of them in conversation. Here is the grammar: This grammar can generate sentences such as A dog chases the cat and the cat hides and The man loves a woman who runs. The second sentence, for example, is generated by the derivation    BNF is most often used to specify the syntax of programming languages. Most programming languages are not, in fact, context-free languages, and BNF is not capable of expressing all aspects of their syntax. For example, BNF cannot express the fact that a variable must be declared before it is used or the fact that the number of actual parameters in a subroutine call statement must match the number of formal parameters in the declaration of the subroutine. So BNF is used to express the context-free aspects of the syntax of a programming language, and other restrictions on the syntax---such as the rule about declaring a variable before it is used---are expressed using informal English descriptions.  When BNF is applied to programming languages, the terminal symbols are generally tokens, which are the minimal meaningful units in a program. For example, the pair of symbols constitute a single token, as does a string such as \"Hello World\" . Every number is represented by a single token. (The actual value of the number is stored as a so-called attribute of the token, but the value plays no role in the context-free syntax of the language.) I will use the symbol to represent a numerical token. Similarly, every variable name, subroutine name, or other identifier in the program is represented by the same token, which I will denote as . One final complication: Some symbols used in programs, such as ] and ( , are also used with a special meaning in BNF grammars. When such a symbol occurs as a terminal symbol, I will enclose it in double quotes. For example, in the BNF production rule the and are terminal symbols in the language that is being described, rather than the BNF notation for an optional item. With this notation, here is part of a BNF grammar that describes statements in the Java programming language: The non-terminals , , and would, of course, have to be defined by other production rules in the grammar. Here is a set of rules that define simple expressions, made up of numbers, identifiers, parentheses and the arithmetic operators and : The first rule says that an is a sequence of one or more 's, separated by plus or minus signs. The second rule defines a to be a sequence of one or more , separated by multiplication or division operators. The last rule says that a can be either an identifier or a number or an enclosed in parentheses. This small BNF grammar can generate expressions such as and . The latter expression is made up of three terms: , , and . The first of these terms is made up of two factors, and . The factor consists of the expression inside a pair of parentheses.  The nice thing about this grammar is that the precedence rules for the operators are implicit in the grammar. For example, according to the grammar, the expression is seen as + where the first term is and the second term is . The occurs as a group, which must be evaluated before the result is added to . Parentheses can change the order of evaluation. For example, is generated by the grammar as a single of the form . The first is . When is evaluated, the value of is computed first and then multiplied by . This is an example of how a grammar that describes the syntax of a language can also reflect its meaning.  Although this section has not introduced any really new ideas or theoretical results, I hope it has demonstrated how context-free grammars can be applied in practice.     Parsing and Parse Trees  Suppose that is a grammar for the language . That is, . The grammar can be used to generate strings in the language~ . In practice, though, we often start with a string which might or might not be in~ , and the problem is to determine whether the string is in the language and, if so, how it can be generated by . The goal is to find a derivation of the string, using the production rules of the grammar, or to show that no such derivation exists. This is known as parsing the string. When the string is a computer program or a sentence in a natural language, parsing the string is an essential step in determining its meaning.  As an example that we will use throughout this section, consider the language that consists of arithmetic expressions containing parentheses, the binary operators and , and the variables , , and . Strings in this language include , , and . Here is a context-free grammar that generates this language: Call the grammar described by these production rules . The grammar says that , , and are expressions, and that you can make new expressions by adding two expressions, by multiplying two expressions, and by enclosing an expression in parentheses. (Later, we'll look at other grammars for the same language---ones that turn out to have certain advantages over .)  Consider the string . To show that this string is in the language , we can exhibit a derivation of the string from the start symbol . For example: This derivation shows that the string is in fact in . Now, this string has many other derivations. At each step in the derivation, there can be a lot of freedom about which rule in the grammar to apply next. Some of this freedom is clearly not very meaningful. When faced with the string in the above example, the order in which we replace the with the variables , , and doesn't much matter. To cut out some of this meaningless freedom, we could agree that in each step of a derivation, the non-terminal symbol that is replaced is the leftmost non-terminal symbol in the string. A derivation in which this is true is called a left derivation . The following left derivation of the string uses the same production rules as the previous derivation, but it applies them in a different order: It shouldn't be too hard to convince yourself that any string that has a derivation has a left derivation (which can be obtained by changing the order in which production rules are applied).  We have seen that the same string might have several different derivations. We might ask whether it can have several different left derivations. The answer is that it depends on the grammar. A context-free grammar is said to be ambiguous  grammar, ambiguous if there is a string such that has more than one left derivation according to the grammar .  Our example grammar is ambiguous. In fact, in addition to the left derivation given above, the string has the alternative left derivation In this left derivation of the string , the first production rule that is applied is . The first on the right-hand side eventually yields while the second yields . In the previous left derivation, the first production rule that was applied was , with the first on the right yielding and the second yielding . If we think in terms of arithmetic expressions, the two left derivations lead to two different interpretations of the expression . In one interpretation, the is a unit that is multiplied by . In the second interpretation, the is a unit that is added to . The second interpretation is the one that is correct according to the usual rules of arithmetic. However, the grammar allows either interpretation. The ambiguity of the grammar allows the string to be parsed in two essentially different ways, and only one of the parsings is consistent with the meaning of the string. Of course, the grammar for English is also ambiguous. In a famous example, it's impossible to tell whether a pretty girls' camp is meant to describe a pretty camp for girls or a camp for pretty girls.  When dealing with artificial languages such as programming languages, it's better to avoid ambiguity. The grammar is perfectly correct in that it generates the correct set of strings, but in a practical situation where we are interested in the meaning of the strings, is not the right grammar for the job. There are other grammars that generate the same language as . Some of them are unambiguous grammars that better reflect the meaning of the strings in the language. For example, the language is also generated by the BNF grammar This grammar can be translated into a standard context-free grammar, which I will call : The language generated by consists of all legal arithmetic expressions made up of parentheses, the operators and , and the variables , , and . That is, . However, is an unambiguous grammar. Consider, for example, the string . Using the grammar , the only left derivation for this string is: There is no choice about the first step in this derivation, since the only production rule with on the left-hand side is . Similarly, the second step is forced by the fact that there is only one rule for rewriting a . In the third step, we must replace an . There are four ways to rewrite , but only one way to produce the that begins the string , so we apply the rule . Now, we have to decide what to do with the in . There two rules for rewriting , and . However, the first of these rules introduces a non-terminal, , which does not match the string we are trying to parse. So, the only choice is to apply the production rule . In the next step of the derivation, we must apply the rule in order to account for the in the string . Similarly, each of the remaining steps in the left derivation is forced.  The fact that is an unambiguous grammar means that at each step in a left derivation for a string , there is only one production rule that can be applied which will lead ultimately to a correct derivation of~ . However, actually satisfies a much stronger property: at each step in the left derivation of , we can tell which production rule has to be applied by looking ahead at the next symbol in~ . We say that is an LL(1) grammar . (This notation means that we can read a string from L eft to right and construct a L eft derivation of the string by looking ahead at most 1 character in the string.) Given an LL(1) grammar for a language, it is fairly straightforward to write a computer program that can parse strings in that language. If the language is a programming language, then parsing is one of the essential steps in translating a computer program into machine language. LL(1) grammars and parsing programs that use them are often studied in courses in programming languages and the theory of compilers.  Not every unambiguous context-free grammar is an LL(1) grammar. Consider, for example, the following grammar, which I will call : This grammar generates the same language as and , and it is unambiguous. However, it is not possible to construct a left derivation for a string according to the grammar by looking ahead one character in the string at each step. The first step in any left derivation must be either or . But how can we decide which of these is the correct first step? Consider the strings and , which are both in the language . For the string , the first step in a left derivation must be , while the first step in a left derivation of must be . However, the first seven characters of the strings are identical, so clearly looking even seven characters ahead is not enough to tell us which production rule to apply. In fact, similar examples show that looking ahead any given finite number of characters is not enough.  However, there is an alternative parsing procedure that will work for . This alternative method of parsing a string produces a right derivation of the string, that is, a derivation in which at each step, the non-terminal symbol that is replaced is the rightmost non-terminal symbol in the string. Here, for example, is a right derivation of the string according to the grammar : The parsing method that produces this right derivation produces it from bottom to top. That is, it begins with the string and works backward to the start symbol , generating the steps of the right derivation in reverse order. The method works because is what is called an LR(1) grammar . That is, roughly, it is possible to read a string from L eft to right and produce a R ight derivation of the string, by looking ahead at most 1 symbol at each step. Although LL(1) grammars are easier for people to work with, LR(1) grammars turn out to be very suitable for machine processing, and they are used as the basis for the parsing process in many compilers.  LR(1) parsing uses a shift\/reduce algorithm. Imagine a cursor or current position that moves through the string that is being parsed. We can visualize the cursor as a vertical bar, so for the string , we start with the configuration . A shift operation simply moves the cursor one symbol to the right. For example, a shift operation would convert to , and a second shift operation would convert that to . In a reduce operation, one or more symbols immediately to the left of the cursor are recognized as the right-hand side of one of the production rules in the grammar. These symbols are removed and replaced by the left-hand side of the production rule. For example, in the configuration , the to the left of the cursor is the right-hand side of the production rule , so we can apply a reduce operation and replace the with , giving . This first reduce operation corresponds to the last step in the right derivation of the string, . Now the can be recognized as the right-hand side of the production rule , so we can replace the with , giving . This corresponds to the next-to-last step in the right derivation, .  At this point, we have the configuration . The could be the right-hand side of the production rule . However, it could also conceivably come from the rule . How do we know whether to reduce the to at this point or to wait for a to come along so that we can reduce ? We can decide by looking ahead at the next character after the cursor. Since this character is a rather than a , we should choose the reduce operation that replaces with , giving . What makes an LR(1) grammar is the fact that we can always decide what operation to apply by looking ahead at most one symbol past the cursor.  After a few more shift and reduce operations, the configuration becomes , which we can reduce to by applying the production rules and . Now, faced with , we must once again decide between a shift operation and a reduce operation that applies the rule . In this case, since the next character is a rather than a , we apply the shift operation, giving . From there we get, in succession, , , , and finally . At this point, we have reduced the entire string to the start symbol of the grammar. The very last step, the reduction of to corresponds to the first step of the right derivation, .  In summary, LR(1) parsing transforms a string into the start symbol of the grammar by a sequence of shift and reduce operations. Each reduce operation corresponds to a step in a right derivation of the string, and these steps are generated in reverse order. Because the steps in the derivation are generated from bottom to top, LR(1) parsing is a type of bottom-up parsing . LL(1) parsing, on the other hand, generates the steps in a left derivation from top to bottom and so is a type of top-down parsing .  Although the language generated by a context-free grammar is defined in terms of derivations, there is another way of presenting the generation of a string that is often more useful. A parse tree displays the generation of a string from the start symbol of a grammar as a two dimensional diagram. Here are two parse trees that show two derivations of the string according to the grammar , which was given at the beginning of this section:   Figure showing two different parse tree derivations of the string .   A parse tree is made up of terminal and non-terminal symbols, connected by lines. The start symbol is at the top, or root, of the tree. Terminal symbols are at the lowest level, or leaves, of the tree. (For some reason, computer scientists traditionally draw trees with leaves at the bottom and root at the top.) A production rule is represented in a parse tree by the symbol lying above all the symbols in , with a line joining to each of the symbols in . For example, in the left parse tree above, the root, , is connected to the symbols , , and , and this corresponds to an application of the production rule .  It is customary to draw a parse tree with the string of non-terminals in a row across the bottom, and with the rest of the tree built on top of that base. Thus, the two parse trees shown above might be drawn as:   Figure showing the same two parse trees as above but with the non-terminals aligned at the bottom.     Given any derivation of a string, it is possible to construct a parse tree that shows each of the steps in that derivation. However, two different derivations can give rise to the same parse tree, since the parse tree does not show the order in which production rules are applied. For example, the parse tree on the left, above, does not show whether the production rule is applied before or after the production rule . However, if we restrict our attention to left derivations, then we find that each parse tree corresponds to a unique left derivation and vice versa . I will state this fact as a theorem, without proof. A similar result holds for right derivations.    Let be a context-free grammar. There is a one-to-one correspondence between parse trees and left derivations based on the grammar .    Based on this theorem, we can say that a context-free grammar is ambiguous if and only if there is a string which has two parse trees.    Exercises  One of the examples in this section was a grammar for a subset of English. Give five more examples of sentences that can be generated from that grammar. Your examples should, collectively, use all the rules of the grammar.  Rewrite the example BNF grammar for a subset of English as a context-free grammar.  Write a single BNF production rule that is equivalent to the following context-free grammar:   Write a BNF production rule that specifies the syntax of real numbers, as they appear in programming languages such as Java and C. Real numbers can include a sign, a decimal point and an exponential part. Some examples are: 17.3, .73, 23.1e67, 1.34E 12, +0.2, 100E+100  Variable references in the Java programming language can be rather complicated. Some examples include:      . Write a BNF production rule for Java variables. You can use the token ident and the non-terminal in your rule.  Use BNF to express the syntax of the try catch statement in the Java programming language.  Give a BNF grammar for compound propositions made up of propositional variables, parentheses, and the logical operators , , and . Use the non-terminal symbol to represent a propositional variable. You do not have to give a definition of .   Show that each of the following grammars is ambiguous by finding a string that has two left derivations according to the grammar:               There are many answers to these.                   Consider the string . Find a left derivation of this string according to each of the grammars , , and , as given in this section.  Draw a parse tree for the string according to each of the grammars , , and , as given in this section.  Draw three different parse trees for the string based on the grammar given in part a) of exercise 1.  Suppose that the string has the following parse tree, according to some grammar :  parse tree for string     List five production rules that must be rules in the grammar , given that this is a valid parse tree.   Give a left derivation for the string according to the grammar .   Give a right derivation for the string according to the grammar .     Show the full sequence of shift and reduce operations that are used in the LR(1) parsing of the string according to the grammar , and give the corresponding right derivation of the string.  This section showed how to use LL(1) and LR(1) parsing to find a derivation of a string in the language generated by some grammar . How is it possible to use LL(1) or LR(1) parsing to determine for an arbitrary string whether ? Give an example.   "
 },
 {
-  "id": "p-4702",
+  "id": "p-5132",
   "level": "2",
-  "url": "sec-grammars.html#p-4702",
+  "url": "sec-grammars.html#p-5132",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "generative grammars parsing "
 },
 {
-  "id": "p-4704",
+  "id": "p-5134",
   "level": "2",
-  "url": "sec-grammars.html#p-4704",
+  "url": "sec-grammars.html#p-5134",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "rewriting rules production rules productions "
 },
 {
-  "id": "p-4705",
+  "id": "p-5135",
   "level": "2",
-  "url": "sec-grammars.html#p-4705",
+  "url": "sec-grammars.html#p-5135",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "context-free grammar non-terminal symbols terminal symbols "
 },
 {
-  "id": "p-4707",
+  "id": "p-5137",
   "level": "2",
-  "url": "sec-grammars.html#p-4707",
+  "url": "sec-grammars.html#p-5137",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -11912,7 +12803,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-grammars.html#def-context-free-grammar",
   "type": "Definition",
-  "number": "15.5.1",
+  "number": "17.5.1",
   "title": "Context-free Grammar.",
   "body": " Context-free Grammar   A context-free grammar is a 4-tuple , where:    is a finite set of symbols. The elements of are the non-terminal symbols of the grammar.     is a finite set of symbols such that . The elements of are the terminal symbols of the grammar.     is a set of production rules. Each rule is of the form where is one of the symbols in and is a string in the language .     . is the start symbol of the grammar.      "
 },
@@ -11921,7 +12812,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-grammars.html#thm-context-free-grammar",
   "type": "Theorem",
-  "number": "15.5.2",
+  "number": "17.5.2",
   "title": "",
   "body": "  Let be the context-free grammar . Then:   If and are strings in such that , then .    If , , and are strings in such that and , then .    If and are strings in such that , and if and are any strings in , then .    If and are strings in such that , and if and are any strings in , then .       Parts 1 and 2 follow from the fact that is the transitive closure of . Part 4 follows easily from Part 3. (I leave this as an exercise.) To prove Part 3, suppose that , , , and are strings such that . By definition, this means that there exist strings and and a production rule such that and . But then we also have and . These two equations, along with the existence of the production rule show, by definition, that .   "
 },
@@ -11930,14 +12821,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-grammars.html#def-context-free-language",
   "type": "Definition",
-  "number": "15.5.3",
+  "number": "17.5.3",
   "title": "Context-free Language.",
   "body": " Context-free Language   Suppose that is a context-free grammar. Then the language generated by is the language over the alphabet defined by That is, contains any string of terminal symbols that can be obtained by starting with the string consisting of the start symbol, , and applying a sequence of production rules.  A language is said to be a context-free language if there is a context-free grammar such that is . Note that there might be many different context-free grammars that generate the same context-free language. Two context-free grammars that generate the same language are said to be equivalent grammars  equivalent .   "
 },
 {
-  "id": "p-4727",
+  "id": "p-5157",
   "level": "2",
-  "url": "sec-grammars.html#p-4727",
+  "url": "sec-grammars.html#p-5157",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -11948,34 +12839,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-grammars.html#thm-non-regular-context-free",
   "type": "Theorem",
-  "number": "15.5.4",
+  "number": "17.5.4",
   "title": "",
   "body": "  Let be the language . Let be the context-free grammar where , and consists of the productions Then , so that is a context-free language. In particular, there exist context-free languages which are not regular.    To show that , we must show both that and that . To show that , let be an arbitrary element of . By definition of , for some . We show that by induction on . In the case where , we have . Now, since can be produced from the start symbol by an application of the rule , so our claim is true for . Now, suppose that and that we already know that . We must show that . Since , we also have, by , that . That is, . Combining this with the production rule , we see that . This means that , as we wanted to show. This completes the proof that .  To show that , suppose that . That is, . We must show that for some . Since , there is a derivation , where . We first prove by induction on that in any derivation , we must have either or . Consider the case . Suppose . Then, we must have that is a rule in the grammar, so must be either or . Since and , is of the required form. Next, consider the inductive case. Suppose that and we already know that in any derivation , we must have or . Suppose that . We know by induction that or , but since and contains no non-terminal symbols, we must have . Since is obtained by applying one of the production rules or to~ , is either or . That is, is either or , as we wanted to show. This completes the induction. Turning back to , we see that must be of the form or of the form . But since , it can contain no non-terminal symbols, so must be of the form , as we wanted to show. This completes the proof that .   "
 },
 {
-  "id": "example-246",
+  "id": "example-269",
   "level": "2",
-  "url": "sec-grammars.html#example-246",
+  "url": "sec-grammars.html#example-269",
   "type": "Example",
-  "number": "15.5.5",
+  "number": "17.5.5",
   "title": "",
   "body": "  For another example, consider the language . Let's try to design a grammar that generates this language. This is similar to the previous example, but now we want to include strings that contain more than . The production rule always produces the same number of and . Can we modify this idea to produce more than ?  One approach would be to produce a string containing just as many as , and then to add some extra . A rule that can generate any number of is . After applying the rule for a while, we want to move to a new state in which we apply the rule . We can get to the new state by applying a rule that changes the into an . We still need a way to finish the process, which means getting rid of all non-terminal symbols in the string. For this, we can use the rule . Putting these rules together, we get the grammar This grammar does indeed generate the language . With slight variations on this grammar, we can produce other related languages. For example, if we replace the rule with , we get the language .  There are other ways to generate the language . For example, the extra non-terminal symbol, , is not really necessary, if we allow to sometimes produce a single without a . This leads to the grammar (But note that the rule would not work in place of , since it would allow the production of strings in which an can follow a , and there are no such strings in the language .) And here are two more grammars that generate this language:   "
 },
 {
-  "id": "example-247",
+  "id": "example-270",
   "level": "2",
-  "url": "sec-grammars.html#example-247",
+  "url": "sec-grammars.html#example-270",
   "type": "Example",
-  "number": "15.5.6",
+  "number": "17.5.6",
   "title": "",
   "body": "  Consider another variation on the language , in which the and can occur in any order, but the number of is still equal to the number of . This language can be defined as . This language includes strings such as , , and .  Let's start with the grammar containing the rules and . We can try adding the rule . Every string that can be generated using these three rules is in the language . However, not every string in can be generated. A derivation that starts with can only produce strings that begin with and end with . A derivation that starts with can only generate strings that begin with and end with . There is no way to generate the strings or , which are in the language . But we shall see that any string in that begins and ends with the same letter can be written in the form where and are shorter strings in . To produce strings of this form, we need one more rule, . The complete set of production rules for the language is    It's easy to see that every string that can be generated using these rules is in , since each rule introduces the same number of as . But we also need to check that every string in can be generated by these rules. This can be done by induction on the length of , using the second form of the principle of mathematical induction. In the base case, and . In this case, since in one step. Suppose , where , and suppose that we already know that for any with , . To finish the induction we must show, based on this induction hypothesis, that .  Suppose that the first and last characters of are different. Then is either of the form or of the form , for some string . Let's assume that is of the form . (The case where is of the form is handled in a similar way.) Since has the same number of and and since has one fewer than and one fewer than , must also have the same number of as . That is . But , so by the induction hypothesis, . So we have . By , we get then . Combining this with the fact that , we get that , that is, . This proves that .  Finally, suppose that the first and last characters of are the same. Let's say that begins and ends with . (The case where begins and ends with is handled in a similar way.) I claim that can be written in the form where and and neither nor is the empty string. This will finish the induction, since we will then have by the induction hypothesis that and , and we can derive from by first applying the rule and then using the first on the right-hand side to derive and the second to derive .  It only remains to figure out how to divide into two strings and which are both in . The technique that is used is one that is more generally useful. Suppose that , where each is either or . Consider the sequence of integers , , , where for each , is the number of in minus the number of in . Since , . Since , . And since , we must have . Furthermore the difference between and is either or , for .  Since and and the value of goes up or down by 1 when increases by 1, must be zero for some between 1 and . That is, cannot get from 1 to unless it passes through zero. Let be a number between 1 and such that . Let and let . Note that . The fact that means that the string has the same number of and , so . It follows automatically that also. Since is strictly between 1 and , neither nor is the empty string. This is all that we needed to show to finish the proof that .  The basic idea of this proof is that if contains the same number of as , then an at the beginning of must have a matching  somewhere in . This matches the in the sense that the corresponding is zero, and the marks the end of a string which contains the same number of as . For example, in the string , the at the beginning of the string is matched by the third , since is the shortest prefix of that has an equal number of and .   "
 },
 {
-  "id": "example-248",
+  "id": "example-271",
   "level": "2",
-  "url": "sec-grammars.html#example-248",
+  "url": "sec-grammars.html#example-271",
   "type": "Example",
-  "number": "15.5.7",
+  "number": "17.5.7",
   "title": "Balanced Parentheses.",
   "body": " Balanced Parentheses  Closely related to this idea of matching and is the idea of balanced parentheses . Consider a string made up of parentheses, such as (()(()))(()) . The parentheses in this sample string are balanced because each left parenthesis has a matching right parenthesis, and the matching pairs are properly nested. A careful definition uses the sort of integer sequence introduced in the above proof. Let be a string of parentheses. Write , where each is either ( or ) . Define a sequence of integers , , , , where is the number of left parentheses in minus the number of right parentheses. We say that the parentheses in are balanced if and for all . The fact that says that contains the same number of left parentheses as right parentheses. The fact the means that the nesting of pairs of parentheses is correct: You can't have a right parenthesis unless it is balanced by a left parenthesis in the preceding part of the string. The language that consists of all balanced strings of parentheses is context-free. It is generated by the grammar The proof is similar to the preceding proof about strings of and . (It might seem that I've made an awfully big fuss about matching and balancing. The reason is that this is one of the few things that we can do with context-free languages that we can't do with regular languages.)  "
 },
@@ -11984,7 +12875,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-grammars.html#thm-context-free-operations",
   "type": "Theorem",
-  "number": "15.5.8",
+  "number": "17.5.8",
   "title": "",
   "body": "  Suppose that and are context-free languages. Then the languages , , and are also context-free.    I will prove only the first claim of the theorem, that is context-free. In the exercises for this section, you are asked to construct grammars for and (without giving formal proofs that your answers are correct).  Let and be context-free grammars such that and . We can assume that , since otherwise we could simply rename the non-terminal symbols in . The idea of the proof is that to generate a string in , we first decide whether we want a string in or a string in . Once that decision is made, to make a string in , we use production rules from , while to make a string in , we use rules from . We have to design a grammar, , to represent this process.  Let be a symbol that is not in any of the alphabets , , , or . will be the start symbol of . The production rules for consist of all the production rules from and together with two new rules: Formally, is defined to be the grammar Suppose that . That is , so there is a derivation . Since every rule from is also a rule in , if follows that . Combining this with the fact that , we have that , and . This shows that . In an exactly similar way, we can show that . Thus, .  It remains to show that . Suppose . Then there is a derivation . This derivation must begin with an application of one of the rules or , since these are the only rules in which appears. If the first rule applied in the derivation is , then the remainder of the derivation shows that . Starting from , the only rules that can be applied are rules from , so in fact we have . This shows that . Similarly, if the first rule applied in the derivation is , then . In any case, . This proves that .   "
 },
@@ -11993,7 +12884,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-grammars.html#def-right-regular-grammar",
   "type": "Definition",
-  "number": "15.5.9",
+  "number": "17.5.9",
   "title": "Right-Regular Grammar.",
   "body": " Right-Regular Grammar   A right-regular grammar regular grammar is a context-free grammar in which the right-hand side of every production rule has one of the following forms: the empty string; a string consisting of a single non-terminal symbol; or a string consisting of a single terminal symbol followed by a single non-terminal symbol.   "
 },
@@ -12002,104 +12893,104 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-grammars.html#thm-every-regular-context-free",
   "type": "Theorem",
-  "number": "15.5.10",
+  "number": "17.5.10",
   "title": "",
   "body": "  A language is regular if and only if there is a right-regular grammar such that . In particular, every regular language is context-free.   "
 },
 {
-  "id": "p-4755",
+  "id": "p-5185",
   "level": "2",
-  "url": "sec-grammars.html#p-4755",
+  "url": "sec-grammars.html#p-5185",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Backus-Naur Form "
 },
 {
-  "id": "p-4756",
+  "id": "p-5186",
   "level": "2",
-  "url": "sec-grammars.html#p-4756",
+  "url": "sec-grammars.html#p-5186",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "syntactic category "
 },
 {
-  "id": "example-249",
+  "id": "example-272",
   "level": "2",
-  "url": "sec-grammars.html#example-249",
+  "url": "sec-grammars.html#example-272",
   "type": "Example",
-  "number": "15.5.11",
+  "number": "17.5.11",
   "title": "",
   "body": " As an example of a complete BNF grammar, let's look at a BNF grammar for a very small subset of English. The start symbol for the grammar is , and the terminal symbols are English words. All the sentences that can be produced from this grammar are syntactically correct English sentences, although you wouldn't encounter many of them in conversation. Here is the grammar: This grammar can generate sentences such as A dog chases the cat and the cat hides and The man loves a woman who runs. The second sentence, for example, is generated by the derivation   "
 },
 {
-  "id": "p-4768",
+  "id": "p-5198",
   "level": "2",
-  "url": "sec-grammars.html#p-4768",
+  "url": "sec-grammars.html#p-5198",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "parsing "
 },
 {
-  "id": "p-4770",
+  "id": "p-5200",
   "level": "2",
-  "url": "sec-grammars.html#p-4770",
+  "url": "sec-grammars.html#p-5200",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "left derivation "
 },
 {
-  "id": "p-4771",
+  "id": "p-5201",
   "level": "2",
-  "url": "sec-grammars.html#p-4771",
+  "url": "sec-grammars.html#p-5201",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "ambiguous "
 },
 {
-  "id": "p-4774",
+  "id": "p-5204",
   "level": "2",
-  "url": "sec-grammars.html#p-4774",
+  "url": "sec-grammars.html#p-5204",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "LL(1) grammar L L 1 "
 },
 {
-  "id": "p-4776",
+  "id": "p-5206",
   "level": "2",
-  "url": "sec-grammars.html#p-4776",
+  "url": "sec-grammars.html#p-5206",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "right derivation LR(1) grammar L R 1 "
 },
 {
-  "id": "p-4777",
+  "id": "p-5207",
   "level": "2",
-  "url": "sec-grammars.html#p-4777",
+  "url": "sec-grammars.html#p-5207",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "shift\/reduce "
 },
 {
-  "id": "p-4780",
+  "id": "p-5210",
   "level": "2",
-  "url": "sec-grammars.html#p-4780",
+  "url": "sec-grammars.html#p-5210",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "bottom-up parsing top-down parsing "
 },
 {
-  "id": "p-4781",
+  "id": "p-5211",
   "level": "2",
-  "url": "sec-grammars.html#p-4781",
+  "url": "sec-grammars.html#p-5211",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -12110,7 +13001,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-grammars.html#fig-parsetree2",
   "type": "Figure",
-  "number": "15.5.13",
+  "number": "17.5.13",
   "title": "",
   "body": "  Figure showing the same two parse trees as above but with the non-terminals aligned at the bottom.   "
 },
@@ -12119,133 +13010,133 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-grammars.html#thm-parsetree-leftderiv",
   "type": "Theorem",
-  "number": "15.5.14",
+  "number": "17.5.14",
   "title": "",
   "body": "  Let be a context-free grammar. There is a one-to-one correspondence between parse trees and left derivations based on the grammar .   "
 },
 {
-  "id": "exercise-546",
+  "id": "exercise-584",
   "level": "2",
-  "url": "sec-grammars.html#exercise-546",
+  "url": "sec-grammars.html#exercise-584",
   "type": "Exercise",
-  "number": "15.5.4.1",
+  "number": "17.5.4.1",
   "title": "",
   "body": "One of the examples in this section was a grammar for a subset of English. Give five more examples of sentences that can be generated from that grammar. Your examples should, collectively, use all the rules of the grammar. "
 },
 {
-  "id": "exercise-547",
+  "id": "exercise-585",
   "level": "2",
-  "url": "sec-grammars.html#exercise-547",
+  "url": "sec-grammars.html#exercise-585",
   "type": "Exercise",
-  "number": "15.5.4.2",
+  "number": "17.5.4.2",
   "title": "",
   "body": "Rewrite the example BNF grammar for a subset of English as a context-free grammar. "
 },
 {
-  "id": "exercise-548",
+  "id": "exercise-586",
   "level": "2",
-  "url": "sec-grammars.html#exercise-548",
+  "url": "sec-grammars.html#exercise-586",
   "type": "Exercise",
-  "number": "15.5.4.3",
+  "number": "17.5.4.3",
   "title": "",
   "body": "Write a single BNF production rule that is equivalent to the following context-free grammar:  "
 },
 {
-  "id": "exercise-549",
+  "id": "exercise-587",
   "level": "2",
-  "url": "sec-grammars.html#exercise-549",
+  "url": "sec-grammars.html#exercise-587",
   "type": "Exercise",
-  "number": "15.5.4.4",
+  "number": "17.5.4.4",
   "title": "",
   "body": "Write a BNF production rule that specifies the syntax of real numbers, as they appear in programming languages such as Java and C. Real numbers can include a sign, a decimal point and an exponential part. Some examples are: 17.3, .73, 23.1e67, 1.34E 12, +0.2, 100E+100 "
 },
 {
-  "id": "exercise-550",
+  "id": "exercise-588",
   "level": "2",
-  "url": "sec-grammars.html#exercise-550",
+  "url": "sec-grammars.html#exercise-588",
   "type": "Exercise",
-  "number": "15.5.4.5",
+  "number": "17.5.4.5",
   "title": "",
   "body": "Variable references in the Java programming language can be rather complicated. Some examples include:      . Write a BNF production rule for Java variables. You can use the token ident and the non-terminal in your rule. "
 },
 {
-  "id": "exercise-551",
+  "id": "exercise-589",
   "level": "2",
-  "url": "sec-grammars.html#exercise-551",
+  "url": "sec-grammars.html#exercise-589",
   "type": "Exercise",
-  "number": "15.5.4.6",
+  "number": "17.5.4.6",
   "title": "",
   "body": "Use BNF to express the syntax of the try catch statement in the Java programming language. "
 },
 {
-  "id": "exercise-552",
+  "id": "exercise-590",
   "level": "2",
-  "url": "sec-grammars.html#exercise-552",
+  "url": "sec-grammars.html#exercise-590",
   "type": "Exercise",
-  "number": "15.5.4.7",
+  "number": "17.5.4.7",
   "title": "",
   "body": "Give a BNF grammar for compound propositions made up of propositional variables, parentheses, and the logical operators , , and . Use the non-terminal symbol to represent a propositional variable. You do not have to give a definition of . "
 },
 {
-  "id": "exercise-553",
+  "id": "exercise-591",
   "level": "2",
-  "url": "sec-grammars.html#exercise-553",
+  "url": "sec-grammars.html#exercise-591",
   "type": "Exercise",
-  "number": "15.5.4.8",
+  "number": "17.5.4.8",
   "title": "",
   "body": " Show that each of the following grammars is ambiguous by finding a string that has two left derivations according to the grammar:               There are many answers to these.                  "
 },
 {
-  "id": "exercise-554",
+  "id": "exercise-592",
   "level": "2",
-  "url": "sec-grammars.html#exercise-554",
+  "url": "sec-grammars.html#exercise-592",
   "type": "Exercise",
-  "number": "15.5.4.9",
+  "number": "17.5.4.9",
   "title": "",
   "body": "Consider the string . Find a left derivation of this string according to each of the grammars , , and , as given in this section. "
 },
 {
-  "id": "exercise-555",
+  "id": "exercise-593",
   "level": "2",
-  "url": "sec-grammars.html#exercise-555",
+  "url": "sec-grammars.html#exercise-593",
   "type": "Exercise",
-  "number": "15.5.4.10",
+  "number": "17.5.4.10",
   "title": "",
   "body": "Draw a parse tree for the string according to each of the grammars , , and , as given in this section. "
 },
 {
-  "id": "exercise-556",
+  "id": "exercise-594",
   "level": "2",
-  "url": "sec-grammars.html#exercise-556",
+  "url": "sec-grammars.html#exercise-594",
   "type": "Exercise",
-  "number": "15.5.4.11",
+  "number": "17.5.4.11",
   "title": "",
   "body": "Draw three different parse trees for the string based on the grammar given in part a) of exercise 1. "
 },
 {
-  "id": "exercise-557",
+  "id": "exercise-595",
   "level": "2",
-  "url": "sec-grammars.html#exercise-557",
+  "url": "sec-grammars.html#exercise-595",
   "type": "Exercise",
-  "number": "15.5.4.12",
+  "number": "17.5.4.12",
   "title": "",
   "body": "Suppose that the string has the following parse tree, according to some grammar :  parse tree for string     List five production rules that must be rules in the grammar , given that this is a valid parse tree.   Give a left derivation for the string according to the grammar .   Give a right derivation for the string according to the grammar .    "
 },
 {
-  "id": "exercise-558",
+  "id": "exercise-596",
   "level": "2",
-  "url": "sec-grammars.html#exercise-558",
+  "url": "sec-grammars.html#exercise-596",
   "type": "Exercise",
-  "number": "15.5.4.13",
+  "number": "17.5.4.13",
   "title": "",
   "body": "Show the full sequence of shift and reduce operations that are used in the LR(1) parsing of the string according to the grammar , and give the corresponding right derivation of the string. "
 },
 {
-  "id": "exercise-559",
+  "id": "exercise-597",
   "level": "2",
-  "url": "sec-grammars.html#exercise-559",
+  "url": "sec-grammars.html#exercise-597",
   "type": "Exercise",
-  "number": "15.5.4.14",
+  "number": "17.5.4.14",
   "title": "",
   "body": "This section showed how to use LL(1) and LR(1) parsing to find a derivation of a string in the language generated by some grammar . How is it possible to use LL(1) or LR(1) parsing to determine for an arbitrary string whether ? Give an example. "
 },
@@ -12254,41 +13145,41 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-turing-machines-comp.html",
   "type": "Section",
-  "number": "15.6",
+  "number": "17.6",
   "title": "Turing Machines and Computability",
   "body": " Turing Machines and Computability   Turing Machine  Computability   In , we saw that there is a neat correspondence between regular expressions and finite automata. That is, a language is generated by a regular expression if and only if that language is accepted by a finite automaton.  In , we introduced the class of context-free languages, and we have considered how context-free grammars can be used to generate context-free languages. You might wonder whether there is any type of automaton that can be used to recognize context-free languages. In fact, there is: The abstract machines known as pushdown automata that utilize a stack in addition to a finite automaton, can be used to define context-free languages. These and languages that are not context-free (or context-sensitive languages) will not be covered in this text. If you wish to learn more about pushdown automata, non-context-free languages, or general grammars please refer to the original source text for this chapter: Foundations of Computation , Chapter 4  We saw hints in the previous sections that ``computation'' is a more general concept than we might have thought. In this chapter, we will see that computer programs are equivalent, in terms of their computational power, to a particularly simple model of computation known as a Turing machine . We shall also see that there are limits to what can be done by computing.    Turing Machines  Historically, the theoretical study of computing began before computers existed. One of the early models of computation was developed in the 1930s by the British mathematician, Alan Turing, who was interested in studying the theoretical abilities and limitations of computation. His model for computation is a very simple abstract computing machine which has come to be known as a Turing machine . While Turing machines are not applicable in the same way that regular expressions, finite-state automata, and grammars are applicable, their use as a fundamental model for computation means that every computer scientist should be familiar with them, at least in a general way.  A Turing machine is really not much more complicated than a finite-state automaton or a pushdown automaton. In fact, Turing machines can be shown to be equivalent in their computational power to pushdown automata with two independent stacks. Like a FSA, a Turing machine has a finite number of possible states, and it changes from state to state as it computes. However, a Turing machine also has an infinitely long tape that it can use for input and output. The tape extends to infinity in both directions. The tape is divided into cells , which are in one-to-one correspondence with the integers, . Each cell can either be blank or it can hold a symbol from a specified alphabet. The Turing machine can move back and forth along this tape, reading and writing symbols and changing state. It can read only one cell at a time, and possibly write a new value in that cell. After doing this, it can change state and it can move by one cell either to the left or to the right. This is how the Turing machine computes. To use a Turing machine, you would write some input on its tape, start the machine, and let it compute until it halts. Whatever is written on the tape at that time is the output of the computation.  You might want to visualize a Turing machine as a physical machine such as in this simple diagram:   Basic graphical representation of a Turing machine.   Kevd1337> , Public domain, via Wikimedia Commons  However, these kinds of diagrams do not tell us anything about the functioning of a particular machine.  Although the tape is infinite, only a finite number of cells can be non-blank at any given time. If you don't like the idea of an infinite tape, you can think of a finite tape that can be extended to an arbitrarily large size as the Turing machine computes: If the Turing machine gets to either end of the tape, it will pause and wait politely until you add a new section of tape. In other words, it's not important that the Turing machine have an infinite amount of memory, only that it can use as much memory as it needs for a given computation, up to any arbitrarily large size. In this way, a Turing machine is like a computer that can ask you to buy it a new disk drive whenever it needs more storage space to continue a computation. The tape of a Turing machine can be used to store arbitrarily large amounts of information in a straightforward way. Although we can imagine using an arbitrary amount of memory with a computer, it's not so easy. Computers aren't set up to keep track of unlimited amounts of data. If you think about how it might be done, you probably won't come with anything better than an infinite tape. (The problem is that computers use integer-valued addresses to keep track of data locations. If a limit is put on the number of bits in an address, then only a fixed, finite amount of data can be addressed. If no limit is put on the number of bits in an address, then we are right back to the problem of storing an arbitrarily large piece of data---just to represent an address!)  A given Turing machine has a fixed, finite set of states. One of these states is designated as the start state . This is the state in which the Turing machine begins a computation. Another special state is the halt state . The Turing machine's computation ends when it enters its halt state. It is possible that a computation might never end because the machine never enters the halt state. This is analogous to an infinite loop in a computer program.  At each step in its computation, the Turing machine reads the contents of the tape cell where it is located. Depending on its state and the symbol that it reads, the machine writes a symbol (possibly the same symbol) to the cell, moves one cell either to the left or to the right, and (possibly) changes its state. The output symbol, direction of motion, and new state are determined by the current state and the input symbol. Note that either the input symbol, the output symbol, or both, can be blank. A Turing machine has a fixed set of rules that tell it how to compute. Each rule specifies the output symbol, direction of motion, and new state for some combination of current state and input symbol. The machine has a rule for every possible combination of current state and input symbol, except that there are no rules for what happens if the current state is the halt state. Of course, once the machine enters the halt state, its computation is complete and the machine simply stops.  I will use the character # to represent a blank in a way that makes it visible. I will always use to represent the halt state. I will indicate the directions, left and right, with and , so that is the set of possible directions of motion. With these conventions, we can give the formal definition of a Turing machine as follows:   Turing Machine  Turing Machine   A Turing machine is a 4-tuple , where:    is a finite set of states, including the halt state, .     is an alphabet which includes the blank symbol, #.     is the start state.     is the transition function. The fact that means that when the Turing machine is in state and reads the symbol , it writes the symbol , moves one cell in the direction , and enters state .       Even though this is the formal definition, it's easier to work with a transition diagram representation of Turing machines. The transition diagram for a Turing machine is similar to the transition diagram for a DFA. However, there are no ``accepting'' states (only a halt state). Furthermore, there must be a way to specify the output symbol and the direction of motion for each step of the computation. We do this by labeling arrows with notations of the form and , where and are symbols in the Turing machine's alphabet. For example,  a simple Turing machine transition diagram  indicates that when the machine is in state and reads an , it writes a , moves left, and enters state .  Here, for example, is a transition diagram for a simple Turing machine that moves to the right, changing 's to 's and vice versa, until it finds a . It leaves blanks (#'s) unchanged. When and if the machine encounters a , it moves to the left and halts:  Transition diagram for a simple Turing machine that moves to the right, changing 's to 's and vice versa, until it finds a .    To simplify the diagrams, I will leave out any transitions that are not relevant to the computation that I want the machine to perform. You can assume that the action for any omitted transition is to write the same symbol that was read, move right, and halt.  For example, shown below is a transition diagram for a Turing machine that makes a copy of a string of 's and 's. To use this machine, you would write a string of 's and 's on its tape, place the machine on the first character of the string, and start the machine in its start state,~ . When the machine halts, there will be two copies of the string on the tape, separated by a blank. The machine will be positioned on the first character of the leftmost copy of the string. Note that this machine uses 's and 's in addition to 's and 's. While it is copying the input string, it temporarily changes the 's and 's that it has copied to 's and 's, respectively. In this way it can keep track of which characters it has already copied. After the string has been copied, the machine changes the 's and 's back to 's and 's before halting.  Transition diagram for Turing machine described above.   In this machine, state checks whether the next character is an , a , or a # (indicating the end of the string). States and add an to the end of the new string, and states and do the same thing with a . States and return the machine to the next character in the input string. When the end of the input string is reached, state will move the machine back to the start of the input string, changing 's and 's back to 's and 's as it goes. Finally, when the machine hits the # that precedes the input string, it moves to the right and halts. This leave it back at the first character of the input string. It would be a good idea to work through the execution of this machine for a few sample input strings. You should also check that it works even for an input string of length zero.  Our primary interest in Turing machines is as language processors. Suppose that is a string over an alphabet . We will assume that does not contain the blank symbol. We can use as input to a Turing machine provided that . To use as input for , we will write on 's tape and assume that the remainder of the tape is blank. We place the machine on the cell containing the first character of the string, except that if then we simply place the machine on a completely blank tape. Then we start the machine in its initial state, , and see what computation it performs. We refer to this setup as ``running with input .''  When is run with input , it is possible that it will just keep running forever without halting. In that case, it doesn't make sense to ask about the output of the computation. Suppose however that does halt on input . Suppose, furthermore, that when halts, its tape is blank except for a string of non-blank symbols, and that the machine is located on the first character of . In this case, we will say that `` halts with output .'' In addition, if halts with an entirely blank tape, we say that `` halts with output .'' Note that when we run with input , one of three things can happen: (1)~ ~might halt with some string as output; (1)~ ~might fail to halt; or (3)~ ~might halt in some configuration that doesn't count as outputting any string.  The fact that a Turing machine can produce an output value allows us for the first time to deal with computation of functions . A function takes an input value in the set and produces an output value in the set . If the sets are sets of strings, we can now ask whether the values of the function can be computed by a Turing machine. That is, is there a Turing machine such that, given any string in the domain of as input, will compute as its output the string . If this is that case, then we say that is a Turing-computable function.   Turing-computable  Turing-computable   Suppose that and are alphabets that do not contain # and that is a function from to . We say that is Turing-computable if there is a Turing machine such that and and for each string , when is run with input , it halts with output . In this case, we say that  computes the function .    For example, let and define by , for . Then is Turing-computable since it is computed by this Turing machine:  Transition diagram for Turing machine described above.    We can also use Turing machines to define ``computable languages.'' There are actually two different notions of Turing-computability for languages. One is based on the idea of Turing-computability for functions. Suppose that is an alphabet and that . The characteristic function of is the function defined by the fact that if and if . Note that given the function , can be obtained as the set . Given a language , we can ask whether the corresponding function is Turing-computable. If so, then we can use a Turing machine to decide whether or not a given string is in . Just run the machine with input . It will halt with output . (That is, it will halt and when it does so, the tape will be blank except for a 0 or a 1, and the machine will be positioned on the 0 or~1.) If the machine halts with output 1, then . If the machine halts with output 0, then .   Turing-decidable  Turing-decidable   Let be an alphabet that does not contain # and let be a language over . We say that is Turing-decidable if there is a Turing machine such that , , and for each , when is run with input , it halts with output . (That is, it halts with output 0 or 1, and the output is 0 if and is 1 if .) In this case, we say that  decides the language .    The second notion of computability for languages is based on the interesting fact that it is possible for a Turing machine to run forever, without ever halting. Whenever we run a Turing machine with input , we can ask the question, will ever halt or will it run forever? If halts on input , we will say that ``accepts'' . We can then look at all the strings over a given alphabet that are accepted by a given Turing machine. This leads to the notion of Turing-acceptable languages.   Turing-acceptable  Turing-acceptable   Let be an alphabet that does not contain #, and let be a language over . We say that is Turing-acceptable if there is a Turing machine such that , and for each , halts on input if and only if . In this case, we say that  accepts the language .    It should be clear that any Turing-decidable language is Turing-acceptable. In fact, if is a language over an alphabet , and if is a Turing machine that decides , then it is easy to modify to produce a Turing machine that accepts . At the point where enters the halt state with output 0, the new machine should enter a new state in which it simply moves to the right forever, without ever halting. Given an input , the modified machine will halt if and only if halts with output 1, that is, if and only if .    Computability  Computability  At this point, it would be useful to look at increasingly complex Turing machines, such as those with more tapes, which compute increasingly complex functions and languages. Although Turing machines are very simple devices, it turns out that they can perform very sophisticated computations. In fact, any computation that can be carried out by a modern digital computer---even one with an unlimited amount of memory---can be carried out by a Turing machine. Although it is not something that can be proved, it is widely believed that anything that can reasonably be called ``computation'' can be done by a Turing machine. This claim is known as the Church-Turing Thesis Church-Turing Thesis .  We do not have time to look at enough examples to convince you that Turing machines are as powerful as computers, but the proof reduces to the fact that computers are actually fairly simple in their basic operation. Everything that a computer does comes down to copying data from one place to another, making simple comparisons between two pieces of data, and performing some basic arithmetic operations. It's possible for Turing machines to do all these things. In fact, it's possible to build a Turing machine to simulate the step-by-step operation of a given computer. Doing so proves that the Turing machine can do any computation that the computer could do, although it will, of course, work much, much more slowly.  We have used Turing machines to define Turing-acceptable languages and Turing-decidable languages. The definitions seem to depend very much on the peculiarities of Turing machines. But the same classes of languages can be defined in other ways. For example, we could use programs running on an idealized computer, with an unlimited amount of memory, to accept or decide languages. Or we could use -tape Turing machines. The resulting classes of languages would be exactly the same as the Turing-acceptable and Turing-decidable languages.  We could look at other ways of specifying languages ``computationally.'' One of the most natural is to imagine a Turing machine or computer program that runs forever and outputs an infinite list of strings over some alphabet . In the case of Turing machines, it's convenient to think of a two-tape Turing machine that lists the strings on its second tape. The strings in the list form a language over . A language that can be listed in this way is said to be recursively enumerable language  recursively enumerable . Note that we make no assumption that the strings must be listed in any particular order, and we allow the same string to appear in the output any number of times. Clearly, a recursively enumerable language is ``computable'' in some sense. Perhaps we have found a new type of computable language. But no---it turns out that we have just found another way of describing the Turing-acceptable languages. The following theorem makes this fact official and adds one more way of describing the same class of languages: Discussion of the proof of this theorem can be found in the source document for this section: Section 5.2 of Foundations of Computation      Let be an alphabet and let be a language over . Then the following are equivalent:   There is a Turing machine that accepts .    There is a two-tape Turing machine that runs forever, making a list of strings on its second tape, such that a string is in the list if and only if .    There is a Turing-computable function such that is the range of the function .        Next, we compare Turing machines to a completely different method of specifying languages: grammars. Suppose is a general grammar and that is the language generated by . Then there is a Turing machine, , that accepts the same language, . The alphabet for will be , where $ is a symbol that is not in . (We also assume that # is not in .) Suppose that is started with input , where . We have to design so that it will halt if and only if . The idea is to have find each string that can be derived from the start symbol . The strings will be written to 's tape and separated by $'s. can begin by writing the start symbol, , on its tape, separated from by a $. Then it repeats the following process indefinitely: For each string on the tape and for each production rule, , of , search the string for occurrences of . When one is found, add a $ to the end of the tape and copy the string to the end of the tape, replacing the occurrence of by . The new string represents the results of applying the production rule to the string. Each time produces a new string, it compares that string to . If they are equal, then halts. If is in fact in , then eventually will produce the string and will halt. Conversely, if is not in , then will go on producing strings forever without ever finding , so will never halt. This shows that, in fact, the language is accepted by .  Conversely, suppose that is a language over an alphabet , and that is Turing-acceptable. Then it is possible to find a grammar that generates . To do this, it's convenient to use the fact that, as discussed above, there is a Turing-computable function such that is the range of~ . Let be a Turing machine that computes the function . We can build a grammar, , that imitates the computations performed by . The idea is that most of the production rules of will imitate steps in the computation of . Some additional rules (which we won't get into here) must be added to get things started, to clean up, and to otherwise bridge the conceptual gap between grammars and Turing machines.   We have now shown, very informally, that a language is Turing-acceptable if and only if there is a grammar that generates . Even though Turing machines and grammars are very different things, they are equivalent in terms of their ability to describe languages. We state this as a theorem:    A language is Turing acceptable (equivalently, recursively enumerable) if and only if there is a general grammar that generates .    In this section, we have been talking mostly about recursively enumerable languages (also known as the Turing-acceptable languages). What about the Turing-decidable languages? We already know that if a language is Turing-decidable, then it is Turing-acceptable. The converse is not true (although we won't be able to prove this yet). However, suppose that is a language over the alphabet and that both and its complement, , are Turing-acceptable. Then is Turing-decidable.  For suppose that is a Turing machine that accepts the language and that is a Turing machine that accepts . We must show that is Turing-decidable. That is, we have to build a Turing machine that decides . For each , when is run with input , it should halt with output 1 if and with output if . To do this, will simulate the computation of both and on input . (It will simulate one step in the computation of , then one step in the computation of , then one step of , then one step of , and so on.) If and when the simulated computation of halts, then will halt with output~1; since accepts , this will happen if and only if . If and when the simulated computation of halts, then will halt with output~0; since accepts , this will happen if and only if . So, for any , halts with the desired output. This means that does in fact decide the language .  It is easy to prove the converse, and the proof is left as an exercise. So we see that a language is Turing-decidable if and only if both it and its complement are Turing-acceptable. Since Turing-acceptability can be defined using other forms of computation besides Turing machines, so can Turing-decidability. For example, a language is Turing-decidable if and only if both it and its complement can be generated by general grammars. We introduced the term ``recursively enumerable'' as a synonym for Turing-acceptable, to get away from the association with a particular form of computation. Similarly, we define the term ``recursive'' as a synonym for Turing-decidable. That is, a language is said to be recursive language recursive if and only if it is Turing-decidable. We then have the theorem:    Let be an alphabet and let be a language over . Then is recursive if and only if both and its complement, , are recursively enumerable.       The Limits of Computation  Limits of Computation  Recursively enumerable languages are languages that can be defined by computation. We have seen that there are many different models of computation---Turing machines, two-tape Turing machines, grammars, computer programs---but they all lead to the same class of languages. In fact, every computational method for specifying languages that has ever been developed produces only recursively enumerable languages. There is something about these languages---some pattern or property---that makes them ``computable,'' and it is some intrinsic property of the languages themselves, not some peculiarity of any given model of computation.  This is especially interesting since most languages are not recursively enumerable. Given an alphabet , there are uncountably many languages over , but only countably many of them are recursively enumerable. The rest---the vast majority---are not recursively enumerable. What can we say about all these non-recursively-enumerable languages? If the language is not recursively enumerable, then there is no algorithm for listing the members of . It might be possible to define by specifying some property that all its members satisfy, but that property can't be computable. That is, there can be no computer program or Turing machine that tests whether a given string has the property, since if there were, then we could write a program that lists the members of .  So, even though almost every language is non-recursively-enumerable, it's difficult to find a particular language that is not recursively enumerable. Nevertheless, in this section we will find one such language. At that same time, we will find an example of a language that is recursively enumerable but not recursive. And we will discover some interesting limitations to the power of computation.  The examples that we will look at in this section involve Turing machines that work with other Turing machines as data. For this to work, we need a symbolic representation of Turing machines---a representation that can be written on the tape of another Turing machine. This will let us create two machines: First, a Turing machine that can generate Turing machines on demand by writing their symbolic representations on its tape. We will design a Turing machine to do this. And second, a Turing machine that can simulate the computation of other Turing machines whose descriptions are written on its tape.  In order to do all this, we must put some limitations on the states and alphabetic symbols that can be used in the Turing machines that we consider. Clearly, given any Turing machine, we can change the names of the states without changing the behavior of the machine. So, without any loss of generality, we can assume that all states have names chosen from the list: , , , , , , . We assume that is the halt state and is the start state. Note that there is an infinite number of possible states, but any given Turing machine will only use finitely many states from this list.  As for the alphabets of the Turing machines, I want to look at Turing machines whose alphabets include the symbols 0, 1, , and of course #. These are the symbols that the machines will use for input and output. The alphabets can also include other symbols. We will assume that these auxiliary symbols are chosen from the list: , , , , . Given a Turing machine whose alphabet includes the symbols 0, 1, , and #, we can rename any other symbols in its alphabet using names from this list. This renaming will not affect any of the behavior that we are interested in.  Now suppose we have one of these standard Turing machines---one whose states are chosen from the list , , , , , , whose start state is , and whose symbols are chosen from the list #, 0, 1, , , , , . Such a machine can be completely encoded as a string of symbols over the alphabet . A transition rule such as can be encoded as a string . To encode a complete machine, simply encode each of its transition rules in this way and join them together in a string, separated by $'s. We now have the symbolic representation for Turing machines that we need.  Note that a string over the alphabet might or might not encode a Turing machine. However, it is a simple matter to check whether such a string is the code for a Turing machine. We can imagine the following process: Generate all the strings over the alphabet . Check each string to see whether it encodes a Turing machine. If so, add the string to an output list. In this way, we can generate a list of all strings that encode standard Turing machines. In effect, the standard Turing machines, or at least their symbolic representations, form a recursively enumerable set. Let be the machine encoded by the first string in this list of standard Turing machines; let be the machine encoded by the second string; let be the machine encoded by the third string; and so on. The list , , ,~\\dots, includes every standard Turing machine. Furthermore, given , we can find the symbolic representation for by generating strings in the list until we have strings. Furthermore---and this is the essential point---we can use a Turing machine to do all these calculations. In fact, there is a Turing machine that, when run with input , will halt with the string representation of written on its tape as output. The Turing machine that does this is , the first of the two machines that we need.  The second machine that we need will be called . It is a so-called Universal Turing Machine . The single Turing machine can simulate the computation of any standard Turing machine, , on any input. Both the symbolic representation of and that of the input string are written to 's tape, separated by a space. As simulates the computation of , it will need some way to keep track of what state is in and of the position of on its (simulated) tape. It does this by writing the current state of on its tape, following 's input string, and by adding a special symbol, such as , to the input string to mark 's position. When is first started, it begins by adding the to the beginning of the input string and writing a after the string to represent the start state of . It is then relatively straightforward for to simulate the computation of . For each step in the computation of , it can determine the current state of (which is recorded on 's tape) and the symbol which is currently reading (which is on 's tape, after the ). searches the symbolic representation of for the rule that tells what to do in this situation. Using this rule, can update its representation of 's state, position, and tape to reflect the result of applying the rule. If the new state of is the halt state, then also halts. Otherwise, it goes on to simulate the next step in 's computation. Note that when is given and an input string as input, will halt if and only if halts on input . (Obviously, this is a very inefficient simulation, but we are not concerned with efficiency here.)  So, we have our two machines, and . After all this setup, we are finally in a position to look at the major theorem that we have been working towards.    Let , , , , be the standard Turing machines, as described above. Let be the language over the alphabet defined by Then is a recursively enumerable language, but is not recursive. The complement is a language that is not recursively enumerable.    First note that if both and were recursively enumerable, then would be recursive, by . So, once we show that is recursively enumerable but not recursive, it follows immediately that cannot be recursively enumerable. That is, the second part of the theorem follows from the first.  To show that is recursively enumerable, it suffices to find a Turing machine, , that accepts . That is, when run with input , for , should halt if and only if . We can build from the Turing machines and which were introduced above. When started with input , should proceed as follows: First copy the input. Run on the first copy of . This will produce a symbolic description of the Turing machine . Now run to simulate the computation of on input . This simulation will end if and only if halts when run with input , that is, if and only if . The Turing machine that performs the computation we have described accepts the language . This proves that is recursively enumerable.  To show that is not recursive, we need to show that there is no Turing machine that decides . Let be any Turing machine. We must show that no matter what does, it does not decide the language . We must do this without knowing anything more about that the fact that is it a Turing machine. To say that decides would mean that for any , when is run with input , will halt with output 1 if and will halt with output 0 if . To show that does not decide we need to show that there is some such that when is run with input , either fails to halt or else halts but gives the wrong output. Note in particular that we only need to find one  for which does not give the correct result. As we try to find , we have nothing much to work with but itself.  To find , we construct a Turing machine that is a simple variation on . When is run on any input, it duplicates the behavior of on that input until halts (if it ever does). At that point, should check 's output. If has halted with output , then should go into an infinite loop, so that never halts in this case. Otherwise, if the output of is not , then should halt. Now, we can assume that is one of the standard Turing machines, say . (If is not already one of these machines, it is because it uses different names for its states and symbols. Renaming the states and symbols will produce an equivalent machine with the same behavior as , and we can replace with this standard machine.)  We now have a Turing machine which has the following behavior when it is run with input (note that the here is the same as in ): If halts with output 1 on input , then will fail to halt on input . If halts with output 0 on input , then fails to halt on input . (What might do in other cases is not relevant here.)  Remember that we are trying to show that does not decide the language . I claim that, in fact, does not give the correct answer for . When is run with input , it is supposed to halt with output 1 if , and it is supposed to halt with output 0 if . Recall that if and only if halts when run with input .  Suppose that we run with input . If does not halt with output 0 or 1, then it has certainly not given the correct answer for . Now, suppose that halts with output 1 on input . In this case, by the properties of given above, we know that does not halt on input . But that means, by definition of , that . By halting with output 1 in this case, has given the wrong answer for . Finally, suppose that halts with output 0 on input . We then know that halts on input . But that means that . Again, by halting with output 0 in this case, has given the wrong answer for . So, in no case will give the correct answer for . This means that does not decide the language , because gives an incorrect answer when it is run with the particular input . does not decide , and since was an arbitrary Turing machine, we see that there is no Turing machine at all that decides the language . Thus, is not a recursive language, as the theorem claims.  To decide the language would be to solve the following problem: Given a Turing machine , decide whether or not will halt when it is run with input . This problem is called the Halting Problem Halting Problem . We have shown that there is no Turing machine that solves this problem. Given the equivalence of Turing machines and computer programs, we can also say that there is no computer program that solves the halting problem. We say that the halting problem is computational unsolvability computationally unsolvable .  The halting problem is just one of many problems that cannot be solved by Turing machines or computer programs. In fact, almost any interesting yes\/no question that can be asked about Turing machines or programs is in this class: Does this Turing machine halt for all possible inputs in ? Given this input, will this program ever halt? Do these two programs (or Turing machines) have the same output for each possible input? Will this Turing machine ever halt if it is started on a blank tape? All these problems are computationally unsolvable in the sense that there is no Turing machine or computer program that will answer them correctly in all cases. The existence of such problems is a real limitation on the power of computation.    Exercises  Let . Draw a transition diagram for a Turing machine that computes the function where , for . Draw a transition diagram for a Turing machine that computes the function where , for .  Let . Draw a transition diagram for a Turing machine that computes the function where .  Suppose that , , and are alphabets and that and are Turing-computable functions. Show that is Turing-computable.  We have defined computability for functions , where and are alphabets. How could Turing machines be used to define computable functions from to ? (Hint: Consider the alphabet .)  Let be an alphabet and let be a language over . Show that is Turing-decidable if and only if its complement, , is Turing-decidable.  Draw a transition diagram for a Turing machine which decides the language . (Hint: Change the 's and 's to \\$'s in pairs.) Explain in general terms how to make a Turing machine that decides the language .  Draw a transition diagram for a Turing machine which decides the language and is a multiple of . (Hint: Erase  's at a time.)  Based on your answer to the previous problem and the copying machine presented in this section, describe in general terms how you would build a Turing machine to decide the language is a prime number .  Let be the function such that for each , is the representation of as a binary number. Draw a transition diagram for a Turing machine that computes .  The language is the range of the function . Design a Turing machine that computes this function, and find the grammar that generates the language by imitating the computation of that machine.  Complete the proof of by proving the following: If is a recursive language over an alphabet , then both and are recursively enumerable.  Show that a language over an alphabet is recursive if and only if there are grammars and such that the language generated by is and the language generated by is .  This section discusses recursive languages and recursively enumerable languages. How could one define recursive subsets of and recursively enumerable subsets of ?  Give an informal argument to show that a subset is recursive if and only if there is a computer program that prints out the elements of  it in increasing order .   "
 },
 {
-  "id": "p-4809",
+  "id": "p-5239",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#p-4809",
+  "url": "sec-turing-machines-comp.html#p-5239",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "pushdown automata "
 },
 {
-  "id": "p-4810",
+  "id": "p-5240",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#p-4810",
+  "url": "sec-turing-machines-comp.html#p-5240",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Turing machine "
 },
 {
-  "id": "p-4811",
+  "id": "p-5241",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#p-4811",
+  "url": "sec-turing-machines-comp.html#p-5241",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Turing machine "
 },
 {
-  "id": "p-4812",
+  "id": "p-5242",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#p-4812",
+  "url": "sec-turing-machines-comp.html#p-5242",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -12299,23 +13190,23 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-turing-machines-comp.html#fig-TM",
   "type": "Figure",
-  "number": "15.6.1",
+  "number": "17.6.1",
   "title": "",
   "body": "  Basic graphical representation of a Turing machine.   Kevd1337> , Public domain, via Wikimedia Commons  "
 },
 {
-  "id": "p-4815",
+  "id": "p-5245",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#p-4815",
+  "url": "sec-turing-machines-comp.html#p-5245",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "start state halt state "
 },
 {
-  "id": "p-4816",
+  "id": "p-5246",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#p-4816",
+  "url": "sec-turing-machines-comp.html#p-5246",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -12326,7 +13217,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-turing-machines-comp.html#def-turing-machine",
   "type": "Definition",
-  "number": "15.6.2",
+  "number": "17.6.2",
   "title": "Turing Machine.",
   "body": " Turing Machine  Turing Machine   A Turing machine is a 4-tuple , where:    is a finite set of states, including the halt state, .     is an alphabet which includes the blank symbol, #.     is the start state.     is the transition function. The fact that means that when the Turing machine is in state and reads the symbol , it writes the symbol , moves one cell in the direction , and enters state .      "
 },
@@ -12335,14 +13226,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-turing-machines-comp.html#def-turing-computable",
   "type": "Definition",
-  "number": "15.6.3",
+  "number": "17.6.3",
   "title": "Turing-computable.",
   "body": " Turing-computable  Turing-computable   Suppose that and are alphabets that do not contain # and that is a function from to . We say that is Turing-computable if there is a Turing machine such that and and for each string , when is run with input , it halts with output . In this case, we say that  computes the function .   "
 },
 {
-  "id": "p-4833",
+  "id": "p-5263",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#p-4833",
+  "url": "sec-turing-machines-comp.html#p-5263",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -12353,7 +13244,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-turing-machines-comp.html#def-turing-decidable",
   "type": "Definition",
-  "number": "15.6.4",
+  "number": "17.6.4",
   "title": "Turing-decidable.",
   "body": " Turing-decidable  Turing-decidable   Let be an alphabet that does not contain # and let be a language over . We say that is Turing-decidable if there is a Turing machine such that , , and for each , when is run with input , it halts with output . (That is, it halts with output 0 or 1, and the output is 0 if and is 1 if .) In this case, we say that  decides the language .   "
 },
@@ -12362,23 +13253,23 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-turing-machines-comp.html#def-turing-acceptable",
   "type": "Definition",
-  "number": "15.6.5",
+  "number": "17.6.5",
   "title": "Turing-acceptable.",
   "body": " Turing-acceptable  Turing-acceptable   Let be an alphabet that does not contain #, and let be a language over . We say that is Turing-acceptable if there is a Turing machine such that , and for each , halts on input if and only if . In this case, we say that  accepts the language .   "
 },
 {
-  "id": "p-4838",
+  "id": "p-5268",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#p-4838",
+  "url": "sec-turing-machines-comp.html#p-5268",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Church-Turing Thesis "
 },
 {
-  "id": "p-4841",
+  "id": "p-5271",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#p-4841",
+  "url": "sec-turing-machines-comp.html#p-5271",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -12389,7 +13280,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-turing-machines-comp.html#thm-turing-equivalence",
   "type": "Theorem",
-  "number": "15.6.6",
+  "number": "17.6.6",
   "title": "",
   "body": "  Let be an alphabet and let be a language over . Then the following are equivalent:   There is a Turing machine that accepts .    There is a two-tape Turing machine that runs forever, making a list of strings on its second tape, such that a string is in the list if and only if .    There is a Turing-computable function such that is the range of the function .      "
 },
@@ -12398,14 +13289,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-turing-machines-comp.html#thm-turing-iff-grammar",
   "type": "Theorem",
-  "number": "15.6.7",
+  "number": "17.6.7",
   "title": "",
   "body": "  A language is Turing acceptable (equivalently, recursively enumerable) if and only if there is a general grammar that generates .   "
 },
 {
-  "id": "p-4852",
+  "id": "p-5282",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#p-4852",
+  "url": "sec-turing-machines-comp.html#p-5282",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -12416,14 +13307,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-turing-machines-comp.html#thm-recursive-language",
   "type": "Theorem",
-  "number": "15.6.8",
+  "number": "17.6.8",
   "title": "",
   "body": "  Let be an alphabet and let be a language over . Then is recursive if and only if both and its complement, , are recursively enumerable.   "
 },
 {
-  "id": "p-4862",
+  "id": "p-5292",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#p-4862",
+  "url": "sec-turing-machines-comp.html#p-5292",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -12434,1008 +13325,144 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-turing-machines-comp.html#thm-halting-prob",
   "type": "Theorem",
-  "number": "15.6.9",
+  "number": "17.6.9",
   "title": "",
   "body": "  Let , , , , be the standard Turing machines, as described above. Let be the language over the alphabet defined by Then is a recursively enumerable language, but is not recursive. The complement is a language that is not recursively enumerable.   "
 },
 {
-  "id": "p-4872",
+  "id": "p-5302",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#p-4872",
+  "url": "sec-turing-machines-comp.html#p-5302",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Halting Problem computationally unsolvable "
 },
 {
-  "id": "exercise-560",
+  "id": "exercise-598",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#exercise-560",
+  "url": "sec-turing-machines-comp.html#exercise-598",
   "type": "Exercise",
-  "number": "15.6.4.1",
+  "number": "17.6.4.1",
   "title": "",
   "body": "Let . Draw a transition diagram for a Turing machine that computes the function where , for . Draw a transition diagram for a Turing machine that computes the function where , for . "
 },
 {
-  "id": "exercise-561",
+  "id": "exercise-599",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#exercise-561",
+  "url": "sec-turing-machines-comp.html#exercise-599",
   "type": "Exercise",
-  "number": "15.6.4.2",
+  "number": "17.6.4.2",
   "title": "",
   "body": "Let . Draw a transition diagram for a Turing machine that computes the function where . "
 },
 {
-  "id": "exercise-562",
+  "id": "exercise-600",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#exercise-562",
+  "url": "sec-turing-machines-comp.html#exercise-600",
   "type": "Exercise",
-  "number": "15.6.4.3",
+  "number": "17.6.4.3",
   "title": "",
   "body": "Suppose that , , and are alphabets and that and are Turing-computable functions. Show that is Turing-computable. "
 },
 {
-  "id": "exercise-563",
+  "id": "exercise-601",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#exercise-563",
+  "url": "sec-turing-machines-comp.html#exercise-601",
   "type": "Exercise",
-  "number": "15.6.4.4",
+  "number": "17.6.4.4",
   "title": "",
   "body": "We have defined computability for functions , where and are alphabets. How could Turing machines be used to define computable functions from to ? (Hint: Consider the alphabet .) "
 },
 {
-  "id": "exercise-564",
+  "id": "exercise-602",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#exercise-564",
+  "url": "sec-turing-machines-comp.html#exercise-602",
   "type": "Exercise",
-  "number": "15.6.4.5",
+  "number": "17.6.4.5",
   "title": "",
   "body": "Let be an alphabet and let be a language over . Show that is Turing-decidable if and only if its complement, , is Turing-decidable. "
 },
 {
-  "id": "exercise-565",
+  "id": "exercise-603",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#exercise-565",
+  "url": "sec-turing-machines-comp.html#exercise-603",
   "type": "Exercise",
-  "number": "15.6.4.6",
+  "number": "17.6.4.6",
   "title": "",
   "body": "Draw a transition diagram for a Turing machine which decides the language . (Hint: Change the 's and 's to \\$'s in pairs.) Explain in general terms how to make a Turing machine that decides the language . "
 },
 {
-  "id": "exercise-566",
+  "id": "exercise-604",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#exercise-566",
+  "url": "sec-turing-machines-comp.html#exercise-604",
   "type": "Exercise",
-  "number": "15.6.4.7",
+  "number": "17.6.4.7",
   "title": "",
   "body": "Draw a transition diagram for a Turing machine which decides the language and is a multiple of . (Hint: Erase  's at a time.) "
 },
 {
-  "id": "exercise-567",
+  "id": "exercise-605",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#exercise-567",
+  "url": "sec-turing-machines-comp.html#exercise-605",
   "type": "Exercise",
-  "number": "15.6.4.8",
+  "number": "17.6.4.8",
   "title": "",
   "body": "Based on your answer to the previous problem and the copying machine presented in this section, describe in general terms how you would build a Turing machine to decide the language is a prime number . "
 },
 {
-  "id": "exercise-568",
+  "id": "exercise-606",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#exercise-568",
+  "url": "sec-turing-machines-comp.html#exercise-606",
   "type": "Exercise",
-  "number": "15.6.4.9",
+  "number": "17.6.4.9",
   "title": "",
   "body": "Let be the function such that for each , is the representation of as a binary number. Draw a transition diagram for a Turing machine that computes . "
 },
 {
-  "id": "exercise-569",
+  "id": "exercise-607",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#exercise-569",
+  "url": "sec-turing-machines-comp.html#exercise-607",
   "type": "Exercise",
-  "number": "15.6.4.10",
+  "number": "17.6.4.10",
   "title": "",
   "body": "The language is the range of the function . Design a Turing machine that computes this function, and find the grammar that generates the language by imitating the computation of that machine. "
 },
 {
-  "id": "exercise-570",
+  "id": "exercise-608",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#exercise-570",
+  "url": "sec-turing-machines-comp.html#exercise-608",
   "type": "Exercise",
-  "number": "15.6.4.11",
+  "number": "17.6.4.11",
   "title": "",
   "body": "Complete the proof of by proving the following: If is a recursive language over an alphabet , then both and are recursively enumerable. "
 },
 {
-  "id": "exercise-571",
+  "id": "exercise-609",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#exercise-571",
+  "url": "sec-turing-machines-comp.html#exercise-609",
   "type": "Exercise",
-  "number": "15.6.4.12",
+  "number": "17.6.4.12",
   "title": "",
   "body": "Show that a language over an alphabet is recursive if and only if there are grammars and such that the language generated by is and the language generated by is . "
 },
 {
-  "id": "exercise-572",
+  "id": "exercise-610",
   "level": "2",
-  "url": "sec-turing-machines-comp.html#exercise-572",
+  "url": "sec-turing-machines-comp.html#exercise-610",
   "type": "Exercise",
-  "number": "15.6.4.13",
+  "number": "17.6.4.13",
   "title": "",
   "body": "This section discusses recursive languages and recursively enumerable languages. How could one define recursive subsets of and recursively enumerable subsets of ? "
 },
 {
-  "id": "exercise-573",
-  "level": "2",
-  "url": "sec-turing-machines-comp.html#exercise-573",
-  "type": "Exercise",
-  "number": "15.6.4.14",
-  "title": "",
-  "body": "Give an informal argument to show that a subset is recursive if and only if there is a computer program that prints out the elements of  it in increasing order . "
-},
-{
-  "id": "s-recurrence-relations",
-  "level": "1",
-  "url": "s-recurrence-relations.html",
-  "type": "Section",
-  "number": "16.1",
-  "title": "Recurrence Relations",
-  "body": " Recurrence Relations   In this section we will begin our study of recurrence relations and their solutions. Our primary focus will be on the class of finite order linear recurrence relations with constant coefficients (shortened to finite order linear relations). First, we will examine closed form expressions from which these relations arise. Second, we will present an algorithm for solving them. In later sections we will consider some other common relations ( ) and introduce an additional tool for studying recurrence relations: generating functions ( ).      Definition and Terminology   Recurrence Relation  Recurrence Relation   Let be a sequence of numbers. A recurrence relation on is a formula that relates all but a finite number of terms of to previous terms of . That is, there is a in the domain of such that if , then is expressed in terms of some (and possibly all) of the terms that precede . If the domain of is , the terms are not defined by the recurrence formula.Their values are the initial conditions (or boundary conditions, or basis) that complete the definition of .     Some Examples of Recurrence Relations     The Fibonacci sequence is defined by the recurrence relation , with the initial conditions and . The recurrence relation is called a second-order relation because depends on the two previous terms of . Recall that the sequence in Section 8.2, , can be defined with the same recurrence relation, but with different initial conditions.    The relation is a third-order recurrence relation. If values of , , and are specified, then is completely defined.    The recurrence relation , , with has infinite order. To determine when is even, you must go back terms. Since grows unbounded with , no finite order can be given to .        Solving Recurrence Relations   Recurrence Relations  Solving   Sequences are often most easily defined with a recurrence relation; however, the calculation of terms by directly applying a recurrence relation can be time-consuming. The process of determining a closed form expression for the terms of a sequence from its recurrence relation is called solving the relation. There is no single technique or algorithm that can be used to solve all recurrence relations. In fact, some recurrence relations cannot be solved. The relation that defines above is one such example. Most of the recurrence relations that you are likely to encounter in the future are classified as finite order linear recurrence relations with constant coefficients. This class is the one that we will spend most of our time with in this chapter.   Order Linear Recurrence Relation  Order of a Recurrence Relation   Let be a sequence of numbers with domain . An order linear recurrence relation on with constant coefficients is a recurrence relation that can be written in the form where are constants and is a numeric function that is defined for .    Note: We will shorten the name of this class of relations to order linear relations. Therefore, in further discussions, would not be considered a first-order linear relation.   Some Finite Order Linear Relations     The Fibonacci sequence is defined by the second-order linear relation because    The relation is a third-order linear relation. In this case, .    The relation can be written as . Therefore, it is a first-order linear relation.        Recurrence relations obtained from solutions  Recurrence relations obtained from solutions  Before giving an algorithm for solving finite order linear relations, we will examine recurrence relations that arise from certain closed form expressions. The closed form expressions are selected so that we will obtain finite order linear relations from them. This approach may seem a bit contrived, but if you were to write down a few simple algebraic expressions, chances are that most of them would be similar to the ones we are about to examine.  For our first example, consider , defined by , . If , . Therefore, satisfies the first order linear relation and the initial condition serves as an initial condition for .  As a second example, consider , . Quite a bit more algebraic manipulation is required to get our result:                                                   .             .                           The recurrence relation that we have just obtained, defined for , together with the initial conditions and , define .  summarizes our results together with a few other examples that we will let the reader derive. Based on these results, we might conjecture that any closed form expression for a sequence that combines exponential expressions and polynomial expressions will be solutions of finite order linear relations. Not only is this true, but the converse is true: a finite order linear relation defines a closed form expression that is similar to the ones that were just examined. The only additional information that is needed is a set of initial conditions.   Recurrence relations obtained from given sequences    Closed Form Expression  Recurrence Relation                                                              Homogeneous Recurrence Relation  Homogeneous Recurrence Relation.   An order linear relation is homogeneous if for all . For each recurrence relation , the associated homogeneous relation is      First Order Homogeneous Recurrence Relations  is a first-order homogeneous relation. Since it can also be written as , it should be no surprise that it arose from an expression that involves powers of 2. More generally, you would expect that the solution of would involve . Actually, the solution is , where the value of is given by the initial condition.    A Second Order Example  Consider the second-order homogeneous relation together with the initial conditions and . From our discussion above, we can predict that the solution to this relation involves terms of the form , where and are nonzero constants that must be determined. If the solution were to equal this quantity exactly, then Substitute these expressions into the recurrence relation to get Each term on the left-hand side of this equation has a factor of , which is nonzero. Dividing through by this common factor yields  Therefore, the only possible values of are 3 and 4. Equation is called the characteristic equation of the recurrence relation. The fact is that our original recurrence relation is true for any sequence of the form , where and are real numbers. This set of sequences is called the general solution of the recurrence relation. If we didn't have initial conditions for , we would stop here. The initial conditions make it possible for us to find definite values for and .   The solution of this set of simultaneous equations is and and so the solution is .    Characteristic Equation  Characteristic Equation  Characteristic Roots   The characteristic equation of the homogeneous order linear relation is the th degree polynomial equation The left-hand side of this equation is called the characteristic polynomial. The roots of the characteristic polynomial are called the characteristic roots of the equation.     Some characteristic equations     The characteristic equation of is .    The characteristic equation of is Note that the absence of a term means that there is not an term appearing in the characteristic equation.       Algorithm for Solving Homogeneous Finite-order Linear Relations      Write out the characteristic equation of the relation , which is .    Find all roots of the characteristic equation, the characteristic roots.    If there are distinct characteristic roots, , then the general solution of the recurrence relation is . If there are fewer than characteristic roots, then at least one root is a multiple root. If is a double root, then the term is replaced with In general, if is a root of multiplicity , then the term is replaced with .    If initial conditions are given, we get linear equations in unknowns (the from Step 3) by substitution. If possible, solve these equations to determine a final form for .       Although this algorithm is valid for all values of , there are limits to the size of for which the algorithm is feasible. Using just a pencil and paper, we can always solve second-order equations. The quadratic formula for the roots of is The solutions of are then   Although cubic and quartic formulas exist, they are too lengthy to introduce here. For this reason, the only higher-order relations ( ) that you could be expected to solve by hand are ones for which there is an easy factorization of the characteristic polynomial.   A solution using the algorithm  Suppose that is defined by , with and . We can solve this recurrence relation with :     Note that we have written the recurrence relation in nonstandard form. To avoid errors in this easy step, you might consider a rearrangement of the equation to, in this case, . Therefore, the characteristic equation is .    The characteristic roots are and . These roots can be just as easily obtained by factoring the characteristic polynomial into .    The general solution of the recurrence relation is .      The simultaneous equations have the solution and . Therefore, .      Here is one rule that might come in handy: If the coefficients of the characteristic polynomial are all integers, with the constant term equal to , then the only possible rational characteristic roots are divisors of (both positive and negative).  With the aid of a computer (or possibly only a calculator), we can increase . Approximations of the characteristic roots can be obtained by any of several well-known methods, some of which are part of standard software packages. There is no general rule that specifies the values of for which numerical approximations will be feasible. The accuracy that you get will depend on the relation that you try to solve. (See Exercise 17 of this section.)   Solution of a Third Order Recurrence Relation  Solve , where , , and .     The characteristic equation is .    The only rational roots that we can attempt are . By checking these, we obtain the three roots 1, 2, and .    The general solution is . The first term can simply be written .    You can solve this system by elimination to obtain , , and . Therefore,        Solution with a Double Characteristic Root  Solve , where and .     Characteristic equation: .    . Therefore, there is a double characteristic root, 4.    General solution: .       Therefore .        Solution of Nonhomogeneous Finite Order Linear Relations   Nonhomogeneous of Finite Order Linear Relations  Solution   Our algorithm for nonhomogeneous relations will not be as complete as for the homogeneous case. This is due to the fact that different right-hand sides ( 's) call for different rules in obtaining a particular solution.   Algorithm for Solving Nonhomogeneous Finite-order Linear Relations   To solve the recurrence relation     Write the associated homogeneous relation and find its general solution (Steps (a) through (c) of ). Call this the homogeneous solution, .    Start to obtain what is called a particular solution, of the recurrence relation by taking an educated guess at the form of a particular solution. For a large class of right-hand sides, this is not really a guess, since the particular solution is often the same type of function as (see ).    Substitute your guess from Step 2 into the recurrence relation. If you made a good guess, you should be able to determine the unknown coefficients of your guess. If you made a wrong guess, it should be apparent from the result of this substitution, so go back to Step 2.    The general solution of the recurrence relation is the sum of the homogeneous and particular solutions. If no conditions are given, then you are finished. If initial conditions are given, they will translate to linear equations in unknowns and solve the system to get a complete solution.        Particular solutions for given right-hand sides    Right Hand Side,  Form of Particular Solution,    Constant,  Constant,    Linear Function,  Linear Function,    degree polynomial,  degree polynomial,    exponential function,  exponential function,      Solution of a Nonhomogeneous First Order Recurrence Relation  Solve , with .     The associated homogeneous relation, has the characteristic equation ; therefore, . The homogeneous solution is .    Since the right-hand side is a constant, we guess that the particular solution will be a constant, .    If we substitute into the recurrence relation, we get , or . Therefore, .    The general solution of the recurrence relation is The initial condition will give us one equation to solve in order to determine . Therefore, and .       Solution of a Nonhomogeneous Second Order Recurrence Relation  Consider with and .     From , we know that . Caution:Don't apply the initial conditions to until you add !    Since the right-hand side is a linear polynomial, is linear; that is, .    Substitution into the recurrence relation yields:  Two polynomials are equal only if their coefficients are equal. Therefore,     Use the general solution and the initial conditions to get a final solution:    Therefore, .       A quick note on interest rates  When a quantity, such as a savings account balance, is increased by some fixed percent, it is most easily computed with a multiplier. In the case of an increase, the multiplier is 1.08 because any original amount , has added to it, so that the new balance is .  Another example is that if the interest rate is , the multiplier would be 1.035. This presumes that the interest is applied at the end of year for annual interest, often called simple interest . If the interest is applied monthly, and we assume a simplifed case where each month has the same length, the multiplier after every month would be . After a year passes, this multiplier would be applied 12 times, which is the same as multiplying by . That increase from 1.035 to 1.03557 is the effect of compound interest .    A Sort of Annuity  Suppose you open a savings account that pays an annual interest rate of . In addition, suppose you decide to deposit one dollar when you open the account, and you intend to double your deposit each year. Let be your balance after years. can be described by the relation , with . If, instead of doubling the deposit each year, you deposited a constant amount, , the term would be replaced with . A sequence of regular deposits such as this is called a simple annuity.  Returning to the original situation,          should be of the form .    Therefore .       Therefore, .       Matching Roots  Find the general solution to .     The characteristic roots of the associated homogeneous relation are and 4. Therefore, .    A function of the form will not be a particular solution of the nonhomogeneous relation since it solves the associated homogeneous relation. When the right-hand side involves an exponential function with a base that equals a characteristic root,you should multiply your guess at a particular solution by . Our guess at would then be . See for a more complete description of this rule.    Substitute into the recurrence relation for : Each term on the left-hand side has a factor of  Therefore, .    The general solution to the recurrence relation is        When the base of right-hand side is equal to a characteristic root  If the right-hand side of a nonhomogeneous relation involves an exponential with base , and is also a characteristic root of multiplicity , then multiply your guess at a particular solution as prescribed in by , where is the index of the sequence.    Examples of matching bases     If , the characteristic roots are 4 and 5. Since 5 matches the base of the right side, will take the form .    If the only characteristic root is 3, but it is a double root (multiplicity 2). Therefore, the form of the particular solution is .    If , the characteristic roots are and 4. The form of the particular solution will be .    If , the characteristic roots are 1 and 8. If the right-hand side is a polynomial, as it is in this case, then the exponential factor can be introduced. The particular solution will take the form .      We conclude this section with a comment on the situation in which the characteristic equation gives rise to complex roots. If we restrict the coefficients of our finite order linear relations to real numbers, or even to integers, we can still encounter characteristic equations whose roots are complex. Here, we will simply take the time to point out that our algorithms are still valid with complex characteristic roots, but the customary method for expressing the solutions of these relations is different. Since an understanding of these representations requires some background in complex numbers, we will simply suggest that an interested reader can refer to a more advanced treatment of recurrence relations (see also difference equations).    Exercises    Solve the following sets of recurrence relations and initial conditions:     , ,         , ,    ,         , ,             , ,                            , ,     , ,         Find a closed form expression for in .       Find a closed form expression for the terms of the Fibonacci sequence (see ).    The sequence was defined by = the number of strings of zeros and ones with length having no consecutive zeros ( (c)). Its recurrence relation is the same as that of the Fibonacci sequence. Determine a closed form expression for , .         The characteristic equation is , which has solutions and , It is useful to point out that and . The general solution is . Using the initial conditions, we obtain the system: and . The solution to this system is and   Therefore the final solution is            If , , then can be described with the recurrence relation . For each of the following sequences that are defined using a summation, find a closed form expression:      ,    ,    ,     ,       Let be the number of ways that the set , , can be partitioned into two nonempty subsets.     Find a recurrence relation for . (Hint: It will be a first-order linear relation.)    Solve the recurrence relation.         For each two-block partition of , there are two partitions we can create when we add , but there is one additional two-block partition to count for which one block is . Therefore,            If you were to deposit a certain amount of money at the end of each year for a number of years, this sequence of payments would be called an annuity (see ).   Find a closed form expression for the balance or value of an annuity that consists of payments of dollars at a rate of interest of . Note that for a normal annuity, the first payment is made after one year.    With an interest rate of 5.5 percent, how much would you need to deposit into an annuity to have a value of one million dollars after 18 years?    The payment of a loan is a form of annuity in which the initial value is some negative amount (the amount of the loan) and the annuity ends when the value is raised to zero. How much could you borrow if you can afford to pay $5,000 per year for 25 years at 11 percent interest?      Suppose that is a small positive number. Consider the recurrence relation , with initial conditions and . If is small enough, we might consider approximating the relation by replacing with 1 and with 0. Solve the original relation and its approximation. Let a be the solution of the approximation. Compare closed form expressions for and . Their forms are very different because the characteristic roots of the original relation were close together and the approximation resulted in one double characteristic root.If characteristic roots of a relation are relatively far apart, this problem will not occur. For example, compare the general solutions of and .     "
-},
-{
-  "id": "def-recurrence-relation",
-  "level": "2",
-  "url": "s-recurrence-relations.html#def-recurrence-relation",
-  "type": "Definition",
-  "number": "16.1.1",
-  "title": "Recurrence Relation.",
-  "body": " Recurrence Relation  Recurrence Relation   Let be a sequence of numbers. A recurrence relation on is a formula that relates all but a finite number of terms of to previous terms of . That is, there is a in the domain of such that if , then is expressed in terms of some (and possibly all) of the terms that precede . If the domain of is , the terms are not defined by the recurrence formula.Their values are the initial conditions (or boundary conditions, or basis) that complete the definition of .   "
-},
-{
-  "id": "ex-some-recurrence-relations",
-  "level": "2",
-  "url": "s-recurrence-relations.html#ex-some-recurrence-relations",
-  "type": "Example",
-  "number": "16.1.2",
-  "title": "Some Examples of Recurrence Relations.",
-  "body": " Some Examples of Recurrence Relations     The Fibonacci sequence is defined by the recurrence relation , with the initial conditions and . The recurrence relation is called a second-order relation because depends on the two previous terms of . Recall that the sequence in Section 8.2, , can be defined with the same recurrence relation, but with different initial conditions.    The relation is a third-order recurrence relation. If values of , , and are specified, then is completely defined.    The recurrence relation , , with has infinite order. To determine when is even, you must go back terms. Since grows unbounded with , no finite order can be given to .     "
-},
-{
-  "id": "def-n-th-order-rr",
-  "level": "2",
-  "url": "s-recurrence-relations.html#def-n-th-order-rr",
-  "type": "Definition",
-  "number": "16.1.3",
-  "title": "<span class=\"process-math\">\\(n^{th}\\)<\/span> Order Linear Recurrence Relation.",
-  "body": " Order Linear Recurrence Relation  Order of a Recurrence Relation   Let be a sequence of numbers with domain . An order linear recurrence relation on with constant coefficients is a recurrence relation that can be written in the form where are constants and is a numeric function that is defined for .   "
-},
-{
-  "id": "ex-some-finite-order-rr",
-  "level": "2",
-  "url": "s-recurrence-relations.html#ex-some-finite-order-rr",
-  "type": "Example",
-  "number": "16.1.4",
-  "title": "Some Finite Order Linear Relations.",
-  "body": " Some Finite Order Linear Relations     The Fibonacci sequence is defined by the second-order linear relation because    The relation is a third-order linear relation. In this case, .    The relation can be written as . Therefore, it is a first-order linear relation.     "
-},
-{
-  "id": "table-50",
-  "level": "2",
-  "url": "s-recurrence-relations.html#table-50",
-  "type": "Table",
-  "number": "16.1.5",
-  "title": "",
-  "body": "                                                 .             .                          "
-},
-{
-  "id": "table-reverse-solutions-rr",
-  "level": "2",
-  "url": "s-recurrence-relations.html#table-reverse-solutions-rr",
-  "type": "Table",
-  "number": "16.1.6",
-  "title": "Recurrence relations obtained from given sequences",
-  "body": " Recurrence relations obtained from given sequences    Closed Form Expression  Recurrence Relation                                                            "
-},
-{
-  "id": "def-homogeneous-recurrence-relation",
-  "level": "2",
-  "url": "s-recurrence-relations.html#def-homogeneous-recurrence-relation",
-  "type": "Definition",
-  "number": "16.1.7",
-  "title": "Homogeneous Recurrence Relation.",
-  "body": " Homogeneous Recurrence Relation  Homogeneous Recurrence Relation.   An order linear relation is homogeneous if for all . For each recurrence relation , the associated homogeneous relation is    "
-},
-{
-  "id": "ex-first-order-homogeneous-rr",
-  "level": "2",
-  "url": "s-recurrence-relations.html#ex-first-order-homogeneous-rr",
-  "type": "Example",
-  "number": "16.1.8",
-  "title": "First Order Homogeneous Recurrence Relations.",
-  "body": " First Order Homogeneous Recurrence Relations  is a first-order homogeneous relation. Since it can also be written as , it should be no surprise that it arose from an expression that involves powers of 2. More generally, you would expect that the solution of would involve . Actually, the solution is , where the value of is given by the initial condition.  "
-},
-{
-  "id": "ex-second-order-rr",
-  "level": "2",
-  "url": "s-recurrence-relations.html#ex-second-order-rr",
-  "type": "Example",
-  "number": "16.1.9",
-  "title": "A Second Order Example.",
-  "body": " A Second Order Example  Consider the second-order homogeneous relation together with the initial conditions and . From our discussion above, we can predict that the solution to this relation involves terms of the form , where and are nonzero constants that must be determined. If the solution were to equal this quantity exactly, then Substitute these expressions into the recurrence relation to get Each term on the left-hand side of this equation has a factor of , which is nonzero. Dividing through by this common factor yields  Therefore, the only possible values of are 3 and 4. Equation is called the characteristic equation of the recurrence relation. The fact is that our original recurrence relation is true for any sequence of the form , where and are real numbers. This set of sequences is called the general solution of the recurrence relation. If we didn't have initial conditions for , we would stop here. The initial conditions make it possible for us to find definite values for and .   The solution of this set of simultaneous equations is and and so the solution is .  "
-},
-{
-  "id": "def-characteristic-equation",
-  "level": "2",
-  "url": "s-recurrence-relations.html#def-characteristic-equation",
-  "type": "Definition",
-  "number": "16.1.10",
-  "title": "Characteristic Equation.",
-  "body": " Characteristic Equation  Characteristic Equation  Characteristic Roots   The characteristic equation of the homogeneous order linear relation is the th degree polynomial equation The left-hand side of this equation is called the characteristic polynomial. The roots of the characteristic polynomial are called the characteristic roots of the equation.   "
-},
-{
-  "id": "ex-some-char-equations",
-  "level": "2",
-  "url": "s-recurrence-relations.html#ex-some-char-equations",
-  "type": "Example",
-  "number": "16.1.11",
-  "title": "Some characteristic equations.",
-  "body": " Some characteristic equations     The characteristic equation of is .    The characteristic equation of is Note that the absence of a term means that there is not an term appearing in the characteristic equation.     "
-},
-{
-  "id": "algorithm-linear-homogeneous-recurrence-relations",
-  "level": "2",
-  "url": "s-recurrence-relations.html#algorithm-linear-homogeneous-recurrence-relations",
-  "type": "Algorithm",
-  "number": "16.1.12",
-  "title": "Algorithm for Solving Homogeneous Finite-order Linear Relations.",
-  "body": " Algorithm for Solving Homogeneous Finite-order Linear Relations      Write out the characteristic equation of the relation , which is .    Find all roots of the characteristic equation, the characteristic roots.    If there are distinct characteristic roots, , then the general solution of the recurrence relation is . If there are fewer than characteristic roots, then at least one root is a multiple root. If is a double root, then the term is replaced with In general, if is a root of multiplicity , then the term is replaced with .    If initial conditions are given, we get linear equations in unknowns (the from Step 3) by substitution. If possible, solve these equations to determine a final form for .      "
-},
-{
-  "id": "ex-hrr-solution-example-1",
-  "level": "2",
-  "url": "s-recurrence-relations.html#ex-hrr-solution-example-1",
-  "type": "Example",
-  "number": "16.1.13",
-  "title": "A solution using the algorithm.",
-  "body": " A solution using the algorithm  Suppose that is defined by , with and . We can solve this recurrence relation with :     Note that we have written the recurrence relation in nonstandard form. To avoid errors in this easy step, you might consider a rearrangement of the equation to, in this case, . Therefore, the characteristic equation is .    The characteristic roots are and . These roots can be just as easily obtained by factoring the characteristic polynomial into .    The general solution of the recurrence relation is .      The simultaneous equations have the solution and . Therefore, .     "
-},
-{
-  "id": "ex-hrr-solution-example-2",
-  "level": "2",
-  "url": "s-recurrence-relations.html#ex-hrr-solution-example-2",
-  "type": "Example",
-  "number": "16.1.14",
-  "title": "Solution of a Third Order Recurrence Relation.",
-  "body": " Solution of a Third Order Recurrence Relation  Solve , where , , and .     The characteristic equation is .    The only rational roots that we can attempt are . By checking these, we obtain the three roots 1, 2, and .    The general solution is . The first term can simply be written .    You can solve this system by elimination to obtain , , and . Therefore,      "
-},
-{
-  "id": "ex-hrr-solution-example-3",
-  "level": "2",
-  "url": "s-recurrence-relations.html#ex-hrr-solution-example-3",
-  "type": "Example",
-  "number": "16.1.15",
-  "title": "Solution with a Double Characteristic Root.",
-  "body": " Solution with a Double Characteristic Root  Solve , where and .     Characteristic equation: .    . Therefore, there is a double characteristic root, 4.    General solution: .       Therefore .     "
-},
-{
-  "id": "algorithm-linear-nonhomogeneous-recurrence-relations",
-  "level": "2",
-  "url": "s-recurrence-relations.html#algorithm-linear-nonhomogeneous-recurrence-relations",
-  "type": "Algorithm",
-  "number": "16.1.16",
-  "title": "Algorithm for Solving Nonhomogeneous Finite-order Linear Relations.",
-  "body": " Algorithm for Solving Nonhomogeneous Finite-order Linear Relations   To solve the recurrence relation     Write the associated homogeneous relation and find its general solution (Steps (a) through (c) of ). Call this the homogeneous solution, .    Start to obtain what is called a particular solution, of the recurrence relation by taking an educated guess at the form of a particular solution. For a large class of right-hand sides, this is not really a guess, since the particular solution is often the same type of function as (see ).    Substitute your guess from Step 2 into the recurrence relation. If you made a good guess, you should be able to determine the unknown coefficients of your guess. If you made a wrong guess, it should be apparent from the result of this substitution, so go back to Step 2.    The general solution of the recurrence relation is the sum of the homogeneous and particular solutions. If no conditions are given, then you are finished. If initial conditions are given, they will translate to linear equations in unknowns and solve the system to get a complete solution.      "
-},
-{
-  "id": "tab-particular-sols",
-  "level": "2",
-  "url": "s-recurrence-relations.html#tab-particular-sols",
-  "type": "Table",
-  "number": "16.1.17",
-  "title": "Particular solutions for given right-hand sides",
-  "body": " Particular solutions for given right-hand sides    Right Hand Side,  Form of Particular Solution,    Constant,  Constant,    Linear Function,  Linear Function,    degree polynomial,  degree polynomial,    exponential function,  exponential function,    "
-},
-{
-  "id": "ex-nhrr-solution-example-1",
-  "level": "2",
-  "url": "s-recurrence-relations.html#ex-nhrr-solution-example-1",
-  "type": "Example",
-  "number": "16.1.18",
-  "title": "Solution of a Nonhomogeneous First Order Recurrence Relation.",
-  "body": " Solution of a Nonhomogeneous First Order Recurrence Relation  Solve , with .     The associated homogeneous relation, has the characteristic equation ; therefore, . The homogeneous solution is .    Since the right-hand side is a constant, we guess that the particular solution will be a constant, .    If we substitute into the recurrence relation, we get , or . Therefore, .    The general solution of the recurrence relation is The initial condition will give us one equation to solve in order to determine . Therefore, and .     "
-},
-{
-  "id": "ex-nhrr-solution-example-2",
-  "level": "2",
-  "url": "s-recurrence-relations.html#ex-nhrr-solution-example-2",
-  "type": "Example",
-  "number": "16.1.19",
-  "title": "Solution of a Nonhomogeneous Second Order Recurrence Relation.",
-  "body": " Solution of a Nonhomogeneous Second Order Recurrence Relation  Consider with and .     From , we know that . Caution:Don't apply the initial conditions to until you add !    Since the right-hand side is a linear polynomial, is linear; that is, .    Substitution into the recurrence relation yields:  Two polynomials are equal only if their coefficients are equal. Therefore,     Use the general solution and the initial conditions to get a final solution:    Therefore, .     "
-},
-{
-  "id": "note-14",
-  "level": "2",
-  "url": "s-recurrence-relations.html#note-14",
-  "type": "Note",
-  "number": "16.1.20",
-  "title": "A quick note on interest rates.",
-  "body": " A quick note on interest rates  When a quantity, such as a savings account balance, is increased by some fixed percent, it is most easily computed with a multiplier. In the case of an increase, the multiplier is 1.08 because any original amount , has added to it, so that the new balance is .  Another example is that if the interest rate is , the multiplier would be 1.035. This presumes that the interest is applied at the end of year for annual interest, often called simple interest . If the interest is applied monthly, and we assume a simplifed case where each month has the same length, the multiplier after every month would be . After a year passes, this multiplier would be applied 12 times, which is the same as multiplying by . That increase from 1.035 to 1.03557 is the effect of compound interest .  "
-},
-{
-  "id": "ex-a-novel-annuity",
-  "level": "2",
-  "url": "s-recurrence-relations.html#ex-a-novel-annuity",
-  "type": "Example",
-  "number": "16.1.21",
-  "title": "A Sort of Annuity.",
-  "body": " A Sort of Annuity  Suppose you open a savings account that pays an annual interest rate of . In addition, suppose you decide to deposit one dollar when you open the account, and you intend to double your deposit each year. Let be your balance after years. can be described by the relation , with . If, instead of doubling the deposit each year, you deposited a constant amount, , the term would be replaced with . A sequence of regular deposits such as this is called a simple annuity.  Returning to the original situation,          should be of the form .    Therefore .       Therefore, .     "
-},
-{
-  "id": "ex-matching-roots",
-  "level": "2",
-  "url": "s-recurrence-relations.html#ex-matching-roots",
-  "type": "Example",
-  "number": "16.1.22",
-  "title": "Matching Roots.",
-  "body": " Matching Roots  Find the general solution to .     The characteristic roots of the associated homogeneous relation are and 4. Therefore, .    A function of the form will not be a particular solution of the nonhomogeneous relation since it solves the associated homogeneous relation. When the right-hand side involves an exponential function with a base that equals a characteristic root,you should multiply your guess at a particular solution by . Our guess at would then be . See for a more complete description of this rule.    Substitute into the recurrence relation for : Each term on the left-hand side has a factor of  Therefore, .    The general solution to the recurrence relation is      "
-},
-{
-  "id": "obs-matching-base",
-  "level": "2",
-  "url": "s-recurrence-relations.html#obs-matching-base",
-  "type": "Observation",
-  "number": "16.1.23",
-  "title": "When the base of right-hand side is equal to a characteristic root.",
-  "body": " When the base of right-hand side is equal to a characteristic root  If the right-hand side of a nonhomogeneous relation involves an exponential with base , and is also a characteristic root of multiplicity , then multiply your guess at a particular solution as prescribed in by , where is the index of the sequence.  "
-},
-{
-  "id": "ex-base-match",
-  "level": "2",
-  "url": "s-recurrence-relations.html#ex-base-match",
-  "type": "Example",
-  "number": "16.1.24",
-  "title": "Examples of matching bases.",
-  "body": " Examples of matching bases     If , the characteristic roots are 4 and 5. Since 5 matches the base of the right side, will take the form .    If the only characteristic root is 3, but it is a double root (multiplicity 2). Therefore, the form of the particular solution is .    If , the characteristic roots are and 4. The form of the particular solution will be .    If , the characteristic roots are 1 and 8. If the right-hand side is a polynomial, as it is in this case, then the exponential factor can be introduced. The particular solution will take the form .     "
-},
-{
-  "id": "exercise-574",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-574",
-  "type": "Exercise",
-  "number": "16.1.5.1",
-  "title": "",
-  "body": "  , ,      "
-},
-{
-  "id": "exercise-575",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-575",
-  "type": "Exercise",
-  "number": "16.1.5.2",
-  "title": "",
-  "body": "  , ,  "
-},
-{
-  "id": "exercise-576",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-576",
-  "type": "Exercise",
-  "number": "16.1.5.3",
-  "title": "",
-  "body": " ,      "
-},
-{
-  "id": "exercise-577",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-577",
-  "type": "Exercise",
-  "number": "16.1.5.4",
-  "title": "",
-  "body": "  , ,  "
-},
-{
-  "id": "exercise-578",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-578",
-  "type": "Exercise",
-  "number": "16.1.5.5",
-  "title": "",
-  "body": "        "
-},
-{
-  "id": "exercise-579",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-579",
-  "type": "Exercise",
-  "number": "16.1.5.6",
-  "title": "",
-  "body": " , ,  "
-},
-{
-  "id": "exercise-580",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-580",
-  "type": "Exercise",
-  "number": "16.1.5.7",
-  "title": "",
-  "body": "        "
-},
-{
-  "id": "exercise-581",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-581",
-  "type": "Exercise",
-  "number": "16.1.5.8",
-  "title": "",
-  "body": "    "
-},
-{
-  "id": "exercise-582",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-582",
-  "type": "Exercise",
-  "number": "16.1.5.9",
-  "title": "",
-  "body": "        "
-},
-{
-  "id": "exercise-583",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-583",
-  "type": "Exercise",
-  "number": "16.1.5.10",
-  "title": "",
-  "body": "  , ,  "
-},
-{
-  "id": "exercise-584",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-584",
-  "type": "Exercise",
-  "number": "16.1.5.11",
-  "title": "",
-  "body": "  , ,      "
-},
-{
-  "id": "exercise-585",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-585",
-  "type": "Exercise",
-  "number": "16.1.5.12",
-  "title": "",
-  "body": " Find a closed form expression for in .  "
-},
-{
-  "id": "exercise-586",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-586",
-  "type": "Exercise",
-  "number": "16.1.5.13",
-  "title": "",
-  "body": "    Find a closed form expression for the terms of the Fibonacci sequence (see ).    The sequence was defined by = the number of strings of zeros and ones with length having no consecutive zeros ( (c)). Its recurrence relation is the same as that of the Fibonacci sequence. Determine a closed form expression for , .         The characteristic equation is , which has solutions and , It is useful to point out that and . The general solution is . Using the initial conditions, we obtain the system: and . The solution to this system is and   Therefore the final solution is          "
-},
-{
-  "id": "exercise-587",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-587",
-  "type": "Exercise",
-  "number": "16.1.5.14",
-  "title": "",
-  "body": " If , , then can be described with the recurrence relation . For each of the following sequences that are defined using a summation, find a closed form expression:      ,    ,    ,     ,     "
-},
-{
-  "id": "exercise-588",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-588",
-  "type": "Exercise",
-  "number": "16.1.5.15",
-  "title": "",
-  "body": " Let be the number of ways that the set , , can be partitioned into two nonempty subsets.     Find a recurrence relation for . (Hint: It will be a first-order linear relation.)    Solve the recurrence relation.         For each two-block partition of , there are two partitions we can create when we add , but there is one additional two-block partition to count for which one block is . Therefore,          "
-},
-{
-  "id": "exercise-589",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-589",
-  "type": "Exercise",
-  "number": "16.1.5.16",
-  "title": "",
-  "body": " If you were to deposit a certain amount of money at the end of each year for a number of years, this sequence of payments would be called an annuity (see ).   Find a closed form expression for the balance or value of an annuity that consists of payments of dollars at a rate of interest of . Note that for a normal annuity, the first payment is made after one year.    With an interest rate of 5.5 percent, how much would you need to deposit into an annuity to have a value of one million dollars after 18 years?    The payment of a loan is a form of annuity in which the initial value is some negative amount (the amount of the loan) and the annuity ends when the value is raised to zero. How much could you borrow if you can afford to pay $5,000 per year for 25 years at 11 percent interest?    "
-},
-{
-  "id": "exercise-590",
-  "level": "2",
-  "url": "s-recurrence-relations.html#exercise-590",
-  "type": "Exercise",
-  "number": "16.1.5.17",
-  "title": "",
-  "body": " Suppose that is a small positive number. Consider the recurrence relation , with initial conditions and . If is small enough, we might consider approximating the relation by replacing with 1 and with 0. Solve the original relation and its approximation. Let a be the solution of the approximation. Compare closed form expressions for and . Their forms are very different because the characteristic roots of the original relation were close together and the approximation resulted in one double characteristic root.If characteristic roots of a relation are relatively far apart, this problem will not occur. For example, compare the general solutions of and .  "
-},
-{
-  "id": "s-some-common-rrs",
-  "level": "1",
-  "url": "s-some-common-rrs.html",
-  "type": "Section",
-  "number": "16.2",
-  "title": "Some Common Recurrence Relations",
-  "body": " Some Common Recurrence Relations    In this section we intend to examine a variety of recurrence relations that are not finite-order linear with constant coefficients. For each part of this section, we will consider a concrete example, present a solution, and, if possible, examine a more general form of the original relation.    A First Basic Example  Consider the homogeneous first-order linear relation without constant coefficients, , , with initial condition . Upon close examination of this relation, we see that the th term is times the term, which is a property of factorial. is a solution of this relation, for if , In addition, since , the initial condition is satisfied. It should be pointed out that from a computational point of view, our solution really isn't much of an improvement since the exact calculation of takes multiplications.  If we examine a similar relation,  with , a table of values for suggests a possible solution: The exponent of 2 in is growing according to the relation with . Thus and . Note that could also be written as , for , but this is not a closed form expression.  In general, the relation for with , where is a function that is defined for all , has the solution  This product form of is not a closed form expression because as grows, the number of multiplications grow. Thus, it is really not a true solution. Often, as for above, a closed form expression can be derived from the product form.    An Analysis of the Binary Search Algorithm   Suppose you intend to use a binary search algorithm (see ) on lists of zero or more sorted items, and that the items are stored in an array, so that you have easy access to each item. A natural question to ask is How much time will it take to complete the search? When a question like this is asked, the time we refer to is often the so-called worst-case time. That is, if we were to search through items, what is the longest amount of time that we will need to complete the search? In order to make an analysis such as this independent of the computer to be used, time is measured by counting the number of steps that are executed. Each step (or sequence of steps) is assigned an absolute time, or weight; therefore, our answer will not be in seconds, but in absolute time units. If the steps in two different algorithms are assigned weights that are consistent, then analyses of the algorithms can be used to compare their relative efficiencies. There are two major steps that must be executed in a call of the binary search algorithm:     If the lower index is less than or equal to the upper index, then the middle of the list is located and its key is compared to the value that you are searching for.    In the worst case, the algorithm must be executed with a list that is roughly half as large as in the previous execution. If we assume that Step 1 takes one time unit and is the worst-case time for a list of items, then For simplicity, we will assume that even though the conditions of Step 1 must be evaluated as false if . You might wonder why is truncated in . If is odd, then for some , the middle of the list will be the item, and no matter what half of the list the search is directed to, the reduced list will have items. On the other hand, if is even, then for . The middle of the list will be the item, and the worst case will occur if we are directed to the items that come after the middle (the through items). Again the reduced list has items.     Solution to and . To determine , the easiest case is when is a power of two. If we compute , , by iteration, our results are The pattern that is established makes it clear that . This result would seem to indicate that every time you double the size of your list, the search time increases by only one unit.  A more complete solution can be obtained if we represent in binary form. For each , there exists a non-negative integer such that For example, if , ; therefore, . If satisfies \\ , its binary representation requires digits. For example, = .  In general, . where . Note that in this form, is easy to describe: it is the digit binary number  Therefore, .  From the pattern that we've just established, reduces to . A formal inductive proof of this statement is possible. However, we expect that most readers would be satisfied with the argument above. Any skeptics are invited to provide the inductive proof.  For those who prefer to see a numeric example, suppose .   Our general conclusion is that the solution to and is that for , , where .  A less cumbersome statement of this fact is that . For example, .    Review of Logarithms  Logarithms  Any discussion of logarithms must start by establishing a base, which can be any positive number other than 1. With the exception of , our base will be 2. We will see that the use of a different base (10 and are the other common ones) only has the effect of multiplying each logarithm by a constant. Therefore, the base that you use really isn't very important. Our choice of base 2 logarithms is convenient for the problems that we are considering.   Base 2 logarithm  Logarithm, base 2   The base 2 logarithm of a positive number represents an exponent and is defined by the following equivalence for any positive real numbers . .     Plot of the logarithm, bases 2, function   Plot of the logarithm, bases 2, function    For example, because and because . A graph of the function in shows that if , the ; that is, when increases, also increases. However, if we move from to , only increases from 10 to 11. This slow rate of increase of the logarithm function is an important point to remember. An algorithm acting on pieces of data that can be executed in time units can handle significantly larger sets of data than an algorithm that can be executed in or time units. The graph of would show the same behavior.  A few more properties that we will use in subsequent discussions involving logarithms are summarized in the following theorem.   Fundamental Properties of Logarithms   Logarithms  Properties    Let and be positive real numbers, and a real number.      Logarithms base   Logarithm  General Base     Logarithm, base of    If , , then for ,     How logarithms with different bases are related   Let , . Then for all , . Therefore, if , base b logarithms can be computed from base 2 logarithms by dividing by the positive scaling factor . If , this scaling factor is negative.    By an analogue of , . Therefore, if we take the base 2 logarithm of both sides of this equality we get: Finally, divide both sides of the last equation by .      and .     Returning to the binary search algorithm, we can derive the final expression for using the properties of logarithms, including that the logarithm function is increasing so that inequalities are maintained when taking logarithms of numbers.     We can apply several of these properties of logarithms to get an alternate expression for :   If the time that was assigned to Step 1 of the binary search algorithm is changed, we wouldn't expect the form of the solution to be very different. If with , then .  A further generalization would be to add a coefficient to : with , where , and is not quite as simple to derive. First, if we consider values of that are powers of 2: If is not a power of 2, by reasoning that is identical to what we used to and , where .  The first term of this expression is a geometric sum, which can be written in closed form. Let be that sum: We've multiplied each term of by and aligned the identical terms in and . Now if we subtract the two equations, Therefore, .  A closed form expression for is      Analysis of Bubble Sort and Merge Sort  Bubble Sort  Merge Sort  The efficiency of any search algorithm such as the binary search relies on fact that the search list is sorted according to a key value and that the search is based on the key value. There are several methods for sorting a list. One example is the bubble sort. You might be familiar with this one since it is a popular first sorting algorithm. A time analysis of the algorithm shows that if is the worst-case time needed to complete the bubble sort on items, then and . The solution of this relation is a quadratic function . The growth rate of a quadratic function such as this one is controlled by its squared term. Any other terms are dwarfed by it as gets large. For the bubble sort, this means that if we double the size of the list that we are to sort, changes to and so becomes . Therefore, the time needed to do a bubble sort is quadrupled. One alternative to bubble sort is the merge sort. Here is a simple version of this algorithm for sorting , . If , the list is sorted trivially. If then:     Divide into and .    Sort and using a merge sort.    Merge the sorted lists and into one sorted list. If the sort is to be done in descending order of key values, you continue to choose the higher key value from the fronts of and and place them in the back of .     Note that will always have items and will have items; thus, if is odd, gets one more item than . We will assume that the time required to perform Step 1 of the algorithm is insignificant compared to the other steps; therefore, we will assign a time value of zero to this step. Step 3 requires roughly comparisons and movements of items from and to ; thus, its time is proportional to . For this reason, we will assume that Step 3 takes time units. Since Step 2 requires time units, with the initial condition   Instead of an exact solution of these equations, we will be content with an estimate for . First, consider the case of , :   Thus, if is a power of 2, . Now if, for some , , then . This can be proved by induction on . As increases from to , increases from to and is slightly larger than . The discrepancy is small enough so that can be considered a solution of and for the purposes of comparing the merge sort with other algorithms. compares with for selected values of .   Comparison of Times for Bubble Sort and Merge Sort    n          10  45  34    50  1225  283    100  4950  665    500  124750  4483    1000  499500  9966       Derangements  Derangement  A derangement is a permutation on a set that has no fixed points . Here is a formal definition:   Derangement   A derangement of a nonempty set is a permutation of (i.e., a bijection from into ) such that for all .    If , an interesting question might be How many derangements are there of ? We know that our answer is bounded above by . We can also expect our answer to be quite a bit smaller than since is the image of itself for of the permutations of .  Let be the number of derangements of . Our answer will come from discovering a recurrence relation on . Suppose that . If we are to construct a derangement of , , then . Thus, the image of can be selected in different ways. No matter which of the choices we make, we can complete the definition of in one of two ways. First, we can decide to make , leaving ways of completing the definition of , since will be a derangement of . Second, if we decide to select , each of the derangements of can be used to define . If is a derangement of such that , then define f by   Note that with our second construction of , , while in the first construction, . Therefore, no derangement of with can be constructed by both methods.  To recap our result, we see that is determined by first choosing one of images of and then constructing the remainder of in one of ways. Therefore,   This homogeneous second-order linear relation with variable coefficients, together with the initial conditions and , completely defines . Instead of deriving a solution of this relation by analytical methods, we will give an empirical derivation of an approximation of . Since the derangements of are drawn from a pool of permutations, we will see what percentage of these permutations are derangements by listing the values of , , and . The results we observe will indicate that as grows, hardly changes at all. If this quotient is computed to eight decimal places, for , . The reciprocal of this number, which seems to be tending toward, is, to eight places, 2.7182818. This number appears in so many places in mathematics that it has its own name, . An approximate solution of our recurrence relation on is then .     Exercises   Solve the following recurrence relations. Indicate whether your solution is an improvement over iteration.      , .     , .     , , .          !    , an improvement.     !, no improvement.       Prove that if , . (Hint: Consider the cases of odd and even separately.)    Solve as completely as possible:     , .    , .     , . (Hint: Write in octal form.)                           Prove by induction that if , , and , , then .   Prove by induction on .    Use the substitution to solve for , with , , and .   The indicated substitution yields . Since , for all . Therefore .    Use the substitution to solve for , with .    Solve as completely as possible:      , , .     , , .         A good approximation to the solution of this recurrence relation is based on the following observation: is a power of a power of two; that is, is , where , then . By applying this recurrence relation times we obtain . Going back to the original form of , or . We would expect that in general, is . We do not see any elementary method for arriving at an exact solution.    Suppose that is a positive integer with . Then can be written in binary form, with and is equal to the sum  . If , then we can estimate this sum to be between and . Therefore, .       Suppose Step 1 of the merge sort algorithm did take a significant amount of time. Assume it takes 0.1 time unit, independent of the value of .     Write out a new recurrence relation for that takes this factor into account.    Solve for , .    Assuming the solution for powers of 2 is a good estimate for all , compare your result to the solution in the text. As gets large, is there really much difference?       "
-},
-{
-  "id": "def-log-base-2",
-  "level": "2",
-  "url": "s-some-common-rrs.html#def-log-base-2",
-  "type": "Definition",
-  "number": "16.2.1",
-  "title": "Base 2 logarithm.",
-  "body": " Base 2 logarithm  Logarithm, base 2   The base 2 logarithm of a positive number represents an exponent and is defined by the following equivalence for any positive real numbers . .   "
-},
-{
-  "id": "fig-log-2-plot",
-  "level": "2",
-  "url": "s-some-common-rrs.html#fig-log-2-plot",
-  "type": "Figure",
-  "number": "16.2.2",
-  "title": "",
-  "body": " Plot of the logarithm, bases 2, function   Plot of the logarithm, bases 2, function   "
-},
-{
-  "id": "theorem-log-properties",
-  "level": "2",
-  "url": "s-some-common-rrs.html#theorem-log-properties",
-  "type": "Theorem",
-  "number": "16.2.3",
-  "title": "Fundamental Properties of Logarithms.",
-  "body": " Fundamental Properties of Logarithms   Logarithms  Properties    Let and be positive real numbers, and a real number.    "
-},
-{
-  "id": "def-logarithm-general-base",
-  "level": "2",
-  "url": "s-some-common-rrs.html#def-logarithm-general-base",
-  "type": "Definition",
-  "number": "16.2.4",
-  "title": "Logarithms base <span class=\"process-math\">\\(b\\)<\/span>.",
-  "body": " Logarithms base   Logarithm  General Base     Logarithm, base of    If , , then for ,   "
-},
-{
-  "id": "theorem-logs-related",
-  "level": "2",
-  "url": "s-some-common-rrs.html#theorem-logs-related",
-  "type": "Theorem",
-  "number": "16.2.5",
-  "title": "How logarithms with different bases are related.",
-  "body": " How logarithms with different bases are related   Let , . Then for all , . Therefore, if , base b logarithms can be computed from base 2 logarithms by dividing by the positive scaling factor . If , this scaling factor is negative.    By an analogue of , . Therefore, if we take the base 2 logarithm of both sides of this equality we get: Finally, divide both sides of the last equation by .   "
-},
-{
-  "id": "note-15",
-  "level": "2",
-  "url": "s-some-common-rrs.html#note-15",
-  "type": "Note",
-  "number": "16.2.6",
-  "title": "",
-  "body": "  and .  "
-},
-{
-  "id": "table-sort-analysis",
-  "level": "2",
-  "url": "s-some-common-rrs.html#table-sort-analysis",
-  "type": "Table",
-  "number": "16.2.7",
-  "title": "Comparison of Times for Bubble Sort and Merge Sort",
-  "body": " Comparison of Times for Bubble Sort and Merge Sort    n          10  45  34    50  1225  283    100  4950  665    500  124750  4483    1000  499500  9966    "
-},
-{
-  "id": "def-derangement",
-  "level": "2",
-  "url": "s-some-common-rrs.html#def-derangement",
-  "type": "Definition",
-  "number": "16.2.8",
-  "title": "Derangement.",
-  "body": " Derangement   A derangement of a nonempty set is a permutation of (i.e., a bijection from into ) such that for all .   "
-},
-{
-  "id": "exercise-591",
-  "level": "2",
-  "url": "s-some-common-rrs.html#exercise-591",
-  "type": "Exercise",
-  "number": "16.2.5.1",
-  "title": "",
-  "body": " Solve the following recurrence relations. Indicate whether your solution is an improvement over iteration.      , .     , .     , , .          !    , an improvement.     !, no improvement.     "
-},
-{
-  "id": "exercise-592",
-  "level": "2",
-  "url": "s-some-common-rrs.html#exercise-592",
-  "type": "Exercise",
-  "number": "16.2.5.2",
-  "title": "",
-  "body": " Prove that if , . (Hint: Consider the cases of odd and even separately.)  "
-},
-{
-  "id": "exercise-593",
-  "level": "2",
-  "url": "s-some-common-rrs.html#exercise-593",
-  "type": "Exercise",
-  "number": "16.2.5.3",
-  "title": "",
-  "body": " Solve as completely as possible:     , .    , .     , . (Hint: Write in octal form.)                         "
-},
-{
-  "id": "exercise-594",
-  "level": "2",
-  "url": "s-some-common-rrs.html#exercise-594",
-  "type": "Exercise",
-  "number": "16.2.5.4",
-  "title": "",
-  "body": " Prove by induction that if , , and , , then .   Prove by induction on .  "
-},
-{
-  "id": "exercise-595",
-  "level": "2",
-  "url": "s-some-common-rrs.html#exercise-595",
-  "type": "Exercise",
-  "number": "16.2.5.5",
-  "title": "",
-  "body": " Use the substitution to solve for , with , , and .   The indicated substitution yields . Since , for all . Therefore .  "
-},
-{
-  "id": "exercise-596",
-  "level": "2",
-  "url": "s-some-common-rrs.html#exercise-596",
-  "type": "Exercise",
-  "number": "16.2.5.6",
-  "title": "",
-  "body": " Use the substitution to solve for , with .  "
-},
-{
-  "id": "exercise-597",
-  "level": "2",
-  "url": "s-some-common-rrs.html#exercise-597",
-  "type": "Exercise",
-  "number": "16.2.5.7",
-  "title": "",
-  "body": " Solve as completely as possible:      , , .     , , .         A good approximation to the solution of this recurrence relation is based on the following observation: is a power of a power of two; that is, is , where , then . By applying this recurrence relation times we obtain . Going back to the original form of , or . We would expect that in general, is . We do not see any elementary method for arriving at an exact solution.    Suppose that is a positive integer with . Then can be written in binary form, with and is equal to the sum  . If , then we can estimate this sum to be between and . Therefore, .     "
-},
-{
-  "id": "exercise-598",
-  "level": "2",
-  "url": "s-some-common-rrs.html#exercise-598",
-  "type": "Exercise",
-  "number": "16.2.5.8",
-  "title": "",
-  "body": " Suppose Step 1 of the merge sort algorithm did take a significant amount of time. Assume it takes 0.1 time unit, independent of the value of .     Write out a new recurrence relation for that takes this factor into account.    Solve for , .    Assuming the solution for powers of 2 is a good estimate for all , compare your result to the solution in the text. As gets large, is there really much difference?     "
-},
-{
-  "id": "s-generating-functions",
-  "level": "1",
-  "url": "s-generating-functions.html",
-  "type": "Section",
-  "number": "16.3",
-  "title": "Generating Functions",
-  "body": " Generating Functions  Generating Functions    This section contains an introduction to the topic of generating functions and how they are used to solve recurrence relations, among other problems. Methods that employ generating functions are based on the concept that you can take a problem involving sequences and translate it into a problem involving generating functions. Once you've solved the new problem, a translation back to sequences gives you a solution of the original problem.  This section covers:   The definition of a generating function.    Solution of a recurrence relation using generating functions to identify the skills needed to use generating functions.    An introduction and\/or review of the skills identified in point 2.    Some applications of generating functions.      Definition   Generating Function of a Sequence  Generating Function       The generating function of a sequence with terms , is the infinite sum The domain and codomain of generating functions will not be of any concern to us since we will only be performing algebraic operations on them.     First Examples     If , , then We can get a closed form expression for by observing that . Therefore, .    Finite sequences have generating functions. For example, the sequence of binomial coefficients , , , , has generating function by application of the binomial formula.    If , . Note that the index that is used in the summation has no significance. Also, note that the lower limit of the summation could start at 1 since .        Solution of a Recurrence Relation Using Generating Functions  We illustrate the use of generating functions by solving , , with and .     Translate the recurrence relation into an equation about generating functions.  Let , , with and . Therefore,     Solve for the generating function of the unknown sequence, .   Close examination of the three sums above shows:      since and .            Therefore,        Determine the sequence whose generating function is the one we got in Step 2.  For our example, we need to know one general fact about the closed form expression of an exponential sequence (a proof will be given later):   Now, in order to recognize in our example, we must write our closed form expression for as a sum of terms like above. Note that the denominator of can be factored: If you look at this last expression for closely, you can imagine how it could be the result of addition of two fractions, where and are two real numbers that must be determined. Starting on the right of , it should be clear that the sum, for any and , would look like the left-hand side. The process of finding values of and that make true is called the partial fractions decomposition of the left-hand side:   Therefore, and   We can apply to each term of :     is the generating function for    is the generating function for .     Therefore, .     From this example, we see that there are several skills that must be mastered in order to work with generating functions. You must be able to:     Manipulate summation expressions and their indices (in Step 2).    Solve algebraic equations and manipulate algebraic expressions, including partial function decompositions (Steps 2 and 3).    Identify sequences with their generating functions (Steps 1 and 3).     We will concentrate on the last skill first, a proficiency in the other skills is a product of doing as many exercises and reading as many examples as possible.  First, we will identify the operations on sequences and on generating functions.    Operations on Sequences   Operations on Sequences   Sequences  Operations on,     pop     push     Convolution of sequences and    Let and be sequences of numbers and let be a real number. Define the sum , the scalar product , the product , the convolution , the pop operation (read pop ), and the push operation (read push ) term-wise for by          If one imagines a sequence to be a matrix with one row and an infinite number of columns, and are exactly as in matrix addition and scalar multiplication. There is no obvious similarity between the other operations and matrix operations.  The pop and push operations can be understood by imagining a sequence to be an infinite stack of numbers with at the top, next, etc., as in a. The sequence is obtained by popping S(0) from the stack, leaving a stack as in b, with S(1) at the top, S(2) next, etc. The sequence is obtained by placing a zero at the top of the stack, resulting in a stack as in c. Keep these figures in mind when we discuss the pop and push operations.   Stack interpretation of pop and push operation   Stack interpretation of pop and push operation     Some Sequence Operations  If , , , and :                                                                        Note that .   Multiple Pop and Push  Multiple Pop and Push:    Multiple pop operation on     Multiple push operation on    If S is a sequence of numbers and a positive integer greater than 1, define Similarly, define     In general, and     Operations on Generating Functions   Generating Functions  Operations on,    Operations on Generating Functions   Generating Functions  Operations on,    If and are generating functions and is a real number, then the sum , scalar product , product , and monomial product , are generating functions, where   The last sum is obtained by substituting for in the previous sum.     Some operations on generating functions  If and then      Note: , and from .   Now we establish the connection between the operations on sequences and generating functions. Let and be sequences and let be a real number.  In words, says that the generating function of the sum of two sequences equals the sum of the generating functions of those sequences. Take the time to write out the other four identities in your own words. From the previous examples, these identities should be fairly obvious, with the possible exception of the last two. We will prove as part of the next theorem and leave the proof of to the interested reader. Note that there is no operation on generating functions that is related to sequence multiplication; that is, cannot be simplified.   Generating functions related to Pop and Push   If ,           .       We prove (a) by induction and leave the proof of (b) to the reader.  Basis: Therefore, part (a) is true for .  Induction: Suppose that for some , the statement in part (a) is true: by the induction hypothesis. Now write in the last expression above as so that it fits into the finite summation:   Therefore the statement is true for .      Closed Form Expressions for Generating Functions   Generating Functions  Closed form expressions for   The most basic tool used to express generating functions in closed form is the closed form expression for the geometric series, which is an expression of the form . It can either be terminated or extended infinitely.  Finite Geometric Series:   Infinite Geometric Series:   Restrictions: and represent constants and the right sides of the two equations apply under the following conditions:     must not equal 1 in the finite case. Note that if .    In the infinite case, the absolute value of must be less than 1.     These restrictions don't come into play with generating functions. We could derive by noting that if , , then (See Exercise 10 of Section 8.3). An alternative derivation was used in Section 8.4. We will take the same steps to derive . Let . Then    Generating Functions involving Geometric Sums     If , , is an infinite geometric series with and .Therefore, .    If , 0, then .    If , then .    Let . Then .  Given a choice between the last form of and the previous sum of three fractions, we would prefer leaving it as a sum of three functions. As we saw in an earlier example, a partial fractions decomposition of a fraction such as the last expression requires some effort to produce.    If , then can be determined by multiplying the numerator and denominator by 1\/2 to obtain . We recognize this fraction as the sum of the infinite geometric series with and . Therefore .    If , then we expand to . Therefore ,  , , and, since there are no higher-powered terms, , . A more concise way of describing is , since is interpreted as 0 of .      lists some closed form expressions for the generating functions of some common sequences.   Closed Form Expressions of some Generating Functions            Sequence  Generating Function                                                              Another Complete Solution  Solve , , with and . The solution will be derived using the same steps that were used earlier in this section, with one variation.     Translate to an equation about generating functions. First, we change the index of the recurrence relation by substituting for . The result is , . Now, if , then is the zero sequence, which has a zero generating function. Furthermore, . Therefore,    We want to now solve the following equation for : Multiply by : Expand and collect all terms involving on one side of the equation: Therefore,    Determine S from its generating function. thus a partial fraction decomposition of would be: Therefore, and . The solution of this set of equations is and . . In conclusion, since , .       An Application to Counting  Let and let be the set of all strings of length zero or more that can be made using each of the elements of zero or more times. By the generalized rule of products, there are such strings that have length , , Suppose that is the set of strings of length with the property that all of the 's and 's precede all of the 's, 's, and 's. Thus , but . Let . A closed form expression for can be obtained by recognizing as the convolution of two sequences. To illustrate our point, we will consider the calculation of .  Note that if a string belongs to , it starts with characters from and is followed by characters from . Let be the number of strings of 's and 's with length and let be the number of strings of 's, 's, and 's with length . By the generalized rule of products, and . Among the strings in are the ones that start with two 's and 's and end with 's, 's, and 's. There are such strings. By the law of addition, Note that the sixth term of R is the sixth term of the convolution of with , . Think about the general situation for a while and it should be clear that . Now, our course of action will be to:     Determine the generating functions of and ,    Multiply and to obtain \\, and    Determine on the basis of .        , and         To recognize from , we must do a partial fractions decomposition: Therefore, and . The solution of this pair of equations is and . Since , which is the sum of the generating functions of and ,   For example, . Naturally, this equals the sum that we get from . To put this number in perspective, the total number of strings of length 6 with no restrictions is , and . Therefore approximately 13 percent of the strings of length 6 satisfy the conditions of the problem.        Extra for Experts  The remainder of this section is intended for readers who have had, or who intend to take, a course in combinatorics. We do not advise that it be included in a typical course. The method that was used in the previous example is a very powerful one and can be used to solve many problems in combinatorics. We close this section with a general description of the problems that can be solved in this way, followed by some examples.  Consider the situation in which , , , are actions that must be taken, each of which results in a well-defined outcome. For each define to be the set of possible outcomes of . We will assume that each outcome can be quantified in some way and that the quantification of the elements of is defined by the function . Thus, each outcome has a non-negative integer associated with it. Finally, define a frequency function such that is the number of elements of that have a quantification of .  Now, based on these assumptions, we can define the problems that can be solved. If a process is defined as a sequence of actions as above, and if the outcome of , which would be an element of , is quantified by then the frequency function, , for is the convolution of the frequency functions for , , , , which has a generating function equal to the product of the generating functions of the frequency functions , , , . That is,    Rolling Two Dice  Suppose that you roll a die two times and add up the numbers on the top face for each roll. Since the faces on the die represent the integers 1 through 6, the sum must be between 2 and 12. How many ways can any one of these sums be obtained? Obviously, 2 can be obtained only one way, with two 1's. There are two sequences that yield a sum of 3: 1-2 and 2-1. To obtain all of the frequencies with which the numbers 2 through 12 can be obtained, we set up the situation as follows. For ; is the rolling of the die for the time. and is defined by . Since each number appears on a die exactly once, the frequency function is if , and otherwise. The process of rolling the die two times is quantified by adding up the ; that is, . The generating function for the frequency function of rolling the die two times is then   Now, to get , just read the coefficient of . For example, the coefficient of is 4, so there are four ways to roll a total of 5.  To apply this method, the crucial step is to decompose a large process in the proper way so that it fits into the general situation that we've described.    Distribution of a Committee  Suppose that an organization is divided into three geographic sections, A, B, and C. Suppose that an executive committee of 11 members must be selected so that no more than 5 members from any one section are on the committee and that Sections A, B, and C must have minimums of 3, 2, and 2 members, respectively, on the committee. Looking only at the number of members from each section on the committee, how many ways can the committee be made up? One example of a valid committee would be 4 A's, 4 B's, and 3 C's.  Let be the action of deciding how many members (not who) from Section A will serve on the committee. and . The frequency function, , is defined by if , with otherwise. is then . Similarly, . Since the committee must have 11 members, our answer will be the coefficient of in , which is 10.      Exercises for Section 10.3   What sequences have the following generating functions?     1                                               What sequences have the following generating functions?                            Find closed form expressions for the generating functions of the following sequences:          , where for , with and .    The Fibonacci sequence: , , with .                           Find closed form expressions for the generating functions of the following sequences:      for and for .     , where for , with and .     , where for , with .       For each of the following expressions, find the partial fraction decomposition and identify the sequence having the expression as a generating function.                                           Find the partial fraction decompositions and identify the sequence having the following expressions:                       Given that and , what is the term of the generating function of each of the following sequences:                                                    Given that and , what is the term of the generating function of each of the following sequences:                            A game is played by rolling a die five times. For the roll, one point is added to your score if you roll a number higher than . Otherwise, your score is zero for that roll. For example, the sequence of rolls gives you a total score of three; while a sequence of 1,2,3,4,5 gives you a score of zero. Of the possible sequences of rolls, how many give you a score of zero?, of one? of five?   Coefficients of through in       Suppose that you roll a die ten times in a row and record the square of each number that you roll. How many ways could the sum of the squares of your rolls equal 40? What is the most common outcome?    "
-},
-{
-  "id": "def-generating-function",
-  "level": "2",
-  "url": "s-generating-functions.html#def-generating-function",
-  "type": "Definition",
-  "number": "16.3.1",
-  "title": "Generating Function of a Sequence.",
-  "body": " Generating Function of a Sequence  Generating Function       The generating function of a sequence with terms , is the infinite sum The domain and codomain of generating functions will not be of any concern to us since we will only be performing algebraic operations on them.   "
-},
-{
-  "id": "ex-first-gf-examples",
-  "level": "2",
-  "url": "s-generating-functions.html#ex-first-gf-examples",
-  "type": "Example",
-  "number": "16.3.2",
-  "title": "First Examples.",
-  "body": " First Examples     If , , then We can get a closed form expression for by observing that . Therefore, .    Finite sequences have generating functions. For example, the sequence of binomial coefficients , , , , has generating function by application of the binomial formula.    If , . Note that the index that is used in the summation has no significance. Also, note that the lower limit of the summation could start at 1 since .     "
-},
-{
-  "id": "p-5126",
-  "level": "2",
-  "url": "s-generating-functions.html#p-5126",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "partial fractions decomposition "
-},
-{
-  "id": "definition-211",
-  "level": "2",
-  "url": "s-generating-functions.html#definition-211",
-  "type": "Definition",
-  "number": "16.3.3",
-  "title": "Operations on Sequences.",
-  "body": " Operations on Sequences   Sequences  Operations on,     pop     push     Convolution of sequences and    Let and be sequences of numbers and let be a real number. Define the sum , the scalar product , the product , the convolution , the pop operation (read pop ), and the push operation (read push ) term-wise for by         "
-},
-{
-  "id": "fig-pop-push",
-  "level": "2",
-  "url": "s-generating-functions.html#fig-pop-push",
-  "type": "Figure",
-  "number": "16.3.4",
-  "title": "",
-  "body": " Stack interpretation of pop and push operation   Stack interpretation of pop and push operation   "
-},
-{
-  "id": "ex-some-sequence-operations",
-  "level": "2",
-  "url": "s-generating-functions.html#ex-some-sequence-operations",
-  "type": "Example",
-  "number": "16.3.5",
-  "title": "Some Sequence Operations.",
-  "body": " Some Sequence Operations  If , , , and :                                                                       "
-},
-{
-  "id": "def-multiple-pop-and-push",
-  "level": "2",
-  "url": "s-generating-functions.html#def-multiple-pop-and-push",
-  "type": "Definition",
-  "number": "16.3.6",
-  "title": "Multiple Pop and Push.",
-  "body": " Multiple Pop and Push  Multiple Pop and Push:    Multiple pop operation on     Multiple push operation on    If S is a sequence of numbers and a positive integer greater than 1, define Similarly, define    "
-},
-{
-  "id": "definition-213",
-  "level": "2",
-  "url": "s-generating-functions.html#definition-213",
-  "type": "Definition",
-  "number": "16.3.7",
-  "title": "Operations on Generating Functions.",
-  "body": " Operations on Generating Functions   Generating Functions  Operations on,    If and are generating functions and is a real number, then the sum , scalar product , product , and monomial product , are generating functions, where   The last sum is obtained by substituting for in the previous sum.   "
-},
-{
-  "id": "ex-some-gf-operations",
-  "level": "2",
-  "url": "s-generating-functions.html#ex-some-gf-operations",
-  "type": "Example",
-  "number": "16.3.8",
-  "title": "Some operations on generating functions.",
-  "body": " Some operations on generating functions  If and then      Note: , and from .  "
-},
-{
-  "id": "gf-of-pop-push",
-  "level": "2",
-  "url": "s-generating-functions.html#gf-of-pop-push",
-  "type": "Theorem",
-  "number": "16.3.9",
-  "title": "Generating functions related to Pop and Push.",
-  "body": " Generating functions related to Pop and Push   If ,           .       We prove (a) by induction and leave the proof of (b) to the reader.  Basis: Therefore, part (a) is true for .  Induction: Suppose that for some , the statement in part (a) is true: by the induction hypothesis. Now write in the last expression above as so that it fits into the finite summation:   Therefore the statement is true for .   "
-},
-{
-  "id": "ex-geometric-sums",
-  "level": "2",
-  "url": "s-generating-functions.html#ex-geometric-sums",
-  "type": "Example",
-  "number": "16.3.10",
-  "title": "Generating Functions involving Geometric Sums.",
-  "body": " Generating Functions involving Geometric Sums     If , , is an infinite geometric series with and .Therefore, .    If , 0, then .    If , then .    Let . Then .  Given a choice between the last form of and the previous sum of three fractions, we would prefer leaving it as a sum of three functions. As we saw in an earlier example, a partial fractions decomposition of a fraction such as the last expression requires some effort to produce.    If , then can be determined by multiplying the numerator and denominator by 1\/2 to obtain . We recognize this fraction as the sum of the infinite geometric series with and . Therefore .    If , then we expand to . Therefore ,  , , and, since there are no higher-powered terms, , . A more concise way of describing is , since is interpreted as 0 of .     "
-},
-{
-  "id": "table-gf-closed-form",
-  "level": "2",
-  "url": "s-generating-functions.html#table-gf-closed-form",
-  "type": "Table",
-  "number": "16.3.11",
-  "title": "Closed Form Expressions of some Generating Functions",
-  "body": " Closed Form Expressions of some Generating Functions            Sequence  Generating Function                                                            "
-},
-{
-  "id": "ex-another-complete-solution",
-  "level": "2",
-  "url": "s-generating-functions.html#ex-another-complete-solution",
-  "type": "Example",
-  "number": "16.3.12",
-  "title": "Another Complete Solution.",
-  "body": " Another Complete Solution  Solve , , with and . The solution will be derived using the same steps that were used earlier in this section, with one variation.     Translate to an equation about generating functions. First, we change the index of the recurrence relation by substituting for . The result is , . Now, if , then is the zero sequence, which has a zero generating function. Furthermore, . Therefore,    We want to now solve the following equation for : Multiply by : Expand and collect all terms involving on one side of the equation: Therefore,    Determine S from its generating function. thus a partial fraction decomposition of would be: Therefore, and . The solution of this set of equations is and . . In conclusion, since , .     "
-},
-{
-  "id": "example-counting-application",
-  "level": "2",
-  "url": "s-generating-functions.html#example-counting-application",
-  "type": "Example",
-  "number": "16.3.13",
-  "title": "An Application to Counting.",
-  "body": " An Application to Counting  Let and let be the set of all strings of length zero or more that can be made using each of the elements of zero or more times. By the generalized rule of products, there are such strings that have length , , Suppose that is the set of strings of length with the property that all of the 's and 's precede all of the 's, 's, and 's. Thus , but . Let . A closed form expression for can be obtained by recognizing as the convolution of two sequences. To illustrate our point, we will consider the calculation of .  Note that if a string belongs to , it starts with characters from and is followed by characters from . Let be the number of strings of 's and 's with length and let be the number of strings of 's, 's, and 's with length . By the generalized rule of products, and . Among the strings in are the ones that start with two 's and 's and end with 's, 's, and 's. There are such strings. By the law of addition, Note that the sixth term of R is the sixth term of the convolution of with , . Think about the general situation for a while and it should be clear that . Now, our course of action will be to:     Determine the generating functions of and ,    Multiply and to obtain \\, and    Determine on the basis of .        , and         To recognize from , we must do a partial fractions decomposition: Therefore, and . The solution of this pair of equations is and . Since , which is the sum of the generating functions of and ,   For example, . Naturally, this equals the sum that we get from . To put this number in perspective, the total number of strings of length 6 with no restrictions is , and . Therefore approximately 13 percent of the strings of length 6 satisfy the conditions of the problem.     "
-},
-{
-  "id": "ex-dice-roll",
-  "level": "2",
-  "url": "s-generating-functions.html#ex-dice-roll",
-  "type": "Example",
-  "number": "16.3.14",
-  "title": "Rolling Two Dice.",
-  "body": " Rolling Two Dice  Suppose that you roll a die two times and add up the numbers on the top face for each roll. Since the faces on the die represent the integers 1 through 6, the sum must be between 2 and 12. How many ways can any one of these sums be obtained? Obviously, 2 can be obtained only one way, with two 1's. There are two sequences that yield a sum of 3: 1-2 and 2-1. To obtain all of the frequencies with which the numbers 2 through 12 can be obtained, we set up the situation as follows. For ; is the rolling of the die for the time. and is defined by . Since each number appears on a die exactly once, the frequency function is if , and otherwise. The process of rolling the die two times is quantified by adding up the ; that is, . The generating function for the frequency function of rolling the die two times is then   Now, to get , just read the coefficient of . For example, the coefficient of is 4, so there are four ways to roll a total of 5.  To apply this method, the crucial step is to decompose a large process in the proper way so that it fits into the general situation that we've described.  "
-},
-{
-  "id": "ex-committee-distribution",
-  "level": "2",
-  "url": "s-generating-functions.html#ex-committee-distribution",
-  "type": "Example",
-  "number": "16.3.15",
-  "title": "Distribution of a Committee.",
-  "body": " Distribution of a Committee  Suppose that an organization is divided into three geographic sections, A, B, and C. Suppose that an executive committee of 11 members must be selected so that no more than 5 members from any one section are on the committee and that Sections A, B, and C must have minimums of 3, 2, and 2 members, respectively, on the committee. Looking only at the number of members from each section on the committee, how many ways can the committee be made up? One example of a valid committee would be 4 A's, 4 B's, and 3 C's.  Let be the action of deciding how many members (not who) from Section A will serve on the committee. and . The frequency function, , is defined by if , with otherwise. is then . Similarly, . Since the committee must have 11 members, our answer will be the coefficient of in , which is 10.   "
-},
-{
-  "id": "exercise-599",
-  "level": "2",
-  "url": "s-generating-functions.html#exercise-599",
-  "type": "Exercise",
-  "number": "16.3.7.1",
-  "title": "",
-  "body": " What sequences have the following generating functions?     1                                             "
-},
-{
-  "id": "exercise-600",
-  "level": "2",
-  "url": "s-generating-functions.html#exercise-600",
-  "type": "Exercise",
-  "number": "16.3.7.2",
-  "title": "",
-  "body": " What sequences have the following generating functions?                          "
-},
-{
-  "id": "exercise-601",
-  "level": "2",
-  "url": "s-generating-functions.html#exercise-601",
-  "type": "Exercise",
-  "number": "16.3.7.3",
-  "title": "",
-  "body": " Find closed form expressions for the generating functions of the following sequences:          , where for , with and .    The Fibonacci sequence: , , with .                         "
-},
-{
-  "id": "exercise-602",
-  "level": "2",
-  "url": "s-generating-functions.html#exercise-602",
-  "type": "Exercise",
-  "number": "16.3.7.4",
-  "title": "",
-  "body": " Find closed form expressions for the generating functions of the following sequences:      for and for .     , where for , with and .     , where for , with .     "
-},
-{
-  "id": "exercise-603",
-  "level": "2",
-  "url": "s-generating-functions.html#exercise-603",
-  "type": "Exercise",
-  "number": "16.3.7.5",
-  "title": "",
-  "body": " For each of the following expressions, find the partial fraction decomposition and identify the sequence having the expression as a generating function.                                         "
-},
-{
-  "id": "exercise-604",
-  "level": "2",
-  "url": "s-generating-functions.html#exercise-604",
-  "type": "Exercise",
-  "number": "16.3.7.6",
-  "title": "",
-  "body": " Find the partial fraction decompositions and identify the sequence having the following expressions:                     "
-},
-{
-  "id": "exercise-605",
-  "level": "2",
-  "url": "s-generating-functions.html#exercise-605",
-  "type": "Exercise",
-  "number": "16.3.7.7",
-  "title": "",
-  "body": " Given that and , what is the term of the generating function of each of the following sequences:                                                  "
-},
-{
-  "id": "exercise-606",
-  "level": "2",
-  "url": "s-generating-functions.html#exercise-606",
-  "type": "Exercise",
-  "number": "16.3.7.8",
-  "title": "",
-  "body": " Given that and , what is the term of the generating function of each of the following sequences:                          "
-},
-{
-  "id": "exercise-607",
-  "level": "2",
-  "url": "s-generating-functions.html#exercise-607",
-  "type": "Exercise",
-  "number": "16.3.7.9",
-  "title": "",
-  "body": " A game is played by rolling a die five times. For the roll, one point is added to your score if you roll a number higher than . Otherwise, your score is zero for that roll. For example, the sequence of rolls gives you a total score of three; while a sequence of 1,2,3,4,5 gives you a score of zero. Of the possible sequences of rolls, how many give you a score of zero?, of one? of five?   Coefficients of through in     "
-},
-{
-  "id": "exercise-608",
-  "level": "2",
-  "url": "s-generating-functions.html#exercise-608",
-  "type": "Exercise",
-  "number": "16.3.7.10",
-  "title": "",
-  "body": " Suppose that you roll a die ten times in a row and record the square of each number that you roll. How many ways could the sum of the squares of your rolls equal 40? What is the most common outcome?  "
-},
-{
-  "id": "Section17_1",
-  "level": "1",
-  "url": "Section17_1.html",
-  "type": "Section",
-  "number": "17.1",
-  "title": "Revisiting Inductive Proofs",
-  "body": " Revisiting Inductive Proofs   "
-},
-{
-  "id": "Section17_2",
-  "level": "1",
-  "url": "Section17_2.html",
-  "type": "Section",
-  "number": "17.2",
-  "title": "Program Correctness",
-  "body": " Program Correctness    Under Construction!    Two Exponentiation Algorithms  Consider the following algorithm implemented in Sage to compute , given an arbitrary integer , non-negative exponent , and a modulus , . The default sample evaluation computes , but you can edit the final line for other inputs.    It should be fairly clear that this algorithm will successfully compute since it mimics the basic definition of exponentiation. However, this algorithm is highly inefficient. The algorithm that is most commonly used for the task of exponentiation is the following one, also implemented in Sage.   The only difficulty with the \"fast algorithm\" is that it might not be so obvious that it always works. When implemented, it can be verified by example, but an even more rigorous verification can be done using the Invariant Relation Theorem. Before stating the theorem, we define some terminology.    Proving the correctness of the fast algorithm   Pre and Post Values    pre and post values of a variable    Given a variable , the pre value of , denoted , is the value before an iteration of a loop. The post value, denoted , is the value after the iteration.     Pre and post values in the fast exponentiation algorithm  In the fast exponentiation algorithm, the relationships between the pre and post values of the three variables are as follows.       Invariant Relation   Given an algorithm's inputs and a set of variables that are used in the algorithm, an invariant relation is a set of one or more equations that are true prior to entering a loop and remain true in every iteration of the loop.     Invariant Relation for Fast Exponentiation   We claim that the invariant relation in the fast algorithm is . We will prove that this is indeed true below.     The Invariant Relation Theorem   Given a loop within an algorithm, if is a relation with the properties     R is true before entering the loop    the truth of R is maintained in any iteration of the loop    the condition for exiting the loop will always be reached in a finite number of iterations.     then R will be true upon exiting the loop.    The condition that the loop ends in a finite number of iterations lets us apply mathematical induction with the induction variable being the number of iterations. We leave the details to the reader.    We can verify the correctness of the fast exponentiation algorithm using the Invariant Relation Theorem. First we note that prior to entering the loop, . Assuming the relation is true at the start of any iteration, that is , then Finally, the value of will decrease to zero in a finite number of steps because the number of binary digits of decreases by one with each iteration. At the end of the loop, which verifies the correctness of the algorithm.    Exercises   How are the pre and post values in the slow exponentiation algorithm related? What is the invariant relation between the variables in the slow algorithm?    Verify the correctness of the following algorithm to compute the greatest common divisor of two integers that are not both zero.    The invariant of this algorithm is .    Verify the correctness of the in Chapter 1.    "
-},
-{
-  "id": "def-pre-post-values",
-  "level": "2",
-  "url": "Section17_2.html#def-pre-post-values",
-  "type": "Definition",
-  "number": "17.2.1",
-  "title": "Pre and Post Values.",
-  "body": " Pre and Post Values    pre and post values of a variable    Given a variable , the pre value of , denoted , is the value before an iteration of a loop. The post value, denoted , is the value after the iteration.   "
-},
-{
-  "id": "ex-pre-post-fast",
-  "level": "2",
-  "url": "Section17_2.html#ex-pre-post-fast",
-  "type": "Example",
-  "number": "17.2.2",
-  "title": "Pre and post values in the fast exponentiation algorithm.",
-  "body": " Pre and post values in the fast exponentiation algorithm  In the fast exponentiation algorithm, the relationships between the pre and post values of the three variables are as follows.     "
-},
-{
-  "id": "def-invariant-relation",
-  "level": "2",
-  "url": "Section17_2.html#def-invariant-relation",
-  "type": "Definition",
-  "number": "17.2.3",
-  "title": "Invariant Relation.",
-  "body": " Invariant Relation   Given an algorithm's inputs and a set of variables that are used in the algorithm, an invariant relation is a set of one or more equations that are true prior to entering a loop and remain true in every iteration of the loop.   "
-},
-{
-  "id": "ex-invariant-fast-expo",
-  "level": "2",
-  "url": "Section17_2.html#ex-invariant-fast-expo",
-  "type": "Example",
-  "number": "17.2.4",
-  "title": "Invariant Relation for Fast Exponentiation.",
-  "body": " Invariant Relation for Fast Exponentiation   We claim that the invariant relation in the fast algorithm is . We will prove that this is indeed true below.   "
-},
-{
-  "id": "th-invariant-relation-theorem",
-  "level": "2",
-  "url": "Section17_2.html#th-invariant-relation-theorem",
-  "type": "Theorem",
-  "number": "17.2.5",
-  "title": "The Invariant Relation Theorem.",
-  "body": " The Invariant Relation Theorem   Given a loop within an algorithm, if is a relation with the properties     R is true before entering the loop    the truth of R is maintained in any iteration of the loop    the condition for exiting the loop will always be reached in a finite number of iterations.     then R will be true upon exiting the loop.    The condition that the loop ends in a finite number of iterations lets us apply mathematical induction with the induction variable being the number of iterations. We leave the details to the reader.   "
-},
-{
-  "id": "exercise-609",
-  "level": "2",
-  "url": "Section17_2.html#exercise-609",
-  "type": "Exercise",
-  "number": "17.2.3.1",
-  "title": "",
-  "body": " How are the pre and post values in the slow exponentiation algorithm related? What is the invariant relation between the variables in the slow algorithm?  "
-},
-{
-  "id": "exercise-610",
-  "level": "2",
-  "url": "Section17_2.html#exercise-610",
-  "type": "Exercise",
-  "number": "17.2.3.2",
-  "title": "",
-  "body": " Verify the correctness of the following algorithm to compute the greatest common divisor of two integers that are not both zero.    The invariant of this algorithm is .  "
-},
-{
   "id": "exercise-611",
   "level": "2",
-  "url": "Section17_2.html#exercise-611",
+  "url": "sec-turing-machines-comp.html#exercise-611",
   "type": "Exercise",
-  "number": "17.2.3.3",
+  "number": "17.6.4.14",
   "title": "",
-  "body": " Verify the correctness of the in Chapter 1.  "
+  "body": "Give an informal argument to show that a subset is recursive if and only if there is a computer program that prints out the elements of  it in increasing order . "
 },
 {
   "id": "app-python-iterators",

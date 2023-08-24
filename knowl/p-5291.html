@@ -11,16 +11,8 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para"><span class="process-math">\(\begin{array}{cc}
-k &amp; \textrm{ Number of ways of getting a score of } k \\
-0 &amp; 120 \\
-1 &amp; 1044 \\
-2 &amp; 2724 \\
-3 &amp; 2724 \\
-4 &amp; 1044 \\
-5 &amp; 120 \\
-\end{array}\)</span></div>
-<span class="incontext"><a href="s-generating-functions.html#p-5291" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para">Note that a string over the alphabet <span class="process-math">\(\{h,q,L,R,\text{\#},0,1,a,',\text{\$}\}\)</span> might or might not encode a Turing machine.  However, it is a simple matter to check whether such a string is the code for a Turing machine. We can imagine the following process:  Generate all the strings over the alphabet <span class="process-math">\(\{h,q,L,R,\text{\#},0,1,a,',\text{\$}\}\text{.}\)</span>  Check each string to see whether it encodes a Turing machine.  If so, add the string to an output list. In this way, we can generate a list of all strings that encode standard Turing machines.  In effect, the standard Turing machines, or at least their symbolic representations, form a recursively enumerable set.  Let <span class="process-math">\(T_0\)</span> be the machine encoded by the first string in this list of standard Turing machines; let <span class="process-math">\(T_1\)</span> be the machine encoded by the second string; let <span class="process-math">\(T_2\)</span> be the machine encoded by the third string; and so on.  The list <span class="process-math">\(T_0\text{,}\)</span> <span class="process-math">\(T_1\text{,}\)</span> <span class="process-math">\(T_2\text{,}\)</span>~\dots, includes every standard Turing machine. Furthermore, given <span class="process-math">\(n\in\N\text{,}\)</span> we can find the symbolic representation for <span class="process-math">\(T_n\)</span> by generating strings in the list until we have <span class="process-math">\(n+1\)</span> strings. Furthermore---and this is the essential point---we can use a Turing machine to do all these calculations.  In fact, there is a Turing machine that, when run with input <span class="process-math">\(a^n\text{,}\)</span> will halt with the string representation of <span class="process-math">\(T_n\)</span> written on its tape as output. The Turing machine that does this is <span class="process-math">\(G\text{,}\)</span> the first of the two machines that we need.</div>
+<span class="incontext"><a href="sec-turing-machines-comp.html#p-5291" class="internal">in-context</a></span>
 </body>
 </html>

@@ -11,30 +11,8 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">Induction: Suppose that for some <span class="process-math">\(p\geq 1\text{,}\)</span> the statement in part (a) is true:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-G(S\uparrow (p+1);z) &amp;= G((S\uparrow p)\uparrow ;z)\\
-&amp; = (G(S\uparrow p ;z)-(S\uparrow p)(0))/z \textrm{ by the basis}\\
-&amp; = \frac{\frac{\left(G(S;z)-\sum_{k=0}^{p-1} S(k)
-z^k\right)}{z^p}-S(p)}{z}
-\end{split}
-\end{equation*}
-</div>
-<div class="para">by the induction hypothesis. Now write <span class="process-math">\(S(p)\)</span> in the last expression above as <span class="process-math">\(\left(S(p)z^p \right)/z^p\)</span> so that it fits into the finite summation:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-G(S\uparrow (p+1);z) &amp; =\left.\left(\frac{G(S;z)-\sum_{k=0}^p S(k)
-z^k}{z^p}\right)\right/z\\
-&amp; = \left(G(S;z)-\sum_{k=0}^p S(k) z^k\right)/z^{p+1}
-\end{split}
-\end{equation*}
-</div>
-</div>
-<span class="incontext"><a href="s-generating-functions.html#p-5185" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para">Context-free grammars are used to describe some aspects of the syntax of programming languages.  However, the notation that is used for grammars in the context of programming languages is somewhat different from the notation introduced in the preceding section.  The notation that is used is called <dfn class="terminology">Backus-Naur Form</dfn> or BNF.  It is named after computer scientists John Backus and Peter Naur, who developed the notation.  Actually, several variations of BNF exist. I will discuss one of them here.  BNF can be used to describe the syntax of natural languages, as well as programming languages, and some of the examples in this section will deal with the syntax of English.</div>
+<span class="incontext"><a href="sec-grammars.html#p-5185" class="internal">in-context</a></span>
 </body>
 </html>

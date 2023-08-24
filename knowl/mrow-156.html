@@ -13,18 +13,11 @@
 <body class="ignore-math">
 <div class="displaymath process-math">
 \begin{align*}
-E \amp \PRODUCES TA\\
-A \amp\PRODUCES +TA \\
-A \amp \PRODUCES \EMPTYSTRING \\
-T \amp \PRODUCES FB\\
-B \amp \PRODUCES *FB\\
-B \amp \PRODUCES \EMPTYSTRING \\
-F \amp \PRODUCES (E)\\
-F \amp \PRODUCES x\\
-F \amp \PRODUCES y\\
-F \amp \PRODUCES z
+\langle expression \rangle \amp ::=\ \langle term \rangle [ \,[ + | - ] \langle term \rangle ]\dots\\
+\langle term \rangle \amp ::=\ \langle factor \rangle [ \, [ * | / ] \langle factor \rangle ]\dots \\
+\langle factor \rangle  \amp ::=\ \textbf{ident} | \textbf{number} | \text{"}(\text{"}\langle expression \rangle \text{"})\text{"}
 \end{align*}
 </div>
-<span class="incontext"><a href="sec-grammars.html#md-32" class="internal">in-context</a></span>
+<span class="incontext"><a href="sec-grammars.html#md-26" class="internal">in-context</a></span>
 </body>
 </html>

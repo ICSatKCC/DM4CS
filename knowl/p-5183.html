@@ -11,8 +11,8 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">We prove (a) by induction and leave the proof of (b) to the reader.</div>
-<span class="incontext"><a href="s-generating-functions.html#p-5183" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para">Examples of the types of production rule that are allowed in a right-regular grammar are <span class="process-math">\(A\PRODUCES\EMPTYSTRING\text{,}\)</span> <span class="process-math">\(B\PRODUCES C\text{,}\)</span> and <span class="process-math">\(D\PRODUCES aE\text{.}\)</span> The idea of the proof is that given a right-regular grammar, we can build a corresponding <span class="process-math">\(NFA\)</span> and <em class="emphasis">vice-versa</em>. The states of the <span class="process-math">\(NFA\)</span> correspond to the non-terminal symbols of the grammar. The start symbol of the grammar corresponds to the starting state of the NFA. A production rule of the form <span class="process-math">\(A\PRODUCES bC\)</span> corresponds to a transition in the NFA from state <span class="process-math">\(A\)</span> to state <span class="process-math">\(C\)</span> while reading the symbol <span class="process-math">\(b\text{.}\)</span> A production rule of the form <span class="process-math">\(A\PRODUCES B\)</span> corresponds to an <span class="process-math">\(\EMPTYSTRING\)</span>-transition from state <span class="process-math">\(A\)</span> to state <span class="process-math">\(B\)</span> in the NFA. And a production rule of the form <span class="process-math">\(A\PRODUCES\EMPTYSTRING\)</span> exists in the grammar if and only if <span class="process-math">\(A\)</span> is a final state in the NFA. With this correspondence, a derivation of a string <span class="process-math">\(w\)</span> in the grammar corresponds to an execution path through the NFA as it accepts the string <span class="process-math">\(w\text{.}\)</span> I won’t give a complete proof here. You are welcome to work through the details if you want. But the important fact is:</div>
+<span class="incontext"><a href="sec-grammars.html#p-5183" class="internal">in-context</a></span>
 </body>
 </html>

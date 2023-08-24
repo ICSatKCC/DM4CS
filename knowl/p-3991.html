@@ -11,19 +11,30 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Since the problem calls for a circuit, it doesn’t matter which vertex we start at; assume that we will start at <span class="process-math">\(\left(x_1,y_1\right)\text{.}\)</span> Once the problem is solved, we can always change our starting position. A function can most efficiently describe a circuit in this problem. Every bijection <span class="process-math">\(f: \{1, . . . , n\} \to \{1, . . . , n\}\)</span> with <span class="process-math">\(f(1)
-= 1\)</span> describes a circuit</div>
+<div class="para">Induction: Suppose that for some <span class="process-math">\(p\geq 1\text{,}\)</span> the statement in part (a) is true:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\left(x_1,
-y_1\right),\left(x_{f(2)},y_{f(2)}\right),\ldots ,\left(x_{f(n)},y_{f(n)}\right)
+\begin{split}
+G(S\uparrow (p+1);z) &amp;= G((S\uparrow p)\uparrow ;z)\\
+&amp; = (G(S\uparrow p ;z)-(S\uparrow p)(0))/z \textrm{ by the basis}\\
+&amp; = \frac{\frac{\left(G(S;z)-\sum_{k=0}^{p-1} S(k)
+z^k\right)}{z^p}-S(p)}{z}
+\end{split}
 \end{equation*}
 </div>
-<div class="para">There are <span class="process-math">\((n - 1)!\)</span> such bijections. Since a circuit and its reversal have the same associated cost, there are <span class="process-math">\(\frac{(n - 1)!}{2}\)</span> cases to consider. An examination of all possible cases is not feasible for large values of <span class="process-math">\(n\text{.}\)</span>
+<div class="para">by the induction hypothesis. Now write <span class="process-math">\(S(p)\)</span> in the last expression above as <span class="process-math">\(\left(S(p)z^p \right)/z^p\)</span> so that it fits into the finite summation:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+G(S\uparrow (p+1);z) &amp; =\left.\left(\frac{G(S;z)-\sum_{k=0}^p S(k)
+z^k}{z^p}\right)\right/z\\
+&amp; = \left(G(S;z)-\sum_{k=0}^p S(k) z^k\right)/z^{p+1}
+\end{split}
+\end{equation*}
 </div>
 </div>
-<span class="incontext"><a href="s-graph-optimization.html#p-3991" class="internal">in-context</a></span>
+<span class="incontext"><a href="s-generating-functions.html#p-3991" class="internal">in-context</a></span>
 </body>
 </html>

@@ -11,49 +11,10 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical"><ol class="lower-alpha">
-<li><div class="para">If possible, find a flow augmenting path with respect to <span class="process-math">\(f_i\text{.}\)</span>
-</div></li>
-<li>
-<div class="para">If a flow augmenting path exists, then:</div>
-<div class="para logical"><ol class="lower-roman">
-<li><div class="para logical">
-<div class="para">Determine</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-d &amp; = \min \{\{w(e) - f_i(e) \mid e
-\text{ is used in the forward
-direction}\},\\
-&amp; \quad \quad \quad \{f_i(e) \mid e
-\text{ is used in the reverse
-direction}\}\}\\
-\\
-\end{split}
-\end{equation*}
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para">Consider the situation in which <span class="process-math">\(P_1\text{,}\)</span> <span class="process-math">\(P_2\text{,}\)</span> <span class="process-math">\(\ldots\text{,}\)</span> <span class="process-math">\(P_m\)</span> are <span class="process-math">\(m\)</span> actions that must be taken, each of which results in a well-defined outcome. For each <span class="process-math">\(k = 1,2, . . . ,m\)</span> define <span class="process-math">\(X_k\)</span> to be the set of possible outcomes of <span class="process-math">\(P_k\)</span> . We will assume that each outcome can be quantified in some way and that the quantification of the elements of <span class="process-math">\(X_k\)</span> is defined by the function <span class="process-math">\(Q_k : X_k \to
+\{0, 1,2, . . .\}\text{.}\)</span> Thus, each outcome has a non-negative integer associated with it. Finally, define a frequency function <span class="process-math">\(F_k : \{0, 1, 2, . . .\} \to \{0, 1, 2, . . .\}\)</span> such that <span class="process-math">\(F_k(n)\)</span> is the number of elements of <span class="process-math">\(X_k\)</span> that have a quantification of <span class="process-math">\(n\text{.}\)</span>
 </div>
-</div></li>
-<li><div class="para logical">
-<div class="para">Define <span class="process-math">\(f_{i+1}\)</span> by</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{array}{cc}
-f_{i+1}(e) = f_i(e) &amp; \text{if } e
-\text{ is not part of the flow augmenting
-path} \\
-f_{i+1}(e)=f_i(e)+d &amp; \text{if } e
-\text{ is used in the forward direction} \\
-f_{i+1}(e)=f_i(e)-d &amp; \text{if } e
-\text{ is used in the reverse direction} \\
-\end{array}
-\end{equation*}
-</div>
-</div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle i = i + 1\)</span></div></li>
-</ol></div>
-</li>
-</ol></div>
-<span class="incontext"><a href="s-graph-optimization.html#p-4027" class="internal">in-context</a></span>
+<span class="incontext"><a href="s-generating-functions.html#p-4027" class="internal">in-context</a></span>
 </body>
 </html>

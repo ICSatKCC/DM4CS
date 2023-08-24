@@ -10,6 +10,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><div class="para">(Indirect): Suppose <span class="process-math">\(u\)</span> is connected to <span class="process-math">\(w\text{,}\)</span> but the shortest path from <span class="process-math">\(u\)</span> to <span class="process-math">\(w\)</span> has length <span class="process-math">\(m\text{,}\)</span> where <span class="process-math">\(m&gt;n\text{.}\)</span> A vertex list for a path of length <span class="process-math">\(m\)</span> will have <span class="process-math">\(m + 1\)</span> vertices. This path can be represented as <span class="process-math">\(\left(v_0,v_1,\ldots, v_m\right)\text{,}\)</span> where <span class="process-math">\(v_0=u\)</span> and <span class="process-math">\(v_m=
-w\text{.}\)</span> Note that since there are only <span class="process-math">\(n\)</span> vertices in the graph and <span class="process-math">\(m\)</span> vertices are listed in the path after <span class="process-math">\(v_0\text{,}\)</span> we can apply the pigeonhole principle and be assured that there must be some duplication in the last <span class="process-math">\(m\)</span> vertices of the vertex list, which represents a circuit in the path. This means that our path of minimum length can be reduced, which is a contradiction.</div></article></body>
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">By an analogue of <a href="" class="xref" data-knowl="./knowl/eq-log-prop-5.html" title="Equation 13.2.8">(13.2.8)</a>, <span class="process-math">\(a=b^{\log_b a}\text{.}\)</span> Therefore, if we take the base 2 logarithm of both sides of this equality we get:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-log-prop-5.html">
+\begin{equation*}
+\log_2 a = \log_2 \left(b^{\log_b a}\right) \Rightarrow \log_2 a
+=\log_b a \cdot \log_2 b
+\end{equation*}
+</div>
+<div class="para">Finally, divide both sides of the last equation by <span class="process-math">\(\log_2b\text{.}\)</span>
+</div>
+</div></article></body>
 </html>
