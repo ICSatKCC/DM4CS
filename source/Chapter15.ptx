@@ -15,7 +15,7 @@
                </stanza>
             </poem>
 <p>This chapter has three principal goals. First, we will identify the basic components of a graph and some of the features that many graphs have. Second, we will discuss some of the questions that are most commonly asked of graphs. Third, we want to make the reader aware of how graphs
-are used. In <xref ref="Section15_1.ptx"/>, we will discuss these topics in general, and in later sections we will take a closer look
+are used. In <xref ref="s-graphs-introduction"/>, we will discuss these topics in general, and in later sections we will take a closer look
 at selected topics in graph theory.</p>
 <p><xref ref="chapter_16_trees"/> will continue our discussion with an examination of trees, a special type of graph.
 </p></introduction>

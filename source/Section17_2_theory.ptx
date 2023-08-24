@@ -184,7 +184,7 @@ the concatenation of regular languages is regular; and the Kleene
 closure of a regular language is regular. It is less clear whether the
 intersection of regular languages is always regular; nor is it clear whether the
 complement of a regular language is guaranteed to be regular.  These are
-questions that will be taken up in <xref ref=""/>. <!--TODO-->
+questions that will be taken up in <xref ref="sec-FSA-and-Regular-Languages"/>.
 </p>
 <p>
 Regular languages, then, are languages whose strings' structure can be described
@@ -192,7 +192,7 @@ in a very formal, mathematical way.  The fact that a language can be
 ``mechanically" described or generated means that we are likely to be
 able to get a computer to recognize strings in that language.
 We will pursue the question of mechanical language recognition in
-<xref ref="section17_4-finite-state-automata"/>, and subsequently will see that our first attempt to model mechanical
+<xref ref="s-finite-state-automata"/>, and subsequently will see that our first attempt to model mechanical
 language recognition does in fact produce a family of ``machines" that recognize
 exactly the regular languages.  But first, in the next section, we will look at some
 practical applications of regular expressions.
