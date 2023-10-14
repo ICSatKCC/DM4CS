@@ -101,8 +101,6 @@
 <description>The conditional proposition If <m>p</m> then <m>q</m>.</description>
 </notation>
 <statement><p>The conditional statement <q>If <m>p</m> then <m>q</m>,</q> denoted <m>p \rightarrow  q</m>, is defined by the truth table:</p>
-  <table xml:id="tt-conditional">
-    <title>Truth Table for <m>p \rightarrow q</m></title>
      <me>
     \begin{array}{|c|c|c|}\hline
     p &amp; q &amp; p \rightarrow q \\
@@ -113,8 +111,6 @@
     1 &amp; 1 &amp; 1 \\\hline
     \end{array}
     </me>
-  </table>
-
 </statement>
 
 </definition>

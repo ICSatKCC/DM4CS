@@ -5,11 +5,11 @@
 
       <table xml:id="tt32-1">
       <title>Truth Table for <m>c= (p \land  q)\lor  (\neg q \land  r)</m></title>
-
-       <me>
+       <!-- <me>
       \begin{array}{|c|c|c|c|c|c|c|}
       \hline
-      p &amp; q &amp; r &amp; p\land q &amp; \neg q &amp; \neg q\land r &amp; (p\land q)\lor (\neg q\land r) \\\hline
+      p &amp; q &amp; r &amp; p\land q &amp; \neg q &amp; \neg q\land r &amp; (p\land q)\lor (\neg q\land r)\\
+      \hline
       0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\\hline
       0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1\\\hline
       0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\\hline
@@ -19,10 +19,9 @@
       1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1\\\hline
       1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1\\\hline
       \end{array}
-      </me>
-
-      <!--     <tabular  halign="center">
-      <row><cell><m>p &amp; q</m></cell><cell><m>r</m></cell><cell><m>p\land q</m></cell><cell><m>\neg q</m></cell><cell><m>\neg q\land r</m></cell><cell><m>(p\land q)\lor (\neg q\land r)</m></cell></row>
+      </me> -->
+       <tabular  halign="center">
+      <row header="yes" bottom="major"><cell><m>p</m></cell><cell><m>q</m></cell><cell><m>r</m></cell><cell><m>p\land q</m></cell><cell><m>\neg q</m></cell><cell><m>\neg q\land r</m></cell><cell><m>(p\land q)\lor (\neg q\land r)</m></cell></row>
       <row><cell>0</cell><cell>0</cell><cell>0</cell><cell>0</cell><cell>1</cell><cell>0</cell><cell>0</cell></row>
       <row><cell>0</cell><cell>0</cell><cell>1</cell><cell>0</cell><cell>1</cell><cell>1</cell><cell>1</cell></row>
       <row><cell>0</cell><cell>1</cell><cell>0</cell><cell>0</cell><cell>0</cell><cell>0</cell><cell>0</cell></row>
@@ -31,7 +30,7 @@
       <row><cell>1</cell><cell>0</cell><cell>1</cell><cell>0</cell><cell>1</cell><cell>1</cell><cell>1</cell></row>
       <row><cell>1</cell><cell>1</cell><cell>0</cell><cell>1</cell><cell>0</cell><cell>0</cell><cell>1</cell></row>
       <row><cell>1</cell><cell>1</cell><cell>1</cell><cell>1</cell><cell>0</cell><cell>0</cell><cell>1</cell></row>
-      </tabular> -->
+      </tabular>
       </table>
 
       <p>Note that the first three columns of the truth table are an enumeration of the eight three-digit binary integers. This standardizes the order in
@@ -64,11 +63,11 @@
   <subsection xml:id="subsec4_2_3-precedence"><title>Precedence of Logical Operators</title>
     <p>It is customary to use the following hierarchy for interpreting propositions, with parentheses overriding this order:
     </p>
-    <p><ul><li><p>First: Negation</p></li>
-    <li><p>Second: Conjunction</p></li>
-    <li><p>Third: Disjunction</p></li>
-    <li><p>Fourth: The conditional operation</p></li>
-    <li><p>Fifth: The biconditional operation</p></li>
+    <p><ul><li><p>First: Negation <m>\neg</m></p></li>
+    <li><p>Second: Conjunction <m>\land</m></p></li>
+    <li><p>Third: Disjunction <m>\lor</m></p></li>
+    <li><p>Fourth: The conditional operation <m>\rightarrow</m></p></li>
+    <li><p>Fifth: The biconditional operation <m>\leftrightarrow</m></p></li>
     </ul></p>
 
 

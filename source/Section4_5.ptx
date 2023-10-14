@@ -65,33 +65,23 @@
 
 		<p>Since the truth set of <m>p \rightarrow  q</m> is <m>\overline{T_p{}}\cup T_q</m>, the Venn diagram for <m>T_{p\to q}</m> in <xref ref="venn_diagram_truth_set_conditional" text="type-local"/> shows that <m>p \Rightarrow  q</m> when <m>T_p\subseteq T_q</m>.</p>
 		<figure xml:id="venn_diagram_truth_set_conditional">
-			<title>Venn Diagram for <m>T_{p\to q}</m> </title>
+			<caption>Venn Diagram for <m>T_{p\to q}</m> </caption>
 			<image width="70%" xml:id="sageplot-venn-truth-set-conditional">
-				<description>A two set Venn Diagram for<m>T_{p\to q}</m></description>
-<!--				<sageplot>
-					m=2
-					scale = 1.7
-					sx=3
-					sy=2
-					centers = [(cos(n*2*pi/m), sin(n*2*pi/m)) for n in range(m)]
-					clr = ['blue', 'blue', 'green']
-					G = Graphics()
-					r=lambda x,y:(x-centers[0][0])^2+(y-centers[0][1])^2 \lt scale^2  or (x-centers[1][0])^2+(y-centers[1][1])^2 > scale^2
-					G+=region_plot(r,(-sx,sx),(-sy,sy),plot_points=200,incol='lightblue',axes=False)
-					for i in range(m):
-					G += circle(centers[i], scale)
-					for i in range(m):
-					G += circle(centers[i], scale)
-					G+=line([[-sx,-sy],[sx,-sy],[sx,sy],[-sx,sy],[-sx,-sy]],rgbcolor=(0,0,0)) -->
-					<!--
-					G+=text('T',centers[0],fontsize='x-large')
-					G+=text('T',centers[1],fontsize='x-large')
-					-->
-				<!--	G
-				</sageplot>  -->
+				<description>A two set Venn Diagram for the truth set of if p then q.</description>
+				<sageplot><xi:include parse="text" href="./sage_venn-truthset-conditional.py" />
+				</sageplot>
 			</image>
 		</figure>
 
+
+		<figure xml:id="venn_diagram_intersection">
+			<caption>Venn Diagram for the Intersection of Two Sets</caption>
+			<image width="60%" xml:id="sageplot-venn-intersection">
+				<description>A two set Venn Diagram for intersection</description>
+				<sageplot><xi:include parse="text" href="./sage_venn-intersection.py" />
+				</sageplot>
+			</image>
+		</figure>
 
 		<example xml:id="ex-implications-over-U"><title>Examples of Implications</title>
 			<p><ol marker="(a)">
