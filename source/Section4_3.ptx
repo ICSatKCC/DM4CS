@@ -15,7 +15,7 @@
       (p \land q)</m> and <m>\neg p \lor \neg q</m> will have the same truth value. The easiest way
       to see this is by examining the truth tables of these propositions.</p>
 
-    <table xml:id="tt33-1">
+    <table xml:id="tt-tautology">
       <title>Truth Tables for <m>\neg (p \land q)</m> and <m>\neg p \lor \neg q</m></title>
       <!-- <me>
       \begin{array}{|c|c|c|c|}
@@ -103,26 +103,75 @@
       <p>
         <ol marker="(a)">
           <li>
-            <p><m>(\neg (p \land q))\leftrightarrow ( \neg p \lor \neg q)</m>.</p>
+            <p><m>\neg (p \land q) \leftrightarrow ( \neg p \lor \neg q)</m>.
+                  <me>
+      \begin{array}{|c|c|c|c|}
+      \hline
+      p &amp; q  &amp; \neg (p\land q) &amp; \neg p\lor \neg q &amp;\neg (p\land q) \leftrightarrow \neg p\lor \neg q\\\hline
+      0 &amp; 0 &amp; 1 &amp; 1 &amp; 1\\\hline
+      0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\\hline
+      1 &amp; 0 &amp; 1 &amp; 1 &amp; 1\\\hline
+      1 &amp; 1 &amp; 0 &amp; 0 &amp; 1\\\hline
+      \end{array}
+      </me></p>
           </li>
           <li>
             <p>
               <m>p \lor \neg p</m>
+              <me>
+                \begin{array}{|c|c|c|c|}
+                \hline
+                p &amp; \neg p  &amp; p \lor \neg p\\\hline
+                0 &amp; 1 &amp; 1 \\\hline
+                1 &amp; 0 &amp; 1  \\\hline
+                \end{array}
+                </me>
             </p>
           </li>
           <li>
             <p>
               <m>(p \land q)\to p</m>
+
+              <me>
+                \begin{array}{|c|c|c|c|}
+                \hline
+                p &amp; q  &amp; p\land q &amp; (p\land q) \rightarrow p \\\hline
+                0 &amp; 0 &amp; 0 &amp; 1 \\\hline
+                0 &amp; 1 &amp; 0 &amp; 1\\\hline
+                1 &amp; 0 &amp; 0 &amp; 1 \\\hline
+                1 &amp; 1 &amp; 1 &amp; 1\\\hline
+                \end{array}
+                </me>
             </p>
           </li>
           <li>
             <p>
-              <m>q\to (p\lor q)</m>
+              <m>q\to (p \lor q)</m>
+              <me>
+                \begin{array}{|c|c|c|c|}
+                \hline
+                p &amp; q  &amp; p \lor q &amp; q \rightarrow (p\lor q) \\\hline
+                0 &amp; 0 &amp; 0 &amp; 1 \\\hline
+                0 &amp; 1 &amp; 1 &amp; 1\\\hline
+                1 &amp; 0 &amp; 1 &amp; 1 \\\hline
+                1 &amp; 1 &amp; 1 &amp; 1\\\hline
+                \end{array}
+                </me>
             </p>
           </li>
           <li>
             <p>
               <m>(p \lor q)\leftrightarrow (q \lor p)</m>
+              <me>
+                \begin{array}{|c|c|c|c|}
+                \hline
+                p &amp; q  &amp; p \lor q &amp; q \lor p &amp; (p \lor q)\leftrightarrow (q \lor p)\\\hline
+                0 &amp; 0 &amp; 0 &amp; 0 &amp;1 \\\hline
+                0 &amp; 1 &amp; 1 &amp; 1 &amp;1\\\hline
+                1 &amp; 0 &amp; 1 &amp; 1 &amp;1 \\\hline
+                1 &amp; 1 &amp; 1 &amp; 1 &amp;1\\\hline
+                \end{array}
+                </me>
             </p>
           </li>
         </ol>
@@ -147,9 +196,36 @@
 
     <example xml:id="some-contradictions">
       <title>Some Contradictions</title>
+      <p>All of the following are contradictions because their truth tables consist of a column of 0's.</p>
+      <ol marker="(a)">
+        <li>
       <p>
-        <m>p \land \neg p</m> and <m>(p\lor q)\land (\neg p) \land (\neg q)</m> are contradictions.</p>
-    </example>
+        <m>p \land \neg p</m>
+        <me>
+          \begin{array}{|c|c|c|c|}
+          \hline
+          p &amp; \neg p  &amp; p \land \neg p\\\hline
+          0 &amp; 1 &amp; 0 \\\hline
+          1 &amp; 0 &amp; 0  \\\hline
+          \end{array}
+          </me></p></li>
+          <li>
+            <p><m>(p\lor q)\land (\neg p) \land (\neg q)</m>
+              <me>
+                \begin{array}{|c|c|c|c|}
+                \hline
+                p &amp; q  &amp; p \lor q &amp; \neg p &amp; \neg q &amp; \neg p \land \neg q&amp; (p \lor q)\land (\neg p) \land (\neg q)\\\hline
+                0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp;0 \\\hline
+                0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp;0\\\hline
+                1 &amp; 0 &amp; 1 &amp; 0 &amp;1 &amp; 0 &amp;0 \\\hline
+                1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp;0\\\hline
+                \end{array}
+                </me>
+            </p>
+          </li>
+      </ol>
+
+      </example>
   </subsection>
 
   <subsection>
@@ -182,15 +258,44 @@
         <ol marker="(a)">
           <li>
             <p>
-              <m>(p \land q)\lor (\neg p \land q)\iff q</m>.</p>
+              <m>(p \land q)\lor (\neg p \land q)\iff q</m>.
+              <me>
+                \begin{array}{|c|c|c|c|}
+                \hline
+                p &amp; q  &amp; (p\land q) &amp; \neg p\land q &amp;\neg (p\land q) \lor (\neg p\land q) &amp; \neg (p\land q) \lor (\neg p\land q) \leftrightarrow q \\\hline
+                0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\\hline
+                0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \\\hline
+                1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\\hline
+                1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\\hline
+                \end{array}</me>
+            </p>
           </li>
           <li>
             <p>
               <m>p \to q \iff \neg q \rightarrow \neg p</m>
+              <me>
+                \begin{array}{|c|c|c|c|}
+                \hline
+                p &amp; q  &amp; (p\rightarrow q) &amp; \neg q\rightarrow \neg p &amp; p \to q \leftrightarrow \neg q \rightarrow \neg p\\\hline
+                0 &amp; 0 &amp; 1 &amp; 1 &amp;  1 \\\hline
+                0 &amp; 1 &amp; 1 &amp; 1 &amp;  1 \\\hline
+                1 &amp; 0 &amp; 0 &amp; 0 &amp;  1 \\\hline
+                1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\\hline
+                \end{array}</me>
             </p>
           </li>
           <li>
-            <p><m>p \lor q \iff q \lor p</m>.</p>
+            <p><m>p \lor q \iff q \lor p</m>.
+              <me>
+                \begin{array}{|c|c|c|c|}
+                \hline
+                p &amp; q  &amp; p \lor q &amp; q \lor p &amp; (p \lor q)\leftrightarrow (q \lor p)\\\hline
+                0 &amp; 0 &amp; 0 &amp; 0 &amp;1 \\\hline
+                0 &amp; 1 &amp; 1 &amp; 1 &amp;1\\\hline
+                1 &amp; 0 &amp; 1 &amp; 1 &amp;1 \\\hline
+                1 &amp; 1 &amp; 1 &amp; 1 &amp;1\\\hline
+                \end{array}
+                </me></p>
           </li>
         </ol>
       </p>
@@ -200,14 +305,32 @@
 
     <example xml:id="equivalence_to_1">
       <title>An equivalence to <m>1</m></title>
-      <p><m>p\lor \neg p\iff 1</m>.</p>
+      <p><m>p\lor \neg p\iff 1</m>.
+        <me>
+          \begin{array}{|c|c|c|c|}
+          \hline
+          p &amp; \neg p  &amp; p \lor \neg p &amp; 1 &amp; (p \lor \neg p) \leftrightarrow 1\\\hline
+          0 &amp; 1 &amp; 1 &amp; 1 &amp; 1\\\hline
+          1 &amp; 0 &amp; 1 &amp; 1  &amp; 1 \\\hline
+          \end{array}
+          </me>
+        </p>
     </example>
 
     <p>All contradictions are equivalent to one another.</p>
 
     <example xml:id="equivalence_to_0">
       <title>An equivalence to <m>0</m></title>
-      <p><m>p\land \neg p\iff 0</m>.</p>
+      <p><m>p\land \neg p\iff 0</m>.
+        <me>
+          \begin{array}{|c|c|c|c|}
+          \hline
+          p &amp; \neg p  &amp; p \land \neg p &amp; 0 &amp; (p \land \neg p) \leftrightarrow 0\\\hline
+          0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\\hline
+          1 &amp; 0 &amp; 0 &amp; 0 &amp; 1\\\hline
+          \end{array}
+          </me>
+        </p>
     </example>
 
   </subsection>
@@ -235,7 +358,7 @@
       another. Certainly, <m>y</m> can be true when <m>x</m> is false; but <m>x</m> can't be true
       when <m>y</m> is false. In this case, we say that <m>x</m> implies <m>y</m>.</p>
 
-    <p>Consider the truth table of <m>p \to q</m>, <xref ref="tt-conditional" />. If <m>p</m>
+    <p>Consider the truth table of <m>p \to q</m>, <xref ref="def-conditional" />. If <m>p</m>
       implies <m>q</m>, then the third case can be ruled out, since it is the case that makes a
       conditional proposition false.</p>
 

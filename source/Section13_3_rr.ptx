@@ -664,16 +664,8 @@
 
 		<table xml:id="table-gf-closed-form">
 			<title>Closed Form Expressions of some Generating Functions</title>
-			<tabular top="major" halign="center">
-				<row>
-					<cell>
-						<m></m>
-					</cell>
-					<cell>
-						<m></m>
-					</cell>
-				</row>
-				<row>
+			<tabular halign="left">
+				<row  header="yes" bottom="major">
 					<cell> Sequence</cell>
 					<cell>Generating Function</cell>
 				</row>
@@ -687,7 +679,7 @@
 				</row>
 				<row>
 					<cell>
-						<m>S(k)=k</m>
+						<m>S(k)=k+1</m>
 					</cell>
 					<cell>
 						<m>G(S;z)=\frac{1}{(1-z)^2}</m>

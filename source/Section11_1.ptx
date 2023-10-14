@@ -946,7 +946,7 @@
 					system of <m>m</m> equations in the <m>n</m> variables, <m>x_1 , x_2, \dots, x_n</m>
 					. Nothing is said about the relative size of <m>m</m> and <m>n</m>. Written more
 					simply in terms of summation notation, the above can be written in the form <me>
-					\displaystylesum_{j=1}^n a_{ij}x_j = f_i, i = 1,2,3,\dots,m
+					\sum_{j=1}^n a_{ij}x_j = f_i, i = 1,2,3,\dots,m
 					</me> It
 					is desired to find<m> (x_1 ,\dots , x_n )</m> solving each of the equations
 					listed. </p>

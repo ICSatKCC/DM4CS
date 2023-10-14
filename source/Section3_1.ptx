@@ -619,7 +619,7 @@ in the product of the three numbers.
 c=0 &amp;1 &amp;2 &amp;3 &amp;4 &amp;5 &amp;6 \\
 \hline
 \hline
-1 &amp;0 &amp; &amp;0 &amp;0 &amp;0 &amp;0 \\
+1 &amp;0 &amp; 0 &amp;0 &amp;0 &amp;0 &amp;0 \\
 2 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0 \\
 3 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0 \\
 4 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0 &amp;0 \\
@@ -649,7 +649,7 @@ c=1 &amp;1 &amp;2 &amp;3 &amp;4 &amp;5 &amp;6 \\
 	<li>
 		<p>Using the <m>A_k</m>notation from <xref ref="ex-rolling-a-die-twice"/> above there are 19 different events:  0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 16, 18, 20, 24, 25, 30 ,36.
 		<me> \begin{array}{rlrl}
-			P(A_0) &amp;  = \frac{18}{72} &amp; P(A_1) &amp; = \frac{1}{72}\\
+			P(A_0) &amp;  = \frac{36}{72} &amp; P(A_1) &amp; = \frac{1}{72}\\
 			P(A_2) &amp; = \frac{2}{72} &amp; P(A_3) &amp; = \frac{2}{72}\\
 			P(A_4) &amp; = \frac{3}{72} &amp; P(A_5) &amp; = \frac{2}{72}\\
 			P(A_6) &amp; = \frac{4}{72} &amp; P(A_8) &amp; = \frac{2}{72}\\

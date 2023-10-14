@@ -63,25 +63,48 @@
 				</p></example>
 		<definition xml:id="def-implication-over-U"><title>Implication for propositions over a universe</title><statement><p> Implication. If <m>p</m> and <m>q</m> are propositions over <m>U</m>, <m>p</m> implies <m>q</m> if <m>p \rightarrow q</m> is a tautology.</p></statement></definition>
 
-		<p>Since the truth set of <m>p \rightarrow  q</m> is <m>\overline{T_p{}}\cup T_q</m>, the Venn diagram for <m>T_{p\to q}</m> in <xref ref="venn_diagram_truth_set_conditional" text="type-local"/> shows that <m>p \Rightarrow  q</m> when <m>T_p\subseteq T_q</m>.</p>
-		<figure xml:id="venn_diagram_truth_set_conditional">
-			<caption>Venn Diagram for <m>T_{p\to q}</m> </caption>
-			<image width="70%" xml:id="sageplot-venn-truth-set-conditional">
-				<description>A two set Venn Diagram for the truth set of if p then q.</description>
-				<sageplot><xi:include parse="text" href="./sage_venn-truthset-conditional.py" />
+		<p>Since the truth set of <m>p \rightarrow  q</m> is <m>\overline{T_p{}}\cup T_q</m>, the Venn diagram for <m>T_{p\to q}</m> 
+			in <xref ref="venn_diagram_truth-set-conditional" text="type-local"/> shows that 
+			<m>p \Rightarrow  q</m> when <m>T_p\subseteq T_q</m> (<m>T_p</m> would be inside of <m>T_q</m>).</p>
+
+			<!-- temporary replacement with image include-->
+			<figure xml:id="venn_diagram_truth-set-conditional">
+				<caption>Venn diagram for the truth set of a conditional statement.
+				</caption>
+				<image width="60%" source="images/sageplot-venn-truth-set-conditional">
+					<description>A Venn diagram showing the truth set of a conditional statement.</description>
+				</image>
+			</figure>
+
+		<!-- <figure xml:id="venn_diagram_truth-set-conditional">
+			<caption>Venn Diagram for the Truth set of a conditional</caption>
+			<image width="60%" xml:id="sageplot-truth-set-conditional">
+				<description>A two set Venn Diagram for truthset</description>
+				<sageplot><xi:include parse="text" href="./sage_venn-truthset.py" />
+				</sageplot> 
+				
+				
+				<sageplot>
+					m=2
+					scale = 1.7
+					sx=3
+					sy=2
+					centers = [(cos(n*2*pi/m), sin(n*2*pi/m)) for n in range(m)]
+					clr = ['blue', 'blue', 'green']
+					G = Graphics()
+					r=lambda x,y:(x-centers[0][0])^2+(y-centers[0][1])^2 \lt scale^2 and ~(x-centers[1][0])^2+(y-centers[1][1])^2 \lt scale^2
+					G+=region_plot(r,(-sx,sx),(-sy,sy),plot_points=200,incol='lightblue',axes=False)
+					for i in range(m):
+						G += circle(centers[i], scale)
+					for i in range(m):
+						G += circle(centers[i], scale)
+					G+=line([[-sx,-sy],[sx,-sy],[sx,sy],[-sx,sy],[-sx,-sy]],rgbcolor=(0,0,0))
+					G+=text('B',centers[0],fontsize='x-large')
+					G+=text('A',centers[1],fontsize='x-large')
+					G
 				</sageplot>
 			</image>
-		</figure>
-
-
-		<figure xml:id="venn_diagram_intersection">
-			<caption>Venn Diagram for the Intersection of Two Sets</caption>
-			<image width="60%" xml:id="sageplot-venn-intersection">
-				<description>A two set Venn Diagram for intersection</description>
-				<sageplot><xi:include parse="text" href="./sage_venn-intersection.py" />
-				</sageplot>
-			</image>
-		</figure>
+		</figure> -->
 
 		<example xml:id="ex-implications-over-U"><title>Examples of Implications</title>
 			<p><ol marker="(a)">
