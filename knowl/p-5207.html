@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,8 +12,26 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">LR(1) parsing uses a <dfn class="terminology">shift/reduce</dfn> algorithm.  Imagine a cursor or current position that moves through the string that is being parsed.  We can visualize the cursor as a vertical bar, so for the string <span class="process-math">\((x+y)*z\text{,}\)</span> we start with the configuration <span class="process-math">\(|(x+y)*z\text{.}\)</span>  A <em class="emphasis">shift</em> operation simply moves the cursor one symbol to the right.  For example, a shift operation would convert <span class="process-math">\(|(x+y)*z\)</span> to <span class="process-math">\((|x+y)*z\text{,}\)</span> and a second shift operation would convert that to <span class="process-math">\((x|+y)*z\text{.}\)</span>  In a reduce operation, one or more symbols immediately to the left of the cursor are recognized as the right-hand side of one of the production rules in the grammar.  These symbols are removed and replaced by the left-hand side of the production rule. For example, in the configuration <span class="process-math">\((x|+y)*z\text{,}\)</span> the <span class="process-math">\(x\)</span> to the left of the cursor is the right-hand side of the production rule <span class="process-math">\(F\PRODUCES x\text{,}\)</span> so we can apply a reduce operation and replace the <span class="process-math">\(x\)</span> with <span class="process-math">\(F\text{,}\)</span> giving <span class="process-math">\((F|+y)*z\text{.}\)</span>  This first reduce operation corresponds to the last step in the right derivation of the string, <span class="process-math">\((F+y)*z\YIELDS (x+y)*z\text{.}\)</span>  Now the <span class="process-math">\(F\)</span> can be recognized as the right-hand side of the production rule <span class="process-math">\(T\PRODUCES F\text{,}\)</span> so we can replace the <span class="process-math">\(F\)</span> with <span class="process-math">\(T\text{,}\)</span> giving <span class="process-math">\((T|+y)*z\text{.}\)</span> This corresponds to the next-to-last step in the right derivation, <span class="process-math">\((T+y)*z\YIELDS (F+y)*z\text{.}\)</span>
+<div class="para logical">
+<div class="para">However, there is an alternative parsing procedure that will work for <span class="process-math">\(G_3\text{.}\)</span>  This alternative method of parsing a string produces a <dfn class="terminology">right derivation</dfn> of the string, that is, a derivation in which at each step, the non-terminal symbol that is replaced is the rightmost non-terminal symbol in the string.  Here, for example, is a right derivation of the string <span class="process-math">\((x+y)*z\)</span> according to the grammar <span class="process-math">\(G_3\text{:}\)</span>
 </div>
-<span class="incontext"><a href="sec-grammars.html#p-5207" class="internal">in-context</a></span>
+<div class="displaymath process-math">
+\begin{align*}
+E \amp \YIELDS T \\
+\amp \YIELDS T*F \\
+\amp \YIELDS T*z \\
+\amp \YIELDS F * z \\
+\amp \YIELDS (E) * z \\
+\amp \YIELDS (E+T) * z \\
+\amp \YIELDS (E+F) * z \\
+\amp \YIELDS (E+y) * z \\
+\amp \YIELDS (T+y) * z \\
+\amp \YIELDS (F+y) * z \\
+\amp \YIELDS (x+y) * z 
+\end{align*}
+</div>
+<div class="para">The parsing method that produces this right derivation produces it from “bottom to top.”  That is, it begins with the string <span class="process-math">\((x+y)*z\)</span> and works backward to the start symbol <span class="process-math">\(E\text{,}\)</span> generating the steps of the right derivation in reverse order. The method works because <span class="process-math">\(G_3\)</span> is what is called an <dfn class="terminology">LR(1) grammar</dfn>.  That is, roughly, it is possible to read a string from <dfn class="terminology">L</dfn>eft to right and produce a <dfn class="terminology">R</dfn>ight derivation of the string, by looking ahead at most <dfn class="terminology">1</dfn> symbol at each step.  Although LL(1) grammars are easier for people to work with, LR(1) grammars turn out to be very suitable for machine processing, and they are used as the basis for the parsing process in many compilers.</div>
+</div>
+<span class="incontext"><a class="internal" href="sec-grammars.html#p-5207">in-context</a></span>
 </body>
 </html>

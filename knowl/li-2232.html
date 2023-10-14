@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -14,6 +14,14 @@
 <article class="li"><h4 class="heading">
 <span class="type">Item</span><span class="period">.</span>
 </h4>
-<div class="para">Parentheses can be used as usual, for grouping.</div></article><span class="incontext"><a href="sec-grammars.html#li-2232" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Items enclosed between “[” and “]<span class="process-math">\(\dots\)</span>” can be repeated zero or more times.  (This has the same effect as a “<span class="process-math">\(*\)</span>” in a regular expression.)  For example,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle integer \rangle ::=\ \langle digit \rangle [ \langle digit \rangle ]\dots
+\end{equation*}
+</div>
+<div class="para">says that an <span class="process-math">\(\langle integer \rangle\)</span> consists of a <span class="process-math">\(\langle digit \rangle\)</span> followed optionally by any number of additional <span class="process-math">\(\langle digit \rangle\)</span>’s.  That is, the non-terminal <span class="process-math">\(\langle integer \rangle\)</span> can be replaced by <span class="process-math">\(\langle digit \rangle\)</span> or by <span class="process-math">\(\langle digit \rangle\)</span><span class="process-math">\(\langle digit \rangle\)</span> or by <span class="process-math">\(\langle digit \rangle\)</span><span class="process-math">\(\langle digit \rangle\)</span><span class="process-math">\(\langle digit \rangle\text{,}\)</span> and so on.</div>
+</div></article><span class="incontext"><a class="internal" href="sec-grammars.html#li-2232">in-context</a></span>
 </body>
 </html>

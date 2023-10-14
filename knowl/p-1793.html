@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,8 +12,32 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">
-<span class="process-math">\((\exists x) (\neg q(x))\)</span> Premise 2</div>
-<span class="incontext"><a href="section5_3-proofs-quantifiers.html#p-1793" class="internal">in-context</a></span>
+<div class="para logical"><ol class="lower-alpha">
+<li><div class="para">
+<span class="process-math">\((\exists x) (\neg q(x))\)</span> Premise 2</div></li>
+<li><div class="para">
+<span class="process-math">\(\neg q(c)\)</span> Existential Instantiation (1)</div></li>
+<li><div class="para">
+<span class="process-math">\((\forall x) (p(x) \lor q(x))\)</span> Premise 1</div></li>
+<li><div class="para">
+<span class="process-math">\((p(c) \lor q(c))\)</span> Universal Instantiation (3). Since UI we can let it be same element as (2)</div></li>
+<li><div class="para">
+<span class="process-math">\(p(c) \)</span> Disjunctive Syllogism (2,4)</div></li>
+<li><div class="para">
+<span class="process-math">\((\forall x) (\neg p(x) \lor r(x))\)</span> Premise 3</div></li>
+<li><div class="para">
+<span class="process-math">\((\neg p(c) \lor r(c))\)</span> UI (6)</div></li>
+<li><div class="para">
+<span class="process-math">\(r(c)\)</span> Disjunctive Syllogism (5,7)</div></li>
+<li><div class="para">
+<span class="process-math">\((\forall x) (s(x) \rightarrow \neg r(x))\)</span> Premise 4</div></li>
+<li><div class="para">
+<span class="process-math">\((s(c) \rightarrow \neg r(c))\)</span> UI (9)</div></li>
+<li><div class="para">
+<span class="process-math">\(\neg s(c)\)</span> Indirect Reasoning (8, 10)</div></li>
+<li><div class="para">
+<span class="process-math">\(\therefore (\exists x) (\neg s(x))\)</span> Existential Generalization (11)</div></li>
+</ol></div>
+<span class="incontext"><a class="internal" href="section5_3-proofs-quantifiers.html#p-1793">in-context</a></span>
 </body>
 </html>

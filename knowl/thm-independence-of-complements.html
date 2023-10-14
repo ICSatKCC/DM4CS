@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -14,6 +14,55 @@
 <article class="theorem theorem-like"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Independence of Complements.</span>
 </h4>
-<div class="para">Let <span class="process-math">\((S,P)\)</span> be a probability space and let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be two events. If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are independent, then <span class="process-math">\(A\)</span> and <span class="process-math">\(\overline{B}\)</span> are also independent.</div></article><article class="hiddenproof"><a href="" class="proof-knowl original" data-knowl="./knowl/proof-12-hidden.html" title="Proof 3.2.8.1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><span class="incontext"><a href="section3_2-Bayes.html#thm-independence-of-complements" class="internal">in-context</a></span>
+<div class="para">Let <span class="process-math">\((S,P)\)</span> be a probability space and let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be two events. If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are independent, then <span class="process-math">\(A\)</span> and <span class="process-math">\(\overline{B}\)</span> are also independent.</div></article><details class="hiddenproof"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">To prove that <span class="process-math">\(A\)</span> and <span class="process-math">\(\overline{B}\)</span> are independent, we have to show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-probability-of-complements.html ./knowl/thm-probability-of-sequence-of-disjoint.html">
+\begin{equation*}
+P \left( A \cap \overline{B} \right) =
+P(A) \cdot P \left( \overline{B} \right) .
+\end{equation*}
+</div>
+<div class="para">Using <a href="" class="xref" data-knowl="./knowl/thm-probability-of-complements.html" title="Theorem 3.1.13: Probability of Complements">Theorem 3.1.13</a>, this is equivalent to showing that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-probability-of-complements.html ./knowl/thm-probability-of-sequence-of-disjoint.html">
+\begin{equation*}
+P \left( A \cap \overline{B} \right) =
+P(A) \cdot \left( 1 - P(B) \right) .
+\end{equation*}
+</div>
+<div class="para">Since the events <span class="process-math">\(A \cap B\)</span> and <span class="process-math">\(A \cap \overline{B}\)</span> are disjoint and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-probability-of-complements.html ./knowl/thm-probability-of-sequence-of-disjoint.html">
+\begin{equation*}
+A = \left( A \cap B \right) \cup
+\left( A \cap \overline{B} \right) ,
+\end{equation*}
+</div>
+<div class="para">it follows from <a href="" class="xref" data-knowl="./knowl/thm-probability-of-sequence-of-disjoint.html" title="Theorem 3.1.10: Probability of a Sequence of Disjoint Events">Theorem 3.1.10</a> that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-probability-of-complements.html ./knowl/thm-probability-of-sequence-of-disjoint.html">
+\begin{equation*}
+P(A) = P( A \cap B ) +
+P \left( A \cap \overline{B} \right) .
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are independent, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-probability-of-complements.html ./knowl/thm-probability-of-sequence-of-disjoint.html">
+\begin{equation*}
+P(A \cap B) = P(A) \cdot P(B) .
+\end{equation*}
+</div>
+<div class="para">It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-probability-of-complements.html ./knowl/thm-probability-of-sequence-of-disjoint.html">
+\begin{equation*}
+P(A) = P(A) \cdot P(B) +
+P \left( A \cap \overline{B} \right) ,
+\end{equation*}
+</div>
+<div class="para">which is equivalent to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-probability-of-complements.html ./knowl/thm-probability-of-sequence-of-disjoint.html">
+\begin{equation*}
+P \left( A \cap \overline{B} \right) =
+P(A) \cdot \left( 1 - P(B) \right) .\Box\text{.}
+\end{equation*}
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="section3_2-Bayes.html#thm-independence-of-complements">in-context</a></span>
 </body>
 </html>

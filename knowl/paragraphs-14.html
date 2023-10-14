@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -11,10 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 <script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Evaluate (Sage)'});
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
 </script>
 </head>
 <body class="ignore-math">
@@ -43,7 +49,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <td class="l m b0 r0 l0 t0 lines">x := x - <span class="process-math">\(c_i\)</span>
 </td>
 </tr>
-</table></div></section></article></div> <div class="para">In the following implementation of the Greedy Change Making algorithm in SageMath the coins it would return are printed out.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-25"><script type="text/x-sage">def makeChange(amt, cList, tList):
+</table></div></section></article></div> <div class="para">In the following implementation of the Greedy Change Making algorithm in SageMath the coins it would return are printed out.</div> <pre id="sage-25" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def makeChange(amt, cList, tList):
     total = 0
     for i in range(0, len(cList)):
         while amt >= cList[i]:
@@ -55,6 +61,6 @@ amounts = [25, 10, 5, 1]
 types = ["quarter", "dime", "nickel", "penny"]
 change = 92
 makeChange(change, amounts, types)
-</script></pre></section><span class="incontext"><a href="section9_1-Algorithms.html#paragraphs-14" class="internal">in-context</a></span>
+</script></pre></section><span class="incontext"><a class="internal" href="section9_1-Algorithms.html#paragraphs-14">in-context</a></span>
 </body>
 </html>

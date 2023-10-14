@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -15,14 +15,16 @@
 <span class="type">Item</span><span class="period">.</span>
 </h4>
 <div class="para logical">
-<div class="para">Items enclosed in brackets are optional.  For example,</div>
+<div class="para">A vertical bar, <span class="process-math">\(\BNFALT\text{,}\)</span> indicates a choice of alternatives.  For example,</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\langle declaration \rangle ::= \langle type \rangle \,\langle variable \rangle 
-[ = \langle expression \rangle ] ;
+\langle digit \rangle ::=\ 0 \BNFALT\ 1 \BNFALT\ 2
+\BNFALT\ 3 \BNFALT\ 4 \BNFALT\ 5 \BNFALT\ 6 \BNFALT\ 7
+\BNFALT\ 8 \BNFALT\ 9
 \end{equation*}
 </div>
-<div class="para">says that <span class="process-math">\(\langle declaration \rangle\)</span> can be replaced either by “<span class="process-math">\(\langle type \rangle\)</span> <span class="process-math">\(\langle variable \rangle\text{;}\)</span>” or by “<span class="process-math">\(\langle type \rangle\)</span> <span class="process-math">\(\langle variable \rangle\)</span> = <span class="process-math">\(\langle expression \rangle\text{;}\)</span>”. (The symbols “=” and “;” are terminal symbols in this rule.)</div>
-</div></article><span class="incontext"><a href="sec-grammars.html#li-2230" class="internal">in-context</a></span>
+<div class="para">indicates that the non-terminal <span class="process-math">\(\langle digit \rangle\)</span> can be replaced by any one of the terminal symbols <span class="process-math">\(0, 1, \dots,9\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a class="internal" href="sec-grammars.html#li-2230">in-context</a></span>
 </body>
 </html>

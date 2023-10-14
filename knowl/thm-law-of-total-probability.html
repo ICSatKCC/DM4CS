@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -30,6 +30,34 @@ P(A) = \sum_{i=1}^n P \left( A \mid B_i \right) \cdot
 P \left( B_i \right) .
 \end{equation*}
 </div>
-</div></article><article class="hiddenproof"><a href="" class="proof-knowl original" data-knowl="./knowl/proof-11-hidden.html" title="Proof 3.2.5.1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><span class="incontext"><a href="section3_2-Bayes.html#thm-law-of-total-probability" class="internal">in-context</a></span>
+</div></article><details class="hiddenproof"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">The assumptions imply that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-conditional-probability.html">
+\begin{equation*}
+\begin{array}{cc}
+A &amp;= A \cap S \\
+&amp;= A \cap \left( \bigcup_{i=1}^n B_i \right) \\
+&amp;= \bigcup_{i=1}^n \left( A \cap B_i \right) .
+\end{array} 
+\end{equation*}
+</div>
+<div class="para">Since the events <span class="process-math">\(A \cap B_1 , A \cap B_2 , \ldots , A \cap B_n\)</span> are pairwise disjoint, it follows from Lemma~\ref{lemSumPr} that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-conditional-probability.html">
+\begin{equation*}
+\begin{array}{cc}
+P(A) &amp;= P \left( \bigcup_{i=1}^n \left( A \cap B_i \right)
+\right) \\
+&amp;=  \sum_{i=1}^n P \left( A \cap B_i \right) .
+\end{array} 
+\end{equation*}
+</div>
+<div class="para">The theorem follows by observing that, from <a href="" class="xref" data-knowl="./knowl/def-conditional-probability.html" title="Definition 3.2.1: Conditional Probability">Definition 3.2.1</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-conditional-probability.html">
+\begin{equation*}
+P \left( A \cap B_i \right) =
+P \left( A \mid B_i \right) \cdot P \left( B_i \right) .
+\end{equation*}
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="section3_2-Bayes.html#thm-law-of-total-probability">in-context</a></span>
 </body>
 </html>

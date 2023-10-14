@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -11,8 +11,15 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">As mentioned briefly above, there is an alternative school of though as to what properties should be required of a finite-state automaton’s transition function. Recall our motivating example of a C++ compiler and a legal \em <code class="code-inline tex2jax_ignore">if</code> statement. In our description, we had the compiler in an ``expecting a <code class="code-inline tex2jax_ignore">)</code>" state; on seeing a <code class="code-inline tex2jax_ignore">)</code>, the compiler moved into an ``expecting a <code class="code-inline tex2jax_ignore"></code> or a legal statement" state. An alternative way to view this would be to say that the compiler, on seeing a <code class="code-inline tex2jax_ignore">)</code>, could move into one of two different states: it could move to an ``expecting a <code class="code-inline tex2jax_ignore">{</code>" state <em class="emphasis">or</em> move to an ``expecting a legal statement" state. Thus, from a single state, on input <code class="code-inline tex2jax_ignore">)</code>, the compiler has multiple moves. This alternative interpretation is not allowed by the DFA model. A second point on which one might question the DFA model is the fact that input must be consumed for the machine to change state. Think of the syntax for C++ function declarations. The return type of a function need not be specified (the default is taken to be <code class="code-inline tex2jax_ignore">int</code>). The start state of the compiler when parsing a function declaration might be ``expecting a return type"; then with no input consumed, the compiler can move to the state ``expecting a legal function name". To model this, it might seem reasonable to allow transitions that do not require the consumption of input (such transitions are called <dfn class="terminology"><span class="process-math">\(\varep\)</span>-transitions</dfn>). Again, this is not supported by the DFA abstraction. There is, therefore, a second class of finite-state automata that people study, the class of nondeterministic finite-state automata.</div>
-<span class="incontext"><a href="s-finite-state-automata.html#p-5005" class="internal">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para">Again, it is not quite so simple as making a two-state machine where the states correspond to ``have seen <span class="process-math">\(aaa\)</span>" and ``have not seen <span class="process-math">\(aaa\)</span>". Think dynamically: as you move through the input string, how do you arrive at the goal of having seen three consecutive <span class="process-math">\(a\)</span>’s? You might have seen two consecutive <span class="process-math">\(a\)</span>’s and still need a third, or you might just have seen one <span class="process-math">\(a\)</span> and be looking for two more to come immediately, or you might just have seen a <span class="process-math">\(b\)</span> and be right back at the beginning as far as seeing 3 consecutive <span class="process-math">\(a\)</span>’s goes. So once again there will be three states, with the ``last symbol was not an <span class="process-math">\(a\)</span>’’ state being the start state. The complete automaton is shown below. <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;">
+<img src="external/images/fsa7.svg" role="img" class="contained" alt="described in detail following the image" aria-describedby="image-166-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe873;</span></summary><div id="image-166-description">Transition diagram that accepts the language <span class="process-math">\(L = \{w
+\in\Sigma^* \
+| w \mbox{ contains three consecutive a's } \}\text{.}\)</span>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">17.3.17<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div>
+<span class="incontext"><a class="internal" href="s-finite-state-automata.html#p-5005">in-context</a></span>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,16 +12,8 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">We now proceed by induction on <span class="process-math">\(j\)</span> to show that <span class="process-math">\(R_{i,j,k}\)</span> is regular for all <span class="process-math">\(i\)</span> and <span class="process-math">\(k\text{.}\)</span> We have proved the base case, <span class="process-math">\(j=0\text{.}\)</span> Suppose that <span class="process-math">\(0\leq j \lt n \)</span> we already know that <span class="process-math">\(R_{i,j,k}\)</span> is regular for all <span class="process-math">\(i\)</span> and all <span class="process-math">\(k\text{.}\)</span> We need to show that <span class="process-math">\(R_{i,j+1,k}\)</span> is regular for all <span class="process-math">\(i\)</span> and <span class="process-math">\(k\text{.}\)</span> In fact,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-R_{i,j+1,k}=R_{i,j,k}\cup
-\left( R_{i,j,j}R_{j,j,j}^*R_{j,j,k}\right) 
-\end{equation*}
-</div>
-<div class="para">which is regular because <span class="process-math">\(R_{i,j,k}\)</span> is regular for all <span class="process-math">\(i\)</span> and <span class="process-math">\(k\text{,}\)</span> and because the union, concatenation, and Kleene star of regular languages are regular.</div>
-</div>
-<span class="incontext"><a href="sec-FSA-and-Regular-Languages.html#p-5072" class="internal">in-context</a></span>
+<div class="para">Consider the language <span class="process-math">\(R_{i,0,k}\text{.}\)</span> For <span class="process-math">\(w\in R_{i,0,k}\text{,}\)</span> the set of allowable intermediate states is empty. Since there can be no intermediate states, it follows that there can be at most one step in the computation that starts in state <span class="process-math">\(q_i\text{,}\)</span> reads <span class="process-math">\(w\text{,}\)</span> and ends in state <span class="process-math">\(q_k\text{.}\)</span> So, <span class="process-math">\(|w|\)</span> can be at most one. This means that <span class="process-math">\(R_{i,0,k}\)</span> is finite, and hence is regular. (In fact, <span class="process-math">\(R_{i,0,k}=\{a\in\Sigma\st \delta(q_i,a)=q_k\}\text{,}\)</span> for <span class="process-math">\(i\ne k\text{,}\)</span> and <span class="process-math">\(R_{i,0,i}=\{\varep\}\cup\{a\in\Sigma\st
+\delta(q_i,a)=q_i\}\text{.}\)</span> Note that in many cases, <span class="process-math">\(R_{i,0,k}\)</span> will be the empty set.)</div>
+<span class="incontext"><a class="internal" href="sec-FSA-and-Regular-Languages.html#p-5072">in-context</a></span>
 </body>
 </html>

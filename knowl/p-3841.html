@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,7 +12,17 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Suppose you intend to use a binary search algorithm (see <a href="section9_2-Recursive_Algorithms.html#subsec9_2_2-recursive-searching" class="internal" title="Subsection 9.2.2: Recursive Searching">Subsection 9.2.2</a>) on lists of zero or more sorted items, and that the items are stored in an array, so that you have easy access to each item. A natural question to ask is “How much time will it take to complete the search?” When a question like this is asked, the time we refer to is often the so-called worst-case time. That is, if we were to search through <span class="process-math">\(n\)</span> items, what is the longest amount of time that we will need to complete the search? In order to make an analysis such as this independent of the computer to be used, time is measured by counting the number of steps that are executed. Each step (or sequence of steps) is assigned an absolute time, or weight; therefore, our answer will not be in seconds, but in absolute time units. If the steps in two different algorithms are assigned weights that are consistent, then analyses of the algorithms can be used to compare their relative efficiencies. There are two major steps that must be executed in a call of the binary search algorithm:</div>
-<span class="incontext"><a href="s-some-common-rrs.html#p-3841" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">In general, the relation <span class="process-math">\(P(n) = f(n)P(n - 1)\)</span> for <span class="process-math">\(n \geq 1\)</span> with <span class="process-math">\(P(0)
+=f(0)\text{,}\)</span> where <span class="process-math">\(f\)</span> is a function that is defined for all <span class="process-math">\(n\geq
+0\text{,}\)</span> has the “solution”</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(n)=\prod _{k=0}^n f(k)
+\end{equation*}
+</div>
+<div class="para">This product form of <span class="process-math">\(P(n)\)</span> is not a closed form expression because as <span class="process-math">\(n\)</span> grows, the number of multiplications grow. Thus, it is really not a true solution. Often, as for <span class="process-math">\(G(k)\)</span> above, a closed form expression can be derived from the product form.</div>
+</div>
+<span class="incontext"><a class="internal" href="s-some-common-rrs.html#p-3841">in-context</a></span>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">We now have a Turing machine <span class="process-math">\(T_n = M\)</span> which has the following behavior when it is run with input <span class="process-math">\(a^n\)</span> (note that the <span class="process-math">\(n\)</span> here is the same <span class="process-math">\(n\)</span> as in <span class="process-math">\(T_n\)</span>): If <span class="process-math">\(H\)</span> halts with output 1 on input <span class="process-math">\(a^n\text{,}\)</span> then <span class="process-math">\(T_n\)</span> will fail to halt on input <span class="process-math">\(a^n\text{.}\)</span>  If <span class="process-math">\(H\)</span> halts with output 0 on input <span class="process-math">\(a^n\text{,}\)</span> then <span class="process-math">\(T_n\)</span> fails to halt on input <span class="process-math">\(a^n\text{.}\)</span>  (What <span class="process-math">\(T_n\)</span> might do in other cases is not relevant here.)</div>
-<span class="incontext"><a href="sec-turing-machines-comp.html#p-5299" class="internal">in-context</a></span>
+<div class="para">To find <span class="process-math">\(n\text{,}\)</span> we construct a Turing machine <span class="process-math">\(M\)</span> that is a simple variation on <span class="process-math">\(H\text{.}\)</span>  When <span class="process-math">\(M\)</span> is run on any input, it duplicates the behavior of <span class="process-math">\(H\)</span> on that input until <span class="process-math">\(H\)</span> halts (if it ever does).  At that point, <span class="process-math">\(M\)</span> should check <span class="process-math">\(H\)</span>’s output.  If <span class="process-math">\(H\)</span> has halted with output <span class="process-math">\(1\text{,}\)</span> then <span class="process-math">\(M\)</span> should go into an infinite loop, so that <span class="process-math">\(M\)</span> never halts in this case. Otherwise, if the output of <span class="process-math">\(H\)</span> is not <span class="process-math">\(1\text{,}\)</span> then <span class="process-math">\(M\)</span> should halt. Now, we can assume that <span class="process-math">\(M\)</span> is one of the standard Turing machines, say <span class="process-math">\(M=T_n\text{.}\)</span>  (If <span class="process-math">\(M\)</span> is not already one of these machines, it is because it uses different names for its states and symbols.  Renaming the states and symbols will produce an equivalent machine with the same behavior as <span class="process-math">\(M\text{,}\)</span> and we can replace <span class="process-math">\(M\)</span> with this standard machine.)</div>
+<span class="incontext"><a class="internal" href="sec-turing-machines-comp.html#p-5299">in-context</a></span>
 </body>
 </html>

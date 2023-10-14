@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -13,6 +13,9 @@
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
+<div class="para">In BNF production rules, I will use the symbol “<span class="process-math">\(::=\)</span>” in place of the “<span class="process-math">\(\PRODUCES\)</span>” that is used in context-free grammars. BNF production rules are more powerful than the production rules in context-free grammars.  That is, one BNF rule might be equivalent to several context-free grammar rules.  As for context-free grammars, the left-hand side of a BNF production rule is a single non-terminal symbol.  The right hand side can include terminals and non-terminals, and can also use the following notations, which should remind you of notations used in regular expressions:</div>
+<ul class="disc">
+<li><div class="para logical">
 <div class="para">A vertical bar, <span class="process-math">\(\BNFALT\text{,}\)</span> indicates a choice of alternatives.  For example,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -23,7 +26,29 @@
 </div>
 <div class="para">indicates that the non-terminal <span class="process-math">\(\langle digit \rangle\)</span> can be replaced by any one of the terminal symbols <span class="process-math">\(0, 1, \dots,9\text{.}\)</span>
 </div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Items enclosed in brackets are optional.  For example,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle declaration \rangle ::= \langle type \rangle \,\langle variable \rangle 
+[ = \langle expression \rangle ] ;
+\end{equation*}
 </div>
-<span class="incontext"><a href="sec-grammars.html#p-5188" class="internal">in-context</a></span>
+<div class="para">says that <span class="process-math">\(\langle declaration \rangle\)</span> can be replaced either by “<span class="process-math">\(\langle type \rangle\)</span> <span class="process-math">\(\langle variable \rangle\text{;}\)</span>” or by “<span class="process-math">\(\langle type \rangle\)</span> <span class="process-math">\(\langle variable \rangle\)</span> = <span class="process-math">\(\langle expression \rangle\text{;}\)</span>”. (The symbols “=” and “;” are terminal symbols in this rule.)</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Items enclosed between “[” and “]<span class="process-math">\(\dots\)</span>” can be repeated zero or more times.  (This has the same effect as a “<span class="process-math">\(*\)</span>” in a regular expression.)  For example,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle integer \rangle ::=\ \langle digit \rangle [ \langle digit \rangle ]\dots
+\end{equation*}
+</div>
+<div class="para">says that an <span class="process-math">\(\langle integer \rangle\)</span> consists of a <span class="process-math">\(\langle digit \rangle\)</span> followed optionally by any number of additional <span class="process-math">\(\langle digit \rangle\)</span>’s.  That is, the non-terminal <span class="process-math">\(\langle integer \rangle\)</span> can be replaced by <span class="process-math">\(\langle digit \rangle\)</span> or by <span class="process-math">\(\langle digit \rangle\)</span><span class="process-math">\(\langle digit \rangle\)</span> or by <span class="process-math">\(\langle digit \rangle\)</span><span class="process-math">\(\langle digit \rangle\)</span><span class="process-math">\(\langle digit \rangle\text{,}\)</span> and so on.</div>
+</div></li>
+<li><div class="para">Parentheses can be used as usual, for grouping.</div></li>
+</ul>
+</div>
+<span class="incontext"><a class="internal" href="sec-grammars.html#p-5188">in-context</a></span>
 </body>
 </html>

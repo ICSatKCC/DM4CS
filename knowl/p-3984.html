@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,8 +12,18 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">In words, <a href="" class="xref" data-knowl="./knowl/gf-ops-1.html" title="Equation 13.3.13">(13.3.13)</a> says that the generating function of the sum of two sequences equals the sum of the generating functions of those sequences. Take the time to write out the other four identities in your own words. From the previous examples, these identities should be fairly obvious, with the possible exception of the last two. We will prove <a href="" class="xref" data-knowl="./knowl/gf-ops-4.html" title="Equation 13.3.16">(13.3.16)</a> as part of the next theorem and leave the proof of <a href="" class="xref" data-knowl="./knowl/gf-ops-5.html" title="Equation 13.3.17">(13.3.17)</a> to the interested reader. Note that there is no operation on generating functions that is related to sequence multiplication; that is, <span class="process-math">\(G(S\cdot
-T;z)\)</span> cannot be simplified.</div>
-<span class="incontext"><a href="s-generating-functions.html#p-3984" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Now we establish the connection between the operations on sequences and generating functions. Let <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> be sequences and let <span class="process-math">\(c\)</span> be a real number.</div>
+<div class="displaymath process-math">
+\begin{gather}
+G(S+T;z)=G(S;z)+G(T;z)\tag{13.3.13}\\
+G(cS;z)=c G(S;z)\tag{13.3.14}\\
+G(S*T;z)=G(S;z) G(T;z)\tag{13.3.15}\\
+G(S\uparrow ;z)=(G(S;z)-S(0))/z\tag{13.3.16}\\
+G(S\downarrow ;z)=z G(S;z)\tag{13.3.17}
+\end{gather}
+</div>
+</div>
+<span class="incontext"><a class="internal" href="s-generating-functions.html#p-3984">in-context</a></span>
 </body>
 </html>

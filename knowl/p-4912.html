@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,9 +12,19 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">One way of describing the grammatical structure of the strings in a language is to use a mathematical formalism called a <dfn class="terminology">regular expression</dfn>. A regular expression is a pattern that ``matches" strings that have a particular form. For example, consider the language (over alphabet <span class="process-math">\(\Sigma = \ab\)</span>) <span class="process-math">\(L= \{x \ | \ x
-\mbox{ starts and ends with } a\}\text{.}\)</span> What is the symbol-by-symbol structure of strings in this language? Well, they start with an <span class="process-math">\(a\text{,}\)</span> followed by zero or more <span class="process-math">\(a\)</span>’s or <span class="process-math">\(b\)</span>’s or both, followed by an <span class="process-math">\(a\text{.}\)</span> The regular expression <span class="process-math">\(a \cdot (a \REOR b)^* \cdot a\)</span> is a pattern that captures this structure and matches any string in <span class="process-math">\(L\)</span> (<span class="process-math">\(\cdot\)</span> and <span class="process-math">\(^*\)</span> have their usual meanings, and <span class="process-math">\(\REOR\)</span> designates <em class="emphasis">or</em>.) <aside class="aside aside-like"><h4 class="heading"><span class="title">Or Notation.</span></h4>
-<div class="para">Various symbols have been used to represent the ``or’’ operation in regular expressions. Both <span class="process-math">\(+\)</span> and <span class="process-math">\(\cup\)</span> have been used for this purpose. In this chapter, we use the symbol <span class="process-math">\(|\)</span> because it is commonly used in computer implementations of regular expressions.</div></aside> Conversely, consider the regular expression <span class="process-math">\((a\cdot(a\REOR b)^*) \REOR ((a\REOR b)^*\cdot a)\text{.}\)</span> This is a pattern that matches any string that either has the form ``<span class="process-math">\(a\)</span> followed by zero or more <span class="process-math">\(a\)</span>’s or <span class="process-math">\(b\)</span>’s or both" (i.e. any string that starts with an <span class="process-math">\(a\)</span>) <em class="emphasis">or</em> has the form ``zero or more <span class="process-math">\(a\)</span>’s or <span class="process-math">\(b\)</span>’s or both followed by an <span class="process-math">\(a\)</span>" (i.e. any string that ends with an <span class="process-math">\(a\)</span>). Thus the regular expression <em class="emphasis">generates</em> the language of all strings that start or end (or both) in an <span class="process-math">\(a\text{:}\)</span> this is the set of strings that match the regular expression.</div>
-<span class="incontext"><a href="s-regular-expressions-and-apps.html#p-4912" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Though we have used the term <em class="emphasis">string</em> throughout to refer to a sequence of symbols from an alphabet, an alternative term that is frequently used is <em class="emphasis">word</em>. The analogy seems fairly obvious: strings are made up of ``letters" from an alphabet, just as words are in human languages like English. In English, however, there are no particular rules specifying which sequences of letters can be used to form legal English words---even unlikely combinations like <em class="emphasis">ghth</em> and <em class="emphasis">ckstr</em> have their place. While some formal languages may simply be random collections of arbitrary strings, more interesting languages are those where the strings in the language all share some common structure:</div>
+<div class="displaymath process-math">
+\begin{gather*}
+L_1 = \{ x\in \ab^* \ | n_a(x) =
+n_b(x)\};\\
+L_2 = \{\mbox{legal Java identifiers}\};\\
+L_3 = \{\mbox{legal C++
+programs}\}.
+\end{gather*}
+</div>
+<div class="para">In all of these languages, there are structural rules which determine which sequences of symbols are in the language and which aren’t. So despite the terminology of ``alphabet" and ``word" in formal language theory, the concepts don’t necessarily match ``alphabet" and ``word" for human languages. A better parallel is to think of the <em class="emphasis">alphabet</em> in a formal language as corresponding to the <em class="emphasis">words</em> in a human language; the <em class="emphasis">words</em> in a formal language correspond to the <em class="emphasis">sentences</em> in a human language, as there are rules (<em class="emphasis">grammar rules</em>) which determine how they can legally be constructed.</div>
+</div>
+<span class="incontext"><a class="internal" href="s-regular-expressions-and-apps.html#p-4912">in-context</a></span>
 </body>
 </html>

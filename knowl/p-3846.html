@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -13,15 +13,22 @@
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">A more complete solution can be obtained if we represent <span class="process-math">\(n\)</span> in binary form. For each <span class="process-math">\(n\geq 1\text{,}\)</span> there exists a non-negative integer <span class="process-math">\(r\)</span> such that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-inequality-84.html">
-\begin{gather}
-\quad \quad 2^{r-1}\leq n &lt; 2^r\tag{13.2.3}
-\end{gather}
+<div class="para">
+<em class="emphasis">Solution to <a href="" class="xref" data-knowl="./knowl/eq-bin-search-recursion.html" title="Equation 13.2.1">(13.2.1)</a> and <a href="" class="xref" data-knowl="./knowl/eq-bin-search-basis.html" title="Equation 13.2.2">(13.2.2)</a>.</em> To determine <span class="process-math">\(T(n)\text{,}\)</span> the easiest case is when <span class="process-math">\(n\)</span> is a power of two. If we compute <span class="process-math">\(T \left(2^m\right)\text{,}\)</span> <span class="process-math">\(m\geq
+0\)</span> , by iteration, our results are</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-bin-search-recursion.html ./knowl/eq-bin-search-basis.html">
+\begin{equation*}
+\begin{array}{c}
+T(1) = 1 + T(0) = 1\\
+T(2) = 1 + T(1) = 2\\
+T(4) = 1 + T(2) = 3\\
+T(8) = 1 + T(4) = 4\\
+\end{array}
+\end{equation*}
 </div>
-<div class="para">For example, if <span class="process-math">\(n = 21\text{,}\)</span> <span class="process-math">\(2^4 \leq 21 &lt; 2^5\text{;}\)</span> therefore, <span class="process-math">\(r = 5\text{.}\)</span> If <span class="process-math">\(n\)</span> satisfies \<a href="" class="xref" data-knowl="./knowl/eq-inequality-84.html" title="Equation 13.2.3">(13.2.3)</a>, its binary representation requires <span class="process-math">\(r\)</span> digits. For example, <span class="process-math">\(21_{\text{ten}}\)</span> = <span class="process-math">\(10101_{\textrm{two}}\text{.}\)</span>
+<div class="para">The pattern that is established makes it clear that <span class="process-math">\(T\left(2^m\right)
+= m + 1\text{.}\)</span> This result would seem to indicate that every time you double the size of your list, the search time increases by only one unit.</div>
 </div>
-</div>
-<span class="incontext"><a href="s-some-common-rrs.html#p-3846" class="internal">in-context</a></span>
+<span class="incontext"><a class="internal" href="s-some-common-rrs.html#p-3846">in-context</a></span>
 </body>
 </html>

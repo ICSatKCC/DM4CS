@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,7 +12,9 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">The above process must halt eventually, as there are only a finite number of states <span class="process-math">\(n\)</span> in the NFA, and therefore there can be at most <span class="process-math">\(2^n\)</span> states in the DFA, as that is the number of subsets of the NFA’s states. The final states of the new DFA are those where at least one of the associated NFA states is an accepting state of the NFA.</div>
-<span class="incontext"><a href="s-finite-state-automata.html#p-5027" class="internal">in-context</a></span>
+<div class="para">for each input symbol <span class="process-math">\(a\text{,}\)</span> look at all <span class="process-math">\(N\)</span>’s states that can be reached from any one of <span class="process-math">\(p_1, \ldots , p_n\)</span> by consuming <span class="process-math">\(a\)</span> (perhaps making some <span class="process-math">\(\varep\)</span>-transitions as well). That is, look at <span class="process-math">\(\partial^*(p_1,a)
+\cup \ldots \cup
+\partial^*(p_n,a)\text{.}\)</span> If there is not already a DFA state <span class="process-math">\(q'\)</span> that corresponds to this subset of <span class="process-math">\(N\)</span>’s states, then add one, and add the transition <span class="process-math">\(\delta(q, a)= q'\)</span> to <span class="process-math">\(D\)</span>’s transitions.</div>
+<span class="incontext"><a class="internal" href="s-finite-state-automata.html#p-5027">in-context</a></span>
 </body>
 </html>

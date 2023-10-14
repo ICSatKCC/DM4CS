@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,21 +12,12 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">Recursive definition of the Gray Code: Given the Gray Code for the <span class="process-math">\(n\)</span>-cube, <span class="process-math">\(n
-\geq 1\text{,}\)</span> then <span class="process-math">\(G_{n+1}\)</span> is obtained by (1) listing <span class="process-math">\(G_n\)</span> with each string prefixed with 0, and then (2) reversing the list of strings in <span class="process-math">\(G_n\)</span> with each string prefixed with 1. Symbolically, the recursion can be expressed as follows, where <span class="process-math">\(G_n^r\)</span> is the reverse of list <span class="process-math">\(G_n\text{.}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-G_{n+1}=\left(
+<div class="para">Basis for the Gray Code (<span class="process-math">\(n = 1\)</span>): The Gray Code for the 1-cube is <span class="process-math">\(G_1=\left(
 \begin{array}{c}
-0 G_n \\
-1 G_n^r \\
+0 \\
+1 \\
 \end{array}
-\right)
-\end{equation*}
-</div>
-</div>
-<span class="incontext"><a href="s-traversals.html#p-4364" class="internal">in-context</a></span>
+\right)\text{.}\)</span> Note that the edge between 0 and 1 is used twice in this circuit. That doesn’t violate any rules for Hamiltonian circuits, but can only happen if a graph has two vertices.</div>
+<span class="incontext"><a class="internal" href="s-traversals.html#p-4364">in-context</a></span>
 </body>
 </html>

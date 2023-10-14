@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -15,6 +15,21 @@
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">11<span class="period">.</span></span>
 </h4>
 <div class="para">State and prove a theorem on inverse functions analogous to the one that says that if a matrix has an inverse, that inverse is unique.</div>
-<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-131-hidden.html" title="Answer 8.3.4.11.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><span class="incontext"><a href="section8_3-function-composition.html#exercise-296" class="internal">in-context</a></span>
+<div class="solutions"><details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="para">If <span class="process-math">\(f:A\to B\)</span> and <span class="process-math">\(f\)</span> has an inverse, then that inverse is unique.</div> <div class="para logical">
+<div class="para">Proof:  Suppose that <span class="process-math">\(g\)</span> and <span class="process-math">\(h\)</span> are both inverses of <span class="process-math">\(f\text{,}\)</span> both having domain <span class="process-math">\(B\)</span> and codomain <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}g &amp;= g\circ i_B \\
+&amp; =g\circ (f\circ h)\\
+&amp; =(g\circ f)\circ h\\
+&amp; =i_A\circ h\\
+&amp; =h\quad \Rightarrow g=h \quad \square
+\end{split}
+\end{equation*}
+</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="section8_3-function-composition.html#exercise-296">in-context</a></span>
 </body>
 </html>

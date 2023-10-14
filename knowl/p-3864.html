@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,20 +12,17 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para logical">
-<div class="para">We can apply several of these properties of logarithms to get an alternate expression for <span class="process-math">\(T(n)\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
+<div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
 \begin{split}
-\left\lfloor \log_2n\right\rfloor +1 &amp;= \left\lfloor \log_2n+1\right\rfloor
-\\
-&amp; = \left\lfloor \log_2n + \log_22\right\rfloor \\
-&amp; =\text{ }\left\lfloor \log_22n \right\rfloor
+T(n)= r &amp; \Leftrightarrow 2^{r-1}\leq n &lt; 2^r\\
+&amp; \Leftrightarrow \log_2 2^{r-1} \leq \log_2 n &lt; \log_2 2^r\\
+&amp; \Leftrightarrow r-1 \leq \log_2 n &lt; r\\
+&amp; \Leftrightarrow r-1 = \lfloor \log_2 n\rfloor \\
+&amp; \Leftrightarrow T(n) = r= \left\lfloor \log_2 n\right\rfloor +1
 \end{split}
 \end{equation*}
-</div>
-</div>
-<span class="incontext"><a href="s-some-common-rrs.html#p-3864" class="internal">in-context</a></span>
+</div></div>
+<span class="incontext"><a class="internal" href="s-some-common-rrs.html#p-3864">in-context</a></span>
 </body>
 </html>

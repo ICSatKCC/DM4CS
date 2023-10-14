@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -15,15 +15,18 @@
 <div class="para logical">
 <div class="displaymath process-math">
 \begin{equation*}
-\begin{split}
-x\in A\cup A &amp; \Rightarrow  (x\in A) \lor (x\in A)\quad\textrm{by the definition of } \cap\\
-&amp;\Rightarrow x\in A \quad\textrm{ by the idempotent law of logic}
-\end{split}
+\begin{array}{ccccccc}
+A &amp; B &amp;\overline{A} &amp; \overline{B} &amp; A\cup B &amp; \overline{(A\cup B)} &amp;\overline{A}\cap \overline{B} \\
+\hline
+0 &amp; 0 &amp;1 &amp;  1 &amp;  0 &amp;  1 &amp;  1 \\
+0 &amp; 1 &amp;1 &amp;  0 &amp;  1 &amp;  0 &amp;  0 \\
+1 &amp; 0 &amp; 0 &amp;  1 &amp;  1 &amp;  0 &amp;  0 \\
+1 &amp; 1 &amp; 0 &amp;  0 &amp;  1 &amp;  0 &amp;  0 \\
+\end{array}
 \end{equation*}
 </div>
-<div class="para">Therefore, <span class="process-math">\(A\cup A\subseteq A\text{.}\)</span>
+<div class="para">The last two columns are the same so the two sets must be equal.</div>
 </div>
-</div>
-<span class="incontext"><a href="section6_2-laws-of-set-theory.html#p-1942" class="internal">in-context</a></span>
+<span class="incontext"><a class="internal" href="section6_2-laws-of-set-theory.html#p-1942">in-context</a></span>
 </body>
 </html>

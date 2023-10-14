@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,9 +12,7 @@
 </head>
 <body class="ignore-math">
 <h3 class="heading"><span class="type">Paragraph</span></h3>
-<div class="para">What formalism might we use to model what it means to recognize a language ``mechanically’’? We look for inspiration to a language-recognizer with which we are all familiar, and which we’ve already in fact mentioned: a compiler. Consider how a C++ compiler might handle recognizing a legal <code class="code-inline tex2jax_ignore">if</code> statement. Having seen the word <code class="code-inline tex2jax_ignore">if</code>, the compiler will be in a <em class="emphasis">state</em> or <em class="emphasis">phase of its execution</em> where it expects to see a <code class="code-inline tex2jax_ignore">(</code>; in this state, any other character will put the compiler in a ``failure" state. If the compiler does in fact see a <code class="code-inline tex2jax_ignore">(</code> next, it will then be in an ``expecting a boolean condition" state; if it sees a sequence of symbols that make up a legal boolean condition, it will then be in an ``expecting a <code class="code-inline tex2jax_ignore">)</code>" state; and then ``expecting a <code class="code-inline tex2jax_ignore">{</code>’ or a legal statement"; and so on. Thus one can think of the compiler as being in a series of states; on seeing a new input symbol, it moves on to a new state; and this sequence of transitions eventually leads to either a ``failure" state (if the <code class="code-inline tex2jax_ignore">if</code> statement is not syntactically correct) or a ``success" state (if the <code class="code-inline tex2jax_ignore">if</code> statement is legal). We isolate these three concepts---states, input-inspired transitions from state to state, and ``accepting" vs ``non-accepting" states---as the key features of a mechanical language-recognizer, and capture them in a model called a <dfn class="terminology">finite-state automaton</dfn>. (Whether this is a successful distillation of the essence of mechanical language recognition remains to be seen; the question will be taken up later in this chapter.) <aside class="aside aside-like"><h3 class="heading"><span class="title">Automata.</span></h3>
-<div class="para">The term <dfn class="terminology">automata</dfn> is the plural form of <dfn class="terminology">automaton</dfn>. In some texts, <dfn class="terminology">machine</dfn> is used in place of automaton.</div></aside>
-</div>
-<span class="incontext"><a href="s-finite-state-automata.html#p-4968" class="internal">in-context</a></span>
+<div class="para">We have seen how regular expressions can be used to generate languages mechanically. How might languages be recognized mechanically? The question is of interest because if we can mechanically recognize languages like <span class="process-math">\(L= \{\)</span>all legal C++ programs that will not go into infinite loops on any input<span class="process-math">\(\}\text{,}\)</span> then it would be possible to write uber-compilers that can do semantic error-checking like testing for infinite loops, in addition to the syntactic error-checking they currently do.</div>
+<span class="incontext"><a class="internal" href="s-finite-state-automata.html#p-4968">in-context</a></span>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -15,12 +15,14 @@
 <div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
 \begin{split}
-\sum_{n=2}^{\infty} S(n-2) z^n &amp; =
-z^2\left(\sum_{n=2}^{\infty} S(n-2) z^{n-2}\right)\\
-&amp; =z^2G(S;z)
+\sum_{n=2}^{\infty} S(n-1) z^n
+&amp;=z\left(\sum_{n=2}^{\infty} S(n-1) z^{n-1}\right)\\
+&amp; =z\left(\sum_{n=1}^{\infty} S(n) z^n\right)\\
+&amp; = z\left(\sum_{n=0}^{\infty} S(n) z^n-S(0)\right)\\
+&amp;= z(G(S;z)-3)
 \end{split}
 \end{equation*}
 </div></div>
-<span class="incontext"><a href="s-generating-functions.html#p-3940" class="internal">in-context</a></span>
+<span class="incontext"><a class="internal" href="s-generating-functions.html#p-3940">in-context</a></span>
 </body>
 </html>

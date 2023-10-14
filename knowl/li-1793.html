@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,28 +12,18 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h4 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">2.c</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">2.b</span><span class="period">.</span>
 </h4>
 <div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
 \begin{split}
-\sum_{n=2}^{\infty} S(n-2) z^n &amp; =
-z^2\left(\sum_{n=2}^{\infty} S(n-2) z^{n-2}\right)\\
-&amp; =z^2G(S;z)
+\sum_{n=2}^{\infty} S(n-1) z^n
+&amp;=z\left(\sum_{n=2}^{\infty} S(n-1) z^{n-1}\right)\\
+&amp; =z\left(\sum_{n=1}^{\infty} S(n) z^n\right)\\
+&amp; = z\left(\sum_{n=0}^{\infty} S(n) z^n-S(0)\right)\\
+&amp;= z(G(S;z)-3)
 \end{split}
 \end{equation*}
-</div></div>
-<div class="para logical">
-<div class="para">Therefore,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-&amp;(G(S;z)-3-z)-2z(G(S;z)-3)-3z^2G(S;z)=0\\
-&amp; \Rightarrow G(S;z)-2z G(S;z)-3z^2G(S;z)=3 - 5z\\
-&amp;\Rightarrow G(S;z)=\frac{3-5z}{1-2z-3z^2}
-\end{split}
-\end{equation*}
-</div>
-</div></article><span class="incontext"><a href="s-generating-functions.html#li-1793" class="internal">in-context</a></span>
+</div></div></article><span class="incontext"><a class="internal" href="s-generating-functions.html#li-1793">in-context</a></span>
 </body>
 </html>

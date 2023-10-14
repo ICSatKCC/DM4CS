@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,7 +12,25 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">The recursive version of BinarySearch <a href="" class="xref" data-knowl="./knowl/alg-recursive-linear-search.html" title="Algorithm 9.2.3: Recursive Linear Search">Algorithm 9.2.3</a> has the same complexity as the iterative version: <span class="process-math">\(\log_2(n)\text{.}\)</span> The only difference is that instead of splitting the list in half and looping, it splits the list in half and makes a recursive call to itself.</div>
-<span class="incontext"><a href="section9_3-AlgorthmicComplexity.html#p-2858" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">The total time to run <code class="code-inline tex2jax_ignore">BinarySearch</code> is therefore approximately <span class="process-math">\((c_1 + c_2 +c_3)\log_2(n) + c_4\text{.}\)</span> <code class="code-inline tex2jax_ignore">BinarySearch</code> has a running time expressed by the function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-big0-common-functions.html">
+\begin{equation*}
+T(n)=(c_1 + c_2 +c_3)\log_2(n) + c_4 \text{.}
+\end{equation*}
+</div>
+<div class="para">The Big O can then be calculated as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-big0-common-functions.html">
+\begin{equation*}
+\begin{array}{c c}
+(c_1 + c_2 +c_3)\log_2(n) + c_4  &amp; (c_1 + c_2 +c_3)\log_2(n) + c_4 \log_2(n) \\
+&amp; \leq (c_1 + c_2+ c_3 + c_4)\log_2(n) \\
+&amp; = O(\log_2(n))
+\end{array}
+\end{equation*}
+</div>
+<div class="para">The asymptotic complexity and running time of <code class="code-inline tex2jax_ignore">BinarySearch</code> is therefore <span class="process-math">\(\log_2(n)\text{.}\)</span> As can be seen in <a href="" class="xref" data-knowl="./knowl/fig-big0-common-functions.html" title="Figure 8.6.7">Figure 8.6.7</a>, this is a far faster algorithm than <span class="process-math">\(O(n)\)</span> <code class="code-inline tex2jax_ignore">LinearSearch</code>.</div>
+</div>
+<span class="incontext"><a class="internal" href="section9_3-AlgorthmicComplexity.html#p-2858">in-context</a></span>
 </body>
 </html>

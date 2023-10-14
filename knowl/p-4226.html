@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -11,8 +11,9 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">The most common way to define a graph in Sage is to use an edge dictionary. Here is how the graph in <a href="" class="xref" data-knowl="./knowl/ex-data-structure-sample.html" title="Example 15.2.2: A Very Small Example">Example 15.2.2</a> is generated and then displayed. Notice that we simply wrap the function <code class="code-inline tex2jax_ignore">DiGraph()</code> around the same dictionary expression we identified earlier.</div>
-<span class="incontext"><a href="s-data-structures-for-graphs.html#p-4226" class="internal">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para">Consider the tournament graph representing a NCAA Division 1 men’s (or women’s) college basketball season in the United States. There are approximately 350 teams in Division 1. Suppose we constructed the graph with an edge from team A to team B if A beat B at least once in the season; and we label the edge with the number of wins. Since the average team plays around 30 games in a season, most of which will be against other Division I teams, we could expect around <span class="process-math">\(\frac{30 \cdot
+350}{2}=5,250\)</span> edges in the graph. This would be somewhat reduced by games with lower division teams and cases where two or more wins over the same team produces one edge. Since 5,250 is much smaller than <span class="process-math">\(350^2=122,500\)</span> entries in an adjacency matrix, an edge dictionary or edge list would be more compact than an adjacency matrix. Even if we were to use software to create an adjacency matrix, many programs will identify the fact that a matrix such as the one in this example would be “sparse” and would leave data in list form and use sparse array methods to work with it.</div>
+<span class="incontext"><a class="internal" href="s-data-structures-for-graphs.html#p-4226">in-context</a></span>
 </body>
 </html>

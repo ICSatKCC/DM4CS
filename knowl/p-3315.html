@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -13,19 +13,41 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Find <span class="process-math">\(h\)</span> such that</div>
+<div class="para">What we want is for one of the rows to be all zeros except for the last term. If we multiply the top row by <span class="process-math">\(-3/2\)</span> and add that to the bottom row, we get</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left(
 \begin{array}{cc|c}
 2 \amp h \amp 4\\
-3 \amp 6 \amp 7\\
+0 \amp 6 +(-3/2 * h) \amp -1\\
 \end{array}
 \right).
 \end{equation*}
 </div>
-<div class="para">is the augmented matrix of a consistent matrix.</div>
+<div class="para">We want to make an <span class="process-math">\(h\)</span> such that the <span class="process-math">\(6 +(-3/2 * h) = 0\text{.}\)</span> Solving for <span class="process-math">\(h\text{,}\)</span> we get 4.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{cc|c}
+2 \amp 4 \amp 4\\
+0 \amp 6 +(-3/2 * 4) \amp -1\\
+\end{array}
+\right) 
+\end{equation*}
 </div>
-<span class="incontext"><a href="s-Systems-of-Equations.html#p-3315" class="internal">in-context</a></span>
+<div class="para">which simplifies to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{cc|c}
+2 \amp 4 \amp 4\\
+0 \amp 0 \amp -1\\
+\end{array}
+\right)\text{,}
+\end{equation*}
+</div>
+<div class="para">which is inconsistent.</div>
+</div>
+<span class="incontext"><a class="internal" href="s-Systems-of-Equations.html#p-3315">in-context</a></span>
 </body>
 </html>

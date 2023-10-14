@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -15,6 +15,24 @@
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">12<span class="period">.</span></span>
 </h4>
 <div class="para">Prove that the set of all infinite sequences of 0’s and 1’s is not a countable set.</div>
-<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-127-hidden.html" title="Answer 8.2.3.12.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><span class="incontext"><a href="section8_2-properties-of-functions.html#exercise-284" class="internal">in-context</a></span>
+<div class="solutions"><details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="para logical">
+<div class="para">The proof is indirect and follows a technique called the Cantor diagonal process. Assume to the contrary that the set is countable, then the elements can be listed: <span class="process-math">\(n_1,n_2,n_3,\ldots\)</span> where each <span class="process-math">\(n_i\)</span> is an infinite sequence of 0s and 1s. Consider the array:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c}
+n_1=n_{11}n_{12}n_{13}\cdots\\
+n_2=n_{21}n_{22}n_{23}\cdots\\
+n_3=n_{31}n_{32}n_{33}\cdots\\
+\quad \vdots\\
+\end{array}
+\end{equation*}
+</div>
+</div> <div class="para">We assume that this array contains all infinite sequences of 0s and 1s. Consider the sequence <span class="process-math">\(s\)</span> defined by <span class="process-math">\(s_i=\begin{cases}
+0 &amp; \textrm{ if } n_{\textrm{ii}}=1 \\
+1 &amp; \textrm{ if } n_{\textrm{ii}}=0
+\end{cases}\)</span>
+</div> <div class="para">Notice that <span class="process-math">\(s\)</span> differs from each <span class="process-math">\(n_i\)</span> in the <span class="process-math">\(i\)</span>th position and so cannot be in the list. This is a contradiction, which completes our proof.</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="section8_2-properties-of-functions.html#exercise-284">in-context</a></span>
 </body>
 </html>

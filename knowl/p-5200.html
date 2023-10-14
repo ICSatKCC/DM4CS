@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -13,28 +13,19 @@
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">Consider the string <span class="process-math">\(x+y*z\text{.}\)</span>  To show that this string is in the language <span class="process-math">\(L(G_1)\text{,}\)</span> we can exhibit a derivation of the string from the start symbol <span class="process-math">\(E\text{.}\)</span>  For example:</div>
+<div class="para">As an example that we will use throughout this section, consider the language that consists of arithmetic expressions containing parentheses, the binary operators <span class="process-math">\(+\)</span> and <span class="process-math">\(*\text{,}\)</span> and the variables <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\text{.}\)</span>  Strings in this language include <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(x+y*z\text{,}\)</span> and <span class="process-math">\(((x+y)*y)+z*z\text{.}\)</span>  Here is a context-free grammar that generates this language:</div>
 <div class="displaymath process-math">
 \begin{align*}
-E\amp \YIELDS E+E\\
-\amp \YIELDS E+E*E\\
-\amp \YIELDS E+y*E\\
-\amp \YIELDS x+y*E\\
-\amp \YIELDS x+y*z
+E \amp \PRODUCES E+E\\
+E \amp \PRODUCES E*E\\
+E \amp \PRODUCES (E)\\
+E \amp \PRODUCES x\\
+E \amp \PRODUCES y\\
+E \amp \PRODUCES z
 \end{align*}
 </div>
-<div class="para">This derivation shows that the string <span class="process-math">\(x+y*z\)</span> is in fact in <span class="process-math">\(L(G_1)\text{.}\)</span> Now, this string has many other derivations.  At each step in the derivation, there can be a lot of freedom about which rule in the grammar to apply next.  Some of this freedom is clearly not very meaningful.  When faced with the string <span class="process-math">\(E+E*E\)</span> in the above example, the order in which we replace the <span class="process-math">\(E\text{'}s\)</span> with the variables <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\)</span> doesn’t much matter.  To cut out some of this meaningless freedom, we could agree that in each step of a derivation, the non-terminal symbol that is replaced is the leftmost non-terminal symbol in the string.  A derivation in which this is true is called a <dfn class="terminology">left derivation</dfn>.  The following left derivation of the string <span class="process-math">\(x+y*z\)</span> uses the same production rules as the previous derivation, but it applies them in a different order:</div>
-<div class="displaymath process-math">
-\begin{align*}
-E\amp \YIELDS E+E\\
-\amp \YIELDS x+E\\
-\amp \YIELDS x+E*E\\
-\amp \YIELDS x+y*E\\
-\amp \YIELDS x+y*z
-\end{align*}
+<div class="para">Call the grammar described by these production rules <span class="process-math">\(G_1\text{.}\)</span> The grammar <span class="process-math">\(G_1\)</span> says that <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\)</span> are expressions, and that you can make new expressions by adding two expressions, by multiplying two expressions, and by enclosing an expression in parentheses. (Later, we’ll look at other grammars for the same language---ones that turn out to have certain advantages over <span class="process-math">\(G_1\text{.}\)</span>)</div>
 </div>
-<div class="para">It shouldn’t be too hard to convince yourself that any string that has a derivation has a left derivation (which can be obtained by changing the order in which production rules are applied).</div>
-</div>
-<span class="incontext"><a href="sec-grammars.html#p-5200" class="internal">in-context</a></span>
+<span class="incontext"><a class="internal" href="sec-grammars.html#p-5200">in-context</a></span>
 </body>
 </html>

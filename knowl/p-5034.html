@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,10 +12,9 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">At this point, our subsequent reasoning might be a bit clearer if we give explicit names to <span class="process-math">\(\delta^*(q_0,w)\)</span> (the state <span class="process-math">\(D\)</span> reaches on input <span class="process-math">\(w\)</span>) and <span class="process-math">\(\delta^*(q_0,x)\)</span> (the state <span class="process-math">\(D\)</span> reaches on input <span class="process-math">\(x\)</span>). Call <span class="process-math">\(\delta^*(q_0, w)\)</span> \ <span class="process-math">\(q_w\text{,}\)</span> and call <span class="process-math">\(\delta^*(q_0,x)\)</span> \ <span class="process-math">\(q_x\text{.}\)</span> We know, because <span class="process-math">\(w=xa\text{,}\)</span> there must be an <span class="process-math">\(a\)</span>-transition from <span class="process-math">\(q_x\)</span> to <span class="process-math">\(q_w\text{.}\)</span> Look at how we added transitions to <span class="process-math">\(\delta\text{:}\)</span> the fact that there is an <span class="process-math">\(a\)</span>-transition from <span class="process-math">\(q_x\)</span> to <span class="process-math">\(q_w\)</span> means that <span class="process-math">\(q_w\)</span> corresponds to the set <span class="process-math">\(\partial^*(p_1,a)
-\cup \ldots \cup \partial^*(p_n,a)\)</span> of <span class="process-math">\(N\)</span>’s states. By our preliminary observation, <span class="process-math">\(\partial^*(p_1,a) \cup \ldots \cup
-\partial^*(p_n,a)\)</span> is just <span class="process-math">\(\partial^*(p_0,w)\text{.}\)</span> So <span class="process-math">\(q_w\)</span> (or <span class="process-math">\(\delta^*(q_0,w)\)</span>) corresponds to <span class="process-math">\(\partial^*(p_0,w)\text{,}\)</span> which is what we wanted to prove. Since <span class="process-math">\(w\)</span> was an arbitrary string of length <span class="process-math">\(n+1\text{,}\)</span> we have shown that the property holds for <span class="process-math">\(n+1\text{.}\)</span>
+<div class="para">Inductive case: Assume that the desired property holds for some number <span class="process-math">\(n\text{,}\)</span> i.e.\ that <span class="process-math">\(\delta^*(q_0,x)\)</span> corresponds to <span class="process-math">\(\partial^*(p_0,x)\)</span> for all <span class="process-math">\(x\)</span> with length <span class="process-math">\(n\text{.}\)</span> Look at an arbitrary string <span class="process-math">\(w\)</span> with length <span class="process-math">\(n+1\text{.}\)</span> We want to show that <span class="process-math">\(\delta^*(q_0,w)\)</span> corresponds to <span class="process-math">\(\partial^*(p_0,w)\text{.}\)</span> Well, the string <span class="process-math">\(w\)</span> must look like <span class="process-math">\(xa\)</span> for some string <span class="process-math">\(x\)</span> (whose length is <span class="process-math">\(n\)</span>) and some symbol <span class="process-math">\(a\text{.}\)</span> By our inductive hypothesis, we know <span class="process-math">\(\delta^*(q_0,x)\)</span> corresponds to <span class="process-math">\(\partial^*(p_0,x)\text{.}\)</span> We know <span class="process-math">\(\partial^*(p_0,x)\)</span> is a set of <span class="process-math">\(N\)</span>’s states, say <span class="process-math">\(\partial^*(p_0,x) =
+\{p_1, \ldots, p_n\}\text{.}\)</span>
 </div>
-<span class="incontext"><a href="s-finite-state-automata.html#p-5034" class="internal">in-context</a></span>
+<span class="incontext"><a class="internal" href="s-finite-state-automata.html#p-5034">in-context</a></span>
 </body>
 </html>

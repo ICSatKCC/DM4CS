@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,25 +12,8 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">The total time to run <code class="code-inline tex2jax_ignore">BinarySearch</code> is therefore approximately <span class="process-math">\((c_1 + c_2 +c_3)\log_2(n) + c_4\text{.}\)</span> <code class="code-inline tex2jax_ignore">BinarySearch</code> has a running time expressed by the function</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-big0-common-functions.html">
-\begin{equation*}
-T(n)=(c_1 + c_2 +c_3)\log_2(n) + c_4 \text{.}
-\end{equation*}
+<div class="para">Assume the length of the list is <span class="process-math">\(n = 2^m\text{.}\)</span> At each iteration, the algorithm divides the list in half so the length of the new list is <span class="process-math">\(\frac{2^m}{2}  = 2^{m-1}\text{.}\)</span> This happens until the remaining list has a single element, it has length <span class="process-math">\(1 = 2^0\text{.}\)</span> Therefore, the maximum number of splits that can occur is <span class="process-math">\(m = \log_2(n)\text{.}\)</span>
 </div>
-<div class="para">The Big O can then be calculated as follows:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-big0-common-functions.html">
-\begin{equation*}
-\begin{array}{c c}
-(c_1 + c_2 +c_3)\log_2(n) + c_4  &amp; (c_1 + c_2 +c_3)\log_2(n) + c_4 \log_2(n) \\
-&amp; \leq (c_1 + c_2+ c_3 + c_4)\log_2(n) \\
-&amp; = O(\log_2(n))
-\end{array}
-\end{equation*}
-</div>
-<div class="para">The asymptotic complexity and running time of <code class="code-inline tex2jax_ignore">BinarySearch</code> is therefore <span class="process-math">\(\log_2(n)\text{.}\)</span> As can be seen in <a href="" class="xref" data-knowl="./knowl/fig-big0-common-functions.html" title="Figure 8.6.7">Figure 8.6.7</a>, this is a far faster algorithm than <span class="process-math">\(O(n)\)</span> <code class="code-inline tex2jax_ignore">LinearSearch</code>.</div>
-</div>
-<span class="incontext"><a href="section9_3-AlgorthmicComplexity.html#p-2857" class="internal">in-context</a></span>
+<span class="incontext"><a class="internal" href="section9_3-AlgorthmicComplexity.html#p-2857">in-context</a></span>
 </body>
 </html>

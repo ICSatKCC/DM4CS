@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,17 +12,13 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h5 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">10.4.3.9.b</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">10.4.3.9.a</span><span class="period">.</span>
 </h5>
-<div class="para logical"><div class="displaymath process-math">
-\begin{equation*}
-\begin{split}
-\left(M^2\right)_{ij}&amp;=M_{i1}M_{1j}+M_{i2}M_{2j}+\cdots +M_{in}M_{nj}\\
-&amp;\leq N_{i1}N_{1j}+N_{i2}N_{2j}+\cdots +N_{in}N_{nj}\\
-&amp;=\left(N^2\right)_{ij} \Rightarrow M^2\leq N^2
-\end{split}\text{.}
-\end{equation*}
-</div></div>
-<div class="para">To verify that the converse is not true we need only one example. For <span class="process-math">\(n=2\text{,}\)</span> let <span class="process-math">\(M_{12}=1\)</span> and all other entries equal <span class="process-math">\(0\text{,}\)</span> and let <span class="process-math">\(N\)</span> be the zero matrix. Since <span class="process-math">\(M^2\)</span> and <span class="process-math">\(N^2\)</span> are both the zero matrix, <span class="process-math">\(M^2\leq N^2\text{,}\)</span> but since <span class="process-math">\(M_{12}&gt;N_{12}, M\leq N\)</span> is false.</div></article><span class="incontext"><a href="s-matrices-of-relations.html#li-1501" class="internal">in-context</a></span>
+<div class="para">Reflexive: <span class="process-math">\(M_{ij}=M_{ij}\)</span> for all <span class="process-math">\(i,j\text{,}\)</span> therefore <span class="process-math">\(M_{ij}\leq M_{ij}\)</span>
+</div>
+<div class="para">Antisymmetric: Assume <span class="process-math">\(M_{ij}\leq N_{ij}\)</span> and <span class="process-math">\(N_{ij}\leq M_{ij}\)</span> for all <span class="process-math">\(1\leq i,j\leq n\text{.}\)</span> Therefore, <span class="process-math">\(M_{ij} = N_{ij}\)</span> for all <span class="process-math">\(1\leq i,j\leq n\)</span>  and so <span class="process-math">\(M=N\)</span>
+</div>
+<div class="para">Transitive: Assume <span class="process-math">\(M, N,\)</span> and <span class="process-math">\(T\)</span> are matrices where <span class="process-math">\(M_{ij}\leq N_{ij}\)</span> and <span class="process-math">\(N_{ij}\leq T_{ij}\text{,}\)</span> for all <span class="process-math">\(1\leq i,j\leq n\text{.}\)</span> Then <span class="process-math">\(M_{ij}\leq T_{ij}\)</span> for all <span class="process-math">\(1\leq i,j\leq n\text{,}\)</span> and so <span class="process-math">\(M\leq T\text{.}\)</span>
+</div></article><span class="incontext"><a class="internal" href="s-matrices-of-relations.html#li-1501">in-context</a></span>
 </body>
 </html>

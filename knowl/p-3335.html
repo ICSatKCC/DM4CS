@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,8 +12,88 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Give the complete solution to the system of equations, <span class="process-math">\(3x - y + 4z = 6\)</span> , <span class="process-math">\(y + 8z = 0\text{,}\)</span> and <span class="process-math">\(-2x + y = -4\text{.}\)</span>
+<div class="para logical">
+<div class="para">We have the corresponding augmented matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{ccc|c}
+7 \amp 14 \amp 15 \amp 22\\
+2 \amp 4 \amp 3 \amp 5\\
+3 \amp 6 \amp 10 \amp 13\\
+\end{array}
+\right).
+\end{equation*}
 </div>
-<span class="incontext"><a href="s-Systems-of-Equations.html#p-3335" class="internal">in-context</a></span>
+<div class="para">Add <span class="process-math">\(-2 * \)</span> row one to <span class="process-math">\(7 * \)</span> row 2:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{ccc|c}
+7 \amp 14 \amp 15 \amp 22\\
+0 \amp 0 \amp -9 \amp -9\\
+3 \amp 6 \amp 10 \amp 13\\
+\end{array}
+\right).
+\end{equation*}
+</div>
+<div class="para">Add <span class="process-math">\(-3 * \)</span> row one to <span class="process-math">\(7 * \)</span> row 3:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{ccc|c}
+7 \amp 14 \amp 15 \amp 22\\
+0 \amp 0 \amp -9 \amp -9\\
+0 \amp 0 \amp 25 \amp 25\\
+\end{array}
+\right).
+\end{equation*}
+</div>
+<div class="para">Multiply row 2 by <span class="process-math">\(-1/9\)</span> and row 3 by <span class="process-math">\(1/25\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{ccc|c}
+7 \amp 14 \amp 15 \amp 22\\
+0 \amp 0 \amp 1 \amp 1\\
+0 \amp 0 \amp 1 \amp 1\\
+\end{array}
+\right).
+\end{equation*}
+</div>
+<div class="para">So.... <span class="process-math">\(z = 1\text{.}\)</span> Add <span class="process-math">\(-1 * \)</span> row 2 to row 3:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{ccc|c}
+7 \amp 14 \amp 15 \amp 22\\
+0 \amp 0 \amp 1 \amp 1\\
+0 \amp 0 \amp 0 \amp 0\\
+\end{array}
+\right).
+\end{equation*}
+</div>
+<div class="para">This shows that <span class="process-math">\(y\)</span> is going to be a free variable. Assign <span class="process-math">\(s\)</span> to <span class="process-math">\(y\text{.}\)</span>The top row yields the equation <span class="process-math">\(7x + 14s + 15z =
+22\text{,}\)</span> since <span class="process-math">\(z = 1\text{,}\)</span> this gives <span class="process-math">\(7x + 14s + 15 = 22\text{.}\)</span> Solving for <span class="process-math">\(x\)</span> we get <span class="process-math">\(x = 1 - 2s \text{,}\)</span> so the final solution can be written:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{c}
+x\\
+y\\
+z\\
+\end{array}
+\right) = \left(
+\begin{array}{c}
+1 - 2s\\
+s\\
+1\\
+\end{array}
+\right) 
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a class="internal" href="s-Systems-of-Equations.html#p-3335">in-context</a></span>
 </body>
 </html>

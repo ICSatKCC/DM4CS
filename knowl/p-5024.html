@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,16 +12,9 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">Now we progressively set up <span class="process-math">\(D\)</span>’s transition function <span class="process-math">\(\delta\)</span> by repeatedly doing the following:</div>
-<ul class="disc">
-<li><div class="para">find a state <span class="process-math">\(q\)</span> that has been added to <span class="process-math">\(D\)</span> but whose out-transitions have not yet been added. (Note that <span class="process-math">\(q_0\)</span> initially fits this description.) Remember that the state <span class="process-math">\(q\)</span> corresponds to some subset <span class="process-math">\(\{p_1,
-\ldots , p_n\}\)</span> of <span class="process-math">\(N\)</span>’s states.</div></li>
-<li><div class="para">for each input symbol <span class="process-math">\(a\text{,}\)</span> look at all <span class="process-math">\(N\)</span>’s states that can be reached from any one of <span class="process-math">\(p_1, \ldots , p_n\)</span> by consuming <span class="process-math">\(a\)</span> (perhaps making some <span class="process-math">\(\varep\)</span>-transitions as well). That is, look at <span class="process-math">\(\partial^*(p_1,a)
-\cup \ldots \cup
-\partial^*(p_n,a)\text{.}\)</span> If there is not already a DFA state <span class="process-math">\(q'\)</span> that corresponds to this subset of <span class="process-math">\(N\)</span>’s states, then add one, and add the transition <span class="process-math">\(\delta(q, a)= q'\)</span> to <span class="process-math">\(D\)</span>’s transitions.</div></li>
-</ul>
-</div>
-<span class="incontext"><a href="s-finite-state-automata.html#p-5024" class="internal">in-context</a></span>
+<div class="para">So how do we make this work? The first thing to do is to deal with a start state <span class="process-math">\(q_0\)</span> for <span class="process-math">\(D\text{.}\)</span> If we’re going to make this state correspond to a subset of <span class="process-math">\(N\)</span>’s states, what subset should it be? Well, remember (1) that in any DFA, <span class="process-math">\(\delta^*(q_0, \varep) = q_0\text{;}\)</span> and (2) we want to make <span class="process-math">\(\delta^*(q_0,
+w)\)</span> correspond to <span class="process-math">\(\partial^*(p_0,w)\)</span> for every <span class="process-math">\(w\text{.}\)</span> Putting these two limitations together tells us that we should make <span class="process-math">\(q_0\)</span> correspond to <span class="process-math">\(\partial^*(p_0,
+\varep)\text{.}\)</span> So <span class="process-math">\(q_0\)</span> corresponds to the subset of all of <span class="process-math">\(N\)</span>’s states that can be reached with no input.</div>
+<span class="incontext"><a class="internal" href="s-finite-state-automata.html#p-5024">in-context</a></span>
 </body>
 </html>

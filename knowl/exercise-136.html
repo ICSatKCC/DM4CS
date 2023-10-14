@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -16,6 +16,41 @@
 </h4>
 <div class="para">In Las Vegas, a roulette wheel has 38 slots numbered 0, 00, 1, 2, . . . , 36. The 0 and 00 slots are green and half of the remaining 36 slots are red and half are black. A croupier spins the wheel and throws in an ivory ball. If you bet 1 dollar on red, you win 1 dollar if the ball stops in a red slot and otherwise you lose 1 dollar.</div> <div class="para">You place a 1-dollar bet on black. Let <span class="process-math">\(X\)</span> be your winnings. Define <span class="process-math">\(S \)</span> and calculate the values of <span class="process-math">\(P(X), \mathbb{E}(X) \)</span> and <span class="process-math">\(V (X)\text{.}\)</span>
 </div>
-<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-57-hidden.html" title="Answer 3.3.6.5.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><span class="incontext"><a href="section3_3-ExpectedValue.html#exercise-136" class="internal">in-context</a></span>
+<div class="solutions"><details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical">
+<div class="para">Here the set of outcomes <span class="process-math">\(S\)</span> is the color of the slots we care about: {black, not black}. Let <span class="process-math">\(X\)</span> be a random variable that represents your winnings, it takes the value 1 if a spin results in a black slot, and the value -1 otherwise. The probability of winning in a spin is <span class="process-math">\(P(X = 1)\)</span> the probability the ball lands on a black slot: <span class="process-math">\(\frac{18}{38}\text{.}\)</span> The probability of losing a spin is <span class="process-math">\(P(X = -1)\)</span> the probability the ball lands on a green or red slot: <span class="process-math">\(\frac{20}{38}\text{.}\)</span> Therefore:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X) = &amp; (1)\frac{18}{38} + (-1)\frac{20}{38}\\
+= &amp; \frac{-2}{38} \\
+= &amp; \frac{-1}{19}\\
+\approx &amp; - 5 \text{ cents}.
+\end{array} 
+\end{equation*}
+</div>
+<div class="para">To calculate the variance we calculate <span class="process-math">\(\mathbb{E}(X^2)\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X^2) = &amp; (1^2)\frac{18}{38} + (-1^2)\frac{20}{38}\\
+= &amp; \frac{38}{38} \\
+= &amp; 1 \text{ dollar}.
+\end{array} 
+\end{equation*}
+</div>
+<div class="para">Using <span class="process-math">\(V(X) =\mathbb{E}(X^2) - (\mathbb{E}(X))^2\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+V(X) = &amp; 1 - (\frac{-1}{19})^2 \\
+= &amp; 1 - \frac{1}{361} \\
+= &amp; \frac{360}{361} \\
+\approx &amp; 99.7 \text{ cents}.
+\end{array} .
+\end{equation*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="section3_3-ExpectedValue.html#exercise-136">in-context</a></span>
 </body>
 </html>

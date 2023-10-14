@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,7 +12,20 @@
 </head>
 <body class="ignore-math">
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<div class="para">Let <span class="process-math">\(x\)</span> be the item to look for and <span class="process-math">\(\{a_1, a_2, \ldots, a_n\}\)</span> be the list of items to search.</div>
-<span class="incontext"><a href="section9_1-Algorithms.html#p-2721" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">The algorithm starts from the beginning of the list of items and compares each item to the target, counting the items as it goes. If the list item is the same as the target item, then the location variable is updated with the count. When it gets to the end of the list, it outputs the value in the location variable.</div>
+<ul class="disc">
+<li><div class="para">Let <span class="process-math">\(x\)</span> be the item to look for and <span class="process-math">\(\{a_1, a_2, \ldots, a_n\}\)</span> be the list of items to search.</div></li>
+<li><div class="para">First, compare <span class="process-math">\(x\)</span> with the first item <span class="process-math">\(a_1\text{.}\)</span>
+</div></li>
+<li><div class="para">If <span class="process-math">\(x\)</span> and <span class="process-math">\(a_1\)</span> are equal, set location to 1.</div></li>
+<li><div class="para">Else, compare <span class="process-math">\(x\)</span> with the second item <span class="process-math">\(a_2\)</span>
+</div></li>
+<li><div class="para">If <span class="process-math">\(x\)</span> and <span class="process-math">\(a_2\)</span> are equal, set location to 2.</div></li>
+<li><div class="para">Continue until the whole list has been scanned.</div></li>
+<li><div class="para">Return location value or 0 if no match was found.</div></li>
+</ul>
+</div>
+<span class="incontext"><a class="internal" href="section9_1-Algorithms.html#p-2721">in-context</a></span>
 </body>
 </html>

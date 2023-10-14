@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -11,10 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 <script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Evaluate (Sage)'});
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
 </script>
 </head>
 <body class="ignore-math">
@@ -78,7 +84,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
-</table></div></section></article></div> <div class="para">In the following implementation of the Iterative Binary Search in SageMath, we search within a sorted list of integers.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-22"><script type="text/x-sage">def IterativeBinarySearch(target, aList):
+</table></div></section></article></div> <div class="para">In the following implementation of the Iterative Binary Search in SageMath, we search within a sorted list of integers.</div> <pre id="sage-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def IterativeBinarySearch(target, aList):
   loc = -1
   begin = 0
   end = len(aList) - 1
@@ -103,6 +109,6 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
   return loc
 s=[1,9,13,16,30,31,32,33,36,37,38,45,49,50,52,61,63,64,69,77,79,80,81,83,86,90,93,96]
 IterativeBinarySearch(37, s)
-</script></pre></section><span class="incontext"><a href="section9_1-Algorithms.html#paragraphs-8" class="internal">in-context</a></span>
+</script></pre></section><span class="incontext"><a class="internal" href="section9_1-Algorithms.html#paragraphs-8">in-context</a></span>
 </body>
 </html>

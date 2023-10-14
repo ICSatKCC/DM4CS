@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,8 +12,8 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">When a set <span class="process-math">\(S\)</span> is concatenated with itself, the notation <span class="process-math">\(SS\)</span> is usually scrapped in favour of <span class="process-math">\(S^2\text{;}\)</span> if <span class="process-math">\(S^2\)</span> is concatenated with <span class="process-math">\(S\text{,}\)</span> we write <span class="process-math">\(S^3\)</span> for the resulting set, etc. So <span class="process-math">\(S^2\)</span> is the set of all strings formed by concatenating two (possibly different, possibly identical) strings from <span class="process-math">\(S\text{,}\)</span> <span class="process-math">\(S^3\)</span> is the set of strings formed by concatenating three strings from <span class="process-math">\(S\text{,}\)</span> etc. Extending this notation, we take <span class="process-math">\(S^1\)</span> to be the set of strings formed from one string in <span class="process-math">\(S\)</span> (i.e.\ <span class="process-math">\(S^1\)</span> is <span class="process-math">\(S\)</span> itself), and <span class="process-math">\(S^0\)</span> to be the set of strings formed from zero strings in <span class="process-math">\(S\)</span> (i.e.\ <span class="process-math">\(S^0 = \{\varep\}\)</span>). If we take the union <span class="process-math">\(S^0 \cup
-S^1 \cup S^2 \cup \ldots\text{,}\)</span> then the resulting set is the set of all strings formed by concatenating zero or more strings from <span class="process-math">\(S\text{,}\)</span> and is denoted <span class="process-math">\(S^*\text{.}\)</span> The set <span class="process-math">\(S^*\)</span> is called the <em class="emphasis">Kleene closure</em> of <span class="process-math">\(S\text{,}\)</span> and the <span class="process-math">\(^*\)</span> operator is called the <em class="emphasis">Kleene star</em> operator.</div>
-<span class="incontext"><a href="s-Languages.html#p-4900" class="internal">in-context</a></span>
+<div class="para">For two sets of strings <span class="process-math">\(S\)</span> and <span class="process-math">\(T\text{,}\)</span> we define the <em class="emphasis">concatenation</em> of <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> (denoted <span class="process-math">\(S\cdot T\)</span> or just <span class="process-math">\(ST\)</span>) to be the set <span class="process-math">\(ST = \{ st \ | \ s \in S \land t\in T \}\text{.}\)</span> For example, if <span class="process-math">\(S = \{ab, aab\}\)</span> and <span class="process-math">\(T=\{\varep, 110, 1010\}\text{,}\)</span> then <span class="process-math">\(ST = \{ab, ab110, ab1010, aab, aab110, aab1010\}\text{.}\)</span> Note in particular that <span class="process-math">\(ab \in
+ST\text{,}\)</span> because <span class="process-math">\(ab \in S\text{,}\)</span> <span class="process-math">\(\varep \in T\text{,}\)</span> and <span class="process-math">\(ab \cdot \varep = ab\text{.}\)</span> Because concatenation of sets is defined in terms of the concatenation of the strings that the sets contain, concatenation of sets is associative and not commutative. (This can easily be verified.)</div>
+<span class="incontext"><a class="internal" href="s-Languages.html#p-4900">in-context</a></span>
 </body>
 </html>

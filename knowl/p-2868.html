@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,46 +12,7 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">Recall that we assume that <span class="process-math">\(n=2^k\)</span> for some integer <span class="process-math">\(k \geq 0\text{.}\)</span> We furthermore assume that <span class="process-math">\(n\)</span> is a large integer. We know from above that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-T(n) \leq 2 \cdot T(n/2) + n .
-\end{equation*}
-</div>
-<div class="para">If we replace <span class="process-math">\(n\)</span> by <span class="process-math">\(n/2\text{,}\)</span> which is a valid thing to do, we get</div>
-<div class="displaymath process-math">
-\begin{equation*}
-T(n/2) \leq 2 \cdot T(n/2^2) + n/2 .
-\end{equation*}
-</div>
-<div class="para">By combining these two inequalities, we get</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{array}{c c c}
-T(n)  &amp; \leq  &amp; 2 \cdot T(n/2) + n \\
-&amp; \leq  &amp; 2 \left( 2 \cdot T(n/2^2) + n/2 \right) + n \\
-&amp; =  &amp; 2^2 \cdot T(n/2^2) + 2n .
-\end{array}
-\end{equation*}
-</div>
-<div class="para">Let us repeat this: Replacing <span class="process-math">\(n\)</span> by <span class="process-math">\(n/2^2\)</span> the recurrence equation gives</div>
-<div class="displaymath process-math">
-\begin{equation*}
-T(n/2^2) \leq 2 \cdot T(n/2^3) + n/2^2 .
-\end{equation*}
-</div>
-<div class="para">By substituting this into the inequality for <span class="process-math">\(T(n)\text{,}\)</span> we get</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{array}{c c c}
-T(n)  &amp; \leq  &amp; 2^2 \cdot T(n/2^2) + 2n \\
-&amp; \leq  &amp; 2^2 \left( 2 \cdot T(n/2^3) + n/2^2 \right) + 2n \\
-&amp; =  &amp; 2^3 \cdot T(n/2^3) + 3n .
-\end{array}
-\end{equation*}
-</div>
-</div>
-<span class="incontext"><a href="section9_3-AlgorthmicComplexity.html#p-2868" class="internal">in-context</a></span>
+<div class="para">Our goal was to determine <span class="process-math">\(T(n)\text{,}\)</span> but at this moment, we only have a recurrence relation for this function. We will solve this recurrence relation using a technique called unfolding:</div>
+<span class="incontext"><a class="internal" href="section9_3-AlgorthmicComplexity.html#p-2868">in-context</a></span>
 </body>
 </html>

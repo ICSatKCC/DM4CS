@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -15,6 +15,33 @@
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span>
 </h4>
 <div class="para">Determine whether each of the functions: <span class="process-math">\(\log(3n + 2)\)</span> and <span class="process-math">\(\log(n^3 + 1)\)</span> is <span class="process-math">\(O(\log n)\)</span> by finding a valid <span class="process-math">\(c\)</span> and <span class="process-math">\(k\)</span> for each, or showing they do not exist.</div>
-<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-142-hidden.html" title="Answer 8.6.6.5.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><span class="incontext"><a href="section8_6-Growth-of-Functions.html#exercise-318" class="internal">in-context</a></span>
+<div class="solutions"><details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical">
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c c}
+\log(3n + 2)  &amp;  \leq \log(3n + n), \forall n &gt; 2\\
+&amp;  = \log(4n)\\
+&amp;  = \log 4 + \log n\\
+&amp;  \leq \log n + \log n, \text{ if } n &gt; 4.\\
+&amp;  = 2 \log n.
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Therefore <span class="process-math">\(\log(3n + 2)\)</span> is <span class="process-math">\(O(\log n)\)</span> with <span class="process-math">\(c = 2, k = 4\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c c}
+\log(n^3 + 1)  &amp;  \leq \log(n^3 + n^3), \forall n &gt; 1\\
+&amp;  = \log(2n^3)\\
+&amp;  = \log 2 + \log n^3\\
+&amp;  = \log 2 + 3\log n\\
+&amp;  \leq 4 \log n, \text{ if } n &gt; 2.
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Therefore <span class="process-math">\(\log(n^3 + 1)\)</span> is <span class="process-math">\(O(\log n)\)</span> with <span class="process-math">\(c = 4, k = 2\text{.}\)</span>
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="section8_6-Growth-of-Functions.html#exercise-318">in-context</a></span>
 </body>
 </html>

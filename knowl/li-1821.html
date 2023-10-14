@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,9 +12,21 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h5 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">e</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">d</span><span class="period">.</span>
 </h5>
-<div class="para">If <span class="process-math">\(G(Q;z) = 34/(2 - 3z)\text{,}\)</span> then <span class="process-math">\(Q\)</span> can be determined by multiplying the numerator and denominator by 1/2 to obtain <span class="process-math">\(\frac{17}{1-\frac{3}{2}z}\text{.}\)</span> We recognize this fraction as the sum of the infinite geometric series with <span class="process-math">\(a = 17\)</span> and <span class="process-math">\(r = \frac{3}{2}z\text{.}\)</span> Therefore <span class="process-math">\(Q(n) = 17(3/2)^n\text{.}\)</span>
-</div></article><span class="incontext"><a href="s-generating-functions.html#li-1821" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(C(n) = S(n) + T(n) + U(n) = 9 \cdot 5^n + 4 + 3(-1)^n\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+G(C;z) &amp; = G(S;z) + G(T;z) + G(U;z)\\
+&amp; = \frac{9}{1-5z} + \frac{4}{1-z}+ \frac{3}{1+z}\\
+&amp; = -\frac{14 z^2+34z-16}{5 z^3-z^2-5 z+1}
+\end{split}
+\end{equation*}
+</div>
+<div class="para">.</div>
+</div>
+<div class="para">Given a choice between the last form of <span class="process-math">\(G(C;z)\)</span> and the previous sum of three fractions, we would prefer leaving it as a sum of three functions. As we saw in an earlier example, a partial fractions decomposition of a fraction such as the last expression requires some effort to produce.</div></article><span class="incontext"><a class="internal" href="s-generating-functions.html#li-1821">in-context</a></span>
 </body>
 </html>

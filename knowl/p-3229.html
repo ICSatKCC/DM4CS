@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -11,15 +11,30 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">The <dfn class="terminology">row operations</dfn> consist of the following</div>
-<ol class="decimal">
-<li><div class="para">Switch two rows.</div></li>
-<li><div class="para">Multiply a row by a nonzero number.</div></li>
-<li><div class="para">Replace a row by a multiple of another row added to it.</div></li>
-</ol>
+<div class="para">In general a linear system is of the form </div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-elementary-operations.html">
+\begin{equation*}
+\begin{array}{c c c c c c}
+a_{11}x_1 + &amp;\dots &amp; + a_{1n}x_n &amp; = b_1 \\
+&amp;\vdots &amp; &amp; \vdots \\
+a_{m1}x_1 + &amp;\dots &amp; + a_{mn}X_n &amp; = b_m \\
+\end{array}
+\end{equation*}
 </div>
-<span class="incontext"><a href="s-Systems-of-Equations.html#p-3229" class="internal">in-context</a></span>
+<div class="para">where the <span class="process-math">\(x_i\)</span> are variables and the <span class="process-math">\(a_{ij}\)</span> and <span class="process-math">\(b_i\)</span> are constants. This system can be represented by the augmented matrix</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-elementary-operations.html">
+\begin{equation*}
+\left( \begin{array}{c c c | c}
+a_{11} &amp; \dots &amp; a_{1n} &amp; b_1 \\
+&amp; \vdots &amp; &amp; \vdots \\
+a_{m1} &amp; \dots &amp; a_{mn} &amp; b_m \\
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Changes to a system of equations as a result of an elementary operation translate into changes of an augmented matrix resulting from a row operation. Note that <a href="" class="xref" data-knowl="./knowl/thm-elementary-operations.html" title="Theorem 11.1.4">Theorem 11.1.4</a> implies that the row operations deliver an augmented matrix for a system of equations which has the same solution set as the original system.</div>
+</div>
+<span class="incontext"><a class="internal" href="s-Systems-of-Equations.html#p-3229">in-context</a></span>
 </body>
 </html>

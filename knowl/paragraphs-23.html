@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -11,10 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 <script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Evaluate (Sage)'});
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
 </script>
 </head>
 <body class="ignore-math">
@@ -62,7 +68,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <td class="l m b0 r0 l0 t0 lines" colspan="2">
 <em class="alert">return</em> RecursiveMaximumElement(<span class="process-math">\(x\text{;}\)</span> <span class="process-math">\(\{a_1, a_2, ..., a_n\}\text{;}\)</span> <span class="process-math">\(loc+1\text{;}\)</span> max)</td>
 </tr>
-</table></div></section></article> <div class="para">In the following implementation of Recursive Maximum Element in SageMath, we find the maximum of a randomly generated list of integers.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-28"><script type="text/x-sage">def RecursiveMaximumElement(aList, loc, m):
+</table></div></section></article> <div class="para">In the following implementation of Recursive Maximum Element in SageMath, we find the maximum of a randomly generated list of integers.</div> <pre id="sage-28" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def RecursiveMaximumElement(aList, loc, m):
     if loc == len(aList):
         print("base case, max is: " + str(m))
         return m
@@ -78,6 +84,6 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 s = [64, 7, 30, 91, 32, 1, 15, 45, 42, 86, 24, 75, 22, 82, 38, 22, 13, 5, 82, 30, 89, 47, 81, 34, 41, 9, 5, 66, 49, 42]
 print(s)
 RecursiveMaximumElement(s,0,0)
-</script></pre></section><span class="incontext"><a href="section9_2-Recursive_Algorithms.html#paragraphs-23" class="internal">in-context</a></span>
+</script></pre></section><span class="incontext"><a class="internal" href="section9_2-Recursive_Algorithms.html#paragraphs-23">in-context</a></span>
 </body>
 </html>

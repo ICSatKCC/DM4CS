@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">We introduce two new common operations on regular expressions and two new meta-characters to represent them. The first operation is represented by the meta-character <code class="code-inline tex2jax_ignore">+</code>: If <code class="code-inline tex2jax_ignore">r</code> is a regular expression, then <code class="code-inline tex2jax_ignore">r+</code> represents the occurrence of <code class="code-inline tex2jax_ignore">r</code> one or more times.  The second operation is represented by <code class="code-inline tex2jax_ignore">?</code>: The notation <code class="code-inline tex2jax_ignore">r?</code> represents an occurrence of <code class="code-inline tex2jax_ignore">r</code> zero or one times.  That is to say, <code class="code-inline tex2jax_ignore">r?</code> represents an optional occurrence of <code class="code-inline tex2jax_ignore">r</code>.  Note that these operations are introduced for convenience only and do not represent any real increase in the power.  In fact, <code class="code-inline tex2jax_ignore">r+</code> is exactly equivalent to <code class="code-inline tex2jax_ignore">rr*</code>, and <code class="code-inline tex2jax_ignore">r?</code> is equivalent to <code class="code-inline tex2jax_ignore">(r|</code><span class="process-math">\(\varep\)</span><code class="code-inline tex2jax_ignore">)</code> (except that in applications there is generally no equivalent to <span class="process-math">\(\varep\)</span>).</div>
-<span class="incontext"><a href="s-regular-expressions-and-apps.html#p-4934" class="internal">in-context</a></span>
+<div class="para">The solution is to use a so-called ``escape character,’’ which is usually the backslash, <code class="code-inline tex2jax_ignore">\</code>.  We agree, for example, that the notation <code class="code-inline tex2jax_ignore">\*</code> refers to the symbol <code class="code-inline tex2jax_ignore">*</code> that is a member of the alphabet, while <code class="code-inline tex2jax_ignore">*</code> by itself is the meta-character that represents the Kleene star operation.  Similarly, <code class="code-inline tex2jax_ignore">(</code> and <code class="code-inline tex2jax_ignore">)</code> are the meta-characters that are used for grouping, while the corresponding characters in the language are written as <code class="code-inline tex2jax_ignore">\(</code> and <code class="code-inline tex2jax_ignore">\)</code>.  For example, a regular expression that matches the string <code class="code-inline tex2jax_ignore">a*b</code> repeated any number of times would be written: <code class="code-inline tex2jax_ignore">(a\*b)*</code>. The backslash is also used to represent certain non-printing characters.  For example, a tab is represented as <code class="code-inline tex2jax_ignore">\t</code> and a new line character is <code class="code-inline tex2jax_ignore">\n</code>.</div>
+<span class="incontext"><a class="internal" href="s-regular-expressions-and-apps.html#p-4934">in-context</a></span>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,8 +12,21 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">They are all lined up! Now look at <span class="process-math">\(p(1)\text{:}\)</span> The sum of the positive integers from 1 to 1 is <span class="process-math">\(\frac{1+1}{2}\text{.}\)</span> Clearly, <span class="process-math">\(p(1)\)</span> is true. This sets off a chain reaction. Since <span class="process-math">\(p(1) \Rightarrow  p(2)\text{,}\)</span> <span class="process-math">\(p(2)\)</span> is true. Since <span class="process-math">\(p(2) \Rightarrow  p(3)\text{,}\)</span> <span class="process-math">\(p(3)\)</span> is true; and so on.   <span class="process-math">\(\blacksquare\)</span>
+<div class="para logical">
+<div class="para">What we’ve just done is analogous to checking two dominos in a line and finding that they are properly positioned. Since we are dealing with an infinite line, we must check all pairs at once. This is accomplished by proving that <span class="process-math">\(p(n) \Rightarrow  p(n + 1)\)</span> for all <span class="process-math">\(n \geq  1\text{:}\)</span>
 </div>
-<span class="incontext"><a href="section5_2-induction.html#p-1650" class="internal">in-context</a></span>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+1 + 2 + \cdots  + n + (n+1) &amp; = (1 + 2 + \cdots  + n) + (n + 1) \\
+&amp; = \frac{ n(n+1)}{2} + (n + 1) \textrm{      by } p(n) \\
+&amp; =  \frac{ n(n+1)}{2}+\frac{2 (n+1)}{2}\\
+&amp; = \frac{  (n+1) (n+2)}{2}  \\
+&amp; = \frac{ (n+1) ((n+1)+1)}{2}
+\end{split}\text{.}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a class="internal" href="section5_2-induction.html#p-1650">in-context</a></span>
 </body>
 </html>

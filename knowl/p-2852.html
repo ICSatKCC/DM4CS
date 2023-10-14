@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,26 +12,7 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">Let us call <span class="process-math">\(c_1\)</span> the amount of time required to compare two integers, <span class="process-math">\(c_2\)</span> the time required to increment variable <code class="code-inline tex2jax_ignore">index</code> because this must be done for each value in the list, <span class="process-math">\(c_3\)</span> the time for the assignment to <code class="code-inline tex2jax_ignore">loc</code> when the target is found, and <span class="process-math">\(c_4\)</span> the time taken to initialize <code class="code-inline tex2jax_ignore">index</code> and <code class="code-inline tex2jax_ignore">loc</code>. The total time to run <code class="code-inline tex2jax_ignore">LinearSearch</code> is therefore approximately <span class="process-math">\((c_1 + c_2)n + c_3 + c_4\text{,}\)</span> because we must make <span class="process-math">\(n\)</span> comparisons and increments, but the assignment of the target and initialization only happen once. <code class="code-inline tex2jax_ignore">LinearSearch</code> has a running time expressed by the function</div>
-<div class="displaymath process-math">
-\begin{equation*}
-T(n)=(c_1 + c_2)n + (c_3 + c_4) \text{.}
-\end{equation*}
-</div>
-<div class="para">The Big O can then be calculated as follows:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{array}{c c}
-(c_1 + c_2)n + (c_3 + c_4)  &amp; \leq (c_1 + c_2)n + (c_3 + c_4)n  \\
-&amp; \leq (c_1 + c_2+ c_3 + c_4)n \\
-&amp; = O(n)
-\end{array}
-\end{equation*}
-</div>
-<div class="para">The asymptotic complexity of <code class="code-inline tex2jax_ignore">LinearSearch</code> is therefore the Big O of <span class="process-math">\(T(n)\text{.}\)</span> This is a <em class="emphasis">Linear Complexity</em> algorithm because <span class="process-math">\(T(n) = O(n)\text{.}\)</span>
-</div>
-</div>
-<span class="incontext"><a href="section9_3-AlgorthmicComplexity.html#p-2852" class="internal">in-context</a></span>
+<div class="para">Consider the LinearSearch algorithms <a href="" class="xref" data-knowl="./knowl/alg-linear-search.html" title="Algorithm 9.1.9: Linear Search">Algorithm 9.1.9</a> and <a href="" class="xref" data-knowl="./knowl/alg-linear-search2.html" title="Algorithm 9.1.10: Smarter Linear Search">Algorithm 9.1.10</a> that find a target value in an array of <span class="process-math">\(n\)</span> integers. The algorithm looks at each integer in turn, comparing it to the target. Here, the size of the problem is the number of integers stored in in the list. The basic operation is to compare an integer’s value to that of the target. As with <code class="code-inline tex2jax_ignore">MaximumElement</code> above, it is reasonable to assume that it takes a fixed amount of time to do one such comparison, regardless of the value of the two integers or their positions in the array.</div>
+<span class="incontext"><a class="internal" href="section9_3-AlgorthmicComplexity.html#p-2852">in-context</a></span>
 </body>
 </html>

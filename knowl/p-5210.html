@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,7 +12,8 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">In summary, LR(1) parsing transforms a string into the start symbol of the grammar by a sequence of shift and reduce operations.  Each reduce operation corresponds to a step in a right derivation of the string, and these steps are generated in reverse order.  Because the steps in the derivation are generated from “bottom to top,” LR(1) parsing is a type of <dfn class="terminology">bottom-up parsing</dfn>.  LL(1) parsing, on the other hand, generates the steps in a left derivation from “top to bottom” and so is a type of <dfn class="terminology">top-down parsing</dfn>.</div>
-<span class="incontext"><a href="sec-grammars.html#p-5210" class="internal">in-context</a></span>
+<div class="para">After a few more shift and reduce operations, the configuration becomes <span class="process-math">\((E)|*z\text{,}\)</span> which we can reduce to <span class="process-math">\(T|*z\)</span> by applying the production rules <span class="process-math">\(F\PRODUCES (E)\)</span> and <span class="process-math">\(T\PRODUCES F\text{.}\)</span> Now, faced with <span class="process-math">\(T|*z\text{,}\)</span> we must once again decide between a shift operation and a reduce operation that applies the rule <span class="process-math">\(E\PRODUCES T\text{.}\)</span>  In this case, since the next character is a <span class="process-math">\(*\)</span> rather than a <span class="process-math">\(+\text{,}\)</span> we apply the shift operation, giving <span class="process-math">\(T*|z\text{.}\)</span>  From there we get, in succession, <span class="process-math">\(T*z|\text{,}\)</span> <span class="process-math">\(T*F|\text{,}\)</span> <span class="process-math">\(T|/\text{,}\)</span> and finally <span class="process-math">\(E|\text{.}\)</span>  At this point, we have reduced the entire string <span class="process-math">\((x+y)*z\)</span> to the start symbol of the grammar. The very last step, the reduction of <span class="process-math">\(T\)</span> to <span class="process-math">\(E\)</span> corresponds to the first step of the right derivation, <span class="process-math">\(E\YIELDS T\text{.}\)</span>
+</div>
+<span class="incontext"><a class="internal" href="sec-grammars.html#p-5210">in-context</a></span>
 </body>
 </html>

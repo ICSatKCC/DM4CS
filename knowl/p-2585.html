@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -13,18 +13,19 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">The Fibonacci sequence is the sequence <span class="process-math">\(F\)</span> defined by</div>
+<div class="para">These rules stipulate that each number in the list is 1.08 times the previous number, with the starting number equal to 100. For example</div>
 <div class="displaymath process-math">
 \begin{equation*}
-F_0= 1 \textrm{, } F_1= 1\textrm{ and}
+\begin{split}
+B_3 &amp;= 1.08 B_2 \\
+&amp;=1.08\left(1.08B_1\right)\\
+&amp;= 1.08\left(1.08\left(1.08 B_0\right)\right)\\
+&amp; = 1.08(1.08(1.08\cdot 100))\\
+&amp;= 1.08^3 100 = 125.971
+\end{split}
 \end{equation*}
 </div>
-<div class="displaymath process-math">
-\begin{equation*}
-F_k = F_{k-2} + F_{k-1} \textrm{ for }k\geq 2
-\end{equation*}
 </div>
-</div>
-<span class="incontext"><a href="section8_4-recursion.html#p-2585" class="internal">in-context</a></span>
+<span class="incontext"><a class="internal" href="section8_4-recursion.html#p-2585">in-context</a></span>
 </body>
 </html>

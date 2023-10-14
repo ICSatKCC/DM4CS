@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -13,14 +13,19 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">If <span class="process-math">\(G = (V, E)\)</span> is a connected planar graph with <span class="process-math">\(v\)</span> vertices, <span class="process-math">\(v\geq
-3\text{,}\)</span> and <span class="process-math">\(e\)</span> edges, then</div>
+<div class="para">For the case where <span class="process-math">\(G'\)</span> is connected,</div>
 <div class="displaymath process-math">
-\begin{gather}
-e \leq 3v - 6\tag{15.6.2}
-\end{gather}
+\begin{equation*}
+\begin{split}
+v+ r -e &amp;= v+r-k\\
+&amp;= v' + (r'+1) -(e'+1)\\
+&amp; = v' + r'-e'\\
+&amp; =2
+\end{split}
+\end{equation*}
 </div>
+<div class="para">If <span class="process-math">\(G'\)</span> is not connected, it must consist of two connected components, <span class="process-math">\(G_1\)</span> and <span class="process-math">\(G_2\text{,}\)</span> since we started with a connected graph, <span class="process-math">\(G\text{.}\)</span> We can apply the induction hypothesis to each of the two components to complete the proof. We leave it to the students to do this, with the reminder that in counting regions, <span class="process-math">\(G_1\)</span> and <span class="process-math">\(G_2\)</span> will share the same infinite region.</div>
 </div>
-<span class="incontext"><a href="s-planarity-and-colorings.html#p-4551" class="internal">in-context</a></span>
+<span class="incontext"><a class="internal" href="s-planarity-and-colorings.html#p-4551">in-context</a></span>
 </body>
 </html>

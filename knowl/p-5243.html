@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,8 +12,7 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">You might want to visualize a Turing machine as a physical machine such as in this simple diagram: <figure class="figure figure-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/Turing_machine.svg" role="img" class="contained" alt="Basic graphical representation of a Turing machine."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">17.6.1<span class="period">.</span></span><span class="space"> </span><a class="external" href="https://commons.wikimedia.org/wiki/File:Turing_machine.png" target="_blank">Kevd1337&gt;</a><a href="" class="fn-knowl original" data-knowl="./knowl/fn-20-hidden.html" title="Footnote 17.6.2"><sup> 2 </sup></a> , Public domain, via Wikimedia Commons</figcaption></figure> However, these kinds of diagrams do not tell us anything about the functioning of a particular machine.</div>
-<span class="incontext"><a href="sec-turing-machines-comp.html#p-5243" class="internal">in-context</a></span>
+<div class="para">A Turing machine is really not much more complicated than a finite-state automaton or a pushdown automaton.<aside class="aside aside-like"></aside> Like a FSA, a Turing machine has a finite number of possible states, and it changes from state to state as it computes. However, a Turing machine also has an infinitely long <dfn class="terminology">tape</dfn> that it can use for input and output.  The tape extends to infinity in both directions.  The tape is divided into <dfn class="terminology">cells</dfn>, which are in one-to-one correspondence with the integers, <span class="process-math">\(\Z\text{.}\)</span> Each cell can either be blank or it can hold a symbol from a specified alphabet.  The Turing machine can move back and forth along this tape, reading and writing symbols and changing state. It can read only one cell at a time, and possibly write a new value in that cell.  After doing this, it can change state and it can move by one cell either to the left or to the right. This is how the Turing machine computes.  To use a Turing machine, you would write some input on its tape, start the machine, and let it compute until it halts.  Whatever is written on the tape at that time is the output of the computation.</div>
+<span class="incontext"><a class="internal" href="sec-turing-machines-comp.html#p-5243">in-context</a></span>
 </body>
 </html>

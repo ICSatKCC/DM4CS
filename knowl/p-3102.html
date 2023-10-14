@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -11,85 +11,34 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">This final example gives an insight into how relational data base programs can systematically answer questions pertaining to large masses of information. Matrices <span class="process-math">\(M\)</span> (on the left) and <span class="process-math">\(N\)</span> (on the right) define the relations <span class="process-math">\(R\)</span>  and <span class="process-math">\(S\)</span> where <span class="process-math">\(a R b\)</span> if software <span class="process-math">\(a\)</span> can be run with operating system <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(b S c\)</span> if operating system <span class="process-math">\(b\)</span> can run on computer <span class="process-math">\(c\text{.}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{array}{cc}
-\begin{array}{cc}
-&amp;
-\begin{array}{cccc}
-\text{OS1} &amp; \text{OS2} &amp; \text{OS3} &amp; \text{OS4}
-\end{array} \\
-\begin{array}{c}
-\text{P1} \\
-\text{P2} \\
-\text{P3} \\
-\text{P4}
-\end{array}
-&amp;
-\left(
-\begin{array}{cccc}
-1  &amp;  0  &amp;  1  &amp;  0  \\
-1  &amp;  1  &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp;  1  \\
-0 &amp; 0 &amp;  1  &amp;  1
-\end{array}
-\right)
-\end{array}
-\begin{array}{cc}
-&amp;
-\begin{array}{ccc}
-\text{C1} &amp; \text{C2} &amp; \text{C3}
-\end{array} \\
-\begin{array}{c}
-\text{OS1} \\
-\text{OS2} \\
-\text{OS3} \\
-\text{OS4} \\
-\end{array}
-&amp; \left(
-\begin{array}{ccc}
-1  &amp;  1  &amp; 0 \\
-0 &amp;  1  &amp; 0 \\
-0 &amp; 0 &amp;  1  \\
-0 &amp;  1  &amp;  1
-\end{array}
-\right)
-\end{array}
-\end{array}
-\end{equation*}
-</div>
-<div class="para">Although the relation between the software and computers is not implicit from the data given, we can easily compute this information. The matrix of <span class="process-math">\(RS\)</span> is <span class="process-math">\(MN\text{,}\)</span> which is</div>
-<div class="displaymath process-math">
+<div class="para">Remark: A convenient help in constructing the adjacency matrix of a relation from a set <span class="process-math">\(A\)</span> into a set <span class="process-math">\(B\)</span> is to write the elements from <span class="process-math">\(A\)</span> in a column preceding the first column of the adjacency matrix, and the elements of <span class="process-math">\(B\)</span> in a row above the first row. Initially, <span class="process-math">\(M\)</span> in <a href="" class="xref" data-knowl="./knowl/ex-first-10-4.html" title="Example 10.4.2: A simple example">Example 2</a> would be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-first-10-4.html">
 \begin{equation*}
 \begin{array}{cc}
 &amp;
 \begin{array}{ccc}
-\text{C1} &amp; \text{C2} &amp; \text{C3}
+2 &amp; 5 &amp; 6 \\
 \end{array}
 \\
 \begin{array}{c}
-\text{P1} \\
-\text{P2} \\
-\text{P3} \\
-\text{P4}
+2 \\
+5 \\
+6 \\
 \end{array}
 &amp; \left(
 \begin{array}{ccc}
-1  &amp;  1  &amp; 1 \\
-1 &amp;  1  &amp; 0 \\
-0 &amp; 1 &amp;  1  \\
-0 &amp;  1  &amp;  1
+&amp;   &amp;   \\
+&amp;   &amp;   \\
+&amp;   &amp;   \\
 \end{array}
-\right)
+\right) \\
 \end{array}
 \end{equation*}
 </div>
-<div class="para">This matrix tells us at a glance which software will run on the computers listed. In this case, all software will run on all computers with the exception of program P2, which will not run on the computer C3, and program P4, which will not run on the computer C1.</div>
+<div class="para">To fill in the matrix, <span class="process-math">\(M_{ij}\)</span> is 1 if and only if <span class="process-math">\(\left(a_i,b_j\right) \in R\text{.}\)</span> So that, since the pair <span class="process-math">\((2, 5) \in R\text{,}\)</span> the entry of <span class="process-math">\(M\)</span> corresponding to the row labeled 2 and the column labeled 5 in the matrix is a 1.</div>
 </div>
-<span class="incontext"><a href="s-matrices-of-relations.html#p-3102" class="internal">in-context</a></span>
+<span class="incontext"><a class="internal" href="s-matrices-of-relations.html#p-3102">in-context</a></span>
 </body>
 </html>

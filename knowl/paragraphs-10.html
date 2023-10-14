@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -11,10 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 <script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Evaluate (Sage)'});
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
 </script>
 </head>
 <body class="ignore-math">
@@ -47,7 +53,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
-</table></div></section></article></div> <div class="para">In the following implementation of Bubble Sort in SageMath, we sort a randomized list of integers.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-23"><script type="text/x-sage">def BubbleSort(aList):
+</table></div></section></article></div> <div class="para">In the following implementation of Bubble Sort in SageMath, we sort a randomized list of integers.</div> <pre id="sage-23" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def BubbleSort(aList):
     for i in range(0, len(aList)):
         for j in range(0, len(aList) - 1 -i):
             if aList[j] > aList[j+1]:
@@ -60,6 +66,6 @@ s = [19, 20, 12, 0, 30, 23, 11, 9, 0, 17, 7, 30, 9, 0, 14, 5, 22, 9, 29, 26, 9, 
 print(s)
 BubbleSort(s)
 print(s)
-</script></pre></section><span class="incontext"><a href="section9_1-Algorithms.html#paragraphs-10" class="internal">in-context</a></span>
+</script></pre></section><span class="incontext"><a class="internal" href="section9_1-Algorithms.html#paragraphs-10">in-context</a></span>
 </body>
 </html>

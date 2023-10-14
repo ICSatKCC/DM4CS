@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -31,6 +31,181 @@
 </div>
 <div class="para">Do row reductions till you obtain a matrix in echelon form. Then complete the process by producing one in row reduced echelon form.</div>
 </div>
-<div class="solutions"><a href="" class="solution-knowl original" data-knowl="./knowl/solution-27-hidden.html" title="Solution 11.1.15.1"><span class="type">Solution</span><span class="period">.</span></a></div></article><span class="incontext"><a href="s-Systems-of-Equations.html#example-171" class="internal">in-context</a></span>
+<div class="solutions"><details class="solution solution-like"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical">
+<div class="para">The pivot column is the second. Hence the pivot position is the one in the first row and second column. Switch the first two rows to obtain a nonzero entry in this pivot position.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{ccccc}
+0 \amp 1 \amp 1 \amp 4 \amp 3\\
+0 \amp 0 \amp 2 \amp 3 \amp 2\\
+0 \amp 0 \amp 1 \amp 2 \amp 2\\
+0 \amp 0 \amp 0 \amp 0 \amp 0\\
+0 \amp 0 \amp 0 \amp 2 \amp 1\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Step two is not necessary because all the entries below the first pivot position in the resulting matrix are zero. Now ignore the top row and the columns to the left of this first pivot position. Thus you apply the same operations to the smaller matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{ccc}
+2 \amp 3 \amp 2\\
+1 \amp 2 \amp 2\\
+0 \amp 0 \amp 0\\
+0 \amp 2 \amp 1\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+</div> <div class="para">The next pivot column is the third corresponding to the first in this smaller matrix and the second pivot position is therefore, the one which is in the second row and third column.</div> <div class="para logical">
+<div class="para">In this case it is not necessary to switch any rows to place a nonzero entry in this position because there is already a nonzero entry there. Multiply the third row of the original matrix by -2 and then add the second row to it. This yields</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{ccccc}
+0 \amp 1 \amp 1 \amp 4 \amp 3\\
+0 \amp 0 \amp 2 \amp 3 \amp 2\\
+0 \amp 0 \amp 0 \amp -1 \amp -2\\
+0 \amp 0 \amp 0 \amp 0 \amp 0\\
+0 \amp 0 \amp 0 \amp 2 \amp 1\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">The next matrix the steps in the algorithm are applied to is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{cc}
+-1 \amp -2\\
+0 \amp 0\\
+2 \amp 1\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">The first pivot column is the first column in this case and no switching of rows is necessary because there is a nonzero entry in the first pivot position. Therefore, the algorithm yields for the next step</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{ccccc}
+0 \amp 1 \amp 1 \amp 4 \amp 3\\
+0 \amp 0 \amp 2 \amp 3 \amp 2\\
+0 \amp 0 \amp 0 \amp -1 \amp -2\\
+0 \amp 0 \amp 0 \amp 0 \amp 0\\
+0 \amp 0 \amp 0 \amp 0 \amp -3\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Now the algorithm will be applied to the matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{c}
+0\\
+-3\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+<div class="para">There is only one column and it is nonzero so this single column is the pivot column. Therefore, the algorithm yields the following matrix for the echelon form.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{ccccc}
+0 \amp 1 \amp 1 \amp 4 \amp 3\\
+0 \amp 0 \amp 2 \amp 3 \amp 2\\
+0 \amp 0 \amp 0 \amp -1 \amp -2\\
+0 \amp 0 \amp 0 \amp 0 \amp -3\\
+0 \amp 0 \amp 0 \amp 0 \amp 0\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">To complete placing the matrix in reduced echelon form, multiply the third row by 3 and add -2 times the fourth row to it. This yields</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{ccccc}
+0 \amp 1 \amp 1 \amp 4 \amp 3\\
+0 \amp 0 \amp 2 \amp 3 \amp 2\\
+0 \amp 0 \amp 0 \amp -3 \amp 0\\
+0 \amp 0 \amp 0 \amp 0 \amp -3\\
+0 \amp 0 \amp 0 \amp 0 \amp 0\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Next multiply the second row by 3 and take 2 times the fourth row and add to it. Then add the fourth row to the first.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{ccccc}
+0 \amp 1 \amp 1 \amp 4 \amp 0\\
+0 \amp 0 \amp 6 \amp 9 \amp 0\\
+0 \amp 0 \amp 0 \amp -3 \amp 0\\
+0 \amp 0 \amp 0 \amp 0 \amp -3\\
+0 \amp 0 \amp 0 \amp 0 \amp 0\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Next work on the fourth column in the same way.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{ccccc}
+0 \amp 3 \amp 3 \amp 0 \amp 0\\
+0 \amp 0 \amp 6 \amp 0 \amp 0\\
+0 \amp 0 \amp 0 \amp -3 \amp 0\\
+0 \amp 0 \amp 0 \amp 0 \amp -3\\
+0 \amp 0 \amp 0 \amp 0 \amp 0\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Take <span class="process-math">\(-1/2\)</span> times the second row and add to the first.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{ccccc}
+0 \amp 3 \amp 0 \amp 0 \amp 0\\
+0 \amp 0 \amp 6 \amp 0 \amp 0\\
+0 \amp 0 \amp 0 \amp -3 \amp 0\\
+0 \amp 0 \amp 0 \amp 0 \amp -3\\
+0 \amp 0 \amp 0 \amp 0 \amp 0\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Finally, divide by the value of the leading entries in the nonzero rows.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(
+\begin{array}{ccccc}
+0 \amp 1 \amp 0 \amp 0 \amp 0\\
+0 \amp 0 \amp 1 \amp 0 \amp 0\\
+0 \amp 0 \amp 0 \amp 1 \amp 0\\
+0 \amp 0 \amp 0 \amp 0 \amp 1\\
+0 \amp 0 \amp 0 \amp 0 \amp 0\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="s-Systems-of-Equations.html#example-171">in-context</a></span>
 </body>
 </html>

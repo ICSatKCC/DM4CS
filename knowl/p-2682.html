@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,8 +12,33 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Show that <span class="process-math">\(f(x) = 10x^2 + x - 22 \)</span> is <span class="process-math">\(\Theta(x^2)\text{.}\)</span> Find <span class="process-math">\(c_1, c_2, k_1, k_2\text{.}\)</span>
+<div class="para logical">
+<div class="para">for all <span class="process-math">\(x \geq 1\)</span>
 </div>
-<span class="incontext"><a href="section8_6-Growth-of-Functions.html#p-2682" class="internal">in-context</a></span>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c c}
+8x^3 - 5x^2 + 7x + 13  &amp;  \leq  8x^3 + 7x + 13\\
+&amp;  \leq 8x^3 + 7x^3 + 13x^3\\
+&amp;  = 28x^3
+\end{array}
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(8x^3 - 5x^2 + 7x + 13\)</span> is <span class="process-math">\(O(x^3)\)</span> with  <span class="process-math">\(c_1 = 28, k_1 = 1\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c c}
+8x^3 - 5x^2 + 7x + 13  &amp;  \geq  8x^3 -5x^2\\
+8x^3 - 5x^2 + 7x + 13  &amp;  \geq  8x^3 -x^3\\
+&amp; x^3 \geq 5x^2 \text{ if } x &gt; 5  \\
+&amp;  = 7x^3
+\end{array}
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(8x^3 - 5x^2 + 7x + 13\)</span> is <span class="process-math">\(\Omega(x^3)\)</span> with  <span class="process-math">\(c_2 = 7, k_2 = 5\)</span> Therefore <span class="process-math">\(8x^3 - 5x^2 + 7x + 13\)</span> is <span class="process-math">\(\Theta(x^3)\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a class="internal" href="section8_6-Growth-of-Functions.html#p-2682">in-context</a></span>
 </body>
 </html>

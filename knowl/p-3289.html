@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -11,46 +11,23 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">The number of free variables is always equal to the number of <dfn class="terminology">different</dfn> parameters used to describe the solution. If there are no free variables, then either there is no solution as in the case where row operations yield an echelon form like</div>
+<div class="para">Most people find it less confusing in the case of an infinite solution set to first place the augmented matrix in row reduced echelon form rather than just echelon form before seeking to write down the description of the solution. In the above, this means we don’t stop with the echelon form above. Instead we first place it in reduced echelon form as follows.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left(
-\begin{array}{ccc}
-1 \amp 2 \amp 3 \\
-0 \amp 4 \amp -2\\
-0 \amp 0 \amp 1\\
+\begin{array}{ccccc}
+1 \amp 0 \amp -1 \amp 1 \amp -1\\
+0 \amp 1 \amp 0 \amp 0 \amp 2\\
+0 \amp 0 \amp 0 \amp 0 \amp 0\\
 \end{array}
 \right)
 \end{equation*}
 </div>
-<div class="para">or there is a unique solution as in the case where row operations yield an echelon form like</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\left(
-\begin{array}{cccc}
-1 \amp 2 \amp 2 \amp 3 \\
-0 \amp 4 \amp 3 \amp -2\\
-0 \amp 0 \amp 4 \amp 1\\
-\end{array}
-\right).
-\end{equation*}
+<div class="para">Then the solution is <span class="process-math">\(y = 2\)</span> from the second row and <span class="process-math">\(x
+= -1 + z - w\)</span> from the first. Thus letting <span class="process-math">\(z = s\)</span> and <span class="process-math">\(w = t\text{,}\)</span> the solution as is given previously.</div>
 </div>
-<div class="para">Also, sometimes there are free variables and no solution as in the following:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\left(
-\begin{array}{cccc}
-1 \amp 2 \amp 2 \amp 3 \\
-0 \amp 4 \amp 3 \amp -2\\
-0 \amp 0 \amp 0 \amp 1\\
-\end{array}
-\right).
-\end{equation*}
-</div>
-<div class="para">There are a lot of cases to consider but it is not necessary to make a major production of this. Do row operations till you obtain a matrix in echelon form or reduced echelon form and determine whether there is a solution. If there is, see if there are free variables. In this case, there will be infinitely many solutions. Find them by assigning different parameters to the free variables and obtain the solution. If there are no free variables, then there will be a unique solution which is easily determined once the augmented matrix is in echelon or row reduced echelon form. In every case, the process yields a straightforward way to describe the solutions to the linear system. As indicated above, you are probably less likely to become confused if you place the augmented matrix in row reduced echelon form rather than just echelon form.</div>
-</div>
-<span class="incontext"><a href="s-Systems-of-Equations.html#p-3289" class="internal">in-context</a></span>
+<span class="incontext"><a class="internal" href="s-Systems-of-Equations.html#p-3289">in-context</a></span>
 </body>
 </html>

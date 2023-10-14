@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -29,6 +29,57 @@ A = \left(
 </div>
 <div class="para">Where are the pivot positions and pivot columns?</div>
 </div>
-<div class="solutions"><a href="" class="solution-knowl original" data-knowl="./knowl/solution-26-hidden.html" title="Solution 11.1.13.1"><span class="type">Solution</span><span class="period">.</span></a></div></article><span class="incontext"><a href="s-Systems-of-Equations.html#example-170" class="internal">in-context</a></span>
+<div class="solutions"><details class="solution solution-like"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical">
+<div class="para">Replace the second row by -3 times the first added to the second. This yields</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A
+= \left(
+\begin{array}{cccc}
+1 \amp 2 \amp 3 \amp 4\\
+0 \amp -4 \amp -8 \amp -6\\
+4 \amp 4 \amp 4 \amp 10\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+<div class="para">This is not in reduced echelon form so replace the bottom row by -4 times the top row added to the bottom. This yields</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left(
+\begin{array}{cccc}
+1 \amp 2 \amp 3 \amp 4\\
+0 \amp -4 \amp -8 \amp -6\\
+0 \amp -4 \amp -8 \amp -6\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+<div class="para">This is still not in reduced echelon form. Replace the bottom row by -1 times the middle row added to the bottom. This yields</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left(
+\begin{array}{cccc}
+1 \amp 2 \amp 3 \amp 4\\
+0 \amp -4 \amp -8 \amp -6\\
+0 \amp 0 \amp 0 \amp 0\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+<div class="para">which is in echelon form, although not in reduced echelon form. Therefore, the pivot positions in the original matrix are the locations corresponding to the first row and first column and the second row and second columns as shown in the following:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left(
+\begin{array}{cccc}
+\boxed{1} \amp 2 \amp 3 \amp 4\\
+3 \amp \boxed{2} \amp 1 \amp 6\\
+4 \amp 4 \amp 4 \amp 10\\
+\end{array}
+\right)
+\end{equation*}
+</div>
+<div class="para">Thus the pivot columns in the matrix are the first two columns.</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s-Systems-of-Equations.html#example-170">in-context</a></span>
 </body>
 </html>

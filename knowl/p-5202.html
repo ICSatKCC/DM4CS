@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,19 +12,8 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para logical">
-<div class="para">Our example grammar <span class="process-math">\(G_1\)</span> is ambiguous.  In fact, in addition to the left derivation given above, the string <span class="process-math">\(x+y*z\)</span> has the alternative left derivation</div>
-<div class="displaymath process-math">
-\begin{align*}
-E\amp \YIELDS E*E\\
-\amp \YIELDS E+E*E\\
-\amp \YIELDS x+E*E\\
-\amp \YIELDS x+y*E\\
-\amp \YIELDS x+y*z
-\end{align*}
+<div class="para">We have seen that the same string might have several different derivations. We might ask whether it can have several different left derivations. The answer is that it depends on the grammar.  A context-free grammar <span class="process-math">\(G\)</span> is said to be <dfn class="terminology">ambiguous</dfn>   if there is a string <span class="process-math">\(w\in L(G)\)</span> such that <span class="process-math">\(w\)</span> has more than one left derivation according to the grammar <span class="process-math">\(G\text{.}\)</span>
 </div>
-<div class="para">In this left derivation of the string <span class="process-math">\(x+y*z\text{,}\)</span> the first production rule that is applied is <span class="process-math">\(E\PRODUCES E*E\text{.}\)</span>  The first <span class="process-math">\(E\)</span> on the right-hand side eventually yields “<span class="process-math">\(x+y\)</span>” while the second yields “<span class="process-math">\(z\)</span>”. In the previous left derivation, the first production rule that was applied was <span class="process-math">\(E\PRODUCES E+E\text{,}\)</span> with the first <span class="process-math">\(E\)</span> on the right yielding “<span class="process-math">\(x\)</span>” and the second <span class="process-math">\(E\)</span> yielding “<span class="process-math">\(y*z\)</span>”.  If we think in terms of arithmetic expressions, the two left derivations lead to two different interpretations of the expression <span class="process-math">\(x+y*z\text{.}\)</span>  In one interpretation, the <span class="process-math">\(x+y\)</span> is a unit that is multiplied by <span class="process-math">\(z\text{.}\)</span> In the second interpretation, the <span class="process-math">\(y*z\)</span> is a unit that is added to <span class="process-math">\(x\text{.}\)</span> The second interpretation is the one that is correct according to the usual rules of arithmetic.  However, the grammar allows either interpretation.  The ambiguity of the grammar allows the string to be parsed in two essentially different ways, and only one of the parsings is consistent with the meaning of the string.  Of course, the grammar for English is also ambiguous.  In a famous example, it’s impossible to tell whether a “pretty girls’ camp” is meant to describe a pretty camp for girls or a camp for pretty girls.</div>
-</div>
-<span class="incontext"><a href="sec-grammars.html#p-5202" class="internal">in-context</a></span>
+<span class="incontext"><a class="internal" href="sec-grammars.html#p-5202">in-context</a></span>
 </body>
 </html>

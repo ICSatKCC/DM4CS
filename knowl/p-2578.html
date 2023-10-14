@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -11,14 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical"><ol class="lower-alpha">
-<li><div class="para">The telescoping form of <span class="process-math">\(p(x) = 5x^4 + 12x^3 -6x^2 + x + 6\)</span> is <span class="process-math">\((((5x + 12) x - 6) x + 1) x + 6\text{.}\)</span> Using Horner’s method, computing the value of <span class="process-math">\(p(c)\)</span> requires four multiplications and four additions/subtractions for any real number <span class="process-math">\(c\text{.}\)</span>
-</div></li>
-<li><div class="para">
-<span class="process-math">\(g(x) = -x^5 + 3x^4 + 2x^2 + x\)</span> has the telescoping form <span class="process-math">\(((((- x + 3) x ) x + 2) x + 1) x\text{.}\)</span>
-</div></li>
-</ol></div>
-<span class="incontext"><a href="section8_4-recursion.html#p-2578" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">We can easily verify that <span class="process-math">\(f(n) = 4n^3 + 2n^2 - 8n + 9\)</span> is a third-degree polynomial expression in  <span class="process-math">\(n\)</span> over <span class="process-math">\(\mathbb{Z}\)</span> based on this definition:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(n)= 4n^3 + 2n^2 - 8n + 9 = ((4n+2)n-8)n+9
+\end{equation*}
+</div>
+<div class="para">Notice that 4 is a zeroth degree polynomial since it is an integer. Therefore <span class="process-math">\(4n + 2\)</span> is a first-degree polynomial; therefore, <span class="process-math">\((4n + 2) n - 8\)</span> is a second-degree polynomial in <span class="process-math">\(n\)</span> over <span class="process-math">\(\mathbb{Z}\text{;}\)</span> therefore, <span class="process-math">\(f(n)\)</span> is a third-degree polynomial in <span class="process-math">\(n\)</span> over <span class="process-math">\(\mathbb{Z}\text{.}\)</span> The final expression for <span class="process-math">\(f(n)\)</span> is called its <dfn class="terminology">telescoping form</dfn>. If we use it to calculate <span class="process-math">\(f(7)\text{,}\)</span> we need only three multiplications and three additions/subtractions. This is called <dfn class="terminology">Horner’s method</dfn> for evaluating a polynomial expression.</div>
+</div>
+<span class="incontext"><a class="internal" href="section8_4-recursion.html#p-2578">in-context</a></span>
 </body>
 </html>

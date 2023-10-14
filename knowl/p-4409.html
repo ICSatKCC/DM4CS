@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -11,9 +11,10 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">A salesman must make stops at vertices A, B, and C, which are all on the same one-way street. The graph in <a href="" class="xref" data-knowl="./knowl/fig-directed-tsp-example.html" title="Figure 15.5.9">Figure 15.5.9</a> is weighted by the function <span class="process-math">\(w(i, j)\)</span> equal to the time it takes to drive from vertex <span class="process-math">\(i\)</span> to vertex <span class="process-math">\(j\text{.}\)</span>
-</div>
-<span class="incontext"><a href="s-graph-optimization.html#p-4409" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para">Although the closest neighbor circuit is often not optimal, we may be satisfied if it is close to optimal. If <span class="process-math">\(C_{opt}\)</span> and <span class="process-math">\(C_{cn}\)</span> are the costs of optimal and closest neighbor circuits in a graph, then it is always the case that <span class="process-math">\(C_{opt}\leq
+C_{cn}\)</span> or <span class="process-math">\(\frac{C_{cn}}{C_{opt}}\geq
+1\text{.}\)</span> We can assess how good the closest neighbor algorithm is by determining how small the quantity <span class="process-math">\(\frac{C_{cn}}{C_{opt}}\)</span> gets. If it is always near 1, then the algorithm is good. However, if there are graphs for which it is large, then the algorithm may be discarded. Note that in <a href="" class="xref" data-knowl="./knowl/ex-tsp-small-example.html" title="Example 15.5.6: A small example">Example 15.5.6</a>, <span class="process-math">\(\frac{C_{cn}}{C_{opt}} = \frac{29}{27}\approx 1.074\text{.}\)</span> A 7 percent increase in cost may or may not be considered significant, depending on the situation.</div>
+<span class="incontext"><a class="internal" href="s-graph-optimization.html#p-4409">in-context</a></span>
 </body>
 </html>

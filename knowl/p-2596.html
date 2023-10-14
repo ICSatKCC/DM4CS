@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,7 +12,20 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">The formula that we have just proven for <span class="process-math">\(B\)</span> is called a closed form expression. It involves no recursion or summation signs.</div>
-<span class="incontext"><a href="section8_4-recursion.html#p-2596" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(k= 0\text{,}\)</span> then <span class="process-math">\(B = 100(1.08)^0 = 100\text{,}\)</span> as defined. Now assume that for some <span class="process-math">\(k\geq 1\text{,}\)</span> the formula for <span class="process-math">\(B_k\)</span> is true.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+B_{k+1} &amp;= 1.08B_k \textrm{  by the recursive definition}\\
+&amp;=1.08\left(100 (1.08)^k\right) \textrm{  by the induction hypothesis}\\
+&amp;= 100 (1.08)^{k+1}
+\end{split}
+\end{equation*}
+</div>
+<div class="para">hence the formula is true for <span class="process-math">\(k+1\)</span>
+</div>
+</div>
+<span class="incontext"><a class="internal" href="section8_4-recursion.html#p-2596">in-context</a></span>
 </body>
 </html>
