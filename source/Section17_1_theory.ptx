@@ -342,6 +342,48 @@
                     
                 </p>
             </statement>
+            <answer>
+                <p>
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                               <me>S^2 = \{\varep, ab, abab, ababab, abababab\} </me> 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <md>
+                                    <mrow>S^3 = \amp \{\varep, ab, abab, ababab, abababab, </mrow>
+                                        <mrow>\amp ababababab, abababababab, ababababababab,</mrow>
+                                        <mrow>\amp abababababababab \}</mrow></md>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <me>S^* = \{\varep, ab, abab, ababab, abababab,  \ldots \}</me>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <md>
+                                    <mrow>ST  =  \amp\{aa, aba, abba,
+                                    abbba, \ldots, </mrow>
+                                    <mrow>\amp abaa, ababa, ababba, ababbba, \ldots,</mrow> 
+                                    <mrow> \amp ababaa, abababa, abababba, abababbba, \ldots\}</mrow></md>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <md><mrow>TS = \amp \{aa, aba, abba,
+                                    abbba,  abbbba, \ldots, </mrow> 
+                                    <mrow> \amp aaab, abaab, abbaab, abbbaab, \ldots ,</mrow>
+                                    <mrow> \amp aaabab, abaabab, abbaabab, abbbaabab, \ldots\}</mrow> 
+                                </md>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </answer>
             
         </exercise>
         <exercise number="2" xml:id="exerc-17_1-2">
@@ -357,6 +399,14 @@
                 <statement>
                     <p>Give an example of a language <m>L</m> such that <m>L=L^*</m>.</p>
                 </statement>
+                <answer>
+                    <p>
+                        <me>
+                            L = \{\varep, a, aa, aaa, aaaa, \ldots\}
+                        </me>
+                        
+                    </p>
+                </answer>
             </exercise>
         </exercises>
  </subsection>
