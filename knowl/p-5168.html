@@ -12,17 +12,11 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">Let’s start with the grammar containing the rules <span class="process-math">\(S\PRODUCES aSb\)</span> and <span class="process-math">\(S\PRODUCES\EMPTYSTRING\text{.}\)</span> We can try adding the rule <span class="process-math">\(S\PRODUCES bSa\text{.}\)</span> Every string that can be generated using these three rules is in the language <span class="process-math">\(L\text{.}\)</span> However, not every string in <span class="process-math">\(L\)</span> can be generated. A derivation that starts with <span class="process-math">\(S\YIELDS aSb\)</span> can only produce strings that begin with <span class="process-math">\(a\)</span> and end with <span class="process-math">\(b\text{.}\)</span> A derivation that starts with <span class="process-math">\(S\YIELDS bSa\)</span> can only generate strings that begin with <span class="process-math">\(b\)</span> and end with <span class="process-math">\(a\text{.}\)</span> There is no way to generate the strings <span class="process-math">\(baab\)</span> or <span class="process-math">\(abbbabaaba\text{,}\)</span> which are in the language <span class="process-math">\(L\text{.}\)</span> But we shall see that any string in <span class="process-math">\(L\)</span> that begins and ends with the same letter can be written in the form <span class="process-math">\(xy\)</span> where <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are shorter strings in <span class="process-math">\(L\text{.}\)</span> To produce strings of this form, we need one more rule, <span class="process-math">\(S\PRODUCES
-SS\text{.}\)</span> The complete set of production rules for the language <span class="process-math">\(L\)</span> is</div>
-<div class="displaymath process-math">
-\begin{align*}
-S\amp\PRODUCES aSb \\
-S\amp\PRODUCES bSa \\
-S\amp\PRODUCES SS \\
-S\amp\PRODUCES \EMPTYSTRING 
-\end{align*}
-</div>
+<div class="para">To show that <span class="process-math">\(L=L(G)\text{,}\)</span> we must show both that <span class="process-math">\(L\SUB L(G)\)</span> and that <span class="process-math">\(L(G)\SUB
+L\text{.}\)</span> To show that <span class="process-math">\(L\SUB L(G)\text{,}\)</span> let <span class="process-math">\(w\)</span> be an arbitrary element of <span class="process-math">\(L\text{.}\)</span> By definition of <span class="process-math">\(L\text{,}\)</span> <span class="process-math">\(w=a^nb^n\)</span> for some <span class="process-math">\(n\in\N\text{.}\)</span> We show that <span class="process-math">\(w\in L(G)\)</span> by induction on <span class="process-math">\(n\text{.}\)</span> In the case where <span class="process-math">\(n=0\text{,}\)</span> we have <span class="process-math">\(w=\EMPTYSTRING\text{.}\)</span> Now, <span class="process-math">\(\EMPTYSTRING\in
+L(G)\)</span> since <span class="process-math">\(\EMPTYSTRING\)</span> can be produced from the start symbol <span class="process-math">\(S\)</span> by an application of the rule <span class="process-math">\(S\PRODUCES\EMPTYSTRING\text{,}\)</span> so our claim is true for <span class="process-math">\(n=0\text{.}\)</span> Now, suppose that <span class="process-math">\(k\in\N\)</span> and that we already know that <span class="process-math">\(a^kb^k\in L(G)\text{.}\)</span> We must show that <span class="process-math">\(a^{k+1}b^{k+1}\in L(G)\text{.}\)</span> Since <span class="process-math">\(S\;\YIELDSTAR a^kb^k\text{,}\)</span> we also have, by <a href="" class="xref" data-knowl="./knowl/thm-context-free-grammar.html" title="Theorem 17.5.2">Theorem 17.5.2</a>, that <span class="process-math">\(aSb\;\YIELDSTAR aa^kb^kb\text{.}\)</span> That is, <span class="process-math">\(aSb\;\YIELDSTAR
+a^{k+1}b^{k+1}\text{.}\)</span> Combining this with the production rule <span class="process-math">\(S\PRODUCES aSb\text{,}\)</span> we see that <span class="process-math">\(S\;\YIELDSTAR
+a^{k+1}b^{k+1}\text{.}\)</span> This means that <span class="process-math">\(a^{k+1}b^{k+1}\in L(G)\text{,}\)</span> as we wanted to show. This completes the proof that <span class="process-math">\(L\SUB L(G)\text{.}\)</span>
 </div>
 <span class="incontext"><a class="internal" href="sec-grammars.html#p-5168">in-context</a></span>
 </body>

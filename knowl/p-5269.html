@@ -11,8 +11,9 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">At this point, it would be useful to look at increasingly complex Turing machines, such as those with more tapes, which compute increasingly complex functions and languages. Although Turing machines are very simple devices, it turns out that they can perform very sophisticated computations.  In fact, any computation that can be carried out by a modern digital computer---even one with an unlimited amount of memory---can be carried out by a Turing machine.  Although it is not something that can be proved, it is widely believed that anything that can reasonably be called ``computation’’ can be done by a Turing machine.  This claim is known as the <dfn class="terminology">Church-Turing Thesis</dfn>.</div>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para">Suppose that <span class="process-math">\(\Sigma\)</span> and <span class="process-math">\(\Gamma\)</span> are alphabets that do not contain # and that <span class="process-math">\(f\)</span> is a function from <span class="process-math">\(\Sigma^*\)</span> to <span class="process-math">\(\Gamma^*\text{.}\)</span>  We say that <span class="process-math">\(f\)</span> is <dfn class="terminology">Turing-computable</dfn> if there is a Turing machine <span class="process-math">\(M=(Q,\Lambda,q_0,\delta)\)</span> such that <span class="process-math">\(\Sigma\SUB\Lambda\)</span> and <span class="process-math">\(\Gamma\SUB\Lambda\)</span> and for each string <span class="process-math">\(w\in\Sigma^*\text{,}\)</span> when <span class="process-math">\(M\)</span> is run with input <span class="process-math">\(w\text{,}\)</span> it halts with output <span class="process-math">\(f(w)\text{.}\)</span>  In this case, we say that <span class="process-math">\(M\)</span> <dfn class="terminology">computes</dfn> the function <span class="process-math">\(f\text{.}\)</span>
+</div>
 <span class="incontext"><a class="internal" href="sec-turing-machines-comp.html#p-5269">in-context</a></span>
 </body>
 </html>

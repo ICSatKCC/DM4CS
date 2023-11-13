@@ -12,15 +12,7 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para logical">
-<div class="para">Items enclosed between “[” and “]<span class="process-math">\(\dots\)</span>” can be repeated zero or more times.  (This has the same effect as a “<span class="process-math">\(*\)</span>” in a regular expression.)  For example,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\langle integer \rangle ::=\ \langle digit \rangle [ \langle digit \rangle ]\dots
-\end{equation*}
-</div>
-<div class="para">says that an <span class="process-math">\(\langle integer \rangle\)</span> consists of a <span class="process-math">\(\langle digit \rangle\)</span> followed optionally by any number of additional <span class="process-math">\(\langle digit \rangle\)</span>’s.  That is, the non-terminal <span class="process-math">\(\langle integer \rangle\)</span> can be replaced by <span class="process-math">\(\langle digit \rangle\)</span> or by <span class="process-math">\(\langle digit \rangle\)</span><span class="process-math">\(\langle digit \rangle\)</span> or by <span class="process-math">\(\langle digit \rangle\)</span><span class="process-math">\(\langle digit \rangle\)</span><span class="process-math">\(\langle digit \rangle\text{,}\)</span> and so on.</div>
-</div>
+<div class="para">Examples of the types of production rule that are allowed in a right-regular grammar are <span class="process-math">\(A\PRODUCES\EMPTYSTRING\text{,}\)</span> <span class="process-math">\(B\PRODUCES C\text{,}\)</span> and <span class="process-math">\(D\PRODUCES aE\text{.}\)</span> The idea of the proof is that given a right-regular grammar, we can build a corresponding <span class="process-math">\(NFA\)</span> and <em class="emphasis">vice-versa</em>. The states of the <span class="process-math">\(NFA\)</span> correspond to the non-terminal symbols of the grammar. The start symbol of the grammar corresponds to the starting state of the NFA. A production rule of the form <span class="process-math">\(A\PRODUCES bC\)</span> corresponds to a transition in the NFA from state <span class="process-math">\(A\)</span> to state <span class="process-math">\(C\)</span> while reading the symbol <span class="process-math">\(b\text{.}\)</span> A production rule of the form <span class="process-math">\(A\PRODUCES B\)</span> corresponds to an <span class="process-math">\(\EMPTYSTRING\)</span>-transition from state <span class="process-math">\(A\)</span> to state <span class="process-math">\(B\)</span> in the NFA. And a production rule of the form <span class="process-math">\(A\PRODUCES\EMPTYSTRING\)</span> exists in the grammar if and only if <span class="process-math">\(A\)</span> is a final state in the NFA. With this correspondence, a derivation of a string <span class="process-math">\(w\)</span> in the grammar corresponds to an execution path through the NFA as it accepts the string <span class="process-math">\(w\text{.}\)</span> I won’t give a complete proof here. You are welcome to work through the details if you want. But the important fact is:</div>
 <span class="incontext"><a class="internal" href="sec-grammars.html#p-5191">in-context</a></span>
 </body>
 </html>

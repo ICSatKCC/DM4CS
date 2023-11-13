@@ -12,8 +12,29 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">The construction continues as long as there are new states being added, and new transitions from those states that have to be computed. The final DFA is shown below. <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa11.svg" role="img" class="contained" alt="Diagram of completed DFA."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">17.3.26<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+<div class="para logical">
+<div class="para">We start by looking at <span class="process-math">\(\partial^*(p_0, \varep)\text{,}\)</span> and then add transitions and states as described above.</div>
+<ul class="disc">
+<li><div class="para">
+<span class="process-math">\(\partial^*(p_0, \varep) = \{p_0\}\)</span> so <span class="process-math">\(q_0 = \{p_0\}\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\delta(q_0,a)\)</span> will be <span class="process-math">\(\partial^*(p_0,a)\text{,}\)</span> which is <span class="process-math">\(\{p_0\}\text{,}\)</span> so <span class="process-math">\(\delta(q_0,a) = q_0\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\delta(q_0,b)\)</span> will be <span class="process-math">\(\partial^*(p_0,b)\text{,}\)</span> which is <span class="process-math">\(\{p_0,
+p_1\}\text{,}\)</span> so we need to add a new state <span class="process-math">\(q_1 = \{p_0, p_1\}\)</span> to the DFA; and add <span class="process-math">\(\delta(q_0,b) = q_1\)</span> to the DFA’s transition function.</div></li>
+<li><div class="para">
+<span class="process-math">\(\delta(q_1,a)\)</span> will be <span class="process-math">\(\partial^*(p_0,a)\)</span> unioned with <span class="process-math">\(\partial^*(p_1,a)\)</span> since <span class="process-math">\(q_1 = \{p_0, p_1\}\text{.}\)</span> Since <span class="process-math">\(\partial^*(p_0,a)
+\cup \partial^*(p_1,a) = \{p_0\} \cup
+\{p_2\} = \{p_0,p_2\}\text{,}\)</span> we need to add a new state <span class="process-math">\(q_2 =
+\{p_0, p_2\}\)</span> to the DFA, and a transition <span class="process-math">\(\delta(q_1,a) = q_2\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\delta(q_1,b)\)</span> will be <span class="process-math">\(\partial^*(p_0,b)\)</span> unioned with <span class="process-math">\(\partial^*(p_1,b)\text{,}\)</span> which gives <span class="process-math">\(\{p_0, p_1\} \cup \{p_2\}\text{,}\)</span> which again gives us a new state <span class="process-math">\(q_3\)</span> to add to the DFA, together with the transition <span class="process-math">\(\delta(q_1,b)
+= q_3\text{.}\)</span>
+</div></li>
+</ul>
 </div>
 <span class="incontext"><a class="internal" href="s-finite-state-automata.html#p-5045">in-context</a></span>
 </body>

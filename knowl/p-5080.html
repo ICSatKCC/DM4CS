@@ -12,8 +12,15 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">It is now clear from the diagram that strings of the form <span class="process-math">\(b^*a\)</span> get you to state <span class="process-math">\(q_1\text{,}\)</span> and any number of repetitions of strings that match <span class="process-math">\(ab^*a\)</span> or <span class="process-math">\(ba^*b\)</span> will keep you there. So the machine accepts <span class="process-math">\(L(b^*a(ab^*a\REOR
-ba^*b)^*)\text{.}\)</span>
+<div class="para logical">
+<div class="para">We now proceed by induction on <span class="process-math">\(j\)</span> to show that <span class="process-math">\(R_{i,j,k}\)</span> is regular for all <span class="process-math">\(i\)</span> and <span class="process-math">\(k\text{.}\)</span> We have proved the base case, <span class="process-math">\(j=0\text{.}\)</span> Suppose that <span class="process-math">\(0\leq j \lt n \)</span> we already know that <span class="process-math">\(R_{i,j,k}\)</span> is regular for all <span class="process-math">\(i\)</span> and all <span class="process-math">\(k\text{.}\)</span> We need to show that <span class="process-math">\(R_{i,j+1,k}\)</span> is regular for all <span class="process-math">\(i\)</span> and <span class="process-math">\(k\text{.}\)</span> In fact,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R_{i,j+1,k}=R_{i,j,k}\cup
+\left( R_{i,j,j}R_{j,j,j}^*R_{j,j,k}\right) 
+\end{equation*}
+</div>
+<div class="para">which is regular because <span class="process-math">\(R_{i,j,k}\)</span> is regular for all <span class="process-math">\(i\)</span> and <span class="process-math">\(k\text{,}\)</span> and because the union, concatenation, and Kleene star of regular languages are regular.</div>
 </div>
 <span class="incontext"><a class="internal" href="sec-FSA-and-Regular-Languages.html#p-5080">in-context</a></span>
 </body>

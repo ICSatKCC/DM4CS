@@ -11,27 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="li"><h5 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">17.5.4.8.a</span><span class="period">.</span>
-</h5>
+<article class="li"><h4 class="heading">
+<span class="type">Item</span><span class="period">.</span>
+</h4>
 <div class="para logical">
-<div class="para"><span class="process-math">\(abab \)</span></div>
+<div class="para">Items enclosed in brackets are optional.  For example,</div>
 <div class="displaymath process-math">
-\begin{align*}
-S \amp \YIELDS SS \\
-\amp \YIELDS aSbS \\
-\amp \YIELDS aSb \\
-\amp \YIELDS abaSb \\
-\amp \YIELDS abab 
-\end{align*}
+\begin{equation*}
+\langle declaration \rangle ::= \langle type \rangle \,\langle variable \rangle 
+[ = \langle expression \rangle ] ;
+\end{equation*}
 </div>
-<div class="displaymath process-math">
-\begin{align*}
-S \amp \YIELDS aSb \\
-\amp \YIELDS abSab \\
-\amp \YIELDS abab 
-\end{align*}
-</div>
+<div class="para">says that <span class="process-math">\(\langle declaration \rangle\)</span> can be replaced either by “<span class="process-math">\(\langle type \rangle\)</span> <span class="process-math">\(\langle variable \rangle\text{;}\)</span>” or by “<span class="process-math">\(\langle type \rangle\)</span> <span class="process-math">\(\langle variable \rangle\)</span> = <span class="process-math">\(\langle expression \rangle\text{;}\)</span>”. (The symbols “=” and “;” are terminal symbols in this rule.)</div>
 </div></article><span class="incontext"><a class="internal" href="sec-grammars.html#li-2236">in-context</a></span>
 </body>
 </html>

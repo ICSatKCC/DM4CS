@@ -11,16 +11,20 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="li"><h5 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">17.5.4.8.b</span><span class="period">.</span>
-</h5>
-<div class="para logical"><div class="displaymath process-math">
-\begin{align*}
-S \amp \PRODUCES ASb \\
-S \amp \PRODUCES \EMPTYSTRING\\
-A \amp \PRODUCES aA\\
-A \amp\PRODUCES a 
-\end{align*}
-</div></div></article><span class="incontext"><a class="internal" href="sec-grammars.html#li-2235">in-context</a></span>
+<article class="li"><h4 class="heading">
+<span class="type">Item</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">A vertical bar, <span class="process-math">\(\BNFALT\text{,}\)</span> indicates a choice of alternatives.  For example,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle digit \rangle ::=\ 0 \BNFALT\ 1 \BNFALT\ 2
+\BNFALT\ 3 \BNFALT\ 4 \BNFALT\ 5 \BNFALT\ 6 \BNFALT\ 7
+\BNFALT\ 8 \BNFALT\ 9
+\end{equation*}
+</div>
+<div class="para">indicates that the non-terminal <span class="process-math">\(\langle digit \rangle\)</span> can be replaced by any one of the terminal symbols <span class="process-math">\(0, 1, \dots,9\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a class="internal" href="sec-grammars.html#li-2235">in-context</a></span>
 </body>
 </html>

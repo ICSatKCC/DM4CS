@@ -12,30 +12,10 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">We start by looking at <span class="process-math">\(\partial^*(p_0, \varep)\text{,}\)</span> and then add transitions and states as described above.</div>
-<ul class="disc">
-<li><div class="para">
-<span class="process-math">\(\partial^*(p_0, \varep) = \{p_0\}\)</span> so <span class="process-math">\(q_0 = \{p_0\}\text{.}\)</span>
-</div></li>
-<li><div class="para">
-<span class="process-math">\(\delta(q_0,a)\)</span> will be <span class="process-math">\(\partial^*(p_0,a)\text{,}\)</span> which is <span class="process-math">\(\{p_0\}\text{,}\)</span> so <span class="process-math">\(\delta(q_0,a) = q_0\text{.}\)</span>
-</div></li>
-<li><div class="para">
-<span class="process-math">\(\delta(q_0,b)\)</span> will be <span class="process-math">\(\partial^*(p_0,b)\text{,}\)</span> which is <span class="process-math">\(\{p_0,
-p_1\}\text{,}\)</span> so we need to add a new state <span class="process-math">\(q_1 = \{p_0, p_1\}\)</span> to the DFA; and add <span class="process-math">\(\delta(q_0,b) = q_1\)</span> to the DFA’s transition function.</div></li>
-<li><div class="para">
-<span class="process-math">\(\delta(q_1,a)\)</span> will be <span class="process-math">\(\partial^*(p_0,a)\)</span> unioned with <span class="process-math">\(\partial^*(p_1,a)\)</span> since <span class="process-math">\(q_1 = \{p_0, p_1\}\text{.}\)</span> Since <span class="process-math">\(\partial^*(p_0,a)
-\cup \partial^*(p_1,a) = \{p_0\} \cup
-\{p_2\} = \{p_0,p_2\}\text{,}\)</span> we need to add a new state <span class="process-math">\(q_2 =
-\{p_0, p_2\}\)</span> to the DFA, and a transition <span class="process-math">\(\delta(q_1,a) = q_2\text{.}\)</span>
-</div></li>
-<li><div class="para">
-<span class="process-math">\(\delta(q_1,b)\)</span> will be <span class="process-math">\(\partial^*(p_0,b)\)</span> unioned with <span class="process-math">\(\partial^*(p_1,b)\text{,}\)</span> which gives <span class="process-math">\(\{p_0, p_1\} \cup \{p_2\}\text{,}\)</span> which again gives us a new state <span class="process-math">\(q_3\)</span> to add to the DFA, together with the transition <span class="process-math">\(\delta(q_1,b)
-= q_3\text{.}\)</span>
-</div></li>
-</ul>
-</div>
+<div class="para">First, a preliminary observation. Suppose <span class="process-math">\(w=xa\text{,}\)</span> i.e.\ <span class="process-math">\(w\)</span> is the string <span class="process-math">\(x\)</span> followed by the single symbol <span class="process-math">\(a\text{.}\)</span> How are <span class="process-math">\(\partial^*(p_0,x)\)</span> and <span class="process-math">\(\partial^*(p_0,w)\)</span> related? Well, recall that <span class="process-math">\(\partial^*(p_0,x)\)</span> is the set of all states that <span class="process-math">\(N\)</span> can reach when it starts in <span class="process-math">\(p_0\)</span> and consumes <span class="process-math">\(x\text{:}\)</span> <span class="process-math">\(\partial^*(p_0,x) = \{p_1,
+\ldots, p_n\}\)</span> for some states <span class="process-math">\(p_1, \ldots, p_n\text{.}\)</span> Now, <span class="process-math">\(w\)</span> is just <span class="process-math">\(x\)</span> with an additional <span class="process-math">\(a\text{,}\)</span> so where might <span class="process-math">\(N\)</span> end up if it starts in <span class="process-math">\(p_0\)</span> and consumes <span class="process-math">\(w\text{?}\)</span> We know that <span class="process-math">\(x\)</span> gets <span class="process-math">\(N\)</span> to <span class="process-math">\(p_1\)</span> or <span class="process-math">\(\ldots\)</span> or <span class="process-math">\(p_n\text{,}\)</span> so <span class="process-math">\(xa\)</span> gets <span class="process-math">\(N\)</span> to any state that can be reached from <span class="process-math">\(p_1\)</span> with an <span class="process-math">\(a\)</span> (and maybe some <span class="process-math">\(\varep\)</span>-transitions), and to any state that can be reached from <span class="process-math">\(p_2\)</span> with an <span class="process-math">\(a\)</span> (and maybe some <span class="process-math">\(\varep\)</span>-transitions), etc. Thus, our relationship between <span class="process-math">\(\partial^*(p_0,x)\)</span> and <span class="process-math">\(\partial^*(p_0,w)\)</span> is that if <span class="process-math">\(\partial^*(p_0,x)
+= \{p_1, \ldots, p_n\}\text{,}\)</span> then <span class="process-math">\(\partial^*(p_0,w) = \partial^*(p_1,a)
+\cup \ldots \cup \partial^*(p_n,a)\text{.}\)</span> With this observation in hand, let’s proceed to our proof by induction.</div>
 <span class="incontext"><a class="internal" href="s-finite-state-automata.html#p-5038">in-context</a></span>
 </body>
 </html>

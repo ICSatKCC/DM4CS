@@ -12,7 +12,27 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Draw a parse tree for the string <span class="process-math">\((x+y)*z*x\)</span> according to each of the grammars <span class="process-math">\(G_1\text{,}\)</span> <span class="process-math">\(G_2\text{,}\)</span> and <span class="process-math">\(G_3\text{,}\)</span> as given in this section.</div>
+<div class="para logical">
+<div class="para">Show that each of the following grammars is ambiguous by finding a string that has two left derivations according to the grammar:</div>
+<ol class="lower-alpha">
+<li><div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+S \amp \PRODUCES SS \\
+S \amp  \PRODUCES aSb\\
+S \amp \PRODUCES bSa \\
+S \amp\PRODUCES\EMPTYSTRING  
+\end{align*}
+</div></div></li>
+<li><div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+S \amp \PRODUCES ASb \\
+S \amp \PRODUCES \EMPTYSTRING\\
+A \amp \PRODUCES aA\\
+A \amp\PRODUCES a 
+\end{align*}
+</div></div></li>
+</ol>
+</div>
 <span class="incontext"><a class="internal" href="sec-grammars.html#p-5231">in-context</a></span>
 </body>
 </html>

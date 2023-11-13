@@ -11,8 +11,10 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">We introduce two new common operations on regular expressions and two new meta-characters to represent them. The first operation is represented by the meta-character <code class="code-inline tex2jax_ignore">+</code>: If <code class="code-inline tex2jax_ignore">r</code> is a regular expression, then <code class="code-inline tex2jax_ignore">r+</code> represents the occurrence of <code class="code-inline tex2jax_ignore">r</code> one or more times.  The second operation is represented by <code class="code-inline tex2jax_ignore">?</code>: The notation <code class="code-inline tex2jax_ignore">r?</code> represents an occurrence of <code class="code-inline tex2jax_ignore">r</code> zero or one times.  That is to say, <code class="code-inline tex2jax_ignore">r?</code> represents an optional occurrence of <code class="code-inline tex2jax_ignore">r</code>.  Note that these operations are introduced for convenience only and do not represent any real increase in the power.  In fact, <code class="code-inline tex2jax_ignore">r+</code> is exactly equivalent to <code class="code-inline tex2jax_ignore">rr*</code>, and <code class="code-inline tex2jax_ignore">r?</code> is equivalent to <code class="code-inline tex2jax_ignore">(r|</code><span class="process-math">\(\varep\)</span><code class="code-inline tex2jax_ignore">)</code> (except that in applications there is generally no equivalent to <span class="process-math">\(\varep\)</span>).</div>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para">
+<span class="process-math">\(L((r_1)) = L(r_1)\text{,}\)</span> i.e. <span class="process-math">\((r_1)\)</span> matches exactly those strings matched by <span class="process-math">\(r_1\text{.}\)</span>
+</div>
 <span class="incontext"><a class="internal" href="s-regular-expressions-and-apps.html#p-4935">in-context</a></span>
 </body>
 </html>

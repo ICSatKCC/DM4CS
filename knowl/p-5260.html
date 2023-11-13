@@ -11,8 +11,11 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">When <span class="process-math">\(M\)</span> is run with input <span class="process-math">\(w\text{,}\)</span> it is possible that it will just keep running forever without halting.  In that case, it doesn’t make sense to ask about the output of the computation.  Suppose however that <span class="process-math">\(M\)</span> does halt on input <span class="process-math">\(w\text{.}\)</span>  Suppose, furthermore, that when <span class="process-math">\(M\)</span> halts, its tape is blank except for a string <span class="process-math">\(x\)</span> of non-blank symbols, and that the machine is located on the first character of <span class="process-math">\(x\text{.}\)</span>  In this case, we will say that ``<span class="process-math">\(M\)</span> halts with output <span class="process-math">\(x\text{.}\)</span>’’ In addition, if <span class="process-math">\(M\)</span> halts with an entirely blank tape, we say that ``<span class="process-math">\(M\)</span> halts with output <span class="process-math">\(\varepsilon\text{.}\)</span>’’ Note that when we run <span class="process-math">\(M\)</span> with input <span class="process-math">\(w\text{,}\)</span> one of three things can happen: (1)~<span class="process-math">\(M\)</span>~might halt with some string as output; (1)~<span class="process-math">\(M\)</span>~might fail to halt; or (3)~<span class="process-math">\(M\)</span>~might halt in some configuration that doesn’t count as outputting any string.</div>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para">
+<span class="process-math">\(\delta\colon (Q - \{h\})\times\Lambda \to \Lambda\times 
+\{L,R\}\times Q\)</span> is the transition function.  The fact that <span class="process-math">\(\delta(q,\sigma)=(\tau,d,r)\)</span> means that when the Turing machine is in state <span class="process-math">\(q\)</span> and reads the symbol <span class="process-math">\(\sigma\text{,}\)</span> it writes the symbol <span class="process-math">\(\tau\text{,}\)</span> moves one cell in the direction <span class="process-math">\(d\text{,}\)</span> and enters state <span class="process-math">\(r\text{.}\)</span>
+</div>
 <span class="incontext"><a class="internal" href="sec-turing-machines-comp.html#p-5260">in-context</a></span>
 </body>
 </html>

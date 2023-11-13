@@ -11,8 +11,26 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Like context-free grammars, BNF grammars make use of production rules, non-terminals, and terminals.  The non-terminals are usually given meaningful, multi-character names.  Here, I will follow a common practice of enclosing non-terminals in angle brackets, so that they can be easily distinguished.  For example, <span class="process-math">\(\langle noun \rangle\)</span> and <span class="process-math">\(\langle sentence \rangle\)</span> could be non-terminals in a BNF grammar for English, while <span class="process-math">\(\langle program \rangle\)</span> and <span class="process-math">\(\langle if{\text -}statement \rangle\)</span> might be used in a BNF grammar for a programming language.  Note that a BNF non-terminal usually represents a meaningful <dfn class="terminology">syntactic category</dfn>, that is, a certain type of building block in the syntax of the language that is being described, such as an adverb, a prepositional phrase, or a variable declaration statement. The terminals of a BNF grammar are the things that actually appear in the language that is being described.  In the case of natural language, the terminals are individual words.</div>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(R\)</span> be a symbol that is not in any of the alphabets <span class="process-math">\(V\text{,}\)</span> <span class="process-math">\(W\text{,}\)</span> <span class="process-math">\(\Sigma\text{,}\)</span> or <span class="process-math">\(\Gamma\text{.}\)</span> <span class="process-math">\(R\)</span> will be the start symbol of <span class="process-math">\(K\text{.}\)</span> The production rules for <span class="process-math">\(K\)</span> consist of all the production rules from <span class="process-math">\(G\)</span> and <span class="process-math">\(H\)</span> together with two new rules:</div>
+<div class="displaymath process-math">
+\begin{gather*}
+R\PRODUCES S\\
+R\PRODUCES T 
+\end{gather*}
+</div>
+<div class="para">Formally, <span class="process-math">\(K\)</span> is defined to be the grammar</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(V\cup W\cup\{R\},
+P\cup Q\cup \{R\PRODUCES S, R\PRODUCES T\},
+\Sigma\cup\Gamma, R)
+\end{equation*}
+</div>
+<div class="para">Suppose that <span class="process-math">\(w\in L\text{.}\)</span> That is <span class="process-math">\(w\in L(G)\text{,}\)</span> so there is a derivation <span class="process-math">\(S\YIELDS_G^*w\text{.}\)</span> Since every rule from <span class="process-math">\(G\)</span> is also a rule in <span class="process-math">\(K\text{,}\)</span> if follows that <span class="process-math">\(S\YIELDS_K^* w\text{.}\)</span> Combining this with the fact that <span class="process-math">\(R\YIELDS_K S\text{,}\)</span> we have that <span class="process-math">\(R\YIELDS_K^* w\text{,}\)</span> and <span class="process-math">\(w\in L(K)\text{.}\)</span> This shows that <span class="process-math">\(L\SUB L(K)\text{.}\)</span> In an exactly similar way, we can show that <span class="process-math">\(M\SUB L(K)\text{.}\)</span> Thus, <span class="process-math">\(L\cup M\SUB L(K)\text{.}\)</span>
+</div>
+</div>
 <span class="incontext"><a class="internal" href="sec-grammars.html#p-5187">in-context</a></span>
 </body>
 </html>

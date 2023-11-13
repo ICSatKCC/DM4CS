@@ -12,13 +12,9 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h5 class="heading">
-<span class="type">Item</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h5>
-<div class="para">
-<span class="process-math">\(\delta(q_1,a)\)</span> will be <span class="process-math">\(\partial^*(p_0,a)\)</span> unioned with <span class="process-math">\(\partial^*(p_1,a)\)</span> since <span class="process-math">\(q_1 = \{p_0, p_1\}\text{.}\)</span> Since <span class="process-math">\(\partial^*(p_0,a)
-\cup \partial^*(p_1,a) = \{p_0\} \cup
-\{p_2\} = \{p_0,p_2\}\text{,}\)</span> we need to add a new state <span class="process-math">\(q_2 =
-\{p_0, p_2\}\)</span> to the DFA, and a transition <span class="process-math">\(\delta(q_1,a) = q_2\text{.}\)</span>
-</div></article><span class="incontext"><a class="internal" href="s-finite-state-automata.html#li-2187">in-context</a></span>
+<div class="para">Base case: Suppose <span class="process-math">\(w\)</span> has length 0. The only string <span class="process-math">\(w\)</span> with length 0 is <span class="process-math">\(\varep\text{,}\)</span> so we want to show that <span class="process-math">\(\delta^*(q_0,\varep)\)</span> corresponds to <span class="process-math">\(\partial^*(p_0,\varep)\text{.}\)</span> Well, <span class="process-math">\(\delta^*(q_0, \varep) =
+q_0\text{,}\)</span> since in a DFA, <span class="process-math">\(\delta^*(q, \varep) = q\)</span> for any state~ <span class="process-math">\(q\text{.}\)</span> We explicitly made <span class="process-math">\(q_0\)</span> correspond to <span class="process-math">\(\partial^*(p_0,\varep)\text{,}\)</span> and so the property holds for <span class="process-math">\(w\)</span> with length 0.</div></article><span class="incontext"><a class="internal" href="s-finite-state-automata.html#li-2187">in-context</a></span>
 </body>
 </html>

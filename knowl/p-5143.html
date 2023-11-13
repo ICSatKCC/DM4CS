@@ -11,9 +11,20 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">
-<span class="process-math">\(\Sigma\)</span> is a finite set of symbols such that <span class="process-math">\(V\cap\Sigma=\emptyset\text{.}\)</span> The elements of <span class="process-math">\(\Sigma\)</span> are the terminal symbols of the grammar.</div>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">In a <dfn class="terminology">context-free grammar</dfn>, every rewriting rule has the form <span class="process-math">\(A\PRODUCES w\text{,}\)</span> where <span class="process-math">\(A\)</span> is single symbol and <span class="process-math">\(w\)</span> is a string of zero or more symbols. The symbols that occur on the left-hand sides of production rules in a context-free grammar are called <dfn class="terminology">non-terminal symbols</dfn>. <aside class="aside aside-like"><div class="para">The grammar is “context-free” in the sense that <span class="process-math">\(w\)</span> can be substituted for <span class="process-math">\(A\)</span> wherever <span class="process-math">\(A\)</span> occurs in a string, regardless of the surrounding context in which <span class="process-math">\(A\)</span> occurs.</div></aside>By convention, the non-terminal symbols are usually uppercase letters. The strings on the right-hand sides of the production rules can include non-terminal symbols as well as other symbols, which are called  <dfn class="terminology">terminal symbols</dfn>. By convention, the terminal symbols are usually lowercase letters. Here are some typical production rules that might occur in context-free grammars:</div>
+<div class="displaymath process-math">
+\begin{align*}
+A\amp \PRODUCES aAbB\\\
+S \amp \PRODUCES SS\\
+C\amp \PRODUCES Acc\\
+B\amp \PRODUCES b\\
+A \amp \PRODUCES\EMPTYSTRING
+\end{align*}
+</div>
+<div class="para">In the last rule in this list, <span class="process-math">\(\EMPTYSTRING\)</span> represents the empty string, as usual. For example, this rule could be applied to the string <span class="process-math">\(aBaAcA\)</span> to produce the string <span class="process-math">\(aBacA\text{.}\)</span> The first occurrence of the symbol <span class="process-math">\(A\)</span> in <span class="process-math">\(aBaAcA\)</span> has been replaced by the empty string---which is just another way of saying that the symbol has been dropped from the string.</div>
+</div>
 <span class="incontext"><a class="internal" href="sec-grammars.html#p-5143">in-context</a></span>
 </body>
 </html>

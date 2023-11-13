@@ -13,24 +13,18 @@
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">However, there is an alternative parsing procedure that will work for <span class="process-math">\(G_3\text{.}\)</span>  This alternative method of parsing a string produces a <dfn class="terminology">right derivation</dfn> of the string, that is, a derivation in which at each step, the non-terminal symbol that is replaced is the rightmost non-terminal symbol in the string.  Here, for example, is a right derivation of the string <span class="process-math">\((x+y)*z\)</span> according to the grammar <span class="process-math">\(G_3\text{:}\)</span>
-</div>
+<div class="para">As an example that we will use throughout this section, consider the language that consists of arithmetic expressions containing parentheses, the binary operators <span class="process-math">\(+\)</span> and <span class="process-math">\(*\text{,}\)</span> and the variables <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\text{.}\)</span>  Strings in this language include <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(x+y*z\text{,}\)</span> and <span class="process-math">\(((x+y)*y)+z*z\text{.}\)</span>  Here is a context-free grammar that generates this language:</div>
 <div class="displaymath process-math">
 \begin{align*}
-E \amp \YIELDS T \\
-\amp \YIELDS T*F \\
-\amp \YIELDS T*z \\
-\amp \YIELDS F * z \\
-\amp \YIELDS (E) * z \\
-\amp \YIELDS (E+T) * z \\
-\amp \YIELDS (E+F) * z \\
-\amp \YIELDS (E+y) * z \\
-\amp \YIELDS (T+y) * z \\
-\amp \YIELDS (F+y) * z \\
-\amp \YIELDS (x+y) * z 
+E \amp \PRODUCES E+E\\
+E \amp \PRODUCES E*E\\
+E \amp \PRODUCES (E)\\
+E \amp \PRODUCES x\\
+E \amp \PRODUCES y\\
+E \amp \PRODUCES z
 \end{align*}
 </div>
-<div class="para">The parsing method that produces this right derivation produces it from “bottom to top.”  That is, it begins with the string <span class="process-math">\((x+y)*z\)</span> and works backward to the start symbol <span class="process-math">\(E\text{,}\)</span> generating the steps of the right derivation in reverse order. The method works because <span class="process-math">\(G_3\)</span> is what is called an <dfn class="terminology">LR(1) grammar</dfn>.  That is, roughly, it is possible to read a string from <dfn class="terminology">L</dfn>eft to right and produce a <dfn class="terminology">R</dfn>ight derivation of the string, by looking ahead at most <dfn class="terminology">1</dfn> symbol at each step.  Although LL(1) grammars are easier for people to work with, LR(1) grammars turn out to be very suitable for machine processing, and they are used as the basis for the parsing process in many compilers.</div>
+<div class="para">Call the grammar described by these production rules <span class="process-math">\(G_1\text{.}\)</span> The grammar <span class="process-math">\(G_1\)</span> says that <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\)</span> are expressions, and that you can make new expressions by adding two expressions, by multiplying two expressions, and by enclosing an expression in parentheses. (Later, we’ll look at other grammars for the same language---ones that turn out to have certain advantages over <span class="process-math">\(G_1\text{.}\)</span>)</div>
 </div>
 <span class="incontext"><a class="internal" href="sec-grammars.html#p-5207">in-context</a></span>
 </body>

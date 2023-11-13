@@ -12,9 +12,8 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Next we note that there is also a loop from <span class="process-math">\(q_1\)</span> to <span class="process-math">\(q_1\)</span> via <span class="process-math">\(q_2\text{.}\)</span> A regular expression that matches the strings that would move around the loop is <span class="process-math">\(ba^*b\text{.}\)</span> Since the transitions in the loop are the only transitions to or from <span class="process-math">\(q_2\text{,}\)</span> we simply remove <span class="process-math">\(q_2\)</span> and replace it with a transition from <span class="process-math">\(q_1\)</span> to <span class="process-math">\(q_1\text{.}\)</span> <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa20.svg" role="img" class="contained" alt="Altered diagram from above."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">17.4.13<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
-</div>
+<div class="para">Consider the language <span class="process-math">\(R_{i,0,k}\text{.}\)</span> For <span class="process-math">\(w\in R_{i,0,k}\text{,}\)</span> the set of allowable intermediate states is empty. Since there can be no intermediate states, it follows that there can be at most one step in the computation that starts in state <span class="process-math">\(q_i\text{,}\)</span> reads <span class="process-math">\(w\text{,}\)</span> and ends in state <span class="process-math">\(q_k\text{.}\)</span> So, <span class="process-math">\(|w|\)</span> can be at most one. This means that <span class="process-math">\(R_{i,0,k}\)</span> is finite, and hence is regular. (In fact, <span class="process-math">\(R_{i,0,k}=\{a\in\Sigma\st \delta(q_i,a)=q_k\}\text{,}\)</span> for <span class="process-math">\(i\ne k\text{,}\)</span> and <span class="process-math">\(R_{i,0,i}=\{\varep\}\cup\{a\in\Sigma\st
+\delta(q_i,a)=q_i\}\text{.}\)</span> Note that in many cases, <span class="process-math">\(R_{i,0,k}\)</span> will be the empty set.)</div>
 <span class="incontext"><a class="internal" href="sec-FSA-and-Regular-Languages.html#p-5079">in-context</a></span>
 </body>
 </html>

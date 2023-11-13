@@ -12,24 +12,8 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">Let <span class="process-math">\(R\)</span> be a symbol that is not in any of the alphabets <span class="process-math">\(V\text{,}\)</span> <span class="process-math">\(W\text{,}\)</span> <span class="process-math">\(\Sigma\text{,}\)</span> or <span class="process-math">\(\Gamma\text{.}\)</span> <span class="process-math">\(R\)</span> will be the start symbol of <span class="process-math">\(K\text{.}\)</span> The production rules for <span class="process-math">\(K\)</span> consist of all the production rules from <span class="process-math">\(G\)</span> and <span class="process-math">\(H\)</span> together with two new rules:</div>
-<div class="displaymath process-math">
-\begin{gather*}
-R\PRODUCES S\\
-R\PRODUCES T 
-\end{gather*}
-</div>
-<div class="para">Formally, <span class="process-math">\(K\)</span> is defined to be the grammar</div>
-<div class="displaymath process-math">
-\begin{equation*}
-(V\cup W\cup\{R\},
-P\cup Q\cup \{R\PRODUCES S, R\PRODUCES T\},
-\Sigma\cup\Gamma, R)
-\end{equation*}
-</div>
-<div class="para">Suppose that <span class="process-math">\(w\in L\text{.}\)</span> That is <span class="process-math">\(w\in L(G)\text{,}\)</span> so there is a derivation <span class="process-math">\(S\YIELDS_G^*w\text{.}\)</span> Since every rule from <span class="process-math">\(G\)</span> is also a rule in <span class="process-math">\(K\text{,}\)</span> if follows that <span class="process-math">\(S\YIELDS_K^* w\text{.}\)</span> Combining this with the fact that <span class="process-math">\(R\YIELDS_K S\text{,}\)</span> we have that <span class="process-math">\(R\YIELDS_K^* w\text{,}\)</span> and <span class="process-math">\(w\in L(K)\text{.}\)</span> This shows that <span class="process-math">\(L\SUB L(K)\text{.}\)</span> In an exactly similar way, we can show that <span class="process-math">\(M\SUB L(K)\text{.}\)</span> Thus, <span class="process-math">\(L\cup M\SUB L(K)\text{.}\)</span>
-</div>
+<div class="para">Since <span class="process-math">\(r_1=1\)</span> and <span class="process-math">\(r_{k-1}=-1\)</span> and the value of <span class="process-math">\(r_i\)</span> goes up or down by 1 when <span class="process-math">\(i\)</span> increases by 1, <span class="process-math">\(r_i\)</span> must be zero for some <span class="process-math">\(i\)</span> between 1 and <span class="process-math">\(k-1\text{.}\)</span> That is, <span class="process-math">\(r_i\)</span> cannot get from 1 to <span class="process-math">\(-1\)</span> unless it passes through zero. Let <span class="process-math">\(i\)</span> be a number between 1 and <span class="process-math">\(k-1\)</span> such that <span class="process-math">\(r_i=0\text{.}\)</span> Let <span class="process-math">\(x=c_1c_2\cdots
+c_i\)</span> and let <span class="process-math">\(y=c_{i+1}c_{i+2}\cdots c_k\text{.}\)</span> Note that <span class="process-math">\(xy=w\text{.}\)</span> The fact that <span class="process-math">\(r_i=0\)</span> means that the string <span class="process-math">\(c_1c_2\cdots c_i\)</span> has the same number of <span class="process-math">\(a\text{'s}\)</span> and <span class="process-math">\(b\text{'s}\text{,}\)</span> so <span class="process-math">\(x\in L(G)\text{.}\)</span> It follows automatically that <span class="process-math">\(y\in L(G)\)</span> also. Since <span class="process-math">\(i\)</span> is strictly between 1 and <span class="process-math">\(k-1\text{,}\)</span> neither <span class="process-math">\(x\)</span> nor <span class="process-math">\(y\)</span> is the empty string. This is all that we needed to show to finish the proof that <span class="process-math">\(L=L(G)\text{.}\)</span>
 </div>
 <span class="incontext"><a class="internal" href="sec-grammars.html#p-5180">in-context</a></span>
 </body>

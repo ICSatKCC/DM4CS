@@ -12,15 +12,8 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">Now we progressively set up <span class="process-math">\(D\)</span>’s transition function <span class="process-math">\(\delta\)</span> by repeatedly doing the following:</div>
-<ul class="disc">
-<li><div class="para">find a state <span class="process-math">\(q\)</span> that has been added to <span class="process-math">\(D\)</span> but whose out-transitions have not yet been added. (Note that <span class="process-math">\(q_0\)</span> initially fits this description.) Remember that the state <span class="process-math">\(q\)</span> corresponds to some subset <span class="process-math">\(\{p_1,
-\ldots , p_n\}\)</span> of <span class="process-math">\(N\)</span>’s states.</div></li>
-<li><div class="para">for each input symbol <span class="process-math">\(a\text{,}\)</span> look at all <span class="process-math">\(N\)</span>’s states that can be reached from any one of <span class="process-math">\(p_1, \ldots , p_n\)</span> by consuming <span class="process-math">\(a\)</span> (perhaps making some <span class="process-math">\(\varep\)</span>-transitions as well). That is, look at <span class="process-math">\(\partial^*(p_1,a)
-\cup \ldots \cup
-\partial^*(p_n,a)\text{.}\)</span> If there is not already a DFA state <span class="process-math">\(q'\)</span> that corresponds to this subset of <span class="process-math">\(N\)</span>’s states, then add one, and add the transition <span class="process-math">\(\delta(q, a)= q'\)</span> to <span class="process-math">\(D\)</span>’s transitions.</div></li>
-</ul>
+<div class="para">The NFA shown below accepts all strings of <span class="process-math">\(a\)</span>’s and <span class="process-math">\(b\)</span>’s in which the second-to-last symbol is <span class="process-math">\(a\text{.}\)</span> <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa8.svg" role="img" class="contained" alt="Diagram of an NFA that accepts the language described above."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">17.3.21<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
 </div>
 <span class="incontext"><a class="internal" href="s-finite-state-automata.html#p-5025">in-context</a></span>
 </body>

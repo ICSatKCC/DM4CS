@@ -12,27 +12,7 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para logical">
-<div class="para">So altogether, if <span class="process-math">\(M\)</span> is an <span class="process-math">\(n\)</span>-state DFA that accepts <span class="process-math">\(L\text{,}\)</span> and <span class="process-math">\(w\)</span> is a string in <span class="process-math">\(L\)</span> whose length is at least <span class="process-math">\(n\text{,}\)</span> then <span class="process-math">\(w\)</span> can be broken down into three pieces <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\text{,}\)</span> <span class="process-math">\(w=xyz\text{,}\)</span> such that</div>
-<ol class="lower-roman">
-<li><div class="para">
-<span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> together contain no more than <span class="process-math">\(n\)</span> symbols;</div></li>
-<li><div class="para">
-<span class="process-math">\(y\)</span> contains at least one symbol;</div></li>
-<li><div class="para logical"><ol class="lower-alpha">
-<li><div class="para">
-<span class="process-math">\(xz\)</span> is accepted by <span class="process-math">\(M\)</span>
-</div></li>
-<li><div class="para">
-<span class="process-math">\(xyz\)</span> is accepted by <span class="process-math">\(M\)</span>
-</div></li>
-<li><div class="para">
-<span class="process-math">\(xyyz\)</span> is accepted by <span class="process-math">\(M\)</span>
-</div></li>
-<li><div class="para">etc.</div></li>
-</ol></div></li>
-</ol>
-</div>
+<div class="para">Consider the sequence of states that the machine passes through while processing the string <span class="process-math">\(abbbabb\text{.}\)</span> Note that there is a repeated state (state 2). We say that <span class="process-math">\(abbbabb\)</span> ``goes through the state 2 twice", meaning that in the course of the string being processed, the machine is in state 2 twice (at least). Call the section of the string that takes you around the loop <span class="process-math">\(y\text{,}\)</span> the preceding section <span class="process-math">\(x\text{,}\)</span> and the rest <span class="process-math">\(z\text{.}\)</span> Then <span class="process-math">\(xz\)</span> is accepted, <span class="process-math">\(xyyz\)</span> is accepted, <span class="process-math">\(xyyyz\)</span> is accepted, etc. Note that the string <span class="process-math">\(aabb\)</span> cannot be divided this way, because it does not go through the same state twice. Which strings <em class="emphasis">can</em> be divided this way? Any string that goes through the same state twice. This may include some relatively short strings and must include any string with length greater than or equal to 9, because there are only 9 states in the machine, and so repetition must occur after 9 input symbols at the latest.</div>
 <span class="incontext"><a class="internal" href="sec-FSA-and-Regular-Languages.html#p-5102">in-context</a></span>
 </body>
 </html>

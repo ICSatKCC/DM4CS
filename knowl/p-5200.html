@@ -13,18 +13,35 @@
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">As an example that we will use throughout this section, consider the language that consists of arithmetic expressions containing parentheses, the binary operators <span class="process-math">\(+\)</span> and <span class="process-math">\(*\text{,}\)</span> and the variables <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\text{.}\)</span>  Strings in this language include <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(x+y*z\text{,}\)</span> and <span class="process-math">\(((x+y)*y)+z*z\text{.}\)</span>  Here is a context-free grammar that generates this language:</div>
+<div class="para">All these notations can be expressed in a context-free grammar by introducing additional production rules.  For example, the BNF rule “<span class="process-math">\(\langle sign \rangle ::= + | -\)</span>” is equivalent to the two rules, “<span class="process-math">\(\langle sign \rangle ::= + \)</span>” and “<span class="process-math">\(\langle sign \rangle ::= - \)</span>”.  A rule that contains an optional item can also be replaced by two rules.  For example,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle declaration \rangle ::=\ \langle type \rangle \langle variable \rangle
+[ = \langle expression \rangle ] ;
+\end{equation*}
+</div>
+<div class="para">can be replaced by the two rules</div>
 <div class="displaymath process-math">
 \begin{align*}
-E \amp \PRODUCES E+E\\
-E \amp \PRODUCES E*E\\
-E \amp \PRODUCES (E)\\
-E \amp \PRODUCES x\\
-E \amp \PRODUCES y\\
-E \amp \PRODUCES z
+\langle declaration \rangle \amp ::=\ \langle type \rangle \langle variable \rangle ;\\
+\langle declaration \rangle \amp ::=\ \langle type \rangle \langle variable \rangle
+= \langle expression \rangle  ;
 \end{align*}
 </div>
-<div class="para">Call the grammar described by these production rules <span class="process-math">\(G_1\text{.}\)</span> The grammar <span class="process-math">\(G_1\)</span> says that <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\)</span> are expressions, and that you can make new expressions by adding two expressions, by multiplying two expressions, and by enclosing an expression in parentheses. (Later, we’ll look at other grammars for the same language---ones that turn out to have certain advantages over <span class="process-math">\(G_1\text{.}\)</span>)</div>
+<div class="para">In context-free grammars, repetition can be expressed by using a recursive rule such as “<span class="process-math">\(S\PRODUCES aS\)</span>”, in which the same non-terminal symbol appears both on the left-hand side and on the right-hand side of the rule.  BNF-style notation using “[” and “]<span class="process-math">\(\dots\)</span>” can be eliminated by replacing it with a new non-terminal symbol and adding a recursive rule to allow that symbol to repeat zero or more times. For example, the production rule</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle integer \rangle ::=\ \langle digit \rangle [ \langle digit \rangle ]\dots
+\end{equation*}
+</div>
+<div class="para">can be replaced by three rules using a new non-terminal symbol <span class="process-math">\(\langle digit{\text -}list \rangle\)</span> to represent a string of zero or more <span class="process-math">\(\langle digit \rangle\)</span>’s:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\langle integer \rangle \amp ::= \langle digit \rangle \langle digit{\text -}list \rangle \\
+\langle digit{\text -}list \rangle \amp ::= \langle digit \rangle \langle digit{\text -}list \rangle \\
+\langle digit{\text -}list \rangle \amp ::= \EMPTYSTRING 
+\end{align*}
+</div>
 </div>
 <span class="incontext"><a class="internal" href="sec-grammars.html#p-5200">in-context</a></span>
 </body>

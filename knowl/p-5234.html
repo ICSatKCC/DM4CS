@@ -12,7 +12,49 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">List five production rules that must be rules in the grammar <span class="process-math">\(G\text{,}\)</span> given that this is a valid parse tree.</div>
+<div class="para logical">
+<div class="para">There are many answers to these.</div>
+<ol class="lower-alpha">
+<li><div class="para logical">
+<div class="para"><span class="process-math">\(abab \)</span></div>
+<div class="displaymath process-math">
+\begin{align*}
+S \amp \YIELDS SS \\
+\amp \YIELDS aSbS \\
+\amp \YIELDS aSb \\
+\amp \YIELDS abaSb \\
+\amp \YIELDS abab 
+\end{align*}
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+S \amp \YIELDS aSb \\
+\amp \YIELDS abSab \\
+\amp \YIELDS abab 
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para"><span class="process-math">\(aab\)</span></div>
+<div class="displaymath process-math">
+\begin{align*}
+S \amp \YIELDS ASb \\
+\amp \YIELDS aASb \\
+\amp \YIELDS aaSb \\
+\amp \YIELDS aab 
+\end{align*}
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+S \amp \YIELDS ASb \\
+\amp \YIELDS Ab \\
+\amp \YIELDS aAb \\
+\amp \YIELDS aab 
+\end{align*}
+</div>
+</div></li>
+</ol>
+</div>
 <span class="incontext"><a class="internal" href="sec-grammars.html#p-5234">in-context</a></span>
 </body>
 </html>

@@ -11,8 +11,23 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">To simplify the diagrams, I will leave out any transitions that are not relevant to the computation that I want the machine to perform. You can assume that the action for any omitted transition is to write the same symbol that was read, move right, and halt.</div>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">A <dfn class="terminology">Turing machine</dfn> is a 4-tuple <span class="process-math">\((Q,\Lambda,q_0,\delta)\text{,}\)</span> where:</div>
+<ol class="decimal">
+<li><div class="para">
+<span class="process-math">\(Q\)</span> is a finite set of states, including the halt state, <span class="process-math">\(h\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\Lambda\)</span> is an alphabet which includes the blank symbol, #.</div></li>
+<li><div class="para">
+<span class="process-math">\(q_0\in Q\)</span> is the start state.</div></li>
+<li><div class="para">
+<span class="process-math">\(\delta\colon (Q - \{h\})\times\Lambda \to \Lambda\times 
+\{L,R\}\times Q\)</span> is the transition function.  The fact that <span class="process-math">\(\delta(q,\sigma)=(\tau,d,r)\)</span> means that when the Turing machine is in state <span class="process-math">\(q\)</span> and reads the symbol <span class="process-math">\(\sigma\text{,}\)</span> it writes the symbol <span class="process-math">\(\tau\text{,}\)</span> moves one cell in the direction <span class="process-math">\(d\text{,}\)</span> and enters state <span class="process-math">\(r\text{.}\)</span>
+</div></li>
+</ol>
+</div>
 <span class="incontext"><a class="internal" href="sec-turing-machines-comp.html#p-5256">in-context</a></span>
 </body>
 </html>

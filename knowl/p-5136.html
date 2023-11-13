@@ -11,20 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">In a <dfn class="terminology">context-free grammar</dfn>, every rewriting rule has the form <span class="process-math">\(A\PRODUCES w\text{,}\)</span> where <span class="process-math">\(A\)</span> is single symbol and <span class="process-math">\(w\)</span> is a string of zero or more symbols. The symbols that occur on the left-hand sides of production rules in a context-free grammar are called <dfn class="terminology">non-terminal symbols</dfn>. <aside class="aside aside-like"><div class="para">The grammar is “context-free” in the sense that <span class="process-math">\(w\)</span> can be substituted for <span class="process-math">\(A\)</span> wherever <span class="process-math">\(A\)</span> occurs in a string, regardless of the surrounding context in which <span class="process-math">\(A\)</span> occurs.</div></aside>By convention, the non-terminal symbols are usually uppercase letters. The strings on the right-hand sides of the production rules can include non-terminal symbols as well as other symbols, which are called  <dfn class="terminology">terminal symbols</dfn>. By convention, the terminal symbols are usually lowercase letters. Here are some typical production rules that might occur in context-free grammars:</div>
+<div class="para">Suppose that <span class="process-math">\(M_1=(Q_1,\Sigma,q_1,\delta_1,F_1)\)</span> and <span class="process-math">\(M_2=(Q_2,\Sigma,q_2,\delta_2,F_2)\)</span> are DFAs over the alphabet <span class="process-math">\(\Sigma\text{.}\)</span> It is possible to construct a DFA that accepts the langauge <span class="process-math">\(L(M_1)\cap L(M_2)\)</span> in a single step. Define the DFA</div>
 <div class="displaymath process-math">
-\begin{align*}
-A\amp \PRODUCES aAbB\\\
-S \amp \PRODUCES SS\\
-C\amp \PRODUCES Acc\\
-B\amp \PRODUCES b\\
-A \amp \PRODUCES\EMPTYSTRING
-\end{align*}
+\begin{equation*}
+M = (Q_1\times Q_2, \Sigma, (q_1,q_2), \delta,
+F_1\times F_2)
+\end{equation*}
 </div>
-<div class="para">In the last rule in this list, <span class="process-math">\(\EMPTYSTRING\)</span> represents the empty string, as usual. For example, this rule could be applied to the string <span class="process-math">\(aBaAcA\)</span> to produce the string <span class="process-math">\(aBacA\text{.}\)</span> The first occurrence of the symbol <span class="process-math">\(A\)</span> in <span class="process-math">\(aBaAcA\)</span> has been replaced by the empty string---which is just another way of saying that the symbol has been dropped from the string.</div>
+<div class="para">where <span class="process-math">\(\delta\)</span> is the function from <span class="process-math">\((Q_1\times
+Q_2)\times\Sigma\)</span> to <span class="process-math">\(Q_1\times Q_2\)</span> that is defined by: <span class="process-math">\(\delta((p1,p2),\sigma))=(\delta_1(p_1,\sigma),\delta_2(p_2,\sigma))\text{.}\)</span> Convince yourself that this definition makes sense. (For example, note that states in <span class="process-math">\(M\)</span> are pairs <span class="process-math">\((p_1,p_2)\)</span> of states, where <span class="process-math">\(p_1\in Q_1\)</span> and <span class="process-math">\(p_2\in Q_2\text{,}\)</span> and note that the start state <span class="process-math">\((q_1,q_2)\)</span> in <span class="process-math">\(M\)</span> is in fact a state in <span class="process-math">\(M\text{.}\)</span>) Prove that <span class="process-math">\(L(M)=L(M_1)\cap L(M_2)\text{,}\)</span> and explain why this shows that the intersection of any two regular languages is regular. This proof---if you can get past the notation---is more direct than the one outlined above.</div>
 </div>
-<span class="incontext"><a class="internal" href="sec-grammars.html#p-5136">in-context</a></span>
+<span class="incontext"><a class="internal" href="sec-FSA-and-Regular-Languages.html#p-5136">in-context</a></span>
 </body>
 </html>

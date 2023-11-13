@@ -13,42 +13,16 @@
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">When BNF is applied to programming languages, the terminal symbols are generally “tokens,” which are the minimal meaningful units in a program.  For example, the pair of symbols <span class="process-math">\(\lt =\)</span> constitute a single token, as does a string such as <code class="code-inline tex2jax_ignore">"Hello World"</code>. Every number is represented by a single token.  (The actual value of the number is stored as a so-called “attribute” of the token, but the value plays no role in the context-free syntax of the language.) I will use the symbol <span class="process-math">\(\textbf{number}\)</span> to represent a numerical token. Similarly, every variable name, subroutine name, or other identifier in the program is represented by the same token, which I will denote as <span class="process-math">\(\textbf{ident}\text{.}\)</span>  One final complication:  Some symbols used in programs, such as “]” and “(”, are also used with a special meaning in BNF grammars.  When such a symbol occurs as a terminal symbol, I will enclose it in double quotes.  For example, in the BNF production rule</div>
+<div class="para">A vertical bar, <span class="process-math">\(\BNFALT\text{,}\)</span> indicates a choice of alternatives.  For example,</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\langle array{\text -}reference \rangle ::=\ 
-\textbf{ident } \text{"[" } \langle expression \rangle \text{ "]"} 
+\langle digit \rangle ::=\ 0 \BNFALT\ 1 \BNFALT\ 2
+\BNFALT\ 3 \BNFALT\ 4 \BNFALT\ 5 \BNFALT\ 6 \BNFALT\ 7
+\BNFALT\ 8 \BNFALT\ 9
 \end{equation*}
 </div>
-<div class="para">the “<span class="process-math">\([\)</span>” and “<span class="process-math">\(]\)</span>” are terminal symbols in the language that is being described, rather than the BNF notation for an optional item.  With this notation, here is part of a BNF grammar that describes statements in the Java programming language:</div>
-<div class="displaymath process-math">
-\begin{align*}
-\langle statement \rangle \amp ::=\ \langle block{\text -}statement \rangle \BNFALT\ \langle if{\text -}statement \rangle \\
-\amp \,\BNFALT\ \langle while{\text -}statement\rangle  \BNFALT\ \langle assignment{\text -}statement \rangle\\
-\amp \,  \BNFALT\ \langle null{\text -}statement \rangle\\
-\langle block{\text -}statement \rangle\amp ::=\ \{ [ \langle statement \rangle ]\dots\ \}\\
-\langle if{\text -}statement \rangle \amp ::=\ if \text{"("} \langle condition \rangle \text{")"}  \langle statement \rangle [ else \langle statement \rangle~] \\
-\langle while{\text -}statement \rangle \amp ::=\ while \text{"("}  \langle condition \rangle \text{")"} \langle statement \rangle \\
-\langle assignment{\text -}statement \rangle \amp  ::=\ \langle variable \rangle = \langle expression \rangle ; \\
-\langle null{\text -}statement \rangle\amp ::=\ \EMPTYSTRING 
-\end{align*}
+<div class="para">indicates that the non-terminal <span class="process-math">\(\langle digit \rangle\)</span> can be replaced by any one of the terminal symbols <span class="process-math">\(0, 1, \dots,9\text{.}\)</span>
 </div>
-<div class="para">The non-terminals <span class="process-math">\(\langle condition \rangle\text{,}\)</span> <span class="process-math">\(\langle variable \rangle\text{,}\)</span> and <span class="process-math">\(\langle expression \rangle\)</span> would, of course, have to be defined by other production rules in the grammar.  Here is a set of rules that define simple expressions, made up of numbers, identifiers, parentheses and the arithmetic operators <span class="process-math">\(+, -, *\)</span> and <span class="process-math">\(/\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{align*}
-\langle expression \rangle \amp ::=\ \langle term \rangle [ \,[ + | - ] \langle term \rangle ]\dots\\
-\langle term \rangle \amp ::=\ \langle factor \rangle [ \, [ * | / ] \langle factor \rangle ]\dots \\
-\langle factor \rangle  \amp ::=\ \textbf{ident} | \textbf{number} | \text{"}(\text{"}\langle expression \rangle \text{"})\text{"}
-\end{align*}
-</div>
-<div class="para">The first rule says that an <span class="process-math">\(\langle expression \rangle\)</span> is a sequence of one or more <span class="process-math">\(\langle term \rangle\)</span>’s, separated by plus or minus signs. The second rule defines a <span class="process-math">\(\langle term \rangle\)</span> to be a sequence of one or more <span class="process-math">\(\langle factors \rangle\text{,}\)</span> separated by multiplication or division operators. The last rule says that a <span class="process-math">\(\langle factor \rangle\)</span> can be either an identifier or a number or an <span class="process-math">\(\langle expression \rangle\)</span> enclosed in parentheses. This small BNF grammar can generate expressions such as “<span class="process-math">\(3*5\)</span>” and</div>
-<div class="displaymath process-math">
-\begin{equation*}
-x*(x+1) - 3/(z+2*(3-x)) + 7\text{.}
-\end{equation*}
-</div>
-<div class="para">The latter expression is made up of three terms: <span class="process-math">\(x*(x+1)\text{,}\)</span> <span class="process-math">\(3/(z+2*(3-x))\text{,}\)</span> and <span class="process-math">\(7\text{.}\)</span>  The first of these terms is made up of two factors, <span class="process-math">\(x\)</span> and <span class="process-math">\((x+1)\text{.}\)</span>  The factor <span class="process-math">\((x+1)\)</span> consists of the expression <span class="process-math">\(x+1\)</span> inside a pair of parentheses.</div>
 </div>
 <span class="incontext"><a class="internal" href="sec-grammars.html#p-5196">in-context</a></span>
 </body>

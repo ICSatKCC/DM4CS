@@ -942,15 +942,15 @@ set \newcommand{\EMPTYSTRING}{\varepsilon}        \newcommand{\PRODUCES}{\longri
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="app-python-iterators"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">A.1</span><span class="space"> </span><span class="title">Python Iterators</span>
 </h2>
-<section class="introduction" id="introduction-84"><div class="para" id="p-5320">All programming languages allow for looping.  A common form of loop is one in which a series of instructions are executed for each value of some index variable, commonly for values between two integers.  Python allows a bit more generality by having structures called “iterators” over which looping can be done.   An iterator can be as simple as a list, such as <code class="code-inline tex2jax_ignore">[0,1,2,3]</code>, but also can be a power set of a finite set, as we see below, or the keys in a dictionary, which is described in the next section.</div></section><section class="subsection" id="subsection-183"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-84"><div class="para" id="p-5327">All programming languages allow for looping.  A common form of loop is one in which a series of instructions are executed for each value of some index variable, commonly for values between two integers.  Python allows a bit more generality by having structures called “iterators” over which looping can be done.   An iterator can be as simple as a list, such as <code class="code-inline tex2jax_ignore">[0,1,2,3]</code>, but also can be a power set of a finite set, as we see below, or the keys in a dictionary, which is described in the next section.</div></section><section class="subsection" id="subsection-183"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">A.1.1</span><span class="space"> </span><span class="title">Counting Subsets</span>
 </h3>
-<div class="para" id="p-5321">Suppose we want to count the number of subsets of <span class="process-math">\(\{0,1,2,...,9\}\)</span> that contain no adjacent elements.  First, we will define our universe and its power set.  The plan will be to define a function that determines whether a subset is "valid" in the sense that it contains no adjacent elements.  Then we will iterate over the subsets, counting the valid ones.  We know that the number of all subsets will be 2 raised to the number of elements in <span class="process-math">\(U\text{,}\)</span> which would be <span class="process-math">\(2^{10}=1024\text{,}\)</span> but let’s check.</div>
+<div class="para" id="p-5328">Suppose we want to count the number of subsets of <span class="process-math">\(\{0,1,2,...,9\}\)</span> that contain no adjacent elements.  First, we will define our universe and its power set.  The plan will be to define a function that determines whether a subset is "valid" in the sense that it contains no adjacent elements.  Then we will iterate over the subsets, counting the valid ones.  We know that the number of all subsets will be 2 raised to the number of elements in <span class="process-math">\(U\text{,}\)</span> which would be <span class="process-math">\(2^{10}=1024\text{,}\)</span> but let’s check.</div>
 <pre id="sage-subsets_of_U" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">U=Set(range(10))
 power_set=U.subsets()
 len(power_set)
 </script></pre>
-<div class="para" id="p-5322">The validity check in this case is very simple.  For each element, <span class="process-math">\(k\text{,}\)</span> of a set, <span class="process-math">\(B\text{,}\)</span> we ask whether its successor, <span class="process-math">\(k+1\text{,}\)</span> is also in the set.  If we never get an answer of "True" then we consider the set valid.  This function could be edited to define validity in other ways to answer different counting questions.  It’s always a good idea to test your functions, so we try two tests, one with a valid set and one with an invalid one.</div>
+<div class="para" id="p-5329">The validity check in this case is very simple.  For each element, <span class="process-math">\(k\text{,}\)</span> of a set, <span class="process-math">\(B\text{,}\)</span> we ask whether its successor, <span class="process-math">\(k+1\text{,}\)</span> is also in the set.  If we never get an answer of "True" then we consider the set valid.  This function could be edited to define validity in other ways to answer different counting questions.  It’s always a good idea to test your functions, so we try two tests, one with a valid set and one with an invalid one.</div>
 <pre id="sage-validity-test" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def valid(B):
     v=true
     for k in B:
@@ -960,7 +960,7 @@ len(power_set)
     return v
 [valid(Set([1,3,5,9])),valid(Set([1,2,4,9]))]
 </script></pre>
-<div class="para" id="p-5323">Finally we do the counting over our power set, incrementing the count variable with each valid set.</div>
+<div class="para" id="p-5330">Finally we do the counting over our power set, incrementing the count variable with each valid set.</div>
 <pre id="sage-count-valid-sets" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">count=0
 for B in power_set:
     if valid(B):

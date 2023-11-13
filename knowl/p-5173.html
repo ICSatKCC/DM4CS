@@ -12,8 +12,25 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Since <span class="process-math">\(r_1=1\)</span> and <span class="process-math">\(r_{k-1}=-1\)</span> and the value of <span class="process-math">\(r_i\)</span> goes up or down by 1 when <span class="process-math">\(i\)</span> increases by 1, <span class="process-math">\(r_i\)</span> must be zero for some <span class="process-math">\(i\)</span> between 1 and <span class="process-math">\(k-1\text{.}\)</span> That is, <span class="process-math">\(r_i\)</span> cannot get from 1 to <span class="process-math">\(-1\)</span> unless it passes through zero. Let <span class="process-math">\(i\)</span> be a number between 1 and <span class="process-math">\(k-1\)</span> such that <span class="process-math">\(r_i=0\text{.}\)</span> Let <span class="process-math">\(x=c_1c_2\cdots
-c_i\)</span> and let <span class="process-math">\(y=c_{i+1}c_{i+2}\cdots c_k\text{.}\)</span> Note that <span class="process-math">\(xy=w\text{.}\)</span> The fact that <span class="process-math">\(r_i=0\)</span> means that the string <span class="process-math">\(c_1c_2\cdots c_i\)</span> has the same number of <span class="process-math">\(a\text{'s}\)</span> and <span class="process-math">\(b\text{'s}\text{,}\)</span> so <span class="process-math">\(x\in L(G)\text{.}\)</span> It follows automatically that <span class="process-math">\(y\in L(G)\)</span> also. Since <span class="process-math">\(i\)</span> is strictly between 1 and <span class="process-math">\(k-1\text{,}\)</span> neither <span class="process-math">\(x\)</span> nor <span class="process-math">\(y\)</span> is the empty string. This is all that we needed to show to finish the proof that <span class="process-math">\(L=L(G)\text{.}\)</span>
+<div class="para logical">
+<div class="para">There are other ways to generate the language <span class="process-math">\(\{a^nb^m| n\ge m\ge 0\}\text{.}\)</span> For example, the extra non-terminal symbol, <span class="process-math">\(A\text{,}\)</span> is not really necessary, if we allow <span class="process-math">\(S\)</span> to sometimes produce a single <span class="process-math">\(a\)</span> without a <span class="process-math">\(b\text{.}\)</span> This leads to the grammar</div>
+<div class="displaymath process-math">
+\begin{align*}
+S \amp \PRODUCES aSb \\
+S \amp \PRODUCES aS \\
+S \amp \PRODUCES \EMPTYSTRING 
+\end{align*}
+</div>
+<div class="para">(But note that the rule <span class="process-math">\(S\PRODUCES Sa\)</span> would not work in place of <span class="process-math">\(S\PRODUCES aS\text{,}\)</span> since it would allow the production of strings in which an <span class="process-math">\(a\)</span> can follow a <span class="process-math">\(b\text{,}\)</span> and there are no such strings in the language <span class="process-math">\(\{a^nb^m| n\ge m\ge 0\}\text{.}\)</span>) And here are two more grammars that generate this language:</div>
+<div class="displaymath process-math">
+\begin{align*}
+S\amp\PRODUCES AB \amp\qquad S\amp\PRODUCES ASb \\
+A\amp\PRODUCES aA \amp\qquad A\amp\PRODUCES aA \\
+B\amp\PRODUCES aBb \amp\qquad S\amp\PRODUCES\EMPTYSTRING \\
+A\amp\PRODUCES \EMPTYSTRING \amp\qquad A\amp\PRODUCES\EMPTYSTRING \\
+B\amp\PRODUCES \EMPTYSTRING \amp\qquad \amp
+\end{align*}
+</div>
 </div>
 <span class="incontext"><a class="internal" href="sec-grammars.html#p-5173">in-context</a></span>
 </body>
