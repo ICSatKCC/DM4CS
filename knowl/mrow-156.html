@@ -13,11 +13,25 @@
 <body class="ignore-math">
 <div class="displaymath process-math">
 \begin{align*}
-\langle expression \rangle \amp ::=\ \langle term \rangle [ \,[ + | - ] \langle term \rangle ]\dots\\
-\langle term \rangle \amp ::=\ \langle factor \rangle [ \, [ * | / ] \langle factor \rangle ]\dots \\
-\langle factor \rangle  \amp ::=\ \textbf{ident} | \textbf{number} | \text{"}(\text{"}\langle expression \rangle \text{"})\text{"}
+\langle sentence \rangle\ \amp \YIELDS\ \langle simple{\text -}sentence \rangle \\
+\amp \YIELDS\ \langle noun{\text -}part \rangle\ \langle verb{\text -}part \rangle\\
+\amp \YIELDS\ \langle article \rangle\ \langle noun \rangle\ \langle verb{\text -}part \rangle \\
+\amp \YIELDS\ \mbox{the}\ \langle noun \rangle\ \langle verb{\text -}part \rangle\\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \langle verb{\text -}part \rangle \\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \langle transitive{\text -}verb \rangle\ \langle noun{\text -}part \rangle\\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \langle noun{\text -}part \rangle \\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \langle article \rangle
+\ \langle noun \rangle\ \mbox{who}\ \langle verb{\text -}part \rangle \\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \mbox{a}
+\ \langle noun \rangle\ \mbox{who}\ \langle verb{\text -}part \rangle\\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \mbox{a}
+\ \mbox{woman}\ \mbox{who}\ \langle verb{\text -}part \rangle\\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \mbox{a}
+\ \mbox{woman}\ \mbox{who}\ \langle intransitive{\text -}verb \rangle\\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \mbox{a}
+\ \mbox{woman}\ \mbox{who}\ \mbox{runs}
 \end{align*}
 </div>
-<span class="incontext"><a class="internal" href="sec-grammars.html#md-26">in-context</a></span>
+<span class="incontext"><a class="internal" href="sec-grammars.html#md-27">in-context</a></span>
 </body>
 </html>

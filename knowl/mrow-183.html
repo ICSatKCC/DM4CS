@@ -13,16 +13,11 @@
 <body class="ignore-math">
 <div class="displaymath process-math">
 \begin{align*}
-E \amp \PRODUCES TA\\
-A \amp\PRODUCES +TA \\
-A \amp \PRODUCES \EMPTYSTRING \\
-T \amp \PRODUCES FB\\
-B \amp \PRODUCES *FB\\
-B \amp \PRODUCES \EMPTYSTRING \\
-F \amp \PRODUCES (E)\\
-F \amp \PRODUCES x\\
-F \amp \PRODUCES y\\
-F \amp \PRODUCES z
+E\amp \YIELDS E+E\\
+\amp \YIELDS x+E\\
+\amp \YIELDS x+E*E\\
+\amp \YIELDS x+y*E\\
+\amp \YIELDS x+y*z
 \end{align*}
 </div>
 <span class="incontext"><a class="internal" href="sec-grammars.html#md-32">in-context</a></span>

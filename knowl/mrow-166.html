@@ -13,13 +13,11 @@
 <body class="ignore-math">
 <div class="displaymath process-math">
 \begin{align*}
-E\amp \YIELDS E+E\\
-\amp \YIELDS E+E*E\\
-\amp \YIELDS E+y*E\\
-\amp \YIELDS x+y*E\\
-\amp \YIELDS x+y*z
+\langle expression \rangle \amp ::=\ \langle term \rangle [ \,[ + | - ] \langle term \rangle ]\dots\\
+\langle term \rangle \amp ::=\ \langle factor \rangle [ \, [ * | / ] \langle factor \rangle ]\dots \\
+\langle factor \rangle  \amp ::=\ \textbf{ident} | \textbf{number} | \text{"}(\text{"}\langle expression \rangle \text{"})\text{"}
 \end{align*}
 </div>
-<span class="incontext"><a class="internal" href="sec-grammars.html#md-28">in-context</a></span>
+<span class="incontext"><a class="internal" href="sec-grammars.html#md-29">in-context</a></span>
 </body>
 </html>

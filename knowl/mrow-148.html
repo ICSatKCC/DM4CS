@@ -13,16 +13,25 @@
 <body class="ignore-math">
 <div class="displaymath process-math">
 \begin{align*}
-\langle statement \rangle \amp ::=\ \langle block{\text -}statement \rangle \BNFALT\ \langle if{\text -}statement \rangle \\
-\amp \,\BNFALT\ \langle while{\text -}statement\rangle  \BNFALT\ \langle assignment{\text -}statement \rangle\\
-\amp \,  \BNFALT\ \langle null{\text -}statement \rangle\\
-\langle block{\text -}statement \rangle\amp ::=\ \{ [ \langle statement \rangle ]\dots\ \}\\
-\langle if{\text -}statement \rangle \amp ::=\ if \text{"("} \langle condition \rangle \text{")"}  \langle statement \rangle [ else \langle statement \rangle~] \\
-\langle while{\text -}statement \rangle \amp ::=\ while \text{"("}  \langle condition \rangle \text{")"} \langle statement \rangle \\
-\langle assignment{\text -}statement \rangle \amp  ::=\ \langle variable \rangle = \langle expression \rangle ; \\
-\langle null{\text -}statement \rangle\amp ::=\ \EMPTYSTRING 
+\langle sentence \rangle\ \amp \YIELDS\ \langle simple{\text -}sentence \rangle \\
+\amp \YIELDS\ \langle noun{\text -}part \rangle\ \langle verb{\text -}part \rangle\\
+\amp \YIELDS\ \langle article \rangle\ \langle noun \rangle\ \langle verb{\text -}part \rangle \\
+\amp \YIELDS\ \mbox{the}\ \langle noun \rangle\ \langle verb{\text -}part \rangle\\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \langle verb{\text -}part \rangle \\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \langle transitive{\text -}verb \rangle\ \langle noun{\text -}part \rangle\\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \langle noun{\text -}part \rangle \\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \langle article \rangle
+\ \langle noun \rangle\ \mbox{who}\ \langle verb{\text -}part \rangle \\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \mbox{a}
+\ \langle noun \rangle\ \mbox{who}\ \langle verb{\text -}part \rangle\\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \mbox{a}
+\ \mbox{woman}\ \mbox{who}\ \langle verb{\text -}part \rangle\\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \mbox{a}
+\ \mbox{woman}\ \mbox{who}\ \langle intransitive{\text -}verb \rangle\\
+\amp \YIELDS\ \mbox{the}\ \mbox{man}\ \mbox{loves}\ \mbox{a}
+\ \mbox{woman}\ \mbox{who}\ \mbox{runs}
 \end{align*}
 </div>
-<span class="incontext"><a class="internal" href="sec-grammars.html#md-25">in-context</a></span>
+<span class="incontext"><a class="internal" href="sec-grammars.html#md-27">in-context</a></span>
 </body>
 </html>

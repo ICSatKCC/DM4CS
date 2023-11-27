@@ -13,11 +13,13 @@
 <body class="ignore-math">
 <div class="displaymath process-math">
 \begin{align*}
-E \amp ::= T\ [\ +\ T\ ]\dots\\
-T  \amp ::= F\ [\ *\ F\ ]\dots\\
-F \amp ::= \text{}\ E\ \text{}\ \BNFALT\ x\ \BNFALT\ y\ \BNFALT\ z
+E\amp \YIELDS E+E\\
+\amp \YIELDS x+E\\
+\amp \YIELDS x+E*E\\
+\amp \YIELDS x+y*E\\
+\amp \YIELDS x+y*z
 \end{align*}
 </div>
-<span class="incontext"><a class="internal" href="sec-grammars.html#md-31">in-context</a></span>
+<span class="incontext"><a class="internal" href="sec-grammars.html#md-32">in-context</a></span>
 </body>
 </html>

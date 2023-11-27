@@ -13,11 +13,16 @@
 <body class="ignore-math">
 <div class="displaymath process-math">
 \begin{align*}
-\langle expression \rangle \amp ::=\ \langle term \rangle [ \,[ + | - ] \langle term \rangle ]\dots\\
-\langle term \rangle \amp ::=\ \langle factor \rangle [ \, [ * | / ] \langle factor \rangle ]\dots \\
-\langle factor \rangle  \amp ::=\ \textbf{ident} | \textbf{number} | \text{"}(\text{"}\langle expression \rangle \text{"})\text{"}
+\langle statement \rangle \amp ::=\ \langle block{\text -}statement \rangle \BNFALT\ \langle if{\text -}statement \rangle \\
+\amp \,\BNFALT\ \langle while{\text -}statement\rangle  \BNFALT\ \langle assignment{\text -}statement \rangle\\
+\amp \,  \BNFALT\ \langle null{\text -}statement \rangle\\
+\langle block{\text -}statement \rangle\amp ::=\ \{ [ \langle statement \rangle ]\dots\ \}\\
+\langle if{\text -}statement \rangle \amp ::=\ if \text{"("} \langle condition \rangle \text{")"}  \langle statement \rangle [ else \langle statement \rangle~] \\
+\langle while{\text -}statement \rangle \amp ::=\ while \text{"("}  \langle condition \rangle \text{")"} \langle statement \rangle \\
+\langle assignment{\text -}statement \rangle \amp  ::=\ \langle variable \rangle = \langle expression \rangle ; \\
+\langle null{\text -}statement \rangle\amp ::=\ \EMPTYSTRING 
 \end{align*}
 </div>
-<span class="incontext"><a class="internal" href="sec-grammars.html#md-26">in-context</a></span>
+<span class="incontext"><a class="internal" href="sec-grammars.html#md-28">in-context</a></span>
 </body>
 </html>
