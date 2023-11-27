@@ -281,7 +281,7 @@
         <p> Note that we sometimes use a slightly different phrasing and say that a language <m>L</m>
             is accepted by some machine <m>M</m>. We don't mean by this that <m>L</m> <em>and
                 maybe some other strings</em> are accepted by <m>M</m>; we mean <m>L = L(M)</m>,
-            i.e.\ <m>
+            i.e. <m>
                 L</m> is <em>exactly</em> the set of strings accepted by <m>M</m>. </p>
         <p> It may not be easy, looking at a formal specification of a DFA, to determine what
             language that automaton accepts. Fortunately, the mathematical description of the
@@ -456,9 +456,9 @@
 
         <p>As mentioned briefly above, there is an alternative school of though as to what
             properties should be required of a finite-state automaton's transition function. Recall
-            our motivating example of a C++ compiler and a legal \em <c>if</c> statement. In our
+            our motivating example of a C++ compiler and a legal <c>if</c> statement. In our
             description, we had the compiler in an ``expecting a <c>)</c>" state; on seeing a <c>)</c>,
-            the compiler moved into an ``expecting a <c></c> or a legal statement" state. An
+            the compiler moved into an ``expecting a <c>}</c> or a legal statement" state. An
             alternative way to view this would be to say that the compiler, on seeing a <c>)</c>,
             could move into one of two different states: it could move to an ``expecting a <c>{</c>"
             state <em>or</em> move to an ``expecting a legal statement" state. Thus, from a single
@@ -482,11 +482,11 @@
             and consumes an <m>a</m>. Rather, we have <m>\partial(q,a) = \{q_1, q_2, \ldots, q_n\}</m>,
             meaning that if the machine is in state <m>q</m> and consumes an <m>a</m>, it might move
             directly to any one of the states <m>q_1, \ldots, q_n</m>. Note that the set of next
-            states \partial(q,a) is defined for every state <m>q</m> and every input symbol <m>a</m>,
+            states <m>\partial(q,a)</m> is defined for every state <m>q</m> and every input symbol <m>a</m>,
             but for some <m>q</m>'s and <m>a</m>'s it could be empty, or contain just one state
-            (there don't <em>have</em> to be multiple next states). The function \<m>partial</m>
+            (there don't <em>have</em> to be multiple next states). The function <m>\partial</m>
             must also specify whether it is possible for the machine to make any moves without input
-            being consumed, i.e.\ <m>\partial(q, \varepsilon)</m> must be specified for every state <m>
+            being consumed, i.e. <m>\partial(q, \varepsilon)</m> must be specified for every state <m>
             q</m>. Again, it is quite possible that <m>\partial(q, \varepsilon)</m> may be empty for
             some states <m>q</m>: there need not be <m>\varep</m>-transitions out of <m>q</m>. </p>
 
@@ -538,7 +538,7 @@
             (sequences of) <m>\varep</m>-transitions out of <m>q</m>. </p>
         <p> We do have to think a bit carefully about what it means for an NFA to accept a string <m>
             w</m>. Suppose <m>\partial^*(q_0,w)</m> contains both accepting and non-accepting
-            states, i.e.\ the machine could end in an accepting state after consuming <m>w</m>, but
+            states, i.e. the machine could end in an accepting state after consuming <m>w</m>, but
             it might also end in a non-accepting state. Should we consider the machine to accept <m>
             w</m>, or should we require every state in <m>\partial^*(q_0,w)</m> to be accepting
             before we admit <m>w</m> to the ranks of the accepted? Think of the C++ compiler again:
@@ -597,11 +597,11 @@
             <proof>
                 <p> Suppose we are given an NFA <m>N = (P, \Sigma, p_0, \partial, F_p)</m>, and we
                     want to build a DFA <m>D=(Q, \Sigma, q_0, \delta, F_q)</m> that accepts the same
-                    language. The idea is to make the states in <m>D</m> correspond to {\em subsets}
+                    language. The idea is to make the states in <m>D</m> correspond to <em>subsets</em>
                     of <m>N</m>'s states, and then to set up <m>D</m>'s transition function <m>
                     \delta</m> so that for any string <m>w</m>, <m>\delta^*(q_0, w)</m> corresponds
-                    to <m>\partial^*(p_0,w)</m>; i.e.\ the {\bf single} state that <m>w</m> gets you
-                    to in <m>D</m> corresponds to the {\bf set} of states that <m>w</m> could get
+                    to <m>\partial^*(p_0,w)</m>; i.e. the <em>single</em> state that <m>w</m> gets you
+                    to in <m>D</m> corresponds to the <em>set</em> of states that <m>w</m> could get
                     you to in <m>N</m>. If any of those states is accepting in <m>N</m>, <m>w</m>
                     would be accepted by <m>N</m>, and so the corresponding state in <m>D</m> would
                     be made accepting as well. </p>
@@ -642,11 +642,11 @@
                     \in\Sigma^*</m>: if this latter property holds, then <m>w \in L(D)</m> iff <m>
                     \delta^*(q_0,w)</m> is accepting, which we made be so iff <m>\partial^*(p_0,w)</m>
                     contains an accepting state of <m>N</m>, which happens iff <m>N</m> accepts <m>w</m>
-                    i.e.\ iff <m>w \in L(N)</m>. </p>
+                    i.e. iff <m>w \in L(N)</m>. </p>
                 <p> So can we argue that <m>\delta^*(q_0,w)</m> does in fact correspond to <m>
                     \partial^*(p_0,w)</m> for all <m>w</m>? We can, using induction on the length of <m>
                     w</m>. </p>
-                <p> First, a preliminary observation. Suppose <m>w=xa</m>, i.e.\ <m>w</m> is the
+                <p> First, a preliminary observation. Suppose <m>w=xa</m>, i.e.  <m>w</m> is the
                     string <m>x</m> followed by the single symbol <m>a</m>. How are <m>
                     \partial^*(p_0,x)</m> and <m>\partial^*(p_0,w)</m> related? Well, recall that <m>
                     \partial^*(p_0,x)</m> is the set of all states that <m>N</m> can reach when it
@@ -674,7 +674,7 @@
                         </li>
                         <li>
                             <p> Inductive case: Assume that the desired property holds for some
-                    number <m>n</m>, i.e.\ that <m>\delta^*(q_0,x)</m> corresponds to <m>
+                    number <m>n</m>, i.e. that <m>\delta^*(q_0,x)</m> corresponds to <m>
                     \partial^*(p_0,x)</m> for all <m>x</m> with length <m>n</m>. Look at an
                     arbitrary string <m>w</m> with length <m>n+1</m>. We want to show that <m>
                     \delta^*(q_0,w)</m> corresponds to <m>\partial^*(p_0,w)</m>. Well, the string <m>
@@ -686,8 +686,8 @@
                             <p> At this point, our subsequent reasoning might be a bit clearer if we
                     give explicit names to <m>\delta^*(q_0,w)</m> (the state <m>D</m> reaches on
                     input <m>w</m>) and <m>\delta^*(q_0,x)</m> (the state <m>D</m> reaches on input <m>
-                    x</m>). Call <m>\delta^*(q_0, w)</m> \ <m>q_w</m>, and call <m>\delta^*(q_0,x)</m>
-                    \ <m>q_x</m>. We know, because <m>w=xa</m>, there must be an <m>a</m>-transition
+                    x</m>). Call <m>\delta^*(q_0, w)</m>  <m>q_w</m>, and call <m>\delta^*(q_0,x)</m>
+                     <m>q_x</m>. We know, because <m>w=xa</m>, there must be an <m>a</m>-transition
                     from <m>q_x</m> to <m>q_w</m>. Look at how we added transitions to <m>\delta</m>:
                     the fact that there is an <m>a</m>-transition from <m>q_x</m> to <m>q_w</m>
                     means that <m>q_w</m> corresponds to the set <m>\partial^*(p_1,a)

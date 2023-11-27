@@ -563,7 +563,7 @@
                     is at least <m>N</m> and which can't be broken down in the way described by the
                     Pumping Lemma. What string should we try to prove unbreakable? We can't pick
                     strings like <m>a^{100}b^{100}</m> because we're working with an arbitrary <m>N</m>
-                    i.e.\ making no assumptions about <m>N</m>'s value; picking <m>a^{100}b^{100}</m>
+                    i.e. making no assumptions about <m>N</m>'s value; picking <m>a^{100}b^{100}</m>
                     is implicitly assuming that <m>N</m> is no bigger than 200 --- for larger values
                     of <m>N</m>, <m>a^{100}b^{100}</m> would not be ``a string whose length is at
                     least <m>N</m>". Whatever string we pick, we <em>have</em> to be sure that its
@@ -578,7 +578,7 @@
                 <p> We need to show that you can't write <m>w = a^Nb^N</m> as <m>w=xyz</m> where <m>
                     x</m> and <m>y</m> together contain at most <m>N</m> symbols, <m>y</m> isn't
                     empty, and all the strings <m>xz</m>, <m>xyyz</m>, <m>xyyyz</m>, etc.\ are still
-                    in <m>L</m>, i.e.\ of the form <m>a^nb^n</m> for some number~<m>n</m>. The best
+                    in <m>L</m>, i.e. of the form <m>a^nb^n</m> for some number~<m>n</m>. The best
                     way to do this is to show that any choice for <m>y</m> (with <m>x</m> being
                     whatever precedes it and <m>z</m> being whatever follows) that satisfies the
                     first two requirements fails to satisfy the third. So what are our possible
@@ -605,7 +605,7 @@
             capabilities of a computer: They are both languages that we could easily write programs
             to recognize. It is not clear how the expressive power of regular expressions could be
             increased, nor how one might modify the FSA model to obtain a more powerful one.
-            However, in the next chapter you will be introduced to the concept of a {\em grammar} as
+            However, in the next chapter you will be introduced to the concept of a <em>grammar</em> as
             a tool for generating languages. The simplest grammars still only produce regular
             languages, but you will see that more complicated grammars have the power to generate
             languages far beyond the realm of the regular. </p>
