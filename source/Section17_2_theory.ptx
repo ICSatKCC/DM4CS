@@ -18,8 +18,8 @@
     structure: <md>
       <mrow>L_1 = \{ x\in \ab^* \ | n_a(x) =
         n_b(x)\};</mrow>
-      <mrow>L_2 = \{\mbox{legal Java identifiers}\};</mrow>
-      <mrow> L_3 = \{\mbox{legal C++
+      <mrow>L_2 = \{\text{legal Java identifiers}\};</mrow>
+      <mrow> L_3 = \{\text{legal C++
         programs}\}.</mrow>
     </md> In all of these languages, there are structural rules which
     determine which sequences of symbols are in the language and which aren't. So despite the
@@ -33,7 +33,7 @@
     mathematical formalism called a <term>regular expression</term>. A regular expression is a
     pattern that ``matches" strings that have a particular form. For example, consider the language
     (over alphabet <m>\Sigma = \ab</m>) <m>L= \{x \ | \ x
-      \mbox{ starts and ends with } a\}</m>. What is the symbol-by-symbol structure of strings in
+      \text{ starts and ends with } a\}</m>. What is the symbol-by-symbol structure of strings in
     this language? Well, they start with an <m>a</m>, followed by zero or more <m>a</m>'s or <m>b</m>'s
     or both, followed by an <m>a</m>. The regular expression <m>a \cdot (a \REOR b)^* \cdot a</m> is
     a pattern that captures this structure and matches any string in <m>L</m> (<m>\cdot</m> and <m>
@@ -402,12 +402,12 @@ following languages.
         <ol marker="(a)">
             <li>
                 <p>
-                   <m>L_1 = \{ x \ | \ x \mbox{ contains 3 consecutive $a$'s}\}</m> 
+                   <m>L_1 = \{ x \ | \ x \text{ contains 3 consecutive $a$'s}\}</m> 
                 </p>
             </li>
             <li>
                 <p>
-                    <m>L_2 = \{ x \ | \ x \mbox{ has even length}\}</m>
+                    <m>L_2 = \{ x \ | \ x \text{ has even length}\}</m>
                 </p>
             </li>
             <li>
@@ -417,7 +417,7 @@ following languages.
             </li>
             <li>
                 <p>
-                    <m>L_4 = \{ x \ | \ x \mbox{ contains the substring } aaba\}</m>
+                    <m>L_4 = \{ x \ | \ x \text{ contains the substring } aaba\}</m>
                 </p>
             </li>
             <li>
@@ -427,7 +427,7 @@ following languages.
             </li>
                         <li>
               <p>
-                <m>L_6 = \{ x \ | \ x \mbox{ doesn't end in } aa\}</m>
+                <m>L_6 = \{ x \ | \ x \text{ doesn't end in } aa\}</m>
               </p>
             </li>
         </ol>

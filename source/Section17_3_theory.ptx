@@ -358,7 +358,7 @@
         <example>
 
             <p>Find a DFA with input alphabet <m>\Sigma = \ab</m> that accepts the language <m>L=
-                    \{w \in\Sigma^* \ | \ n_a(w) \mbox{ and } n_b(w) \mbox{ are both even } \}</m>.</p>
+                    \{w \in\Sigma^* \ | \ n_a(w) \text{ and } n_b(w) \text{ are both even } \}</m>.</p>
 
             <p>The characteristics that determine whether or not a string <m>w</m> is in <m>L</m>
                 are the parity of <m>n_a(w)</m> and <m>n_b(w)</m>. There are four possible
@@ -398,7 +398,7 @@
             </p>
         </example>
         <example> Find a DFA with input alphabet <m>\Sigma = \ab</m> that accepts the language <m>L
-                = \{w \in\Sigma^* \ | \ n_a(w) \mbox{ is divisible by 3 } \}</m>. The relevant
+                = \{w \in\Sigma^* \ | \ n_a(w) \text{ is divisible by 3 } \}</m>. The relevant
             characteristic here is of course whether or not the number of <m>a</m>'s in a string is
             divisible by 3, perhaps suggesting a two-state machine. But in fact, there is more than
             one way for a number to not be divisible by 3: dividing the number by 3 could produce a
@@ -415,14 +415,14 @@
                 <image source="images/fsa6" width="80%">
                     <description>Transition diagram that accepts the language <m>L = \{w \in\Sigma^*
             \ | \
-                            n_a(w) \mbox{ is divisible by 3 } \}</m></description>
+                            n_a(w) \text{ is divisible by 3 } \}</m></description>
                 </image>
             </figure>
         </example>
 
         <example>
             <p> Find a DFA with input alphabet <m>\Sigma = \ab</m> that accepts the language <m>L =
-                \{w \in\Sigma^* \ | w \mbox{ contains three consecutive a's } \}</m>.</p>
+                \{w \in\Sigma^* \ | w \text{ contains three consecutive a's } \}</m>.</p>
             <p> Again, it is not quite so simple as making a two-state machine where the states
                 correspond to ``have seen <m>aaa</m>" and ``have not seen <m>aaa</m>". Think
                 dynamically: as you move through the input string, how do you arrive at the goal of
@@ -435,7 +435,7 @@
                     <image source="images/fsa7" width="80%">
                         <description>Transition diagram that accepts the language <m>L = \{w
                 \in\Sigma^* \
-                                | w \mbox{ contains three consecutive a's } \}</m>.</description>
+                                | w \text{ contains three consecutive a's } \}</m>.</description>
                     </image>
                 </figure>
             </p>
@@ -668,7 +668,7 @@
                             <p> Base case: Suppose <m>w</m> has length 0. The only string <m>w</m>
                     with length 0 is <m>\varep</m>, so we want to show that <m>\delta^*(q_0,\varep)</m>
                     corresponds to <m>\partial^*(p_0,\varep)</m>. Well, <m>\delta^*(q_0, \varep) =
-                    q_0</m>, since in a DFA, <m>\delta^*(q, \varep) = q</m> for any state~ <m>q</m>.
+                    q_0</m>, since in a DFA, <m>\delta^*(q, \varep) = q</m> for any state <m>q</m>.
                     We explicitly made <m>q_0</m> correspond to <m>\partial^*(p_0,\varep)</m>, and
                     so the property holds for <m>w</m> with length 0. </p>
                         </li>
@@ -781,23 +781,23 @@
                         </li>
                         <li>
                             <p>
-                                <m>L_3= \{ x \ | \ n_a(x)+n_b(x) \mbox{ is even }\}</m>
+                                <m>L_3= \{ x \ | \ n_a(x)+n_b(x) \text{ is even }\}</m>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <m>L_4= \{ x \ | \ n_a(x) \mbox{ is a multiple of 5 }\}</m>
+                                <m>L_4= \{ x \ | \ n_a(x) \text{ is a multiple of 5 }\}</m>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <m>L_5= \{ x \ | \ x \mbox{ does not contain the substring }
+                                <m>L_5= \{ x \ | \ x \text{ does not contain the substring }
                                     abb\}</m>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <m>L_6= \{ x \ | \ x \mbox{ has no <m>a</m>'s in the even positions}
+                                <m>L_6= \{ x \ | \ x \text{ has no } a \text{'s in even positions}
                     \}</m>
                             </p>
                         </li>
@@ -832,9 +832,7 @@
         <exercise number="3" xml:id="exerc-17_3-3">
             <statement>
                 <p> Let <m>\Sigma=\{0,1\}</m>. Give a DFA that accepts the language <me>
-                        L = \{ x \in \Sigma^* \ | \ x \mbox{ is the binary representation of an
-                    integer
-                        divisible by 3}\}.</me>
+                        L = \{ x \in \Sigma^* \ | \ x \text{ is in binary }, 3|x \}.</me>
                 </p>
             </statement>
         </exercise>

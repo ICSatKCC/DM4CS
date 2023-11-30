@@ -221,7 +221,7 @@ to write the same symbol that was read, move right, and halt.</p>
 that makes a copy of a string of <m>a</m>'s and <m>b</m>'s.  To use this machine,
 you would write a string of <m>a</m>'s and <m>b</m>'s on its tape, place
 the machine on the first character of the string, and start the
-machine in its start state,~<m>q_0</m>.  When the machine halts, there will be
+machine in its start state, <m>q_0</m>.  When the machine halts, there will be
 two copies of the string on the tape, separated by a blank.
 The machine will be positioned on the first character of the leftmost
 copy of the string.  Note that this machine uses <m>c</m>'s and
@@ -277,8 +277,8 @@ of <m>x</m>.  In this case, we will say that ``<m>M</m> halts with output <m>x</
 In addition, if <m>M</m> halts with an entirely blank tape, we say that
 ``<m>M</m> halts with output <m>\varepsilon</m>.''
 Note that when we run <m>M</m> with input <m>w</m>, one of three things can happen:
-(1)~<m>M</m>~might halt with some string as output; (1)~<m>M</m>~might fail to halt; 
-or (3)~<m>M</m>~might halt in some configuration that doesn't
+(1) <m>M</m> might halt with some string as output; (1) <m>M</m> might fail to halt; 
+or (3) <m>M</m> might halt in some configuration that doesn't
 count as outputting any string.</p>
 
 <p>The fact that a Turing machine can produce an output value allows us
@@ -331,7 +331,7 @@ Given a language <m>L</m>, we can ask whether the corresponding function
 machine to decide whether or not a given string <m>w</m> is in <m>L</m>.
 Just run the machine with input <m>w</m>.  It will halt with output <m>\chi_L(w)</m>.
 (That is, it will halt and when it does so, the tape will be blank except for
-a 0 or a 1, and the machine will be positioned on the 0 or~1.)
+a 0 or a 1, and the machine will be positioned on the 0 or 1.)
 If the machine halts with output 1, then <m>w\in L</m>.  If the machine halts with
 output 0, then <m>w\not\in L</m>.</p>
 
@@ -510,7 +510,7 @@ Conversely, suppose that <m>L</m> is a language over an alphabet <m>\Sigma</m>,
 and that <m>L</m> is Turing-acceptable.  Then it is possible to find a grammar
 <m>G</m> that generates <m>L</m>.  To do this, it's convenient to use the
 fact that, as discussed above, there is a Turing-computable function
-<m>f\colon \{a\}^*\to\Sigma</m> such that <m>L</m> is the range of~<m>f</m>.
+<m>f\colon \{a\}^*\to\Sigma</m> such that <m>L</m> is the range of <m>f</m>.
 Let <m>M=(Q,\Lambda,q_0,\delta)</m> be a Turing machine that computes
 the function <m>f</m>.  We can build a grammar, <m>G</m>, that imitates the computations
 performed by <m>M</m>.  The idea is that most of the production rules of <m>G</m> will
@@ -557,9 +557,9 @@ output 1 if <m>w\in L</m> and with output <m>0</m> if <m>w\not\in L</m>.  To do 
 (It will simulate one step in the computation of <m>M</m>, then one step
 in the computation of <m>M'</m>, then one step of <m>M</m>, then one step of <m>M'</m>,
 and so on.)  If and when the simulated computation of <m>M</m> halts, then
-<m>T</m> will halt with output~1; since <m>M</m> accepts <m>L</m>, this will happen if and
+<m>T</m> will halt with output 1; since <m>M</m> accepts <m>L</m>, this will happen if and
 only if <m>w\in L</m>.  If and when the simulated computation of <m>M'</m> halts, then
-<m>T</m> will halt with output~0; since <m>M</m> accepts <m>L</m>, this will happen if and
+<m>T</m> will halt with output 0; since <m>M</m> accepts <m>L</m>, this will happen if and
 only if <m>w\not\in L</m>.  So, for any <m>w\in\Sigma^*</m>, <m>T</m> halts with the
 desired output.  This means that <m>T</m> does in fact decide the language <m>L</m>.
 </p>
@@ -687,7 +687,7 @@ machine encoded by the first string in this list of
 standard Turing machines; let <m>T_1</m> be
 the machine encoded by the second string; let <m>T_2</m> be the
 machine encoded by the third string; and so on.  The list
-<m>T_0</m>, <m>T_1</m>, <m>T_2</m>,~\dots, includes every standard Turing machine.
+<m>T_0</m>, <m>T_1</m>, <m>T_2</m>, <m>\dots</m>, includes every standard Turing machine.
 Furthermore, given <m>n\in\N</m>, we can find the symbolic representation
 for <m>T_n</m> by generating strings in the list until we have <m>n+1</m> strings.
 Furthermore---and this is the essential point---we can use a Turing

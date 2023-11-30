@@ -164,7 +164,7 @@
                     q_k</m>: <me>q_i\longrightarrow p_1\longrightarrow p_2 \cdots\longrightarrow
                     p_r\longrightarrow q_k </me> We are interested in computations in which all of
                     the intermediate states--- <m>p_1,p_2,\dots,p_r</m>---are in the set <m>
-                    \{q_0,q_1,\dots,q_{j-1}\}</m>, for some number~ <m>j</m>. We define <m>R_{i,j,k}</m>
+                    \{q_0,q_1,\dots,q_{j-1}\}</m>, for some number <m>j</m>. We define <m>R_{i,j,k}</m>
                     to be the set of all strings <m>w</m> in <m>\Sigma^*</m> that are consumed by
                     such a computation. That is, <m>w\in R_{i,j,k}</m> if and only if when <m>M</m>
                     starts in state <m>q_i</m> and reads <m>w</m>, it ends in state <m>q_k</m>, and
@@ -578,7 +578,7 @@
                 <p> We need to show that you can't write <m>w = a^Nb^N</m> as <m>w=xyz</m> where <m>
                     x</m> and <m>y</m> together contain at most <m>N</m> symbols, <m>y</m> isn't
                     empty, and all the strings <m>xz</m>, <m>xyyz</m>, <m>xyyyz</m>, etc.\ are still
-                    in <m>L</m>, i.e. of the form <m>a^nb^n</m> for some number~<m>n</m>. The best
+                    in <m>L</m>, i.e. of the form <m>a^nb^n</m> for some number <m>n</m>. The best
                     way to do this is to show that any choice for <m>y</m> (with <m>x</m> being
                     whatever precedes it and <m>z</m> being whatever follows) that satisfies the
                     first two requirements fails to satisfy the third. So what are our possible
@@ -599,7 +599,7 @@
                     is no threshold value for <m>L</m>; so <m>L</m> is not regular. </p>
             </proof>
         </theorem>
-        <p> The fact that languages like <m>\{a^nb^n\ | \ n \geq 0\}</m> and <m>\{a^p \ |\ p \mbox{
+        <p> The fact that languages like <m>\{a^nb^n\ | \ n \geq 0\}</m> and <m>\{a^p \ |\ p \text{
             is prime}\}</m> are not regular is a severe blow to any idea that regular expressions or
             finite-state automata capture the language-generation or language-recognition
             capabilities of a computer: They are both languages that we could easily write programs
