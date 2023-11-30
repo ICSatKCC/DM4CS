@@ -13,8 +13,8 @@
         <p> What formalism might we use to model what it means to recognize a language
             ``mechanically''? We look for inspiration to a language-recognizer with which we are all
             familiar, and which we've already in fact mentioned: a compiler. Consider how a C++
-            compiler might handle recognizing a legal <c>if</c> statement. Having seen the word 
-            <c>if</c>, the compiler will be in a <em>state</em> or <em>phase of its execution</em>
+            compiler might handle recognizing a legal <c>if</c> statement. Having seen the word <c>
+            if</c>, the compiler will be in a <em>state</em> or <em>phase of its execution</em>
             where it expects to see a <c>(</c>; in this state, any other character will put the
             compiler in a ``failure" state. If the compiler does in fact see a <c>(</c> next, it
             will then be in an ``expecting a boolean condition" state; if it sees a sequence of
@@ -482,9 +482,9 @@
             and consumes an <m>a</m>. Rather, we have <m>\partial(q,a) = \{q_1, q_2, \ldots, q_n\}</m>,
             meaning that if the machine is in state <m>q</m> and consumes an <m>a</m>, it might move
             directly to any one of the states <m>q_1, \ldots, q_n</m>. Note that the set of next
-            states <m>\partial(q,a)</m> is defined for every state <m>q</m> and every input symbol <m>a</m>,
-            but for some <m>q</m>'s and <m>a</m>'s it could be empty, or contain just one state
-            (there don't <em>have</em> to be multiple next states). The function <m>\partial</m>
+            states <m>\partial(q,a)</m> is defined for every state <m>q</m> and every input symbol <m>
+            a</m>, but for some <m>q</m>'s and <m>a</m>'s it could be empty, or contain just one
+            state (there don't <em>have</em> to be multiple next states). The function <m>\partial</m>
             must also specify whether it is possible for the machine to make any moves without input
             being consumed, i.e. <m>\partial(q, \varepsilon)</m> must be specified for every state <m>
             q</m>. Again, it is quite possible that <m>\partial(q, \varepsilon)</m> may be empty for
@@ -600,9 +600,9 @@
                     language. The idea is to make the states in <m>D</m> correspond to <em>subsets</em>
                     of <m>N</m>'s states, and then to set up <m>D</m>'s transition function <m>
                     \delta</m> so that for any string <m>w</m>, <m>\delta^*(q_0, w)</m> corresponds
-                    to <m>\partial^*(p_0,w)</m>; i.e. the <em>single</em> state that <m>w</m> gets you
-                    to in <m>D</m> corresponds to the <em>set</em> of states that <m>w</m> could get
-                    you to in <m>N</m>. If any of those states is accepting in <m>N</m>, <m>w</m>
+                    to <m>\partial^*(p_0,w)</m>; i.e. the <em>single</em> state that <m>w</m> gets
+                    you to in <m>D</m> corresponds to the <em>set</em> of states that <m>w</m> could
+                    get you to in <m>N</m>. If any of those states is accepting in <m>N</m>, <m>w</m>
                     would be accepted by <m>N</m>, and so the corresponding state in <m>D</m> would
                     be made accepting as well. </p>
                 <p> So how do we make this work? The first thing to do is to deal with a start state <m>
@@ -646,19 +646,22 @@
                 <p> So can we argue that <m>\delta^*(q_0,w)</m> does in fact correspond to <m>
                     \partial^*(p_0,w)</m> for all <m>w</m>? We can, using induction on the length of <m>
                     w</m>. </p>
-                <p> First, a preliminary observation. Suppose <m>w=xa</m>, i.e.  <m>w</m> is the
+                <p> First, a preliminary observation. Suppose <m>w=xa</m>, i.e. <m>w</m> is the
                     string <m>x</m> followed by the single symbol <m>a</m>. How are <m>
                     \partial^*(p_0,x)</m> and <m>\partial^*(p_0,w)</m> related? Well, recall that <m>
                     \partial^*(p_0,x)</m> is the set of all states that <m>N</m> can reach when it
                     starts in <m>p_0</m> and consumes <m>x</m>: <m>\partial^*(p_0,x) = \{p_1,
-                    \ldots, p_n\}</m> for some states <m>p_1, \ldots, p_n</m>. Now, <m>w</m> is just <m>
-                    x</m> with an additional <m>a</m>, so where might <m>N</m> end up if it starts
-                    in <m>p_0</m> and consumes <m>w</m>? We know that <m>x</m> gets <m>N</m> to <m>
-                    p_1</m> or <m>\ldots</m> or <m>p_n</m>, so <m>xa</m> gets <m>N</m> to any state
-                    that can be reached from <m>p_1</m> with an <m>a</m> (and maybe some <m>\varep</m>-transitions),
-                    and to any state that can be reached from <m>p_2</m> with an <m>a</m> (and maybe
-                    some <m>\varep</m>-transitions), etc. Thus, our relationship between <m>
-                    \partial^*(p_0,x)</m> and <m>\partial^*(p_0,w)</m> is that if <m>\partial^*(p_0,x)
+                        \ldots, p_n\}</m> for some states <m>p_1, \ldots, p_n</m>. Now, <m>w</m> is
+                    just <m>
+                        x</m> with an additional <m>a</m>, so where might <m>N</m> end up if it
+                    starts in <m>p_0</m> and consumes <m>w</m>? We know that <m>x</m> gets <m>N</m>
+                    to <m>
+                        p_1</m> or <m>\ldots</m> or <m>p_n</m>, so <m>xa</m> gets <m>N</m> to any
+                    state that can be reached from <m>p_1</m> with an <m>a</m> (and maybe some <m>
+                    \varep</m>-transitions), and to any state that can be reached from <m>p_2</m>
+                    with an <m>a</m> (and maybe some <m>\varep</m>-transitions), etc. Thus, our
+                    relationship between <m>
+                        \partial^*(p_0,x)</m> and <m>\partial^*(p_0,w)</m> is that if <m>\partial^*(p_0,x)
                     = \{p_1, \ldots, p_n\}</m>, then <m>\partial^*(p_0,w) = \partial^*(p_1,a)
                         \cup \ldots \cup \partial^*(p_n,a)</m>. With this observation in hand, let's
                     proceed to our proof by induction. </p>
@@ -687,10 +690,11 @@
                     give explicit names to <m>\delta^*(q_0,w)</m> (the state <m>D</m> reaches on
                     input <m>w</m>) and <m>\delta^*(q_0,x)</m> (the state <m>D</m> reaches on input <m>
                     x</m>). Call <m>\delta^*(q_0, w)</m>  <m>q_w</m>, and call <m>\delta^*(q_0,x)</m>
-                     <m>q_x</m>. We know, because <m>w=xa</m>, there must be an <m>a</m>-transition
-                    from <m>q_x</m> to <m>q_w</m>. Look at how we added transitions to <m>\delta</m>:
-                    the fact that there is an <m>a</m>-transition from <m>q_x</m> to <m>q_w</m>
-                    means that <m>q_w</m> corresponds to the set <m>\partial^*(p_1,a)
+                     <m>
+                    q_x</m>. We know, because <m>w=xa</m>, there must be an <m>a</m>-transition from <m>
+                    q_x</m> to <m>q_w</m>. Look at how we added transitions to <m>\delta</m>: the
+                    fact that there is an <m>a</m>-transition from <m>q_x</m> to <m>q_w</m> means
+                    that <m>q_w</m> corresponds to the set <m>\partial^*(p_1,a)
                                     \cup \ldots \cup \partial^*(p_n,a)</m> of <m>N</m>'s states. By
                     our preliminary observation, <m>\partial^*(p_1,a) \cup \ldots \cup
                     \partial^*(p_n,a)</m> is just <m>\partial^*(p_0,w)</m>. So <m>q_w</m> (or <m>
@@ -739,7 +743,8 @@
                 \partial^*(p_1,a)</m> since <m>q_1 = \{p_0, p_1\}</m>. Since <m>\partial^*(p_0,a)
                 \cup \partial^*(p_1,a) = \{p_0\} \cup
                                 \{p_2\} = \{p_0,p_2\}</m>, we need to add a new state <m>q_2 =
-                \{p_0, p_2\}</m> to the DFA, and a transition <m>\delta(q_1,a) = q_2</m>. </p>
+                                \{p_0, p_2\}</m> to the DFA, and a transition <m>\delta(q_1,a) = q_2</m>
+                . </p>
                     </li>
                     <li>
                         <p>
@@ -776,34 +781,34 @@
                         marker="(a)">
                         <li>
                             <p>
-                                <m>L_2= L(a^*b^*)</m>
+                                <me>L_2= L(a^*b^*)</me>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <m>L_3= \{ x \ | \ n_a(x)+n_b(x) \text{ is even }\}</m>
+                                <me>L_3= \{ x \ | \ n_a(x)+n_b(x) \text{ is even }\}</me>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <m>L_4= \{ x \ | \ n_a(x) \text{ is a multiple of 5 }\}</m>
+                                <me>L_4= \{ x \ | \ n_a(x) \text{ is a multiple of 5 }\}</me>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <m>L_5= \{ x \ | \ x \text{ does not contain the substring }
-                                    abb\}</m>
+                                <me>L_5= \{ x \ | \ x \text{ does not contain the substring }
+                                    abb\}</me>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <m>L_6= \{ x \ | \ x \text{ has no } a \text{'s in even positions}
-                    \}</m>
+                                <me>L_6= \{ x \ | \ x \text{ has no } a \text{'s in even
+                    positions}\}</me>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <m>L_7 = L(aa^* \REOR aba^*b^*)</m>
+                                <me>L_7 = L(aa^* \REOR aba^*b^*)</me>
                             </p>
                         </li>
                     </ol>
@@ -858,8 +863,7 @@
                 <p> Give a DFA that accepts the language accepted by the following NFA. (Be sure to
                     note that, for example, it is possible to reach both <m>q_1</m> and <m>q_3</m>
                     from <m>q_0</m> on consumption of an <m>a</m>, because of the <m>\varep</m>
-                    -transition.)
-  <figure
+                    -transition.) <figure
                         xml:id="fig-fsa4ex">
                         <image source="images/fsa4ex" width="80%">
                             <description>NFA diagram for exercise 6.</description>
