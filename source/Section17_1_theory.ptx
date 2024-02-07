@@ -64,7 +64,7 @@
         of symbols, which implies that order matters. Thus <m>011</m>, <m>101</m>, and <m>110</m>
         are all different strings, though they are made up of the same symbols. The strings <m>
         x=\aetc{a}{n}</m> and <m>
-                y=\aetc{b}{m}</m> are <em>equal</em> only if <m>m=n</m> (i.e.\ the strings contain
+                y=\aetc{b}{m}</m> are <em>equal</em> only if <m>m=n</m> (i.e.the strings contain
         the same number of symbols) and <m>a_i=b_i</m> for all <m>1 \leq i \leq n</m>.</p>
 
         <p>Just as
@@ -212,7 +212,7 @@
                 <md>
                     <mrow>L_1 \amp = \{011, 1010,111\} </mrow>
                     <mrow> L_2 \amp = \{0, 10, 110, 1110, 11110, \ldots\} </mrow>
-                    <mrow> L_3 \amp = \{x \in \Sigma^* \ | \ n_0(x) = n_1(x) \} </mrow>
+                    <mrow> L_3 \amp = \{x \in \Sigma^*  |  n_0(x) = n_1(x) \} </mrow>
                     <mrow> \amp\text{where the notation } n_0(x) \text{ is the number of } 0\text{'s in the string } x </mrow>
                     <mrow> \amp \text{and similarly for } n_1(x)</mrow>
                     <mrow> L_4 \amp = \{x| x \text{ is a multiple of } 5 \text{ in binary}\} </mrow>
@@ -249,7 +249,7 @@
         
         <p>For two sets of strings <m>S</m> and <m>T</m>, we define the <em>
         concatenation</em> of <m>S</m> and <m>T</m> (denoted <m>S\cdot T</m> or just <m>ST</m>) to
-        be the set <m>ST = \{ st \ | \ s \in S \land t\in T \}</m>. For example, if <m>S = \{ab, aab\}</m> 
+        be the set <m>ST = \{ st  |  s \in S \land t\in T \}</m>. For example, if <m>S = \{ab, aab\}</m> 
         and <m>T=\{\varep, 110, 1010\}</m>, then <m>ST = \{ab, ab110, ab1010, aab, aab110, aab1010\}</m>. 
         Note in particular that <m>ab \in
         ST</m>, because <m>ab \in S</m>, <m>\varep \in T</m>, and <m>ab \cdot \varep = ab</m>.
@@ -389,7 +389,7 @@
         <exercise number="2" xml:id="exerc-17_1-2">
         <statement>
             <p>
-                 The <em>reverse</em> of a language <m>L</m> is defined to be <m>L^R = \{ x^R \ | \ x \in L\}</m>. Find <m>
+                 The <em>reverse</em> of a language <m>L</m> is defined to be <m>L^R = \{ x^R  |  x \in L\}</m>. Find <m>
         S^R</m> and <m>T^R</m> for the <m>S</m> and <m>T</m> in the preceding problem.
             </p>
         </statement>
