@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Expected value of rolling two dice.</span>
+</h4> <div class="para logical">
+<div class="para">Consider a fair red die and a fair blue die, and assume we roll them independently, just like <a href="" class="xref" data-knowl="./knowl/xref/ex-rolling-a-die-twice.html" title="Example 3.1.7: Rolling a Die Twice">Example 3.1.7</a>. The sample space is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-rolling-a-die-twice.html">
+\begin{equation*}
+S = \{ (i,j) : 1 \leq i
+\leq 6 , 1 \leq j \leq 6 \} ,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(i\)</span> is the result of the red die and <span class="process-math">\(j\)</span> is the result of the blue die. Each outcome <span class="process-math">\((i,j)\)</span> in <span class="process-math">\(S\)</span> has the same probability of <span class="process-math">\(1/36\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(X\)</span> be the random variable whose value is equal to the sum of the results of the two rolls. As a function <span class="process-math">\(X : S \rightarrow \mathbb{R}\text{,}\)</span> we have <span class="process-math">\(X(i,j) = i+j\text{.}\)</span> The matrix below gives all possible values of <span class="process-math">\(X\text{.}\)</span> The leftmost column indicates the result of the red die, the top row indicates the result of the blue die, and each other entry is the corresponding value of <span class="process-math">\(X\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{|c||c|c|c|c|c|c|}
+\hline
+&amp;1 &amp;2 &amp;3 &amp;4 &amp;5 &amp;6 \\
+\hline
+\hline
+1 &amp;2 &amp;3 &amp;4 &amp;5 &amp;6 &amp;7 \\
+2 &amp;3 &amp;4 &amp;5 &amp;6 &amp;7 &amp;8 \\
+3 &amp;4 &amp;5 &amp;6 &amp;7 &amp;8 &amp;9 \\
+4 &amp;5 &amp;6 &amp;7 &amp;8 &amp;9 &amp;10 \\
+5 &amp;6 &amp;7 &amp;8 &amp;9 &amp;10 &amp;11 \\
+6 &amp;7 &amp;8 &amp;9 &amp;10 &amp;11 &amp;12 \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<div class="para">The expected value <span class="process-math">\(\mathbb{E}(X)\)</span> of <span class="process-math">\(X\)</span> is equal to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X) &amp; = \sum_{(i,j) \in S} X(i,j) \cdot P(i,j) \\
+&amp; = \sum_{(i,j) \in S} (i+j) \cdot \frac{1}{36} \\
+&amp; = \frac{1}{36} \sum_{(i,j) \in S} (i+j) \\
+&amp; = \frac{1}{36} \cdot \text{the sum of all matrix entries} \\
+&amp; = \frac{1}{36} \cdot 252 \\
+&amp; = 7 .
+\end{array}
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a class="internal" href="section3_3-ExpectedValue.html#ex-expected-two-dice-roll">in-context</a></span>
+</body>
+</html>
