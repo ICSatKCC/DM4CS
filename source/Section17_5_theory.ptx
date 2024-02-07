@@ -819,7 +819,7 @@ language:
   <mrow> \amp \,  \BNFALT\ \langle null{\text -}statement \rangle
 </mrow>
 <mrow> \langle block{\text -}statement \rangle\amp ::=\ \{ [ \langle statement \rangle ]\dots\ \}</mrow>
-<mrow> \langle if{\text -}statement \rangle \amp ::=\ if \text{"("} \langle condition \rangle \text{")"}  \langle statement \rangle [ else \langle statement \rangle~] </mrow>
+<mrow> \langle if{\text -}statement \rangle \amp ::=\ if \text{"("} \langle condition \rangle \text{")"}  \langle statement \rangle [ else \langle statement \rangle] </mrow>
 <mrow> \langle while{\text -}statement \rangle \amp ::=\ while \text{"("}  \langle condition \rangle \text{")"} \langle statement \rangle </mrow>
 <mrow> \langle assignment{\text -}statement \rangle \amp  ::=\ \langle variable \rangle = \langle expression \rangle ; </mrow>
 <mrow> \langle null{\text -}statement \rangle\amp ::=\ \EMPTYSTRING </mrow>

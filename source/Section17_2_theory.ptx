@@ -309,7 +309,7 @@ basic regular expressions here: Previously, we only thought of
 a regular expression as something that either will match
 or will not match a given string in its entirety.   When
 we use a regular expression for a search operation, however,
-we want to find a \textit<em>substring</em> of a given string that
+we want to find a <em>substring</em> of a given string that
 matches the expression.  The notations <c>^</c>,
 <c>\$</c> and <c>\ b</c> put a restrictions
 on <em>where</em> the matching substring can be located in the string.

@@ -263,8 +263,8 @@
         by concatenating two (possibly different, possibly identical) strings from <m>S</m>, <m>S^3</m>
         is the set of strings formed by concatenating three strings from <m>S</m>, etc. Extending
         this notation, we take <m>S^1</m> to be the set of strings formed from one string in <m>S</m>
-        (i.e.\ <m>S^1</m> is <m>S</m> itself), and <m>S^0</m> to be the set of strings formed from
-        zero strings in <m>S</m> (i.e.\ <m>S^0 = \{\varep\}</m>). If we take the union <m>S^0 \cup
+        (i.e <m>S^1</m> is <m>S</m> itself), and <m>S^0</m> to be the set of strings formed from
+        zero strings in <m>S</m> (i.e.<m>S^0 = \{\varep\}</m>). If we take the union <m>S^0 \cup
         S^1 \cup S^2 \cup \ldots</m>, then the resulting set is the set of all strings formed by
         concatenating zero or more strings from <m>S</m>, and is denoted <m>S^*</m>. The set <m>S^*</m>
         is called the <em>Kleene closure</em> of <m>S</m>, and the <m>^*</m> operator is called the <em>Kleene
