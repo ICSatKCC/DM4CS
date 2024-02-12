@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="Section11_2">
     <title>Revisiting Matrix Arithmetic</title>
-    <!-- TODO review induction before program correctness -->
-    <p>
-        Under Construction!
-    </p>
+    <idx><h>Matrices</h></idx>
+    <idx><h>Matrix Arithmetic</h></idx>
+    
+    <introduction>
+        <p>
+            In this section we will review and expand upon what we learned about matrices and matrix arithmetic in <xref ref="chapter_7"/>.
+        </p>
+    </introduction>
+    <subsection xml:id="ss-Add-Scalar-Multi-Matrices">
+        <title>Addition and Scalar Multiplication of Matrices</title>
+        <p>You have now solved systems of equations by writing them in terms of an augmented matrix
+and then doing row operations on this augmented matrix. It turns out such rectangular
+arrays of numbers are important from many other different points of view. Numbers are
+also called <term>scalars</term>. In this book, numbers will generally be either real or complex numbers.
+I will refer to the set of numbers as F sometimes when it is not important to worry about
+whether the number is real or complex. Thus F can be either the real numbers R or the
+complex numbers C. However, most of the algebraic considerations hold for more general
+fields of scalars.</p>
+
+<p>A <term>matrix</term> is a rectangular array of numbers. Several of them are referred to as <term>matrices</term>.
+For example, here is a matrix.
+    </subsection>
 </section>
