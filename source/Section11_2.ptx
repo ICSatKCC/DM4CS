@@ -286,7 +286,7 @@ from the commutative law of addition of numbers.
 </p>
 	</subsection>
 
-    <subsection xml:id="subsec-Matrix Multiplication">
+    <subsection xml:id="subsec-matrix-mult">
         <title>Matrix Multiplication</title>
         <p>
             This is where things get interesting. Matrices can be thought of as a rule for making new
