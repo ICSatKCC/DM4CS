@@ -1,26 +1,400 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="Section11_2">
-    <title>Revisiting Matrix Arithmetic</title>
-    <idx><h>Matrices</h></idx>
-    <idx><h>Matrix Arithmetic</h></idx>
-    
-    <introduction>
-        <p>
-            In this section we will review and expand upon what we learned about matrices and matrix arithmetic in <xref ref="chapter_7"/>.
-        </p>
-    </introduction>
-    <subsection xml:id="ss-Add-Scalar-Multi-Matrices">
-        <title>Addition and Scalar Multiplication of Matrices</title>
-        <p>You have now solved systems of equations by writing them in terms of an augmented matrix
-and then doing row operations on this augmented matrix. It turns out such rectangular
-arrays of numbers are important from many other different points of view. Numbers are
-also called <term>scalars</term>. In this book, numbers will generally be either real or complex numbers.
-I will refer to the set of numbers as F sometimes when it is not important to worry about
-whether the number is real or complex. Thus F can be either the real numbers R or the
-complex numbers C. However, most of the algebraic considerations hold for more general
-fields of scalars.</p>
+	<title>Revisiting Matrix Arithmetic</title>
+	<idx><h>Matrices</h></idx>
+	<idx><h>Matrix Arithmetic</h></idx>
+	<introduction>
+		<p>
+			In this section we will review and expand upon what we learned about matrices and matrix arithmetic in <xref ref="chapter_7"/>.
+		</p>
+	</introduction>
 
-<p>A <term>matrix</term> is a rectangular array of numbers. Several of them are referred to as <term>matrices</term>.
-For example, here is a matrix.
+	<subsection xml:id="ss-Add-Scalar-Multi-Matrices">
+		<title>Addition and Scalar Multiplication of Matrices</title>
+		<p>
+			You have now solved systems of equations by writing them in terms of an augmented matrix
+			and then doing row operations on this augmented matrix.
+			It turns out such rectangular
+			arrays of numbers are important from many other different points of view.
+			Numbers are
+			also called <term>scalars</term>.
+			In this book, numbers will generally be either real or complex numbers.
+			I will refer to the set of numbers as F sometimes when it is not important to worry about
+			whether the number is real or complex.
+			Thus F can be either the real numbers R or the
+			complex numbers C.
+			However, most of the algebraic considerations hold for more general
+			fields of scalars.
+		</p>
+
+		<p>
+			A <term>matrix</term> is a rectangular array of numbers.
+			Several of them are referred to as <term>matrices</term>.
+			For example, here is a matrix.
+			<me>
+				\left( \begin{array}{c c c c}
+				1 &amp; 2 &amp; 3 &amp; 4 \\
+				5 &amp; 2 &amp; 8 &amp; 7 \\
+				6 &amp; -9 &amp; 1 &amp; 2\\
+				\end{array} \right)
+			</me>
+			The size or dimension of a matrix is defined as <m>m \times n</m> where <m>m</m> is the number of rows and
+			<m>n</m> is the number of columns.
+			The above matrix is a <m>3 \times 4</m> matrix because there are three
+			rows and four columns.
+			The first row is <m>(1 2 3 4)</m> , the second row is <m>(5 2 8 7)</m> and so forth.
+			The first column is <m>
+			\left( \begin{array}{c}
+			1 \\
+			5 \\
+			6 \\
+			\end{array} \right)
+			</m>.
+			When specifying the size of a matrix, you always list the
+			number of rows before the number of columns.
+			Also, you can remember the columns are
+			like columns in a Greek temple.
+			They stand upright while the rows just lie there like rows
+			made by a tractor in a plowed field.
+			Elements of the matrix are identified according to
+			position in the matrix.
+			For example, 8 is in position 2, 3 because it is in the second row and
+			the third column.
+			You might remember that you always list the rows before the columns
+			by using the phrase <em>Row</em>man <em>C</em>atholic.
+			The symbol, <m>(a_{ij})</m> refers to a matrix.
+			The entry in
+			the <m>i^{th}</m> row and the <m>j^{th}</m> column of this matrix is denoted by <m>a_{ij}</m> .
+			Using this notation on the
+			above matrix, <m>a_{23} = 8, a_{32} = -9, a_{12} = 2,</m> etc.
+		</p>
+        <p>
+            There are various operations which are done on matrices. Matrices can be added mul-
+tiplied by a scalar, and multiplied by other matrices. To illustrate scalar multiplication,
+consider the following example in which a matrix is being multiplied by the scalar 3.
+<me>
+    3 \left( \begin{array}{c c c c}
+    1 &amp; 2 &amp; 3 &amp; 4 \\
+    5 &amp; 2 &amp; 8 &amp; 7 \\
+    6 &amp; -9 &amp; 1 &amp; 2\\
+    \end{array} \right) = \left( \begin{array}{c c c c}
+    3 &amp; 6 &amp; 9 &amp; 12 \\
+    15 &amp; 6 &amp; 24 &amp; 21 \\
+    18 &amp; -27 &amp; 3 &amp; 6\\
+    \end{array} \right)
+</me>
+The new matrix is obtained by multiplying every entry of the original matrix by the given
+scalar. If <m>A</m> is an <m>m \times n</m> matrix, <m>-A</m> is defined to equal <m>(-1) A</m>.
+        </p>
+        <p>
+            Two matrices must be the same size to be added. The sum of two matrices is a matrix
+which is obtained by adding the corresponding entries. Thus
+<me>\left( \begin{array}{c c}
+ 1 &amp; 2 \\
+ 3 &amp; 4 \\
+ 5 &amp; 2\\
+ \end{array} \right) + 
+ \begin{array}{c c}
+ -1 &amp; 4 \\
+ 2 &amp; 8 \\
+ 6 &amp; -4\\
+ \end{array} \right) = 
+ \begin{array}{c c }
+ 0 &amp; 6 \\
+ 5 &amp; 12 \\
+ 11 &amp; -2\\
+ \end{array} \right)
+</me>
+Two matrices are equal exactly when they are the same size and the corresponding entries
+are identical. Thus
+<me>\left( \begin{array}{c c}
+    0 &amp; 0 \\
+    0 &amp; 0 \\
+    0 &amp; 0\\
+    \end{array} \right) \neq
+    \left( \begin{array}{c c}
+    0 &amp; 0 \\
+    0 &amp; 0 \\
+    \end{array} \right)</me>
+
+because they are different sizes. As noted above, you write <m>(c_{ij})</m> for the matrix <m>C</m> whose
+<m>ij^{th}</m> entry is <m>c_{ij}</m> . In doing arithmetic with matrices you must define what happens in terms
+of the <m>c_{ij}</m>  sometimes called the <term>entries</term> of the matrix or the <term>components</term> of the matrix.
+        </p>
+        <p>
+            The above discussion stated for general matrices is given in the following definition.
+        </p>
+        <definition xml:id="def-scalar-matrix-mult">
+            <title>Scalar Matrix Multiplication</title>
+			<idx>
+				<h>Scalar Matrix Multiplication</h>
+			</idx>
+            <statement>
+                <p>
+                    If <m>A = (a_{ij})</m> and <m>k</m> is a scalar, then <m>kA = (ka_{ij})</m>.
+                </p>
+            </statement>
+        </definition>
+    <example>
+        <p>
+            <me>7 
+                \begin{array}{c c}
+                2 &amp; 0 \\
+               1 &amp; -4 \\
+                \end{array} \right) = 
+                \begin{array}{c c}
+                14 &amp; 0 \\
+                7 &amp; 28 \\
+                \end{array} \right)
+               </me>.
+        </p>
+    </example>
+    <definition xml:id="def-matrix-addition">
+        <title>Matrix Addition</title>
+        <idx>
+            <h>Matrix Addition</h>
+        </idx>
+        <statement>
+            <p>
+                If <m>A = (a_{ij})</m> and <m>B = (b_{ij})</m> are two <m>m \times n</m> matrices. Then <m>A+B =
+                C</m> where
+                <me>C = (c_{ij})</me>
+                for <m>c_{ij} = a_{ij} + b_{ij}</m> .
+            </p>
+        </statement>
+    </definition>
+    <example>
+        <me>\left( \begin{array}{c c c}
+            1 &amp; 2 &amp; 3\\
+            1 &amp; 0 &amp; 4 \\
+            \end{array} \right) + 
+            \begin{array}{c c c}
+            5 &amp; 2 &amp; 3 \\
+            -6 &amp; 2 &amp; 1\\
+            \end{array} \right) = 
+            \begin{array}{c c c}
+            6 &amp; 4 &amp; 6 \\
+            -5 &amp; 2 &amp; 5 \\
+            \end{array} \right)
+           </me>
+           <p>
+            To save on notation, we will often use <m>A_{ij}</m> to refer to the <m>ij^{th}</m> entry of matrix <m>A</m>.
+           </p>
+    </example>
+    <definition xml:id="def-zero-matrix">
+        <title>Zero Matrix</title>
+        <idx>
+            <h>Zero Matrix</h>
+        </idx>
+        <statement>
+            <p>
+                The <m>m \times n</m> zero matrix is the <m>m \times n</m> matrix having every
+entry equal to zero. It is denoted by 0.
+            </p>
+        </statement>
+    </definition>
+
+        <example>
+            <p>The <m>2 \times 3</m> zero matrix is <m>\left( \begin{array}{c c c}
+                0 &amp; 0 &amp; 0\\
+                0 &amp; 0 &amp; 0 \\
+                \end{array} \right)</m>.
+            </p>
+        </example>
+
+        <definition xml:id="def-matrix-equality">
+            <title>Matrix Equality</title>
+            <idx>
+                <h>Matrix Equality</h>
+            </idx>
+            
+            <statement>
+                <p>
+                    Let <m>A</m> and <m>B</m> be two matrices. Then <m>A = B</m> means
+                    that the two matrices are of the same size and for <m>A = (a_{ij})</m> and <m>B = (b_{ij})</m> , <m>a_{ij} = b_{ij} </m>for all
+                    <m>1 \leq i \leq m</m> and <m>1 \leq j \leq n</m>.
+                </p>
+            </statement>
+        </definition>
+        <p>
+            The following properties of matrices can be easily verified. You should do so. These
+properties are called the vector space axioms.
+<ul>
+    <li>
+        <p>
+            Commutative Law Of Addition.
+<me>A + B = B + A,</me>
+        </p>
+    </li>
+    <li>
+        <p>
+            Associative Law for Addition.
+<me>(A + B) +C = A + (B +C) ,</me>
+ 
+        </p>
+    </li>
+    <li>
+        <p>
+            Existence of an Additive Identity
+<me>A + 0 = A,</me>
+        </p>
+    </li>
+    <li>
+        <p>Existence of an Additive Inverse
+            <me>A + (-A) = 0.</me>
+        </p>
+    </li>
+</ul>
+        </p>
+<p>
+    Also for <m>\alpha, \beta</m> scalars, the following additional properties hold.
+    <ul>
+        <li>
+            <p>
+            Distributive law over Matrix Addition.
+<me>\alpha (A + B) = \alpha A + \alpha B,</me>
+
+ 
+            </p>
+        </li>
+        <li>
+            <p> Distributive law over Scalar Addition
+<me>(\alpha + \beta ) A = \alpha A + \beta A,</me>
+            </p>
+        </li>
+        <li>
+            <p>Associative law for Scalar Multiplication
+                <me>\alpha (\beta A) = \alpha\beta (A) ,</me>
+            </p>
+        </li>
+        <li>
+            <p>
+                Rule for Multiplication by 1.
+                <me>1A = A.</me>
+            </p>
+        </li>
+    </ul>
+</p>
+<p>
+    As an example, consider the Commutative Law of Addition. Let <m>A + B = C</m> and <m>B + A =
+D</m>. Why is <m>D = C</m>?
+ <me>
+    C_{ij} = A_{ij} + B_{ij} = B_{ij} + A_{ij} = D_{ij} .
+ </me>
+ Therefore, <m>C = D</m> because the <m>ij^{th}</m> entries are the same. Note that the conclusion follows
+from the commutative law of addition of numbers.
+</p>
+	</subsection>
+
+    <subsection xml:id="subsec-Matrix Multiplication">
+        <title>Matrix Multiplication</title>
+        <p>
+            This is where things get interesting. Matrices can be thought of as a rule for making new
+vectors from old vectors.
+        </p>
+        <definition xml:id="def-vectors">
+            <title>Vectors</title>
+            <idx>
+                <h>Vector</h>
+            </idx>
+            
+            <statement>
+                <p>
+                    Matrices which are <m>n \times 1</m> or <m>1 \times n</m> are called <term>vectors</term> and are often denoted
+                    by a bold letter. Thus the <m>n \times 1</m> matrix
+                        <me>
+                            \bm{x} = \left( \begin{array}{c}
+                            x_1 \\
+                            \vdots \\
+                            x_n \\
+                            \end{array} \right)
+                        </me>
+                        
+                    is also called a <term>column vector</term>. The <m>1 \times n</m> matrix
+                    <me>
+                        \bm{x} = \left( \begin{array}{c c c}
+                        x_1 &amp; \dots &amp; x_n \\
+                        \end{array} \right)
+                    </me>
+                    is called a <term>row vector</term>.
+                </p>
+            </statement>
+        </definition>
+        <p>
+            Although the following description of matrix multiplication may seem strange, it is in
+fact the most important and useful of the matrix operations. To begin with consider the
+case where a matrix is multiplied by a column vector. First consider a special case.
+
+<me>\left( \begin{array}{c c c}
+    1 &amp; 2 &amp; 3\\
+    4 &amp; 5 &amp; 6 \\
+    \end{array} \right)  
+    \begin{array}{c}
+     7 \\
+     8 \\
+     9\\
+    \end{array} \right) = \mathord{?}
+   </me> 
+   By definition, this equals
+   <me>
+    7 \left( \begin{array}{c} 
+    1\\
+    4\\
+    \end{array} \right) + 8 \left( \begin{array}{c} 
+    2\\
+    5\\
+    \end{array} \right) + 9 \left( \begin{array}{c} 
+    3\\
+    6\\
+    \end{array} \right) =
+    \left( \begin{array}{c} 
+    50\\
+    122\\
+    \end{array} \right).
+   </me>
+        </p>
+        <p>
+            In more general terms,
+            <me>\begin{align}
+                \left( \begin{array}{c c c}
+    a_{11} &amp; a_{12}  &amp; a_{13} \\
+    a_{21}  &amp; a_{22}  &amp; a_{23}  \\
+    \end{array} \right)  
+    \begin{array}{c}
+     x_1 \\
+     x_2 \\
+     x_3 \\
+    \end{array} \right) &amp; =
+
+    x_1 \left( \begin{array}{c} 
+    a_{11}\\
+    a_{21}\\
+    \end{array} \right) + x_2 \left( \begin{array}{c} 
+    a_{12}\\
+    a_{22} \\
+    \end{array} \right) + x_3\left( \begin{array}{c} 
+    a_{13}\\
+    a_{23}\\
+    \end{array} \right)\\
+
+    &amp; =
+    \left( \begin{array}{c} 
+    a_{11}x_1 + a_{12}x_2 + a_{13}x_3\\
+    a_{21}x_1 + a_{22}x_2 + a_{23}x_3\\
+    \end{array} \right).
+    \end{align}
+            </me>
+            Thus you take <m>x_1</m> times the first column, add to <m>x_2</m> times the second column, and finally <m>x_3</m>
+            times the third column. The above sum is called a <term>linear combination</term> of the given column
+            vectors. These will be discussed more later. In general, a linear combination of vectors is
+            just a sum consisting of scalars times vectors. When you multiply a matrix on the left by a
+            vector on the right, the numbers making up the vector are just the scalars to be used in the
+            linear combination of the columns as illustrated above.      
+        </p>
+        <p>
+            More generally, here is the definition of how to multiply an <m>(m \times n)</m> matrix times a
+<m>(n \times 1)</m> matrix (column vector).
+        </p>
+        <!-- TODO Stopped at Def 5.1.9 Kuttler 5.1 -->
     </subsection>
 </section>
