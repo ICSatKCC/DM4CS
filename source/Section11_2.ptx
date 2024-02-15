@@ -94,12 +94,12 @@ which is obtained by adding the corresponding entries. Thus
  3 &amp; 4 \\
  5 &amp; 2\\
  \end{array} \right) + 
- \begin{array}{c c}
+ \left(\begin{array}{c c}
  -1 &amp; 4 \\
  2 &amp; 8 \\
  6 &amp; -4\\
  \end{array} \right) = 
- \begin{array}{c c }
+ \left(\begin{array}{c c }
  0 &amp; 6 \\
  5 &amp; 12 \\
  11 &amp; -2\\
@@ -138,18 +138,18 @@ of the <m>c_{ij}</m>  sometimes called the <term>entries</term> of the matrix or
     <example>
         <p>
             <me>7 
-                \begin{array}{c c}
+                \left(\begin{array}{c c}
                 2 &amp; 0 \\
                1 &amp; -4 \\
                 \end{array} \right) = 
-                \begin{array}{c c}
+                \left( \begin{array}{c c}
                 14 &amp; 0 \\
                 7 &amp; 28 \\
                 \end{array} \right)
                </me>.
         </p>
     </example>
-    <definition xml:id="def-matrix-addition">
+    <definition xml:id="def-lin-alg-matrix-addition">
         <title>Matrix Addition</title>
         <idx>
             <h>Matrix Addition</h>
@@ -168,11 +168,11 @@ of the <m>c_{ij}</m>  sometimes called the <term>entries</term> of the matrix or
             1 &amp; 2 &amp; 3\\
             1 &amp; 0 &amp; 4 \\
             \end{array} \right) + 
-            \begin{array}{c c c}
+            \left(\begin{array}{c c c}
             5 &amp; 2 &amp; 3 \\
             -6 &amp; 2 &amp; 1\\
             \end{array} \right) = 
-            \begin{array}{c c c}
+            \left(\begin{array}{c c c}
             6 &amp; 4 &amp; 6 \\
             -5 &amp; 2 &amp; 5 \\
             \end{array} \right)
@@ -202,7 +202,7 @@ entry equal to zero. It is denoted by 0.
             </p>
         </example>
 
-        <definition xml:id="def-matrix-equality">
+        <definition xml:id="def-lin-alg-matrix-equality">
             <title>Matrix Equality</title>
             <idx>
                 <h>Matrix Equality</h>
@@ -303,7 +303,7 @@ vectors from old vectors.
                     Matrices which are <m>n \times 1</m> or <m>1 \times n</m> are called <term>vectors</term> and are often denoted
                     by a bold letter. Thus the <m>n \times 1</m> matrix
                         <me>
-                            \bm{x} = \left( \begin{array}{c}
+                            \mathbf{x} = \left( \begin{array}{c}
                             x_1 \\
                             \vdots \\
                             x_n \\
@@ -312,7 +312,7 @@ vectors from old vectors.
                         
                     is also called a <term>column vector</term>. The <m>1 \times n</m> matrix
                     <me>
-                        \bm{x} = \left( \begin{array}{c c c}
+                        \mathbf{x} = \left( \begin{array}{c c c}
                         x_1 &amp; \dots &amp; x_n \\
                         \end{array} \right)
                     </me>
@@ -329,7 +329,7 @@ case where a matrix is multiplied by a column vector. First consider a special c
     1 &amp; 2 &amp; 3\\
     4 &amp; 5 &amp; 6 \\
     \end{array} \right)  
-    \begin{array}{c}
+    \left(  \begin{array}{c}
      7 \\
      8 \\
      9\\
@@ -354,36 +354,36 @@ case where a matrix is multiplied by a column vector. First consider a special c
    </me>
         </p>
         <p>
-            In more general terms,
-            <me>\begin{align}
-                \left( \begin{array}{c c c}
-    a_{11} &amp; a_{12}  &amp; a_{13} \\
-    a_{21}  &amp; a_{22}  &amp; a_{23}  \\
-    \end{array} \right)  
-    \begin{array}{c}
-     x_1 \\
-     x_2 \\
-     x_3 \\
-    \end{array} \right) &amp; =
+ In more general terms,
+ <md>
+    <mrow> \begin{pmatrix}
+        a_{11} &amp; a_{12}  &amp; a_{13} \\
+        a_{21}  &amp; a_{22}  &amp; a_{23}  \\
+        \end{pmatrix}   
+        \begin{pmatrix}
+            x_1 \\
+            x_2 \\
+            x_3 \\
+        \end{pmatrix} \amp  =
 
-    x_1 \left( \begin{array}{c} 
-    a_{11}\\
-    a_{21}\\
-    \end{array} \right) + x_2 \left( \begin{array}{c} 
-    a_{12}\\
-    a_{22} \\
-    \end{array} \right) + x_3\left( \begin{array}{c} 
-    a_{13}\\
-    a_{23}\\
-    \end{array} \right)\\
-
-    &amp; =
-    \left( \begin{array}{c} 
-    a_{11}x_1 + a_{12}x_2 + a_{13}x_3\\
-    a_{21}x_1 + a_{22}x_2 + a_{23}x_3\\
-    \end{array} \right).
-    \end{align}
-            </me>
+        x_1 \begin{pmatrix}
+        a_{11}\\
+        a_{21}\\
+        \end{pmatrix} 
+        + x_2 \begin{pmatrix} 
+        a_{12}\\
+        a_{22} \\
+        \end{pmatrix} 
+        + x_3 \begin{pmatrix} 
+        a_{13}\\
+        a_{23}\\
+        \end{pmatrix} </mrow>
+        <mrow> \amp =
+            \begin{pmatrix}
+           a_{11}x_1 + a_{12}x_2 + a_{13}x_3\\
+           a_{21}x_1 + a_{22}x_2 + a_{23}x_3\\
+           \end{pmatrix}. </mrow>
+ </md>
             Thus you take <m>x_1</m> times the first column, add to <m>x_2</m> times the second column, and finally <m>x_3</m>
             times the third column. The above sum is called a <term>linear combination</term> of the given column
             vectors. These will be discussed more later. In general, a linear combination of vectors is
@@ -395,6 +395,33 @@ case where a matrix is multiplied by a column vector. First consider a special c
             More generally, here is the definition of how to multiply an <m>(m \times n)</m> matrix times a
 <m>(n \times 1)</m> matrix (column vector).
         </p>
-        <!-- TODO Stopped at Def 5.1.9 Kuttler 5.1 -->
+       <definition xml:id="def-matrix-vector-mult">
+        <statement>
+            <p> Let <m>A = A_{ij}</m> be an <m>m \times n</m> matrix and <m>\mathbf{v}</m> be an <m>n \times 1</m> matrix,
+                
+                <me>
+                    \mathbf{v} = \begin{pmatrix}
+                    v_1 \\
+                    \vdots\\
+                    v_n\\
+                    \end{pmatrix}, A = \begin{pmatrix} 
+                    \mathbf{a}_1, \dots, \mathbf{a}_n \end{pmatrix}
+                </me>
+                where <m>\mathbf{a}_i</m> is an <m>m \times 1</m> column vector. Then <m>A\mathbf{v}</m> written as
+                <me> \begin{pmatrix} 
+                    \mathbf{a}_1, \dots, \mathbf{a}_n \end{pmatrix}
+                    \begin{pmatrix}
+                    v_1 \\
+                    \vdots\\
+                    v_n\\
+                    \end{pmatrix},
+                </me>
+                is the <m>m \times 1</m> column vector which equals the following linear combination of columns.
+                <me> v_1 \mathbf{a}_1 + v_2 \mathbf{a}_2 + \dots + v_n\mathbf{a}_n \equiv \sum_{j=1}^n v_j\mathbf{a}_j </me>
+
+            </p>
+            <!-- TODO stop at Kuttler 5.1 eq (5.9)-->
+        </statement>
+       </definition>
     </subsection>
 </section>
