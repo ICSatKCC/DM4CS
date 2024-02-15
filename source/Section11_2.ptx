@@ -418,10 +418,68 @@ case where a matrix is multiplied by a column vector. First consider a special c
                 </me>
                 is the <m>m \times 1</m> column vector which equals the following linear combination of columns.
                 <me> v_1 \mathbf{a}_1 + v_2 \mathbf{a}_2 + \dots + v_n\mathbf{a}_n \equiv \sum_{j=1}^n v_j\mathbf{a}_j </me>
-
+                If the <m>j_{th}</m> column of <m>A</m> is
+                <me>
+                    \begin{pmatrix}
+                    A_{1j} \\
+                    A_{2j}
+                    \vdots\\
+                    A_{mj}\\
+                    \end{pmatrix},
+                </me>
+                then the sum above takes the form
+                <me>
+                    v_1\begin{pmatrix}
+                    A_{11} \\
+                    A_{21}
+                    \vdots\\
+                    A_{m1}\\
+                    \end{pmatrix} + 
+                    v_2 \begin{pmatrix}
+                    A_{12} \\
+                    A_{22}
+                    \vdots\\
+                    A_{m2}\\
+                    \end{pmatrix}
+                    + \dots + v_n\begin{pmatrix}
+                    A_{1n} \\
+                    A_{2n}
+                    \vdots\\
+                    A_{mn}\\
+                    \end{pmatrix}
+                </me>
+                
+                Thus the <m>i_{th}</m> entry of <m>A\mathbf{v}</m> is <m>\sum_{j=1}^{n} A_{ij}v_j</m>. Note that multiplication by an <m>m \times n</m> matrix takes an
+<m>n \times 1</m> matrix, and produces an <m>m \times 1</m> matrix (vector).
             </p>
-            <!-- TODO stop at Kuttler 5.1 eq (5.9)-->
         </statement>
        </definition>
+       <p>
+        Here is another example.
+       </p>
+       <example>
+       <p> Compute
+        <me>
+            \begin{pmatrix}
+            1 &amp; 2 &amp; 1 &amp; 3\\
+            0 &amp; 2 &amp; 1 &amp; -2\\
+            2 &amp; 1 &amp; 4 &amp; 1\\
+            \end{pmatrix}
+            \begin{pmatrix}
+            1 \\
+            2\\
+            0\\
+            1\\
+            \end{pmatrix}
+        </me>
+        First of all this is of the form <m>(3 \times 4) (4 \times 1)</m> and so the result should be a <m>(3 \times 1)</m> .
+         Note how the inside numbers cancel. To get the element in the second row and first and only
+column, compute
+       <md>
+            <mrow>\sum_{k=1}^4 a_{2k}v_k \amp = a_{21}v_1 + a_{22}v_2 + a_{23}v_3 + a_{24}v_4 </mrow>
+            <mrow> \amp = 0 \times 1 + 2 \times 2 + 1 \times 0 + (-2) \times 1 = 2</mrow>
+        </md>
+    </p>
+       </example>
     </subsection>
 </section>
