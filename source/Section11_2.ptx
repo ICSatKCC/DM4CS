@@ -626,8 +626,8 @@
 				Multiply the following:
 				<me>
 					\begin{pmatrix}
-					1 &amp; 2 &amp; 1 &amp;\\
-					0 &amp; 2 &amp; 1 &amp;\\
+					1 &amp; 2 &amp; 1 \\
+					0 &amp; 2 &amp; 1 \\
 					\end{pmatrix}
 					\begin{pmatrix}
 					1 &amp; 2 &amp; 0\\
@@ -636,8 +636,6 @@
 					\end{pmatrix}
 				</me>
 			</p>
-
-		
 
 			<solution>
 				<p>
@@ -660,41 +658,38 @@
 						0\\
 						-2\\
 						\end{pmatrix}}^{\text{First column}},
-
-                        \overbrace{
-                            \begin{pmatrix}
-                            1 &amp; 2 &amp; 1\\
-                            0 &amp; 2 &amp; 1\\
-                            \end{pmatrix}
-
-                            \begin{pmatrix}
-                            2 \\
-                            3\\
-                            1\\
-                            \end{pmatrix}}^{\text{Second column}},
-                                                        
-                            \overbrace{
-                                \begin{pmatrix}
-                                1 &amp; 2 &amp; 1\\
-                                0 &amp; 2 &amp; 1\\
-                                \end{pmatrix}
-                                \begin{pmatrix}
-                                0 \\
-                                1\\
-                                1\\
-                                \end{pmatrix}}^{\text{Third column}}
-
-                            \end{pmatrix}
+						\overbrace{
+						\begin{pmatrix}
+						1 &amp; 2 &amp; 1\\
+						0 &amp; 2 &amp; 1\\
+						\end{pmatrix}
+						\begin{pmatrix}
+						2 \\
+						3\\
+						1\\
+						\end{pmatrix}}^{\text{Second column}},
+						\overbrace{
+						\begin{pmatrix}
+						1 &amp; 2 &amp; 1\\
+						0 &amp; 2 &amp; 1\\
+						\end{pmatrix}
+						\begin{pmatrix}
+						0 \\
+						1\\
+						1\\
+						\end{pmatrix}}^{\text{Third column}}
+						\end{pmatrix}
 					</me>
-                    You know how to multiply a matrix times a vector and so you do so to obtain each of the three columns.
+					You know how to multiply a matrix times a vector and so you do so to obtain each of the three columns.
 				</p>
 			</solution>
-            <answer>
+
+			<answer>
 				<p>
 					<me>
 						\begin{pmatrix}
-						1 &amp; 2 &amp; 1 &amp;\\
-						0 &amp; 2 &amp; 1 &amp;\\
+						1 &amp; 2 &amp; 1\\
+						0 &amp; 2 &amp; 1\\
 						\end{pmatrix}
 						\begin{pmatrix}
 						1 &amp; 2 &amp; 0\\
@@ -702,75 +697,163 @@
 						-2 &amp; 1 &amp; 1\\
 						\end{pmatrix} =
 						\begin{pmatrix}
-						-1 &amp; 9 &amp; 3 &amp;\\
-						-2 &amp; 7 &amp; 3 &amp;\\
+						-1 &amp; 9 &amp; 3 \\
+						-2 &amp; 7 &amp; 3 \\
 						\end{pmatrix}
 					</me>
 				</p>
 			</answer>
 		</example>
-        <example>
-            <p>
-                Multiply the following,
-                <me>\begin{pmatrix}
-                    1 &amp; 2 &amp; 0\\
-                    0 &amp; 3 &amp; 1\\
-                    -2 &amp; 1 &amp; 1\\
-                    \end{pmatrix}
-                    \begin{pmatrix}
-						1 &amp; 2 &amp; 1 &amp;\\
-						0 &amp; 2 &amp; 1 &amp;\\
-						\end{pmatrix}				
-                </me>
-            </p>
-            <solution>
-                <p>
-                    First check if it is possible. This is of the form <m>(3 \times 3) (2 \times 3) </m>. The inside numbers
-do not match and so you can't do this multiplication. This means that anything you write
-will be absolute nonsense because it is impossible to multiply these matrices in this order.
-Aren't they the same two matrices considered in the previous example? Yes they are.
-It is just that here they are in a different order. This shows something you must always
-remember about matrix multiplication.
-<em>Order Matters!
-Matrix Multiplication Is Not Commutative!</em>
-This is very different than multiplication of numbers!
-                </p>
-            </solution>
-        </example>
+
+		<example>
+			<p>
+				Multiply the following,
+				<me>
+					\begin{pmatrix}
+					1 &amp; 2 &amp; 0\\
+					0 &amp; 3 &amp; 1\\
+					-2 &amp; 1 &amp; 1\\
+					\end{pmatrix}
+					\begin{pmatrix}
+					1 &amp; 2 &amp; 1 \\
+					0 &amp; 2 &amp; 1 \\
+					\end{pmatrix}
+				</me>
+			</p>
+
+			<solution>
+				<p>
+					First check if it is possible.
+					This is of the form <m>(3 \times 3) (2 \times 3) </m>.
+					The inside numbers
+					do not match and so you can't do this multiplication.
+					This means that anything you write
+					will be absolute nonsense because it is impossible to multiply these matrices in this order.
+					Aren't they the same two matrices considered in the previous example? Yes they are.
+					It is just that here they are in a different order.
+					This shows something you must always
+					remember about matrix multiplication.
+					<em>Order Matters!
+					Matrix Multiplication Is Not Commutative!</em>
+					This is very different than multiplication of numbers!
+				</p>
+			</solution>
+		</example>
 	</subsection>
-    <subsection xml:id="subsec-ijth-entry-of-matrix-prod">
-        <title>The <m>ij^{th}</m> Entry of a Product</title>
-        <p>
-            It is important to describe matrix multiplication in terms of entries of the matrices. What is
-the <m>ij^{th}</m> entry of <m>AB</m>? It would be the <m>i^{th}</m> entry of the <m>j^{th}</m> column of <m>AB</m>. Thus it would be the
-<m>i^{th}</m> entry of <m>A\mathbf{b}_j</m> . Now
+
+	<subsection xml:id="subsec-ijth-entry-of-matrix-prod">
+		<title>The <m>ij^{th}</m> Entry of a Product</title>
+		<p>
+			It is important to describe matrix multiplication in terms of entries of the matrices.
+			What is
+			the <m>ij^{th}</m> entry of <m>AB</m>? It would be the <m>i^{th}</m> entry of the <m>j^{th}</m> column of <m>AB</m>.
+			Thus it would be the
+			<m>i^{th}</m> entry of <m>A\mathbf{b}_j</m> .
+			Now
+			<me>
+				\mathbf{b}_j = \begin{pmatrix}
+				B_{1j} \\
+				\vdots\\
+				B_{nj}\\
+				\end{pmatrix}
+			</me>
+			and from the above defintion, the <m>i^{th}</m> entry is
+			<me>
+				\sum_{k=1}^{n} A_{ik}B_{kj} \equiv A_{i1}B_{1j} + A_{i2}B_{2j} + \dots + A_{in}B_{nj}
+			</me>
+			In terms of pictures of the matrix, you are doing
+			<me>
+				\begin{pmatrix}
+				A_{11} &amp; A_{12}  &amp; \dots &amp; A_{1n} \\
+				A_{21}  &amp; A_{22}  &amp; \dots &amp; A_{2n} \\
+				\vdots &amp; \vdots &amp; &amp; \vdots\\
+				A_{m1} &amp; A_{m2} &amp; \dots &amp; A_{mn}\\
+				\end{pmatrix}
+				\begin{pmatrix}
+				B_{11} &amp; B_{12}  &amp; \dots &amp; B_{1p} \\
+				B_{21}  &amp; B_{22}  &amp; \dots &amp; B_{2p} \\
+				\vdots &amp; \vdots &amp; &amp; \vdots\\
+				B_{n1} &amp; B_{n2} &amp; \dots &amp; B_{np}\\
+				\end{pmatrix}
+			</me>
+			Then as explained above, the <m>j^{th}</m> column is of the form
+			<me>
+				\begin{pmatrix}
+				A_{11} &amp; A_{12}  &amp; \dots &amp; A_{1n} \\
+				A_{21}  &amp; A_{22}  &amp; \dots &amp; A_{2n} \\
+				\vdots &amp; \vdots &amp; &amp; \vdots\\
+				A_{m1} &amp; A_{m2} &amp; \dots &amp; A_{mn}\\
+				\end{pmatrix}
+				\begin{pmatrix}
+				B_{1j}\\
+				B_{2j} \\
+				\vdots \\
+				B_{nj}\\
+				\end{pmatrix}
+			</me>
+			which is an <m>m \times 1</m> matrix or column vector which equals
+			<me>
+				\begin{pmatrix}
+				A_{11}\\
+				A_{21} \\
+				\vdots \\
+				A_{m1}\\
+				\end{pmatrix}B_{1j} +
+				\begin{pmatrix}
+				A_{12}\\
+				A_{22} \\
+				\vdots \\
+				A_{m2}\\
+				\end{pmatrix}B_{2j} + \dots +
+				\begin{pmatrix}
+				A_{1n}\\
+				A_{2n} \\
+				\vdots \\
+				A_{mn}\\
+				\end{pmatrix}B_{nj}.
+			</me>
+			The second entry of this <m>m \times 1</m> matrix is
+			<me>
+				A_{21}B_{1j} + A_{22}B_{2j} + \dots + A_{2n}B_{nj} = \sum_{k=1}^{m} A_{2k}B_{kj}.
+			</me>
+			Similarly, the <m>i^{th}</m> entry of this <m>m \times 1</m> matrix is
+			<me>
+				A_{i1}B_{1j} + A_{i2}B_{2j} + \dots + A_{in}B_{nj} = \sum_{k=1}^{m} A_{ik}B_{kj}.
+			</me>
+			This shows the following definition for matrix multiplication in terms of the <m>ij^{th}</m> entries of the project 
+			coincides with <xref ref="def-conformable-matrices"/>
+		</p>
+		<definition xml:id="def-ijth-entry-of-matrix-prod">
+			<statement>
+				<p>
+					Let <m>A = (A_{ij})</m> be an <m>m \times n</m> matrix and let <m>B = (B_{ij})</m> be an <m>n \times p</m> matrix.
+Then <m>AB</m> is an <m>m \times p</m> matrix and
 <me>
-    \mathbf{b}_j = \begin{pmatrix}
-    B_{1j} \\
-    \vdots\\
-    B_{nj}\\
-    \end{pmatrix}
+	\left(AB\right)_{ij} = \sum_{k=1}^{n} A_{ik}B_{kj} \equiv A_{i1}B_{1j} + A_{i2}B_{2j} + \dots + A_{in}B_{nj}
 </me>
-        and from the above defintion, the <m>i^{th}</m> entry is
-        <me>
-            \sum_{k=1}^{n} A_{ik}B_{kj} \equiv A_{i1}B_{1j} + A_{i2}B_{2j} + \dots + A_{in}B_{nj}
-        </me>
-        In terms of pictures of the matrix, you are doing
-        <me>
-            \begin{pmatrix}
-            A_{11} &amp; A_{12}  &amp; \dots &amp; A_{1n} \\
-            A_{21}  &amp; A_{22}  &amp; \dots &amp; A_{2n} \\
-            \vdots &amp; \vdots &amp; &amp; \vdots\\
-            A_{m1} &amp; A_{m2} &amp; \dots &amp; A_{mn}\\   
-            \end{pmatrix}
-            \begin{pmatrix}
-            B_{11} &amp; B_{12}  &amp; \dots &amp; B_{1p} \\
-            B_{21}  &amp; B_{22}  &amp; \dots &amp; B_{2p} \\
-            \vdots &amp; \vdots &amp; &amp; \vdots\\
-            B_{n1} &amp; B_{n2} &amp; \dots &amp; B_{np}\\   
-            \end{pmatrix}
-        </me>
-        which is an 
-        </p>        
-    </subsection>
+Another way to write this is
+<me>
+	\left(AB\right)_{ij} = \overset{1 \times n} {\begin{pmatrix}
+	A_{i1} &amp; A_{i2} &amp; \dots &amp; A_{in}\end{pmatrix}}
+	\overset{n \times 1}{
+	\begin{pmatrix}
+	B_{1j} \\
+	B_{2j} \\
+	 \vdots \\ 
+	 B_{nj}\end{pmatrix}}. 
+</me>
+Note that to get <m>(AB)_{ij}</m> you multiply the <m>i^{th}</m> row of <m>A</m> and the <m>j^{th}</m> column of <m>B</m>. In terms of
+the dot product from calculus, the <m>ij^{th}</m> entry of <m>AB</m> is the dot product
+of the <m>i^{th}</m>  row of <m>A</m> with the <m>j^{th}</m> column of <m>B</m>.
+				</p>
+			</statement>
+		</definition>
+		<p>
+			I will summarize the above discussion in the following
+ proposition which shows that the above definition delivers the earlier one in <xref ref="def-conformable-matrices"/> 
+ about <m>AB \equiv (A\mathbf{b}_1, \dots , A\mathbf{b}_p)</m>. It is important
+to realize these two definitions are equivalent.
+		</p>
+		<!-- Stop at proposition 5.1.15-->
+	</subsection>
 </section>
