@@ -68,418 +68,709 @@
 			Using this notation on the
 			above matrix, <m>a_{23} = 8, a_{32} = -9, a_{12} = 2,</m> etc.
 		</p>
-        <p>
-            There are various operations which are done on matrices. Matrices can be added mul-
-tiplied by a scalar, and multiplied by other matrices. To illustrate scalar multiplication,
-consider the following example in which a matrix is being multiplied by the scalar 3.
-<me>
-    3 \left( \begin{array}{c c c c}
-    1 &amp; 2 &amp; 3 &amp; 4 \\
-    5 &amp; 2 &amp; 8 &amp; 7 \\
-    6 &amp; -9 &amp; 1 &amp; 2\\
-    \end{array} \right) = \left( \begin{array}{c c c c}
-    3 &amp; 6 &amp; 9 &amp; 12 \\
-    15 &amp; 6 &amp; 24 &amp; 21 \\
-    18 &amp; -27 &amp; 3 &amp; 6\\
-    \end{array} \right)
-</me>
-The new matrix is obtained by multiplying every entry of the original matrix by the given
-scalar. If <m>A</m> is an <m>m \times n</m> matrix, <m>-A</m> is defined to equal <m>(-1) A</m>.
-        </p>
-        <p>
-            Two matrices must be the same size to be added. The sum of two matrices is a matrix
-which is obtained by adding the corresponding entries. Thus
-<me>\left( \begin{array}{c c}
- 1 &amp; 2 \\
- 3 &amp; 4 \\
- 5 &amp; 2\\
- \end{array} \right) + 
- \left(\begin{array}{c c}
- -1 &amp; 4 \\
- 2 &amp; 8 \\
- 6 &amp; -4\\
- \end{array} \right) = 
- \left(\begin{array}{c c }
- 0 &amp; 6 \\
- 5 &amp; 12 \\
- 11 &amp; -2\\
- \end{array} \right)
-</me>
-Two matrices are equal exactly when they are the same size and the corresponding entries
-are identical. Thus
-<me>\left( \begin{array}{c c}
-    0 &amp; 0 \\
-    0 &amp; 0 \\
-    0 &amp; 0\\
-    \end{array} \right) \neq
-    \left( \begin{array}{c c}
-    0 &amp; 0 \\
-    0 &amp; 0 \\
-    \end{array} \right)</me>
 
-because they are different sizes. As noted above, you write <m>(c_{ij})</m> for the matrix <m>C</m> whose
-<m>ij^{th}</m> entry is <m>c_{ij}</m> . In doing arithmetic with matrices you must define what happens in terms
-of the <m>c_{ij}</m>  sometimes called the <term>entries</term> of the matrix or the <term>components</term> of the matrix.
-        </p>
-        <p>
-            The above discussion stated for general matrices is given in the following definition.
-        </p>
-        <definition xml:id="def-scalar-matrix-mult">
-            <title>Scalar Matrix Multiplication</title>
+		<p>
+			There are various operations which are done on matrices.
+			Matrices can be added mul-
+			tiplied by a scalar, and multiplied by other matrices.
+			To illustrate scalar multiplication,
+			consider the following example in which a matrix is being multiplied by the scalar 3.
+			<me>
+				3 \left( \begin{array}{c c c c}
+				1 &amp; 2 &amp; 3 &amp; 4 \\
+				5 &amp; 2 &amp; 8 &amp; 7 \\
+				6 &amp; -9 &amp; 1 &amp; 2\\
+				\end{array} \right) = \left( \begin{array}{c c c c}
+				3 &amp; 6 &amp; 9 &amp; 12 \\
+				15 &amp; 6 &amp; 24 &amp; 21 \\
+				18 &amp; -27 &amp; 3 &amp; 6\\
+				\end{array} \right)
+			</me>
+			The new matrix is obtained by multiplying every entry of the original matrix by the given
+			scalar.
+			If <m>A</m> is an <m>m \times n</m> matrix, <m>-A</m> is defined to equal <m>(-1) A</m>.
+		</p>
+
+		<p>
+			Two matrices must be the same size to be added.
+			The sum of two matrices is a matrix
+			which is obtained by adding the corresponding entries.
+			Thus
+			<me>
+				\left( \begin{array}{c c}
+				1 &amp; 2 \\
+				3 &amp; 4 \\
+				5 &amp; 2\\
+				\end{array} \right) +
+				\left(\begin{array}{c c}
+				-1 &amp; 4 \\
+				2 &amp; 8 \\
+				6 &amp; -4\\
+				\end{array} \right) =
+				\left(\begin{array}{c c }
+				0 &amp; 6 \\
+				5 &amp; 12 \\
+				11 &amp; -2\\
+				\end{array} \right)
+			</me>
+			Two matrices are equal exactly when they are the same size and the corresponding entries
+			are identical.
+			Thus
+			<me>
+				\left( \begin{array}{c c}
+				0 &amp; 0 \\
+				0 &amp; 0 \\
+				0 &amp; 0\\
+				\end{array} \right) \neq
+				\left( \begin{array}{c c}
+				0 &amp; 0 \\
+				0 &amp; 0 \\
+				\end{array} \right)
+			</me>
+			because they are different sizes.
+			As noted above, you write <m>(c_{ij})</m> for the matrix <m>C</m> whose
+			<m>ij^{th}</m> entry is <m>c_{ij}</m> .
+			In doing arithmetic with matrices you must define what happens in terms
+			of the <m>c_{ij}</m>  sometimes called the <term>entries</term> of the matrix or the <term>components</term> of the matrix.
+		</p>
+
+		<p>
+			The above discussion stated for general matrices is given in the following definition.
+		</p>
+
+		<definition xml:id="def-scalar-matrix-mult">
+			<title>Scalar Matrix Multiplication</title>
 			<idx>
-				<h>Scalar Matrix Multiplication</h>
+			<h>Scalar Matrix Multiplication</h>
 			</idx>
-            <statement>
-                <p>
-                    If <m>A = (a_{ij})</m> and <m>k</m> is a scalar, then <m>kA = (ka_{ij})</m>.
-                </p>
-            </statement>
-        </definition>
-    <example>
-        <p>
-            <me>7 
-                \left(\begin{array}{c c}
-                2 &amp; 0 \\
-               1 &amp; -4 \\
-                \end{array} \right) = 
-                \left( \begin{array}{c c}
-                14 &amp; 0 \\
-                7 &amp; 28 \\
-                \end{array} \right)
-               </me>.
-        </p>
-    </example>
-    <definition xml:id="def-lin-alg-matrix-addition">
-        <title>Matrix Addition</title>
-        <idx>
-            <h>Matrix Addition</h>
-        </idx>
-        <statement>
-            <p>
-                If <m>A = (a_{ij})</m> and <m>B = (b_{ij})</m> are two <m>m \times n</m> matrices. Then <m>A+B =
-                C</m> where
-                <me>C = (c_{ij})</me>
-                for <m>c_{ij} = a_{ij} + b_{ij}</m> .
-            </p>
-        </statement>
-    </definition>
-    <example>
-        <me>\left( \begin{array}{c c c}
-            1 &amp; 2 &amp; 3\\
-            1 &amp; 0 &amp; 4 \\
-            \end{array} \right) + 
-            \left(\begin{array}{c c c}
-            5 &amp; 2 &amp; 3 \\
-            -6 &amp; 2 &amp; 1\\
-            \end{array} \right) = 
-            \left(\begin{array}{c c c}
-            6 &amp; 4 &amp; 6 \\
-            -5 &amp; 2 &amp; 5 \\
-            \end{array} \right)
-           </me>
-           <p>
-            To save on notation, we will often use <m>A_{ij}</m> to refer to the <m>ij^{th}</m> entry of matrix <m>A</m>.
-           </p>
-    </example>
-    <definition xml:id="def-zero-matrix">
-        <title>Zero Matrix</title>
-        <idx>
-            <h>Zero Matrix</h>
-        </idx>
-        <statement>
-            <p>
-                The <m>m \times n</m> zero matrix is the <m>m \times n</m> matrix having every
-entry equal to zero. It is denoted by 0.
-            </p>
-        </statement>
-    </definition>
 
-        <example>
-            <p>The <m>2 \times 3</m> zero matrix is <m>\left( \begin{array}{c c c}
-                0 &amp; 0 &amp; 0\\
-                0 &amp; 0 &amp; 0 \\
-                \end{array} \right)</m>.
-            </p>
-        </example>
+			<statement>
+				<p>
+					If <m>A = (a_{ij})</m> and <m>k</m> is a scalar, then <m>kA = (ka_{ij})</m>.
+				</p>
+			</statement>
+		</definition>
 
-        <definition xml:id="def-lin-alg-matrix-equality">
-            <title>Matrix Equality</title>
-            <idx>
-                <h>Matrix Equality</h>
-            </idx>
-            
-            <statement>
-                <p>
-                    Let <m>A</m> and <m>B</m> be two matrices. Then <m>A = B</m> means
-                    that the two matrices are of the same size and for <m>A = (a_{ij})</m> and <m>B = (b_{ij})</m> , <m>a_{ij} = b_{ij} </m>for all
-                    <m>1 \leq i \leq m</m> and <m>1 \leq j \leq n</m>.
-                </p>
-            </statement>
-        </definition>
-        <p>
-            The following properties of matrices can be easily verified. You should do so. These
-properties are called the vector space axioms.
-<ul>
-    <li>
-        <p>
-            Commutative Law Of Addition.
-<me>A + B = B + A,</me>
-        </p>
-    </li>
-    <li>
-        <p>
-            Associative Law for Addition.
-<me>(A + B) +C = A + (B +C) ,</me>
- 
-        </p>
-    </li>
-    <li>
-        <p>
-            Existence of an Additive Identity
-<me>A + 0 = A,</me>
-        </p>
-    </li>
-    <li>
-        <p>Existence of an Additive Inverse
-            <me>A + (-A) = 0.</me>
-        </p>
-    </li>
-</ul>
-        </p>
-<p>
-    Also for <m>\alpha, \beta</m> scalars, the following additional properties hold.
-    <ul>
-        <li>
-            <p>
-            Distributive law over Matrix Addition.
-<me>\alpha (A + B) = \alpha A + \alpha B,</me>
+		<example>
+			<p>
+				<me>
+					7
+					\left(\begin{array}{c c}
+					2 &amp; 0 \\
+					1 &amp; -4 \\
+					\end{array} \right) =
+					\left( \begin{array}{c c}
+					14 &amp; 0 \\
+					7 &amp; 28 \\
+					\end{array} \right)
+				</me>.
+			</p>
+		</example>
 
- 
-            </p>
-        </li>
-        <li>
-            <p> Distributive law over Scalar Addition
-<me>(\alpha + \beta ) A = \alpha A + \beta A,</me>
-            </p>
-        </li>
-        <li>
-            <p>Associative law for Scalar Multiplication
-                <me>\alpha (\beta A) = \alpha\beta (A) ,</me>
-            </p>
-        </li>
-        <li>
-            <p>
-                Rule for Multiplication by 1.
-                <me>1A = A.</me>
-            </p>
-        </li>
-    </ul>
-</p>
-<p>
-    As an example, consider the Commutative Law of Addition. Let <m>A + B = C</m> and <m>B + A =
-D</m>. Why is <m>D = C</m>?
- <me>
-    C_{ij} = A_{ij} + B_{ij} = B_{ij} + A_{ij} = D_{ij} .
- </me>
- Therefore, <m>C = D</m> because the <m>ij^{th}</m> entries are the same. Note that the conclusion follows
-from the commutative law of addition of numbers.
-</p>
+		<definition xml:id="def-lin-alg-matrix-addition">
+			<title>Matrix Addition</title>
+			<idx>
+			<h>Matrix Addition</h>
+			</idx>
+
+			<statement>
+				<p>
+					If <m>A = (a_{ij})</m> and <m>B = (b_{ij})</m> are two <m>m \times n</m> matrices.
+					Then <m>A+B =
+					C</m> where
+					<me>
+						C = (c_{ij})
+					</me>
+					for <m>c_{ij} = a_{ij} + b_{ij}</m> .
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<me>
+				\left( \begin{array}{c c c}
+				1 &amp; 2 &amp; 3\\
+				1 &amp; 0 &amp; 4 \\
+				\end{array} \right) +
+				\left(\begin{array}{c c c}
+				5 &amp; 2 &amp; 3 \\
+				-6 &amp; 2 &amp; 1\\
+				\end{array} \right) =
+				\left(\begin{array}{c c c}
+				6 &amp; 4 &amp; 6 \\
+				-5 &amp; 2 &amp; 5 \\
+				\end{array} \right)
+			</me>
+
+			<p>
+				To save on notation, we will often use <m>A_{ij}</m> to refer to the <m>ij^{th}</m> entry of matrix <m>A</m>.
+			</p>
+		</example>
+
+		<definition xml:id="def-zero-matrix">
+			<title>Zero Matrix</title>
+			<idx>
+			<h>Zero Matrix</h>
+			</idx>
+
+			<statement>
+				<p>
+					The <m>m \times n</m> zero matrix is the <m>m \times n</m> matrix having every
+					entry equal to zero.
+					It is denoted by 0.
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<p>
+				The <m>2 \times 3</m> zero matrix is <m>\left( \begin{array}{c c c}
+				0 &amp; 0 &amp; 0\\
+				0 &amp; 0 &amp; 0 \\
+				\end{array} \right)</m>.
+			</p>
+		</example>
+
+		<definition xml:id="def-lin-alg-matrix-equality">
+			<title>Matrix Equality</title>
+			<idx>
+			<h>Matrix Equality</h>
+			</idx>
+
+			<statement>
+				<p>
+					Let <m>A</m> and <m>B</m> be two matrices.
+					Then <m>A = B</m> means
+					that the two matrices are of the same size and for <m>A = (a_{ij})</m> and <m>B = (b_{ij})</m> , <m>a_{ij} = b_{ij} </m>for all
+					<m>1 \leq i \leq m</m> and <m>1 \leq j \leq n</m>.
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			The following properties of matrices can be easily verified.
+			You should do so.
+			These
+			properties are called the vector space axioms.
+			<ul>
+				<li>
+					<p>
+						Commutative Law Of Addition.
+						<me>
+							A + B = B + A,
+						</me>
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Associative Law for Addition.
+						<me>
+							(A + B) +C = A + (B +C) ,
+						</me>
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Existence of an Additive Identity
+						<me>
+							A + 0 = A,
+						</me>
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Existence of an Additive Inverse
+						<me>
+							A + (-A) = 0.
+						</me>
+					</p>
+				</li>
+			</ul>
+		</p>
+
+		<p>
+			Also for <m>\alpha, \beta</m> scalars, the following additional properties hold.
+			<ul>
+				<li>
+					<p>
+						Distributive law over Matrix Addition.
+						<me>
+							\alpha (A + B) = \alpha A + \alpha B,
+						</me>
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Distributive law over Scalar Addition
+						<me>
+							(\alpha + \beta ) A = \alpha A + \beta A,
+						</me>
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Associative law for Scalar Multiplication
+						<me>
+							\alpha (\beta A) = \alpha\beta (A) ,
+						</me>
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Rule for Multiplication by 1.
+						<me>
+							1A = A.
+						</me>
+					</p>
+				</li>
+			</ul>
+		</p>
+
+		<p>
+			As an example, consider the Commutative Law of Addition.
+			Let <m>A + B = C</m> and <m>B + A =
+			D</m>.
+			Why is <m>D = C</m>?
+			<me>
+				C_{ij} = A_{ij} + B_{ij} = B_{ij} + A_{ij} = D_{ij} .
+			</me>
+			Therefore, <m>C = D</m> because the <m>ij^{th}</m> entries are the same.
+			Note that the conclusion follows
+			from the commutative law of addition of numbers.
+		</p>
 	</subsection>
 
-    <subsection xml:id="subsec-matrix-mult">
-        <title>Matrix Multiplication</title>
-        <p>
-            This is where things get interesting. Matrices can be thought of as a rule for making new
-vectors from old vectors.
-        </p>
-        <definition xml:id="def-vectors">
-            <title>Vectors</title>
-            <idx>
-                <h>Vector</h>
-            </idx>
-            
-            <statement>
-                <p>
-                    Matrices which are <m>n \times 1</m> or <m>1 \times n</m> are called <term>vectors</term> and are often denoted
-                    by a bold letter. Thus the <m>n \times 1</m> matrix
-                        <me>
-                            \mathbf{x} = \left( \begin{array}{c}
-                            x_1 \\
-                            \vdots \\
-                            x_n \\
-                            \end{array} \right)
-                        </me>
-                        
-                    is also called a <term>column vector</term>. The <m>1 \times n</m> matrix
-                    <me>
-                        \mathbf{x} = \left( \begin{array}{c c c}
-                        x_1 &amp; \dots &amp; x_n \\
-                        \end{array} \right)
-                    </me>
-                    is called a <term>row vector</term>.
-                </p>
-            </statement>
-        </definition>
-        <p>
-            Although the following description of matrix multiplication may seem strange, it is in
-fact the most important and useful of the matrix operations. To begin with consider the
-case where a matrix is multiplied by a column vector. First consider a special case.
+	<subsection xml:id="subsec-matrix-mult">
+		<title>Matrix Multiplication</title>
+		<p>
+			This is where things get interesting.
+			Matrices can be thought of as a rule for making new
+			vectors from old vectors.
+		</p>
 
-<me>\left( \begin{array}{c c c}
-    1 &amp; 2 &amp; 3\\
-    4 &amp; 5 &amp; 6 \\
-    \end{array} \right)  
-    \left(  \begin{array}{c}
-     7 \\
-     8 \\
-     9\\
-    \end{array} \right) = \mathord{?}
-   </me> 
-   By definition, this equals
-   <me>
-    7 \left( \begin{array}{c} 
-    1\\
-    4\\
-    \end{array} \right) + 8 \left( \begin{array}{c} 
-    2\\
-    5\\
-    \end{array} \right) + 9 \left( \begin{array}{c} 
-    3\\
-    6\\
-    \end{array} \right) =
-    \left( \begin{array}{c} 
-    50\\
-    122\\
-    \end{array} \right).
-   </me>
-        </p>
-        <p>
- In more general terms,
- <md>
-    <mrow> \begin{pmatrix}
-        a_{11} &amp; a_{12}  &amp; a_{13} \\
-        a_{21}  &amp; a_{22}  &amp; a_{23}  \\
-        \end{pmatrix}   
-        \begin{pmatrix}
-            x_1 \\
-            x_2 \\
-            x_3 \\
-        \end{pmatrix} \amp  =
+		<definition xml:id="def-vectors">
+			<title>Vectors</title>
+			<idx>
+			<h>Vector</h>
+			</idx>
 
-        x_1 \begin{pmatrix}
-        a_{11}\\
-        a_{21}\\
-        \end{pmatrix} 
-        + x_2 \begin{pmatrix} 
-        a_{12}\\
-        a_{22} \\
-        \end{pmatrix} 
-        + x_3 \begin{pmatrix} 
-        a_{13}\\
-        a_{23}\\
-        \end{pmatrix} </mrow>
-        <mrow> \amp =
-            \begin{pmatrix}
-           a_{11}x_1 + a_{12}x_2 + a_{13}x_3\\
-           a_{21}x_1 + a_{22}x_2 + a_{23}x_3\\
-           \end{pmatrix}. </mrow>
- </md>
-            Thus you take <m>x_1</m> times the first column, add to <m>x_2</m> times the second column, and finally <m>x_3</m>
-            times the third column. The above sum is called a <term>linear combination</term> of the given column
-            vectors. These will be discussed more later. In general, a linear combination of vectors is
-            just a sum consisting of scalars times vectors. When you multiply a matrix on the left by a
-            vector on the right, the numbers making up the vector are just the scalars to be used in the
-            linear combination of the columns as illustrated above.      
-        </p>
-        <p>
-            More generally, here is the definition of how to multiply an <m>(m \times n)</m> matrix times a
-<m>(n \times 1)</m> matrix (column vector).
-        </p>
-       <definition xml:id="def-matrix-vector-mult">
-        <statement>
-            <p> Let <m>A = A_{ij}</m> be an <m>m \times n</m> matrix and <m>\mathbf{v}</m> be an <m>n \times 1</m> matrix,
-                
-                <me>
-                    \mathbf{v} = \begin{pmatrix}
-                    v_1 \\
-                    \vdots\\
-                    v_n\\
-                    \end{pmatrix}, A = \begin{pmatrix} 
-                    \mathbf{a}_1, \dots, \mathbf{a}_n \end{pmatrix}
-                </me>
-                where <m>\mathbf{a}_i</m> is an <m>m \times 1</m> column vector. Then <m>A\mathbf{v}</m> written as
-                <me> \begin{pmatrix} 
-                    \mathbf{a}_1, \dots, \mathbf{a}_n \end{pmatrix}
-                    \begin{pmatrix}
-                    v_1 \\
-                    \vdots\\
-                    v_n\\
-                    \end{pmatrix},
-                </me>
-                is the <m>m \times 1</m> column vector which equals the following linear combination of columns.
-                <me> v_1 \mathbf{a}_1 + v_2 \mathbf{a}_2 + \dots + v_n\mathbf{a}_n \equiv \sum_{j=1}^n v_j\mathbf{a}_j </me>
-                If the <m>j_{th}</m> column of <m>A</m> is
-                <me>
-                    \begin{pmatrix}
-                    A_{1j} \\
-                    A_{2j}
-                    \vdots\\
-                    A_{mj}\\
-                    \end{pmatrix},
-                </me>
-                then the sum above takes the form
-                <me>
-                    v_1\begin{pmatrix}
-                    A_{11} \\
-                    A_{21}
-                    \vdots\\
-                    A_{m1}\\
-                    \end{pmatrix} + 
-                    v_2 \begin{pmatrix}
-                    A_{12} \\
-                    A_{22}
-                    \vdots\\
-                    A_{m2}\\
+			<statement>
+				<p>
+					Matrices which are <m>n \times 1</m> or <m>1 \times n</m> are called <term>vectors</term> and are often denoted
+					by a bold letter.
+					Thus the <m>n \times 1</m> matrix
+					<me>
+						\mathbf{x} = \left( \begin{array}{c}
+						x_1 \\
+						\vdots \\
+						x_n \\
+						\end{array} \right)
+					</me>
+					is also called a <term>column vector</term>.
+					The <m>1 \times n</m> matrix
+					<me>
+						\mathbf{x} = \left( \begin{array}{c c c}
+						x_1 &amp; \dots &amp; x_n \\
+						\end{array} \right)
+					</me>
+					is called a <term>row vector</term>.
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			Although the following description of matrix multiplication may seem strange, it is in
+			fact the most important and useful of the matrix operations.
+			To begin with consider the
+			case where a matrix is multiplied by a column vector.
+			First consider a special case.
+			<me>
+				\left( \begin{array}{c c c}
+				1 &amp; 2 &amp; 3\\
+				4 &amp; 5 &amp; 6 \\
+				\end{array} \right)
+				\left(  \begin{array}{c}
+				7 \\
+				8 \\
+				9\\
+				\end{array} \right) = \mathord{?}
+			</me>
+			By definition, this equals
+			<me>
+				7 \left( \begin{array}{c}
+				1\\
+				4\\
+				\end{array} \right) + 8 \left( \begin{array}{c}
+				2\\
+				5\\
+				\end{array} \right) + 9 \left( \begin{array}{c}
+				3\\
+				6\\
+				\end{array} \right) =
+				\left( \begin{array}{c}
+				50\\
+				122\\
+				\end{array} \right).
+			</me>
+		</p>
+
+		<p>
+			In more general terms,
+			<md>
+				<mrow> \begin{pmatrix}
+				a_{11} &amp; a_{12}  &amp; a_{13} \\
+				a_{21}  &amp; a_{22}  &amp; a_{23}  \\
+				\end{pmatrix}
+				\begin{pmatrix}
+				x_1 \\
+				x_2 \\
+				x_3 \\
+				\end{pmatrix} \amp  =
+				x_1 \begin{pmatrix}
+				a_{11}\\
+				a_{21}\\
+				\end{pmatrix}
+				+ x_2 \begin{pmatrix}
+				a_{12}\\
+				a_{22} \\
+				\end{pmatrix}
+				+ x_3 \begin{pmatrix}
+				a_{13}\\
+				a_{23}\\
+				\end{pmatrix} </mrow>
+				<mrow> \amp =
+				\begin{pmatrix}
+				a_{11}x_1 + a_{12}x_2 + a_{13}x_3\\
+				a_{21}x_1 + a_{22}x_2 + a_{23}x_3\\
+				\end{pmatrix}.
+				</mrow>
+			</md>
+			Thus you take <m>x_1</m> times the first column, add to <m>x_2</m> times the second column, and finally <m>x_3</m>
+			times the third column.
+			The above sum is called a <term>linear combination</term> of the given column
+			vectors.
+			These will be discussed more later.
+			In general, a linear combination of vectors is
+			just a sum consisting of scalars times vectors.
+			When you multiply a matrix on the left by a
+			vector on the right, the numbers making up the vector are just the scalars to be used in the
+			linear combination of the columns as illustrated above.
+		</p>
+
+		<p>
+			More generally, here is the definition of how to multiply an <m>(m \times n)</m> matrix times a
+			<m>(n \times 1)</m> matrix (column vector).
+		</p>
+
+		<definition xml:id="def-matrix-vector-mult">
+			<statement>
+				<p>
+					Let <m>A = A_{ij}</m> be an <m>m \times n</m> matrix and <m>\mathbf{v}</m> be an <m>n \times 1</m> matrix,
+					<me>
+						\mathbf{v} = \begin{pmatrix}
+						v_1 \\
+						\vdots\\
+						v_n\\
+						\end{pmatrix}, A = \begin{pmatrix}
+						\mathbf{a}_1, \dots, \mathbf{a}_n \end{pmatrix}
+					</me>
+					where <m>\mathbf{a}_i</m> is an <m>m \times 1</m> column vector.
+					Then <m>A\mathbf{v}</m> written as
+					<me>
+						\begin{pmatrix}
+						\mathbf{a}_1, \dots, \mathbf{a}_n \end{pmatrix}
+						\begin{pmatrix}
+						v_1 \\
+						\vdots\\
+						v_n\\
+						\end{pmatrix},
+					</me>
+					is the <m>m \times 1</m> column vector which equals the following linear combination of columns.
+					<me>
+						v_1 \mathbf{a}_1 + v_2 \mathbf{a}_2 + \dots + v_n\mathbf{a}_n \equiv \sum_{j=1}^n v_j\mathbf{a}_j
+					</me>
+					If the <m>j_{th}</m> column of <m>A</m> is
+					<me>
+						\begin{pmatrix}
+						A_{1j} \\
+						A_{2j}
+						\vdots\\
+						A_{mj}\\
+						\end{pmatrix},
+					</me>
+					then the sum above takes the form
+					<me>
+						v_1\begin{pmatrix}
+						A_{11} \\
+						A_{21}
+						\vdots\\
+						A_{m1}\\
+						\end{pmatrix} +
+						v_2 \begin{pmatrix}
+						A_{12} \\
+						A_{22}
+						\vdots\\
+						A_{m2}\\
+						\end{pmatrix}
+						+ \dots + v_n\begin{pmatrix}
+						A_{1n} \\
+						A_{2n}
+						\vdots\\
+						A_{mn}\\
+						\end{pmatrix}
+					</me>
+					Thus the <m>i_{th}</m> entry of <m>A\mathbf{v}</m> is <m>\sum_{j=1}^{n} A_{ij}v_j</m>.
+					Note that multiplication by an <m>m \times n</m> matrix takes an
+					<m>n \times 1</m> matrix, and produces an <m>m \times 1</m> matrix (vector).
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			Here is another example.
+		</p>
+
+		<example>
+			<p>
+				Compute
+				<me>
+					\begin{pmatrix}
+					1 &amp; 2 &amp; 1 &amp; 3\\
+					0 &amp; 2 &amp; 1 &amp; -2\\
+					2 &amp; 1 &amp; 4 &amp; 1\\
+					\end{pmatrix}
+					\begin{pmatrix}
+					1 \\
+					2\\
+					0\\
+					1\\
+					\end{pmatrix}
+				</me>
+				First of all this is of the form <m>(3 \times 4) (4 \times 1)</m> and so the result should be a <m>(3 \times 1)</m> .
+				Note how the inside numbers cancel.
+				To get the element in the second row and first and only
+				column, compute
+				<md>
+					<mrow>\sum_{k=1}^4 a_{2k}v_k \amp = a_{21}v_1 + a_{22}v_2 + a_{23}v_3 + a_{24}v_4 </mrow>
+					<mrow> \amp = 0 \times 1 + 2 \times 2 + 1 \times 0 + (-2) \times 1 = 2.</mrow>
+				</md>
+				You should do the rest of the problem and verify
+				<me>
+					\begin{pmatrix}
+					1 &amp; 2 &amp; 1 &amp; 3\\
+					0 &amp; 2 &amp; 1 &amp; -2\\
+					2 &amp; 1 &amp; 4 &amp; 1\\
+					\end{pmatrix}
+					\begin{pmatrix}
+					1 \\
+					2\\
+					0\\
+					1\\
+					\end{pmatrix} =
+					\begin{pmatrix}
+					8 \\
+					2\\
+					5\\
+					\end{pmatrix}
+				</me>
+			</p>
+		</example>
+
+		<p>
+			The next task is to multiply an <m>m \times n</m> matrix times an <m>n \times p</m> matrix.
+			Before doing so the following may be helpful.
+		</p>
+
+		<p>
+			For <m>A</m> and  <m>B</m> matrices, in order to form the product, <m>AB</m>, the number of columns of <m>A</m> must equal the number of rows of <m>B</m>.
+			Thus the form
+			of the product must be
+			<me>
+				(m \times n)(n \times p) = m \times p.
+			</me>
+			Not the two outside numbers give the size of the product.
+			Remember:
+			<em>If the two middle numbers don't match, you can't multiply the matrices!</em>
+		</p>
+
+		<definition xml:id="def-conformable-matrices">
+			<statement>
+				<p>
+					When the number of columns of <m>A</m> equals the number of rows of <m>B</m> the
+					two matrices are said to be <term>conformable</term> and the product <m>AB</m> is obtained as follows.
+					Let <m>A</m>
+					be an <m>m \times n</m> matrix and let <m>B</m> be an <m>n \times p</m> matrix.
+					Then <m>B</m> is of the form
+					<me>
+						B = (\mathbf{b}_1 , \dots , \mathbf{b}_p)
+					</me>
+					where <m>\mathbf{b}_k</m> is an <m>n \times 1</m> matrix or column vector.
+					Then the <m>m \times p</m> matrix <m>AB</m> is defined as
+					follows:
+					<me>
+						AB \equiv (A\mathbf{b}_1, \dots , A\mathbf{b}_p)
+					</me>
+					where <m>A\mathbf{b}_k</m> is an <m>m \times 1</m> matrix or column vector which gives the <m>k^{th}</m> column of <m>AB</m>.
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<p>
+				Multiply the following:
+				<me>
+					\begin{pmatrix}
+					1 &amp; 2 &amp; 1 &amp;\\
+					0 &amp; 2 &amp; 1 &amp;\\
+					\end{pmatrix}
+					\begin{pmatrix}
+					1 &amp; 2 &amp; 0\\
+					0 &amp; 3 &amp; 1\\
+					-2 &amp; 1 &amp; 1\\
+					\end{pmatrix}
+				</me>
+			</p>
+
+		
+
+			<solution>
+				<p>
+					The first thing you need to check before doing anything else is whether it is possible
+					to do the multiplication.
+					The first matrix on left is a <m>2 \times 3</m> and the second matrix on right
+					is a <m>3 \times 3</m>.
+					Therefore, is it possible to multiply these matrices.
+					According to the above
+					discussion it should be a <m>2 \times 3</m> matrix of the form
+					<me>
+						\begin{pmatrix}
+						\overbrace{
+						\begin{pmatrix}
+						1 &amp; 2 &amp; 1\\
+						0 &amp; 2 &amp; 1\\
+						\end{pmatrix}
+						\begin{pmatrix}
+						1 \\
+						0\\
+						-2\\
+						\end{pmatrix}}^{\text{First column}},
+
+                        \overbrace{
+                            \begin{pmatrix}
+                            1 &amp; 2 &amp; 1\\
+                            0 &amp; 2 &amp; 1\\
+                            \end{pmatrix}
+
+                            \begin{pmatrix}
+                            2 \\
+                            3\\
+                            1\\
+                            \end{pmatrix}}^{\text{Second column}},
+                                                        
+                            \overbrace{
+                                \begin{pmatrix}
+                                1 &amp; 2 &amp; 1\\
+                                0 &amp; 2 &amp; 1\\
+                                \end{pmatrix}
+                                \begin{pmatrix}
+                                0 \\
+                                1\\
+                                1\\
+                                \end{pmatrix}}^{\text{Third column}}
+
+                            \end{pmatrix}
+					</me>
+                    You know how to multiply a matrix times a vector and so you do so to obtain each of the three columns.
+				</p>
+			</solution>
+            <answer>
+				<p>
+					<me>
+						\begin{pmatrix}
+						1 &amp; 2 &amp; 1 &amp;\\
+						0 &amp; 2 &amp; 1 &amp;\\
+						\end{pmatrix}
+						\begin{pmatrix}
+						1 &amp; 2 &amp; 0\\
+						0 &amp; 3 &amp; 1\\
+						-2 &amp; 1 &amp; 1\\
+						\end{pmatrix} =
+						\begin{pmatrix}
+						-1 &amp; 9 &amp; 3 &amp;\\
+						-2 &amp; 7 &amp; 3 &amp;\\
+						\end{pmatrix}
+					</me>
+				</p>
+			</answer>
+		</example>
+        <example>
+            <p>
+                Multiply the following,
+                <me>\begin{pmatrix}
+                    1 &amp; 2 &amp; 0\\
+                    0 &amp; 3 &amp; 1\\
+                    -2 &amp; 1 &amp; 1\\
                     \end{pmatrix}
-                    + \dots + v_n\begin{pmatrix}
-                    A_{1n} \\
-                    A_{2n}
-                    \vdots\\
-                    A_{mn}\\
-                    \end{pmatrix}
+                    \begin{pmatrix}
+						1 &amp; 2 &amp; 1 &amp;\\
+						0 &amp; 2 &amp; 1 &amp;\\
+						\end{pmatrix}				
                 </me>
-                
-                Thus the <m>i_{th}</m> entry of <m>A\mathbf{v}</m> is <m>\sum_{j=1}^{n} A_{ij}v_j</m>. Note that multiplication by an <m>m \times n</m> matrix takes an
-<m>n \times 1</m> matrix, and produces an <m>m \times 1</m> matrix (vector).
             </p>
-        </statement>
-       </definition>
-       <p>
-        Here is another example.
-       </p>
-       <example>
-       <p> Compute
+            <solution>
+                <p>
+                    First check if it is possible. This is of the form <m>(3 \times 3) (2 \times 3) </m>. The inside numbers
+do not match and so you can't do this multiplication. This means that anything you write
+will be absolute nonsense because it is impossible to multiply these matrices in this order.
+Aren't they the same two matrices considered in the previous example? Yes they are.
+It is just that here they are in a different order. This shows something you must always
+remember about matrix multiplication.
+<em>Order Matters!
+Matrix Multiplication Is Not Commutative!</em>
+This is very different than multiplication of numbers!
+                </p>
+            </solution>
+        </example>
+	</subsection>
+    <subsection xml:id="subsec-ijth-entry-of-matrix-prod">
+        <title>The <m>ij^{th}</m> Entry of a Product</title>
+        <p>
+            It is important to describe matrix multiplication in terms of entries of the matrices. What is
+the <m>ij^{th}</m> entry of <m>AB</m>? It would be the <m>i^{th}</m> entry of the <m>j^{th}</m> column of <m>AB</m>. Thus it would be the
+<m>i^{th}</m> entry of <m>A\mathbf{b}_j</m> . Now
+<me>
+    \mathbf{b}_j = \begin{pmatrix}
+    B_{1j} \\
+    \vdots\\
+    B_{nj}\\
+    \end{pmatrix}
+</me>
+        and from the above defintion, the <m>i^{th}</m> entry is
+        <me>
+            \sum_{k=1}^{n} A_{ik}B_{kj} \equiv A_{i1}B_{1j} + A_{i2}B_{2j} + \dots + A_{in}B_{nj}
+        </me>
+        In terms of pictures of the matrix, you are doing
         <me>
             \begin{pmatrix}
-            1 &amp; 2 &amp; 1 &amp; 3\\
-            0 &amp; 2 &amp; 1 &amp; -2\\
-            2 &amp; 1 &amp; 4 &amp; 1\\
+            A_{11} &amp; A_{12}  &amp; \dots &amp; A_{1n} \\
+            A_{21}  &amp; A_{22}  &amp; \dots &amp; A_{2n} \\
+            \vdots &amp; \vdots &amp; &amp; \vdots\\
+            A_{m1} &amp; A_{m2} &amp; \dots &amp; A_{mn}\\   
             \end{pmatrix}
             \begin{pmatrix}
-            1 \\
-            2\\
-            0\\
-            1\\
+            B_{11} &amp; B_{12}  &amp; \dots &amp; B_{1p} \\
+            B_{21}  &amp; B_{22}  &amp; \dots &amp; B_{2p} \\
+            \vdots &amp; \vdots &amp; &amp; \vdots\\
+            B_{n1} &amp; B_{n2} &amp; \dots &amp; B_{np}\\   
             \end{pmatrix}
         </me>
-        First of all this is of the form <m>(3 \times 4) (4 \times 1)</m> and so the result should be a <m>(3 \times 1)</m> .
-         Note how the inside numbers cancel. To get the element in the second row and first and only
-column, compute
-       <md>
-            <mrow>\sum_{k=1}^4 a_{2k}v_k \amp = a_{21}v_1 + a_{22}v_2 + a_{23}v_3 + a_{24}v_4 </mrow>
-            <mrow> \amp = 0 \times 1 + 2 \times 2 + 1 \times 0 + (-2) \times 1 = 2</mrow>
-        </md>
-    </p>
-       </example>
+        which is an 
+        </p>        
     </subsection>
 </section>
