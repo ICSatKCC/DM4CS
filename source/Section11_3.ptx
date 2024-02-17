@@ -1,8 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="Section11_3">
-    <title>Matrix Inverses</title>
-    <!-- TODO review induction before program correctness -->
-    <p>
-        Under Construction!
-    </p>
+	<title>Matrix Inverses</title>
+	<!-- TODO starts in Kuttler p 92  -->
+	<!-- put some examples in from wikipedia as to why important-->
+	<p>
+		Now we come to the most important property a matrix can have, an <term>inverse</term>. 
+		Matrices with this property are crucial for many computer science
+		applications, such as these from the <url href="https://en.wikipedia.org/wiki/Invertible_matrix">Wikipedia article: Invertible matrix</url>.
+		<ul>
+
+			<li>
+				<p>
+					In computer graphics and image processing, invertible matrices are fundamental for transformations.
+					Whether rotating, scaling, or translating images, these matrices facilitate seamless manipulation, contributing to the creation of visually appealing graphics.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					The world of cybersecurity relies on invertible matrices for encryption and decryption processes.
+					Algorithms that involve matrix operations play a crucial role in securing sensitive information, making invertible matrices indispensable in cryptographic protocols.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					In finance, invertible matrices find applications in portfolio optimization.
+					Efficiently managing diverse assets and risk requires mathematical models that involve invertible matrices, ensuring robust financial strategies.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					The backbone of many machine learning algorithms is formed by invertible matrices.
+					From feature engineering to training models, these matrices contribute to the stability and efficiency of algorithms, enhancing predictive accuracy.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					In data science, invertible matrices are employed for dimensionality reduction techniques.
+					Simplifying complex datasets without losing crucial information is achieved through the application of these matrices, aiding in more manageable and insightful analyses.
+				</p>
+			</li>
+		</ul>
+	</p>
 </section>
