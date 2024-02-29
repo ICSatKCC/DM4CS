@@ -1048,289 +1048,322 @@
 					</me>
 				</p>
 			</solution>
-			</example>
-		</subsection>
+		</example>
+	</subsection>
 
-			<subsection xml:id="subsec-props-of-matrix-mult">
-				<title>Properties of Matrix Multiplication</title>
+	<subsection xml:id="subsec-props-of-matrix-mult">
+		<title>Properties of Matrix Multiplication</title>
+		<p>
+			As pointed out above, sometimes it is possible to multiply matrices in one order but not
+			in the other order.
+			What if it makes sense to multiply them in either order? Will the two
+			products be equal then?
+		</p>
+
+		<example>
+			<p>
+				Compare <m>\begin{pmatrix}
+				1 &amp; 2\\
+				3 &amp; 4\\
+				\end{pmatrix}\begin{pmatrix}
+				0 &amp; 1 \\
+				1 &amp; 0\\
+				\end{pmatrix}</m> and <m>\begin{pmatrix}
+				0 &amp; 1 \\
+				1 &amp; 0\\
+				\end{pmatrix}\begin{pmatrix}
+				1 &amp; 2\\
+				3 &amp; 4\\
+				\end{pmatrix}</m>
+			</p>
+
+			<p>
+				The first product is
+				<me>
+					\begin{pmatrix}
+					1 &amp; 2\\
+					3 &amp; 4\\
+					\end{pmatrix}\begin{pmatrix}
+					0 &amp; 1 \\
+					1 &amp; 0\\
+					\end{pmatrix} = \begin{pmatrix}
+					2 &amp; 1 \\
+					4 &amp; 3\\
+					\end{pmatrix}.
+				</me>
+			</p>
+
+			<p>
+				The second product is
+				<me>
+					\begin{pmatrix}
+					0 &amp; 1 \\
+					1 &amp; 0\\
+					\end{pmatrix}
+					\begin{pmatrix}
+					1 &amp; 2\\
+					3 &amp; 4\\
+					\end{pmatrix} = \begin{pmatrix}
+					3 &amp; 4 \\
+					1 &amp; 2\\
+					\end{pmatrix}.
+				</me>
+				You see these are not equal.
+				Again you cannot conclude that <m>AB = BA</m> for matrix multiplication
+				even when multiplication is defined in both orders.
+				However, there are some
+				properties which do hold.
+			</p>
+		</example>
+
+
+		<proposition xml:id="prop-matrix-mult-distributivity">
+			<statement>
 				<p>
-					As pointed out above, sometimes it is possible to multiply matrices in one order but not
-					in the other order.
-					What if it makes sense to multiply them in either order? Will the two
-					products be equal then?
+					If all multiplications and additions make sense, the following hold for
+					matrices, <m>A, B, C</m> and <m>a, b</m> scalars.
+					<mdn>
+						<mrow xml:id="eq-mat-dist1">A(aB + bC) \amp = a(AB) + b(BC) </mrow>
+						<mrow xml:id="eq-mat-dist2">(B + C)A \amp = BA + CA </mrow>
+						<mrow xml:id="eq-mat-assoc">A(BC) \amp = (AB)C </mrow>
+					</mdn>
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					Using <xref ref="def-ijth-entry-of-matrix-prod"/>,
+					<md>
+						<mrow>(A(aB + bC))_{ij} \amp \sum_{k} A_{ik}(aB_{kj} + bC_{kj}) </mrow>
+						<mrow> \amp  = a\sum_{k} A_{ik}B_{kj} + b\sum_{k} A_{ik}C_{kj}</mrow>
+						<mrow> \amp = a(AB)_{ij} + b(AC)_{ij}</mrow>
+						<mrow> \amp =  (a(AB) + b(BC))_{ij}.</mrow>
+					</md>
+					Thus <m>A(aB + bC) = a(AB) + b(BC)</m> as claimed.
+					Formula <xref ref="eq-mat-dist2"/> is entirely similar.
 				</p>
 
-				<example>
-					<p>
-						Compare <m>\begin{pmatrix}
-						1 &amp; 2\\
-						3 &amp; 4\\
-						\end{pmatrix}\begin{pmatrix}
-						0 &amp; 1 \\
-						1 &amp; 0\\
-						\end{pmatrix}</m> and <m>\begin{pmatrix}
-						0 &amp; 1 \\
-						1 &amp; 0\\
-						\end{pmatrix}\begin{pmatrix}
-						1 &amp; 2\\
-						3 &amp; 4\\
-						\end{pmatrix}</m>
-					</p>
+				<p>
+					Formula <xref ref="eq-mat-assoc"/> is the associative law of multiplication.
+					Using definition <xref ref="def-ijth-entry-of-matrix-prod"/>
+					<md>
+						<mrow>(A(BC))_{ij} \amp \sum_{k} A_{ik}(BC)_{kj} </mrow>
+						<mrow> \amp \sum_{k} A_{ik} \sum_{l} B_{kl}C_{lj}</mrow>
+						<mrow> \amp \sum_{l} (AB)_{il}C_{lj}</mrow>
+						<mrow> \amp ((AB)C)_{ij}.</mrow>
+					</md>
+					This proves <xref ref="eq-mat-assoc"/>.
+					<m>\blacksquare</m>
+				</p>
+			</proof>
+		</proposition>
+	</subsection>
 
-					<p>
-						The first product is
-						<me>
-							\begin{pmatrix}
-							1 &amp; 2\\
-							3 &amp; 4\\
-							\end{pmatrix}\begin{pmatrix}
-							0 &amp; 1 \\
-							1 &amp; 0\\
-							\end{pmatrix} = \begin{pmatrix}
-							2 &amp; 1 \\
-							4 &amp; 3\\
-							\end{pmatrix}.
-						</me>
-					</p>
+	<subsection xml:id="subsec-matrix-transpose">
+		<title>Matrix Transpose</title>
+		<p>
+			Another important operation on matrices is that of taking the <term>transpose</term>.
+			The following
+			example shows what is meant by this operation, denoted by placing a <m>T</m> as an exponent on
+			the matrix.
+			<me>
+				\begin{pmatrix}
+				1 &amp; 4\\
+				3 &amp; 1\\
+				2 &amp; 6\\
+				\end{pmatrix}^{T} =
+				\begin{pmatrix}
+				1 &amp; 3 &amp; 2 \\
+				4 &amp; 1 &amp; 6 \\
+				\end{pmatrix}
+			</me>
+			What happened? The first column became the first row and the second column became the
+			second row.
+			Thus the <m>3 \times 2</m> matrix became a <m>2 \times 3</m> matrix.
+			The number 3 was in the second
+			row and the first column and it ended up in the first row and second column.
+			Here is the
+			definition.
+		</p>
 
-					<p>
-						The second product is
-						<me>
-							\begin{pmatrix}
-							0 &amp; 1 \\
-							1 &amp; 0\\
-							\end{pmatrix}
-							\begin{pmatrix}
-							1 &amp; 2\\
-							3 &amp; 4\\
-							\end{pmatrix} = \begin{pmatrix}
-							3 &amp; 4 \\
-							1 &amp; 2\\
-							\end{pmatrix}.
-						</me>
-						You see these are not equal.
-						Again you cannot conclude that <m>AB = BA</m> for matrix multiplication
-						even when multiplication is defined in both orders.
-						However, there are some
-						properties which do hold.
-					</p>
-				</example>
-				<proposition xml:id="prop-matrix-mult-distributivity">
-					<statement>
-						<p>
-							If all multiplications and additions make sense, the following hold for
-							matrices, <m>A, B, C</m> and <m>a, b</m> scalars.
-							<mdn>
-								<mrow xml:id="eq-mat-dist1">A(aB + bC) \amp = a(AB) + b(BC) </mrow>
-								<mrow xml:id="eq-mat-dist2">(B + C)A \amp = BA + CA </mrow>
-								<mrow xml:id="eq-mat-assoc">A(BC) \amp = (AB)C </mrow>
-							</mdn>
-						</p>
-					</statement>
-					<proof>
-						<p>
-							Using <xref ref="def-ijth-entry-of-matrix-prod"/>,
-							<md>
-								<mrow>(A(aB + bC))_{ij} \amp \sum_{k} A_{ik}(aB_{kj} + bC_{kj}) </mrow>
-								<mrow> \amp  = a\sum_{k} A_{ik}B_{kj} + b\sum_{k} A_{ik}C_{kj}</mrow>	
-								<mrow> \amp = a(AB)_{ij} + b(AC)_{ij}</mrow>
-								<mrow> \amp =  (a(AB) + b(BC))_{ij}.</mrow>
-							</md>
-							Thus <m>A(aB + bC) = a(AB) + b(BC)</m> as claimed. Formula <xref ref="eq-mat-dist2"/> is entirely similar.
-						</p>
-						<p>
-							Formula <xref ref="eq-mat-assoc"/> is the associative law of multiplication. Using definition <xref ref="def-ijth-entry-of-matrix-prod"/>
-							<md>
-								<mrow>(A(BC))_{ij} \amp \sum_{k} A_{ik}(BC)_{kj} </mrow>
-								<mrow> \amp \sum_{k} A_{ik} \sum_{l} B_{kl}C_{lj}</mrow>
-								<mrow> \amp \sum_{l} (AB)_{il}C_{lj}</mrow>
-								<mrow> \amp ((AB)C)_{ij}.</mrow>
-							</md>
-							This proves <xref ref="eq-mat-assoc"/>. <m>\blacksquare</m>
-						</p>
-					</proof>
-				</proposition>
-			</subsection>
-			<subsection xml:id="subsec-matrix-transpose">
-				<title>Matrix Transpose</title>
+		<definition xml:id="def-matrix-transpose">
+			<statement>
 				<p>
-					Another important operation on matrices is that of taking the <term>transpose</term>. The following
-example shows what is meant by this operation, denoted by placing a <m>T</m> as an exponent on
-the matrix.
+					Let <m>A</m> be an <m>m \times n</m> matrix.
+					Then <m>A^T</m> denotes the <m>n \times n</m> matrix which is defined as follows.
 					<me>
-						\begin{pmatrix}
-						1 &amp; 4\\
-						3 &amp; 1\\
-						2 &amp; 6\\
-						\end{pmatrix}^{T} =
-						\begin{pmatrix}
-							1 &amp; 3 &amp; 2 \\
-							4 &amp; 1 &amp; 6 \\
-						\end{pmatrix}
+						(A^T)_{ij} = A_{ji}
 					</me>
-					What happened? The first column became the first row and the second column became the
-second row. Thus the <m>3 \times 2</m> matrix became a <m>2 \times 3</m> matrix. The number 3 was in the second
-row and the first column and it ended up in the first row and second column. Here is the
-definition.	
 				</p>
-				<definition xml:id="def-matrix-transpose">
-					<statement>
-						<p> Let <m>A</m> be an <m>m \times n</m> matrix. Then <m>A^T</m> denotes the <m>n \times n</m> matrix which is defined as follows.
-							<me>
-								(A^T)_{ij} = A_{ji}
-							</me>							
-						</p>
-					</statement>
-				</definition>
-				<example>
-					<me>
-						\begin{pmatrix}
-							1 &amp; 2 &amp; -6 \\
-							3 &amp; 5 &amp; 4 \\
-						\end{pmatrix}^{T} = 
-						\begin{pmatrix}
-						1 &amp; 3\\
-						2 &amp; 5\\
-						-6 &amp; 4\\
-						\end{pmatrix}						
-					</me>
-				</example>
-				<p>
-					The transpose of a matrix has the following important properties.
-					<lemma xml:id="lem-transpose-distributivity">
-						<statement>
-							<p>
-								Let <m>A</m> be an <m>m \times n</m> matrix and let <m>B</m> be a <m>n \times p</m> matrix. Then
-								<me>
-									(AB)^T = B^T A^T
-								</me>
-								and if <m>\alpha</m> and <m>\beta</m> are scalars,
-								<me>
-									(\alpha A + \beta B)^T = \alpha A^T + \beta B^T
-								</me>
-								
-							</p>
-						</statement>
-						<proof>
-							<p>
-								From the definition, 
-								<me>
-									\begin{pmatrix}(AB)^T \end{pmatrix}_{ij} = (AB)_{ji} = \sum_k (B^T)_{ik}(A^T)_{kj} = (B^T A^T)_{ij}.
-								</me>
-								The proof of the second formula is left as an exercise.<m>\blacksquare</m>
-								
-							</p>
-						</proof>
-					</lemma>
-				</p>
-				<definition xml:id="def-symmetric-matrix">
-					<statement>
-						<p>
-							An <m>n \times n</m> matrix <m>A</m> is said to be <term>symmetric</term> if <m>A = A^T</m> . It is said to be <term>skew
-symmetric</term> if <m>A = -A^T</m> .
-						</p>
-					</statement>
-				</definition>
-				<example>
+			</statement>
+		</definition>
+
+		<example>
+			<me>
+				\begin{pmatrix}
+				1 &amp; 2 &amp; -6 \\
+				3 &amp; 5 &amp; 4 \\
+				\end{pmatrix}^{T} =
+				\begin{pmatrix}
+				1 &amp; 3\\
+				2 &amp; 5\\
+				-6 &amp; 4\\
+				\end{pmatrix}
+			</me>
+		</example>
+
+		<p>
+			The transpose of a matrix has the following important properties.
+			<lemma xml:id="lem-transpose-distributivity">
+				<statement>
 					<p>
-						Let
+						Let <m>A</m> be an <m>m \times n</m> matrix and let <m>B</m> be a <m>n \times p</m> matrix.
+						Then
 						<me>
-							A = \begin{pmatrix}
-							2 &amp; 1 &amp; 3\\
-							1 &amp; 5 &amp; -3\\
-							3 &amp; -3 &amp; 7.\\
-							\end{pmatrix}
+							(AB)^T = B^T A^T
 						</me>
-						Then 
+						and if <m>\alpha</m> and <m>\beta</m> are scalars,
 						<me>
-							A^T = \begin{pmatrix}
-							2 &amp; 1 &amp; 3\\
-							1 &amp; 5 &amp; -3\\
-							3 &amp; -3 &amp; 7.\\
-							\end{pmatrix}
+							(\alpha A + \beta B)^T = \alpha A^T + \beta B^T
 						</me>
-						Therefore, <m>A</m> is symmetric.
 					</p>
-				</example>
-				<example>
+				</statement>
+
+
+				<proof>
 					<p>
-						Let
+						From the definition,
 						<me>
-							A = \begin{pmatrix}
-							0 &amp; 1 &amp; 3\\
-							-1 &amp; 0 &amp; 2\\
-							-3 &amp; -2 &amp; 0.\\
-							\end{pmatrix}
+							\begin{pmatrix}(AB)^T \end{pmatrix}_{ij} = (AB)_{ji} = \sum_k (B^T)_{ik}(A^T)_{kj} = (B^T A^T)_{ij}.
 						</me>
-						Then 
-						<me>
-							A^T = \begin{pmatrix}
-							0 &amp; -1 &amp; -3\\
-							1 &amp; 0 &amp; -2\\
-							3 &amp; 2 &amp; 0.\\
-							\end{pmatrix}
-						</me>
-						Therefore, <m>A</m> is skew symmetric.
+						The proof of the second formula is left as an exercise.<m>\blacksquare</m>
 					</p>
-				</example>
-			</subsection>
-			<subsection xml:id="subsec-identity-matrix">
-				<title>Identity Matrix</title>
+				</proof>
+			</lemma>
+		</p>
+
+		<definition xml:id="def-symmetric-matrix">
+			<statement>
 				<p>
-					There is a special matrix called <m>I</m> and referred to as the identity matrix. It is always a square
-matrix, meaning the number of rows equals the number of columns and it has the property
-that there are ones down the main diagonal and zeroes elsewhere. Here are some identity
-matrices of various sizes.
-					<me>
-						\begin{pmatrix}
-							1
-							\end{pmatrix}, 
-							\begin{pmatrix}
-							1 &amp; 0\\
-							0 &amp; 1 
-							\end{pmatrix},
-							\begin{pmatrix}
-							1 &amp; 0 &amp; 0\\
-							0 &amp; 1 &amp; 0\\
-							0 &amp; 0 &amp; 1\\
-							\end{pmatrix}, 
-							\begin{pmatrix}
-							1 &amp; 0 &amp; 0 &amp; 0\\
-							0 &amp; 1 &amp; 0 &amp; 0\\
-							0 &amp; 0 &amp; 1 &amp; 0\\
-							0 &amp; 0 &amp; 0 &amp; 1\\
-							\end{pmatrix}
-					</me>
-					The first is the <m>1 \times 1</m> identity matrix, the second is the <m>2 \times 2</m> identity matrix, the third is the
-					<m>3 \times 3</m> identity matrix, and the fourth is the <m>4 \times 4</m> identity matrix. By extension, you can
-					likely see what the <m>n \times n</m> identity matrix would be. It is so important that there is a special
-					symbol to denote the <m>ij^{th}</m> entry of the identity matrix <m>I_{ij} = \delta_{ij}</m> where <m>\delta_{ij}</m> is the <term>Kronecker
-					symbol</term> defined by
-					<me>
-						\delta_{ij} = \begin{cases}
-						1 &amp; \text{ if } i = j \\
-						0 &amp; \text{ if } i \neq j\\
-						\end{cases}
-					</me>
-					It is called the <term>identity matrix</term> because it is a <term>multiplicative identity</term> in the following
-sense.
-					<lemma xml:id="lem-identity-matrix">
-						<statement>
-							<p>
-								Suppose <m>A</m> is an <m>m \times n</m> matrix and <m>I_n</m> is the <m>n \times n</m> identity matrix. Then
-<m>AI_n = A</m>. If <m>I_m</m> is the <m>m \times m</m> identity matrix, it also follows that <m>I_m A = A</m>.
-							</p>
-						</statement>
-						<proof>
-							<p>
-								<me>
-									(AI_n)_{ij} = \sum_{k} A_{ik}\delta_{kj} = A_{ij}
-								</me>
-								and so <m>AI_n = A</m>. The other case is left as an exercise for you. <m>\blacksquare</m>
-								
-							</p>
-						</proof>
-					</lemma>
+					An <m>n \times n</m> matrix <m>A</m> is said to be <term>symmetric</term> if <m>A = A^T</m> .
+					It is said to be <term>skew
+					symmetric</term> if <m>A = -A^T</m> .
 				</p>
-			</subsection>
-		</section>
+			</statement>
+		</definition>
+
+		<example>
+			<p>
+				Let
+				<me>
+					A = \begin{pmatrix}
+					2 &amp; 1 &amp; 3\\
+					1 &amp; 5 &amp; -3\\
+					3 &amp; -3 &amp; 7.\\
+					\end{pmatrix}
+				</me>
+				Then
+				<me>
+					A^T = \begin{pmatrix}
+					2 &amp; 1 &amp; 3\\
+					1 &amp; 5 &amp; -3\\
+					3 &amp; -3 &amp; 7.\\
+					\end{pmatrix}
+				</me>
+				Therefore, <m>A</m> is symmetric.
+			</p>
+		</example>
+
+		<example>
+			<p>
+				Let
+				<me>
+					A = \begin{pmatrix}
+					0 &amp; 1 &amp; 3\\
+					-1 &amp; 0 &amp; 2\\
+					-3 &amp; -2 &amp; 0.\\
+					\end{pmatrix}
+				</me>
+				Then
+				<me>
+					A^T = \begin{pmatrix}
+					0 &amp; -1 &amp; -3\\
+					1 &amp; 0 &amp; -2\\
+					3 &amp; 2 &amp; 0.\\
+					\end{pmatrix}
+				</me>
+				Therefore, <m>A</m> is skew symmetric.
+			</p>
+		</example>
+	</subsection>
+
+	<subsection xml:id="subsec-identity-matrix">
+		<title>Identity Matrix</title>
+		<p>
+			There is a special matrix called <m>I</m> and referred to as the identity matrix.
+			It is always a square
+			matrix, meaning the number of rows equals the number of columns and it has the property
+			that there are ones down the main diagonal and zeroes elsewhere.
+			Here are some identity
+			matrices of various sizes.
+			<me>
+				\begin{pmatrix}
+				1
+				\end{pmatrix},
+				\begin{pmatrix}
+				1 &amp; 0\\
+				0 &amp; 1
+				\end{pmatrix},
+				\begin{pmatrix}
+				1 &amp; 0 &amp; 0\\
+				0 &amp; 1 &amp; 0\\
+				0 &amp; 0 &amp; 1\\
+				\end{pmatrix},
+				\begin{pmatrix}
+				1 &amp; 0 &amp; 0 &amp; 0\\
+				0 &amp; 1 &amp; 0 &amp; 0\\
+				0 &amp; 0 &amp; 1 &amp; 0\\
+				0 &amp; 0 &amp; 0 &amp; 1\\
+				\end{pmatrix}
+			</me>
+			The first is the <m>1 \times 1</m> identity matrix, the second is the <m>2 \times 2</m> identity matrix, the third is the
+			<m>3 \times 3</m> identity matrix, and the fourth is the <m>4 \times 4</m> identity matrix.
+			By extension, you can
+			likely see what the <m>n \times n</m> identity matrix would be.
+			It is so important that there is a special
+			symbol to denote the <m>ij^{th}</m> entry of the identity matrix <m>I_{ij} = \delta_{ij}</m> where <m>\delta_{ij}</m> is the <term>Kronecker
+			symbol</term> defined by
+			<me>
+				\delta_{ij} = \begin{cases}
+				1 &amp; \text{ if } i = j \\
+				0 &amp; \text{ if } i \neq j\\
+				\end{cases}
+			</me>
+			It is called the <term>identity matrix</term> because it is a <term>multiplicative identity</term> in the following
+			sense.
+			<lemma xml:id="lem-identity-matrix">
+				<statement>
+					<p>
+						Suppose <m>A</m> is an <m>m \times n</m> matrix and <m>I_n</m> is the <m>n \times n</m> identity matrix.
+						Then
+						<m>AI_n = A</m>.
+						If <m>I_m</m> is the <m>m \times m</m> identity matrix, it also follows that <m>I_m A = A</m>.
+					</p>
+				</statement>
+
+
+				<proof>
+					<p>
+						<me>
+							(AI_n)_{ij} = \sum_{k} A_{ik}\delta_{kj} = A_{ij}
+						</me>
+						and so <m>AI_n = A</m>.
+						The other case is left as an exercise for you.
+						<m>\blacksquare</m>
+					</p>
+				</proof>
+			</lemma>
+		</p>
+	</subsection>
+</section>

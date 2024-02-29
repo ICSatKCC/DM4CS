@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="Section11_3">
 	<title>Matrix Inverses</title>
-	<!-- TODO starts in Kuttler p 92  -->
-	<!-- put some examples in from wikipedia as to why important-->
+	<!-- starts in Kuttler def 5.1.28  -->
+	<!-- Put in some examples in from wikipedia as to why important-->
 	<p>
-		Now we come to the most important property a matrix can have, an <term>inverse</term>. 
-		Matrices with this property are crucial for many computer science
-		applications, such as these from the <url href="https://en.wikipedia.org/wiki/Invertible_matrix">Wikipedia article: Invertible matrix</url>.
+		Now we come to the most useful property a matrix can have, to be <term>invertible</term>, meaning
+		it has an <term>inverse matrix</term>. 
+		A system of linear equations only has a solution if, when it's represented in a matrix, that matrix is invertible. 
+		Matrix inverses also allow faster solving of systems of linear equations. This property is crucial for many computer science
+		applications, such as these from the <url href="https://en.wikipedia.org/wiki/Invertible_matrix">Wikipedia article: Invertible matrix</url>:
 		<ul>
 
 			<li>
@@ -45,4 +47,227 @@
 			</li>
 		</ul>
 	</p>
+	<definition xml:id="def-inverse-matrix">
+		<title>Inverse Matrix</title>
+		<idx><h>Inverse Matrix</h></idx>
+		<statement>
+			<p>
+				An <m> n\times n </m> matrix A has an inverse, <m>A^{-1}</m> if and only if <m>AA^{-1} = A^{-1}A = I</m>.
+Such a matrix is called invertible.
+			</p>
+		</statement>
+	</definition>
+	<p>
+		It is very important to observe that the inverse of a matrix, if it exists, is unique. Another way
+to think of this is that if it acts like the inverse, then it is the inverse.
+	</p>
+	<theorem xml:id="thm-matrix-inverse-prop">
+		<statement>
+			<p>
+				Suppose <m>A^{-1}</m> exists and <m>AB = BA = I</m>. Then <m>B = A^{-1}</m>.
+			</p>
+		</statement>
+		<proof>
+			<p>
+<m>A^{-1} = A^{-1}I = A^{-1}(AB) = (A^{-1}A)B = IB =B. \Blacksquare</m>
+			</p>
+		</proof>
+	</theorem>
+	<p>
+		Unlike ordinary multiplication of numbers, it can happen that 
+		<m>A \neq 0</m> but <m>A</m> may fail to have an inverse. 
+		This is illustrated in the following example.
+	</p>
+	<example>
+		<statement>
+			<p>
+				Let <m>A = \begin{pmatrix}
+					1 &amp; 1\\
+					1 &amp; 1 \\
+					\end{pmatrix}</m>. Does <m>A</m> have an inverse?
+			</p>
+		</statement>
+		<answer>
+			<p>
+				
+One might think <m>A</m> would have an inverse because it does not equal zero. However, 
+<me>\begin{pmatrix}
+	1 &amp; 1 \\
+	1 &amp; 1 \\
+	\end{pmatrix}
+	\begin{pmatrix}
+	-1 \\
+	1\\
+	\end{pmatrix} =
+	\begin{pmatrix}
+	0 \\
+	0 \\
+	\end{pmatrix}</me>
+and if <m>A^{-1}</m> existed, this could not happen because you could write
+<me>	\begin{pmatrix}
+	0 \\
+	0 \\
+	\end{pmatrix} =
+	A^{-1}\left(\begin{pmatrix}
+	0 \\
+	0 \\
+	\end{pmatrix} \right) = 
+	A^{-1}\left( A \begin{pmatrix}
+	-1 \\
+	1\\
+	\end{pmatrix} \right) =
+</me>
+
+<me>
+\left(A^{-1}A\right)\left( A \begin{pmatrix}
+-1 \\
+1\\
+\end{pmatrix} = 
+I \left( A \begin{pmatrix}
+-1 \\
+1\\
+\end{pmatrix} = \left( A \begin{pmatrix}
+-1 \\
+1\\
+\end{pmatrix},
+</me>
+a contradiction. Thus the answer is that <m>A</m> does not have an inverse.
+			</p>
+		</answer>
+	</example>
+
+	<example>
+		<statement>
+			<p>
+				Let <m>A = \begin{pmatrix}1 &amp;1\\
+					1&amp;2\end{pmatrix}</m>. Show <m>\begin{pmatrix}2 &amp;-1\\
+					-1&amp;1\end{pmatrix}</m> is the inverse of <m>A</m>.
+			</p>
+		</statement>
+		<answer>
+			<p>
+				To check this, multiply
+				<me>\begin{pmatrix}1 &amp;1\\
+					1&amp;2\end{pmatrix}
+					begin{pmatrix}2 &amp;-1\\
+					-1&amp;1\end{pmatrix} =
+					begin{pmatrix}1 &amp; 0\\
+					0 &amp;1\end{pmatrix}
+				</me>
+				and
+				<me>begin{pmatrix}2 &amp;-1\\
+					-1&amp;1\end{pmatrix}
+					\begin{pmatrix}1 &amp;1\\
+					1&amp;2\end{pmatrix}
+					 =
+					begin{pmatrix}1 &amp; 0\\
+					0 &amp;1\end{pmatrix}
+				</me>
+				showing that this matrix is indeed the inverse of <m>A</m>.
+			</p>
+		</answer>
+	</example>
+	<subsection xml:id="subsec-finding-matrix-inverse">
+		<title>Finding The Inverse Of A Matrix</title>
+		<p>
+			In the last example, how would you find <m>A^{-1}</m>? You wish to find a matrix 
+			<m>\begin{pmatrix} x &amp; z\\
+				y &amp; w \end{pmatrix}</m> such that
+				<me>
+					<me>\begin{pmatrix}1 &amp;1\\
+						1&amp;2\end{pmatrix}
+						\begin{pmatrix} x &amp; z\\
+				y &amp; w \end{pmatrix} =
+						begin{pmatrix}1 &amp; 0\\
+						0 &amp;1\end{pmatrix}.
+					</me>
+				This requires the solution to the systems of equations,
+				<me>
+					 x + y = 1, x + 2y = 0
+				</me>
+				and
+				<me>
+					z+ w = 0, z + 2w = 1.
+				</me>
+				Writing the augmented matrix for these two systems gives
+				<men xml:id="eqn-inverse-aug-a">
+					\left( \begin{array}{c c | c}
+				1 &amp; 1 &amp; 1\\
+				1 &amp; 2 &amp; 0\\
+				\end{array} \right)
+				</men>
+				for the first system and 
+				<men xml:id="eqn-inverse-aug-b">
+					\left( \begin{array}{c c | c}
+				1 &amp; 1 &amp; 0\\
+				1 &amp; 2 &amp; 1\\
+				\end{array} \right)
+				</men>
+				for the second. Let's solve the first system. Take <m>(-1)</m> times the first row and
+				add to the second to get
+				<me>
+					\left( \begin{array}{c c | c}
+				1 &amp; 1 &amp; 1\\
+				0 &amp; 1 &amp; -1\\
+				\end{array} \right).
+				</me>
+				Now take <m>(-1)</m> times the second row and add it to the first to get
+				<me>
+					\left( \begin{array}{c c | c}
+				1 &amp; 0 &amp; 2\\
+				0 &amp; 1 &amp; -1\\
+				\end{array} \right).
+				</me>
+				Putting in the variables, this says <m>x = 2</m> and <m>y = -1.</m>
+		</p>
+		<p>
+			Now solve the second system, (<xref ref="eqn-inverse-aug-b"/>) to find <m>z</m> and <m>w</m>. Take <m>(-1)</m> times the first
+			row and add to the second to get
+			<me>\left( \begin{array}{c c | c}
+				1 &amp; 1 &amp; 0\\
+				0 &amp; 1 &amp; 1\\
+				\end{array} \right)</me>.
+Now take <m>(-1)</m> times the second row and add it to the first to get
+				<me>
+					\left( \begin{array}{c c | c}
+				1 &amp; 0 &amp; -1\\
+				0 &amp; 1 &amp;  1\\
+				\end{array} \right).
+				</me>
+				Putting in the variables, this says <m>z = -1</m> and <m>w = 1.</m> Therefore, the inverse matrix is
+				<me>
+					\begin{pmatrix}2 &amp;-1\\
+						-1&amp;1\end{pmatrix}.
+						</me>
+		</p>
+		<p>
+			Didn't the above seem rather repetitive? Note that exactly the same row operations were used in both systems. 
+			In each case, the end result was something of the form <m>(I|v)</m> where <m>I</m> is the identity
+and <m>\mathbf{v}</m> gave a column of the inverse. In the above, <m>\begin{pmatrix}x\\
+	y\end{pmatrix}</m>, the first column of the inverse was obtained first and then the second column <m>\begin{pmatrix}z\\
+		w\end{pmatrix}.</m>
+		</p>
+		<p>
+			To simplify this procedure, you could have written
+			<me>
+				\left( \begin{array}{c c | c c}
+				1 &amp; 1 &amp; 1 &amp; 0\\
+				1 &amp; 2 &amp;  0 &amp; 1\\
+				\end{array} \right)
+			</me>
+			and row reduced until you obtained
+			<me>
+				\left( \begin{array}{c c | c c}
+				1 &amp; 0 &amp; 2 &amp; -1\\
+				0 &amp; 1 &amp;  -1 &amp; 1\\
+				\end{array} \right)
+			</me>
+			and read off the inverse as the <m>2 \times 2</m> matrix on the right side.
+		</p>
+		<p>
+			This is the reason for the following simple procedure for finding the inverse of a matrix. This procedure 
+			is called the <term>Gauss-Jordan procedure</term>.
+		</p>
+		<!-- TODO STOP at G-J procedure definition-->
+	</subsection>
 </section>
