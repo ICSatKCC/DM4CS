@@ -268,6 +268,65 @@ and <m>\mathbf{v}</m> gave a column of the inverse. In the above, <m>\begin{pmat
 			This is the reason for the following simple procedure for finding the inverse of a matrix. This procedure 
 			is called the <term>Gauss-Jordan procedure</term>.
 		</p>
-		<!-- TODO STOP at G-J procedure definition-->
+	
+	<definition xml:id="def-gauss-jordan-proc">
+		<statement>
+			<p>
+				Suppose <m>A</m> is an <m>n \times n</m> matrix. To find <m>A^{-1}</m> if it exists, 
+				form the augmented <m>n \times 2n</m> matrix
+				<me>\left(A | I \right)</me>
+				and then, if possible do row operations until you obtain an <m>n \times 2n</m> matrix of the form
+				<men xml:id="eqn-gauss-jordan-outcome">
+					\left(I|B\right).
+				</men>
+				When this has been done, <m>B = A^{-1}</m>. If it is impossible to row reduce to a matrix of the form <m>(I|B)</m>,
+				then <m>A</m> has no inverse.
+			</p>
+		</statement>
+	</definition>
+	<p>
+		Actually, all this shows is how to find a right inverse if it exists. Later it will be shown that the right inverse is 
+		<em>the</em> inverse. See <xref ref="corollary-tbd"/> or the Elementary Linear Algebra book at <url href="">http://www.Saylor.org.</url>
+		for proof of this.
+	</p>
+	<example> <statement>
+		<p>
+
+		Let <me>A =
+			\left( \begin{array}{c c c}
+		1 &amp; 2 &amp; 2\\
+		1 &amp; 0 &amp; 2\\
+		3 &amp; 1 &amp; -1
+		\end{array} \right).
+		</me>
+		Find <m>A^{-1}</m> if it exists.
+					
+	</p>
+</statement>
+	<answer>
+		<p>
+			Set up the augmented matrix <m>(A|I)</m>
+			<me>\left( \begin{array}{c c c | c c c}
+				1 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0\\
+				1 &amp; 0 &amp; 2 &amp; 0 &amp; 1 &amp; 0\\
+				3 &amp; 1 &amp; -1 &amp; 0 &amp; 0 &amp; 1
+				\end{array} \right).</me>
+			Next take <m>(-1)</m> times the first row and add to the second followed by <m>(-3)</m> times the first
+			row added to the last. This yields
+			<me>\left( \begin{array}{c c c | c c c}
+				1 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0\\
+				0 &amp; -2 &amp; 0 &amp; -1 &amp; 1 &amp; 0\\
+				0 &amp; -5 &amp; -7 &amp; -3 &amp; 0 &amp; 1
+				\end{array} \right).</me>
+				Then take 5 times the second row and add to -2 times the last row
+				<me>\left( \begin{array}{c c c | c c c}
+					1 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0\\
+					0 &amp; -10 &amp; 0 &amp; -5 &amp; 5 &amp; 0\\
+					0 &amp; 0 &amp; 14 &amp; 1 &amp; 5 &amp; -1
+					\end{array} \right).</me>
+			<!-- STOPPED 3/14 bottom of page 89 in Kuttler -->
+		</p>
+	</answer>
+	</example>
 	</subsection>
 </section>
