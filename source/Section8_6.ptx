@@ -43,9 +43,9 @@ f(x) = 10*x^2
 g(x) = x^2
 c = 10
 
-p1 = plot(f, (x,0,5), color="red" , legend_marker='f(x)', thickness='2')
-p2 = plot(g, (x,0,5),  color="blue", legend_marker='g(x)', thickness='2')
-p3 = plot(c*g, (x,0,5),  color="black", linestyle="dotted", legend_marker='10*g(x)', thickness='3')
+p1 = plot(f, (x,0,5), color="red" , legend_label='f(x)', thickness='2')
+p2 = plot(g, (x,0,5),  color="blue", legend_label='g(x)', thickness='2')
+p3 = plot(c*g, (x,0,5),  color="black", linestyle="dotted", legend_label='10*g(x)', thickness='3')
 p1+ p2 + p3
 </input>
 <output>
@@ -69,9 +69,9 @@ f(x) = (x^2 + 100*x + 10)
 g(x) = x^2
 c = 111
 
-p1 = plot(f, (x,0,3), color="red" , legend_marker='f(x)', thickness='2')
-p2 = plot(g, (x,0,3),  color="blue", legend_marker='g(x)', thickness='2')
-p3 = plot(c*g, (x,0,3),  color="black", linestyle="dotted", legend_marker='c*g(x)', thickness='3')
+p1 = plot(f, (x,0,3), color="red" , legend_label='f(x)', thickness='2')
+p2 = plot(g, (x,0,3),  color="blue", legend_label='g(x)', thickness='2')
+p3 = plot(c*g, (x,0,3),  color="black", linestyle="dotted", legend_label='c*g(x)', thickness='3')
 p1+ p2 + p3
 </input>
 <output>
@@ -123,9 +123,9 @@ f(x) = (6*x^4 - 2*x^3 + 5)
 g(x) = x^4
 c = 13
 
-p1 = plot(f, (x,0,3), color="red" , legend_marker='f(x)', thickness='2')
-p2 = plot(g, (x,0,3),  color="blue", legend_marker='g(x)', thickness='2')
-p3 = plot(c*g, (x,0,3),  color="black", linestyle="dotted", legend_marker='c*g(x)', thickness='3')
+p1 = plot(f, (x,0,3), color="red" , legend_label='f(x)', thickness='2')
+p2 = plot(g, (x,0,3),  color="blue", legend_label='g(x)', thickness='2')
+p3 = plot(c*g, (x,0,3),  color="black", linestyle="dotted", legend_label='c*g(x)', thickness='3')
 p1+ p2 + p3
 </input>
 <output>
@@ -273,9 +273,9 @@ g(x) = 2^x
 c1 = 20
 c2 = 1
 
-p1 = plot(f, (x,0,10), color="red" , legend_marker='f(x)', thickness='2')
-p2 = plot(c1*g, (x,0,10),  color="black", linestyle="dotted", legend_marker='20 * g(x)', thickness='3')
-p3 = plot(c2*g, (x,0,10),  color="black", linestyle="dotted", legend_marker='1 * g(x)', thickness='3')
+p1 = plot(f, (x,0,10), color="red" , legend_label='f(x)', thickness='2')
+p2 = plot(c1*g, (x,0,10),  color="black", linestyle="dotted", legend_label='20 * g(x)', thickness='3')
+p3 = plot(c2*g, (x,0,10),  color="black", linestyle="dotted", legend_label='1 * g(x)', thickness='3')
 p1+ p2 + p3
 </input>
 <output>
