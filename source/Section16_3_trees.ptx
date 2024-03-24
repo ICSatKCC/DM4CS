@@ -352,6 +352,7 @@
                      <description>Figure for exercise 16.3.2a</description>
                     <!-- <image width="100%" source="images/fig-exercise-16-3-2a.png"> -->
                         <latex-image><xi:include parse="text" href="./tikz-fig-exercise-16.3.2.tex" />
+                            
                         </latex-image>
                     </image>
                 </figure>

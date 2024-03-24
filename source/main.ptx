@@ -4,32 +4,41 @@
 
   <docinfo>
     <macros>
-      <!-- Added in from old bookinfo.xml--> \newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+      <!-- Added in from old bookinfo.xml--> 
+      \newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
       \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
       \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
       \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
       \newcommand{\cis}{\operatorname{cis}} \newcommand{\chr}{\operatorname{char}}
-      \newcommand{\Null}{\operatorname{Null}} \renewcommand{\vec}[1]{\mathbf{#1}}     <!--Added
-      for Foundations of CS (ch 15)-->
+      \newcommand{\Null}{\operatorname{Null}} \renewcommand{\vec}[1]{\mathbf{#1}}     
+      <!--Added for Foundations of CS (ch 15)-->
       \newcommand{\N}{{\mathbb N}} \newcommand{\Z}{{\mathbb Z}} \newcommand{\Q}{{\mathbb Q}}
       \newcommand{\R}{{\mathbb R}} \newcommand{\Zpos}{{{\mathbb Z}^+}} \newcommand{\SUB}{\subseteq}
       \newcommand{\SUP}{\supseteq} \newcommand{\PSUB}{\varsubsetneq}
-      \newcommand{\PSUP}{\varsupsetneq} \newcommand{\SETDIFF}{\smallsetminus} % the set difference
-      operator. \newcommand{\st}{\,|\,} % for the | in sets { x | P(x) }
+      \newcommand{\PSUP}{\varsupsetneq} \newcommand{\SETDIFF}{\smallsetminus}
+       <!-- the set difference
+      operator-->
+      \newcommand{\st}{\,|\,} <!--for the | in sets { x | P(x) } -->
       \newcommand{\ab}{\mbox{$\{a,b\}$}} \newcommand{\aetc}[2]{\mbox{{${#1}_1{#1}_2\ldots
       {#1}_{#2}$}}} \newcommand{\varep}{\varepsilon}
       \newcommand{\fsafig}[1]{\medskip\centerline{\eps{fsa#1}}\medskip}
-      \newcommand{\REOR}{\hbox{$\,|\,$}} \newcommand{\POW}{{\mathscr P}} % For the power set of a
-      set \newcommand{\EMPTYSTRING}{\varepsilon}       <!---for
-      grammars section --> \newcommand{\PRODUCES}{\longrightarrow}
-      \newcommand{\YIELDS}{\Longrightarrow} \newcommand{\YIELDSTAR}{{\Longrightarrow}^*}
+      \newcommand{\REOR}{\hbox{$\,|\,$}} \newcommand{\POW}{{\mathscr P}} 
+      <!-- For the power set of a set-->
+      \newcommand{\EMPTYSTRING}{\varepsilon}  
+      <!---for grammars section --> 
+      \newcommand{\PRODUCES}{\longrightarrow}
+      \newcommand{\YIELDS}{\Longrightarrow} 
+      \newcommand{\YIELDSTAR}{{\Longrightarrow}^*}
       \newcommand{\NT}[1]{\hbox{$\langle$\textit{#1}$\rangle$}}
-      \newcommand{\BNFPRODUCES}{\hbox{\texttt{::=}}} \newcommand{\BNFALT}{\hbox{$|$}} </macros>
+      \newcommand{\BNFPRODUCES}{\hbox{\texttt{::=}}} 
+      \newcommand{\BNFALT}{\hbox{$|$}} 
+    </macros>
     <latex-image-preamble>
       \usepackage{amsmath}
       \usepackage{pgf, tikz}
       \usetikzlibrary{arrows, automata}
       \usepackage{pgfplots}
+      \pgfplotsset{compat=1.17}
 
     </latex-image-preamble>
   </docinfo>

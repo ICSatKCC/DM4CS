@@ -3,250 +3,303 @@
 	<title>Matrix Inverses</title>
 	<!-- starts in Kuttler def 5.1.28  -->
 	<!-- Put in some examples in from wikipedia as to why important-->
-	<p>
-		Now we come to the most useful property a matrix can have, to be <term>invertible</term>, meaning
-		it has an <term>inverse matrix</term>. 
-		A system of linear equations only has a solution if, when it's represented in a matrix, that matrix is invertible. 
-		Matrix inverses also allow faster solving of systems of linear equations. This property is crucial for many computer science
-		applications, such as these from the <url href="https://en.wikipedia.org/wiki/Invertible_matrix">Wikipedia article: Invertible matrix</url>:
-		<ul>
+	<introduction>
+		<p>
+			Now we come to the most useful property a matrix can have, to be <term>invertible</term>, meaning
+			it has an <term>inverse matrix</term>.
+			A system of linear equations only has a solution if, when it's represented in a matrix, that matrix is invertible.
+			Matrix inverses also allow faster solving of systems of linear equations.
+			This property is crucial for many computer science
+			applications, such as these from the <url href="https://en.wikipedia.org/wiki/Invertible_matrix">Wikipedia article: Invertible matrix</url>:
+			<ul>
+				<li>
+					<p>
+						In computer graphics and image processing, invertible matrices are fundamental for transformations.
+						Whether rotating, scaling, or translating images, these matrices facilitate seamless manipulation, contributing to the creation of visually appealing graphics.
+					</p>
+				</li>
 
-			<li>
-				<p>
-					In computer graphics and image processing, invertible matrices are fundamental for transformations.
-					Whether rotating, scaling, or translating images, these matrices facilitate seamless manipulation, contributing to the creation of visually appealing graphics.
-				</p>
-			</li>
+				<li>
+					<p>
+						The world of cybersecurity relies on invertible matrices for encryption and decryption processes.
+						Algorithms that involve matrix operations play a crucial role in securing sensitive information, making invertible matrices indispensable in cryptographic protocols.
+					</p>
+				</li>
 
-			<li>
-				<p>
-					The world of cybersecurity relies on invertible matrices for encryption and decryption processes.
-					Algorithms that involve matrix operations play a crucial role in securing sensitive information, making invertible matrices indispensable in cryptographic protocols.
-				</p>
-			</li>
+				<li>
+					<p>
+						In finance, invertible matrices find applications in portfolio optimization.
+						Efficiently managing diverse assets and risk requires mathematical models that involve invertible matrices, ensuring robust financial strategies.
+					</p>
+				</li>
 
-			<li>
-				<p>
-					In finance, invertible matrices find applications in portfolio optimization.
-					Efficiently managing diverse assets and risk requires mathematical models that involve invertible matrices, ensuring robust financial strategies.
-				</p>
-			</li>
+				<li>
+					<p>
+						The backbone of many machine learning algorithms is formed by invertible matrices.
+						From feature engineering to training models, these matrices contribute to the stability and efficiency of algorithms, enhancing predictive accuracy.
+					</p>
+				</li>
 
-			<li>
-				<p>
-					The backbone of many machine learning algorithms is formed by invertible matrices.
-					From feature engineering to training models, these matrices contribute to the stability and efficiency of algorithms, enhancing predictive accuracy.
-				</p>
-			</li>
-
-			<li>
-				<p>
-					In data science, invertible matrices are employed for dimensionality reduction techniques.
-					Simplifying complex datasets without losing crucial information is achieved through the application of these matrices, aiding in more manageable and insightful analyses.
-				</p>
-			</li>
-		</ul>
-	</p>
-	<definition xml:id="def-inverse-matrix">
+				<li>
+					<p>
+						In data science, invertible matrices are employed for dimensionality reduction techniques.
+						Simplifying complex datasets without losing crucial information is achieved through the application of these matrices, aiding in more manageable and insightful analyses.
+					</p>
+				</li>
+			</ul>
+		</p>
+	</introduction>
+	<subsection xml:id="subsec-inverse-matrix">
 		<title>Inverse Matrix</title>
-		<idx><h>Inverse Matrix</h></idx>
-		<statement>
-			<p>
-				An <m> n\times n </m> matrix A has an inverse, <m>A^{-1}</m> if and only if <m>AA^{-1} = A^{-1}A = I</m>.
-Such a matrix is called invertible.
-			</p>
-		</statement>
-	</definition>
-	<p>
-		It is very important to observe that the inverse of a matrix, if it exists, is unique. Another way
-to think of this is that if it acts like the inverse, then it is the inverse.
-	</p>
-	<theorem xml:id="thm-matrix-inverse-prop">
-		<statement>
-			<p>
-				Suppose <m>A^{-1}</m> exists and <m>AB = BA = I</m>. Then <m>B = A^{-1}</m>.
-			</p>
-		</statement>
-		<proof>
-			<p>
-<m>A^{-1} = A^{-1}I = A^{-1}(AB) = (A^{-1}A)B = IB =B. \Blacksquare</m>
-			</p>
-		</proof>
-	</theorem>
-	<p>
-		Unlike ordinary multiplication of numbers, it can happen that 
-		<m>A \neq 0</m> but <m>A</m> may fail to have an inverse. 
-		This is illustrated in the following example.
-	</p>
-	<example>
-		<statement>
-			<p>
-				Let <m>A = \begin{pmatrix}
+		
+
+		<definition xml:id="def-inverse-matrix">
+			<title>Inverse Matrix</title>
+			<idx><h>Inverse Matrix</h></idx>
+			<statement>
+				<p>
+					An <m> n\times n </m> matrix A has an inverse, <m>A^{-1}</m> if and only if <m>AA^{-1} = A^{-1}A = I</m>.
+					Such a matrix is called invertible.
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			It is very important to observe that the inverse of a matrix, if it exists, is unique.
+			Another way
+			to think of this is that if it acts like the inverse, then it is the inverse.
+		</p>
+
+		<theorem xml:id="thm-matrix-inverse-prop">
+			<statement>
+				<p>
+					Suppose <m>A^{-1}</m> exists and <m>AB = BA = I</m>.
+					Then <m>B = A^{-1}</m>.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					<m>A^{-1} = A^{-1}I = A^{-1}(AB) = (A^{-1}A)B = IB =B.
+					\blacksquare</m>
+				</p>
+			</proof>
+		</theorem>
+
+		<p>
+			Unlike ordinary multiplication of numbers, it can happen that
+			<m>A \neq 0</m> but <m>A</m> may fail to have an inverse.
+			This is illustrated in the following example.
+		</p>
+
+		<example>
+			<title>A matrix without an inverse</title>
+			
+			
+			<statement>
+				<p>
+					Let <m>A = \begin{pmatrix}
 					1 &amp; 1\\
 					1 &amp; 1 \\
-					\end{pmatrix}</m>. Does <m>A</m> have an inverse?
-			</p>
-		</statement>
-		<answer>
-			<p>
-				
-One might think <m>A</m> would have an inverse because it does not equal zero. However, 
-<me>\begin{pmatrix}
-	1 &amp; 1 \\
-	1 &amp; 1 \\
-	\end{pmatrix}
-	\begin{pmatrix}
-	-1 \\
-	1\\
-	\end{pmatrix} =
-	\begin{pmatrix}
-	0 \\
-	0 \\
-	\end{pmatrix}</me>
-and if <m>A^{-1}</m> existed, this could not happen because you could write
-<me>	\begin{pmatrix}
-	0 \\
-	0 \\
-	\end{pmatrix} =
-	A^{-1}\left(\begin{pmatrix}
-	0 \\
-	0 \\
-	\end{pmatrix} \right) = 
-	A^{-1}\left( A \begin{pmatrix}
-	-1 \\
-	1\\
-	\end{pmatrix} \right) =
-</me>
+					\end{pmatrix}</m>.
+					Does <m>A</m> have an inverse?
+				</p>
+			</statement>
 
-<me>
-\left(A^{-1}A\right)\left( A \begin{pmatrix}
--1 \\
-1\\
-\end{pmatrix} = 
-I \left( A \begin{pmatrix}
--1 \\
-1\\
-\end{pmatrix} = \left( A \begin{pmatrix}
--1 \\
-1\\
-\end{pmatrix},
-</me>
-a contradiction. Thus the answer is that <m>A</m> does not have an inverse.
-			</p>
-		</answer>
-	</example>
+			<answer>
+				<p>
+					One might think <m>A</m> would have an inverse because it does not equal zero.
+					However,
+					<me>
+						\begin{pmatrix}
+						1 &amp; 1 \\
+						1 &amp; 1 \\
+						\end{pmatrix}
+						\begin{pmatrix}
+						-1 \\
+						1\\
+						\end{pmatrix} =
+						\begin{pmatrix}
+						0 \\
+						0 \\
+						\end{pmatrix}
+					</me>
+					and if <m>A^{-1}</m> existed, this could not happen because you could write
+					<me>
+						\begin{pmatrix}
+						0 \\
+						0 \\
+						\end{pmatrix} =
+						A^{-1}\left(\begin{pmatrix}
+						0 \\
+						0 \\
+						\end{pmatrix} \right) =
+						A^{-1}\left( A \begin{pmatrix}
+						-1 \\
+						1\\
+						\end{pmatrix} \right) =
+					</me>
+					<me>
+						\left(A^{-1}A\right)\begin{pmatrix}
+						-1 \\
+						1\\
+						\end{pmatrix} =
+						I \begin{pmatrix}
+						-1 \\
+						1\\
+						\end{pmatrix} = \begin{pmatrix}
+						-1 \\
+						1\\
+						\end{pmatrix},
+					</me>
+					a contradiction.
+					Thus the answer is that <m>A</m> does not have an inverse.
+				</p>
+			</answer>
+		</example>
 
-	<example>
-		<statement>
-			<p>
-				Let <m>A = \begin{pmatrix}1 &amp;1\\
-					1&amp;2\end{pmatrix}</m>. Show <m>\begin{pmatrix}2 &amp;-1\\
+		<example>
+			<title>Showing a matrix is an inverse</title>
+			
+			
+			<statement>
+				<p>
+					Let <m>A = \begin{pmatrix}1 &amp;1\\
+					1&amp;2\end{pmatrix}</m>.
+					Show <m>\begin{pmatrix}2 &amp;-1\\
 					-1&amp;1\end{pmatrix}</m> is the inverse of <m>A</m>.
-			</p>
-		</statement>
-		<answer>
-			<p>
-				To check this, multiply
-				<me>\begin{pmatrix}1 &amp;1\\
-					1&amp;2\end{pmatrix}
-					begin{pmatrix}2 &amp;-1\\
-					-1&amp;1\end{pmatrix} =
-					begin{pmatrix}1 &amp; 0\\
-					0 &amp;1\end{pmatrix}
-				</me>
-				and
-				<me>begin{pmatrix}2 &amp;-1\\
-					-1&amp;1\end{pmatrix}
-					\begin{pmatrix}1 &amp;1\\
-					1&amp;2\end{pmatrix}
-					 =
-					begin{pmatrix}1 &amp; 0\\
-					0 &amp;1\end{pmatrix}
-				</me>
-				showing that this matrix is indeed the inverse of <m>A</m>.
-			</p>
-		</answer>
-	</example>
+				</p>
+			</statement>
+
+			<answer>
+				<p>
+					To check this, multiply
+					<me>
+						\begin{pmatrix}
+						1 &amp; 1\\
+						1 &amp; 2
+						\end{pmatrix}
+						\begin{pmatrix}
+						2 &amp; -1\\
+						-1 &amp; 1
+						\end{pmatrix} =
+						\begin{pmatrix}
+						1 &amp; 0\\
+						0 &amp; 1
+						\end{pmatrix}
+					</me>
+					and
+					<me>
+						\begin{pmatrix}
+						2 &amp;-1\\
+						-1&amp;1
+						\end{pmatrix}
+						\begin{pmatrix}
+						1 &amp;1\\
+						1&amp;2
+						\end{pmatrix}
+						=
+						\begin{pmatrix}
+						1 &amp; 0\\
+						0 &amp;1
+						\end{pmatrix}
+					</me>
+					showing that this matrix is indeed the inverse of <m>A</m>.
+				</p>
+			</answer>
+		</example>
+
+	</subsection>
 	<subsection xml:id="subsec-finding-matrix-inverse">
 		<title>Finding The Inverse Of A Matrix</title>
 		<p>
-			In the last example, how would you find <m>A^{-1}</m>? You wish to find a matrix 
+			In the last example, how would you find <m>A^{-1}</m>? You wish to find a matrix
 			<m>\begin{pmatrix} x &amp; z\\
-				y &amp; w \end{pmatrix}</m> such that
-				<me>
-					<me>\begin{pmatrix}1 &amp;1\\
-						1&amp;2\end{pmatrix}
-						\begin{pmatrix} x &amp; z\\
+			y &amp; w \end{pmatrix}</m> such that
+			<me>
+				\begin{pmatrix}1 &amp;1\\
+				1&amp;2\end{pmatrix}
+				\begin{pmatrix} x &amp; z\\
 				y &amp; w \end{pmatrix} =
-						begin{pmatrix}1 &amp; 0\\
-						0 &amp;1\end{pmatrix}.
-					</me>
-				This requires the solution to the systems of equations,
-				<me>
-					 x + y = 1, x + 2y = 0
-				</me>
-				and
-				<me>
-					z+ w = 0, z + 2w = 1.
-				</me>
-				Writing the augmented matrix for these two systems gives
-				<men xml:id="eqn-inverse-aug-a">
-					\left( \begin{array}{c c | c}
+				\begin{pmatrix}1 &amp; 0\\
+				0 &amp;1\end{pmatrix}.
+			</me>
+			This requires the solution to the systems of equations,
+			<me>
+				x + y = 1, x + 2y = 0
+			</me>
+			and
+			<me>
+				z+ w = 0, z + 2w = 1.
+			</me>
+			Writing the augmented matrix for these two systems gives
+			<men xml:id="eqn-inverse-aug-a">
+				\left( \begin{array}{c c | c}
 				1 &amp; 1 &amp; 1\\
 				1 &amp; 2 &amp; 0\\
 				\end{array} \right)
-				</men>
-				for the first system and 
-				<men xml:id="eqn-inverse-aug-b">
-					\left( \begin{array}{c c | c}
+			</men>
+			for the first system and
+			<men xml:id="eqn-inverse-aug-b">
+				\left( \begin{array}{c c | c}
 				1 &amp; 1 &amp; 0\\
 				1 &amp; 2 &amp; 1\\
 				\end{array} \right)
-				</men>
-				for the second. Let's solve the first system. Take <m>(-1)</m> times the first row and
-				add to the second to get
-				<me>
-					\left( \begin{array}{c c | c}
+			</men>
+			for the second.
+			Let's solve the first system.
+			Take <m>(-1)</m> times the first row and
+			add to the second to get
+			<me>
+				\left( \begin{array}{c c | c}
 				1 &amp; 1 &amp; 1\\
 				0 &amp; 1 &amp; -1\\
 				\end{array} \right).
-				</me>
-				Now take <m>(-1)</m> times the second row and add it to the first to get
-				<me>
-					\left( \begin{array}{c c | c}
+			</me>
+			Now take <m>(-1)</m> times the second row and add it to the first to get
+			<me>
+				\left( \begin{array}{c c | c}
 				1 &amp; 0 &amp; 2\\
 				0 &amp; 1 &amp; -1\\
 				\end{array} \right).
-				</me>
-				Putting in the variables, this says <m>x = 2</m> and <m>y = -1.</m>
+			</me>
+			Putting in the variables, this says <m>x = 2</m> and <m>y = -1.</m>
 		</p>
+
 		<p>
-			Now solve the second system, (<xref ref="eqn-inverse-aug-b"/>) to find <m>z</m> and <m>w</m>. Take <m>(-1)</m> times the first
+			Now solve the second system, (<xref ref="eqn-inverse-aug-b"/>) to find <m>z</m> and <m>w</m>.
+			Take <m>(-1)</m> times the first
 			row and add to the second to get
-			<me>\left( \begin{array}{c c | c}
+			<me>
+				\left( \begin{array}{c c | c}
 				1 &amp; 1 &amp; 0\\
 				0 &amp; 1 &amp; 1\\
-				\end{array} \right)</me>.
-Now take <m>(-1)</m> times the second row and add it to the first to get
-				<me>
-					\left( \begin{array}{c c | c}
+				\end{array} \right)
+			</me>.
+			Now take <m>(-1)</m> times the second row and add it to the first to get
+			<me>
+				\left( \begin{array}{c c | c}
 				1 &amp; 0 &amp; -1\\
 				0 &amp; 1 &amp;  1\\
 				\end{array} \right).
-				</me>
-				Putting in the variables, this says <m>z = -1</m> and <m>w = 1.</m> Therefore, the inverse matrix is
-				<me>
-					\begin{pmatrix}2 &amp;-1\\
-						-1&amp;1\end{pmatrix}.
-						</me>
+			</me>
+			Putting in the variables, this says <m>z = -1</m> and <m>w = 1.</m> Therefore, the inverse matrix is
+			<me>
+				\begin{pmatrix}2 &amp;-1\\
+				-1&amp;1\end{pmatrix}.
+			</me>
 		</p>
+
 		<p>
-			Didn't the above seem rather repetitive? Note that exactly the same row operations were used in both systems. 
+			Didn't the above seem rather repetitive? Note that exactly the same row operations were used in both systems.
 			In each case, the end result was something of the form <m>(I|v)</m> where <m>I</m> is the identity
-and <m>\mathbf{v}</m> gave a column of the inverse. In the above, <m>\begin{pmatrix}x\\
-	y\end{pmatrix}</m>, the first column of the inverse was obtained first and then the second column <m>\begin{pmatrix}z\\
-		w\end{pmatrix}.</m>
+			and <m>\mathbf{v}</m> gave a column of the inverse.
+			In the above, <m>\begin{pmatrix}x\\
+			y\end{pmatrix}</m>, the first column of the inverse was obtained first and then the second column <m>\begin{pmatrix}z\\
+			w\end{pmatrix}.</m>
 		</p>
+
 		<p>
 			To simplify this procedure, you could have written
 			<me>
@@ -264,69 +317,379 @@ and <m>\mathbf{v}</m> gave a column of the inverse. In the above, <m>\begin{pmat
 			</me>
 			and read off the inverse as the <m>2 \times 2</m> matrix on the right side.
 		</p>
+
 		<p>
-			This is the reason for the following simple procedure for finding the inverse of a matrix. This procedure 
+			This is the reason for the following simple procedure for finding the inverse of a matrix.
+			This procedure
 			is called the <term>Gauss-Jordan procedure</term>.
 		</p>
-	
-	<definition xml:id="def-gauss-jordan-proc">
-		<statement>
-			<p>
-				Suppose <m>A</m> is an <m>n \times n</m> matrix. To find <m>A^{-1}</m> if it exists, 
-				form the augmented <m>n \times 2n</m> matrix
-				<me>\left(A | I \right)</me>
-				and then, if possible do row operations until you obtain an <m>n \times 2n</m> matrix of the form
-				<men xml:id="eqn-gauss-jordan-outcome">
-					\left(I|B\right).
-				</men>
-				When this has been done, <m>B = A^{-1}</m>. If it is impossible to row reduce to a matrix of the form <m>(I|B)</m>,
-				then <m>A</m> has no inverse.
-			</p>
-		</statement>
-	</definition>
-	<p>
-		Actually, all this shows is how to find a right inverse if it exists. Later it will be shown that the right inverse is 
-		<em>the</em> inverse. See <xref ref="corollary-tbd"/> or the Elementary Linear Algebra book at <url href="">http://www.Saylor.org.</url>
-		for proof of this.
-	</p>
-	<example> <statement>
-		<p>
 
-		Let <me>A =
-			\left( \begin{array}{c c c}
-		1 &amp; 2 &amp; 2\\
-		1 &amp; 0 &amp; 2\\
-		3 &amp; 1 &amp; -1
-		\end{array} \right).
-		</me>
-		Find <m>A^{-1}</m> if it exists.
-					
-	</p>
-</statement>
-	<answer>
+		<definition xml:id="def-gauss-jordan-proc">
+			<title>Gauss-Jordan Procedure</title>
+			<idx><h>Gauss-Jordan Procedure</h></idx>
+			<statement>
+				<p>
+					Suppose <m>A</m> is an <m>n \times n</m> matrix.
+					To find <m>A^{-1}</m> if it exists,
+					form the augmented <m>n \times 2n</m> matrix
+					<me>
+						\left(A | I \right)
+					</me>
+					and then, if possible do row operations until you obtain an <m>n \times 2n</m> matrix of the form
+					<men xml:id="eqn-gauss-jordan-outcome">
+						\left(I|B\right).
+					</men>
+					When this has been done, <m>B = A^{-1}</m>.
+					If it is impossible to row reduce to a matrix of the form <m>(I|B)</m>,
+					then <m>A</m> has no inverse.
+				</p>
+			</statement>
+		</definition>
+
 		<p>
-			Set up the augmented matrix <m>(A|I)</m>
-			<me>\left( \begin{array}{c c c | c c c}
-				1 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0\\
-				1 &amp; 0 &amp; 2 &amp; 0 &amp; 1 &amp; 0\\
-				3 &amp; 1 &amp; -1 &amp; 0 &amp; 0 &amp; 1
-				\end{array} \right).</me>
-			Next take <m>(-1)</m> times the first row and add to the second followed by <m>(-3)</m> times the first
-			row added to the last. This yields
-			<me>\left( \begin{array}{c c c | c c c}
-				1 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0\\
-				0 &amp; -2 &amp; 0 &amp; -1 &amp; 1 &amp; 0\\
-				0 &amp; -5 &amp; -7 &amp; -3 &amp; 0 &amp; 1
-				\end{array} \right).</me>
-				Then take 5 times the second row and add to -2 times the last row
-				<me>\left( \begin{array}{c c c | c c c}
-					1 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0\\
-					0 &amp; -10 &amp; 0 &amp; -5 &amp; 5 &amp; 0\\
-					0 &amp; 0 &amp; 14 &amp; 1 &amp; 5 &amp; -1
-					\end{array} \right).</me>
-			<!-- STOPPED 3/14 bottom of page 89 in Kuttler -->
+			Actually, all this shows is how to find a right inverse if it exists.
+			Later it will be shown that the right inverse is
+			<em>the</em> inverse.
+			See <xref ref="corollary-tbd"/> or the Elementary Linear Algebra book at <url href="">http://www.Saylor.org.</url>
+			for proof of this.
 		</p>
-	</answer>
-	</example>
+
+		<example>
+			<title>Using Gauss-Jordan to find a matrix inverse</title>
+			
+			
+			<statement>
+				<p>
+					Let
+					<me>
+						A =
+						\left( \begin{array}{c c c}
+						1 &amp; 2 &amp; 2\\
+						1 &amp; 0 &amp; 2\\
+						3 &amp; 1 &amp; -1
+						\end{array} \right).
+					</me>
+					Find <m>A^{-1}</m> if it exists.
+				</p>
+			</statement>
+
+			<answer>
+				<p>
+					Set up the augmented matrix <m>(A|I)</m>
+					<me>
+						\left( \begin{array}{c c c | c c c}
+						1 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0\\
+						1 &amp; 0 &amp; 2 &amp; 0 &amp; 1 &amp; 0\\
+						3 &amp; 1 &amp; -1 &amp; 0 &amp; 0 &amp; 1
+						\end{array} \right).
+					</me>
+					Next take <m>(-1)</m> times the first row and add to the second followed by <m>(-3)</m> times the first
+					row added to the last.
+					This yields
+					<me>
+						\left( \begin{array}{c c c | c c c}
+						1 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0\\
+						0 &amp; -2 &amp; 0 &amp; -1 &amp; 1 &amp; 0\\
+						0 &amp; -5 &amp; -7 &amp; -3 &amp; 0 &amp; 1
+						\end{array} \right).
+					</me>
+					Then take 5 times the second row and add to -2 times the last row
+					<me>
+						\left( \begin{array}{c c c | c c c}
+						1 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0\\
+						0 &amp; -10 &amp; 0 &amp; -5 &amp; 5 &amp; 0\\
+						0 &amp; 0 &amp; 14 &amp; 1 &amp; 5 &amp; -2
+						\end{array} \right).
+					</me>
+					Next take the last row and add to <m>(-7)</m> times the top row.
+					This yields
+					<me>
+						\left( \begin{array}{c c c | c c c}
+						-7 &amp; -14 &amp; 0 &amp; -6 &amp; 5 &amp; -2\\
+						0 &amp; -10 &amp; 0 &amp; -5 &amp; 5 &amp; 0\\
+						0 &amp; 0 &amp; 14 &amp; 1 &amp; 5 &amp; -2
+						\end{array} \right).
+					</me>
+					Now take <m>(-7/5)</m> times the second row and add to the top.
+					<me>
+						\left( \begin{array}{c c c | c c c}
+						-7 &amp; 0 &amp; 0 &amp; 1 &amp; -2 &amp; -2\\
+						0 &amp; -10 &amp; 0 &amp; -5 &amp; 5 &amp; 0\\
+						0 &amp; 0 &amp; 14 &amp; 1 &amp; 5 &amp; -2
+						\end{array} \right).
+					</me>
+					Finally divide the top row by <m>-7</m>, the second row by <m>-10</m> and the bottom row by 14 which yields
+					<me>
+						\left( \begin{array}{c c c | c c c}
+						1 &amp; 0 &amp; 0 &amp; -\frac{1}{7} &amp; \frac{2}{7} &amp; \frac{2}{7}\\
+						0 &amp; 1 &amp; 0 &amp; \frac{1}{2} &amp; -\frac{1}{2} &amp; 0\\
+						0 &amp; 0 &amp; 1 &amp; \frac{1}{14} &amp; \frac{5}{14} &amp; -\frac{1}{7}
+						\end{array} \right).
+					</me>
+					Therefore, the inverse is
+					<me>
+						\left( \begin{array}{c c c}
+						-\frac{1}{7} &amp; \frac{2}{7} &amp; \frac{2}{7}\\
+						\frac{1}{2} &amp; -\frac{1}{2} &amp; 0\\
+						\frac{1}{14} &amp; \frac{5}{14} &amp; -\frac{1}{7}
+						\end{array} \right).
+					</me>
+				</p>
+			</answer>
+		</example>
+
+		<example><title>Gauss-Jordan on a matrix with no inverse</title>
+		
+		
+			<statement>
+				<p>
+					Let
+					<me>
+						A =
+						\left( \begin{array}{c c c}
+						1 &amp; 2 &amp; 2\\
+						1 &amp; 0 &amp; 2\\
+						2 &amp; 2 &amp; 4
+						\end{array} \right).
+					</me>
+					Find <m>A^{-1}</m> if it exists.
+				</p>
+			</statement>
+
+			<answer>
+				<p>
+					Write the augmented matrix <m>(A|I)</m>
+					<me>
+						\left( \begin{array}{c c c | c c c}
+						1 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0\\
+						1 &amp; 0 &amp; 2 &amp; 0 &amp; 1 &amp; 0\\
+						2 &amp; 2 &amp; 4 &amp; 0 &amp; 0 &amp; 1
+						\end{array} \right).
+					</me>
+					and proceed to do row operations attempting to obtain <m>(I|A^{-1})</m> .
+					Take (-1) times the top row and
+					add to the second.
+					Then take (-2) times the top row and add to the bottom.
+					<me>
+						\left( \begin{array}{c c c | c c c}
+						1 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0\\
+						0 &amp; -2 &amp; 0 &amp; -1 &amp; 1 &amp; 0\\
+						0 &amp; -2 &amp; 0 &amp; -2 &amp; 0 &amp; 1
+						\end{array} \right).
+					</me>
+					Next add (-1) times the second row to the bottom row.
+					<me>
+						\left( \begin{array}{c c c | c c c}
+						1 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0\\
+						0 &amp; -2 &amp; 0 &amp; -1 &amp; 1 &amp; 0\\
+						0 &amp; 0 &amp; 0 &amp; -1 &amp; -1 &amp; 1
+						\end{array} \right).
+					</me>
+					At this point, you can see there will be no inverse because you have obtained a row of zeros in the
+					left half of the augmented matrix <m>(A|I)</m> .
+					Thus there will be no way to obtain <m>I</m> on the left.
+				</p>
+			</answer>
+		</example>
+
+		<example xml:id="ex-gauss-jordan-3">
+			<title>Checking Gauss-Jordan outcome correctness</title>
+			
+			
+			<statement>
+				<p>
+					Let
+					<me>
+						A =
+						\left( \begin{array}{c c c}
+						1 &amp; 0 &amp; 1\\
+						1 &amp; -1 &amp; 1\\
+						1 &amp; 1 &amp; -1
+						\end{array} \right).
+					</me>
+					Find <m>A^{-1}</m> if it exists.
+				</p>
+			</statement>
+
+			<answer>
+				<p>
+					Form the augmented matrix
+					<me>
+						\left( \begin{array}{c c c | c c c}
+						1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0\\
+						1 &amp; -1 &amp; 1 &amp; 0 &amp; 1 &amp; 0\\
+						1 &amp; 1 &amp; -1 &amp; 0 &amp; 0 &amp; 1
+						\end{array} \right).
+					</me>
+					Now do row operations until the <m>n \times n</m> matrix on the left becomes the identity matrix.
+					This yields
+					after some computations,
+					<me>
+						\left( \begin{array}{c c c | c c c}
+						1 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} &amp; \frac{1}{2}\\
+						0 &amp; 1 &amp; 0 &amp; 1 &amp; -1 &amp; 0\\
+						0 &amp; 0 &amp; 1 &amp; 1 &amp; -\frac{1}{2} &amp; -\frac{1}{2}
+						\end{array} \right)
+					</me>
+					and so the inverse of A is the matrix on the right,
+					<me>
+						\left( \begin{array}{ c c c}
+						0 &amp; \frac{1}{2} &amp; \frac{1}{2}\\
+						1 &amp; -1 &amp; 0\\
+						1 &amp; -\frac{1}{2} &amp; -\frac{1}{2}
+						\end{array} \right).
+					</me>
+					Checking the answer is easy.
+					Just multiply the matrices and see if it works.
+					<me>
+						\left( \begin{array}{c c c}
+						1 &amp; 0 &amp; 1\\
+						1 &amp; -1 &amp; 1\\
+						1 &amp; 1 &amp; -1
+						\end{array} \right) \left( \begin{array}{ c c c}
+						0 &amp; \frac{1}{2} &amp; \frac{1}{2}\\
+						1 &amp; -1 &amp; 0\\
+						1 &amp; -\frac{1}{2} &amp; -\frac{1}{2}
+						\end{array} \right) =\left( \begin{array}{ c c c}
+						1 &amp; 0 &amp; 0\\
+						0 &amp; 1 &amp; 0\\
+						0 &amp; 0 &amp; 1
+						\end{array} \right).
+					</me>
+					Always check your answer because if you are like some of us, you will usually have made a mistake.
+				</p>
+			</answer>
+		</example>
+		<example>
+			<title>Solving systems of equations with a matrix inverse</title>
+			
+			
+			<statement>
+				<p>
+					In this example, it is shown how to use the inverse of a matrix to find the solution
+					to a system of equations. Consider the following system of equations. Use the inverse of a suitable
+					matrix to give the solutions to this system.
+					<me>\begin{pmatrix} 
+						x + z = 1\\
+						x - y + z = 3\\
+						x + y - z = 2
+						\end{pmatrix}.
+					</me>
+				</p>
+				<p>
+
+				The system of equations can be written in terms of matrices as
+				<men xml:id="eq-system-of-matrices">
+					\begin{pmatrix}
+					 1 &amp; 0 &amp; 1\\
+					 1 &amp; -1 &amp; 1\\
+					 1 &amp; 1 &amp; -1
+					\end{pmatrix}
+					\begin{pmatrix}
+					x \\
+					y \\
+					z 
+					\end{pmatrix}
+					= \begin{pmatrix}
+					1 \\
+					3 \\
+					2 \\
+					\end{pmatrix}.
+				</men>
+				More simply, this is of the form <m>A\mathbf{x} = \mathbf{b}</m>. Suppose you find the inverse of the matrix <m>A^{-1}</m> . Then you
+could multiply both sides of this equation by <m>A^{-1}</m> to obtain
+				<me>\mathbf{x} = (A^{-1}A)\mathbf{x} = A^{-1}(A\mathbf{x}) = A^{-1}\mathbf{b}.</me>
+				This gives the solution as <m> \mathbf{x} = A^{-1} \mathbf{b}</m>. Note that once you have found the inverse, you can easily get
+the solution for different right hand sides without any effort. It is always just <m>A^{-1} \mathbf{b}</m>. In the given
+example, the inverse of the matrix is
+									<me>
+										\begin{pmatrix}
+					 0 &amp; \frac{1}{2} &amp; \frac{1}{2} \\
+					 1 &amp; -1 &amp; 0\\
+					 1 &amp; -\frac{1}{2} &amp; -\frac{1}{2}
+					\end{pmatrix}.
+									</me>
+									This was shown above in <xref ref="ex-gauss-jordan-3"/>. Therefore, from what was just explained, the solution to the
+given system is
+									<me>\begin{pmatrix}
+										x \\
+										y \\
+										z 
+										\end{pmatrix}
+										= \begin{pmatrix}
+										0 &amp; \frac{1}{2} &amp; \frac{1}{2} \\
+										1 &amp; -1 &amp; 0\\
+										1 &amp; -\frac{1}{2} &amp; -\frac{1}{2}
+									   \end{pmatrix}
+										
+					\begin{pmatrix}
+					1 \\
+					3 \\
+					2 \\
+					\end{pmatrix} = 
+					\begin{pmatrix}
+					\frac{5}{2} \\
+					-2 \\
+					-\frac{3}{2}\\
+					\end{pmatrix}
+					.</me>
+
+					What if the right side of <xref ref="eq-system-of-matrices"/> had been
+					<me>
+						\begin{pmatrix}
+					0 \\
+					1 \\
+					3 \\
+					\end{pmatrix}?
+					</me> 
+					What would be the solution to
+					<me>\begin{pmatrix}
+						1 &amp; 0 &amp; 1\\
+						1 &amp; -1 &amp; 1\\
+						1 &amp; 1 &amp; -1
+					   \end{pmatrix}
+					   \begin{pmatrix}
+					   x \\
+					   y \\
+					   z 
+					   \end{pmatrix}
+					   = \begin{pmatrix}
+					   0 \\
+					   1 \\
+					   3 \\
+					   \end{pmatrix}?</me>
+					   By the above discussion, it is just
+					   <me>\begin{pmatrix}
+						x \\
+						y \\
+						z 
+						\end{pmatrix}
+						= \begin{pmatrix}
+						0 &amp; \frac{1}{2} &amp; \frac{1}{2} \\
+						1 &amp; -1 &amp; 0\\
+						1 &amp; -\frac{1}{2} &amp; -\frac{1}{2}
+					   \end{pmatrix}
+						
+	\begin{pmatrix}
+	0 \\
+	1 \\
+	3 \\
+	\end{pmatrix} = 
+	\begin{pmatrix}
+	2 \\
+	-1 \\
+	-2\\
+	\end{pmatrix}
+	.</me>
+	This illustrates why once you have found the inverse of a given matrix, you can use it to solve many
+	different systems easily.
+</p>
+			</statement>
+		</example>
 	</subsection>
+	<exercises xml:id="exercises-11-3"><title>Exercises</title>
+	<!--TO DO ex up to 24 in book section go in 11.2-->
+	
+		
+	</exercises>
 </section>
