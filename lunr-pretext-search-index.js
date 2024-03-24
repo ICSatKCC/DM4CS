@@ -7,7 +7,7 @@ var ptx_lunr_docs = [
   "type": "Colophon",
   "number": "",
   "title": "Colophon",
-  "body": " 1st Edition - version 2  icsatkcc.github.io\/Discrete-Math-for-Computer-Science\/  copyright   Unless otherwise indicated below, this work is a deriviative of Applied Discrete Structures by Al Doerr and Ken Levasseur licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License .  Webwork exercises marked with WebWork Open Problem are contributions to the WeBWorK Open Problem Library , licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License by the author(s) indicated in the source file for each problem. Source files retrieved from https:\/\/github.com\/openwebwork\/webwork-open-problem-library .  Chapter 2.5 is a deriviative of Chapter 1.5 of Discrete Mathematics: An Open Introduction by Oscar Levin licensed under a Creative Commons Attribution-ShareAlike 4.0 International License .   "
+  "body": " 1st Edition - version 2   https:\/\/icsatkcc.github.io\/DM4CS\/dm4cs.html   copyright   Unless otherwise indicated below, this work is a deriviative of Applied Discrete Structures by Al Doerr and Ken Levasseur licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License .  Webwork exercises marked with WebWork Open Problem are contributions to the WeBWorK Open Problem Library , licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License by the author(s) indicated in the source file for each problem. Source files retrieved from https:\/\/github.com\/openwebwork\/webwork-open-problem-library .  Chapter 2.5 is a deriviative of Chapter 1.5 of Discrete Mathematics: An Open Introduction by Oscar Levin licensed under a Creative Commons Attribution-ShareAlike 4.0 International License .   "
 },
 {
   "id": "frontmatter-3",
@@ -7621,7 +7621,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "11.1",
   "title": "Systems of Equations",
-  "body": " Systems of Equations  Systems of Equations   In this section we will learn how to solve multiple linear equations with multiple unknowns using matrices.    Elementary Operations  Consider the following example.   Solution Set  Solution Set  Find and such that   The set of ordered pairs, (x, y) which solve both equations is called the solution set .  You can verify that is a solution to the above system. The interesting question is this: If you were not given this information to verify, how could you determine the solution? You can do this by using the following basic operations on the equations, none of which change the set of solutions of the system of equations.    Elementary Operations  Elementary Operations   Elementary operations are those operations consisting of the following.   Interchange the order in which the equations are listed.    Multiply any equation by a nonzero number.    Replace any equation with itself added to a multiple of another equation.       To illustrate the third of these operations on this particular system, consider the following.  The system has the same solution set as the system  To obtain the second system, take the second equation of the first system and add times the first equation to obtain . Now, this clearly shows that and so it follows from the other equation that and so .   Of course a linear system may involve many equations and many variables. The solution set is still the collection of solutions to the equations. In every case, the above operations of do not change the set of solutions to the system of linear equations.    Suppose you have two equations, involving the variables,  where and are expressions involving the variables and and are constants. (In the above example there are only two variables, and and while .) Then the system has the same solution set as Also the system has the same solutions as the system, . The system has the same solution as the system provided .    If solves then it solves the first equation in . Also, it satisfies and so, since it also solves it must solve . Therefore, if solves it must also solve . On the other hand, if it solves the system and , then and so you can subtract these equal quantities from both sides of to obtain showing that it satisfies .  The second assertion of the theorem which says that the system has the same solution as the system, is seen to be true because it involves nothing more than listing the two equations in a different order. They are the same equations.  The third assertion of the theorem which says has the same solution as the system provided is verified as follows: If is a solution of , then it is a solution to because the second system only involves multiplying the equation, by . If is a solution of , then upon multiplying by the number , you find that     Stated simply, the above theorem shows that the elementary operations do not change the solution set of a system of equations.  Here is an example in which there are three equations and three variables. You want to find values for such that each of the given equations are satisfied when these values are plugged in to the equations.    Find the solutions to the system,       To solve this system replace the second equation by times the first equation added to the second. This yields the system Now take times the second and add to the third. More precisely, replace the third equation with times the second added to the third. This yields the system At this point, you can tell what the solution is. This system has the same solution as the original system and in the above, . Then using this in the second equation, it follows and so . Now using this in the top equation yields and so . This process is called back substitution .  Alternatively, you could have continued as follows. Add times the bottom equation to the middle and then add times the bottom to the top. This yields Now add times the second to the top. This yields a system which has the same solution set as the original system. This avoided back substitution and led to the same solution set.       Gauss Elimination  Gauss Elimination  A less cumbersome way to represent a linear system is to write it as an augmented matrix . For example the linear system in can be written as It has exactly the same information as the original system but here it is understood there is an column , a column, , and a column, . The rows correspond to the equations in the system. Thus the top row in the augmented matrix corresponds to the equation, . Now when you replace an equation with a multiple of another equation added to itself, you are just taking a row of this augmented matrix and replacing it with a multiple of another row added to it. Thus the first step in solving would be to take times the first row of the augmented matrix above and add it to the second row,  Note how this corresponds to the first step in solving . Next take (-2) times the second row and add to the third, This augmented matrix corresponds to the system which is the same as the second step in solving . By back substitution you obtain the solution , , and .  In general a linear system is of the form  where the are variables and the and are constants. This system can be represented by the augmented matrix Changes to a system of equations as a result of an elementary operation translate into changes of an augmented matrix resulting from a row operation. Note that implies that the row operations deliver an augmented matrix for a system of equations which has the same solution set as the original system.   Row Operations   Row Operations    The row operations consist of the following   Switch two rows.    Multiply a row by a nonzero number.    Replace a row by a multiple of another row added to it.        Gauss elimination  Gauss Elimination  is a systematic procedure to simplify an augmented matrix to a reduced form. In the following definition, the term  leading entry  refers to the first nonzero entry of a row when scanning the row from left to right.   Echelon Form   Echelon Form    An augmented matrix is in echelon form if   All nonzero rows are above any rows of zeros.    Each leading entry of a row is in a column to the right of the leading entries of any rows above it.       How do you know when to stop doing row operations? You might stop when you have obtained an echelon form as described above, but you certainly should stop doing row operations if you have gotten a matrix in row reduced echelon form described next.   Row Reduced Echelon Form   Row Reduced Echelon Form    An augmented matrix is in row reduced echelon form if   All nonzero rows are above any rows of zeros.    Each leading entry of a row is in a column to the right of the leading entries of any rows above it.    All entries in a column above and below a leading entry are zero.    Each leading entry is a 1, the only nonzero entry in its column.        Matrices in Row Reduced Echelon Form   Here are some matrices which are in row reduced echelon form. .     Matrices in Echelon Form   Here are matrices in echelon form which are not in row reduced echelon form but which are in echelon form.     Matrices not in Echelon Form   Here are matrices which are not in echelon form.     Pivot Positions and Pivot Columns   Pivot Position    Pivot Column    A pivot position in a matrix is the location of a leading entry in an echelon form resulting from the application of row operations to the matrix. A pivot column is a column that contains a pivot position.    For example consider the following.   Putting a Matrix into Row Reduced Echelon Form   Suppose Where are the pivot positions and pivot columns?    Replace the second row by -3 times the first added to the second. This yields This is not in reduced echelon form so replace the bottom row by -4 times the top row added to the bottom. This yields This is still not in reduced echelon form. Replace the bottom row by -1 times the middle row added to the bottom. This yields which is in echelon form, although not in reduced echelon form. Therefore, the pivot positions in the original matrix are the locations corresponding to the first row and first column and the second row and second columns as shown in the following: Thus the pivot columns in the matrix are the first two columns.    The following is the algorithm for obtaining a matrix which is in row reduced echelon form.    This algorithm tells how to start with a matrix and do row operations on it in such a way as to end up with a matrix in row reduced echelon form.   Find the first nonzero column from the left. This is the first pivot column. The position at the top of the first pivot column is the first pivot position. Switch rows if necessary to place a nonzero number in the first pivot position.    Use row operations to zero out the entries below the first pivot position.    Ignore the row containing the most recent pivot position identified and the rows above it. Repeat steps 1 and 2 to the remaining sub-matrix, the rectangular array of numbers obtained from the original matrix by deleting the rows you just ignored. Repeat the process until there are no more rows to modify. The matrix will then be in echelon form.    Moving from right to left, use the nonzero elements in the pivot positions to zero out the elements in the pivot columns which are above the pivots.    Divide each nonzero row by the value of the leading entry. The result will be a matrix in row reduced echelon form.   This row reduction procedure applies to both augmented matrices and non augmented matrices. There is nothing special about the augmented column with respect to the row reduction procedure.      Here is a matrix. Do row reductions till you obtain a matrix in echelon form. Then complete the process by producing one in row reduced echelon form.    The pivot column is the second. Hence the pivot position is the one in the first row and second column. Switch the first two rows to obtain a nonzero entry in this pivot position.   Step two is not necessary because all the entries below the first pivot position in the resulting matrix are zero. Now ignore the top row and the columns to the left of this first pivot position. Thus you apply the same operations to the smaller matrix   The next pivot column is the third corresponding to the first in this smaller matrix and the second pivot position is therefore, the one which is in the second row and third column.  In this case it is not necessary to switch any rows to place a nonzero entry in this position because there is already a nonzero entry there. Multiply the third row of the original matrix by -2 and then add the second row to it. This yields   The next matrix the steps in the algorithm are applied to is   The first pivot column is the first column in this case and no switching of rows is necessary because there is a nonzero entry in the first pivot position. Therefore, the algorithm yields for the next step   Now the algorithm will be applied to the matrix There is only one column and it is nonzero so this single column is the pivot column. Therefore, the algorithm yields the following matrix for the echelon form.   To complete placing the matrix in reduced echelon form, multiply the third row by 3 and add -2 times the fourth row to it. This yields   Next multiply the second row by 3 and take 2 times the fourth row and add to it. Then add the fourth row to the first.   Next work on the fourth column in the same way.   Take times the second row and add to the first.   Finally, divide by the value of the leading entries in the nonzero rows.     The above algorithm is the way a computer would obtain a reduced echelon form for a given matrix. It is not necessary for you to pretend you are a computer but if you like to do so, the algorithm described above will work. The main idea is to do row operations in such a way as to end up with a matrix in echelon form or row reduced echelon form because when this has been done, the resulting augmented matrix will allow you to describe the solutions to the linear system of equations in a meaningful way. When you do row operations until you obtain row reduced echelon form, the process is called the Gauss Jordan method  Gauss Jordan Method  . Otherwise, it is called Gauss elimination .    Give the complete solution to the system of equations, , , and .    The augmented matrix for this system is   Multiply the second row by 2, the first row by 5, and then take (-1) times the first row and add to the second. Then multiply the first row by 1\/5. This yields   Switch the last two rows to get   then take -3 times the top added to 2 times the middle to get .  Multiply bottom by 19 and take the second row times -1 added to the bottom. This gives a row of zeros with -2 at the right end, representing the equation 0x + 0y + 0z = -2 which has no solution so there is no solution to this system of equations. When this happens, the system is called inconsistent . In this case it is very easy to describe the solution set. The system has no solution.    Here is another example based on the use of row operations.    Give the complete solution to the system of equations, , , and .    The augmented matrix of this system is   Replace the last row with 2 times the top row added to 3 times the bottom row combining two row operations. This gives The entry 3 in this sequence of row operations is called the pivot . It is used to create zeros in the other places of the column.  Next take -1 times the middle row and add to the bottom. Here the 1 in the second row is the pivot. This is in reduced echelon form. The equations corresponding to this reduced echelon form are and . Apparently can equal any number. Lets call this number .  In this context is called a parameter .  Therefore, the solution set of this system is , , and where is completely arbitrary. The system has an infinite set of solutions which are given in the above simple way. This is what it is all about, finding the solutions to the system.    There is some terminology connected to this which is useful. Recall how each column corresponds to a variable in the original system of equations. The variables corresponding to a pivot column are called basic variables . The other variables are called free variables . In there was one free variable, , and two basic variables, and . In de- scribing the solution to the system of equations, the free variables are assigned a parameter. In this parameter was . Sometimes there are many free variables and in these cases, you need to use many parameters. Here is another example.    Find the solution to the system       The augmented matrix is   Take -1 times the first row and add to the second. Then take -1 times the first row and add to the third. This yields   Now add the second row to the bottom row This matrix is in echelon form and you see the basic variables are and while the free variables are and . Assign to and to . Then the second row yields the equation, while the top equation yields the equation, and so since , this gives showing that , , , and . One can write this in the form This is another example of a system which has an infinite solution set but this time the solution set depends on two parameters, not one.  Most people find it less confusing in the case of an infinite solution set to first place the augmented matrix in row reduced echelon form rather than just echelon form before seeking to write down the description of the solution. In the above, this means we don't stop with the echelon form above. Instead we first place it in reduced echelon form as follows. Then the solution is from the second row and from the first. Thus letting and , the solution as is given previously.    The number of free variables is always equal to the number of different parameters used to describe the solution. If there are no free variables, then either there is no solution as in the case where row operations yield an echelon form like or there is a unique solution as in the case where row operations yield an echelon form like Also, sometimes there are free variables and no solution as in the following: There are a lot of cases to consider but it is not necessary to make a major production of this. Do row operations till you obtain a matrix in echelon form or reduced echelon form and determine whether there is a solution. If there is, see if there are free variables. In this case, there will be infinitely many solutions. Find them by assigning different parameters to the free variables and obtain the solution. If there are no free variables, then there will be a unique solution which is easily determined once the augmented matrix is in echelon or row reduced echelon form. In every case, the process yields a straightforward way to describe the solutions to the linear system. As indicated above, you are probably less likely to become confused if you place the augmented matrix in row reduced echelon form rather than just echelon form.  In summary,   System of Linear Equations   System of Linear Equations    A system of linear equations is a list of equations, where are numbers, and is a number. The above is a system of equations in the variables, . Nothing is said about the relative size of and . Written more simply in terms of summation notation, the above can be written in the form It is desired to find solving each of the equations listed.    As illustrated above, such a system of linear equations may have a unique solution, no solution, or infinitely many solutions and these are the only three cases which can occur for any linear system. Furthermore, you do exactly the same things to solve any linear system. You write the augmented matrix and do row operations until you get a simpler system in which it is possible to see the solution, usually obtaining a matrix in echelon or reduced echelon form. All is based on the observation that the row operations do not change the solution set. You can have more equations than variables, fewer equations than variables, etc. It doesn't matter. You always set up the augmented matrix and go to work on it.    A system of linear equations is called consistent if there exists a solution. It is called inconsistent if there is no solution.    These are reasonable words to describe the situations of having or not having a solution. If you think of each equation as a condition which must be satisfied by the variables, con- sistent would mean there is some choice of variables which can satisfy all the conditions. Inconsistent would mean there is no choice of the variables which can satisfy each of the conditions.    Exercises   Find the point which lies on both lines, and .   Set up augmented matrix: Add the first line to the second. Divide line two by  So . Backsubstituting: , so . Therefore is the point .    Solve Exercise 1 graphically. That is, graph each line and see where they intersect.     Graph of Exercise 11.1.1   Graph of lines described in Exercise 11.1.1        Find the point of intersection of the two lines and .    Solve Exercise 3 graphically. That is, graph each line and see where they intersect.    Do the three lines, , , and have a common point of intersection? If so, find the point and if not, tell why they don’t have such a common point of intersection   Set up augmented matrix: Add the first line to the third. Add the first line to the second. Add the second line to the third. Divide line two by  So . Backsubstituting to line one: , so . The common intersecting point is .    Do the three planes, , , and have a common point of intersection? If so, find one and if not, tell why there is no such point.    You have a system of equations in two variables, . Explain the geometric significance of   No solution.    A unique solution.    An infinite number of solutions.         No solution. The lines are parallel.    A unique solution. The lines must intersect.    An infinite number of solutions. The lines must be the same line.       If a system of equations has more equations than variables, can it have a solution? If so, give an example and if not, tell why not.    Find such that is the augmented matrix of an inconsistent matrix.   What we want is for one of the rows to be all zeros except for the last term. If we multiply the top row by and add that to the bottom row, we get We want to make an such that the . Solving for , we get 4. which simplifies to , which is inconsistent.    Find such that is the augmented matrix of a consistent matrix.    Determine if the system is consistent. If so, is the solution unique?       We have the corresponding matrix:   Add row 1 to row 4:   Add row 1 to row 3:   Add row 1 to row 2:   Add row 2 to row 3:   Add row 2 to row 4:   Therefore we see that we have a problem because rows 3 and 4 are saying and . Or we could keep going with the row operations and add row 3 to row 4: Add row 2 to row 4: which then definitively shows that the system is not consistent.    Determine if the system is consistent. If so, is the solution unique?        Find the general solution of the system whose augmented matrix is    Adding row 1 to row 3:   Adding row 1 to row 2:   Adding row 2 to row 3:   Multiplying row 3 by :   So , continuing row operations: add row 3 to row 2 So , continuing row operations: add row 2 to row 1 So .  The solution is then     Find the general solution of the system whose augmented matrix is     Give the complete solution to the system of equations, , , and .   We have the corresponding augmented matrix: Add row one to row 2: Add row one to row 3: Multiply row 2 by and row 3 by So.... . Add row 2 to row 3: This shows that is going to be a free variable. Assign to .The top row yields the equation , since , this gives . Solving for we get , so the final solution can be written:     Give the complete solution to the system of equations, , , and .    "
+  "body": " Systems of Equations  Systems of Equations   In this section we will learn how to solve multiple linear equations with multiple unknowns using matrices.    Elementary Operations  Consider the following example.   Solution Set  Solution Set  Find and such that   The set of ordered pairs, (x, y) which solve both equations is called the solution set .  You can verify that is a solution to the above system. The interesting question is this: If you were not given this information to verify, how could you determine the solution? You can do this by using the following basic operations on the equations, none of which change the set of solutions of the system of equations.    Elementary Operations  Elementary Operations   Elementary operations are those operations consisting of the following.   Interchange the order in which the equations are listed.    Multiply any equation by a nonzero number.    Replace any equation with itself added to a multiple of another equation.       To illustrate the third of these operations on this particular system, consider the following.  The system has the same solution set as the system  To obtain the second system, take the second equation of the first system and add times the first equation to obtain . Now, this clearly shows that and so it follows from the other equation that and so .   Of course a linear system may involve many equations and many variables. The solution set is still the collection of solutions to the equations. In every case, the above operations of do not change the set of solutions to the system of linear equations.    Suppose you have two equations, involving the variables,  where and are expressions involving the variables and and are constants. (In the above example there are only two variables, and and while .) Then the system has the same solution set as Also the system has the same solutions as the system, . The system has the same solution as the system provided .    If solves then it solves the first equation in . Also, it satisfies and so, since it also solves it must solve . Therefore, if solves it must also solve . On the other hand, if it solves the system and , then and so you can subtract these equal quantities from both sides of to obtain showing that it satisfies .  The second assertion of the theorem which says that the system has the same solution as the system, is seen to be true because it involves nothing more than listing the two equations in a different order. They are the same equations.  The third assertion of the theorem which says has the same solution as the system provided is verified as follows: If is a solution of , then it is a solution to because the second system only involves multiplying the equation, by . If is a solution of , then upon multiplying by the number , you find that     Stated simply, the above theorem shows that the elementary operations do not change the solution set of a system of equations.  Here is an example in which there are three equations and three variables. You want to find values for such that each of the given equations are satisfied when these values are plugged in to the equations.    Find the solutions to the system,       To solve this system replace the second equation by times the first equation added to the second. This yields the system Now take times the second and add to the third. More precisely, replace the third equation with times the second added to the third. This yields the system At this point, you can tell what the solution is. This system has the same solution as the original system and in the above, . Then using this in the second equation, it follows and so . Now using this in the top equation yields and so . This process is called back substitution .  Alternatively, you could have continued as follows. Add times the bottom equation to the middle and then add times the bottom to the top. This yields Now add times the second to the top. This yields a system which has the same solution set as the original system. This avoided back substitution and led to the same solution set.       Gauss Elimination  Gauss Elimination  A less cumbersome way to represent a linear system is to write it as an augmented matrix . For example the linear system in can be written as It has exactly the same information as the original system but here it is understood there is an column , a column, , and a column, . The rows correspond to the equations in the system. Thus the top row in the augmented matrix corresponds to the equation, . Now when you replace an equation with a multiple of another equation added to itself, you are just taking a row of this augmented matrix and replacing it with a multiple of another row added to it. Thus the first step in solving would be to take times the first row of the augmented matrix above and add it to the second row,  Note how this corresponds to the first step in solving . Next take (-2) times the second row and add to the third, This augmented matrix corresponds to the system which is the same as the second step in solving . By back substitution you obtain the solution , , and .  In general a linear system is of the form  where the are variables and the and are constants. This system can be represented by the augmented matrix Changes to a system of equations as a result of an elementary operation translate into changes of an augmented matrix resulting from a row operation. Note that implies that the row operations deliver an augmented matrix for a system of equations which has the same solution set as the original system.   Row Operations   Row Operations    The row operations consist of the following   Switch two rows.    Multiply a row by a nonzero number.    Replace a row by a multiple of another row added to it.        Gauss elimination  Gauss Elimination  is a systematic procedure to simplify an augmented matrix to a reduced form. In the following definition, the term  leading entry  refers to the first nonzero entry of a row when scanning the row from left to right.   Echelon Form   Echelon Form    An augmented matrix is in echelon form if   All nonzero rows are above any rows of zeros.    Each leading entry of a row is in a column to the right of the leading entries of any rows above it.       How do you know when to stop doing row operations? You might stop when you have obtained an echelon form as described above, but you certainly should stop doing row operations if you have gotten a matrix in row reduced echelon form described next.   Row Reduced Echelon Form   Row Reduced Echelon Form    An augmented matrix is in row reduced echelon form if   All nonzero rows are above any rows of zeros.    Each leading entry of a row is in a column to the right of the leading entries of any rows above it.    All entries in a column above and below a leading entry are zero.    Each leading entry is a 1, the only nonzero entry in its column.        Matrices in Row Reduced Echelon Form   Here are some matrices which are in row reduced echelon form. .     Matrices in Echelon Form   Here are matrices in echelon form which are not in row reduced echelon form but which are in echelon form.     Matrices not in Echelon Form   Here are matrices which are not in echelon form.     Pivot Positions and Pivot Columns   Pivot Position    Pivot Column    A pivot position in a matrix is the location of a leading entry in an echelon form resulting from the application of row operations to the matrix. A pivot column is a column that contains a pivot position.    For example consider the following.   Putting a Matrix into Row Reduced Echelon Form   Suppose Where are the pivot positions and pivot columns?    Replace the second row by -3 times the first added to the second. This yields This is not in reduced echelon form so replace the bottom row by -4 times the top row added to the bottom. This yields This is still not in reduced echelon form. Replace the bottom row by -1 times the middle row added to the bottom. This yields which is in echelon form, although not in reduced echelon form. Therefore, the pivot positions in the original matrix are the locations corresponding to the first row and first column and the second row and second columns as shown in the following: Thus the pivot columns in the matrix are the first two columns.    The following is the algorithm for obtaining a matrix which is in row reduced echelon form.    This algorithm tells how to start with a matrix and do row operations on it in such a way as to end up with a matrix in row reduced echelon form.   Find the first nonzero column from the left. This is the first pivot column. The position at the top of the first pivot column is the first pivot position. Switch rows if necessary to place a nonzero number in the first pivot position.    Use row operations to zero out the entries below the first pivot position.    Ignore the row containing the most recent pivot position identified and the rows above it. Repeat steps 1 and 2 to the remaining sub-matrix, the rectangular array of numbers obtained from the original matrix by deleting the rows you just ignored. Repeat the process until there are no more rows to modify. The matrix will then be in echelon form.    Moving from right to left, use the nonzero elements in the pivot positions to zero out the elements in the pivot columns which are above the pivots.    Divide each nonzero row by the value of the leading entry. The result will be a matrix in row reduced echelon form.   This row reduction procedure applies to both augmented matrices and non augmented matrices. There is nothing special about the augmented column with respect to the row reduction procedure.      Here is a matrix. Do row reductions till you obtain a matrix in echelon form. Then complete the process by producing one in row reduced echelon form.    The pivot column is the second. Hence the pivot position is the one in the first row and second column. Switch the first two rows to obtain a nonzero entry in this pivot position.   Step two is not necessary because all the entries below the first pivot position in the resulting matrix are zero. Now ignore the top row and the columns to the left of this first pivot position. Thus you apply the same operations to the smaller matrix   The next pivot column is the third corresponding to the first in this smaller matrix and the second pivot position is therefore, the one which is in the second row and third column.  In this case it is not necessary to switch any rows to place a nonzero entry in this position because there is already a nonzero entry there. Multiply the third row of the original matrix by -2 and then add the second row to it. This yields   The next matrix the steps in the algorithm are applied to is   The first pivot column is the first column in this case and no switching of rows is necessary because there is a nonzero entry in the first pivot position. Therefore, the algorithm yields for the next step   Now the algorithm will be applied to the matrix There is only one column and it is nonzero so this single column is the pivot column. Therefore, the algorithm yields the following matrix for the echelon form.   To complete placing the matrix in reduced echelon form, multiply the third row by 3 and add -2 times the fourth row to it. This yields   Next multiply the second row by 3 and take 2 times the fourth row and add to it. Then add the fourth row to the first.   Next work on the fourth column in the same way.   Take times the second row and add to the first.   Finally, divide by the value of the leading entries in the nonzero rows.     The above algorithm is the way a computer would obtain a reduced echelon form for a given matrix. It is not necessary for you to pretend you are a computer but if you like to do so, the algorithm described above will work. The main idea is to do row operations in such a way as to end up with a matrix in echelon form or row reduced echelon form because when this has been done, the resulting augmented matrix will allow you to describe the solutions to the linear system of equations in a meaningful way. When you do row operations until you obtain row reduced echelon form, the process is called the Gauss Jordan method  Gauss Jordan Method  . Otherwise, it is called Gauss elimination .    Give the complete solution to the system of equations, , , and .    The augmented matrix for this system is   Multiply the second row by 2, the first row by 5, and then take (-1) times the first row and add to the second. Then multiply the first row by 1\/5. This yields   Switch the last two rows to get   then take -3 times the top added to 2 times the middle to get .  Multiply bottom by 19 and take the second row times -1 added to the bottom. This gives a row of zeros with -2 at the right end, representing the equation 0x + 0y + 0z = -2 which has no solution so there is no solution to this system of equations. When this happens, the system is called inconsistent . In this case it is very easy to describe the solution set. The system has no solution.    Here is another example based on the use of row operations.    Give the complete solution to the system of equations, , , and .    The augmented matrix of this system is   Replace the last row with 2 times the top row added to 3 times the bottom row combining two row operations. This gives The entry 3 in this sequence of row operations is called the pivot . It is used to create zeros in the other places of the column.  Next take -1 times the middle row and add to the bottom. Here the 1 in the second row is the pivot. This is in reduced echelon form. The equations corresponding to this reduced echelon form are and . Apparently can equal any number. Lets call this number .  In this context is called a parameter .  Therefore, the solution set of this system is , , and where is completely arbitrary. The system has an infinite set of solutions which are given in the above simple way. This is what it is all about, finding the solutions to the system.    There is some terminology connected to this which is useful. Recall how each column corresponds to a variable in the original system of equations. The variables corresponding to a pivot column are called basic variables . The other variables are called free variables . In there was one free variable, , and two basic variables, and . In de- scribing the solution to the system of equations, the free variables are assigned a parameter. In this parameter was . Sometimes there are many free variables and in these cases, you need to use many parameters. Here is another example.    Find the solution to the system       The augmented matrix is   Take -1 times the first row and add to the second. Then take -1 times the first row and add to the third. This yields   Now add the second row to the bottom row This matrix is in echelon form and you see the basic variables are and while the free variables are and . Assign to and to . Then the second row yields the equation, while the top equation yields the equation, and so since , this gives showing that , , , and . One can write this in the form This is another example of a system which has an infinite solution set but this time the solution set depends on two parameters, not one.  Most people find it less confusing in the case of an infinite solution set to first place the augmented matrix in row reduced echelon form rather than just echelon form before seeking to write down the description of the solution. In the above, this means we don't stop with the echelon form above. Instead we first place it in reduced echelon form as follows. Then the solution is from the second row and from the first. Thus letting and , the solution as is given previously.    The number of free variables is always equal to the number of different parameters used to describe the solution. If there are no free variables, then either there is no solution as in the case where row operations yield an echelon form like or there is a unique solution as in the case where row operations yield an echelon form like Also, sometimes there are free variables and no solution as in the following: There are a lot of cases to consider but it is not necessary to make a major production of this. Do row operations till you obtain a matrix in echelon form or reduced echelon form and determine whether there is a solution. If there is, see if there are free variables. In this case, there will be infinitely many solutions. Find them by assigning different parameters to the free variables and obtain the solution. If there are no free variables, then there will be a unique solution which is easily determined once the augmented matrix is in echelon or row reduced echelon form. In every case, the process yields a straightforward way to describe the solutions to the linear system. As indicated above, you are probably less likely to become confused if you place the augmented matrix in row reduced echelon form rather than just echelon form.  In summary,   System of Linear Equations   System of Linear Equations    A system of linear equations is a list of equations, where are numbers, and is a number. The above is a system of equations in the variables, . Nothing is said about the relative size of and . Written more simply in terms of summation notation, the above can be written in the form It is desired to find solving each of the equations listed.    As illustrated above, such a system of linear equations may have a unique solution, no solution, or infinitely many solutions and these are the only three cases which can occur for any linear system. Furthermore, you do exactly the same things to solve any linear system. You write the augmented matrix and do row operations until you get a simpler system in which it is possible to see the solution, usually obtaining a matrix in echelon or reduced echelon form. All is based on the observation that the row operations do not change the solution set. You can have more equations than variables, fewer equations than variables, etc. It doesn't matter. You always set up the augmented matrix and go to work on it.    A system of linear equations is called consistent if there exists a solution. It is called inconsistent if there is no solution.    These are reasonable words to describe the situations of having or not having a solution. If you think of each equation as a condition which must be satisfied by the variables, con- sistent would mean there is some choice of variables which can satisfy all the conditions. Inconsistent would mean there is no choice of the variables which can satisfy each of the conditions.     Exercises   Find the point which lies on both lines, and .   Set up augmented matrix: Add the first line to the second. Divide line two by  So . Backsubstituting: , so . Therefore is the point .    Solve Exercise 1 graphically. That is, graph each line and see where they intersect.     Graph of Exercise 11.1.1   Graph of lines described in Exercise 11.1.1        Find the point of intersection of the two lines and .    Solve Exercise 3 graphically. That is, graph each line and see where they intersect.    Do the three lines, , , and have a common point of intersection? If so, find the point and if not, tell why they don’t have such a common point of intersection   Set up augmented matrix: Add the first line to the third. Add the first line to the second. Add the second line to the third. Divide line two by  So . Backsubstituting to line one: , so . The common intersecting point is .    Do the three planes, , , and have a common point of intersection? If so, find one and if not, tell why there is no such point.    You have a system of equations in two variables, . Explain the geometric significance of   No solution.    A unique solution.    An infinite number of solutions.         No solution. The lines are parallel.    A unique solution. The lines must intersect.    An infinite number of solutions. The lines must be the same line.       If a system of equations has more equations than variables, can it have a solution? If so, give an example and if not, tell why not.    Find such that is the augmented matrix of an inconsistent matrix.   What we want is for one of the rows to be all zeros except for the last term. If we multiply the top row by and add that to the bottom row, we get We want to make an such that the . Solving for , we get 4. which simplifies to , which is inconsistent.    Find such that is the augmented matrix of a consistent matrix.    Determine if the system is consistent. If so, is the solution unique?       We have the corresponding matrix:   Add row 1 to row 4:   Add row 1 to row 3:   Add row 1 to row 2:   Add row 2 to row 3:   Add row 2 to row 4:   Therefore we see that we have a problem because rows 3 and 4 are saying and . Or we could keep going with the row operations and add row 3 to row 4: Add row 2 to row 4: which then definitively shows that the system is not consistent.    Determine if the system is consistent. If so, is the solution unique?        Find the general solution of the system whose augmented matrix is    Adding row 1 to row 3:   Adding row 1 to row 2:   Adding row 2 to row 3:   Multiplying row 3 by :   So , continuing row operations: add row 3 to row 2 So , continuing row operations: add row 2 to row 1 So .  The solution is then     Find the general solution of the system whose augmented matrix is     Give the complete solution to the system of equations, , , and .   We have the corresponding augmented matrix: Add row one to row 2: Add row one to row 3: Multiply row 2 by and row 3 by So.... . Add row 2 to row 3: This shows that is going to be a free variable. Assign to .The top row yields the equation , since , this gives . Solving for we get , so the final solution can be written:     Give the complete solution to the system of equations, , , and .    "
 },
 {
   "id": "ss-elementary-operations-3",
@@ -7999,7 +7999,304 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "11.2",
   "title": "Revisiting Matrix Arithmetic",
-  "body": " Revisiting Matrix Arithmetic   Under Construction!  "
+  "body": " Revisiting Matrix Arithmetic  Matrices  Matrix Arithmetic   In this section we will review and expand upon what we learned about matrices and matrix arithmetic in .    Addition and Scalar Multiplication of Matrices  You have now solved systems of equations by writing them in terms of an augmented matrix and then doing row operations on this augmented matrix. It turns out such rectangular arrays of numbers are important from many other different points of view. Numbers are also called scalars . In this book, numbers will generally be either real or complex numbers. I will refer to the set of numbers as F sometimes when it is not important to worry about whether the number is real or complex. Thus F can be either the real numbers R or the complex numbers C. However, most of the algebraic considerations hold for more general fields of scalars.  A matrix is a rectangular array of numbers. Several of them are referred to as matrices . For example, here is a matrix. The size or dimension of a matrix is defined as where is the number of rows and is the number of columns. The above matrix is a matrix because there are three rows and four columns. The first row is , the second row is and so forth. The first column is . When specifying the size of a matrix, you always list the number of rows before the number of columns. Also, you can remember the columns are like columns in a Greek temple. They stand upright while the rows just lie there like rows made by a tractor in a plowed field. Elements of the matrix are identified according to position in the matrix. For example, 8 is in position 2, 3 because it is in the second row and the third column. You might remember that you always list the rows before the columns by using the phrase Row man C atholic. The symbol, refers to a matrix. The entry in the row and the column of this matrix is denoted by . Using this notation on the above matrix, etc.  There are various operations which are done on matrices. Matrices can be added mul- tiplied by a scalar, and multiplied by other matrices. To illustrate scalar multiplication, consider the following example in which a matrix is being multiplied by the scalar 3. The new matrix is obtained by multiplying every entry of the original matrix by the given scalar. If is an matrix, is defined to equal .  Two matrices must be the same size to be added. The sum of two matrices is a matrix which is obtained by adding the corresponding entries. Thus Two matrices are equal exactly when they are the same size and the corresponding entries are identical. Thus because they are different sizes. As noted above, you write for the matrix whose entry is . In doing arithmetic with matrices you must define what happens in terms of the sometimes called the entries of the matrix or the components of the matrix.  The above discussion stated for general matrices is given in the following definition.   Scalar Matrix Multiplication   Scalar Matrix Multiplication    If and is a scalar, then .      .    Matrix Addition   Matrix Addition    If and are two matrices. Then where for .      To save on notation, we will often use to refer to the entry of matrix .    Zero Matrix   Zero Matrix    The zero matrix is the matrix having every entry equal to zero. It is denoted by 0.     The zero matrix is .    Matrix Equality   Matrix Equality    Let and be two matrices. Then means that the two matrices are of the same size and for and , for all and .    The following properties of matrices can be easily verified. You should do so. These properties are called the vector space axioms.   Commutative Law Of Addition.     Associative Law for Addition.     Existence of an Additive Identity     Existence of an Additive Inverse      Also for scalars, the following additional properties hold.   Distributive law over Matrix Addition.     Distributive law over Scalar Addition     Associative law for Scalar Multiplication     Rule for Multiplication by 1.      As an example, consider the Commutative Law of Addition. Let and . Why is ? Therefore, because the entries are the same. Note that the conclusion follows from the commutative law of addition of numbers.    Multiplication of Matrices  This is where things get interesting. Matrices can be thought of as a rule for making new vectors from old vectors.   Vectors   Vector    Matrices which are or are called vectors and are often denoted by a bold letter. Thus the matrix is also called a column vector . The matrix is called a row vector .    Although the following description of matrix multiplication may seem strange, it is in fact the most important and useful of the matrix operations. To begin with consider the case where a matrix is multiplied by a column vector. First consider a special case. By definition, this equals   In more general terms, Thus you take times the first column, add to times the second column, and finally times the third column. The above sum is called a linear combination of the given column vectors. These will be discussed more later. In general, a linear combination of vectors is just a sum consisting of scalars times vectors. When you multiply a matrix on the left by a vector on the right, the numbers making up the vector are just the scalars to be used in the linear combination of the columns as illustrated above.  More generally, here is the definition of how to multiply an matrix times a matrix (column vector).    Let be an matrix and be an matrix, where is an column vector. Then written as is the column vector which equals the following linear combination of columns. If the column of is then the sum above takes the form Thus the entry of is . Note that multiplication by an matrix takes an matrix, and produces an matrix (vector).    Here is another example.   Compute First of all this is of the form and so the result should be a . Note how the inside numbers cancel. To get the element in the second row and first and only column, compute You should do the rest of the problem and verify    The next task is to multiply an matrix times an matrix. Before doing so the following may be helpful.  For and matrices, in order to form the product, , the number of columns of must equal the number of rows of . Thus the form of the product must be Not the two outside numbers give the size of the product. Remember: If the two middle numbers don't match, you can't multiply the matrices!     When the number of columns of equals the number of rows of the two matrices are said to be conformable and the product is obtained as follows. Let be an matrix and let be an matrix. Then is of the form where is an matrix or column vector. Then the matrix is defined as follows: where is an matrix or column vector which gives the column of .     Multiply the following:    The first thing you need to check before doing anything else is whether it is possible to do the multiplication. The first matrix on left is a and the second matrix on right is a . Therefore, is it possible to multiply these matrices. According to the above discussion it should be a matrix of the form You know how to multiply a matrix times a vector and so you do so to obtain each of the three columns.          Multiply the following,    First check if it is possible. This is of the form . The inside numbers do not match and so you can't do this multiplication. This means that anything you write will be absolute nonsense because it is impossible to multiply these matrices in this order. Aren't they the same two matrices considered in the previous example? Yes they are. It is just that here they are in a different order. This shows something you must always remember about matrix multiplication. Order Matters! Matrix Multiplication Is Not Commutative! This is very different than multiplication of numbers!      The Entry of a Product  It is important to describe matrix multiplication in terms of entries of the matrices. What is the entry of ? It would be the entry of the column of . Thus it would be the entry of . Now and from the above defintion, the entry is In terms of pictures of the matrix, you are doing Then as explained above, the column is of the form which is an matrix or column vector which equals The second entry of this matrix is Similarly, the entry of this matrix is This shows the following definition for matrix multiplication in terms of the entries of the project coincides with     Let be an matrix and let be an matrix. Then is an matrix and Another way to write this is Note that to get you multiply the row of and the column of . In terms of the dot product from calculus, the entry of is the dot product of the row of with the column of .    I will summarize the above discussion in the following proposition which shows that the above definition delivers the earlier one in about . It is important to realize these two definitions are equivalent.    Let be an matrix. Let where each is a column vector or matrix so is an matrix. Then is an matrix and so the column of is just .    From the definition of multiplication of matrices, . However, and so, from the way we multiply a matrix times a vector, Thus, the entry from the top of is the entry in the column of showing that indeed the claim is true.      Multiply if possible .   First check to see if this is possible. It is of the form and since the inside numbers match, the two matrices are conformable and it is possible to do the multiplication. The result should be a matrix. The answer is of the form where the commas separate the columns in the resulting product. Thus the above product equals a matrix as desired. In terms of the entries and the above definition, the entry in the third row and second column of the product should equal     You should try a few more such examples to verify the above definition in terms of the entries works for other entries.  Multiply if possible .  This is not possible because it is of the form and the middle numbers don't match. In other words the two matrices are not conformable in the indicated order.    Multiply if possible .  This is possible because in this case it is of the form and the middle numbers do match so the matrices are conformable. When the multiplication is done it equals Check this and be sure you come up with the same answer.    Multiply if possible .  In this case it is of the form . The middle numbers match so you can do it. Verify       Properties of Matrix Multiplication  As pointed out above, sometimes it is possible to multiply matrices in one order but not in the other order. What if it makes sense to multiply them in either order? Will the two products be equal then?   Compare and   The first product is   The second product is You see these are not equal. Again you cannot conclude that for matrix multiplication even when multiplication is defined in both orders. However, there are some properties which do hold.     If all multiplications and additions make sense, the following hold for matrices, and scalars.     Using , Thus as claimed. Formula is entirely similar.  Formula is the associative law of multiplication. Using definition  This proves .       Matrix Transpose  Another important operation on matrices is that of taking the transpose . The following example shows what is meant by this operation, denoted by placing a as an exponent on the matrix. What happened? The first column became the first row and the second column became the second row. Thus the matrix became a matrix. The number 3 was in the second row and the first column and it ended up in the first row and second column. Here is the definition.    Let be an matrix. Then denotes the matrix which is defined as follows.        The transpose of a matrix has the following important properties.   Let be an matrix and let be a matrix. Then and if and are scalars,     From the definition, The proof of the second formula is left as an exercise.        An matrix is said to be symmetric if . It is said to be skew symmetric if .     Let Then Therefore, is symmetric.    Let Then Therefore, is skew symmetric.     Identity Matrix  There is a special matrix called and referred to as the identity matrix. It is always a square matrix, meaning the number of rows equals the number of columns and it has the property that there are ones down the main diagonal and zeroes elsewhere. Here are some identity matrices of various sizes. The first is the identity matrix, the second is the identity matrix, the third is the identity matrix, and the fourth is the identity matrix. By extension, you can likely see what the identity matrix would be. It is so important that there is a special symbol to denote the entry of the identity matrix where is the Kronecker symbol defined by It is called the identity matrix because it is a multiplicative identity in the following sense.   Suppose is an matrix and is the identity matrix. Then . If is the identity matrix, it also follows that .     and so . The other case is left as an exercise for you.       "
+},
+{
+  "id": "ss-Add-Scalar-Multi-Matrices-2",
+  "level": "2",
+  "url": "Section11_2.html#ss-Add-Scalar-Multi-Matrices-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "scalars "
+},
+{
+  "id": "ss-Add-Scalar-Multi-Matrices-3",
+  "level": "2",
+  "url": "Section11_2.html#ss-Add-Scalar-Multi-Matrices-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "matrix matrices "
+},
+{
+  "id": "ss-Add-Scalar-Multi-Matrices-5",
+  "level": "2",
+  "url": "Section11_2.html#ss-Add-Scalar-Multi-Matrices-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "entries components "
+},
+{
+  "id": "def-scalar-matrix-mult",
+  "level": "2",
+  "url": "Section11_2.html#def-scalar-matrix-mult",
+  "type": "Definition",
+  "number": "11.2.1",
+  "title": "Scalar Matrix Multiplication.",
+  "body": " Scalar Matrix Multiplication   Scalar Matrix Multiplication    If and is a scalar, then .   "
+},
+{
+  "id": "ss-Add-Scalar-Multi-Matrices-8",
+  "level": "2",
+  "url": "Section11_2.html#ss-Add-Scalar-Multi-Matrices-8",
+  "type": "Example",
+  "number": "11.2.2",
+  "title": "",
+  "body": "  .  "
+},
+{
+  "id": "def-lin-alg-matrix-addition",
+  "level": "2",
+  "url": "Section11_2.html#def-lin-alg-matrix-addition",
+  "type": "Definition",
+  "number": "11.2.3",
+  "title": "Matrix Addition.",
+  "body": " Matrix Addition   Matrix Addition    If and are two matrices. Then where for .   "
+},
+{
+  "id": "ss-Add-Scalar-Multi-Matrices-10",
+  "level": "2",
+  "url": "Section11_2.html#ss-Add-Scalar-Multi-Matrices-10",
+  "type": "Example",
+  "number": "11.2.4",
+  "title": "",
+  "body": "  To save on notation, we will often use to refer to the entry of matrix .  "
+},
+{
+  "id": "def-zero-matrix",
+  "level": "2",
+  "url": "Section11_2.html#def-zero-matrix",
+  "type": "Definition",
+  "number": "11.2.5",
+  "title": "Zero Matrix.",
+  "body": " Zero Matrix   Zero Matrix    The zero matrix is the matrix having every entry equal to zero. It is denoted by 0.   "
+},
+{
+  "id": "ss-Add-Scalar-Multi-Matrices-12",
+  "level": "2",
+  "url": "Section11_2.html#ss-Add-Scalar-Multi-Matrices-12",
+  "type": "Example",
+  "number": "11.2.6",
+  "title": "",
+  "body": " The zero matrix is .  "
+},
+{
+  "id": "def-lin-alg-matrix-equality",
+  "level": "2",
+  "url": "Section11_2.html#def-lin-alg-matrix-equality",
+  "type": "Definition",
+  "number": "11.2.7",
+  "title": "Matrix Equality.",
+  "body": " Matrix Equality   Matrix Equality    Let and be two matrices. Then means that the two matrices are of the same size and for and , for all and .   "
+},
+{
+  "id": "def-vectors",
+  "level": "2",
+  "url": "Section11_2.html#def-vectors",
+  "type": "Definition",
+  "number": "11.2.8",
+  "title": "Vectors.",
+  "body": " Vectors   Vector    Matrices which are or are called vectors and are often denoted by a bold letter. Thus the matrix is also called a column vector . The matrix is called a row vector .   "
+},
+{
+  "id": "subsec-mult-of-matrices-5",
+  "level": "2",
+  "url": "Section11_2.html#subsec-mult-of-matrices-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "linear combination "
+},
+{
+  "id": "def-matrix-vector-mult",
+  "level": "2",
+  "url": "Section11_2.html#def-matrix-vector-mult",
+  "type": "Definition",
+  "number": "11.2.9",
+  "title": "",
+  "body": "  Let be an matrix and be an matrix, where is an column vector. Then written as is the column vector which equals the following linear combination of columns. If the column of is then the sum above takes the form Thus the entry of is . Note that multiplication by an matrix takes an matrix, and produces an matrix (vector).   "
+},
+{
+  "id": "subsec-mult-of-matrices-9",
+  "level": "2",
+  "url": "Section11_2.html#subsec-mult-of-matrices-9",
+  "type": "Example",
+  "number": "11.2.10",
+  "title": "",
+  "body": " Compute First of all this is of the form and so the result should be a . Note how the inside numbers cancel. To get the element in the second row and first and only column, compute You should do the rest of the problem and verify   "
+},
+{
+  "id": "def-conformable-matrices",
+  "level": "2",
+  "url": "Section11_2.html#def-conformable-matrices",
+  "type": "Definition",
+  "number": "11.2.11",
+  "title": "",
+  "body": "  When the number of columns of equals the number of rows of the two matrices are said to be conformable and the product is obtained as follows. Let be an matrix and let be an matrix. Then is of the form where is an matrix or column vector. Then the matrix is defined as follows: where is an matrix or column vector which gives the column of .   "
+},
+{
+  "id": "subsec-mult-of-matrices-13",
+  "level": "2",
+  "url": "Section11_2.html#subsec-mult-of-matrices-13",
+  "type": "Example",
+  "number": "11.2.12",
+  "title": "",
+  "body": " Multiply the following:    The first thing you need to check before doing anything else is whether it is possible to do the multiplication. The first matrix on left is a and the second matrix on right is a . Therefore, is it possible to multiply these matrices. According to the above discussion it should be a matrix of the form You know how to multiply a matrix times a vector and so you do so to obtain each of the three columns.        "
+},
+{
+  "id": "subsec-mult-of-matrices-14",
+  "level": "2",
+  "url": "Section11_2.html#subsec-mult-of-matrices-14",
+  "type": "Example",
+  "number": "11.2.13",
+  "title": "",
+  "body": " Multiply the following,    First check if it is possible. This is of the form . The inside numbers do not match and so you can't do this multiplication. This means that anything you write will be absolute nonsense because it is impossible to multiply these matrices in this order. Aren't they the same two matrices considered in the previous example? Yes they are. It is just that here they are in a different order. This shows something you must always remember about matrix multiplication. Order Matters! Matrix Multiplication Is Not Commutative! This is very different than multiplication of numbers!   "
+},
+{
+  "id": "def-ijth-entry-of-matrix-prod",
+  "level": "2",
+  "url": "Section11_2.html#def-ijth-entry-of-matrix-prod",
+  "type": "Definition",
+  "number": "11.2.14",
+  "title": "",
+  "body": "  Let be an matrix and let be an matrix. Then is an matrix and Another way to write this is Note that to get you multiply the row of and the column of . In terms of the dot product from calculus, the entry of is the dot product of the row of with the column of .   "
+},
+{
+  "id": "prop-kth-column-is-Abk",
+  "level": "2",
+  "url": "Section11_2.html#prop-kth-column-is-Abk",
+  "type": "Proposition",
+  "number": "11.2.15",
+  "title": "",
+  "body": "  Let be an matrix. Let where each is a column vector or matrix so is an matrix. Then is an matrix and so the column of is just .    From the definition of multiplication of matrices, . However, and so, from the way we multiply a matrix times a vector, Thus, the entry from the top of is the entry in the column of showing that indeed the claim is true.    "
+},
+{
+  "id": "subsec-ijth-entry-of-matrix-prod-6",
+  "level": "2",
+  "url": "Section11_2.html#subsec-ijth-entry-of-matrix-prod-6",
+  "type": "Example",
+  "number": "11.2.16",
+  "title": "",
+  "body": " Multiply if possible .   First check to see if this is possible. It is of the form and since the inside numbers match, the two matrices are conformable and it is possible to do the multiplication. The result should be a matrix. The answer is of the form where the commas separate the columns in the resulting product. Thus the above product equals a matrix as desired. In terms of the entries and the above definition, the entry in the third row and second column of the product should equal    "
+},
+{
+  "id": "subsec-ijth-entry-of-matrix-prod-8",
+  "level": "2",
+  "url": "Section11_2.html#subsec-ijth-entry-of-matrix-prod-8",
+  "type": "Example",
+  "number": "11.2.17",
+  "title": "",
+  "body": "Multiply if possible .  This is not possible because it is of the form and the middle numbers don't match. In other words the two matrices are not conformable in the indicated order.   "
+},
+{
+  "id": "subsec-ijth-entry-of-matrix-prod-9",
+  "level": "2",
+  "url": "Section11_2.html#subsec-ijth-entry-of-matrix-prod-9",
+  "type": "Example",
+  "number": "11.2.18",
+  "title": "",
+  "body": "Multiply if possible .  This is possible because in this case it is of the form and the middle numbers do match so the matrices are conformable. When the multiplication is done it equals Check this and be sure you come up with the same answer.   "
+},
+{
+  "id": "subsec-ijth-entry-of-matrix-prod-10",
+  "level": "2",
+  "url": "Section11_2.html#subsec-ijth-entry-of-matrix-prod-10",
+  "type": "Example",
+  "number": "11.2.19",
+  "title": "",
+  "body": "Multiply if possible .  In this case it is of the form . The middle numbers match so you can do it. Verify    "
+},
+{
+  "id": "subsec-props-of-matrix-mult-3",
+  "level": "2",
+  "url": "Section11_2.html#subsec-props-of-matrix-mult-3",
+  "type": "Example",
+  "number": "11.2.20",
+  "title": "",
+  "body": " Compare and   The first product is   The second product is You see these are not equal. Again you cannot conclude that for matrix multiplication even when multiplication is defined in both orders. However, there are some properties which do hold.  "
+},
+{
+  "id": "prop-matrix-mult-distributivity",
+  "level": "2",
+  "url": "Section11_2.html#prop-matrix-mult-distributivity",
+  "type": "Proposition",
+  "number": "11.2.21",
+  "title": "",
+  "body": "  If all multiplications and additions make sense, the following hold for matrices, and scalars.     Using , Thus as claimed. Formula is entirely similar.  Formula is the associative law of multiplication. Using definition  This proves .    "
+},
+{
+  "id": "subsec-matrix-transpose-2",
+  "level": "2",
+  "url": "Section11_2.html#subsec-matrix-transpose-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "transpose "
+},
+{
+  "id": "def-matrix-transpose",
+  "level": "2",
+  "url": "Section11_2.html#def-matrix-transpose",
+  "type": "Definition",
+  "number": "11.2.22",
+  "title": "",
+  "body": "  Let be an matrix. Then denotes the matrix which is defined as follows.    "
+},
+{
+  "id": "subsec-matrix-transpose-4",
+  "level": "2",
+  "url": "Section11_2.html#subsec-matrix-transpose-4",
+  "type": "Example",
+  "number": "11.2.23",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "lem-transpose-distributivity",
+  "level": "2",
+  "url": "Section11_2.html#lem-transpose-distributivity",
+  "type": "Lemma",
+  "number": "11.2.24",
+  "title": "",
+  "body": "  Let be an matrix and let be a matrix. Then and if and are scalars,     From the definition, The proof of the second formula is left as an exercise.    "
+},
+{
+  "id": "def-symmetric-matrix",
+  "level": "2",
+  "url": "Section11_2.html#def-symmetric-matrix",
+  "type": "Definition",
+  "number": "11.2.25",
+  "title": "",
+  "body": "  An matrix is said to be symmetric if . It is said to be skew symmetric if .   "
+},
+{
+  "id": "subsec-matrix-transpose-7",
+  "level": "2",
+  "url": "Section11_2.html#subsec-matrix-transpose-7",
+  "type": "Example",
+  "number": "11.2.26",
+  "title": "",
+  "body": " Let Then Therefore, is symmetric.  "
+},
+{
+  "id": "subsec-matrix-transpose-8",
+  "level": "2",
+  "url": "Section11_2.html#subsec-matrix-transpose-8",
+  "type": "Example",
+  "number": "11.2.27",
+  "title": "",
+  "body": " Let Then Therefore, is skew symmetric.  "
+},
+{
+  "id": "subsec-identity-matrix-2",
+  "level": "2",
+  "url": "Section11_2.html#subsec-identity-matrix-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Kronecker symbol identity matrix multiplicative identity "
 },
 {
   "id": "Section11_3",
@@ -8008,7 +8305,106 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "11.3",
   "title": "Matrix Inverses",
-  "body": " Matrix Inverses   Under Construction!  "
+  "body": " Matrix Inverses     Now we come to the most useful property a matrix can have, to be invertible , meaning it has an inverse matrix . A system of linear equations only has a solution if, when it's represented in a matrix, that matrix is invertible. Matrix inverses also allow faster solving of systems of linear equations. This property is crucial for many computer science applications, such as these from the Wikipedia article: Invertible matrix :   In computer graphics and image processing, invertible matrices are fundamental for transformations. Whether rotating, scaling, or translating images, these matrices facilitate seamless manipulation, contributing to the creation of visually appealing graphics.    The world of cybersecurity relies on invertible matrices for encryption and decryption processes. Algorithms that involve matrix operations play a crucial role in securing sensitive information, making invertible matrices indispensable in cryptographic protocols.    In finance, invertible matrices find applications in portfolio optimization. Efficiently managing diverse assets and risk requires mathematical models that involve invertible matrices, ensuring robust financial strategies.    The backbone of many machine learning algorithms is formed by invertible matrices. From feature engineering to training models, these matrices contribute to the stability and efficiency of algorithms, enhancing predictive accuracy.    In data science, invertible matrices are employed for dimensionality reduction techniques. Simplifying complex datasets without losing crucial information is achieved through the application of these matrices, aiding in more manageable and insightful analyses.       Inverse Matrix   Inverse Matrix  Inverse Matrix   An matrix A has an inverse, if and only if . Such a matrix is called invertible.    It is very important to observe that the inverse of a matrix, if it exists, is unique. Another way to think of this is that if it acts like the inverse, then it is the inverse.    Suppose exists and . Then .         Unlike ordinary multiplication of numbers, it can happen that but may fail to have an inverse. This is illustrated in the following example.   A matrix without an inverse   Let . Does have an inverse?    One might think would have an inverse because it does not equal zero. However, and if existed, this could not happen because you could write  a contradiction. Thus the answer is that does not have an inverse.     Showing a matrix is an inverse   Let . Show is the inverse of .    To check this, multiply and showing that this matrix is indeed the inverse of .      Finding The Inverse Of A Matrix  In the last example, how would you find ? You wish to find a matrix such that This requires the solution to the systems of equations, and Writing the augmented matrix for these two systems gives for the first system and for the second. Let's solve the first system. Take times the first row and add to the second to get Now take times the second row and add it to the first to get Putting in the variables, this says and   Now solve the second system, ( ) to find and . Take times the first row and add to the second to get . Now take times the second row and add it to the first to get Putting in the variables, this says and Therefore, the inverse matrix is   Didn't the above seem rather repetitive? Note that exactly the same row operations were used in both systems. In each case, the end result was something of the form where is the identity and gave a column of the inverse. In the above, , the first column of the inverse was obtained first and then the second column   To simplify this procedure, you could have written and row reduced until you obtained and read off the inverse as the matrix on the right side.  This is the reason for the following simple procedure for finding the inverse of a matrix. This procedure is called the Gauss-Jordan procedure .   Gauss-Jordan Procedure  Gauss-Jordan Procedure   Suppose is an matrix. To find if it exists, form the augmented matrix and then, if possible do row operations until you obtain an matrix of the form When this has been done, . If it is impossible to row reduce to a matrix of the form , then has no inverse.    Actually, all this shows is how to find a right inverse if it exists. Later it will be shown that the right inverse is the inverse. See or the Elementary Linear Algebra book at http:\/\/www.Saylor.org. for proof of this.   Using Gauss-Jordan to find a matrix inverse   Let Find if it exists.    Set up the augmented matrix  Next take times the first row and add to the second followed by times the first row added to the last. This yields Then take 5 times the second row and add to -2 times the last row Next take the last row and add to times the top row. This yields Now take times the second row and add to the top. Finally divide the top row by , the second row by and the bottom row by 14 which yields Therefore, the inverse is     Gauss-Jordan on a matrix with no inverse   Let Find if it exists.    Write the augmented matrix  and proceed to do row operations attempting to obtain . Take (-1) times the top row and add to the second. Then take (-2) times the top row and add to the bottom. Next add (-1) times the second row to the bottom row. At this point, you can see there will be no inverse because you have obtained a row of zeros in the left half of the augmented matrix . Thus there will be no way to obtain on the left.     Checking Gauss-Jordan outcome correctness   Let Find if it exists.    Form the augmented matrix Now do row operations until the matrix on the left becomes the identity matrix. This yields after some computations, and so the inverse of A is the matrix on the right, Checking the answer is easy. Just multiply the matrices and see if it works. Always check your answer because if you are like some of us, you will usually have made a mistake.     Solving systems of equations with a matrix inverse   In this example, it is shown how to use the inverse of a matrix to find the solution to a system of equations. Consider the following system of equations. Use the inverse of a suitable matrix to give the solutions to this system.   The system of equations can be written in terms of matrices as More simply, this is of the form . Suppose you find the inverse of the matrix . Then you could multiply both sides of this equation by to obtain This gives the solution as . Note that once you have found the inverse, you can easily get the solution for different right hand sides without any effort. It is always just . In the given example, the inverse of the matrix is This was shown above in . Therefore, from what was just explained, the solution to the given system is What if the right side of had been What would be the solution to By the above discussion, it is just This illustrates why once you have found the inverse of a given matrix, you can use it to solve many different systems easily.     Exercises    "
+},
+{
+  "id": "Section11_3-2-1",
+  "level": "2",
+  "url": "Section11_3.html#Section11_3-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "invertible inverse matrix "
+},
+{
+  "id": "def-inverse-matrix",
+  "level": "2",
+  "url": "Section11_3.html#def-inverse-matrix",
+  "type": "Definition",
+  "number": "11.3.1",
+  "title": "Inverse Matrix.",
+  "body": " Inverse Matrix  Inverse Matrix   An matrix A has an inverse, if and only if . Such a matrix is called invertible.   "
+},
+{
+  "id": "thm-matrix-inverse-prop",
+  "level": "2",
+  "url": "Section11_3.html#thm-matrix-inverse-prop",
+  "type": "Theorem",
+  "number": "11.3.2",
+  "title": "",
+  "body": "  Suppose exists and . Then .        "
+},
+{
+  "id": "subsec-inverse-matrix-6",
+  "level": "2",
+  "url": "Section11_3.html#subsec-inverse-matrix-6",
+  "type": "Example",
+  "number": "11.3.3",
+  "title": "A matrix without an inverse.",
+  "body": " A matrix without an inverse   Let . Does have an inverse?    One might think would have an inverse because it does not equal zero. However, and if existed, this could not happen because you could write  a contradiction. Thus the answer is that does not have an inverse.   "
+},
+{
+  "id": "subsec-inverse-matrix-7",
+  "level": "2",
+  "url": "Section11_3.html#subsec-inverse-matrix-7",
+  "type": "Example",
+  "number": "11.3.4",
+  "title": "Showing a matrix is an inverse.",
+  "body": " Showing a matrix is an inverse   Let . Show is the inverse of .    To check this, multiply and showing that this matrix is indeed the inverse of .   "
+},
+{
+  "id": "subsec-finding-matrix-inverse-6",
+  "level": "2",
+  "url": "Section11_3.html#subsec-finding-matrix-inverse-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Gauss-Jordan procedure "
+},
+{
+  "id": "def-gauss-jordan-proc",
+  "level": "2",
+  "url": "Section11_3.html#def-gauss-jordan-proc",
+  "type": "Definition",
+  "number": "11.3.5",
+  "title": "Gauss-Jordan Procedure.",
+  "body": " Gauss-Jordan Procedure  Gauss-Jordan Procedure   Suppose is an matrix. To find if it exists, form the augmented matrix and then, if possible do row operations until you obtain an matrix of the form When this has been done, . If it is impossible to row reduce to a matrix of the form , then has no inverse.   "
+},
+{
+  "id": "subsec-finding-matrix-inverse-9",
+  "level": "2",
+  "url": "Section11_3.html#subsec-finding-matrix-inverse-9",
+  "type": "Example",
+  "number": "11.3.6",
+  "title": "Using Gauss-Jordan to find a matrix inverse.",
+  "body": " Using Gauss-Jordan to find a matrix inverse   Let Find if it exists.    Set up the augmented matrix  Next take times the first row and add to the second followed by times the first row added to the last. This yields Then take 5 times the second row and add to -2 times the last row Next take the last row and add to times the top row. This yields Now take times the second row and add to the top. Finally divide the top row by , the second row by and the bottom row by 14 which yields Therefore, the inverse is    "
+},
+{
+  "id": "subsec-finding-matrix-inverse-10",
+  "level": "2",
+  "url": "Section11_3.html#subsec-finding-matrix-inverse-10",
+  "type": "Example",
+  "number": "11.3.7",
+  "title": "Gauss-Jordan on a matrix with no inverse.",
+  "body": "Gauss-Jordan on a matrix with no inverse   Let Find if it exists.    Write the augmented matrix  and proceed to do row operations attempting to obtain . Take (-1) times the top row and add to the second. Then take (-2) times the top row and add to the bottom. Next add (-1) times the second row to the bottom row. At this point, you can see there will be no inverse because you have obtained a row of zeros in the left half of the augmented matrix . Thus there will be no way to obtain on the left.   "
+},
+{
+  "id": "ex-gauss-jordan-3",
+  "level": "2",
+  "url": "Section11_3.html#ex-gauss-jordan-3",
+  "type": "Example",
+  "number": "11.3.8",
+  "title": "Checking Gauss-Jordan outcome correctness.",
+  "body": " Checking Gauss-Jordan outcome correctness   Let Find if it exists.    Form the augmented matrix Now do row operations until the matrix on the left becomes the identity matrix. This yields after some computations, and so the inverse of A is the matrix on the right, Checking the answer is easy. Just multiply the matrices and see if it works. Always check your answer because if you are like some of us, you will usually have made a mistake.   "
+},
+{
+  "id": "subsec-finding-matrix-inverse-12",
+  "level": "2",
+  "url": "Section11_3.html#subsec-finding-matrix-inverse-12",
+  "type": "Example",
+  "number": "11.3.9",
+  "title": "Solving systems of equations with a matrix inverse.",
+  "body": " Solving systems of equations with a matrix inverse   In this example, it is shown how to use the inverse of a matrix to find the solution to a system of equations. Consider the following system of equations. Use the inverse of a suitable matrix to give the solutions to this system.   The system of equations can be written in terms of matrices as More simply, this is of the form . Suppose you find the inverse of the matrix . Then you could multiply both sides of this equation by to obtain This gives the solution as . Note that once you have found the inverse, you can easily get the solution for different right hand sides without any effort. It is always just . In the given example, the inverse of the matrix is This was shown above in . Therefore, from what was just explained, the solution to the given system is What if the right side of had been What would be the solution to By the above discussion, it is just This illustrates why once you have found the inverse of a given matrix, you can use it to solve many different systems easily.   "
 },
 {
   "id": "Section11_4",
