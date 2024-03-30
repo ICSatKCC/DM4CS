@@ -42,7 +42,7 @@
 			<m>n</m> is the number of columns.
 			The above matrix is a <m>3 \times 4</m> matrix because there are three
 			rows and four columns.
-			The first row is <m>(1 2 3 4)</m> , the second row is <m>(5 2 8 7)</m> and so forth.
+			The first row is <m>(1 \, 2 \, 3 \, 4)</m> , the second row is <m>(5 \, 2 \, 8 \, 7)</m> and so forth.
 			The first column is <m>
 			\left( \begin{array}{c}
 			1 \\
@@ -1366,4 +1366,474 @@
 			</lemma>
 		</p>
 	</subsection>
+	<exercises xml:id="exercises-11-2">
+		<title>Exercises</title>
+		<exercise number="1">
+				<statement>
+					<p> Here are some matrices:</p>
+					<me>
+						A = \begin{pmatrix}
+						1 &amp; 2 &amp; 3\\
+						2 &amp; 1 &amp; 7
+						\end{pmatrix},
+						B = 
+						\begin{pmatrix}
+						3 &amp; -1 &amp; 2\\
+						-3 &amp; 2 &amp; 1
+						\end{pmatrix},
+					</me>
+					<me>
+						C = \begin{pmatrix}
+						1 &amp; 2\\
+						3 &amp; 1 
+						\end{pmatrix},
+						D = \begin{pmatrix}
+						-1 &amp; 2\\
+						2 &amp; -3 
+						\end{pmatrix},
+						E = \begin{pmatrix}
+						2\\
+						3 
+						\end{pmatrix}
+					</me>
+					<p>
+						Find if possible <m>-3A, 3B - A, AC, CB, AE, EA.</m> If it is not possible explain why.
+					</p>
+				</statement>
+				<answer>
+					<me>
+						-3A = \begin{pmatrix}
+						-3 &amp; -6 &amp; -9\\
+						-6 &amp; -3 &amp; -21
+						\end{pmatrix}
+					</me>
+					<me>
+						3B - A = \begin{pmatrix}
+						9 &amp; -3 &amp; 6\\
+						-9 &amp; 6 &amp; 3
+						\end{pmatrix} - \begin{pmatrix}
+						1 &amp; 2 &amp; 3\\
+						2 &amp; 1 &amp; 7
+						\end{pmatrix} = 
+						\begin{pmatrix}
+						8 &amp; -5 &amp; 3\\
+						-11 &amp; 5 &amp; -4
+						\end{pmatrix} 
+					</me>
+					<me>
+						AC = \text{ not possible because } A \text{ has more rows than } C \text{ has columns.}
+					</me>
+					<me>CB = \begin{pmatrix}
+						1 &amp; 2\\
+						3 &amp; 1 
+						\end{pmatrix}\begin{pmatrix}
+						3 &amp; -1 &amp; 2\\
+						-3 &amp; 2 &amp; 1
+						\end{pmatrix} = \begin{pmatrix}
+						-3 &amp; 3 &amp; 4\\
+						6 &amp; -1 &amp; 7
+						\end{pmatrix} 
+
+					</me>
+					<me>AE = \text{ not possible because } A \text{ has more rows than } E \text{ has columns.} </me>
+					<me>
+						EA = \text{ not possible because } E \text{ has less rows than } A \text{ has columns.}
+					</me>
+				</answer>
+		</exercise>
+		<exercise number="2">
+			<statement>
+				<p> Here are some matrices:</p>
+				<me>
+					A = \begin{pmatrix}
+					1 &amp; 2\\
+					3 &amp; 2 \\
+					1 &amp; -1
+					\end{pmatrix},
+					B = 
+					\begin{pmatrix}
+					2 &amp; -5 &amp; 2\\
+					-3 &amp; 2 &amp; 1
+					\end{pmatrix},
+				</me>
+				<me>
+					C = \begin{pmatrix}
+					1 &amp; 2\\
+					5 &amp; 0 
+					\end{pmatrix},
+					D = \begin{pmatrix}
+					-1 &amp; 1\\
+					4 &amp; -3 
+					\end{pmatrix},
+					E = \begin{pmatrix}
+					1\\
+					3 
+					\end{pmatrix}
+				</me>
+				<p>
+					Find if possible <m>-3A, 3B - A, AC, CA, AE, EA, BE, DE.</m> If it is not possible explain why.
+				</p>
+			</statement>
+			</exercise>
+			<exercise number="3">
+				<statement>
+					<p> Here are some matrices:</p>
+					<me>
+						A = \begin{pmatrix}
+						1 &amp; 2 \\
+						 3 &amp; 2 \\
+						 1 &amp; -1
+						\end{pmatrix},
+						B = 
+						\begin{pmatrix}
+						2 &amp; -5 &amp; 2\\
+						-3 &amp; 2 &amp; 1
+						\end{pmatrix},
+					</me>
+					<me>
+						C = \begin{pmatrix}
+						1 &amp; 2\\
+						5 &amp; 0 
+						\end{pmatrix},
+						D = \begin{pmatrix}
+						-1 &amp; 1\\
+						4 &amp; -3 
+						\end{pmatrix},
+						E = \begin{pmatrix}
+						1\\
+						3 
+						\end{pmatrix}
+					</me>
+					<p>
+						Find if possible <m>-3A^{T}, 3B - A^{T}, AC, CA, AE, E^{T}B, BE, DE, EE^{T}, E^{T}T.</m> If it is not possible explain why.
+					</p>
+				</statement>
+				<answer>
+					<me>
+						-3A^{T} = \begin{pmatrix}
+						-3 &amp; -6 \\
+						-9 &amp; -6 \\
+						-3 &amp;  3
+						\end{pmatrix}^{T} = \begin{pmatrix}
+						-3 &amp; -9 &amp; -3\\
+						-6 &amp; -6 &amp; 3
+						\end{pmatrix} 
+					</me>
+					<me>
+						3B - A^{T} = \begin{pmatrix}
+						6 &amp; -15 &amp; 6\\
+						-9 &amp; 6 &amp; 3
+						\end{pmatrix} - \begin{pmatrix}
+						1 &amp; 3 &amp; 1\\
+						2 &amp; 2 &amp; -1
+						\end{pmatrix} = 
+						\begin{pmatrix}
+						8 &amp; -6 &amp; 5\\
+						-7 &amp; 4 &amp; 4
+						\end{pmatrix} 
+					</me>
+					<me>
+						AC = \ \begin{pmatrix}
+						1 &amp; 2 \\
+						 3 &amp; 2 \\
+						 1 &amp; -1
+						\end{pmatrix}\begin{pmatrix}
+						1 &amp; 2\\
+						5 &amp; 0 
+						\end{pmatrix} = 
+						\ \begin{pmatrix}
+						11 &amp; 2 \\
+						 13 &amp; 6 \\
+						 -4 &amp; 2
+						\end{pmatrix}
+					</me>
+
+					<me>CA = \text{ not possible because } C \text{ has less columns than } A \text{ has rows.}</me>
+
+					<me>AE = \begin{pmatrix}
+						1 &amp; 2 \\
+						 3 &amp; 2 \\
+						 1 &amp; -1
+						\end{pmatrix}\begin{pmatrix}
+						1\\
+						3 
+						\end{pmatrix} = \begin{pmatrix}
+						7\\
+						9\\
+						-2
+						\end{pmatrix} 
+
+					</me>
+
+					<me>E^{T}B =  \begin{pmatrix}
+						1 &amp;3 
+						\end{pmatrix} \begin{pmatrix}
+						2 &amp; -5 &amp; 2\\
+						-3 &amp; 2 &amp; 1
+						\end{pmatrix} =  \begin{pmatrix}
+						-7 &amp; 1 &amp; 5 
+						\end{pmatrix}</me>
+
+					<me>
+						BE = \text{ not possible because } E \text{ has less rows than } B \text{ has columns.}
+					</me>
+					<me>
+						DE = \begin{pmatrix}
+						-1 &amp; 1\\
+						4 &amp; -3 
+						\end{pmatrix}\begin{pmatrix}
+						1\\
+						3 
+						\end{pmatrix} = \begin{pmatrix}
+						2\\
+						-5 
+						\end{pmatrix} 
+					</me>
+					<me>EE^{T} = \begin{pmatrix}
+						1\\
+						3 
+						\end{pmatrix} \begin{pmatrix}
+						1 &amp; 3 
+						\end{pmatrix} = 
+						\begin{pmatrix}
+						1 &amp; 3\\
+						3 &amp; 9
+						\end{pmatrix}
+					</me>
+					<me>E^{T}E = \begin{pmatrix}
+						1 &amp; 3 
+						\end{pmatrix}
+						\begin{pmatrix}
+						1\\
+						3 
+						\end{pmatrix} = 
+						\begin{pmatrix}
+						10
+						\end{pmatrix}
+
+					</me>
+				</answer>
+		</exercise>
+		<exercise number="4">
+			<statement>
+				<p> Here are some matrices:</p>
+				<me>
+					A = \begin{pmatrix}
+					1 &amp; 2\\
+					3 &amp; 2 \\
+					1 &amp; -1
+					\end{pmatrix},
+					B = 
+					\begin{pmatrix}
+					2 &amp; -5 &amp; 2\\
+					-3 &amp; 2 &amp; 1
+					\end{pmatrix},
+				</me>
+				<me>
+					C = \begin{pmatrix}
+					1 &amp; 2\\
+					5 &amp; 0 
+					\end{pmatrix},
+					D = \begin{pmatrix}
+					-1\\
+					4 
+					\end{pmatrix},
+					E = \begin{pmatrix}
+					1\\
+					3 
+					\end{pmatrix}
+				</me>
+				<p>
+					Find if possible <m>AD, DA, D^{T}B, D^{T}BE, E^{T}D, DE^{T} .</m> If it is not possible explain why.
+				</p>
+			</statement>
+			</exercise>
+			<exercise number="5">
+				<statement>
+					<p>Let
+					<m>
+						A = \begin{pmatrix}
+						1 &amp; 1 \\
+						-2 &amp; -1 \\
+						 1 &amp; 2
+						\end{pmatrix},
+						B = 
+						\begin{pmatrix}
+						1 &amp; -1 &amp; -2\\
+						2 &amp; 1 &amp;  -2
+						\end{pmatrix},
+					</m> and <m>C = 
+						\begin{pmatrix}
+						1 &amp; 1 &amp; -3\\
+						-1 &amp; 2 &amp;  0 \\
+						-3 &amp; -1 &amp; 0
+						\end{pmatrix}</m>
+				</p>
+					
+					<p><ol marker="(a)" cols="2">
+					<li>
+						<p>
+							<m>AB</m>
+						</p>
+					</li>
+					<li>
+						<p>
+							<m>BA</m>
+						</p>
+					</li>
+					<li>
+						<p>
+							<m>AC</m>
+						</p>
+					</li>
+					<li>
+						<p>
+							<m>CA</m>
+						</p>
+					</li>
+					<li>
+						<p>
+							<m>CB</m>
+						</p>
+					</li>
+					<li>
+						<p>
+							<m>BC</m>
+						</p>
+					</li>
+					</ol>
+					</p>
+				</statement>
+				<answer>		
+					<p><ol marker="(a)">
+					<li>
+						<p>
+							<me>AB = \begin{pmatrix}
+								1 &amp; 1 \\
+								-2 &amp; -1 \\
+								 1 &amp; 2
+								\end{pmatrix}
+								\begin{pmatrix}
+								1 &amp; -1 &amp; -2\\
+								2 &amp; 1 &amp;  -2
+								\end{pmatrix} = 
+								\begin{pmatrix}
+								3 &amp; 0 &amp; -4 \\
+								-4 &amp; 1 &amp; 6 \\
+								 5 &amp; 1 &amp; -6
+								\end{pmatrix}
+							</me> 
+						</p>
+					</li>
+					<li>
+						<p>
+							<me>BA = 
+								\begin{pmatrix}
+								1 &amp; -1 &amp; -2\\
+								2 &amp; 1 &amp;  -2
+								\end{pmatrix} \begin{pmatrix}
+								1 &amp; 1 \\
+								-2 &amp; -1 \\
+								 1 &amp; 2
+								\end{pmatrix} = 
+								\begin{pmatrix}
+								-11 &amp; -8 \\
+								 4 &amp; -3
+								\end{pmatrix}
+							</me>
+						</p>
+					</li>
+					<li>
+						<p>
+							<m>AC </m> is not possible, the number of columns of <m>A</m> do not match the number of rows of <m>C</m>.
+						</p>
+					</li>
+					<li>
+						<p>
+							<me>CA=  \begin{pmatrix}
+								1 &amp; 1 &amp; -3\\
+								-1 &amp; 2 &amp;  0 \\
+								-3 &amp; -1 &amp; 0
+								\end{pmatrix}\begin{pmatrix}
+								1 &amp; 1 \\
+								-2 &amp; -1 \\
+								 1 &amp; 2
+								\end{pmatrix} = \begin{pmatrix}
+								-4 &amp; -4 \\
+								-5 &amp; 1 \\
+								 -1 &amp; -4
+								\end{pmatrix}</me>
+						</p>
+					</li>
+					<li>
+						<p>
+							<m>CB</m> is not possible because the number of columns of <m>C</m> are not the same as the number of rows of <m>B</m>.
+						</p>
+					</li>
+					<li>
+						<p>
+							<me>BC = \begin{pmatrix}
+								1 &amp; -1 &amp; -2\\
+								2 &amp; 1 &amp;  -2
+								\end{pmatrix}
+								\begin{pmatrix}
+								1 &amp; 1 &amp; -3\\
+								-1 &amp; 2 &amp;  0 \\
+								-3 &amp; -1 &amp; 0
+								\end{pmatrix} = \begin{pmatrix}
+								8 &amp; 1 &amp; -3\\
+								7 &amp; 6 &amp;  -6
+								\end{pmatrix} </me>
+						</p>
+					</li>
+					</ol>
+					</p>
+				</answer>
+		</exercise>
+		<exercise number="6">
+			<statement>
+				<p> Suppose <m>A</m> and <m>B</m> are square matrices of the same size. Which of the following are correct?
+					<ol  marker="(a)" >
+						<li>
+							<p>
+								<m>(A - B)^2 = A^2 - 2AB + B^2</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>(AB)^2 = A^2 B^2</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>(A + B)^2 = A^2 + 2AB + B^2</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>(A + B)^2 = A^2 + AB + BA + B^2</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>A^2 B^2 = A (AB) B</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>(A + B)3 = A^3 + 3A^2 B + 3AB^2 + B^3</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>(A + B) (A - B) = A^2 - B^2</m>
+							</p>
+						</li>
+					</ol>					
+				</p>
+			</statement>
+			
+		</exercise>
+		<!-- TO DO Stop at exercise  7-->
+	</exercises>
 </section>
