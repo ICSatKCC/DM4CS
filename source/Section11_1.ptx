@@ -1359,12 +1359,12 @@
 						\right).</me> So <m>y = 4/10 = 2/5</m>, continuing row operations: add <m>-2
 					*</m> row 2 to row 1 <me>\left(
 						\begin{array}{ccc|c}
-						1 \amp 0 \amp 0 \amp -8/10 \\
+						1 \amp 0 \amp 0 \amp 12/10 \\
 						0 \amp 1 \amp 0 \amp 4/10 \\
 						0 \amp 0 \amp 1 \amp -1/10 \\
 						\end{array}
-						\right).</me> So <m>x = -8/10 = -4/5</m>. </p>
-				<p> The solution is then <m>x = -4/5, y = 2/5, z = -1/10</m>
+						\right).</me> So <m>x = 12/10 = 6/5</m>. </p>
+				<p> The solution is then <m>x = 6/5, y = 2/5, z = -1/10</m>
 				</p>
 			</solution>
 

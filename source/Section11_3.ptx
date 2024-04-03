@@ -688,8 +688,197 @@ given system is
 		</example>
 	</subsection>
 	<exercises xml:id="exercises-11-3"><title>Exercises</title>
-	<!--TO DO ex up to 24 in book section go in 11.2-->
 	
-		
+	<!-- Kuttler ex 28 -->
+		<exercise number="1">
+			<statement>
+				<p>
+					Let 
+					<me>
+						A = \begin{pmatrix}
+						2 &amp; 1\\
+						-1 &amp; 3
+					   \end{pmatrix}.
+					</me>
+					Find <m>A^{-1}</m> if possible. If <m>A^{-1}</m> does not exist, determine why.
+				</p>
+			</statement>
+			<answer>
+				<p>
+					Set up augmented matrix to use Gauss-Jordan:
+					<me>
+						\left( \begin{array}{c c | c c }
+						2 &amp; 1  &amp; 1 &amp; 0\\
+						-1 &amp; 3 &amp; 0  &amp; 1
+						\end{array} \right).
+					</me>
+					Multiply row 2 by 2:
+					<me>
+						\left( \begin{array}{c c | c c }
+						2 &amp; 1  &amp; 1 &amp; 0\\
+						-2 &amp; 6 &amp; 0  &amp; 2
+						\end{array} \right).
+					</me>
+					Add row 1 to row 2:
+					<me>
+						\left( \begin{array}{c c | c c }
+						2 &amp; 1  &amp; 1 &amp; 0\\
+						0 &amp; 7 &amp; 1  &amp; 2
+						\end{array} \right).
+					</me>
+					Add divide row 2 by 7:
+					<me>
+						\left( \begin{array}{c c | c c }
+						2 &amp; 1  &amp; 1 &amp; 0\\
+						0 &amp; 1 &amp; 1/7  &amp; 2/7
+						\end{array} \right).
+					</me>
+					Subtract row 2 from row 1:
+					<me>
+						\left( \begin{array}{c c | c c }
+						2 &amp; 0  &amp; 6/7 &amp; -2/7\\
+						0 &amp; 1 &amp; 1/7  &amp; 2/7
+						\end{array} \right).
+					</me>
+					Divide row 1 by 2:
+					<me>
+						\left( \begin{array}{c c | c c }
+						1 &amp; 0  &amp; 6/14 &amp; -2/14\\
+						0 &amp; 1 &amp; 1/7  &amp; 2/7
+						\end{array} \right).
+					</me>
+					The inverse is the matrix on the right:
+					<me>
+					\begin{pmatrix}
+						6/14 &amp; -2/14\\
+						1/7 &amp; 2/7
+					   \end{pmatrix}
+					</me>
+				</p>
+				<p>
+					Check by multiplying the inverse with the original matrix:
+					<me>\begin{pmatrix}
+						2 &amp; 1\\
+						-1 &amp; 3
+					   \end{pmatrix}\begin{pmatrix}
+					   6/14 &amp; -2/14\\
+					   1/7 &amp; 2/7
+					  \end{pmatrix} = \begin{pmatrix}
+					 12/14 + 1/7 &amp; -4/14 + 2/7\\
+					 -6/14 + 3/7 &amp; 2/14 + 6/7 
+					  \end{pmatrix} = \begin{pmatrix}
+					  1 &amp; 0\\
+					  0 &amp; 1 
+					   \end{pmatrix}</me>
+					   Which is what we want.
+				</p>
+			</answer>
+		</exercise>
+		<!-- Kuttler ex 29 -->
+		<exercise number="2">
+			<statement>
+				<p>
+					Let 
+					<me>
+						A = \begin{pmatrix}
+						0 &amp; 1\\
+						5 &amp; 3
+					   \end{pmatrix}.
+					</me>
+					Find <m>A^{-1}</m> if possible. If <m>A^{-1}</m> does not exist, determine why.
+				</p>
+			</statement>
+			</exercise>
+			<exercise number="3">
+				<statement>
+					<p>
+						Let 
+						<me>
+							A = \begin{pmatrix}
+							2 &amp; 1\\
+							3 &amp; 0
+						   \end{pmatrix}.
+						</me>
+						Find <m>A^{-1}</m> if possible. If <m>A^{-1}</m> does not exist, determine why.
+					</p>
+				</statement>
+				<answer>
+					<p>
+						Set up augmented matrix to use Gauss-Jordan:
+					<me>
+						\left( \begin{array}{c c | c c }
+						2 &amp; 1  &amp; 1 &amp; 0\\
+						3 &amp; 0 &amp; 0  &amp; 1
+						\end{array} \right).
+					</me>
+						Subtract 3 times row 1 from 2 times row 2
+						<me>
+							\left( \begin{array}{c c | c c }
+							2 &amp; 1  &amp; 1 &amp; 0\\
+							0 &amp; -3 &amp; -3  &amp; 2
+							\end{array} \right).
+						</me>
+						Divide row 2 by -3
+						<me>
+							\left( \begin{array}{c c | c c }
+							2 &amp; 1  &amp; 1 &amp; 0\\
+							0 &amp; 1 &amp; 1  &amp; -2/3
+							\end{array} \right).
+						</me>
+						Subtract row 2 from row 1
+						<me>
+							\left( \begin{array}{c c | c c }
+							2 &amp; 0  &amp; 0 &amp; 2/3\\
+							0 &amp; 1 &amp; 1  &amp; -2/3
+							\end{array} \right).
+						</me>
+						Divide row 1 by 2
+						<me>
+							\left( \begin{array}{c c | c c }
+							1 &amp; 0  &amp; 0 &amp; 2/6\\
+							0 &amp; 1 &amp; 1  &amp; -2/3
+							\end{array} \right).
+						</me>
+						So the inverse matrix is
+						<me>
+							\begin{pmatrix}
+								0 &amp; 1/3\\
+								1 &amp; -2/3
+							   \end{pmatrix}
+							</me>
+					</p>
+					<p>
+						Check by multiplying the inverse with the original matrix:
+						<me>\begin{pmatrix}
+							2 &amp; 1\\
+							3 &amp; 0
+						   \end{pmatrix}\begin{pmatrix}
+						   0 &amp; 1/3\\
+						   1 &amp; -2/3
+						  \end{pmatrix} = \begin{pmatrix}
+						 0 + 1 &amp; 2/3 + -2/3\\
+						 0 + 0 &amp; 3/3 + 0 
+						  \end{pmatrix} = \begin{pmatrix}
+						  1 &amp; 0\\
+						  0 &amp; 1 
+						   \end{pmatrix}</me>
+						   Which is what we want.
+					</p>
+				</answer>
+				</exercise>
+				<exercise number="4">
+					<statement>
+						<p>
+							Let 
+							<me>
+								A = \begin{pmatrix}
+								0 &amp; 1\\
+								4 &amp; 2
+							   \end{pmatrix}.
+							</me>
+							Find <m>A^{-1}</m> if possible. If <m>A^{-1}</m> does not exist, determine why.
+						</p>
+					</statement>
+					</exercise>
 	</exercises>
 </section>

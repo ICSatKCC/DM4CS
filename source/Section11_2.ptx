@@ -1520,7 +1520,7 @@
 			</me>
 
 			<p>
-				Find if possible <m>-3A^{T}, 3B - A^{T}, AC, CA, AE, E^{T}B, BE, DE, EE^{T}, E^{T}T.</m> If it is not possible explain why.
+				Find if possible <m>-3A^{T}, 3B - A^{T}, AC, CA, AE, E^{T}B, BE, DE, EE^{T}, E^{T}E.</m> If it is not possible explain why.
 			</p>
 		</statement>
 
@@ -1914,7 +1914,7 @@
 			</p>
 
 			<p>
-				Otherwise let <m>B = begin{pmatrix}
+				Otherwise let <m>B = \begin{pmatrix}
 				x &amp; y \\
 				z &amp; w
 				\end{pmatrix}</m>, then <m>AB = 0</m> whenever <m>z = -x </m> and <m>w = -y</m>.

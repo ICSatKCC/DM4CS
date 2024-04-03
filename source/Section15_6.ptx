@@ -610,7 +610,7 @@
                     dimensions so that no edges intersect.</p>
             </statement>
         </exercise>
-        <exercise number="15">
+        <exercise number="13">
             <statement>
                 <p>Suppose you had to color the edges of an undirected graph so that for each
                     vertex, the edges that it is connected to have different colors.
