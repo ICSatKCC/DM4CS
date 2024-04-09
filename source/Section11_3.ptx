@@ -700,7 +700,7 @@ given system is
 						-1 &amp; 3
 					   \end{pmatrix}.
 					</me>
-					Find <m>A^{-1}</m> if possible. If <m>A^{-1}</m> does not exist, determine why.
+					Find <m>A^{-1}</m> if possible using the Gauss-Jordan method. If <m>A^{-1}</m> does not exist, determine why.
 				</p>
 			</statement>
 			<answer>
@@ -726,7 +726,7 @@ given system is
 						0 &amp; 7 &amp; 1  &amp; 2
 						\end{array} \right).
 					</me>
-					Add divide row 2 by 7:
+					Divide row 2 by 7:
 					<me>
 						\left( \begin{array}{c c | c c }
 						2 &amp; 1  &amp; 1 &amp; 0\\
@@ -785,7 +785,7 @@ given system is
 						5 &amp; 3
 					   \end{pmatrix}.
 					</me>
-					Find <m>A^{-1}</m> if possible. If <m>A^{-1}</m> does not exist, determine why.
+					Find <m>A^{-1}</m> if possible using the Gauss-Jordan method. If <m>A^{-1}</m> does not exist, determine why.
 				</p>
 			</statement>
 			</exercise>
@@ -799,7 +799,7 @@ given system is
 							3 &amp; 0
 						   \end{pmatrix}.
 						</me>
-						Find <m>A^{-1}</m> if possible. If <m>A^{-1}</m> does not exist, determine why.
+						Find <m>A^{-1}</m> if possible using the Gauss-Jordan method. If <m>A^{-1}</m> does not exist, determine why.
 					</p>
 				</statement>
 				<answer>
@@ -876,9 +876,11 @@ given system is
 								4 &amp; 2
 							   \end{pmatrix}.
 							</me>
-							Find <m>A^{-1}</m> if possible. If <m>A^{-1}</m> does not exist, determine why.
+							Find <m>A^{-1}</m> if possible using the Gauss-Jordan method. If <m>A^{-1}</m> does not exist, determine why.
 						</p>
 					</statement>
 					</exercise>
+
+					<!-- ADD using the Gauss-Jordan method to wording-->
 	</exercises>
 </section>
