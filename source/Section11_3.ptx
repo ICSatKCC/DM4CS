@@ -789,6 +789,7 @@ given system is
 				</p>
 			</statement>
 			</exercise>
+			<!-- Kuttler 5.30-->
 			<exercise number="3">
 				<statement>
 					<p>
@@ -866,13 +867,16 @@ given system is
 					</p>
 				</answer>
 				</exercise>
+
+
+				<!-- Kuttler 5.31 inverse does not exist -->
 				<exercise number="4">
 					<statement>
 						<p>
 							Let 
 							<me>
 								A = \begin{pmatrix}
-								0 &amp; 1\\
+								2 &amp; 1\\
 								4 &amp; 2
 							   \end{pmatrix}.
 							</me>
@@ -881,6 +885,279 @@ given system is
 					</statement>
 					</exercise>
 
-					<!-- ADD using the Gauss-Jordan method to wording-->
-	</exercises>
+
+<!--kuttler 5.35-->
+
+	<exercise number="5"> 
+		<statement>
+			<p>
+				Let
+
+				<me>
+									A = \begin{pmatrix}
+									1 &amp; 2 &amp; 3\\
+									2 &amp; 1 &amp; 4\\
+									4 &amp; 5 &amp; 10
+								   \end{pmatrix}.
+								</me>
+								Find <m>A^{-1}</m> if possible using the Gauss-Jordan method. If <m>A^{-1}</m> does not exist, determine why.
+							</p>
+			
+		</statement>
+		<answer>
+			<p>
+				Set up augmented matrix to use Gauss-Jordan:
+				<me>
+					\left( \begin{array}{c c c | c c c}
+					1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+					2 &amp; 1 &amp; 4 &amp; 0  &amp; 1 &amp; 0\\
+					4 &amp; 5 &amp; 10 &amp; 0 &amp; 0 &amp; 1\\
+					\end{array} \right).
+				</me>
+				Row 3 - 4* row 1:
+				<me>
+					\left( \begin{array}{c c c | c c c}
+					1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+					2 &amp; 1 &amp; 4 &amp; 0  &amp; 1 &amp; 0\\
+					0 &amp; -3 &amp; -2 &amp; -4 &amp; 0 &amp; 1\\
+					\end{array} \right).
+				</me>
+				Row 2 - 2* row 1:
+				<me>
+					\left( \begin{array}{c c c | c c c}
+					1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+					0 &amp; -3 &amp; -2 &amp; -2  &amp; 1 &amp; 0\\
+					0 &amp; -3 &amp; -2 &amp; -4 &amp; 0 &amp; 1\\
+					\end{array} \right).
+				</me>
+				Row 3 - row 2:
+				<me>
+					\left( \begin{array}{c c c | c c c}
+					1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+					0 &amp; -3 &amp; -2 &amp; -2  &amp; 1 &amp; 0\\
+					0 &amp; 0 &amp; 0 &amp; -6 &amp; -1 &amp; 1\\
+					\end{array} \right).
+				</me>
+				There is no inverse. The left side cannot be made into <m>I</m>.
+			</p>
+		</answer>
+	</exercise> 
+
+	<exercise number="6"> <!-- Kuttler 5.34-->
+		<statement>
+			<p>
+				Let
+
+				<me>
+									A = \begin{pmatrix}
+									1 &amp; 0 &amp; 3\\
+									2 &amp; 3 &amp; 4\\
+									1 &amp; 0 &amp; 2
+								   \end{pmatrix}.
+								</me>
+								Find <m>A^{-1}</m> if possible using the Gauss-Jordan method. If <m>A^{-1}</m> does not exist, determine why.
+							
+			</p>
+		</statement>
+		
+	</exercise>
+
+					
+	<exercise number="7"> <!-- Kuttler 5.40 part a changed matrix 33 because det sol-->
+	<statement>
+		<p>
+			Using the inverse of the matrix, find the solution to this system:
+			<me>
+				\begin{pmatrix}
+				1 &amp; 2 &amp; 3\\
+				2 &amp; 1 &amp; 4\\
+				1 &amp; 0 &amp; 2
+			   \end{pmatrix}\begin{pmatrix}
+			   x\\
+			   y\\
+			   z
+			   \end{pmatrix} = \begin{pmatrix}
+			   1\\
+			   2\\
+			   3
+			   \end{pmatrix}
+			</me>
+		</p>
+	</statement>
+	<answer>
+		<p>
+			Set up augmented matrix to use Gauss-Jordan:
+				<me>
+					\left( \begin{array}{c c c | c c c}
+					1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+					2 &amp; 1 &amp; 4 &amp; 0  &amp; 1 &amp; 0\\
+					1 &amp; 0 &amp; 2 &amp; 0 &amp; 0 &amp; 1\\
+					\end{array} \right).
+				</me>
+				Row 2 - 2 * row 1
+				<me>
+					\left( \begin{array}{c c c | c c c}
+					1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+					0 &amp; -3 &amp; -2 &amp; -2  &amp; 1 &amp; 0\\
+					1 &amp; 0 &amp; 2 &amp; 0 &amp; 0 &amp; 1\\
+					\end{array} \right).
+				</me>
+				Row 3 - row 1
+				<me>
+					\left( \begin{array}{c c c | c c c}
+					1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+					0 &amp; -3 &amp; -2 &amp; -2  &amp; 1 &amp; 0\\
+					0 &amp; -2 &amp; -1 &amp; -1 &amp; 0 &amp; 1\\
+					\end{array} \right).
+				</me>
+				Row 2 <m>* -1/3</m>
+				<me>
+					\left( \begin{array}{c c c | c c c}
+					1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+					0 &amp; 1 &amp; 2/3 &amp; 2/3  &amp; -1/3 &amp; 0\\
+					0 &amp; -2 &amp; -1 &amp; -1 &amp; 0 &amp; 1\\
+					\end{array} \right).
+				</me>
+				Row 3 <m>+ 2* </m> row 2
+				<me>
+					\left( \begin{array}{c c c | c c c}
+					1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+					0 &amp; 1 &amp; 2/3 &amp; 2/3  &amp; -1/3 &amp; 0\\
+					0 &amp; 0 &amp; 1/3 &amp; 1/3 &amp; -2/3 &amp; 1\\
+					\end{array} \right).
+				</me>
+				Row 3 <m>* 3</m>
+				<me>
+					\left( \begin{array}{c c c | c c c}
+					1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+					0 &amp; 1 &amp; 2/3 &amp; 2/3  &amp; -1/3 &amp; 0\\
+					0 &amp; 0 &amp; 1 &amp; 1 &amp; -2 &amp; 3\\
+					\end{array} \right).
+				</me>
+				Row 1 <m> - 3 *</m> row 3
+				<me>
+					\left( \begin{array}{c c c | c c c}
+					1 &amp; 2 &amp; 0  &amp; -2 &amp; 6 &amp; -9\\
+					0 &amp; 1 &amp; 2/3 &amp; 2/3  &amp; -1/3 &amp; 0\\
+					0 &amp; 0 &amp; 1 &amp; 1 &amp; -2 &amp; 3\\
+					\end{array} \right).
+				</me>
+				Row 2 <m> - 2/3 *</m> row 3
+				<me>
+					\left( \begin{array}{c c c | c c c}
+					1 &amp; 2 &amp; 0  &amp; -2 &amp; 6 &amp; -9\\
+					0 &amp; 1 &amp; 0 &amp; 0  &amp; 1 &amp; -2\\
+					0 &amp; 0 &amp; 1 &amp; 1 &amp; -2 &amp; 3\\
+					\end{array} \right).
+				</me>
+				Row 1 <m> - 2 *</m> row 2
+				<me>
+					\left( \begin{array}{c c c | c c c}
+					1 &amp; 0 &amp; 0  &amp; -2 &amp; 4 &amp; -5\\
+					0 &amp; 1 &amp; 0 &amp; 0  &amp; 1 &amp; -2\\
+					0 &amp; 0 &amp; 1 &amp; 1 &amp; -2 &amp; 3\\
+					\end{array} \right).
+				</me>
+		</p>
+		<p>
+			So the inverse matrix is
+			<me>
+				\left( \begin{array}{c c c}
+				-2 &amp; 4 &amp; -5\\
+				0  &amp; 1 &amp; -2\\
+				1 &amp; -2 &amp; 3\\
+				\end{array} \right).
+			</me>
+		</p>
+		<p>
+			<me>
+				\begin{pmatrix}
+				x\\
+				y\\
+				z\end{pmatrix} = \left( \begin{array}{c c c}
+				-2 &amp; 4 &amp; -5\\
+				0  &amp; 1 &amp; -2\\
+				1 &amp; -2 &amp; 3\\
+				\end{array} \right)\begin{pmatrix}
+				1\\
+				2\\
+				3
+				\end{pmatrix} = )\begin{pmatrix}
+				-9\\
+				-4\\
+				6
+				\end{pmatrix}
+			</me>
+			So <m>x = -9, y = -4, z = 6</m>.
+		</p>
+	</answer>
+	</exercise>
+	<exercise number="8"> <!-- Kuttler 5.40 part b -->
+		<statement>
+			<p>
+				Using the inverse of the matrix, find the solution to this system:
+				<me>
+					\begin{pmatrix}
+					1 &amp; 0 &amp; 3\\
+					2 &amp; 3 &amp; 4\\
+					1 &amp; 0 &amp; 2
+				   \end{pmatrix}\begin{pmatrix}
+				   x\\
+				   y\\
+				   z
+				   \end{pmatrix} = \begin{pmatrix}
+				   2\\
+				   0\\
+				   1
+				   \end{pmatrix}
+				</me>
+			</p>
+		</statement>
+		</exercise>
+		<exercise number="9"> <!-- Kuttler 5.40 part c, changed matrix because gives answers -->
+			<!-- TO DO CHANGE MATRIX AND WRITE SOLUTION-->
+			<statement>
+				<p>
+					Using the inverse of the matrix, find the solution to this system:
+					<me>
+						\begin{pmatrix}
+						1 &amp; 0 &amp; 3\\
+						2 &amp; 3 &amp; 4\\
+						1 &amp; 0 &amp; 2
+					   \end{pmatrix}\begin{pmatrix}
+					   x\\
+					   y\\
+					   z
+					   \end{pmatrix} = \begin{pmatrix}
+					   1\\
+					   0\\
+					   1
+					   \end{pmatrix}
+					</me>
+				</p>
+			</statement>
+			</exercise>
+			<exercise number="10"> <!-- Kuttler 5.40 part d -->
+				<statement>
+					<p>
+						Using the inverse of the matrix, find the solution to this system:
+						<me>
+							\begin{pmatrix}
+							1 &amp; 0 &amp; 3\\
+							2 &amp; 3 &amp; 4\\
+							1 &amp; 0 &amp; 2
+						   \end{pmatrix}\begin{pmatrix}
+						   x\\
+						   y\\
+						   z
+						   \end{pmatrix} = \begin{pmatrix}
+						   3\\
+						   -1\\
+						   -2
+						   \end{pmatrix}
+						</me>
+					</p>
+				</statement>
+				</exercise>
+					</exercises>
 </section>
