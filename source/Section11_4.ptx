@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="Section11_4">
     <title>Matrix Determinants</title>
-    <!-- TODO review induction before program correctness -->
+    <introduction>
+        <p>The determinant is a number (a scalar value) that is a certain function of the entries 
+            of a square matrix. The determinant of a matrix <m>A</m> is commonly denoted <m>det(A)</m>,
+             <m>det A</m>, or <m>|A|</m>. Its value characterizes some properties of the matrix and 
+             the area of the shape it represents geometrically. Historically, determinants were used long before matrices: 
+             A determinant was originally defined as a property of a system of linear equations. 
+             The determinant "determines" whether the system has a unique solution (which occurs precisely if the determinant is non-zero).
+        </p>
+        <p>
+            We will see in this chapter that the determinant is used to determine if a matrix has an inverse (the system of equations has a unique solution),
+            to find an inverse matrix if it exists, and to solve systems of linear equations more quickly. The determinant has many other uses which would 
+            be covered in more advanced mathematics courses. See also the <url href="https://en.wikipedia.org/wiki/Determinant">Wikipedia article: Determinant.</url>
+        </p>
+    </introduction>
     <p>
         Under Construction!
     </p>
