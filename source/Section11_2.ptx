@@ -1693,7 +1693,7 @@
 				\end{pmatrix}</m>
 			</p>
 
-			<p>
+			<p>Find if possible:
 				<ol marker="(a)" cols="2">
 					<li>
 						<p>
@@ -1731,6 +1731,7 @@
 						</p>
 					</li>
 				</ol>
+				If not possible, explain why.
 			</p>
 		</statement>
 

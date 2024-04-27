@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="Section11_4">
-    <title>Matrix Determinants</title>
+    <title>Matrix Determinants</title><idx><h>Matrix Determinant</h></idx>
     <introduction>
         <p>The determinant is a number (a scalar value) that is a certain function of the entries 
             of a square matrix. The determinant of a matrix <m>A</m> is commonly denoted <m>det(A)</m>,
@@ -15,7 +15,140 @@
             be covered in more advanced mathematics courses. See also the <url href="https://en.wikipedia.org/wiki/Determinant">Wikipedia article: Determinant.</url>
         </p>
     </introduction>
-    <p>
-        Under Construction!
-    </p>
+<subsection xml:id="ss-basic-det-techniques-properties">
+    <title>Basic Techniques and Properties</title>
+    <subsubsection xml:id="subsubsec-Cofactors-2-x-2-Dets">
+        <title>Cofactors and <m>2 \times 2</m> Deteriminants</title>
+        <p>
+            Let <m>A</m> be an <m>n \times n</m> matrix. The determinant of <m>A</m>, denoted as <m>det(A)</m> is a number. If the
+matrix is a <m>2 \tiems 2</m> matrix, this number is very easy to find.
+        </p>
+        <definition xml:id="def-2-x-2-det">
+            <statement>
+                <p>
+                   Let <m>A = \begin{pmatrix}
+                    a &amp; b\\
+                    c &amp; d
+                    \end{pmatrix}</m>. Then  <m>det(A) \equiv ad - cb</m>. The determinant is also often denoted by enclosing the matrix
+                    with two vertical lines. Thus
+                    <me>
+                        det \begin{pmatrix}
+                        a &amp; b\\
+                        c &amp; d
+                        \end{pmatrix} = \begin{vmatrix}
+                        a &amp; b\\
+                        c &amp; d
+                        \end{vmatrix}.
+                    </me> 
+                </p>
+            </statement>
+        </definition>
+        <example>
+            <p>
+                Find <m>det\begin{pmatrix}
+                    2 &amp; 4\\
+                    -1 &amp; 6
+                    \end{pmatrix}</m>.
+            </p>
+            <p>
+                From the definition this is just <m>(2)(6) - (-1)(4) = 16</m>. 
+            </p>
+        </example>
+        <p>
+            Having defined what is meant by the determinant of a <m>2 \times 2</m> matrix, what about a <m>3 \times 3</m> matrix?
+        </p>
+        <definition xml:id="def-matrix-minor"><idx><h>matrix minor</h></idx>
+            <statement>
+                <p>
+                    Suppose <m>A</m> is a <m>3 \times 3</m> matrix. The <m>ij^{th}</m> <term>minor</term>, denoted as <m>minor(A)_{ij}</m> , 
+                    is the determinant of the <m>2\times 2</m> matrix which results from deleting the <m>i^{th}</m> row and the <m>j^{th}</m> 
+                    column.
+                </p>
+            </statement>
+        </definition>
+        <example>
+           <p> Consider the matrix
+            <me>\begin{pmatrix}
+                1 &amp; 2 &amp; 3\\
+                4 &amp; 3 &amp; 2\\
+                3 &amp; 2 &amp; 1\\
+                \end{pmatrix}.</me></p>
+                <p>
+                    The (1,2) minor is the determinant of the <m>2 \times 2</m> matrix which results when you delete the first
+                    row and the second column. This minor is therefore 
+                    <me>det\begin{pmatrix}
+                        4 &amp; 2\\
+                        3 &amp; 1\\
+                        \end{pmatrix} = (4)(1) - (3)(2) = -2.</me>
+                </p>
+                <p>
+                    The (2,3) minor is the determinant of the <m>2 \times 2</m> matrix which results when you delete the second
+                    row and the third column. This minor is therefore 
+                    <me>det\begin{pmatrix}
+                        1 &amp; 2\\
+                        3 &amp; 2\\
+                        \end{pmatrix} = (1)(2) - (3)(2) = -4.</me>
+                </p>
+        </example>
+        <definition xml:id="def-matrix-cofactor"><idx><h>matrix cofactor</h></idx>
+            <statement>
+                <p>
+                    Suppose <m>A</m> is a <m>3 \times 3</m> matrix. The <m>ij^{th}</m> <term>cofactor</term> is defined to be <m>(-1)^{i+j} \times
+(ij^{th}</m> minor). In words, you multiply <m>(-1)^(i+j)</m> times the <m>ij^{th}</m> minor to get the <m>ij^{th}</m> cofactor.
+The cofactors of a matrix are so important that special notation is appropriate when referring to them. The <m>ij^{th}</m> cofactor 
+of a matrix <m>A</m> will be denoted by <m>cof(A)_{ij}</m> . It is also convenient to refer to the cofactor of an entry of a matrix as follows. For ai j an entry of
+the matrix, its cofactor is just <m>cof(A)_{ij}</m> . Thus the cofactor of the <m>ij^{th}</m> entry is just the <m>ij^{th}</m>
+cofactor.
+                </p>
+            </statement>
+        </definition>
+        <example>
+            <p> Consider the matrix
+             <me>\begin{pmatrix}
+                 1 &amp; 2 &amp; 3\\
+                 4 &amp; 3 &amp; 2\\
+                 3 &amp; 2 &amp; 1\\
+                 \end{pmatrix}.</me></p>
+                 <p>
+                     The (1,2) minor is the determinant of the <m>2 \times 2</m> matrix which results when you delete the first
+                     row and the second column. This minor is therefore 
+                     <me>det\begin{pmatrix}
+                         4 &amp; 2\\
+                         3 &amp; 1\\
+                         \end{pmatrix} = (4)(1) - (3)(2) = -2.</me>
+                 </p>
+                 <p>
+                     It follows
+                     <me>cof(A)_{12} = (-1)^{1+2} det\begin{pmatrix}
+                         4 &amp; 2\\
+                         3 &amp; 1\\
+                         \end{pmatrix} = (-1)^{1+2} (-2) = 2.</me>
+                 </p>
+                <p>
+                    The (2,3) minor is the determinant of the <m>2 \times 2</m> matrix which results when you delete the second
+                    row and the third column. This minor is therefore 
+                    <me>det\begin{pmatrix}
+                        1 &amp; 2\\
+                        3 &amp; 2\\
+                        \end{pmatrix} = (1)(2) - (3)(2) = -4.</me>
+                </p>
+                <p>
+                    Therefore,
+                    <me>cof(A)_{23} = (-1)^{2+3} det\begin{pmatrix}
+                        1 &amp; 2\\
+                        3 &amp; 2\\
+                        \end{pmatrix} = (-1)^{2+3} (-4) = 4.</me>
+                </p>
+                <p>
+                    Similarly,
+                    <me>cof(A)_{22} = (-1)^{2+2} det\begin{pmatrix}
+                        1 &amp; 3\\
+                        3 &amp; 1\\
+                        \end{pmatrix} = -4.</me>
+                </p>
+         </example>
+         <!-- STOP at Definition 6.1.7 -->
+    </subsubsection>
+    
+</subsection>
 </section>
