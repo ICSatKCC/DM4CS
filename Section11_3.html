@@ -678,7 +678,13 @@ window.MathJax = {
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section11_3.html#exercises-11-3" class="internal"><span class="codenumber">11.3.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
+</li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -1423,7 +1429,7 @@ A =
 <div class="para">In this example, it is shown how to use the inverse of a matrix to find the solution to a system of equations. Consider the following system of equations. Use the inverse of a suitable matrix to give the solutions to this system.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\begin{pmatrix} 
+\begin{pmatrix}
 x + z = 1\\
 x - y + z = 3\\
 x + y - z = 2
@@ -1442,7 +1448,7 @@ x + y - z = 2
 \begin{pmatrix}
 x \\
 y \\
-z 
+z
 \end{pmatrix}
 = \begin{pmatrix}
 1 \\
@@ -1473,7 +1479,7 @@ z
 \begin{pmatrix}
 x \\
 y \\
-z 
+z
 \end{pmatrix}
 = \begin{pmatrix}
 0 &amp; \frac{1}{2} &amp; \frac{1}{2} \\
@@ -1484,7 +1490,7 @@ z
 1 \\
 3 \\
 2 \\
-\end{pmatrix} = 
+\end{pmatrix} =
 \begin{pmatrix}
 \frac{5}{2} \\
 -2 \\
@@ -1514,7 +1520,7 @@ z
 \begin{pmatrix}
 x \\
 y \\
-z 
+z
 \end{pmatrix}
 = \begin{pmatrix}
 0 \\
@@ -1529,7 +1535,7 @@ z
 \begin{pmatrix}
 x \\
 y \\
-z 
+z
 \end{pmatrix}
 = \begin{pmatrix}
 0 &amp; \frac{1}{2} &amp; \frac{1}{2} \\
@@ -1540,7 +1546,7 @@ z
 0 \\
 1 \\
 3 \\
-\end{pmatrix} = 
+\end{pmatrix} =
 \begin{pmatrix}
 2 \\
 -1 \\
@@ -1552,7 +1558,539 @@ z
 <div class="para">This illustrates why once you have found the inverse of a given matrix, you can use it to solve many different systems easily.</div>
 </div></article></details></section><section class="exercises" id="exercises-11-3"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">11.3.3</span><span class="space"> </span><span class="title">Exercises</span>
-</h3></section></section></div>
+</h3>
+<article class="exercise exercise-like" id="exercises-11-3-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-11-3-2-1-1">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{pmatrix}
+2 &amp; 1\\
+-1 &amp; 3
+\end{pmatrix}.
+\end{equation*}
+</div>
+<div class="para">Find <span class="process-math">\(A^{-1}\)</span> if possible using the Gauss-Jordan method. If <span class="process-math">\(A^{-1}\)</span> does not exist, determine why.</div>
+</div>
+<div class="solutions"><details id="exercises-11-3-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="para logical" id="exercises-11-3-2-2-1">
+<div class="para">Set up augmented matrix to use Gauss-Jordan:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c | c c }
+2 &amp; 1  &amp; 1 &amp; 0\\
+-1 &amp; 3 &amp; 0  &amp; 1
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Multiply row 2 by 2:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c | c c }
+2 &amp; 1  &amp; 1 &amp; 0\\
+-2 &amp; 6 &amp; 0  &amp; 2
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Add row 1 to row 2:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c | c c }
+2 &amp; 1  &amp; 1 &amp; 0\\
+0 &amp; 7 &amp; 1  &amp; 2
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Divide row 2 by 7:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c | c c }
+2 &amp; 1  &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 1/7  &amp; 2/7
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Subtract row 2 from row 1:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c | c c }
+2 &amp; 0  &amp; 6/7 &amp; -2/7\\
+0 &amp; 1 &amp; 1/7  &amp; 2/7
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Divide row 1 by 2:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c | c c }
+1 &amp; 0  &amp; 6/14 &amp; -2/14\\
+0 &amp; 1 &amp; 1/7  &amp; 2/7
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">The inverse is the matrix on the right:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+6/14 &amp; -2/14\\
+1/7 &amp; 2/7
+\end{pmatrix}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="exercises-11-3-2-2-2">
+<div class="para">Check by multiplying the inverse with the original matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+2 &amp; 1\\
+-1 &amp; 3
+\end{pmatrix}\begin{pmatrix}
+6/14 &amp; -2/14\\
+1/7 &amp; 2/7
+\end{pmatrix} = \begin{pmatrix}
+12/14 + 1/7 &amp; -4/14 + 2/7\\
+-6/14 + 3/7 &amp; 2/14 + 6/7
+\end{pmatrix} = \begin{pmatrix}
+1 &amp; 0\\
+0 &amp; 1
+\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">Which is what we want.</div>
+</div>
+</div></details></div></article><article class="exercise exercise-like" id="exercises-11-3-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-11-3-3-1-1">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{pmatrix}
+0 &amp; 1\\
+5 &amp; 3
+\end{pmatrix}.
+\end{equation*}
+</div>
+<div class="para">Find <span class="process-math">\(A^{-1}\)</span> if possible using the Gauss-Jordan method. If <span class="process-math">\(A^{-1}\)</span> does not exist, determine why.</div>
+</div></article><article class="exercise exercise-like" id="exercises-11-3-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-11-3-4-1-1">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{pmatrix}
+2 &amp; 1\\
+3 &amp; 0
+\end{pmatrix}.
+\end{equation*}
+</div>
+<div class="para">Find <span class="process-math">\(A^{-1}\)</span> if possible using the Gauss-Jordan method. If <span class="process-math">\(A^{-1}\)</span> does not exist, determine why.</div>
+</div>
+<div class="solutions"><details id="exercises-11-3-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="para logical" id="exercises-11-3-4-2-1">
+<div class="para">Set up augmented matrix to use Gauss-Jordan:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c | c c }
+2 &amp; 1  &amp; 1 &amp; 0\\
+3 &amp; 0 &amp; 0  &amp; 1
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Subtract 3 times row 1 from 2 times row 2</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c | c c }
+2 &amp; 1  &amp; 1 &amp; 0\\
+0 &amp; -3 &amp; -3  &amp; 2
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Divide row 2 by -3</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c | c c }
+2 &amp; 1  &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 1  &amp; -2/3
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Subtract row 2 from row 1</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c | c c }
+2 &amp; 0  &amp; 0 &amp; 2/3\\
+0 &amp; 1 &amp; 1  &amp; -2/3
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Divide row 1 by 2</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c | c c }
+1 &amp; 0  &amp; 0 &amp; 2/6\\
+0 &amp; 1 &amp; 1  &amp; -2/3
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">So the inverse matrix is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+0 &amp; 1/3\\
+1 &amp; -2/3
+\end{pmatrix}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="exercises-11-3-4-2-2">
+<div class="para">Check by multiplying the inverse with the original matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+2 &amp; 1\\
+3 &amp; 0
+\end{pmatrix}\begin{pmatrix}
+0 &amp; 1/3\\
+1 &amp; -2/3
+\end{pmatrix} = \begin{pmatrix}
+0 + 1 &amp; 2/3 + -2/3\\
+0 + 0 &amp; 3/3 + 0
+\end{pmatrix} = \begin{pmatrix}
+1 &amp; 0\\
+0 &amp; 1
+\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">Which is what we want.</div>
+</div>
+</div></details></div></article><article class="exercise exercise-like" id="exercises-11-3-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-11-3-5-1-1">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{pmatrix}
+2 &amp; 1\\
+4 &amp; 2
+\end{pmatrix}.
+\end{equation*}
+</div>
+<div class="para">Find <span class="process-math">\(A^{-1}\)</span> if possible using the Gauss-Jordan method. If <span class="process-math">\(A^{-1}\)</span> does not exist, determine why.</div>
+</div></article><article class="exercise exercise-like" id="exercises-11-3-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-11-3-6-1-1">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{pmatrix}
+1 &amp; 2 &amp; 3\\
+2 &amp; 1 &amp; 4\\
+4 &amp; 5 &amp; 10
+\end{pmatrix}.
+\end{equation*}
+</div>
+<div class="para">Find <span class="process-math">\(A^{-1}\)</span> if possible using the Gauss-Jordan method. If <span class="process-math">\(A^{-1}\)</span> does not exist, determine why.</div>
+</div>
+<div class="solutions"><details id="exercises-11-3-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-11-3-6-2-1">
+<div class="para">Set up augmented matrix to use Gauss-Jordan:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c c | c c c}
+1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+2 &amp; 1 &amp; 4 &amp; 0  &amp; 1 &amp; 0\\
+4 &amp; 5 &amp; 10 &amp; 0 &amp; 0 &amp; 1\\
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Row 3 - 4* row 1:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c c | c c c}
+1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+2 &amp; 1 &amp; 4 &amp; 0  &amp; 1 &amp; 0\\
+0 &amp; -3 &amp; -2 &amp; -4 &amp; 0 &amp; 1\\
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Row 2 - 2* row 1:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c c | c c c}
+1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; -3 &amp; -2 &amp; -2  &amp; 1 &amp; 0\\
+0 &amp; -3 &amp; -2 &amp; -4 &amp; 0 &amp; 1\\
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Row 3 - row 2:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c c | c c c}
+1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; -3 &amp; -2 &amp; -2  &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; -6 &amp; -1 &amp; 1\\
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">There is no inverse. The left side cannot be made into <span class="process-math">\(I\text{.}\)</span>
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="exercises-11-3-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-11-3-7-1-1">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{pmatrix}
+1 &amp; 0 &amp; 3\\
+2 &amp; 3 &amp; 4\\
+1 &amp; 0 &amp; 2
+\end{pmatrix}.
+\end{equation*}
+</div>
+<div class="para">Find <span class="process-math">\(A^{-1}\)</span> if possible using the Gauss-Jordan method. If <span class="process-math">\(A^{-1}\)</span> does not exist, determine why.</div>
+</div></article><article class="exercise exercise-like" id="exercises-11-3-8"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-11-3-8-1-1">
+<div class="para">Using the inverse of the matrix, find the solution to this system:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+1 &amp; 2 &amp; 3\\
+2 &amp; 1 &amp; 4\\
+1 &amp; 0 &amp; 2
+\end{pmatrix}\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix} = \begin{pmatrix}
+1\\
+2\\
+3
+\end{pmatrix}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="exercises-11-3-8-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="para logical" id="exercises-11-3-8-2-1">
+<div class="para">Set up augmented matrix to use Gauss-Jordan:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c c | c c c}
+1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+2 &amp; 1 &amp; 4 &amp; 0  &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 2 &amp; 0 &amp; 0 &amp; 1\\
+\end{array} \right).
+\end{equation*}
+</div>
+</div> <div class="para logical" id="exercises-11-3-8-2-2">
+<div class="para">Now perform row operations: Row 2 - 2 * row 1</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c c | c c c}
+1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; -3 &amp; -2 &amp; -2  &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 2 &amp; 0 &amp; 0 &amp; 1\\
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Row 3 - row 1</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c c | c c c}
+1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; -3 &amp; -2 &amp; -2  &amp; 1 &amp; 0\\
+0 &amp; -2 &amp; -1 &amp; -1 &amp; 0 &amp; 1\\
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Row 2 <span class="process-math">\(* -1/3\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c c | c c c}
+1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 2/3 &amp; 2/3  &amp; -1/3 &amp; 0\\
+0 &amp; -2 &amp; -1 &amp; -1 &amp; 0 &amp; 1\\
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Row 3 <span class="process-math">\(+ 2* \)</span> row 2</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c c | c c c}
+1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 2/3 &amp; 2/3  &amp; -1/3 &amp; 0\\
+0 &amp; 0 &amp; 1/3 &amp; 1/3 &amp; -2/3 &amp; 1\\
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Row 3 <span class="process-math">\(* 3\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c c | c c c}
+1 &amp; 2 &amp; 3  &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 2/3 &amp; 2/3  &amp; -1/3 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; -2 &amp; 3\\
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Row 1 <span class="process-math">\(- 3 *\)</span> row 3</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c c | c c c}
+1 &amp; 2 &amp; 0  &amp; -2 &amp; 6 &amp; -9\\
+0 &amp; 1 &amp; 2/3 &amp; 2/3  &amp; -1/3 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; -2 &amp; 3\\
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Row 2 <span class="process-math">\(- 2/3 *\)</span> row 3</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c c | c c c}
+1 &amp; 2 &amp; 0  &amp; -2 &amp; 6 &amp; -9\\
+0 &amp; 1 &amp; 0 &amp; 0  &amp; 1 &amp; -2\\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; -2 &amp; 3\\
+\end{array} \right).
+\end{equation*}
+</div>
+<div class="para">Row 1 <span class="process-math">\(- 2 *\)</span> row 2</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c c | c c c}
+1 &amp; 0 &amp; 0  &amp; -2 &amp; 4 &amp; -5\\
+0 &amp; 1 &amp; 0 &amp; 0  &amp; 1 &amp; -2\\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; -2 &amp; 3\\
+\end{array} \right).
+\end{equation*}
+</div>
+</div> <div class="para logical" id="exercises-11-3-8-2-3">
+<div class="para">The inverse matrix is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c c}
+-2 &amp; 4 &amp; -5\\
+0  &amp; 1 &amp; -2\\
+1 &amp; -2 &amp; 3\\
+\end{array} \right).
+\end{equation*}
+</div>
+</div> <div class="para logical" id="exercises-11-3-8-2-4">
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+x\\
+y\\
+z\end{pmatrix} = \left( \begin{array}{c c c}
+-2 &amp; 4 &amp; -5\\
+0  &amp; 1 &amp; -2\\
+1 &amp; -2 &amp; 3\\
+\end{array} \right)\begin{pmatrix}
+1\\
+2\\
+3
+\end{pmatrix} = )\begin{pmatrix}
+-9\\
+-4\\
+6
+\end{pmatrix}.
+\end{equation*}
+</div>
+<div class="para">Therefore, the solution is <span class="process-math">\(x = -9, y = -4, z = 6\text{.}\)</span>
+</div>
+</div>
+</div></details></div></article><article class="exercise exercise-like" id="exercises-11-3-9"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-11-3-9-1-1">
+<div class="para">Using the inverse of the matrix, find the solution to this system:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+1 &amp; 0 &amp; 3\\
+2 &amp; 3 &amp; 4\\
+1 &amp; 0 &amp; 2
+\end{pmatrix}\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix} = \begin{pmatrix}
+2\\
+0\\
+1
+\end{pmatrix}
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="exercises-11-3-10"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-11-3-10-1-1">
+<div class="para">Using the inverse of the matrix, find the solution to this system:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+1 &amp; 2 &amp; 3\\
+2 &amp; 1 &amp; 4\\
+1 &amp; 0 &amp; 2
+\end{pmatrix}\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix} = \begin{pmatrix}
+1\\
+0\\
+1
+\end{pmatrix}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="exercises-11-3-10-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="para logical" id="exercises-11-3-10-2-1">
+<div class="para">We have already calculated the inverse for this matrix above in Exercise 7, it is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{array}{c c c}
+-2 &amp; 4 &amp; -5\\
+0  &amp; 1 &amp; -2\\
+1 &amp; -2 &amp; 3\\
+\end{array} \right).
+\end{equation*}
+</div>
+</div> <div class="para logical" id="exercises-11-3-10-2-2">
+<div class="para">Solving for</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+x\\
+y\\
+z\end{pmatrix} = \left( \begin{array}{c c c}
+-2 &amp; 4 &amp; -5\\
+0  &amp; 1 &amp; -2\\
+1 &amp; -2 &amp; 3\\
+\end{array} \right)\begin{pmatrix}
+1\\
+0\\
+1
+\end{pmatrix} = \begin{pmatrix}
+-7\\
+-2\\
+4
+\end{pmatrix}.
+\end{equation*}
+</div>
+<div class="para"><span class="process-math">\(x = -7, y = -2, z = 4\text{.}\)</span></div>
+</div>
+</div></details></div></article><article class="exercise exercise-like" id="exercises-11-3-11"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-11-3-11-1-1">
+<div class="para">Using the inverse of the matrix, find the solution to this system:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+1 &amp; 0 &amp; 3\\
+2 &amp; 3 &amp; 4\\
+1 &amp; 0 &amp; 2
+\end{pmatrix}\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix} = \begin{pmatrix}
+3\\
+-1\\
+-2
+\end{pmatrix}
+\end{equation*}
+</div>
+</div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="Section11_2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Section11_4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
