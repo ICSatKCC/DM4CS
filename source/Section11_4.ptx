@@ -333,7 +333,109 @@ matrix.
       </theorem>
       
     </subsubsection>
-    <!-- stop at 6.1.2 det of triangular-->
+
+    <!-- Kuttler 6.1.2 -->
+     <subsubsection xml:id="subsubsec-det-of-triangular-matrix">
+        <title>The Determinant of a Triangular Matrix</title>
+        <p>
+            Notwithstanding the difficulties involved in using the method of Laplace expansion, certain types of
+            matrices are very easy to deal with.
+        </p>
+        <definition xml:id="def-upper-triangular-matrix">
+            <idx><h>triangular matrix</h></idx>
+            <statement>
+                <p>
+                    A matrix <m>M</m> , is <term>upper triangular</term> if <m>M_{ij}= 0</m> whenever <m>i \gt j</m>. 
+                    Thus such a matrix equals zero below the main diagonal, the entries of the form 
+                    <m>M_{ii}</m>, as shown.
+                    <me>
+                       \begin{pmatrix}
+                        * &amp; * &amp; \cdots &amp; *\\
+                        0 &amp; * &amp; \ddots &amp; \vdots\\
+                        \vdots &amp; \ddots &amp; \ddots &amp; *\\
+                        0 &amp; \cdots &amp; 0 &amp; *
+                        \end{pmatrix}
+                    </me>
+                    A <term>lower triangular</term> matrix is defined similarly as a matrix for which all entries above the main 
+                    diagonal are equal to zero.
+                </p>
+            </statement>
+        </definition>
+        <p>
+            You should verify the following using the above theorem on Laplace expansion.
+        </p>
+        <corollary xml:id="cor-det-of-triangular-matrix">
+            <statement>
+                <p>
+                    Let <m>M</m> be an upper (lower) triangular matrix. Then <m>det(M)</m> is obtained by taking
+                    the product of the entries on the main diagonal. 
+                </p>
+            </statement>
+        </corollary>
+        <example>
+            <statement>
+                <p>
+                    Let
+                    <me>
+                        A = \begin{pmatrix}
+                         1 &amp; 2 &amp; 3 &amp; 77\\
+                         0 &amp; 2 &amp; 6 &amp; 7\\
+                         0 &amp; 0 &amp; 3 &amp; 33.7\\
+                         0 &amp; 0 &amp; 0 &amp; -1
+                         \end{pmatrix}
+                     </me>
+                     Find <m>det(A).</m>
+                </p>
+            </statement>
+            <answer>
+                <p>
+                    From the above corollary, it suffices to take the product of the diagonal elements. 
+                    Thus <m>det(A) =1 \times 2 \times 3 \times (-1) = -6.</m>
+                </p>
+            </answer>
+            <solution>
+                <p>
+                    Without using the corollary, you could expand along the first column. This
+                gives
+                
+                <me>1\begin{vmatrix}
+                    2 &amp; 6 &amp; 7\\
+                    0 &amp; 3 &amp; 33.7\\
+                    0 &amp; 0 &amp; -1 \end{vmatrix} + 
+                    0(-1)^{2+1}\begin{vmatrix}
+                    2 &amp; 3 &amp; 77\\
+                    0 &amp; 3 &amp; 33.7\\
+                    0 &amp; 0 &amp; -1 \end{vmatrix} +
+                </me> 
+                <me>0(-1)^{3+1}\begin{vmatrix}
+                    2 &amp; 3 &amp; 77\\
+                    2 &amp; 6 &amp; 7\\
+                    0 &amp; 0 &amp; -1 \end{vmatrix} + 
+                    0(-1)^{4+1}\begin{vmatrix}
+                    2 &amp; 3 &amp; 77\\
+                    2 &amp; 6 &amp; 7\\
+                    0 &amp; 3 &amp; 33.77 \end{vmatrix} +
+                </me>
+                and the only non-zero term in the expansion is the first one
+                <me>1\begin{vmatrix}
+                    2 &amp; 6 &amp; 7\\
+                    0 &amp; 3 &amp; 33.7\\
+                    0 &amp; 0 &amp; -1 \end{vmatrix}
+                </me>
+                Now expand this along the first column to obtain
+                <me>1 \times \left( 2 \times \begin{vmatrix} 3 &amp; 33.7\\ 0 &amp; -1 \end{vmatrix}
+                    + 0(-1)^{2+1}\begin{vmatrix} 6 &amp; 7\\ 0 &amp; -1 \end{vmatrix}
+                    + 0(-1)^{3+1}\begin{vmatrix} 6 &amp; 7\\ 3 &amp; 33.7 \end{vmatrix} \right)
+                </me>
+                <me>= 1\times 2 \times \begin{vmatrix} 3 &amp; 33.7\\ 0 &amp; -1 \end{vmatrix}
+                </me>
+                Next expand this last determinant along the first column to obtain the above equals
+                <me>1\times 2 \times 3 \times (-1) = -6</me>
+                which is just the product of the entries down the main diagonal of the original matrix.
+                </p>
+            </solution>
+        </example>
+     </subsubsection>
     
 </subsection>
 </section>
