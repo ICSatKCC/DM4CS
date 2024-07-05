@@ -21,7 +21,7 @@
         <title>Cofactors and <m>2 \times 2</m> Deteriminants</title>
         <p>
             Let <m>A</m> be an <m>n \times n</m> matrix. The determinant of <m>A</m>, denoted as <m>det(A)</m> is a number. If the
-matrix is a <m>2 \tiems 2</m> matrix, this number is very easy to find.
+matrix is a <m>2 \times 2</m> matrix, this number is very easy to find.
         </p>
         <definition xml:id="def-2-x-2-det">
             <statement>
@@ -296,7 +296,11 @@ Algebra book chapter 7 on the theory of the determinant.
                 <m>cof (A) = (c_{ij}) </m> where to obtain <m>c_{ij}</m> delete the <m>i^{th}</m> row and the 
                 <m>j^{th}</m> column of <m>A</m>, take the determinant
                 of the <m>(n - 1) \times (n - 1)</m> matrix which results, (This is called the <m>ij^{th}</m>
-                 <term>minor</term> of <m>A</m>. ) and then multiply this number by <m>(-1)^{i+j}</m> . Thus 
+                 <term>minor</term> of <m>A</m>. ) and then multiply this number by <m>(-1)^{i+j}</m> .
+                </p>
+
+                <p>
+                 Thus 
                  <m>(-1)^{i+j} \times (\text{ the } ij^{th} \text{ minor})</m> equals the <m>ij^{th}</m> cofactor. To make
                 the formulas easier to remember, <m>cof(A)_{ij}</m> will denote the <m>ij^{th}</m> entry of 
                  the cofactor matrix.  
@@ -436,6 +440,172 @@ matrix.
             </solution>
         </example>
      </subsubsection>
-    
+    <subsubsection xml:id="subsubsec-props-of-dets">
+        <title>Properties of Determinants</title>
+        <p>
+            There are many properties satisfied by determinants. Some of these properties have to do with row
+            operations. Recall the row operations: <xref ref="def-row-operations"/>
+        </p>
+        <theorem xml:id="thm-switch-rows-neg-det">
+            <title>Switching two rows negates the determinant</title>
+            
+            
+            <statement>
+                <p> Let <m>A</m> be an <m>n \times n</m> matrix and let <m>A_1</m> be a matrix which results 
+                    from switching two
+                    rows of <m>A</m>. Then <m>det(A) = -det(A_1)</m> . Also, if one row of <m>A</m> is a 
+                    multiple of another row of <m>A</m>, then
+                    <m>det(A) = 0</m>.
+                    
+                </p>
+            </statement>
+        </theorem>
+        <example>
+            <statement>
+                <p>
+                    Let <m>A = \begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix}
+                    </m>, and let <m>A_1 = \begin{pmatrix}3 &amp; 4\\ 1 &amp; 2\end{pmatrix} </m>.
+                </p>
+                <p>
+                   Then <m>det(A) = -2</m> and <m>det(A_1) = 2.</m>
+                </p>
+            </statement>
+        </example>
+        <theorem xml:id="thm-det-mult-mat-by-scalar">
+            <title>Multiplying a matrix by a scalar, also multiplies the determinant</title>            
+            <statement>
+                <p>
+                    Let <m>A</m> be an <m>n \times n</m> matrix and let <m>A_1</m> be a matrix which results 
+                    from multiplying some row of <m>A</m> by a scalar <m>c</m>. Then <m>c \,det(A) = det(A_1)</m>.  
+                </p>
+            </statement>
+        </theorem>
+        <example>
+            <statement>
+                <p>
+                    Let <m>A = \begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix}
+                    </m>, <m>A_1 = \begin{pmatrix}2 &amp; 4\\ 3 &amp; 4\end{pmatrix} </m>.
+                </p>
+
+                <p>
+                    The first row of <m>A_1</m> is 2 times the first row of <m>A</m>.
+
+                </p>
+
+                <p>
+                    <m>Det(A) = -2</m> and <m>det(A_1) = -4 = 2 \cdot -2 = 2 \, det(A).</m>
+                </p>
+            </statement>
+        </example>
+      
+        <theorem xml:id="thm-row-ops-dont-change-det">
+            <title>Row operation 3 doesn't change the determinant</title>
+            
+            
+            <statement>
+                <p>
+                    Let <m>A</m> be an <m>n \times n</m> matrix and let <m>A_1</m> be a matrix 
+                    which results from applying
+                row operation 3. That is, you replace some row by a multiple of another row added to itself. 
+                Then <m>det (A) = det (A_1 ).</m> 
+                </p>
+            </statement>
+        </theorem>
+        <example>
+            <statement>
+                <p>
+                    Let <m>A = \begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix}
+                    </m> and let <m>A_1 = \begin{pmatrix}1 &amp; 2\\ 4 &amp; 6\end{pmatrix} </m>. Thus the second row of
+                    <m>A_1</m> is one times the first row added to the second row.   
+                </p>
+
+                <p>
+                    <m>det(A) = -2</m> and <m>det(A_1) = -2.</m>
+                </p>
+            </statement>
+        </example>
+        
+        <theorem xml:id="thm-rows-cols-same-effect">
+            <title>Columns have the same effect</title>
+            
+            
+            <statement>
+                <p>
+                    In <xref ref="thm-switch-rows-neg-det"/> - <xref ref="thm-row-ops-dont-change-det"/> you can replace the word "row"
+                    with the word "column".
+                </p>
+            </statement>
+        </theorem>
+        <p>
+            There are two other major properties of determinants which do
+            not involve row operations.
+        </p>
+        <!--these two were in one theorem in original.-->
+        <theorem xml:id="thm-prod-of-dets">
+            <title>The determinant of a matrix product is the product
+                of the determinants
+            </title>
+            <statement>
+                <p>
+                    <p>
+                        Let <m>A </m> and <m>B </m> be two <m>n\times n</m> matrices, then
+                        <me>det(AB) = det(A) det(B).</me>
+                    </p>  
+                </p>
+            </statement>
+        </theorem>
+        <example>
+            <statement>
+                <p>
+                    Compare <m>det(AB)</m> and <m>det(A) det(B)</m> for
+                    <me>A = \begin{pmatrix}1 &amp; 2\\ -3&amp; 2\end{pmatrix}, B = \begin{pmatrix}3 &amp; 2\\ 4&amp; 1\end{pmatrix}</me>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    First
+                    <me>AB = \begin{pmatrix}1 &amp; 2\\ -3&amp; 2\end{pmatrix}\begin{pmatrix}3 &amp; 2\\ 4&amp; 1\end{pmatrix} = \begin{pmatrix}11 &amp; 4\\ -1 &amp; -4\end{pmatrix} </me>
+                
+                and so
+                <me>det(AB) = det\begin{pmatrix}11 &amp; 4\\ -1 &amp; -4\end{pmatrix} = -40.</me>
+                    Now
+                    <me>det(A) = det\begin{pmatrix}1 &amp; 2\\ -3 &amp; 2\end{pmatrix} = 8</me>
+                    and
+                    <me>det(b) = det\begin{pmatrix}3 &amp; 2\\ 4 &amp; 1\end{pmatrix} = -5.</me>
+                    Thus <m>det(A)det(B) = 8 \times (-5) = -40.</m>
+            </p>
+            </solution>
+        </example>
+        <theorem xml:id="thm-det-of-transp">
+            <title>The determinant of a matrix is the determinant of its transpose
+            </title>
+            <statement>
+                <p>
+                    <p>
+                        Let <m>A </m> be an <m>n\times n</m> matrix, then
+                        <me>det(A) = det(A^T)</me>
+                    </p>  
+                </p>
+            </statement>
+        </theorem>
+        <!--added this example-->
+        <example>
+            <statement>
+                <p>
+                    Compare <m>det(A)</m> and <m>det(A^T)</m> for
+                    <me>A = \begin{pmatrix}1 &amp; 2\\ -3&amp; 2\end{pmatrix}.</me>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <me>det(A) = det\begin{pmatrix}1 &amp; 2\\ -3 &amp; 2\end{pmatrix} = (1\cdot 2) - (-3 \cdot 2) = 8</me>
+                    and
+                    <me>det(A^t) = det\begin{pmatrix}1 &amp; -3\\ 2 &amp; 2\end{pmatrix} = (1\cdot 2) - (2 \cdot -3) = 8.</me>
+                    Thus <m>det(A)= det(A^T).</m>
+            </p>
+            </solution>
+        </example>
+    </subsubsection>
+    <!-- subsub 6.1.4 next-->
 </subsection>
 </section>
