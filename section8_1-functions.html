@@ -692,10 +692,21 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -993,12 +1004,12 @@ sagecell.makeSagecell({
 <li id="subsec8_1_1-function-definition-notation-4-1-2"><div class="para" id="subsec8_1_1-function-definition-notation-4-1-2-1">The phrase “is related to exactly one element of the set <span class="process-math">\(B\)</span>” means that if <span class="process-math">\((a, b)\in f\)</span> and <span class="process-math">\((a, c)\in f\text{,}\)</span> then <span class="process-math">\(b = c\text{.}\)</span>
 </div></li>
 </ul></div>
-<details id="ex-function-1" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-function-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">A function as a list of ordered pairs.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-function-1-2">Let <span class="process-math">\(A = \{-2, -1,0, 1, 2\}\)</span> and <span class="process-math">\(B = \{0, 1, 2, 3, 4\}\text{,}\)</span> and if <span class="process-math">\(s = \{(-2, 4), (-1, 1), (0, 0), (1, 1), (2, 4)\}\text{,}\)</span> then <span class="process-math">\(s\)</span> is a function from <span class="process-math">\(A\)</span> into <span class="process-math">\(B\text{.}\)</span>
-</div></article></details><details id="ex-function-2" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-function-1-2">Let <span class="process-math">\(A = \{-2, -1,0, 1, 2\}\)</span> and <span class="process-math">\(B = \{0, 1, 2, 3, 4\}\text{,}\)</span> and if <span class="process-math">\(s = \{(-2, 4), (-1, 1), (0, 0), (1, 1), (2, 4)\}\text{,}\)</span> then <span class="process-math">\(s\)</span> is a function from <span class="process-math">\(A\)</span> into <span class="process-math">\(B\text{.}\)</span>
+</div></article></details><details id="ex-function-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">A function as a set of ordered pairs in set-builder notation.</span>
-</h4></summary><article class="example example-like"><div class="para" id="ex-function-2-2">Let <span class="process-math">\(\mathbb{R}\)</span> be the real numbers. Then <span class="process-math">\(L = \{(x, 3x) \mid x \in \mathbb{R}\}\)</span> is a function from <span class="process-math">\(\mathbb{R}\)</span> into <span class="process-math">\(\mathbb{R}\text{,}\)</span> or, more simply, <span class="process-math">\(L\)</span> is a function on <span class="process-math">\(\mathbb{R}\text{.}\)</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-function-2-2">Let <span class="process-math">\(\mathbb{R}\)</span> be the real numbers. Then <span class="process-math">\(L = \{(x, 3x) \mid x \in \mathbb{R}\}\)</span> is a function from <span class="process-math">\(\mathbb{R}\)</span> into <span class="process-math">\(\mathbb{R}\text{,}\)</span> or, more simply, <span class="process-math">\(L\)</span> is a function on <span class="process-math">\(\mathbb{R}\text{.}\)</span>
 </div></article></details><div class="para" id="subsec8_1_1-function-definition-notation-7">It is customary to use a different system of notation for functions than the one we will use for relations in Discrete Math. If <span class="process-math">\(f\)</span> is a function from the set  <span class="process-math">\(A\)</span> into the set <span class="process-math">\(B\text{,}\)</span> we will write <span class="process-math">\(f:A \rightarrow B\text{.}\)</span>
 </div>
 <div class="para" id="subsec8_1_1-function-definition-notation-8">The reader is probably more familiar with the notation for describing functions that is used in basic algebra or calculus courses. For example, <span class="process-math">\(y =\frac{1}{x}\)</span> or <span class="process-math">\(f(x) =\frac{1}{x}\)</span> both define the function <span class="process-math">\(\left\{\left.\left(x,\frac{1}{x}\right)\right| x\in \mathbb{R}, x\neq
@@ -1009,9 +1020,9 @@ sagecell.makeSagecell({
 </h4> <div class="para" id="def-set-of-functions-5-1">Given two sets,  <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> the set of all functions from A into B is denoted  <span class="process-math">\(B^A\text{.}\)</span>
 </div></article><div class="para" id="subsec8_1_1-function-definition-notation-11">The notation used for sets of functions makes sense in light of <a href="section8_1-functions.html#exercise-counting-functions" class="xref" data-knowl="./knowl/xref/exercise-counting-functions.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 8.1.5.7">Exercise 7</a>.</div>
 <div class="para" id="subsec8_1_1-function-definition-notation-12">One way to imagine a function and what it does is to think of it as a machine. The machine could be mechanical, electronic, hydraulic, or abstract. Imagine that the machine only accepts certain objects as raw materials or input. The possible raw materials make up the domain. Given some input, the machine produces a finished product that depends on the input. The possible finished products that we imagine could come out of this process make up the codomain.</div>
-<details id="ex-non-pair-description" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-non-pair-description" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">A definition based on images.</span>
-</h4></summary><article class="example example-like"><div class="para" id="ex-non-pair-description-2">We can define a function based on specifying the codomain element to which each domain element is related.   For example, <span class="process-math">\(f: \mathbb{R} \rightarrow \mathbb{R}\)</span> defined by <span class="process-math">\(f(x) = x^2\)</span> is an alternate description of <span class="process-math">\(f= \left\{\left.\left(x,
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-non-pair-description-2">We can define a function based on specifying the codomain element to which each domain element is related.   For example, <span class="process-math">\(f: \mathbb{R} \rightarrow \mathbb{R}\)</span> defined by <span class="process-math">\(f(x) = x^2\)</span> is an alternate description of <span class="process-math">\(f= \left\{\left.\left(x,
 x ^2\right)\right|x \in  \mathbb{R}\right\}\text{.}\)</span>
 </div></article></details><article class="definition definition-like" id="def-image-of-an-element"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Image of an element under a function.</span>
@@ -1036,9 +1047,9 @@ f(X) = \{f(a) \mid a \in X\} = \{b \in Y \mid  \exists a \in X\textrm{ such that
 <div class="para" id="subsec8_1_1-function-definition-notation-20">The formula that we used to describe the image of a real number under <span class="process-math">\(L\text{,}\)</span> <span class="process-math">\(L(x) = 3x\text{,}\)</span> is preferred over the set notation for <span class="process-math">\(L\)</span> due to its brevity. Any time a function can be described with a rule or formula, we will use this form of description. In <a href="section8_1-functions.html#ex-function-1" class="xref" data-knowl="./knowl/xref/ex-function-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.1.2: A function as a list of ordered pairs">Example 8.1.2</a>, the image of each element of <span class="process-math">\(A\)</span> is its square. To describe that fact, we write <span class="process-math">\(s(a) = a^2\)</span> (<span class="process-math">\(a \in  A\)</span>), or <span class="process-math">\(S:A \rightarrow  B\)</span> defined by <span class="process-math">\(S(a) = a^2\text{.}\)</span>
 </div>
 <div class="para" id="subsec8_1_1-function-definition-notation-21">There are many ways that a function can be described. Many factors, such as the complexity of the function, dictate its representation.</div>
-<details id="ex-data-function" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-data-function" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Data as a function.</span>
-</h4></summary><article class="example example-like"><div class="para logical" id="ex-data-function-2">
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-data-function-2">
 <div class="para">Suppose a survey of 1,000 persons is done asking how many hours of television each watches per day. Consider the function <span class="process-math">\(W:
 \{0,1,\ldots , 24\} \rightarrow  \{0,1,2,\ldots ,1000\}\)</span> defined by</div>
 <div class="displaymath process-math">
@@ -1047,9 +1058,9 @@ W(t) = \textrm{the number of persons who gave a response of } t \textrm{ hours}
 \end{equation*}
 </div>
 <div class="para">This function will probably have no formula such as the ones for <span class="process-math">\(s\)</span> and <span class="process-math">\(L\)</span> above.</div>
-</div></article></details><details id="ex-conditional-function" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article></details><details id="ex-conditional-function" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Conditional definiton of a function.</span>
-</h4></summary><article class="example example-like"><div class="para logical" id="ex-conditional-function-2">
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-conditional-function-2">
 <div class="para">Consider the function <span class="process-math">\(m:\mathbb{P} \rightarrow  \mathbb{Q}\)</span> defined by the set</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1088,12 +1099,12 @@ f
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">8.1.4</span><span class="space"> </span><span class="title">Non-Functions</span>
 </h3>
 <div class="para" id="subsec8_1_4-non-functions-2">We close this section with two examples of relations that are not functions.</div>
-<details id="ex-nonfunction1" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-nonfunction1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">A non-function.</span>
-</h4></summary><article class="example example-like"><div class="para" id="ex-nonfunction1-2">Let <span class="process-math">\(A = B = \{1, 2, 3\}\)</span> and let <span class="process-math">\(f= \{(1, 2), (2, 3)\}\text{.}\)</span> Here <span class="process-math">\(f\)</span> is not a function from <span class="process-math">\(A\)</span> into <span class="process-math">\(B\)</span> since <span class="process-math">\(f\)</span> does not act on, or “use,” all elements of <span class="process-math">\(A\text{.}\)</span>
-</div></article></details><details id="ex-nonfunction2" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-nonfunction1-2">Let <span class="process-math">\(A = B = \{1, 2, 3\}\)</span> and let <span class="process-math">\(f= \{(1, 2), (2, 3)\}\text{.}\)</span> Here <span class="process-math">\(f\)</span> is not a function from <span class="process-math">\(A\)</span> into <span class="process-math">\(B\)</span> since <span class="process-math">\(f\)</span> does not act on, or “use,” all elements of <span class="process-math">\(A\text{.}\)</span>
+</div></article></details><details id="ex-nonfunction2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Another non-function.</span>
-</h4></summary><article class="example example-like"><div class="para" id="ex-nonfunction2-2">Let <span class="process-math">\(A = B = \{1,2, 3\}\)</span> and let <span class="process-math">\(g = \{(1, 2), (2, 3), (2, 1),(3, 2)\}\text{.}\)</span> We note that <span class="process-math">\(g\)</span> acts on all of <span class="process-math">\(A\text{.}\)</span>  However, <span class="process-math">\(g\)</span> is still not a function since <span class="process-math">\((2, 3) \in  g\)</span> and <span class="process-math">\((2, 1) \in  g\)</span> and the condition on each domain being related to exactly one element of the codomain is violated.</div></article></details></section><section class="exercises" id="exercises-8-1"><h3 class="heading hide-type">
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-nonfunction2-2">Let <span class="process-math">\(A = B = \{1,2, 3\}\)</span> and let <span class="process-math">\(g = \{(1, 2), (2, 3), (2, 1),(3, 2)\}\text{.}\)</span> We note that <span class="process-math">\(g\)</span> acts on all of <span class="process-math">\(A\text{.}\)</span>  However, <span class="process-math">\(g\)</span> is still not a function since <span class="process-math">\((2, 3) \in  g\)</span> and <span class="process-math">\((2, 1) \in  g\)</span> and the condition on each domain being related to exactly one element of the codomain is violated.</div></article></details></section><section class="exercises" id="exercises-8-1"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">8.1.5</span><span class="space"> </span><span class="title">Exercises for Section 8.1</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-8-1-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
@@ -1114,7 +1125,7 @@ f
 <span class="process-math">\(L\subseteq A\times A\text{,}\)</span> where <span class="process-math">\(L = \{(1, 1), (2, 1), (3, 1), (4, 1)\}\text{.}\)</span>
 </div></li>
 </ol></div>
-<div class="solutions"><details id="exercise-8-1-1-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercise-8-1-1-2-1"><ol class="lower-alpha cols3">
+<div class="solutions"><details id="exercise-8-1-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercise-8-1-1-2-1"><ol class="lower-alpha cols3">
 <li id="exercise-8-1-1-2-1-1-1"><div class="para" id="exercise-8-1-1-2-1-1-1-1">Yes</div></li>
 <li id="exercise-8-1-1-2-1-1-2"><div class="para" id="exercise-8-1-1-2-1-1-2-1">Yes</div></li>
 <li id="exercise-8-1-1-2-1-1-3"><div class="para" id="exercise-8-1-1-2-1-1-3-1">No</div></li>
@@ -1142,7 +1153,7 @@ f
 </div></li>
 </ol></div></article><article class="exercise exercise-like" id="exercises-8-1-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para" id="exercises-8-1-4-1-1">Find the ranges of each of the relations that are functions in Exercise 1.</div>
-<div class="solutions"><details id="exercises-8-1-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-8-1-4-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-8-1-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-8-1-4-2-1"><ol class="lower-alpha">
 <li id="exercises-8-1-4-2-1-1-1"><div class="para" id="exercises-8-1-4-2-1-1-1-1">Range of <span class="process-math">\(f=f(A)=\{a,b,c,d\}=B\)</span>
 </div></li>
 <li id="exercises-8-1-4-2-1-1-2"><div class="para" id="exercises-8-1-4-2-1-1-2-1">Range of <span class="process-math">\(g=g(A)=\{a,b,d\}\)</span>
@@ -1169,7 +1180,7 @@ f(8)=8\text{.}\)</span> Describe the equivalence classes of the kernel of <span 
 </ol></div></article><article class="exercise exercise-like" id="exercise-counting-functions"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
 <div class="para" id="exercise-counting-functions-1-1">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are finite sets, how many different functions are there from <span class="process-math">\(A\)</span> into <span class="process-math">\(B\text{?}\)</span>
 </div>
-<div class="solutions"><details id="exercise-counting-functions-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="exercise-counting-functions-2-1">For each of the <span class="process-math">\(\lvert A \rvert \)</span> elements of <span class="process-math">\(A\text{,}\)</span> there are <span class="process-math">\(\lvert B \rvert\)</span> possible images, so there are <span class="process-math">\(\lvert B \rvert\cdot \lvert B \rvert\cdot \ldots \cdot \lvert B \rvert=\left\lvert B \rvert^{\lvert A \rvert}\right.\)</span> functions from <span class="process-math">\(A\)</span> into <span class="process-math">\(B\text{.}\)</span>
+<div class="solutions"><details id="exercise-counting-functions-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="exercise-counting-functions-2-1">For each of the <span class="process-math">\(\lvert A \rvert \)</span> elements of <span class="process-math">\(A\text{,}\)</span> there are <span class="process-math">\(\lvert B \rvert\)</span> possible images, so there are <span class="process-math">\(\lvert B \rvert\cdot \lvert B \rvert\cdot \ldots \cdot \lvert B \rvert=\left\lvert B \rvert^{\lvert A \rvert}\right.\)</span> functions from <span class="process-math">\(A\)</span> into <span class="process-math">\(B\text{.}\)</span>
 </div></div></details></div></article><article class="exercise exercise-like" id="exercises-8-1-9"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="para" id="exercises-8-1-9-1-1">Let <span class="process-math">\(f\)</span> be a function with domain <span class="process-math">\(A\)</span> and codomain <span class="process-math">\(B\text{.}\)</span> Consider the relation <span class="process-math">\(K \subseteq  A \times  A\)</span> defined on the domain of <span class="process-math">\(f\)</span> by <span class="process-math">\((x, y) \in  K\)</span> if and only if <span class="process-math">\(f(x) = f(y)\text{.}\)</span> The relation <span class="process-math">\(K\)</span> is called <em class="emphasis">the kernel of <span class="process-math">\(f\)</span></em>.</div> <div class="para logical" id="exercises-8-1-9-1-2"><ol class="lower-alpha">
 <li id="exercises-8-1-9-1-2-1-1"><div class="para" id="exercises-8-1-9-1-2-1-1-1">Prove that <span class="process-math">\(K\)</span> is an equivalence relation.</div></li>

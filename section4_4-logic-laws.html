@@ -680,10 +680,21 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -967,9 +978,9 @@ window.MathJax = {
 <div class="para" id="section4_4-logic-laws-2-2">In this section, we will list the most basic equivalences and implications of logic. Most of the equivalences listed in Table <a href="section4_4-logic-laws.html#table-equivalences" class="xref" data-knowl="./knowl/xref/table-equivalences.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 4.4.3: Basic Logical Laws - Equivalences">Table 4.4.3</a> should be obvious to the reader. Remember, 0 stands for contradiction, 1 for tautology. Many logical laws are similar to algebraic laws. For example, there is a logical law corresponding to the associative law of addition, <span class="process-math">\(a + (b + c) = (a + b) + c\text{.}\)</span> In fact, associativity of both conjunction and disjunction are among the laws of logic. Notice that with one exception, the laws are paired in such a way that exchanging the symbols <span class="process-math">\(\land\text{,}\)</span> <span class="process-math">\(\lor\text{,}\)</span> 1 and 0 for <span class="process-math">\(\lor\text{,}\)</span> <span class="process-math">\(\land\text{,}\)</span> 0, and 1, respectively, in any law gives you a second law. For example, <span class="process-math">\(p
 \lor 0\Leftrightarrow p\)</span> results in <span class="process-math">\(p \land 1 \Leftrightarrow p\text{.}\)</span> This is called a <em class="emphasis">duality principle</em>. For now, think of it as a way of remembering two laws for the price of one. We will leave it to the reader to verify a few of these laws with truth tables. However, the reader should be careful in applying duality to the conditional operator and implication since the dual involves taking the converse. For example, the dual of <span class="process-math">\(p \land q\Rightarrow p\)</span> is <span class="process-math">\(p \lor q \Leftarrow p\text{,}\)</span> which is usually written <span class="process-math">\(p\Rightarrow p \lor q\text{.}\)</span>
 </div>
-<details id="ex-identity-and" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-identity-and" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Verification of an Identity Law.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-identity-and-2">The Identity Law can be verified with this truth table. The fact that <span class="process-math">\((p \land
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-identity-and-2">The Identity Law can be verified with this truth table. The fact that <span class="process-math">\((p \land
 1)\leftrightarrow p\)</span> is a tautology serves as a valid proof.</div> <figure class="table table-like" id="tt-identity-and"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.4.2<span class="period">.</span></span><span class="space"> </span>Truth table to demonstrate the identity law for conjunction.</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(p\)</span></th>
@@ -1187,7 +1198,7 @@ p)\Leftrightarrow (p \land q) \lor (\neg p \land \neg q)\)</span></td>
 </h3>
 <article class="exercise exercise-like" id="exercises-4_4-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para" id="exercises-4_4-2-1-1">Write the following in symbolic notation and determine whether it is a tautology: “If I study then I will learn. I will not learn. Therefore, I do not study.”</div>
-<div class="solutions"><details id="exercises-4_4-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="solutions"><details id="exercises-4_4-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
 <div class="para logical" id="exercises-4_4-2-2-1">
 <div class="para">Let <span class="process-math">\(s=\textrm{I will study}\text{,}\)</span><span class="process-math">\(t=\textrm{I will learn.}\)</span> The argument is: <span class="process-math">\(((s\to
 t)\land (\neg t))\to (\neg s) ,\)</span> call the argument <span class="process-math">\(a\text{.}\)</span>
@@ -1218,7 +1229,7 @@ s\text{ } &amp; t\text{ } &amp; s\to t\text{ } &amp; (s\to t)\land (\neg t)\text
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="exercises-4_4-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="exercises-4_4-4-2-1">In any true statement <span class="process-math">\(S\text{,}\)</span> replace; <span class="process-math">\(\land\)</span> with <span class="process-math">\(\lor\text{,}\)</span> <span class="process-math">\(\lor\)</span> with <span class="process-math">\(\land\text{,}\)</span> 0 with 1, 1 with 0, <span class="process-math">\(\Leftarrow\)</span> with <span class="process-math">\(\Rightarrow \text{,}\)</span> and <span class="process-math">\(\Rightarrow \)</span> with <span class="process-math">\(\Leftarrow \text{.}\)</span> Leave all other connectives unchanged.</div></div></details></div></article><article class="exercise exercise-like" id="exercises-4_4-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="solutions"><details id="exercises-4_4-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="exercises-4_4-4-2-1">In any true statement <span class="process-math">\(S\text{,}\)</span> replace; <span class="process-math">\(\land\)</span> with <span class="process-math">\(\lor\text{,}\)</span> <span class="process-math">\(\lor\)</span> with <span class="process-math">\(\land\text{,}\)</span> 0 with 1, 1 with 0, <span class="process-math">\(\Leftarrow\)</span> with <span class="process-math">\(\Rightarrow \text{,}\)</span> and <span class="process-math">\(\Rightarrow \)</span> with <span class="process-math">\(\Leftarrow \text{.}\)</span> Leave all other connectives unchanged.</div></div></details></div></article><article class="exercise exercise-like" id="exercises-4_4-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para" id="exercises-4_4-5-1-1">Write the dual of the following statements:</div> <div class="para logical" id="exercises-4_4-5-1-2"><ol class="lower-alpha">
 <li id="exercises-4_4-5-1-2-1-1"><div class="para" id="p-derived-exercises-4_4-5-1-2-1-1"><span class="process-math">\(\displaystyle (p \land q)\Rightarrow p\)</span></div></li>
 <li id="exercises-4_4-5-1-2-1-2"><div class="para" id="p-derived-exercises-4_4-5-1-2-1-2"><span class="process-math">\(\displaystyle (p\lor q)\land \neg q\Rightarrow p\)</span></div></li>

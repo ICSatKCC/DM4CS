@@ -680,10 +680,21 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -991,9 +1002,9 @@ S = \{ (b,b) , (b,g) , (g,b) , (g,g) \} ,
 P(A \mid B) = \frac{P(A \cap B)}{P(B)} . 
 \end{equation*}
 </div>
-</div></article><details id="ex-anils-children" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article><details id="ex-anils-children" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of a second boy.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-anils-children-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-anils-children-2">
 <div class="para">Returning to Anil’s two children, we saw that the sample space is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-conditional-probability.html">
 \begin{equation*}
@@ -1035,9 +1046,9 @@ P(A \mid B) = \frac{P(A \cap B)}{P(B)}
 \end{equation*}
 </div>
 <div class="para">which is the same answer as we got before.</div>
-</div></article></details><details id="ex-condl-prob-dice-roll" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article></details><details id="ex-condl-prob-dice-roll" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of rolling a three given an odd number is rolled.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-condl-prob-dice-roll-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-condl-prob-dice-roll-2">
 <div class="para">Assume we roll a fair die, i.e., we choose an element uniformly at random from the sample space</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1099,7 +1110,7 @@ P(B \mid A) = \frac{P(B \cap A)}{P(A)}
 P(A \mid B) + P \left( \overline{A} \mid B \right) = 1 . 
 \end{equation*}
 </div>
-</div></article><details id="thm-sum-of-conditional-complements-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-sum-of-conditional-complements-3-1">
+</div></article><details id="thm-sum-of-conditional-complements-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-sum-of-conditional-complements-3-1">
 <div class="para">By definition, we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-probability-of-sequence-of-disjoint.html">
 \begin{equation*}
@@ -1158,7 +1169,7 @@ P(A) = \sum_{i=1}^n P \left( A \mid B_i \right) \cdot
 P \left( B_i \right) .
 \end{equation*}
 </div>
-</div></article><details id="thm-law-of-total-probability-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-law-of-total-probability-3-1">
+</div></article><details id="thm-law-of-total-probability-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-law-of-total-probability-3-1">
 <div class="para">The assumptions imply that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-conditional-probability.html">
 \begin{equation*}
@@ -1217,9 +1228,9 @@ P(A \mid B) = P(A) .
 P(B \mid A) = P(B) .
 \end{equation*}
 </div>
-</div></article><details id="ex-rolling-two-dice-independent" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article><details id="ex-rolling-two-dice-independent" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Independence of Rolling Two Dice.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-rolling-two-dice-independent-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-rolling-two-dice-independent-2">
 <div class="para">Assume we roll a red die and a blue die; thus, the sample space is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1320,7 +1331,7 @@ P \left( A_3 \right) \cdot P \left( B_3 \right)
 <article class="theorem theorem-like" id="thm-independence-of-complements"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Independence of Complements.</span>
 </h4>
-<div class="para" id="thm-independence-of-complements-2-1">Let <span class="process-math">\((S,P)\)</span> be a probability space and let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be two events. If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are independent, then <span class="process-math">\(A\)</span> and <span class="process-math">\(\overline{B}\)</span> are also independent.</div></article><details id="thm-independence-of-complements-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-independence-of-complements-3-1">
+<div class="para" id="thm-independence-of-complements-2-1">Let <span class="process-math">\((S,P)\)</span> be a probability space and let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be two events. If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are independent, then <span class="process-math">\(A\)</span> and <span class="process-math">\(\overline{B}\)</span> are also independent.</div></article><details id="thm-independence-of-complements-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-independence-of-complements-3-1">
 <div class="para">To prove that <span class="process-math">\(A\)</span> and <span class="process-math">\(\overline{B}\)</span> are independent, we have to show that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-probability-of-complements.html ./knowl/xref/thm-probability-of-sequence-of-disjoint.html">
 \begin{equation*}
@@ -1422,9 +1433,9 @@ P(A \cap B \cap C) = P(A) \cdot P(B) \cdot P(C) .
 \end{equation*}
 </div>
 </div>
-<details id="ex-pairwise-but-not-mutual-independence" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-pairwise-but-not-mutual-independence" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Pairwise but not Mutually Independent Coin Flips.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-pairwise-but-not-mutual-independence-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-pairwise-but-not-mutual-independence-2">
 <div class="para">Consider flipping a coin three times and assume that the result is a uniformly random element from the sample space</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1520,9 +1531,9 @@ X(i,j) = i+j
 </div>
 </div>
 <div class="para" id="subsec3_2_3-random-variables-6">Note that the term “random variable” is misleading: A random variable is <em class="emphasis">not</em> random, but a function that assigns, to every outcome <span class="process-math">\(\omega\)</span> in the sample space <span class="process-math">\(S\text{,}\)</span> a real number <span class="process-math">\(X(\omega)\text{.}\)</span> Also, a random variable is <em class="emphasis">not</em> a variable, but a function.</div>
-<details id="ex-random-variables-three-coins" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-random-variables-three-coins" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Flipping Three Coins with Random Variables.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-random-variables-three-coins-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-random-variables-three-coins-2">
 <div class="para">Assume we flip three coins. The sample space is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1616,9 +1627,9 @@ Y=2 &amp; \emptyset  \\
 \{ \omega \in S : X(\omega) = x \} .
 \end{equation*}
 </div>
-</div></article><details id="ex-prob-random-variables-three-coins" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article><details id="ex-prob-random-variables-three-coins" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.14</span><span class="period">.</span><span class="space"> </span><span class="title">Probabilities of Flipping Three Coins with Random Variables.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-prob-random-variables-three-coins-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-prob-random-variables-three-coins-2">
 <div class="para">Let us return to the example in which we flip three coins. Assume that the coins are fair and the three flips are mutually independent. Consider again the corresponding random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{.}\)</span> It should be clear how we determine, for example, the probability that <span class="process-math">\(X\)</span> is equal to <span class="process-math">\(0\text{,}\)</span> which we will write as <span class="process-math">\(P(X=0)\text{.}\)</span> Using our interpretation of “<span class="process-math">\(X=0\)</span>” as being the event <span class="process-math">\(\{TTT\}\text{,}\)</span> we get</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1718,9 +1729,9 @@ P(A \mid B)  &amp;= \frac{P(B \mid A) \cdot P(A)}{P(B)} \\
 &amp;= \frac{P(B \mid A) \cdot P(A)}{(P(B \mid A) \cdot P(A)) + (P(B \mid \overline{A}) \cdot P(\overline{A}))}\end{array} .
 \end{equation*}
 </div>
-</div></article><details id="ex-bayes-balls-boxes" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article><details id="ex-bayes-balls-boxes" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.18</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of having chosen from a particular urn.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-bayes-balls-boxes-2">We have two urns <span class="process-math">\(U_i\)</span> and <span class="process-math">\(U_j\text{.}\)</span> <span class="process-math">\(U_i\)</span> contains 2 black balls and 3 white balls. <span class="process-math">\(U_j\)</span> contains 1 black ball and 1 white ball. An urn is chosen at random, then a ball is chosen at random from it. If a black ball is chosen, what is the probability it came from urn <span class="process-math">\(U_i\text{?}\)</span>
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-bayes-balls-boxes-2">We have two urns <span class="process-math">\(U_i\)</span> and <span class="process-math">\(U_j\text{.}\)</span> <span class="process-math">\(U_i\)</span> contains 2 black balls and 3 white balls. <span class="process-math">\(U_j\)</span> contains 1 black ball and 1 white ball. An urn is chosen at random, then a ball is chosen at random from it. If a black ball is chosen, what is the probability it came from urn <span class="process-math">\(U_i\text{?}\)</span>
 </div> <div class="para logical" id="ex-bayes-balls-boxes-3">
 <div class="para">Let <span class="process-math">\(I\)</span> be the event urn <span class="process-math">\(U_i\)</span> is chosen and <span class="process-math">\(B\)</span> be the event a black ball is chosen.</div>
 <ol class="decimal">
@@ -1772,7 +1783,7 @@ P(A_j \mid B)  &amp;= \frac{P(B \mid A_j) \cdot P(A_j)}{\sum_{i=1}^{n}(P(B \mid 
 <article class="exercise exercise-like" id="section3_2-Bayes-8-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para" id="section3_2-Bayes-8-2-1-1">Assume that <span class="process-math">\(E\)</span> and <span class="process-math">\(F\)</span> are two events with positive probabilities.  Show that if <span class="process-math">\(P(E|F) = P(E)\text{,}\)</span> then <span class="process-math">\(P(F|E) = P(F)\text{.}\)</span>
 </div>
-<div class="solutions"><details id="section3_2-Bayes-8-2-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section3_2-Bayes-8-2-2-1">
+<div class="solutions"><details id="section3_2-Bayes-8-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="section3_2-Bayes-8-2-2-1">
 <div class="para">If <span class="process-math">\(P(E|F) = P(E)\)</span> then the two events are independent.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1804,7 +1815,7 @@ P(F) &amp; = P(F|E).
 <li id="section3_2-Bayes-8-4-1-1-1-4"><div class="para" id="section3_2-Bayes-8-4-1-1-1-4-1">the first outcome was less than 5?</div></li>
 </ol>
 </div>
-<div class="solutions"><details id="section3_2-Bayes-8-4-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section3_2-Bayes-8-4-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="section3_2-Bayes-8-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="section3_2-Bayes-8-4-2-1"><ol class="lower-alpha">
 <li id="section3_2-Bayes-8-4-2-1-1-1"><div class="para" id="section3_2-Bayes-8-4-2-1-1-1-1"><span class="process-math">\(\displaystyle \frac{1}{2} \)</span></div></li>
 <li id="section3_2-Bayes-8-4-2-1-1-2"><div class="para" id="section3_2-Bayes-8-4-2-1-1-2-1"><span class="process-math">\(\displaystyle \frac{2}{3} \)</span></div></li>
 <li id="section3_2-Bayes-8-4-2-1-1-3"><div class="para" id="section3_2-Bayes-8-4-2-1-1-3-1"><span class="process-math">\(\displaystyle 0\)</span></div></li>
@@ -1851,7 +1862,7 @@ P(F) &amp; = P(F|E).
 </ol>
 </div></li>
 </ol></div>
-<div class="solutions"><details id="section3_2-Bayes-8-6-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section3_2-Bayes-8-6-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="section3_2-Bayes-8-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="section3_2-Bayes-8-6-2-1"><ol class="lower-alpha">
 <li id="section3_2-Bayes-8-6-2-1-1-1"><div class="para" id="section3_2-Bayes-8-6-2-1-1-1-1">(1) and (2)</div></li>
 <li id="section3_2-Bayes-8-6-2-1-1-2"><div class="para" id="section3_2-Bayes-8-6-2-1-1-2-1">(1)</div></li>
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="section3_2-Bayes-8-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
@@ -1872,7 +1883,7 @@ P(F) &amp; = P(F|E).
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="section3_2-Bayes-8-8-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section3_2-Bayes-8-8-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="section3_2-Bayes-8-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="section3_2-Bayes-8-8-2-1"><ol class="lower-alpha">
 <li id="section3_2-Bayes-8-8-2-1-1-1"><div class="para logical" id="section3_2-Bayes-8-8-2-1-1-1-1">
 <div class="para">We have</div>
 <div class="displaymath process-math">
@@ -1900,7 +1911,7 @@ P(C \cap (A \cap B)) = \frac{1}{4} &amp; \neq P(C)P(A \cap B)  = \frac{1}{8}.
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="section3_2-Bayes-8-9"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="para" id="section3_2-Bayes-8-9-1-1">Let <span class="process-math">\(S = \{a,b,c,d,e,f\}\text{.}\)</span>  Assume that <span class="process-math">\(P(a) = P(b) = 1/8\)</span> and <span class="process-math">\(P(c) = P(d) = P(e) = P(f) = 3/16\text{.}\)</span>  Let <span class="process-math">\(A\text{,}\)</span>~<span class="process-math">\(B\text{,}\)</span> and~<span class="process-math">\(C\)</span> be the events <span class="process-math">\(A = \{d,e,a\}\text{,}\)</span> <span class="process-math">\(B = \{c,e,a\}\text{,}\)</span> <span class="process-math">\(C = \{c,d,a\}\text{.}\)</span>  Show that <span class="process-math">\(P(A \cap B \cap C) = P(A)P(B)P(C)\)</span> but no two of these events are independent.</div></article><article class="exercise exercise-like" id="section3_2-Bayes-8-10"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
 <div class="para" id="section3_2-Bayes-8-10-1-1"> We have two urns <span class="process-math">\(U_a\)</span> and <span class="process-math">\(U_b\text{.}\)</span> <span class="process-math">\(U_a\)</span> contains 9 black balls and 6 white balls. <span class="process-math">\(U_b\)</span> contains 3 black balls and 1 white ball. An urn is chosen at random, then a ball is chosen at random from it. Let <span class="process-math">\(A\)</span> be the event urn <span class="process-math">\(U_a\)</span> is chosen and <span class="process-math">\(W\)</span> be the event a white ball is chosen.</div> <div class="para" id="section3_2-Bayes-8-10-1-2">Calculate <span class="process-math">\(P(A|W)\)</span> using Bayes’ Rule</div>
-<div class="solutions"><details id="section3_2-Bayes-8-10-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section3_2-Bayes-8-10-2-1"><div class="displaymath process-math">
+<div class="solutions"><details id="section3_2-Bayes-8-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="section3_2-Bayes-8-10-2-1"><div class="displaymath process-math">
 \begin{equation*}
 \begin{array}{rl}
 P(A|W) &amp; = \frac{P(W|A)P(A)}{P(W|A)P(A) + P(W|B)P(B)}\\

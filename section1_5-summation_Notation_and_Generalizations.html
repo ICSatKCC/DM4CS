@@ -680,10 +680,21 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -976,15 +987,15 @@ window.MathJax = {
 <li id="ss-sums-6-1-3"><div class="para" id="ss-sums-6-1-3-1">The value of <span class="process-math">\(k\)</span> below the summation symbol is the <em class="emphasis">initial index</em> and the value above the summation symbol is the <em class="emphasis">terminal index</em>.</div></li>
 <li id="ss-sums-6-1-4"><div class="para" id="ss-sums-6-1-4-1">It is understood that the series is a sum of the general terms where the index start with the initial index and increases by one up to and including the terminal index.</div></li>
 </ul></div>
-<details id="some_finite_series" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="some_finite_series" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Some finite series.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="some_finite_series-2"><ol class="lower-alpha">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="some_finite_series-2"><ol class="lower-alpha">
 <li id="some_finite_series-2-1-1"><div class="para" id="some_finite_series-2-1-1-1"><span class="process-math">\(\displaystyle \sum_{i=1}^4 a_i= a_1+ a_2+a_3+a_4\)</span></div></li>
 <li id="some_finite_series-2-1-2"><div class="para" id="some_finite_series-2-1-2-1"><span class="process-math">\(\displaystyle \sum_{k=0}^5 b_k=b_0+b_1+b_2+b_3+b_4+b_5\)</span></div></li>
 <li id="some_finite_series-2-1-3"><div class="para" id="some_finite_series-2-1-3-1"><span class="process-math">\(\displaystyle \sum_{i=-2}^2 c_i=c_{-2}+c_{-1}+c_0+c_1+c_2\)</span></div></li>
-</ol></div></article></details><details id="more_finite_series" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</ol></div></article></details><details id="more_finite_series" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">More finite series.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="more_finite_series-2">If the general terms in a series are more specific, the sum can often be simplified. For example,</div> <div class="para logical" id="more_finite_series-3"><ol class="lower-alpha">
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="more_finite_series-2">If the general terms in a series are more specific, the sum can often be simplified. For example,</div> <div class="para logical" id="more_finite_series-3"><ol class="lower-alpha">
 <li id="more_finite_series-3-1-1"><div class="para" id="more_finite_series-3-1-1-1"><span class="process-math">\(\displaystyle \sum_{i=1}^4 i^2=1^2+2^2+3^2+4^2=30\)</span></div></li>
 <li id="more_finite_series-3-1-2"><div class="para logical" id="more_finite_series-3-1-2-1"><div class="displaymath process-math">
 \begin{equation*}
@@ -1007,9 +1018,9 @@ window.MathJax = {
 <li id="generalized-set-operations-3-2-1-2"><div class="para" id="generalized-set-operations-3-2-1-2-1"><span class="process-math">\(\displaystyle A_1\cup A_2\cup \cdots \cup A_n=\underset{i=1}{\overset{n}{\cup }}A_i\)</span></div></li>
 <li id="generalized-set-operations-3-2-1-3"><div class="para" id="generalized-set-operations-3-2-1-3-1"><span class="process-math">\(\displaystyle A_1\times A_2\times \cdots \times A_n=\underset{i=1}{\overset{n}{\times }}A_i\)</span></div></li>
 <li id="generalized-set-operations-3-2-1-4"><div class="para" id="generalized-set-operations-3-2-1-4-1"><span class="process-math">\(\displaystyle A_1\oplus A_2\oplus \cdots \oplus A_n=\underset{i=1}{\overset{n}{\oplus }}A_i\)</span></div></li>
-</ol></div></article><details id="some_generalized_operations" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</ol></div></article><details id="some_generalized_operations" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Some generalized operations.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="some_generalized_operations-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="some_generalized_operations-2">
 <div class="para">If <span class="process-math">\(A_1 = \{0, 2, 3\}\text{,}\)</span> <span class="process-math">\(A_2 = \{1, 2, 3, 6\}\text{,}\)</span> and <span class="process-math">\(A_3 = \{-1, 0, 3, 9\}\text{,}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1049,7 +1060,7 @@ A \cap \left(\underset{i=1}{\overset{n}{\cup }}B_i\right)= \underset{i=1}{\overs
 <span class="process-math">\(\sum_{k=1}^n (2k-1)\)</span> for <span class="process-math">\(n = 1, 2, 3, 4\)</span>
 </div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-1-5-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-1-5-2-2-1"><ol class="lower-alpha cols2">
+<div class="solutions"><details id="exercises-1-5-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-1-5-2-2-1"><ol class="lower-alpha cols2">
 <li id="exercises-1-5-2-2-1-1-1"><div class="para" id="exercises-1-5-2-2-1-1-1-1"><span class="process-math">\(\displaystyle 24\)</span></div></li>
 <li id="exercises-1-5-2-2-1-1-2"><div class="para" id="exercises-1-5-2-2-1-1-2-1"><span class="process-math">\(\displaystyle 6\)</span></div></li>
 <li id="exercises-1-5-2-2-1-1-3"><div class="para" id="exercises-1-5-2-2-1-1-3-1"><span class="process-math">\(\displaystyle 3,7,15,31\)</span></div></li>
@@ -1074,7 +1085,7 @@ A \cap \left(\underset{i=1}{\overset{n}{\cup }}B_i\right)= \underset{i=1}{\overs
 <li id="exercises-1-5-4-1-1-1-3"><div class="para" id="exercises-1-5-4-1-1-1-3-1">Repeat parts (a) and (b) for <span class="process-math">\(\sum_{i=1}^n i^3=\frac{n^2(n+1)^2}{4}\)</span>
 </div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-1-5-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-1-5-4-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-1-5-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-1-5-4-2-1"><ol class="lower-alpha">
 <li id="exercises-1-5-4-2-1-1-1"><div class="para" id="exercises-1-5-4-2-1-1-1-1"><span class="process-math">\(\displaystyle \frac{1}{1 (1+1)}+\frac{1}{2 (2+1)}+\frac{1}{3 (3+1)}+\cdots +\frac{1}{n(n+1)}=\frac{n}{n+1}\)</span></div></li>
 <li id="exercises-1-5-4-2-1-1-2"><div class="para" id="exercises-1-5-4-2-1-1-2-1"><span class="process-math">\(\displaystyle \frac{1}{1(2)}+\frac{1}{2(3)}+\frac{1}{3(4)}=\frac{1}{2}+\frac{1}{6}+\frac{1}{12}=\frac{3}{4}=\frac{3}{3+1}\)</span></div></li>
 <li id="exercises-1-5-4-2-1-1-3"><div class="para" id="exercises-1-5-4-2-1-1-3-1">
@@ -1098,7 +1109,7 @@ k \\
 \end{array}
 \right)x^{n-k}y^k\text{.}\)</span>
 </div>
-<div class="solutions"><details id="exercises-1-5-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="exercises-1-5-6-2-1"><span class="process-math">\((x+y)^3=\left(\text{}_0^3\right)x^3+\left(\text{}_1^3\right)x^{2}y+\left.(_2^3\right)x y^2+\left(\text{}_3^3\right)y^3\)</span></div></div></details></div></article><article class="exercise exercise-like" id="exercises-1-5-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="solutions"><details id="exercises-1-5-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="exercises-1-5-6-2-1"><span class="process-math">\((x+y)^3=\left(\text{}_0^3\right)x^3+\left(\text{}_1^3\right)x^{2}y+\left.(_2^3\right)x y^2+\left(\text{}_3^3\right)y^3\)</span></div></div></details></div></article><article class="exercise exercise-like" id="exercises-1-5-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <div class="para logical" id="exercises-1-5-7-1-1"><ol class="lower-alpha">
 <li id="exercises-1-5-7-1-1-1-1"><div class="para" id="exercises-1-5-7-1-1-1-1-1">Draw the Venn diagram for <span class="process-math">\(\underset{i=1}{\overset{3}{\cap }}A_i\text{.}\)</span>
 </div></li>
@@ -1111,7 +1122,7 @@ k \\
 <li id="exercises-1-5-8-1-2-1-3"><div class="para" id="exercises-1-5-8-1-2-1-3-1"><span class="process-math">\(\displaystyle \underset{i=1}{\overset{5}{\cap }}A_i\)</span></div></li>
 <li id="exercises-1-5-8-1-2-1-4"><div class="para" id="exercises-1-5-8-1-2-1-4-1"><span class="process-math">\(\displaystyle \underset{i=1}{\overset{5}{\cap }}B_i\)</span></div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-1-5-8-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-1-5-8-2-1"><ol class="lower-alpha cols2">
+<div class="solutions"><details id="exercises-1-5-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-1-5-8-2-1"><ol class="lower-alpha cols2">
 <li id="exercises-1-5-8-2-1-1-1"><div class="para" id="exercises-1-5-8-2-1-1-1-1"><span class="process-math">\(\displaystyle \{x\in \mathbb{Q}\mid 0 &lt; x \leq 5\}\)</span></div></li>
 <li id="exercises-1-5-8-2-1-1-2"><div class="para" id="exercises-1-5-8-2-1-1-2-1"><span class="process-math">\(\displaystyle \{x\in \mathbb{Q}\mid -5 &lt; x &lt; 5\}=B_5\)</span></div></li>
 <li id="exercises-1-5-8-2-1-1-3"><div class="para" id="exercises-1-5-8-2-1-1-3-1"><span class="process-math">\(\displaystyle \emptyset\)</span></div></li>
@@ -1127,7 +1138,7 @@ k \\
 <li id="exercises-1-5-10-1-2-1-1"><div class="para" id="exercises-1-5-10-1-2-1-1-1"><span class="process-math">\(\displaystyle \prod _{i=1}^3 i^2\)</span></div></li>
 <li id="exercises-1-5-10-1-2-1-2"><div class="para" id="exercises-1-5-10-1-2-1-2-1"><span class="process-math">\(\displaystyle \prod _{i=1}^3 (2i+1)\)</span></div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-1-5-10-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-1-5-10-2-1"><ol class="lower-alpha cols2">
+<div class="solutions"><details id="exercises-1-5-10-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-1-5-10-2-1"><ol class="lower-alpha cols2">
 <li id="exercises-1-5-10-2-1-1-1"><div class="para" id="exercises-1-5-10-2-1-1-1-1"><span class="process-math">\(\displaystyle 36\)</span></div></li>
 <li id="exercises-1-5-10-2-1-1-2"><div class="para" id="exercises-1-5-10-2-1-1-2-1"><span class="process-math">\(\displaystyle 105\)</span></div></li>
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-1-5-11"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>

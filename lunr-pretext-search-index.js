@@ -8611,7 +8611,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "11.4",
   "title": "Matrix Determinants",
-  "body": " Matrix Determinants Matrix Determinant   The determinant is a number (a scalar value) that is a certain function of the entries of a square matrix. The determinant of a matrix is commonly denoted , , or . Its value characterizes some properties of the matrix and the area of the shape it represents geometrically. Historically, determinants were used long before matrices: A determinant was originally defined as a property of a system of linear equations. The determinant \"determines\" whether the system has a unique solution (which occurs precisely if the determinant is non-zero).  We will see in this chapter that the determinant is used to determine if a matrix has an inverse (the system of equations has a unique solution), to find an inverse matrix if it exists, and to solve systems of linear equations more quickly. The determinant has many other uses which would be covered in more advanced mathematics courses. See also the Wikipedia article: Determinant.     Basic Techniques and Properties   Cofactors and Deteriminants  Let be an matrix. The determinant of , denoted as is a number. If the matrix is a matrix, this number is very easy to find.    Let . Then . The determinant is also often denoted by enclosing the matrix w two vertical lines. Thus      Find .  From the definition this is just .   Having defined what is meant by the determinant of a matrix, what about a matrix?  matrix minor   Suppose is a matrix. The  minor , denoted as , is the determinant of the matrix which results from deleting the row and the column.     Consider the matrix  The (1,2) minor is the determinant of the matrix which results when you delete the first row and the second column. This minor is therefore   The (2,3) minor is the determinant of the matrix which results when you delete the second row and the third column. This minor is therefore    matrix cofactor   Suppose is a matrix. The  cofactor is defined to be minor). In words, you multiply times the minor to get the cofactor. The cofactors of a matrix are so important that special notation is appropriate when referring to them. The cofactor of a matrix will be denoted by . It is also convenient to refer to the cofactor of an entry of a matrix as follows. For ai j an entry of the matrix, its cofactor is just . Thus the cofactor of the entry is just the cofactor.     Consider the matrix  The (1,2) minor is the determinant of the matrix which results when you delete the first row and the second column. This minor is therefore   It follows   The (2,3) minor is the determinant of the matrix which results when you delete the second row and the third column. This minor is therefore   Therefore,   Similarly,       The determinant of a matrix , is obtained by picking a row (column) and taking the product of each entry in that row (column) w its cofactor and adding these up. This process when applied to the row (column) is known as expanding the determinant along the row (column).     Find the determinant of Here is how it is done by expanding around the first column.    You see, we just followed the rule in the above definition. We took the 1 in the first column and multiplied it by its cofactor, the 4 in the first column and multiplied it by its cofactor, and the 3 in the first column and multiplied it by its cofactor. Then we added these numbers together.  You could also expand the determinant along the second row as follows. Observe this gives the same number. You should try expanding along other rows and columns. If you don’t make any mistakes, you will always get the same answer.   What about a matrix? You know now how to find the determinant of a matrix. The pattern is the same.    Suppose A is a matrix. The  minor is the determinant of the matrix you obtain when you delete the row and the column. The  cofactor , is defined to be . In words, you multiply times the minor to get the cofactor.      The determinant of a matrix , is obtained by picking a row (column) and taking the product of each entry in that row (column) with its cofactor and adding these together. This process when applied to the row (column) is known as expanding the determinant along the   row (column) .      Find where     As in the case of a matrix, you can expand this along any row or column. Lets pick the third column.     Now you know how to expand each of the matrices along a row or a column. If you do so, you will get assuming you make no mistakes. You could expand this matrix along any row or any column and assuming you make no mistakes, you will always get the same thing which is defined to be the determinant of the matrix . This method of evaluating a determinant by expanding along a row or a column is called the method of Laplace expansion .    Note that each of the four terms in the example solution above involves three terms consisting of determinants of matrices and each of these will need 2 terms. Therefore, there will be terms to evaluate in order to find the determinant using the method of Laplace expansion. Suppose now you have a matrix and you follow the above pattern for evaluating determinants. By analogy to the above, there will be terms involved in the evaluation of such a determinant by Laplace expansion along a row or column. This is a lot of terms.  In addition to the difficulties just discussed, you should regard the above claim that you always get the same answer by picking any row or column with considerable skepticism. It is incredible and not at all obvious. However, it requires a little effort to establish it. This is done in the Elementary Linear Algebra book chapter 7 on the theory of the determinant.  matrix cofactor   Let be an matrix and suppose the determinant of a matrix has been defined. Then a new matrix called the cofactor matrix , is defined by where to obtain delete the row and the column of , take the determinant of the matrix which results, (This is called the  minor of . ) and then multiply this number by . Thus equals the cofactor. To make the formulas easier to remember, will denote the entry of the cofactor matrix.    With this definition of the cofactor matrix, here is how to define the determinant of an matrix.  Determininant of an matrix   Let be an matrix where and suppose the determinant of an has been defined. Then     The first sum consists of expanding the determinant along the row and the second expands the determinant along the column.    Expanding the n matrix along any row or column always gives the same answer so the above definition is a good definition.       "
+  "body": " Matrix Determinants  Matrix Determinant   The determinant is a number (a scalar value) that is a certain function of the entries of a square matrix. The determinant of a matrix is commonly denoted , , or . Its value characterizes some properties of the matrix and the area of the shape it represents geometrically. Historically, determinants were used long before matrices: A determinant was originally defined as a property of a system of linear equations. The determinant \"determines\" whether the system has a unique solution (which occurs precisely if the determinant is non-zero).  We will see in this chapter that the determinant is used to determine if a matrix has an inverse (the system of equations has a unique solution), to find an inverse matrix if it exists, and to solve systems of linear equations more quickly. The determinant has many other uses which would be covered in more advanced mathematics courses. See also the Wikipedia article: Determinant.     Basic Techniques and Properties   Cofactors and Deteriminants  Let be an matrix. The determinant of , denoted as is a number. If the matrix is a matrix, this number is very easy to find.    Let . Then . The determinant is also often denoted by enclosing the matrix w two vertical lines. Thus      Find .  From the definition this is just .   Having defined what is meant by the determinant of a matrix, what about a matrix?   matrix minor   Suppose is a matrix. The  minor , denoted as , is the determinant of the matrix which results from deleting the row and the column.     Consider the matrix   The (1,2) minor is the determinant of the matrix which results when you delete the first row and the second column. This minor is therefore   The (2,3) minor is the determinant of the matrix which results when you delete the second row and the third column. This minor is therefore     matrix cofactor   Suppose is a matrix. The  cofactor is defined to be minor). In words, you multiply times the minor to get the cofactor. The cofactors of a matrix are so important that special notation is appropriate when referring to them. The cofactor of a matrix will be denoted by . It is also convenient to refer to the cofactor of an entry of a matrix as follows. For ai j an entry of the matrix, its cofactor is just . Thus the cofactor of the entry is just the cofactor.     Consider the matrix   The (1,2) minor is the determinant of the matrix which results when you delete the first row and the second column. This minor is therefore   It follows   The (2,3) minor is the determinant of the matrix which results when you delete the second row and the third column. This minor is therefore   Therefore,   Similarly,       The determinant of a matrix , is obtained by picking a row (column) and taking the product of each entry in that row (column) w its cofactor and adding these up. This process when applied to the row (column) is known as expanding the determinant along the row (column).     Find the determinant of Here is how it is done by expanding around the first column.    You see, we just followed the rule in the above definition. We took the 1 in the first column and multiplied it by its cofactor, the 4 in the first column and multiplied it by its cofactor, and the 3 in the first column and multiplied it by its cofactor. Then we added these numbers together.  You could also expand the determinant along the second row as follows. Observe this gives the same number. You should try expanding along other rows and columns. If you don't make any mistakes, you will always get the same answer.   What about a matrix? You know now how to find the determinant of a matrix. The pattern is the same.    Suppose A is a matrix. The  minor is the determinant of the matrix you obtain when you delete the row and the column. The  cofactor , is defined to be . In words, you multiply times the minor to get the cofactor.      The determinant of a matrix , is obtained by picking a row (column) and taking the product of each entry in that row (column) with its cofactor and adding these together. This process when applied to the row (column) is known as expanding the determinant along the   row (column) .      Find where     As in the case of a matrix, you can expand this along any row or column. Lets pick the third column.     Now you know how to expand each of the matrices along a row or a column. If you do so, you will get assuming you make no mistakes. You could expand this matrix along any row or any column and assuming you make no mistakes, you will always get the same thing which is defined to be the determinant of the matrix . This method of evaluating a determinant by expanding along a row or a column is called the method of Laplace expansion .    Note that each of the four terms in the example solution above involves three terms consisting of determinants of matrices and each of these will need 2 terms. Therefore, there will be terms to evaluate in order to find the determinant using the method of Laplace expansion. Suppose now you have a matrix and you follow the above pattern for evaluating determinants. By analogy to the above, there will be terms involved in the evaluation of such a determinant by Laplace expansion along a row or column. This is a lot of terms.  In addition to the difficulties just discussed, you should regard the above claim that you always get the same answer by picking any row or column with considerable skepticism. It is incredible and not at all obvious. However, it requires a little effort to establish it. This is done in the Elementary Linear Algebra book chapter 7 on the theory of the determinant.   matrix cofactor   Let be an matrix and suppose the determinant of a matrix has been defined. Then a new matrix called the cofactor matrix , is defined by where to obtain delete the row and the column of , take the determinant of the matrix which results, (This is called the  minor of . ) and then multiply this number by .  Thus equals the cofactor. To make the formulas easier to remember, will denote the entry of the cofactor matrix.    With this definition of the cofactor matrix, here is how to define the determinant of an matrix.   Determininant of a Matrix   Let be an matrix where and suppose the determinant of an has been defined. Then     The first sum consists of expanding the determinant along the row and the second expands the determinant along the column.    Expanding the n matrix along any row or column always gives the same answer so the above definition is a good definition.       The Determinant of a Triangular Matrix  Notwithstanding the difficulties involved in using the method of Laplace expansion, certain types of matrices are very easy to deal with.   triangular matrix   A matrix , is upper triangular if whenever . Thus such a matrix equals zero below the main diagonal, the entries of the form , as shown. A lower triangular matrix is defined similarly as a matrix for which all entries above the main diagonal are equal to zero.    You should verify the following using the above theorem on Laplace expansion.    Let be an upper (lower) triangular matrix. Then is obtained by taking the product of the entries on the main diagonal.      Let Find     From the above corollary, it suffices to take the product of the diagonal elements. Thus     Without using the corollary, you could expand along the first column. This gives  and the only non-zero term in the expansion is the first one Now expand this along the first column to obtain  Next expand this last determinant along the first column to obtain the above equals which is just the product of the entries down the main diagonal of the original matrix.      Properties of Determinants  There are many properties satisfied by determinants. Some of these properties have to do with row operations. Recall the row operations:    Switching two rows negates the determinant   Let be an matrix and let be a matrix which results from switching two rows of . Then . Also, if one row of is a multiple of another row of , then .      Let , and let .  Then and      Multiplying a matrix by a scalar, also multiplies the determinant   Let be an matrix and let be a matrix which results from multiplying some row of by a scalar . Then .      Let , .  The first row of is 2 times the first row of .   and      Row operation 3 doesn't change the determinant   Let be an matrix and let be a matrix which results from applying row operation 3. That is, you replace some row by a multiple of another row added to itself. Then       Let and let . Thus the second row of is one times the first row added to the second row.   and      Columns have the same effect   In - you can replace the word \"row\" with the word \"column\".    There are two other major properties of determinants which do not involve row operations.    The determinant of a matrix product is the product of the determinants    Let and be two matrices, then        Compare and for     First and so Now and Thus      The determinant of a matrix is the determinant of its transpose    Let be an matrix, then         Compare and for      and Thus        Finding Determinants Using Row Operations  From the above section, - , can be used to find determinants using row operations. As pointed out above, the method of Laplace expansion will not be practical for any matrix of large size. Here is an example in which all the row operations are used.    Find the determinant of the matrix     Replace the second row by (-5) times the first row added to it. Then replace the third row by (-4) times the first row added to it. Finally, replace the fourth row by (-2) times the first row added to it. This yields the matrix and from it has the same determinant as . Now using other row operations, where The second row of was replaced by times the third row added to the second row. By this didn't change the value of the determinant. Then the last row was multiplied by . By the resulting matrix has a determinant which is times the determinant of the un-multiplied matrix. Therefore, we multiplied by to retain the correct value. Now replace the last row with 2 times the third added to it. This does not change the value of the determinant by . Finally switch the third and second rows. This causes the determinant to be multiplied by . Thus where You could do more row operations or you could note that this can be easily expanded along the first column followed by expanding the matrix which results along its first column. Thus and so and       Find the determinant of the matrix     Replace the second row by times the first row added to it. Next take times the first row and add to the third and finally take times the first row and add to the last row. This yields By this matrix has the same determinant as the original matrix. Remember you can work with the columns also. Take times the last column and add to the second column. This yields By this matrix has the same determinant as the original matrix. Now take times the third row and add to the top row. This gives. which by has the same determinant as the original matrix. Let's expand it now along the first column. This yields the following for the determinant of the original matrix. which equals   We suggest you do not try to be fancy in using row operations. That is, stick mostly to the one which replaces a row or column with a multiple of another row or column added to it. Also note there is no way to check your answer other than working the problem more than one way. To be sure you have gotten it right you must do this.       Applications of Determinants   A Formula For The Inverse  The definition of the determinant in terms of Laplace expansion along a row or column also provides a way to give a formula for the inverse of a matrix. Recall the definition of the inverse of a matrix in . Also recall the definition of the cofactor matrix given in . This cofactor matrix was just the matrix which results from replacing the entry of the matrix with the cofactor.  The following theorem says that to find the inverse, take the transpose of the cofactor matrix and divide by the determinant. The transpose of the cofactor matrix is called the adjugate or sometimes the classical adjoint of the matrix . In other words, is equal to one divided by the determinant of times the adjugate matrix of . This is what the following theorem says with more precision.     exists if and only if . If , then where for the cofactor of .    From the definition of the determinant in terms of expansion along a column, and letting , if , Now consider when . Replace the column with the column to obtain a matrix whose determinant equals zero by . However, expanding this matrix along the column yields Summarizing, Now which is the entry of . Therefore,   Using the other formula in and similar reasoning, Now, which is the entry of . Therefore, and it follows that , where In other words,   Now suppose exists. Then by  so       Find the inverse of the matrix     First, find the determinant of this matrix. Using - , the determinant of this matrix equals the determinant of the matrix which equals 12. The cofactor matrix of is Each entry of was replaced by its cofactor. Therefore, from the above theorem, the inverse of should equal   Does it work? You should check to see if it does. When the matrices are multiplied and so it is correct.      Find the inverse of the matrix     First find its determinant. This determinant is . The inverse is therefore equal to Expanding all the determinants this yields   Always check your work. and so we got it right. If the result of multiplying these matrices had been something other than the identity matrix, you would know there was an error. When this happens, you need to search for the mistake if you are interested in getting the right answer. A common mistake is to forget to take the transpose of the cofactor matrix.    This way of finding inverses is especially useful in the case where it is desired to find the inverse of a matrix whose entries are functions.     "
 },
 {
   "id": "def-2-x-2-det",
@@ -8638,7 +8638,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "11.4.3",
   "title": "",
-  "body": "matrix minor   Suppose is a matrix. The  minor , denoted as , is the determinant of the matrix which results from deleting the row and the column.   "
+  "body": " matrix minor   Suppose is a matrix. The  minor , denoted as , is the determinant of the matrix which results from deleting the row and the column.   "
 },
 {
   "id": "subsubsec-Cofactors-2-x-2-Dets-7",
@@ -8647,7 +8647,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "11.4.4",
   "title": "",
-  "body": " Consider the matrix  The (1,2) minor is the determinant of the matrix which results when you delete the first row and the second column. This minor is therefore   The (2,3) minor is the determinant of the matrix which results when you delete the second row and the third column. This minor is therefore   "
+  "body": " Consider the matrix   The (1,2) minor is the determinant of the matrix which results when you delete the first row and the second column. This minor is therefore   The (2,3) minor is the determinant of the matrix which results when you delete the second row and the third column. This minor is therefore   "
 },
 {
   "id": "def-matrix-cofactor",
@@ -8656,7 +8656,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "11.4.5",
   "title": "",
-  "body": "matrix cofactor   Suppose is a matrix. The  cofactor is defined to be minor). In words, you multiply times the minor to get the cofactor. The cofactors of a matrix are so important that special notation is appropriate when referring to them. The cofactor of a matrix will be denoted by . It is also convenient to refer to the cofactor of an entry of a matrix as follows. For ai j an entry of the matrix, its cofactor is just . Thus the cofactor of the entry is just the cofactor.   "
+  "body": " matrix cofactor   Suppose is a matrix. The  cofactor is defined to be minor). In words, you multiply times the minor to get the cofactor. The cofactors of a matrix are so important that special notation is appropriate when referring to them. The cofactor of a matrix will be denoted by . It is also convenient to refer to the cofactor of an entry of a matrix as follows. For ai j an entry of the matrix, its cofactor is just . Thus the cofactor of the entry is just the cofactor.   "
 },
 {
   "id": "subsubsec-Cofactors-2-x-2-Dets-9",
@@ -8665,7 +8665,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "11.4.6",
   "title": "",
-  "body": " Consider the matrix  The (1,2) minor is the determinant of the matrix which results when you delete the first row and the second column. This minor is therefore   It follows   The (2,3) minor is the determinant of the matrix which results when you delete the second row and the third column. This minor is therefore   Therefore,   Similarly,   "
+  "body": " Consider the matrix   The (1,2) minor is the determinant of the matrix which results when you delete the first row and the second column. This minor is therefore   It follows   The (2,3) minor is the determinant of the matrix which results when you delete the second row and the third column. This minor is therefore   Therefore,   Similarly,   "
 },
 {
   "id": "def-det-of-three-by-three",
@@ -8683,7 +8683,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "11.4.8",
   "title": "",
-  "body": " Find the determinant of Here is how it is done by expanding around the first column.    You see, we just followed the rule in the above definition. We took the 1 in the first column and multiplied it by its cofactor, the 4 in the first column and multiplied it by its cofactor, and the 3 in the first column and multiplied it by its cofactor. Then we added these numbers together.  You could also expand the determinant along the second row as follows. Observe this gives the same number. You should try expanding along other rows and columns. If you don’t make any mistakes, you will always get the same answer.  "
+  "body": " Find the determinant of Here is how it is done by expanding around the first column.    You see, we just followed the rule in the above definition. We took the 1 in the first column and multiplied it by its cofactor, the 4 in the first column and multiplied it by its cofactor, and the 3 in the first column and multiplied it by its cofactor. Then we added these numbers together.  You could also expand the determinant along the second row as follows. Observe this gives the same number. You should try expanding along other rows and columns. If you don't make any mistakes, you will always get the same answer.  "
 },
 {
   "id": "def-det-of-four-by-four",
@@ -8719,16 +8719,16 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "11.4.12",
   "title": "",
-  "body": "matrix cofactor   Let be an matrix and suppose the determinant of a matrix has been defined. Then a new matrix called the cofactor matrix , is defined by where to obtain delete the row and the column of , take the determinant of the matrix which results, (This is called the  minor of . ) and then multiply this number by . Thus equals the cofactor. To make the formulas easier to remember, will denote the entry of the cofactor matrix.   "
+  "body": " matrix cofactor   Let be an matrix and suppose the determinant of a matrix has been defined. Then a new matrix called the cofactor matrix , is defined by where to obtain delete the row and the column of , take the determinant of the matrix which results, (This is called the  minor of . ) and then multiply this number by .  Thus equals the cofactor. To make the formulas easier to remember, will denote the entry of the cofactor matrix.   "
 },
 {
-  "id": "def-det-of-n-by-n",
+  "id": "def-det-sum-of-cof",
   "level": "2",
-  "url": "Section11_4.html#def-det-of-n-by-n",
+  "url": "Section11_4.html#def-det-sum-of-cof",
   "type": "Definition",
   "number": "11.4.13",
-  "title": "Determininant of an <span class=\"process-math\">\\(n \\times n\\)<\/span> matrix.",
-  "body": "Determininant of an matrix   Let be an matrix where and suppose the determinant of an has been defined. Then    "
+  "title": "Determininant of a Matrix.",
+  "body": " Determininant of a Matrix   Let be an matrix where and suppose the determinant of an has been defined. Then    "
 },
 {
   "id": "thm-expanding-along-row-column",
@@ -8738,6 +8738,186 @@ var ptx_lunr_docs = [
   "number": "11.4.14",
   "title": "",
   "body": "  Expanding the n matrix along any row or column always gives the same answer so the above definition is a good definition.   "
+},
+{
+  "id": "def-upper-triangular-matrix",
+  "level": "2",
+  "url": "Section11_4.html#def-upper-triangular-matrix",
+  "type": "Definition",
+  "number": "11.4.15",
+  "title": "",
+  "body": " triangular matrix   A matrix , is upper triangular if whenever . Thus such a matrix equals zero below the main diagonal, the entries of the form , as shown. A lower triangular matrix is defined similarly as a matrix for which all entries above the main diagonal are equal to zero.   "
+},
+{
+  "id": "cor-det-of-triangular-matrix",
+  "level": "2",
+  "url": "Section11_4.html#cor-det-of-triangular-matrix",
+  "type": "Corollary",
+  "number": "11.4.16",
+  "title": "",
+  "body": "  Let be an upper (lower) triangular matrix. Then is obtained by taking the product of the entries on the main diagonal.   "
+},
+{
+  "id": "subsubsec-det-of-triangular-matrix-6",
+  "level": "2",
+  "url": "Section11_4.html#subsubsec-det-of-triangular-matrix-6",
+  "type": "Example",
+  "number": "11.4.17",
+  "title": "",
+  "body": "  Let Find     From the above corollary, it suffices to take the product of the diagonal elements. Thus     Without using the corollary, you could expand along the first column. This gives  and the only non-zero term in the expansion is the first one Now expand this along the first column to obtain  Next expand this last determinant along the first column to obtain the above equals which is just the product of the entries down the main diagonal of the original matrix.   "
+},
+{
+  "id": "thm-switch-rows-neg-det",
+  "level": "2",
+  "url": "Section11_4.html#thm-switch-rows-neg-det",
+  "type": "Theorem",
+  "number": "11.4.18",
+  "title": "Switching two rows negates the determinant.",
+  "body": " Switching two rows negates the determinant   Let be an matrix and let be a matrix which results from switching two rows of . Then . Also, if one row of is a multiple of another row of , then .   "
+},
+{
+  "id": "subsubsec-props-of-dets-4",
+  "level": "2",
+  "url": "Section11_4.html#subsubsec-props-of-dets-4",
+  "type": "Example",
+  "number": "11.4.19",
+  "title": "",
+  "body": "  Let , and let .  Then and    "
+},
+{
+  "id": "thm-det-mult-mat-by-scalar",
+  "level": "2",
+  "url": "Section11_4.html#thm-det-mult-mat-by-scalar",
+  "type": "Theorem",
+  "number": "11.4.20",
+  "title": "Multiplying a matrix by a scalar, also multiplies the determinant.",
+  "body": " Multiplying a matrix by a scalar, also multiplies the determinant   Let be an matrix and let be a matrix which results from multiplying some row of by a scalar . Then .   "
+},
+{
+  "id": "subsubsec-props-of-dets-6",
+  "level": "2",
+  "url": "Section11_4.html#subsubsec-props-of-dets-6",
+  "type": "Example",
+  "number": "11.4.21",
+  "title": "",
+  "body": "  Let , .  The first row of is 2 times the first row of .   and    "
+},
+{
+  "id": "thm-row-ops-dont-change-det",
+  "level": "2",
+  "url": "Section11_4.html#thm-row-ops-dont-change-det",
+  "type": "Theorem",
+  "number": "11.4.22",
+  "title": "Row operation 3 doesn’t change the determinant.",
+  "body": " Row operation 3 doesn't change the determinant   Let be an matrix and let be a matrix which results from applying row operation 3. That is, you replace some row by a multiple of another row added to itself. Then    "
+},
+{
+  "id": "subsubsec-props-of-dets-8",
+  "level": "2",
+  "url": "Section11_4.html#subsubsec-props-of-dets-8",
+  "type": "Example",
+  "number": "11.4.23",
+  "title": "",
+  "body": "  Let and let . Thus the second row of is one times the first row added to the second row.   and    "
+},
+{
+  "id": "thm-rows-cols-same-effect",
+  "level": "2",
+  "url": "Section11_4.html#thm-rows-cols-same-effect",
+  "type": "Theorem",
+  "number": "11.4.24",
+  "title": "Columns have the same effect.",
+  "body": " Columns have the same effect   In - you can replace the word \"row\" with the word \"column\".   "
+},
+{
+  "id": "thm-prod-of-dets",
+  "level": "2",
+  "url": "Section11_4.html#thm-prod-of-dets",
+  "type": "Theorem",
+  "number": "11.4.25",
+  "title": "The determinant of a matrix product is the product of the determinants.",
+  "body": " The determinant of a matrix product is the product of the determinants    Let and be two matrices, then     "
+},
+{
+  "id": "subsubsec-props-of-dets-12",
+  "level": "2",
+  "url": "Section11_4.html#subsubsec-props-of-dets-12",
+  "type": "Example",
+  "number": "11.4.26",
+  "title": "",
+  "body": "  Compare and for     First and so Now and Thus    "
+},
+{
+  "id": "thm-det-of-transp",
+  "level": "2",
+  "url": "Section11_4.html#thm-det-of-transp",
+  "type": "Theorem",
+  "number": "11.4.27",
+  "title": "The determinant of a matrix is the determinant of its transpose.",
+  "body": " The determinant of a matrix is the determinant of its transpose    Let be an matrix, then     "
+},
+{
+  "id": "subsubsec-props-of-dets-14",
+  "level": "2",
+  "url": "Section11_4.html#subsubsec-props-of-dets-14",
+  "type": "Example",
+  "number": "11.4.28",
+  "title": "",
+  "body": "  Compare and for      and Thus    "
+},
+{
+  "id": "subsubsec-det-row-ops-3",
+  "level": "2",
+  "url": "Section11_4.html#subsubsec-det-row-ops-3",
+  "type": "Example",
+  "number": "11.4.29",
+  "title": "",
+  "body": "  Find the determinant of the matrix     Replace the second row by (-5) times the first row added to it. Then replace the third row by (-4) times the first row added to it. Finally, replace the fourth row by (-2) times the first row added to it. This yields the matrix and from it has the same determinant as . Now using other row operations, where The second row of was replaced by times the third row added to the second row. By this didn't change the value of the determinant. Then the last row was multiplied by . By the resulting matrix has a determinant which is times the determinant of the un-multiplied matrix. Therefore, we multiplied by to retain the correct value. Now replace the last row with 2 times the third added to it. This does not change the value of the determinant by . Finally switch the third and second rows. This causes the determinant to be multiplied by . Thus where You could do more row operations or you could note that this can be easily expanded along the first column followed by expanding the matrix which results along its first column. Thus and so and    "
+},
+{
+  "id": "subsubsec-det-row-ops-4",
+  "level": "2",
+  "url": "Section11_4.html#subsubsec-det-row-ops-4",
+  "type": "Example",
+  "number": "11.4.30",
+  "title": "",
+  "body": "  Find the determinant of the matrix     Replace the second row by times the first row added to it. Next take times the first row and add to the third and finally take times the first row and add to the last row. This yields By this matrix has the same determinant as the original matrix. Remember you can work with the columns also. Take times the last column and add to the second column. This yields By this matrix has the same determinant as the original matrix. Now take times the third row and add to the top row. This gives. which by has the same determinant as the original matrix. Let's expand it now along the first column. This yields the following for the determinant of the original matrix. which equals   We suggest you do not try to be fancy in using row operations. That is, stick mostly to the one which replaces a row or column with a multiple of another row or column added to it. Also note there is no way to check your answer other than working the problem more than one way. To be sure you have gotten it right you must do this.   "
+},
+{
+  "id": "subsubsec-formula-for-inverse-3",
+  "level": "2",
+  "url": "Section11_4.html#subsubsec-formula-for-inverse-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "adjugate classical adjoint "
+},
+{
+  "id": "thm-inverse-from-cofactor",
+  "level": "2",
+  "url": "Section11_4.html#thm-inverse-from-cofactor",
+  "type": "Theorem",
+  "number": "11.4.31",
+  "title": "",
+  "body": "   exists if and only if . If , then where for the cofactor of .    From the definition of the determinant in terms of expansion along a column, and letting , if , Now consider when . Replace the column with the column to obtain a matrix whose determinant equals zero by . However, expanding this matrix along the column yields Summarizing, Now which is the entry of . Therefore,   Using the other formula in and similar reasoning, Now, which is the entry of . Therefore, and it follows that , where In other words,   Now suppose exists. Then by  so    "
+},
+{
+  "id": "subsubsec-formula-for-inverse-5",
+  "level": "2",
+  "url": "Section11_4.html#subsubsec-formula-for-inverse-5",
+  "type": "Example",
+  "number": "11.4.32",
+  "title": "",
+  "body": "  Find the inverse of the matrix     First, find the determinant of this matrix. Using - , the determinant of this matrix equals the determinant of the matrix which equals 12. The cofactor matrix of is Each entry of was replaced by its cofactor. Therefore, from the above theorem, the inverse of should equal   Does it work? You should check to see if it does. When the matrices are multiplied and so it is correct.   "
+},
+{
+  "id": "subsubsec-formula-for-inverse-6",
+  "level": "2",
+  "url": "Section11_4.html#subsubsec-formula-for-inverse-6",
+  "type": "Example",
+  "number": "11.4.33",
+  "title": "",
+  "body": "  Find the inverse of the matrix     First find its determinant. This determinant is . The inverse is therefore equal to Expanding all the determinants this yields   Always check your work. and so we got it right. If the result of multiplying these matrices had been something other than the identity matrix, you would know there was an error. When this happens, you need to search for the mistake if you are interested in getting the right answer. A common mistake is to forget to take the transpose of the cofactor matrix.   "
 },
 {
   "id": "s-posets-revisited",

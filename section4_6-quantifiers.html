@@ -680,10 +680,21 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -967,9 +978,9 @@ window.MathJax = {
 <article class="definition definition-like" id="def-exist-quantifier"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">The Existential Quantifier.</span>
 </h4> <div class="para" id="def-exist-quantifier-4-1">If <span class="process-math">\(p(n)\)</span> is a proposition over <span class="process-math">\(U\)</span> with <span class="process-math">\(T_p\neq \emptyset\text{,}\)</span> we commonly say “There exists an <span class="process-math">\(n\)</span> in <span class="process-math">\(U\)</span> such that <span class="process-math">\(p(n)\)</span> (is true).” We abbreviate this with the symbols <span class="process-math">\((\exists  n)_U(p(n))\text{.}\)</span> The symbol <span class="process-math">\(\exists\)</span> is called the existential quantifier.   If the context is clear, the mention of <span class="process-math">\(U\)</span> is dropped: <span class="process-math">\((\exists n)(p(n))\text{.}\)</span>
-</div></article><details id="ex-existential-misc" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article><details id="ex-existential-misc" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Some examples of existential quantifiers.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-existential-misc-2"><ol class="lower-alpha">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-existential-misc-2"><ol class="lower-alpha">
 <li id="ex-existential-misc-2-1-1"><div class="para" id="ex-existential-misc-2-1-1-1">
 <span class="process-math">\((\exists k)_{\mathbb{Z}}(k ^2- k - 12 = 0)\)</span> is another way of saying that there is an integer that solves the equation <span class="process-math">\(k^2 - k - 12 = 0\text{.}\)</span> The fact that two such integers exist doesn’t affect the truth of this proposition in any way.</div></li>
 <li id="ex-existential-misc-2-1-2"><div class="para" id="ex-existential-misc-2-1-2-1">
@@ -982,9 +993,9 @@ window.MathJax = {
 <article class="definition definition-like" id="def-universal-quantifier"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">The Universal Quantifier.</span>
 </h4> <div class="para" id="def-universal-quantifier-4-1">If <span class="process-math">\(p(n)\)</span> is a proposition over <span class="process-math">\(U\)</span> with <span class="process-math">\(T_p=U\text{,}\)</span> we commonly say “For all <span class="process-math">\(n\)</span> in <span class="process-math">\(U\text{,}\)</span> <span class="process-math">\(p(n)\)</span> (is true).” We abbreviate this with the symbols <span class="process-math">\((\forall n)_U(p(n))\text{.}\)</span> The symbol <span class="process-math">\(\forall\)</span> is called the universal quantifier.  If the context is clear, the mention of <span class="process-math">\(U\)</span> is dropped: <span class="process-math">\((\forall n)(p(n))\text{.}\)</span>
-</div></article><details id="ex-universal-misc" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article><details id="ex-universal-misc" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Some Universal Quantifiers.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-universal-misc-2"><ol class="lower-alpha">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-universal-misc-2"><ol class="lower-alpha">
 <li id="ex-universal-misc-2-1-1"><div class="para" id="p-derived-ex-universal-misc-2-1-1">We can say that the square of every real number is non-negative symbolically with a universal quantifier:  <span class="process-math">\((\forall x)
 _{\mathbb{R}}(x ^2 \geq  0)\text{.}\)</span>
 </div></li>
@@ -1023,9 +1034,9 @@ _{\mathbb{R}}(x ^2 \geq  0)\text{.}\)</span>
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.6.3</span><span class="space"> </span><span class="title">The Negation of Quantified Propositions</span>
 </h3>
 <div class="para" id="ss-negated-quantifiers-3">When you negate a quantified proposition, the existential and universal quantifiers complement one another.</div>
-<details id="ex-negated-existential" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-negated-existential" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.6</span><span class="period">.</span><span class="space"> </span><span class="title">Negation of an Existential Quantifier.</span>
-</h4></summary><article class="example example-like"><div class="para logical" id="ex-negated-existential-2">
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-negated-existential-2">
 <div class="para">Over the universe of animals, define <span class="process-math">\(F(x)\text{:}\)</span> <span class="process-math">\(x\)</span> is a fish and <span class="process-math">\(W(x)\text{:}\)</span> <span class="process-math">\(x\)</span> lives in the water. We know that the proposition <span class="process-math">\(W(x) \rightarrow F(x)\)</span> is not always true. In other words, <span class="process-math">\((\forall x)(W(x) \rightarrow  F(x))\)</span> is false. Another way of stating this fact is that there exists an animal that lives in the water and is not a fish; that is,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1039,9 +1050,9 @@ _{\mathbb{R}}(x ^2 \geq  0)\text{.}\)</span>
 <figure class="table table-like" id="table-quantifier-negation"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.6.7<span class="period">.</span></span><span class="space"> </span>Negation of Quantified Expressions</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr><td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\neg ((\forall n)_U(p(n)) )\Leftrightarrow  (\exists  n)_U (\neg p(n))\)</span></td></tr>
 <tr><td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\neg ((\exists n)_U(p(n)) )\Leftrightarrow  (\forall  n)_U (\neg p(n))\)</span></td></tr>
-</table></div></figure><details id="ex-more-negated-quantifiers" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</table></div></figure><details id="ex-more-negated-quantifiers" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">More Negations of Quantified Expressions.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-more-negated-quantifiers-2"><ol class="lower-alpha">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-more-negated-quantifiers-2"><ol class="lower-alpha">
 <li id="ex-more-negated-quantifiers-2-1-1"><div class="para" id="p-derived-ex-more-negated-quantifiers-2-1-1">The ancient Greeks first discovered that <span class="process-math">\(\sqrt{2}\)</span> is an irrational number; that is, <span class="process-math">\(\sqrt{2}\)</span> is not a rational number. <span class="process-math">\(\neg ((\exists r)_{\mathbb{Q}}(r^2 = 2))\)</span> and <span class="process-math">\((\forall r)_{\mathbb{Q}} (r^2\neq  2)\)</span> both state this fact symbolically.</div></li>
 <li id="ex-more-negated-quantifiers-2-1-2"><div class="para" id="p-derived-ex-more-negated-quantifiers-2-1-2">
 <span class="process-math">\(\neg ((\forall n)_{\mathbb{P}}(n ^2- n + 41 \textrm{ is prime}))\)</span> is equivalent to <span class="process-math">\((\exists  n)_{\mathbb{P}} (n^2
@@ -1090,7 +1101,7 @@ _{\mathbb{R}}(x ^2 \geq  0)\text{.}\)</span>
 <li id="exercises-4_6-2-1-2-1-3"><div class="para" id="exercises-4_6-2-1-2-1-3-1">Translate into English: <span class="process-math">\((\forall x)(F(x) \rightarrow  S(x))\text{.}\)</span>
 </div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-4_6-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-4_6-2-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-4_6-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-4_6-2-2-1"><ol class="lower-alpha">
 <li id="exercises-4_6-2-2-1-1-1"><div class="para" id="exercises-4_6-2-2-1-1-1-1"><span class="process-math">\(\displaystyle (\forall x)(F(x)\to C(x))\)</span></div></li>
 <li id="exercises-4_6-2-2-1-1-2"><div class="para" id="exercises-4_6-2-2-1-1-2-1">There are objects in the sea which are not fish.</div></li>
 <li id="exercises-4_6-2-2-1-1-3"><div class="para" id="exercises-4_6-2-2-1-1-3-1">Every fish lives in the sea.</div></li>
@@ -1110,7 +1121,7 @@ _{\mathbb{R}}(x ^2 \geq  0)\text{.}\)</span>
 <li id="exercises-4_6-4-1-3-1-6"><div class="para" id="exercises-4_6-4-1-3-1-6-1">Express using quantifiers: There are mathematics books that are published outside the United States.</div></li>
 <li id="exercises-4_6-4-1-3-1-7"><div class="para" id="exercises-4_6-4-1-3-1-7-1">Express using quantifiers: Not all books have bibliographies.</div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-4_6-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-4_6-4-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-4_6-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-4_6-4-2-1"><ol class="lower-alpha">
 <li id="exercises-4_6-4-2-1-1-1"><div class="para" id="p-derived-exercises-4_6-4-2-1-1-1">There is a book with a cover that is not blue.</div></li>
 <li id="exercises-4_6-4-2-1-1-2"><div class="para" id="exercises-4_6-4-2-1-1-2-1">Every mathematics book that is published in the United States has a blue cover.</div></li>
 <li id="exercises-4_6-4-2-1-1-3"><div class="para" id="exercises-4_6-4-2-1-1-3-1">There exists a mathematics book with a cover that is not blue.</div></li>
@@ -1126,15 +1137,15 @@ _{\mathbb{R}}(x ^2 \geq  0)\text{.}\)</span>
 </ol></div></article><article class="exercise exercise-like" id="exercises-4_6-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para" id="exercises-4_6-6-1-1">Translate into your own words and indicate whether it is true or false that <span class="process-math">\((\exists u) _{\mathbb{Z}} (4 u^2 -9 = 0)\text{.}\)</span>
 </div>
-<div class="solutions"><details id="exercises-4_6-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="exercises-4_6-6-2-1">The equation <span class="process-math">\(4u^2-9=0\)</span> has a solution in the integers. (False)</div></div></details></div></article><article class="exercise exercise-like" id="exercises-4_6-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="solutions"><details id="exercises-4_6-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="exercises-4_6-6-2-1">The equation <span class="process-math">\(4u^2-9=0\)</span> has a solution in the integers. (False)</div></div></details></div></article><article class="exercise exercise-like" id="exercises-4_6-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <div class="para" id="exercises-4_6-7-1-1">Use quantifiers to say that <span class="process-math">\(\sqrt{3}\)</span> is an irrational number.</div>
-<div class="solutions"><details id="exercises-4_6-7-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="exercises-4_6-7-2-1">Your answer will depend on your choice of a universe</div></div></details></div></article><article class="exercise exercise-like" id="exercises-4_6-8"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="solutions"><details id="exercises-4_6-7-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises-4_6-7-2-1">Your answer will depend on your choice of a universe</div></div></details></div></article><article class="exercise exercise-like" id="exercises-4_6-8"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
 <div class="para" id="exercises-4_6-8-1-1">What do the following propositions say, where <span class="process-math">\(U\)</span> is the power set of <span class="process-math">\(\{1,2,\dots , 9\}\text{?}\)</span> Which of these propositions are true?</div> <div class="para logical" id="exercises-4_6-8-1-2"><ol class="lower-alpha">
 <li id="exercises-4_6-8-1-2-1-1"><div class="para" id="exercises-4_6-8-1-2-1-1-1"><span class="process-math">\((\forall A)_U \lvert A \rvert \neq \lvert A^c \rvert\text{.}\)</span></div></li>
 <li id="exercises-4_6-8-1-2-1-2"><div class="para" id="exercises-4_6-8-1-2-1-2-1"><span class="process-math">\(\displaystyle (\exists A)_U(\exists B)_U (\lvert A \rvert =5, \lvert B \rvert=5, \textrm{ and } A\cap B=\emptyset )\)</span></div></li>
 <li id="exercises-4_6-8-1-2-1-3"><div class="para" id="exercises-4_6-8-1-2-1-3-1"><span class="process-math">\(\displaystyle (\forall A)_U(\forall B)_U (A-B=B^c-A^c)\)</span></div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-4_6-8-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-4_6-8-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-4_6-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-4_6-8-2-1"><ol class="lower-alpha">
 <li id="exercises-4_6-8-2-1-1-1"><div class="para" id="exercises-4_6-8-2-1-1-1-1">Every subset of <span class="process-math">\(U\)</span> has a cardinality different from its complement. (True)</div></li>
 <li id="exercises-4_6-8-2-1-1-2"><div class="para" id="exercises-4_6-8-2-1-1-2-1">There is a pair of disjoint subsets of <span class="process-math">\(U\)</span> both having cardinality 5. (False)</div></li>
 <li id="exercises-4_6-8-2-1-1-3"><div class="para" id="exercises-4_6-8-2-1-1-3-1">
@@ -1142,16 +1153,16 @@ _{\mathbb{R}}(x ^2 \geq  0)\text{.}\)</span>
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-4_6-9"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="para" id="exercises-4_6-9-1-1">Use quantifiers to state that for every positive integer, there is a larger positive integer.</div></article><article class="exercise exercise-like" id="exercises-4_6-10"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
 <div class="para" id="exercises-4_6-10-1-1">Use  quantifiers to state that the sum of any two rational numbers is rational.</div>
-<div class="solutions"><details id="exercises-4_6-10-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="exercises-4_6-10-2-1">
+<div class="solutions"><details id="exercises-4_6-10-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="exercises-4_6-10-2-1">
 <span class="process-math">\((\forall a)_{\mathbb{Q}}(\forall b)_{\mathbb{Q}}\)</span>(<span class="process-math">\(a+b\)</span> is a rational number.)</div></div></details></div></article><article class="exercise exercise-like" id="exercises-4_6-11"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
 <div class="para" id="exercises-4_6-11-1-1">Over the universe of real numbers, use quantifiers to say that the equation <span class="process-math">\(a + x = b\)</span> has a solution for all values of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span>
 </div>
-<div class="solutions"><details id="exercises-4_6-11-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="exercises-4_6-11-2-1">You will need three quantifiers.</div></div></details></div></article><article class="exercise exercise-like" id="exercises-4_6-12"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="solutions"><details id="exercises-4_6-11-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises-4_6-11-2-1">You will need three quantifiers.</div></div></details></div></article><article class="exercise exercise-like" id="exercises-4_6-12"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
 <div class="para" id="exercises-4_6-12-1-1">Let <span class="process-math">\(n\)</span> be a positive integer.  Describe using quantifiers:</div> <div class="para logical" id="exercises-4_6-12-1-2"><ol class="lower-alpha">
 <li id="exercises-4_6-12-1-2-1-1"><div class="para" id="exercises-4_6-12-1-2-1-1-1"><span class="process-math">\(\displaystyle x \in \underset{k=1}{\overset{n}{\cup }}A_k\)</span></div></li>
 <li id="exercises-4_6-12-1-2-1-2"><div class="para" id="exercises-4_6-12-1-2-1-2-1"><span class="process-math">\(\displaystyle x \in \underset{k=1}{\overset{n}{\cap }}A_k\)</span></div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-4_6-12-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="solutions"><details id="exercises-4_6-12-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
 <div class="para" id="exercises-4_6-12-2-1">Let <span class="process-math">\(I=\{1,2,3,\ldots ,n\}\)</span>
 </div> <div class="para logical" id="exercises-4_6-12-2-2"><ol class="lower-alpha">
 <li id="exercises-4_6-12-2-2-1-1"><div class="para" id="exercises-4_6-12-2-2-1-1-1"><span class="process-math">\(\displaystyle (\exists x)_I\left(x\in A_i\right)\)</span></div></li>

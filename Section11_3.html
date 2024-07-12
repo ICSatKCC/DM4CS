@@ -680,10 +680,21 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -980,15 +991,15 @@ window.MathJax = {
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.3.2</span><span class="period">.</span>
 </h4>
 <div class="para" id="thm-matrix-inverse-prop-1-1">Suppose <span class="process-math">\(A^{-1}\)</span> exists and <span class="process-math">\(AB = BA = I\text{.}\)</span> Then <span class="process-math">\(B = A^{-1}\text{.}\)</span>
-</div></article><details id="thm-matrix-inverse-prop-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-matrix-inverse-prop-2-1"><span class="process-math">\(A^{-1} = A^{-1}I = A^{-1}(AB) = (A^{-1}A)B = IB =B.
+</div></article><details id="thm-matrix-inverse-prop-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-matrix-inverse-prop-2-1"><span class="process-math">\(A^{-1} = A^{-1}I = A^{-1}(AB) = (A^{-1}A)B = IB =B.
 \blacksquare\)</span></div></article></details><div class="para" id="subsec-inverse-matrix-5">Unlike ordinary multiplication of numbers, it can happen that <span class="process-math">\(A \neq 0\)</span> but <span class="process-math">\(A\)</span> may fail to have an inverse. This is illustrated in the following example.</div>
-<details id="subsec-inverse-matrix-6" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="subsec-inverse-matrix-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">A matrix without an inverse.</span>
-</h4></summary><article class="example example-like"><div class="para" id="subsec-inverse-matrix-6-2-1">Let <span class="process-math">\(A = \begin{pmatrix}
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-inverse-matrix-6-2-1">Let <span class="process-math">\(A = \begin{pmatrix}
 1 &amp; 1\\
 1 &amp; 1 \\
 \end{pmatrix}\text{.}\)</span> Does <span class="process-math">\(A\)</span> have an inverse?</div>
-<div class="solutions"><details id="subsec-inverse-matrix-6-3" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="subsec-inverse-matrix-6-3-1">
+<div class="solutions"><details id="subsec-inverse-matrix-6-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="subsec-inverse-matrix-6-3-1">
 <div class="para">One might think <span class="process-math">\(A\)</span> would have an inverse because it does not equal zero. However,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1039,13 +1050,13 @@ I \begin{pmatrix}
 \end{equation*}
 </div>
 <div class="para">a contradiction. Thus the answer is that <span class="process-math">\(A\)</span> does not have an inverse.</div>
-</div></div></details></div></article></details><details id="subsec-inverse-matrix-7" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></div></details></div></article></details><details id="subsec-inverse-matrix-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Showing a matrix is an inverse.</span>
-</h4></summary><article class="example example-like"><div class="para" id="subsec-inverse-matrix-7-2-1">Let <span class="process-math">\(A = \begin{pmatrix}1 &amp;1\\
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-inverse-matrix-7-2-1">Let <span class="process-math">\(A = \begin{pmatrix}1 &amp;1\\
 1&amp;2\end{pmatrix}\text{.}\)</span> Show <span class="process-math">\(\begin{pmatrix}2 &amp;-1\\
 -1&amp;1\end{pmatrix}\)</span> is the inverse of <span class="process-math">\(A\text{.}\)</span>
 </div>
-<div class="solutions"><details id="subsec-inverse-matrix-7-3" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="subsec-inverse-matrix-7-3-1">
+<div class="solutions"><details id="subsec-inverse-matrix-7-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="subsec-inverse-matrix-7-3-1">
 <div class="para">To check this, multiply</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1220,9 +1231,9 @@ w\end{pmatrix}.\)</span>
 </div>
 <div class="para">When this has been done, <span class="process-math">\(B = A^{-1}\text{.}\)</span> If it is impossible to row reduce to a matrix of the form <span class="process-math">\((I|B)\text{,}\)</span> then <span class="process-math">\(A\)</span> has no inverse.</div>
 </div></article><div class="para" id="subsec-finding-matrix-inverse-8">Actually, all this shows is how to find a right inverse if it exists. Later it will be shown that the right inverse is <em class="emphasis">the</em> inverse. See <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "corollary-tbd" missing or not unique]</code> or the Elementary Linear Algebra book at <a class="external" href="" target="_blank">http://www.Saylor.org.</a><details class="ptx-footnote" aria-live="polite" id="subsec-finding-matrix-inverse-8-4"><summary class="ptx-footnote__number" title="Footnote 11.3.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="subsec-finding-matrix-inverse-8-4"><code class="code-inline tex2jax_ignore"></code></div></details> for proof of this.</div>
-<details id="subsec-finding-matrix-inverse-9" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="subsec-finding-matrix-inverse-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Using Gauss-Jordan to find a matrix inverse.</span>
-</h4></summary><article class="example example-like"><div class="para logical" id="subsec-finding-matrix-inverse-9-2-1">
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-finding-matrix-inverse-9-2-1">
 <div class="para">Let</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1236,7 +1247,7 @@ A =
 </div>
 <div class="para">Find <span class="process-math">\(A^{-1}\)</span> if it exists.</div>
 </div>
-<div class="solutions"><details id="subsec-finding-matrix-inverse-9-3" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="subsec-finding-matrix-inverse-9-3-1">
+<div class="solutions"><details id="subsec-finding-matrix-inverse-9-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="subsec-finding-matrix-inverse-9-3-1">
 <div class="para">Set up the augmented matrix <span class="process-math">\((A|I)\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1308,9 +1319,9 @@ A =
 \end{array} \right).
 \end{equation*}
 </div>
-</div></div></details></div></article></details><details id="subsec-finding-matrix-inverse-10" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></div></details></div></article></details><details id="subsec-finding-matrix-inverse-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Gauss-Jordan on a matrix with no inverse.</span>
-</h4></summary><article class="example example-like"><div class="para logical" id="subsec-finding-matrix-inverse-10-2-1">
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-finding-matrix-inverse-10-2-1">
 <div class="para">Let</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1324,7 +1335,7 @@ A =
 </div>
 <div class="para">Find <span class="process-math">\(A^{-1}\)</span> if it exists.</div>
 </div>
-<div class="solutions"><details id="subsec-finding-matrix-inverse-10-3" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="subsec-finding-matrix-inverse-10-3-1">
+<div class="solutions"><details id="subsec-finding-matrix-inverse-10-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="subsec-finding-matrix-inverse-10-3-1">
 <div class="para">Write the augmented matrix <span class="process-math">\((A|I)\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1357,9 +1368,9 @@ A =
 \end{equation*}
 </div>
 <div class="para">At this point, you can see there will be no inverse because you have obtained a row of zeros in the left half of the augmented matrix <span class="process-math">\((A|I)\)</span> . Thus there will be no way to obtain <span class="process-math">\(I\)</span> on the left.</div>
-</div></div></details></div></article></details><details id="ex-gauss-jordan-3" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></div></details></div></article></details><details id="ex-gauss-jordan-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Checking Gauss-Jordan outcome correctness.</span>
-</h4></summary><article class="example example-like"><div class="para logical" id="ex-gauss-jordan-3-2-1">
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-gauss-jordan-3-2-1">
 <div class="para">Let</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1373,7 +1384,7 @@ A =
 </div>
 <div class="para">Find <span class="process-math">\(A^{-1}\)</span> if it exists.</div>
 </div>
-<div class="solutions"><details id="ex-gauss-jordan-3-3" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="ex-gauss-jordan-3-3-1">
+<div class="solutions"><details id="ex-gauss-jordan-3-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="ex-gauss-jordan-3-3-1">
 <div class="para">Form the augmented matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1423,9 +1434,9 @@ A =
 \end{equation*}
 </div>
 <div class="para">Always check your answer because if you are like some of us, you will usually have made a mistake.</div>
-</div></div></details></div></article></details><details id="subsec-finding-matrix-inverse-12" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></div></details></div></article></details><details id="subsec-finding-matrix-inverse-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Solving systems of equations with a matrix inverse.</span>
-</h4></summary><article class="example example-like"><div class="para logical" id="subsec-finding-matrix-inverse-12-2-1">
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-finding-matrix-inverse-12-2-1">
 <div class="para">In this example, it is shown how to use the inverse of a matrix to find the solution to a system of equations. Consider the following system of equations. Use the inverse of a suitable matrix to give the solutions to this system.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1572,7 +1583,7 @@ A = \begin{pmatrix}
 </div>
 <div class="para">Find <span class="process-math">\(A^{-1}\)</span> if possible using the Gauss-Jordan method. If <span class="process-math">\(A^{-1}\)</span> does not exist, determine why.</div>
 </div>
-<div class="solutions"><details id="exercises-11-3-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="solutions"><details id="exercises-11-3-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
 <div class="para logical" id="exercises-11-3-2-2-1">
 <div class="para">Set up augmented matrix to use Gauss-Jordan:</div>
 <div class="displaymath process-math">
@@ -1683,7 +1694,7 @@ A = \begin{pmatrix}
 </div>
 <div class="para">Find <span class="process-math">\(A^{-1}\)</span> if possible using the Gauss-Jordan method. If <span class="process-math">\(A^{-1}\)</span> does not exist, determine why.</div>
 </div>
-<div class="solutions"><details id="exercises-11-3-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="solutions"><details id="exercises-11-3-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
 <div class="para logical" id="exercises-11-3-4-2-1">
 <div class="para">Set up augmented matrix to use Gauss-Jordan:</div>
 <div class="displaymath process-math">
@@ -1786,7 +1797,7 @@ A = \begin{pmatrix}
 </div>
 <div class="para">Find <span class="process-math">\(A^{-1}\)</span> if possible using the Gauss-Jordan method. If <span class="process-math">\(A^{-1}\)</span> does not exist, determine why.</div>
 </div>
-<div class="solutions"><details id="exercises-11-3-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-11-3-6-2-1">
+<div class="solutions"><details id="exercises-11-3-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-11-3-6-2-1">
 <div class="para">Set up augmented matrix to use Gauss-Jordan:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1863,7 +1874,7 @@ z
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="exercises-11-3-8-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="solutions"><details id="exercises-11-3-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
 <div class="para logical" id="exercises-11-3-8-2-1">
 <div class="para">Set up augmented matrix to use Gauss-Jordan:</div>
 <div class="displaymath process-math">
@@ -2034,7 +2045,7 @@ z
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="exercises-11-3-10-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="solutions"><details id="exercises-11-3-10-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
 <div class="para logical" id="exercises-11-3-10-2-1">
 <div class="para">We have already calculated the inverse for this matrix above in Exercise 7, it is</div>
 <div class="displaymath process-math">

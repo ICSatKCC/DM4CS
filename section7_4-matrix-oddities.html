@@ -680,10 +680,21 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -1023,7 +1034,7 @@ window.MathJax = {
 </h3>
 <article class="exercise exercise-like" id="exercises-7_4-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para" id="exercises-7_4-2-1-1">Discuss each of the “Matrix Oddities” with respect to elementary algebra.</div>
-<div class="solutions"><details id="exercises-7_4-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="solutions"><details id="exercises-7_4-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
 <div class="para" id="exercises-7_4-2-2-1">In elementary algebra (the algebra of real numbers), each of the given oddities does not exist.</div> <div class="para logical" id="exercises-7_4-2-2-2"><ul class="disc">
 <li id="exercises-7_4-2-2-2-1-1"><div class="para" id="exercises-7_4-2-2-2-1-1-1">
 <span class="process-math">\(AB\)</span> may be different from <span class="process-math">\(BA\text{.}\)</span> Not so in elementary algebra, since <span class="process-math">\(a b = b a\)</span> by the commutative law of multiplication.</div></li>
@@ -1043,7 +1054,7 @@ window.MathJax = {
 </div></li>
 <li id="exercises-7_4-4-1-2-1-2"><div class="para" id="exercises-7_4-4-1-2-1-2-1"><span class="process-math">\(A^2 = I \textrm{ and } \det A \neq  0 \Rightarrow  A = I \textrm{ or } A = -I\text{.}\)</span></div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-7_4-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-7_4-4-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-7_4-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-7_4-4-2-1"><ol class="lower-alpha">
 <li id="exercises-7_4-4-2-1-1-1"><div class="para" id="exercises-7_4-4-2-1-1-1-1">
 <span class="process-math">\(\det  A \neq 0\Rightarrow A^{-1}\)</span> exists, and if you multiply the equation <span class="process-math">\(A^2=A\)</span> on both sides by <span class="process-math">\(A^{-1}\)</span> , you obtain <span class="process-math">\(A=I\text{.}\)</span>
 </div></li>
@@ -1080,7 +1091,7 @@ x_1 -x_2= -1\\
 6 x_1 +4x_2= -1\\
 \end{array}\)</span></div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-7_4-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-7_4-6-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-7_4-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-7_4-6-2-1"><ol class="lower-alpha">
 <li id="exercises-7_4-6-2-1-1-1"><div class="para" id="p-derived-exercises-7_4-6-2-1-1-1">
 <span class="process-math">\(A^{-1}=\left(
 \begin{array}{cc}

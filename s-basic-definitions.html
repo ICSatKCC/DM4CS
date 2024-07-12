@@ -680,10 +680,21 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -969,12 +980,12 @@ window.MathJax = {
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">10.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Relation.</span>
 </h4>
 <div class="para" id="Relation-3-1">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be sets. A relation from <span class="process-math">\(A\)</span> into <span class="process-math">\(B\)</span> is any subset of <span class="process-math">\(A\times B\text{.}\)</span>
-</div></article><details id="ex-simple-relation" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article><details id="ex-simple-relation" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">10.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">A simple example.</span>
-</h4></summary><article class="example example-like"><div class="para" id="ex-simple-relation-2-1">Let <span class="process-math">\(A = \{1, 2, 3\}\)</span> and <span class="process-math">\(B = \{4, 5\}\text{.}\)</span> Then <span class="process-math">\(\{(1, 4), (2, 4), (3, 5)\}\)</span> is a relation from <span class="process-math">\(A\)</span> into <span class="process-math">\(B\text{.}\)</span>
-</div> <div class="para" id="ex-simple-relation-2-2">Of course, there are many others we could describe; 64, to be exact.</div></article></details><details id="ex-divides-example" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-simple-relation-2-1">Let <span class="process-math">\(A = \{1, 2, 3\}\)</span> and <span class="process-math">\(B = \{4, 5\}\text{.}\)</span> Then <span class="process-math">\(\{(1, 4), (2, 4), (3, 5)\}\)</span> is a relation from <span class="process-math">\(A\)</span> into <span class="process-math">\(B\text{.}\)</span>
+</div> <div class="para" id="ex-simple-relation-2-2">Of course, there are many others we could describe; 64, to be exact.</div></article></details><details id="ex-divides-example" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">10.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Divisibility Example.</span>
-</h4></summary><article class="example example-like"><div class="para" id="ex-divides-example-2-1">Let <span class="process-math">\(A = \{2, 3, 5, 6\}\)</span> and define a relation <span class="process-math">\(R\)</span> from <span class="process-math">\(A\)</span> into <span class="process-math">\(A\)</span> by <span class="process-math">\((a, b) \in r\)</span> if and only if <span class="process-math">\(a\)</span> divides evenly into <span class="process-math">\(b\text{.}\)</span> The set of pairs that qualify for membership is <span class="process-math">\(r = \{(2, 2), (3, 3), (5, 5), (6, 6), (2, 6), (3, 6)\}\text{.}\)</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-divides-example-2-1">Let <span class="process-math">\(A = \{2, 3, 5, 6\}\)</span> and define a relation <span class="process-math">\(R\)</span> from <span class="process-math">\(A\)</span> into <span class="process-math">\(A\)</span> by <span class="process-math">\((a, b) \in r\)</span> if and only if <span class="process-math">\(a\)</span> divides evenly into <span class="process-math">\(b\text{.}\)</span> The set of pairs that qualify for membership is <span class="process-math">\(r = \{(2, 2), (3, 3), (5, 5), (6, 6), (2, 6), (3, 6)\}\text{.}\)</span>
 </div></article></details></section><section class="subsection" id="s-basic-definitions-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">10.1.2</span><span class="space"> </span><span class="title">Relations on a Set</span>
 </h3>
@@ -1036,7 +1047,7 @@ window.MathJax = {
 <li id="exercises-10-1-2-1-2-1-3"><div class="para" id="exercises-10-1-2-1-2-1-3-1">
 <span class="process-math">\(x R y\)</span> iff <span class="process-math">\(y =x^2\)</span> ; (1,1), (2, 3), (2, 4), (2, 6)</div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-10-1-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-10-1-2-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-10-1-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-1-2-2-1"><ol class="lower-alpha">
 <li id="exercises-10-1-2-2-1-1-1"><div class="para" id="exercises-10-1-2-2-1-1-1-1"><span class="process-math">\(\displaystyle (2,4), (2,8)\)</span></div></li>
 <li id="exercises-10-1-2-2-1-1-2"><div class="para" id="exercises-10-1-2-2-1-1-2-1"><span class="process-math">\(\displaystyle (2, 3), (2, 4), (5,8)\)</span></div></li>
 <li id="exercises-10-1-2-2-1-1-3"><div class="para" id="exercises-10-1-2-2-1-1-3-1"><span class="process-math">\(\displaystyle (1,1), (2,4)\)</span></div></li>
@@ -1059,7 +1070,7 @@ window.MathJax = {
 <li id="exercises-10-1-4-1-1-8-3"><div class="para" id="exercises-10-1-4-1-1-8-3-1"><span class="process-math">\(\displaystyle R^3\)</span></div></li>
 </ol>
 </div>
-<div class="solutions"><details id="exercises-10-1-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-10-1-4-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-10-1-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-1-4-2-1"><ol class="lower-alpha">
 <li id="exercises-10-1-4-2-1-1-1"><div class="para" id="exercises-10-1-4-2-1-1-1-1"><span class="process-math">\(\displaystyle R=\{(1,2), (2,3), (3,4), (4,5)\}\)</span></div></li>
 <li id="exercises-10-1-4-2-1-1-2"><div class="para" id="exercises-10-1-4-2-1-1-2-1"><span class="process-math">\(\displaystyle R^2 = \{(1,3), (2,4), (3,5)\}=\{(x,y) : y=x+2, x,y\in A\}\)</span></div></li>
 <li id="exercises-10-1-4-2-1-1-3"><div class="para" id="exercises-10-1-4-2-1-1-3-1"><span class="process-math">\(\displaystyle R^3=\{(1,4), (2,5)\}=\{(x,y) : y=x+3, x,y \in  A\}\)</span></div></li>
@@ -1072,7 +1083,7 @@ window.MathJax = {
 </div></li>
 <li id="exercises-10-1-6-1-2-1-2"><div class="para" id="exercises-10-1-6-1-2-1-2-1">What is the cardinality of <span class="process-math">\(\rho\)</span> for an arbitrary <span class="process-math">\(n\text{?}\)</span> Express your answer in terms of <span class="process-math">\(n\text{.}\)</span> (Hint: There are three places that each element of S can go in building an element of <span class="process-math">\(\rho\text{.}\)</span>)</div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-10-1-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-10-1-6-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-10-1-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-1-6-2-1"><ol class="lower-alpha">
 <li id="exercises-10-1-6-2-1-1-1"><div class="para" id="exercises-10-1-6-2-1-1-1-1">When <span class="process-math">\(n=3\text{,}\)</span> there are 27 pairs in the relation.</div></li>
 <li id="exercises-10-1-6-2-1-1-2"><div class="para" id="exercises-10-1-6-2-1-1-2-1">Imagine building a pair of disjoint subsets of <span class="process-math">\(S\text{.}\)</span> For each element of <span class="process-math">\(S\)</span> there are three places that it can go: into the first set of the ordered pair, into the second set, or into neither set. Therefore the number of pairs in the relation is <span class="process-math">\(3^n\text{,}\)</span> by the product rule.</div></li>
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-10-1-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>

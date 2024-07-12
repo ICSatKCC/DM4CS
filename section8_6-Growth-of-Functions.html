@@ -692,10 +692,21 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -994,9 +1005,9 @@ f(x) = O(g(x))
 \end{equation*}
 </div>
 </div></article><div class="para" id="subsec8_6_1-big-o-notation-5">This definition is rather complicated, but the idea is simple: <span class="process-math">\(f(x) = O(g(x))\)</span> means <span class="process-math">\(f(x)\)</span> is less than or equal to <span class="process-math">\(g(x)\text{,}\)</span> except that we’re willing to ignore a constant factor, namely <span class="process-math">\(c\text{,}\)</span> and to allow exceptions for small <span class="process-math">\(x\text{,}\)</span> namely, for <span class="process-math">\(x \leq k\)</span> .</div>
-<details id="ex-big-o-x-squared" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-big-o-x-squared" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Prove <span class="process-math">\(10x^2 = O(x^2)\)</span>.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-big-o-x-squared-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-big-o-x-squared-2">
 <div class="para">If we choose <span class="process-math">\(c = 10\)</span> and <span class="process-math">\(k = 0\text{,}\)</span> then <span class="process-math">\(10x^2 = O(x^2) \)</span> holds because for all <span class="process-math">\(x \geq 0,\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1014,9 +1025,9 @@ p2 = plot(g, (x,0,5),  color="blue", legend_label='g(x)', thickness='2')
 p3 = plot(c*g, (x,0,5),  color="black", linestyle="dotted", legend_label='10*g(x)', thickness='3')
 p1+ p2 + p3
 </script></pre>
-<details id="ex-big-o-deg2-poly" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-big-o-deg2-poly" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Prove <span class="process-math">\(x^2 + 100x + 10 = O(x^2)\)</span>.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-big-o-deg2-poly-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-big-o-deg2-poly-2">
 <div class="para">If we take the polynomial <span class="process-math">\(x^2 + 100x + 10\)</span> and change it so that all of the constant cofficients are multiplied with <span class="process-math">\(x^2\)</span> we have:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1049,7 +1060,7 @@ p1+ p2 + p3
 \begin{equation*}
 a_k x^k + a_{k-1}x^{k-1} + \dots + a_1x + a_0 = O(x^k)
 \end{equation*}
-</div></article><details id="bigO-of-polynomials-4" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="bigO-of-polynomials-4-1">
+</div></article><details id="bigO-of-polynomials-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="bigO-of-polynomials-4-1">
 <div class="para">Given a polynomial:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1073,9 +1084,9 @@ a_k x^k + a_{k-1}x^{k-1} + \dots + a_1x + a_0 = O(x^k)
 </div>
 <div class="para">for <span class="process-math">\(c = (a_k + a_{k-1} + \dots + a_1 + a_0)\)</span> and <span class="process-math">\(k \geq 1\text{.}\)</span>
 </div>
-</div></article></details><details id="ex-big-o-poly-w-neg" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article></details><details id="ex-big-o-poly-w-neg" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">Prove <span class="process-math">\(6x^4 - 2x^3 + 5 = O(x^4)\)</span>.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-big-o-poly-w-neg-2">If we have negative coefficients in a polynomial, <a href="section8_6-Growth-of-Functions.html#bigO-of-polynomials" class="xref" data-knowl="./knowl/xref/bigO-of-polynomials.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.6.4: Polynomial Big O Theorem">Theorem 8.6.4</a> still applies because Big O as defined in <a href="section8_6-Growth-of-Functions.html#def-big-o" class="xref" data-knowl="./knowl/xref/def-big-o.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 8.6.1: Big O">Definition 8.6.1</a>  is an upper bound on the <em class="emphasis">absolute value</em> of <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> must be non-negative.</div> <div class="para logical" id="ex-big-o-poly-w-neg-3">
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-big-o-poly-w-neg-2">If we have negative coefficients in a polynomial, <a href="section8_6-Growth-of-Functions.html#bigO-of-polynomials" class="xref" data-knowl="./knowl/xref/bigO-of-polynomials.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.6.4: Polynomial Big O Theorem">Theorem 8.6.4</a> still applies because Big O as defined in <a href="section8_6-Growth-of-Functions.html#def-big-o" class="xref" data-knowl="./knowl/xref/def-big-o.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 8.6.1: Big O">Definition 8.6.1</a>  is an upper bound on the <em class="emphasis">absolute value</em> of <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> must be non-negative.</div> <div class="para logical" id="ex-big-o-poly-w-neg-3">
 <div class="para">Here we take the absolute value of our polynomial <span class="process-math">\(\lvert 6x^4 - 2x^3 + 5 \rvert\)</span> and multipling all of the constant cofficients by <span class="process-math">\(x^4\)</span> we have:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1113,9 +1124,9 @@ p2 = plot(g, (x,0,3),  color="blue", legend_label='g(x)', thickness='2')
 p3 = plot(c*g, (x,0,3),  color="black", linestyle="dotted", legend_label='c*g(x)', thickness='3')
 p1+ p2 + p3
 </script></pre>
-<details id="ex-big-o-factorial" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-big-o-factorial" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.6.6</span><span class="period">.</span><span class="space"> </span><span class="title">Big O of <span class="process-math">\(n!\)</span></span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-big-o-factorial-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-big-o-factorial-2">
 <div class="para">
 <span class="process-math">\(n! = n * (n-1) * \dots * 2 * 1\)</span> for <span class="process-math">\(n \geq 1\text{.}\)</span> There are <span class="process-math">\(n\)</span> terms total. Since <span class="process-math">\(n \geq 1 \text{,}\)</span> it must be true that:</div>
 <div class="displaymath process-math">
@@ -1290,13 +1301,13 @@ f_1*f_2(x) = O(g_1(x)*g_2(x))
 </div></li></ul>
 </div></li>
 </ul></div>
-<details id="ex-big-o-log_poly" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-big-o-log_poly" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.6.9</span><span class="period">.</span><span class="space"> </span><span class="title">Big O of <span class="process-math">\(7x^3\log_{2}x\)</span>.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-big-o-log_poly-2">Here we have two functions multiplied together: <span class="process-math">\(f(x) = x^3\)</span> and <span class="process-math">\(g(x) = \log_{2}x\text{.}\)</span> We can calculate the Big O of both separately and combine them.</div> <div class="para" id="ex-big-o-log_poly-3">For the first one <a href="section8_6-Growth-of-Functions.html#bigO-of-polynomials" class="xref" data-knowl="./knowl/xref/bigO-of-polynomials.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.6.4: Polynomial Big O Theorem">Theorem 8.6.4</a> applies so we have <span class="process-math">\(f(x) = O(x^3)\text{.}\)</span> For <span class="process-math">\(g(x)\)</span> there are no powers or constants so the Big O is just <span class="process-math">\(\log_2(x)\text{.}\)</span>
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-big-o-log_poly-2">Here we have two functions multiplied together: <span class="process-math">\(f(x) = x^3\)</span> and <span class="process-math">\(g(x) = \log_{2}x\text{.}\)</span> We can calculate the Big O of both separately and combine them.</div> <div class="para" id="ex-big-o-log_poly-3">For the first one <a href="section8_6-Growth-of-Functions.html#bigO-of-polynomials" class="xref" data-knowl="./knowl/xref/bigO-of-polynomials.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.6.4: Polynomial Big O Theorem">Theorem 8.6.4</a> applies so we have <span class="process-math">\(f(x) = O(x^3)\text{.}\)</span> For <span class="process-math">\(g(x)\)</span> there are no powers or constants so the Big O is just <span class="process-math">\(\log_2(x)\text{.}\)</span>
 </div> <div class="para" id="ex-big-o-log_poly-4">Multiplying: <span class="process-math">\(7x^3\log_{2}x = O(x^3\log_{2}x)\)</span>
-</div></article></details><details id="ex-big-o-log_plus_poly" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article></details><details id="ex-big-o-log_plus_poly" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.6.10</span><span class="period">.</span><span class="space"> </span><span class="title">Big O of <span class="process-math">\(9x^{2} + 3^x\)</span>.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-big-o-log_plus_poly-2">Here we have two functions added together: <span class="process-math">\(f(x) = 9x^{2}\)</span> and <span class="process-math">\(g(x) = 3^x\text{.}\)</span> We must calculate the Big O of both separately and decide which is largest.</div> <div class="para" id="ex-big-o-log_plus_poly-3">For the first one <a href="section8_6-Growth-of-Functions.html#bigO-of-polynomials" class="xref" data-knowl="./knowl/xref/bigO-of-polynomials.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.6.4: Polynomial Big O Theorem">Theorem 8.6.4</a> applies so we have <span class="process-math">\(f(x) = O(x^2)\text{.}\)</span> For <span class="process-math">\(g(x)\text{,}\)</span> this is an exponential in <span class="process-math">\(x\text{,}\)</span> so the Big O is just the function itself: <span class="process-math">\(3^x\text{.}\)</span> Looking at <a href="section8_6-Growth-of-Functions.html#fig-big0-common-functions" class="xref" data-knowl="./knowl/xref/fig-big0-common-functions.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.6.7">Figure 8.6.7</a> we can see that <span class="process-math">\(3^x\)</span> grows much faster than the polynomial <span class="process-math">\(x^2\text{,}\)</span> therefore <span class="process-math">\(9x^{2} + 3^x = O(3^x)\)</span>
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-big-o-log_plus_poly-2">Here we have two functions added together: <span class="process-math">\(f(x) = 9x^{2}\)</span> and <span class="process-math">\(g(x) = 3^x\text{.}\)</span> We must calculate the Big O of both separately and decide which is largest.</div> <div class="para" id="ex-big-o-log_plus_poly-3">For the first one <a href="section8_6-Growth-of-Functions.html#bigO-of-polynomials" class="xref" data-knowl="./knowl/xref/bigO-of-polynomials.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.6.4: Polynomial Big O Theorem">Theorem 8.6.4</a> applies so we have <span class="process-math">\(f(x) = O(x^2)\text{.}\)</span> For <span class="process-math">\(g(x)\text{,}\)</span> this is an exponential in <span class="process-math">\(x\text{,}\)</span> so the Big O is just the function itself: <span class="process-math">\(3^x\text{.}\)</span> Looking at <a href="section8_6-Growth-of-Functions.html#fig-big0-common-functions" class="xref" data-knowl="./knowl/xref/fig-big0-common-functions.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.6.7">Figure 8.6.7</a> we can see that <span class="process-math">\(3^x\)</span> grows much faster than the polynomial <span class="process-math">\(x^2\text{,}\)</span> therefore <span class="process-math">\(9x^{2} + 3^x = O(3^x)\)</span>
 </div></article></details></section><section class="subsection" id="subsec8_6_4-big-omega"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">8.6.4</span><span class="space"> </span><span class="title">Big Omega</span>
 </h3>
@@ -1369,7 +1380,7 @@ p1+ p2 + p3
 <article class="exercise exercise-like" id="section8_6-Growth-of-Functions-9-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para" id="section8_6-Growth-of-Functions-9-2-1-1">Show that <span class="process-math">\(f(x) =  8x^3 - 5x^2 + 7x + 13 \)</span> is <span class="process-math">\(\Theta(x^3)\text{.}\)</span> Find <span class="process-math">\(c_1, c_2, k_1, k_2\text{.}\)</span>
 </div>
-<div class="solutions"><details id="section8_6-Growth-of-Functions-9-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="section8_6-Growth-of-Functions-9-2-2-1">
+<div class="solutions"><details id="section8_6-Growth-of-Functions-9-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="section8_6-Growth-of-Functions-9-2-2-1">
 <div class="para">for all <span class="process-math">\(x \geq 1\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1400,7 +1411,7 @@ p1+ p2 + p3
 </div></article><article class="exercise exercise-like" id="section8_6-Growth-of-Functions-9-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para" id="section8_6-Growth-of-Functions-9-4-1-1">Show that <span class="process-math">\(f(x) = x^5 \neq O(x^4)\)</span>
 </div>
-<div class="solutions"><details id="section8_6-Growth-of-Functions-9-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="section8_6-Growth-of-Functions-9-4-2-1">
+<div class="solutions"><details id="section8_6-Growth-of-Functions-9-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="section8_6-Growth-of-Functions-9-4-2-1">
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{array}{c c}
@@ -1422,7 +1433,7 @@ x  &amp;  \leq 1\\
 <li id="section8_6-Growth-of-Functions-9-5-1-2-1-5"><div class="para" id="p-derived-section8_6-Growth-of-Functions-9-5-1-2-1-5"><span class="process-math">\(\displaystyle f(x) = x^{10}, g(x) = 10^x.\)</span></div></li>
 </ol></div></article><article class="exercise exercise-like" id="section8_6-Growth-of-Functions-9-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para" id="section8_6-Growth-of-Functions-9-6-1-1">Determine whether each of the functions: <span class="process-math">\(\log(3n + 2)\)</span> and <span class="process-math">\(\log(n^3 + 1)\)</span> is <span class="process-math">\(O(\log n)\)</span> by finding a valid <span class="process-math">\(c\)</span> and <span class="process-math">\(k\)</span> for each, or showing they do not exist.</div>
-<div class="solutions"><details id="section8_6-Growth-of-Functions-9-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="section8_6-Growth-of-Functions-9-6-2-1">
+<div class="solutions"><details id="section8_6-Growth-of-Functions-9-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="section8_6-Growth-of-Functions-9-6-2-1">
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{array}{c c}

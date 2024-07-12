@@ -680,10 +680,21 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -972,9 +983,9 @@ a_n\)</span> from an alphabet is called a string over that alphabet.</div>
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">17.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Symbol.</span>
 </h4>  <div class="para" id="def-symbol-3-1">The elements of an alphabet are called symbols.</div></article><article class="definition definition-like" id="def-string"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">17.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">String.</span>
-</h4>  <div class="para" id="def-string-4-1">A finite sequence of symbols <span class="process-math">\(a_1 a_2 \ldots a_n\)</span> from an alphabet is called a string over that alphabet.</div></article><details id="subsec-Languages-6" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</h4>  <div class="para" id="def-string-4-1">A finite sequence of symbols <span class="process-math">\(a_1 a_2 \ldots a_n\)</span> from an alphabet is called a string over that alphabet.</div></article><details id="subsec-Languages-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">17.1.4</span><span class="period">.</span>
-</h4></summary><article class="example example-like"><span class="process-math">\(\Sigma = \{0,1\}\)</span> is an alphabet, and <span class="process-math">\(011\text{,}\)</span> <span class="process-math">\(1010\text{,}\)</span> and <span class="process-math">\(1\)</span> are all strings over <span class="process-math">\(\Sigma\text{.}\)</span></article></details><div class="para" id="subsec-Languages-7">Note that strings really are <em class="emphasis">sequences</em> of symbols, which implies that order matters. Thus <span class="process-math">\(011\text{,}\)</span> <span class="process-math">\(101\text{,}\)</span> and <span class="process-math">\(110\)</span> are all different strings, though they are made up of the same symbols. The strings <span class="process-math">\(x=\aetc{a}{n}\)</span> and <span class="process-math">\(y=\aetc{b}{m}\)</span> are <em class="emphasis">equal</em> only if <span class="process-math">\(m=n\)</span> (i.e.the strings contain the same number of symbols) and <span class="process-math">\(a_i=b_i\)</span> for all <span class="process-math">\(1 \leq i \leq n\text{.}\)</span>
+</h4></summary><article class="example example-like knowl__content"><span class="process-math">\(\Sigma = \{0,1\}\)</span> is an alphabet, and <span class="process-math">\(011\text{,}\)</span> <span class="process-math">\(1010\text{,}\)</span> and <span class="process-math">\(1\)</span> are all strings over <span class="process-math">\(\Sigma\text{.}\)</span></article></details><div class="para" id="subsec-Languages-7">Note that strings really are <em class="emphasis">sequences</em> of symbols, which implies that order matters. Thus <span class="process-math">\(011\text{,}\)</span> <span class="process-math">\(101\text{,}\)</span> and <span class="process-math">\(110\)</span> are all different strings, though they are made up of the same symbols. The strings <span class="process-math">\(x=\aetc{a}{n}\)</span> and <span class="process-math">\(y=\aetc{b}{m}\)</span> are <em class="emphasis">equal</em> only if <span class="process-math">\(m=n\)</span> (i.e.the strings contain the same number of symbols) and <span class="process-math">\(a_i=b_i\)</span> for all <span class="process-math">\(1 \leq i \leq n\text{.}\)</span>
 </div>
 <div class="para" id="subsec-Languages-8">Just as there are operations defined on numbers, truth values, sets, and other mathematical entities, there are operations defined on strings. Some important operations are:</div>
 <article class="definition definition-like" id="def-string-length"><h4 class="heading">
@@ -991,9 +1002,9 @@ x(yz)\)</span> for all strings <span class="process-math">\(x,y\)</span> and <sp
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">17.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Reversal.</span>
 </h4>  <div class="para" id="def-string-reversal-3-1">The reverse of a string <span class="process-math">\(x=a_1a_2\ldots a_n\)</span> is the string <span class="process-math">\(x^R =
 a_na_{n-1}\ldots a_2a_1\text{.}\)</span>
-</div></article><details id="ex-string-ops" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article><details id="ex-string-ops" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">17.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">String Operations.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-string-ops-2">Let <span class="process-math">\(\Sigma = \{a,b\}\)</span> , <span class="process-math">\(x=a\text{,}\)</span> <span class="process-math">\(y=abaa\text{,}\)</span> and <span class="process-math">\(z=bab\text{.}\)</span>
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-string-ops-2">Let <span class="process-math">\(\Sigma = \{a,b\}\)</span> , <span class="process-math">\(x=a\text{,}\)</span> <span class="process-math">\(y=abaa\text{,}\)</span> and <span class="process-math">\(z=bab\text{.}\)</span>
 </div> <div class="para" id="ex-string-ops-3">Then <span class="process-math">\(|x|
 = 1\text{,}\)</span> <span class="process-math">\(|y| = 4\text{,}\)</span> and <span class="process-math">\(|z|=3\text{.}\)</span>
 </div> <div class="para" id="ex-string-ops-4">Also, <span class="process-math">\(xx = aa\text{,}\)</span> <span class="process-math">\(xy = aabaa\text{,}\)</span> <span class="process-math">\(xz = abab\text{,}\)</span> and <span class="process-math">\(zx
@@ -1004,9 +1015,9 @@ b, c, d )\text{;}\)</span> if a letter is intended to represent a string, the co
 </div>
 <div class="para" id="subsec-Languages-14">In set theory, we have a special symbol to designate the set that contains no elements. Similarly, language theory has a special symbol <span class="process-math">\(\varepsilon\)</span> which is used to represent the <em class="emphasis">empty string</em>, the string with no symbols in it. (Some texts use the symbol <span class="process-math">\(\lambda\)</span> instead.) It is worth noting that <span class="process-math">\(|\varep| = 0\text{,}\)</span> that <span class="process-math">\(\varep^R = \varep\text{,}\)</span> and that <span class="process-math">\(\varep \cdot x = x \cdot \varep = x\)</span> for all strings <span class="process-math">\(x\text{.}\)</span> (This last fact may appear a bit confusing. Remember that <span class="process-math">\(\varep\)</span> is not a symbol in a string with length 1, but rather the name given to the string made up of 0 symbols. Pasting those 0 symbols onto the front or back of a string <span class="process-math">\(x\)</span> still produces <span class="process-math">\(x\text{.}\)</span>)</div>
 <div class="para" id="subsec-Languages-15">The set of all strings over an alphabet <span class="process-math">\(\Sigma\)</span> is denoted <span class="process-math">\(\Sigma^*\text{.}\)</span> (In language theory, the symbol <span class="process-math">\(^*\)</span> is typically used to denote ``zero or more’’, so <span class="process-math">\(\Sigma^*\)</span> is the set of strings made up of zero or more symbols from <span class="process-math">\(\Sigma\text{.}\)</span>) Note that while an alphabet <span class="process-math">\(\Sigma\)</span> is by definition a <em class="emphasis">finite</em> set of symbols, and strings are by definition <em class="emphasis">finite</em> sequences of those symbols, the set <span class="process-math">\(\Sigma^*\)</span> is always <em class="emphasis">infinite</em>. Why is this? Suppose <span class="process-math">\(\Sigma\)</span> contains <span class="process-math">\(n\)</span> elements. Then there is one string over <span class="process-math">\(\Sigma\)</span> with 0 symbols, <span class="process-math">\(n\)</span> strings with 1 symbol, <span class="process-math">\(n^2\)</span> strings with 2 symbols (since there are <span class="process-math">\(n\)</span> choices for the first symbol and <span class="process-math">\(n\)</span> choices for the second), <span class="process-math">\(n^3\)</span> strings with 3 symbols, etc.</div>
-<details id="ex-strings-over-alphabet" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-strings-over-alphabet" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">17.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Set of all Strings over an Alphabet.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-strings-over-alphabet-2">If <span class="process-math">\(\Sigma = \{1\}\text{,}\)</span> then <span class="process-math">\(\Sigma^* = \{\varep,
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-strings-over-alphabet-2">If <span class="process-math">\(\Sigma = \{1\}\text{,}\)</span> then <span class="process-math">\(\Sigma^* = \{\varep,
 1, 11, 111, \ldots\}\text{.}\)</span>
 </div> <div class="para" id="ex-strings-over-alphabet-3">If <span class="process-math">\(\Sigma = \ab\text{,}\)</span> then <span class="process-math">\(\Sigma^* = \{
 \varep, a, b, aa, ab, ba, bb, aaa, aab, \ldots\}\text{.}\)</span>
@@ -1017,9 +1028,9 @@ b, c, d )\text{;}\)</span> if a letter is intended to represent a string, the co
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">17.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Languages over an Alphabet.</span>
 </h4> <div class="para" id="def-language-2-1">A language over an alphabet <span class="process-math">\(\Sigma\)</span> is a subset of <span class="process-math">\(\Sigma^*\text{.}\)</span> Thus, a language over <span class="process-math">\(\Sigma\)</span> is an element of <span class="process-math">\({\cal P}(\Sigma^*)\text{,}\)</span> the power set of <span class="process-math">\(\Sigma^*\text{.}\)</span>
 </div></article><div class="para" id="subsec-Languages-20">In other words, any set of strings (over alphabet <span class="process-math">\(\Sigma\)</span>) constitutes a language (over alphabet <span class="process-math">\(\Sigma\)</span>).</div>
-<details id="ex-languages-over-set" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-languages-over-set" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">17.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Languages over a set.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-languages-over-set-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-languages-over-set-2">
 <div class="para">Let <span class="process-math">\(\Sigma =
 \{0,1\}\text{.}\)</span> Then the following are all languages over <span class="process-math">\(\Sigma\text{:}\)</span>
 </div>
@@ -1043,9 +1054,9 @@ L_4 \amp = \{x| x \text{ is a multiple of } 5 \text{ in binary}\}
 ST\text{,}\)</span> because <span class="process-math">\(ab \in S\text{,}\)</span> <span class="process-math">\(\varep \in T\text{,}\)</span> and <span class="process-math">\(ab \cdot \varep = ab\text{.}\)</span> Because concatenation of sets is defined in terms of the concatenation of the strings that the sets contain, concatenation of sets is associative and not commutative. (This can easily be verified.)</div>
 <div class="para" id="subsec-Languages-27">When a set <span class="process-math">\(S\)</span> is concatenated with itself, the notation <span class="process-math">\(SS\)</span> is usually scrapped in favour of <span class="process-math">\(S^2\text{;}\)</span> if <span class="process-math">\(S^2\)</span> is concatenated with <span class="process-math">\(S\text{,}\)</span> we write <span class="process-math">\(S^3\)</span> for the resulting set, etc. So <span class="process-math">\(S^2\)</span> is the set of all strings formed by concatenating two (possibly different, possibly identical) strings from <span class="process-math">\(S\text{,}\)</span> <span class="process-math">\(S^3\)</span> is the set of strings formed by concatenating three strings from <span class="process-math">\(S\text{,}\)</span> etc. Extending this notation, we take <span class="process-math">\(S^1\)</span> to be the set of strings formed from one string in <span class="process-math">\(S\)</span> (i.e <span class="process-math">\(S^1\)</span> is <span class="process-math">\(S\)</span> itself), and <span class="process-math">\(S^0\)</span> to be the set of strings formed from zero strings in <span class="process-math">\(S\)</span> (i.e.<span class="process-math">\(S^0 = \{\varep\}\)</span>). If we take the union <span class="process-math">\(S^0 \cup
 S^1 \cup S^2 \cup \ldots\text{,}\)</span> then the resulting set is the set of all strings formed by concatenating zero or more strings from <span class="process-math">\(S\text{,}\)</span> and is denoted <span class="process-math">\(S^*\text{.}\)</span> The set <span class="process-math">\(S^*\)</span> is called the <em class="emphasis">Kleene closure</em> of <span class="process-math">\(S\text{,}\)</span> and the <span class="process-math">\(^*\)</span> operator is called the <em class="emphasis">Kleene star</em> operator.</div>
-<details id="ex-kleene-closure" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-kleene-closure" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">17.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Kleene Closure of a set.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-kleene-closure-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-kleene-closure-2">
 <div class="para">Let <span class="process-math">\(S = \{01, ba\}\text{.}\)</span> Then</div>
 <div class="displaymath process-math" id="ex-kleene-closure-2-2">
 \begin{align*}
@@ -1058,9 +1069,9 @@ S^* \amp =\{\varep,01,ba,0101,01ba,ba01,baba,010101,0101ba,\ldots\}.
 \end{align*}
 </div>
 </div></article></details><div class="para" id="subsec-Languages-29">Note that this is the second time we have seen the notation <span class="process-math">\(something^*\text{.}\)</span> We have previously seen that for an alphabet <span class="process-math">\(\Sigma\text{,}\)</span> <span class="process-math">\(\Sigma^*\)</span> is defined to be the set of all strings over <span class="process-math">\(\Sigma\text{.}\)</span> If you think of <span class="process-math">\(\Sigma\)</span> as being a set of length-1 strings, and take its Kleene closure, the result is once again the set of all strings over <span class="process-math">\(\Sigma\text{,}\)</span> and so the two notions of <span class="process-math">\(^*\)</span> coincide.</div>
-<details id="ex-sigma-star" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-sigma-star" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">17.1.14</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Sigma^*\)</span>.</span>
-</h4></summary><article class="example example-like">&gt; Let <span class="process-math">\(\Sigma = \ab\text{.}\)</span> Then<div class="displaymath process-math" id="ex-sigma-star-3">
+</h4></summary><article class="example example-like knowl__content">&gt; Let <span class="process-math">\(\Sigma = \ab\text{.}\)</span> Then<div class="displaymath process-math" id="ex-sigma-star-3">
 \begin{align*}
 \Sigma^0 \amp = \{\varep\} \\
 \Sigma^1 \amp = \ab \\
@@ -1084,7 +1095,7 @@ abbba, \ldots\}\text{.}\)</span> Find the following:</div>
 <li id="exerc-17_1-1-1-1-3-5"><div class="para" id="exerc-17_1-1-1-1-3-5-1"><span class="process-math">\(\displaystyle TS\)</span></div></li>
 </ol>
 </div>
-<div class="solutions"><details id="exerc-17_1-1-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exerc-17_1-1-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exerc-17_1-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exerc-17_1-1-2-1"><ol class="lower-alpha">
 <li id="exerc-17_1-1-2-1-1-1"><div class="para logical" id="exerc-17_1-1-2-1-1-1-1"><div class="displaymath process-math">
 \begin{equation*}
 S^2 = \{\varep, ab, abab, ababab, abababab\} 
@@ -1122,7 +1133,7 @@ abbba,  abbbba, \ldots, \\
 <div class="para" id="exerc-17_1-2-1-1">The <em class="emphasis">reverse</em> of a language <span class="process-math">\(L\)</span> is defined to be <span class="process-math">\(L^R = \{ x^R  |  x \in L\}\text{.}\)</span> Find <span class="process-math">\(S^R\)</span> and <span class="process-math">\(T^R\)</span> for the <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> in the preceding problem.</div></article><article class="exercise exercise-like" id="exerc-17_1-3"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
 <div class="para" id="exerc-17_1-3-1-1">Give an example of a language <span class="process-math">\(L\)</span> such that <span class="process-math">\(L=L^*\text{.}\)</span>
 </div>
-<div class="solutions"><details id="exerc-17_1-3-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exerc-17_1-3-2-1"><div class="displaymath process-math">
+<div class="solutions"><details id="exerc-17_1-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exerc-17_1-3-2-1"><div class="displaymath process-math">
 \begin{equation*}
 L = \{\varep, a, aa, aaa, aaaa, \ldots\}
 \end{equation*}

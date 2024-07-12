@@ -680,10 +680,21 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -962,9 +973,9 @@ window.MathJax = {
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">12.8</span><span class="space"> </span><span class="title">Logic Circuit Minimization</span>
 </h2>
 <div class="para" id="s-circuit-minimization-4">Let’s start with a logic circuit and see how the laws of boolean algebra can help us simplify it.</div>
-<details id="example-logic-design-1" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+<details id="example-logic-design-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">12.8.1</span><span class="period">.</span><span class="space"> </span><span class="title">Simplification of a circuit.</span>
-</h3></summary><article class="example example-like"> <div class="para" id="example-logic-design-1-2">Consider the circuit in <a href="s-circuit-minimization.html#fig-ex-1-start-circuit" class="xref" data-knowl="./knowl/xref/fig-ex-1-start-circuit.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 12.8.2">Figure 12.8.2</a>. As usual, we assume that three inputs enter on the left and the output exits on the right.</div> <figure class="figure figure-like" id="fig-ex-1-start-circuit"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fig_tikz_gate_simp1_init.png" class="contained" alt="Initial gate diagram"></div>
+</h3></summary><article class="example example-like knowl__content"> <div class="para" id="example-logic-design-1-2">Consider the circuit in <a href="s-circuit-minimization.html#fig-ex-1-start-circuit" class="xref" data-knowl="./knowl/xref/fig-ex-1-start-circuit.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 12.8.2">Figure 12.8.2</a>. As usual, we assume that three inputs enter on the left and the output exits on the right.</div> <figure class="figure figure-like" id="fig-ex-1-start-circuit"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fig_tikz_gate_simp1_init.png" class="contained" alt="Initial gate diagram"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.8.2<span class="period">.</span></span><span class="space"> </span>Initial gate diagram</figcaption></figure> <div class="para logical" id="example-logic-design-1-4">
 <div class="para">If we trace the inputs through the gates we see that this circuit realizes the boolean function</div>
 <div class="displaymath process-math">
@@ -994,9 +1005,9 @@ x_1 \cdot \overline{x_2} \cdot x_3 \\
 </div>
 </div> <figure class="figure figure-like" id="fig-ex-1-end-circuit"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/fig_tikz_gate_simp1_end.png" class="contained" alt="Simplified gate diagram"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.8.3<span class="period">.</span></span><span class="space"> </span>Simplified gate diagram</figcaption></figure></article></details><div class="para" id="s-circuit-minimization-6">Next, we start with a table of desired outputs based on three bits of input and design an efficient circuit to realize this output.</div>
-<details id="example-logic-design-2" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+<details id="example-logic-design-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">12.8.4</span><span class="period">.</span>
-</h3></summary><article class="example example-like"><div class="para" id="example-logic-design-2-1">Consider the following table of desired outputs for the three input bits <span class="process-math">\(x_1, x_2, x_3\)</span> .</div> <figure class="table table-like" id="table-logic-design-output"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">12.8.5<span class="period">.</span></span><span class="space"> </span>Desired output table</figcaption><div class="tabular-box natural-width"><table class="tabular">
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="example-logic-design-2-1">Consider the following table of desired outputs for the three input bits <span class="process-math">\(x_1, x_2, x_3\)</span> .</div> <figure class="table table-like" id="table-logic-design-output"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">12.8.5<span class="period">.</span></span><span class="space"> </span>Desired output table</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(x_1\)</span></td>
 <td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(x_2\)</span></td>
@@ -1057,7 +1068,7 @@ x_1 \cdot \overline{x_2} \cdot x_3 \\
 </h3>
 <article class="exercise exercise-like" id="exerc-12_8-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para" id="exerc-12_8-1-1-1">List the laws of boolean algebra that justify the steps in the simplification of the boolean function <span class="process-math">\(f\left(x_1, x_2, x_3\right)\)</span> in <a href="s-circuit-minimization.html#example-logic-design-1" class="xref" data-knowl="./knowl/xref/example-logic-design-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 12.8.1: Simplification of a circuit">Example 12.8.1</a>. Some steps use more than one law.</div>
-<div class="solutions"><details id="exerc-12_8-1-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exerc-12_8-1-2-1"><ol class="decimal">
+<div class="solutions"><details id="exerc-12_8-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exerc-12_8-1-2-1"><ol class="decimal">
 <li id="exerc-12_8-1-2-1-1-1"><div class="para" id="exerc-12_8-1-2-1-1-1-1">Associative, commutative, and idempotent laws.</div></li>
 <li id="exerc-12_8-1-2-1-1-2"><div class="para" id="exerc-12_8-1-2-1-1-2-1">Distributive law.</div></li>
 <li id="exerc-12_8-1-2-1-1-3"><div class="para" id="exerc-12_8-1-2-1-1-3-1">Idempotent and complement laws.</div></li>
@@ -1075,13 +1086,13 @@ x_1 \cdot \overline{x_2} \cdot x_3 \\
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="exercises-12-8-3-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-12-8-3-2-1"><div class="displaymath process-math">
+<div class="solutions"><details id="exercises-12-8-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-12-8-3-2-1"><div class="displaymath process-math">
 \begin{equation*}
 (x_1\cdot \overline{x_2})+(x_1\cdot x_2)+(\overline{x_1} \cdot x_2).
 \end{equation*}
 </div></div></div></details></div></article><article class="exercise exercise-like" id="exerc-simpler-circuit"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para" id="exerc-simpler-circuit-1-1">Find a further simplification of the boolean function in <a href="s-circuit-minimization.html#example-logic-design-2" class="xref" data-knowl="./knowl/xref/example-logic-design-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 12.8.4">Example 12.8.4</a>, and draw the corresponding gate diagram for the circuit that it realizes.</div>
-<div class="solutions"><details id="exerc-simpler-circuit-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="solutions"><details id="exerc-simpler-circuit-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
 <div class="para" id="exerc-simpler-circuit-2-1">A simpler boolean expression for the function is <span class="process-math">\(\overline{x_2} \cdot (x_1 +
 x_3)\text{.}\)</span>
 </div> <figure class="figure figure-like" id="fig-logic-design-exerc-3"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/fig-logic-design-exerc-3.png" class="contained" alt="Figure for exercise 3"></div>

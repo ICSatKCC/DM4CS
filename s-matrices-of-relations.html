@@ -680,10 +680,21 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -980,9 +991,9 @@ M_{ij}= \left\{
 </div>
 <div class="para">
 <span class="process-math">\(M\)</span> is called the <dfn class="terminology">adjacency matrix</dfn> (or the relation matrix) of <span class="process-math">\(R\)</span> .</div>
-</div></article><details id="ex-first-10-4" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article><details id="ex-first-10-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">10.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">A simple example.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-first-10-4-2">Let <span class="process-math">\(A = \{2, 5, 6\}\)</span> and let <span class="process-math">\(R\)</span>  be the relation <span class="process-math">\(\{(2, 2), (2, 5), (5, 6), (6, 6)\}\)</span> on <span class="process-math">\(A\text{.}\)</span> Since <span class="process-math">\(R\)</span>  is a relation from <span class="process-math">\(A\)</span> into the same set <span class="process-math">\(A\)</span> (the <span class="process-math">\(B\)</span> of the definition), we have <span class="process-math">\(a_1= 2\text{,}\)</span> <span class="process-math">\(a_2=5\text{,}\)</span> and <span class="process-math">\(a_3=6\text{,}\)</span> while <span class="process-math">\(b_1= 2\text{,}\)</span> <span class="process-math">\(b_2=5\text{,}\)</span> and <span class="process-math">\(b_3=6\text{.}\)</span> Next, since</div> <div class="para logical" id="ex-first-10-4-3"><ul class="disc">
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-first-10-4-2">Let <span class="process-math">\(A = \{2, 5, 6\}\)</span> and let <span class="process-math">\(R\)</span>  be the relation <span class="process-math">\(\{(2, 2), (2, 5), (5, 6), (6, 6)\}\)</span> on <span class="process-math">\(A\text{.}\)</span> Since <span class="process-math">\(R\)</span>  is a relation from <span class="process-math">\(A\)</span> into the same set <span class="process-math">\(A\)</span> (the <span class="process-math">\(B\)</span> of the definition), we have <span class="process-math">\(a_1= 2\text{,}\)</span> <span class="process-math">\(a_2=5\text{,}\)</span> and <span class="process-math">\(a_3=6\text{,}\)</span> while <span class="process-math">\(b_1= 2\text{,}\)</span> <span class="process-math">\(b_2=5\text{,}\)</span> and <span class="process-math">\(b_3=6\text{.}\)</span> Next, since</div> <div class="para logical" id="ex-first-10-4-3"><ul class="disc">
 <li id="ex-first-10-4-3-1-1"><div class="para" id="ex-first-10-4-3-1-1-1">
 <span class="process-math">\(2 R 2\text{,}\)</span> we have <span class="process-math">\(M_{11}= 1\)</span>
 </div></li>
@@ -1046,9 +1057,9 @@ M^2 =\left(
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1 \cdot  1 = 1\)</span></td>
 </tr>
 </table></div></figure></article><div class="para" id="s-matrices-of-relations-4-5">Notice that from <a href="chapter4.html" class="internal" title="Chapter 4: Logic">Chapter 4</a>, this is the “arithmetic of logic,” where <span class="process-math">\(+\)</span> replaces “or” and <span class="process-math">\(\cdot\)</span> replaces “and.”</div>
-<details id="ex-composition-matrices" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-composition-matrices" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">10.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Composition by Multiplication.</span>
-</h4></summary><article class="example example-like"><div class="para" id="ex-composition-matrices-2-1">Suppose that <span class="process-math">\(M=\left(
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-composition-matrices-2-1">Suppose that <span class="process-math">\(M=\left(
 \begin{array}{cccc}
 0 &amp; 1 &amp; 0 &amp; 0 \\
 1 &amp; 0 &amp; 1 &amp; 0 \\
@@ -1108,9 +1119,9 @@ M^2 =\left(
 </div>
 <div class="para">To fill in the matrix, <span class="process-math">\(M_{ij}\)</span> is 1 if and only if <span class="process-math">\(\left(a_i,b_j\right) \in R\text{.}\)</span> So that, since the pair <span class="process-math">\((2, 5) \in R\text{,}\)</span> the entry of <span class="process-math">\(M\)</span> corresponding to the row labeled 2 and the column labeled 5 in the matrix is a 1.</div>
 </div>
-<details id="ex-relations-information" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-relations-information" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">10.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Relations and Information.</span>
-</h4></summary><article class="example example-like"><div class="para logical" id="ex-relations-information-2-1">
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-relations-information-2-1">
 <div class="para">This final example gives an insight into how relational data base programs can systematically answer questions pertaining to large masses of information. Matrices <span class="process-math">\(M\)</span> (on the left) and <span class="process-math">\(N\)</span> (on the right) define the relations <span class="process-math">\(R\)</span>  and <span class="process-math">\(S\)</span> where <span class="process-math">\(a R b\)</span> if software <span class="process-math">\(a\)</span> can be run with operating system <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(b S c\)</span> if operating system <span class="process-math">\(b\)</span> can run on computer <span class="process-math">\(c\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1200,7 +1211,7 @@ M^2 =\left(
 <li id="exercises-10-4-2-1-2-1-3"><div class="para" id="exercises-10-4-2-1-2-1-3-1">Verify the result in part b by finding the product of the adjacency matrices of <span class="process-math">\(R_1\)</span> and <span class="process-math">\(R_2\text{.}\)</span>
 </div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-10-4-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-10-4-2-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-10-4-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-4-2-2-1"><ol class="lower-alpha">
 <li id="exercises-10-4-2-2-1-1-1"><div class="para" id="exercises-10-4-2-2-1-1-1-1">
 <span class="process-math">\(\begin{array}{cc}
 &amp;
@@ -1271,7 +1282,7 @@ M^2 =\left(
 <li id="exercises-10-4-3-1-1-1-3"><div class="para" id="exercises-10-4-3-1-1-1-3-1">Find the digraph of <span class="process-math">\(R^2\)</span> directly from the given digraph and compare your results with those of part (b).</div></li>
 </ol></div></article><article class="exercise exercise-like" id="exercises-10-4-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para" id="exercises-10-4-4-1-1">Suppose that the matrices in <a href="s-matrices-of-relations.html#ex-composition-matrices" class="xref" data-knowl="./knowl/xref/ex-composition-matrices.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 10.4.5: Composition by Multiplication">Example 10.4.5</a> are relations on <span class="process-math">\(\{1, 2, 3, 4\}\text{.}\)</span> What relations do <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> describe?</div>
-<div class="solutions"><details id="exercises-10-4-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><figure class="table table-like" id="exercises-10-4-4-2-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">10.4.8<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<div class="solutions"><details id="exercises-10-4-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><figure class="table table-like" id="exercises-10-4-4-2-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">10.4.8<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr><td class="l m b0 r0 l0 t0 lines">M : <span class="process-math">\(x R y\)</span> if and only if <span class="process-math">\(\lvert x -y \rvert = 1\)</span>
 </td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines">N : <span class="process-math">\(x S y\)</span> if and only if <span class="process-math">\(x\)</span> is less than <span class="process-math">\(y\text{.}\)</span>
@@ -1331,7 +1342,7 @@ A &amp; B &amp; C &amp; J &amp; L &amp; P \\
 </ol></div></article><article class="exercise exercise-like" id="exercises-10-4-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para" id="exercises-10-4-6-1-1">How many different reflexive, symmetric relations are there on a set with three elements?</div>
 <div class="solutions">
-<details id="exercises-10-4-6-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="exercises-10-4-6-2-1">Consider the possible matrices.</div></div></details><details id="exercises-10-4-6-3" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="exercises-10-4-6-3-1">The diagonal entries of the matrix for such a relation must be 1. When the three entries above the diagonal are determined, the entries below are also determined. Therefore, there are <span class="process-math">\(2^3\)</span> fitting the description.</div></div></details>
+<details id="exercises-10-4-6-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises-10-4-6-2-1">Consider the possible matrices.</div></div></details><details id="exercises-10-4-6-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="exercises-10-4-6-3-1">The diagonal entries of the matrix for such a relation must be 1. When the three entries above the diagonal are determined, the entries below are also determined. Therefore, there are <span class="process-math">\(2^3\)</span> fitting the description.</div></div></details>
 </div></article><article class="exercise exercise-like" id="exercises-10-4-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <div class="para" id="exercises-10-4-7-1-1">Let <span class="process-math">\(A = \{a, b, c, d\}\text{.}\)</span>  Let <span class="process-math">\(R\)</span>  be the relation on <span class="process-math">\(A\)</span> with adjacency matrix <span class="process-math">\(\begin{array}{cc}
 &amp;
@@ -1364,7 +1375,7 @@ d \\
 <li id="exercises-10-4-8-1-2-1-1"><div class="para" id="exercises-10-4-8-1-2-1-1-1">Represent <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span> as both graphs and matrices.</div></li>
 <li id="exercises-10-4-8-1-2-1-2"><div class="para" id="exercises-10-4-8-1-2-1-2-1">Determine <span class="process-math">\(RS\text{,}\)</span> <span class="process-math">\(R^2\text{,}\)</span> and <span class="process-math">\(S^2\text{;}\)</span> and represent them clearly in any way.</div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-10-4-8-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-10-4-8-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-10-4-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-4-8-2-1"><ol class="lower-alpha">
 <li id="exercises-10-4-8-2-1-1-1"><div class="para" id="exercises-10-4-8-2-1-1-1-1">
 <span class="process-math">\(\begin{array}{cc}
 &amp;
@@ -1467,7 +1478,7 @@ d \\
 <li id="exercises-10-4-10-1-2-1-3"><div class="para" id="exercises-10-4-10-1-2-1-3-1">If <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> are matrices of equivalence relations and <span class="process-math">\(M \leq  N\text{,}\)</span> how are the equivalence classes defined by <span class="process-math">\(M\)</span> related to the equivalence classes defined by <span class="process-math">\(N\text{?}\)</span>
 </div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-10-4-10-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-10-4-10-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-10-4-10-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-4-10-2-1"><ol class="lower-alpha">
 <li id="exercises-10-4-10-2-1-1-1">
 <div class="para" id="exercises-10-4-10-2-1-1-1-1">Reflexive: <span class="process-math">\(M_{ij}=M_{ij}\)</span> for all <span class="process-math">\(i,j\text{,}\)</span> therefore <span class="process-math">\(M_{ij}\leq M_{ij}\)</span>
 </div>

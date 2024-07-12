@@ -680,10 +680,21 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -1000,9 +1011,9 @@ P(S) = \sum_{x \in S} P(x) = 1 ,
 </div>
 <div class="para">where the last equality follows from the second condition in <a href="section3_1-probability.html#def-probability-function" class="xref" data-knowl="./knowl/xref/def-probability-function.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.2: Probability Function or Distribution">Definition 3.1.2</a>.</div>
 </div>
-<details id="ex-flipping-a-coin" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-flipping-a-coin" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Flipping a Coin.</span>
-</h4></summary><article class="example example-like"><div class="para logical" id="ex-flipping-a-coin-2">
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-flipping-a-coin-2">
 <div class="para">Assume we flip a coin. Since there are two possible outcomes (the coin comes up either <em class="emphasis">heads</em> (<span class="process-math">\(H\)</span>) or <em class="emphasis">tails</em> (<span class="process-math">\(T\)</span>)), the sample space is the set <span class="process-math">\(S = \{H,T \}\text{.}\)</span> If the coin is <em class="emphasis">fair</em>, i.e., the probabilities of <span class="process-math">\(H\)</span> and <span class="process-math">\(T\)</span> are equal, then the probability function <span class="process-math">\(P : S \rightarrow \mathbb{R}\)</span> is given by</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-probability-function.html ./knowl/xref/def-probability-event.html">
 \begin{equation*}
@@ -1029,9 +1040,9 @@ P(\{H,T\}) &amp;= &amp;P(H) + P(T) &amp;= &amp;1/2 + 1/2 &amp;= &amp;1 .
 \end{array} 
 \end{equation*}
 </div>
-</div></article></details><details id="ex-flipping-a-coin-twice" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article></details><details id="ex-flipping-a-coin-twice" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Flipping a Coin Twice.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-flipping-a-coin-twice-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-flipping-a-coin-twice-2">
 <div class="para">If we flip a fair coin twice, then there are four possible outcomes, and the sample space becomes <span class="process-math">\(S = \{ HH , HT , TH , TT \}\text{.}\)</span> For example, <span class="process-math">\(HT\)</span> indicates that the first flip resulted in heads, whereas the second flip resulted in tails. In this case, the probability function <span class="process-math">\(P : S \rightarrow \mathbb{R}\)</span> is given by \[ P(HH) = P(HT) = P(TH) = P(TT) = 1/4 . \] Observe again that this function <span class="process-math">\(P\)</span> satisfies the two conditions in <a href="section3_1-probability.html#def-probability-function" class="xref" data-knowl="./knowl/xref/def-probability-function.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.2: Probability Function or Distribution">Definition 3.1.2</a>. Since the sample space consists of <span class="process-math">\(4\)</span> elements, the number of events is equal to <span class="process-math">\(2^4 = 16\text{.}\)</span> For example, <span class="process-math">\(A = \{ HT , TH \}\)</span> is an event and it follows from <a href="section3_1-probability.html#def-probability-event" class="xref" data-knowl="./knowl/xref/def-probability-event.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.4: Probability of an Event">Definition 3.1.4</a> that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-probability-function.html ./knowl/xref/def-probability-event.html">
 \begin{equation*}
@@ -1040,9 +1051,9 @@ P(A) = P(HT) + P(TH) = 1/4 + 1/4 = 1/2 .
 </div>
 <div class="para">In words, when flipping a fair coin twice, the probability that we see one heads and one tails (without specifying the order) is equal to <span class="process-math">\(1/2\text{.}\)</span>
 </div>
-</div></article></details><details id="ex-rolling-a-die-twice" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article></details><details id="ex-rolling-a-die-twice" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Rolling a Die Twice.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-rolling-a-die-twice-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-rolling-a-die-twice-2">
 <div class="para">If we roll a fair die, then there are six possible outcomes (<span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(2\text{,}\)</span> <span class="process-math">\(3\text{,}\)</span> <span class="process-math">\(4\text{,}\)</span> <span class="process-math">\(5\text{,}\)</span> and <span class="process-math">\(6\)</span>), each one occurring with probability <span class="process-math">\(1/6\text{.}\)</span> If we roll this die twice, we obtain the sample space</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-probability-function.html">
 \begin{equation*}
@@ -1149,7 +1160,7 @@ S' = \{ 2,3,4,5,6,7,8,9,10,11,12 \} .
 <section class="introduction" id="subsec3_1_2-basic-rules-of-probability-2"><div class="para" id="subsec3_1_2-basic-rules-of-probability-2-1">In this section, we prove some basic properties of probability functions. As we will see, all these properties follow from <a href="section3_1-probability.html#def-probability-function" class="xref" data-knowl="./knowl/xref/def-probability-function.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.2: Probability Function or Distribution">Definition 3.1.2</a>. Throughout this section, <span class="process-math">\((S,P)\)</span> is a probability space.</div></section><article class="theorem theorem-like" id="thm-probability-of-empty-set"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(P(\emptyset) = 0\)</span>.</span>
 </h4>
-<div class="para" id="thm-probability-of-empty-set-2-1">Recall that an event is a subset of the sample space <span class="process-math">\(S\text{.}\)</span> In particular, the empty set <span class="process-math">\(\emptyset\)</span> is an event. Intuitively, <span class="process-math">\(P(\emptyset)\)</span> must be zero, because it is the probability that there is no outcome, which can never occur.</div></article><details id="thm-probability-of-empty-set-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-probability-of-empty-set-3-1">
+<div class="para" id="thm-probability-of-empty-set-2-1">Recall that an event is a subset of the sample space <span class="process-math">\(S\text{.}\)</span> In particular, the empty set <span class="process-math">\(\emptyset\)</span> is an event. Intuitively, <span class="process-math">\(P(\emptyset)\)</span> must be zero, because it is the probability that there is no outcome, which can never occur.</div></article><details id="thm-probability-of-empty-set-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-probability-of-empty-set-3-1">
 <div class="para">By <a href="section3_1-probability.html#def-probability-event" class="xref" data-knowl="./knowl/xref/def-probability-event.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.4: Probability of an Event">Definition 3.1.4</a>, we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-probability-event.html">
 \begin{equation*}
@@ -1170,7 +1181,7 @@ P ( A_1 \cup A_2 \cup \cdots \cup A_n ) =
 \sum_{i=1}^n P\left(A_i\right) .
 \end{equation*}
 </div>
-</div></article><details id="thm-probability-of-sequence-of-disjoint-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-probability-of-sequence-of-disjoint-3-1">
+</div></article><details id="thm-probability-of-sequence-of-disjoint-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-probability-of-sequence-of-disjoint-3-1">
 <div class="para">Define <span class="process-math">\(A = A_1 \cup A_2 \cup \cdots \cup A_n\text{.}\)</span> Using <a href="section3_1-probability.html#def-probability-event" class="xref" data-knowl="./knowl/xref/def-probability-event.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.4: Probability of an Event">Definition 3.1.4</a>, we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-probability-event.html">
 \begin{equation*}
@@ -1181,9 +1192,9 @@ P(A) &amp;= \sum_{x \in A} P(x) \\
 \end{array} 
 \end{equation*}
 </div>
-</div></article></details><details id="ex-probability-of-sum-of-dice" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article></details><details id="ex-probability-of-sum-of-dice" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of an Even Outcome When Flipping a Die Twice.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-probability-of-sum-of-dice-2">Assume we roll a fair die twice. What is the probability that the sum of the two results is even? If you look at the matrix in <a href="section3_1-probability.html#ex-rolling-a-die-twice" class="xref" data-knowl="./knowl/xref/ex-rolling-a-die-twice.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.7: Rolling a Die Twice">Example 3.1.7</a>, then you see that there are <span class="process-math">\(18\)</span> entries out of <span class="process-math">\(36\)</span> that are even. Therefore, the probability of having an even sum is equal to <span class="process-math">\(18/36=1/2\text{.}\)</span> Below we will give a different way to determine this probability.</div> <div class="para logical" id="ex-probability-of-sum-of-dice-3">
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-probability-of-sum-of-dice-2">Assume we roll a fair die twice. What is the probability that the sum of the two results is even? If you look at the matrix in <a href="section3_1-probability.html#ex-rolling-a-die-twice" class="xref" data-knowl="./knowl/xref/ex-rolling-a-die-twice.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.7: Rolling a Die Twice">Example 3.1.7</a>, then you see that there are <span class="process-math">\(18\)</span> entries out of <span class="process-math">\(36\)</span> that are even. Therefore, the probability of having an even sum is equal to <span class="process-math">\(18/36=1/2\text{.}\)</span> Below we will give a different way to determine this probability.</div> <div class="para logical" id="ex-probability-of-sum-of-dice-3">
 <div class="para">The sample space is the set</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1237,7 +1248,7 @@ P(A) = P\left(A_1\right) + P\left(A_2\right) =
 P(A) = 1 - P \left( \overline{A} \right) .
 \end{equation*}
 </div>
-</div></article><details id="thm-probability-of-complements-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-probability-of-complements-3-1">
+</div></article><details id="thm-probability-of-complements-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-probability-of-complements-3-1">
 <div class="para">Since <span class="process-math">\(A\)</span> and <span class="process-math">\(\overline{A}\)</span> are disjoint and <span class="process-math">\(S = A \cup \overline{A}\text{,}\)</span> it follows from <a href="section3_1-probability.html#thm-probability-of-sequence-of-disjoint" class="xref" data-knowl="./knowl/xref/thm-probability-of-sequence-of-disjoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.10: Probability of a Sequence of Disjoint Events">Theorem 3.1.10</a> that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-probability-of-sequence-of-disjoint.html ./knowl/xref/def-probability-event.html">
 \begin{equation*}
@@ -1257,7 +1268,7 @@ P(A) + P \left( \overline{A} \right) .
 P(A \cup B) = P(A) + P(B) - P(A \cap B) . 
 \end{equation*}
 </div>
-</div></article><details id="thm-probability-of-union-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-probability-of-union-3-1">
+</div></article><details id="thm-probability-of-union-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-probability-of-union-3-1">
 <div class="para">This is similar to the Law of Inclusion-Exclusion <a href="section2_3-partitions-and-law-of-addition.html#inclusion-exclusion" class="xref" data-knowl="./knowl/xref/inclusion-exclusion.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.3.9: Laws of Inclusion-Exclusion">Theorem 2.3.9</a>. Since <span class="process-math">\(B - A\)</span> and <span class="process-math">\(A \cap B\)</span> are disjoint and <span class="process-math">\(B = (B - A) \cup (A \cap B)\text{,}\)</span> it follows from <a href="section3_1-probability.html#thm-probability-of-sequence-of-disjoint" class="xref" data-knowl="./knowl/xref/thm-probability-of-sequence-of-disjoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.10: Probability of a Sequence of Disjoint Events">Theorem 3.1.10</a> that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/inclusion-exclusion.html ./knowl/xref/thm-probability-of-sequence-of-disjoint.html ./knowl/xref/thm-probability-of-sequence-of-disjoint.html">
 \begin{equation*}
@@ -1276,9 +1287,9 @@ P(A \cup B) = P(A) + P(B - A) .
 P(A \cup B) = P(A) + P(B) - P(A \cap B)\text{.}
 \end{equation*}
 </div>
-</div></article></details><details id="ex-probability-of-divisible" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article></details><details id="ex-probability-of-divisible" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Probability a number is divisible by 2 or 3.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-probability-of-divisible-2">Assume we choose a number <span class="process-math">\(x\)</span> in the sample space <span class="process-math">\(S=\{1,2,\ldots,1000\}\text{,}\)</span> such that each element has the same probability <span class="process-math">\(1/1000\)</span> of being chosen. What is the probability that <span class="process-math">\(x\)</span> is divisible by <span class="process-math">\(2\)</span> or <span class="process-math">\(3\text{?}\)</span>
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-probability-of-divisible-2">Assume we choose a number <span class="process-math">\(x\)</span> in the sample space <span class="process-math">\(S=\{1,2,\ldots,1000\}\text{,}\)</span> such that each element has the same probability <span class="process-math">\(1/1000\)</span> of being chosen. What is the probability that <span class="process-math">\(x\)</span> is divisible by <span class="process-math">\(2\)</span> or <span class="process-math">\(3\text{?}\)</span>
 </div> <div class="para logical" id="ex-probability-of-divisible-3">
 <div class="para">Define the events</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-probability-of-union.html">
@@ -1355,7 +1366,7 @@ P(A) = \frac{|A|}{|S|} .
 </div>
 <div class="para">In a uniform probability space <span class="process-math">\((S,P)\text{,}\)</span> the probability of an event <span class="process-math">\(A\)</span> is the ratio of the size of <span class="process-math">\(A\)</span> and the size of <span class="process-math">\(S\text{.}\)</span>
 </div>
-</div></article><details id="thm-probability-of-uniform-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-probability-of-uniform-3-1">
+</div></article><details id="thm-probability-of-uniform-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-probability-of-uniform-3-1">
 <div class="para">By using <a href="section3_1-probability.html#def-probability-event" class="xref" data-knowl="./knowl/xref/def-probability-event.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.4: Probability of an Event">Definition 3.1.4</a> and <a href="section3_1-probability.html#def-uniform-distribution" class="xref" data-knowl="./knowl/xref/def-uniform-distribution.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.16: Uniform Distributions or Probability Spaces">Definition 3.1.16</a>, we get</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-probability-event.html ./knowl/xref/def-uniform-distribution.html">
 \begin{equation*}
@@ -1365,9 +1376,9 @@ P(A) = \sum_{x \in A} P(x)
 = \frac{|A|}{|S|} . 
 \end{equation*}
 </div>
-</div></article></details><details id="ex-probability-of-full_house" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article></details><details id="ex-probability-of-full_house" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.18</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of a Full House.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-probability-of-full_house-2">In a standard deck of <span class="process-math">\(52\)</span> cards, each card has a <em class="emphasis">suit</em> and a <em class="emphasis">rank</em>. There are four suits (spades, hearts, clubs, and diamonds), and 13 ranks (Ace, <span class="process-math">\(2,3,4,5,6,7,8,9,10\text{,}\)</span> Jack, Queen, and King). A hand of five cards is called a <em class="emphasis">full house</em>, if three of the cards are of the same rank and the other two cards are also of the same (but necessarily different) rank. For example, the hand: <blockquote class="blockquote" id="ex-probability-of-full_house-2-6"><div class="para" id="ex-probability-of-full_house-2-6-1">7 of spades , 7 of hearts , 7 of diamonds , Q of spades , Q of clubs</div></blockquote> is a full house, because it consists of three sevens and two Queens.</div> <div class="para logical" id="ex-probability-of-full_house-3">
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-probability-of-full_house-2">In a standard deck of <span class="process-math">\(52\)</span> cards, each card has a <em class="emphasis">suit</em> and a <em class="emphasis">rank</em>. There are four suits (spades, hearts, clubs, and diamonds), and 13 ranks (Ace, <span class="process-math">\(2,3,4,5,6,7,8,9,10\text{,}\)</span> Jack, Queen, and King). A hand of five cards is called a <em class="emphasis">full house</em>, if three of the cards are of the same rank and the other two cards are also of the same (but necessarily different) rank. For example, the hand: <blockquote class="blockquote" id="ex-probability-of-full_house-2-6"><div class="para" id="ex-probability-of-full_house-2-6-1">7 of spades , 7 of hearts , 7 of diamonds , Q of spades , Q of clubs</div></blockquote> is a full house, because it consists of three sevens and two Queens.</div> <div class="para logical" id="ex-probability-of-full_house-3">
 <div class="para">Assume we get a uniformly random hand of five cards. What is the probability that this hand is a full house? To answer this question, first observe that a hand of five cards is a <em class="emphasis">subset</em> of the set of all <span class="process-math">\(52\)</span> cards. Thus, the sample space is the set <span class="process-math">\(S\)</span> consisting of all <span class="process-math">\(5\)</span>-element subsets of the set of <span class="process-math">\(52\)</span> cards and, therefore,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1404,9 +1415,9 @@ P(A) = \frac{|A|}{|S|} .
 P(A) = \frac{|A|}{|S|} = \frac{3,744}{2,598,960} \approx 0.00144 .
 \end{equation*}
 </div>
-</div></article></details><details id="ex-monty-hall" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article></details><details id="ex-monty-hall" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">The Monty Hall Problem.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-monty-hall-2">The Monty Hall Problem is a well-known puzzle in probability theory. It is named after the host, Monty Hall, of the American television game show <em class="emphasis">Let’s Make a Deal</em>. The problem became famous in 1990, when (part of) a reader’s letter was published in Marilyn vos Savant’s column <em class="emphasis">Ask Marilyn</em> in the magazine <em class="emphasis">Parade</em>: <blockquote class="blockquote" id="ex-monty-hall-2-4"><div class="para" id="ex-monty-hall-2-4-1">Suppose you’re on a game show, and you’re given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what’s behind the doors, opens another door, say No. 3, which has a goat. He then says to you, “Do you want to switch?” Is it to your advantage to switch your choice?</div></blockquote>
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-monty-hall-2">The Monty Hall Problem is a well-known puzzle in probability theory. It is named after the host, Monty Hall, of the American television game show <em class="emphasis">Let’s Make a Deal</em>. The problem became famous in 1990, when (part of) a reader’s letter was published in Marilyn vos Savant’s column <em class="emphasis">Ask Marilyn</em> in the magazine <em class="emphasis">Parade</em>: <blockquote class="blockquote" id="ex-monty-hall-2-4"><div class="para" id="ex-monty-hall-2-4-1">Suppose you’re on a game show, and you’re given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what’s behind the doors, opens another door, say No. 3, which has a goat. He then says to you, “Do you want to switch?” Is it to your advantage to switch your choice?</div></blockquote>
 </div> <div class="para" id="ex-monty-hall-3">Note that the host can always open a door that has a goat behind it. After the host has opened No.3, we know that the car is either behind No.1 or No.2, and it seems that both these doors have the same probability (i.e., <span class="process-math">\(50\%\)</span>) of having the car behind them. We will prove below, however, that this is not true: It is indeed to our advantage to switch our choice.</div> <div class="para logical" id="ex-monty-hall-4">
 <div class="para">We assume that the car is equally likely to be behind any of the three doors. Moreover, the host knows what is behind each door.</div>
 <ul class="disc">
@@ -1428,7 +1439,7 @@ P(A) = P(B) = 2/3 .
 = 1/2\text{,}\)</span> <span class="process-math">\(P(b) =
 1/3\text{,}\)</span> and <span class="process-math">\(P(c) = 1/6\text{.}\)</span>  Find the probabilities for all eight subsets of <span class="process-math">\(S\text{.}\)</span>
 </div>
-<div class="solutions"><details id="section3_1-probability-6-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section3_1-probability-6-2-2-1">
+<div class="solutions"><details id="section3_1-probability-6-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="section3_1-probability-6-2-2-1">
 <span class="process-math">\(P(\{a, b, c\}) = 1\text{,}\)</span> <span class="process-math">\(P (\{a\}) = \frac{1}{2}\text{,}\)</span> <span class="process-math">\(P(\{a, b\}) = \frac{5}{6}\text{,}\)</span> <span class="process-math">\(P(\{b\}) = \frac{1}{3}\text{,}\)</span> <span class="process-math">\(P (\{b, c\}) = \frac{1}{2} \text{,}\)</span> <span class="process-math">\(P(\{c\}) = \frac{1}{6} \text{,}\)</span> <span class="process-math">\(P (\{a, c\}) = \frac{2}{3} \text{,}\)</span> <span class="process-math">\(P(\emptyset) = 0\text{.}\)</span>
 </div></div></details></div></article><article class="exercise exercise-like" id="section3_1-probability-6-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4> <div class="para" id="section3_1-probability-6-3-1-1">Consider the sample space <span class="process-math">\(S = \{a,b,c,d\}\)</span> and a probability function <span class="process-math">\(P : S \rightarrow \mathbb{R}\)</span> on <span class="process-math">\(S\text{.}\)</span> Define the events <span class="process-math">\(A=\{a\}\text{,}\)</span> <span class="process-math">\(B=\{a,b\}\text{,}\)</span> <span class="process-math">\(C=\{a,b,c\}\text{,}\)</span> and <span class="process-math">\(D=\{b,d\}\text{.}\)</span> You are given that <span class="process-math">\(P(A) = 1/10\text{,}\)</span> <span class="process-math">\(P(B)=1/2\text{,}\)</span> and <span class="process-math">\(P(C)=7/10\text{.}\)</span> Determine <span class="process-math">\(P(D)\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="section3_1-probability-6-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
@@ -1443,7 +1454,7 @@ P(A) = P(B) = 2/3 .
 <li id="section3_1-probability-6-4-1-1-2-5"><div class="para" id="section3_1-probability-6-4-1-1-2-5-1">You receive a grade in this course.</div></li>
 </ol>
 </div>
-<div class="solutions"><details id="section3_1-probability-6-4-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section3_1-probability-6-4-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="section3_1-probability-6-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="section3_1-probability-6-4-2-1"><ol class="lower-alpha">
 <li id="section3_1-probability-6-4-2-1-1-1"><div class="para" id="section3_1-probability-6-4-2-1-1-1-1">There are three possible outcomes, <span class="process-math">\(A\)</span> wins <span class="process-math">\((A_w)\text{,}\)</span> <span class="process-math">\(B\)</span> wins <span class="process-math">\((B_w)\text{,}\)</span>or it is a tie <span class="process-math">\((T)\text{.}\)</span> The sample space would be the set <span class="process-math">\(S = \{A_w, B_w, T\}\)</span>
 </div></li>
 <li id="section3_1-probability-6-4-2-1-1-2"><div class="para" id="section3_1-probability-6-4-2-1-1-2-1">The sample space is <span class="process-math">\(S = \{H,T\}\text{.}\)</span>
@@ -1460,7 +1471,7 @@ P(A) = P(B) = 2/3 .
 <li id="section3_1-probability-6-6-1-1-3-3"><div class="para" id="p-derived-section3_1-probability-6-6-1-1-3-3">If both the coin and the die are fair, how would you define the probability function <span class="process-math">\(P\)</span> for this sample space?</div></li>
 </ol>
 </div>
-<div class="solutions"><details id="section3_1-probability-6-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="section3_1-probability-6-6-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="section3_1-probability-6-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="section3_1-probability-6-6-2-1"><ol class="lower-alpha">
 <li id="section3_1-probability-6-6-2-1-1-1"><div class="para logical" id="section3_1-probability-6-6-2-1-1-1-1">
 <div class="para">The sample space is the products of the combinations of 1 coin flip and two dice rolls. We can use a matrix similar to  <a href="section3_1-probability.html#ex-rolling-a-die-twice" class="xref" data-knowl="./knowl/xref/ex-rolling-a-die-twice.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.7: Rolling a Die Twice">Example 3.1.7</a> above for the case where the coin flip results in a 0. The product for all entries is 0. Then we can make another matrix of the same size where the coin flip results in a 1. The product is just the product of the two dice rolls</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-rolling-a-die-twice.html">
@@ -1559,7 +1570,7 @@ S = \{HHH,\ HHT,\ HTH,\ HTT,\ THH,\ THT,\ TTH,\ TTT\}
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="section3_1-probability-6-8-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="section3_1-probability-6-8-2-1">
+<div class="solutions"><details id="section3_1-probability-6-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="section3_1-probability-6-8-2-1">
 <div class="para">
 <span class="process-math">\(|S| = 2^{2n} = (2^2)^n = 4^n\)</span> because each of the <span class="process-math">\(2n\)</span> flips has 2 possible outcomes.</div>
 <ol class="lower-alpha">
@@ -1589,7 +1600,7 @@ S = \{HHH,\ HHT,\ HTH,\ HTT,\ THH,\ THT,\ TTH,\ TTT\}
 1/4\text{,}\)</span> <span class="process-math">\(P(\tilde A) =
 1/3\text{,}\)</span> and <span class="process-math">\(P(B) = 1/2\text{.}\)</span>  What is <span class="process-math">\(P(A \cup B)\text{?}\)</span>
 </div>
-<div class="solutions"><details id="section3_1-probability-6-10-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="section3_1-probability-6-10-2-1"><span class="process-math">\(\frac{11}{12}\)</span></div></div></details></div></article><article class="exercise exercise-like" id="section3_1-probability-6-11"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="solutions"><details id="section3_1-probability-6-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="section3_1-probability-6-10-2-1"><span class="process-math">\(\frac{11}{12}\)</span></div></div></details></div></article><article class="exercise exercise-like" id="section3_1-probability-6-11"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
 <div class="para" id="section3_1-probability-6-11-1-1">A die is loaded in such a way that the probability of each face turning up is proportional to the number of dots on that face. (For example, a six is three times as probable as a two.) What is the probability of getting an even number in one throw?</div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="chapter_3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section3_2-Bayes.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

@@ -692,10 +692,21 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -995,9 +1006,9 @@ z^3+\cdots
 \end{equation*}
 </div>
 <div class="para">The domain and codomain of generating functions will not be of any concern to us since we will only be performing algebraic operations on them.</div>
-</div></article><details id="ex-first-gf-examples" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div></article><details id="ex-first-gf-examples" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">First Examples.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-first-gf-examples-2"><ol class="lower-alpha">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-first-gf-examples-2"><ol class="lower-alpha">
 <li id="ex-first-gf-examples-2-1-1"><div class="para logical" id="ex-first-gf-examples-2-1-1-1">
 <div class="para">If <span class="process-math">\(S_n = 3^n\text{,}\)</span><span class="process-math">\(n \geq 0\text{,}\)</span> then</div>
 <div class="displaymath process-math">
@@ -1245,9 +1256,9 @@ S(k-1) &amp; \textrm{ if } k&gt;0
 + T\)</span> and <span class="process-math">\(c S\)</span> are exactly as in matrix addition and scalar multiplication. There is no obvious similarity between the other operations and matrix operations.</div>
 <div class="para" id="ops-on-sequences-4">The pop and push operations can be understood by imagining a sequence to be an infinite stack of numbers with <span class="process-math">\(S(0)\)</span> at the top, <span class="process-math">\(S(1)\)</span> next, etc., as in <a href="s-generating-functions.html#fig-pop-push" class="xref" data-knowl="./knowl/xref/fig-pop-push.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 13.3.4">Figure 13.3.4</a>a. The sequence <span class="process-math">\(S\uparrow\)</span> is obtained by “popping” S(0) from the stack, leaving a stack as in <a href="s-generating-functions.html#fig-pop-push" class="xref" data-knowl="./knowl/xref/fig-pop-push.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 13.3.4">Figure 13.3.4</a>b, with S(1) at the top, S(2) next, etc. The sequence <span class="process-math">\(S\downarrow\)</span> is obtained by placing a zero at the top of the stack, resulting in a stack as in <a href="s-generating-functions.html#fig-pop-push" class="xref" data-knowl="./knowl/xref/fig-pop-push.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 13.3.4">Figure 13.3.4</a>c. Keep these figures in mind when we discuss the pop and push operations.</div>
 <figure class="figure figure-like" id="fig-pop-push"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/fig-pop-push.png" class="contained" alt="Stack interpretation of pop and push operation"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.3.4<span class="period">.</span></span><span class="space"> </span>Stack interpretation of pop and push operation</figcaption></figure><details id="ex-some-sequence-operations" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.3.4<span class="period">.</span></span><span class="space"> </span>Stack interpretation of pop and push operation</figcaption></figure><details id="ex-some-sequence-operations" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Some Sequence Operations.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-some-sequence-operations-2">If <span class="process-math">\(S(n) = n\text{,}\)</span> <span class="process-math">\(T(n) = n^2\text{,}\)</span> <span class="process-math">\(U(n) = 2^n\text{,}\)</span> and <span class="process-math">\(R(n) =n 2^n\text{:}\)</span>
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-some-sequence-operations-2">If <span class="process-math">\(S(n) = n\text{,}\)</span> <span class="process-math">\(T(n) = n^2\text{,}\)</span> <span class="process-math">\(U(n) = 2^n\text{,}\)</span> and <span class="process-math">\(R(n) =n 2^n\text{:}\)</span>
 </div> <div class="para logical" id="ex-some-sequence-operations-3"><ol class="lower-alpha">
 <li id="ex-some-sequence-operations-3-1-1"><div class="para" id="ex-some-sequence-operations-3-1-1-1"><span class="process-math">\(\displaystyle (S + T)(n) = n + n^2\)</span></div></li>
 <li id="ex-some-sequence-operations-3-1-2"><div class="para" id="ex-some-sequence-operations-3-1-2-1"><span class="process-math">\(\displaystyle (U + R)(n) = 2^n+ n 2^n= (1+n)2^n\)</span></div></li>
@@ -1339,9 +1350,9 @@ where } c_k= \sum_{j=0}^k a_jb_{k-j}\tag{13.3.11}\\
 z^k=\sum_{k=0}^{\infty} a_k z^{k+p} = \sum_{n=p}^{\infty} a_{n-p} z^n\tag{13.3.12}
 \end{gather}
 </div>
-</div> <div class="para" id="sss-operations-on-generating-functions-3-3-2">The last sum is obtained by substituting <span class="process-math">\(n - p\)</span> for <span class="process-math">\(k\)</span> in the previous sum.</div></article><details id="ex-some-gf-operations" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div> <div class="para" id="sss-operations-on-generating-functions-3-3-2">The last sum is obtained by substituting <span class="process-math">\(n - p\)</span> for <span class="process-math">\(k\)</span> in the previous sum.</div></article><details id="ex-some-gf-operations" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Some operations on generating functions.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-some-gf-operations-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-some-gf-operations-2">
 <div class="para">If <span class="process-math">\(D(z) =\sum_{k=0}^{\infty} kz^k\)</span> and <span class="process-math">\(H(z) =\sum_{k=0}^{\infty} 2^k z^k\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1397,7 +1408,7 @@ T;z)\)</span> cannot be simplified.</div>
 <li id="gf-of-pop-push-2-2-1-1"><div class="para" id="gf-of-pop-push-2-2-1-1-1"><span class="process-math">\(\displaystyle G(S\uparrow p;z) = \left(G(S;z) -\left.\sum_{k=0}^{p-1} S(k)
 z^k\right)/z^k\right.\)</span></div></li>
 <li id="gf-of-pop-push-2-2-1-2"><div class="para" id="gf-of-pop-push-2-2-1-2-1"><span class="process-math">\(G(S\downarrow p;z) = z^p G(S;z)\text{.}\)</span></div></li>
-</ol></div></article><details id="gf-of-pop-push-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="gf-of-pop-push-3-1">We prove (a) by induction and leave the proof of (b) to the reader.</div> <div class="para logical" id="gf-of-pop-push-3-2">
+</ol></div></article><details id="gf-of-pop-push-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="gf-of-pop-push-3-1">We prove (a) by induction and leave the proof of (b) to the reader.</div> <div class="para logical" id="gf-of-pop-push-3-2">
 <div class="para">Basis:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1475,9 +1486,9 @@ x =a r+ ar^2 +\cdots = x- a \Rightarrow x-rx=a \Rightarrow x= \frac{a}{1-r}
 \end{equation*}
 </div>
 </div>
-<details id="ex-geometric-sums" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-geometric-sums" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Generating Functions involving Geometric Sums.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-geometric-sums-2"><ol class="lower-alpha">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-geometric-sums-2"><ol class="lower-alpha">
 <li id="ex-geometric-sums-2-1-1"><div class="para" id="ex-geometric-sums-2-1-1-1">If <span class="process-math">\(S(n) = 9\cdot 5^n\text{,}\)</span> <span class="process-math">\(n \geq 0\text{,}\)</span> <span class="process-math">\(G(S;z)\)</span> is an infinite geometric series with <span class="process-math">\(a = 9\)</span> and <span class="process-math">\(r = 5z\text{.}\)</span>Therefore, <span class="process-math">\(G(S;z)
 = \frac{9}{1 - 5z}\text{.}\)</span>
 </div></li>
@@ -1549,9 +1560,9 @@ G(C;z) &amp; = G(S;z) + G(T;z) + G(U;z)\\
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\)</span></td>
 </tr>
-</table></div></figure><details id="ex-another-complete-solution" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</table></div></figure><details id="ex-another-complete-solution" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Another Complete Solution.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-another-complete-solution-2">Solve <span class="process-math">\(S(k) + 3S(k - 1) - 4S(k -2) = 0\text{,}\)</span> <span class="process-math">\(k\geq 2\text{,}\)</span> with <span class="process-math">\(S(0) = 3\)</span> and <span class="process-math">\(S(1) = -2\text{.}\)</span> The solution will be derived using the same steps that were used earlier in this section, with one variation.</div> <div class="para logical" id="ex-another-complete-solution-3"><ol class="decimal">
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-another-complete-solution-2">Solve <span class="process-math">\(S(k) + 3S(k - 1) - 4S(k -2) = 0\text{,}\)</span> <span class="process-math">\(k\geq 2\text{,}\)</span> with <span class="process-math">\(S(0) = 3\)</span> and <span class="process-math">\(S(1) = -2\text{.}\)</span> The solution will be derived using the same steps that were used earlier in this section, with one variation.</div> <div class="para logical" id="ex-another-complete-solution-3"><ol class="decimal">
 <li id="ex-another-complete-solution-3-1-1"><div class="para logical" id="ex-another-complete-solution-3-1-1-1">
 <div class="para">Translate to an equation about generating functions. First, we change the index of the recurrence relation by substituting <span class="process-math">\(n + 2\)</span> for <span class="process-math">\(k\text{.}\)</span> The result is <span class="process-math">\(S(n + 2) + 3S(n + 1) - 4S(n) = 0\text{,}\)</span> <span class="process-math">\(n \geq 0\text{.}\)</span> Now, if <span class="process-math">\(V(n) = S(n + 2) + 3 S(n + 1) - 4S(n)\text{,}\)</span> then <span class="process-math">\(V\)</span> is the zero sequence, which has a zero generating function. Furthermore, <span class="process-math">\(V
 = S\uparrow 2+3(S\uparrow )-4 S\text{.}\)</span> Therefore,</div>
@@ -1622,9 +1633,9 @@ z+1)} =\frac{(A+B)+(4B-A)z}{(z-1) (4 z+1)}
 <div class="para">In conclusion, since <span class="process-math">\(G(S;z) =
 G\left(S_1;z\right) + G\left(S _2;z\right)\text{,}\)</span> <span class="process-math">\(S(n) = 2 + (-4)^n\)</span> .</div>
 </div></li>
-</ol></div></article></details><details id="example-counting-application" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</ol></div></article></details><details id="example-counting-application" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">An Application to Counting.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="example-counting-application-2">Let <span class="process-math">\(A = \{a, b, c, d, e\}\)</span> and let <span class="process-math">\(A^*\)</span> be the set of all strings of length zero or more that can be made using each of the elements of <span class="process-math">\(A\)</span> zero or more times. By the generalized rule of products, there are <span class="process-math">\(5^n\)</span> such strings that have length <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(n\geq 0\text{,}\)</span> Suppose that <span class="process-math">\(X_n\)</span> is the set of strings of length <span class="process-math">\(n\)</span> with the property that all of the <span class="process-math">\(a\)</span>’s and <span class="process-math">\(b\)</span>’s precede all of the <span class="process-math">\(c\)</span>’s, <span class="process-math">\(d\)</span>’s, and <span class="process-math">\(e\)</span>’s. Thus <span class="process-math">\(aaabde \in X_6\text{,}\)</span> but <span class="process-math">\(abcabc \notin X_6\text{.}\)</span> Let <span class="process-math">\(R(n) =\lvert X_n \rvert\text{.}\)</span> A closed form expression for <span class="process-math">\(R\)</span> can be obtained by recognizing <span class="process-math">\(R\)</span> as the convolution of two sequences. To illustrate our point, we will consider the calculation of <span class="process-math">\(R(6)\text{.}\)</span>
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="example-counting-application-2">Let <span class="process-math">\(A = \{a, b, c, d, e\}\)</span> and let <span class="process-math">\(A^*\)</span> be the set of all strings of length zero or more that can be made using each of the elements of <span class="process-math">\(A\)</span> zero or more times. By the generalized rule of products, there are <span class="process-math">\(5^n\)</span> such strings that have length <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(n\geq 0\text{,}\)</span> Suppose that <span class="process-math">\(X_n\)</span> is the set of strings of length <span class="process-math">\(n\)</span> with the property that all of the <span class="process-math">\(a\)</span>’s and <span class="process-math">\(b\)</span>’s precede all of the <span class="process-math">\(c\)</span>’s, <span class="process-math">\(d\)</span>’s, and <span class="process-math">\(e\)</span>’s. Thus <span class="process-math">\(aaabde \in X_6\text{,}\)</span> but <span class="process-math">\(abcabc \notin X_6\text{.}\)</span> Let <span class="process-math">\(R(n) =\lvert X_n \rvert\text{.}\)</span> A closed form expression for <span class="process-math">\(R\)</span> can be obtained by recognizing <span class="process-math">\(R\)</span> as the convolution of two sequences. To illustrate our point, we will consider the calculation of <span class="process-math">\(R(6)\text{.}\)</span>
 </div> <div class="para logical" id="example-counting-application-3">
 <div class="para">Note that if a string belongs to <span class="process-math">\(X_6\text{,}\)</span> it starts with <span class="process-math">\(k\)</span> characters from <span class="process-math">\(\{a,
 b\}\)</span> and is followed by <span class="process-math">\(6 - k\)</span> characters from <span class="process-math">\(\{c,
@@ -1691,9 +1702,9 @@ G(F;z) =G\left(F_1;z\right)G\left(F_2;z\right) \cdots \left(F_m;z\right)
 \end{equation*}
 </div>
 </div>
-<details id="ex-dice-roll" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<details id="ex-dice-roll" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Rolling Two Dice.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-dice-roll-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-dice-roll-2">
 <div class="para">Suppose that you roll a die two times and add up the numbers on the top face for each roll. Since the faces on the die represent the integers 1 through 6, the sum must be between 2 and 12. How many ways can any one of these sums be obtained? Obviously, 2 can be obtained only one way, with two 1’s. There are two sequences that yield a sum of 3: 1-2 and 2-1. To obtain all of the frequencies with which the numbers 2 through 12 can be obtained, we set up the situation as follows. For <span class="process-math">\(j =
 1, 2\text{;}\)</span> <span class="process-math">\(P_j\)</span> is the rolling of the die for the <span class="process-math">\(j^{\text{th}}\)</span> time. <span class="process-math">\(X_j
 = \{1, 2, . . . , 6\}\)</span> and <span class="process-math">\(Q_j : X_j \rightarrow \{0, 1, 2, 3,\ldots \}\)</span> is defined by <span class="process-math">\(Q_j(x) = x\text{.}\)</span> Since each number appears on a die exactly once, the frequency function is <span class="process-math">\(F_j(k)=1\)</span> if <span class="process-math">\(1 \leq k \leq 6\text{,}\)</span> and <span class="process-math">\(F_j(k) = 0\)</span> otherwise. The process of rolling the die two times is quantified by adding up the <span class="process-math">\({Q_j}'s\text{;}\)</span> that is, <span class="process-math">\(Q\left(a_1, a_2\right)
@@ -1708,9 +1719,9 @@ z^3+z^2
 \end{split}
 \end{equation*}
 </div>
-</div> <div class="para" id="ex-dice-roll-3">Now, to get <span class="process-math">\(F(k)\text{,}\)</span> just read the coefficient of <span class="process-math">\(z^k\text{.}\)</span> For example, the coefficient of <span class="process-math">\(z^5\)</span> is 4, so there are four ways to roll a total of 5.</div> <div class="para" id="ex-dice-roll-4">To apply this method, the crucial step is to decompose a large process in the proper way so that it fits into the general situation that we’ve described.</div></article></details><details id="ex-committee-distribution" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</div> <div class="para" id="ex-dice-roll-3">Now, to get <span class="process-math">\(F(k)\text{,}\)</span> just read the coefficient of <span class="process-math">\(z^k\text{.}\)</span> For example, the coefficient of <span class="process-math">\(z^5\)</span> is 4, so there are four ways to roll a total of 5.</div> <div class="para" id="ex-dice-roll-4">To apply this method, the crucial step is to decompose a large process in the proper way so that it fits into the general situation that we’ve described.</div></article></details><details id="ex-committee-distribution" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">Distribution of a Committee.</span>
-</h4></summary><article class="example example-like"> <div class="para" id="ex-committee-distribution-2">Suppose that an organization is divided into three geographic sections, A, B, and C. Suppose that an executive committee of 11 members must be selected so that no more than 5 members from any one section are on the committee and that Sections A, B, and C must have minimums of 3, 2, and 2 members, respectively, on the committee. Looking only at the number of members from each section on the committee, how many ways can the committee be made up? One example of a valid committee would be 4 A’s, 4 B’s, and 3 C’s.</div> <div class="para" id="ex-committee-distribution-3">Let <span class="process-math">\(P_A\)</span> be the action of deciding how many members (not who) from Section A will serve on the committee. <span class="process-math">\(X_A= \{3, 4, 5\}\)</span> and <span class="process-math">\(Q_A(k)=k\text{.}\)</span> The frequency function, <span class="process-math">\(F_A\)</span> , is defined by <span class="process-math">\(F_A(k)=1\)</span> if <span class="process-math">\(k\in X_k\)</span> , with <span class="process-math">\(F_A(k)=0\)</span> otherwise. <span class="process-math">\(G\left(F_A;z\right)\)</span> is then <span class="process-math">\(z^3+
+</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-committee-distribution-2">Suppose that an organization is divided into three geographic sections, A, B, and C. Suppose that an executive committee of 11 members must be selected so that no more than 5 members from any one section are on the committee and that Sections A, B, and C must have minimums of 3, 2, and 2 members, respectively, on the committee. Looking only at the number of members from each section on the committee, how many ways can the committee be made up? One example of a valid committee would be 4 A’s, 4 B’s, and 3 C’s.</div> <div class="para" id="ex-committee-distribution-3">Let <span class="process-math">\(P_A\)</span> be the action of deciding how many members (not who) from Section A will serve on the committee. <span class="process-math">\(X_A= \{3, 4, 5\}\)</span> and <span class="process-math">\(Q_A(k)=k\text{.}\)</span> The frequency function, <span class="process-math">\(F_A\)</span> , is defined by <span class="process-math">\(F_A(k)=1\)</span> if <span class="process-math">\(k\in X_k\)</span> , with <span class="process-math">\(F_A(k)=0\)</span> otherwise. <span class="process-math">\(G\left(F_A;z\right)\)</span> is then <span class="process-math">\(z^3+
 z^4+z^5\)</span> . Similarly, <span class="process-math">\(G\left(F_B;z\right) =z^2+ z^3+ z ^4 + z^5=
 G\left(F_C ;z\right)\text{.}\)</span> Since the committee must have 11 members, our answer will be the coefficient of <span class="process-math">\(z^{11}\)</span> in <span class="process-math">\(G\left(F_A;z\right)G\left(F_B;z\right)G\left(F_C;z\right)\text{,}\)</span> which is 10.</div> <pre id="ex-committee-distribution-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('z')
 expand((z^3+ z^4+z^5)*(z^2+ z^3+ z ^4 + z^5)^2)
@@ -1724,7 +1735,7 @@ expand((z^3+ z^4+z^5)*(z^2+ z^3+ z ^4 + z^5)^2)
 <li id="s-generating-functions-10-2-1-2-1-3"><div class="para" id="s-generating-functions-10-2-1-2-1-3-1"><span class="process-math">\(\displaystyle 1 + z\)</span></div></li>
 <li id="s-generating-functions-10-2-1-2-1-4"><div class="para" id="s-generating-functions-10-2-1-2-1-4-1"><span class="process-math">\(\displaystyle \frac{3}{1+2z}+ \frac{3}{1-3z}\)</span></div></li>
 </ol></div>
-<div class="solutions"><details id="s-generating-functions-10-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="s-generating-functions-10-2-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="s-generating-functions-10-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="s-generating-functions-10-2-2-1"><ol class="lower-alpha">
 <li id="s-generating-functions-10-2-2-1-1-1"><div class="para" id="s-generating-functions-10-2-2-1-1-1-1"><span class="process-math">\(\displaystyle 1,0,0,0,0,\ldots\)</span></div></li>
 <li id="s-generating-functions-10-2-2-1-1-2"><div class="para" id="s-generating-functions-10-2-2-1-1-2-1"><span class="process-math">\(\displaystyle 5(1/2)^k\)</span></div></li>
 <li id="s-generating-functions-10-2-2-1-1-3"><div class="para" id="s-generating-functions-10-2-2-1-1-3-1"><span class="process-math">\(\displaystyle 1,1,0,0,0,\ldots\)</span></div></li>
@@ -1746,7 +1757,7 @@ expand((z^3+ z^4+z^5)*(z^2+ z^3+ z ^4 + z^5)^2)
 0\text{,}\)</span> with <span class="process-math">\(F(0) = F(1) = 1\text{.}\)</span>
 </div></li>
 </ol></div>
-<div class="solutions"><details id="s-generating-functions-10-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="s-generating-functions-10-4-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="s-generating-functions-10-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="s-generating-functions-10-4-2-1"><ol class="lower-alpha">
 <li id="s-generating-functions-10-4-2-1-1-1"><div class="para" id="s-generating-functions-10-4-2-1-1-1-1"><span class="process-math">\(\displaystyle 1/(1-9z)\)</span></div></li>
 <li id="s-generating-functions-10-4-2-1-1-2"><div class="para" id="s-generating-functions-10-4-2-1-1-2-1"><span class="process-math">\(\displaystyle (2-10z)\left/\left(1-6z+5z^2\right)\right.\)</span></div></li>
 <li id="s-generating-functions-10-4-2-1-1-3"><div class="para" id="s-generating-functions-10-4-2-1-1-3-1"><span class="process-math">\(\displaystyle 1\left/\left(1-z-z^2\right)\right.\)</span></div></li>
@@ -1770,7 +1781,7 @@ expand((z^3+ z^4+z^5)*(z^2+ z^3+ z ^4 + z^5)^2)
 <li id="s-generating-functions-10-6-1-2-1-2"><div class="para" id="s-generating-functions-10-6-1-2-1-2-1"><span class="process-math">\(\displaystyle \frac{32-22z}{2-3z+z^2}\)</span></div></li>
 <li id="s-generating-functions-10-6-1-2-1-3"><div class="para" id="s-generating-functions-10-6-1-2-1-3-1"><span class="process-math">\(\displaystyle \frac{6-29z}{1-11z+ 30z^2}\)</span></div></li>
 </ol></div>
-<div class="solutions"><details id="s-generating-functions-10-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="s-generating-functions-10-6-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="s-generating-functions-10-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="s-generating-functions-10-6-2-1"><ol class="lower-alpha">
 <li id="s-generating-functions-10-6-2-1-1-1"><div class="para" id="s-generating-functions-10-6-2-1-1-1-1"><span class="process-math">\(\displaystyle 3/(1-2z)+2/(1+2z), 3\cdot 2^k+2(-2)^k\)</span></div></li>
 <li id="s-generating-functions-10-6-2-1-1-2"><div class="para" id="s-generating-functions-10-6-2-1-1-2-1"><span class="process-math">\(\displaystyle 10/(1-z)+12/(2-z), 10+6(1/2)^k\)</span></div></li>
 <li id="s-generating-functions-10-6-2-1-1-3"><div class="para" id="s-generating-functions-10-6-2-1-1-3-1"><span class="process-math">\(\displaystyle -1/(1-5z)+7/(1-6z), 7\cdot 6^k-5^k\)</span></div></li>
@@ -1786,7 +1797,7 @@ expand((z^3+ z^4+z^5)*(z^2+ z^3+ z ^4 + z^5)^2)
 <li id="s-generating-functions-10-8-1-2-1-3"><div class="para" id="s-generating-functions-10-8-1-2-1-3-1"><span class="process-math">\(\displaystyle S * T\)</span></div></li>
 <li id="s-generating-functions-10-8-1-2-1-4"><div class="para" id="s-generating-functions-10-8-1-2-1-4-1"><span class="process-math">\(\displaystyle S\uparrow *S\uparrow\)</span></div></li>
 </ol></div>
-<div class="solutions"><details id="s-generating-functions-10-8-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="s-generating-functions-10-8-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="s-generating-functions-10-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="s-generating-functions-10-8-2-1"><ol class="lower-alpha">
 <li id="s-generating-functions-10-8-2-1-1-1"><div class="para" id="s-generating-functions-10-8-2-1-1-1-1"><span class="process-math">\(\displaystyle 11k\)</span></div></li>
 <li id="s-generating-functions-10-8-2-1-1-2"><div class="para" id="s-generating-functions-10-8-2-1-1-2-1"><span class="process-math">\(\displaystyle (5/3)k(k+1)(2k+1)+5k(k+1)\)</span></div></li>
 <li id="s-generating-functions-10-8-2-1-1-3"><div class="para" id="p-derived-s-generating-functions-10-8-2-1-1-3">
@@ -1804,7 +1815,7 @@ expand((z^3+ z^4+z^5)*(z^2+ z^3+ z ^4 + z^5)^2)
 <li id="s-generating-functions-10-9-1-2-1-4"><div class="para" id="s-generating-functions-10-9-1-2-1-4-1"><span class="process-math">\(\displaystyle Q * Q\)</span></div></li>
 </ol></div></article><article class="exercise exercise-like" id="s-generating-functions-10-10"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
 <div class="para" id="s-generating-functions-10-10-1-1">A game is played by rolling a die five times. For the <span class="process-math">\(k^{\text{th}}\)</span> roll, one point is added to your score if you roll a number higher than <span class="process-math">\(k\text{.}\)</span> Otherwise, your score is zero for that roll. For example, the sequence of rolls <span class="process-math">\(2,3,4,1,2\)</span> gives you a total score of three; while a sequence of 1,2,3,4,5 gives you a score of zero. Of the <span class="process-math">\(6^5 = 7776\)</span> possible sequences of rolls, how many give you a score of zero?, of one? <span class="process-math">\(\ldots \)</span> of five?</div>
-<div class="solutions"><details id="s-generating-functions-10-10-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="solutions"><details id="s-generating-functions-10-10-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
 <div class="para" id="s-generating-functions-10-10-2-1">Coefficients of <span class="process-math">\(z^0\)</span> through <span class="process-math">\(z^5\)</span> in <span class="process-math">\((1+5z)(2+4z)(3+3z)(4+2z)(5+z)\)</span>
 </div> <div class="para" id="s-generating-functions-10-10-2-2"><span class="process-math">\(\begin{array}{cc}
 k &amp; \textrm{ Number of ways of getting a score of } k \\

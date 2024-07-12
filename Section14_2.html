@@ -692,10 +692,21 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -1004,9 +1015,9 @@ fast_exp(2,5,7)
 </h3>
 <article class="definition definition-like" id="def-pre-post-values"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">14.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Pre and Post Values.</span>
-</h4>  <div class="para" id="def-pre-post-values-3-1">Given a variable <span class="process-math">\(x\text{,}\)</span> the pre value of <span class="process-math">\(x\text{,}\)</span> denoted <span class="process-math">\(\grave x\text{,}\)</span> is the value before an iteration of a loop. The post value, denoted <span class="process-math">\(\acute x\text{,}\)</span> is the value after the iteration.</div></article><details id="ex-pre-post-fast" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</h4>  <div class="para" id="def-pre-post-values-3-1">Given a variable <span class="process-math">\(x\text{,}\)</span> the pre value of <span class="process-math">\(x\text{,}\)</span> denoted <span class="process-math">\(\grave x\text{,}\)</span> is the value before an iteration of a loop. The post value, denoted <span class="process-math">\(\acute x\text{,}\)</span> is the value after the iteration.</div></article><details id="ex-pre-post-fast" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">14.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Pre and post values in the fast exponentiation algorithm.</span>
-</h4></summary><article class="example example-like"> <div class="para logical" id="ex-pre-post-fast-2">
+</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-pre-post-fast-2">
 <div class="para">In the fast exponentiation algorithm, the relationships between the pre and post values of the three variables are as follows.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1027,9 +1038,9 @@ k = \grave k//2
 </div>
 </div></article></details><article class="definition definition-like" id="def-invariant-relation"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">14.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Invariant Relation.</span>
-</h4> <div class="para" id="def-invariant-relation-2-1">Given an algorithm’s inputs and a set of variables that are used in the algorithm, an <em class="emphasis">invariant relation</em> is a set of one or more equations that are true prior to entering a loop and remain true in every iteration of the loop.</div></article><details id="ex-invariant-fast-expo" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+</h4> <div class="para" id="def-invariant-relation-2-1">Given an algorithm’s inputs and a set of variables that are used in the algorithm, an <em class="emphasis">invariant relation</em> is a set of one or more equations that are true prior to entering a loop and remain true in every iteration of the loop.</div></article><details id="ex-invariant-fast-expo" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">14.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Invariant Relation for Fast Exponentiation.</span>
-</h4></summary><article class="example example-like"><div class="para" id="ex-invariant-fast-expo-2-1">We claim that the invariant relation in the fast algorithm is <span class="process-math">\(b t^k = a^m
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-invariant-fast-expo-2-1">We claim that the invariant relation in the fast algorithm is <span class="process-math">\(b t^k = a^m
 (mod\,n)\text{.}\)</span> We will prove that this is indeed true below.</div></article></details><article class="theorem theorem-like" id="th-invariant-relation-theorem"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">14.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">The Invariant Relation Theorem.</span>
 </h4>
@@ -1037,7 +1048,7 @@ k = \grave k//2
 <li id="th-invariant-relation-theorem-2-2-1-1"><div class="para" id="th-invariant-relation-theorem-2-2-1-1-1">R is true before entering the loop</div></li>
 <li id="th-invariant-relation-theorem-2-2-1-2"><div class="para" id="th-invariant-relation-theorem-2-2-1-2-1">the truth of R is maintained in any iteration of the loop</div></li>
 <li id="th-invariant-relation-theorem-2-2-1-3"><div class="para" id="th-invariant-relation-theorem-2-2-1-3-1">the condition for exiting the loop will always be reached in a finite number of iterations.</div></li>
-</ol></div> <div class="para" id="th-invariant-relation-theorem-2-3">then R will be true upon exiting the loop.</div></article><details id="th-invariant-relation-theorem-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="th-invariant-relation-theorem-3-1">The condition that the loop ends in a finite number of iterations lets us apply mathematical induction with the induction variable being the number of iterations. We leave the details to the reader.</div></article></details><div class="para logical" id="Section14_2-4-7">
+</ol></div> <div class="para" id="th-invariant-relation-theorem-2-3">then R will be true upon exiting the loop.</div></article><details id="th-invariant-relation-theorem-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th-invariant-relation-theorem-3-1">The condition that the loop ends in a finite number of iterations lets us apply mathematical induction with the induction variable being the number of iterations. We leave the details to the reader.</div></article></details><div class="para logical" id="Section14_2-4-7">
 <div class="para">We can verify the correctness of the fast exponentiation algorithm using the Invariant Relation Theorem. First we note that prior to entering the loop, <span class="process-math">\(b t^k = 1 a^m = a^m
 (mod\,n)\text{.}\)</span> Assuming the relation is true at the start of any iteration, that is <span class="process-math">\(\grave{b}
 \grave{t}^{\grave k} = a^m (mod\,n)\text{,}\)</span> then</div>
@@ -1074,7 +1085,7 @@ r1=t
 return r0
 gcd(1001,154) #test
 </script></pre>
-<div class="solutions"><details id="exercises-app-alg1-3-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="exercises-app-alg1-3-2-1">The invariant of this algorithm is <span class="process-math">\(gcd(r0,r1)=gcd(a,b)\text{.}\)</span>
+<div class="solutions"><details id="exercises-app-alg1-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises-app-alg1-3-2-1">The invariant of this algorithm is <span class="process-math">\(gcd(r0,r1)=gcd(a,b)\text{.}\)</span>
 </div></div></details></div></article><article class="exercise exercise-like" id="exercises-app-alg1-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para" id="exercises-app-alg1-4-1-1">Verify the correctness of the <a href="section1_4-binary_Representation_of_Positive_Integers.html#binary-conversion-algorithm" class="xref" data-knowl="./knowl/xref/binary-conversion-algorithm.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 1.4.2: Binary Conversion Algorithm">Binary Conversion Algorithm</a> in Chapter 1.</div></article></section></section></div>
 <div class="ptx-content-footer">

@@ -680,10 +680,21 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li></ul>
-</li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -1147,7 +1158,7 @@ S_{2^k}(I+S_{2^k})=S_{2^{k+1}}
 <li id="exercises-10-5-4-1-1-1-1"><div class="para" id="exercises-10-5-4-1-1-1-1-1">Draw digraphs of the relations <span class="process-math">\(\mathcal{S}\text{,}\)</span> <span class="process-math">\(\mathcal{S}^2\text{,}\)</span> <span class="process-math">\(\mathcal{S}^3\)</span> , and <span class="process-math">\(\mathcal{S}^+\)</span>  where <span class="process-math">\(\mathcal{S}\)</span> is defined in the first exercise above.</div></li>
 <li id="exercises-10-5-4-1-1-1-2"><div class="para" id="p-derived-exercises-10-5-4-1-1-1-2">Verify that in terms of the graph of <span class="process-math">\(\mathcal{S}\text{,}\)</span> <span class="process-math">\(a \mathcal{S}^+ b\)</span> if and only if <span class="process-math">\(b\)</span> is reachable from <span class="process-math">\(a\)</span> along a path of any finite nonzero length.</div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-10-5-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="solutions"><details id="exercises-10-5-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
 <div class="para logical" id="exercises-10-5-4-2-1"><ol class="lower-alpha">
 <li id="exercises-10-5-4-2-1-1-1"><div class="para" id="exercises-10-5-4-2-1-1-1-1">See graphs below.</div></li>
 <li id="exercises-10-5-4-2-1-1-2"><div class="para" id="exercises-10-5-4-2-1-1-2-1">For example, <span class="process-math">\(0\mathcal{S}^+ 4\)</span> and using <span class="process-math">\(\mathcal{S}\)</span> one can go from 0 to 4 using a path of length 3.</div></li>
@@ -1173,7 +1184,7 @@ S_{2^k}(I+S_{2^k})=S_{2^{k+1}}
 <li id="exercises-10-5-6-1-1-1-4"><div class="para" id="exercises-10-5-6-1-1-1-4-1">Convince yourself that the reflexive closure of the relation <span class="process-math">\(&lt;\)</span> on the set of positive integers <span class="process-math">\(\mathbb{P}\)</span> is <span class="process-math">\(\leq\text{.}\)</span>
 </div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-10-5-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="solutions"><details id="exercises-10-5-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
 <div class="para" id="exercises-10-5-6-2-1">Definition: Reflexive Closure.  Let <span class="process-math">\(R\)</span> be a relation on <span class="process-math">\(A\text{.}\)</span> The reflexive closure of <span class="process-math">\(R\)</span> is the smallest reflexive relation that contains <span class="process-math">\(R\text{.}\)</span>
 </div> <div class="para" id="exercises-10-5-6-2-2">Theorem: The reflexive closure of <span class="process-math">\(R\)</span> is the union of <span class="process-math">\(R\)</span> with <span class="process-math">\(\{(x, x) : x\in A\}\)</span>
 </div>
@@ -1191,7 +1202,7 @@ S_{2^k}(I+S_{2^k})=S_{2^{k+1}}
 </div></li>
 <li id="exercises-10-5-8-1-1-1-2"><div class="para" id="exercises-10-5-8-1-1-1-2-1">Is the transitive closure of a symmetric relation always both symmetric and reflexive? Explain.</div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-10-5-8-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="exercises-10-5-8-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-10-5-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-5-8-2-1"><ol class="lower-alpha">
 <li id="exercises-10-5-8-2-1-1-1"><div class="para" id="exercises-10-5-8-2-1-1-1-1">By the definition of transitive closure, <span class="process-math">\(R^+\)</span> is the smallest relation which contains <span class="process-math">\(R\text{;}\)</span> therefore, it is transitive. The transitive closure of <span class="process-math">\(R^+\text{,}\)</span> <span class="process-math">\(\left(R^+\right)^+\)</span> , is the smallest transitive relation that contains <span class="process-math">\(R^+\text{.}\)</span> Since <span class="process-math">\(R^+\)</span> is transitive, <span class="process-math">\(\left(R^+\right)^+=R^+\text{.}\)</span>
 </div></li>
 <li id="exercises-10-5-8-2-1-1-2"><div class="para" id="exercises-10-5-8-2-1-1-2-1">The transitive closure of a symmetric relation is symmetric, but it may not be reflexive. If one element is not related to any elements, then the transitive closure will not relate that element to others.</div></li>
