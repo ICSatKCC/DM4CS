@@ -681,19 +681,12 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -978,30 +971,30 @@ window.MathJax = {
 <article class="definition definition-like" id="def-exist-quantifier"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">The Existential Quantifier.</span>
 </h4> <div class="para" id="def-exist-quantifier-4-1">If <span class="process-math">\(p(n)\)</span> is a proposition over <span class="process-math">\(U\)</span> with <span class="process-math">\(T_p\neq \emptyset\text{,}\)</span> we commonly say “There exists an <span class="process-math">\(n\)</span> in <span class="process-math">\(U\)</span> such that <span class="process-math">\(p(n)\)</span> (is true).” We abbreviate this with the symbols <span class="process-math">\((\exists  n)_U(p(n))\text{.}\)</span> The symbol <span class="process-math">\(\exists\)</span> is called the existential quantifier.   If the context is clear, the mention of <span class="process-math">\(U\)</span> is dropped: <span class="process-math">\((\exists n)(p(n))\text{.}\)</span>
-</div></article><details id="ex-existential-misc" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ex-existential-misc"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Some examples of existential quantifiers.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-existential-misc-2"><ol class="lower-alpha">
+</h4> <div class="para logical" id="ex-existential-misc-2"><ol class="lower-alpha">
 <li id="ex-existential-misc-2-1-1"><div class="para" id="ex-existential-misc-2-1-1-1">
 <span class="process-math">\((\exists k)_{\mathbb{Z}}(k ^2- k - 12 = 0)\)</span> is another way of saying that there is an integer that solves the equation <span class="process-math">\(k^2 - k - 12 = 0\text{.}\)</span> The fact that two such integers exist doesn’t affect the truth of this proposition in any way.</div></li>
 <li id="ex-existential-misc-2-1-2"><div class="para" id="ex-existential-misc-2-1-2-1">
 <span class="process-math">\((\exists k)_{\mathbb{Z}}(3k=102)\)</span> simply states that 102 is a multiple of 3, which is true. On the other hand, <span class="process-math">\((\exists  k)_{\mathbb{Z}}(3k=100)\)</span> states that 100 is a multiple of 3, which is false.</div></li>
 <li id="ex-existential-misc-2-1-3"><div class="para" id="ex-existential-misc-2-1-3-1">
 <span class="process-math">\((\exists x)_{\mathbb{R}}(x^2 + 1 = 0)\)</span> is false since the solution set of the equation <span class="process-math">\(x^2+ 1 = 0\)</span> in the real numbers is empty.  It is common to write <span class="process-math">\((\nexists x)_{\mathbb{R}}(x^2 + 1 = 0)\)</span>  in this case.</div></li>
-</ol></div></article></details><div class="para" id="subsec4_6_1-existential-4">There are a wide variety of ways that you can write a proposition with an existential quantifier. <a href="section4_6-quantifiers.html#table-quantifier-variations" class="xref" data-knowl="./knowl/xref/table-quantifier-variations.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 4.6.5: Notational Variations with Quantified Expressions">Table 4.6.5</a> contains a list of different variations that could be used for both the existential and universal quantifiers.</div></section><section class="subsection" id="subsec4_6_2-universal-quantifier"><h3 class="heading hide-type">
+</ol></div></article><div class="para" id="subsec4_6_1-existential-4">There are a wide variety of ways that you can write a proposition with an existential quantifier. <a href="section4_6-quantifiers.html#table-quantifier-variations" class="xref" data-knowl="./knowl/xref/table-quantifier-variations.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 4.6.5: Notational Variations with Quantified Expressions">Table 4.6.5</a> contains a list of different variations that could be used for both the existential and universal quantifiers.</div></section><section class="subsection" id="subsec4_6_2-universal-quantifier"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.6.2</span><span class="space"> </span><span class="title">The Universal Quantifier</span>
 </h3>
 <article class="definition definition-like" id="def-universal-quantifier"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">The Universal Quantifier.</span>
 </h4> <div class="para" id="def-universal-quantifier-4-1">If <span class="process-math">\(p(n)\)</span> is a proposition over <span class="process-math">\(U\)</span> with <span class="process-math">\(T_p=U\text{,}\)</span> we commonly say “For all <span class="process-math">\(n\)</span> in <span class="process-math">\(U\text{,}\)</span> <span class="process-math">\(p(n)\)</span> (is true).” We abbreviate this with the symbols <span class="process-math">\((\forall n)_U(p(n))\text{.}\)</span> The symbol <span class="process-math">\(\forall\)</span> is called the universal quantifier.  If the context is clear, the mention of <span class="process-math">\(U\)</span> is dropped: <span class="process-math">\((\forall n)(p(n))\text{.}\)</span>
-</div></article><details id="ex-universal-misc" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ex-universal-misc"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Some Universal Quantifiers.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-universal-misc-2"><ol class="lower-alpha">
+</h4> <div class="para logical" id="ex-universal-misc-2"><ol class="lower-alpha">
 <li id="ex-universal-misc-2-1-1"><div class="para" id="p-derived-ex-universal-misc-2-1-1">We can say that the square of every real number is non-negative symbolically with a universal quantifier:  <span class="process-math">\((\forall x)
 _{\mathbb{R}}(x ^2 \geq  0)\text{.}\)</span>
 </div></li>
 <li id="ex-universal-misc-2-1-2"><div class="para" id="p-derived-ex-universal-misc-2-1-2">
 <span class="process-math">\((\forall n) _{\mathbb{Z}} (n + 0 = 0 + n =n)\)</span> says that the sum of zero and any integer <span class="process-math">\(n\)</span> is <span class="process-math">\(n\text{.}\)</span> This fact is called the identity property of zero for addition.</div></li>
-</ol></div></article></details><figure class="table table-like" id="table-quantifier-variations"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.6.5<span class="period">.</span></span><span class="space"> </span>Notational Variations with Quantified Expressions</figcaption><div class="tabular-box natural-width"><table class="tabular">
+</ol></div></article><figure class="table table-like" id="table-quantifier-variations"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.6.5<span class="period">.</span></span><span class="space"> </span>Notational Variations with Quantified Expressions</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b0 r0 l0 t0 lines">Universal Quantifier</td>
 <td class="c m b0 r0 l0 t0 lines">Existential Quantifier</td>
@@ -1034,9 +1027,10 @@ _{\mathbb{R}}(x ^2 \geq  0)\text{.}\)</span>
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.6.3</span><span class="space"> </span><span class="title">The Negation of Quantified Propositions</span>
 </h3>
 <div class="para" id="ss-negated-quantifiers-3">When you negate a quantified proposition, the existential and universal quantifiers complement one another.</div>
-<details id="ex-negated-existential" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-negated-existential"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.6</span><span class="period">.</span><span class="space"> </span><span class="title">Negation of an Existential Quantifier.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-negated-existential-2">
+</h4>
+<div class="para logical" id="ex-negated-existential-2">
 <div class="para">Over the universe of animals, define <span class="process-math">\(F(x)\text{:}\)</span> <span class="process-math">\(x\)</span> is a fish and <span class="process-math">\(W(x)\text{:}\)</span> <span class="process-math">\(x\)</span> lives in the water. We know that the proposition <span class="process-math">\(W(x) \rightarrow F(x)\)</span> is not always true. In other words, <span class="process-math">\((\forall x)(W(x) \rightarrow  F(x))\)</span> is false. Another way of stating this fact is that there exists an animal that lives in the water and is not a fish; that is,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1046,18 +1040,18 @@ _{\mathbb{R}}(x ^2 \geq  0)\text{.}\)</span>
 \end{split}\text{.}
 \end{equation*}
 </div>
-</div></article></details><div class="para" id="ss-negated-quantifiers-5">Note that the negation of a universally quantified proposition is an existentially quantified proposition. In addition, when you negate an existentially quantified proposition, you get a universally quantified proposition.   Symbolically,</div>
+</div></article><div class="para" id="ss-negated-quantifiers-5">Note that the negation of a universally quantified proposition is an existentially quantified proposition. In addition, when you negate an existentially quantified proposition, you get a universally quantified proposition.   Symbolically,</div>
 <figure class="table table-like" id="table-quantifier-negation"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.6.7<span class="period">.</span></span><span class="space"> </span>Negation of Quantified Expressions</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr><td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\neg ((\forall n)_U(p(n)) )\Leftrightarrow  (\exists  n)_U (\neg p(n))\)</span></td></tr>
 <tr><td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\neg ((\exists n)_U(p(n)) )\Leftrightarrow  (\forall  n)_U (\neg p(n))\)</span></td></tr>
-</table></div></figure><details id="ex-more-negated-quantifiers" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</table></div></figure><article class="example example-like" id="ex-more-negated-quantifiers"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">More Negations of Quantified Expressions.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-more-negated-quantifiers-2"><ol class="lower-alpha">
+</h4> <div class="para logical" id="ex-more-negated-quantifiers-2"><ol class="lower-alpha">
 <li id="ex-more-negated-quantifiers-2-1-1"><div class="para" id="p-derived-ex-more-negated-quantifiers-2-1-1">The ancient Greeks first discovered that <span class="process-math">\(\sqrt{2}\)</span> is an irrational number; that is, <span class="process-math">\(\sqrt{2}\)</span> is not a rational number. <span class="process-math">\(\neg ((\exists r)_{\mathbb{Q}}(r^2 = 2))\)</span> and <span class="process-math">\((\forall r)_{\mathbb{Q}} (r^2\neq  2)\)</span> both state this fact symbolically.</div></li>
 <li id="ex-more-negated-quantifiers-2-1-2"><div class="para" id="p-derived-ex-more-negated-quantifiers-2-1-2">
 <span class="process-math">\(\neg ((\forall n)_{\mathbb{P}}(n ^2- n + 41 \textrm{ is prime}))\)</span> is equivalent to <span class="process-math">\((\exists  n)_{\mathbb{P}} (n^2
 - n + 41 \textrm{ is composite})\text{.}\)</span> They are either both true or both  false.</div></li>
-</ol></div></article></details></section><section class="subsection" id="ss-multiple-quantifiers"><h3 class="heading hide-type">
+</ol></div></article></section><section class="subsection" id="ss-multiple-quantifiers"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.6.4</span><span class="space"> </span><span class="title">Multiple Quantifiers</span>
 </h3>
 <div class="para" id="ss-multiple-quantifiers-3">If a proposition has more than one variable, then you can quantify it more than once. For example, <span class="process-math">\(p(x, y):x^2 - y^2 = (x + y)(x - y)\)</span> is a tautology over the set of all pairs of real numbers because it is true for each pair <span class="process-math">\((x, y)\)</span> in <span class="process-math">\(\mathbb{R} \times  \mathbb{R}\text{.}\)</span> Another way to look at this proposition is as a proposition with two variables. The assertion that <span class="process-math">\(p(x,y)\)</span> is a tautology could be quantified as <span class="process-math">\((\forall x)_{\mathbb{R}} ((\forall y) _{\mathbb{R}}(p(x, y)))\)</span> or <span class="process-math">\((\forall y)_{\mathbb{R}} ((\forall x) _{\mathbb{R}}(p(x, y)))\)</span>

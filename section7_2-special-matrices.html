@@ -681,19 +681,12 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -980,9 +973,10 @@ window.MathJax = {
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Diagonal Matrix.</span>
 </h4>
 <div class="para" id="def-diagonal-matrix-2-1">A square matrix D is called a diagonal matrix if <span class="process-math">\(d_{i j}\)</span> = 0 whenever <span class="process-math">\(i \neq  j\text{.}\)</span>
-</div></article><details id="example-diagonal-matrices" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="example-diagonal-matrices"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Some diagonal matrices.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="example-diagonal-matrices-2-1">
+</h4>
+<div class="para" id="example-diagonal-matrices-2-1">
 <span class="process-math">\(A = \left(
 \begin{array}{ccc}
 1 &amp; 0 &amp; 0 \\
@@ -1001,13 +995,14 @@ window.MathJax = {
 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 1 \\
 \end{array}
-\right)\)</span> are all diagonal matrices.</div></article></details></section><section class="subsection" id="section7_2-special-matrices-3"><h3 class="heading hide-type">
+\right)\)</span> are all diagonal matrices.</div></article></section><section class="subsection" id="section7_2-special-matrices-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="space"> </span><span class="title">The Identity Matrix and Matrix Inverses</span>
 </h3>
 <div class="para" id="section7_2-special-matrices-3-2">In the example above, the <span class="process-math">\(3\times 3\)</span> diagonal matrix <span class="process-math">\(I\)</span> whose diagonal entries are all 1’s has the distinctive property that for any other <span class="process-math">\(3\times 3\)</span> matrix <span class="process-math">\(A\)</span> we have <span class="process-math">\(A I = I A = A\text{.}\)</span> For example:</div>
-<details id="ex-matrix-identity-product" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-matrix-identity-product"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Multiplying by the Identity Matrix.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-matrix-identity-product-2-1">If <span class="process-math">\(A = \left(
+</h4>
+<div class="para" id="ex-matrix-identity-product-2-1">If <span class="process-math">\(A = \left(
 \begin{array}{ccc}
 1 &amp; 2 &amp; 5 \\
 6 &amp; 7 &amp; -2 \\
@@ -1026,7 +1021,7 @@ window.MathJax = {
 3 &amp; -3 &amp; 0 \\
 \end{array}
 \right)\text{.}\)</span>
-</div></article></details><div class="para" id="section7_2-special-matrices-3-4">In other words, the matrix <span class="process-math">\(I\)</span> behaves in matrix algebra like the real number 1; that is, as a multiplicative identity. In matrix algebra, the matrix <span class="process-math">\(I\)</span> is called simply the identity matrix. Convince yourself that if <span class="process-math">\(A\)</span> is any <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A I = I A = A\text{.}\)</span>
+</div></article><div class="para" id="section7_2-special-matrices-3-4">In other words, the matrix <span class="process-math">\(I\)</span> behaves in matrix algebra like the real number 1; that is, as a multiplicative identity. In matrix algebra, the matrix <span class="process-math">\(I\)</span> is called simply the identity matrix. Convince yourself that if <span class="process-math">\(A\)</span> is any <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A I = I A = A\text{.}\)</span>
 </div>
 <article class="definition definition-like" id="def-identity-matrix"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Identity Matrix.</span>
@@ -1091,9 +1086,10 @@ a &amp; b \\
 c &amp; d \\
 \end{array}
 \right|\)</span> for the determinant of the general <span class="process-math">\(2 \times 2\)</span> matrix.</div>
-<details id="ex-some-determinants" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-some-determinants"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Some determinants of two by two matrices.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-some-determinants-2-1">If <span class="process-math">\(A =\left(
+</h4>
+<div class="para" id="ex-some-determinants-2-1">If <span class="process-math">\(A =\left(
 \begin{array}{cc}
 1 &amp; 2 \\
 -3 &amp; 5 \\
@@ -1104,7 +1100,7 @@ c &amp; d \\
 2 &amp; 4 \\
 \end{array}
 \right)\)</span>  then <span class="process-math">\(\det  B = 1\cdot 4 -2\cdot 2=0.\)</span>
-</div></article></details><article class="theorem theorem-like" id="theorem-inverse-two-by-two"><h4 class="heading">
+</div></article><article class="theorem theorem-like" id="theorem-inverse-two-by-two"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Inverse of 2 by 2 matrix.</span>
 </h4>
 <div class="para" id="theorem-inverse-two-by-two-2-1">Let <span class="process-math">\(A =\left(
@@ -1118,9 +1114,10 @@ d &amp; -b \\
 -c &amp; a \\
 \end{array}
 \right)\text{.}\)</span>
-</div></article><details id="theorem-inverse-two-by-two-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="theorem-inverse-two-by-two-3-1">See Exercise 4 at the end of this section.</div></article></details><details id="ex-finding-inverses" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><details id="theorem-inverse-two-by-two-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="theorem-inverse-two-by-two-3-1">See Exercise 4 at the end of this section.</div></article></details><article class="example example-like" id="ex-finding-inverses"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Finding Inverses.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-finding-inverses-2-1">
+</h4>
+<div class="para logical" id="ex-finding-inverses-2-1">
 <div class="para">Can we find the inverses of the matrices in <a href="section7_2-special-matrices.html#ex-some-determinants" class="xref" data-knowl="./knowl/xref/ex-some-determinants.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.2.8: Some determinants of two by two matrices">Example 7.2.8</a>? If <span class="process-math">\(A =\left(
 \begin{array}{cc}
 1 &amp; 2 \\
@@ -1144,7 +1141,7 @@ A^{-1}= \frac{1}{11}\left(
 </div>
 <div class="para">The reader should verify that <span class="process-math">\(A A^{-1}=A^{-1}A = I\text{.}\)</span>
 </div>
-</div> <div class="para" id="ex-finding-inverses-2-2">The second matrix, <span class="process-math">\(B\text{,}\)</span> has a determinant equal to zero. If we tried to apply the formula in <a href="section7_2-special-matrices.html#theorem-inverse-two-by-two" class="xref" data-knowl="./knowl/xref/theorem-inverse-two-by-two.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.9: Inverse of 2 by 2 matrix">Theorem 7.2.9</a>, we would be dividing by zero. For this reason, the formula can’t be applied and in fact <span class="process-math">\(B^{-1}\)</span> does not exist.</div></article></details><div class="para logical" id="section7_2-special-matrices-3-18">
+</div> <div class="para" id="ex-finding-inverses-2-2">The second matrix, <span class="process-math">\(B\text{,}\)</span> has a determinant equal to zero. If we tried to apply the formula in <a href="section7_2-special-matrices.html#theorem-inverse-two-by-two" class="xref" data-knowl="./knowl/xref/theorem-inverse-two-by-two.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.9: Inverse of 2 by 2 matrix">Theorem 7.2.9</a>, we would be dividing by zero. For this reason, the formula can’t be applied and in fact <span class="process-math">\(B^{-1}\)</span> does not exist.</div></article><div class="para logical" id="section7_2-special-matrices-3-18">
 <div class="para">Remarks:</div>
 <ul class="disc">
 <li id="section7_2-special-matrices-3-18-1-1"><div class="para" id="p-derived-section7_2-special-matrices-3-18-1-1">In general, if <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times 2\)</span> matrix and if <span class="process-math">\(\det  A = 0\text{,}\)</span> then <span class="process-math">\(A^{-1}\)</span> does not exist.</div></li>

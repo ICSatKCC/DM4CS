@@ -681,19 +681,12 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -976,16 +969,16 @@ window.MathJax = {
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.1.1</span><span class="space"> </span><span class="title">Elementary Operations</span>
 </h3>
 <div class="para" id="ss-elementary-operations-2">Consider the following example.</div>
-<details id="ss-elementary-operations-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ss-elementary-operations-3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Solution Set.</span>
-</h4></summary><article class="example example-like knowl__content">  <div class="para logical" id="ss-elementary-operations-3-3">
+</h4>  <div class="para logical" id="ss-elementary-operations-3-3">
 <div class="para">Find <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 x + y = 7 \text{ and } 2x - y = 8.
 \end{equation*}
 </div>
-</div> <div class="para" id="ss-elementary-operations-3-4">The set of ordered pairs, (x, y) which solve both equations is called the <dfn class="terminology">solution set</dfn>.</div> <div class="para" id="ss-elementary-operations-3-5">You can verify that <span class="process-math">\((x, y) = (5, 2)\)</span> is a solution to the above system. The interesting question is this: If you were not given this information to verify, how could you determine the solution? You can do this by using the following basic operations on the equations, none of which change the set of solutions of the system of equations.</div></article></details><article class="definition definition-like" id="def-elementary-operations"><h4 class="heading">
+</div> <div class="para" id="ss-elementary-operations-3-4">The set of ordered pairs, (x, y) which solve both equations is called the <dfn class="terminology">solution set</dfn>.</div> <div class="para" id="ss-elementary-operations-3-5">You can verify that <span class="process-math">\((x, y) = (5, 2)\)</span> is a solution to the above system. The interesting question is this: If you were not given this information to verify, how could you determine the solution? You can do this by using the following basic operations on the equations, none of which change the set of solutions of the system of equations.</div></article><article class="definition definition-like" id="def-elementary-operations"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary Operations.</span>
 </h4>  <div class="para logical" id="def-elementary-operations-3-1">
 <div class="para">
@@ -995,9 +988,10 @@ x + y = 7 \text{ and } 2x - y = 8.
 <li id="def-elementary-operations-3-1-2-2"><div class="para" id="def-elementary-operations-3-1-2-2-1">Multiply any equation by a nonzero number.</div></li>
 <li id="def-elementary-operations-3-1-2-3"><div class="para" id="def-elementary-operations-3-1-2-3-1">Replace any equation with itself added to a multiple of another equation.</div></li>
 </ol>
-</div></article><details id="ex-some-elementary-operations" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ex-some-elementary-operations"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.1.3</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-some-elementary-operations-1">
+</h4>
+<div class="para logical" id="ex-some-elementary-operations-1">
 <div class="para">To illustrate the third of these operations on this particular system, consider the following.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1022,7 +1016,7 @@ x + y = 7
 </div>
 <div class="para">To obtain the second system, take the second equation of the first system and add <span class="process-math">\(-2\)</span> times the first equation to obtain <span class="process-math">\(-3y = -6\text{.}\)</span> Now, this clearly shows that <span class="process-math">\(y = 2\)</span> and so it follows from the other equation that <span class="process-math">\(x + 2 = 7\)</span> and so <span class="process-math">\(x = 5\text{.}\)</span>
 </div>
-</div></article></details><div class="para" id="ss-elementary-operations-6">Of course a linear system may involve many equations and many variables. The solution set is still the collection of solutions to the equations. In every case, the above operations of <a href="s-Systems-of-Equations.html#def-elementary-operations" class="xref" data-knowl="./knowl/xref/def-elementary-operations.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.1.2: Elementary Operations">Definition 11.1.2</a> do not change the set of solutions to the system of linear equations.</div>
+</div></article><div class="para" id="ss-elementary-operations-6">Of course a linear system may involve many equations and many variables. The solution set is still the collection of solutions to the equations. In every case, the above operations of <a href="s-Systems-of-Equations.html#def-elementary-operations" class="xref" data-knowl="./knowl/xref/def-elementary-operations.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.1.2: Elementary Operations">Definition 11.1.2</a> do not change the set of solutions to the system of linear equations.</div>
 <article class="theorem theorem-like" id="thm-elementary-operations"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.1.4</span><span class="period">.</span>
 </h4>
@@ -1072,9 +1066,10 @@ a f_2\text{,}\)</span> then upon multiplying <span class="process-math">\(aE_2 =
 = f_2. \Box\)</span>
 </div></article></details><div class="para" id="ss-elementary-operations-8">Stated simply, the above theorem shows that the elementary operations do not change the solution set of a system of equations.</div>
 <div class="para" id="ss-elementary-operations-9">Here is an example in which there are three equations and three variables. You want to find values for <span class="process-math">\(x, y, z\)</span> such that each of the given equations are satisfied when these values are plugged in to the equations.</div>
-<details id="ex-elementary-operations" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-elementary-operations"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.1.5</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-elementary-operations-1-1">
+</h4>
+<div class="para logical" id="ex-elementary-operations-1-1">
 <div class="para">Find the solutions to the system,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1127,7 +1122,7 @@ x = 1, y = 2, z = 3,
 </div>
 <div class="para">a system which has the same solution set as the original system. This avoided back substitution and led to the same solution set.</div>
 </div>
-</div></details></div></article></details></section><section class="subsection" id="ss-gauss-elimination"><h3 class="heading hide-type">
+</div></details></div></article></section><section class="subsection" id="ss-gauss-elimination"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.1.2</span><span class="space"> </span><span class="title">Gauss Elimination</span>
 </h3>
 <div class="para logical" id="ss-gauss-elimination-3">
@@ -1246,9 +1241,10 @@ a_{m1} &amp; \dots &amp; a_{mn} &amp; b_m \\
 <li id="def-row-reduced-echelon-form-3-1-2-3"><div class="para" id="def-row-reduced-echelon-form-3-1-2-3-1">All entries in a column above and below a leading entry are zero.</div></li>
 <li id="def-row-reduced-echelon-form-3-1-2-4"><div class="para" id="def-row-reduced-echelon-form-3-1-2-4-1">Each leading entry is a 1, the only nonzero entry in its column.</div></li>
 </ol>
-</div></article><details id="example-row-reduced-echelon-matrices" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="example-row-reduced-echelon-matrices"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Matrices in Row Reduced Echelon Form.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="example-row-reduced-echelon-matrices-2-1">
+</h4>
+<div class="para logical" id="example-row-reduced-echelon-matrices-2-1">
 <div class="para">Here are some matrices which are in row reduced echelon form.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1270,9 +1266,10 @@ a_{m1} &amp; \dots &amp; a_{mn} &amp; b_m \\
 \right)\text{.}
 \end{equation*}
 </div>
-</div></article></details><details id="example-echelon-matrices" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="example-echelon-matrices"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Matrices in Echelon Form.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="example-echelon-matrices-2-1">
+</h4>
+<div class="para logical" id="example-echelon-matrices-2-1">
 <div class="para">Here are matrices in echelon form which are not in row reduced echelon form but which are in echelon form.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1294,9 +1291,10 @@ a_{m1} &amp; \dots &amp; a_{mn} &amp; b_m \\
 \right).
 \end{equation*}
 </div>
-</div></article></details><details id="example-not-echelon-matrices" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="example-not-echelon-matrices"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Matrices not in Echelon Form.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="example-not-echelon-matrices-2-1">
+</h4>
+<div class="para logical" id="example-not-echelon-matrices-2-1">
 <div class="para">Here are matrices which are not in echelon form.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1325,12 +1323,13 @@ a_{m1} &amp; \dots &amp; a_{mn} &amp; b_m \\
 \right).
 \end{equation*}
 </div>
-</div></article></details><article class="definition definition-like" id="def-pivot"><h4 class="heading">
+</div></article><article class="definition definition-like" id="def-pivot"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Pivot Positions and Pivot Columns.</span>
 </h4>  <div class="para" id="def-pivot-4-1">A <dfn class="terminology">pivot position</dfn> in a matrix is the location of a leading entry in an echelon form resulting from the application of row operations to the matrix. A <dfn class="terminology">pivot column</dfn> is a column that contains a pivot position.</div></article><div class="para" id="ss-gauss-elimination-14">For example consider the following.</div>
-<details id="ss-gauss-elimination-15" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ss-gauss-elimination-15"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Putting a Matrix into Row Reduced Echelon Form.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ss-gauss-elimination-15-2-1">
+</h4>
+<div class="para logical" id="ss-gauss-elimination-15-2-1">
 <div class="para">Suppose</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1396,7 +1395,7 @@ A = \left(
 \end{equation*}
 </div>
 <div class="para">Thus the pivot columns in the matrix are the first two columns.</div>
-</div></div></details></div></article></details><div class="para" id="ss-gauss-elimination-16">The following is the algorithm for obtaining a matrix which is in row reduced echelon form.</div>
+</div></div></details></div></article><div class="para" id="ss-gauss-elimination-16">The following is the algorithm for obtaining a matrix which is in row reduced echelon form.</div>
 <article class="algorithm theorem-like" id="alg-row-reduced-echelon"><h4 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">11.1.14</span><span class="period">.</span>
 </h4>
@@ -1410,9 +1409,10 @@ A = \left(
 <li id="alg-row-reduced-echelon-1-1-1-5"><div class="para" id="alg-row-reduced-echelon-1-1-1-5-1">Divide each nonzero row by the value of the leading entry. The result will be a matrix in row reduced echelon form.</div></li>
 </ol>
 <div class="para">This row reduction procedure applies to both augmented matrices and non augmented matrices. There is nothing special about the augmented column with respect to the row reduction procedure.</div>
-</div></article><details id="ss-gauss-elimination-18" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ss-gauss-elimination-18"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.1.15</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ss-gauss-elimination-18-1-1">
+</h4>
+<div class="para logical" id="ss-gauss-elimination-18-1-1">
 <div class="para">Here is a matrix.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1604,10 +1604,11 @@ A = \left(
 \end{equation*}
 </div>
 </div>
-</div></details></div></article></details><div class="para" id="ss-gauss-elimination-19">The above algorithm is the way a computer would obtain a reduced echelon form for a given matrix. It is not necessary for you to pretend you are a computer but if you like to do so, the algorithm described above will work. The main idea is to do row operations in such a way as to end up with a matrix in echelon form or row reduced echelon form because when this has been done, the resulting augmented matrix will allow you to describe the solutions to the linear system of equations in a meaningful way. When you do row operations until you obtain row reduced echelon form, the process is called the <dfn class="terminology">Gauss Jordan method</dfn>. Otherwise, it is called <dfn class="terminology">Gauss elimination</dfn>.</div>
-<details id="ss-gauss-elimination-20" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></details></div></article><div class="para" id="ss-gauss-elimination-19">The above algorithm is the way a computer would obtain a reduced echelon form for a given matrix. It is not necessary for you to pretend you are a computer but if you like to do so, the algorithm described above will work. The main idea is to do row operations in such a way as to end up with a matrix in echelon form or row reduced echelon form because when this has been done, the resulting augmented matrix will allow you to describe the solutions to the linear system of equations in a meaningful way. When you do row operations until you obtain row reduced echelon form, the process is called the <dfn class="terminology">Gauss Jordan method</dfn>. Otherwise, it is called <dfn class="terminology">Gauss elimination</dfn>.</div>
+<article class="example example-like" id="ss-gauss-elimination-20"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.1.16</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ss-gauss-elimination-20-1-1">Give the complete solution to the system of equations, <span class="process-math">\(5x+10y-7z = -2\text{,}\)</span> <span class="process-math">\(2x
+</h4>
+<div class="para" id="ss-gauss-elimination-20-1-1">Give the complete solution to the system of equations, <span class="process-math">\(5x+10y-7z = -2\text{,}\)</span> <span class="process-math">\(2x
 + 4y - 3z = -1\text{,}\)</span> and <span class="process-math">\(3x + 6y + 5z = 9\text{.}\)</span>
 </div>
 <div class="solutions"><details id="ss-gauss-elimination-20-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
@@ -1678,10 +1679,11 @@ A = \left(
 </div>
 <div class="para">a row of zeros with -2 at the right end, representing the equation 0x + 0y + 0z = -2 which has no solution so there is no solution to this system of equations. When this happens, the system is called <dfn class="terminology">inconsistent</dfn>. In this case it is very easy to describe the solution set. The system has no solution.</div>
 </div>
-</div></details></div></article></details><div class="para" id="ss-gauss-elimination-21">Here is another example based on the use of row operations.</div>
-<details id="ex-infinite-sols" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></details></div></article><div class="para" id="ss-gauss-elimination-21">Here is another example based on the use of row operations.</div>
+<article class="example example-like" id="ex-infinite-sols"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.1.17</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-infinite-sols-1-1">Give the complete solution to the system of equations, <span class="process-math">\(3x - y - 5z = 9\text{,}\)</span> <span class="process-math">\(y
+</h4>
+<div class="para" id="ex-infinite-sols-1-1">Give the complete solution to the system of equations, <span class="process-math">\(3x - y - 5z = 9\text{,}\)</span> <span class="process-math">\(y
 - 10z = 0\text{,}\)</span> and <span class="process-math">\(-2x + y = -6\text{.}\)</span>
 </div>
 <div class="solutions"><details id="ex-infinite-sols-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
@@ -1727,10 +1729,11 @@ A = \left(
 </div>
 <div class="para">This is in reduced echelon form. The equations corresponding to this reduced echelon form are <span class="process-math">\(y = 10z\)</span> and <span class="process-math">\(x = 3 + 5z\text{.}\)</span> Apparently <span class="process-math">\(z\)</span> can equal any number. Lets call this number <span class="process-math">\(t\text{.}\)</span> <aside class="aside aside-like" id="ex-infinite-sols-2-3-6"><div class="para" id="ex-infinite-sols-2-3-6-1">In this context <span class="process-math">\(t\)</span> is called a <dfn class="terminology">parameter</dfn>.</div></aside> Therefore, the solution set of this system is <span class="process-math">\(x = 3 + 5t\text{,}\)</span> <span class="process-math">\(y = 10t\text{,}\)</span> and <span class="process-math">\(z = t\)</span> where <span class="process-math">\(t\)</span> is completely arbitrary. The system has an infinite set of solutions which are given in the above simple way. This is what it is all about, finding the solutions to the system.</div>
 </div>
-</div></details></div></article></details><div class="para" id="ss-gauss-elimination-23">There is some terminology connected to this which is useful. Recall how each column corresponds to a variable in the original system of equations. The variables corresponding to a pivot column are called <dfn class="terminology">basic variables</dfn>. The other variables are called <dfn class="terminology">free variables</dfn>. In <a href="s-Systems-of-Equations.html#ex-infinite-sols" class="xref" data-knowl="./knowl/xref/ex-infinite-sols.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 11.1.17">Example 11.1.17</a> there was one free variable, <span class="process-math">\(z\text{,}\)</span> and two basic variables, <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span> In de- scribing the solution to the system of equations, the free variables are assigned a parameter. In <a href="s-Systems-of-Equations.html#ex-infinite-sols" class="xref" data-knowl="./knowl/xref/ex-infinite-sols.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 11.1.17">Example 11.1.17</a> this parameter was <span class="process-math">\(t\text{.}\)</span> Sometimes there are many free variables and in these cases, you need to use many parameters. Here is another example.</div>
-<details id="ex-two-parameters" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></details></div></article><div class="para" id="ss-gauss-elimination-23">There is some terminology connected to this which is useful. Recall how each column corresponds to a variable in the original system of equations. The variables corresponding to a pivot column are called <dfn class="terminology">basic variables</dfn>. The other variables are called <dfn class="terminology">free variables</dfn>. In <a href="s-Systems-of-Equations.html#ex-infinite-sols" class="xref" data-knowl="./knowl/xref/ex-infinite-sols.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 11.1.17">Example 11.1.17</a> there was one free variable, <span class="process-math">\(z\text{,}\)</span> and two basic variables, <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span> In de- scribing the solution to the system of equations, the free variables are assigned a parameter. In <a href="s-Systems-of-Equations.html#ex-infinite-sols" class="xref" data-knowl="./knowl/xref/ex-infinite-sols.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 11.1.17">Example 11.1.17</a> this parameter was <span class="process-math">\(t\text{.}\)</span> Sometimes there are many free variables and in these cases, you need to use many parameters. Here is another example.</div>
+<article class="example example-like" id="ex-two-parameters"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.1.18</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-two-parameters-1-1">
+</h4>
+<div class="para logical" id="ex-two-parameters-1-1">
 <div class="para">Find the solution to the system</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1826,7 +1829,7 @@ t\\
 <div class="para">Then the solution is <span class="process-math">\(y = 2\)</span> from the second row and <span class="process-math">\(x
 = -1 + z - w\)</span> from the first. Thus letting <span class="process-math">\(z = s\)</span> and <span class="process-math">\(w = t\text{,}\)</span> the solution as is given previously.</div>
 </div>
-</div></details></div></article></details><div class="para logical" id="ss-gauss-elimination-25">
+</div></details></div></article><div class="para logical" id="ss-gauss-elimination-25">
 <div class="para">The number of free variables is always equal to the number of <dfn class="terminology">different</dfn> parameters used to describe the solution. If there are no free variables, then either there is no solution as in the case where row operations yield an echelon form like</div>
 <div class="displaymath process-math">
 \begin{equation*}

@@ -681,19 +681,12 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -1053,9 +1046,10 @@ window.MathJax = {
 <article class="definition definition-like" id="def-scalar-matrix-mult"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Scalar Matrix Multiplication.</span>
 </h4>  <div class="para" id="def-scalar-matrix-mult-3-1">If <span class="process-math">\(A = (a_{ij})\)</span> and <span class="process-math">\(k\)</span> is a scalar, then <span class="process-math">\(kA = (ka_{ij})\text{.}\)</span>
-</div></article><details id="ss-Add-Scalar-Multi-Matrices-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ss-Add-Scalar-Multi-Matrices-8"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.2</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ss-Add-Scalar-Multi-Matrices-8-1"><div class="displaymath process-math">
+</h4>
+<div class="para logical" id="ss-Add-Scalar-Multi-Matrices-8-1"><div class="displaymath process-math">
 \begin{equation*}
 7
 \left(\begin{array}{c c}
@@ -1067,7 +1061,7 @@ window.MathJax = {
 7 &amp; 28 \\
 \end{array} \right)\text{.}
 \end{equation*}
-</div></div></article></details><article class="definition definition-like" id="def-lin-alg-matrix-addition"><h4 class="heading">
+</div></div></article><article class="definition definition-like" id="def-lin-alg-matrix-addition"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix Addition.</span>
 </h4>  <div class="para logical" id="def-lin-alg-matrix-addition-3-1">
 <div class="para">If <span class="process-math">\(A = (a_{ij})\)</span> and <span class="process-math">\(B = (b_{ij})\)</span> are two <span class="process-math">\(m \times n\)</span> matrices. Then <span class="process-math">\(A+B =
@@ -1078,9 +1072,10 @@ C = (c_{ij})
 \end{equation*}
 </div>
 <div class="para">for <span class="process-math">\(c_{ij} = a_{ij} + b_{ij}\)</span> .</div>
-</div></article><details id="ss-Add-Scalar-Multi-Matrices-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ss-Add-Scalar-Multi-Matrices-10"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.4</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="displaymath process-math">
+</h4>
+<div class="displaymath process-math">
 \begin{equation*}
 \left( \begin{array}{c c c}
 1 &amp; 2 &amp; 3\\
@@ -1097,15 +1092,16 @@ C = (c_{ij})
 \end{equation*}
 </div>
 <div class="para" id="ss-Add-Scalar-Multi-Matrices-10-2">To save on notation, we will often use <span class="process-math">\(A_{ij}\)</span> to refer to the <span class="process-math">\(ij^{th}\)</span> entry of matrix <span class="process-math">\(A\text{.}\)</span>
-</div></article></details><article class="definition definition-like" id="def-zero-matrix"><h4 class="heading">
+</div></article><article class="definition definition-like" id="def-zero-matrix"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Zero Matrix.</span>
-</h4>  <div class="para" id="def-zero-matrix-3-1">The <span class="process-math">\(m \times n\)</span> zero matrix is the <span class="process-math">\(m \times n\)</span> matrix having every entry equal to zero. It is denoted by 0.</div></article><details id="ss-Add-Scalar-Multi-Matrices-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4>  <div class="para" id="def-zero-matrix-3-1">The <span class="process-math">\(m \times n\)</span> zero matrix is the <span class="process-math">\(m \times n\)</span> matrix having every entry equal to zero. It is denoted by 0.</div></article><article class="example example-like" id="ss-Add-Scalar-Multi-Matrices-12"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.6</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ss-Add-Scalar-Multi-Matrices-12-1">The <span class="process-math">\(2 \times 3\)</span> zero matrix is <span class="process-math">\(\left( \begin{array}{c c c}
+</h4>
+<div class="para" id="ss-Add-Scalar-Multi-Matrices-12-1">The <span class="process-math">\(2 \times 3\)</span> zero matrix is <span class="process-math">\(\left( \begin{array}{c c c}
 0 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 0 \\
 \end{array} \right)\text{.}\)</span>
-</div></article></details><article class="definition definition-like" id="def-lin-alg-matrix-equality"><h4 class="heading">
+</div></article><article class="definition definition-like" id="def-lin-alg-matrix-equality"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix Equality.</span>
 </h4>  <div class="para" id="def-lin-alg-matrix-equality-3-1">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be two matrices. Then <span class="process-math">\(A = B\)</span> means that the two matrices are of the same size and for <span class="process-math">\(A = (a_{ij})\)</span> and <span class="process-math">\(B = (b_{ij})\)</span> , <span class="process-math">\(a_{ij} = b_{ij} \)</span>for all <span class="process-math">\(1 \leq i \leq m\)</span> and <span class="process-math">\(1 \leq j \leq n\text{.}\)</span>
 </div></article><div class="para logical" id="ss-Add-Scalar-Multi-Matrices-14">
@@ -1357,9 +1353,10 @@ A_{mn}\\
 </div>
 <div class="para">Thus the <span class="process-math">\(i_{th}\)</span> entry of <span class="process-math">\(A\mathbf{v}\)</span> is <span class="process-math">\(\sum_{j=1}^{n} A_{ij}v_j\text{.}\)</span> Note that multiplication by an <span class="process-math">\(m \times n\)</span> matrix takes an <span class="process-math">\(n \times 1\)</span> matrix, and produces an <span class="process-math">\(m \times 1\)</span> matrix (vector).</div>
 </div></article><div class="para" id="subsec-mult-of-matrices-8">Here is another example.</div>
-<details id="subsec-mult-of-matrices-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="subsec-mult-of-matrices-9"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.10</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-mult-of-matrices-9-1">
+</h4>
+<div class="para logical" id="subsec-mult-of-matrices-9-1">
 <div class="para">Compute</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1404,7 +1401,7 @@ A_{mn}\\
 \end{pmatrix}
 \end{equation*}
 </div>
-</div></article></details><div class="para" id="subsec-mult-of-matrices-10">The next task is to multiply an <span class="process-math">\(m \times n\)</span> matrix times an <span class="process-math">\(n \times p\)</span> matrix. Before doing so the following may be helpful.</div>
+</div></article><div class="para" id="subsec-mult-of-matrices-10">The next task is to multiply an <span class="process-math">\(m \times n\)</span> matrix times an <span class="process-math">\(n \times p\)</span> matrix. Before doing so the following may be helpful.</div>
 <div class="para logical" id="subsec-mult-of-matrices-11">
 <div class="para">For <span class="process-math">\(A\)</span> and  <span class="process-math">\(B\)</span> matrices, in order to form the product, <span class="process-math">\(AB\text{,}\)</span> the number of columns of <span class="process-math">\(A\)</span> must equal the number of rows of <span class="process-math">\(B\text{.}\)</span> Thus the form of the product must be</div>
 <div class="displaymath process-math">
@@ -1433,9 +1430,10 @@ AB \equiv (A\mathbf{b}_1, \dots , A\mathbf{b}_p)
 </div>
 <div class="para">where <span class="process-math">\(A\mathbf{b}_k\)</span> is an <span class="process-math">\(m \times 1\)</span> matrix or column vector which gives the <span class="process-math">\(k^{th}\)</span> column of <span class="process-math">\(AB\text{.}\)</span>
 </div>
-</div></article><details id="subsec-mult-of-matrices-13" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="subsec-mult-of-matrices-13"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.12</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-mult-of-matrices-13-1">
+</h4>
+<div class="para logical" id="subsec-mult-of-matrices-13-1">
 <div class="para">Multiply the following:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1505,9 +1503,10 @@ AB \equiv (A\mathbf{b}_1, \dots , A\mathbf{b}_p)
 -2 &amp; 7 &amp; 3 \\
 \end{pmatrix}
 \end{equation*}
-</div></div></div></details></article></details><details id="subsec-mult-of-matrices-14" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></div></div></details></article><article class="example example-like" id="subsec-mult-of-matrices-14"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.13</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-mult-of-matrices-14-1">
+</h4>
+<div class="para logical" id="subsec-mult-of-matrices-14-1">
 <div class="para">Multiply the following,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1522,7 +1521,7 @@ AB \equiv (A\mathbf{b}_1, \dots , A\mathbf{b}_p)
 \end{pmatrix}
 \end{equation*}
 </div>
-</div> <details id="subsec-mult-of-matrices-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="subsec-mult-of-matrices-14-2-1">First check if it is possible. This is of the form <span class="process-math">\((3 \times 3) (2 \times 3) \text{.}\)</span> The inside numbers do not match and so you can’t do this multiplication. This means that anything you write will be absolute nonsense because it is impossible to multiply these matrices in this order. Aren’t they the same two matrices considered in the previous example? Yes they are. It is just that here they are in a different order. This shows something you must always remember about matrix multiplication. <em class="emphasis">Order Matters! Matrix Multiplication Is Not Commutative!</em> This is very different than multiplication of numbers!</div></div></details></article></details></section><section class="subsection" id="subsec-ijth-entry-of-matrix-prod"><h3 class="heading hide-type">
+</div> <details id="subsec-mult-of-matrices-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="subsec-mult-of-matrices-14-2-1">First check if it is possible. This is of the form <span class="process-math">\((3 \times 3) (2 \times 3) \text{.}\)</span> The inside numbers do not match and so you can’t do this multiplication. This means that anything you write will be absolute nonsense because it is impossible to multiply these matrices in this order. Aren’t they the same two matrices considered in the previous example? Yes they are. It is just that here they are in a different order. This shows something you must always remember about matrix multiplication. <em class="emphasis">Order Matters! Matrix Multiplication Is Not Commutative!</em> This is very different than multiplication of numbers!</div></div></details></article></section><section class="subsection" id="subsec-ijth-entry-of-matrix-prod"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.2.3</span><span class="space"> </span><span class="title">The <span class="process-math">\(ij^{th}\)</span> Entry of a Product</span>
 </h3>
 <div class="para logical" id="subsec-ijth-entry-of-matrix-prod-2">
@@ -1670,9 +1669,10 @@ B_{nk}\end{pmatrix}
 </div>
 <div class="para">Thus, the <span class="process-math">\(i^{th}\)</span> entry from the top of <span class="process-math">\(A\mathbf{b}_k\)</span> is the <span class="process-math">\(i^{th}\)</span> entry in the <span class="process-math">\(k^{th}\)</span> column of <span class="process-math">\(AB\)</span> showing that indeed the claim is true. <span class="process-math">\(\blacksquare\)</span>
 </div>
-</div></article></details><details id="subsec-ijth-entry-of-matrix-prod-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article></details><article class="example example-like" id="subsec-ijth-entry-of-matrix-prod-6"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.16</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-ijth-entry-of-matrix-prod-6-1">Multiply if possible <span class="process-math">\(\begin{pmatrix}
+</h4>
+<div class="para" id="subsec-ijth-entry-of-matrix-prod-6-1">Multiply if possible <span class="process-math">\(\begin{pmatrix}
 1 &amp; 2 \\
 3 &amp; 1\\
 2 &amp; 6\\
@@ -1732,10 +1732,10 @@ B_{nk}\end{pmatrix}
 \sum_k a_{3k}b{k2} = a_{31}b{12} + a_{32}b{22} = 2 \times 3 + 6 \times 6 = 42.
 \end{equation*}
 </div>
-</div></div></details></article></details><div class="para" id="subsec-ijth-entry-of-matrix-prod-7">You should try a few more such examples to verify the above definition in terms of the <span class="process-math">\(ij^{th}\)</span> entries works for other entries.</div>
-<details id="subsec-ijth-entry-of-matrix-prod-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></div></details></article><div class="para" id="subsec-ijth-entry-of-matrix-prod-7">You should try a few more such examples to verify the above definition in terms of the <span class="process-math">\(ij^{th}\)</span> entries works for other entries.</div>
+<article class="example example-like" id="subsec-ijth-entry-of-matrix-prod-8"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.17</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content">Multiply if possible <span class="process-math">\(\begin{pmatrix}
+</h4>Multiply if possible <span class="process-math">\(\begin{pmatrix}
 1 &amp; 2 \\
 3 &amp; 1\\
 2 &amp; 6\\
@@ -1744,9 +1744,9 @@ B_{nk}\end{pmatrix}
 2 &amp; 3 &amp; 1\\
 7 &amp; 6 &amp; 2\\
 0 &amp; 0 &amp; 0\\
-\end{pmatrix}\text{.}\)</span> <details id="subsec-ijth-entry-of-matrix-prod-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="subsec-ijth-entry-of-matrix-prod-8-2-1">This is not possible because it is of the form <span class="process-math">\((3 \times 2)(3 \times 3)\)</span> and the middle numbers don’t match. In other words the two matrices are not conformable in the indicated order.</div></div></details></article></details><details id="subsec-ijth-entry-of-matrix-prod-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+\end{pmatrix}\text{.}\)</span> <details id="subsec-ijth-entry-of-matrix-prod-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="subsec-ijth-entry-of-matrix-prod-8-2-1">This is not possible because it is of the form <span class="process-math">\((3 \times 2)(3 \times 3)\)</span> and the middle numbers don’t match. In other words the two matrices are not conformable in the indicated order.</div></div></details></article><article class="example example-like" id="subsec-ijth-entry-of-matrix-prod-9"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.18</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content">Multiply if possible <span class="process-math">\(\begin{pmatrix}
+</h4>Multiply if possible <span class="process-math">\(\begin{pmatrix}
 2 &amp; 3 &amp; 1\\
 7 &amp; 6 &amp; 2\\
 0 &amp; 0 &amp; 0\\
@@ -1767,9 +1767,9 @@ B_{nk}\end{pmatrix}
 \end{equation*}
 </div>
 <div class="para">Check this and be sure you come up with the same answer.</div>
-</div></div></details></article></details><details id="subsec-ijth-entry-of-matrix-prod-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></div></details></article><article class="example example-like" id="subsec-ijth-entry-of-matrix-prod-10"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.19</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content">Multiply if possible <span class="process-math">\(\begin{pmatrix}
+</h4>Multiply if possible <span class="process-math">\(\begin{pmatrix}
 1\\
 2\\
 1\\
@@ -1793,13 +1793,14 @@ B_{nk}\end{pmatrix}
 \end{pmatrix}.
 \end{equation*}
 </div>
-</div></div></details></article></details></section><section class="subsection" id="subsec-props-of-matrix-mult"><h3 class="heading hide-type">
+</div></div></details></article></section><section class="subsection" id="subsec-props-of-matrix-mult"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.2.4</span><span class="space"> </span><span class="title">Properties of Matrix Multiplication</span>
 </h3>
 <div class="para" id="subsec-props-of-matrix-mult-2">As pointed out above, sometimes it is possible to multiply matrices in one order but not in the other order. What if it makes sense to multiply them in either order? Will the two products be equal then?</div>
-<details id="subsec-props-of-matrix-mult-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="subsec-props-of-matrix-mult-3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.20</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-props-of-matrix-mult-3-1">Compare <span class="process-math">\(\begin{pmatrix}
+</h4>
+<div class="para" id="subsec-props-of-matrix-mult-3-1">Compare <span class="process-math">\(\begin{pmatrix}
 1 &amp; 2\\
 3 &amp; 4\\
 \end{pmatrix}\begin{pmatrix}
@@ -1846,7 +1847,7 @@ B_{nk}\end{pmatrix}
 \end{equation*}
 </div>
 <div class="para">You see these are not equal. Again you cannot conclude that <span class="process-math">\(AB = BA\)</span> for matrix multiplication even when multiplication is defined in both orders. However, there are some properties which do hold.</div>
-</div></article></details><article class="proposition theorem-like" id="prop-matrix-mult-distributivity"><h4 class="heading">
+</div></article><article class="proposition theorem-like" id="prop-matrix-mult-distributivity"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">11.2.21</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="prop-matrix-mult-distributivity-1-1">
@@ -1912,9 +1913,10 @@ A(BC) \amp = (AB)C \tag{11.2.3}
 (A^T)_{ij} = A_{ji}
 \end{equation*}
 </div>
-</div></article><details id="subsec-matrix-transpose-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="subsec-matrix-transpose-4"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.23</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="displaymath process-math">
+</h4>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{pmatrix}
 1 &amp; 2 &amp; -6 \\
@@ -1926,7 +1928,7 @@ A(BC) \amp = (AB)C \tag{11.2.3}
 -6 &amp; 4\\
 \end{pmatrix}
 \end{equation*}
-</div></article></details><div class="para" id="subsec-matrix-transpose-5">The transpose of a matrix has the following important properties. <article class="lemma theorem-like" id="lem-transpose-distributivity"><h4 class="heading">
+</div></article><div class="para" id="subsec-matrix-transpose-5">The transpose of a matrix has the following important properties. <article class="lemma theorem-like" id="lem-transpose-distributivity"><h4 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">11.2.24</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="lem-transpose-distributivity-1-1">
@@ -1956,9 +1958,10 @@ A(BC) \amp = (AB)C \tag{11.2.3}
 <article class="definition definition-like" id="def-symmetric-matrix"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.25</span><span class="period">.</span>
 </h4>
-<div class="para" id="def-symmetric-matrix-1-1">An <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(A\)</span> is said to be <dfn class="terminology">symmetric</dfn> if <span class="process-math">\(A = A^T\)</span> . It is said to be <dfn class="terminology">skew symmetric</dfn> if <span class="process-math">\(A = -A^T\)</span> .</div></article><details id="subsec-matrix-transpose-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="def-symmetric-matrix-1-1">An <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(A\)</span> is said to be <dfn class="terminology">symmetric</dfn> if <span class="process-math">\(A = A^T\)</span> . It is said to be <dfn class="terminology">skew symmetric</dfn> if <span class="process-math">\(A = -A^T\)</span> .</div></article><article class="example example-like" id="subsec-matrix-transpose-7"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.26</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-matrix-transpose-7-1">
+</h4>
+<div class="para logical" id="subsec-matrix-transpose-7-1">
 <div class="para">Let</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1980,9 +1983,10 @@ A^T = \begin{pmatrix}
 \end{equation*}
 </div>
 <div class="para">Therefore, <span class="process-math">\(A\)</span> is symmetric.</div>
-</div></article></details><details id="subsec-matrix-transpose-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="subsec-matrix-transpose-8"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.27</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-matrix-transpose-8-1">
+</h4>
+<div class="para logical" id="subsec-matrix-transpose-8-1">
 <div class="para">Let</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2004,7 +2008,7 @@ A^T = \begin{pmatrix}
 \end{equation*}
 </div>
 <div class="para">Therefore, <span class="process-math">\(A\)</span> is skew symmetric.</div>
-</div></article></details></section><section class="subsection" id="subsec-identity-matrix"><h3 class="heading hide-type">
+</div></article></section><section class="subsection" id="subsec-identity-matrix"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.2.6</span><span class="space"> </span><span class="title">Identity Matrix</span>
 </h3>
 <div class="para logical" id="subsec-identity-matrix-2">

@@ -681,19 +681,12 @@ window.MathJax = {
 <li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -972,106 +965,129 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Section11_4"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">11.4</span><span class="space"> </span><span class="title">Matrix Determinants</span>
 </h2>
-<section class="introduction" id="Section11_4-3"><div class="para" id="Section11_4-3-1">The determinant is a number (a scalar value) that is a certain function of the entries of a square matrix. The determinant of a matrix <span class="process-math">\(A\)</span> is commonly denoted <span class="process-math">\(det(A)\text{,}\)</span> <span class="process-math">\(det A\text{,}\)</span> or <span class="process-math">\(|A|\text{.}\)</span> Its value characterizes some properties of the matrix and the area of the shape it represents geometrically. Historically, determinants were used long before matrices: A determinant was originally defined as a property of a system of linear equations. The determinant "determines" whether the system has a unique solution (which occurs precisely if the determinant is non-zero).</div> <div class="para" id="Section11_4-3-2">We will see in this chapter that the determinant is used to determine if a matrix has an inverse (the system of equations has a unique solution), to find an inverse matrix if it exists, and to solve systems of linear equations more quickly. The determinant has many other uses which would be covered in more advanced mathematics courses. See also the <a class="external" href="https://en.wikipedia.org/wiki/Determinant" target="_blank">Wikipedia article: Determinant.</a><details class="ptx-footnote" aria-live="polite" id="Section11_4-3-2-2"><summary class="ptx-footnote__number" title="Footnote 11.4.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="Section11_4-3-2-2"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Determinant</code></div></details>
-</div></section><section class="subsection" id="ss-basic-det-techniques-properties"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.4.1</span><span class="space"> </span><span class="title">Basic Techniques and Properties</span>
+<section class="introduction" id="Section11_4-3"><div class="para" id="Section11_4-3-1">The <dfn class="terminology">determinant</dfn> is a number (a scalar value) that is a certain function of the entries of a square matrix. The determinant of a matrix <span class="process-math">\(A\)</span> is commonly denoted <span class="process-math">\(\det (A)\text{,}\)</span> <span class="process-math">\(\det A\text{,}\)</span> or <span class="process-math">\(|A|\text{.}\)</span> Its value characterizes some properties of the matrix and the area of the shape it represents geometrically. Historically, determinants were used long before matrices: A determinant was originally defined as a property of a system of linear equations. The determinant "determines" whether the system has a unique solution (which occurs precisely if the determinant is non-zero).</div> <div class="para" id="Section11_4-3-2">We will see in this section that the determinant is used to determine if a matrix has an inverse (the system of equations has a unique solution), to find an inverse matrix if it exists, and to solve systems of linear equations more quickly. The determinant has many other uses which would be covered in more advanced mathematics courses. See also the <a class="external" href="https://en.wikipedia.org/wiki/Determinant" target="_blank">Wikipedia article: Determinant.</a><details class="ptx-footnote" aria-live="polite" id="Section11_4-3-2-2"><summary class="ptx-footnote__number" title="Footnote 11.4.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="Section11_4-3-2-2"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Determinant</code></div></details>
+</div></section><section class="subsection" id="subsec-cofactors-2-x-2-dets"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.4.1</span><span class="space"> </span><span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span>
 </h3>
-<section class="subsubsection" id="subsubsec-Cofactors-2-x-2-Dets"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">11.4.1.1</span><span class="space"> </span><span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span>
-</h4>
-<div class="para" id="subsubsec-Cofactors-2-x-2-Dets-2">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n \times n\)</span> matrix. The determinant of <span class="process-math">\(A\text{,}\)</span> denoted as <span class="process-math">\(det(A)\)</span> is a number. If the matrix is a <span class="process-math">\(2 \times 2\)</span> matrix, this number is very easy to find.</div>
-<article class="definition definition-like" id="def-2-x-2-det"><h5 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.1</span><span class="period">.</span>
-</h5>
-<div class="para logical" id="def-2-x-2-det-1-1">
-<div class="para">Let <span class="process-math">\(A = \begin{pmatrix} a &amp; b\\ c &amp; d \end{pmatrix}\text{.}\)</span> Then  <span class="process-math">\(det(A) \equiv ad - cb\text{.}\)</span> The determinant is also often denoted by enclosing the matrix w<span class="process-math">\(i{th}\)</span> two vertical lines. Thus</div>
+<div class="para" id="subsec-cofactors-2-x-2-dets-2">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n \times n\)</span> matrix. The <dfn class="terminology">determinant</dfn> of <span class="process-math">\(A\text{,}\)</span> denoted as <span class="process-math">\(\det (A)\)</span> is a number. If the matrix is a <span class="process-math">\(2 \times 2\)</span> matrix, this number is very easy to find.</div>
+<article class="definition definition-like" id="def-2-x-2-det"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Determinant of a <span class="process-math">\(2 \times 2\)</span> Matrix.</span>
+</h4> <div class="para logical" id="def-2-x-2-det-2-1">
+<div class="para">Let</div>
 <div class="displaymath process-math">
 \begin{equation*}
-det \begin{pmatrix} a &amp; b\\ c &amp; d \end{pmatrix} = \begin{vmatrix} a &amp; b\\ c &amp; d \end{vmatrix} .
+A = \begin{pmatrix} a &amp; b\\ c &amp; d \end{pmatrix}\text{.}
 \end{equation*}
 </div>
-</div></article><details id="subsubsec-Cofactors-2-x-2-Dets-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+<div class="para">Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det (A) \equiv ad - cb\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="def-2-x-2-det-2-2">
+<div class="para">The determinant is also often denoted by enclosing the matrix with two vertical lines. Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det \begin{pmatrix} a &amp; b\\ c &amp; d \end{pmatrix} = \begin{vmatrix} a &amp; b\\ c &amp; d \end{vmatrix} .
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="subsec-cofactors-2-x-2-dets-4"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.2</span><span class="period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para" id="subsubsec-Cofactors-2-x-2-Dets-4-1">Find <span class="process-math">\(det\begin{pmatrix} 2 &amp; 4\\ -1 &amp; 6 \end{pmatrix}\text{.}\)</span>
-</div> <div class="para" id="subsubsec-Cofactors-2-x-2-Dets-4-2">From the definition this is just <span class="process-math">\((2)(6) - (-1)(4) = 16\text{.}\)</span>
-</div></article></details><div class="para" id="subsubsec-Cofactors-2-x-2-Dets-5">Having defined what is meant by the determinant of a <span class="process-math">\(2 \times 2\)</span> matrix, what about a <span class="process-math">\(3 \times 3\)</span> matrix?</div>
-<article class="definition definition-like" id="def-matrix-minor"><h5 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.3</span><span class="period">.</span>
-</h5> <div class="para" id="def-matrix-minor-2-1">Suppose <span class="process-math">\(A\)</span> is a <span class="process-math">\(3 \times 3\)</span> matrix. The <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">minor</dfn>, denoted as <span class="process-math">\(minor(A)_{ij}\)</span> , is the determinant of the <span class="process-math">\(2\times 2\)</span> matrix which results from deleting the <span class="process-math">\(i^{th}\)</span> row and the <span class="process-math">\(j^{th}\)</span> column.</div></article><details id="subsubsec-Cofactors-2-x-2-Dets-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+</h4>
+<div class="para" id="subsec-cofactors-2-x-2-dets-4-1-1">Find <span class="process-math">\(\det \begin{pmatrix} 2 &amp; 4\\ -1 &amp; 6 \end{pmatrix}\text{.}\)</span>
+</div>
+<div class="solutions"><details id="subsec-cofactors-2-x-2-dets-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-cofactors-2-x-2-dets-4-2-1">
+<div class="para">From the definition this is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(2)(6) - (-1)(4) = 16\text{.}
+\end{equation*}
+</div>
+</div></div></details></div></article><div class="para" id="subsec-cofactors-2-x-2-dets-5">Having defined what is meant by the determinant of a <span class="process-math">\(2 \times 2\)</span> matrix, what about a <span class="process-math">\(3 \times 3\)</span> matrix?</div>
+<article class="definition definition-like" id="def-matrix-minor"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix Minor.</span>
+</h4>  <div class="para" id="def-matrix-minor-3-1">Suppose <span class="process-math">\(A\)</span> is a <span class="process-math">\(3 \times 3\)</span> matrix. The <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">minor</dfn>, denoted as <span class="process-math">\(\text{minor}(A)_{ij}\)</span> or <span class="process-math">\((i,j)\)</span> minor , is the determinant of the <span class="process-math">\(2\times 2\)</span> matrix which results from deleting the <span class="process-math">\(i^{th}\)</span> row and the <span class="process-math">\(j^{th}\)</span> column.</div></article><article class="example example-like" id="subsec-cofactors-2-x-2-dets-7"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.4</span><span class="period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para logical" id="subsubsec-Cofactors-2-x-2-Dets-7-1">
+</h4>
+<div class="para logical" id="subsec-cofactors-2-x-2-dets-7-1">
 <div class="para">Consider the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 4 &amp; 3 &amp; 2\\ 3 &amp; 2 &amp; 1\\ \end{pmatrix}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsubsec-Cofactors-2-x-2-Dets-7-2">
+</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-7-2">
 <div class="para">The (1,2) minor is the determinant of the <span class="process-math">\(2 \times 2\)</span> matrix which results when you delete the first row and the second column. This minor is therefore</div>
 <div class="displaymath process-math">
 \begin{equation*}
-det\begin{pmatrix} 4 &amp; 2\\ 3 &amp; 1\\ \end{pmatrix} = (4)(1) - (3)(2) = -2.
+\det\begin{pmatrix} 4 &amp; 2\\ 
+3 &amp; 1\end{pmatrix} = (4)(1) - (3)(2) = -2.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsubsec-Cofactors-2-x-2-Dets-7-3">
+</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-7-3">
 <div class="para">The (2,3) minor is the determinant of the <span class="process-math">\(2 \times 2\)</span> matrix which results when you delete the second row and the third column. This minor is therefore</div>
 <div class="displaymath process-math">
 \begin{equation*}
-det\begin{pmatrix} 1 &amp; 2\\ 3 &amp; 2\\ \end{pmatrix} = (1)(2) - (3)(2) = -4.
+\det\begin{pmatrix} 1 &amp; 2\\ 
+3 &amp; 2\end{pmatrix} = (1)(2) - (3)(2) = -4.
 \end{equation*}
 </div>
-</div></article></details><article class="definition definition-like" id="def-matrix-cofactor"><h5 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.5</span><span class="period">.</span>
-</h5> <div class="para" id="def-matrix-cofactor-2-1">Suppose <span class="process-math">\(A\)</span> is a <span class="process-math">\(3 \times 3\)</span> matrix. The <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">cofactor</dfn> is defined to be <span class="process-math">\((-1)^{i+j} \times (ij^{th}\)</span> minor). In words, you multiply <span class="process-math">\((-1)^(i+j)\)</span> times the <span class="process-math">\(ij^{th}\)</span> minor to get the <span class="process-math">\(ij^{th}\)</span> cofactor. The cofactors of a matrix are so important that special notation is appropriate when referring to them. The <span class="process-math">\(ij^{th}\)</span> cofactor of a matrix <span class="process-math">\(A\)</span> will be denoted by <span class="process-math">\(cof(A)_{ij}\)</span> . It is also convenient to refer to the cofactor of an entry of a matrix as follows. For ai j an entry of the matrix, its cofactor is just <span class="process-math">\(cof(A)_{ij}\)</span> . Thus the cofactor of the <span class="process-math">\(ij^{th}\)</span> entry is just the <span class="process-math">\(ij^{th}\)</span> cofactor.</div></article><details id="subsubsec-Cofactors-2-x-2-Dets-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+</div></article><article class="definition definition-like" id="def-ij-cofactor"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.5</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(ij^{th}\)</span> Cofactor.</span>
+</h4>  <div class="para" id="def-ij-cofactor-3-1">Suppose <span class="process-math">\(A\)</span> is a <span class="process-math">\(3 \times 3\)</span> matrix. The <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">cofactor</dfn> is defined to be <span class="process-math">\((-1)^{i+j} \times (ij^{th}\)</span> minor). In words, you multiply <span class="process-math">\((-1)^{(i+j)}\)</span> times the <span class="process-math">\(ij^{th}\)</span> minor to get the <span class="process-math">\(ij^{th}\)</span> cofactor.</div> <div class="para" id="def-ij-cofactor-3-2">The cofactors of a matrix are so important that special notation is appropriate when referring to them. The <span class="process-math">\(ij^{th}\)</span> cofactor of a matrix <span class="process-math">\(A\)</span> will be denoted by <dfn class="terminology"><span class="process-math">\(\text{cof} (A)_{ij}\)</span></dfn> . It is also convenient to refer to the cofactor of an entry of a matrix as follows. For <span class="process-math">\(a_{ij}\)</span> an entry of the matrix, its cofactor is just <span class="process-math">\(\text{cof} (A)_{ij}\)</span> . Thus the cofactor of the <span class="process-math">\(ij^{th}\)</span> entry is just the <span class="process-math">\(ij^{th}\)</span> cofactor.</div></article><article class="example example-like" id="subsec-cofactors-2-x-2-dets-9"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.6</span><span class="period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para logical" id="subsubsec-Cofactors-2-x-2-Dets-9-1">
+</h4>
+<div class="para logical" id="subsec-cofactors-2-x-2-dets-9-1">
 <div class="para">Consider the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 4 &amp; 3 &amp; 2\\ 3 &amp; 2 &amp; 1\\ \end{pmatrix}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsubsec-Cofactors-2-x-2-Dets-9-2">
+</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-9-2">
 <div class="para">The (1,2) minor is the determinant of the <span class="process-math">\(2 \times 2\)</span> matrix which results when you delete the first row and the second column. This minor is therefore</div>
 <div class="displaymath process-math">
 \begin{equation*}
-det\begin{pmatrix} 4 &amp; 2\\ 3 &amp; 1\\ \end{pmatrix} = (4)(1) - (3)(2) = -2.
+\det \begin{pmatrix}4&amp;2\\
+3&amp;1\end{pmatrix}  = (4)(1) - (3)(2) = -2.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsubsec-Cofactors-2-x-2-Dets-9-3">
+</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-9-3">
 <div class="para">It follows</div>
 <div class="displaymath process-math">
 \begin{equation*}
-cof(A)_{12} = (-1)^{1+2} det\begin{pmatrix} 4 &amp; 2\\ 3 &amp; 1\\ \end{pmatrix} = (-1)^{1+2} (-2) = 2.
+\text{cof} (A)_{12} = (-1)^{1+2} \det \begin{pmatrix} 4 &amp; 2\\
+3 &amp; 1\end{pmatrix} = (-1)^{1+2} (-2) = 2.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsubsec-Cofactors-2-x-2-Dets-9-4">
+</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-9-4">
 <div class="para">The (2,3) minor is the determinant of the <span class="process-math">\(2 \times 2\)</span> matrix which results when you delete the second row and the third column. This minor is therefore</div>
 <div class="displaymath process-math">
 \begin{equation*}
-det\begin{pmatrix} 1 &amp; 2\\ 3 &amp; 2\\ \end{pmatrix} = (1)(2) - (3)(2) = -4.
+\det \begin{pmatrix} 1 &amp; 2\\ 3 &amp; 2\end{pmatrix} = (1)(2) - (3)(2) = -4.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsubsec-Cofactors-2-x-2-Dets-9-5">
+</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-9-5">
 <div class="para">Therefore,</div>
 <div class="displaymath process-math">
 \begin{equation*}
-cof(A)_{23} = (-1)^{2+3} det\begin{pmatrix} 1 &amp; 2\\ 3 &amp; 2\\ \end{pmatrix} = (-1)^{2+3} (-4) = 4.
+\text{cof} (A)_{23} = (-1)^{2+3} \det \begin{pmatrix} 1 &amp; 2\\ 3 &amp; 2\end{pmatrix} = (-1)^{2+3} (-4) = 4.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsubsec-Cofactors-2-x-2-Dets-9-6">
+</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-9-6">
 <div class="para">Similarly,</div>
 <div class="displaymath process-math">
 \begin{equation*}
-cof(A)_{22} = (-1)^{2+2} det\begin{pmatrix} 1 &amp; 3\\ 3 &amp; 1\\ \end{pmatrix} = -4.
+\text{cof} (A)_{22} = (-1)^{2+2} \det \begin{pmatrix} 1 &amp; 3\\ 3 &amp; 1\\ \end{pmatrix} = -4.
 \end{equation*}
 </div>
-</div></article></details><article class="definition definition-like" id="def-det-of-three-by-three"><h5 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.7</span><span class="period">.</span>
-</h5>
-<div class="para" id="def-det-of-three-by-three-1-1">The determinant of a <span class="process-math">\(3 \times 3\)</span> matrix <span class="process-math">\(A\text{,}\)</span> is obtained by picking a row (column) and taking the product of each entry in that row (column) w<span class="process-math">\(i{th}\)</span> its cofactor and adding these up. This process when applied to the <span class="process-math">\(i^{th}\)</span> row (column) is known as expanding the determinant along the <span class="process-math">\(i^{th}\)</span> row (column).</div></article><details id="subsubsec-Cofactors-2-x-2-Dets-11" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+</div></article><article class="definition definition-like" id="def-expanding-along-row"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Expanding Along a Row or Column.</span>
+</h4> <div class="para" id="def-expanding-along-row-2-1">The determinant of a <span class="process-math">\(3 \times 3\)</span> matrix <span class="process-math">\(A\text{,}\)</span> is obtained by picking a row (column) and taking the product of each entry in that row (column) with its cofactor and adding these up. This process when applied to the <span class="process-math">\(i^{th}\)</span> row (column) is known as <dfn class="terminology">expanding the determinant along the <span class="process-math">\(i^{th}\)</span> row (column)</dfn>.</div></article><article class="example example-like" id="subsec-cofactors-2-x-2-dets-11"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.8</span><span class="period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para logical" id="subsubsec-Cofactors-2-x-2-Dets-11-1">
+</h4>
+<div class="para logical" id="subsec-cofactors-2-x-2-dets-11-1">
 <div class="para">Find the determinant of</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1082,37 +1098,38 @@ A = \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 4 &amp; 3 &amp; 2\\ 3 &amp; 2 &amp; 1\\ 
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\overbrace{1(-1)^{1+1}\begin{vmatrix}3 &amp; 2\\ 2 &amp; 1 \end{vmatrix}}^{cof(A)_{11}} + \overbrace{4(-1)^{2+1}\begin{vmatrix}2 &amp; 3\\ 2 &amp; 1 \end{vmatrix}}^{cof(A)_{21}} + \overbrace{3(-1)^{3+1}\begin{vmatrix}3 &amp; 2\\ 3 &amp; 2 \end{vmatrix}}^{cof(A)_{31}} = 0 .
+\overbrace{1(-1)^{1+1}\begin{vmatrix}3 &amp; 2\\ 2 &amp; 1 \end{vmatrix}}^{\text{cof} (A)_{11}} + \overbrace{4(-1)^{2+1}\begin{vmatrix}2 &amp; 3\\ 2 &amp; 1 \end{vmatrix}}^{\text{cof} (A)_{21}} + \overbrace{3(-1)^{3+1}\begin{vmatrix}3 &amp; 2\\ 3 &amp; 2 \end{vmatrix}}^{\text{cof} (A)_{31}} = 0 .
 \end{equation*}
 </div>
-</div> <div class="para" id="subsubsec-Cofactors-2-x-2-Dets-11-2">You see, we just followed the rule in the above definition. We took the 1 in the first column and multiplied it by its cofactor, the 4 in the first column and multiplied it by its cofactor, and the 3 in the first column and multiplied it by its cofactor. Then we added these numbers together.</div> <div class="para logical" id="subsubsec-Cofactors-2-x-2-Dets-11-3">
+</div> <div class="para" id="subsec-cofactors-2-x-2-dets-11-2">You see, we just followed the rule in the above definition. We took the 1 in the first column and multiplied it by its cofactor, the 4 in the first column and multiplied it by its cofactor, and the 3 in the first column and multiplied it by its cofactor. Then we added these numbers together.</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-11-3">
 <div class="para">You could also expand the determinant along the second row as follows.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\overbrace{4(-1)^{2+1}\begin{vmatrix}2 &amp; 3\\ 2 &amp; 1 \end{vmatrix}}^{cof(A)_{21}} + \overbrace{3(-1)^{2+2}\begin{vmatrix}1 &amp; 3\\ 3 &amp; 1 \end{vmatrix}}^{cof(A)_{22}} + \overbrace{2(-1)^{2+3}\begin{vmatrix}1 &amp; 2\\ 3 &amp; 2 \end{vmatrix}}^{cof(A)_{23}} = 0 .
+\overbrace{4(-1)^{2+1}\begin{vmatrix}2 &amp; 3\\ 2 &amp; 1 \end{vmatrix}}^{\text{cof} (A)_{21}} + \overbrace{3(-1)^{2+2}\begin{vmatrix}1 &amp; 3\\ 3 &amp; 1 \end{vmatrix}}^{\text{cof} (A)_{22}} + \overbrace{2(-1)^{2+3}\begin{vmatrix}1 &amp; 2\\ 3 &amp; 2 \end{vmatrix}}^{\text{cof} (A)_{23}} = 0 .
 \end{equation*}
 </div>
 <div class="para">Observe this gives the same number. You should try expanding along other rows and columns. If you don’t make any mistakes, you will always get the same answer.</div>
-</div></article></details><div class="para" id="subsubsec-Cofactors-2-x-2-Dets-12">What about a <span class="process-math">\(4 \times 4\)</span> matrix? You know now how to find the determinant of a <span class="process-math">\(3 \times 3\)</span> matrix. The pattern is the same.</div>
-<article class="definition definition-like" id="def-det-of-four-by-four"><h5 class="heading">
+</div></article><div class="para" id="subsec-cofactors-2-x-2-dets-12">What about a <span class="process-math">\(4 \times 4\)</span> matrix? You know now how to find the determinant of a <span class="process-math">\(3 \times 3\)</span> matrix. The pattern is the same.</div>
+<article class="definition definition-like" id="def-det-of-four-by-four"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.9</span><span class="period">.</span>
-</h5>
-<div class="para" id="def-det-of-four-by-four-1-1">Suppose A is a <span class="process-math">\(4 \times 4\)</span> matrix. The <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">minor</dfn> is the determinant of the <span class="process-math">\(3 \times 3\)</span> matrix you obtain when you delete the <span class="process-math">\(i^{th}\)</span> row and the <span class="process-math">\(j^{th}\)</span> column. The <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">cofactor</dfn>, <span class="process-math">\(cof(A)\)</span> is defined to be <span class="process-math">\((-1)^{i+j} \times (ij^{th} \text{ minor})\text{.}\)</span> In words, you multiply <span class="process-math">\((-1)^{i+j}\)</span> times the <span class="process-math">\(ij^{th}\)</span> minor to get the <span class="process-math">\(ij^{th}\)</span> cofactor.</div></article><article class="definition definition-like" id="def-expanding-the-determinant"><h5 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.10</span><span class="period">.</span>
-</h5>
-<div class="para" id="def-expanding-the-determinant-1-1">The determinant of a <span class="process-math">\(4 \times 4\)</span> matrix <span class="process-math">\(A\text{,}\)</span> is obtained by picking a row (column) and taking the product of each entry in that row (column) with its cofactor and adding these together. This process when applied to the <span class="process-math">\(i^{th}\)</span> row (column) is known as <em class="emphasis">expanding the determinant along the</em> <span class="process-math">\(i^{th}\)</span> <em class="emphasis">row (column)</em>.</div></article><details id="subsubsec-Cofactors-2-x-2-Dets-15" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+</h4>
+<div class="para" id="def-det-of-four-by-four-1-1">Suppose A is a <span class="process-math">\(4 \times 4\)</span> matrix. The <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">minor</dfn> is the determinant of the <span class="process-math">\(3 \times 3\)</span> matrix you obtain when you delete the <span class="process-math">\(i^{th}\)</span> row and the <span class="process-math">\(j^{th}\)</span> column. The <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">cofactor</dfn>, <span class="process-math">\(\text{cof} (A)\)</span> is defined to be <span class="process-math">\((-1)^{i+j} \times (ij^{th} \text{ minor})\text{.}\)</span> In words, you multiply <span class="process-math">\((-1)^{i+j}\)</span> times the <span class="process-math">\(ij^{th}\)</span> minor to get the <span class="process-math">\(ij^{th}\)</span> cofactor.</div></article><article class="definition definition-like" id="def-laplace-expansion"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Laplace Expansion.</span>
+</h4> <div class="para" id="def-laplace-expansion-2-1">The determinant of a <span class="process-math">\(4 \times 4\)</span> matrix <span class="process-math">\(A\text{,}\)</span> is obtained by expanding along a row (column) just as was done for a <span class="process-math">\(3\times 3\)</span> matrix in <a href="Section11_4.html#def-expanding-along-row" class="xref" data-knowl="./knowl/xref/def-expanding-along-row.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.7: Expanding Along a Row or Column">Definition 11.4.7</a>, except the expanding process must be repeated again for each of the resulting <span class="process-math">\(3\times 3\)</span> matrices to obtain their determinants.</div>
+<div class="para" id="def-laplace-expansion-2-2">This method of evaluating a determinant by expanding along a row or a column can be done for any size square matrix and is called the <em class="emphasis">method of Laplace expansion</em>. The process must be repeated until the resulting matrices are small enough to easily calculate their determinants.</div></article><article class="example example-like" id="subsec-cofactors-2-x-2-dets-15"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.11</span><span class="period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para logical" id="subsubsec-Cofactors-2-x-2-Dets-15-1-1">
-<div class="para">Find <span class="process-math">\(det(A)\)</span> where</div>
+</h4>
+<div class="para logical" id="subsec-cofactors-2-x-2-dets-15-1-1">
+<div class="para">Find <span class="process-math">\(\det (A)\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 5 &amp; 4 &amp; 2 &amp; 3\\ 1 &amp; 3 &amp; 4 &amp; 5\\ 3 &amp; 4 &amp; 3 &amp; 2 \end{pmatrix}.
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="subsubsec-Cofactors-2-x-2-Dets-15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para logical" id="subsubsec-Cofactors-2-x-2-Dets-15-2-1">
-<div class="para">As in the case of a <span class="process-math">\(3 \times 3\)</span> matrix, you can expand this along any row or column. Lets pick the third column. <span class="process-math">\(det (A) =\)</span>
+<div class="solutions"><details id="subsec-cofactors-2-x-2-dets-15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="subsec-cofactors-2-x-2-dets-15-2-1">
+<div class="para">As in the case of a <span class="process-math">\(3 \times 3\)</span> matrix, you can expand this along any row or column. Lets pick the third column. <span class="process-math">\(\det (A) =\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1124,58 +1141,59 @@ A = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 5 &amp; 4 &amp; 2 &amp; 3\\ 1 &a
 4(-1)^{3+3}\begin{vmatrix} 1 &amp; 2 &amp; 4\\ 5 &amp; 4 &amp; 3\\ 3 &amp; 4 &amp; 2 \end{vmatrix} + 3(-1)^{4+3}\begin{vmatrix} 1 &amp; 2 &amp; 4\\ 5 &amp; 4 &amp; 3\\ 1 &amp; 3 &amp; 5 \end{vmatrix} .
 \end{equation*}
 </div>
-</div> <div class="para" id="subsubsec-Cofactors-2-x-2-Dets-15-2-2">Now you know how to expand each of the <span class="process-math">\(3 \times 3\)</span> matrices along a row or a column. If you do so, you will get <span class="process-math">\(-12\)</span> assuming you make no mistakes. You could expand this matrix along any row or any column and assuming you make no mistakes, you will always get the same thing which is defined to be the determinant of the matrix <span class="process-math">\(A\text{.}\)</span> This method of evaluating a determinant by expanding along a row or a column is called the <em class="emphasis">method of Laplace expansion</em>.</div>
-</div></details></div></article></details><div class="para" id="subsubsec-Cofactors-2-x-2-Dets-16">Note that each of the four terms in the example solution above involves three terms consisting of determinants of <span class="process-math">\(2 \times 2\)</span> matrices and each of these will need 2 terms. Therefore, there will be <span class="process-math">\(4 \times 3 \times 2 = 24\)</span> terms to evaluate in order to find the determinant using the method of Laplace expansion. Suppose now you have a <span class="process-math">\(10 \times 10\)</span> matrix and you follow the above pattern for evaluating determinants. By analogy to the above, there will be <span class="process-math">\(10! = 3, 628 , 800\)</span> terms involved in the evaluation of such a determinant by Laplace expansion along a row or column. This is a lot of terms.</div>
-<div class="para" id="subsubsec-Cofactors-2-x-2-Dets-17">In addition to the difficulties just discussed, you should regard the above claim that you always get the same answer by picking any row or column with considerable skepticism. It is incredible and not at all obvious. However, it requires a little effort to establish it. This is done in the Elementary Linear Algebra book chapter 7 on the theory of the determinant.</div>
-<article class="definition definition-like" id="def-cofactor-equals-minor"><h5 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.12</span><span class="period">.</span>
-</h5> <div class="para" id="def-cofactor-equals-minor-2-1">Let <span class="process-math">\(A = (a_{ij})\)</span> be an <span class="process-math">\(n \times n\)</span> matrix and suppose the determinant of a <span class="process-math">\((n - 1) \times (n - 1)\)</span> matrix has been defined. Then a new matrix called the <dfn class="terminology">cofactor matrix</dfn>, <span class="process-math">\(cof (A)\)</span> is defined by <span class="process-math">\(cof (A) = (c_{ij}) \)</span> where to obtain <span class="process-math">\(c_{ij}\)</span> delete the <span class="process-math">\(i^{th}\)</span> row and the <span class="process-math">\(j^{th}\)</span> column of <span class="process-math">\(A\text{,}\)</span> take the determinant of the <span class="process-math">\((n - 1) \times (n - 1)\)</span> matrix which results, (This is called the <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">minor</dfn> of <span class="process-math">\(A\text{.}\)</span> ) and then multiply this number by <span class="process-math">\((-1)^{i+j}\)</span> .</div> <div class="para" id="def-cofactor-equals-minor-2-2">Thus <span class="process-math">\((-1)^{i+j} \times (\text{ the } ij^{th} \text{ minor})\)</span> equals the <span class="process-math">\(ij^{th}\)</span> cofactor. To make the formulas easier to remember, <span class="process-math">\(cof(A)_{ij}\)</span> will denote the <span class="process-math">\(ij^{th}\)</span> entry of the cofactor matrix.</div></article><div class="para" id="subsubsec-Cofactors-2-x-2-Dets-19">With this definition of the cofactor matrix, here is how to define the determinant of an <span class="process-math">\(n \times n\)</span> matrix.</div>
-<article class="definition definition-like" id="def-det-sum-of-cof"><h5 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.13</span><span class="period">.</span><span class="space"> </span><span class="title">Determininant of a Matrix.</span>
-</h5> <div class="para logical" id="def-det-sum-of-cof-2-1">
+</div> <div class="para" id="subsec-cofactors-2-x-2-dets-15-2-2">Now you know how to expand each of the <span class="process-math">\(3 \times 3\)</span> matrices along a row or a column. If you do so, you will get <span class="process-math">\(-12\)</span> assuming you make no mistakes. You could expand this matrix along any row or any column and assuming you make no mistakes, you will always get the same thing which is defined to be the determinant of the matrix <span class="process-math">\(A\text{.}\)</span> .</div>
+</div></details></div></article><div class="para" id="subsec-cofactors-2-x-2-dets-16">Note that each of the four terms in the example solution above involves three terms consisting of determinants of <span class="process-math">\(2 \times 2\)</span> matrices and each of these will need 2 terms. Therefore, there will be <span class="process-math">\(4 \times 3 \times 2 = 24\)</span> terms to evaluate in order to find the determinant using the method of Laplace expansion. Suppose now you have a <span class="process-math">\(10 \times 10\)</span> matrix and you follow the above pattern for evaluating determinants. By analogy to the above, there will be <span class="process-math">\(10! = 3, 628 , 800\)</span> terms involved in the evaluation of such a determinant by Laplace expansion along a row or column. This is a lot of terms.</div>
+<div class="para" id="subsec-cofactors-2-x-2-dets-17">In addition to the difficulties just discussed, you should regard the above claim that you always get the same answer by picking any row or column with considerable skepticism. It is incredible and not at all obvious. However, it requires a little effort to establish it. This is done in the Elementary Linear Algebra book chapter 7 on the theory of the determinant.</div>
+<article class="definition definition-like" id="def-cofactor-equals-minor"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.12</span><span class="period">.</span><span class="space"> </span><span class="title">Cofactor Matrix.</span>
+</h4>  <div class="para" id="def-cofactor-equals-minor-3-1">Let <span class="process-math">\(A = (a_{ij})\)</span> be an <span class="process-math">\(n \times n\)</span> matrix and suppose the determinant of a <span class="process-math">\((n - 1) \times (n - 1)\)</span> matrix has been defined. Then a new matrix called the <dfn class="terminology">cofactor matrix</dfn>, <span class="process-math">\(cof (A)\)</span> is defined by <span class="process-math">\(cof (A) = (c_{ij}) \)</span> where to obtain <span class="process-math">\(c_{ij}\)</span> delete the <span class="process-math">\(i^{th}\)</span> row and the <span class="process-math">\(j^{th}\)</span> column of <span class="process-math">\(A\text{,}\)</span> take the determinant of the <span class="process-math">\((n - 1) \times (n - 1)\)</span> matrix which results, (This is called the <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">minor</dfn> of <span class="process-math">\(A\text{.}\)</span> ) and then multiply this number by <span class="process-math">\((-1)^{i+j}\)</span> .</div> <div class="para" id="def-cofactor-equals-minor-3-2">Thus <span class="process-math">\((-1)^{i+j} \times (\text{ the } ij^{th} \text{ minor})\)</span> equals the <span class="process-math">\(ij^{th}\)</span> cofactor. To make the formulas easier to remember, <span class="process-math">\(\text{cof} (A)_{ij}\)</span> will denote the <span class="process-math">\(ij^{th}\)</span> entry of the cofactor matrix.</div></article><div class="para" id="subsec-cofactors-2-x-2-dets-19">With this definition of the cofactor matrix, here is how to define the determinant of an <span class="process-math">\(n \times n\)</span> matrix.</div>
+<article class="definition definition-like" id="def-det-sum-of-cof"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.13</span><span class="period">.</span><span class="space"> </span><span class="title">Determininant as Sum of Cofactor Matrices.</span>
+</h4> <div class="para logical" id="def-det-sum-of-cof-2-1">
 <div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n \times n\)</span> matrix where <span class="process-math">\(n \geq 2\)</span> and suppose the determinant of an <span class="process-math">\((n - 1) \times (n - 1)\)</span> has been defined. Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
-det(A) = \sum_{j = 1}^{n} a_{ij}\, cof(A)_{ij} = \sum_{i = 1}^{n} a_{ij}\, cof(A)_{ij}
+\det (A) = \sum_{j = 1}^{n} a_{ij}\, \text{cof} (A)_{ij} = \sum_{i = 1}^{n} a_{ij}\, \text{cof} (A)_{ij}
 \end{equation*}
 </div>
-</div></article><div class="para" id="subsubsec-Cofactors-2-x-2-Dets-21">The first sum consists of expanding the determinant along the <span class="process-math">\(i^{th}\)</span> row and the second expands the determinant along the <span class="process-math">\(j^{th}\)</span> column.</div>
-<article class="theorem theorem-like" id="thm-expanding-along-row-column"><h5 class="heading">
+</div></article><div class="para" id="subsec-cofactors-2-x-2-dets-21">The first sum consists of expanding the determinant along the <span class="process-math">\(i^{th}\)</span> row and the second expands the determinant along the <span class="process-math">\(j^{th}\)</span> column.</div>
+<article class="theorem theorem-like" id="thm-expanding-along-row-column"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.4.14</span><span class="period">.</span>
-</h5>
-<div class="para" id="thm-expanding-along-row-column-1-1">Expanding the <span class="process-math">\(n \times \)</span>n matrix along any row or column always gives the same answer so the above definition is a good definition.</div></article></section><section class="subsubsection" id="subsubsec-det-of-triangular-matrix"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">11.4.1.2</span><span class="space"> </span><span class="title">The Determinant of a Triangular Matrix</span>
 </h4>
-<div class="para" id="subsubsec-det-of-triangular-matrix-2">Notwithstanding the difficulties involved in using the method of Laplace expansion, certain types of matrices are very easy to deal with.</div>
-<article class="definition definition-like" id="def-upper-triangular-matrix"><h5 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.15</span><span class="period">.</span>
-</h5> <div class="para logical" id="def-upper-triangular-matrix-2-1">
-<div class="para">A matrix <span class="process-math">\(M\)</span> , is <dfn class="terminology">upper triangular</dfn> if <span class="process-math">\(M_{ij}= 0\)</span> whenever <span class="process-math">\(i \gt j\text{.}\)</span> Thus such a matrix equals zero below the main diagonal, the entries of the form <span class="process-math">\(M_{ii}\text{,}\)</span> as shown.</div>
+<div class="para" id="thm-expanding-along-row-column-1-1">Expanding the <span class="process-math">\(n \times \)</span>n matrix along any row or column always gives the same answer so the above definition is a good definition.</div></article></section><section class="subsection" id="subsec-det-of-triangular-matrix"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.4.2</span><span class="space"> </span><span class="title">The Determinant of a Triangular Matrix</span>
+</h3>
+<div class="para" id="subsec-det-of-triangular-matrix-2">Notwithstanding the difficulties involved in using the method of Laplace expansion, certain types of matrices are very easy to deal with.</div>
+<article class="definition definition-like" id="def-upper-triangular-matrix"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">Triangular Matrices.</span>
+</h4>  <div class="para logical" id="def-upper-triangular-matrix-3-1">
+<div class="para">A matrix <span class="process-math">\(M\)</span> , is <dfn class="terminology">upper triangular</dfn> if <span class="process-math">\(M_{ij}= 0\)</span> whenever <span class="process-math">\(i \gt j\text{.}\)</span> Thus in such a matrix, every entry below the main diagonal (the entries of the form <span class="process-math">\(M_{ii}\)</span>) equals zero, as shown.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\begin{pmatrix} * &amp; * &amp; \cdots &amp; *\\ 0 &amp; * &amp; \ddots &amp; \vdots\\ \vdots &amp; \ddots &amp; \ddots &amp; *\\ 0 &amp; \cdots &amp; 0 &amp; * \end{pmatrix}
+M = \begin{pmatrix} M_{11} &amp; * &amp; \cdots &amp; *\\ 0 &amp; M_{22} &amp; \ddots &amp; \vdots\\ \vdots &amp; \ddots &amp; \ddots &amp; *\\ 0 &amp; \cdots &amp; 0 &amp; M_{nn} \end{pmatrix}
 \end{equation*}
 </div>
 <div class="para">A <dfn class="terminology">lower triangular</dfn> matrix is defined similarly as a matrix for which all entries above the main diagonal are equal to zero.</div>
-</div></article><div class="para" id="subsubsec-det-of-triangular-matrix-4">You should verify the following using the above theorem on Laplace expansion.</div>
-<article class="corollary theorem-like" id="cor-det-of-triangular-matrix"><h5 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">11.4.16</span><span class="period">.</span>
-</h5>
-<div class="para" id="cor-det-of-triangular-matrix-1-1">Let <span class="process-math">\(M\)</span> be an upper (lower) triangular matrix. Then <span class="process-math">\(det(M)\)</span> is obtained by taking the product of the entries on the main diagonal.</div></article><details id="subsubsec-det-of-triangular-matrix-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+</div></article><div class="para" id="subsec-det-of-triangular-matrix-4">You should verify the following using the above theorem on Laplace expansion.</div>
+<article class="corollary theorem-like" id="cor-det-of-triangular-matrix"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">11.4.16</span><span class="period">.</span><span class="space"> </span><span class="title">Determinant of a Triangular Matrix.</span>
+</h4>
+<div class="para" id="cor-det-of-triangular-matrix-2-1">Let <span class="process-math">\(M\)</span> be an upper (lower) triangular matrix. Then <span class="process-math">\(\det (M)\)</span> is obtained by taking the product of the entries on the main diagonal.</div></article><article class="example example-like" id="subsec-det-of-triangular-matrix-6"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.17</span><span class="period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para logical" id="subsubsec-det-of-triangular-matrix-6-1-1">
+</h4>
+<div class="para logical" id="subsec-det-of-triangular-matrix-6-1-1">
 <div class="para">Let</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 77\\ 0 &amp; 2 &amp; 6 &amp; 7\\ 0 &amp; 0 &amp; 3 &amp; 33.7\\ 0 &amp; 0 &amp; 0 &amp; -1 \end{pmatrix}
 \end{equation*}
 </div>
-<div class="para">Find <span class="process-math">\(det(A).\)</span>
+<div class="para">Find <span class="process-math">\(\det (A).\)</span>
 </div>
 </div>
 <div class="solutions">
-<details id="subsubsec-det-of-triangular-matrix-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="subsubsec-det-of-triangular-matrix-6-2-1">From the above corollary, it suffices to take the product of the diagonal elements. Thus <span class="process-math">\(det(A) =1 \times 2 \times 3 \times (-1) = -6.\)</span>
-</div></div></details><details id="subsubsec-det-of-triangular-matrix-6-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsubsec-det-of-triangular-matrix-6-3-1">
+<details id="subsec-det-of-triangular-matrix-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="subsec-det-of-triangular-matrix-6-2-1">From the above corollary, it suffices to take the product of the diagonal elements. Thus <span class="process-math">\(\det (A) =1 \times 2 \times 3 \times (-1) = -6.\)</span>
+</div></div></details><details id="subsec-det-of-triangular-matrix-6-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-det-of-triangular-matrix-6-3-1">
 <div class="para">Without using the corollary, you could expand along the first column. This gives</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1212,62 +1230,66 @@ A = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 77\\ 0 &amp; 2 &amp; 6 &amp; 7\\ 0 &
 </div>
 <div class="para">which is just the product of the entries down the main diagonal of the original matrix.</div>
 </div></div></details>
-</div></article></details></section><section class="subsubsection" id="subsubsec-props-of-dets"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">11.4.1.3</span><span class="space"> </span><span class="title">Properties of Determinants</span>
-</h4>
-<div class="para" id="subsubsec-props-of-dets-2">There are many properties satisfied by determinants. Some of these properties have to do with row operations. Recall the row operations: <a href="s-Systems-of-Equations.html#def-row-operations" class="xref" data-knowl="./knowl/xref/def-row-operations.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.1.6: Row Operations">Definition 11.1.6</a>
+</div></article></section><section class="subsection" id="subsec-props-of-dets"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.4.3</span><span class="space"> </span><span class="title">Properties of Determinants</span>
+</h3>
+<div class="para" id="subsec-props-of-dets-2">There are many properties satisfied by determinants. Some of these properties have to do with row operations. Recall the row operations: <a href="s-Systems-of-Equations.html#def-row-operations" class="xref" data-knowl="./knowl/xref/def-row-operations.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.1.6: Row Operations">Definition 11.1.6</a>
 </div>
-<article class="theorem theorem-like" id="thm-switch-rows-neg-det"><h5 class="heading">
+<article class="theorem theorem-like" id="thm-switch-rows-neg-det"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.4.18</span><span class="period">.</span><span class="space"> </span><span class="title">Switching two rows negates the determinant.</span>
-</h5>
-<div class="para" id="thm-switch-rows-neg-det-2-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n \times n\)</span> matrix and let <span class="process-math">\(A_1\)</span> be a matrix which results from switching two rows of <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(det(A) = -det(A_1)\)</span> . Also, if one row of <span class="process-math">\(A\)</span> is a multiple of another row of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(det(A) = 0\text{.}\)</span>
-</div></article><details id="subsubsec-props-of-dets-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+</h4>
+<div class="para" id="thm-switch-rows-neg-det-2-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n \times n\)</span> matrix and let <span class="process-math">\(A_1\)</span> be a matrix which results from switching two rows of <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(\det (A) = -\det (A_1)\)</span> . Also, if one row of <span class="process-math">\(A\)</span> is a multiple of another row of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(\det (A) = 0\text{.}\)</span>
+</div></article><article class="example example-like" id="subsec-props-of-dets-4"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.19</span><span class="period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para" id="subsubsec-props-of-dets-4-1-1">Let <span class="process-math">\(A = \begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix} \text{,}\)</span> and let <span class="process-math">\(A_1 = \begin{pmatrix}3 &amp; 4\\ 1 &amp; 2\end{pmatrix} \text{.}\)</span>
-</div> <div class="para" id="subsubsec-props-of-dets-4-1-2">Then <span class="process-math">\(det(A) = -2\)</span> and <span class="process-math">\(det(A_1) = 2.\)</span>
-</div></article></details><article class="theorem theorem-like" id="thm-det-mult-mat-by-scalar"><h5 class="heading">
+</h4>
+<div class="para" id="subsec-props-of-dets-4-1-1">Let <span class="process-math">\(A = \begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix} \text{,}\)</span> and let <span class="process-math">\(A_1 = \begin{pmatrix}3 &amp; 4\\ 1 &amp; 2\end{pmatrix} \text{.}\)</span>
+</div> <div class="para" id="subsec-props-of-dets-4-1-2">Then <span class="process-math">\(\det (A) = -2\)</span> and <span class="process-math">\(\det (A_1) = 2.\)</span>
+</div></article><article class="theorem theorem-like" id="thm-det-mult-mat-by-scalar"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.4.20</span><span class="period">.</span><span class="space"> </span><span class="title">Multiplying a matrix by a scalar, also multiplies the determinant.</span>
-</h5>
-<div class="para" id="thm-det-mult-mat-by-scalar-2-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n \times n\)</span> matrix and let <span class="process-math">\(A_1\)</span> be a matrix which results from multiplying some row of <span class="process-math">\(A\)</span> by a scalar <span class="process-math">\(c\text{.}\)</span> Then <span class="process-math">\(c \,det(A) = det(A_1)\text{.}\)</span>
-</div></article><details id="subsubsec-props-of-dets-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+</h4>
+<div class="para" id="thm-det-mult-mat-by-scalar-2-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n \times n\)</span> matrix and let <span class="process-math">\(A_1\)</span> be a matrix which results from multiplying some row of <span class="process-math">\(A\)</span> by a scalar <span class="process-math">\(c\text{.}\)</span> Then <span class="process-math">\(c \,\det (A) = \det (A_1)\text{.}\)</span>
+</div></article><article class="example example-like" id="subsec-props-of-dets-6"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.21</span><span class="period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para" id="subsubsec-props-of-dets-6-1-1">Let <span class="process-math">\(A = \begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix} \text{,}\)</span> <span class="process-math">\(A_1 = \begin{pmatrix}2 &amp; 4\\ 3 &amp; 4\end{pmatrix} \text{.}\)</span>
-</div> <div class="para" id="subsubsec-props-of-dets-6-1-2">The first row of <span class="process-math">\(A_1\)</span> is 2 times the first row of <span class="process-math">\(A\text{.}\)</span>
-</div> <div class="para" id="subsubsec-props-of-dets-6-1-3">
-<span class="process-math">\(Det(A) = -2\)</span> and <span class="process-math">\(det(A_1) = -4 = 2 \cdot -2 = 2 \, det(A).\)</span>
-</div></article></details><article class="theorem theorem-like" id="thm-row-ops-dont-change-det"><h5 class="heading">
+</h4>
+<div class="para" id="subsec-props-of-dets-6-1-1">Let <span class="process-math">\(A = \begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix} \text{,}\)</span> <span class="process-math">\(A_1 = \begin{pmatrix}2 &amp; 4\\ 3 &amp; 4\end{pmatrix} \text{.}\)</span>
+</div> <div class="para" id="subsec-props-of-dets-6-1-2">The first row of <span class="process-math">\(A_1\)</span> is 2 times the first row of <span class="process-math">\(A\text{.}\)</span>
+</div> <div class="para" id="subsec-props-of-dets-6-1-3">
+<span class="process-math">\(\det (A) = -2\)</span> and <span class="process-math">\(\det (A_1) = -4 = 2 \cdot -2 = 2 \, \det (A).\)</span>
+</div></article><article class="theorem theorem-like" id="thm-row-ops-dont-change-det"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.4.22</span><span class="period">.</span><span class="space"> </span><span class="title">Row operation 3 doesn’t change the determinant.</span>
-</h5>
-<div class="para" id="thm-row-ops-dont-change-det-2-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n \times n\)</span> matrix and let <span class="process-math">\(A_1\)</span> be a matrix which results from applying row operation 3. That is, you replace some row by a multiple of another row added to itself. Then <span class="process-math">\(det (A) = det (A_1 ).\)</span>
-</div></article><details id="subsubsec-props-of-dets-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+</h4>
+<div class="para" id="thm-row-ops-dont-change-det-2-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n \times n\)</span> matrix and let <span class="process-math">\(A_1\)</span> be a matrix which results from applying row operation 3. That is, you replace some row by a multiple of another row added to itself. Then <span class="process-math">\(\det (A) = \det (A_1 ).\)</span>
+</div></article><article class="example example-like" id="subsec-props-of-dets-8"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.23</span><span class="period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para" id="subsubsec-props-of-dets-8-1-1">Let <span class="process-math">\(A = \begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix} \)</span> and let <span class="process-math">\(A_1 = \begin{pmatrix}1 &amp; 2\\ 4 &amp; 6\end{pmatrix} \text{.}\)</span> Thus the second row of <span class="process-math">\(A_1\)</span> is one times the first row added to the second row.</div> <div class="para" id="subsubsec-props-of-dets-8-1-2">
-<span class="process-math">\(det(A) = -2\)</span> and <span class="process-math">\(det(A_1) = -2.\)</span>
-</div></article></details><article class="theorem theorem-like" id="thm-rows-cols-same-effect"><h5 class="heading">
+</h4>
+<div class="para" id="subsec-props-of-dets-8-1-1">Let <span class="process-math">\(A = \begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix} \)</span> and let <span class="process-math">\(A_1 = \begin{pmatrix}1 &amp; 2\\ 4 &amp; 6\end{pmatrix} \text{.}\)</span> Thus the second row of <span class="process-math">\(A_1\)</span> is one times the first row added to the second row.</div> <div class="para" id="subsec-props-of-dets-8-1-2">
+<span class="process-math">\(\det (A) = -2\)</span> and <span class="process-math">\(\det (A_1) = -2.\)</span>
+</div></article><article class="theorem theorem-like" id="thm-rows-cols-same-effect"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.4.24</span><span class="period">.</span><span class="space"> </span><span class="title">Columns have the same effect.</span>
-</h5>
-<div class="para" id="thm-rows-cols-same-effect-2-1">In <a href="Section11_4.html#thm-switch-rows-neg-det" class="xref" data-knowl="./knowl/xref/thm-switch-rows-neg-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.18: Switching two rows negates the determinant">Theorem 11.4.18</a> - <a href="Section11_4.html#thm-row-ops-dont-change-det" class="xref" data-knowl="./knowl/xref/thm-row-ops-dont-change-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.22: Row operation 3 doesn’t change the determinant">Theorem 11.4.22</a> you can replace the word "row" with the word "column".</div></article><div class="para" id="subsubsec-props-of-dets-10">There are two other major properties of determinants which do not involve row operations.</div>
-<article class="theorem theorem-like" id="thm-prod-of-dets"><h5 class="heading">
+</h4>
+<div class="para" id="thm-rows-cols-same-effect-2-1">In <a href="Section11_4.html#thm-switch-rows-neg-det" class="xref" data-knowl="./knowl/xref/thm-switch-rows-neg-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.18: Switching two rows negates the determinant">Theorem 11.4.18</a> - <a href="Section11_4.html#thm-row-ops-dont-change-det" class="xref" data-knowl="./knowl/xref/thm-row-ops-dont-change-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.22: Row operation 3 doesn’t change the determinant">Theorem 11.4.22</a> you can replace the word "row" with the word "column".</div></article><div class="para" id="subsec-props-of-dets-10">There are two other major properties of determinants which do not involve row operations.</div>
+<article class="theorem theorem-like" id="thm-prod-of-dets"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.4.25</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant of a matrix product is the product of the determinants.</span>
-</h5>
+</h4>
 <div class="para" id="thm-prod-of-dets-2-1"><div class="para logical" id="thm-prod-of-dets-2-1-1">
 <div class="para">Let <span class="process-math">\(A \)</span> and <span class="process-math">\(B \)</span> be two <span class="process-math">\(n\times n\)</span> matrices, then</div>
 <div class="displaymath process-math">
 \begin{equation*}
-det(AB) = det(A) det(B).
+\det (AB) = \det (A) \det (B).
 \end{equation*}
 </div>
-</div></div></article><details id="subsubsec-props-of-dets-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+</div></div></article><article class="example example-like" id="subsec-props-of-dets-12"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.26</span><span class="period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para logical" id="subsubsec-props-of-dets-12-1-1">
-<div class="para">Compare <span class="process-math">\(det(AB)\)</span> and <span class="process-math">\(det(A) det(B)\)</span> for</div>
+</h4>
+<div class="para logical" id="subsec-props-of-dets-12-1-1">
+<div class="para">Compare <span class="process-math">\(\det (AB)\)</span> and <span class="process-math">\(\det (A) \det (B)\)</span> for</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A = \begin{pmatrix}1 &amp; 2\\ -3&amp; 2\end{pmatrix}, B = \begin{pmatrix}3 &amp; 2\\ 4&amp; 1\end{pmatrix}
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="subsubsec-props-of-dets-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsubsec-props-of-dets-12-2-1">
+<div class="solutions"><details id="subsec-props-of-dets-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-props-of-dets-12-2-1">
 <div class="para">First</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1277,64 +1299,66 @@ AB = \begin{pmatrix}1 &amp; 2\\ -3&amp; 2\end{pmatrix}\begin{pmatrix}3 &amp; 2\\
 <div class="para">and so</div>
 <div class="displaymath process-math">
 \begin{equation*}
-det(AB) = det\begin{pmatrix}11 &amp; 4\\ -1 &amp; -4\end{pmatrix} = -40.
+\det (AB) = \det \begin{pmatrix}11 &amp; 4\\ -1 &amp; -4\end{pmatrix} = -40.
 \end{equation*}
 </div>
 <div class="para">Now</div>
 <div class="displaymath process-math">
 \begin{equation*}
-det(A) = det\begin{pmatrix}1 &amp; 2\\ -3 &amp; 2\end{pmatrix} = 8
+\det (A) = det\begin{pmatrix}1 &amp; 2\\ -3 &amp; 2\end{pmatrix} = 8
 \end{equation*}
 </div>
 <div class="para">and</div>
 <div class="displaymath process-math">
 \begin{equation*}
-det(b) = det\begin{pmatrix}3 &amp; 2\\ 4 &amp; 1\end{pmatrix} = -5.
+\det ( b) = det\begin{pmatrix}3 &amp; 2\\ 4 &amp; 1\end{pmatrix} = -5.
 \end{equation*}
 </div>
-<div class="para">Thus <span class="process-math">\(det(A)det(B) = 8 \times (-5) = -40.\)</span>
+<div class="para">Thus <span class="process-math">\(\det (A)\det (B) = 8 \times (-5) = -40.\)</span>
 </div>
-</div></div></details></div></article></details><article class="theorem theorem-like" id="thm-det-of-transp"><h5 class="heading">
+</div></div></details></div></article><article class="theorem theorem-like" id="thm-det-of-transp"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.4.27</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant of a matrix is the determinant of its transpose.</span>
-</h5>
+</h4>
 <div class="para" id="thm-det-of-transp-2-1"><div class="para logical" id="thm-det-of-transp-2-1-1">
 <div class="para">Let <span class="process-math">\(A \)</span> be an <span class="process-math">\(n\times n\)</span> matrix, then</div>
 <div class="displaymath process-math">
 \begin{equation*}
-det(A) = det(A^T)
+\det (A) = \det (A^T)
 \end{equation*}
 </div>
-</div></div></article><details id="subsubsec-props-of-dets-14" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+</div></div></article><article class="example example-like" id="subsec-props-of-dets-14"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.28</span><span class="period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para logical" id="subsubsec-props-of-dets-14-1-1">
-<div class="para">Compare <span class="process-math">\(det(A)\)</span> and <span class="process-math">\(det(A^T)\)</span> for</div>
+</h4>
+<div class="para logical" id="subsec-props-of-dets-14-1-1">
+<div class="para">Compare <span class="process-math">\(\det (A)\)</span> and <span class="process-math">\(\det (A^T)\)</span> for</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A = \begin{pmatrix}1 &amp; 2\\ -3&amp; 2\end{pmatrix}.
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="subsubsec-props-of-dets-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsubsec-props-of-dets-14-2-1">
+<div class="solutions"><details id="subsec-props-of-dets-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-props-of-dets-14-2-1">
 <div class="displaymath process-math">
 \begin{equation*}
-det(A) = det\begin{pmatrix}1 &amp; 2\\ -3 &amp; 2\end{pmatrix} = (1\cdot 2) - (-3 \cdot 2) = 8
+\det (A) = det\begin{pmatrix}1 &amp; 2\\ -3 &amp; 2\end{pmatrix} = (1\cdot 2) - (-3 \cdot 2) = 8
 \end{equation*}
 </div>
 <div class="para">and</div>
 <div class="displaymath process-math">
 \begin{equation*}
-det(A^t) = det\begin{pmatrix}1 &amp; -3\\ 2 &amp; 2\end{pmatrix} = (1\cdot 2) - (2 \cdot -3) = 8.
+\det (A^t) = det\begin{pmatrix}1 &amp; -3\\ 2 &amp; 2\end{pmatrix} = (1\cdot 2) - (2 \cdot -3) = 8.
 \end{equation*}
 </div>
-<div class="para">Thus <span class="process-math">\(det(A)= det(A^T).\)</span>
+<div class="para">Thus <span class="process-math">\(\det (A)= \det (A^T).\)</span>
 </div>
-</div></div></details></div></article></details></section><section class="subsubsection" id="subsubsec-det-row-ops"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">11.4.1.4</span><span class="space"> </span><span class="title">Finding Determinants Using Row Operations</span>
-</h4>
-<div class="para" id="subsubsec-det-row-ops-2">From the above section, <a href="Section11_4.html#thm-row-ops-dont-change-det" class="xref" data-knowl="./knowl/xref/thm-row-ops-dont-change-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.22: Row operation 3 doesn’t change the determinant">Theorem 11.4.22</a> - <a href="Section11_4.html#thm-rows-cols-same-effect" class="xref" data-knowl="./knowl/xref/thm-rows-cols-same-effect.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.24: Columns have the same effect">Theorem 11.4.24</a>, can be used to find determinants using row operations. As pointed out above, the method of Laplace expansion will not be practical for any matrix of large size. Here is an example in which all the row operations are used.</div>
-<details id="subsubsec-det-row-ops-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+</div></div></details></div></article></section><section class="subsection" id="subsec-det-row-ops"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.4.4</span><span class="space"> </span><span class="title">Finding Determinants Using Row Operations</span>
+</h3>
+<div class="para" id="subsec-det-row-ops-2">From the above section, <a href="Section11_4.html#thm-row-ops-dont-change-det" class="xref" data-knowl="./knowl/xref/thm-row-ops-dont-change-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.22: Row operation 3 doesn’t change the determinant">Theorem 11.4.22</a> - <a href="Section11_4.html#thm-rows-cols-same-effect" class="xref" data-knowl="./knowl/xref/thm-rows-cols-same-effect.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.24: Columns have the same effect">Theorem 11.4.24</a>, can be used to find determinants using row operations. As pointed out above, the method of Laplace expansion will not be practical for any matrix of large size. Here is an example in which all the row operations are used.</div>
+<article class="example example-like" id="subsec-det-row-ops-3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.29</span><span class="period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para logical" id="subsubsec-det-row-ops-3-1-1">
+</h4>
+<div class="para logical" id="subsec-det-row-ops-3-1-1">
 <div class="para">Find the determinant of the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1342,20 +1366,20 @@ A = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 5 &amp; 1 &amp; 2 &amp; 3\\ 4 &a
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="subsubsec-det-row-ops-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsubsec-det-row-ops-3-2-1">
+<div class="solutions"><details id="subsec-det-row-ops-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-det-row-ops-3-2-1">
 <div class="para">Replace the second row by (-5) times the first row added to it. Then replace the third row by (-4) times the first row added to it. Finally, replace the fourth row by (-2) times the first row added to it. This yields the matrix</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-row-ops-dont-change-det.html ./knowl/xref/thm-row-ops-dont-change-det.html ./knowl/xref/thm-det-mult-mat-by-scalar.html ./knowl/xref/thm-row-ops-dont-change-det.html">
 \begin{equation*}
 B = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 0 &amp; -9 &amp; -13 &amp; -17\\ 0 &amp; -3 &amp; -8 &amp; -13\\ 0 &amp; -2 &amp; -10 &amp; -3 \end{pmatrix}
 \end{equation*}
 </div>
-<div class="para">and from <a href="Section11_4.html#thm-row-ops-dont-change-det" class="xref" data-knowl="./knowl/xref/thm-row-ops-dont-change-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.22: Row operation 3 doesn’t change the determinant">Theorem 11.4.22</a> it has the same determinant as <span class="process-math">\(A\text{.}\)</span> Now using other row operations,<span class="process-math">\(det(B) = \frac{-1}{3} det(C)\)</span> where</div>
+<div class="para">and from <a href="Section11_4.html#thm-row-ops-dont-change-det" class="xref" data-knowl="./knowl/xref/thm-row-ops-dont-change-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.22: Row operation 3 doesn’t change the determinant">Theorem 11.4.22</a> it has the same determinant as <span class="process-math">\(A\text{.}\)</span> Now using other row operations,<span class="process-math">\(\det (B) = \frac{-1}{3} \det (C)\)</span> where</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-row-ops-dont-change-det.html ./knowl/xref/thm-row-ops-dont-change-det.html ./knowl/xref/thm-det-mult-mat-by-scalar.html ./knowl/xref/thm-row-ops-dont-change-det.html">
 \begin{equation*}
 C = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 0 &amp; 0 &amp; 11 &amp; 22\\ 0 &amp; -3 &amp; -8 &amp; -13\\ 0 &amp; 6 &amp; 30 &amp; 9 \end{pmatrix}
 \end{equation*}
 </div>
-<div class="para">The second row of <span class="process-math">\(B\)</span> was replaced by <span class="process-math">\((-3)\)</span> times the third row added to the second row. By <a href="Section11_4.html#thm-row-ops-dont-change-det" class="xref" data-knowl="./knowl/xref/thm-row-ops-dont-change-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.22: Row operation 3 doesn’t change the determinant">Theorem 11.4.22</a> this didn’t change the value of the determinant. Then the last row was multiplied by <span class="process-math">\((-3)\)</span> . By <a href="Section11_4.html#thm-det-mult-mat-by-scalar" class="xref" data-knowl="./knowl/xref/thm-det-mult-mat-by-scalar.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.20: Multiplying a matrix by a scalar, also multiplies the determinant">Theorem 11.4.20</a> the resulting matrix has a determinant which is <span class="process-math">\((-3)\)</span> times the determinant of the un-multiplied matrix. Therefore, we multiplied by <span class="process-math">\(\frac{-1}{3}\)</span> to retain the correct value. Now replace the last row with 2 times the third added to it. This does not change the value of the determinant by <a href="Section11_4.html#thm-row-ops-dont-change-det" class="xref" data-knowl="./knowl/xref/thm-row-ops-dont-change-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.22: Row operation 3 doesn’t change the determinant">Theorem 11.4.22</a>. Finally switch the third and second rows. This causes the determinant to be multiplied by<span class="process-math">\((-1)\)</span> . Thus <span class="process-math">\(det (C) = - det (D)\)</span> where</div>
+<div class="para">The second row of <span class="process-math">\(B\)</span> was replaced by <span class="process-math">\((-3)\)</span> times the third row added to the second row. By <a href="Section11_4.html#thm-row-ops-dont-change-det" class="xref" data-knowl="./knowl/xref/thm-row-ops-dont-change-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.22: Row operation 3 doesn’t change the determinant">Theorem 11.4.22</a> this didn’t change the value of the determinant. Then the last row was multiplied by <span class="process-math">\((-3)\)</span> . By <a href="Section11_4.html#thm-det-mult-mat-by-scalar" class="xref" data-knowl="./knowl/xref/thm-det-mult-mat-by-scalar.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.20: Multiplying a matrix by a scalar, also multiplies the determinant">Theorem 11.4.20</a> the resulting matrix has a determinant which is <span class="process-math">\((-3)\)</span> times the determinant of the un-multiplied matrix. Therefore, we multiplied by <span class="process-math">\(\frac{-1}{3}\)</span> to retain the correct value. Now replace the last row with 2 times the third added to it. This does not change the value of the determinant by <a href="Section11_4.html#thm-row-ops-dont-change-det" class="xref" data-knowl="./knowl/xref/thm-row-ops-dont-change-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.22: Row operation 3 doesn’t change the determinant">Theorem 11.4.22</a>. Finally switch the third and second rows. This causes the determinant to be multiplied by<span class="process-math">\((-1)\)</span> . Thus <span class="process-math">\(\det (C) = - \det (D)\)</span> where</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-row-ops-dont-change-det.html ./knowl/xref/thm-row-ops-dont-change-det.html ./knowl/xref/thm-det-mult-mat-by-scalar.html ./knowl/xref/thm-row-ops-dont-change-det.html">
 \begin{equation*}
 D = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 0 &amp; -3 &amp; -8 &amp; -13\\ 0 &amp; 0 &amp; 11 &amp; 22\\ 0 &amp; 0 &amp; 14 &amp; -17 \end{pmatrix}
@@ -1364,14 +1388,15 @@ D = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 0 &amp; -3 &amp; -8 &amp; -13\\ 
 <div class="para">You could do more row operations or you could note that this can be easily expanded along the first column followed by expanding the <span class="process-math">\(3 \times 3\)</span> matrix which results along its first column. Thus</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-row-ops-dont-change-det.html ./knowl/xref/thm-row-ops-dont-change-det.html ./knowl/xref/thm-det-mult-mat-by-scalar.html ./knowl/xref/thm-row-ops-dont-change-det.html">
 \begin{equation*}
-det(D) = 1(-3) \begin{vmatrix} 11 &amp; 22\\ 14 &amp; -17 \end{vmatrix} = 1485
+\det (D) = 1(-3) \begin{vmatrix} 11 &amp; 22\\ 14 &amp; -17 \end{vmatrix} = 1485
 \end{equation*}
 </div>
-<div class="para">and so <span class="process-math">\(det(C) = -1485\)</span> and <span class="process-math">\(det(A) = det(B) = \frac{-1}{3}(-1485) = 495\)</span>
+<div class="para">and so <span class="process-math">\(\det (C) = -1485\)</span> and <span class="process-math">\(\det (A) = \det (B) = \frac{-1}{3}(-1485) = 495\)</span>
 </div>
-</div></div></details></div></article></details><details id="subsubsec-det-row-ops-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+</div></div></details></div></article><article class="example example-like" id="subsec-det-row-ops-4"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.30</span><span class="period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para logical" id="subsubsec-det-row-ops-4-1-1">
+</h4>
+<div class="para logical" id="subsec-det-row-ops-4-1-1">
 <div class="para">Find the determinant of the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1379,8 +1404,8 @@ det(D) = 1(-3) \begin{vmatrix} 11 &amp; 22\\ 14 &amp; -17 \end{vmatrix} = 1485
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="subsubsec-det-row-ops-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para logical" id="subsubsec-det-row-ops-4-2-1">
+<div class="solutions"><details id="subsec-det-row-ops-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="subsec-det-row-ops-4-2-1">
 <div class="para">Replace the second row by <span class="process-math">\((-1)\)</span> times the first row added to it. Next take <span class="process-math">\(-2\)</span> times the first row and add to the third and finally take <span class="process-math">\(-3\)</span> times the first row and add to the last row. This yields</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-row-ops-dont-change-det.html ./knowl/xref/thm-rows-cols-same-effect.html ./knowl/xref/thm-row-ops-dont-change-det.html">
 \begin{equation*}
@@ -1402,120 +1427,118 @@ det(D) = 1(-3) \begin{vmatrix} 11 &amp; 22\\ 14 &amp; -17 \end{vmatrix} = 1485
 <div class="para">which by <a href="Section11_4.html#thm-row-ops-dont-change-det" class="xref" data-knowl="./knowl/xref/thm-row-ops-dont-change-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.22: Row operation 3 doesn’t change the determinant">Theorem 11.4.22</a> has the same determinant as the original matrix. Let’s expand it now along the first column. This yields the following for the determinant of the original matrix.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-row-ops-dont-change-det.html ./knowl/xref/thm-rows-cols-same-effect.html ./knowl/xref/thm-row-ops-dont-change-det.html">
 \begin{equation*}
-det \begin{pmatrix} 0 &amp; -1 &amp; -1\\ -8 &amp; -4 &amp; 1\\ 10 &amp; -8 &amp; -4\end{pmatrix}
+\det \begin{pmatrix} 0 &amp; -1 &amp; -1\\ -8 &amp; -4 &amp; 1\\ 10 &amp; -8 &amp; -4\end{pmatrix}
 \end{equation*}
 </div>
 <div class="para">which equals</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-row-ops-dont-change-det.html ./knowl/xref/thm-rows-cols-same-effect.html ./knowl/xref/thm-row-ops-dont-change-det.html">
 \begin{equation*}
-8 det \begin{pmatrix}-1 &amp; -1\\ -8 &amp; -4\end{pmatrix} + 10 det \begin{pmatrix}-1 &amp; -1\\ -4 &amp; 1\end{pmatrix} = -82
+8 \det \begin{pmatrix}-1 &amp; -1\\ -8 &amp; -4\end{pmatrix} + 10 \det \begin{pmatrix}-1 &amp; -1\\ -4 &amp; 1\end{pmatrix} = -82
 \end{equation*}
 </div>
-</div> <div class="para" id="subsubsec-det-row-ops-4-2-2">We suggest you do not try to be fancy in using row operations. That is, stick mostly to the one which replaces a row or column with a multiple of another row or column added to it. Also note there is no way to check your answer other than working the problem more than one way. To be sure you have gotten it right you must do this.</div>
-</div></details></div></article></details></section></section><section class="subsection" id="ss-apps-of-det"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.4.2</span><span class="space"> </span><span class="title">Applications of Determinants</span>
+</div> <div class="para" id="subsec-det-row-ops-4-2-2">We suggest you do not try to be fancy in using row operations. That is, stick mostly to the one which replaces a row or column with a multiple of another row or column added to it. Also note there is no way to check your answer other than working the problem more than one way. To be sure you have gotten it right you must do this.</div>
+</div></details></div></article></section><section class="subsection" id="subsec-formula-for-inverse"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.4.5</span><span class="space"> </span><span class="title">A Formula For The Inverse</span>
 </h3>
-<section class="subsubsection" id="subsubsec-formula-for-inverse"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">11.4.2.1</span><span class="space"> </span><span class="title">A Formula For The Inverse</span>
+<div class="para" id="subsec-formula-for-inverse-2">The definition of the determinant in terms of Laplace expansion along a row or column also provides a way to give a formula for the inverse of a matrix. Recall the definition of the inverse of a matrix in <a href="Section11_3.html#def-inverse-matrix" class="xref" data-knowl="./knowl/xref/def-inverse-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.3.1: Inverse Matrix">Definition 11.3.1</a>. Also recall the definition of the cofactor matrix given in <a href="Section11_4.html#def-cofactor-equals-minor" class="xref" data-knowl="./knowl/xref/def-cofactor-equals-minor.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.12: Cofactor Matrix">Definition 11.4.12</a>. This cofactor matrix was just the matrix which results from replacing the <span class="process-math">\(ij^{th}\)</span> entry of the matrix with the <span class="process-math">\(ij^{th}\)</span> cofactor.</div>
+<div class="para" id="subsec-formula-for-inverse-3">The following theorem says that to find the inverse, take the transpose of the cofactor matrix and divide by the determinant. The transpose of the cofactor matrix is called the <dfn class="terminology">adjugate</dfn> or sometimes the <dfn class="terminology">classical adjoint</dfn> of the matrix <span class="process-math">\(A\text{.}\)</span> In other words, <span class="process-math">\(A^{-1}\)</span> is equal to 1 divided by the determinant of <span class="process-math">\(A\)</span> times the adjugate matrix of <span class="process-math">\(A\text{.}\)</span> This is what the following theorem says with more precision.</div>
+<article class="theorem theorem-like" id="thm-inverse-from-cofactor"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.4.31</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix Inverse is Adjugate Divided by Determinant.</span>
 </h4>
-<div class="para" id="subsubsec-formula-for-inverse-2">The definition of the determinant in terms of Laplace expansion along a row or column also provides a way to give a formula for the inverse of a matrix. Recall the definition of the inverse of a matrix in <a href="Section11_3.html#def-inverse-matrix" class="xref" data-knowl="./knowl/xref/def-inverse-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.3.1: Inverse Matrix">Definition 11.3.1</a>. Also recall the definition of the cofactor matrix given in <a href="Section11_4.html#def-cofactor-equals-minor" class="xref" data-knowl="./knowl/xref/def-cofactor-equals-minor.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.12">Definition 11.4.12</a>. This cofactor matrix was just the matrix which results from replacing the <span class="process-math">\(ij^{th}\)</span> entry of the matrix with the <span class="process-math">\(ij^{th}\)</span> cofactor.</div>
-<div class="para" id="subsubsec-formula-for-inverse-3">The following theorem says that to find the inverse, take the transpose of the cofactor matrix and divide by the determinant. The transpose of the cofactor matrix is called the <dfn class="terminology">adjugate</dfn> or sometimes the <dfn class="terminology">classical adjoint</dfn> of the matrix <span class="process-math">\(A\text{.}\)</span> In other words, <span class="process-math">\(A^{-1}\)</span> is equal to one divided by the determinant of <span class="process-math">\(A\)</span> times the adjugate matrix of <span class="process-math">\(A\text{.}\)</span> This is what the following theorem says with more precision.</div>
-<article class="theorem theorem-like" id="thm-inverse-from-cofactor"><h5 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.4.31</span><span class="period">.</span>
-</h5>
-<div class="para logical" id="thm-inverse-from-cofactor-1-1">
+<div class="para logical" id="thm-inverse-from-cofactor-2-1">
 <div class="para">
-<span class="process-math">\(A^{-1}\)</span> exists if and only if <span class="process-math">\(det(A) \neq 0\text{.}\)</span> If <span class="process-math">\(det(A) \neq 0\text{,}\)</span> then <span class="process-math">\(A^{-1} = (a_{ij}^{-1}) \)</span> where</div>
+<span class="process-math">\(A^{-1}\)</span> exists if and only if <span class="process-math">\(\det (A) \neq 0\text{.}\)</span> If <span class="process-math">\(\det (A) \neq 0\text{,}\)</span> then <span class="process-math">\(A^{-1} = (a_{ij}^{-1}) \)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
-a_{ij}^{-1} = det(A)^{-1} cof(A)_{ji}
+a_{ij}^{-1} = \frac{\text{adj} (A)_{ij}}{\det (A)} = \frac{\text{cof} (A)_{ji}}{\det (A)} 
 \end{equation*}
 </div>
-<div class="para">for <span class="process-math">\(cof(A)_{ji}\)</span> the <span class="process-math">\(ij^{th}\)</span> cofactor of <span class="process-math">\(A\text{.}\)</span>
+<div class="para">where <span class="process-math">\(\text{cof} (A)_{ji}  = \text{cof} (A)_{ij}^T = \text{adj} A_{ij}\text{.}\)</span>
 </div>
-</div></article><details id="thm-inverse-from-cofactor-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-inverse-from-cofactor-2-1">
-<div class="para">From the definition of the determinant in terms of expansion along a column, and letting <span class="process-math">\((a_{ir}) = A\text{,}\)</span> if <span class="process-math">\(det (A) \neq 0\text{,}\)</span>
+</div></article><details id="thm-inverse-from-cofactor-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-inverse-from-cofactor-3-1">
+<div class="para">From the definition of the determinant in terms of expansion along a column, and letting <span class="process-math">\((a_{ir}) = A\text{,}\)</span> if <span class="process-math">\(\det (A) \neq 0\text{,}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-switch-rows-neg-det.html">
 \begin{equation*}
-\sum_{i=1}^n a_{ir} cof(A)_{ir}det(A)^{-1} = det(A)det(A)^{-1} = 1.
+\sum_{i=1}^n a_{ir} \text{cof} (A)_{ir}\det (A)^{-1} = \det (A)\det (A)^{-1} = 1.
 \end{equation*}
 </div>
 <div class="para">Now consider</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-switch-rows-neg-det.html">
 \begin{equation*}
-\sum_{i=1}^n a_{ir} cof(A)_{ik}det(A)^{-1}
+\sum_{i=1}^n a_{ir} \text{cof} (A)_{ik}\det (A)^{-1}
 \end{equation*}
 </div>
 <div class="para">when <span class="process-math">\(k \neq r\text{.}\)</span> Replace the <span class="process-math">\(k^{th}\)</span> column with the <span class="process-math">\(r^{th}\)</span> column to obtain a matrix <span class="process-math">\(B_k\)</span> whose determinant equals zero by <a href="Section11_4.html#thm-switch-rows-neg-det" class="xref" data-knowl="./knowl/xref/thm-switch-rows-neg-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.18: Switching two rows negates the determinant">Theorem 11.4.18</a>. However, expanding this matrix <span class="process-math">\(B_k\)</span> along the <span class="process-math">\(k^{th}\)</span> column yields</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-switch-rows-neg-det.html">
 \begin{equation*}
-0 = det(B_k)det(A)^{-1}  = \sum_{i=1}^n a_{ir} cof(A)_{ik}det(A)^{-1}.
+0 = \det (B_k)\det (A)^{-1}  = \sum_{i=1}^n a_{ir} \text{cof} (A)_{ik}\det (A)^{-1}.
 \end{equation*}
 </div>
 <div class="para">Summarizing,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-switch-rows-neg-det.html">
 \begin{equation*}
-\sum_{i=1}^n a_{ir} cof(A)_{ik}det(A)^{-1} = \delta_{rk} \equiv \begin{cases}1 &amp; \text{if } r = k\\
+\sum_{i=1}^n a_{ir} \text{cof} (A)_{ik}\det (A)^{-1} = \delta_{rk} \equiv \begin{cases}1 &amp; \text{if } r = k\\
 0 &amp; \text{if } r \neq k\end{cases}.
 \end{equation*}
 </div>
 <div class="para">Now</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-switch-rows-neg-det.html">
 \begin{equation*}
-\sum_{i=1}^n a_{ir} cof(A)_{ik} = \sum_{i=1}^n a_{ir} cof(A)_{ki}^T 
+\sum_{i=1}^n a_{ir} \text{cof} (A)_{ik} = \sum_{i=1}^n a_{ir} \text{cof} (A)_{ki}^T 
 \end{equation*}
 </div>
-<div class="para">which is the <span class="process-math">\(kr^{th}\)</span> entry of <span class="process-math">\(cof(A)^T A\text{.}\)</span> Therefore,</div>
+<div class="para">which is the <span class="process-math">\(kr^{th}\)</span> entry of <span class="process-math">\(\text{cof} (A)^T A\text{.}\)</span> Therefore,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-switch-rows-neg-det.html">
 \begin{equation*}
-\frac{cof(A)^T}{det(A)} A = I.
+\frac{\text{cof} (A)^T}{\det (A)} A = I.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="thm-inverse-from-cofactor-2-2">
-<div class="para">Using the other formula in <a href="Section11_4.html#def-det-sum-of-cof" class="xref" data-knowl="./knowl/xref/def-det-sum-of-cof.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.13: Determininant of a Matrix">Definition 11.4.13</a> and similar reasoning,</div>
+</div> <div class="para logical" id="thm-inverse-from-cofactor-3-2">
+<div class="para">Using the other formula in <a href="Section11_4.html#def-det-sum-of-cof" class="xref" data-knowl="./knowl/xref/def-det-sum-of-cof.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.13: Determininant as Sum of Cofactor Matrices">Definition 11.4.13</a> and similar reasoning,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-det-sum-of-cof.html">
 \begin{equation*}
-\sum_{j=1}^n a_{rj} cof(A)_{kj} det(A)^{-1} = \delta_{rk}.
+\sum_{j=1}^n a_{rj} \text{cof} (A)_{kj} \det (A)^{-1} = \delta_{rk}.
 \end{equation*}
 </div>
 <div class="para">Now,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-det-sum-of-cof.html">
 \begin{equation*}
-\sum_{j=1}^n a_{rj} cof(A)_{kj} = \sum_{j=1}^n a_{rj} cof(A)_{jk}^T
+\sum_{j=1}^n a_{rj} \text{cof} (A)_{kj} = \sum_{j=1}^n a_{rj} \text{cof} (A)_{jk}^T
 \end{equation*}
 </div>
-<div class="para">which is the <span class="process-math">\(rk^{th}\)</span> entry of <span class="process-math">\(A\, cof(A)^T\text{.}\)</span> Therefore,</div>
+<div class="para">which is the <span class="process-math">\(rk^{th}\)</span> entry of <span class="process-math">\(A\, \text{cof} (A)^T\text{.}\)</span> Therefore,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-det-sum-of-cof.html">
 \begin{equation*}
-A \frac{cof(A)^T}{det(A)} A = I,
+A \frac{\text{cof} (A)^T}{\det (A)} A = I,
 \end{equation*}
 </div>
 <div class="para">and it follows that <span class="process-math">\(A^{-1} = (a_{ij}^{-1})\text{,}\)</span> where</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-det-sum-of-cof.html">
 \begin{equation*}
-a_{ij}^{-1} = cof(A)_{ij} det(A)^{-1}.
+a_{ij}^{-1} = \text{cof} (A)_{ij} \det (A)^{-1}.
 \end{equation*}
 </div>
 <div class="para">In other words,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-det-sum-of-cof.html">
 \begin{equation*}
-A^{-1} = \frac{cof(A)^T}{det(A)}.
+A^{-1} = \frac{\text{cof} (A)^T}{\det (A)}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="thm-inverse-from-cofactor-2-3">
+</div> <div class="para logical" id="thm-inverse-from-cofactor-3-3">
 <div class="para">Now suppose <span class="process-math">\(A^{-1}\)</span> exists. Then by <a href="Section11_4.html#thm-prod-of-dets" class="xref" data-knowl="./knowl/xref/thm-prod-of-dets.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.25: The determinant of a matrix product is the product of the determinants">Theorem 11.4.25</a>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-prod-of-dets.html">
 \begin{equation*}
-1 = det(I) = det(AA^{-1}) = det(A)det(A^{-1}) 
+1 = \det (I) = \det (AA^{-1}) = \det (A)\det (A^{-1}) 
 \end{equation*}
 </div>
-<div class="para">so <span class="process-math">\(det(A) \neq 0. \blacksquare\)</span>
+<div class="para">so <span class="process-math">\(\det (A) \neq 0. \blacksquare\)</span>
 </div>
-</div></article></details><details id="subsubsec-formula-for-inverse-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+</div></article></details><article class="example example-like" id="subsec-formula-for-inverse-5"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.32</span><span class="period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para logical" id="subsubsec-formula-for-inverse-5-1-1">
+</h4>
+<div class="para logical" id="subsec-formula-for-inverse-5-1-1">
 <div class="para">Find the inverse of the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1523,27 +1546,30 @@ A =  \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 3 &amp; 0 &amp; 1\\ 1 &amp; 2 &amp; 1 \
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="subsubsec-formula-for-inverse-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para logical" id="subsubsec-formula-for-inverse-5-2-1">
-<div class="para">First, find the determinant of this matrix. Using <a href="Section11_4.html#thm-row-ops-dont-change-det" class="xref" data-knowl="./knowl/xref/thm-row-ops-dont-change-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.22: Row operation 3 doesn’t change the determinant">Theorem 11.4.22</a> - <a href="Section11_4.html#thm-rows-cols-same-effect" class="xref" data-knowl="./knowl/xref/thm-rows-cols-same-effect.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.24: Columns have the same effect">Theorem 11.4.24</a>, the determinant of this matrix equals the determinant of the matrix</div>
+<div class="solutions"><details id="subsec-formula-for-inverse-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="subsec-formula-for-inverse-5-2-1">
+<div class="para">First, find the determinant of this matrix. Using row operations (<a href="Section11_4.html#thm-row-ops-dont-change-det" class="xref" data-knowl="./knowl/xref/thm-row-ops-dont-change-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.22: Row operation 3 doesn’t change the determinant">Theorem 11.4.22</a> - <a href="Section11_4.html#thm-rows-cols-same-effect" class="xref" data-knowl="./knowl/xref/thm-rows-cols-same-effect.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.24: Columns have the same effect">Theorem 11.4.24</a>), the determinant of this matrix equals the determinant of the matrix:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-row-ops-dont-change-det.html ./knowl/xref/thm-rows-cols-same-effect.html">
 \begin{equation*}
 \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 0 &amp; -6 &amp; -8\\ 0 &amp; 0 &amp; -2 \end{pmatrix}
 \end{equation*}
 </div>
-<div class="para">which equals 12. The cofactor matrix of <span class="process-math">\(A\)</span> is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-row-ops-dont-change-det.html ./knowl/xref/thm-rows-cols-same-effect.html">
+<div class="para">which equals 12.</div>
+</div> <div class="para logical" id="subsec-formula-for-inverse-5-2-2">
+<div class="para">Next, find the cofactor matrix of <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\begin{pmatrix} -2 &amp; -2 &amp; 6\\ 4 &amp; -2 &amp; 0\\ 2 &amp; 8 &amp; -6 \end{pmatrix}
+\text{cof}(A) = \begin{pmatrix} -2 &amp; -2 &amp; 6\\ 4 &amp; -2 &amp; 0\\ 2 &amp; 8 &amp; -6 \end{pmatrix}
 \end{equation*}
 </div>
 <div class="para">Each entry of <span class="process-math">\(A\)</span> was replaced by its cofactor. Therefore, from the above theorem, the inverse of <span class="process-math">\(A\)</span> should equal</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-row-ops-dont-change-det.html ./knowl/xref/thm-rows-cols-same-effect.html">
+<div class="displaymath process-math">
 \begin{equation*}
 \frac{1}{12} \begin{pmatrix} -2 &amp; -2 &amp; 6\\ 4 &amp; -2 &amp; 0\\ 2 &amp; 8 &amp; -6 \end{pmatrix}^T = \begin{pmatrix} -\frac{1}{6} &amp; \frac{1}{3} &amp; \frac{1}{6}\\ -\frac{1}{6} &amp; -\frac{1}{6} &amp; \frac{2}{3}\\ \frac{1}{2} &amp; 0 &amp; -\frac{1}{2} \end{pmatrix}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsubsec-formula-for-inverse-5-2-2">
+</div> <div class="para logical" id="subsec-formula-for-inverse-5-2-3">
 <div class="para">Does it work? You should check to see if it does. When the matrices are multiplied</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1552,9 +1578,10 @@ A =  \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 3 &amp; 0 &amp; 1\\ 1 &amp; 2 &amp; 1 \
 </div>
 <div class="para">and so it is correct.</div>
 </div>
-</div></details></div></article></details><details id="subsubsec-formula-for-inverse-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+</div></details></div></article><article class="example example-like" id="subsec-formula-for-inverse-6"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.33</span><span class="period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para logical" id="subsubsec-formula-for-inverse-6-1-1">
+</h4>
+<div class="para logical" id="subsec-formula-for-inverse-6-1-1">
 <div class="para">Find the inverse of the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1562,8 +1589,8 @@ A = \begin{pmatrix} \frac{1}{2} &amp; 0 &amp; \frac{1}{2}\\ -\frac{1}{6} &amp; \
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="subsubsec-formula-for-inverse-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para logical" id="subsubsec-formula-for-inverse-6-2-1">
+<div class="solutions"><details id="subsec-formula-for-inverse-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="subsec-formula-for-inverse-6-2-1">
 <div class="para">First find its determinant. This determinant is <span class="process-math">\(\frac{1}{6}\)</span> . The inverse is therefore equal to</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1576,7 +1603,7 @@ A = \begin{pmatrix} \frac{1}{2} &amp; 0 &amp; \frac{1}{2}\\ -\frac{1}{6} &amp; \
 6\begin{pmatrix} \frac{1}{6} &amp; \frac{1}{3} &amp; \frac{1}{6}\\ \frac{1}{3} &amp; \frac{1}{6} &amp; -\frac{1}{3}\\ -\frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} \end{pmatrix}^T =  \begin{pmatrix} 1 &amp; 2 &amp; -1\\ 2 &amp; 1 &amp; 1\\ 1 &amp; -2 &amp; 1 \end{pmatrix}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsubsec-formula-for-inverse-6-2-2">
+</div> <div class="para logical" id="subsec-formula-for-inverse-6-2-2">
 <div class="para">Always check your work.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1585,7 +1612,160 @@ A = \begin{pmatrix} \frac{1}{2} &amp; 0 &amp; \frac{1}{2}\\ -\frac{1}{6} &amp; \
 </div>
 <div class="para">and so we got it right. If the result of multiplying these matrices had been something other than the identity matrix, you would know there was an error. When this happens, you need to search for the mistake if you are interested in getting the right answer. A common mistake is to forget to take the transpose of the cofactor matrix.</div>
 </div>
-</div></details></div></article></details><div class="para" id="subsubsec-formula-for-inverse-7">This way of finding inverses is especially useful in the case where it is desired to find the inverse of a matrix whose entries are functions.</div></section></section></section></div>
+</div></details></div></article><div class="para" id="subsec-formula-for-inverse-7">This way of finding inverses is especially useful in the case where it is desired to find the inverse of a matrix whose entries are functions.</div>
+<article class="example example-like" id="subsec-formula-for-inverse-8"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.34</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-formula-for-inverse-8-1-1">
+<div class="para">Suppose</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A(t) =  \begin{pmatrix} e^t &amp; 0 &amp; 0\\ 
+0 &amp; \cos t &amp; \sin t\\
+0 &amp; -\sin t &amp; \cos t 
+\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">Show that <span class="process-math">\(A(t)^{-1}\)</span> exists and then find it.</div>
+</div>
+<div class="solutions"><details id="subsec-formula-for-inverse-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-formula-for-inverse-8-2-1">
+<div class="para">First note <span class="process-math">\(\det(A(t)) = e^t \neq 0,\)</span> so <span class="process-math">\(A(t)^{-1}\)</span> exists. The cofactor matrix is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C(t) =  \begin{pmatrix} 1 &amp; 0 &amp; 0\\ 
+0 &amp; e^t \cos t &amp; e^t \sin t\\
+0 &amp; -e^t\sin t &amp; e^t\cos t 
+\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">so the inverse is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{e^t} \begin{pmatrix} 1 &amp; 0 &amp; 0\\ 
+0 &amp; e^t \cos t &amp; e^t \sin t\\
+0 &amp; -e^t\sin t &amp; e^t\cos t 
+\end{pmatrix}^T = \begin{pmatrix} e^{-t} &amp; 0 &amp; 0\\ 
+0 &amp; \cos t &amp; -\sin t\\
+0 &amp; \sin t &amp; \cos t 
+\end{pmatrix}
+\end{equation*}
+</div>
+</div></div></details></div></article></section><section class="subsection" id="subsec-cramers-rule"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.4.6</span><span class="space"> </span><span class="title">Cramer’s Rule</span>
+</h3>
+<div class="para" id="subsec-cramers-rule-3">This formula for the inverse also implies a famous procedure known as <dfn class="terminology">Cramer’s rule</dfn>. Cramer’s rule gives a formula for the solutions, <span class="process-math">\(\mathbf{x}\text{,}\)</span> to a system of equations, <span class="process-math">\(A\mathbf{x} = \mathbf{y}\)</span> in the special case that <span class="process-math">\(A\)</span> is a square matrix. Note this rule does not apply if you have a system of equations in which there is a different number of equations than variables.</div>
+<div class="para logical" id="subsec-cramers-rule-4">
+<div class="para">In case you are solving a system of equations, <span class="process-math">\(A\mathbf{x} = \mathbf{y}\)</span> for <span class="process-math">\(\mathbf{x}\text{,}\)</span> it follows that if <span class="process-math">\(A^{-1}\)</span> exists,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-inverse-from-cofactor.html ./knowl/xref/def-expanding-along-row.html">
+\begin{equation*}
+\mathbf{x} = (A^{-1}A)\mathbf{x} = A^{-1}(A\mathbf{x}) = A^{-1}\mathbf{y}
+\end{equation*}
+</div>
+<div class="para">thus solving the system. Now in the case <span class="process-math">\(A^{-1}\)</span> exists, <a href="Section11_4.html#thm-inverse-from-cofactor" class="xref" data-knowl="./knowl/xref/thm-inverse-from-cofactor.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.31: Matrix Inverse is Adjugate Divided by Determinant">Theorem 11.4.31</a> is a formula for <span class="process-math">\(A^{-1}\text{.}\)</span> Using this formula,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-inverse-from-cofactor.html ./knowl/xref/def-expanding-along-row.html">
+\begin{equation*}
+x_i = \sum_{j=1}^n a_{ij}^{-1} y_{j} = \sum_{j=1}^n\frac{1}{\det(A)} \text{cof} (A)_{ji}y_j.
+\end{equation*}
+</div>
+<div class="para">By <a href="Section11_4.html#def-expanding-along-row" class="xref" data-knowl="./knowl/xref/def-expanding-along-row.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.7: Expanding Along a Row or Column">Definition 11.4.7</a>. the formula for the expansion of a determinant along a column,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-inverse-from-cofactor.html ./knowl/xref/def-expanding-along-row.html">
+\begin{equation*}
+x_i = \frac{1}{\det(A)}\det \begin{pmatrix}* &amp; \cdots &amp; y_1 &amp; \cdots *\\
+\vdots &amp;&amp; \vdots &amp; &amp; \vdots\\
+* &amp; \cdots &amp; y_n &amp; \cdots &amp; *  \end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">where here the <span class="process-math">\(i^{th}\)</span> column of <span class="process-math">\(A\)</span> is replaced by the column vector <span class="process-math">\((y_1, \cdots, y_n)^T\text{,}\)</span> and the determinant of this modified matrix is taken and divided by <span class="process-math">\(\det(A).\)</span> This formula is known as Cramer’s rule.</div>
+</div>
+<article class="definition definition-like" id="def-cramers-rule"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.35</span><span class="period">.</span><span class="space"> </span><span class="title">Cramer’s Rule.</span>
+</h4> <div class="para logical" id="def-cramers-rule-3-1">
+<div class="para">Suppose <span class="process-math">\(A\)</span> is an <span class="process-math">\(n \times n\)</span> matrix and it is desired to solve the system <span class="process-math">\(A\mathbf{x} = \mathbf{y}\text{,}\)</span> <span class="process-math">\(\mathbf{y} =
+(y_1, \cdots , y_n )^T\)</span> for <span class="process-math">\(\mathbf{x} = (x_1, \cdots , x_n )^T\text{.}\)</span> Then Cramer’s rule says</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_i = \frac{\det A_i}{\det A}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(A_i\)</span> is obtained by replacing the <span class="process-math">\(i^{th}\)</span> column of <span class="process-math">\(A\)</span> with the column <span class="process-math">\((y_1, \cdots , y_n )^T\)</span>
+</div>
+</div></article><article class="example example-like" id="subsec-cramers-rule-6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.36</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-cramers-rule-6-1-1">
+<div class="para">Find <span class="process-math">\(x, y, z\)</span> if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix} 1 &amp; 2 &amp; 1\\ 
+3 &amp; 2 &amp; 1\\
+2 &amp; -3 &amp; 2
+\end{pmatrix}
+\begin{pmatrix}x \\ y \\ z \end{pmatrix} = \begin{pmatrix}1 \\ 2 \\ 3 \end{pmatrix} 
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="subsec-cramers-rule-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="subsec-cramers-rule-6-2-1">
+<div class="para">Using Cramer’s rule, solve for <span class="process-math">\(x\)</span> by replacing column 1 with <span class="process-math">\((y_1, \cdots , y_n )^T = \begin{pmatrix}1 \\ 2 \\ 3 \end{pmatrix}\)</span> and dividing the determinant of the new matrix by the determinant of the original matrix.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x = \frac{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 
+2 &amp; 2 &amp; 1\\
+3 &amp; -3 &amp; 2\end{vmatrix}}{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 
+3 &amp; 2 &amp; 1\\
+2 &amp; -3 &amp; 2\end{vmatrix}} = \frac{1}{2}
+\end{equation*}
+</div>
+<div class="para">Now to find <span class="process-math">\(y,\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y = \frac{\begin{vmatrix}1 &amp; 1 &amp; 1\\ 
+3 &amp; 2 &amp; 1\\
+2 &amp; 3 &amp; 2\end{vmatrix}}{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 
+3 &amp; 2 &amp; 1\\
+2 &amp; -3 &amp; 2\end{vmatrix}} = -\frac{1}{7}
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(z,\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+z = \frac{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 
+3 &amp; 2 &amp; 2\\
+2 &amp; -3 &amp; 3\end{vmatrix}}{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 
+3 &amp; 2 &amp; 1\\
+2 &amp; -3 &amp; 2\end{vmatrix}} = -\frac{11}{14}
+\end{equation*}
+</div>
+</div> You see the pattern.</div></details></div></article><div class="para" id="subsec-cramers-rule-7">For large systems Cramer’s rule is less than useful because to use it you must evaluate determinants. However, you have no practical way to evaluate determinants for large matrices other than row operations and if you are using row operations, you might just as well use them to solve the system to begin with. It will be a lot less trouble. Nevertheless, there are situations in which Cramer’s rule is useful.</div>
+<article class="example example-like" id="subsec-cramers-rule-8"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.37</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-cramers-rule-8-1-1">
+<div class="para">Solve for <span class="process-math">\(z\)</span> if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix} 1 &amp; 0 &amp; 0\\ 
+0 &amp; e^t \cos t &amp; e^t \sin t\\
+0 &amp; -e^t\sin t &amp; e^t \cos t
+\end{pmatrix}
+\begin{pmatrix}x \\ y \\ z \end{pmatrix} = \begin{pmatrix}1 \\ t \\ t^2 \end{pmatrix} 
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="subsec-cramers-rule-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-cramers-rule-8-2-1">
+<div class="para">You could do it by row operations but it might be easier in this case to use Cramer’s rule because the matrix of coefficients do not consist of numbers but of functions. Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+z = \frac{\begin{vmatrix}1 &amp; 0 &amp; 1\\ 
+0 &amp; e^t \cos t &amp; t\\
+0 &amp; -e^t\sin t &amp; t^2\end{vmatrix}}{\begin{vmatrix}1 &amp; 0 &amp; 0\\ 
+0 &amp; e^t \cos t &amp; e^t \sin t\\
+0 &amp; -e^t\sin t &amp; e^t \cos t\end{vmatrix}} = t((\cos t)t + \sin t)e^{-t}.
+\end{equation*}
+</div>
+</div></div></details></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="Section11_3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter_12.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

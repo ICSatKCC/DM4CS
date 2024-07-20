@@ -684,19 +684,12 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -1099,6 +1092,8 @@ window.MathJax = {
 </div>
 <div class="indexitem">Closest Neighbor Algorithm<span class="indexknowl">, <a href="s-graph-optimization.html#alg-closest-neighbor" class="xref" data-knowl="./knowl/index/alg-closest-neighbor.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 15.5.5: The Closest Neighbor Algorithm">Algorithm</a></span>
 </div>
+<div class="indexitem">cofactor<span class="indexknowl">, <a href="Section11_4.html#def-ij-cofactor" class="xref" data-knowl="./knowl/index/def-ij-cofactor.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.5: ij^{th} Cofactor">Definition</a></span>
+</div>
 <div class="indexitem">Combination with Repetition Formula<span class="indexknowl">, <a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#combination-with-repetition-formula" class="xref" data-knowl="./knowl/index/combination-with-repetition-formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.5.2: Combination with Repetition Formula">Theorem</a></span>
 </div>
 <div class="indexitem">Combinations<span class="indexknowl">, <a href="section2_4-combinations-and-the-binomial-theorem.html#combinations" class="internal" title="Subsection 2.4.1: Combinations">Subsection</a></span>
@@ -1156,6 +1151,8 @@ window.MathJax = {
 <div class="indexitem">Counting Binary Trees<span class="indexknowl">, <a href="s-binary-trees.html#ss-counting-binary-trees" class="internal" title="Subsection 16.4.4: Counting Binary Trees">Subsection</a></span>
 </div>
 <div class="indexitem">covering relation<span class="indexknowl">, <a href="s-atoms-of-a-boolean-algebra.html#def-cover" class="xref" data-knowl="./knowl/index/def-cover.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 12.4.4: The Covering Relation">Definition</a></span>
+</div>
+<div class="indexitem">Cramer’s rule<span class="indexknowl">, <a href="Section11_4.html#subsec-cramers-rule" class="internal" title="Subsection 11.4.6: Cramer’s Rule">Subsection</a> <a href="Section11_4.html#def-cramers-rule" class="xref" data-knowl="./knowl/index/def-cramers-rule.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.35: Cramer’s Rule">Definition</a></span>
 </div>
 <div class="indexitem">Cycle<span class="indexknowl">, <a href="s-what-is-a-tree.html#def-cycle" class="xref" data-knowl="./knowl/index/def-cycle.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 16.1.1: Cycle">Definition</a></span>
 </div>
@@ -1473,13 +1470,13 @@ window.MathJax = {
 </div>
 <div class="indexitem">Matrix Arithmetic<span class="indexknowl">, <a href="Section11_2.html" class="internal" title="Section 11.2: Revisiting Matrix Arithmetic">Section</a></span>
 </div>
-<div class="indexitem">matrix cofactor<span class="indexknowl">, <a href="Section11_4.html#def-matrix-cofactor" class="xref" data-knowl="./knowl/index/def-matrix-cofactor.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.5">Definition</a> <a href="Section11_4.html#def-cofactor-equals-minor" class="xref" data-knowl="./knowl/index/def-cofactor-equals-minor.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.12">Definition</a></span>
+<div class="indexitem">matrix cofactor<span class="indexknowl">, <a href="Section11_4.html#def-cofactor-equals-minor" class="xref" data-knowl="./knowl/index/def-cofactor-equals-minor.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.12: Cofactor Matrix">Definition</a></span>
 </div>
 <div class="indexitem">Matrix Determinant<span class="indexknowl">, <a href="Section11_4.html" class="internal" title="Section 11.4: Matrix Determinants">Section</a></span>
 </div>
 <div class="indexitem">Matrix Equality<span class="indexknowl">, <a href="Section11_2.html#def-lin-alg-matrix-equality" class="xref" data-knowl="./knowl/index/def-lin-alg-matrix-equality.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.2.7: Matrix Equality">Definition</a></span>
 </div>
-<div class="indexitem">matrix minor<span class="indexknowl">, <a href="Section11_4.html#def-matrix-minor" class="xref" data-knowl="./knowl/index/def-matrix-minor.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.3">Definition</a></span>
+<div class="indexitem">matrix minor<span class="indexknowl">, <a href="Section11_4.html#def-matrix-minor" class="xref" data-knowl="./knowl/index/def-matrix-minor.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.3: Matrix Minor">Definition</a></span>
 </div>
 <div class="indexitem">Matrix Multiplication<span class="indexknowl">, <a href="section7_1-basic-matrix-definitions.html#def-matrix-multiplication" class="xref" data-knowl="./knowl/index/def-matrix-multiplication.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 7.1.8: Matrix Multiplication">Definition</a></span>
 </div>
@@ -1797,7 +1794,7 @@ window.MathJax = {
 </div>
 <div class="indexitem">Tree<span class="indexknowl">, <a href="s-what-is-a-tree.html#def-tree" class="xref" data-knowl="./knowl/index/def-tree.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 16.1.2: Tree">Definition</a></span>
 </div>
-<div class="indexitem">triangular matrix<span class="indexknowl">, <a href="Section11_4.html#def-upper-triangular-matrix" class="xref" data-knowl="./knowl/index/def-upper-triangular-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.15">Definition</a></span>
+<div class="indexitem">triangular matrix<span class="indexknowl">, <a href="Section11_4.html#def-upper-triangular-matrix" class="xref" data-knowl="./knowl/index/def-upper-triangular-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.15: Triangular Matrices">Definition</a></span>
 </div>
 <div class="indexitem">Truth Set<span class="indexknowl">, <a href="section4_5-propositions-over-universe.html#def-truth-set" class="xref" data-knowl="./knowl/index/def-truth-set.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.5.3: Truth Set">Definition</a></span>
 </div>

@@ -681,19 +681,12 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -1044,23 +1037,23 @@ f(n)= 4n^3 + 2n^2 - 8n + 9 = ((4n+2)n-8)n+9
 </div>
 <div class="para">Notice that 4 is a zeroth degree polynomial since it is an integer. Therefore <span class="process-math">\(4n + 2\)</span> is a first-degree polynomial; therefore, <span class="process-math">\((4n + 2) n - 8\)</span> is a second-degree polynomial in <span class="process-math">\(n\)</span> over <span class="process-math">\(\mathbb{Z}\text{;}\)</span> therefore, <span class="process-math">\(f(n)\)</span> is a third-degree polynomial in <span class="process-math">\(n\)</span> over <span class="process-math">\(\mathbb{Z}\text{.}\)</span> The final expression for <span class="process-math">\(f(n)\)</span> is called its <dfn class="terminology">telescoping form</dfn>. If we use it to calculate <span class="process-math">\(f(7)\text{,}\)</span> we need only three multiplications and three additions/subtractions. This is called <dfn class="terminology">Horner’s method</dfn> for evaluating a polynomial expression.</div>
 </div>
-<details id="ex-more-telescoping" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-more-telescoping"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">More Telescoping Polynomials.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-more-telescoping-2"><ol class="lower-alpha">
+</h4> <div class="para logical" id="ex-more-telescoping-2"><ol class="lower-alpha">
 <li id="ex-more-telescoping-2-1-1"><div class="para" id="ex-more-telescoping-2-1-1-1">The telescoping form of <span class="process-math">\(p(x) = 5x^4 + 12x^3 -6x^2 + x + 6\)</span> is <span class="process-math">\((((5x + 12) x - 6) x + 1) x + 6\text{.}\)</span> Using Horner’s method, computing the value of <span class="process-math">\(p(c)\)</span> requires four multiplications and four additions/subtractions for any real number <span class="process-math">\(c\text{.}\)</span>
 </div></li>
 <li id="ex-more-telescoping-2-1-2"><div class="para" id="ex-more-telescoping-2-1-2-1">
 <span class="process-math">\(g(x) = -x^5 + 3x^4 + 2x^2 + x\)</span> has the telescoping form <span class="process-math">\(((((- x + 3) x ) x + 2) x + 1) x\text{.}\)</span>
 </div></li>
-</ol></div></article></details><div class="para" id="subsec8_4_2-polynomials-and-their-evaluation-11">Many computer languages represent polynomials as lists of coefficients, usually starting with the constant term. For example, <span class="process-math">\(g(x) = -x^5 +
+</ol></div></article><div class="para" id="subsec8_4_2-polynomials-and-their-evaluation-11">Many computer languages represent polynomials as lists of coefficients, usually starting with the constant term. For example, <span class="process-math">\(g(x) = -x^5 +
 3x^4 +\text{  }2x^2 + x\)</span>  would be represented with the list <span class="process-math">\(\{0,1,2,0,3,-1\}\text{.}\)</span> In both Mathematica and Sage, polynomial expressions can be entered and manipulated, so the list representation is only internal. Some lower-leveled languages do require users to program polynomial operations with lists. We will leave these programming issues to another source.</div></section><section class="subsection" id="subsec8_4_4-recursive-sequences"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">8.4.3</span><span class="space"> </span><span class="title">Recursively Defined Sequences</span>
 </h3>
 <div class="para" id="subsec8_4_4-recursive-sequences-3">For the next two examples, consider a sequence of numbers to be a list of numbers consisting of a zeroth number, first number, second number, ... . If a sequence is given the name <span class="process-math">\(S\text{,}\)</span> the <span class="process-math">\(k^{th}\)</span> number of <span class="process-math">\(S\)</span> is usually written <span class="process-math">\(S_k\)</span>  or <span class="process-math">\(S(k)\text{.}\)</span>
 </div>
-<details id="ex-geometric-growth" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-geometric-growth"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Geometric Growth Sequence.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-geometric-growth-2">
+</h4> <div class="para logical" id="ex-geometric-growth-2">
 <div class="para">Define the sequence of numbers <span class="process-math">\(B\)</span> by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1085,9 +1078,10 @@ B_3 &amp;= 1.08 B_2 \\
 \end{split}
 \end{equation*}
 </div>
-</div></article></details><details id="ex-fibonacci-sequence" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ex-fibonacci-sequence"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">The Fibonacci Sequence.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-fibonacci-sequence-3">
+</h4>
+<div class="para logical" id="ex-fibonacci-sequence-3">
 <div class="para">The Fibonacci sequence is the sequence <span class="process-math">\(F\)</span> defined by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1099,7 +1093,7 @@ F_0= 1 \textrm{, } F_1= 1\textrm{ and}
 F_k = F_{k-2} + F_{k-1} \textrm{ for }k\geq 2
 \end{equation*}
 </div>
-</div></article></details></section><section class="subsection" id="subsec8_4_5-recursion"><h3 class="heading hide-type">
+</div></article></section><section class="subsection" id="subsec8_4_5-recursion"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">8.4.4</span><span class="space"> </span><span class="title">Recursion</span>
 </h3>
 <div class="para" id="subsec8_4_5-recursion-2">All of the previous examples were presented recursively. That is, every “object” is described in one of two forms. One form is by a simple definition, which is usually called the basis for the recursion. The second form is by a recursive description in which objects are described in terms of themselves, with the following qualification. What is essential for a proper use of recursion is that the objects can be expressed in terms of simpler objects, where “simpler” means closer to the basis of the recursion. To avoid what might be considered a circular definition, the basis must be reached after a finite number of applications of the recursion.</div>
@@ -1136,9 +1130,10 @@ F_4 &amp;= F_2+F_3\\
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">8.4.6</span><span class="space"> </span><span class="title">Induction and Recursion</span>
 </h3>
 <div class="para" id="subsec8_4_7-induction-and-recursion-3">The definition of the positive integers in terms of Peano’s Postulates is a recursive definition. The basis element is the number 1 and the recursion is that if <span class="process-math">\(n\)</span> is a positive integer, then so is its successor. In this case, <span class="process-math">\(n\)</span> is the simple object and the recursion is of a forward type. Of course, the validity of an induction proof is based on our acceptance of this definition. Therefore, the appearance of induction proofs when recursion is used is no coincidence.</div>
-<details id="ex-geometric-squence-proof" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-geometric-squence-proof"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.9</span><span class="period">.</span><span class="space"> </span><span class="title">Proof of a formula for <span class="process-math">\(B\)</span>.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-geometric-squence-proof-2">A formula for the sequence <span class="process-math">\(B\)</span> in <a href="section8_4-recursion.html#ex-geometric-growth" class="xref" data-knowl="./knowl/xref/ex-geometric-growth.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.4.6: Geometric Growth Sequence">Example 8.4.6</a> is <span class="process-math">\(B = 100(1.08)^k\)</span> for <span class="process-math">\(k\geq 0\text{.}\)</span> A proof by induction follow.</div> <div class="para logical" id="ex-geometric-squence-proof-3">
+</h4>
+<div class="para" id="ex-geometric-squence-proof-2">A formula for the sequence <span class="process-math">\(B\)</span> in <a href="section8_4-recursion.html#ex-geometric-growth" class="xref" data-knowl="./knowl/xref/ex-geometric-growth.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.4.6: Geometric Growth Sequence">Example 8.4.6</a> is <span class="process-math">\(B = 100(1.08)^k\)</span> for <span class="process-math">\(k\geq 0\text{.}\)</span> A proof by induction follow.</div> <div class="para logical" id="ex-geometric-squence-proof-3">
 <div class="para">If <span class="process-math">\(k= 0\text{,}\)</span> then <span class="process-math">\(B = 100(1.08)^0 = 100\text{,}\)</span> as defined. Now assume that for some <span class="process-math">\(k\geq 1\text{,}\)</span> the formula for <span class="process-math">\(B_k\)</span> is true.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1151,12 +1146,13 @@ B_{k+1} &amp;= 1.08B_k \textrm{  by the recursive definition}\\
 </div>
 <div class="para">hence the formula is true for <span class="process-math">\(k+1\)</span>
 </div>
-</div> <div class="para" id="ex-geometric-squence-proof-4">The formula that we have just proven for <span class="process-math">\(B\)</span> is called a closed form expression. It involves no recursion or summation signs.</div></article></details><article class="definition definition-like" id="def-closed-form-expression"><h4 class="heading">
+</div> <div class="para" id="ex-geometric-squence-proof-4">The formula that we have just proven for <span class="process-math">\(B\)</span> is called a closed form expression. It involves no recursion or summation signs.</div></article><article class="definition definition-like" id="def-closed-form-expression"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Closed Form Expression.</span>
 </h4>
-<div class="para" id="def-closed-form-expression-3-1">Let <span class="process-math">\(E = E\left(x_1, x_2, \ldots ,x_n\right)\)</span> be an algebraic expression involving variables <span class="process-math">\(x_1, x_2, \ldots ,x_n\)</span> which are allowed to take on values from some predetermined set. <span class="process-math">\(E\)</span> is a <dfn class="terminology">closed form expression</dfn> if there exists a number <span class="process-math">\(T\)</span> such that the evaluation of <span class="process-math">\(E\)</span> with any allowed values of the variables will take no more than <span class="process-math">\(T\)</span> operations (alternatively, <span class="process-math">\(T\)</span> time units).</div></article><details id="ex-summation-simplifed" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="def-closed-form-expression-3-1">Let <span class="process-math">\(E = E\left(x_1, x_2, \ldots ,x_n\right)\)</span> be an algebraic expression involving variables <span class="process-math">\(x_1, x_2, \ldots ,x_n\)</span> which are allowed to take on values from some predetermined set. <span class="process-math">\(E\)</span> is a <dfn class="terminology">closed form expression</dfn> if there exists a number <span class="process-math">\(T\)</span> such that the evaluation of <span class="process-math">\(E\)</span> with any allowed values of the variables will take no more than <span class="process-math">\(T\)</span> operations (alternatively, <span class="process-math">\(T\)</span> time units).</div></article><article class="example example-like" id="ex-summation-simplifed"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.11</span><span class="period">.</span><span class="space"> </span><span class="title">Reducing a summation to closed form.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-summation-simplifed-2">The sum <span class="process-math">\(E(n)=\sum_{k=1}^n k\)</span> is not a closed form expression because the number of additions needed to evaluate <span class="process-math">\(E(n)\)</span> grows indefinitely with <span class="process-math">\(n\text{.}\)</span> A closed form expression that computes the value of <span class="process-math">\(E(n)\)</span> is <span class="process-math">\(\frac{n(n+1)}{2}\text{,}\)</span> which only requires <span class="process-math">\(T=3\)</span> operations.</div></article></details></section><section class="exercises" id="section8_4-recursion-10"><h3 class="heading hide-type">
+</h4>
+<div class="para" id="ex-summation-simplifed-2">The sum <span class="process-math">\(E(n)=\sum_{k=1}^n k\)</span> is not a closed form expression because the number of additions needed to evaluate <span class="process-math">\(E(n)\)</span> grows indefinitely with <span class="process-math">\(n\text{.}\)</span> A closed form expression that computes the value of <span class="process-math">\(E(n)\)</span> is <span class="process-math">\(\frac{n(n+1)}{2}\text{,}\)</span> which only requires <span class="process-math">\(T=3\)</span> operations.</div></article></section><section class="exercises" id="section8_4-recursion-10"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">8.4.7</span><span class="space"> </span><span class="title">Exercises for Section 8.4</span>
 </h3>
 <article class="exercise exercise-like" id="section8_4-recursion-10-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>

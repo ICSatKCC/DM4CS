@@ -693,19 +693,12 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -998,9 +991,9 @@ A\times B = \{(a, b) \mid a \in  A \quad\textrm{and}\quad b \in  B\}\text{,}
 </div>
 <div class="para">that is, <span class="process-math">\(A\times B\)</span> is the set of all possible ordered pairs whose first component comes from <span class="process-math">\(A\)</span> and whose second component comes from <span class="process-math">\(B\text{.}\)</span>
 </div>
-</div></article><details id="Cartesian-products-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="Cartesian-products-3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Some Cartesian Products.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para" id="Cartesian-products-3-2">Notation in mathematics is often developed for good reason. In this case, a few examples will make clear why the symbol <span class="process-math">\(\times \)</span> is used for Cartesian products.</div> <div class="para logical" id="Cartesian-products-3-3"><ul class="disc">
+</h4> <div class="para" id="Cartesian-products-3-2">Notation in mathematics is often developed for good reason. In this case, a few examples will make clear why the symbol <span class="process-math">\(\times \)</span> is used for Cartesian products.</div> <div class="para logical" id="Cartesian-products-3-3"><ul class="disc">
 <li id="Cartesian-products-3-3-1-1"><div class="para logical" id="Cartesian-products-3-3-1-1-1">
 <div class="para">Let <span class="process-math">\(A = \{1, 2, 3\}\)</span> and <span class="process-math">\(B = \{4, 5\}\text{.}\)</span> Then</div>
 <div class="displaymath process-math">
@@ -1021,7 +1014,7 @@ A \times  A = \{(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), 
 <div class="para">Note that <span class="process-math">\(|A \times  A| = 9 = {\lvert A \rvert}^2\text{.}\)</span>
 </div>
 </div></li>
-</ul></div></article></details><div class="para" id="Cartesian-products-4">These two examples illustrate the general rule that if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are finite sets, then <span class="process-math">\(\lvert A \times B \rvert = \lvert A \rvert  \times  \lvert B \rvert \text{.}\)</span>
+</ul></div></article><div class="para" id="Cartesian-products-4">These two examples illustrate the general rule that if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are finite sets, then <span class="process-math">\(\lvert A \times B \rvert = \lvert A \rvert  \times  \lvert B \rvert \text{.}\)</span>
 </div>
 <div class="para logical" id="Cartesian-products-5">
 <div class="para">We can define the Cartesian product of three (or more) sets similarly. This will be the set of all ordered <span class="process-math">\(n\)</span>-tuples where the first component comes from the first set, the second component comes from the second set, ... and the <span class="process-math">\(n^{th}\)</span> component comes from the <span class="process-math">\(n^{th}\)</span> set. For example,</div>
@@ -1057,13 +1050,13 @@ A^n =  \underset{n \textrm{ factors}}{\underline{A \times A \times \ldots \times
 </h4> <div class="para" id="power-set-4-1">If <span class="process-math">\(A\)</span> is any set, the power set of <span class="process-math">\(A\)</span> is the set of all subsets of <span class="process-math">\(A\text{,}\)</span> denoted <span class="process-math">\(\mathcal{P}(A)\text{.}\)</span>
 </div></article><div class="para" id="power-sets-3">The two extreme cases, the empty set and all of <span class="process-math">\(A\text{,}\)</span> are both included in <span class="process-math">\(\mathcal{P}(A)\text{.}\)</span>
 </div>
-<details id="Some_Power_Sets" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="Some_Power_Sets"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Some Power Sets.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="Some_Power_Sets-2"><ul class="disc">
+</h4> <div class="para logical" id="Some_Power_Sets-2"><ul class="disc">
 <li id="Some_Power_Sets-2-1-1"><div class="para" id="Some_Power_Sets-2-1-1-1"><span class="process-math">\(\displaystyle \mathcal{P}(\emptyset )=\{\emptyset \}\)</span></div></li>
 <li id="Some_Power_Sets-2-1-2"><div class="para" id="Some_Power_Sets-2-1-2-1"><span class="process-math">\(\displaystyle \mathcal{P}(\{1\}) = \{\emptyset , \{1\}\}\)</span></div></li>
 <li id="Some_Power_Sets-2-1-3"><div class="para" id="Some_Power_Sets-2-1-3-1"><span class="process-math">\(\mathcal{P}(\{1,2\}) = \{\emptyset , \{1\}, \{2\}, \{1, 2\}\}\text{.}\)</span></div></li>
-</ul></div> <div class="para" id="Some_Power_Sets-3">We will leave it to you to guess at a general formula for the number of elements in the power set of a finite set. In Chapter 2, we will discuss counting rules that will help us derive this formula.</div></article></details></section><section class="subsection" id="Sage_Note_Sets-1-3"><h3 class="heading hide-type">
+</ul></div> <div class="para" id="Some_Power_Sets-3">We will leave it to you to guess at a general formula for the number of elements in the power set of a finite set. In Chapter 2, we will discuss counting rules that will help us derive this formula.</div></article></section><section class="subsection" id="Sage_Note_Sets-1-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="space"> </span><span class="title">SageMath Note: Cartesian Products and Power Sets</span>
 </h3>
 <div class="para" id="Sage_Note_Sets-1-3-3">The second and fourth cells depend on the cells preceeding them, please evaluate from top to bottom.</div>

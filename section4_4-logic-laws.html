@@ -681,19 +681,12 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -978,9 +971,9 @@ window.MathJax = {
 <div class="para" id="section4_4-logic-laws-2-2">In this section, we will list the most basic equivalences and implications of logic. Most of the equivalences listed in Table <a href="section4_4-logic-laws.html#table-equivalences" class="xref" data-knowl="./knowl/xref/table-equivalences.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 4.4.3: Basic Logical Laws - Equivalences">Table 4.4.3</a> should be obvious to the reader. Remember, 0 stands for contradiction, 1 for tautology. Many logical laws are similar to algebraic laws. For example, there is a logical law corresponding to the associative law of addition, <span class="process-math">\(a + (b + c) = (a + b) + c\text{.}\)</span> In fact, associativity of both conjunction and disjunction are among the laws of logic. Notice that with one exception, the laws are paired in such a way that exchanging the symbols <span class="process-math">\(\land\text{,}\)</span> <span class="process-math">\(\lor\text{,}\)</span> 1 and 0 for <span class="process-math">\(\lor\text{,}\)</span> <span class="process-math">\(\land\text{,}\)</span> 0, and 1, respectively, in any law gives you a second law. For example, <span class="process-math">\(p
 \lor 0\Leftrightarrow p\)</span> results in <span class="process-math">\(p \land 1 \Leftrightarrow p\text{.}\)</span> This is called a <em class="emphasis">duality principle</em>. For now, think of it as a way of remembering two laws for the price of one. We will leave it to the reader to verify a few of these laws with truth tables. However, the reader should be careful in applying duality to the conditional operator and implication since the dual involves taking the converse. For example, the dual of <span class="process-math">\(p \land q\Rightarrow p\)</span> is <span class="process-math">\(p \lor q \Leftarrow p\text{,}\)</span> which is usually written <span class="process-math">\(p\Rightarrow p \lor q\text{.}\)</span>
 </div>
-<details id="ex-identity-and" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-identity-and"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Verification of an Identity Law.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-identity-and-2">The Identity Law can be verified with this truth table. The fact that <span class="process-math">\((p \land
+</h4> <div class="para" id="ex-identity-and-2">The Identity Law can be verified with this truth table. The fact that <span class="process-math">\((p \land
 1)\leftrightarrow p\)</span> is a tautology serves as a valid proof.</div> <figure class="table table-like" id="tt-identity-and"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.4.2<span class="period">.</span></span><span class="space"> </span>Truth table to demonstrate the identity law for conjunction.</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(p\)</span></th>
@@ -1000,7 +993,7 @@ window.MathJax = {
 <td class="c m b0 r0 l0 t0 lines">1</td>
 <td class="c m b0 r0 l0 t0 lines">1</td>
 </tr>
-</table></div></figure></article></details><figure class="table table-like" id="table-equivalences"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.4.3<span class="period">.</span></span><span class="space"> </span>Basic Logical Laws - Equivalences</figcaption><div class="tabular-box natural-width"><table class="tabular">
+</table></div></figure></article><figure class="table table-like" id="table-equivalences"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.4.3<span class="period">.</span></span><span class="space"> </span>Basic Logical Laws - Equivalences</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b0 r0 l0 t0 lines"></td>
 <td class="c m b0 r0 l0 t0 lines">Commutative Laws</td>

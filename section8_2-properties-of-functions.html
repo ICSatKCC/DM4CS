@@ -681,19 +681,12 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -1025,18 +1018,21 @@ f(a) = f(b) \Rightarrow   a = b
 <article class="definition definition-like" id="def-bijective-function"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Bijective Function, Bijection.</span>
 </h4>  <div class="para" id="def-bijective-function-4-1">A function <span class="process-math">\(f: A \rightarrow B\)</span> is bijective if it is both injective and surjective. Bijective functions are also called one-to-one correspondences or one-to-one, onto functions.</div></article><div class="para" id="section8_2-properties-of-functions-3-11">The function <span class="process-math">\(f\)</span> that we opened this section with is bijective. The function <span class="process-math">\(g\)</span> is neither injective nor surjective.</div>
-<details id="ex-injective-notsurjective" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-injective-notsurjective"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Injective but not surjective function.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-injective-notsurjective-2">Let <span class="process-math">\(A = \{1, 2, 3\}\)</span> and <span class="process-math">\(B = \{a, b, c, d\}\text{,}\)</span> and define <span class="process-math">\(f:A \rightarrow  B\)</span> by <span class="process-math">\(f(1) = b\text{,}\)</span> <span class="process-math">\(f(2) = c\text{,}\)</span> and <span class="process-math">\(f(3)
-= a\text{.}\)</span> Then <span class="process-math">\(f \)</span> is injective but not surjective.</div></article></details><details id="ex-characteristic-properties" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4>
+<div class="para" id="ex-injective-notsurjective-2">Let <span class="process-math">\(A = \{1, 2, 3\}\)</span> and <span class="process-math">\(B = \{a, b, c, d\}\text{,}\)</span> and define <span class="process-math">\(f:A \rightarrow  B\)</span> by <span class="process-math">\(f(1) = b\text{,}\)</span> <span class="process-math">\(f(2) = c\text{,}\)</span> and <span class="process-math">\(f(3)
+= a\text{.}\)</span> Then <span class="process-math">\(f \)</span> is injective but not surjective.</div></article><article class="example example-like" id="ex-characteristic-properties"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Characteristic Functions.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-characteristic-properties-2">The characteristic function, <span class="process-math">\(\chi _S\)</span> in <a href="section8_1-functions.html#exercise-characteristic-function" class="xref" data-knowl="./knowl/xref/exercise-characteristic-function.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 8.1.5.2">Exercise 8.1.5.2</a>  is surjective if <span class="process-math">\(S\)</span> is a proper subset of <span class="process-math">\(A\text{,}\)</span> but never injective if <span class="process-math">\(\lvert A \rvert &gt; 2\text{.}\)</span>
-</div></article></details></section><section class="subsection" id="section8_2-properties-of-functions-4"><h3 class="heading hide-type">
+</h4>
+<div class="para" id="ex-characteristic-properties-2">The characteristic function, <span class="process-math">\(\chi _S\)</span> in <a href="section8_1-functions.html#exercise-characteristic-function" class="xref" data-knowl="./knowl/xref/exercise-characteristic-function.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 8.1.5.2">Exercise 8.1.5.2</a>  is surjective if <span class="process-math">\(S\)</span> is a proper subset of <span class="process-math">\(A\text{,}\)</span> but never injective if <span class="process-math">\(\lvert A \rvert &gt; 2\text{.}\)</span>
+</div></article></section><section class="subsection" id="section8_2-properties-of-functions-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">8.2.2</span><span class="space"> </span><span class="title">Counting</span>
 </h3>
-<details id="ex-classroom" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-classroom"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Seating Students.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-classroom-2">Let <span class="process-math">\(A\)</span> be the set of students who are sitting in a classroom,  let <span class="process-math">\(B\)</span> be the set of seats in the classroom, and let <span class="process-math">\(s\)</span> be the function which maps each student into the chair he or she is sitting in. When is <span class="process-math">\(s\)</span> one to one? When is it onto? Under normal circumstances, <span class="process-math">\(s\)</span>  would always be injective since no two different students would be in the same seat.  In order for <span class="process-math">\(s\)</span> to be surjective, we need all seats to be used, so <span class="process-math">\(s\)</span>  is a surjection if the classroom is filled to capacity.</div></article></details><div class="para" id="section8_2-properties-of-functions-4-3">Functions can also be used for counting the elements in large finite sets or in infinite sets. Let’s say we wished to count the occupants in an auditorium containing 1,500 seats. If each seat is occupied, the answer is obvious, 1,500 people. What we have done is to set up a one-to-one correspondence, or bijection, from seats to people. We formalize in a definition.</div>
+</h4>
+<div class="para" id="ex-classroom-2">Let <span class="process-math">\(A\)</span> be the set of students who are sitting in a classroom,  let <span class="process-math">\(B\)</span> be the set of seats in the classroom, and let <span class="process-math">\(s\)</span> be the function which maps each student into the chair he or she is sitting in. When is <span class="process-math">\(s\)</span> one to one? When is it onto? Under normal circumstances, <span class="process-math">\(s\)</span>  would always be injective since no two different students would be in the same seat.  In order for <span class="process-math">\(s\)</span> to be surjective, we need all seats to be used, so <span class="process-math">\(s\)</span>  is a surjection if the classroom is filled to capacity.</div></article><div class="para" id="section8_2-properties-of-functions-4-3">Functions can also be used for counting the elements in large finite sets or in infinite sets. Let’s say we wished to count the occupants in an auditorium containing 1,500 seats. If each seat is occupied, the answer is obvious, 1,500 people. What we have done is to set up a one-to-one correspondence, or bijection, from seats to people. We formalize in a definition.</div>
 <article class="definition definition-like" id="def-cardinality"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Cardinality.</span>
 </h4>
@@ -1045,9 +1041,10 @@ f(a) = f(b) \Rightarrow   a = b
 <article class="definition definition-like" id="def-countable-set"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Countable Set.</span>
 </h4>
-<div class="para" id="def-countable-set-3-1">If a set is finite or has the same cardinality as the set of positive integers, it is called a countable set.</div></article><details id="ex-the-alphabet" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="def-countable-set-3-1">If a set is finite or has the same cardinality as the set of positive integers, it is called a countable set.</div></article><article class="example example-like" id="ex-the-alphabet"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Counting the Alphabet.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-the-alphabet-2">
+</h4>
+<div class="para logical" id="ex-the-alphabet-2">
 <div class="para">The alphabet <span class="process-math">\(\{A, B, C, . . . , Z\}\)</span> has cardinality 26 through the following bijection into the set <span class="process-math">\(\{1,2,3,\ldots ,26\}\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1059,9 +1056,10 @@ A &amp; B &amp; C &amp; \cdots  &amp; Z \\
 \end{array}\text{.}
 \end{equation*}
 </div>
-</div></article></details><details id="ex-evens-eq-all" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ex-evens-eq-all"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">As many evens as all positive integers.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-evens-eq-all-2">Recall that <span class="process-math">\(2\mathbb{P}= \{b\in \mathbb{P} \mid b= 2k \textrm{ for some } k \in \mathbb{P} \}\text{.}\)</span>  Paradoxically, <span class="process-math">\(2\mathbb{P}\)</span>  has the same cardinality as the set <span class="process-math">\(\mathbb{P}\)</span> of positive integers. To prove this, we must find a bijection from <span class="process-math">\(\mathbb{P}\)</span> to <span class="process-math">\(2\mathbb{P}\text{.}\)</span>  Such a function isn’t unique, but this one is the simplest: <span class="process-math">\(f:\mathbb{P} \rightarrow  2\mathbb{P}\)</span> where <span class="process-math">\(f(m) = 2m\text{.}\)</span>  Two statements must be proven to justify our claim that <span class="process-math">\(f\)</span> is a bijection:</div> <div class="para logical" id="ex-evens-eq-all-3"><ul class="disc">
+</h4>
+<div class="para" id="ex-evens-eq-all-2">Recall that <span class="process-math">\(2\mathbb{P}= \{b\in \mathbb{P} \mid b= 2k \textrm{ for some } k \in \mathbb{P} \}\text{.}\)</span>  Paradoxically, <span class="process-math">\(2\mathbb{P}\)</span>  has the same cardinality as the set <span class="process-math">\(\mathbb{P}\)</span> of positive integers. To prove this, we must find a bijection from <span class="process-math">\(\mathbb{P}\)</span> to <span class="process-math">\(2\mathbb{P}\text{.}\)</span>  Such a function isn’t unique, but this one is the simplest: <span class="process-math">\(f:\mathbb{P} \rightarrow  2\mathbb{P}\)</span> where <span class="process-math">\(f(m) = 2m\text{.}\)</span>  Two statements must be proven to justify our claim that <span class="process-math">\(f\)</span> is a bijection:</div> <div class="para logical" id="ex-evens-eq-all-3"><ul class="disc">
 <li id="ex-evens-eq-all-3-1-1">
 <div class="para" id="ex-evens-eq-all-3-1-1-1">
 <span class="process-math">\(f\)</span> is one-to-one.</div>
@@ -1082,7 +1080,7 @@ f(a) = f(b) \Longrightarrow  2a = 2b \Longrightarrow  a = b.
 2\mathbb{P}\text{,}\)</span> <span class="process-math">\(b = 2k\)</span> for some <span class="process-math">\(k \in  \mathbb{P}\)</span> by the definition of <span class="process-math">\(2\mathbb{P}\text{.}\)</span> So we have <span class="process-math">\(f(k) = 2k = b\text{.}\)</span> Hence, each element of 2<span class="process-math">\(\mathbb{P}\)</span> is the image of some element of <span class="process-math">\(\mathbb{P}\text{.}\)</span>
 </div>
 </li>
-</ul></div></article></details><div class="para" id="section8_2-properties-of-functions-4-9">Another way to look at any function with <span class="process-math">\(\mathbb{P}\)</span> as its domain is creating a list of the form <span class="process-math">\(f(1),f(2), f(3), \ldots\text{.}\)</span>  In the previous example, the list  is <span class="process-math">\(2, 4, 6, \ldots\text{.}\)</span>  This infinite list clearly has no duplicate entries and every even positive integer appears in the list eventually.</div>
+</ul></div></article><div class="para" id="section8_2-properties-of-functions-4-9">Another way to look at any function with <span class="process-math">\(\mathbb{P}\)</span> as its domain is creating a list of the form <span class="process-math">\(f(1),f(2), f(3), \ldots\text{.}\)</span>  In the previous example, the list  is <span class="process-math">\(2, 4, 6, \ldots\text{.}\)</span>  This infinite list clearly has no duplicate entries and every even positive integer appears in the list eventually.</div>
 <div class="para" id="section8_2-properties-of-functions-4-10">A function <span class="process-math">\(f:\mathbb{P}\to A\)</span> is a bijection if the infinite list <span class="process-math">\(f(1), f(2), f(3), \ldots\)</span> contains no duplicates, and every element of <span class="process-math">\(A\)</span> appears on in the list.  In this case, we say the <span class="process-math">\(A\)</span> is <dfn class="terminology">countably infinite</dfn>, or simply <dfn class="terminology">countable</dfn>
 </div>
 <div class="para" id="section8_2-properties-of-functions-4-11">Readers who have studied real analysis should recall that the set of rational numbers is a countable set, while the set of real numbers is not a countable set. See the exercises at the end of this section for an another example of such a set.</div>
@@ -1098,9 +1096,10 @@ f(a) = f(b) \Longrightarrow  2a = 2b \Longrightarrow  a = b.
 \end{equation*}
 </div>
 <div class="para">which is a contradiction.</div>
-</div></article></details><details id="ex-names" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article></details><article class="example example-like" id="ex-names"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">A duplicate name is assured.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-names-2">Assume that a room contains four students with the first names John, James, and Mary. Prove that two students have the same first name. We can visualize a mapping from the set of students to the set of first names; each student has a first name. The pigeonhole principle applies with <span class="process-math">\(n = 1\text{,}\)</span> and we can conclude that at least two of the students have the same first name.</div></article></details></section><section class="exercises" id="exercises-8-2"><h3 class="heading hide-type">
+</h4>
+<div class="para" id="ex-names-2">Assume that a room contains four students with the first names John, James, and Mary. Prove that two students have the same first name. We can visualize a mapping from the set of students to the set of first names; each student has a first name. The pigeonhole principle applies with <span class="process-math">\(n = 1\text{,}\)</span> and we can conclude that at least two of the students have the same first name.</div></article></section><section class="exercises" id="exercises-8-2"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">8.2.3</span><span class="space"> </span><span class="title">Exercises for Section 8.2</span>
 </h3>
 <article class="exercise exercise-like" id="exercises-8-2-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>

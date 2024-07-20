@@ -681,19 +681,12 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -1004,19 +997,19 @@ window.MathJax = {
 </table></div></figure><div class="para" id="ss-proofs-with-quantifiers-4">The instantiation rules are used to fix a variable in a proposition over a universe to a single (but perhaps unspecified) value in order to apply the rules of propositional logic. The generalization rules are used to expand results from a fixed variable to the entire universe. Commonly in less formal proofs, such as those in mathematics, these are implied but not directly stated in the proof.</div>
 <article class="definition definition-like" id="def-constructive-proof"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Constructive Proof.</span>
-</h4> <div class="para" id="def-constructive-proof-3-1">Constructive proofs are used to prove theorems of the form: <span class="process-math">\((\exists n)(p(n))\text{.}\)</span> All that is needed is to find one value <span class="process-math">\(c\)</span> for which <span class="process-math">\(p(c)\)</span> is true and then invoke the Existential Generalization Rule.</div></article><details id="ex-constructive-proof" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4> <div class="para" id="def-constructive-proof-3-1">Constructive proofs are used to prove theorems of the form: <span class="process-math">\((\exists n)(p(n))\text{.}\)</span> All that is needed is to find one value <span class="process-math">\(c\)</span> for which <span class="process-math">\(p(c)\)</span> is true and then invoke the Existential Generalization Rule.</div></article><article class="example example-like" id="ex-constructive-proof"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">A constructive proof.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-constructive-proof-2">Show that there is a positive integer that can be written as the sum of cubes of positive integers in two different ways:</div>
+</h4> <div class="para" id="ex-constructive-proof-2">Show that there is a positive integer that can be written as the sum of cubes of positive integers in two different ways:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 10^3 + 9^3 = 12^3 + 1^3 = 1729
 \end{equation*}
 </div>
-<div class="para" id="ex-constructive-proof-4">Therefore by Existential Generalization it is true, there is a positive integer that can be written as the sum of cubes of positive integers in two different ways.</div></article></details><article class="definition definition-like" id="def-non-constructive-proof"><h4 class="heading">
+<div class="para" id="ex-constructive-proof-4">Therefore by Existential Generalization it is true, there is a positive integer that can be written as the sum of cubes of positive integers in two different ways.</div></article><article class="definition definition-like" id="def-non-constructive-proof"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Non-Constructive Proof.</span>
-</h4> <div class="para" id="def-non-constructive-proof-3-1">Non-constructive proofs are also used to prove theorems of the form: <span class="process-math">\((\exists n)(p(n))\text{.}\)</span> Assume no <span class="process-math">\(c\)</span> exists for which <span class="process-math">\(p(c)\)</span> is true and show this leads to a contradiction.</div></article><details id="ex-non-constructive-proof" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4> <div class="para" id="def-non-constructive-proof-3-1">Non-constructive proofs are also used to prove theorems of the form: <span class="process-math">\((\exists n)(p(n))\text{.}\)</span> Assume no <span class="process-math">\(c\)</span> exists for which <span class="process-math">\(p(c)\)</span> is true and show this leads to a contradiction.</div></article><article class="example example-like" id="ex-non-constructive-proof"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">A non-constructive proof.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-non-constructive-proof-2">Show that there exist irrational numbers <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> such that <span class="process-math">\(x^y\)</span> is rational.</div> <div class="para logical" id="ex-non-constructive-proof-3">
+</h4> <div class="para" id="ex-non-constructive-proof-2">Show that there exist irrational numbers <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> such that <span class="process-math">\(x^y\)</span> is rational.</div> <div class="para logical" id="ex-non-constructive-proof-3">
 <ul class="disc">
 <li id="ex-non-constructive-proof-3-1-1"><div class="para" id="ex-non-constructive-proof-3-1-1-1">Take the negation of the conclusion: no such <span class="process-math">\(x, y\)</span> exist.</div></li>
 <li id="ex-non-constructive-proof-3-1-2"><div class="para" id="ex-non-constructive-proof-3-1-2-1">We know that <span class="process-math">\(\sqrt{2}\)</span> is irrational.</div></li>
@@ -1046,11 +1039,11 @@ x^y = (\sqrt{2}^{\sqrt{2}})^{\sqrt{2}} = \sqrt{2}^{(\sqrt{2}\sqrt{2})} = \sqrt{2
 </div></li>
 </ul>
 <div class="para">.</div>
-</div></article></details><article class="definition definition-like" id="def-proof-of-non-existence"><h4 class="heading">
+</div></article><article class="definition definition-like" id="def-proof-of-non-existence"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Proof of Non-Existence.</span>
-</h4> <div class="para" id="def-proof-of-non-existence-2-1">Non-Existence proofs are used to prove theorems of the form: <span class="process-math">\(\neg (\exists n)(p(n))\text{.}\)</span> Using the equivalent form <span class="process-math">\((\forall n) \neg(p(n)) )\)</span> show that <span class="process-math">\((p(n))\)</span> is never true.</div></article><details id="ex-non-existence-proof" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4> <div class="para" id="def-proof-of-non-existence-2-1">Non-Existence proofs are used to prove theorems of the form: <span class="process-math">\(\neg (\exists n)(p(n))\text{.}\)</span> Using the equivalent form <span class="process-math">\((\forall n) \neg(p(n)) )\)</span> show that <span class="process-math">\((p(n))\)</span> is never true.</div></article><article class="example example-like" id="ex-non-existence-proof"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">A non-existence proof..</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-non-existence-proof-2">
+</h4> <div class="para logical" id="ex-non-existence-proof-2">
 <div class="para">Show that there is no number <span class="process-math">\(x\)</span> such that <span class="process-math">\(x^2 + 1 \lt 0\text{.}\)</span>
 </div>
 <ul class="disc">
@@ -1071,12 +1064,12 @@ x^y = (\sqrt{2}^{\sqrt{2}})^{\sqrt{2}} = \sqrt{2}^{(\sqrt{2}\sqrt{2})} = \sqrt{2
 <li id="ex-non-existence-proof-2-3-5"><div class="para" id="ex-non-existence-proof-2-3-5-1">Therefore, by Universal Instantiation <span class="process-math">\((\forall x) \neg(p(x)) )\square\)</span>
 </div></li>
 </ul>
-</div></article></details><article class="definition definition-like" id="def-proof-by-counterexample"><h4 class="heading">
+</div></article><article class="definition definition-like" id="def-proof-by-counterexample"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Proof by Counterexample.</span>
 </h4> <div class="para" id="def-proof-by-counterexample-2-1">Counterexamples are used to show theorems of the form <span class="process-math">\((\forall n)(p(n))\)</span> are false. All that is needed is to find one value <span class="process-math">\(c\)</span> for which <span class="process-math">\(p(c)\)</span> is false. That value is called a counterexample. <span class="process-math">\((\forall n)(p(n))\)</span> is then false by Universal Instantiation. Counterexamples can also be used to prove statements with a negated universal quantifier <span class="process-math">\(\neg (\forall n)(p(n))\)</span> are true. This is done using the counterexample in a proof by contradiction on <span class="process-math">\((\forall n)(p(n))\)</span>
-</div>.</article><details id="ex-proof-by-counterexample" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div>.</article><article class="example example-like" id="ex-proof-by-counterexample"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">A counterexample proof..</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-proof-by-counterexample-2">
+</h4> <div class="para logical" id="ex-proof-by-counterexample-2">
 <div class="para">Show that every positive integer is the sum of the squares of 3 integers.</div>
 <ul class="disc">
 <li id="ex-proof-by-counterexample-2-1-1"><div class="para" id="ex-proof-by-counterexample-2-1-1-1">This can be rewritten as <span class="process-math">\((\forall x)(p(x))\text{,}\)</span> where <span class="process-math">\(p(x)\)</span> is the statement "<span class="process-math">\(x\)</span> is the sum of the squares of 3 integers" and <span class="process-math">\(x \in \mathbb{P}\text{.}\)</span>
@@ -1095,11 +1088,11 @@ x^y = (\sqrt{2}^{\sqrt{2}})^{\sqrt{2}} = \sqrt{2}^{(\sqrt{2}\sqrt{2})} = \sqrt{2
 </li>
 <li id="ex-proof-by-counterexample-2-1-3"><div class="para" id="ex-proof-by-counterexample-2-1-3-1">Therefore, 7 is a counterexample and <span class="process-math">\((\forall x)(p(x))\)</span> is false.</div></li>
 </ul>
-</div></article></details><article class="definition definition-like" id="def-ug-proof"><h4 class="heading">
+</div></article><article class="definition definition-like" id="def-ug-proof"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Proof by Universal Generalization.</span>
-</h4> <div class="para" id="def-ug-proof-2-1">Universal Generalization is used for many proofs of mathematical formulas, but most less formal proofs don’t state that it is used. In a proof using Universal Generalization, we pick an arbitrary value from the universe and show that the statement is true. The catch is the value must be arbitrary, showing a formula works for a particular value cannot be generalized to all values in the universe.</div></article><details id="ex-ug-proof" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4> <div class="para" id="def-ug-proof-2-1">Universal Generalization is used for many proofs of mathematical formulas, but most less formal proofs don’t state that it is used. In a proof using Universal Generalization, we pick an arbitrary value from the universe and show that the statement is true. The catch is the value must be arbitrary, showing a formula works for a particular value cannot be generalized to all values in the universe.</div></article><article class="example example-like" id="ex-ug-proof"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">A proof using Universal Generalization..</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-ug-proof-2">Prove if an integer <span class="process-math">\(x\)</span> is even then <span class="process-math">\(x^2\)</span> is even.</div> <div class="para" id="ex-ug-proof-3">The statement to be proven can be rewritten more formally as <span class="process-math">\((\forall x)(p(x) \rightarrow p(x^2))\text{,}\)</span> where <span class="process-math">\(p(x)\)</span> is the statement <span class="process-math">\(x\)</span> is even. A formal proof would proceed as follows:</div> <ol class="decimal">
+</h4> <div class="para" id="ex-ug-proof-2">Prove if an integer <span class="process-math">\(x\)</span> is even then <span class="process-math">\(x^2\)</span> is even.</div> <div class="para" id="ex-ug-proof-3">The statement to be proven can be rewritten more formally as <span class="process-math">\((\forall x)(p(x) \rightarrow p(x^2))\text{,}\)</span> where <span class="process-math">\(p(x)\)</span> is the statement <span class="process-math">\(x\)</span> is even. A formal proof would proceed as follows:</div> <ol class="decimal">
 <li id="ex-ug-proof-4-1"><div class="para" id="ex-ug-proof-4-1-1">
 <span class="process-math">\((\forall x)(p(x) \rightarrow p(x^2)) \)</span> Premise</div></li>
 <li id="ex-ug-proof-4-2"><div class="para" id="ex-ug-proof-4-2-1">
@@ -1115,7 +1108,7 @@ x^y = (\sqrt{2}^{\sqrt{2}})^{\sqrt{2}} = \sqrt{2}^{(\sqrt{2}\sqrt{2})} = \sqrt{2
 <span class="process-math">\(p(c^2)\)</span> is true.</div></li>
 <li id="ex-ug-proof-4-7"><div class="para" id="ex-ug-proof-4-7-1">
 <span class="process-math">\(\therefore (\forall x)(p(x) \rightarrow p(x^2))\)</span> Universal Generalization.</div></li>
-</ol></article></details></section><section class="exercises" id="exercises-5_3"><h3 class="heading hide-type">
+</ol></article></section><section class="exercises" id="exercises-5_3"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="space"> </span><span class="title">Exercises for Section 5.3</span>
 </h3>
 <article class="exercise exercise-like" id="exercises-5_3-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>

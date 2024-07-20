@@ -681,19 +681,12 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -1042,26 +1035,26 @@ window.MathJax = {
 <article class="definition definition-like" id="def-subset"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Subset.</span>
 </h4>  <div class="para" id="def-subset-3-1">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be sets. We say that <span class="process-math">\(A\)</span> is a subset of <span class="process-math">\(B\)</span> if and only if every element of <span class="process-math">\(A\)</span> is an element of <span class="process-math">\(B\text{.}\)</span> We write <span class="process-math">\(A \subseteq B\)</span> to denote the fact that <span class="process-math">\(A\)</span> is a subset of <span class="process-math">\(B\text{.}\)</span>
-</div></article><details id="some-subsets" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="some-subsets"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Some Subsets.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="some-subsets-2"><ol class="lower-alpha">
+</h4> <div class="para logical" id="some-subsets-2"><ol class="lower-alpha">
 <li id="some-subsets-2-1-1"><div class="para" id="some-subsets-2-1-1-1">If <span class="process-math">\(A = \{3, 5, 8\}\)</span> and <span class="process-math">\(B = \{5, 8, 3, 2, 6\}\text{,}\)</span> then <span class="process-math">\(A\subseteq B\)</span> .</div></li>
 <li id="some-subsets-2-1-2"><div class="para" id="some-subsets-2-1-2-1"><span class="process-math">\(\displaystyle \mathbb{N}\subseteq \mathbb{Z}\subseteq \mathbb{Q}\subseteq \mathbb{R}\subseteq
 \mathbb{C}\)</span></div></li>
 <li id="some-subsets-2-1-3"><div class="para" id="some-subsets-2-1-3-1">If <span class="process-math">\(S = \{3, 5, 8\}\)</span> and <span class="process-math">\(T = \{5, 3, 8\}\text{,}\)</span> then <span class="process-math">\(S \subseteq T\)</span> and <span class="process-math">\(T
 \subseteq S\text{.}\)</span>
 </div></li>
-</ol></div></article></details><article class="definition definition-like" id="set-equality"><h4 class="heading">
+</ol></div></article><article class="definition definition-like" id="set-equality"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Set Equality.</span>
 </h4> <div class="para" id="set-equality-2-1">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be sets. We say that <span class="process-math">\(A\)</span> is equal to <span class="process-math">\(B\)</span> (notation <span class="process-math">\(A
 = B\)</span>) if and only if every element of <span class="process-math">\(A\)</span> is an element of <span class="process-math">\(B\)</span> and conversely every element of <span class="process-math">\(B\)</span> is an element of <span class="process-math">\(A\text{;}\)</span> that is, <span class="process-math">\(A \subseteq B\)</span> and <span class="process-math">\(B
 \subseteq A\text{.}\)</span>
-</div></article><details id="set-equality-examples" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="set-equality-examples"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Examples illustrating set equality.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="set-equality-examples-2"><ol class="lower-alpha">
+</h4> <div class="para logical" id="set-equality-examples-2"><ol class="lower-alpha">
 <li id="set-equality-examples-2-1-1"><div class="para" id="set-equality-examples-2-1-1-1">In <a href="section1_1-set-Notation-and-Relations.html#some-subsets" class="xref" data-knowl="./knowl/xref/some-subsets.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.1.4: Some Subsets">Example 1.1.4</a>, <span class="process-math">\(S = T\text{.}\)</span> Note that the ordering of the elements is unimportant.</div></li>
 <li id="set-equality-examples-2-1-2"><div class="para" id="set-equality-examples-2-1-2-1">The number of times that an element appears in an enumeration doesn’t affect a set. For example, if <span class="process-math">\(A = \{1, 5, 3, 5\}\)</span> and <span class="process-math">\(B = \{1, 5, 3\}\text{,}\)</span> then <span class="process-math">\(A = B\text{.}\)</span> Warning to readers of other texts: Some books introduce the concept of a multiset, in which the number of occurrences of an element matters.</div></li>
-</ol></div></article></details><div class="para" id="ss-subsets-6">A few comments are in order about the expression “if and only if” as used in our definitions. This expression means “is equivalent to saying,” or more exactly, that the word (or concept) being defined can at any time be replaced by the defining expression. Conversely, the expression that defines the word (or concept) can be replaced by the word.</div>
+</ol></div></article><div class="para" id="ss-subsets-6">A few comments are in order about the expression “if and only if” as used in our definitions. This expression means “is equivalent to saying,” or more exactly, that the word (or concept) being defined can at any time be replaced by the defining expression. Conversely, the expression that defines the word (or concept) can be replaced by the word.</div>
 <div class="para" id="ss-subsets-7">Occasionally there is need to discuss the set that contains no elements, namely the empty set, which is denoted by <span class="process-math">\(\emptyset\)</span>. This set is also called the null set.</div>
 <div class="para" id="ss-subsets-8">It is clear, we hope, from the definition of a subset, that given any set <span class="process-math">\(A\)</span> we have <span class="process-math">\(A\subseteq
 A\)</span> and <span class="process-math">\(\emptyset \subseteq A\text{.}\)</span> If <span class="process-math">\(A\)</span> is nonempty, then <span class="process-math">\(A\)</span> is called an <dfn class="terminology">improper subset</dfn> of <span class="process-math">\(A\text{.}\)</span> All other subsets of <span class="process-math">\(A\text{,}\)</span> including the empty set, are called <dfn class="terminology">proper subsets</dfn> of <span class="process-math">\(A\text{.}\)</span> The empty set is an improper subset of itself.</div>

@@ -681,19 +681,12 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -987,15 +980,15 @@ window.MathJax = {
 <li id="ss-sums-6-1-3"><div class="para" id="ss-sums-6-1-3-1">The value of <span class="process-math">\(k\)</span> below the summation symbol is the <em class="emphasis">initial index</em> and the value above the summation symbol is the <em class="emphasis">terminal index</em>.</div></li>
 <li id="ss-sums-6-1-4"><div class="para" id="ss-sums-6-1-4-1">It is understood that the series is a sum of the general terms where the index start with the initial index and increases by one up to and including the terminal index.</div></li>
 </ul></div>
-<details id="some_finite_series" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="some_finite_series"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Some finite series.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="some_finite_series-2"><ol class="lower-alpha">
+</h4> <div class="para logical" id="some_finite_series-2"><ol class="lower-alpha">
 <li id="some_finite_series-2-1-1"><div class="para" id="some_finite_series-2-1-1-1"><span class="process-math">\(\displaystyle \sum_{i=1}^4 a_i= a_1+ a_2+a_3+a_4\)</span></div></li>
 <li id="some_finite_series-2-1-2"><div class="para" id="some_finite_series-2-1-2-1"><span class="process-math">\(\displaystyle \sum_{k=0}^5 b_k=b_0+b_1+b_2+b_3+b_4+b_5\)</span></div></li>
 <li id="some_finite_series-2-1-3"><div class="para" id="some_finite_series-2-1-3-1"><span class="process-math">\(\displaystyle \sum_{i=-2}^2 c_i=c_{-2}+c_{-1}+c_0+c_1+c_2\)</span></div></li>
-</ol></div></article></details><details id="more_finite_series" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</ol></div></article><article class="example example-like" id="more_finite_series"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">More finite series.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para" id="more_finite_series-2">If the general terms in a series are more specific, the sum can often be simplified. For example,</div> <div class="para logical" id="more_finite_series-3"><ol class="lower-alpha">
+</h4> <div class="para" id="more_finite_series-2">If the general terms in a series are more specific, the sum can often be simplified. For example,</div> <div class="para logical" id="more_finite_series-3"><ol class="lower-alpha">
 <li id="more_finite_series-3-1-1"><div class="para" id="more_finite_series-3-1-1-1"><span class="process-math">\(\displaystyle \sum_{i=1}^4 i^2=1^2+2^2+3^2+4^2=30\)</span></div></li>
 <li id="more_finite_series-3-1-2"><div class="para logical" id="more_finite_series-3-1-2-1"><div class="displaymath process-math">
 \begin{equation*}
@@ -1006,7 +999,7 @@ window.MathJax = {
 \end{split}\text{.}
 \end{equation*}
 </div></div></li>
-</ol></div></article></details></section><section class="subsection" id="ss-generalizations"><h3 class="heading hide-type">
+</ol></div></article></section><section class="subsection" id="ss-generalizations"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="space"> </span><span class="title">Generalizations</span>
 </h3>
 <div class="para" id="ss-generalizations-2">Summation notation can be generalized to many mathematical operations, for example, set intersection: <span class="process-math">\(A_1\cap A_2\cap A_3\cap A_4=\underset{i=1}{\overset{4}{\cap }}A_i\)</span>
@@ -1018,9 +1011,9 @@ window.MathJax = {
 <li id="generalized-set-operations-3-2-1-2"><div class="para" id="generalized-set-operations-3-2-1-2-1"><span class="process-math">\(\displaystyle A_1\cup A_2\cup \cdots \cup A_n=\underset{i=1}{\overset{n}{\cup }}A_i\)</span></div></li>
 <li id="generalized-set-operations-3-2-1-3"><div class="para" id="generalized-set-operations-3-2-1-3-1"><span class="process-math">\(\displaystyle A_1\times A_2\times \cdots \times A_n=\underset{i=1}{\overset{n}{\times }}A_i\)</span></div></li>
 <li id="generalized-set-operations-3-2-1-4"><div class="para" id="generalized-set-operations-3-2-1-4-1"><span class="process-math">\(\displaystyle A_1\oplus A_2\oplus \cdots \oplus A_n=\underset{i=1}{\overset{n}{\oplus }}A_i\)</span></div></li>
-</ol></div></article><details id="some_generalized_operations" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</ol></div></article><article class="example example-like" id="some_generalized_operations"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Some generalized operations.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="some_generalized_operations-2">
+</h4> <div class="para logical" id="some_generalized_operations-2">
 <div class="para">If <span class="process-math">\(A_1 = \{0, 2, 3\}\text{,}\)</span> <span class="process-math">\(A_2 = \{1, 2, 3, 6\}\text{,}\)</span> and <span class="process-math">\(A_3 = \{-1, 0, 3, 9\}\text{,}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1046,7 +1039,7 @@ B_n\right)
 A \cap \left(\underset{i=1}{\overset{n}{\cup }}B_i\right)= \underset{i=1}{\overset{n}{\cup }}\left(A\cap B_i\right)\text{.}
 \end{equation*}
 </div>
-</div></article></details></section><section class="exercises" id="exercises-1-5"><h3 class="heading hide-type">
+</div></article></section><section class="exercises" id="exercises-1-5"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="space"> </span><span class="title">Exercises for Section 1.5</span>
 </h3>
 <article class="exercise exercise-like" id="exercises-1-5-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>

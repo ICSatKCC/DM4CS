@@ -681,19 +681,12 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -1002,9 +995,9 @@ S = \{ (b,b) , (b,g) , (g,b) , (g,g) \} ,
 P(A \mid B) = \frac{P(A \cap B)}{P(B)} . 
 \end{equation*}
 </div>
-</div></article><details id="ex-anils-children" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ex-anils-children"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of a second boy.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-anils-children-2">
+</h4> <div class="para logical" id="ex-anils-children-2">
 <div class="para">Returning to Anil’s two children, we saw that the sample space is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-conditional-probability.html">
 \begin{equation*}
@@ -1046,9 +1039,9 @@ P(A \mid B) = \frac{P(A \cap B)}{P(B)}
 \end{equation*}
 </div>
 <div class="para">which is the same answer as we got before.</div>
-</div></article></details><details id="ex-condl-prob-dice-roll" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ex-condl-prob-dice-roll"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of rolling a three given an odd number is rolled.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-condl-prob-dice-roll-2">
+</h4> <div class="para logical" id="ex-condl-prob-dice-roll-2">
 <div class="para">Assume we roll a fair die, i.e., we choose an element uniformly at random from the sample space</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1100,7 +1093,7 @@ P(B \mid A) = \frac{P(B \cap A)}{P(A)}
 \end{equation*}
 </div>
 <div class="para">This shows that, in general, <span class="process-math">\(P(A \mid B)\)</span> is not equal to <span class="process-math">\(P(B \mid A)\text{.}\)</span> Observe that this is not surprising. (Do you see why?)</div>
-</div></article></details><article class="theorem theorem-like" id="thm-sum-of-conditional-complements"><h4 class="heading">
+</div></article><article class="theorem theorem-like" id="thm-sum-of-conditional-complements"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Sum of the conditional probabilities of complements.</span>
 </h4>
 <div class="para logical" id="thm-sum-of-conditional-complements-2-1">
@@ -1228,9 +1221,9 @@ P(A \mid B) = P(A) .
 P(B \mid A) = P(B) .
 \end{equation*}
 </div>
-</div></article><details id="ex-rolling-two-dice-independent" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ex-rolling-two-dice-independent"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Independence of Rolling Two Dice.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-rolling-two-dice-independent-2">
+</h4> <div class="para logical" id="ex-rolling-two-dice-independent-2">
 <div class="para">Assume we roll a red die and a blue die; thus, the sample space is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1327,7 +1320,7 @@ P \left( A_3 \right) \cdot P \left( B_3 \right)
 \end{equation*}
 </div>
 <div class="para">and the events <span class="process-math">\(A_3\)</span> and <span class="process-math">\(B_3\)</span> are not independent. This is not surprising: If we know that <span class="process-math">\(B_3\)</span> occurs, then <span class="process-math">\(A_3\)</span> cannot not occur. Thus, the event <span class="process-math">\(B_3\)</span> has an effect on the probability that the event <span class="process-math">\(A_3\)</span> occurs.</div>
-</div></article></details><div class="para" id="subsec3_2_2-independent-events-6">Consider two events <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> in a sample space <span class="process-math">\(S\text{.}\)</span> If these events are independent, then the probability that <span class="process-math">\(A\)</span> occurs does not depend on whether or not <span class="process-math">\(B\)</span> occurs. Since whether or not <span class="process-math">\(B\)</span> occurs is the same as whether the complement <span class="process-math">\(\overline{B}\)</span> does not or does occur, it should not be a surprise that the events <span class="process-math">\(A\)</span> and <span class="process-math">\(\overline{B}\)</span> are independent as well.</div>
+</div></article><div class="para" id="subsec3_2_2-independent-events-6">Consider two events <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> in a sample space <span class="process-math">\(S\text{.}\)</span> If these events are independent, then the probability that <span class="process-math">\(A\)</span> occurs does not depend on whether or not <span class="process-math">\(B\)</span> occurs. Since whether or not <span class="process-math">\(B\)</span> occurs is the same as whether the complement <span class="process-math">\(\overline{B}\)</span> does not or does occur, it should not be a surprise that the events <span class="process-math">\(A\)</span> and <span class="process-math">\(\overline{B}\)</span> are independent as well.</div>
 <article class="theorem theorem-like" id="thm-independence-of-complements"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Independence of Complements.</span>
 </h4>
@@ -1433,9 +1426,9 @@ P(A \cap B \cap C) = P(A) \cdot P(B) \cdot P(C) .
 \end{equation*}
 </div>
 </div>
-<details id="ex-pairwise-but-not-mutual-independence" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-pairwise-but-not-mutual-independence"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Pairwise but not Mutually Independent Coin Flips.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-pairwise-but-not-mutual-independence-2">
+</h4> <div class="para logical" id="ex-pairwise-but-not-mutual-independence-2">
 <div class="para">Consider flipping a coin three times and assume that the result is a uniformly random element from the sample space</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1508,7 +1501,7 @@ P(A \cap B \cap C) \neq P(A) \cdot P(B) \cdot P(C)
 \end{equation*}
 </div>
 <div class="para">and, therefore, the sequence <span class="process-math">\(A,B,C\)</span> is <em class="emphasis">not</em> mutually independent. Of course, this is not surprising: If both events <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> occur, then event <span class="process-math">\(C\)</span> also occurs.</div>
-</div></article></details></section><section class="subsection" id="subsec3_2_3-random-variables"><h3 class="heading hide-type">
+</div></article></section><section class="subsection" id="subsec3_2_3-random-variables"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="space"> </span><span class="title">Random Variables</span>
 </h3>
 <section class="introduction" id="subsec3_2_3-random-variables-3"><div class="para" id="subsec3_2_3-random-variables-3-1"><blockquote class="blockquote" id="subsec3_2_3-random-variables-3-1-1"><div class="para" id="subsec3_2_3-random-variables-3-1-1-1">A random variable is neither random nor variable.</div></blockquote></div> <div class="para" id="subsec3_2_3-random-variables-3-2">We have already seen random variables in <a href="section3_1-probability.html" class="internal" title="Section 3.1: Introduction to Probability">Section 3.1</a>, even though we did not use that term there. For example, in <a href="section3_1-probability.html#ex-flipping-a-coin" class="xref" data-knowl="./knowl/xref/ex-flipping-a-coin.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.5: Flipping a Coin">Example 3.1.5</a>, we rolled a die twice and were interested in the sum of the results of these two rolls. In other words, we did an “experiment” (rolling a die twice) and asked for a function of the outcome (the sum of the results of the two rolls).</div></section><article class="definition definition-like" id="def-random-variable"><h4 class="heading">
@@ -1531,9 +1524,9 @@ X(i,j) = i+j
 </div>
 </div>
 <div class="para" id="subsec3_2_3-random-variables-6">Note that the term “random variable” is misleading: A random variable is <em class="emphasis">not</em> random, but a function that assigns, to every outcome <span class="process-math">\(\omega\)</span> in the sample space <span class="process-math">\(S\text{,}\)</span> a real number <span class="process-math">\(X(\omega)\text{.}\)</span> Also, a random variable is <em class="emphasis">not</em> a variable, but a function.</div>
-<details id="ex-random-variables-three-coins" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-random-variables-three-coins"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Flipping Three Coins with Random Variables.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-random-variables-three-coins-2">
+</h4> <div class="para logical" id="ex-random-variables-three-coins-2">
 <div class="para">Assume we flip three coins. The sample space is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1595,7 +1588,7 @@ Y =
 \right.
 \end{equation*}
 </div>
-</div></article></details><div class="para logical" id="subsec3_2_3-random-variables-8">
+</div></article><div class="para logical" id="subsec3_2_3-random-variables-8">
 <div class="para">Random variables give rise to events in a natural way. In the three-coin example, “<span class="process-math">\(X=0\)</span>” corresponds to the event <span class="process-math">\(\{TTT\}\text{,}\)</span> whereas “<span class="process-math">\(X=2\)</span>” corresponds to the event <span class="process-math">\(\{HHT,HTH,THH\}\text{.}\)</span> The table below gives some values of the random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> together with the corresponding events.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1627,9 +1620,9 @@ Y=2 &amp; \emptyset  \\
 \{ \omega \in S : X(\omega) = x \} .
 \end{equation*}
 </div>
-</div></article><details id="ex-prob-random-variables-three-coins" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ex-prob-random-variables-three-coins"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.14</span><span class="period">.</span><span class="space"> </span><span class="title">Probabilities of Flipping Three Coins with Random Variables.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-prob-random-variables-three-coins-2">
+</h4> <div class="para logical" id="ex-prob-random-variables-three-coins-2">
 <div class="para">Let us return to the example in which we flip three coins. Assume that the coins are fair and the three flips are mutually independent. Consider again the corresponding random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{.}\)</span> It should be clear how we determine, for example, the probability that <span class="process-math">\(X\)</span> is equal to <span class="process-math">\(0\text{,}\)</span> which we will write as <span class="process-math">\(P(X=0)\text{.}\)</span> Using our interpretation of “<span class="process-math">\(X=0\)</span>” as being the event <span class="process-math">\(\{TTT\}\text{,}\)</span> we get</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1662,7 +1655,7 @@ P(Y=2) &amp; = P(\emptyset) \\
 \end{array}
 \end{equation*}
 </div>
-</div></article></details><div class="para logical" id="subsec3_2_3-random-variables-12">
+</div></article><div class="para logical" id="subsec3_2_3-random-variables-12">
 <div class="para">Consider an arbitrary probability space <span class="process-math">\((S,P)\)</span> and let <span class="process-math">\(X : S \rightarrow \mathbb{R}\)</span> be a random variable. Using <a href="section3_1-probability.html#def-probability-event" class="xref" data-knowl="./knowl/xref/def-probability-event.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.4: Probability of an Event">Definition 3.1.4</a> and <a href="section3_2-Bayes.html#def-X-equals-x" class="xref" data-knowl="./knowl/xref/def-X-equals-x.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.2.13: X = x">Definition 3.2.13</a>, the probability of the event “<span class="process-math">\(X=x\)</span>”, i.e., the probability that <span class="process-math">\(X\)</span> is equal to <span class="process-math">\(x\text{,}\)</span> is equal to</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-probability-event.html ./knowl/xref/def-X-equals-x.html">
 \begin{equation*}
@@ -1729,9 +1722,9 @@ P(A \mid B)  &amp;= \frac{P(B \mid A) \cdot P(A)}{P(B)} \\
 &amp;= \frac{P(B \mid A) \cdot P(A)}{(P(B \mid A) \cdot P(A)) + (P(B \mid \overline{A}) \cdot P(\overline{A}))}\end{array} .
 \end{equation*}
 </div>
-</div></article><details id="ex-bayes-balls-boxes" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ex-bayes-balls-boxes"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.18</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of having chosen from a particular urn.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-bayes-balls-boxes-2">We have two urns <span class="process-math">\(U_i\)</span> and <span class="process-math">\(U_j\text{.}\)</span> <span class="process-math">\(U_i\)</span> contains 2 black balls and 3 white balls. <span class="process-math">\(U_j\)</span> contains 1 black ball and 1 white ball. An urn is chosen at random, then a ball is chosen at random from it. If a black ball is chosen, what is the probability it came from urn <span class="process-math">\(U_i\text{?}\)</span>
+</h4> <div class="para" id="ex-bayes-balls-boxes-2">We have two urns <span class="process-math">\(U_i\)</span> and <span class="process-math">\(U_j\text{.}\)</span> <span class="process-math">\(U_i\)</span> contains 2 black balls and 3 white balls. <span class="process-math">\(U_j\)</span> contains 1 black ball and 1 white ball. An urn is chosen at random, then a ball is chosen at random from it. If a black ball is chosen, what is the probability it came from urn <span class="process-math">\(U_i\text{?}\)</span>
 </div> <div class="para logical" id="ex-bayes-balls-boxes-3">
 <div class="para">Let <span class="process-math">\(I\)</span> be the event urn <span class="process-math">\(U_i\)</span> is chosen and <span class="process-math">\(B\)</span> be the event a black ball is chosen.</div>
 <ol class="decimal">
@@ -1764,7 +1757,7 @@ P(I|B) &amp; = \frac{P(B|I)P(I)}{P(B)}\\
 </div>
 </div></li>
 </ol>
-</div></article></details><div class="para" id="subsec3_2_4-bayes-theorem-6">Bayes’ Theorem can be expanded to calculate the conditional probability from more than two events, <span class="process-math">\(A, \overline{A}\text{.}\)</span>
+</div></article><div class="para" id="subsec3_2_4-bayes-theorem-6">Bayes’ Theorem can be expanded to calculate the conditional probability from more than two events, <span class="process-math">\(A, \overline{A}\text{.}\)</span>
 </div>
 <article class="definition definition-like" id="def-generalized-bayes-rule"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.19</span><span class="period">.</span><span class="space"> </span><span class="title">Generalized Bayes’ Theorem.</span>

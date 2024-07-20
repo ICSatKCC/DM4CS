@@ -681,19 +681,12 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -976,9 +969,10 @@ window.MathJax = {
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="space"> </span><span class="title">Tuples or Permutations with Repetition</span>
 </h3>
 <div class="para" id="tuples-with-repetition-4">We have already seen in <a href="section2_2-permutations.html#ordering-digits" class="xref" data-knowl="./knowl/xref/ordering-digits.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.2.11: Ordering of digits under different conditions">Example 2.2.11</a> that if we want to choose an ordered list from a set of items but allow items to be chosen repeatedly, this doesn’t follow the formal definition of a permutation. Instead we are forming <dfn class="terminology">ordered <span class="process-math">\(n-\)</span>tuples</dfn> or <dfn class="terminology">permutations with repetition</dfn> and <a href="section2_1-the-rule-of-products.html#rule-of-products" class="internal" title="Subsection 2.1.2: The Rule Of Products">The Rule Of Products</a> is applied.</div>
-<details id="counting-with-order-and-repetition" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="counting-with-order-and-repetition"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Counting with Order and Repetition.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="counting-with-order-and-repetition-2-1">How many strings of length <span class="process-math">\(r\)</span> can be formed from the uppercase letters of the English alphabet?</div> <div class="para" id="counting-with-order-and-repetition-2-2">Each of the <span class="process-math">\(r\)</span> positions in the string has 26 possibilities, so by <a href="section2_1-the-rule-of-products.html#rule-of-products" class="internal" title="Subsection 2.1.2: The Rule Of Products">The Rule Of Products</a> there are <span class="process-math">\(26^r\)</span> strings.</div></article></details></section><section class="subsection" id="combinations-with-repetition"><h3 class="heading hide-type">
+</h4>
+<div class="para" id="counting-with-order-and-repetition-2-1">How many strings of length <span class="process-math">\(r\)</span> can be formed from the uppercase letters of the English alphabet?</div> <div class="para" id="counting-with-order-and-repetition-2-2">Each of the <span class="process-math">\(r\)</span> positions in the string has 26 possibilities, so by <a href="section2_1-the-rule-of-products.html#rule-of-products" class="internal" title="Subsection 2.1.2: The Rule Of Products">The Rule Of Products</a> there are <span class="process-math">\(26^r\)</span> strings.</div></article></section><section class="subsection" id="combinations-with-repetition"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="space"> </span><span class="title">Combinations with Repetition</span>
 </h3>
 <div class="para" id="combinations-with-repetition-3">Suppose we don’t care about the order and items can be repeated or items are indistinguishable from each other.</div>
@@ -1062,9 +1056,10 @@ window.MathJax = {
 <div class="para" id="combination-with-repetition-formula-4">This is just counting the number of combinations of positions for <span class="process-math">\(n-1\)</span> bars (or <span class="process-math">\(k\)</span> stars) in a sequence with <span class="process-math">\(n+k-1\)</span> positions. It is the same as choosing <span class="process-math">\(n-1\)</span> items from a set of <span class="process-math">\(n+k-1\)</span> elements.</div></article><div class="para" id="combinations-with-repetition-18">While we are at it, we can also answer a related question: how many ways are there to distribute 7 cookies to 4 kids so that each kid gets at least one cookie?</div>
 <div class="para" id="combinations-with-repetition-19">Giving each kid one cookie is required and there is no choice. We only need to count how the remaining 3 cookies can be distributed to the 4 kids. So we have 3 stars and 3 bars for a total of 6 symbols, 3 of which must be bars. So we see that there are <span class="process-math">\({6 \choose 3}\)</span> ways to distribute the cookies.</div>
 <div class="para" id="combinations-with-repetition-20">Stars and bars can be used in counting problems other than kids and cookies. Here are a few examples:</div>
-<details id="counting-pizzas" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="counting-pizzas"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Counting Pizzas with Repeated Toppings.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="counting-pizzas-2-1">Your favorite mathematical pizza chain offers 10 toppings. How many pizzas can you make if you are allowed 6 toppings? The order of toppings does not matter but now you are allowed repeats. So one possible pizza is triple sausage, double pineapple, and onions.</div>
+</h4>
+<div class="para" id="counting-pizzas-2-1">Your favorite mathematical pizza chain offers 10 toppings. How many pizzas can you make if you are allowed 6 toppings? The order of toppings does not matter but now you are allowed repeats. So one possible pizza is triple sausage, double pineapple, and onions.</div>
 <div class="solutions"><details id="counting-pizzas-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="counting-pizzas-3-1">We get 6 toppings (counting possible repeats). Represent each of these toppings as a star. Think of going down the menu one topping at a time: you see anchovies first, and skip to the next, sausage. You say yes to sausage 3 times (use 3 stars), then switch to the next topping on the list. You keep skipping until you get to pineapple, which you say yes to twice. Another switch and you are at onions. You say yes once. Then you keep switching until you get to the last topping, never saying yes again (since you already have said yes 6 times. There are 10 toppings to choose from, so we must switch from considering one topping to the next 9 times. These are the bars.</div> <div class="para logical" id="counting-pizzas-3-2">
 <div class="para">Now that we are confident that we have the right number of stars and bars, we answer the question simply: there are 6 stars and 9 bars, so 15 symbols. We need to pick 9 of them to be bars, so there number of pizzas possible is</div>
@@ -1074,9 +1069,10 @@ window.MathJax = {
 \end{equation*}
 </div>
 </div>
-</div></details></div></article></details><details id="counting-phone-numbers" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></details></div></article><article class="example example-like" id="counting-phone-numbers"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Counting Phone Numbers with Non-Increasing Digits.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="counting-phone-numbers-2-1">How many 7 digit phone numbers are there in which the digits are non-increasing? That is, every digit is less than or equal to the previous one.</div>
+</h4>
+<div class="para" id="counting-phone-numbers-2-1">How many 7 digit phone numbers are there in which the digits are non-increasing? That is, every digit is less than or equal to the previous one.</div>
 <div class="solutions"><details id="counting-phone-numbers-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="counting-phone-numbers-3-1">
 <div class="para">We need to decide on 7 digits so we will use 7 stars. The bars will represent a switch from each possible single digit number down the next smaller one. So the phone number 866-5221 is represented by the stars and bars chart</div>
@@ -1093,9 +1089,10 @@ window.MathJax = {
 \end{equation*}
 </div>
 </div>
-</div></details></div></article></details><details id="counting-solutions-to-equations" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></details></div></article><article class="example example-like" id="counting-solutions-to-equations"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Counting Solutions to Equations.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="counting-solutions-to-equations-2-1">
+</h4>
+<div class="para logical" id="counting-solutions-to-equations-2-1">
 <div class="para">How many solutions are there to the equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1117,13 +1114,14 @@ x_1 + x_2 + x_3 + x_4 + x_5 = 13.
 </div></li>
 <li id="counting-solutions-to-equations-3-2-1-3"><div class="para" id="counting-solutions-to-equations-3-2-1-3-1">Now each variable must be 2 or greater. So before any counting, give each variable 2 units. We now have 3 remaining stars and 4 bars, so there are <span class="process-math">\({7 \choose 4}\)</span> solutions.</div></li>
 </ol></div>
-</div></details></div></article></details></section><section class="subsection" id="ordering-indistinguishable-objects"><h3 class="heading hide-type">
+</div></details></div></article></section><section class="subsection" id="ordering-indistinguishable-objects"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="space"> </span><span class="title">Ordering Indistinguishable Objects</span>
 </h3>
 <div class="para" id="ordering-indistinguishable-objects-3">In the previous section, we examined how many ways we can choose from a limited number indistinguishable objects, where the order didn’t matter. If one child got four cookies, it didn’t matter if she was given one first and the other three after all the rest of the cookies were given out to the other children. What can we do if the order of choosing does matter?</div>
-<details id="counting-strings-with-repeated-letters" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="counting-strings-with-repeated-letters"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Counting Strings With Repeated Letters.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="counting-strings-with-repeated-letters-2-1">Suppose we wish to count the number of ways we can rearrange the letters in the word "PROCESSES". For this kind of counting problem we cannot apply the Permutation Formula because two letters, "S" and "E", are repeated. We also cannot use the Rule of Products because the repetition is limited, we only have three "S"s, two "E"s, and one each of "P", "R", "O" and "C" to choose.</div> <div class="para" id="counting-strings-with-repeated-letters-2-2">We have nine positions to fill. We can first choose three of those positions for the "S"s: <span class="process-math">\(\binom{9}{3}\)</span> (note we use the binomial formula because the "S"s are identical, the order of the "S"s doesn’t matter). Then we will have six positions left to fill. We can choose two of those for the "E"s: <span class="process-math">\(\binom{6}{2}\)</span> That leaves four positions for "P", three for "R", two for "O" and one for "C": <span class="process-math">\(\binom{4}{1}\text{,}\)</span> <span class="process-math">\(\binom{3}{1}\)</span> , <span class="process-math">\(\binom{2}{1}\text{,}\)</span> <span class="process-math">\(\binom{1}{1}\)</span>
+</h4>
+<div class="para" id="counting-strings-with-repeated-letters-2-1">Suppose we wish to count the number of ways we can rearrange the letters in the word "PROCESSES". For this kind of counting problem we cannot apply the Permutation Formula because two letters, "S" and "E", are repeated. We also cannot use the Rule of Products because the repetition is limited, we only have three "S"s, two "E"s, and one each of "P", "R", "O" and "C" to choose.</div> <div class="para" id="counting-strings-with-repeated-letters-2-2">We have nine positions to fill. We can first choose three of those positions for the "S"s: <span class="process-math">\(\binom{9}{3}\)</span> (note we use the binomial formula because the "S"s are identical, the order of the "S"s doesn’t matter). Then we will have six positions left to fill. We can choose two of those for the "E"s: <span class="process-math">\(\binom{6}{2}\)</span> That leaves four positions for "P", three for "R", two for "O" and one for "C": <span class="process-math">\(\binom{4}{1}\text{,}\)</span> <span class="process-math">\(\binom{3}{1}\)</span> , <span class="process-math">\(\binom{2}{1}\text{,}\)</span> <span class="process-math">\(\binom{1}{1}\)</span>
 </div> <div class="para logical" id="counting-strings-with-repeated-letters-2-3">
 <div class="para">We can then apply the product rule to determine how many ways there are to do all of those:</div>
 <div class="displaymath process-math" id="counting-strings-with-repeated-letters-2-3-1">
@@ -1135,7 +1133,7 @@ x_1 + x_2 + x_3 + x_4 + x_5 = 13.
 \amp = 30240
 \end{align*}
 </div>
-</div></article></details><article class="definition definition-like" id="Definition-Multiset"><h4 class="heading">
+</div></article><article class="definition definition-like" id="Definition-Multiset"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Multiset.</span>
 </h4>  <div class="para" id="Definition-Multiset-3-1">A <dfn class="terminology">multiset</dfn> is a collection of objects, just like a set, but can contain an object more than once (the order of the elements still doesn’t matter). For example, <span class="process-math">\(\{1,1, 2, 5, 5, 7\}\)</span> is a multiset of size 6.</div></article><article class="definition definition-like" id="Definition-Multiplicity"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Multiplicity.</span>
@@ -1150,16 +1148,17 @@ x_1 + x_2 + x_3 + x_4 + x_5 = 13.
 \frac{n!}{n_1!*n_2!*\dots * n_k!}
 \end{equation*}
 </div>
-</div></article><details id="counting-bridge-hands" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="counting-bridge-hands"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">Counting Bridge Hands.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="counting-bridge-hands-2-1">We saw this example in <a href="section2_4-combinations-and-the-binomial-theorem.html#sage-bridge-hands" class="internal" title="Subsection 2.4.3: SageMath Note">Subsection 2.4.3</a>. Now we have a formula to solve it directly, though it might not seem like the same type of problem at first.</div> <div class="para" id="counting-bridge-hands-2-2">In bridge, the location of a hand in relation to the dealer has some bearing on the game. The number of possible hands takes into account the number each player’s possible hands depending on the order in which they are dealt. The player in the West position gets their 13 cards first, then the player in the North position gets 13 cards, then the player in the East gets 13 cards and finally the South gets 13 cards. We can apply <a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#permutations-of-multisets" class="xref" data-knowl="./knowl/xref/permutations-of-multisets.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.5.9: Permutations Of Multisets">Theorem 2.5.9</a> to solve this.</div> <div class="para logical" id="counting-bridge-hands-2-3">
+</h4>
+<div class="para" id="counting-bridge-hands-2-1">We saw this example in <a href="section2_4-combinations-and-the-binomial-theorem.html#sage-bridge-hands" class="internal" title="Subsection 2.4.3: SageMath Note">Subsection 2.4.3</a>. Now we have a formula to solve it directly, though it might not seem like the same type of problem at first.</div> <div class="para" id="counting-bridge-hands-2-2">In bridge, the location of a hand in relation to the dealer has some bearing on the game. The number of possible hands takes into account the number each player’s possible hands depending on the order in which they are dealt. The player in the West position gets their 13 cards first, then the player in the North position gets 13 cards, then the player in the East gets 13 cards and finally the South gets 13 cards. We can apply <a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#permutations-of-multisets" class="xref" data-knowl="./knowl/xref/permutations-of-multisets.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.5.9: Permutations Of Multisets">Theorem 2.5.9</a> to solve this.</div> <div class="para logical" id="counting-bridge-hands-2-3">
 <div class="para">In this case we have <span class="process-math">\(n = 52\)</span> items, the cards, and four "types" of items, West’s cards, North’s cards, East’s cards, and South’s cards, each with multiplicity 13. To see how we can use the <a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#permutations-of-multisets" class="xref" data-knowl="./knowl/xref/permutations-of-multisets.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.5.9: Permutations Of Multisets">Theorem 2.5.9</a> to solve this: apply some ordering to the entire deck of cards, say the Ace of Hearts is first, the Two of Hearts is second, and so on, for all 52 cards. Then the cards dealt to West correspond to choosing positions for 13 cards (of type West’s cards), the cards dealt to North correspond to choosing positions for 13 cards of type North’s cards, and so on.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/permutations-of-multisets.html">
 \begin{equation*}
 \binom{52}{13}\binom{39}{13}\binom{26}{13}\binom{13}{13} = \frac{52!}{13!*13!*13!* 13!}
 \end{equation*}
 </div>
-</div></article></details></section><section class="exercises" id="exercises-2-5"><h3 class="heading hide-type">
+</div></article></section><section class="exercises" id="exercises-2-5"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercises-2-5-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>

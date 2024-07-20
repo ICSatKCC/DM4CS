@@ -681,19 +681,12 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-basic-det-techniques-properties" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Basic Techniques and Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-Cofactors-2-x-2-Dets" class="internal"><span class="codenumber">11.4.1.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.1.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-props-of-dets" class="internal"><span class="codenumber">11.4.1.3</span> <span class="title">Properties of Determinants</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-det-row-ops" class="internal"><span class="codenumber">11.4.1.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section11_4.html#ss-apps-of-det" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Applications of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section11_4.html#subsubsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.2.1</span> <span class="title">A Formula For The Inverse</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -979,16 +972,16 @@ window.MathJax = {
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">13.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Recurrence Relation.</span>
 </h4>  <div class="para" id="def-recurrence-relation-3-1">Let <span class="process-math">\(S\)</span> be a sequence of numbers. A recurrence relation on <span class="process-math">\(S\)</span> is a formula that relates all but a finite number of terms of <span class="process-math">\(S\)</span> to previous terms of <span class="process-math">\(S\text{.}\)</span> That is, there is a <span class="process-math">\(k_0\)</span> in the domain of <span class="process-math">\(S\)</span> such that if <span class="process-math">\(k \geq k_0\text{,}\)</span> then <span class="process-math">\(S(k)\)</span> is expressed in terms of some (and possibly all) of the terms that precede <span class="process-math">\(S(k)\text{.}\)</span> If the domain of <span class="process-math">\(S\)</span> is <span class="process-math">\(\{0,1,2,\textrm{...}\}\text{,}\)</span> the terms <span class="process-math">\(S
 (0), S(1), . . . , S\left(k_0-1\right)\)</span> are not defined by the recurrence formula.Their values are the initial conditions (or boundary conditions, or basis) that complete the definition of <span class="process-math">\(S\text{.}\)</span>
-</div></article><details id="ex-some-recurrence-relations" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ex-some-recurrence-relations"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Some Examples of Recurrence Relations.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-some-recurrence-relations-2"><ol class="lower-alpha">
+</h4> <div class="para logical" id="ex-some-recurrence-relations-2"><ol class="lower-alpha">
 <li id="ex-some-recurrence-relations-2-1-1"><div class="para" id="ex-some-recurrence-relations-2-1-1-1">The Fibonacci sequence is defined by the recurrence relation <span class="process-math">\(F_k=
 F_{k-2}+ F_{k-1}\text{,}\)</span> <span class="process-math">\(k\geq 2,\)</span> with the initial conditions <span class="process-math">\(F_0=1\)</span> and <span class="process-math">\(F_1=1\text{.}\)</span> The recurrence relation is called a second-order relation because <span class="process-math">\(F_k\)</span> depends on the two previous terms of <span class="process-math">\(F\text{.}\)</span> Recall that the sequence <span class="process-math">\(C\)</span> in Section 8.2, <a href="section8_5-Sequences.html#ex-three-sequences" class="xref" data-knowl="./knowl/xref/ex-three-sequences.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.5.2: Three sequences defined in different ways">Example 8.5.2</a>, can be defined with the same recurrence relation, but with different initial conditions.</div></li>
 <li id="ex-some-recurrence-relations-2-1-2"><div class="para" id="ex-some-recurrence-relations-2-1-2-1">The relation <span class="process-math">\(T(k) = 2T(k - 1)^2 - k T(k - 3)\)</span> is a third-order recurrence relation. If values of <span class="process-math">\(T(0)\text{,}\)</span> <span class="process-math">\(T(1)\text{,}\)</span> and <span class="process-math">\(T(2)\)</span> are specified, then <span class="process-math">\(T\)</span> is completely defined.</div></li>
 <li id="ex-some-recurrence-relations-2-1-3"><div class="para" id="ex-some-recurrence-relations-2-1-3-1">The recurrence relation <span class="process-math">\(S(n) = S(\lfloor n/2\rfloor ) + 5\text{,}\)</span> <span class="process-math">\(n &gt;
 0\text{,}\)</span> with <span class="process-math">\(S(0)=0\)</span> has infinite order. To determine <span class="process-math">\(S(n)\)</span> when <span class="process-math">\(n\)</span> is even, you must go back <span class="process-math">\(n/2\)</span> terms. Since <span class="process-math">\(n/2\)</span> grows unbounded with <span class="process-math">\(n\text{,}\)</span> no finite order can be given to <span class="process-math">\(S\text{.}\)</span>
 </div></li>
-</ol></div></article></details></section><section class="subsection" id="ss-solving-recurrence-relations"><h3 class="heading hide-type">
+</ol></div></article></section><section class="subsection" id="ss-solving-recurrence-relations"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">13.1.2</span><span class="space"> </span><span class="title">Solving Recurrence Relations</span>
 </h3>
 <div class="para" id="ss-solving-recurrence-relations-3">Sequences are often most easily defined with a recurrence relation; however, the calculation of terms by directly applying a recurrence relation can be time-consuming. The process of determining a closed form expression for the terms of a sequence from its recurrence relation is called solving the relation. There is no single technique or algorithm that can be used to solve all recurrence relations. In fact, some recurrence relations cannot be solved. The relation that defines <span class="process-math">\(T\)</span> above is one such example. Most of the recurrence relations that you are likely to encounter in the future are classified as finite order linear recurrence relations with constant coefficients. This class is the one that we will spend most of our time with in this chapter.</div>
@@ -1007,16 +1000,16 @@ C_2, \ldots , C_n\)</span> are constants and <span class="process-math">\(f\)</s
 </div>
 </div></article><div class="para" id="ss-solving-recurrence-relations-5">Note: We will shorten the name of this class of relations to <span class="process-math">\(n^{\textrm{th}}\)</span> order linear relations. Therefore, in further discussions, <span class="process-math">\(S(k)
 + 2k S(k - 1) = 0\)</span> would not be considered a first-order linear relation.</div>
-<details id="ex-some-finite-order-rr" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-some-finite-order-rr"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Some Finite Order Linear Relations.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-some-finite-order-rr-2"><ol class="lower-alpha">
+</h4> <div class="para logical" id="ex-some-finite-order-rr-2"><ol class="lower-alpha">
 <li id="ex-some-finite-order-rr-2-1-1"><div class="para" id="ex-some-finite-order-rr-2-1-1-1">The Fibonacci sequence is defined by the second-order linear relation because <span class="process-math">\(F_k- F_{k-1}- F_{k-2}=0\)</span>
 </div></li>
 <li id="ex-some-finite-order-rr-2-1-2"><div class="para" id="ex-some-finite-order-rr-2-1-2-1">The relation <span class="process-math">\(P(j) + 2P(j - 3) = j^2\)</span> is a third-order linear relation. In this case, <span class="process-math">\(C_1= C_2= 0\text{.}\)</span>
 </div></li>
 <li id="ex-some-finite-order-rr-2-1-3"><div class="para" id="ex-some-finite-order-rr-2-1-3-1">The relation <span class="process-math">\(A(k)= 2(A(k - 1) + k)\)</span> can be written as <span class="process-math">\(A(k) -
 2A(k - 1) = 2k\text{.}\)</span> Therefore, it is a first-order linear relation.</div></li>
-</ol></div></article></details></section><section class="subsection" id="sss-recurrence-relations-obtained-from-solutions"><h3 class="heading hide-type">
+</ol></div></article></section><section class="subsection" id="sss-recurrence-relations-obtained-from-solutions"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">13.1.3</span><span class="space"> </span><span class="title">Recurrence relations obtained from “solutions”</span>
 </h3>
 <div class="para" id="sss-recurrence-relations-obtained-from-solutions-3">Before giving an algorithm for solving finite order linear relations, we will examine recurrence relations that arise from certain closed form expressions. The closed form expressions are selected so that we will obtain finite order linear relations from them. This approach may seem a bit contrived, but if you were to write down a few simple algebraic expressions, chances are that most of them would be similar to the ones we are about to examine.</div>
@@ -1115,12 +1108,12 @@ C_2, \ldots , C_n\)</span> are constants and <span class="process-math">\(f\)</s
 = 0\)</span> for all <span class="process-math">\(k\text{.}\)</span> For each recurrence relation <span class="process-math">\(S(k) + C_1S(k - 1)
 +\ldots + C_n S(k - n) = f(k)\text{,}\)</span> the associated homogeneous relation is <span class="process-math">\(S(k)
 + C_1S(k - 1) +\ldots + C_n S(k - n) =0\)</span>
-</div></article><details id="ex-first-order-homogeneous-rr" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ex-first-order-homogeneous-rr"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">First Order Homogeneous Recurrence Relations.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-first-order-homogeneous-rr-2">
-<span class="process-math">\(D(k) - 2D(k - 1) = 0\)</span> is a first-order homogeneous relation. Since it can also be written as <span class="process-math">\(D(k) = 2D(k - 1)\text{,}\)</span> it should be no surprise that it arose from an expression that involves powers of 2. More generally, you would expect that the solution of <span class="process-math">\(L(k) - a L(k - 1)\)</span> would involve <span class="process-math">\(a^k\text{.}\)</span> Actually, the solution is <span class="process-math">\(L(k) = L(0)a^k\text{,}\)</span> where the value of <span class="process-math">\(L(0)\)</span> is given by the initial condition.</div></article></details><details id="ex-second-order-rr" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4> <div class="para" id="ex-first-order-homogeneous-rr-2">
+<span class="process-math">\(D(k) - 2D(k - 1) = 0\)</span> is a first-order homogeneous relation. Since it can also be written as <span class="process-math">\(D(k) = 2D(k - 1)\text{,}\)</span> it should be no surprise that it arose from an expression that involves powers of 2. More generally, you would expect that the solution of <span class="process-math">\(L(k) - a L(k - 1)\)</span> would involve <span class="process-math">\(a^k\text{.}\)</span> Actually, the solution is <span class="process-math">\(L(k) = L(0)a^k\text{,}\)</span> where the value of <span class="process-math">\(L(0)\)</span> is given by the initial condition.</div></article><article class="example example-like" id="ex-second-order-rr"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">A Second Order Example.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-second-order-rr-2">
+</h4> <div class="para logical" id="ex-second-order-rr-2">
 <div class="para">Consider the second-order homogeneous relation <span class="process-math">\(S(k) - 7S(k - 1) + 12 S(k- 2) = 0\)</span> together with the initial conditions <span class="process-math">\(S(0) = 4\)</span> and <span class="process-math">\(S(1) = 4\text{.}\)</span> From our discussion above, we can predict that the solution to this relation involves terms of the form <span class="process-math">\(b a^k\text{,}\)</span> where <span class="process-math">\(b\)</span> and <span class="process-math">\(a\)</span> are nonzero constants that must be determined. If the solution were to equal this quantity exactly, then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1168,7 +1161,7 @@ b_1+b_2=4 \\
 \end{equation*}
 </div>
 </div> <div class="para" id="ex-second-order-rr-4">The solution of this set of simultaneous equations is <span class="process-math">\(b_1 = 12\)</span> and <span class="process-math">\(b_2 = -8\)</span> and so the solution is <span class="process-math">\(S(k) = 12 \cdot 3^k - 8 \cdot 4^k\text{.}\)</span>
-</div></article></details><article class="definition definition-like" id="def-characteristic-equation"><h4 class="heading">
+</div></article><article class="definition definition-like" id="def-characteristic-equation"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">13.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Characteristic Equation.</span>
 </h4>  <div class="para logical" id="def-characteristic-equation-4-1">
 <div class="para">The characteristic equation of the homogeneous <span class="process-math">\(n^{\textrm{th}}\)</span> order linear relation <span class="process-math">\(S(k) + C_1 S(k- 1) +\ldots + C_n S(k - n) =0\)</span> is the <span class="process-math">\(n\)</span>th degree polynomial equation</div>
@@ -1179,14 +1172,14 @@ C_1a^{n-1}+\cdots +C_{n-1}a+C_n=0
 \end{equation*}
 </div>
 <div class="para">The left-hand side of this equation is called the characteristic polynomial. The roots of the characteristic polynomial are called the characteristic roots of the equation.</div>
-</div></article><details id="ex-some-char-equations" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="ex-some-char-equations"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Some characteristic equations.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-some-char-equations-2"><ol class="lower-alpha">
+</h4> <div class="para logical" id="ex-some-char-equations-2"><ol class="lower-alpha">
 <li id="ex-some-char-equations-2-1-1"><div class="para" id="ex-some-char-equations-2-1-1-1">The characteristic equation of <span class="process-math">\(F(k) - F(k - 1) - F(k - 2) = 0\)</span> is <span class="process-math">\(a^2-a-1=0\text{.}\)</span>
 </div></li>
 <li id="ex-some-char-equations-2-1-2"><div class="para" id="ex-some-char-equations-2-1-2-1">The characteristic equation of <span class="process-math">\(Q(k) + 2Q(k - 1) - 3Q(k - 2) - 6 Q(k-
 4) = 0\)</span> is <span class="process-math">\(a^4+ 2a^3 - 3a^2 - 6 = 0.\)</span> Note that the absence of a <span class="process-math">\(Q(k - 3)\)</span> term means that there is not an <span class="process-math">\(x^{4-3}=x\)</span> term appearing in the characteristic equation.</div></li>
-</ol></div></article></details><article class="algorithm theorem-like" id="algorithm-linear-homogeneous-recurrence-relations"><h4 class="heading">
+</ol></div></article><article class="algorithm theorem-like" id="algorithm-linear-homogeneous-recurrence-relations"><h4 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">13.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Algorithm for Solving Homogeneous Finite-order Linear Relations.</span>
 </h4>
 <div class="para logical" id="algorithm-linear-homogeneous-recurrence-relations-2-1"><ol class="lower-alpha">
@@ -1221,9 +1214,9 @@ C_2}\right)\textrm{ and }\frac{1}{2}\left(-C_1-\sqrt{C_1{}^2-4 C_2}\right)
 </div>
 </div>
 <div class="para" id="sss-recurrence-relations-obtained-from-solutions-17">Although cubic and quartic formulas exist, they are too lengthy to introduce here. For this reason, the only higher-order relations (<span class="process-math">\(n\geq 3\)</span>) that you could be expected to solve by hand are ones for which there is an easy factorization of the characteristic polynomial.</div>
-<details id="ex-hrr-solution-example-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-hrr-solution-example-1"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">A solution using the algorithm.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-hrr-solution-example-1-2">Suppose that <span class="process-math">\(T\)</span> is defined by <span class="process-math">\(T(k) =7T(k-1)-10T(k-2)\text{,}\)</span> with <span class="process-math">\(T(0) = 4\)</span> and <span class="process-math">\(T(1) = 17\text{.}\)</span> We can solve this recurrence relation with <a href="s-recurrence-relations.html#algorithm-linear-homogeneous-recurrence-relations" class="xref" data-knowl="./knowl/xref/algorithm-linear-homogeneous-recurrence-relations.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 13.1.12: Algorithm for Solving Homogeneous Finite-order Linear Relations">Algorithm 13.1.12</a>:</div> <div class="para logical" id="ex-hrr-solution-example-1-3"><ol class="lower-alpha">
+</h4> <div class="para" id="ex-hrr-solution-example-1-2">Suppose that <span class="process-math">\(T\)</span> is defined by <span class="process-math">\(T(k) =7T(k-1)-10T(k-2)\text{,}\)</span> with <span class="process-math">\(T(0) = 4\)</span> and <span class="process-math">\(T(1) = 17\text{.}\)</span> We can solve this recurrence relation with <a href="s-recurrence-relations.html#algorithm-linear-homogeneous-recurrence-relations" class="xref" data-knowl="./knowl/xref/algorithm-linear-homogeneous-recurrence-relations.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 13.1.12: Algorithm for Solving Homogeneous Finite-order Linear Relations">Algorithm 13.1.12</a>:</div> <div class="para logical" id="ex-hrr-solution-example-1-3"><ol class="lower-alpha">
 <li id="ex-hrr-solution-example-1-3-1-1"><div class="para" id="ex-hrr-solution-example-1-3-1-1-1">Note that we have written the recurrence relation in “nonstandard” form. To avoid errors in this easy step, you might consider a rearrangement of the equation to, in this case, <span class="process-math">\(T(k)
 -7T(k-1)+10T(k-2)=0\text{.}\)</span> Therefore, the characteristic equation is <span class="process-math">\(a^2
 -7a + 10 = 0\text{.}\)</span>
@@ -1252,11 +1245,11 @@ b_1+b_2=4 \\
 \end{array}
 \right\}\textrm{ }\)</span> The simultaneous equations have the solution <span class="process-math">\(b_1=1\)</span> and <span class="process-math">\(b_2=3\text{.}\)</span> Therefore, <span class="process-math">\(T(k)=2^{k }+3\cdot 5^k\text{.}\)</span>
 </div></li>
-</ol></div></article></details><div class="para" id="sss-recurrence-relations-obtained-from-solutions-19">Here is one rule that might come in handy: If the coefficients of the characteristic polynomial are all integers, with the constant term equal to <span class="process-math">\(m\text{,}\)</span> then the only possible rational characteristic roots are divisors of <span class="process-math">\(m\)</span> (both positive and negative).</div>
+</ol></div></article><div class="para" id="sss-recurrence-relations-obtained-from-solutions-19">Here is one rule that might come in handy: If the coefficients of the characteristic polynomial are all integers, with the constant term equal to <span class="process-math">\(m\text{,}\)</span> then the only possible rational characteristic roots are divisors of <span class="process-math">\(m\)</span> (both positive and negative).</div>
 <div class="para" id="sss-recurrence-relations-obtained-from-solutions-20">With the aid of a computer (or possibly only a calculator), we can increase <span class="process-math">\(n\text{.}\)</span> Approximations of the characteristic roots can be obtained by any of several well-known methods, some of which are part of standard software packages. There is no general rule that specifies the values of <span class="process-math">\(n\)</span> for which numerical approximations will be feasible. The accuracy that you get will depend on the relation that you try to solve. (See Exercise 17 of this section.)</div>
-<details id="ex-hrr-solution-example-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-hrr-solution-example-2"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.1.14</span><span class="period">.</span><span class="space"> </span><span class="title">Solution of a Third Order Recurrence Relation.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-hrr-solution-example-2-2">Solve <span class="process-math">\(S(k) - 7S(k - 2) + 6S(k - 3) = 0\text{,}\)</span> where <span class="process-math">\(S(0) =8\text{,}\)</span> <span class="process-math">\(S(1) = 6\text{,}\)</span> and <span class="process-math">\(S(2) = 22\text{.}\)</span>
+</h4> <div class="para" id="ex-hrr-solution-example-2-2">Solve <span class="process-math">\(S(k) - 7S(k - 2) + 6S(k - 3) = 0\text{,}\)</span> where <span class="process-math">\(S(0) =8\text{,}\)</span> <span class="process-math">\(S(1) = 6\text{,}\)</span> and <span class="process-math">\(S(2) = 22\text{.}\)</span>
 </div> <div class="para logical" id="ex-hrr-solution-example-2-3"><ol class="lower-alpha">
 <li id="ex-hrr-solution-example-2-3-1-1"><div class="para" id="ex-hrr-solution-example-2-3-1-1-1">The characteristic equation is <span class="process-math">\(a^3 - 7a + 6 = 0\text{.}\)</span>
 </div></li>
@@ -1280,9 +1273,9 @@ b_1+4b_2+9b_3=22 \\
 \right\}\textrm{ }\)</span> You can solve this system by elimination to obtain <span class="process-math">\(b_1=5\text{,}\)</span> <span class="process-math">\(b_2=2\text{,}\)</span> and <span class="process-math">\(b_3=1\text{.}\)</span> Therefore, <span class="process-math">\(\quad\)</span><span class="process-math">\(S(k)
 = 5 + 2\cdot 2^k + (-3)^k = 5 + 2^{k+1} + (-3)^k\)</span>
 </div></li>
-</ol></div></article></details><details id="ex-hrr-solution-example-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</ol></div></article><article class="example example-like" id="ex-hrr-solution-example-3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Solution with a Double Characteristic Root.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-hrr-solution-example-3-2">Solve <span class="process-math">\(D(k) - 8D(k - 1) + 16D(k - 2) = 0\text{,}\)</span> where <span class="process-math">\(D(2) = 16\)</span> and <span class="process-math">\(D(3) =
+</h4> <div class="para" id="ex-hrr-solution-example-3-2">Solve <span class="process-math">\(D(k) - 8D(k - 1) + 16D(k - 2) = 0\text{,}\)</span> where <span class="process-math">\(D(2) = 16\)</span> and <span class="process-math">\(D(3) =
 80\text{.}\)</span>
 </div> <div class="para logical" id="ex-hrr-solution-example-3-3"><ol class="lower-alpha">
 <li id="ex-hrr-solution-example-3-3-1-1"><div class="para" id="ex-hrr-solution-example-3-3-1-1-1">Characteristic equation: <span class="process-math">\(a^2- 8a + 16 = 0\text{.}\)</span>
@@ -1316,7 +1309,7 @@ b_{11}=\frac{1}{4} \\
 <div class="para" id="ex-hrr-solution-example-3-3-1-4-2">Therefore <span class="process-math">\(D (k) = (1/2 + (1/4) k) 4^k= (2 + k)4^{k-1}\text{.}\)</span>
 </div>
 </li>
-</ol></div></article></details></section><section class="subsection" id="ss-solution-of-nonhomogeneous-relations"><h3 class="heading hide-type">
+</ol></div></article></section><section class="subsection" id="ss-solution-of-nonhomogeneous-relations"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">13.1.4</span><span class="space"> </span><span class="title">Solution of Nonhomogeneous Finite Order Linear Relations</span>
 </h3>
 <div class="para" id="ss-solution-of-nonhomogeneous-relations-3">Our algorithm for nonhomogeneous relations will not be as complete as for the homogeneous case. This is due to the fact that different right-hand sides (<span class="process-math">\(f(k)\)</span>’s) call for different rules in obtaining a particular solution.</div>
@@ -1364,9 +1357,9 @@ f(k)\)</span>
 <td class="c m b0 r0 l0 t0 lines">exponential function, <span class="process-math">\(d a^k\)</span>
 </td>
 </tr>
-</table></div></figure><details id="ex-nhrr-solution-example-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</table></div></figure><article class="example example-like" id="ex-nhrr-solution-example-1"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.1.18</span><span class="period">.</span><span class="space"> </span><span class="title">Solution of a Nonhomogeneous First Order Recurrence Relation.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-nhrr-solution-example-1-2">Solve <span class="process-math">\(S(k) + 5S(k - 1) = 9\text{,}\)</span> with <span class="process-math">\(S(0) = 6\text{.}\)</span>
+</h4> <div class="para" id="ex-nhrr-solution-example-1-2">Solve <span class="process-math">\(S(k) + 5S(k - 1) = 9\text{,}\)</span> with <span class="process-math">\(S(0) = 6\text{.}\)</span>
 </div> <div class="para logical" id="ex-nhrr-solution-example-1-3"><ol class="lower-alpha">
 <li id="ex-nhrr-solution-example-1-3-1-1"><div class="para" id="ex-nhrr-solution-example-1-3-1-1-1">The associated homogeneous relation,<span class="process-math">\(S(k) + 5S(k - 1) = 0\)</span> has the characteristic equation <span class="process-math">\(a + 5 = 0\text{;}\)</span> therefore, <span class="process-math">\(a = -5\text{.}\)</span> The homogeneous solution is <span class="process-math">\(S^{(h)}(k) =b (-5)^k\text{.}\)</span>
 </div></li>
@@ -1379,9 +1372,9 @@ S^{(h)}(k)+S^{(p)}(k) =b (-5)^k+1.5\)</span> The initial condition will give us 
 }b\textrm{ }+ 1.5 = 6\)</span> Therefore, <span class="process-math">\(b = 4.5\)</span> and <span class="process-math">\(S(k) =
 4.5(-5)^k + 1.5\text{.}\)</span>
 </div></li>
-</ol></div></article></details><details id="ex-nhrr-solution-example-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</ol></div></article><article class="example example-like" id="ex-nhrr-solution-example-2"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">Solution of a Nonhomogeneous Second Order Recurrence Relation.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-nhrr-solution-example-2-2">Consider <span class="process-math">\(T(k) - 7T(k - 1) + 10T(k - 2) = 6 + 8k\)</span> with <span class="process-math">\(T(0) = 1\)</span> and <span class="process-math">\(T(1)
+</h4> <div class="para" id="ex-nhrr-solution-example-2-2">Consider <span class="process-math">\(T(k) - 7T(k - 1) + 10T(k - 2) = 6 + 8k\)</span> with <span class="process-math">\(T(0) = 1\)</span> and <span class="process-math">\(T(1)
 = 2\text{.}\)</span>
 </div> <div class="para logical" id="ex-nhrr-solution-example-2-3"><ol class="lower-alpha">
 <li id="ex-nhrr-solution-example-2-3-1-1"><div class="para" id="ex-nhrr-solution-example-2-3-1-1-1">From <a href="s-recurrence-relations.html#ex-hrr-solution-example-1" class="xref" data-knowl="./knowl/xref/ex-hrr-solution-example-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 13.1.13: A solution using the algorithm">Example 13.1.13</a>, we know that <span class="process-math">\(T^{(h)}(k)=b_12^k+ b_25^k\text{.}\)</span> Caution:Don’t apply the initial conditions to <span class="process-math">\(T^{(h)}\)</span> until you add <span class="process-math">\(T^{(p)}\text{!}\)</span>
@@ -1431,13 +1424,13 @@ b_2=2 \\
 <div class="para" id="ex-nhrr-solution-example-2-3-1-4-2">Therefore, <span class="process-math">\(T(k) =-9\cdot 2^k+ 2\cdot 5^k+8+2k\text{.}\)</span>
 </div>
 </li>
-</ol></div></article></details><article class="note remark-like" id="ss-solution-of-nonhomogeneous-relations-8"><h4 class="heading">
+</ol></div></article><article class="note remark-like" id="ss-solution-of-nonhomogeneous-relations-8"><h4 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">13.1.20</span><span class="period">.</span><span class="space"> </span><span class="title">A quick note on interest rates.</span>
 </h4> <div class="para" id="ss-solution-of-nonhomogeneous-relations-8-2">When a quantity, such as a savings account balance, is increased by some fixed percent, it is most easily computed with a multiplier. In the case of an <span class="process-math">\(8\%\)</span> increase, the multiplier is 1.08 because any original amount <span class="process-math">\(A\text{,}\)</span> has <span class="process-math">\(0.08A\)</span> added to it, so that the new balance is <span class="process-math">\(A+0.08A = (1+0.08)A = 1.08 A\text{.}\)</span>
 </div> <div class="para" id="ss-solution-of-nonhomogeneous-relations-8-3">Another example is that if the interest rate is <span class="process-math">\(3.5\%\text{,}\)</span> the multiplier would be 1.035. This presumes that the interest is applied at the end of year for <span class="process-math">\(3.5\%\)</span> annual interest, often called <dfn class="terminology">simple interest</dfn>. If the interest is applied monthly, and we assume a simplifed case where each month has the same length, the multiplier after every month would be <span class="process-math">\(\left(1+\frac{0.035}{12}\right)
-\approx 1.00292\text{.}\)</span> After a year passes, this multiplier would be applied 12 times, which is the same as multiplying by <span class="process-math">\(1.00292^{12}\approx 1.03557\text{.}\)</span> That increase from 1.035 to 1.03557 is the effect of <dfn class="terminology">compound interest</dfn>.</div></article><details id="ex-a-novel-annuity" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+\approx 1.00292\text{.}\)</span> After a year passes, this multiplier would be applied 12 times, which is the same as multiplying by <span class="process-math">\(1.00292^{12}\approx 1.03557\text{.}\)</span> That increase from 1.035 to 1.03557 is the effect of <dfn class="terminology">compound interest</dfn>.</div></article><article class="example example-like" id="ex-a-novel-annuity"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">A Sort of Annuity.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-a-novel-annuity-2">Suppose you open a savings account that pays an annual interest rate of <span class="process-math">\(8\%\text{.}\)</span> In addition, suppose you decide to deposit one dollar when you open the account, and you intend to double your deposit each year. Let <span class="process-math">\(B(k)\)</span> be your balance after <span class="process-math">\(k\)</span> years. <span class="process-math">\(B\)</span> can be described by the relation <span class="process-math">\(B(k) = 1.08 B(k - 1) + 2^k\text{,}\)</span> with <span class="process-math">\(S(0) = 1\text{.}\)</span> If, instead of doubling the deposit each year, you deposited a constant amount, <span class="process-math">\(q\text{,}\)</span> the <span class="process-math">\(2^k\)</span> term would be replaced with <span class="process-math">\(q\text{.}\)</span> A sequence of regular deposits such as this is called a simple annuity.</div> <div class="para" id="ex-a-novel-annuity-3">Returning to the original situation,</div> <div class="para logical" id="ex-a-novel-annuity-4"><ol class="lower-alpha">
+</h4> <div class="para" id="ex-a-novel-annuity-2">Suppose you open a savings account that pays an annual interest rate of <span class="process-math">\(8\%\text{.}\)</span> In addition, suppose you decide to deposit one dollar when you open the account, and you intend to double your deposit each year. Let <span class="process-math">\(B(k)\)</span> be your balance after <span class="process-math">\(k\)</span> years. <span class="process-math">\(B\)</span> can be described by the relation <span class="process-math">\(B(k) = 1.08 B(k - 1) + 2^k\text{,}\)</span> with <span class="process-math">\(S(0) = 1\text{.}\)</span> If, instead of doubling the deposit each year, you deposited a constant amount, <span class="process-math">\(q\text{,}\)</span> the <span class="process-math">\(2^k\)</span> term would be replaced with <span class="process-math">\(q\text{.}\)</span> A sequence of regular deposits such as this is called a simple annuity.</div> <div class="para" id="ex-a-novel-annuity-3">Returning to the original situation,</div> <div class="para logical" id="ex-a-novel-annuity-4"><ol class="lower-alpha">
 <li id="ex-a-novel-annuity-4-1-1"><div class="para" id="ex-a-novel-annuity-4-1-1-1"><span class="process-math">\(\displaystyle B^{(h)}(k)=b_1(1.08){}^k\)</span></div></li>
 <li id="ex-a-novel-annuity-4-1-2"><div class="para" id="ex-a-novel-annuity-4-1-2-1">
 <span class="process-math">\(B^{(p)}(k)\)</span> should be of the form <span class="process-math">\(d 2^k\text{.}\)</span>
@@ -1463,9 +1456,9 @@ d 2^k = 1.08d 2^{k-1}+2^k &amp; \Rightarrow (2d) 2^{k-1} = 1.08d
 <div class="para" id="ex-a-novel-annuity-4-1-4-2">Therefore, <span class="process-math">\(B(k) = -1.174\cdot 1.08^k+ 2.174\cdot 2^k\text{.}\)</span>
 </div>
 </li>
-</ol></div></article></details><details id="ex-matching-roots" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</ol></div></article><article class="example example-like" id="ex-matching-roots"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.1.22</span><span class="period">.</span><span class="space"> </span><span class="title">Matching Roots.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para" id="ex-matching-roots-2">Find the general solution to <span class="process-math">\(S(k) - 3 S(k - 1) - 4 S(k - 2) = 4^k\text{.}\)</span>
+</h4> <div class="para" id="ex-matching-roots-2">Find the general solution to <span class="process-math">\(S(k) - 3 S(k - 1) - 4 S(k - 2) = 4^k\text{.}\)</span>
 </div> <div class="para logical" id="ex-matching-roots-3"><ol class="lower-alpha">
 <li id="ex-matching-roots-3-1-1"><div class="para" id="ex-matching-roots-3-1-1-1">The characteristic roots of the associated homogeneous relation are <span class="process-math">\(-1\)</span> and 4. Therefore, <span class="process-math">\(S^{(h)}(k)=b_1(-1){}^k+ b_2 4^k\text{.}\)</span>
 </div></li>
@@ -1501,11 +1494,11 @@ b_2 4^k +0.8 k 4^k
 \end{equation*}
 </div>
 </div></li>
-</ol></div></article></details><article class="observation remark-like" id="obs-matching-base"><h4 class="heading">
+</ol></div></article><article class="observation remark-like" id="obs-matching-base"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">13.1.23</span><span class="period">.</span><span class="space"> </span><span class="title">When the base of right-hand side is equal to a characteristic root.</span>
-</h4> <div class="para" id="obs-matching-base-2">If the right-hand side of a nonhomogeneous relation involves an exponential with base <span class="process-math">\(a\text{,}\)</span> and <span class="process-math">\(a\)</span> is also a characteristic root of multiplicity <span class="process-math">\(p\text{,}\)</span> then multiply your guess at a particular solution as prescribed in <a href="s-recurrence-relations.html#tab-particular-sols" class="xref" data-knowl="./knowl/xref/tab-particular-sols.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 13.1.17: Particular solutions for given right-hand sides">Table 13.1.17</a> by <span class="process-math">\(k^p\text{,}\)</span> where <span class="process-math">\(k\)</span> is the index of the sequence.</div></article><details id="ex-base-match" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4> <div class="para" id="obs-matching-base-2">If the right-hand side of a nonhomogeneous relation involves an exponential with base <span class="process-math">\(a\text{,}\)</span> and <span class="process-math">\(a\)</span> is also a characteristic root of multiplicity <span class="process-math">\(p\text{,}\)</span> then multiply your guess at a particular solution as prescribed in <a href="s-recurrence-relations.html#tab-particular-sols" class="xref" data-knowl="./knowl/xref/tab-particular-sols.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 13.1.17: Particular solutions for given right-hand sides">Table 13.1.17</a> by <span class="process-math">\(k^p\text{,}\)</span> where <span class="process-math">\(k\)</span> is the index of the sequence.</div></article><article class="example example-like" id="ex-base-match"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">13.1.24</span><span class="period">.</span><span class="space"> </span><span class="title">Examples of matching bases.</span>
-</h4></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-base-match-2"><ol class="lower-alpha">
+</h4> <div class="para logical" id="ex-base-match-2"><ol class="lower-alpha">
 <li id="ex-base-match-2-1-1"><div class="para" id="ex-base-match-2-1-1-1">If <span class="process-math">\(S(k) - 9S(k - 1) + 20 S(k - 2) = 2\cdot 5^k\text{,}\)</span> the characteristic roots are 4 and 5. Since 5 matches the base of the right side, <span class="process-math">\(S^{(p)}(k)\)</span> will take the form <span class="process-math">\(d k 5^k\text{.}\)</span>
 </div></li>
 <li id="ex-base-match-2-1-2"><div class="para" id="ex-base-match-2-1-2-1">If <span class="process-math">\(S(n)- 6S(n - 1) + 9 S(n - 2) = 3^{n+1}\)</span> the only characteristic root is 3, but it is a double root (multiplicity 2). Therefore, the form of the particular solution is <span class="process-math">\(d n^2 3^n\text{.}\)</span>
@@ -1516,7 +1509,7 @@ b_2 4^k +0.8 k 4^k
 <li id="ex-base-match-2-1-4"><div class="para" id="ex-base-match-2-1-4-1">If <span class="process-math">\(S(k) - 9S(k - 1) + 8S(k- 2) = 9k + 1 = (9k + 1)1^k\text{,}\)</span> the characteristic roots are 1 and 8. If the right-hand side is a polynomial, as it is in this case, then the exponential factor <span class="process-math">\(1^k\)</span> can be introduced. The particular solution will take the form <span class="process-math">\(k\left(d_0+
 d_1k\right)\text{.}\)</span>
 </div></li>
-</ol></div></article></details><div class="para" id="ss-solution-of-nonhomogeneous-relations-13">We conclude this section with a comment on the situation in which the characteristic equation gives rise to complex roots. If we restrict the coefficients of our finite order linear relations to real numbers, or even to integers, we can still encounter characteristic equations whose roots are complex. Here, we will simply take the time to point out that our algorithms are still valid with complex characteristic roots, but the customary method for expressing the solutions of these relations is different. Since an understanding of these representations requires some background in complex numbers, we will simply suggest that an interested reader can refer to a more advanced treatment of recurrence relations (see also difference equations).</div></section><section class="exercises" id="exercises-13-1"><h3 class="heading hide-type">
+</ol></div></article><div class="para" id="ss-solution-of-nonhomogeneous-relations-13">We conclude this section with a comment on the situation in which the characteristic equation gives rise to complex roots. If we restrict the coefficients of our finite order linear relations to real numbers, or even to integers, we can still encounter characteristic equations whose roots are complex. Here, we will simply take the time to point out that our algorithms are still valid with complex characteristic roots, but the customary method for expressing the solutions of these relations is different. Since an understanding of these representations requires some background in complex numbers, we will simply suggest that an interested reader can refer to a more advanced treatment of recurrence relations (see also difference equations).</div></section><section class="exercises" id="exercises-13-1"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">13.1.5</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <div class="exercisegroup" id="exercises-13-1-2">
