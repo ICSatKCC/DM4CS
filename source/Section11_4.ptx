@@ -1040,5 +1040,133 @@ of a matrix whose entries are functions.
         </subsection>
 
         <!-- to do exercises-->
+        <exercises xml:id="exercises-11-4">
+            <title>Exercises</title>
+            <exercise number="1">
+                <statement>
+                    <p>
+                       Find the determinants of the following matrices.
+                       <ol marker="(a)">
+                        <li>
+                            <p>
+                                <me>
+                                    \begin{pmatrix} 1 &amp; 2 &amp; 3\\
+                                     3 &amp; 2 &amp; 2\\
+                                      0 &amp; 9 &amp; 8 \end{pmatrix}
+                                </me>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <me>
+                                    \begin{pmatrix} 4 &amp; 3 &amp; 2\\
+                                     1 &amp; 7 &amp; 8\\
+                                      3 &amp; -9 &amp; 3 \end{pmatrix}
+                                </me>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <me>
+                                    \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\
+                                     1 &amp;3 &amp; 2 &amp; 3\\
+                                      4 &amp; 1 &amp; 5 &amp; 0\\
+                                      1 &amp; 2 &amp; 1 &amp; 2 \end{pmatrix}
+                                </me>
+                            </p>
+                        </li>
+                       </ol>
+
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        <ol marker="(a)">
+                            <li>
+                                <p>Using the "short cut" shown in class.
+                                    <me>
+                                        \begin{vmatrix} 1 &amp; 2 &amp; 3\\
+                                         3 &amp; 2 &amp; 2\\
+                                          0 &amp; 9 &amp; 8 \end{vmatrix} </me> 
+                                          <me> = (1\cdot 2 \cdot 8) + (3 \cdot 9 \cdot 3)
+                                          + (0\cdot 2 \cdot 2) - (0 \cdot 2 \cdot 3 ) - (2 \cdot 9 \cdot 1) - (3 \cdot 2 \cdot 8)\\ 
+                                          </me><me> = 31\\
+                                    </me>
+
+                                </p>
+                            </li>
+                            <li>
+                                <p>Expanding along row 1.
+                                    <me>
+                                        \begin{vmatrix} 4 &amp; 3 &amp; 2\\
+                                         1 &amp; 7 &amp; 8\\
+                                          3 &amp; -9 &amp; 3 \end{vmatrix}</me>
+
+                                          <me> = 4(-1)^{1+1}\begin{vmatrix} 
+                                          7 &amp; 8\\
+                                         -9 &amp; 3\end{vmatrix}
+                                          + 3(-1)^{1+2}\begin{vmatrix} 
+                                         1 &amp; 8\\
+                                        3 &amp; 3\end{vmatrix} 
+                                        + 2(-1)^{1+3}\begin{vmatrix} 
+                                        1 &amp; 7\\
+                                       3 &amp; -9 \end{vmatrix}</me>
+
+                                       
+                                       <me>
+                                       = 4((7\cdot3)-(8\cdot -9)) - 3((1\cdot 3) - (3 \cdot 8)) + 2((1\cdot 9) - (3 \cdot 7))
+                                       
+                                       </me>
+                                    <me> = 372 + 63 - 60
+                                    </me>
+                                    <me>  = 375
+                                    </me>
+                                    
+                                </p>
+                            </li>
+                            <li>
+                                <p>Using row operations to make a triangular matrix.
+                                    <me>
+                                        \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\
+                                         1 &amp;3 &amp; 2 &amp; 3\\
+                                          4 &amp; 1 &amp; 5 &amp; 0\\
+                                          1 &amp; 2 &amp; 1 &amp; 2 \end{pmatrix}
+                                    </me>
+                                   
+                                    Subtracting row 1 from rows 2 and 4, and 4 times row 1 from row 3 gives
+                                    <me>
+                                        \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\
+                                         0 &amp;1 &amp; -1 &amp; 1\\
+                                          0 &amp; -7 &amp; -7 &amp; -8\\
+                                          0 &amp; 0 &amp; -2 &amp; 0 \end{pmatrix}
+                                    </me>
+                                    Add 7 times row 2 to row 3 gives
+                                    <me>
+                                        \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\
+                                         0 &amp;1 &amp; -1 &amp; 1\\
+                                          0 &amp; 0 &amp; -14 &amp; -1\\
+                                          0 &amp; 0 &amp; -2 &amp; 0 \end{pmatrix}
+                                    </me>
+                                    Subtract 1/7 times row 3 from row 4 gives
+                                    <me>
+                                        \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\
+                                         0 &amp;1 &amp; -1 &amp; 1\\
+                                          0 &amp; 0 &amp; -14 &amp; -1\\
+                                          0 &amp; 0 &amp; 0 &amp; \frac{1}{7} \end{pmatrix}
+                                    </me>
+                                    Taking the product of the diagonal
+                                    <me>1 \cdot 1 \cdot -14 \cdot \frac{1}{7} = -2</me> 
+                                </p>
+                            </li>
+                           </ol>
+                        
+                    </p>
+                </solution>
+                
+            </exercise>
+            
+            
+            
+        </exercises>
 
 </section>
