@@ -19,7 +19,7 @@
 <span class="process-math">\(A^{-1}\)</span> exists if and only if <span class="process-math">\(\det (A) \neq 0\text{.}\)</span> If <span class="process-math">\(\det (A) \neq 0\text{,}\)</span> then <span class="process-math">\(A^{-1} = (a_{ij}^{-1}) \)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
-a_{ij}^{-1} = \frac{\text{adj} (A)_{ij}}{\det (A)} = \frac{\text{cof} (A)_{ji}}{\det (A)} 
+a_{ij}^{-1} = \frac{\text{adj} (A)_{ij}}{\det (A)} = \frac{\text{cof} (A)_{ji}}{\det (A)}
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(\text{cof} (A)_{ji}  = \text{cof} (A)_{ij}^T = \text{adj} A_{ij}\text{.}\)</span>
@@ -47,14 +47,13 @@ a_{ij}^{-1} = \frac{\text{adj} (A)_{ij}}{\det (A)} = \frac{\text{cof} (A)_{ji}}{
 <div class="para">Summarizing,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-switch-rows-neg-det.html">
 \begin{equation*}
-\sum_{i=1}^n a_{ir} \text{cof} (A)_{ik}\det (A)^{-1} = \delta_{rk} \equiv \begin{cases}1 &amp; \text{if } r = k\\
-0 &amp; \text{if } r \neq k\end{cases}.
+\sum_{i=1}^n a_{ir} \text{cof} (A)_{ik}\det (A)^{-1} = \delta_{rk} \equiv \begin{cases}1 &amp; \text{if } r = k\\ 0 &amp; \text{if } r \neq k\end{cases}.
 \end{equation*}
 </div>
 <div class="para">Now</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-switch-rows-neg-det.html">
 \begin{equation*}
-\sum_{i=1}^n a_{ir} \text{cof} (A)_{ik} = \sum_{i=1}^n a_{ir} \text{cof} (A)_{ki}^T 
+\sum_{i=1}^n a_{ir} \text{cof} (A)_{ik} = \sum_{i=1}^n a_{ir} \text{cof} (A)_{ki}^T
 \end{equation*}
 </div>
 <div class="para">which is the <span class="process-math">\(kr^{th}\)</span> entry of <span class="process-math">\(\text{cof} (A)^T A\text{.}\)</span> Therefore,</div>
@@ -99,10 +98,11 @@ A^{-1} = \frac{\text{cof} (A)^T}{\det (A)}.
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-prod-of-dets.html">
 \begin{equation*}
-1 = \det (I) = \det (AA^{-1}) = \det (A)\det (A^{-1}) 
+1 = \det (I) = \det (AA^{-1}) = \det (A)\det (A^{-1})
 \end{equation*}
 </div>
-<div class="para">so <span class="process-math">\(\det (A) \neq 0. \blacksquare\)</span>
+<div class="para">so <span class="process-math">\(\det (A) \neq 0.
+\blacksquare\)</span>
 </div>
 </div></article></details><span class="incontext"><a class="internal" href="Section11_4.html#thm-inverse-from-cofactor">in-context</a></span>
 </body>
