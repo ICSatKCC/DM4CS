@@ -21,1152 +21,1564 @@
     </introduction>
 
 
+    <subsection xml:id="subsec-cofactors-2-x-2-dets">
+        <title>Cofactors and <m>2 \times 2</m> Deteriminants</title>
 
-        <subsection xml:id="subsec-cofactors-2-x-2-dets">
-            <title>Cofactors and <m>2 \times 2</m> Deteriminants</title>
+        <p>
+            Let <m>A</m> be an <m>n \times n</m> matrix.
+            The <term>determinant</term> of <m>A</m>, denoted as <m >\det (A)</m> is a number.
+            If the matrix is a <m>2 \times 2</m> matrix, this number is very easy to find.
+        </p>
 
+        <definition xml:id="def-2-x-2-det">
+            <title>Determinant of a <m>2 \times 2</m> Matrix</title>
+
+            <statement>
+                <p>
+                    Let
+                    <me>
+                        A = \begin{pmatrix} a &amp; b\\ c &amp; d \end{pmatrix}
+                    </me>.
+                    Then
+                    <me>
+                        \det (A) \equiv ad - cb
+                    </me>.
+                </p>
+
+                <p>
+                    The determinant is also often denoted by enclosing the matrix with two vertical lines.
+                    Thus
+                    <me>
+                        \det \begin{pmatrix} a &amp; b\\ c &amp; d \end{pmatrix} = \begin{vmatrix} a &amp; b\\ c &amp; d \end{vmatrix} .
+                    </me>
+                </p>
+            </statement>
+        </definition>
+
+        <example>
+            <statement>
+                <p>
+                    Find <m >\det \begin{pmatrix} 2 &amp; 4\\ -1 &amp; 6 \end{pmatrix}</m>.
+                </p>
+            </statement>
+
+            <solution>
+                <p>
+                    From the definition this is
+                    <me>
+                        (2)(6) - (-1)(4) = 16
+                    </me>.
+                </p>
+            </solution>
+        </example>
+
+        <p>
+            Having defined what is meant by the determinant of a <m>2 \times 2</m> matrix, what about a <m>3 \times 3</m> matrix?
+        </p>
+
+        <definition xml:id="def-matrix-minor">
+            <idx><h>matrix minor</h></idx>
+            <title>Matrix Minor</title>
+
+            <statement>
+                <p>
+                    Suppose <m>A</m> is a <m>3 \times 3</m> matrix.
+                    The <m>ij^{th}</m> <term>minor</term>, denoted as <m>\text{minor}(A)_{ij}</m> or <m>(i,j)</m> minor , is the determinant of the <m>2\times 2</m> matrix which results from deleting the <m>i^{th}</m> row and the <m>j^{th}</m> column.
+                </p>
+            </statement>
+        </definition>
+
+        <example>
             <p>
-                Let <m>A</m> be an <m>n \times n</m> matrix.
-                The <term>determinant</term> of <m>A</m>, denoted as <m >\det (A)</m> is a number.
-                If the matrix is a <m>2 \times 2</m> matrix, this number is very easy to find.
+                Consider the matrix
+                <me>
+                    \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 4 &amp; 3 &amp; 2\\ 3 &amp; 2 &amp; 1\\ \end{pmatrix}.
+                </me>
             </p>
 
-            <definition xml:id="def-2-x-2-det">
-                <title>Determinant of a <m>2 \times 2</m> Matrix</title>
-                
-                <statement>
-                    <p>
-                        Let <me>A = \begin{pmatrix} a &amp; b\\ c &amp; d \end{pmatrix}</me>.
+            <p>
+                The (1,2) minor is the determinant of the <m>2 \times 2</m> matrix which results when you delete the first row and the second column.
+                This minor is therefore
+                <me>
+                    \det\begin{pmatrix} 4 &amp; 2\\ 3 &amp; 1\end{pmatrix} = (4)(1) - (3)(2) = -2.
+                </me>
+            </p>
 
-                        Then  <me>\det (A) \equiv ad - cb</me>.</p>
-                        <p>
-                  
-                        The determinant is also often denoted by enclosing the matrix with two vertical lines.
-                        Thus
+            <p>
+                The (2,3) minor is the determinant of the <m>2 \times 2</m> matrix which results when you delete the second row and the third column.
+                This minor is therefore
+                <me>
+                    \det\begin{pmatrix} 1 &amp; 2\\ 3 &amp; 2\end{pmatrix} = (1)(2) - (3)(2) = -4.
+                </me>
+            </p>
+        </example>
+
+        <definition xml:id="def-ij-cofactor">
+            <title><m>ij^{th}</m> Cofactor</title>
+
+            <idx><h>cofactor</h></idx>
+            <statement>
+                <p>
+                    Suppose <m>A</m> is a <m>3 \times 3</m> matrix.
+                    The <m>ij^{th}</m> <term>cofactor</term> is defined to be <m>(-1)^{i+j} \times (ij^{th}</m> minor).
+                    In words, you multiply <m>(-1)^{(i+j)}</m> times the <m>ij^{th}</m> minor to get the <m>ij^{th}</m> cofactor.
+                </p>
+
+                <p>
+                    The cofactors of a matrix are so important that special notation is appropriate when referring to them.
+                    The <m>ij^{th}</m> cofactor of a matrix <m>A</m> will be denoted by <term><m>\text{cof} (A)_{ij}</m></term> .
+                    It is also convenient to refer to the cofactor of an entry of a matrix as follows.
+                    For <m>a_{ij}</m> an entry of the matrix, its cofactor is just <m>\text{cof} (A)_{ij}</m> .
+                    Thus the cofactor of the <m>ij^{th}</m> entry is just the <m>ij^{th}</m> cofactor.
+                </p>
+            </statement>
+        </definition>
+
+        <example>
+            <p>
+                Consider the matrix
+                <me>
+                    \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 4 &amp; 3 &amp; 2\\ 3 &amp; 2 &amp; 1\\ \end{pmatrix}.
+                </me>
+            </p>
+
+            <p>
+                The (1,2) minor is the determinant of the <m>2 \times 2</m> matrix which results when you delete the first row and the second column.
+                This minor is therefore
+                <me>
+                    \det \begin{pmatrix}4&amp;2\\ 3&amp;1\end{pmatrix}  = (4)(1) - (3)(2) = -2.
+                </me>
+            </p>
+
+            <p>
+                It follows
+                <me>
+                    \text{cof} (A)_{12} = (-1)^{1+2} \det \begin{pmatrix} 4 &amp; 2\\ 3 &amp; 1\end{pmatrix} = (-1)^{1+2} (-2) = 2.
+                </me>
+            </p>
+
+            <p>
+                The (2,3) minor is the determinant of the <m>2 \times 2</m> matrix which results when you delete the second row and the third column.
+                This minor is therefore
+                <me>
+                    \det \begin{pmatrix} 1 &amp; 2\\ 3 &amp; 2\end{pmatrix} = (1)(2) - (3)(2) = -4.
+                </me>
+            </p>
+
+            <p>
+                Therefore,
+                <me>
+                    \text{cof} (A)_{23} = (-1)^{2+3} \det \begin{pmatrix} 1 &amp; 2\\ 3 &amp; 2\end{pmatrix} = (-1)^{2+3} (-4) = 4.
+                </me>
+            </p>
+
+            <p>
+                Similarly,
+                <me>
+                    \text{cof} (A)_{22} = (-1)^{2+2} \det \begin{pmatrix} 1 &amp; 3\\ 3 &amp; 1\\ \end{pmatrix} = -4.
+                </me>
+            </p>
+        </example>
+        <!-- STOP at Definition 6.1.7 -->
+        <definition xml:id="def-expanding-along-row">
+            <title>Expanding Along a Row or Column</title>
+
+            <statement>
+                <p>
+                    The determinant of a <m>3 \times 3</m> matrix <m>A</m>, is obtained by picking a row (column) and taking the product of each entry in that row (column) with its cofactor and adding these up.
+                    This process when applied to the <m>i^{th}</m> row (column) is known as <term>expanding the determinant along the <m>i^{th}</m> row (column)</term>.
+                </p>
+            </statement>
+        </definition>
+
+        <example>
+            <p>
+                Find the determinant of
+                <me>
+                    A = \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 4 &amp; 3 &amp; 2\\ 3 &amp; 2 &amp; 1\\ \end{pmatrix}.
+                </me>
+                Here is how it is done by <em>expanding around the first column.</em>
+                <me>
+                    \overbrace{1(-1)^{1+1}\begin{vmatrix}3 &amp; 2\\ 2 &amp; 1 \end{vmatrix}}^{\text{cof} (A)_{11}} + \overbrace{4(-1)^{2+1}\begin{vmatrix}2 &amp; 3\\ 2 &amp; 1 \end{vmatrix}}^{\text{cof} (A)_{21}} + \overbrace{3(-1)^{3+1}\begin{vmatrix}3 &amp; 2\\ 3 &amp; 2 \end{vmatrix}}^{\text{cof} (A)_{31}} = 0 .
+                </me>
+            </p>
+
+            <p>
+                You see, we just followed the rule in the above definition.
+                We took the 1 in the first column and multiplied it by its cofactor, the 4 in the first column and multiplied it by its cofactor, and the 3 in the first column and multiplied it by its cofactor.
+                Then we added these numbers together.
+            </p>
+
+            <p>
+                You could also expand the determinant along the second row as follows.
+                <me>
+                    \overbrace{4(-1)^{2+1}\begin{vmatrix}2 &amp; 3\\ 2 &amp; 1 \end{vmatrix}}^{\text{cof} (A)_{21}} + \overbrace{3(-1)^{2+2}\begin{vmatrix}1 &amp; 3\\ 3 &amp; 1 \end{vmatrix}}^{\text{cof} (A)_{22}} + \overbrace{2(-1)^{2+3}\begin{vmatrix}1 &amp; 2\\ 3 &amp; 2 \end{vmatrix}}^{\text{cof} (A)_{23}} = 0 .
+                </me>
+                Observe this gives the same number.
+                You should try expanding along other rows and columns.
+                If you don't make any mistakes, you will always get the same answer.
+            </p>
+        </example>
+
+        <p>
+            What about a <m>4 \times 4</m> matrix? You know now how to find the determinant of a <m>3 \times 3</m> matrix.
+            The pattern is the same.
+        </p>
+
+        <definition xml:id="def-det-of-four-by-four">
+            <statement>
+                <p>
+                    Suppose A is a <m>4 \times 4</m> matrix.
+                    The <m>ij^{th}</m> <term>minor</term> is the determinant of the <m>3 \times 3</m> matrix you obtain when you delete the <m>i^{th}</m> row and the <m>j^{th}</m> column.
+                    The <m>ij^{th}</m> <term>cofactor</term>, <m>\text{cof} (A)</m> is defined to be <m>(-1)^{i+j} \times (ij^{th} \text{ minor})</m>.
+                    In words, you multiply <m>(-1)^{i+j}</m> times the <m>ij^{th}</m> minor to get the <m>ij^{th}</m> cofactor.
+                </p>
+            </statement>
+        </definition>
+
+        <definition xml:id="def-laplace-expansion">
+            <title>Laplace Expansion</title>
+
+            <statement>
+                <p>
+                    The determinant of a <m>4 \times 4</m> matrix <m>A</m>, is obtained by expanding along a row (column) just as was done for a <m>3\times 3</m> matrix in <xref ref="def-expanding-along-row"/>, except the expanding process must be repeated again for each of the resulting <m>3\times 3</m> matrices to obtain their determinants.
+                </p>
+
+                <p>
+                    This method of evaluating a determinant by expanding along a row or a column can be done for any size square matrix and is called the <em>method of Laplace expansion</em>.
+                    The process must be repeated until the resulting matrices are small enough to easily calculate their determinants.
+                </p>
+            </statement>
+        </definition>
+
+        <example>
+            <statement>
+                <p>
+                    Find <m >\det (A)</m> where
+                    <me>
+                        A = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 5 &amp; 4 &amp; 2 &amp; 3\\ 1 &amp; 3 &amp; 4 &amp; 5\\ 3 &amp; 4 &amp; 3 &amp; 2 \end{pmatrix}.
+                    </me>
+                </p>
+            </statement>
+
+            <solution>
+                <p>
+                    As in the case of a <m>3 \times 3</m> matrix, you can expand this along any row or column.
+                    Lets pick the third column.
+                    <m> \det (A) =</m>
+                    <me>
+                        3(-1)^{1+3}\begin{vmatrix} 5 &amp; 4 &amp; 3\\ 1 &amp; 3 &amp; 5\\ 3 &amp; 4 &amp; 2 \end{vmatrix} + 2(-1)^{2+3}\begin{vmatrix} 1 &amp; 2 &amp; 4\\ 1 &amp; 3 &amp; 5\\ 3 &amp; 4 &amp; 2 \end{vmatrix} +
+                    </me>
+                    <me>
+                        4(-1)^{3+3}\begin{vmatrix} 1 &amp; 2 &amp; 4\\ 5 &amp; 4 &amp; 3\\ 3 &amp; 4 &amp; 2 \end{vmatrix} + 3(-1)^{4+3}\begin{vmatrix} 1 &amp; 2 &amp; 4\\ 5 &amp; 4 &amp; 3\\ 1 &amp; 3 &amp; 5 \end{vmatrix} .
+                    </me>
+                </p>
+
+                <p>
+                    Now you know how to expand each of the <m>3 \times 3</m> matrices along a row or a column.
+                    If you do so, you will get <m>-12</m> assuming you make no mistakes.
+                    You could expand this matrix along any row or any column and assuming you make no mistakes, you will always get the same thing which is defined to be the determinant of the matrix <m>A</m>.
+                    .
+                </p>
+            </solution>
+        </example>
+
+        <p>
+            Note that each of the four terms in the example solution above involves three terms consisting of determinants of <m>2 \times 2</m> matrices and each of these will need 2 terms.
+            Therefore, there will be <m>4 \times 3 \times 2 = 24</m> terms to evaluate in order to find the determinant using the method of Laplace expansion.
+            Suppose now you have a <m>10 \times 10</m> matrix and you follow the above pattern for evaluating determinants.
+            By analogy to the above, there will be <m>10! = 3, 628 , 800</m> terms involved in the evaluation of such a determinant by Laplace expansion along a row or column.
+            This is a lot of terms.
+        </p>
+
+        <p>
+            In addition to the difficulties just discussed, you should regard the above claim that you always get the same answer by picking any row or column with considerable skepticism.
+            It is incredible and not at all obvious.
+            However, it requires a little effort to establish it.
+            This is done in the Elementary Linear Algebra book chapter 7 on the theory of the determinant.
+        </p>
+
+        <definition xml:id="def-cofactor-equals-minor">
+            <idx><h>matrix cofactor</h></idx>
+            <title>Cofactor Matrix</title>
+
+            <statement>
+                <p>
+                    Let <m>A = (a_{ij})</m> be an <m>n \times n</m> matrix and suppose the determinant of a <m>(n - 1) \times (n - 1)</m> matrix has been defined.
+                    Then a new matrix called the <term>cofactor matrix</term>, <m>cof (A)</m> is defined by <m>cof (A) = (c_{ij}) </m> where to obtain <m>c_{ij}</m> delete the <m>i^{th}</m> row and the <m>j^{th}</m> column of <m>A</m>, take the determinant of the <m>(n - 1) \times (n - 1)</m> matrix which results, (This is called the <m>ij^{th}</m> <term>minor</term> of <m>A</m>.
+                    ) and then multiply this number by <m>(-1)^{i+j}</m> .
+                </p>
+
+                <p>
+                    Thus <m>(-1)^{i+j} \times (\text{ the } ij^{th} \text{ minor})</m> equals the <m>ij^{th}</m> cofactor.
+                    To make the formulas easier to remember, <m>\text{cof} (A)_{ij}</m> will denote the <m>ij^{th}</m> entry of the cofactor matrix.
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            With this definition of the cofactor matrix, here is how to define the determinant of an <m>n \times n</m> matrix.
+        </p>
+
+        <definition xml:id="def-det-sum-of-cof">
+            <title>Determininant as Sum of Cofactor Matrices</title>
+
+            <statement>
+                <p>
+                    Let <m>A</m> be an <m>n \times n</m> matrix where <m>n \geq 2</m> and suppose the determinant of an <m>(n - 1) \times (n - 1)</m> has been defined.
+                    Then
+                    <me>
+                        \det (A) = \sum_{j = 1}^{n} a_{ij}\, \text{cof} (A)_{ij} = \sum_{i = 1}^{n} a_{ij}\, \text{cof} (A)_{ij}
+                    </me>
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            The first sum consists of expanding the determinant along the <m>i^{th}</m> row and the second expands the determinant along the <m>j^{th}</m> column.
+        </p>
+
+        <theorem xml:id="thm-expanding-along-row-column">
+            <statement>
+                <p>
+                    Expanding the <m>n \times </m>n matrix along any row or column always gives the same answer so the above definition is a good definition.
+                </p>
+            </statement>
+        </theorem>
+    </subsection>
+    <!-- Kuttler 6.1.2 -->
+    <subsection xml:id="subsec-det-of-triangular-matrix">
+        <title>The Determinant of a Triangular Matrix</title>
+
+        <p>
+            Notwithstanding the difficulties involved in using the method of Laplace expansion, certain types of matrices are very easy to deal with.
+        </p>
+
+        <definition xml:id="def-upper-triangular-matrix">
+            <idx><h>triangular matrix</h></idx>
+            <title>Triangular Matrices</title>
+
+            <statement>
+                <p>
+                    A matrix <m>M</m> , is <term>upper triangular</term> if <m>M_{ij}= 0</m> whenever <m>i \gt j</m>.
+                    Thus in such a matrix, every entry below the main diagonal (the entries of the form <m>M_{ii}</m>) equals zero, as shown.
+                    <me>
+                        M = \begin{pmatrix} M_{11} &amp; \cdot  &amp; \cdots &amp; \cdot \\ 0 &amp; M_{22} &amp; \ddots &amp; \vdots\\ \vdots &amp; \ddots &amp; \ddots &amp; \cdot \\ 0 &amp; \cdots &amp; 0 &amp; M_{nn} \end{pmatrix}
+                    </me>
+                    A <term>lower triangular</term> matrix is defined similarly as a matrix for which all entries above the main diagonal are equal to zero.
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            You should verify the following using the above theorem on Laplace expansion.
+        </p>
+
+        <corollary xml:id="cor-det-of-triangular-matrix">
+            <title>Determinant of a Triangular Matrix</title>
+
+            <statement>
+                <p>
+                    Let <m>M</m> be an upper (lower) triangular matrix.
+                    Then <m >\det (M)</m> is obtained by taking the product of the entries on the main diagonal.
+                </p>
+            </statement>
+        </corollary>
+
+        <example>
+            <statement>
+                <p>
+                    Let
+                    <me>
+                        A = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 77\\ 0 &amp; 2 &amp; 6 &amp; 7\\ 0 &amp; 0 &amp; 3 &amp; 33.7\\ 0 &amp; 0 &amp; 0 &amp; -1 \end{pmatrix}
+                    </me>
+                    Find <m >\det (A).</m>
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    From the above corollary, it suffices to take the product of the diagonal elements.
+                    Thus <m >\det (A) =1 \times 2 \times 3 \times (-1) = -6.</m>
+                </p>
+            </answer>
+
+            <solution>
+                <p>
+                    Without using the corollary, you could expand along the first column.
+                    This gives
+                    <me>
+                        1\begin{vmatrix} 2 &amp; 6 &amp; 7\\ 0 &amp; 3 &amp; 33.7\\ 0 &amp; 0 &amp; -1 \end{vmatrix} + 0(-1)^{2+1}\begin{vmatrix} 2 &amp; 3 &amp; 77\\ 0 &amp; 3 &amp; 33.7\\ 0 &amp; 0 &amp; -1 \end{vmatrix} +
+                    </me>
+                    <me>
+                        0(-1)^{3+1}\begin{vmatrix} 2 &amp; 3 &amp; 77\\ 2 &amp; 6 &amp; 7\\ 0 &amp; 0 &amp; -1 \end{vmatrix} + 0(-1)^{4+1}\begin{vmatrix} 2 &amp; 3 &amp; 77\\ 2 &amp; 6 &amp; 7\\ 0 &amp; 3 &amp; 33.77 \end{vmatrix} +
+                    </me>
+                    and the only non-zero term in the expansion is the first one
+                    <me>
+                        1\begin{vmatrix} 2 &amp; 6 &amp; 7\\ 0 &amp; 3 &amp; 33.7\\ 0 &amp; 0 &amp; -1 \end{vmatrix}
+                    </me>
+                    Now expand this along the first column to obtain
+                    <me>
+                        1 \times \left( 2 \times \begin{vmatrix} 3 &amp; 33.7\\ 0 &amp; -1 \end{vmatrix} + 0(-1)^{2+1}\begin{vmatrix} 6 &amp; 7\\ 0 &amp; -1 \end{vmatrix} + 0(-1)^{3+1}\begin{vmatrix} 6 &amp; 7\\ 3 &amp; 33.7 \end{vmatrix} \right)
+                    </me>
+                    <me>
+                        = 1\times 2 \times \begin{vmatrix} 3 &amp; 33.7\\ 0 &amp; -1 \end{vmatrix}
+                    </me>
+                    Next expand this last determinant along the first column to obtain the above equals
+                    <me>
+                        1\times 2 \times 3 \times (-1) = -6
+                    </me>
+                    which is just the product of the entries down the main diagonal of the original matrix.
+                </p>
+            </solution>
+        </example>
+    </subsection>
+
+
+    <subsection xml:id="subsec-props-of-dets">
+        <title>Properties of Determinants</title>
+
+        <p>
+            There are many properties satisfied by determinants.
+            Some of these properties have to do with row operations.
+            Recall the row operations: <xref ref="def-row-operations"/>
+        </p>
+
+        <theorem xml:id="thm-switch-rows-neg-det">
+            <title>Switching two rows negates the determinant</title>
+
+            <statement>
+                <p>
+                    Let <m>A</m> be an <m>n \times n</m> matrix and let <m>A_1</m> be a matrix which results from switching two rows of <m>A</m>.
+                    Then <m>\det (A) = -\det (A_1)</m> .
+                    Also, if one row of <m>A</m> is a multiple of another row of <m>A</m>, then <m>\det (A) = 0</m>.
+                </p>
+            </statement>
+        </theorem>
+
+        <example>
+            <statement>
+                <p>
+                    Let <m>A = \begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix} </m>, and let <m>A_1 = \begin{pmatrix}3 &amp; 4\\ 1 &amp; 2\end{pmatrix} </m>.
+                </p>
+
+                <p>
+                    Then <m>\det (A) = -2</m> and <m>\det (A_1) = 2.</m>
+                </p>
+            </statement>
+        </example>
+
+        <theorem xml:id="thm-det-mult-mat-by-scalar">
+            <title>Multiplying a matrix by a scalar, also multiplies the determinant</title>
+
+            <statement>
+                <p>
+                    Let <m>A</m> be an <m>n \times n</m> matrix and let <m>A_1</m> be a matrix which results from multiplying some row of <m>A</m> by a scalar <m>c</m>.
+                    Then <m>c \,\det (A) = \det (A_1)</m>.
+                </p>
+            </statement>
+        </theorem>
+
+        <example>
+            <statement>
+                <p>
+                    Let <m>A = \begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix} </m>, <m>A_1 = \begin{pmatrix}2 &amp; 4\\ 3 &amp; 4\end{pmatrix} </m>.
+                </p>
+
+                <p>
+                    The first row of <m>A_1</m> is 2 times the first row of <m>A</m>.
+                </p>
+
+                <p>
+                    <m>\det (A) = -2</m> and <m>\det (A_1) = -4 = 2 \cdot -2 = 2 \, \det (A).</m>
+                </p>
+            </statement>
+        </example>
+
+        <theorem xml:id="thm-row-ops-dont-change-det">
+            <title>Row operation 3 doesn't change the determinant</title>
+
+            <statement>
+                <p>
+                    Let <m>A</m> be an <m>n \times n</m> matrix and let <m>A_1</m> be a matrix which results from applying row operation 3.
+                    That is, you replace some row by a multiple of another row added to itself.
+                    Then <m> \det (A) = \det (A_1 ).</m>
+                </p>
+            </statement>
+        </theorem>
+
+        <example>
+            <statement>
+                <p>
+                    Let <m>A = \begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix} </m> and let <m>A_1 = \begin{pmatrix}1 &amp; 2\\ 4 &amp; 6\end{pmatrix} </m>.
+                    Thus the second row of <m>A_1</m> is one times the first row added to the second row.
+                </p>
+
+                <p>
+                    <m>\det (A) = -2</m> and <m>\det (A_1) = -2.</m>
+                </p>
+            </statement>
+        </example>
+
+        <theorem xml:id="thm-rows-cols-same-effect">
+            <title>Columns have the same effect</title>
+
+            <statement>
+                <p>
+                    In <xref ref="thm-switch-rows-neg-det"/> - <xref ref="thm-row-ops-dont-change-det"/> you can replace the word "row" with the word "column".
+                </p>
+            </statement>
+        </theorem>
+
+        <p>
+            There are two other major properties of determinants which do not involve row operations.
+        </p>
+        <!--these two were in one theorem in original.-->
+        <theorem xml:id="thm-prod-of-dets">
+            <title>The determinant of a matrix product is the product of the determinants </title>
+
+            <statement>
+                <p>
+                    <p>
+                        Let <m>A </m> and <m>B </m> be two <m>n\times n</m> matrices, then
                         <me>
-                            \det \begin{pmatrix} a &amp; b\\ c &amp; d \end{pmatrix} = \begin{vmatrix} a &amp; b\\ c &amp; d \end{vmatrix} .
+                            \det (AB) = \det (A) \det (B).
                         </me>
                     </p>
-                </statement>
+                </p>
+            </statement>
+        </theorem>
 
-            </definition>
+        <example>
+            <statement>
+                <p>
+                    Compare <m>\det (AB)</m> and <m>\det (A) \det (B)</m> for
+                    <me>
+                        A = \begin{pmatrix}1 &amp; 2\\ -3&amp; 2\end{pmatrix}, B = \begin{pmatrix}3 &amp; 2\\ 4&amp; 1\end{pmatrix}
+                    </me>
+                </p>
+            </statement>
 
-            <example>
-                <statement>
+            <solution>
+                <p>
+                    First
+                    <me>
+                        AB = \begin{pmatrix}1 &amp; 2\\ -3&amp; 2\end{pmatrix}\begin{pmatrix}3 &amp; 2\\ 4&amp; 1\end{pmatrix} = \begin{pmatrix}11 &amp; 4\\ -1 &amp; -4\end{pmatrix}
+                    </me>
+                    and so
+                    <me>
+                        \det (AB) = \det \begin{pmatrix}11 &amp; 4\\ -1 &amp; -4\end{pmatrix} = -40.
+                    </me>
+                    Now
+                    <me>
+                        \det (A) = det\begin{pmatrix}1 &amp; 2\\ -3 &amp; 2\end{pmatrix} = 8
+                    </me>
+                    and
+                    <me>
+                        \det ( b) = det\begin{pmatrix}3 &amp; 2\\ 4 &amp; 1\end{pmatrix} = -5.
+                    </me>
+                    Thus <m>\det (A)\det (B) = 8 \times (-5) = -40.</m>
+                </p>
+            </solution>
+        </example>
+
+        <theorem xml:id="thm-det-of-transp">
+            <title>The determinant of a matrix is the determinant of its transpose </title>
+
+            <statement>
+                <p>
                     <p>
-                        Find <m >\det \begin{pmatrix} 2 &amp; 4\\ -1 &amp; 6 \end{pmatrix}</m>.
+                        Let <m>A </m> be an <m>n\times n</m> matrix, then
+                        <me>
+                            \det (A) = \det (A^T)
+                        </me>
                     </p>
-                </statement>
-
-                <solution>
-                    <p>
-                        From the definition this is <me>(2)(6) - (-1)(4) = 16</me>.
-                    </p>
-                </solution>
-          
-            </example>
-
-            <p>
-                Having defined what is meant by the determinant of a <m>2 \times 2</m> matrix, what about a <m>3 \times 3</m> matrix?
-            </p>
-
-            <definition xml:id="def-matrix-minor">
-                <idx><h>matrix minor</h></idx>
-                <title>Matrix Minor</title>
-            
-                <statement>
-                    <p>
-                        Suppose <m>A</m> is a <m>3 \times 3</m> matrix.
-                        The <m>ij^{th}</m> <term>minor</term>, denoted as <m>\text{minor}(A)_{ij}</m> or <m>(i,j)</m> minor , is the determinant of the <m>2\times 2</m> matrix which results from deleting the <m>i^{th}</m> row and the <m>j^{th}</m> column.
-                    </p>
-                </statement>
-            </definition>
-
-            <example>
+                </p>
+            </statement>
+        </theorem>
+        <!--added this example-->
+        <example>
+            <statement>
                 <p>
-                    Consider the matrix
+                    Compare <m>\det (A)</m> and <m>\det (A^T)</m> for
                     <me>
-                        \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 4 &amp; 3 &amp; 2\\ 3 &amp; 2 &amp; 1\\ \end{pmatrix}.
+                        A = \begin{pmatrix}1 &amp; 2\\ -3&amp; 2\end{pmatrix}.
+                    </me>
+                </p>
+            </statement>
+
+            <solution>
+                <p>
+                    <me>
+                        \det (A) = det\begin{pmatrix}1 &amp; 2\\ -3 &amp; 2\end{pmatrix} = (1\cdot 2) - (-3 \cdot 2) = 8
+                    </me>
+                    and
+                    <me>
+                        \det (A^t) = det\begin{pmatrix}1 &amp; -3\\ 2 &amp; 2\end{pmatrix} = (1\cdot 2) - (2 \cdot -3) = 8.
+                    </me>
+                    Thus <m>\det (A)= \det (A^T).</m>
+                </p>
+            </solution>
+        </example>
+    </subsection>
+    <!-- subsub 6.1.4 -->
+    <subsection xml:id="subsec-det-row-ops">
+        <title>Finding Determinants Using Row Operations</title>
+
+        <p>
+            From the above section, <xref ref="thm-row-ops-dont-change-det"/> - <xref ref="thm-rows-cols-same-effect"/>, can be used to find determinants using row operations.
+            As pointed out above, the method of Laplace expansion will not be practical for any matrix of large size.
+            Here is an example in which all the row operations are used.
+        </p>
+
+        <example>
+            <statement>
+                <p>
+                    Find the determinant of the matrix
+                    <me>
+                        A = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 5 &amp; 1 &amp; 2 &amp; 3\\ 4 &amp; 5 &amp; 4 &amp; 3\\ 2 &amp; 2 &amp; -4 &amp; 5 \end{pmatrix}
+                    </me>
+                </p>
+            </statement>
+
+            <solution>
+                <p>
+                    Replace the second row by (-5) times the first row added to it.
+                    Then replace the third row by (-4) times the first row added to it.
+                    Finally, replace the fourth row by (-2) times the first row added to it.
+                    This yields the matrix
+                    <me>
+                        B = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 0 &amp; -9 &amp; -13 &amp; -17\\ 0 &amp; -3 &amp; -8 &amp; -13\\ 0 &amp; -2 &amp; -10 &amp; -3 \end{pmatrix}
+                    </me>
+                    and from <xref ref="thm-row-ops-dont-change-det"/> it has the same determinant as <m>A</m>.
+                    Now using other row operations,<m>\det (B) = \frac{-1}{3} \det (C)</m> where
+                    <me>
+                        C = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 0 &amp; 0 &amp; 11 &amp; 22\\ 0 &amp; -3 &amp; -8 &amp; -13\\ 0 &amp; 6 &amp; 30 &amp; 9 \end{pmatrix}
+                    </me>
+                    The second row of <m>B</m> was replaced by <m>(-3)</m> times the third row added to the second row.
+                    By <xref ref="thm-row-ops-dont-change-det"/> this didn't change the value of the determinant.
+                    Then the last row was multiplied by <m>(-3)</m> .
+                    By <xref ref="thm-det-mult-mat-by-scalar"/> the resulting matrix has a determinant which is <m>(-3)</m> times the determinant of the un-multiplied matrix.
+                    Therefore, we multiplied by <m>\frac{-1}{3}</m> to retain the correct value.
+                    Now replace the last row with 2 times the third added to it.
+                    This does not change the value of the determinant by <xref ref="thm-row-ops-dont-change-det"/>.
+                    Finally switch the third and second rows.
+                    This causes the determinant to be multiplied by<m> (-1)</m> .
+                    Thus <m> \det (C) = - \det (D)</m> where
+                    <me>
+                        D = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 0 &amp; -3 &amp; -8 &amp; -13\\ 0 &amp; 0 &amp; 11 &amp; 22\\ 0 &amp; 0 &amp; 14 &amp; -17 \end{pmatrix}
+                    </me>
+                    You could do more row operations or you could note that this can be easily expanded along the first column followed by expanding the <m>3 \times 3</m> matrix which results along its first column.
+                    Thus
+                    <me>
+                        \det (D) = 1(-3) \begin{vmatrix} 11 &amp; 22\\ 14 &amp; -17 \end{vmatrix} = 1485
+                    </me>
+                    and so <m>\det (C) = -1485</m> and <m>\det (A) = \det (B) = \frac{-1}{3}(-1485) = 495</m>
+                </p>
+            </solution>
+        </example>
+
+        <example>
+            <statement>
+                <p>
+                    Find the determinant of the matrix
+                    <me>
+                        \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\ 1 &amp; -3 &amp; 2 &amp; 1\\ 2 &amp; 1 &amp; 2 &amp; 5\\ 3 &amp; -4 &amp; 1 &amp; 2\end{pmatrix}
+                    </me>
+                </p>
+            </statement>
+
+            <solution>
+                <p>
+                    Replace the second row by <m>(-1)</m> times the first row added to it.
+                    Next take <m>-2</m> times the first row and add to the third and finally take <m>-3</m> times the first row and add to the last row.
+                    This yields
+                    <me>
+                        \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\ 0 &amp; -5 &amp; -1 &amp; -1\\ 0 &amp; -3 &amp; -4 &amp; 1\\ 0 &amp; -10 &amp; -8 &amp; -4\end{pmatrix}
+                    </me>
+                    By <xref ref="thm-row-ops-dont-change-det"/> this matrix has the same determinant as the original matrix.
+                    Remember you can work with the columns also.
+                    Take <m>-5</m> times the last column and add to the second column.
+                    This yields
+                    <me>
+                        \begin{pmatrix} 1 &amp; -8 &amp; 3 &amp; 2\\ 0 &amp; 0 &amp; -1 &amp; -1\\ 0 &amp; -8 &amp; -4 &amp; 1\\ 0 &amp; 10 &amp; -8 &amp; -4\end{pmatrix}
+                    </me>
+                    By <xref ref="thm-rows-cols-same-effect"/> this matrix has the same determinant as the original matrix.
+                    Now take <m>(-1)</m> times the third row and add to the top row.
+                    This gives.
+                    <me>
+                        \begin{pmatrix} 1 &amp; 0 &amp; 7 &amp; 1\\ 0 &amp; 0 &amp; -1 &amp; -1\\ 0 &amp; -8 &amp; -4 &amp; 1\\ 0 &amp; 10 &amp; -8 &amp; -4\end{pmatrix}
+                    </me>
+                    which by <xref ref="thm-row-ops-dont-change-det"/> has the same determinant as the original matrix.
+                    Let's expand it now along the first column.
+                    This yields the following for the determinant of the original matrix.
+                    <me>
+                        \det \begin{pmatrix} 0 &amp; -1 &amp; -1\\ -8 &amp; -4 &amp; 1\\ 10 &amp; -8 &amp; -4\end{pmatrix}
+                    </me>
+                    which equals
+                    <me>
+                        8 \det \begin{pmatrix}-1 &amp; -1\\ -8 &amp; -4\end{pmatrix} + 10 \det \begin{pmatrix}-1 &amp; -1\\ -4 &amp; 1\end{pmatrix} = -82
                     </me>
                 </p>
 
                 <p>
-                    The (1,2) minor is the determinant of the <m>2 \times 2</m> matrix which results when you delete the first row and the second column.
-                    This minor is therefore
-                    <me>
-                        \det\begin{pmatrix} 4 &amp; 2\\ 
-                        3 &amp; 1\end{pmatrix} = (4)(1) - (3)(2) = -2.
-                    </me>
+                    We suggest you do not try to be fancy in using row operations.
+                    That is, stick mostly to the one which replaces a row or column with a multiple of another row or column added to it.
+                    Also note there is no way to check your answer other than working the problem more than one way.
+                    To be sure you have gotten it right you must do this.
                 </p>
+            </solution>
+        </example>
+    </subsection>
+    <!--removed subsection-->
+    <subsection xml:id="subsec-formula-for-inverse">
+        <title>A Formula For The Inverse</title>
 
+        <p>
+            The definition of the determinant in terms of Laplace expansion along a row or column also provides a way to give a formula for the inverse of a matrix.
+            Recall the definition of the inverse of a matrix in <xref ref="def-inverse-matrix"/>.
+            Also recall the definition of the cofactor matrix given in <xref ref="def-cofactor-equals-minor"/>.
+            This cofactor matrix was just the matrix which results from replacing the <m>ij^{th}</m> entry of the matrix with the <m>ij^{th}</m> cofactor.
+        </p>
+
+        <p>
+            The following theorem says that to find the inverse, take the transpose of the cofactor matrix and divide by the determinant.
+            The transpose of the cofactor matrix is called the <term>adjugate</term> or sometimes the <term>classical adjoint</term> of the matrix <m>A</m>.
+            In other words, <m>A^{-1}</m> is equal to 1 divided by the determinant of <m>A</m> times the adjugate matrix of <m>A</m>.
+            This is what the following theorem says with more precision.
+        </p>
+
+        <theorem xml:id="thm-inverse-from-cofactor">
+            <title>Matrix Inverse is Adjugate Divided by Determinant</title>
+
+            <statement>
                 <p>
-                    The (2,3) minor is the determinant of the <m>2 \times 2</m> matrix which results when you delete the second row and the third column.
-                    This minor is therefore
+                    <m>A^{-1}</m> exists if and only if <m>\det (A) \neq 0</m>. If <m>\det (A) \neq 0</m>, then <m>A^{-1} = (a_{ij}^{-1}) </m> where
                     <me>
-                        \det\begin{pmatrix} 1 &amp; 2\\ 
-                        3 &amp; 2\end{pmatrix} = (1)(2) - (3)(2) = -4.
+                        a_{ij}^{-1} = \frac{\text{adj} (A)_{ij}}{\det (A)} = \frac{\text{cof} (A)_{ji}}{\det (A)}
                     </me>
+                    where <m>\text{cof} (A)_{ji}  = \text{cof} (A)_{ij}^T = \text{adj} A_{ij}</m>.
                 </p>
-            </example>
+            </statement>
 
-            <definition xml:id="def-ij-cofactor">
-                <title><m>ij^{th}</m> Cofactor</title>
-                
-                
-                <idx><h>cofactor</h></idx>
-                <statement>
-                    <p>
-                        Suppose <m>A</m> is a <m>3 \times 3</m> matrix.
-                        The <m>ij^{th}</m> <term>cofactor</term> is defined to be <m>(-1)^{i+j} \times (ij^{th}</m> minor).
-                        In words, you multiply <m>(-1)^{(i+j)}</m> times the <m>ij^{th}</m> minor to get the <m>ij^{th}</m> cofactor.
-                    </p>
-                    <p>
-                        The cofactors of a matrix are so important that special notation is appropriate when referring to them.
-                        The <m>ij^{th}</m> cofactor of a matrix <m>A</m> will be denoted by <term><m>\text{cof} (A)_{ij}</m></term> .
-                        It is also convenient to refer to the cofactor of an entry of a matrix as follows.
-                        For <m>a_{ij}</m> an entry of the matrix, its cofactor is just <m>\text{cof} (A)_{ij}</m> .
-                        Thus the cofactor of the <m>ij^{th}</m> entry is just the <m>ij^{th}</m> cofactor.
-                    </p>
-                </statement>
-            </definition>
 
-            <example>
+            <proof>
                 <p>
-                    Consider the matrix
+                    From the definition of the determinant in terms of expansion along a column, and letting <m>(a_{ir}) = A</m>, if <m> \det (A) \neq 0</m>,
                     <me>
-                        \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 4 &amp; 3 &amp; 2\\ 3 &amp; 2 &amp; 1\\ \end{pmatrix}.
+                        \sum_{i=1}^n a_{ir} \text{cof} (A)_{ir}\det (A)^{-1} = \det (A)\det (A)^{-1} = 1.
                     </me>
-                </p>
-
-                <p>
-                    The (1,2) minor is the determinant of the <m>2 \times 2</m> matrix which results when you delete the first row and the second column.
-                    This minor is therefore
+                    Now consider
                     <me>
-                        \det \begin{pmatrix}4&amp;2\\
-                        3&amp;1\end{pmatrix}  = (4)(1) - (3)(2) = -2.
+                        \sum_{i=1}^n a_{ir} \text{cof} (A)_{ik}\det (A)^{-1}
                     </me>
-                </p>
-
-                <p>
-                    It follows
+                    when <m>k \neq r</m>.
+                    Replace the <m>k^{th}</m> column with the <m>r^{th}</m> column to obtain a matrix <m>B_k</m> whose determinant equals zero by <xref ref="thm-switch-rows-neg-det"/>.
+                    However, expanding this matrix <m>B_k</m> along the <m>k^{th}</m> column yields
                     <me>
-                        \text{cof} (A)_{12} = (-1)^{1+2} \det \begin{pmatrix} 4 &amp; 2\\
-                        3 &amp; 1\end{pmatrix} = (-1)^{1+2} (-2) = 2.
+                        0 = \det (B_k)\det (A)^{-1}  = \sum_{i=1}^n a_{ir} \text{cof} (A)_{ik}\det (A)^{-1}.
                     </me>
-                </p>
-
-                <p>
-                    The (2,3) minor is the determinant of the <m>2 \times 2</m> matrix which results when you delete the second row and the third column.
-                    This minor is therefore
+                    Summarizing,
                     <me>
-                        \det \begin{pmatrix} 1 &amp; 2\\ 3 &amp; 2\end{pmatrix} = (1)(2) - (3)(2) = -4.
+                        \sum_{i=1}^n a_{ir} \text{cof} (A)_{ik}\det (A)^{-1} = \delta_{rk} \equiv \begin{cases}1 &amp; \text{if } r = k\\ 0 &amp; \text{if } r \neq k\end{cases}.
                     </me>
-                </p>
-
-                <p>
+                    Now
+                    <me>
+                        \sum_{i=1}^n a_{ir} \text{cof} (A)_{ik} = \sum_{i=1}^n a_{ir} \text{cof} (A)_{ki}^T
+                    </me>
+                    which is the <m>kr^{th}</m> entry of <m>\text{cof} (A)^T A</m>.
                     Therefore,
                     <me>
-                        \text{cof} (A)_{23} = (-1)^{2+3} \det \begin{pmatrix} 1 &amp; 2\\ 3 &amp; 2\end{pmatrix} = (-1)^{2+3} (-4) = 4.
+                        \frac{\text{cof} (A)^T}{\det (A)} A = I.
                     </me>
                 </p>
 
                 <p>
-                    Similarly,
+                    Using the other formula in <xref ref="def-det-sum-of-cof"/> and similar reasoning,
                     <me>
-                        \text{cof} (A)_{22} = (-1)^{2+2} \det \begin{pmatrix} 1 &amp; 3\\ 3 &amp; 1\\ \end{pmatrix} = -4.
+                        \sum_{j=1}^n a_{rj} \text{cof} (A)_{kj} \det (A)^{-1} = \delta_{rk}.
                     </me>
-                </p>
-            </example>
-            <!-- STOP at Definition 6.1.7 -->
-            <definition xml:id="def-expanding-along-row">
-                <title>Expanding Along a Row or Column</title>
-                
-                
-                <statement>
-                    <p>
-                        The determinant of a <m>3 \times 3</m> matrix <m>A</m>, is obtained by picking a row (column) and taking the product of each entry in that row (column) with its cofactor and adding these up.
-                        This process when applied to the <m>i^{th}</m> row (column) is known as <term>expanding the determinant along the <m>i^{th}</m> row (column)</term>.
-                    </p>
-                </statement>
-            </definition>
-
-            <example>
-                <p>
-                    Find the determinant of
+                    Now,
                     <me>
-                        A = \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 4 &amp; 3 &amp; 2\\ 3 &amp; 2 &amp; 1\\ \end{pmatrix}.
+                        \sum_{j=1}^n a_{rj} \text{cof} (A)_{kj} = \sum_{j=1}^n a_{rj} \text{cof} (A)_{jk}^T
                     </me>
-                    Here is how it is done by <em>expanding around the first column.</em>
+                    which is the <m>rk^{th}</m> entry of <m>A\, \text{cof} (A)^T</m>.
+                    Therefore,
                     <me>
-                        \overbrace{1(-1)^{1+1}\begin{vmatrix}3 &amp; 2\\ 2 &amp; 1 \end{vmatrix}}^{\text{cof} (A)_{11}} + \overbrace{4(-1)^{2+1}\begin{vmatrix}2 &amp; 3\\ 2 &amp; 1 \end{vmatrix}}^{\text{cof} (A)_{21}} + \overbrace{3(-1)^{3+1}\begin{vmatrix}3 &amp; 2\\ 3 &amp; 2 \end{vmatrix}}^{\text{cof} (A)_{31}} = 0 .
+                        A \frac{\text{cof} (A)^T}{\det (A)} A = I,
+                    </me>
+                    and it follows that <m>A^{-1} = (a_{ij}^{-1})</m>, where
+                    <me>
+                        a_{ij}^{-1} = \text{cof} (A)_{ij} \det (A)^{-1}.
+                    </me>
+                    In other words,
+                    <me>
+                        A^{-1} = \frac{\text{cof} (A)^T}{\det (A)}.
                     </me>
                 </p>
 
                 <p>
-                    You see, we just followed the rule in the above definition.
-                    We took the 1 in the first column and multiplied it by its cofactor, the 4 in the first column and multiplied it by its cofactor, and the 3 in the first column and multiplied it by its cofactor.
-                    Then we added these numbers together.
+                    Now suppose <m>A^{-1}</m> exists.
+                    Then by <xref ref="thm-prod-of-dets"/>
+                    <me>
+                        1 = \det (I) = \det (AA^{-1}) = \det (A)\det (A^{-1})
+                    </me>
+                    so <m>\det (A) \neq 0.
+                    \blacksquare</m>
+                </p>
+            </proof>
+        </theorem>
+
+        <example>
+            <statement>
+                <p>
+                    Find the inverse of the matrix
+                    <me>
+                        A =  \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 3 &amp; 0 &amp; 1\\ 1 &amp; 2 &amp; 1 \end{pmatrix}
+                    </me>
+                </p>
+            </statement>
+
+            <solution>
+                <p>
+                    First, find the determinant of this matrix.
+                    Using row operations (<xref ref="thm-row-ops-dont-change-det"/> - <xref ref="thm-rows-cols-same-effect"/>), the determinant of this matrix equals the determinant of the matrix:
+                    <me>
+                        \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 0 &amp; -6 &amp; -8\\ 0 &amp; 0 &amp; -2 \end{pmatrix}
+                    </me>
+                    which equals 12.
                 </p>
 
                 <p>
-                    You could also expand the determinant along the second row as follows.
+                    Next, find the cofactor matrix of <m>A</m>.
                     <me>
-                        \overbrace{4(-1)^{2+1}\begin{vmatrix}2 &amp; 3\\ 2 &amp; 1 \end{vmatrix}}^{\text{cof} (A)_{21}} + \overbrace{3(-1)^{2+2}\begin{vmatrix}1 &amp; 3\\ 3 &amp; 1 \end{vmatrix}}^{\text{cof} (A)_{22}} + \overbrace{2(-1)^{2+3}\begin{vmatrix}1 &amp; 2\\ 3 &amp; 2 \end{vmatrix}}^{\text{cof} (A)_{23}} = 0 .
+                        \text{cof}(A) = \begin{pmatrix} -2 &amp; -2 &amp; 6\\ 4 &amp; -2 &amp; 0\\ 2 &amp; 8 &amp; -6 \end{pmatrix}
                     </me>
-                    Observe this gives the same number.
-                    You should try expanding along other rows and columns.
-                    If you don't make any mistakes, you will always get the same answer.
+                    Each entry of <m>A</m> was replaced by its cofactor.
+                    Therefore, from the above theorem, the inverse of <m>A</m> should equal
+                    <me>
+                        \frac{1}{12} \begin{pmatrix} -2 &amp; -2 &amp; 6\\ 4 &amp; -2 &amp; 0\\ 2 &amp; 8 &amp; -6 \end{pmatrix}^T = \begin{pmatrix} -\frac{1}{6} &amp; \frac{1}{3} &amp; \frac{1}{6}\\ -\frac{1}{6} &amp; -\frac{1}{6} &amp; \frac{2}{3}\\ \frac{1}{2} &amp; 0 &amp; -\frac{1}{2} \end{pmatrix}.
+                    </me>
                 </p>
-            </example>
 
-            <p>
-                What about a <m>4 \times 4</m> matrix? You know now how to find the determinant of a <m>3 \times 3</m> matrix.
-                The pattern is the same.
-            </p>
-
-            <definition xml:id="def-det-of-four-by-four">
-                <statement>
-                    <p>
-                        Suppose A is a <m>4 \times 4</m> matrix.
-                        The <m>ij^{th}</m> <term>minor</term> is the determinant of the <m>3 \times 3</m> matrix you obtain when you delete the <m>i^{th}</m> row and the <m>j^{th}</m> column.
-                        The <m>ij^{th}</m> <term>cofactor</term>, <m>\text{cof} (A)</m> is defined to be <m>(-1)^{i+j} \times (ij^{th} \text{ minor})</m>.
-                        In words, you multiply <m>(-1)^{i+j}</m> times the <m>ij^{th}</m> minor to get the <m>ij^{th}</m> cofactor.
-                    </p>
-                </statement>
-            </definition>
-
-            <definition xml:id="def-laplace-expansion"><title>Laplace Expansion</title>
-            
-            
-                <statement>
-                    <p>
-                        The determinant of a <m>4 \times 4</m> matrix <m>A</m>, is obtained by expanding along a row (column) 
-                        just as was done for a <m>3\times 3</m> matrix in <xref ref="def-expanding-along-row"/>, except the expanding process must
-                        be repeated again for each of the resulting <m>3\times 3</m> matrices to obtain their determinants.
-
-                    </p><p>
-                        This method of evaluating a determinant by expanding along a row or a column can be done for any size square matrix
-                        and is called the <em>method of Laplace expansion</em>. The process must be repeated until the resulting matrices
-                    are small enough to easily calculate their determinants.</p>
-                </statement>
-            </definition>
-
-            <example>
-                <statement>
-                    <p>
-                        Find <m >\det (A)</m> where
-                        <me>
-                            A = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 5 &amp; 4 &amp; 2 &amp; 3\\ 1 &amp; 3 &amp; 4 &amp; 5\\ 3 &amp; 4 &amp; 3 &amp; 2 \end{pmatrix}.
-                        </me>
-                    </p>
-                </statement>
-
-                <solution>
-                    <p>
-                        As in the case of a <m>3 \times 3</m> matrix, you can expand this along any row or column.
-                        Lets pick the third column.
-                        <m> \det (A) =</m>
-                        <me>
-                            3(-1)^{1+3}\begin{vmatrix} 5 &amp; 4 &amp; 3\\ 1 &amp; 3 &amp; 5\\ 3 &amp; 4 &amp; 2 \end{vmatrix} + 2(-1)^{2+3}\begin{vmatrix} 1 &amp; 2 &amp; 4\\ 1 &amp; 3 &amp; 5\\ 3 &amp; 4 &amp; 2 \end{vmatrix} +
-                        </me>
-                        <me>
-                            4(-1)^{3+3}\begin{vmatrix} 1 &amp; 2 &amp; 4\\ 5 &amp; 4 &amp; 3\\ 3 &amp; 4 &amp; 2 \end{vmatrix} + 3(-1)^{4+3}\begin{vmatrix} 1 &amp; 2 &amp; 4\\ 5 &amp; 4 &amp; 3\\ 1 &amp; 3 &amp; 5 \end{vmatrix} .
-                        </me>
-                    </p>
-
-                    <p>
-                        Now you know how to expand each of the <m>3 \times 3</m> matrices along a row or a column.
-                        If you do so, you will get <m>-12</m> assuming you make no mistakes.
-                        You could expand this matrix along any row or any column and assuming you make no mistakes, you will always get the same thing which is defined to be the determinant of the matrix <m>A</m>.
-                        .
-                    </p>
-                </solution>
-            </example>
-
-            <p>
-                Note that each of the four terms in the example solution above involves three terms consisting of determinants of <m>2 \times 2</m> matrices and each of these will need 2 terms.
-                Therefore, there will be <m>4 \times 3 \times 2 = 24</m> terms to evaluate in order to find the determinant using the method of Laplace expansion.
-                Suppose now you have a <m>10 \times 10</m> matrix and you follow the above pattern for evaluating determinants.
-                By analogy to the above, there will be <m>10! = 3, 628 , 800</m> terms involved in the evaluation of such a determinant by Laplace expansion along a row or column.
-                This is a lot of terms.
-            </p>
-
-            <p>
-                In addition to the difficulties just discussed, you should regard the above claim that you always get the same answer by picking any row or column with considerable skepticism.
-                It is incredible and not at all obvious.
-                However, it requires a little effort to establish it.
-                This is done in the Elementary Linear Algebra book chapter 7 on the theory of the determinant.
-            </p>
-
-            <definition xml:id="def-cofactor-equals-minor">
-                <idx><h>matrix cofactor</h></idx>
-                <title>Cofactor Matrix</title>
-                
-                <statement>
-                    <p>
-                        Let <m>A = (a_{ij})</m> be an <m>n \times n</m> matrix and suppose the determinant of a <m>(n - 1) \times (n - 1)</m> matrix has been defined.
-                        Then a new matrix called the <term>cofactor matrix</term>, <m>cof (A)</m> is defined by <m>cof (A) = (c_{ij}) </m> where to obtain <m>c_{ij}</m> delete the <m>i^{th}</m> row and the <m>j^{th}</m> column of <m>A</m>, take the determinant of the <m>(n - 1) \times (n - 1)</m> matrix which results, (This is called the <m>ij^{th}</m> <term>minor</term> of <m>A</m>.
-                        ) and then multiply this number by <m>(-1)^{i+j}</m> .
-                    </p>
-
-                    <p>
-                        Thus <m>(-1)^{i+j} \times (\text{ the } ij^{th} \text{ minor})</m> equals the <m>ij^{th}</m> cofactor.
-                        To make the formulas easier to remember, <m>\text{cof} (A)_{ij}</m> will denote the <m>ij^{th}</m> entry of the cofactor matrix.
-                    </p>
-                </statement>
-            </definition>
-
-            <p>
-                With this definition of the cofactor matrix, here is how to define the determinant of an <m>n \times n</m> matrix.
-            </p>
-
-            <definition xml:id="def-det-sum-of-cof">
-                <title>Determininant as Sum of Cofactor Matrices</title>
-
-                <statement>
-                    <p>
-                        Let <m>A</m> be an <m>n \times n</m> matrix where <m>n \geq 2</m> and suppose the determinant of an <m>(n - 1) \times (n - 1)</m> has been defined.
-                        Then
-                        <me>
-                            \det (A) = \sum_{j = 1}^{n} a_{ij}\, \text{cof} (A)_{ij} = \sum_{i = 1}^{n} a_{ij}\, \text{cof} (A)_{ij}
-                        </me>
-                    </p>
-                </statement>
-            </definition>
-
-            <p>
-                The first sum consists of expanding the determinant along the <m>i^{th}</m> row and the second expands the determinant along the <m>j^{th}</m> column.
-            </p>
-
-            <theorem xml:id="thm-expanding-along-row-column">
-                <statement>
-                    <p>
-                        Expanding the <m>n \times </m>n matrix along any row or column always gives the same answer so the above definition is a good definition.
-                    </p>
-                </statement>
-            </theorem>
-        </subsection>
-        <!-- Kuttler 6.1.2 -->
-        <subsection xml:id="subsec-det-of-triangular-matrix">
-            <title>The Determinant of a Triangular Matrix</title>
-
-            <p>
-                Notwithstanding the difficulties involved in using the method of Laplace expansion, certain types of matrices are very easy to deal with.
-            </p>
-
-            <definition xml:id="def-upper-triangular-matrix">
-                <idx><h>triangular matrix</h></idx>
-                <title>Triangular Matrices</title>
-                
-                
-                <statement>
-                    <p>
-                        A matrix <m>M</m> , is <term>upper triangular</term> if <m>M_{ij}= 0</m> whenever <m>i \gt j</m>.
-                        Thus in such a matrix, every entry below the main diagonal (the entries of the form <m>M_{ii}</m>) equals zero, as shown.
-                        <me>
-                            M = \begin{pmatrix} M_{11} &amp; * &amp; \cdots &amp; *\\ 0 &amp; M_{22} &amp; \ddots &amp; \vdots\\ \vdots &amp; \ddots &amp; \ddots &amp; *\\ 0 &amp; \cdots &amp; 0 &amp; M_{nn} \end{pmatrix}
-                        </me>
-                        A <term>lower triangular</term> matrix is defined similarly as a matrix for which all entries above the main diagonal are equal to zero.
-                    </p>
-                </statement>
-            </definition>
-
-            <p>
-                You should verify the following using the above theorem on Laplace expansion.
-            </p>
-
-            <corollary xml:id="cor-det-of-triangular-matrix">
-                <title>Determinant of a Triangular Matrix</title>
-                
-                
-                <statement>
-                    <p>
-                        Let <m>M</m> be an upper (lower) triangular matrix.
-                        Then <m >\det (M)</m> is obtained by taking the product of the entries on the main diagonal.
-                    </p>
-                </statement>
-            </corollary>
-
-            <example>
-                <statement>
-                    <p>
-                        Let
-                        <me>
-                            A = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 77\\ 0 &amp; 2 &amp; 6 &amp; 7\\ 0 &amp; 0 &amp; 3 &amp; 33.7\\ 0 &amp; 0 &amp; 0 &amp; -1 \end{pmatrix}
-                        </me>
-                        Find <m >\det (A).</m>
-                    </p>
-                </statement>
-
-                <answer>
-                    <p>
-                        From the above corollary, it suffices to take the product of the diagonal elements.
-                        Thus <m >\det (A) =1 \times 2 \times 3 \times (-1) = -6.</m>
-                    </p>
-                </answer>
-
-                <solution>
-                    <p>
-                        Without using the corollary, you could expand along the first column.
-                        This gives
-                        <me>
-                            1\begin{vmatrix} 2 &amp; 6 &amp; 7\\ 0 &amp; 3 &amp; 33.7\\ 0 &amp; 0 &amp; -1 \end{vmatrix} + 0(-1)^{2+1}\begin{vmatrix} 2 &amp; 3 &amp; 77\\ 0 &amp; 3 &amp; 33.7\\ 0 &amp; 0 &amp; -1 \end{vmatrix} +
-                        </me>
-                        <me>
-                            0(-1)^{3+1}\begin{vmatrix} 2 &amp; 3 &amp; 77\\ 2 &amp; 6 &amp; 7\\ 0 &amp; 0 &amp; -1 \end{vmatrix} + 0(-1)^{4+1}\begin{vmatrix} 2 &amp; 3 &amp; 77\\ 2 &amp; 6 &amp; 7\\ 0 &amp; 3 &amp; 33.77 \end{vmatrix} +
-                        </me>
-                        and the only non-zero term in the expansion is the first one
-                        <me>
-                            1\begin{vmatrix} 2 &amp; 6 &amp; 7\\ 0 &amp; 3 &amp; 33.7\\ 0 &amp; 0 &amp; -1 \end{vmatrix}
-                        </me>
-                        Now expand this along the first column to obtain
-                        <me>
-                            1 \times \left( 2 \times \begin{vmatrix} 3 &amp; 33.7\\ 0 &amp; -1 \end{vmatrix} + 0(-1)^{2+1}\begin{vmatrix} 6 &amp; 7\\ 0 &amp; -1 \end{vmatrix} + 0(-1)^{3+1}\begin{vmatrix} 6 &amp; 7\\ 3 &amp; 33.7 \end{vmatrix} \right)
-                        </me>
-                        <me>
-                            = 1\times 2 \times \begin{vmatrix} 3 &amp; 33.7\\ 0 &amp; -1 \end{vmatrix}
-                        </me>
-                        Next expand this last determinant along the first column to obtain the above equals
-                        <me>
-                            1\times 2 \times 3 \times (-1) = -6
-                        </me>
-                        which is just the product of the entries down the main diagonal of the original matrix.
-                    </p>
-                </solution>
-            </example>
-        </subsection>
-
-        <subsection xml:id="subsec-props-of-dets">
-            <title>Properties of Determinants</title>
-
-            <p>
-                There are many properties satisfied by determinants.
-                Some of these properties have to do with row operations.
-                Recall the row operations: <xref ref="def-row-operations"/>
-            </p>
-
-            <theorem xml:id="thm-switch-rows-neg-det">
-                <title>Switching two rows negates the determinant</title>
-
-                <statement>
-                    <p>
-                        Let <m>A</m> be an <m>n \times n</m> matrix and let <m>A_1</m> be a matrix which results from switching two rows of <m>A</m>.
-                        Then <m>\det (A) = -\det (A_1)</m> .
-                        Also, if one row of <m>A</m> is a multiple of another row of <m>A</m>, then <m>\det (A) = 0</m>.
-                    </p>
-                </statement>
-            </theorem>
-
-            <example>
-                <statement>
-                    <p>
-                        Let <m>A = \begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix} </m>, and let <m>A_1 = \begin{pmatrix}3 &amp; 4\\ 1 &amp; 2\end{pmatrix} </m>.
-                    </p>
-
-                    <p>
-                        Then <m>\det (A) = -2</m> and <m>\det (A_1) = 2.</m>
-                    </p>
-                </statement>
-            </example>
-
-            <theorem xml:id="thm-det-mult-mat-by-scalar">
-                <title>Multiplying a matrix by a scalar, also multiplies the determinant</title>
-
-                <statement>
-                    <p>
-                        Let <m>A</m> be an <m>n \times n</m> matrix and let <m>A_1</m> be a matrix which results from multiplying some row of <m>A</m> by a scalar <m>c</m>.
-                        Then <m>c \,\det (A) = \det (A_1)</m>.
-                    </p>
-                </statement>
-            </theorem>
-
-            <example>
-                <statement>
-                    <p>
-                        Let <m>A = \begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix} </m>, <m>A_1 = \begin{pmatrix}2 &amp; 4\\ 3 &amp; 4\end{pmatrix} </m>.
-                    </p>
-
-                    <p>
-                        The first row of <m>A_1</m> is 2 times the first row of <m>A</m>.
-                    </p>
-
-                    <p>
-                        <m>\det (A) = -2</m> and <m>\det (A_1) = -4 = 2 \cdot -2 = 2 \, \det (A).</m>
-                    </p>
-                </statement>
-            </example>
-
-            <theorem xml:id="thm-row-ops-dont-change-det">
-                <title>Row operation 3 doesn't change the determinant</title>
-
-                <statement>
-                    <p>
-                        Let <m>A</m> be an <m>n \times n</m> matrix and let <m>A_1</m> be a matrix which results from applying row operation 3.
-                        That is, you replace some row by a multiple of another row added to itself.
-                        Then <m> \det (A) = \det (A_1 ).</m>
-                    </p>
-                </statement>
-            </theorem>
-
-            <example>
-                <statement>
-                    <p>
-                        Let <m>A = \begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix} </m> and let <m>A_1 = \begin{pmatrix}1 &amp; 2\\ 4 &amp; 6\end{pmatrix} </m>.
-                        Thus the second row of <m>A_1</m> is one times the first row added to the second row.
-                    </p>
-
-                    <p>
-                        <m>\det (A) = -2</m> and <m>\det (A_1) = -2.</m>
-                    </p>
-                </statement>
-            </example>
-
-            <theorem xml:id="thm-rows-cols-same-effect">
-                <title>Columns have the same effect</title>
-
-                <statement>
-                    <p>
-                        In <xref ref="thm-switch-rows-neg-det"/> - <xref ref="thm-row-ops-dont-change-det"/> you can replace the word "row" with the word "column".
-                    </p>
-                </statement>
-            </theorem>
-
-            <p>
-                There are two other major properties of determinants which do not involve row operations.
-            </p>
-            <!--these two were in one theorem in original.-->
-            <theorem xml:id="thm-prod-of-dets">
-                <title>The determinant of a matrix product is the product of the determinants </title>
-
-                <statement>
-                    <p>
-                        <p>
-                            Let <m>A </m> and <m>B </m> be two <m>n\times n</m> matrices, then
-                            <me>
-                                \det (AB) = \det (A) \det (B).
-                            </me>
-                        </p>
-                    </p>
-                </statement>
-            </theorem>
-
-            <example>
-                <statement>
-                    <p>
-                        Compare <m>\det (AB)</m> and <m>\det (A) \det (B)</m> for
-                        <me>
-                            A = \begin{pmatrix}1 &amp; 2\\ -3&amp; 2\end{pmatrix}, B = \begin{pmatrix}3 &amp; 2\\ 4&amp; 1\end{pmatrix}
-                        </me>
-                    </p>
-                </statement>
-
-                <solution>
-                    <p>
-                        First
-                        <me>
-                            AB = \begin{pmatrix}1 &amp; 2\\ -3&amp; 2\end{pmatrix}\begin{pmatrix}3 &amp; 2\\ 4&amp; 1\end{pmatrix} = \begin{pmatrix}11 &amp; 4\\ -1 &amp; -4\end{pmatrix}
-                        </me>
-                        and so
-                        <me>
-                            \det (AB) = \det \begin{pmatrix}11 &amp; 4\\ -1 &amp; -4\end{pmatrix} = -40.
-                        </me>
-                        Now
-                        <me>
-                            \det (A) = det\begin{pmatrix}1 &amp; 2\\ -3 &amp; 2\end{pmatrix} = 8
-                        </me>
-                        and
-                        <me>
-                            \det ( b) = det\begin{pmatrix}3 &amp; 2\\ 4 &amp; 1\end{pmatrix} = -5.
-                        </me>
-                        Thus <m>\det (A)\det (B) = 8 \times (-5) = -40.</m>
-                    </p>
-                </solution>
-            </example>
-
-            <theorem xml:id="thm-det-of-transp">
-                <title>The determinant of a matrix is the determinant of its transpose </title>
-
-                <statement>
-                    <p>
-                        <p>
-                            Let <m>A </m> be an <m>n\times n</m> matrix, then
-                            <me>
-                                \det (A) = \det (A^T)
-                            </me>
-                        </p>
-                    </p>
-                </statement>
-            </theorem>
-            <!--added this example-->
-            <example>
-                <statement>
-                    <p>
-                        Compare <m>\det (A)</m> and <m>\det (A^T)</m> for
-                        <me>
-                            A = \begin{pmatrix}1 &amp; 2\\ -3&amp; 2\end{pmatrix}.
-                        </me>
-                    </p>
-                </statement>
-
-                <solution>
-                    <p>
-                        <me>
-                            \det (A) = det\begin{pmatrix}1 &amp; 2\\ -3 &amp; 2\end{pmatrix} = (1\cdot 2) - (-3 \cdot 2) = 8
-                        </me>
-                        and
-                        <me>
-                            \det (A^t) = det\begin{pmatrix}1 &amp; -3\\ 2 &amp; 2\end{pmatrix} = (1\cdot 2) - (2 \cdot -3) = 8.
-                        </me>
-                        Thus <m>\det (A)= \det (A^T).</m>
-                    </p>
-                </solution>
-            </example>
-        </subsection>
-        <!-- subsub 6.1.4 -->
-        <subsection xml:id="subsec-det-row-ops">
-            <title>Finding Determinants Using Row Operations</title>
-
-            <p>
-                From the above section, <xref ref="thm-row-ops-dont-change-det"/> - <xref ref="thm-rows-cols-same-effect"/>, can be used to find determinants using row operations.
-                As pointed out above, the method of Laplace expansion will not be practical for any matrix of large size.
-                Here is an example in which all the row operations are used.
-            </p>
-
-            <example>
-                <statement>
-                    <p>
-                        Find the determinant of the matrix
-                        <me>
-                            A = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 5 &amp; 1 &amp; 2 &amp; 3\\ 4 &amp; 5 &amp; 4 &amp; 3\\ 2 &amp; 2 &amp; -4 &amp; 5 \end{pmatrix}
-                        </me>
-                    </p>
-                </statement>
-
-                <solution>
-                    <p>
-                        Replace the second row by (-5) times the first row added to it.
-                        Then replace the third row by (-4) times the first row added to it.
-                        Finally, replace the fourth row by (-2) times the first row added to it.
-                        This yields the matrix
-                        <me>
-                            B = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 0 &amp; -9 &amp; -13 &amp; -17\\ 0 &amp; -3 &amp; -8 &amp; -13\\ 0 &amp; -2 &amp; -10 &amp; -3 \end{pmatrix}
-                        </me>
-                        and from <xref ref="thm-row-ops-dont-change-det"/> it has the same determinant as <m>A</m>.
-                        Now using other row operations,<m>\det (B) = \frac{-1}{3} \det (C)</m> where
-                        <me>
-                            C = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 0 &amp; 0 &amp; 11 &amp; 22\\ 0 &amp; -3 &amp; -8 &amp; -13\\ 0 &amp; 6 &amp; 30 &amp; 9 \end{pmatrix}
-                        </me>
-                        The second row of <m>B</m> was replaced by <m>(-3)</m> times the third row added to the second row.
-                        By <xref ref="thm-row-ops-dont-change-det"/> this didn't change the value of the determinant.
-                        Then the last row was multiplied by <m>(-3)</m> .
-                        By <xref ref="thm-det-mult-mat-by-scalar"/> the resulting matrix has a determinant which is <m>(-3)</m> times the determinant of the un-multiplied matrix.
-                        Therefore, we multiplied by <m>\frac{-1}{3}</m> to retain the correct value.
-                        Now replace the last row with 2 times the third added to it.
-                        This does not change the value of the determinant by <xref ref="thm-row-ops-dont-change-det"/>.
-                        Finally switch the third and second rows.
-                        This causes the determinant to be multiplied by<m> (-1)</m> .
-                        Thus <m> \det (C) = - \det (D)</m> where
-                        <me>
-                            D = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 0 &amp; -3 &amp; -8 &amp; -13\\ 0 &amp; 0 &amp; 11 &amp; 22\\ 0 &amp; 0 &amp; 14 &amp; -17 \end{pmatrix}
-                        </me>
-                        You could do more row operations or you could note that this can be easily expanded along the first column followed by expanding the <m>3 \times 3</m> matrix which results along its first column.
-                        Thus
-                        <me>
-                            \det (D) = 1(-3) \begin{vmatrix} 11 &amp; 22\\ 14 &amp; -17 \end{vmatrix} = 1485
-                        </me>
-                        and so <m>\det (C) = -1485</m> and <m>\det (A) = \det (B) = \frac{-1}{3}(-1485) = 495</m>
-                    </p>
-                </solution>
-            </example>
-
-            <example>
-                <statement>
-                    <p>
-                        Find the determinant of the matrix
-                        <me>
-                            \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\ 1 &amp; -3 &amp; 2 &amp; 1\\ 2 &amp; 1 &amp; 2 &amp; 5\\ 3 &amp; -4 &amp; 1 &amp; 2\end{pmatrix}
-                        </me>
-                    </p>
-                </statement>
-
-                <solution>
-                    <p>
-                        Replace the second row by <m>(-1)</m> times the first row added to it.
-                        Next take <m>-2</m> times the first row and add to the third and finally take <m>-3</m> times the first row and add to the last row.
-                        This yields
-                        <me>
-                            \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\ 0 &amp; -5 &amp; -1 &amp; -1\\ 0 &amp; -3 &amp; -4 &amp; 1\\ 0 &amp; -10 &amp; -8 &amp; -4\end{pmatrix}
-                        </me>
-                        By <xref ref="thm-row-ops-dont-change-det"/> this matrix has the same determinant as the original matrix.
-                        Remember you can work with the columns also.
-                        Take <m>-5</m> times the last column and add to the second column.
-                        This yields
-                        <me>
-                            \begin{pmatrix} 1 &amp; -8 &amp; 3 &amp; 2\\ 0 &amp; 0 &amp; -1 &amp; -1\\ 0 &amp; -8 &amp; -4 &amp; 1\\ 0 &amp; 10 &amp; -8 &amp; -4\end{pmatrix}
-                        </me>
-                        By <xref ref="thm-rows-cols-same-effect"/> this matrix has the same determinant as the original matrix.
-                        Now take <m>(-1)</m> times the third row and add to the top row.
-                        This gives.
-                        <me>
-                            \begin{pmatrix} 1 &amp; 0 &amp; 7 &amp; 1\\ 0 &amp; 0 &amp; -1 &amp; -1\\ 0 &amp; -8 &amp; -4 &amp; 1\\ 0 &amp; 10 &amp; -8 &amp; -4\end{pmatrix}
-                        </me>
-                        which by <xref ref="thm-row-ops-dont-change-det"/> has the same determinant as the original matrix.
-                        Let's expand it now along the first column.
-                        This yields the following for the determinant of the original matrix.
-                        <me>
-                            \det \begin{pmatrix} 0 &amp; -1 &amp; -1\\ -8 &amp; -4 &amp; 1\\ 10 &amp; -8 &amp; -4\end{pmatrix}
-                        </me>
-                        which equals
-                        <me>
-                            8 \det \begin{pmatrix}-1 &amp; -1\\ -8 &amp; -4\end{pmatrix} + 10 \det \begin{pmatrix}-1 &amp; -1\\ -4 &amp; 1\end{pmatrix} = -82
-                        </me>
-                    </p>
-
-                    <p>
-                        We suggest you do not try to be fancy in using row operations.
-                        That is, stick mostly to the one which replaces a row or column with a multiple of another row or column added to it.
-                        Also note there is no way to check your answer other than working the problem more than one way.
-                        To be sure you have gotten it right you must do this.
-                    </p>
-                </solution>
-            </example>
-        </subsection>
- <!--removed subsection-->
-
-        <subsection xml:id="subsec-formula-for-inverse">
-            <title>A Formula For The Inverse</title>
-
-            <p>
-                The definition of the determinant in terms of Laplace expansion along a row or column also provides a way to give a formula for the inverse of a matrix.
-                Recall the definition of the inverse of a matrix in <xref ref="def-inverse-matrix"/>.
-                Also recall the definition of the cofactor matrix given in <xref ref="def-cofactor-equals-minor"/>.
-                This cofactor matrix was just the matrix which results from replacing the <m>ij^{th}</m> entry of the matrix with the <m>ij^{th}</m> cofactor.
-            </p>
-
-            <p>
-                The following theorem says that to find the inverse, take the transpose of the cofactor matrix and divide by the determinant.
-                The transpose of the cofactor matrix is called the <term>adjugate</term> or sometimes the <term>classical adjoint</term> of the matrix <m>A</m>.
-                In other words, <m>A^{-1}</m> is equal to 1 divided by the determinant of <m>A</m> times the adjugate matrix of <m>A</m>.
-                This is what the following theorem says with more precision.
-            </p>
-
-            <theorem xml:id="thm-inverse-from-cofactor">
-                <title>Matrix Inverse is Adjugate Divided by Determinant</title> 
-                
-                <statement>
-                    <p>
-                        <m>A^{-1}</m> exists if and only if 
-                        <m>\det (A) \neq 0</m>. 
-                        If <m>\det (A) \neq 0</m>, then <m>A^{-1} = (a_{ij}^{-1}) </m> where 
-                        <me>a_{ij}^{-1} = \frac{\text{adj} (A)_{ij}}{\det (A)} = \frac{\text{cof} (A)_{ji}}{\det (A)} </me> 
-                        where <m>\text{cof} (A)_{ji}  = \text{cof} (A)_{ij}^T = \text{adj} A_{ij}</m>.
-                    </p>
-                </statement>
-                <proof>
-                    <p>
-                        From the definition of the determinant in terms of expansion along
-                        a column, and letting <m>(a_{ir}) = A</m>, if <m> \det (A) \neq 0</m>, 
-                        <me>\sum_{i=1}^n a_{ir} \text{cof} (A)_{ir}\det (A)^{-1} = \det (A)\det (A)^{-1} = 1.</me>
-                        
-                        Now consider
-                        <me>\sum_{i=1}^n a_{ir} \text{cof} (A)_{ik}\det (A)^{-1}</me>
-                        when <m>k \neq r</m>. Replace the <m>k^{th}</m> column with the <m>r^{th}</m> column to obtain a matrix <m>B_k</m> whose
-                        determinant equals zero by <xref ref="thm-switch-rows-neg-det"/>. However, expanding this matrix <m>B_k</m> along the <m>k^{th}</m>
-                        column yields
-                        <me>0 = \det (B_k)\det (A)^{-1}  = \sum_{i=1}^n a_{ir} \text{cof} (A)_{ik}\det (A)^{-1}.</me>
-                        Summarizing,
-                        <me>\sum_{i=1}^n a_{ir} \text{cof} (A)_{ik}\det (A)^{-1} = \delta_{rk} \equiv \begin{cases}1 &amp; \text{if } r = k\\
-                            0 &amp; \text{if } r \neq k\end{cases}.</me>
-
-                        Now
-                        <me>\sum_{i=1}^n a_{ir} \text{cof} (A)_{ik} = \sum_{i=1}^n a_{ir} \text{cof} (A)_{ki}^T </me>
-                        which is the <m>kr^{th}</m> entry of <m>\text{cof} (A)^T A</m>. Therefore, 
-                        <me>\frac{\text{cof} (A)^T}{\det (A)} A = I.</me>
-                    </p>
-                    <p>
-                        Using the other formula in <xref ref="def-det-sum-of-cof"/> and similar reasoning,
-                        <me>\sum_{j=1}^n a_{rj} \text{cof} (A)_{kj} \det (A)^{-1} = \delta_{rk}.</me>
-                        Now, 
-                        <me>\sum_{j=1}^n a_{rj} \text{cof} (A)_{kj} = \sum_{j=1}^n a_{rj} \text{cof} (A)_{jk}^T</me>
-                        which is the <m>rk^{th}</m> entry of <m>A\, \text{cof} (A)^T</m>. Therefore,
-                        <me>A \frac{\text{cof} (A)^T}{\det (A)} A = I,</me>
-                        and it follows that <m>A^{-1} = (a_{ij}^{-1})</m>, where
-                        <me>a_{ij}^{-1} = \text{cof} (A)_{ij} \det (A)^{-1}.</me>
-
-                        In other words, 
-                        <me>A^{-1} = \frac{\text{cof} (A)^T}{\det (A)}.</me>
-                    </p>
-                    <p>
-                        Now suppose <m>A^{-1}</m> exists. Then by <xref ref="thm-prod-of-dets"/>
-                        <me>1 = \det (I) = \det (AA^{-1}) = \det (A)\det (A^{-1}) </me>
-                        so <m>\det (A) \neq 0. \blacksquare</m>
-                    </p>
-                </proof>
-            </theorem>
-
-            <example>
-                <statement>
-                    <p>
-                        Find the inverse of the matrix
-                        <me>
-                            A =  \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 3 &amp; 0 &amp; 1\\ 1 &amp; 2 &amp; 1 \end{pmatrix}
-                        </me>
-                    </p>
-                </statement>
-
-                <solution>
-                    <p>
-                        First, find the determinant of this matrix.
-                        Using row operations (<xref ref="thm-row-ops-dont-change-det"/> - <xref ref="thm-rows-cols-same-effect"/>), the determinant of this matrix equals the determinant of the matrix:
-                        <me>
-                            \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 0 &amp; -6 &amp; -8\\ 0 &amp; 0 &amp; -2 \end{pmatrix}
-                        </me>
-                        which equals 12.
-                        </p>
-                        <p>
-                        Next, find the cofactor matrix of <m>A</m>.
-                        <me>
-                            \text{cof}(A) = \begin{pmatrix} -2 &amp; -2 &amp; 6\\ 4 &amp; -2 &amp; 0\\ 2 &amp; 8 &amp; -6 \end{pmatrix}
-                        </me>
-                        Each entry of <m>A</m> was replaced by its cofactor.
-                        Therefore, from the above theorem, the inverse of <m>A</m> should equal
-                        <me>
-                            \frac{1}{12} \begin{pmatrix} -2 &amp; -2 &amp; 6\\ 4 &amp; -2 &amp; 0\\ 2 &amp; 8 &amp; -6 \end{pmatrix}^T = \begin{pmatrix} -\frac{1}{6} &amp; \frac{1}{3} &amp; \frac{1}{6}\\ -\frac{1}{6} &amp; -\frac{1}{6} &amp; \frac{2}{3}\\ \frac{1}{2} &amp; 0 &amp; -\frac{1}{2} \end{pmatrix}.
-                        </me>
-                    </p>
-
-                    <p>
-                        Does it work? You should check to see if it does.
-                        When the matrices are multiplied
-                        <me>
-                            \begin{pmatrix} -\frac{1}{6} &amp; \frac{1}{3} &amp; \frac{1}{6}\\ -\frac{1}{6} &amp; -\frac{1}{6} &amp; \frac{2}{3}\\ \frac{1}{2} &amp; 0 &amp; -\frac{1}{2} \end{pmatrix}\begin{pmatrix} 1 &amp; 2 &amp; 3\\ 0 &amp; -6 &amp; -8\\ 0 &amp; 0 &amp; -2 \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 1 \end{pmatrix}
-                        </me>
-                        and so it is correct.
-                    </p>
-                </solution>
-            </example>
-
-            <example>
-                <statement>
-                    <p>
-                        Find the inverse of the matrix
-                        <me>
-                            A = \begin{pmatrix} \frac{1}{2} &amp; 0 &amp; \frac{1}{2}\\ -\frac{1}{6} &amp; \frac{1}{3} &amp; -\frac{1}{2}\\ -\frac{5}{6} &amp; \frac{2}{3} &amp; -\frac{1}{2} \end{pmatrix}
-                        </me>
-                    </p>
-                </statement>
-
-                <solution>
-                    <p>
-                        First find its determinant.
-                        This determinant is <m>\frac{1}{6}</m> .
-                        The inverse is therefore equal to
-                        <me>
-                            6 \begin{pmatrix} \begin{vmatrix} \frac{1}{3} &amp; -\frac{1}{2}\\ \frac{2}{3} &amp; -\frac{1}{2} \end{vmatrix} &amp; -\begin{vmatrix} -\frac{1}{6} &amp; -\frac{1}{2}\\ -\frac{5}{6} &amp; -\frac{1}{2} \end{vmatrix} &amp; \begin{vmatrix} -\frac{1}{6} &amp; \frac{1}{3}\\ -\frac{5}{6} &amp; \frac{2}{3} \end{vmatrix}\\ -\begin{vmatrix} 0 &amp; \frac{1}{2}\\ \frac{2}{3} &amp; -\frac{1}{2} \end{vmatrix} &amp; \begin{vmatrix} \frac{1}{2} &amp; \frac{1}{2}\\ -\frac{5}{6} &amp; -\frac{1}{2} \end{vmatrix} &amp; -\begin{vmatrix} \frac{1}{2} &amp; 0\\ -\frac{5}{6} &amp; \frac{2}{3} \end{vmatrix}\\ -\begin{vmatrix} 0 &amp; \frac{1}{2}\\ \frac{1}{3} &amp; -\frac{1}{2} \end{vmatrix} &amp; \begin{vmatrix} \frac{1}{2} &amp; \frac{1}{2}\\ -\frac{1}{6} &amp; -\frac{1}{2} \end{vmatrix} &amp; -\begin{vmatrix} \frac{1}{2} &amp; 0\\ -\frac{1}{6} &amp; \frac{1}{3} \end{vmatrix}\\ \end{pmatrix}^T
-                        </me>
-                        Expanding all the <m>2 \times 2</m> determinants this yields
-                        <me>
-                            6\begin{pmatrix} \frac{1}{6} &amp; \frac{1}{3} &amp; \frac{1}{6}\\ \frac{1}{3} &amp; \frac{1}{6} &amp; -\frac{1}{3}\\ -\frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} \end{pmatrix}^T =  \begin{pmatrix} 1 &amp; 2 &amp; -1\\ 2 &amp; 1 &amp; 1\\ 1 &amp; -2 &amp; 1 \end{pmatrix}
-                        </me>
-                    </p>
-
-                    <p>
-                        Always check your work.
-                        <me>
-                            \begin{pmatrix} 1 &amp; 2 &amp; -1\\ 2 &amp; 1 &amp; 1\\ 1 &amp; -2 &amp; 1 \end{pmatrix} \begin{pmatrix} \frac{1}{2} &amp; 0 &amp; \frac{1}{2}\\ -\frac{1}{6} &amp; \frac{1}{3} &amp; -\frac{1}{2}\\ -\frac{5}{6} &amp; \frac{2}{3} &amp; -\frac{1}{2} \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 1 \end{pmatrix}
-                        </me>
-                        and so we got it right.
-                        If the result of multiplying these matrices had been something other than the identity matrix, you would know there was an error.
-                        When this happens, you need to search for the mistake if you are interested in getting the right answer.
-                        A common mistake is to forget to take the transpose of the cofactor matrix.
-                    </p>
-                </solution>
-            </example>
-            <p>
-                This way of finding inverses is especially useful in the case where it is desired to find the inverse
-of a matrix whose entries are functions.
-            </p>
-            <!-- example 6.2.4-->
-             <example>
-                <statement>
-                    <p>
-                        Suppose
-                        <me>
-                            A(t) =  \begin{pmatrix} e^t &amp; 0 &amp; 0\\ 
-                            0 &amp; \cos t &amp; \sin t\\
-                            0 &amp; -\sin t &amp; \cos t 
-                            \end{pmatrix}
-                        </me>
-                        Show that <m>A(t)^{-1}</m> exists and then find it.
-                    </p>
-                </statement>
-                <solution>
-                    <p>
-                      First note <m>\det(A(t)) = e^t \neq 0,</m> so <m>A(t)^{-1}</m> exists. The cofactor
-                      matrix is
-                      <me>
-                        C(t) =  \begin{pmatrix} 1 &amp; 0 &amp; 0\\ 
-                        0 &amp; e^t \cos t &amp; e^t \sin t\\
-                        0 &amp; -e^t\sin t &amp; e^t\cos t 
-                        \end{pmatrix}
+                <p>
+                    Does it work? You should check to see if it does.
+                    When the matrices are multiplied
+                    <me>
+                        \begin{pmatrix} -\frac{1}{6} &amp; \frac{1}{3} &amp; \frac{1}{6}\\ -\frac{1}{6} &amp; -\frac{1}{6} &amp; \frac{2}{3}\\ \frac{1}{2} &amp; 0 &amp; -\frac{1}{2} \end{pmatrix}\begin{pmatrix} 1 &amp; 2 &amp; 3\\ 0 &amp; -6 &amp; -8\\ 0 &amp; 0 &amp; -2 \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 1 \end{pmatrix}
+                    </me>
+                    and so it is correct.
+                </p>
+            </solution>
+        </example>
+
+        <example>
+            <statement>
+                <p>
+                    Find the inverse of the matrix
+                    <me>
+                        A = \begin{pmatrix} \frac{1}{2} &amp; 0 &amp; \frac{1}{2}\\ -\frac{1}{6} &amp; \frac{1}{3} &amp; -\frac{1}{2}\\ -\frac{5}{6} &amp; \frac{2}{3} &amp; -\frac{1}{2} \end{pmatrix}
+                    </me>
+                </p>
+            </statement>
+
+            <solution>
+                <p>
+                    First find its determinant.
+                    This determinant is <m>\frac{1}{6}</m> .
+                    The inverse is therefore equal to
+                    <me>
+                        6 \begin{pmatrix} \begin{vmatrix} \frac{1}{3} &amp; -\frac{1}{2}\\ \frac{2}{3} &amp; -\frac{1}{2} \end{vmatrix} &amp; -\begin{vmatrix} -\frac{1}{6} &amp; -\frac{1}{2}\\ -\frac{5}{6} &amp; -\frac{1}{2} \end{vmatrix} &amp; \begin{vmatrix} -\frac{1}{6} &amp; \frac{1}{3}\\ -\frac{5}{6} &amp; \frac{2}{3} \end{vmatrix}\\ -\begin{vmatrix} 0 &amp; \frac{1}{2}\\ \frac{2}{3} &amp; -\frac{1}{2} \end{vmatrix} &amp; \begin{vmatrix} \frac{1}{2} &amp; \frac{1}{2}\\ -\frac{5}{6} &amp; -\frac{1}{2} \end{vmatrix} &amp; -\begin{vmatrix} \frac{1}{2} &amp; 0\\ -\frac{5}{6} &amp; \frac{2}{3} \end{vmatrix}\\ -\begin{vmatrix} 0 &amp; \frac{1}{2}\\ \frac{1}{3} &amp; -\frac{1}{2} \end{vmatrix} &amp; \begin{vmatrix} \frac{1}{2} &amp; \frac{1}{2}\\ -\frac{1}{6} &amp; -\frac{1}{2} \end{vmatrix} &amp; -\begin{vmatrix} \frac{1}{2} &amp; 0\\ -\frac{1}{6} &amp; \frac{1}{3} \end{vmatrix}\\ \end{pmatrix}^T
+                    </me>
+                    Expanding all the <m>2 \times 2</m> determinants this yields
+                    <me>
+                        6\begin{pmatrix} \frac{1}{6} &amp; \frac{1}{3} &amp; \frac{1}{6}\\ \frac{1}{3} &amp; \frac{1}{6} &amp; -\frac{1}{3}\\ -\frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} \end{pmatrix}^T =  \begin{pmatrix} 1 &amp; 2 &amp; -1\\ 2 &amp; 1 &amp; 1\\ 1 &amp; -2 &amp; 1 \end{pmatrix}
+                    </me>
+                </p>
+
+                <p>
+                    Always check your work.
+                    <me>
+                        \begin{pmatrix} 1 &amp; 2 &amp; -1\\ 2 &amp; 1 &amp; 1\\ 1 &amp; -2 &amp; 1 \end{pmatrix} \begin{pmatrix} \frac{1}{2} &amp; 0 &amp; \frac{1}{2}\\ -\frac{1}{6} &amp; \frac{1}{3} &amp; -\frac{1}{2}\\ -\frac{5}{6} &amp; \frac{2}{3} &amp; -\frac{1}{2} \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 1 \end{pmatrix}
+                    </me>
+                    and so we got it right.
+                    If the result of multiplying these matrices had been something other than the identity matrix, you would know there was an error.
+                    When this happens, you need to search for the mistake if you are interested in getting the right answer.
+                    A common mistake is to forget to take the transpose of the cofactor matrix.
+                </p>
+            </solution>
+        </example>
+
+        <p>
+            This way of finding inverses is especially useful in the case where it is desired to find the inverse of a matrix whose entries are functions.
+        </p>
+        <!-- example 6.2.4-->
+        <example>
+            <statement>
+                <p>
+                    Suppose
+                    <me>
+                        A(t) =  \begin{pmatrix} e^t &amp; 0 &amp; 0\\ 0 &amp; \cos t &amp; \sin t\\ 0 &amp; -\sin t &amp; \cos t \end{pmatrix}
+                    </me>
+                    Show that <m>A(t)^{-1}</m> exists and then find it.
+                </p>
+            </statement>
+
+            <solution>
+                <p>
+                    First note <m>\det(A(t)) = e^t \neq 0,</m> so <m>A(t)^{-1}</m> exists.
+                    The cofactor matrix is
+                    <me>
+                        C(t) =  \begin{pmatrix} 1 &amp; 0 &amp; 0\\ 0 &amp; e^t \cos t &amp; e^t \sin t\\ 0 &amp; -e^t\sin t &amp; e^t\cos t \end{pmatrix}
                     </me>
                     so the inverse is
                     <me>
-                        \frac{1}{e^t} \begin{pmatrix} 1 &amp; 0 &amp; 0\\ 
-                        0 &amp; e^t \cos t &amp; e^t \sin t\\
-                        0 &amp; -e^t\sin t &amp; e^t\cos t 
-                        \end{pmatrix}^T = \begin{pmatrix} e^{-t} &amp; 0 &amp; 0\\ 
-                        0 &amp; \cos t &amp; -\sin t\\
-                        0 &amp; \sin t &amp; \cos t 
-                        \end{pmatrix}
+                        \frac{1}{e^t} \begin{pmatrix} 1 &amp; 0 &amp; 0\\ 0 &amp; e^t \cos t &amp; e^t \sin t\\ 0 &amp; -e^t\sin t &amp; e^t\cos t \end{pmatrix}^T = \begin{pmatrix} e^{-t} &amp; 0 &amp; 0\\ 0 &amp; \cos t &amp; -\sin t\\ 0 &amp; \sin t &amp; \cos t \end{pmatrix}
                     </me>
-                    
-                    </p>
-                </solution>
-             </example>
-        </subsection>
-        <subsection xml:id="subsec-cramers-rule">
+                </p>
+            </solution>
+        </example>
+    </subsection>
+
+
+    <subsection xml:id="subsec-cramers-rule">
+        <title>Cramer's Rule</title>
+
+        <idx><h>Cramer's rule</h></idx>
+        <p>
+            This formula for the inverse also implies a famous procedure known as <term>Cramer's rule</term>.
+            Cramer's rule gives a formula for the solutions, <m>\mathbf{x}</m>, to a system of equations, <m>A\mathbf{x} = \mathbf{y}</m> in the special case that <m>A</m> is a square matrix.
+            Note this rule does not apply if you have a system of equations in which there is a different number of equations than variables.
+        </p>
+
+        <p>
+            In case you are solving a system of equations, <m>A\mathbf{x} = \mathbf{y}</m> for <m>\mathbf{x}</m>, it follows that if <m>A^{-1}</m> exists,
+            <me>
+                \mathbf{x} = (A^{-1}A)\mathbf{x} = A^{-1}(A\mathbf{x}) = A^{-1}\mathbf{y}
+            </me>
+            thus solving the system.
+            Now in the case <m>A^{-1}</m> exists, <xref ref="thm-inverse-from-cofactor"/> is a formula for <m>A^{-1}</m>.
+            Using this formula,
+            <me>
+                x_i = \sum_{j=1}^n a_{ij}^{-1} y_{j} = \sum_{j=1}^n\frac{1}{\det(A)} \text{cof} (A)_{ji}y_j.
+            </me>
+            By <xref ref="def-expanding-along-row"/>.
+            the formula for the expansion of a determinant along a column,
+            <me>
+                x_i = \frac{1}{\det(A)}\det \begin{pmatrix}\cdot  &amp; \cdots &amp; y_1 &amp; \cdots \cdot \\ \vdots &amp;&amp; \vdots &amp; &amp; \vdots\\ \cdot  &amp; \cdots &amp; y_n &amp; \cdots &amp; \cdot   \end{pmatrix}
+            </me>
+            where here the <m>i^{th}</m> column of <m>A</m> is replaced by the column vector <m>(y_1, \cdots, y_n)^T</m>, and the determinant of this modified matrix is taken and divided by <m>\det(A).</m> This formula is known as Cramer's rule.
+        </p>
+
+        <definition xml:id="def-cramers-rule">
             <title>Cramer's Rule</title>
+
             <idx><h>Cramer's rule</h></idx>
+            <statement>
+                <p>
+                    Suppose <m>A</m> is an <m>n \times n</m> matrix and it is desired to solve the system <m>A\mathbf{x} = \mathbf{y}</m>, <m>\mathbf{y} = (y_1, \cdots , y_n )^T</m> for <m>\mathbf{x} = (x_1, \cdots , x_n )^T</m>.
+                    Then Cramer's rule says
+                    <me>
+                        x_i = \frac{\det A_i}{\det A}
+                    </me>
+                    where <m>A_i</m> is obtained by replacing the <m>i^{th}</m> column of <m>A</m> with the column <m>(y_1, \cdots , y_n )^T</m>
+                </p>
+            </statement>
+        </definition>
+
+        <example>
+            <statement>
+                <p>
+                    Find <m>x, y, z</m> if
+                    <me>
+                        \begin{pmatrix} 1 &amp; 2 &amp; 1\\ 3 &amp; 2 &amp; 1\\ 2 &amp; -3 &amp; 2 \end{pmatrix} \begin{pmatrix}x \\ y \\ z \end{pmatrix} = \begin{pmatrix}1 \\ 2 \\ 3 \end{pmatrix}
+                    </me>
+                </p>
+            </statement>
+
+            <solution>
+                <p>
+                    Using Cramer's rule, solve for <m>x</m> by replacing column 1 with <m>(y_1, \cdots , y_n )^T = \begin{pmatrix}1 \\ 2 \\ 3 \end{pmatrix}</m> and dividing the determinant of the new matrix by the determinant of the original matrix.
+                    <me>
+                        x = \frac{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 2 &amp; 2 &amp; 1\\ 3 &amp; -3 &amp; 2\end{vmatrix}}{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 3 &amp; 2 &amp; 1\\ 2 &amp; -3 &amp; 2\end{vmatrix}} = \frac{1}{2}
+                    </me>
+                    Now to find <m>y,</m>
+                    <me>
+                        y = \frac{\begin{vmatrix}1 &amp; 1 &amp; 1\\ 3 &amp; 2 &amp; 1\\ 2 &amp; 3 &amp; 2\end{vmatrix}}{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 3 &amp; 2 &amp; 1\\ 2 &amp; -3 &amp; 2\end{vmatrix}} = -\frac{1}{7}
+                    </me>
+                    and <m>z,</m>
+                    <me>
+                        z = \frac{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 3 &amp; 2 &amp; 2\\ 2 &amp; -3 &amp; 3\end{vmatrix}}{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 3 &amp; 2 &amp; 1\\ 2 &amp; -3 &amp; 2\end{vmatrix}} = -\frac{11}{14}
+                    </me>
+                </p>
+                You see the pattern.
+            </solution>
+        </example>
+
+        <p>
+            For large systems Cramer's rule is less than useful because to use it you must evaluate determinants.
+            However, you have no practical way to evaluate determinants for large matrices other than row operations and if you are using row operations, you might just as well use them to solve the system to begin with.
+            It will be a lot less trouble.
+            Nevertheless, there are situations in which Cramer's rule is useful.
+        </p>
+
+        <example>
+            <statement>
+                <p>
+                    Solve for <m>z</m> if
+                    <me>
+                        \begin{pmatrix} 1 &amp; 0 &amp; 0\\ 0 &amp; e^t \cos t &amp; e^t \sin t\\ 0 &amp; -e^t\sin t &amp; e^t \cos t \end{pmatrix} \begin{pmatrix}x \\ y \\ z \end{pmatrix} = \begin{pmatrix}1 \\ t \\ t^2 \end{pmatrix}
+                    </me>
+                </p>
+            </statement>
+
+            <solution>
+                <p>
+                    You could do it by row operations but it might be easier in this case to use Cramer’s rule because the matrix of coefficients do not consist of numbers but of functions.
+                    Thus
+                    <me>
+                        z = \frac{\begin{vmatrix}1 &amp; 0 &amp; 1\\ 0 &amp; e^t \cos t &amp; t\\ 0 &amp; -e^t\sin t &amp; t^2\end{vmatrix}}{\begin{vmatrix}1 &amp; 0 &amp; 0\\ 0 &amp; e^t \cos t &amp; e^t \sin t\\ 0 &amp; -e^t\sin t &amp; e^t \cos t\end{vmatrix}} = t((\cos t)t + \sin t)e^{-t}.
+                    </me>
+                </p>
+            </solution>
+        </example>
+    </subsection>
+    <!-- to do exercises-->
+    <exercises xml:id="exercises-11-4">
+    <title>Exercises</title>
+        <!-- 1to9 are Kuttler 6.3 1 to 9-->
+    <exercise number="1">
+        <statement>
             <p>
-                This formula for the inverse also implies a famous procedure known as <term>Cramer's rule</term>. Cramer's
-                rule gives a formula for the solutions, <m>\mathbf{x}</m>, to a system of equations, <m>A\mathbf{x} = \mathbf{y}</m> in the special case that <m>A</m>
-                is a square matrix. Note this rule does not apply if you have a system of equations in which there
-                is a different number of equations than variables.  
+                Find the determinants of the following matrices.
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            <me>
+                                \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 3 &amp; 2 &amp; 2\\ 0 &amp; 9 &amp; 8 \end{pmatrix}
+                            </me>
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            <me>
+                                \begin{pmatrix} 4 &amp; 3 &amp; 2\\ 1 &amp; 7 &amp; 8\\ 3 &amp; -9 &amp; 3 \end{pmatrix}
+                            </me>
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            <me>
+                                \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\ 1 &amp;3 &amp; 2 &amp; 3\\ 4 &amp; 1 &amp; 5 &amp; 0\\ 1 &amp; 2 &amp; 1 &amp; 2 \end{pmatrix}
+                            </me>
+                        </p>
+                    </li>
+                </ol>
             </p>
+        </statement>
+
+        <solution>
             <p>
-                In case you are solving a system of equations, <m>A\mathbf{x} = \mathbf{y}</m> for <m>\mathbf{x}</m>, 
-                it follows that if <m>A^{-1}</m> exists,  
-                <me>\mathbf{x} = (A^{-1}A)\mathbf{x} = A^{-1}(A\mathbf{x}) = A^{-1}\mathbf{y}</me>
-                thus solving the system. Now in the case <m>A^{-1}</m> exists, <xref ref="thm-inverse-from-cofactor"/> is a formula for 
-                <m>A^{-1}</m>. Using this formula,
-                <me>x_i = \sum_{j=1}^n a_{ij}^{-1} y_{j} = \sum_{j=1}^n\frac{1}{\det(A)} \text{cof} (A)_{ji}y_j.</me>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Using the "short cut" shown in class.
+                            <me>
+                                \begin{vmatrix} 1 &amp; 2 &amp; 3\\ 3 &amp; 2 &amp; 2\\ 0 &amp; 9 &amp; 8 \end{vmatrix}
+                            </me>
+                            <me>
+                                = (1\cdot 2 \cdot 8) + (3 \cdot 9 \cdot 3) + (0\cdot 2 \cdot 2) - (0 \cdot 2 \cdot 3 ) - (2 \cdot 9 \cdot 1) - (3 \cdot 2 \cdot 8)\\
+                            </me>
+                            <me>
+                                = 31\\
+                            </me>
+                        </p>
+                    </li>
 
-                By <xref ref="def-expanding-along-row"/>. the formula for the expansion of a determinant along a column,
-                <me>x_i = \frac{1}{\det(A)}\det \begin{pmatrix}* &amp; \cdots &amp; y_1 &amp; \cdots *\\
-                    \vdots &amp;&amp; \vdots &amp; &amp; \vdots\\
-                    * &amp; \cdots &amp; y_n &amp; \cdots &amp; *  \end{pmatrix}</me>
-                    where here the <m>i^{th}</m> column of <m>A</m> is replaced by the column vector <m>(y_1, \cdots, y_n)^T</m>,
-                    and the determinant of this modified matrix is taken and divided by <m>\det(A).</m> This formula is known as
-                    Cramer's rule.
+                    <li>
+                        <p>
+                            Expanding along row 1.
+                            <me>
+                                \begin{vmatrix} 4 &amp; 3 &amp; 2\\ 1 &amp; 7 &amp; 8\\ 3 &amp; -9 &amp; 3 \end{vmatrix}
+                            </me>
+                            <me>
+                                = 4(-1)^{1+1}\begin{vmatrix} 7 &amp; 8\\ -9 &amp; 3\end{vmatrix} + 3(-1)^{1+2}\begin{vmatrix} 1 &amp; 8\\ 3 &amp; 3\end{vmatrix} + 2(-1)^{1+3}\begin{vmatrix} 1 &amp; 7\\ 3 &amp; -9 \end{vmatrix}
+                            </me>
+                            <me>
+                                = 4((7\cdot3)-(8\cdot -9)) - 3((1\cdot 3) - (3 \cdot 8)) + 2((1\cdot 9) - (3 \cdot 7))
+                            </me>
+                            <me>
+                                = 372 + 63 - 60
+                            </me>
+                            <me>
+                                = 375
+                            </me>
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Using row operations to make a triangular matrix.
+                            <me>
+                                \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\ 1 &amp;3 &amp; 2 &amp; 3\\ 4 &amp; 1 &amp; 5 &amp; 0\\ 1 &amp; 2 &amp; 1 &amp; 2 \end{pmatrix}
+                            </me>
+                            Subtracting row 1 from rows 2 and 4, and 4 times row 1 from row 3 gives
+                            <me>
+                                \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\ 0 &amp;1 &amp; -1 &amp; 1\\ 0 &amp; -7 &amp; -7 &amp; -8\\ 0 &amp; 0 &amp; -2 &amp; 0 \end{pmatrix}
+                            </me>
+                            Add 7 times row 2 to row 3 gives
+                            <me>
+                                \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\ 0 &amp;1 &amp; -1 &amp; 1\\ 0 &amp; 0 &amp; -14 &amp; -1\\ 0 &amp; 0 &amp; -2 &amp; 0 \end{pmatrix}
+                            </me>
+                            Subtract 1/7 times row 3 from row 4 gives
+                            <me>
+                                \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\ 0 &amp;1 &amp; -1 &amp; 1\\ 0 &amp; 0 &amp; -14 &amp; -1\\ 0 &amp; 0 &amp; 0 &amp; \frac{1}{7} \end{pmatrix}
+                            </me>
+                            Taking the product of the diagonal
+                            <me>
+                                1 \cdot 1 \cdot -14 \cdot \frac{1}{7} = -2
+                            </me>
+                        </p>
+                    </li>
+                </ol>
             </p>
-            <definition xml:id="def-cramers-rule">
-                <title>Cramer's Rule</title><idx><h>Cramer's rule</h></idx>
-                
-                <statement>
-                    <p>
-                        Suppose <m>A</m> is an <m>n \times n</m> matrix and it is desired to solve 
-                        the system <m>A\mathbf{x} = \mathbf{y}</m>, <m>\mathbf{y} =
-                        (y_1, \cdots , y_n )^T</m>
-                         for <m>\mathbf{x} = (x_1, \cdots , x_n )^T</m>. Then Cramer's rule 
-                         says
-                         <me>x_i = \frac{\det A_i}{\det A}</me>
-                         where <m>A_i</m> is obtained by replacing the <m>i^{th}</m> column of <m>A</m>
-                         with the column <m>(y_1, \cdots , y_n )^T</m>
-                    </p>
-                </statement>
-            </definition>
-            <example>
-                <statement>
-                    <p>
-                        Find <m>x, y, z</m> if
-                        <me>\begin{pmatrix} 1 &amp; 2 &amp; 1\\ 
-                            3 &amp; 2 &amp; 1\\
-                            2 &amp; -3 &amp; 2
-                            \end{pmatrix}
-                            \begin{pmatrix}x \\ y \\ z \end{pmatrix} = \begin{pmatrix}1 \\ 2 \\ 3 \end{pmatrix} 
-                        </me>  
-                    </p>
-                </statement>
-                <solution>
-                    <p>
-                        Using Cramer's rule, solve for <m>x</m> by replacing column 1 with <m>(y_1, \cdots , y_n )^T = \begin{pmatrix}1 \\ 2 \\ 3 \end{pmatrix}</m> and dividing the determinant of
-                        the new matrix by the determinant of the original matrix.
-                        <me>x = \frac{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 
-                            2 &amp; 2 &amp; 1\\
-                            3 &amp; -3 &amp; 2\end{vmatrix}}{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 
-                            3 &amp; 2 &amp; 1\\
-                            2 &amp; -3 &amp; 2\end{vmatrix}} = \frac{1}{2}</me>
-
-                        Now to find <m>y,</m>  
-                        <me>y = \frac{\begin{vmatrix}1 &amp; 1 &amp; 1\\ 
-                            3 &amp; 2 &amp; 1\\
-                            2 &amp; 3 &amp; 2\end{vmatrix}}{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 
-                            3 &amp; 2 &amp; 1\\
-                            2 &amp; -3 &amp; 2\end{vmatrix}} = -\frac{1}{7}</me>
-                        and <m>z,</m>  
-                        <me>z = \frac{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 
-                            3 &amp; 2 &amp; 2\\
-                            2 &amp; -3 &amp; 3\end{vmatrix}}{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 
-                            3 &amp; 2 &amp; 1\\
-                            2 &amp; -3 &amp; 2\end{vmatrix}} = -\frac{11}{14}</me>
-                    </p>
-                    You see the pattern.
-                </solution>
-                
-            </example>
+        </solution>
+    </exercise>
+    <exercise number="2">
+        <statement>
             <p>
-                For large systems Cramer's rule is less than useful because to use it you must evaluate determinants. However, you have no practical
-                way to evaluate determinants for large matrices other than row operations and if you are using row
-                operations, you might just as well use them to solve the system to begin with. It will be a lot less
-                trouble. Nevertheless, there are situations in which Cramer's rule is useful.
+                Find the following determinant by expanding along the first row.
+        <me>
+            \begin{vmatrix} 1 &amp; 2 &amp; 1\\ 2 &amp; 1 &amp; 3\\ 2 &amp; 1 &amp; 1 \end{vmatrix}
+        </me>
+        
             </p>
-            <example>
-                <statement>
-                    <p>
-                        Solve for <m>z</m> if
-                        <me>\begin{pmatrix} 1 &amp; 0 &amp; 0\\ 
-                            0 &amp; e^t \cos t &amp; e^t \sin t\\
-                            0 &amp; -e^t\sin t &amp; e^t \cos t
-                            \end{pmatrix}
-                            \begin{pmatrix}x \\ y \\ z \end{pmatrix} = \begin{pmatrix}1 \\ t \\ t^2 \end{pmatrix} 
-                        </me>
-                    </p>
-                </statement>
-                <solution>
-                    <p>
-                        You could do it by row operations but it might be easier in this case to use Cramer’s rule because
-                        the matrix of coefficients do not consist of numbers but of functions. Thus 
-                        
-                        <me>z = \frac{\begin{vmatrix}1 &amp; 0 &amp; 1\\ 
-                            0 &amp; e^t \cos t &amp; t\\
-                            0 &amp; -e^t\sin t &amp; t^2\end{vmatrix}}{\begin{vmatrix}1 &amp; 0 &amp; 0\\ 
-                            0 &amp; e^t \cos t &amp; e^t \sin t\\
-                            0 &amp; -e^t\sin t &amp; e^t \cos t\end{vmatrix}} = t((\cos t)t + \sin t)e^{-t}.</me>
-                    </p>
-                </solution>
-            </example>
-
-        </subsection>
-
-        <!-- to do exercises-->
-        <exercises xml:id="exercises-11-4">
-            <title>Exercises</title>
-            <exercise number="1">
-                <statement>
-                    <p>
-                       Find the determinants of the following matrices.
-                       <ol marker="(a)">
-                        <li>
-                            <p>
-                                <me>
-                                    \begin{pmatrix} 1 &amp; 2 &amp; 3\\
-                                     3 &amp; 2 &amp; 2\\
-                                      0 &amp; 9 &amp; 8 \end{pmatrix}
-                                </me>
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <me>
-                                    \begin{pmatrix} 4 &amp; 3 &amp; 2\\
-                                     1 &amp; 7 &amp; 8\\
-                                      3 &amp; -9 &amp; 3 \end{pmatrix}
-                                </me>
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <me>
-                                    \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\
-                                     1 &amp;3 &amp; 2 &amp; 3\\
-                                      4 &amp; 1 &amp; 5 &amp; 0\\
-                                      1 &amp; 2 &amp; 1 &amp; 2 \end{pmatrix}
-                                </me>
-                            </p>
-                        </li>
-                       </ol>
-
-                    </p>
-                </statement>
-                <solution>
-                    <p>
-                        <ol marker="(a)">
-                            <li>
-                                <p>Using the "short cut" shown in class.
-                                    <me>
-                                        \begin{vmatrix} 1 &amp; 2 &amp; 3\\
-                                         3 &amp; 2 &amp; 2\\
-                                          0 &amp; 9 &amp; 8 \end{vmatrix} </me> 
-                                          <me> = (1\cdot 2 \cdot 8) + (3 \cdot 9 \cdot 3)
-                                          + (0\cdot 2 \cdot 2) - (0 \cdot 2 \cdot 3 ) - (2 \cdot 9 \cdot 1) - (3 \cdot 2 \cdot 8)\\ 
-                                          </me><me> = 31\\
-                                    </me>
-
-                                </p>
-                            </li>
-                            <li>
-                                <p>Expanding along row 1.
-                                    <me>
-                                        \begin{vmatrix} 4 &amp; 3 &amp; 2\\
-                                         1 &amp; 7 &amp; 8\\
-                                          3 &amp; -9 &amp; 3 \end{vmatrix}</me>
-
-                                          <me> = 4(-1)^{1+1}\begin{vmatrix} 
-                                          7 &amp; 8\\
-                                         -9 &amp; 3\end{vmatrix}
-                                          + 3(-1)^{1+2}\begin{vmatrix} 
-                                         1 &amp; 8\\
-                                        3 &amp; 3\end{vmatrix} 
-                                        + 2(-1)^{1+3}\begin{vmatrix} 
-                                        1 &amp; 7\\
-                                       3 &amp; -9 \end{vmatrix}</me>
-
-                                       
-                                       <me>
-                                       = 4((7\cdot3)-(8\cdot -9)) - 3((1\cdot 3) - (3 \cdot 8)) + 2((1\cdot 9) - (3 \cdot 7))
-                                       
-                                       </me>
-                                    <me> = 372 + 63 - 60
-                                    </me>
-                                    <me>  = 375
-                                    </me>
-                                    
-                                </p>
-                            </li>
-                            <li>
-                                <p>Using row operations to make a triangular matrix.
-                                    <me>
-                                        \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\
-                                         1 &amp;3 &amp; 2 &amp; 3\\
-                                          4 &amp; 1 &amp; 5 &amp; 0\\
-                                          1 &amp; 2 &amp; 1 &amp; 2 \end{pmatrix}
-                                    </me>
-                                   
-                                    Subtracting row 1 from rows 2 and 4, and 4 times row 1 from row 3 gives
-                                    <me>
-                                        \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\
-                                         0 &amp;1 &amp; -1 &amp; 1\\
-                                          0 &amp; -7 &amp; -7 &amp; -8\\
-                                          0 &amp; 0 &amp; -2 &amp; 0 \end{pmatrix}
-                                    </me>
-                                    Add 7 times row 2 to row 3 gives
-                                    <me>
-                                        \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\
-                                         0 &amp;1 &amp; -1 &amp; 1\\
-                                          0 &amp; 0 &amp; -14 &amp; -1\\
-                                          0 &amp; 0 &amp; -2 &amp; 0 \end{pmatrix}
-                                    </me>
-                                    Subtract 1/7 times row 3 from row 4 gives
-                                    <me>
-                                        \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 2\\
-                                         0 &amp;1 &amp; -1 &amp; 1\\
-                                          0 &amp; 0 &amp; -14 &amp; -1\\
-                                          0 &amp; 0 &amp; 0 &amp; \frac{1}{7} \end{pmatrix}
-                                    </me>
-                                    Taking the product of the diagonal
-                                    <me>1 \cdot 1 \cdot -14 \cdot \frac{1}{7} = -2</me> 
-                                </p>
-                            </li>
-                           </ol>
-                        
-                    </p>
-                </solution>
+        </statement>
+        
+    </exercise>
+    <exercise number="3">
+        <statement>
+            <p>
+                Find the following determinant by expanding along the first column.
+                <me>
+                    \begin{vmatrix} 1 &amp; 2 &amp; 1\\ 1 &amp; 0 &amp; 1\\ 2 &amp; 1 &amp; 1 \end{vmatrix}
+                </me>
                 
-            </exercise>
-            
-            
-            
-        </exercises>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                <me>
+                    \begin{vmatrix} 1 &amp; 2 &amp; 1\\ 1 &amp; 0 &amp; 1\\ 2 &amp; 1 &amp; 1 \end{vmatrix}
+                    = 1(-1)^{1+1}\begin{vmatrix} 0 &amp; 1\\1 &amp; 1 \end{vmatrix} + 1(-1)^{1+2}\begin{vmatrix} 2 &amp; 1\\1 &amp; 1 \end{vmatrix}
+                    + 2(-1)^{1+3}\begin{vmatrix} 2 &amp; 1\\0 &amp; 1 \end{vmatrix}
+                </me>
+                <me>= 2 </me>
+            </p>
+        </solution>
+      
+    </exercise>
+    <exercise number="4">
+        <statement>
+            <p>
+                Find the following determinant by expanding along the second row.
+                <me>
+                    \begin{vmatrix} 1 &amp; 2 &amp; 1\\ 2 &amp; 1 &amp; 3\\ 2 &amp; 1 &amp; 1 \end{vmatrix}
+                </me>  
+            </p>
+        </statement>
+    </exercise>
+    <exercise number="5">
+        <statement>
+            <p>
+                Compute the determinant by cofactor expansion. Pick the easiest row or column to use.
+                <me>
+                    \begin{vmatrix} 1 &amp; 0 &amp; 0 &amp; 1\\
+                    2 &amp; 1 &amp; 1 &amp; 0\\
+                    0 &amp; 0 &amp; 0 &amp; 2\\
+                    2 &amp; 1 &amp; 3 &amp; 1 \end{vmatrix}
+                </me>
+            </p>
+        </statement>
+        <solution>
+            <p>
+               This would normally take a lot of time because the matrix is a <m>4\times 4</m>, but row three
+               only has one non-zero entry so we will expand along row 3. The only term is the one for column 4:
+               <me>\begin{vmatrix} 1 &amp; 0 &amp; 0 &amp; 1\\
+                2 &amp; 1 &amp; 1 &amp; 0\\
+                0 &amp; 0 &amp; 0 &amp; 2\\
+                2 &amp; 1 &amp; 3 &amp; 1 \end{vmatrix} = 2(-1)^{3+4} \begin{vmatrix} 1 &amp; 0 &amp; 0\\
+                2 &amp; 1 &amp; 1\\
+                2 &amp; 1 &amp; 3\end{vmatrix}</me>.
+                Now we must find the determinant of the <m>3\times 3</m> matrix (the <m>34^{th}</m> minor).
 
+                Again, this isn't that terrible because the first row only has one non-zero entry. So choosing to expand
+                around row 1, we have only a column 1 term.
+                <me>2(-1)^{3+4} (1(-1)^{1+1}\begin{vmatrix}
+                    1 &amp; 1\\
+                    1 &amp; 3\end{vmatrix})
+                </me>
+                Now using the formula for the determinant of a <m>2\times 2</m> matrix we end up with
+                <me>2(-1)^{3+4} (1(-1)^{1+1}((1\cdot 3) - (1\cdot1))) = -2 \cdot 2 = -4
+                </me>
+
+            </p>
+        </solution>
+        
+    </exercise>
+    <exercise number="6">
+        <statement>
+            <p>
+                Find the determinant using row operations.
+                <me>
+                    \begin{vmatrix} 1 &amp; 2 &amp; 1\\ 2 &amp; 3 &amp; 2\\
+                     -4 &amp; 1 &amp; 2 \end{vmatrix}
+                </me>
+            </p>
+        </statement>
+        
+    </exercise>
+    <exercise number="7">
+        <statement>
+            <p>
+                Find the determinant using row operations.
+                <me>
+                    \begin{vmatrix} 2 &amp; 1 &amp; 3\\ 2 &amp; 4 &amp; 2\\
+                     1 &amp; 4 &amp; -5 \end{vmatrix}
+                </me> 
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Here is one way to go about this:
+
+                Subtracting row 1 from row 2 and then <m>\frac{1}{2}</m> row 1 from row 3.
+                <me>
+                    \begin{vmatrix} 2 &amp; 1 &amp; 3\\ 0 &amp; 3 &amp; -1\\
+                      0 &amp; \frac{7}{2} &amp; -\frac{13}{2} \end{vmatrix}
+                </me>
+                Then subracting <m>\frac{7}{6}</m> row 2 from  row 3
+                <me>
+                    \begin{vmatrix} 2 &amp; 1 &amp; 3\\ 0 &amp; 3 &amp; -1\\
+                     0 &amp; 0 &amp; -\frac{32}{6} \end{vmatrix}
+                </me>
+                So our determinant is:
+                <me>2\cdot 3\cdot -\frac{32}{6} = - 32</me>
+            </p>
+        </solution>
+        
+    </exercise>
+    <exercise number="8">
+        <statement>
+            <p>
+                Find the determinant using row operations.
+                <me>
+                    \begin{vmatrix} 1 &amp; 2 &amp; 1 &amp; 2\\
+                    3 &amp; 1 &amp; -2 &amp; 3\\
+                     -1 &amp; 0 &amp; 3 &amp; 1\\
+                     2 &amp; 3 &amp; 2 &amp; -2\end{vmatrix}
+                </me> 
+            </p>
+        </statement>
+    </exercise>
+    <exercise number="9">
+        <statement>
+            <p>
+                Find the determinant using row operations.
+                <me>
+                    \begin{vmatrix} 1 &amp; 4 &amp; 1 &amp; 2\\
+                    3 &amp; 2 &amp; -2 &amp; 3\\
+                     -1 &amp; 0 &amp; 3 &amp; 3\\
+                     2 &amp; 1 &amp; 2 &amp; -2\end{vmatrix}
+                </me> 
+            </p>
+        </statement>
+        <solution>
+            <p>
+                One way to do this is:
+
+                Zeroing everything under row 1 in column 1. Subtract 3 times row 1 from row 2, add row 1 to 
+                row 3 and subtract 2 times row 1 from row 4.
+                <me>
+                    \begin{vmatrix} 1 &amp; 4 &amp; 1 &amp; 2\\
+                    0 &amp; -10 &amp; -5 &amp; -3\\
+                     0 &amp; 4 &amp; 4 &amp; 5\\
+                     0 &amp; -7 &amp; 0 &amp; -6\end{vmatrix}
+                </me> 
+               Zeroing everything under row 2 in column 2. Add <m>\frac{4}{10}</m> times row 2 to row 3 and subtract
+               <m>\frac{7}{10}</m> times row 2 from row 4.
+                <me>
+                    \begin{vmatrix} 1 &amp; 4 &amp; 1 &amp; 2\\
+                    0 &amp; -10 &amp; -5 &amp; -3\\
+                     0 &amp; 0 &amp; 2 &amp; \frac{19}{5}\\
+                     0 &amp; 0 &amp; \frac{7}{2} &amp; \frac{-39}{10}\end{vmatrix}
+                </me>
+                Zeroing everything under row 3 in column 3. Subtract <m>\frac{7}{4}</m> times row 3 from row 4.
+                <me>
+                    \begin{vmatrix} 1 &amp; 4 &amp; 1 &amp; 2\\
+                    0 &amp; -10 &amp; -5 &amp; -3\\
+                     0 &amp; 0 &amp; 2 &amp; \frac{19}{5}\\
+                     0 &amp; 0 &amp; 0 &amp; -\frac{211}{20}\end{vmatrix}
+                </me>
+                The determinant is the product of the diagonal values:
+                <me>1 \cdot -10 \cdot 2 \cdot -\frac{211}{20} = 211</me>
+            </p>
+        </solution>
+    </exercise>
+    <!-- skipped some of the properties of determinants questions in kuttler-->
+     <!-- kuttler 6.3.27-->
+      <exercise number="10">
+        <statement>
+            <p>
+                User Cramer's rule to find the solution to
+        <me>x + 2y = 1</me>
+        <me>2x - y = 2 </me>
+            </p>
+        </statement>
+        
+      </exercise>
+
+      <!-- kuttler 6.3.28-->
+      <exercise number="11">
+        <statement>
+            <p>
+                User Cramer's rule to find the solution to
+                <me>x + 2y + z = 1</me>
+                <me>2x - y - z = 2 </me>
+                <me>x + z = 1</me>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                So we have:
+                <me>\begin{pmatrix}
+                   1 &amp;2 &amp;1\\
+                   2 &amp;-1 &amp;-1\\
+                   1 &amp;0 &amp;1\\
+                  \end{pmatrix}
+                  \begin{pmatrix}
+                   x\\
+                   y\\
+                   z\\
+                  \end{pmatrix}
+                  = \begin{pmatrix}
+                   1\\
+                   2\\
+                   1\\
+                    \end{pmatrix}</me>
+               
+                    <me>x = \dfrac{\begin{vmatrix}
+                           1 &amp;2 &amp;1\\
+                           2 &amp;-1 &amp;-1\\
+                           1 &amp;0 &amp;1\\
+                          \end{vmatrix}}{\begin{vmatrix}
+                           1 &amp;2 &amp;1\\
+                           2 &amp;-1 &amp;-1\\
+                           1 &amp;0 &amp;1\\
+                          \end{vmatrix}} = 1</me> (The matrices are the same top and bottom)
+               
+                          <me>y = \dfrac{\begin{vmatrix}
+                           1 &amp;1 &amp;1\\
+                           2 &amp;2 &amp;-1\\
+                           1 &amp;1 &amp;1\\
+                          \end{vmatrix}}{\begin{vmatrix}
+                           1 &amp;2 &amp;1\\
+                           2 &amp;-1 &amp;-1\\
+                           1 &amp;0 &amp;1\\
+                          \end{vmatrix}}</me>
+                          <me>= (1\cdot 2\cdot 1)+(1\cdot -1\cdot 1)+(2\cdot 1\cdot 1) - (1\cdot 2\cdot 1) - (2\cdot 1\cdot 1) -(1\cdot -1\cdot 1) </me>
+                          <me>/ ((1\cdot -1\cdot 1) + (2\cdot -1\cdot 1) + (1\cdot 2\cdot 0) - (1\cdot -1\cdot 1) - (2\cdot 2\cdot 1) - (1\cdot 0\cdot -1)</me>
+                          <me>= (2 -1 + 2 - 2 -2 + 1 )/(-1 -2 + 1 - 4)</me>
+                          <me> = 0</me>
+               
+                          <me>z = \dfrac{\begin{vmatrix}
+                           1 &amp;2 &amp;1\\
+                           2 &amp;-1 &amp;2\\
+                           1 &amp;0 &amp;1\\
+                          \end{vmatrix}}{\begin{vmatrix}
+                           1 &amp;2 &amp;1\\
+                           2 &amp;-1 &amp;-1\\
+                           1 &amp;0 &amp;1\\
+                          \end{vmatrix}}</me>
+                          <me>= (1\cdot -1\cdot 1) + (2\cdot 0\cdot 1) + (2\cdot 2\cdot 1) - (1\cdot -1\cdot 1) - (2\cdot 2\cdot 1) - (2\cdot 0\cdot 1) </me>
+                          <me>/ ((1\cdot -1\cdot 1) + (2\cdot -1\cdot 1) + (1\cdot 2\cdot 0) - (1\cdot -1\cdot 1) - (2\cdot 2\cdot 1) - (1\cdot 0\cdot -1)</me>
+                          <me>= (-1 + 4 + 1 -4)/(-1 -2 + 1 - 4)</me>
+                          <me> = 0</me>
+               
+                          <me>
+                           \begin{pmatrix}
+                   x = 1\\
+                   y = 0\\
+                   z = 0\\
+                  \end{pmatrix}</me>
+            </p>
+        </solution>
+       
+      </exercise>
+      <!-- kuttler ex 6.3.29-->
+      <exercise number="12">
+        <statement>
+            <p>
+                Here is a matrix, 
+                <me>\begin{pmatrix}
+                    1 &amp;2 &amp;3\\
+                    0 &amp;2 &amp;1\\
+                    3 &amp;1 &amp;0\\
+                   \end{pmatrix}.</me>
+                   Determine whether the matrix has an inverse by finding whether the determinant is non-zero. If
+                   the determinant is non-zero, find the inverse using the formula <xref ref="thm-inverse-from-cofactor"/> for the inverse which involves the
+                   cofactor matrix
+            </p>
+        </statement>
+      </exercise>
+        <!-- kuttler ex 6.3.30-->
+        <exercise number="13">
+            <statement>
+                <p>
+                    Here is a matrix, 
+                    <me>\begin{pmatrix}
+                        1 &amp;2 &amp;0\\
+                        0 &amp;2 &amp;1\\
+                        3 &amp;1 &amp;1\\
+                       \end{pmatrix}.</me>
+                       Determine whether the matrix has an inverse by finding whether the determinant is non-zero. If
+                       the determinant is non-zero, find the inverse using the formula <xref ref="thm-inverse-from-cofactor"/> for the inverse which involves the
+                       cofactor matrix
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <me>\begin{vmatrix}
+   1 &amp; 2 &amp; 0\\
+   0 &amp; 2 &amp; 1\\
+   3 &amp; 1 &amp; 1\\
+  \end{vmatrix} = (1\cdot 2\cdot 1) + (0\cdot 1\cdot 0) + (3\cdot 2\cdot 1) - (0\cdot 2\cdot 3) - (2\cdot 0\cdot 1) - (1\cdot 1\cdot 1) = 7</me>
+  The determinant is 7 so there is an inverse.
+
+  The inverse is then equal to:
+  <me>1/7 \begin{pmatrix}
+         (-1)^{1+1}\begin{vmatrix}
+          2 &amp; 1\\
+          1 &amp; 1\\
+         \end{vmatrix} &amp;(-1)^{1+2}
+         \begin{vmatrix}
+          0 &amp; 1\\
+          3 &amp; 1\\
+         \end{vmatrix}
+            &amp; (-1)^{1+3}\begin{vmatrix}
+          0 &amp; 2\\
+          3 &amp; 1\\
+         \end{vmatrix}\\&amp;&amp;\\
+         (-1)^{2+1}\begin{vmatrix}
+          2 &amp; 0\\
+          1 &amp; 1\\
+         \end{vmatrix} &amp;
+         (-1)^{2+2}\begin{vmatrix}
+          1 &amp; 0\\
+          3 &amp; 1\\
+         \end{vmatrix}
+            &amp;(-1)^{2+3}\begin{vmatrix}
+          1 &amp; 2\\
+          3 &amp; 1\\
+         \end{vmatrix}\\&amp; &amp;\\
+         (-1)^{3+1}\begin{vmatrix}
+          2 &amp; 0\\
+          2 &amp; 1\\
+         \end{vmatrix} &amp;
+         (-1)^{3+2}\begin{vmatrix}
+          1 &amp; 0\\
+          0 &amp; 1\\
+         \end{vmatrix}
+            &amp; (-1)^{3+3}\begin{vmatrix}
+          1 &amp; 2\\
+          0 &amp; 2\\
+         \end{vmatrix}\\
+        \end{pmatrix}^T
+  </me>
+
+<me> = 1/7 \begin{pmatrix}
+          1 &amp; 3 &amp; -6\\
+          -2 &amp; 1 &amp; 5\\
+          2 &amp; -1 &amp; 2\\
+         \end{pmatrix}^T
+</me>
+
+<me> = \begin{pmatrix}
+          1/7 &amp; -2/7 &amp; 2/7\\
+          3/7 &amp; 1/7 &amp; -1/7\\
+          -6/7 &amp; 5/7 &amp; 2/7\\
+         \end{pmatrix}
+</me> 
+                </p>
+            </solution>
+          </exercise>
+          <exercise number="14">
+            <!--Kuttler 6.3.31-->
+            <statement>
+                <p>
+                    Here is a matrix, 
+                    <me>\begin{pmatrix}
+                        1 &amp;3 &amp;3\\
+                        2 &amp;4 &amp;1\\
+                        0 &amp;1 &amp;1\\
+                       \end{pmatrix}.</me>
+                       Determine whether the matrix has an inverse by finding whether the determinant is non-zero. If
+                       the determinant is non-zero, find the inverse using the formula <xref ref="thm-inverse-from-cofactor"/> for the inverse which involves the
+                       cofactor matrix
+                </p>
+            </statement>
+          </exercise>
+          <exercise number="15">
+            <!--Kuttler 6.3.32-->
+            <statement>
+                <p>
+                    Here is a matrix, 
+                    <me>\begin{pmatrix}
+                        1 &amp;2 &amp;3\\
+                        0 &amp;2 &amp;1\\
+                        2 &amp;6 &amp;7\\
+                       \end{pmatrix}.</me>
+                       Determine whether the matrix has an inverse by finding whether the determinant is non-zero. If
+                       the determinant is non-zero, find the inverse using the formula <xref ref="thm-inverse-from-cofactor"/> for the inverse which involves the
+                       cofactor matrix
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <me>\begin{vmatrix}
+                        1 &amp;2 &amp;3\\
+                        0 &amp;2 &amp;1\\
+                        2 &amp;6 &amp;7\\
+                       \end{vmatrix}</me>
+                       
+                       <me> 
+                       = (1\cdot 2\cdot 7) + (2\cdot 1 \cdot2)
+                       +(0 \cdot 6 \cdot3) - (2\cdot2\cdot 3) -(2\cdot 0 \cdot 7)
+                       - (6 \cdot 1 \cdot 1)</me>
+                       <me>= 18 - 18 = 0</me>
+                       
+                    This matrix doesn't have an inverse.
+                </p>
+            </solution>
+          </exercise>
+          <exercise number="16">
+            
+    <!--Kuttler 6.3.32-->
+          <statement>
+            <p>
+                Here is a matrix, 
+                <me>\begin{pmatrix}
+                    1 &amp;0 &amp;3\\
+                    1 &amp;0 &amp;1\\
+                    3 &amp;1 &amp;0\\
+                   \end{pmatrix}.</me>
+                   Determine whether the matrix has an inverse by finding whether the determinant is non-zero. If
+                   the determinant is non-zero, find the inverse using the formula <xref ref="thm-inverse-from-cofactor"/> for the inverse which involves the
+                   cofactor matrix.
+            </p>
+        </statement>
+      </exercise>
+    </exercises>
 </section>
