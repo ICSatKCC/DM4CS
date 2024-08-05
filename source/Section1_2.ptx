@@ -123,7 +123,7 @@
 			<figure xml:id="venn_diagram_intersection">
 				<caption>Venn Diagram for the Intersection of Two Sets</caption>
 				<image width="60%" xml:id="sageplot-venn-intersection">
-					<description>A two set Venn Diagram for intersection</description>
+					<shortdescription>Venn Diagram highlighting the overlap of two sets as intersection</shortdescription>
 					<sageplot><xi:include parse="text" href="./sage_venn-intersection.py" />
 					</sageplot>
 				</image>
@@ -133,7 +133,7 @@
 				<caption>Venn Diagram for the Union <m>A \cup B</m>
 				</caption>
 				<image width="60%" xml:id="sageplot-venn-union">
-					<description>A two set Venn Diagram for Union</description>
+					<shortdescription>Venn Diagram highlighting all of two sets as union</shortdescription>
 					<sageplot><xi:include parse="text" href="./sage_venn-union.py" />
 					</sageplot>
 				</image>
@@ -172,7 +172,7 @@
 		<figure xml:id="venn_diagram_complement1">
 			<caption>Venn Diagram for <m>B - A</m></caption>
 			<image width="60%" xml:id="sageplot-venn-complement1">
-				<description>A Venn Diagram for the complement of <m>A</m> relative to <m>B</m></description>
+				<shortdescription>A Venn Diagram showing the complement of <m>A</m> relative to <m>B</m></shortdescription>
 				<sageplot><xi:include parse="text" href="./sage_venn-compliment1.py" />
 				</sageplot>
 			</image>
@@ -217,7 +217,7 @@
 			<figure xml:id="venn_diagram_complement2">
 				<caption>Venn Diagram for <m>\overline{A}</m></caption>
 				<image width="60%" xml:id="sageplot-venn-complement2">
-					<description>A Venn Diagram for the complement of a set.</description>
+					<shortdescription>A Venn Diagram showing the complement of a set.</shortdescription>
 					<sageplot><xi:include parse="text" href="./sage_venn-compliment2.py" />
 					</sageplot>
 				</image>
@@ -225,7 +225,7 @@
 			<figure xml:id="venn_diagram_complement3">
 				<caption>Venn Diagram for <m>A-B</m> when <m>B</m> is a subset of <m>A</m></caption>
 				<image width="60%" xml:id="sageplot-venn-complement3">
-					<description>A Venn Diagram for the complement relative to a superset</description>
+					<shortdescription>A Venn Diagram showing the complement relative to a superset</shortdescription>
 					<sageplot><xi:include parse="text" href="./sage_venn-compliment3.py" />
 					</sageplot>
 				</image>
@@ -268,7 +268,7 @@
 			<figure xml:id="venn_diagram_symmetric">
 				<caption>Venn Diagram for the symmetric difference <m>A \oplus B</m></caption>
 				<image width="60%" xml:id="sageplot-venn-symmetric">
-					<description>A two set Venn Diagram for the symmetric difference of two sets.</description>
+					<shortdescription>A two set Venn Diagram showing the symmetric difference of two sets.</shortdescription>
 					<sageplot><xi:include parse="text" href="./sage_venn-symmetric.py" />
 					</sageplot>
 				</image>
@@ -656,7 +656,7 @@
 					<caption>
 					</caption>
 					<image width="100%" source="images/fig-sol-1-2-7.png">
-						<description>Solution to #7 of section 1.2</description>
+						<shortdescription>Four Venn diagrams illustrating the solutions to Exercise 7</shortdescription>
 					</image>
 				</figure>
 			</answer>
