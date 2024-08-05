@@ -63,16 +63,16 @@
 				</p></example>
 		<definition xml:id="def-implication-over-U"><title>Implication for propositions over a universe</title><statement><p> Implication. If <m>p</m> and <m>q</m> are propositions over <m>U</m>, <m>p</m> implies <m>q</m> if <m>p \rightarrow q</m> is a tautology.</p></statement></definition>
 
-		<p>Since the truth set of <m>p \rightarrow  q</m> is <m>\overline{T_p{}}\cup T_q</m>, the Venn diagram for <m>T_{p\to q}</m> 
-			in <xref ref="venn_diagram_truth-set-conditional" text="type-local"/> shows that 
-			<m>p \Rightarrow  q</m> when <m>T_p\subseteq T_q</m> (<m>T_p</m> would be inside of <m>T_q</m>).</p>
+		<p>Since the truth set of <m>p \rightarrow  q</m> is <m>\overline{T_p} \cup T_q</m>, the Venn diagram for <m>T_{p\to q}</m> 
+			in <xref ref="venn_diagram_truth-set-conditional" text="type-local"/> shows that implication, 
+			<m>p \Rightarrow  q</m>, must be when <m>T_p\subseteq T_q</m> (<m>T_p</m> would be inside of <m>T_q</m>).</p>
 
 			<!-- temporary replacement with image include-->
 			<figure xml:id="venn_diagram_truth-set-conditional">
 				<caption>Venn diagram for the truth set of a conditional statement.
 				</caption>
 				<image width="60%" source="images/sageplot-venn-truth-set-conditional">
-					<description>A Venn diagram showing the truth set of a conditional statement.</description>
+					<shortdescription>A Venn diagram illustrating the truth set of a conditional statement.</shortdescription>
 				</image>
 			</figure>
 

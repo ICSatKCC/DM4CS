@@ -83,7 +83,7 @@
 			<statement><p> If <m>n \geq  0</m>, and <m>x</m> and <m>y</m> are numbers, then
 					<me>(x+y)^{n} = \sum_{k=0}^n \binom{n}{k} x^{n-k} y^k</me>.</p>
 			</statement>
-			<proof><p>This theorem will be proven using a logical procedure called mathematical induction, which will be introduced in Chapter 3. </p></proof>
+			<proof><p>This theorem can be proven using a logical procedure called mathematical induction, which will be introduced in <xref ref="section5_2-induction"/>. </p></proof>
 		</theorem>
 		<example xml:id="term-in-an-expansion"><title>Identifying a term in an expansion</title><p>Find the third term in the expansion of
 				<m>(x-y)^{4} = (x+(-y))^{4}</m>. The third term,  when <m>k=2</m>, is <m>\binom{4}{2} x^{4-2} (-y)^2 = 6 x^2 y^2</m>.</p>
@@ -136,7 +136,7 @@
 				<figure xml:id="fig-lattice-path-6">
 					<caption>A lattice path</caption>
 					<image width="50%" source="images/fig-lattice-path-6.png">
-						<description>An example of a lattice path</description>
+						<shortdescription>An illustration of a lattice path</shortdescription>
 					</image>
 				</figure>
 			</statement>

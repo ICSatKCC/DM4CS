@@ -84,7 +84,7 @@
       <caption>With permission from Randall Munroe <url href="http://xkcd.com">http://xkcd.com</url>
       </caption>
       <image width="64%" source="images/1_to_10.png">
-        <description>Comic from http://xkcd.com.</description>
+        <shortdescription>Comic making a joke about 10 in binary from http://xkcd.com</shortdescription>
       </image>
     </figure>
   </subsection>

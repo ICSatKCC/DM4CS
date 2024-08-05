@@ -33,7 +33,7 @@
 		<figure xml:id="knowledge-pyramid">
 			<caption>The body of knowledge in a mathematical system </caption>
 			<image width="70%" xml:id="pyramid" >
-				<description>Inverted pyramid of knowledge</description>
+				<shortdescription>Illustration of the inverted pyramid of knowledge</shortdescription>
 				<sageplot>
 					c=1.414
 					g=plot(abs(x),(x,-3*c,3*c),axes=False)

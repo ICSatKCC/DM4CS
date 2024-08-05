@@ -22,14 +22,14 @@
 			<caption>Development of the left side of the distributive law for sets
 			</caption>
 			<image width="100%" source="images/distrib-venn-lhs.png">
-				<description>Development of the left side of the distributive law for sets</description>
+				<shortdescription>Three Venn Diagrams illustrating <m>A \cap  (B \cup  C)</m> </shortdescription>
 			</image>
 		</figure>
 		<figure xml:id="distrib-venn-rhs">
 			<caption>Development of the right side of the distributive law for sets
 			</caption>
 			<image width="100%" source="images/distrib-venn-rhs.png">
-				<description>Development of the right side of the distributive law for sets</description>
+				<shortdescription>Three Venn Diagrams illustrating <m>(A \cap  B) \cup  (A \cap  C)</m> </shortdescription>
 			</image>
 		</figure>
 

@@ -77,7 +77,7 @@
 			<figure xml:id="venn_diagram_CS_Students">
 				<caption>Venn Diagram</caption>
 				<image xml:id="sageplot-venn-CS_Students">
-					<description>A three set Venn Diagram to solve the Junior CS student example.</description>
+					<shortdescription>A three set Venn Diagram used to solve the Junior CS student example.</shortdescription>
 					<sageplot>
 						m=3
 						scale = 1.6

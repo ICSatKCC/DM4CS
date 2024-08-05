@@ -178,7 +178,7 @@
 			<caption>Computation of one entry in the product of two 3 by 3 matrices
 			</caption>
 			<image width="100%" source="images/fig-one-matrix-product-entry.png">
-				<description>Computation of one entry in the product of two 3 by 3 matrices</description>
+				<shortdescription>Illustration of the computation of one entry in a matrix product.</shortdescription>
 			</image>
 		</figure>
 
