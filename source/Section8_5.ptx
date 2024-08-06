@@ -143,7 +143,7 @@
 				<figure xml:id="exercise-6-5-3">
 					<caption>A general configuration of three lines</caption>
 					<image width="60%" source="images/exercise-6-5-3.png">
-						<description>A general configuration of three lines</description>
+						<shortdescription>Illustration of a general configuration of three lines</shortdescription>
 					</image>
 				</figure>
 			</statement>

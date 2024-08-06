@@ -194,7 +194,9 @@
 					<caption>Enumeration of the rational numbers.
 					</caption>
 					<image width="100%" source="images/fig-sol-6-2-9.png">
+						<shortdescription>Illustration of listing rational numbers for diagonalization proof.</shortdescription>
 					</image>
+					
 				</figure>
 			</answer>
 		</exercise>

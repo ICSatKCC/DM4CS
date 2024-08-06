@@ -148,7 +148,9 @@ p1+ p2 + p3
     </introduction>
     <figure xml:id="fig-big0-common-functions">
       <caption>Growth of functions commonly used for algorithm analysis. Image by Cmglee <url href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4</url></caption>
-   <image width="70%" source="images/Comparison_computational_complexity.png"/>
+   <image width="70%" source="images/Comparison_computational_complexity.png">
+    <shortdescription>Plot showing growth of common functions.</shortdescription>
+   </image>>
 
  </figure>
  <p>In addition to polynomials, we have the following Big O estimates:
@@ -279,7 +281,9 @@ p3 = plot(c2*g, (x,0,10),  color="black", linestyle="dotted", legend_label='1 * 
 p1+ p2 + p3
 </input>
 <output>
-<!-- TODO <image source="images/sageplot-bigO-polynomial.png"/>-->
+  <image width="100%" source="images/sageplot-bigO-polynomial.png">
+    <shortdescription>Plot showing <m>f(x)</m> between <m>g(x)</m> and <m>20g(x)</m></shortdescription>
+  </image>
   </output>
   </sage>
 
