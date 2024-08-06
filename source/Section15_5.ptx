@@ -204,7 +204,7 @@
             <figure xml:id="fig-small-tsp-example">
                 <caption>A small example</caption>
                 <image width="100%" source="images/fig-small-tsp-example.png">
-                    <description>A small weighted graph</description>
+                    <shortshortdescription>A small weighted graph</shortshortdescription>
                 </image>
             </figure>
         </example>
@@ -231,7 +231,7 @@
             <figure xml:id="fig-directed-tsp-example">
                 <caption>Traveling a one-way street</caption>
                 <image width="100%" source="images/fig-directed-tsp-example.png">
-                    <description>A small directed weighted graph</description>
+                    <shortshortdescription>A small directed weighted graph</shortshortdescription>
                 </image>
             </figure>
 
@@ -367,7 +367,7 @@
             <caption>The Strip Algorithm
             </caption>
             <image width="100%" source="images/fig-strip-alg-tsp.png">
-                <description>The Strip Algorithm</description>
+                <shortshortdescription>Illustrations of the two phases of the strip algorithm</shortshortdescription>
             </image>
         </figure>
 
@@ -436,14 +436,14 @@
                 <caption>City Water System
                 </caption>
                 <image width="80%" source="images/fig-water-system.png">
-                    <description>City Water System</description>
+                    <shortshortdescription>A diagram of a simplified city water system with 5 pipes</shortshortdescription>
                 </image>
             </figure>
             <figure xml:id="fig-water-network">
                 <caption>Flow Diagram for a City's Water Network
                 </caption>
                 <image width="80%" source="images/fig-water-network.png">
-                    <description>City Water Network</description>
+                    <shortdescription>A flow diagram of the city water system</shortdescription>
                 </image>
             </figure>
             <p>Although the material passing through this network is water, networks can also
@@ -717,7 +717,7 @@
                 <caption>Current Flow
                 </caption>
                 <image width="80%" source="images/fig-flow-example-before.png">
-                    <description>Current Flow</description>
+                    <shortdescription>Graph representation of a flow network</shortdescription>
                 </image>
             </figure>
 
@@ -732,7 +732,7 @@
                 <caption>Updated Flow
                 </caption>
                 <image width="80%" source="images/fig-updated-flow.png">
-                    <description>Updated Flow</description>
+                    <shortdescription>Graph representation of updated flow network</shortdescription>
                 </image>
             </figure>
         </example>
@@ -892,7 +892,7 @@
                 <figure xml:id="fig-exercise-15-5-5">
                     <caption />
                     <image width="100%" source="images/fig-exercise-15-5-5.png">
-                        <description>Figure for Exercise 15-5-5</description>
+                        <shortdescription>Flow network graph for Exercise 5</shortdescription>
                     </image>
                 </figure>
                 <p>
@@ -946,7 +946,7 @@
                 <figure xml:id="fig-exercise-15-5-6">
                     <caption />
                     <image width="70%" source="images/fig-exercise-15-5-6.png">
-                        <description>Figure for Exercise 15-5-6</description>
+                        <shortdescription>Flow network graph for Exercise 6</shortdescription>
                     </image>
                 </figure>
 
@@ -955,25 +955,25 @@
         <exercise number="7">
             <statement>
                 <p> Find maximal flows for the following networks.</p>
-                <sidebyside>
+                
                     <figure xml:id="fig-exercise-15-5-7a">
                         <caption />
-                        <image width="100%" source="images/fig-exercise-15-5-7a.png">
-                            <description>Figure for Exercise 15-5-7a</description>
+                        <image width="70%" source="images/fig-exercise-15-5-7a.png">
+                            <shortdescription>Flow network graph for Exercise7a</shortdescription>
                         </image>
                     </figure>
                     <figure xml:id="fig-exercise-15-5-7b">
                         <caption />
-                        <image width="100%" source="images/fig-exercise-15-5-7b.png">
-                            <description>Figure for Exercise 15-5-7b</description>
+                        <image width="70%" source="images/fig-exercise-15-5-7b.png">
+                            <shortdescription>Flow network graph for Exercise7b</shortdescription>
                         </image>
                     </figure>
-                </sidebyside>
+                
 
                 <figure xml:id="fig-exercise-15-5-7c">
                     <caption />
                     <image width="70%" source="images/fig-exercise-15-5-7c.png">
-                        <description>Figure for Exercise 15-5-7c</description>
+                        <shortdescription>Flow network graph for Exercise7c</shortdescription>
                     </image>
                 </figure>
             </statement>
@@ -987,64 +987,65 @@
                             <p> Value of maximal flow <m>=14</m>.</p>
                         </li>
                         <li>
-                            <p> Value of maximal flow <m>=14</m>. See <xref
-                                    ref="table-solution-15-5-7" text="type-global" /> for one way to
-                                got this flow.</p>
+                            <p> Value of maximal flow <m>=14</m>. See table for one way to
+                                get this flow.
+                                <table xml:id="table-solution-15-5-7">
+                                    <title />
+                                    <tabular top="major" halign="center">
+                                        <row>
+                                            <cell>Step</cell>
+                                            <cell>Flow-augmenting path</cell>
+                                            <cell>Flow added</cell>
+                                        </row>
+                                        <row>
+                                            <cell>1</cell>
+                                            <cell>
+                                                <m>\text{Source},A,\text{Sink}</m>
+                                            </cell>
+                                            <cell>2</cell>
+                                        </row>
+                                        <row>
+                                            <cell>2</cell>
+                                            <cell>
+                                                <m>\text{Source}, C,B, \text{Sink}</m>
+                                            </cell>
+                                            <cell>3</cell>
+                                        </row>
+                                        <row>
+                                            <cell>3</cell>
+                                            <cell>
+                                                <m>\text{Source},E,D, \text{Sink}</m>
+                                            </cell>
+                                            <cell>4</cell>
+                                        </row>
+                                        <row>
+                                            <cell>4</cell>
+                                            <cell>
+                                                <m>\text{Source},A,B,\text{Sink}</m>
+                                            </cell>
+                                            <cell>1</cell>
+                                        </row>
+                                        <row>
+                                            <cell>5</cell>
+                                            <cell>
+                                                <m>\text{Source},C,D, \text{Sink}</m>
+                                            </cell>
+                                            <cell>2</cell>
+                                        </row>
+                                        <row>
+                                            <cell>6</cell>
+                                            <cell>
+                                                <m>\text{Source},A,B,C,D, \text{Sink}</m>
+                                            </cell>
+                                            <cell>2</cell>
+                                        </row>
+                                    </tabular>
+                                </table>
+                            </p>
                         </li>
                     </ol>
                 </p>
-                <table xml:id="table-solution-15-5-7">
-                    <title />
-                    <tabular top="major" halign="center">
-                        <row>
-                            <cell>Step</cell>
-                            <cell>Flow-augmenting path</cell>
-                            <cell>Flow added</cell>
-                        </row>
-                        <row>
-                            <cell>1</cell>
-                            <cell>
-                                <m>\text{Source},A,\text{Sink}</m>
-                            </cell>
-                            <cell>2</cell>
-                        </row>
-                        <row>
-                            <cell>2</cell>
-                            <cell>
-                                <m>\text{Source}, C,B, \text{Sink}</m>
-                            </cell>
-                            <cell>3</cell>
-                        </row>
-                        <row>
-                            <cell>3</cell>
-                            <cell>
-                                <m>\text{Source},E,D, \text{Sink}</m>
-                            </cell>
-                            <cell>4</cell>
-                        </row>
-                        <row>
-                            <cell>4</cell>
-                            <cell>
-                                <m>\text{Source},A,B,\text{Sink}</m>
-                            </cell>
-                            <cell>1</cell>
-                        </row>
-                        <row>
-                            <cell>5</cell>
-                            <cell>
-                                <m>\text{Source},C,D, \text{Sink}</m>
-                            </cell>
-                            <cell>2</cell>
-                        </row>
-                        <row>
-                            <cell>6</cell>
-                            <cell>
-                                <m>\text{Source},A,B,C,D, \text{Sink}</m>
-                            </cell>
-                            <cell>2</cell>
-                        </row>
-                    </tabular>
-                </table>
+                
             </answer>
         </exercise>
 

@@ -146,7 +146,7 @@
 		<caption>Nondistributive lattices, the pentagon and diamond lattices
 		</caption>
 		<image width="50%" source="images/fig-nondistributive-lattices.png">
-			<description>Nondistributive Lattices</description>
+			<shortdescription>Hasse diagrams of pentagon and diamond lattices</shortdescription>
 		</image>
 	</figure>
 	<exercises xml:id="exercises-12-2">

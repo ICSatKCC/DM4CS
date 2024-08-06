@@ -32,10 +32,6 @@
 		<definition xml:id="def-generating-function">
 			<title>Generating Function of a Sequence</title>
 			<idx>Generating Function</idx>
-			<notation>
-				<usage><m></m></usage>
-				<description></description>
-			</notation>
 			<statement>
 				<p>The generating function of a sequence <m>S</m> with terms <m>S_0,S_1 ,S_2, \dots </m>,
 					is the infinite sum <me>G(S;z)=\sum_{n=0}^{\infty} S_n z^n=S_0+S_1 z+S_2 z^2+S_3
@@ -299,9 +295,9 @@
 
 
 		<figure xml:id="fig-pop-push">
-			<caption>Stack interpretation of pop and push operation</caption>
+			<caption>Stack interpretation of pop and push operations</caption>
 			<image width="100%" source="images/fig-pop-push.png">
-				<description>Stack interpretation of pop and push operation</description>
+				<shortdescription>Illustration of stack push and pop operations</shortdescription>
 			</image>
 		</figure>
 

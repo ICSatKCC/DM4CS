@@ -1198,7 +1198,7 @@ at the beginning of this section:
 
 <figure xml:id="fig-parsetree">
   <image source="images/fig-5-1" width="80%">
-     <description>Figure showing two different parse tree derivations of the string <m>x+y*z</m> .</description>
+     <shortdescription>Figure showing two different parse tree derivations of the string <m>x+y*z</m> .</shortdescription>
   </image>
 </figure>
 
@@ -1222,7 +1222,7 @@ top of that base.  Thus, the two parse trees shown above might
 be drawn as:
 <figure xml:id="fig-parsetree2">
   <image source="images/fig-5-2" width="80%">
-    <description>Figure showing the same two parse trees as above but with the non-terminals aligned at the bottom.</description>
+    <shortdescription>Figure showing the same two parse trees as above but with the non-terminals aligned at the bottom.</shortdescription>
  </image>
 </figure>
 </p>
@@ -1394,7 +1394,7 @@ each of the grammars <m>G_1</m>, <m>G_2</m>, and <m>G_3</m>, as given in this se
 <exercise number="12"> <p>Suppose that the string <m>abbcabac</m> has the following parse
 tree, according to some grammar <m>G</m>:
 <image source="images/fig-5-3" width="50%">
-  <description>parse tree for string <m>abbcabac</m></description>
+  <shortdescription>parse tree for string <m>abbcabac</m></shortdescription>
 </image>
 <ol>
   <li>

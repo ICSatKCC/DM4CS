@@ -15,7 +15,7 @@
             <caption>A Rooted Tree
             </caption>
             <image width="100%" source="images/fig-rooted-tree-16-3.png">
-                <description>A Rooted Tree</description>
+                <shortdescription>A graph as a rooted tree</shortdescription>
             </image>
         </figure>
 
@@ -60,7 +60,7 @@
             <caption>A Rooted Tree, redrawn
             </caption>
             <image width="100%" source="images/fig-rooted-tree-16-3-redrawn.png">
-                <description>A Rooted Tree, redrawn</description>
+                <shortdescription>A graph as a rooted rree, redrawn so the root vertex is above all others</shortdescription>
             </image>
         </figure>
 
@@ -150,7 +150,7 @@
                 <caption>Applicant Data in a Rooted Tree
                 </caption>
                 <image width="100%" source="images/fig-applicant-tree.png">
-                    <description>Applicant Data in a Rooted Tree</description>
+                    <shortdescription>A data structure visualized as a Rooted Tree</shortdescription>
                 </image>
             </figure>
 
@@ -284,9 +284,9 @@
 </input>
         </sage>
         <figure xml:id="sage_graph">
-            <caption>Weighed graph, SageMath output </caption>
+            <caption>Weighed graph, Example SageMath output </caption>
             <image width="100%" source="images/sage_graph.png">
-                <description>SageMath Output - Weighted Graph</description>
+                <shortdescription>SageMath generated weighted graph</shortdescription>
             </image>
         </figure>
 
@@ -318,7 +318,7 @@
         <figure xml:id="sage_spanning_tree">
             <caption>Spanning tree, SageMath output </caption>
             <image width="100%" source="images/sage_spanning_tree.png">
-                <description>SageMath Output - Spanning tree for weighted graph</description>
+                <shortdescription>SageMath generated spanning tree of weighted graph</shortdescription>
             </image>
         </figure>
 
@@ -349,18 +349,19 @@
                 <figure >
                     <caption>Graph 2(a)</caption>
                     <image xml:id="fig-exercise-16-3-2a" width="100%">
-                     <description>Figure for exercise 16.3.2a</description>
+                     
                     <!-- <image width="100%" source="images/fig-exercise-16-3-2a.png"> -->
                         <latex-image><xi:include parse="text" href="./tikz-fig-exercise-16.3.2.tex" />
-                            
+                            <shortdescription>Graph for exercise 2a</shortdescription>
                         </latex-image>
                     </image>
                 </figure>
                 <figure>
                     <caption>Graph 2(b)</caption>
                     <image xml:id="fig-exercise-16-3-2b" width="100%">
-                     <description>Figure for exercise 16.3.2b</description>
+                    
                         <latex-image><xi:include parse="text" href="./tikz-fig-exercise-16.3.2b.tex" />
+                            <shortdescription>Graph for exercise 2b</shortdescription>
                         </latex-image>
                     </image>
                 </figure>
@@ -381,7 +382,7 @@
                 <figure xml:id="fig-solution-16-3-3">
                     <caption />
                     <image width="100%" source="images/fig-solution-16-3-3.png">
-                        <description>Solution to exercise 16-3-3</description>
+                        <shortdescription>Solution tree for exercise 3</shortdescription>
                     </image>
                 </figure>
             </answer>

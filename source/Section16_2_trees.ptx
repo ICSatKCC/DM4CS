@@ -23,7 +23,7 @@
             <caption>Atlantis University Graph
             </caption>
             <image width="100%" source="images/fig-atlantis-16.png">
-                <description>Atlantis University Graph</description>
+                <shortdescription>Graph representing four university campuses</shortdescription>
             </image>
         </figure>
 
@@ -155,7 +155,7 @@
                 <caption>Bridges between two sets
                 </caption>
                 <image width="100%" source="images/fig-bridges-16.png">
-                    <description>Bridges between two sets</description>
+                    <shortdescription>Graph image identifying bridge edges between two vertex sets</shortdescription>
                 </image>
             </figure>
         </example>
@@ -246,7 +246,7 @@
             <figure xml:id="fig-weighted-graph-16">
                 <caption>A small weighted graph</caption>
                 <image width="80%" source="images/fig-weighted-graph-16.png">
-                    <description>A weighted graph</description>
+                    <shortdescription>An undirected weighted graph with 7 vertices</shortdescription>
                 </image>
             </figure>
         </example>
@@ -275,7 +275,7 @@
                 <caption>Minimum diameter spanning tree for <m>K_5</m>
                 </caption>
                 <image width="80%" source="images/fig-min-diameter-k5.png">
-                    <description>Minimum diameter spanning tree for K_5</description>
+                    <shortdescription>Depiction of a minimum diameter spanning tree on <m>K_5</m></shortdescription>
                 </image>
             </figure>
 
@@ -323,7 +323,7 @@
                 <figure xml:id="fig-sol-e-16-2-3">
                     <caption />
                     <image width="80%" source="images/fig-sol-e-16-2-3.png">
-                        <description>Solution to exercise 16-2-3</description>
+                        <shortdescription>Graph demonstrating solution to exercise 3</shortdescription>
                     </image>
                 </figure>
             </answer>
@@ -335,19 +335,19 @@
                 <figure xml:id="fig-exercise-16-2-4a">
                     <caption />
                     <image width="80%" source="images/fig-exercise-16-2-4a.png">
-                        <description>Figure for exercise-16-2-4a</description>
+                        <shortdescription>Graph for exercise 4a</shortdescription>
                     </image>
                 </figure>
                 <figure xml:id="fig-exercise-16-2-4b">
                     <caption />
                     <image width="80%" source="images/fig-exercise-16-2-4b.png">
-                        <description>Figure for exercise-16-2-4b</description>
+                        <shortdescription>Graph for exercise 4b</shortdescription>
                     </image>
                 </figure>
                 <figure xml:id="fig-exercise-16-2-4c">
                     <caption />
                     <image width="70%" source="images/fig-exercise-16-2-4c.png">
-                        <description>Figure for exercise-16-2-4c</description>
+                        <shortdescription>Graph for exercise 4c</shortdescription>
                     </image>
                 </figure>
 
@@ -359,13 +359,13 @@
                 <figure xml:id="fig-exercise-16-2-5a">
                     <caption />
                     <image width="80%" source="images/fig-exercise-16-2-5a.png">
-                        <description>Figure for exercise-16-2-5a</description>
+                        <shortdescription>Graph for exercise 5a</shortdescription>
                     </image>
                 </figure>
                 <figure xml:id="fig-exercise-16-2-5b">
                     <caption />
                     <image width="80%" source="images/fig-exercise-16-2-5b.png">
-                        <description>Figure for exercise-16-2-5b</description>
+                        <shortdescription>Graph for exercise 5b</shortdescription>
                     </image>
                 </figure>
             </statement>

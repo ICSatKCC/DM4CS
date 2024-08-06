@@ -47,7 +47,7 @@
                 <caption>Some trees and some non-trees
                 </caption>
                 <image width="100%" source="images/fig-some-trees.png">
-                    <description>Some trees and some non-trees</description>
+                    <shortdescription>Image of 6 different graphs, labeled <m>i - vi</m></shortdescription>
                 </image>
             </figure>
             <p>
@@ -82,21 +82,21 @@
                     <caption>Butane
                     </caption>
                     <image width="100%" source="images/fig-butane.png">
-                        <description>Structure of Butane</description>
+                        <shortdescription>Structure graph of Butane</shortdescription>
                     </image>
                 </figure>
                 <figure xml:id="fig-isobutane">
                     <caption>Isobutane
                     </caption>
                     <image width="100%" source="images/fig-isobutane.png">
-                        <description>Structure of Isobutane</description>
+                        <shortdescription>Structure graph of Isobutane</shortdescription>
                     </image>
                 </figure>
                 <figure xml:id="fig-benzene">
                     <caption>Benzene
                     </caption>
                     <image width="100%" source="images/fig-benzene.png">
-                        <description>Structure of Benzene</description>
+                        <shortdescription>Structure graph of Benzene</shortdescription>
                     </image>
                 </figure>
             </sidebyside>
@@ -265,7 +265,7 @@
                 <figure xml:id="fig-sol-16-1-1">
                     <caption />
                     <image width="100%" source="images/fig-sol-16-1-1.png">
-                        <description>Solution to exercise 16-1-1</description>
+                        <shortdescription>Image of all 16 trees that connect four vertices</shortdescription>
                     </image>
                 </figure>
             </answer>

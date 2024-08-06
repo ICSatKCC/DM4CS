@@ -1027,7 +1027,7 @@
 					<figure>
 						<caption>Graph of Exercise 11.1.1</caption>
 						<image xml:id="fig-exercise-11-1-2_sol" width="100%">
-							<description>Graph of lines described in Exercise 11.1.1</description>
+							<shortdescription>Graph of lines described in Exercise 1</shortdescription>
 							<latex-image>
 								<xi:include parse="text" href="./tikz-fig-exercise-11.1.2_soln.tex" />
 							</latex-image>

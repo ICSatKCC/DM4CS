@@ -9,7 +9,7 @@ In representing this relation as a graph, elements of <m>A</m> are called the ve
 <figure xml:id="fig-graph-10-2-1">
    <caption>Digraph of a relation </caption>
       <image width="60%" xml:id="graph-10-2-1">
-         <description>Digraph of the relation r</description>
+         <shortdescription>Digraph of the relation <m>R</m></shortdescription>
 					<sageplot>
 					g=DiGraph({0:[0,3],1:[2],2:[1,0],3:[2]})
 					f621=g.plot(layout='spring',loop_size=0.1)
@@ -23,7 +23,7 @@ be presented as in <xref ref="fig-graph-10-2-2" text="type-global" />.</p>
 <figure xml:id="fig-graph-10-2-2">
    <caption>Alternate embedding of the previous directed graph</caption>
       <image width="75%" xml:id="graph-10-2-2">
-         <description>Digraph of the relation r, alternate embedding</description>
+         <shortdescription>Altenative embedding of the digraph of relation <m>R</m>.</shortdescription>
 					<sageplot>
 					g=DiGraph({0:[0,3],1:[2],2:[1,0],3:[2]})
 					f622=g.plot(pos={0:(0,0),1:(1,0),2:(1,1),3:(0,1)},loop_size=0.1)
@@ -36,7 +36,7 @@ be presented as in <xref ref="fig-graph-10-2-2" text="type-global" />.</p>
       <figure xml:id="fig-graph-10-2-3">
             <caption>Digraph of the relation <m>R</m></caption>
             <image  width="75%" xml:id="graph-10-2-3">
-               <description>Digraph of the relation <m>R</m></description>
+               <shortdescription>Digraph of another relation.</shortdescription>
                <!-- TO DO THese actually use svg and png of xml:id name -->
 						<sageplot>
                   g=DiGraph({1:[2,3],2:[1,3],3:[1,3]})
@@ -51,7 +51,7 @@ be presented as in <xref ref="fig-graph-10-2-2" text="type-global" />.</p>
 <figure xml:id="fig-graph-10-2-subsets-2">
    <caption>Graph for set containment on subsets of <m>\{1,2\}</m> </caption>
    <image width="100%" source="images/graph-10-2-subsets-2.png">
-   <description>Graph for set containment on subsets  of <m>\{1,2\}</m></description>
+   <shortdescription>Digraph representing the subset relation on a powerset.</shortdescription>
    </image>
 </figure>
 <p>We will see in the next section that since <m>\subseteq</m> has certain structural properties that describe <q>partial orderings.</q> We will be able to draw a much simpler type graph than this one, but for now the graph above serves our purposes.</p>
@@ -62,9 +62,9 @@ be presented as in <xref ref="fig-graph-10-2-2" text="type-global" />.</p>
 <exercise number="1"><statement><p> Let <m>A = \{1, 2, 3, 4\}</m>, and let <m>R</m> be the relation <m>\leq</m> on <m>A</m>. Draw a digraph for <m>R</m>.</p>
 </statement>
 <answer>
-<figure xml:id="fig-sol-10-2-1"><caption/>
+<figure xml:id="fig-sol-10-2-1"><caption>Left: digraph for <m>\leq</m> on <m>A</m>. Right: Hasse diagram for same relation (to be seen later)</caption>>
 			 <image width="50%" source="images/fig-sol-10-2-1.png">
-				  <description>Solution to exercise 1 of 6.2</description>
+				  <shortdescription>Digraph and Hasse diagram representing the <m>\leq</m> relation</shortdescription>
 			 </image>
 </figure>
 </answer>
@@ -78,7 +78,9 @@ be presented as in <xref ref="fig-graph-10-2-2" text="type-global" />.</p>
 <answer><p> See <xref ref="fig-13-1-1" text="type-global"/></p>
 <figure xml:id="fig-13-1-1">
 	<caption>Digraph of the relation <m>T</m></caption>
-	<image  width="60%" source="images/fig-13-1-1.png" />
+	<image  width="60%" source="images/fig-13-1-1.png">
+      <shortdescription>Digraph showing the relation <m>T</m></shortdescription>
+   </image>
 </figure>
 </answer>
 </exercise>

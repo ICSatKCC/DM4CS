@@ -183,9 +183,9 @@
 			</definition>
 
 			<figure xml:id="fig-log-2-plot">
-				<caption>Plot of the logarithm, bases 2, function</caption>
+				<caption>Plot of the base 2 logarithm function</caption>
 				<image width="100%" source="images/fig-log-2-plot.png">
-					<description>Plot of the logarithm, bases 2, function</description>
+					<shortdescription>Plot of the log base 2 function from <m>x=0</m> to 9</shortdescription>
 				</image>
 			</figure>
 

@@ -383,7 +383,7 @@
 			<figure xml:id="fig-example-15-3-1">
 				<caption>A simple example of breadth-first search</caption>
 				<image width="100%" source="images/fig-example-15-3-1.png">
-					<description>Example Graph for breadth-first search</description>
+					<shortdescription>Example Graph for breadth-first search</shortdescription>
 				</image>
 			</figure>
 
@@ -530,7 +530,7 @@
 		</exercise>
 		<exercise number="4">
 			<statement>
-				<p>Use a broadcasting algorithm to determine the shortest path from vertex <m>a</m>
+				<p>Use the Breadth-First Search algorithm to determine the shortest path from vertex <m>a</m>
 					to vertex <m>i</m> in the graphs shown in the <xref ref="fig-exercise-15-3-4"
 						text="type-global" /> below. List the depth sets and the stack that is
 					created.</p>
@@ -538,7 +538,7 @@
 				<figure xml:id="fig-exercise-15-3-4">
 					<caption>Shortest paths from <m>a</m> to <m>i</m>?</caption>
 					<image width="60%" source="images/fig-exercise-15-3-4.png">
-						<description>Graphs for exercise 15-3-4</description>
+						<shortdescription>Two graphs for exercise 4</shortdescription>
 					</image>
 				</figure>
 			</statement>

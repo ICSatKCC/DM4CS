@@ -16,7 +16,7 @@
 			<caption>Initial gate diagram
 			</caption>
 			<image width="80%" source="images/fig_tikz_gate_simp1_init.png">
-				<description>Initial gate diagram</description>
+				<shortdescription>Complex gate diagram</shortdescription>
 			</image>
 		</figure>
 		<p>If we trace the inputs through the gates we see that this circuit realizes the boolean
@@ -46,7 +46,7 @@
 			<caption>Simplified gate diagram
 			</caption>
 			<image width="60%" source="images/fig_tikz_gate_simp1_end.png">
-				<description>Simplified gate diagram</description>
+				<shortdescription>Simplified gate diagram</shortdescription>
 			</image>
 		</figure>
 	</example>
@@ -132,7 +132,7 @@
 			<caption>A realization of the table of desired outputs.
 			</caption>
 			<image width="60%" source="images/fig_tikz_gate_simp2.png">
-				<description>Simplified realization of the desired table of outputs</description>
+				<shortdescription>Circuit diagram of the desired table of outputs</shortdescription>
 			</image>
 		</figure>
 	</example>
@@ -216,7 +216,7 @@ number of gates to be used, thus increasing costs. One of the more difficult job
 					<caption>An even simpler circuit
 					</caption>
 					<image width="100%" source="images/fig-logic-design-exerc-3.png">
-						<description>Figure for exercise 3</description>
+						<shortdescription>Diagram of simplified circuit with 3 gates</shortdescription>
 					</image>
 				</figure>
 			</answer>
@@ -230,7 +230,7 @@ number of gates to be used, thus increasing costs. One of the more difficult job
 					<caption>Can this circuit be simplifed?
 					</caption>
 					<image width="100%" source="images/fig-logic-design-exerc-4.png">
-						<description>Figure for exercise 4</description>
+						<shortdescription>Switching circuit diagram</shortdescription>
 					</image>
 				</figure>
 				<p>
@@ -265,7 +265,7 @@ number of gates to be used, thus increasing costs. One of the more difficult job
 					<caption>Can this circuit be simplifed?
 					</caption>
 					<image width="100%" source="images/fig-logic-design-exerc-5.png">
-						<description>Figure for exercise 3</description>
+						<shortdescription>Circuit diagram with 4 gates</shortdescription>
 					</image>
 				</figure>
 				<p>

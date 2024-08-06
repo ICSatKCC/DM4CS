@@ -15,7 +15,7 @@
 		<caption>Illustration of the atom concept
 		</caption>D
 		<image width="50%" source="images/fig-atoms.png">
-			<description>Illustration of the atom concept</description>
+			<shortdescription>Hasse diagram of <m>[B; \lor , \land, \bar{}]</m> </shortdescription>
 		</image>
 	</figure>
 
@@ -55,7 +55,7 @@
 		<caption>Conditions for an atom
 		</caption>
 		<image width="70%" source="images/fig-atom-conditions.png">
-			<description>Conditions for an atom</description>
+			<shortdescription>Two diagrams showing the conditions for an atom</shortdescription>
 		</image>
 	</figure>
 
@@ -169,7 +169,7 @@
 				<caption>Isomorphisms to be combined
 				</caption>
 				<image width="35%" source="images/fig-corollary-image.png">
-					<description>Isomorphism to be combined</description>
+					<shortdescription>Graphical representation of Boolean algebras of the same order</shortdescription>
 				</image>
 			</figure>
 			<p>Every Boolean algebra of order <m>2^n</m> is isomorphic to <m>[\mathcal{P}(A); \cup ,

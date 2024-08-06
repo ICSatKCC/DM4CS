@@ -37,7 +37,7 @@
                 <caption>A Planar Graph
                 </caption>
                 <image width="100%" source="images/fig-planar-plane.png">
-                    <description>A Planar Graph</description>
+                    <shortdescription>Two versions of the same planar graph.</shortdescription>
                 </image>
             </figure>
         </example>
@@ -70,7 +70,7 @@
             <idx>Path Graph</idx>
             <notation>
                 <usage><m>P_n</m></usage>
-                <description>a path graph of length <m>n</m></description>
+                <shortdescription>a path graph of length <m>n</m></shortdescription>
             </notation>
             <statement>
                 <p>A path graph of length <m>n</m>, denoted <m>P_n</m>, is an undirected graph with <m>
@@ -89,7 +89,7 @@
         <figure xml:id="fig-path-graphs">
             <caption>One dimensional graphs</caption>
             <image width="100%" source="images/fig-chains.png">
-                <description>One dimensional graphs</description>
+                <shortdescription>Three one-dimensional graphs</shortdescription>
             </image>
         </figure>
 
@@ -109,7 +109,7 @@
             <caption>The Three Utilities Puzzle
             </caption>
             <image width="80%" source="images/fig-utilities-puzzle.png">
-                <description>The Three Utilities Puzzle</description>
+                <shortdescription>Graph representation of the three utilities puzzle</shortdescription>
             </image>
         </figure>
 
@@ -157,7 +157,7 @@
                     <caption>Two cases in the proof of Euler's Formula
                     </caption>
                     <image width="70%" source="images/fig-euler-proof-scheme.png">
-                        <description>Two cases in the proof of Euler's Formula</description>
+                        <shortdescription>Image of the two cases in the proof of Euler's Formula</shortdescription>
                     </image>
                 </figure>
                 <p>If <m>G'</m> is connected, the induction hypothesis can be applied to it. If <m>
@@ -259,7 +259,7 @@
             <caption>A 3-coloring of Euler Island
             </caption>
             <image width="100%" source="images/fig-euler-island.png">
-                <description>A 3-coloring of Euler Island</description>
+                <shortdescription>Image showing a 3-coloring of Euler Island</shortdescription>
             </image>
         </figure>
 
@@ -356,11 +356,11 @@
                 <figure xml:id="fig-five-coloring-proof">
                     <caption />
                     <image width="64%" source="images/fig-five-coloring-proof.png">
-                        <description>Figure used in the proof of the five color theorem</description>
+                        <shortdescription>Graph showing vertex of degree 5 with adjacent vertices all colored differently</shortdescription>
                     </image>
                 </figure>
 
-                <p>Starting at <m>v_1</m> in <m>G-v</m>, suppose we try to construct a path <m>v_3</m>
+                <p>Starting at <m>v_1</m> in <m>G-v</m>, suppose we try to construct a path to <m>v_3</m>
                     that passes through only red and blue vertices. This can either be accomplished
                     or it can't be accomplished. If it can't be done, consider all paths that start
                     at <m>v_1</m>, and go through only red and blue vertices. If we exchange the
@@ -490,7 +490,7 @@
                     <caption>What are the chromatic numbers?
                     </caption>
                     <image width="70%" source="images/fig-exercise-15-6-3.png">
-                        <description>What are the chromatic numbers?</description>
+                        <shortdescription>Image of 6 graphs for exercise 3</shortdescription>
                     </image>
                 </figure>
             </statement>

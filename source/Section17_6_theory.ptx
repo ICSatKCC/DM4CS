@@ -74,7 +74,7 @@ time is the output of the computation.</p>
 <figure width="80%" xml:id="fig-TM">
   
    <image source="images/Turing_machine" width="50%">
-      <description>Basic graphical representation of a Turing machine.</description>
+      <shortdescription>Basic graphical representation of a Turing machine.</shortdescription>
    </image>
 <caption><url href="https://commons.wikimedia.org/wiki/File:Turing_machine.png">Kevd1337></url>
    , Public domain, via Wikimedia Commons</caption>
@@ -192,7 +192,7 @@ form <m>(\sigma,\tau,L)</m> and <m>(\sigma,\tau,R)</m>, where
 For example,
 
 <image source="images/turing1" width="50%">
-   <description>a simple Turing machine transition diagram</description>
+   <shortdescription>A simple Turing machine transition diagram</shortdescription>
 </image>
 indicates that when the machine is in state <m>q_0</m> and
 reads an <m>a</m>, it writes a <m>b</m>, moves left, and enters state <m>h</m>.
@@ -205,9 +205,9 @@ versa, until it finds a <m>c</m>.  It leaves blanks (#'s) unchanged.
 When and if the machine encounters a <m>c</m>, it moves to the left
 and halts:
 <image source="images/turing2" width="60%">
-   <description>Transition diagram for a simple Turing machine
+   <shortdescription>Transition diagram for a simple Turing machine
       that moves to the right, changing <m>a</m>'s to <m>b</m>'s and vice
-      versa, until it finds a <m>c</m>.</description>
+      versa, until it finds a <m>c</m>.</shortdescription>
 </image>
 </p>
 
@@ -233,7 +233,7 @@ string has been copied, the machine changes the <m>c</m>'s and <m>d</m>'s
 back to <m>a</m>'s and <m>b</m>'s before halting.
 
 <image source="images/turing3" width="80%">
-   <description>Transition diagram for Turing machine described above.</description>
+   <shortdescription>Transition diagram for a Turing machine that copies strings of a's and b's.</shortdescription>
 </image></p>
 
 <p>
@@ -313,7 +313,7 @@ by <m>f(a^n)=a^{2n}</m>, for <m>n\in\N</m>.  Then <m>f</m> is Turing-computable
 since it is computed by this Turing machine:
 
 <image source="images/turing4" width="90%">
-   <description>Transition diagram for Turing machine <m>f</m> described above.</description>
+   <shortdescription>Transition diagram for Turing machine <m>f</m> described in text.</shortdescription>
 </image>
 </p>
 

@@ -23,9 +23,7 @@
 		<caption>The Altair Computer, an early PC, by Todd Dailey, Creative Commons
 		</caption>
 		<image width="80%" source="images/fig-altair.jpg">
-			<description>Image of an Altair computer from
-				https://en.wikipedia.org/wiki/Altair_8800#/media/File:Altair_8800_at_the_Computer_History_Museum,_cropped.jpg
-				at the Computer History Museum</description>
+			<shortdescription>Image of an Altair computer</shortdescription>
 		</image>
 	</figure>
 
@@ -52,14 +50,14 @@
 		<caption>Representation of a normally OFF switch controlled by variable <m>x_1</m>
 		</caption>
 		<image width="50%" source="images/fig-switch-normal-off.png">
-			<description>Representation of a normally OFF switch</description>
+			<shortdescription>Graphical representation of a normally OFF switch</shortdescription>
 		</image>
 	</figure>
 	<figure xml:id="fig-switch-normal-on">
 		<caption>Representation of a normally ON switch controlled by variable <m>x_1</m>
 		</caption>
 		<image width="50%" source="images/fig-switch-normal-on.png">
-			<description>Representation of a normally ON switch</description>
+			<shortdescription>Graphical representation of a normally ON switch</shortdescription>
 		</image>
 	</figure>
 	<!--</sidebyside>-->
@@ -79,7 +77,7 @@
 		<caption>Two switches in AND configuration realizing <m>x_1 \cdot x_2</m>
 		</caption>
 		<image width="50%" source="images/fig-and-switch.png">
-			<description>Two switches in AND configuration</description>
+			<shortdescription>Graphical representation of two switches in AND configuration</shortdescription>
 		</image>
 	</figure>
 
@@ -108,7 +106,7 @@
 		<caption>Two switches in OR configuration realizing <m>x_1 + x_2</m>
 		</caption>
 		<image width="30%" source="images/fig-or-switch.png">
-			<description>Two switches in OR configuration</description>
+			<shortdescription>Graphical representation of two switches in OR configuration</shortdescription>
 		</image>
 	</figure>
 	<!-- </sidebyside> -->
@@ -124,15 +122,15 @@
 		two <m>x_1</m>'s might represent two electromagnetic switches controlled by the same magnet.</p>
 	<sidebyside>
 		<figure xml:id="fig-switches-distributive1">
-			<caption>(a)</caption>
+			<caption>(a) <m>x_1 \cdot \left(x_2+ x_3\right)</m></caption>
 			<image width="30%" source="images/fig-switches-distributive1.png">
-				<description>The first of equivalent switching circuits</description>
+				<shortdescription>The first of equivalent switching circuits</shortdescription>
 			</image>
 		</figure>
 		<figure xml:id="fig-switches-distributive2">
-			<caption>(b)</caption>
+			<caption>(b) <m>x_1 \cdot x_2+x_1 \cdot x_3</m></caption>
 			<image width="20%" source="images/fig-switches-distributive2.png">
-				<description>The second of equivalent switching circuits</description>
+				<shortdescription>The second of equivalent switching circuits</shortdescription>
 			</image>
 		</figure>
 	</sidebyside>
@@ -147,14 +145,14 @@
 		<caption>An OR gate
 		</caption>
 		<image width="60%" source="images/fig_tikz_or_gate.png">
-			<description>An OR gate</description>
+			<shortdescription>OR gate symbol</shortdescription>
 		</image>
 	</figure>
 	<figure xml:id="fig-and-gate">
 		<caption>An AND gate
 		</caption>
 		<image width="60%" source="images/fig_tikz_and_gate.png">
-			<description>An AND gate</description>
+			<shortdescription>AND gate symbol</shortdescription>
 		</image>
 	</figure>
 
@@ -164,7 +162,7 @@
 		<caption>Inverter, or NOT gate
 		</caption>
 		<image width="60%" source="images/fig_tikz_not_gate.png">
-			<description>Inverter</description>
+			<shortdescription>Inverter symbol</shortdescription>
 		</image>
 	</figure>
 	<p>When drawing more complex circuits, multiple AND's or OR's are sometimes depicted using a
@@ -180,14 +178,14 @@
 			<caption>Simple version of a ternary OR gate
 			</caption>
 			<image width="40%" source="images/fig_tikz_or3_gate.png">
-				<description>Simple version of a ternary OR gate</description>
+				<shortdescription>OR gate symbol with three inputs</shortdescription>
 			</image>
 		</figure>
 		<figure xml:id="fig-triple-or-real">
 			<caption>A ternary OR gate created with binary OR gates
 			</caption>
 			<image width="40%" source="images/fig_tikz_or3_2gates.png">
-				<description>A ternary OR gate created with binary OR gates</description>
+				<shortdescription>A three-input OR created with two binary OR gate symbols</shortdescription>
 			</image>
 		</figure>
 	</sidebyside>
@@ -198,7 +196,7 @@
 		<caption>
 		</caption>
 		<image width="70%" source="images/fig_tikz_XOR_NAND_NOR.png">
-			<description></description>
+			<shortdescription>Symbols for XOR, NAND, and NOR gates</shortdescription>
 		</image>
 	</figure>
 

@@ -14,12 +14,12 @@
             <figure xml:id="fig-konigsberg-map">
                 <caption>A map of Koenigsberg, circa 1735 </caption>
                 <image source="images/fig-konigsberg-map.png">
-                    <description>A map of Koenigsberg</description>
+                    <shortdescription>Image of an old map of Koenigsberg</shortdescription>
                 </image>
             </figure>
             <figure xml:id="fig-konigsberg-multigraph">
                 <caption>A multigraph for the bridges of Koenigsberg</caption>
-                <image source="images/fig-konigsberg-multigraph.png" />
+                <image source="images/fig-konigsberg-multigraph.png"><shortdescription>Multigraph representation of Koenigsberg map</shortdescription> </image>
             </figure>
         </sidebyside>
 
@@ -85,7 +85,7 @@
                 <caption>An Eulerian graph
                 </caption>
                 <image width="100%" source="images/fig-eulerian-15-4.png">
-                    <description>An Eulerian graph</description>
+                    <shortdescription>An Eulerian graph</shortdescription>
                 </image>
             </figure>
         </example>
@@ -140,10 +140,10 @@
                     the current path.</p>
 
                 <figure xml:id="fig-path-augmentation">
-                    <caption>Path Augmentation Plan
+                    <caption>Path augmentation
                     </caption>
                     <image width="100%" source="images/fig-path-augmentation.png">
-                        <description>Path Augmentation Plan</description>
+                        <shortdescription>Drawing of path augmentation</shortdescription>
                     </image>
                 </figure>
 
@@ -174,7 +174,7 @@
             <caption>Irish stamp honoring Sir William Rowan Hamilton
             </caption>
             <image width="100%" source="images/fig-hamilton-stamp.png">
-                <description>Irish stamp honoring Sir William Rowan Hamilton</description>
+                <shortdescription>Irish stamp honoring Sir William Rowan Hamilton</shortdescription>
             </image>
         </figure>
 
@@ -206,13 +206,13 @@
                 <figure xml:id="fig-dodec">
                     <caption>A Dodecahedron</caption>
                     <image source="images/fig-dodec.png">
-                        <description>A Dodecahedron</description>
+                        <shortdescription>A three dimensional dodecahedron</shortdescription>
                     </image>
                 </figure>
                 <figure xml:id="fig-dodec-graph">
                     <caption>The Dodecahedron Graph</caption>
                     <image source="images/fig-dodec-graph.png">
-                        <description>The Dodecahedron Graph</description>
+                        <shortdescription>A graph representing a dodecahedron</shortdescription>
                     </image>
                 </figure>
             </sidebyside>
@@ -292,7 +292,7 @@
                 <caption>Analog-Digital Dial
                 </caption>
                 <image width="50%" source="images/fig-a-d-dial.png">
-                    <description>Analog-Digital Dial</description>
+                    <shortdescription>Image of an analog-digital dial</shortdescription>
                 </image>
             </figure>
 
@@ -338,7 +338,7 @@
                 <caption>Coating scheme for the Analog-Digital Dial
                 </caption>
                 <image width="70%" source="images/fig-intro-dial-coating.png">
-                    <description>Analog-Digital Dial</description>
+                    <shortdescription>Image of described coating scheme for the analog-digital dial</shortdescription>
                 </image>
             </figure>
 
@@ -356,8 +356,8 @@
             <figure xml:id="fig-intro-3-cube">
                 <caption>The 3-cube
                 </caption>
-                <image width="64%" source="images/fig-intro-3-cube.png">
-                    <description>The 3-cube</description>
+                <image width="80%" source="images/fig-intro-3-cube.png">
+                    <shortdescription>A 3-cube graph</shortdescription>
                 </image>
             </figure>
 
@@ -467,13 +467,13 @@
         </exercise>
         <exercise number="2">
             <statement>
-                <p> Which of the drawings in <xref ref="fig-drawings-15-4" text="type-global" /> can
+                <p> Which of these drawings can
                     be drawn without removing your pencil from the paper and without drawing any
-                    line twice?</p>
+                    line twice? (Hint: think about the Bridges of Koenigsberg)</p>
                 <figure xml:id="fig-drawings-15-4">
                     <caption />
                     <image width="65%" source="images/fig-drawings-15-4.png">
-                        <description>Drawings for exercise 15-4-2</description>
+                        <shortdescription>Three line drawings for exercise 2</shortdescription>
                     </image>
                 </figure>
             </statement>
@@ -533,7 +533,7 @@
                 <figure xml:id="fig-exercise-15-4-6">
                     <caption>Graphs for exercise 6</caption>
                     <image width="100%" source="images/fig-exercise-15-4-6.png">
-                        <description>graphs for exercise 15-4-6</description>
+                        <shortdescription>Image of 4 graphs for exercise 6</shortdescription>
                     </image>
                 </figure>
             </statement>
@@ -608,8 +608,8 @@
                     <caption>Correspondence between a line of dominos and a path in a <m>K_6</m>
                     </caption>
                     <image width="80%" source="images/fig-domino_path.png">
-                        <description>Four dominos lay end-to-end with numbers on abutting ends
-                            matching. They correspond with four connecting edges in a <m>K_6</m>. </description>
+                        <shortdescription>Four dominos lay end-to-end with numbers on abutting ends
+                            matching. They correspond with four connecting edges in a <m>K_6</m>. </shortdescription>
                     </image>
                 </figure>
 

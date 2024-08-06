@@ -18,7 +18,7 @@
                 <caption>Two different ordered rooted trees
                 </caption>
                 <image width="100%" source="images/fig-ordered-rooted.png">
-                    <description>Two different ordered rooted trees</description>
+                    <shortdescription>Two different ordered rooted trees</shortdescription>
                 </image>
             </figure>
         </example>
@@ -57,7 +57,7 @@
             <caption>Two different binary trees
             </caption>
             <image width="100%" source="images/fig-diff-binary-trees.png">
-                <description>Two different binary trees</description>
+                <shortdescription>Two different binary trees with two vertices each.</shortdescription>
             </image>
         </figure>
 
@@ -170,7 +170,7 @@
                 <caption>A Complete Binary Tree to Level 2
                 </caption>
                 <image width="80%" source="images/fig-bin-tree-16-4.png">
-                    <description>A Complete Binary Tree to Level 2</description>
+                    <shortdescription>A complete binary tree with 7 vertices</shortdescription>
                 </image>
             </figure>
         </example>
@@ -180,7 +180,7 @@
             \ldots </m>, <m>a_n</m>, <m>n\geq 1</m>, we first execute the following algorithm that
             creates a binary tree:</p>
         <algorithm xml:id="alg-bin-sort-maketree">
-            <title>Binary Sort Tree Creation</title>
+            <title>Binary Sort (or Search) Tree Creation</title>
             <statement>
                 <p>
                     <ol marker="(1)">
@@ -233,10 +233,10 @@
             meaning here.</p>
 
         <figure xml:id="fig-sort-tree">
-            <caption>A Binary Sorting Tree
+            <caption>A Binary Sort (or Search) Tree
             </caption>
             <image width="80%" source="images/fig-sort-tree.png">
-                <description>Binary Sorting Tree</description>
+                <shortdescription>A binary sort (or search) tree with 7 vertices</shortdescription>
             </image>
         </figure>
     </subsection>
@@ -262,7 +262,7 @@
             <caption>Building an Expression Tree
             </caption>
             <image width="90%" source="images/fig-expression-tree-build.png">
-                <description>Building an Expression Tree</description>
+                <shortdescription>Diagram of process for building an expression tree</shortdescription>
             </image>
         </figure>
         <example xml:id="ex-expression-tree-examples">
@@ -286,7 +286,7 @@
                 <caption>Expression Tree Examples
                 </caption>
                 <image width="100%" source="images/fig-expression-tree-examples.png">
-                    <description>Expression Tree Examples</description>
+                    <shortdescription>Image of three expression trees</shortdescription>
                 </image>
             </figure>
         </example>
@@ -522,13 +522,13 @@
                 <figure xml:id="fig-sol-16-4-1-A">
                     <caption />
                     <image width="80%" source="images/fig-sol-16-4-1-A.png">
-                        <description>Solution to exercise 16-4-1-A</description>
+                        <shortdescription>Expresssion tree solutions for exercises 1a - 1d.</shortdescription>
                     </image>
                 </figure>
                 <figure xml:id="fig-sol-16-4-1-B">
                     <caption />
                     <image width="70%" source="images/fig-sol-16-4-1-B.png">
-                        <description>Solution to exercise 16-4-1-B</description>
+                        <shortdescription>Expression tree solution for exercise 1e</shortdescription>
                     </image>
                 </figure>
             </answer>
@@ -594,7 +594,7 @@
                 <figure xml:id="fig-sol-16-4-5">
                     <caption />
                     <image width="90%" source="images/fig-sol-16-4-5.png">
-                        <description>Solution to exercise 16-4-5</description>
+                        <shortdescription>Solution trees for exercises 5a and 5b</shortdescription>
                     </image>
                 </figure>
             </answer>

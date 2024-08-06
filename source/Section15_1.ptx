@@ -44,7 +44,7 @@
             <figure xml:id="fig-directed-graph-ex1">
                 <caption>A directed graph</caption>
                 <image width="75%" xml:id="tikz-directed-graph-ex1">
-                    <description>A directed graph</description>
+                    <shortdescription>A directed graph</shortdescription>
                     <latex-image><xi:include parse="text" href="./tikz-fig-directed-graph-ex1.tex" />
                     </latex-image>
                 </image>
@@ -81,7 +81,7 @@
             <figure xml:id="fig-multigraph-ex1">
                 <caption>A directed multigraph</caption>
                 <image width="100%" source="images/fig-multigraph-ex1.png">
-                    <description>A directed multigraph</description>
+                    <shortdescription>A directed multigraph</shortdescription>
                 </image>
             </figure>
 
@@ -119,12 +119,12 @@
                 <figure xml:id="fig-undirected-1">
                     <caption>Communications Map</caption>
                     <image source="images/fig-undirected-1.png">
-                        <description>Trefoil image</description>
+                        <shortdescription>Graph representation of a network</shortdescription>
                     </image>
                 </figure>
                 <figure xml:id="fig-undirected-2">
                     <caption>Island Road Map</caption>
-                    <image source="images/fig-undirected-2.png" />
+                    <image source="images/fig-undirected-2.png"><shortdescription>Map of a small island with roads</shortdescription> </image>
                 </figure>
             </sidebyside>
 
@@ -163,7 +163,7 @@
             <figure xml:id="fig-labeled-graph-15-1">
                 <caption>A flow chart - an example of a labeled graph</caption>
                 <image width="90%" source="images/fig-labeled-graph-15-1.png">
-                    <description>A flow chart - an example of a labeled graph</description>
+                    <shortdescription>A labeled graph</shortdescription>
                 </image>
             </figure>
             <p>At the start of the problem-solving process, we are at the vertex labeled <q>Start</q>
@@ -254,7 +254,7 @@
                 <caption>A graph and a few of its subgraphs
                 </caption>
                 <image width="90%"   xml:id="sageplot-subgraphs">
-                    <description>A image of a graph and a few of its subgraphs</description>
+                    <shortdescription>An image of a graph and three of its subgraphs</shortdescription>
                     <sageplot><xi:include parse="text" href="./sage-fig-subgraphs.py" />
                     </sageplot>
                 </image>
@@ -311,7 +311,7 @@
                 <caption>Round-robin tournament graph with four vertices
                 </caption>
                 <image width="60%" source="images/fig-tournament-graph-15-1.png">
-                    <description>Round-robin tournament graph with four vertices</description>
+                    <shortdescription>Round-robin tournament graph with four vertices</shortdescription>
                 </image>
             </figure>
         </example>
@@ -363,7 +363,7 @@
                 <caption>A single elimination tournament graph
                 </caption>
                 <image width="60%" source="images/fig-mlb-1983-15-1.png">
-                    <description>A single elimination tournament graph</description>
+                    <shortdescription>A single elimination tournament graph</shortdescription>
                 </image>
             </figure>
 
@@ -387,7 +387,7 @@
             <caption>Isomorphic Graphs
             </caption>
             <image width="100%" source="images/fig-isomorphic-graphs-15-1.png">
-                <description>Isomorphic Graphs</description>
+                <shortdescription>Two graphs that are isomorphic to each other</shortdescription>
             </image>
         </figure>
 
@@ -449,6 +449,7 @@
             <figure xml:id="fig-degrees-example-15-1">
                 <caption>An undirected graph</caption>
                 <image width="60%" source="images/fig-degrees-example-15-1.png">
+                    <shortdescription>An undirected graph with five vertices</shortdescription>
                 </image>
             </figure>
             <p>
@@ -483,7 +484,7 @@
         <figure xml:id="fig-degree-sequence-example">
             <caption>A graph that shows that <m>4,2,1,1,1,1</m> is a graphic sequence. </caption>
             <image width="100%" source="images/fig-degree-sequence-example.png">
-                <description>A graph that shows that <m>4,2,1,1,1,1</m> is a graphic sequence.</description>
+                <shortdescription>A graph with graphic sequence <m>4,2,1,1,1,1</m>.</shortdescription>
             </image>
         </figure>
         <p>See <xref ref="biblio-knuth-2011" /> for more details on what are also referred to as <term>graphical
@@ -565,7 +566,7 @@
                     <caption>Solution to exercise 3 of Section 15.1
                     </caption>
                     <image width="75%" source="images/fig-sol-15-1-3.png">
-                        <description>Solution to exercise 3 of Section 15.1</description>
+                        <shortdescription>A labeled, directed graph that models binary strings</shortdescription>
                     </image>
                 </figure>
             </answer>
@@ -595,7 +596,7 @@
                     <caption>Which graphs are isomorphic to one another?
                     </caption>
                     <image width="100%" source="images/fig-exercise-15-1-6.png">
-                        <description>Graph for exercise 6 of section 15.1</description>
+                        <shortdescription>An image of nine graphs, labeled a - i</shortdescription>
                     </image>
                 </figure>
             </statement>
@@ -729,7 +730,7 @@
                     <caption>Two graphs with the same degree sequences
                     </caption>
                     <image width="100%" source="images/fig-same-ds-15-1.png">
-                        <description>Two graphs with the same degree sequences</description>
+                        <shortdescription>Two different graphs with the same degree sequence</shortdescription>
                     </image>
                 </figure>
 

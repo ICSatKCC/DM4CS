@@ -196,40 +196,44 @@ path of any finite nonzero length.</li>
                     <figure >
                         <caption>Digraph of <m>\mathcal{S}</m></caption>
                         <image source="images/S65-3s">
-                            <description>digraph of S</description>
+                            <shortdescription>digraph of <m>\mathcal{S}</m></shortdescription>
                         </image>
                     </figure>
                     <figure >
                         <caption>Digraph of <m>\mathcal{S}^2</m></caption>
-                        <image source="images/S65-3s2"/>
+                        <image source="images/S65-3s2"> <shortdescription>digraph of <m>\mathcal{S}^2</m></shortdescription>
+                    </image>
                     </figure>
                 </sidebyside>
 
                 <sidebyside widths="48% 48%" margins="auto">
                     <figure >
                         <caption>Digraph of <m>\mathcal{S}^3</m></caption>
-                        <image source="images/S65-3s3"/>
+                        <image source="images/S65-3s3"> <shortdescription>digraph of <m>\mathcal{S}^3</m></shortdescription>
+                        </image>
                     </figure>
                     <figure >
                         <caption>Digraph of <m>\mathcal{S}^+</m></caption>
-                        <image source="images/S65-3stc"/>
+                        <image source="images/S65-3stc"> <shortdescription>digraph of <m>\mathcal{S}^+</m></shortdescription>
+                        </image>
                     </figure>
                 </sidebyside>
 </answer>
 </exercise>
 <exercise number="4"><statement><p> Let <m>R</m> be the relation represented by the following digraph.</p>
+    <figure>
+        <caption>Digraph of <m>R</m> in exercise 4.
+        </caption>
+        <image width="90%" source="images/fig-exercise-10-5-4.png">
+             <shortdescription>Graph for exercise 4</shortdescription>
+        </image>
+</figure>
 <p><ol marker="(a)">
 <li><p> Find <m>R^+</m> using the definition based on order pairs.</p></li>
 <li><p> Determine the digraph of <m>R^+</m> directly from the digraph of <m>R</m>.</p></li>
 <li><p> Verify your result in part (b) by computing the digraph from your result in part (a).</p></li>
 </ol></p>
-	<figure>
-			 <caption>Digraph of <m>R</m> in exercise 4.
-			 </caption>
-			 <image width="90%" source="images/fig-exercise-10-5-4.png">
-				  <description>Graph for exercise 4 of Section 10.5</description>
-			 </image>
-	</figure>
+	
 </statement>
 
 </exercise>

@@ -501,7 +501,7 @@ BinarySearch(t, s,0,len(s)-1)
 <p>The MergeSort process is visualized in the image below:</p>
   <figure xml:id="fig-merge-sort"><caption>Merge Sort Diagram. VineetKumar at English Wikipedia [Public domain], <url href="https://commons.wikimedia.org/wiki/File:Merge_sort_algorithm_diagram.svg">via Wikimedia Commons</url></caption>
     <image source="images/Merge_sort_algorithm_diagram.png">
-      <description>Merge sort diagram</description></image>
+      <shortdescription>Diagram showing splits and merges of Merge Sort</shortdescription></image>
  </figure>
 
 <p>Below, you see this recursive algorithm in pseudocode. </p>

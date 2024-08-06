@@ -61,7 +61,7 @@ is related to the upper one.
                 <caption>Hasse diagram for set containment on subsets of <m>\{1,2\}</m>
                 </caption>
                 <image width="100%" source="images/subsets_2_hasse.png">
-                    <description>Hasse diagram for set containment on subsets of <m>\{1,2\}</m></description>
+                    <shortdescription>Hasse diagram representing the subset relation on a powerset.</shortdescription>
                 </image>
             </figure>
 <example xml:id="ex-def-by-hasse"><title>Definition of a relation using a Hasse diagram</title><statement><p>Consider the partial ordering relation <m>R</m> whose Hasse diagram is <xref ref="fig-pentagonal-hasse" text="type-global" />.</p>
@@ -70,11 +70,11 @@ is related to the upper one.
                 <caption>Hasse diagram for the pentagonal poset
                 </caption>
                 <image width="50%" source="images/pentagonal-hasse.png">
-                    <description>Hasse diagram for the pentagonal poset</description>
+                    <shortdescription>Hasse diagram for the pentagonal poset</shortdescription>
                 </image>
             </figure>
 <!--
-<figure xml:id="fig-pentagonal-hasse">
+<<figure xml:id="fig-sage-pentagonal-hasse">
    <caption>Hasse Diagram of the Pentagonal Poset</caption>
    <image xml:id="pentagonal-hasse">
       <description>Hasse Diagram of the Pentagonal Poset</description>
@@ -85,8 +85,8 @@ is related to the upper one.
           h632
           </sageplot>
     </image>
-</figure>
- -->
+</figure> -->
+
 <p>How do we read this diagram? What is <m>A</m>? What is <m>R</m>? What does the digraph of <m>R</m> look like? Certainly <m>A = \{1,2,3,4,5\}</m> and
 <m>1 R 2</m>, <m>3 R 4</m>, <m>1 R 4</m>, <m>1 R 5</m>, etc., Notice that <m>1 R 5</m> is implied by the fact that there is a path of length three upward
 from 1 to 5. This follows from the edges that are shown and the transitive property that is presumed in a poset.  Since <m>1 R 3</m> and <m>3 R
@@ -103,7 +103,7 @@ a complete list of pairs defined by <m>R</m>.
                 <caption>Digraph for the pentagonal poset
                 </caption>
                 <image width="100%" source="images/pentagonal-digraph.png">
-                    <description>Digraph for the pentagonal poset</description>
+                    <shortdescription>Digraph for the pentagonal poset</shortdescription>
                 </image>
             </figure>
 
@@ -186,7 +186,7 @@ a \equiv_m b &amp;\Rightarrow   m \mid (a-b)\\
 <figure xml:id="fig-graph-10-3-5">
    <caption>Digraph of a random relation <m>R</m></caption>
       <image width="80%" xml:id="graph-10-3-5">
-         <description>A random relation</description>
+         <shortdescription>A digraph of a random relation</shortdescription>
 					<sageplot>
 					g=DiGraph({'a':['b','c'],'b':['b'],'c':['a','c']})
 					f635=g.plot(layout='circular',loop_size=0.1)
@@ -208,7 +208,7 @@ a \equiv_m b &amp;\Rightarrow   m \mid (a-b)\\
 <answer>
 <figure xml:id="fig-sol-10-3-1"><caption/>
 		 <image width="100%" source="images/fig-sol-10-3-1.png">
-			  <description>Solution to number 1 of <xref ref="s-properties-of-relations"/></description>
+			  <shortdescription>Solution Hasse diagrams for parts a and c.</shortdescription>
 		 </image>
 </figure>
 <p><ol marker="(a)">
@@ -228,7 +228,7 @@ a \equiv_m b &amp;\Rightarrow   m \mid (a-b)\\
 <hint><p>Here is a Hasse diagram for the part (a).</p>
 <figure xml:id="fig-subsets-3-hasse"><caption/>
 		 <image width="100%" source="images/fig-subsets-3-hasse.png">
-			  <description>Hasse Diagram for a set containment for subsets of a three element set</description>
+			  <shortdescription>Hasse Diagram for part a.</shortdescription>
 		 </image>
 </figure>
 </hint>
@@ -243,25 +243,25 @@ or transitive. Try to develop procedures for determining the validity of these p
 		<figure xml:id="fig-exercises-10-digraphs">
 			<caption>Some digraphs of relations</caption>
 			<image width="100%" source="images/exercises-10-digraphs.png">
-				<description>Some digraphs of relations for exercise 3 of section 6.3</description>
+				<shortdescription>Digraphs of relations for exercise 3.</shortdescription>
 			</image>
 		</figure>
   </statement>
 <answer>
-<table xml:id="table-10-3-3-sol"><title>Properties of relations defined by digraphs</title>
-<tabular>
-<row><cell>Part</cell><cell>reflexive?</cell><cell>symmetric?</cell><cell>antisymmetric?</cell><cell>transitive?</cell></row>
-<row><cell>i</cell><cell>yes</cell><cell>no</cell><cell>no</cell><cell>yes</cell></row>
-<row><cell>ii</cell><cell>yes</cell><cell>no</cell><cell>yes</cell><cell>yes</cell></row>
-<row><cell>iii</cell><cell>no</cell><cell>no</cell><cell>no</cell><cell>no</cell></row>
-<row><cell>iv</cell><cell>no</cell><cell>yes</cell><cell>yes</cell><cell>yes</cell></row>
-<row><cell>v</cell><cell>yes</cell><cell>yes</cell><cell>no</cell><cell>yes</cell></row>
-<row><cell>vi</cell><cell>yes</cell><cell>no</cell><cell>yes</cell><cell>yes</cell></row>
-<row><cell>vii</cell><cell>no</cell><cell>no</cell><cell>no</cell><cell>no</cell></row>
-</tabular>
-</table>
+
 <p><ol marker="(a)">
-<li><p>See <xref ref="table-10-3-3-sol" text="type-global"/></p></li>
+<li><p><table xml:id="table-10-3-3-sol"><title>Properties of relations defined by given digraphs</title>
+    <tabular>
+    <row><cell>Part</cell><cell>reflexive?</cell><cell>symmetric?</cell><cell>antisymmetric?</cell><cell>transitive?</cell></row>
+    <row><cell>i</cell><cell>yes</cell><cell>no</cell><cell>no</cell><cell>yes</cell></row>
+    <row><cell>ii</cell><cell>yes</cell><cell>no</cell><cell>yes</cell><cell>yes</cell></row>
+    <row><cell>iii</cell><cell>no</cell><cell>no</cell><cell>no</cell><cell>no</cell></row>
+    <row><cell>iv</cell><cell>no</cell><cell>yes</cell><cell>yes</cell><cell>yes</cell></row>
+    <row><cell>v</cell><cell>yes</cell><cell>yes</cell><cell>no</cell><cell>yes</cell></row>
+    <row><cell>vi</cell><cell>yes</cell><cell>no</cell><cell>yes</cell><cell>yes</cell></row>
+    <row><cell>vii</cell><cell>no</cell><cell>no</cell><cell>no</cell><cell>no</cell></row>
+    </tabular>
+    </table></p></li>
 <li><p> Graphs ii and vi show partial ordering relations. Graph v is of an equivalence relation. </p></li>
 </ol></p>
 </answer>
@@ -286,14 +286,14 @@ or transitive. Try to develop procedures for determining the validity of these p
 <answer><p><ol marker="(a)"><li><p> No, since <m>\mid 1-1\mid =0\neq 2</m>, for example</p></li>
 <li><p> Yes, because <m>\mid i-j\mid =</m><m>\mid j-i\mid </m>.</p></li>
 <li><p> No, since <m>\mid 2-4\mid =2</m> and <m>\mid 4-6\mid =2</m>, but <m>\mid 2-6\mid =4\neq 2</m>, for example.</p></li>
-<li><p>See <xref ref="fig-sol-10-3-5" text="type-global"/></p>
+<li><p></p>
 </li>
-</ol></p>
+</ol>
 <figure xml:id="fig-sol-10-3-5"><caption/>
                 <image width="100%" source="images/fig-sol-10-3-5.png">
-                    <description>Solution to number 5c of section 6.3</description>
+                    <shortdescription>Digraph solution to part c.</shortdescription>
                 </image>
-            </figure>
+            </figure></p>
 </answer>
 </exercise>
 <exercise number="6"><statement><p>For the set of cities on a map, consider the relation <m>x R y</m> if and only if city <m>x</m> is connected by a road to city <m>y</m>. A city is considered to be connected to itself, and two cities are connected even though there are cities on the road between them. Is this an equivalence
@@ -314,7 +314,9 @@ relation or a partial ordering? Explain.</p>
 </statement>
 <answer>
 <p><ol marker="(a)">
-<li></li>
+<li><p>
+    It must be shown that <m>R</m> is reflexive, symmetric, and transitive.
+</p></li>
 <li><p> <m>c(0)=\{0\}, c(1)=\{1,2,3\}=c(2)=c(3)</m></p></li>
 <li><p> <m>c(0)\cup c(1)=A</m> and <m>c(0)\cap c(1)=\emptyset</m></p></li>
 <li><p> Let <m>A</m> be any set and let <m>R</m> be an equivalence relation on <m>A</m>. Let <m>a</m> be any element of <m>A</m>. <m>a\in c(a)</m> since <m>R</m> is reflexive, so each element of <m>A</m> is in some equivalence class. Therefore, the union of all equivalence classes equals <m>A</m>. Next we show that any two equivalence classes are either identical or disjoint and we are done. Let <m>c(a)</m> and <m>c(b)</m> be two equivalence classes, and assume that <m>c(a)\cap c(b)\neq \emptyset</m>. We want to show that <m>c(a)=c(b)</m>. To show that <m>c(a)\subseteq c(b)</m>, let <m>x\in c(a)</m>. <m>x\in c(a) \Rightarrow a R x </m>. Also, there exists an element, <m>y</m>, of <m>A</m> that is in the intersection of <m>c(a)</m>
@@ -385,17 +387,18 @@ relation. What are the equivalence classes under <m>R</m>?</p>
 </statement>
 <answer>
 <p><ol marker="(a)">
-<li><p> The proof follows from the biconditional equivalence in <xref ref="table-implications" text="type-global"/>.</p></li>
+<li><p> These proofs follow from the biconditional equivalence in <xref ref="table-implications" text="type-global"/>.</p></li>
+<li><p> </p></li>
 <li><p> Apply the chain rule.</p></li>
 <li>
-<p>See <xref ref="fig-sol-10-3-11" text="type-global" />.</p>
+<p><figure xml:id="fig-sol-10-3-11"><caption/>
+    <image width="40%" source="images/fig-sol-10-3-11.png">
+         <shortdescription>Hasse diagram for implication</shortdescription>
+    </image>
+</figure></p>
 </li>
 </ol></p>
-<figure xml:id="fig-sol-10-3-11"><caption/>
-		 <image width="40%" source="images/fig-sol-10-3-11.png">
-			  <description>Solution to number 11 of <xref ref="s-properties-of-relations"/></description>
-		 </image>
-</figure>
+
 </answer>
 </exercise>
 
@@ -413,7 +416,7 @@ relation. What are the equivalence classes under <m>R</m>?</p>
                 <caption>Hasse diagram for <m>R</m> in exercise 12.
                 </caption>
                 <image width="100%"	 source="images/exercise-10-12.png">
-                    <description>Hasse diagram for exercise 12</description>
+                    <shortdescription>Hasse diagram for exercise 12</shortdescription>
                 </image>
             </figure>
 </statement>

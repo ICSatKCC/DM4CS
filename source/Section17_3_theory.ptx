@@ -291,7 +291,7 @@
                 diagram</term>. Consider again the DFA of the two preceding examples. It can be
             represented pictorially as: <figure xml:id="fig-fsa1">
                 <image source="images/fsa1" width="80%">
-                    <description>Transition diagram for above DFA</description>
+                    <shortdescription>Transition diagram for above DFA, <m>M</m></shortdescription>
                 </image>
             </figure>
             The arrow on the left indicates that <m>p</m> is the start state; double circles
@@ -305,7 +305,7 @@
                 <p> Find the language accepted by the DFA shown below (and describe it using a
                     regular expression!) <figure xml:id="fig-fsa2">
                         <image source="images/fsa2" width="80%">
-                            <description>Transition diagram to find language</description>
+                            <shortdescription>Transition diagram representing a formal language</shortdescription>
                         </image>
                     </figure>
                     The start state of <m>M</m> is accepting, which means <m>\varep \in L(M)</m>. If <m>
@@ -319,7 +319,7 @@
             be escaped. It is fairly common to omit such states from transition diagrams. For
             example, one is likely to see the diagram: <figure xml:id="fig-fsa3">
                 <image source="images/fsa3" width="80%">
-                    <description>Transition diagram omitting trap state</description>
+                    <shortdescription>Transition diagram omitting a trap state</shortdescription>
                 </image>
             </figure>
         </p>
@@ -329,7 +329,7 @@
             defined for every state-input pair. The diagram is ``short for" the full diagram: <figure
                 xml:id="fig-fsa4">
                 <image source="images/fsa4" width="80%">
-                    <description>Transition diagram with trap state</description>
+                    <shortdescription>Transition diagram with trap state</shortdescription>
                 </image>
             </figure>
         </p>
@@ -390,7 +390,7 @@
                 to the desired criteria for the language <m>L</m> is <m>q_1</m>, so we make <m>q_1</m>
                 a final state. The complete machine is shown below. <figure xml:id="fig-fsa5">
                     <image source="images/fsa5" width="80%">
-                        <description>Transition diagram from description above</description>
+                        <shortdescription>Transition diagram for finite state machine described in example</shortdescription>
                     </image>
                 </figure>
 
@@ -413,9 +413,9 @@
             because the consumption of a <m>b</m> does not affect the only relevant characteristic, <m>
             b</m>'s do not cause changes of state. <figure xml:id="fig-fsa6">
                 <image source="images/fsa6" width="80%">
-                    <description>Transition diagram that accepts the language <m>L = \{w \in\Sigma^*
+                    <shortdescription>Transition diagram that accepts the language <m>L = \{w \in\Sigma^*
             \ | \
-                            n_a(w) \text{ is divisible by 3 } \}</m></description>
+                            n_a(w) \text{ is divisible by 3 } \}</m></shortdescription>
                 </image>
             </figure>
         </example>
@@ -433,9 +433,7 @@
                 there will be three states, with the ``last symbol was not an <m>a</m>'' state being
                 the start state. The complete automaton is shown below. <figure xml:id="fig-fsa7">
                     <image source="images/fsa7" width="80%">
-                        <description>Transition diagram that accepts the language <m>L = \{w
-                \in\Sigma^* \
-                                | w \text{ contains three consecutive a's } \}</m>.</description>
+                        <shortdescription>Transition diagram that accepts a language where the number of a characters is divisible by 3.</shortdescription>
                     </image>
                 </figure>
             </p>
@@ -566,7 +564,7 @@
             <p> The NFA shown below accepts all strings of <m>a</m>'s and <m>b</m>'s in which the
                 second-to-last symbol is <m>a</m>. <figure xml:id="fig-fsa8">
                     <image source="images/fsa8" width="80%">
-                        <description>Diagram of an NFA that accepts the language described above.</description>
+                        <shortdescription>Diagram of a non-deterministic finite state automata described in example.</shortdescription>
                     </image>
                 </figure>
             </p>
@@ -715,7 +713,7 @@
         <example xml:id="ex-nfa-to-dfa">
             <p> Consider the NFA shown below. <figure xml:id="fig-fsa9">
                     <image source="images/fsa9" width="80%">
-                        <description>Diagram of an NFA to convert to DFA.</description>
+                        <shortdescription>Diagram of an NFA.</shortdescription>
                     </image>
                 </figure>
             </p>
@@ -758,7 +756,7 @@
             <p> At this point, our partially-constructed DFA looks as shown below: <figure
                     xml:id="fig-fsa10">
                     <image source="images/fsa10" width="80%">
-                        <description>Diagram of an NFA partially converted to a DFA.</description>
+                        <shortdescription>Diagram of an NFA partially converted to a DFA.</shortdescription>
                     </image>
                 </figure>
             </p>
@@ -766,7 +764,7 @@
                 transitions from those states that have to be computed. The final DFA is shown
                 below. <figure xml:id="fig-fsa11">
                     <image source="images/fsa11" width="80%">
-                        <description>Diagram of completed DFA.</description>
+                        <shortdescription>Diagram of completely converted DFA.</shortdescription>
                     </image>
                 </figure>
             </p>
@@ -820,14 +818,14 @@
             <statement>
                 <p> What languages do the following DFAs accept? <figure xml:id="fig-fsa1ex">
                         <image source="images/fsa1ex" width="80%">
-                            <description>Transition diagram (a).</description>
+                            <shortdescription>Transition diagram for exercise 2(a).</shortdescription>
                         </image>
                     </figure>
 
                     <figure
                         xml:id="fig-fsa2ex">
                         <image source="images/fsa2ex" width="70%">
-                            <description>Transition diagram (b).</description>
+                            <shortdescription>Transition diagram for exercise 3(b).</shortdescription>
                         </image>
                     </figure>
                 </p>
@@ -852,7 +850,7 @@
                 <p> Give a DFA that accepts the language accepted by the following NFA. <figure
                         xml:id="fig-fsa3ex">
                         <image source="images/fsa3ex" width="80%">
-                            <description>NFA diagram for exercise 5.</description>
+                            <shortdescription>NFA diagram for exercise 5.</shortdescription>
                         </image>
                     </figure>
                 </p>
@@ -866,7 +864,7 @@
                     -transition.) <figure
                         xml:id="fig-fsa4ex">
                         <image source="images/fsa4ex" width="80%">
-                            <description>NFA diagram for exercise 6.</description>
+                            <shortdescription>NFA diagram for exercise 6.</shortdescription>
                         </image>
                     </figure>
 
