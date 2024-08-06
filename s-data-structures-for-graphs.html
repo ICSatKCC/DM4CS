@@ -990,7 +990,7 @@ sagecell.makeSagecell({
 </ol>
 </div></figure><article class="example example-like" id="ex-data-structure-sample"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">15.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">A Very Small Example.</span>
-</h4> <div class="para" id="ex-data-structure-sample-2">We consider the representation of the following graph:</div> <figure class="figure figure-like" id="fig-example-15-2-1"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/fig-example-15-2-1.png" class="contained" alt="Example Graph to illustrate data structures"></div>
+</h4> <div class="para" id="ex-data-structure-sample-2">We consider the representation of the following graph:</div> <figure class="figure figure-like" id="fig-example-15-2-1"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/fig-example-15-2-1.png" class="contained" alt="A directed graph with four vertices"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.3<span class="period">.</span></span><span class="space"> </span>Graph for a Very Small Example</figcaption></figure> <div class="para logical" id="ex-data-structure-sample-4">
 <div class="para">The adjacency matrix that represents the graph would be</div>
 <div class="displaymath process-math">
@@ -1032,8 +1032,7 @@ DiGraph(M).show()
 <pre id="sss-sage-graphs-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G2 = Graph( {1 : [4, 2], 2 : [3, 4], 3 : [3], 4 : [1]})
 G2.show()
 </script></pre>
-<div class="para" id="sss-sage-graphs-13">There are many special graphs and graph families that are available in Sage through the <code class="code-inline tex2jax_ignore">
-			graphs</code> module. They are referenced with the prefix <code class="code-inline tex2jax_ignore">graphs.</code> followed by the name and zero or more paramenters inside parentheses. Here are a couple of them, first a complete graph with five vertices.</div>
+<div class="para" id="sss-sage-graphs-13">There are many special graphs and graph families that are available in Sage through the <code class="code-inline tex2jax_ignore">graphs</code> module. They are referenced with the prefix <code class="code-inline tex2jax_ignore">graphs.</code> followed by the name and zero or more paramenters inside parentheses. Here are a couple of them, first a complete graph with five vertices.</div>
 <pre id="sss-sage-graphs-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">graphs.CompleteGraph(5).show()
 </script></pre>
 <div class="para" id="sss-sage-graphs-15">Here is a wheel graph, named for an obvious pattern of vertices and edges. We assign a name to it first and then show the graph without labeling the vertices.</div>
