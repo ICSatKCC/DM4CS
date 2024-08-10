@@ -1,8 +1,441 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="Section14_1">
     <title>Revisiting Inductive Proofs</title>
-    <!-- TODO review induction before program correctness -->
-    <p>
-        Under Construction!
+    <!-- From https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_and_Computation_Fundamentals/Mathematics_for_Computer_Science_(Lehman_Leighton_and_Meyer)/01%3A_Proofs/05%3A_Induction -->
+   
+    <!-- Mathematics for Computer Science (Lehman, Leighton, and Meyer) LibreTexts Engineering/MIT OpenCourseWare -->
+    <introduction>
+        <p>
+            Induction is a powerful method for showing a property is true for all nonnegative integers. Induction plays a central role in discrete mathematics and computer science. 
+            In fact, its use is a defining characteristic of discrete --as opposed to continuous-- mathematics.
+        </p>  
+        <p>
+            This section begins with a review of inductive proofs from <url href="https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_and_Computation_Fundamentals/Mathematics_for_Computer_Science_(Lehman_Leighton_and_Meyer)">Mathematics for Computer Science (Lehman, Leighton, and Meyer)</url> 
+        </p>
+    </introduction>
+        
+    <subsection xml:id="subsec-ordinary-induction">
+        <title>Ordinary Induction</title>
+        <p>
+            Suppose there is a professor who brings a bottomless bag of 
+            assorted miniature candy bars to her large class. She offers to share the candy in the following way. 
+            First, she lines the students up in order. Next she states two rules:
+            <ol>
+                <li>
+                    <p>
+                        The student at the beginning of the line gets a candy bar.  
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If a student gets a candy bar, then the following student in line also gets a candy bar.  
+                    </p>
+                </li>
+            </ol>
+            
+            
+        </p>
+        <p>
+            
+        Let's number the students by their order in line, starting the count with 0, as usual in computer science. Now we can understand the second rule as a short description of a whole sequence of statements:
+        <ul>
+            <li>
+                <p>
+                    If student 0 gets a candy bar, then student 1 also gets one.  
+                </p>
+            </li>
+            <li>
+                <p>
+                    If student 1 gets a candy bar, then student 2 also gets one.  
+                </p>
+            </li>
+            <li>
+                <p>
+                    If student 2 gets a candy bar, then student 3 also gets one.
+                </p>
+            </li>
+        </ul>
+            
+        Of course, this sequence has a more concise mathematical description:
+        <md>
+            <mrow> \text{If student }n \text{ gets a candy bar, then student } n+1 \text{ gets a candy bar,}</mrow>
+            <mrow> \text{for all nonnegative integers,} n. </mrow>
+        </md>  
+        </p>
+        <p>
+            So suppose you are student 17. By these rules, are you entitled to a miniature candy bar? 
+            Well, student 0 gets a candy bar by the first rule. Therefore, by the second rule, student 1 also gets one, 
+            which means student 2 gets one, which means student 3 gets one as well, and so on. By 17 applications of the professor's 
+            second rule, you get your candy bar! 
+            Of course the rules really guarantee a candy bar to every student, no matter how far back in line they may be.
+        </p>
+        <p>
+            The reasoning that led us to conclude that every student gets a candy bar is essentially all there is to induction.
+
+        <definition xml:id="def-induction-principle">
+            <title>The Induction Principle</title>
+            
+            
+            <statement>
+                <p>
+                   Let <m>P</m> be a proposition over a universe <xref ref="def-proposition-over-U"/> (or predicate) on the nonnegative integers.
+                   If
+                   <ul>
+                    <li>
+                        <p>
+                            <m>P(0)</m> is true, and
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>P(n) \Rightarrow P(n+1)</m> for all nonnegative integers, <m>n</m> (remember from <xref ref="def-implication"/> ,
+                            <m>\Rightarrow</m> means IMPLIES ),
+                        </p>
+                    </li>
+                 
+                   </ul>
+                   then
+                   <ul>
+                    <li>
+                        <p>
+                            <m>P(m)</m> is true for all nonnegative integers, <m>m</m>.
+                        </p>
+                    </li>
+                   </ul>
+                </p>
+            </statement>
+        </definition>
+        </p>
+        <p>
+            We'll refer to the induction method described above as <term>ordinary induction</term> when we need to 
+            distinguish it in this chapter. 
+            Formulated as a formal argument as in <xref ref="chapter5"/>, this would be
+            <theorem xml:id="thm-induction-rule">
+                <title>Induction Rule</title>
+                
+                
+                <statement>
+                    <p>
+                        <md>
+                            <mrow> &amp; P(0)</mrow>
+                            <mrow>&amp; \forall n, P(n)\Rightarrow p(n+1)</mrow>
+                            <mrow> \hline  </mrow>
+                            <mrow>\therefore &amp; \forall m \in \N, P(m)  </mrow>
+                        </md>
+                    </p>
+                </statement>
+            </theorem>
+            
+        </p>
+        <p>
+            This Induction Rule works for the same intuitive reason that all the students get 
+            candy bars, and we hope the explanation using candy bars makes it clear why the 
+            soundness of ordinary induction can be taken for granted. In fact, the rule is so obvious 
+            that it's hard to see what more basic principle could be used to justify it.
+            What's not so obvious is how much mileage we get by using it.
+        </p>
+        <example xml:id="ex-induction-sum">
+			<title>A Familiar Example</title>
+            <statement>
+               
+           
+            <p>
+                Below is the formula for the sum of the nonnegative integers up to <m>n</m>.
+                The formula holds for all nonnegative integers, so it is the kind of statement to which induction applies directly. 
+            </p>
+
+            <theorem xml:id="thm-sum-of-first">
+                <statement>
+                    <p>
+                        For all <m>n \in \N</m>
+                        <men xml:id="eq-sum-of-n">\sum_{i = 1}^n i = 1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}</men>
+                    </p>
+                </statement>
+            </theorem>
+        </statement>
+        <solution>
+            <p>
+                To prove the theorem by induction, define predicate <m>P(n)</m> to be 
+                <xref ref="thm-sum-of-first"/>. Now the theorem can be restated as the claim that
+                <m>P(n)</m> is true for all <m>n \in \N</m>. This is great, because the Induction
+                Principle lets us reach precisely that conclusion, provided we establish two simpler facts:
+                <ul>
+                    <li>
+                        <p>
+                            <m>P(0)</m> is true.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>P(n) \Rightarrow P(n+1)</m> for all nonnegative integers, <m>n</m>, 
+                        </p>
+                    </li>
+                </ul>
+            </p>
+            <p>
+                So now our job is reduced to proving these two statements.
+            </p>
+            <p>
+                <em>Basis step:</em> The first statement follows because of the convention that a sum of
+                 zero terms is equal to 0. So <m>P(0)</m> is the true assertion that a sum of 
+                 zero terms is equal to <m>\frac{0(0+1)}{2} =0</m>.
+            </p>
+            <p>
+                <em>Inductive step:</em>The second statement is more complicated. But remember a basic plan for proving 
+                the validity of any implication: assume the statement on the left and then prove the statement on the right. 
+                In this case, we assume <m>P(n)</m> namely, <xref ref="thm-sum-of-first"/>, in order to prove <m>P(n+1)</m>, 
+                which is the equation:
+
+
+                <men xml:id="eq-sum-n1"> \sum_{i = 1}^{n+1} i = 1 + 2 + 3 + \cdots + n + (n+1) = \frac{(n+1)(n+2)}{2}</men>
+            
+                These two equations are quite similar; in fact, adding <m>(n +1)</m> to both sides of equation <xref ref="eq-sum-of-n"/>
+                and simplifying the right side gives the equation <xref ref="eq-sum-n1"/>: 
+                <md>
+                    <mrow>1 + 2 + 3 + \cdots + n +(n+1) \amp = \frac{n(n+1)}{2} +(n+1)</mrow>
+                     <mrow> \amp = \frac{(n+1)(n+2)}{2} </mrow>
+                </md>
+                Thus, if <m>P(n)</m>> is true, then so is <m>P(n+1)</m>. 
+                This argument is valid for every nonnegative integer <m>n</m>, 
+                so this establishes the second fact required by the induction 
+                proof. Therefore, the Induction Principle says that the predicate <m>P(M)</m> is true 
+                for all nonnegative integers, <m>m</m>. The theorem is proved.
+            </p>
+        </solution>
+            
+        </example>
+    </subsection>
+    <subsection xml:id="subsec-template-inductive-proofs">
+        <title>A Template for Inductive Proofs</title>
+        <p>
+            
+       
+        The proof of <xref ref="thm-sum-of-first"/> was relatively simple, but even the most complicated induction 
+        proof follows exactly the same template. There are five components:
+        <ol>
+            <li>
+                <p>
+                    Define an appropriate predicate: "Let <m>P(n)</m> be the statement "For every <m>n\in \N, \dots </m>"  
+                </p>
+            </li>
+            <li>
+                <p>
+                    Prove that <m>P(0)</m> is true. This is usually easy, as in the example above. This part of the proof is called the <term>base case</term> or <term>basis step</term>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Define an appropriate inductive hypothesis. 
+                    The predicate <m>P(k)</m>, setting <m>n</m> to some arbitrary <m>k \in \N</m> is called the inductive hypothesis. 
+                    The eventual conclusion of the induction argument will be that <m>P(n)</m> is 
+                    true for all nonnegative <m>n</m>. A clearly stated induction hypothesis is often the most important part 
+                    of an induction proof, and its omission is the largest source of confused proofs by students. 
+                    In the simplest cases, the induction hypothesis can be lifted straight from the proposition you are trying 
+                    to prove, as we did with equation <xref ref="eq-sum-of-n"/>. 
+                    Sometimes the induction hypothesis will involve several variables, in which case you should indicate which 
+                    variable serves as <m>n</m> (usually <m>k</m> is used for this). 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Prove that <m>P(k)</m> implies <m>P(k+1)</m> for every nonnegative integer <m>k</m>. 
+                    This is called the <term>inductive step</term>. The basic plan is always the same: 
+                    assume that <m>P(k)</m> is true and then use this assumption to prove that <m>P(k+1)</m> is true. 
+                    These two statements should be fairly similar, but bridging the gap may require some ingenuity. 
+                    Whatever argument you give must be valid for every nonnegative integer <m>k</m>, 
+                    since the goal is to prove that <em>all</em> the following implications are true:
+                    <me>P(0) \rightarrow P(1), P(1) \rightarrow P(2). P(2) \rightarrow P(3). \dots</me>
+                </p>
+            </li>
+            <li>
+                <p>Invoke induction. State a conclusion, for example: Given these facts, the induction principle allows us to conclude that <m>P(n)</m> 
+                    is true for all nonnegative <m>n \in \N</m>. This is the logical capstone to the whole argument.
+                    
+                   </p> 
+            </li>
+        </ol>
     </p>
+    <p>
+        Always be sure to explicitly label the base case and the inductive step (which encompasses steps 4 and 5 above). Doing so will make your proofs clearer and will decrease the chance that you forget a key step—like checking the base case. 
+                
+    </p>
+    <p>
+        The proof of <xref ref="thm-sum-of-first"/> given above is perfectly valid; 
+        however, it contains a lot of extraneous explanation that you won't usually 
+        see in induction proofs. The writeup below is closer to what you might see 
+        in print and should be prepared to produce yourself.  
+        
+    </p>
+    <example>
+        <title>A Clean Writeup</title>
+
+        <statement>
+            <p>
+                Let <m>P(n)</m> be the statement: for every <m>n \in \N</m>,
+                <me>1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}</me>
+            </p>
+            <p>
+                <term>Basis step:</term> <m>P(0)</m> is true, because both sides of the
+                equation equal 0 when <m>n = 0.</m>
+            </p>
+            <p>
+                <term>Inductive step:</term> Assuming an inductive hypothesis that <m>P(k)</m> is true, that is
+                <me>1 + 2 + 3 + \cdots + k = \frac{k(k+1)}{2}</me>
+                for some nonnegative integer <m>k</m>. Adding <m>k+1</m> to both sides of the
+                equation implies that 
+                <md>
+                    <mrow>1 + 2 + 3 + \cdots + k +(k+1) \amp = \frac{k(k+1)}{2} +(k+1) &amp; </mrow>
+                     <mrow> \amp = \frac{(k+1)(k+2)}{2} &amp; \text{(by simple algebra)}</mrow>
+                </md>
+                which proves <m>P(k+1).</m>
+            </p>
+            <p>
+                <term>Conclusion:</term> So it follows by induction that <m>P(n)</m> is true for all nonnegative <m>n</m>. <m>\blacksquare</m>
+            </p>
+        </statement>
+        
+        
+    </example>
+        <p>
+            It probably bothers you that induction led to a proof of this summation formula but did
+             not provide an intuitive way to understand it nor did it explain where the formula came from in the first place.
+             This is both a weakness and a strength. It is a weakness when a proof does not provide insight. 
+             But it is a strength that a proof can provide a reader with a reliable guarantee of correctness without requiring insight.   
+        </p>
+    </subsection>
+    <subsection xml:id="subsec-review-strong-induction">
+        <title>Strong Induction</title>
+        <p>
+            A useful variant of induction is called strong induction. 
+            Strong induction and ordinary induction are used for exactly the same thing: 
+            proving that a predicate is true for all nonnegative integers. Strong induction is useful when a 
+            simple proof that the predicate holds for <m>n+1</m> does not follow just from the fact that it 
+            holds at <m>n</m>, but from the fact that it holds for other values<m>\leq n</m>.
+        </p>
+        <definition xml:id="def-strong-induction">
+            <title>Principle of Strong Induction</title>
+            
+            
+            <statement>
+                <p>
+                    Let <m>P</m> be a predicate on nonnegative integers. If  
+                    <ul>
+                        <li>
+                            <p>
+                                <m>P(0)</m> is true, and  
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                for all <m>n \in \N, P(0), P(1), \dots, P(n)</m> together imply
+                                 <m>P(n+1)</m>,  
+                            </p>
+                        </li>
+                    </ul>
+                    then <m>P(M)</m> is true for all <m>m \in \N</m>.  
+                </p>
+            </statement>
+        </definition>
+        <p>
+            The only change from the ordinary induction principle is that strong induction allows you make more assumptions in the inductive step of your proof! 
+            In an ordinary induction argument, you assume that <m>P(n)</m> is true and try to prove that <m>P(n+1)</m> is also true.
+             In a strong induction argument, you may assume that <m>P(0), P(1), \dots,</m> and <m>P(n)</m> are all true when 
+             you go to prove <m>P(n+1)</m>. So you can assume a stronger set of hypotheses which can make your job easier.   
+        </p>
+        <p>
+            Formulated as a formal argument as in <xref ref="chapter5"/>, strong induction is
+            <theorem xml:id="thm-strong-induction-rule">
+                <title>Strong Induction Rule</title>
+                
+                
+                <statement>
+                    <p>
+                        <md>
+                            <mrow> &amp; P(0)</mrow>
+                            <mrow>&amp; \forall n,(P(0) \land P(1) \land \dots P(n))\Rightarrow p(n+1)</mrow>
+                            <mrow> \hline  </mrow>
+                            <mrow>\therefore &amp; \forall m \in \N, P(m)  </mrow>
+                        </md>
+
+                        Stated more succinctly, the rule is
+                        <md>
+                            <mrow> &amp; P(0)</mrow>
+                            <mrow>&amp; \left[ \forall k \leq n \in \N,P(k) \right] \Rightarrow p(n+1)</mrow>
+                            <mrow> \hline  </mrow>
+                            <mrow>\therefore &amp; \forall m \in \N, P(m)  </mrow>
+                        </md>
+                    </p>
+                </statement>
+            </theorem>
+        </p>
+        <p>
+            The template for strong induction proofs is identical to the template given in <xref ref="subsec-template-inductive-proofs"/> for ordinary induction except 
+            for two things:
+            <ul>
+                <li>
+                    <p>
+                        you should state that your proof is by strong induction, and  
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        you can assume that <m>P(0),P(1),\dots,</m>
+        
+                        and <m>P(n)</m> are all true instead of only <m>P(n)</m> during the inductive step. 
+                    </p>
+                </li>
+            </ul>
+            
+              
+        </p>
+        <example>
+            <title>Product of Primes</title>
+            <statement>
+                <p>
+                    <theorem xml:id="thm-product-of-primes">
+                        <statement>
+                            <p>
+                                Every integer greater than 1 is a product of primes.
+                            </p>
+                        </statement>
+                    </theorem>
+                    
+                </p>
+                <p>
+                    We will prove <xref ref="thm-product-of-primes"/> by strong induction, letting 
+                    <m>P(n)</m> be the statement: <m>\forall n &gt; 1 \in \N, n</m> is a product of primes.
+                </p>
+                <p>
+                    <term>Basis step:</term> <m>P(2)</m> is true because 2 is prime, so it is a length one product of primes by convention.
+
+
+
+                </p>
+                <p>
+                    <term>Inductive step:</term> Suppose that <m>k\geq 2</m> and that every number from 2 to <m>k</m> is a product of primes. 
+                    We must show that <m>P(k+1)</m> holds, namely, that <m>k +1</m> is also a product of primes. We argue by cases:
+                    <ol>
+                        <li>
+                            <p>
+                                If <m>k+1</m> itself is prime, it is a length one product of primes by convention, and so <m>P(k+1)</m> holds in this case. 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Otherwise, <m>k+1</m> is not prime, which by definition means <m>k+1 = i\cdot j</m> for some integers <m>i, j</m> between 2 and <m>k</m>. 
+                                Now by the strong induction hypothesis, we know that both <m>i</m> and <m>j</m> are products of primes. 
+                                By multiplying these products, it follows immediately that <m>i\cdot j = k+1 </m> is also a product of primes. Therefore, <m>P(K+1)</m> holds in this case as well. 
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+                <p>
+                    <term>Conclusion: </term>So <m>P(k+1)</m> holds in any case, which completes the proof by strong induction that <m>P(n)</m> holds 
+                    for all <m>n \geq2</m>. <m>\blacksquare</m>
+                </p>
+            </statement>
+            
+            
+        </example>
+    </subsection>
 </section>
