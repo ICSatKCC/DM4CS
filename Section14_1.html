@@ -772,7 +772,14 @@ window.MathJax = {
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="chapter_14_prog_corr.html" class="internal"><span class="codenumber">14</span> <span class="title">Program Correctness</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="Section14_1.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Revisiting Inductive Proofs</span></a></div></li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="Section14_1.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Revisiting Inductive Proofs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section14_1.html#subsec-ordinary-induction" class="internal"><span class="codenumber">14.1.1</span> <span class="title">Ordinary Induction</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section14_1.html#subsec-template-inductive-proofs" class="internal"><span class="codenumber">14.1.2</span> <span class="title">A Template for Inductive Proofs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section14_1.html#subsec-review-strong-induction" class="internal"><span class="codenumber">14.1.3</span> <span class="title">Strong Induction</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section14_2.html" class="internal"><span class="codenumber">14.2</span> <span class="title">Program Correctness</span></a></div>
 <ul class="structural toc-item-list">
@@ -966,7 +973,224 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Section14_1"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">14.1</span><span class="space"> </span><span class="title">Revisiting Inductive Proofs</span>
 </h2>
-<div class="para" id="Section14_1-2">Under Construction!</div></section></div>
+<section class="introduction" id="Section14_1-2"><div class="para" id="Section14_1-2-1">Induction is a powerful method for showing a property is true for all nonnegative integers. Induction plays a central role in discrete mathematics and computer science. In fact, its use is a defining characteristic of discrete --as opposed to continuous-- mathematics.</div> <div class="para" id="Section14_1-2-2">This section begins with a review of inductive proofs from <a class="external" href="https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_and_Computation_Fundamentals/Mathematics_for_Computer_Science_(Lehman_Leighton_and_Meyer)" target="_blank">Mathematics for Computer Science (Lehman, Leighton, and Meyer)</a><details class="ptx-footnote" aria-live="polite" id="Section14_1-2-2-2"><summary class="ptx-footnote__number" title="Footnote 14.1.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="Section14_1-2-2-2"><code class="code-inline tex2jax_ignore">eng.libretexts.org/Bookshelves/Computer_Science/Programming_and_Computation_Fundamentals/Mathematics_for_Computer_Science_(Lehman_Leighton_and_Meyer)</code></div></details>
+</div></section><section class="subsection" id="subsec-ordinary-induction"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">14.1.1</span><span class="space"> </span><span class="title">Ordinary Induction</span>
+</h3>
+<div class="para logical" id="subsec-ordinary-induction-2">
+<div class="para">Suppose there is a professor who brings a bottomless bag of assorted miniature candy bars to her large class. She offers to share the candy in the following way. First, she lines the students up in order. Next she states two rules:</div>
+<ol class="decimal">
+<li id="subsec-ordinary-induction-2-1-1"><div class="para" id="subsec-ordinary-induction-2-1-1-1">The student at the beginning of the line gets a candy bar.</div></li>
+<li id="subsec-ordinary-induction-2-1-2"><div class="para" id="subsec-ordinary-induction-2-1-2-1">If a student gets a candy bar, then the following student in line also gets a candy bar.</div></li>
+</ol>
+</div>
+<div class="para logical" id="subsec-ordinary-induction-3">
+<div class="para">Let’s number the students by their order in line, starting the count with 0, as usual in computer science. Now we can understand the second rule as a short description of a whole sequence of statements:</div>
+<ul class="disc">
+<li id="subsec-ordinary-induction-3-1-1"><div class="para" id="subsec-ordinary-induction-3-1-1-1">If student 0 gets a candy bar, then student 1 also gets one.</div></li>
+<li id="subsec-ordinary-induction-3-1-2"><div class="para" id="subsec-ordinary-induction-3-1-2-1">If student 1 gets a candy bar, then student 2 also gets one.</div></li>
+<li id="subsec-ordinary-induction-3-1-3"><div class="para" id="subsec-ordinary-induction-3-1-3-1">If student 2 gets a candy bar, then student 3 also gets one.</div></li>
+</ul>
+<div class="para">Of course, this sequence has a more concise mathematical description:</div>
+<div class="displaymath process-math" id="subsec-ordinary-induction-3-2">
+\begin{gather*}
+\text{If student }n \text{ gets a candy bar, then student } n+1 \text{ gets a candy bar,}\\
+\text{for all nonnegative integers,} n. 
+\end{gather*}
+</div>
+</div>
+<div class="para" id="subsec-ordinary-induction-4">So suppose you are student 17. By these rules, are you entitled to a miniature candy bar? Well, student 0 gets a candy bar by the first rule. Therefore, by the second rule, student 1 also gets one, which means student 2 gets one, which means student 3 gets one as well, and so on. By 17 applications of the professor’s second rule, you get your candy bar! Of course the rules really guarantee a candy bar to every student, no matter how far back in line they may be.</div>
+<div class="para" id="subsec-ordinary-induction-5">The reasoning that led us to conclude that every student gets a candy bar is essentially all there is to induction. <article class="definition definition-like" id="def-induction-principle"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">14.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">The Induction Principle.</span>
+</h4> <div class="para logical" id="def-induction-principle-2-1">
+<div class="para">Let <span class="process-math">\(P\)</span> be a proposition over a universe <a href="section4_5-propositions-over-universe.html#def-proposition-over-U" class="xref" data-knowl="./knowl/xref/def-proposition-over-U.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.5.1: Proposition over a Universe">Definition 4.5.1</a> (or predicate) on the nonnegative integers. If</div>
+<ul class="disc">
+<li id="def-induction-principle-2-1-3-1"><div class="para" id="def-induction-principle-2-1-3-1-1">
+<span class="process-math">\(P(0)\)</span> is true, and</div></li>
+<li id="def-induction-principle-2-1-3-2"><div class="para" id="def-induction-principle-2-1-3-2-1">
+<span class="process-math">\(P(n) \Rightarrow P(n+1)\)</span> for all nonnegative integers, <span class="process-math">\(n\)</span> (remember from <a href="section4_3-equivalence-implication.html#def-implication" class="xref" data-knowl="./knowl/xref/def-implication.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.3.11: Implication">Definition 4.3.11</a> , <span class="process-math">\(\Rightarrow\)</span> means IMPLIES ),</div></li>
+</ul>
+<div class="para">then</div>
+<ul class="disc"><li id="def-induction-principle-2-1-4-1"><div class="para" id="def-induction-principle-2-1-4-1-1">
+<span class="process-math">\(P(m)\)</span> is true for all nonnegative integers, <span class="process-math">\(m\text{.}\)</span>
+</div></li></ul>
+</div></article>
+</div>
+<div class="para" id="subsec-ordinary-induction-6">We’ll refer to the induction method described above as <dfn class="terminology">ordinary induction</dfn> when we need to distinguish it in this chapter. Formulated as a formal argument as in <a href="chapter5.html" class="internal" title="Chapter 5: Proofs">Chapter 5</a>, this would be <article class="theorem theorem-like" id="thm-induction-rule"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">14.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Induction Rule.</span>
+</h4>
+<div class="para logical" id="thm-induction-rule-2-1"><div class="displaymath process-math" id="thm-induction-rule-2-1-1">
+\begin{align*}
+&amp; P(0)\\
+&amp; \forall n, P(n)\Rightarrow p(n+1)\\
+\hline  \\
+\therefore &amp; \forall m \in \N, P(m)  
+\end{align*}
+</div></div></article>
+</div>
+<div class="para" id="subsec-ordinary-induction-7">This Induction Rule works for the same intuitive reason that all the students get candy bars, and we hope the explanation using candy bars makes it clear why the soundness of ordinary induction can be taken for granted. In fact, the rule is so obvious that it’s hard to see what more basic principle could be used to justify it. What’s not so obvious is how much mileage we get by using it.</div>
+<article class="example example-like" id="ex-induction-sum"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">A Familiar Example.</span>
+</h4>
+<div class="para" id="ex-induction-sum-2-1">Below is the formula for the sum of the nonnegative integers up to <span class="process-math">\(n\text{.}\)</span> The formula holds for all nonnegative integers, so it is the kind of statement to which induction applies directly.</div> <article class="theorem theorem-like" id="thm-sum-of-first"><h5 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">14.1.4</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="thm-sum-of-first-1-1">
+<div class="para">For all <span class="process-math">\(n \in \N\)</span>
+</div>
+<div class="displaymath process-math" id="eq-sum-of-n">
+\begin{equation}
+\sum_{i = 1}^n i = 1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}\tag{14.1.1}
+\end{equation}
+</div>
+</div></article><div class="solutions"><details id="ex-induction-sum-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-induction-sum-3-1">
+<div class="para">To prove the theorem by induction, define predicate <span class="process-math">\(P(n)\)</span> to be <a href="Section14_1.html#thm-sum-of-first" class="xref" data-knowl="./knowl/xref/thm-sum-of-first.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 14.1.4">Theorem 14.1.4</a>. Now the theorem can be restated as the claim that <span class="process-math">\(P(n)\)</span> is true for all <span class="process-math">\(n \in \N\text{.}\)</span> This is great, because the Induction Principle lets us reach precisely that conclusion, provided we establish two simpler facts:</div>
+<ul class="disc">
+<li id="ex-induction-sum-3-1-5-1"><div class="para" id="ex-induction-sum-3-1-5-1-1">
+<span class="process-math">\(P(0)\)</span> is true.</div></li>
+<li id="ex-induction-sum-3-1-5-2"><div class="para" id="ex-induction-sum-3-1-5-2-1">
+<span class="process-math">\(P(n) \Rightarrow P(n+1)\)</span> for all nonnegative integers, <span class="process-math">\(n\text{,}\)</span>
+</div></li>
+</ul>
+</div> <div class="para" id="ex-induction-sum-3-2">So now our job is reduced to proving these two statements.</div> <div class="para" id="ex-induction-sum-3-3">
+<em class="emphasis">Basis step:</em> The first statement follows because of the convention that a sum of zero terms is equal to 0. So <span class="process-math">\(P(0)\)</span> is the true assertion that a sum of zero terms is equal to <span class="process-math">\(\frac{0(0+1)}{2} =0\text{.}\)</span>
+</div> <div class="para logical" id="ex-induction-sum-3-4">
+<div class="para">
+<em class="emphasis">Inductive step:</em>The second statement is more complicated. But remember a basic plan for proving the validity of any implication: assume the statement on the left and then prove the statement on the right. In this case, we assume <span class="process-math">\(P(n)\)</span> namely, <a href="Section14_1.html#thm-sum-of-first" class="xref" data-knowl="./knowl/xref/thm-sum-of-first.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 14.1.4">Theorem 14.1.4</a>, in order to prove <span class="process-math">\(P(n+1)\text{,}\)</span> which is the equation:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-sum-of-first.html ./knowl/xref/eq-sum-of-n.html ./knowl/xref/eq-sum-n1.html" id="eq-sum-n1">
+\begin{equation}
+\sum_{i = 1}^{n+1} i = 1 + 2 + 3 + \cdots + n + (n+1) = \frac{(n+1)(n+2)}{2}\tag{14.1.2}
+\end{equation}
+</div>
+<div class="para">These two equations are quite similar; in fact, adding <span class="process-math">\((n +1)\)</span> to both sides of equation <a href="Section14_1.html#eq-sum-of-n" class="xref" data-knowl="./knowl/xref/eq-sum-of-n.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 14.1.1">(14.1.1)</a> and simplifying the right side gives the equation <a href="Section14_1.html#eq-sum-n1" class="xref" data-knowl="./knowl/xref/eq-sum-n1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 14.1.2">(14.1.2)</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-sum-of-first.html ./knowl/xref/eq-sum-of-n.html ./knowl/xref/eq-sum-n1.html" id="ex-induction-sum-3-4-9">
+\begin{align*}
+1 + 2 + 3 + \cdots + n +(n+1) \amp = \frac{n(n+1)}{2} +(n+1)\\
+\amp = \frac{(n+1)(n+2)}{2} 
+\end{align*}
+</div>
+<div class="para">Thus, if <span class="process-math">\(P(n)\)</span>&gt; is true, then so is <span class="process-math">\(P(n+1)\text{.}\)</span> This argument is valid for every nonnegative integer <span class="process-math">\(n\text{,}\)</span> so this establishes the second fact required by the induction proof. Therefore, the Induction Principle says that the predicate <span class="process-math">\(P(M)\)</span> is true for all nonnegative integers, <span class="process-math">\(m\text{.}\)</span> The theorem is proved.</div>
+</div>
+</div></details></div></article></section><section class="subsection" id="subsec-template-inductive-proofs"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">14.1.2</span><span class="space"> </span><span class="title">A Template for Inductive Proofs</span>
+</h3>
+<div class="para logical" id="subsec-template-inductive-proofs-2">
+<div class="para">The proof of <a href="Section14_1.html#thm-sum-of-first" class="xref" data-knowl="./knowl/xref/thm-sum-of-first.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 14.1.4">Theorem 14.1.4</a> was relatively simple, but even the most complicated induction proof follows exactly the same template. There are five components:</div>
+<ol class="decimal">
+<li id="subsec-template-inductive-proofs-2-2-1"><div class="para" id="subsec-template-inductive-proofs-2-2-1-1">Define an appropriate predicate: "Let <span class="process-math">\(P(n)\)</span> be the statement "For every <span class="process-math">\(n\in \N, \dots \)</span>"</div></li>
+<li id="subsec-template-inductive-proofs-2-2-2"><div class="para" id="subsec-template-inductive-proofs-2-2-2-1">Prove that <span class="process-math">\(P(0)\)</span> is true. This is usually easy, as in the example above. This part of the proof is called the <dfn class="terminology">base case</dfn> or <dfn class="terminology">basis step</dfn>.</div></li>
+<li id="subsec-template-inductive-proofs-2-2-3"><div class="para" id="subsec-template-inductive-proofs-2-2-3-1">Define an appropriate inductive hypothesis. The predicate <span class="process-math">\(P(k)\text{,}\)</span> setting <span class="process-math">\(n\)</span> to some arbitrary <span class="process-math">\(k \in \N\)</span> is called the inductive hypothesis. The eventual conclusion of the induction argument will be that <span class="process-math">\(P(n)\)</span> is true for all nonnegative <span class="process-math">\(n\text{.}\)</span> A clearly stated induction hypothesis is often the most important part of an induction proof, and its omission is the largest source of confused proofs by students. In the simplest cases, the induction hypothesis can be lifted straight from the proposition you are trying to prove, as we did with equation <a href="Section14_1.html#eq-sum-of-n" class="xref" data-knowl="./knowl/xref/eq-sum-of-n.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 14.1.1">(14.1.1)</a>. Sometimes the induction hypothesis will involve several variables, in which case you should indicate which variable serves as <span class="process-math">\(n\)</span> (usually <span class="process-math">\(k\)</span> is used for this).</div></li>
+<li id="subsec-template-inductive-proofs-2-2-4"><div class="para logical" id="subsec-template-inductive-proofs-2-2-4-1">
+<div class="para">Prove that <span class="process-math">\(P(k)\)</span> implies <span class="process-math">\(P(k+1)\)</span> for every nonnegative integer <span class="process-math">\(k\text{.}\)</span> This is called the <dfn class="terminology">inductive step</dfn>. The basic plan is always the same: assume that <span class="process-math">\(P(k)\)</span> is true and then use this assumption to prove that <span class="process-math">\(P(k+1)\)</span> is true. These two statements should be fairly similar, but bridging the gap may require some ingenuity. Whatever argument you give must be valid for every nonnegative integer <span class="process-math">\(k\text{,}\)</span> since the goal is to prove that <em class="emphasis">all</em> the following implications are true:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(0) \rightarrow P(1), P(1) \rightarrow P(2). P(2) \rightarrow P(3). \dots
+\end{equation*}
+</div>
+</div></li>
+<li id="subsec-template-inductive-proofs-2-2-5"><div class="para" id="subsec-template-inductive-proofs-2-2-5-1">Invoke induction. State a conclusion, for example: Given these facts, the induction principle allows us to conclude that <span class="process-math">\(P(n)\)</span> is true for all nonnegative <span class="process-math">\(n \in \N\text{.}\)</span> This is the logical capstone to the whole argument.</div></li>
+</ol>
+</div>
+<div class="para" id="subsec-template-inductive-proofs-3">Always be sure to explicitly label the base case and the inductive step (which encompasses steps 4 and 5 above). Doing so will make your proofs clearer and will decrease the chance that you forget a key step—like checking the base case.</div>
+<div class="para" id="subsec-template-inductive-proofs-4">The proof of <a href="Section14_1.html#thm-sum-of-first" class="xref" data-knowl="./knowl/xref/thm-sum-of-first.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 14.1.4">Theorem 14.1.4</a> given above is perfectly valid; however, it contains a lot of extraneous explanation that you won’t usually see in induction proofs. The writeup below is closer to what you might see in print and should be prepared to produce yourself.</div>
+<article class="example example-like" id="subsec-template-inductive-proofs-5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">A Clean Writeup.</span>
+</h4>
+<div class="para logical" id="subsec-template-inductive-proofs-5-2-1">
+<div class="para">Let <span class="process-math">\(P(n)\)</span> be the statement: for every <span class="process-math">\(n \in \N\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}
+\end{equation*}
+</div>
+</div> <div class="para" id="subsec-template-inductive-proofs-5-2-2">
+<dfn class="terminology">Basis step:</dfn> <span class="process-math">\(P(0)\)</span> is true, because both sides of the equation equal 0 when <span class="process-math">\(n = 0.\)</span>
+</div> <div class="para logical" id="subsec-template-inductive-proofs-5-2-3">
+<div class="para">
+<dfn class="terminology">Inductive step:</dfn> Assuming an inductive hypothesis that <span class="process-math">\(P(k)\)</span> is true, that is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1 + 2 + 3 + \cdots + k = \frac{k(k+1)}{2}
+\end{equation*}
+</div>
+<div class="para">for some nonnegative integer <span class="process-math">\(k\text{.}\)</span> Adding <span class="process-math">\(k+1\)</span> to both sides of the equation implies that</div>
+<div class="displaymath process-math" id="subsec-template-inductive-proofs-5-2-3-6">
+\begin{align*}
+1 + 2 + 3 + \cdots + k +(k+1) \amp = \frac{k(k+1)}{2} +(k+1) &amp; \\
+\amp = \frac{(k+1)(k+2)}{2} &amp; \text{(by simple algebra)}
+\end{align*}
+</div>
+<div class="para">which proves <span class="process-math">\(P(k+1).\)</span>
+</div>
+</div> <div class="para" id="subsec-template-inductive-proofs-5-2-4">
+<dfn class="terminology">Conclusion:</dfn> So it follows by induction that <span class="process-math">\(P(n)\)</span> is true for all nonnegative <span class="process-math">\(n\text{.}\)</span> <span class="process-math">\(\blacksquare\)</span>
+</div></article><div class="para" id="subsec-template-inductive-proofs-6">It probably bothers you that induction led to a proof of this summation formula but did not provide an intuitive way to understand it nor did it explain where the formula came from in the first place. This is both a weakness and a strength. It is a weakness when a proof does not provide insight. But it is a strength that a proof can provide a reader with a reliable guarantee of correctness without requiring insight.</div></section><section class="subsection" id="subsec-review-strong-induction"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">14.1.3</span><span class="space"> </span><span class="title">Strong Induction</span>
+</h3>
+<div class="para" id="subsec-review-strong-induction-2">A useful variant of induction is called strong induction. Strong induction and ordinary induction are used for exactly the same thing: proving that a predicate is true for all nonnegative integers. Strong induction is useful when a simple proof that the predicate holds for <span class="process-math">\(n+1\)</span> does not follow just from the fact that it holds at <span class="process-math">\(n\text{,}\)</span> but from the fact that it holds for other values<span class="process-math">\(\leq n\text{.}\)</span>
+</div>
+<article class="definition definition-like" id="def-strong-induction"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">14.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Principle of Strong Induction.</span>
+</h4> <div class="para logical" id="def-strong-induction-2-1">
+<div class="para">Let <span class="process-math">\(P\)</span> be a predicate on nonnegative integers. If</div>
+<ul class="disc">
+<li id="def-strong-induction-2-1-2-1"><div class="para" id="def-strong-induction-2-1-2-1-1">
+<span class="process-math">\(P(0)\)</span> is true, and</div></li>
+<li id="def-strong-induction-2-1-2-2"><div class="para" id="def-strong-induction-2-1-2-2-1">for all <span class="process-math">\(n \in \N, P(0), P(1), \dots, P(n)\)</span> together imply <span class="process-math">\(P(n+1)\text{,}\)</span>
+</div></li>
+</ul>
+<div class="para">then <span class="process-math">\(P(M)\)</span> is true for all <span class="process-math">\(m \in \N\text{.}\)</span>
+</div>
+</div></article><div class="para" id="subsec-review-strong-induction-4">The only change from the ordinary induction principle is that strong induction allows you make more assumptions in the inductive step of your proof! In an ordinary induction argument, you assume that <span class="process-math">\(P(n)\)</span> is true and try to prove that <span class="process-math">\(P(n+1)\)</span> is also true. In a strong induction argument, you may assume that <span class="process-math">\(P(0), P(1), \dots,\)</span> and <span class="process-math">\(P(n)\)</span> are all true when you go to prove <span class="process-math">\(P(n+1)\text{.}\)</span> So you can assume a stronger set of hypotheses which can make your job easier.</div>
+<div class="para" id="subsec-review-strong-induction-5">Formulated as a formal argument as in <a href="chapter5.html" class="internal" title="Chapter 5: Proofs">Chapter 5</a>, strong induction is <article class="theorem theorem-like" id="thm-strong-induction-rule"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">14.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Strong Induction Rule.</span>
+</h4>
+<div class="para logical" id="thm-strong-induction-rule-2-1">
+<div class="displaymath process-math" id="thm-strong-induction-rule-2-1-1">
+\begin{align*}
+&amp; P(0)\\
+&amp; \forall n,(P(0) \land P(1) \land \dots P(n))\Rightarrow p(n+1)\\
+\hline  \\
+\therefore &amp; \forall m \in \N, P(m)  
+\end{align*}
+</div>
+<div class="para">Stated more succinctly, the rule is</div>
+<div class="displaymath process-math" id="thm-strong-induction-rule-2-1-2">
+\begin{align*}
+&amp; P(0)\\
+&amp; \left[ \forall k \leq n \in \N,P(k) \right] \Rightarrow p(n+1)\\
+\hline  \\
+\therefore &amp; \forall m \in \N, P(m)  
+\end{align*}
+</div>
+</div></article>
+</div>
+<div class="para logical" id="subsec-review-strong-induction-6">
+<div class="para">The template for strong induction proofs is identical to the template given in <a href="Section14_1.html#subsec-template-inductive-proofs" class="internal" title="Subsection 14.1.2: A Template for Inductive Proofs">Subsection 14.1.2</a> for ordinary induction except for two things:</div>
+<ul class="disc">
+<li id="subsec-review-strong-induction-6-2-1"><div class="para" id="subsec-review-strong-induction-6-2-1-1">you should state that your proof is by strong induction, and</div></li>
+<li id="subsec-review-strong-induction-6-2-2"><div class="para" id="subsec-review-strong-induction-6-2-2-1">you can assume that <span class="process-math">\(P(0),P(1),\dots,\)</span> and <span class="process-math">\(P(n)\)</span> are all true instead of only <span class="process-math">\(P(n)\)</span> during the inductive step.</div></li>
+</ul>
+</div>
+<article class="example example-like" id="subsec-review-strong-induction-7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Product of Primes.</span>
+</h4>
+<div class="para" id="subsec-review-strong-induction-7-2-1"><article class="theorem theorem-like" id="thm-product-of-primes"><h5 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">14.1.9</span><span class="period">.</span>
+</h5>
+<div class="para" id="thm-product-of-primes-1-1">Every integer greater than 1 is a product of primes.</div></article></div> <div class="para" id="subsec-review-strong-induction-7-2-2">We will prove <a href="Section14_1.html#thm-product-of-primes" class="xref" data-knowl="./knowl/xref/thm-product-of-primes.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 14.1.9">Theorem 14.1.9</a> by strong induction, letting <span class="process-math">\(P(n)\)</span> be the statement: <span class="process-math">\(\forall n &gt; 1 \in \N, n\)</span> is a product of primes.</div> <div class="para" id="subsec-review-strong-induction-7-2-3">
+<dfn class="terminology">Basis step:</dfn> <span class="process-math">\(P(2)\)</span> is true because 2 is prime, so it is a length one product of primes by convention.</div> <div class="para logical" id="subsec-review-strong-induction-7-2-4">
+<div class="para">
+<dfn class="terminology">Inductive step:</dfn> Suppose that <span class="process-math">\(k\geq 2\)</span> and that every number from 2 to <span class="process-math">\(k\)</span> is a product of primes. We must show that <span class="process-math">\(P(k+1)\)</span> holds, namely, that <span class="process-math">\(k +1\)</span> is also a product of primes. We argue by cases:</div>
+<ol class="decimal">
+<li id="subsec-review-strong-induction-7-2-4-6-1"><div class="para" id="subsec-review-strong-induction-7-2-4-6-1-1">If <span class="process-math">\(k+1\)</span> itself is prime, it is a length one product of primes by convention, and so <span class="process-math">\(P(k+1)\)</span> holds in this case.</div></li>
+<li id="subsec-review-strong-induction-7-2-4-6-2"><div class="para" id="subsec-review-strong-induction-7-2-4-6-2-1">Otherwise, <span class="process-math">\(k+1\)</span> is not prime, which by definition means <span class="process-math">\(k+1 = i\cdot j\)</span> for some integers <span class="process-math">\(i, j\)</span> between 2 and <span class="process-math">\(k\text{.}\)</span> Now by the strong induction hypothesis, we know that both <span class="process-math">\(i\)</span> and <span class="process-math">\(j\)</span> are products of primes. By multiplying these products, it follows immediately that <span class="process-math">\(i\cdot j = k+1 \)</span> is also a product of primes. Therefore, <span class="process-math">\(P(K+1)\)</span> holds in this case as well.</div></li>
+</ol>
+</div> <div class="para" id="subsec-review-strong-induction-7-2-5">
+<dfn class="terminology">Conclusion:</dfn>So <span class="process-math">\(P(k+1)\)</span> holds in any case, which completes the proof by strong induction that <span class="process-math">\(P(n)\)</span> holds for all <span class="process-math">\(n \geq2\text{.}\)</span> <span class="process-math">\(\blacksquare\)</span>
+</div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="chapter_14_prog_corr.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Section14_2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

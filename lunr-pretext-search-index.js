@@ -10978,7 +10978,79 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "14.1",
   "title": "Revisiting Inductive Proofs",
-  "body": " Revisiting Inductive Proofs   Under Construction!  "
+  "body": " Revisiting Inductive Proofs     Induction is a powerful method for showing a property is true for all nonnegative integers. Induction plays a central role in discrete mathematics and computer science. In fact, its use is a defining characteristic of discrete --as opposed to continuous-- mathematics.  This section begins with a review of inductive proofs from Mathematics for Computer Science (Lehman, Leighton, and Meyer)     Ordinary Induction  Suppose there is a professor who brings a bottomless bag of assorted miniature candy bars to her large class. She offers to share the candy in the following way. First, she lines the students up in order. Next she states two rules:   The student at the beginning of the line gets a candy bar.    If a student gets a candy bar, then the following student in line also gets a candy bar.     Let's number the students by their order in line, starting the count with 0, as usual in computer science. Now we can understand the second rule as a short description of a whole sequence of statements:   If student 0 gets a candy bar, then student 1 also gets one.    If student 1 gets a candy bar, then student 2 also gets one.    If student 2 gets a candy bar, then student 3 also gets one.   Of course, this sequence has a more concise mathematical description:   So suppose you are student 17. By these rules, are you entitled to a miniature candy bar? Well, student 0 gets a candy bar by the first rule. Therefore, by the second rule, student 1 also gets one, which means student 2 gets one, which means student 3 gets one as well, and so on. By 17 applications of the professor's second rule, you get your candy bar! Of course the rules really guarantee a candy bar to every student, no matter how far back in line they may be.  The reasoning that led us to conclude that every student gets a candy bar is essentially all there is to induction.  The Induction Principle   Let be a proposition over a universe (or predicate) on the nonnegative integers. If    is true, and     for all nonnegative integers, (remember from , means IMPLIES ),   then    is true for all nonnegative integers, .        We'll refer to the induction method described above as ordinary induction when we need to distinguish it in this chapter. Formulated as a formal argument as in , this would be  Induction Rule         This Induction Rule works for the same intuitive reason that all the students get candy bars, and we hope the explanation using candy bars makes it clear why the soundness of ordinary induction can be taken for granted. In fact, the rule is so obvious that it's hard to see what more basic principle could be used to justify it. What's not so obvious is how much mileage we get by using it.   A Familiar Example   Below is the formula for the sum of the nonnegative integers up to . The formula holds for all nonnegative integers, so it is the kind of statement to which induction applies directly.    For all        To prove the theorem by induction, define predicate to be . Now the theorem can be restated as the claim that is true for all . This is great, because the Induction Principle lets us reach precisely that conclusion, provided we establish two simpler facts:    is true.     for all nonnegative integers, ,     So now our job is reduced to proving these two statements.   Basis step: The first statement follows because of the convention that a sum of zero terms is equal to 0. So is the true assertion that a sum of zero terms is equal to .   Inductive step: The second statement is more complicated. But remember a basic plan for proving the validity of any implication: assume the statement on the left and then prove the statement on the right. In this case, we assume namely, , in order to prove , which is the equation: These two equations are quite similar; in fact, adding to both sides of equation and simplifying the right side gives the equation : Thus, if > is true, then so is . This argument is valid for every nonnegative integer , so this establishes the second fact required by the induction proof. Therefore, the Induction Principle says that the predicate is true for all nonnegative integers, . The theorem is proved.      A Template for Inductive Proofs  The proof of was relatively simple, but even the most complicated induction proof follows exactly the same template. There are five components:   Define an appropriate predicate: \"Let be the statement \"For every \"    Prove that is true. This is usually easy, as in the example above. This part of the proof is called the base case or basis step .    Define an appropriate inductive hypothesis. The predicate , setting to some arbitrary is called the inductive hypothesis. The eventual conclusion of the induction argument will be that is true for all nonnegative . A clearly stated induction hypothesis is often the most important part of an induction proof, and its omission is the largest source of confused proofs by students. In the simplest cases, the induction hypothesis can be lifted straight from the proposition you are trying to prove, as we did with equation . Sometimes the induction hypothesis will involve several variables, in which case you should indicate which variable serves as (usually is used for this).    Prove that implies for every nonnegative integer . This is called the inductive step . The basic plan is always the same: assume that is true and then use this assumption to prove that is true. These two statements should be fairly similar, but bridging the gap may require some ingenuity. Whatever argument you give must be valid for every nonnegative integer , since the goal is to prove that all the following implications are true:     Invoke induction. State a conclusion, for example: Given these facts, the induction principle allows us to conclude that is true for all nonnegative . This is the logical capstone to the whole argument.     Always be sure to explicitly label the base case and the inductive step (which encompasses steps 4 and 5 above). Doing so will make your proofs clearer and will decrease the chance that you forget a key step—like checking the base case.  The proof of given above is perfectly valid; however, it contains a lot of extraneous explanation that you won't usually see in induction proofs. The writeup below is closer to what you might see in print and should be prepared to produce yourself.   A Clean Writeup   Let be the statement: for every ,    Basis step:  is true, because both sides of the equation equal 0 when    Inductive step: Assuming an inductive hypothesis that is true, that is for some nonnegative integer . Adding to both sides of the equation implies that which proves    Conclusion: So it follows by induction that is true for all nonnegative .     It probably bothers you that induction led to a proof of this summation formula but did not provide an intuitive way to understand it nor did it explain where the formula came from in the first place. This is both a weakness and a strength. It is a weakness when a proof does not provide insight. But it is a strength that a proof can provide a reader with a reliable guarantee of correctness without requiring insight.    Strong Induction  A useful variant of induction is called strong induction. Strong induction and ordinary induction are used for exactly the same thing: proving that a predicate is true for all nonnegative integers. Strong induction is useful when a simple proof that the predicate holds for does not follow just from the fact that it holds at , but from the fact that it holds for other values .   Principle of Strong Induction   Let be a predicate on nonnegative integers. If    is true, and    for all together imply ,   then is true for all .    The only change from the ordinary induction principle is that strong induction allows you make more assumptions in the inductive step of your proof! In an ordinary induction argument, you assume that is true and try to prove that is also true. In a strong induction argument, you may assume that and are all true when you go to prove . So you can assume a stronger set of hypotheses which can make your job easier.  Formulated as a formal argument as in , strong induction is  Strong Induction Rule    Stated more succinctly, the rule is      The template for strong induction proofs is identical to the template given in for ordinary induction except for two things:   you should state that your proof is by strong induction, and    you can assume that and are all true instead of only during the inductive step.      Product of Primes      Every integer greater than 1 is a product of primes.     We will prove by strong induction, letting be the statement: is a product of primes.   Basis step:  is true because 2 is prime, so it is a length one product of primes by convention.   Inductive step: Suppose that and that every number from 2 to is a product of primes. We must show that holds, namely, that is also a product of primes. We argue by cases:   If itself is prime, it is a length one product of primes by convention, and so holds in this case.    Otherwise, is not prime, which by definition means for some integers between 2 and . Now by the strong induction hypothesis, we know that both and are products of primes. By multiplying these products, it follows immediately that is also a product of primes. Therefore, holds in this case as well.      Conclusion: So holds in any case, which completes the proof by strong induction that holds for all .      "
+},
+{
+  "id": "def-induction-principle",
+  "level": "2",
+  "url": "Section14_1.html#def-induction-principle",
+  "type": "Definition",
+  "number": "14.1.1",
+  "title": "The Induction Principle.",
+  "body": " The Induction Principle   Let be a proposition over a universe (or predicate) on the nonnegative integers. If    is true, and     for all nonnegative integers, (remember from , means IMPLIES ),   then    is true for all nonnegative integers, .      "
+},
+{
+  "id": "subsec-ordinary-induction-6",
+  "level": "2",
+  "url": "Section14_1.html#subsec-ordinary-induction-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "ordinary induction "
+},
+{
+  "id": "ex-induction-sum",
+  "level": "2",
+  "url": "Section14_1.html#ex-induction-sum",
+  "type": "Example",
+  "number": "14.1.3",
+  "title": "A Familiar Example.",
+  "body": " A Familiar Example   Below is the formula for the sum of the nonnegative integers up to . The formula holds for all nonnegative integers, so it is the kind of statement to which induction applies directly.    For all        To prove the theorem by induction, define predicate to be . Now the theorem can be restated as the claim that is true for all . This is great, because the Induction Principle lets us reach precisely that conclusion, provided we establish two simpler facts:    is true.     for all nonnegative integers, ,     So now our job is reduced to proving these two statements.   Basis step: The first statement follows because of the convention that a sum of zero terms is equal to 0. So is the true assertion that a sum of zero terms is equal to .   Inductive step: The second statement is more complicated. But remember a basic plan for proving the validity of any implication: assume the statement on the left and then prove the statement on the right. In this case, we assume namely, , in order to prove , which is the equation: These two equations are quite similar; in fact, adding to both sides of equation and simplifying the right side gives the equation : Thus, if > is true, then so is . This argument is valid for every nonnegative integer , so this establishes the second fact required by the induction proof. Therefore, the Induction Principle says that the predicate is true for all nonnegative integers, . The theorem is proved.   "
+},
+{
+  "id": "subsec-template-inductive-proofs-2",
+  "level": "2",
+  "url": "Section14_1.html#subsec-template-inductive-proofs-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "base case basis step inductive step "
+},
+{
+  "id": "subsec-template-inductive-proofs-5",
+  "level": "2",
+  "url": "Section14_1.html#subsec-template-inductive-proofs-5",
+  "type": "Example",
+  "number": "14.1.5",
+  "title": "A Clean Writeup.",
+  "body": " A Clean Writeup   Let be the statement: for every ,    Basis step:  is true, because both sides of the equation equal 0 when    Inductive step: Assuming an inductive hypothesis that is true, that is for some nonnegative integer . Adding to both sides of the equation implies that which proves    Conclusion: So it follows by induction that is true for all nonnegative .    "
+},
+{
+  "id": "def-strong-induction",
+  "level": "2",
+  "url": "Section14_1.html#def-strong-induction",
+  "type": "Definition",
+  "number": "14.1.6",
+  "title": "Principle of Strong Induction.",
+  "body": " Principle of Strong Induction   Let be a predicate on nonnegative integers. If    is true, and    for all together imply ,   then is true for all .   "
+},
+{
+  "id": "thm-strong-induction-rule",
+  "level": "2",
+  "url": "Section14_1.html#thm-strong-induction-rule",
+  "type": "Theorem",
+  "number": "14.1.7",
+  "title": "Strong Induction Rule.",
+  "body": " Strong Induction Rule    Stated more succinctly, the rule is    "
+},
+{
+  "id": "subsec-review-strong-induction-7",
+  "level": "2",
+  "url": "Section14_1.html#subsec-review-strong-induction-7",
+  "type": "Example",
+  "number": "14.1.8",
+  "title": "Product of Primes.",
+  "body": " Product of Primes      Every integer greater than 1 is a product of primes.     We will prove by strong induction, letting be the statement: is a product of primes.   Basis step:  is true because 2 is prime, so it is a length one product of primes by convention.   Inductive step: Suppose that and that every number from 2 to is a product of primes. We must show that holds, namely, that is also a product of primes. We argue by cases:   If itself is prime, it is a length one product of primes by convention, and so holds in this case.    Otherwise, is not prime, which by definition means for some integers between 2 and . Now by the strong induction hypothesis, we know that both and are products of primes. By multiplying these products, it follows immediately that is also a product of primes. Therefore, holds in this case as well.      Conclusion: So holds in any case, which completes the proof by strong induction that holds for all .    "
 },
 {
   "id": "Section14_2",
