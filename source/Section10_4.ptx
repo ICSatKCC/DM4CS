@@ -413,7 +413,7 @@ M =
 <li><p> Determine <m>RS</m>, <m>R^2</m>, and <m>S^2</m>; and represent them clearly in any way.</p></li>
 </ol></p>
 </statement>
-<answer><p><ol marker="(a)"><li><p> <m>\begin{array}{cc}
+<answer><p><ol marker="(a)"><li><p> <m>R =  \begin{array}{cc}
   &amp;
 \begin{array}{cccc}
  1 &amp; 2 &amp; 3 &amp; 4 \\
@@ -434,13 +434,12 @@ M =
  0 &amp; 0 &amp; 1 &amp; 0 \\
 \end{array}
 \right) \\
-\end{array}</m> and <m>\begin{array}{cc}
+\end{array}</m> and <m> S = \begin{array}{cc}
    &amp;
 \begin{array}{cccc}
  1 &amp; 2 &amp; 3 &amp; 4 \\
 \end{array}
- \\
-
+ \\ 
 \begin{array}{c}
  1 \\
  2 \\
@@ -472,10 +471,10 @@ M =
 \end{array}
  &amp; \left(
 \begin{array}{cccc}
- 0 &amp; 1 &amp; 0 &amp; 0 \\
+ 0 &amp; 1 &amp; 0 &amp; 1 \\
  1 &amp; 0 &amp; 1 &amp; 0 \\
  0 &amp; 1 &amp; 0 &amp; 1 \\
- 0 &amp; 0 &amp; 1 &amp; 0 \\
+ 1 &amp; 0 &amp; 1 &amp; 0 \\
 \end{array}
 \right) \\
 \end{array}</m>
@@ -496,13 +495,13 @@ M =
 \end{array}
  &amp; \left(
 \begin{array}{cccc}
- 0 &amp; 1 &amp; 0 &amp; 0 \\
- 1 &amp; 0 &amp; 1 &amp; 0 \\
- 0 &amp; 1 &amp; 0 &amp; 1 \\
- 0 &amp; 0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 1 \\
 \end{array}
 \right) \\
-\end{array}</m><m>=S^2</m>
+\end{array} =S^2 = S</m>
 </p></li>
 </ol></p>
 </answer>
