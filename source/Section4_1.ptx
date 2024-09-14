@@ -247,9 +247,9 @@ For each of the following propositions, identify simple propositions, express th
 <li>If 8 is not an even integer then <m>2>5</m>. True.</li>
 </ol></p>
 </answer></exercise>
-<!-- TODO rewrite this question, students confused about other conditional forms -->
+
 <exercise number="4">
-<statement><p>Rewrite each of the following statements using the other conditional forms:</p>
+<statement><p>Rewrite each of the following statements in symbolic form. Make sure you define the propositional variables:</p>
 <p><ol marker="(a)">
 <li><p>If an integer is a multiple of 4, then it is even.</p></li>
 <li><p>The fact that a polygon is a square is a sufficient condition that it is a rectangle.</p></li>
@@ -258,8 +258,6 @@ For each of the following propositions, identify simple propositions, express th
 <li><p> <m>x^2=y^2</m> is a necessary condition for <m>x = y</m>. </p></li>
 </ol></p>
 </statement>
-
-
 </exercise>
 <exercise number="5">
 <statement><p>Write the converse of the propositions in exercise 4. Compare the truth of each proposition and its converse.
