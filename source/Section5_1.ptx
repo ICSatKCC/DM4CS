@@ -401,16 +401,32 @@
 						</ol></p>
 			</answer>
 		</exercise>
-		<exercise number="6"><statement><p>Determine the validity of the following argument: For students to do well in a discrete mathematics course, it is necessary that they study hard.
-					Students who do well in courses do not skip classes. Students who study hard do well in courses. Therefore students who do well in a discrete mathematics
-					course do not skip class.</p></statement>
-		</exercise>
-		<exercise number="7"><statement><p>Describe how <m>p_1,p_1\to p_2,\ldots  ,p_{99}\to p_{100}\Rightarrow p_{100}</m> could be proved in 199 steps.
-					</p></statement>
-			<answer><p> <m>p_1\to p_k</m> and <m>p_k\to p_{k+1}</m> implies <m>p_1\to p_{k+1}</m>. It takes two steps to get to <m>p_1\to p_{k+1}</m> from <m>p_1\to p_k</m> This means it takes <m>2(100-1)</m> steps to get to <m>p_1\to p_{100}</m> (subtract 1 because <m>p_1\to p_2</m> is stated as a premise). A final step is needed to apply detachment to imply <m>p_{100}</m></p></answer>
+		<exercise number="6"><statement><p>Use the rules of inference and logic laws to show these hypotheses: 
+			<ul>
+				<li>
+					<p>
+						"If the surf is big or it is not windy the surf contest will be held and the
+			Jet Ski will be used for rescues"
+					</p>
+				</li>
+				<li>
+					<p>
+						"If the surf contest is held, the prize money will be
+						awarded"	
+					</p>
+				</li>
+				<li>
+					<p>
+						"the prize money was not awarded"
+					</p>
+				</li>
+			</ul>
+			imply the conclusion: "it was windy".
 
-		</exercise>
 
+			(Hint: define some propositions and express the entire argument in propositional form)</p></statement>
+</exercise>
+		
 	</exercises>
 
 

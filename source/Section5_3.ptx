@@ -180,6 +180,93 @@
 				</p>
 			</statement>
 		</exercise>
+		<exercise number="3"><statement><p>Given the following argument: </p>
+			<p>
+			"If students study hard in courses, then they do well in them." 
+			"For students to do well in courses it is necessary that they do not skip classes for those courses."
+			"Students doing well in discrete math follows from them studying hard in discrete math."
+			"Therefore, students who do well in a discrete math
+			course do not skip discrete math class."</p>
+			<p>
+				Define propositional functions and the compound proposition for each statement over the universe of courses.
 
+			</p>
+			</statement>
+			<answer>
+				<p>
+				First, define propositions over the universe of all courses:
+				<ul>
+					<li>
+						<p>
+							Let <m>W(x)</m> be: Students do well in course <m>x</m>.
+						</p>
+					</li>
+					<li>
+						<p>
+							Let <m>H(x)</m> be: Students study hard in course <m>x</m>.
+						</p>
+					</li>
+					<li>
+						<p>
+							Let <m>S(x)</m> be: Students skip class for course <m>x</m>.
+						</p>
+					</li>
+					<li>
+						<p>
+							
+						</p>
+					</li>
+
+
+				</ul>	
+				Now define the compound propositions given to us:
+				<ul>
+					<li>
+						
+						<p>
+							"If students study hard in courses, then they do well in them."
+							<me>\forall x H(x) \rightarrow W(x)</me>
+						</p>
+					</li>
+					<li>
+						<p>
+							"For students to do well in courses it is necessary that they do not skip classes for those courses."
+
+							<me>\forall x W(x) \rightarrow \neg S(x)</me>
+						</p>
+					</li>
+					<li>
+					<p>
+						"Students doing well in discrete math, follows from them studying hard in discrete math." 
+						translates to:
+
+
+						"If students study hard in their discrete math course, then they do well in the course." from the
+						<xref ref="list-conditional-forms"/>. So we have: 
+						<me>H(\text{discrete math}) \rightarrow W(\text{discrete math})</me>
+
+					</p>
+				</li>
+					<li>
+						<p>
+							We're asked to show: "students who do well in a discrete math
+							course do not skip discrete math class."
+
+							This translates to: "If students do well in discrete math, then they do not skip
+							discrete math class."
+
+							<me>W(\text{discrete math}) \rightarrow \neg S(\text{discrete math})</me>
+						</p>
+					</li>
+				</ul>
+		
+				</p>
+			</answer>
+  </exercise>
+  <exercise number="4"><statement><p>Using the propositions from exercise 3 to prove the statement: "students who do well in a discrete math
+	course do not skip discrete math class".
+	</p></statement>
+	
+</exercise>
 	</exercises>
 </section>
