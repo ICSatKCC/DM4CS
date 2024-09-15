@@ -1170,7 +1170,56 @@ x^y = (\sqrt{2}^{\sqrt{2}})^{\sqrt{2}} = \sqrt{2}^{(\sqrt{2}\sqrt{2})} = \sqrt{2
 <span class="process-math">\(\therefore (\exists x) (\neg s(x))\)</span> Existential Generalization (11)</div></li>
 </ol></div>
 </div></details></div></article><article class="exercise exercise-like" id="exercises-5_3-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="exercises-5_3-3-1-1">Prove that <span class="process-math">\((\exists x)(\forall y)(p(x, y)) \Rightarrow  (\forall y)(\exists x)(p(x, y))\text{,}\)</span> but that converse is not true.</div></article></section></section></div>
+<div class="para" id="exercises-5_3-3-1-1">Prove that <span class="process-math">\((\exists x)(\forall y)(p(x, y)) \Rightarrow  (\forall y)(\exists x)(p(x, y))\text{,}\)</span> but that converse is not true.</div></article><article class="exercise exercise-like" id="exercises-5_3-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="exercises-5_3-4-1-1">Given the following argument:</div> <div class="para" id="exercises-5_3-4-1-2">"If students study hard in courses, then they do well in them." "For students to do well in courses it is necessary that they do not skip classes for those courses." "Students doing well in discrete math follows from them studying hard in discrete math." "Therefore, students who do well in a discrete math course do not skip discrete math class."</div> <div class="para" id="exercises-5_3-4-1-3">Define propositional functions and the compound proposition for each statement over the universe of courses.</div>
+<div class="solutions"><details id="exercises-5_3-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-5_3-4-2-1">
+<div class="para">First, define propositions over the universe of all courses:</div>
+<ul class="disc">
+<li id="exercises-5_3-4-2-1-1-1"><div class="para" id="exercises-5_3-4-2-1-1-1-1">Let <span class="process-math">\(W(x)\)</span> be: Students do well in course <span class="process-math">\(x\text{.}\)</span>
+</div></li>
+<li id="exercises-5_3-4-2-1-1-2"><div class="para" id="exercises-5_3-4-2-1-1-2-1">Let <span class="process-math">\(H(x)\)</span> be: Students study hard in course <span class="process-math">\(x\text{.}\)</span>
+</div></li>
+<li id="exercises-5_3-4-2-1-1-3"><div class="para" id="exercises-5_3-4-2-1-1-3-1">Let <span class="process-math">\(S(x)\)</span> be: Students skip class for course <span class="process-math">\(x\text{.}\)</span>
+</div></li>
+<li id="exercises-5_3-4-2-1-1-4"><div class="para" id="exercises-5_3-4-2-1-1-4-1"></div></li>
+</ul>
+<div class="para">Now define the compound propositions given to us:</div>
+<ul class="disc">
+<li id="exercises-5_3-4-2-1-2-1"><div class="para logical" id="exercises-5_3-4-2-1-2-1-1">
+<div class="para">"If students study hard in courses, then they do well in them."</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall x H(x) \rightarrow W(x)
+\end{equation*}
+</div>
+</div></li>
+<li id="exercises-5_3-4-2-1-2-2"><div class="para logical" id="exercises-5_3-4-2-1-2-2-1">
+<div class="para">"For students to do well in courses it is necessary that they do not skip classes for those courses."</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall x W(x) \rightarrow \neg S(x)
+\end{equation*}
+</div>
+</div></li>
+<li id="exercises-5_3-4-2-1-2-3"><div class="para logical" id="exercises-5_3-4-2-1-2-3-1">
+<div class="para">"Students doing well in discrete math, follows from them studying hard in discrete math." translates to: "If students study hard in their discrete math course, then they do well in the course." from the <a href="section4_1-propositions-logic-operators.html#list-conditional-forms" class="xref" data-knowl="./knowl/xref/list-conditional-forms.html" data-reveal-label="Reveal" data-close-label="Close" title="List 4.1.11: Conditional Alternative Forms">List 4.1.11</a>. So we have:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/list-conditional-forms.html">
+\begin{equation*}
+H(\text{discrete math}) \rightarrow W(\text{discrete math})
+\end{equation*}
+</div>
+</div></li>
+<li id="exercises-5_3-4-2-1-2-4"><div class="para logical" id="exercises-5_3-4-2-1-2-4-1">
+<div class="para">We’re asked to show: "students who do well in a discrete math course do not skip discrete math class." This translates to: "If students do well in discrete math, then they do not skip discrete math class."</div>
+<div class="displaymath process-math">
+\begin{equation*}
+W(\text{discrete math}) \rightarrow \neg S(\text{discrete math})
+\end{equation*}
+</div>
+</div></li>
+</ul>
+</div></div></details></div></article><article class="exercise exercise-like" id="exercises-5_3-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="exercises-5_3-5-1-1">Using the propositions from exercise 3 to prove the statement: "students who do well in a discrete math course do not skip discrete math class".</div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="section5_2-induction.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section5_4-proof-review.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
