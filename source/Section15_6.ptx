@@ -521,7 +521,7 @@
         </exercise>
         <exercise number="4">
             <statement>
-                <p> Prove that if an undirected graph has a subgraph that is a <m>K_3</m> it then
+                <p> Prove that if an undirected graph has a subgraph that is a <m>K_3</m> then
                     its chromatic number is at least 3.</p>
             </statement>
         </exercise>
