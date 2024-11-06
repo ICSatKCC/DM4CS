@@ -553,7 +553,7 @@
             <title>Augmenting City Water Flow</title>
             <p>For <m>f_1</m> in <xref ref="fig-water-network" text="type-global" />, a flow
                 augmenting path would be<m>\left(e_2 , e_3 , e_4 \right)</m> since <m>w\left(e_2\right)-f_1\left(e_2\right)=
-                15</m>, <m>w\left(e_3\right)-f_1\left(e_3\right)=5</m>, and <m>
+                15</m>, <m>w\left(e_3\right)-f_1\left(e_3\right)= 15</m>, and <m>
                 w\left(e_4\right)-f_1\left(e_4\right)=5</m>.</p>
             <p>These positive differences represent unused capacities, and the smallest value
                 represents the amount of flow that can be added to each edge in the path. Note that

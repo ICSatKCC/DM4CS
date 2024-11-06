@@ -1266,13 +1266,13 @@
 						1 \amp 2 \amp 1 \amp -1 \amp 2 \\
 						0 \amp -3 \amp 0 \amp 2 \amp -1\\
 						0 \amp 0 \amp -3 \amp 0 \amp -2\\
-						0 \amp 0 \amp -3 \amp 0 \amp 1\\
+						0 \amp 0 \amp -3 \amp 0 \amp -1\\
 						\end{array}
 						\right).</me>
 
 				</p>
 				<p> Therefore we see that we have a problem because rows 3 and 4 are saying <m>-3z=
-					-2</m> and <m>-3z = 1</m>. Or we could keep going with the row operations and
+					-2</m> and <m>-3z = -1</m>. Or we could keep going with the row operations and
 					add <m>-1 * </m>row 3 to row 4: Add <m>-2 * </m> row 2 to row 4: <me>\left(
 					\begin{array}{ccccc}
 						1 \amp 2 \amp 1 \amp -1 \amp 2 \\
