@@ -993,11 +993,128 @@ window.MathJax = {
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="space"> </span><span class="title">Proof using Set-Membership Tables</span>
 </h3>
 <div class="para" id="subsec6_1_3-membership-table-proof-2">Let <span class="process-math">\(A\)</span> be a subset of a universal set <span class="process-math">\(U\)</span> and let <span class="process-math">\(u\in U\text{.}\)</span> To use this method we note that exactly one of the following is true: <span class="process-math">\(u \in  A\)</span> or <span class="process-math">\(u\notin  A\text{.}\)</span> Denote the situation where <span class="process-math">\(u \in  A\)</span> by 1 and that where <span class="process-math">\(u \notin  A\)</span> by 0. Working with two sets, <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> and if <span class="process-math">\(u \in  U\text{,}\)</span> there are four possible outcomes of “where <span class="process-math">\(u\)</span> can be.” What are they? The set-membership table for <span class="process-math">\(A \cup  B\)</span> is:</div>
-<figure class="table table-like" id="mt-union"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.1.5<span class="period">.</span></span><span class="space"> </span>Membership Table for <span class="process-math">\(A \cup  B\)</span></figcaption></figure><div class="para" id="subsec6_1_3-membership-table-proof-4">This table illustrates that <span class="process-math">\(u\in A \cup  B\)</span> if and only if <span class="process-math">\(u\in A\)</span> or <span class="process-math">\(u \in  B\text{.}\)</span>
+<figure class="table table-like" id="mt-union"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.1.5<span class="period">.</span></span><span class="space"> </span>Membership Table for <span class="process-math">\(A \cup B\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(A\)</span></th>
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(B\)</span></th>
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(A \cup  B\)</span></th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+</table></div></figure><div class="para" id="subsec6_1_3-membership-table-proof-4">This table illustrates that <span class="process-math">\(u\in A \cup  B\)</span> if and only if <span class="process-math">\(u\in A\)</span> or <span class="process-math">\(u \in  B\text{.}\)</span>
 </div>
 <div class="para" id="subsec6_1_3-membership-table-proof-5">In order to prove the distributive law via a set-membership table, write out the table for each side of the set statement to be proved and note that if <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> are two columns in a table, then the set statement <span class="process-math">\(S\)</span> is equal to the set statement <span class="process-math">\(T\)</span> if and only if corresponding entries in each row are the same.</div>
 <div class="para" id="subsec6_1_3-membership-table-proof-6">To prove <span class="process-math">\(A \cap  (B \cup  C) = (A \cap  B) \cup  (A \cap  C)\text{,}\)</span> first note that the statement involves three sets, <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\text{,}\)</span> so there are <span class="process-math">\(2^3= 8\)</span> possibilities for the membership of an element in the sets.</div>
-<figure class="table table-like" id="tab-mt-distr"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.1.6<span class="period">.</span></span><span class="space"> </span>Membership table to prove the distributive law of intersection over union</figcaption></figure><div class="para" id="subsec6_1_3-membership-table-proof-8">Since each entry in Column 7 is the same as the corresponding entry in Column 8, we have shown that <span class="process-math">\(A\cap  (B \cup  C) = (A\cap B) \cup  (A \cap C)\)</span> for any sets <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\text{.}\)</span> The main advantage of this method is that it is mechanical. The main disadvantage is that it is reasonable to use only for a relatively small number of sets. If we are trying to prove a statement involving five sets, there are <span class="process-math">\(2^5 = 32\)</span> rows, which would test anyone’s patience doing the work by hand.</div></section><section class="subsection" id="subsec6_1_4-proofs-using-definitions-sets"><h3 class="heading hide-type">
+<figure class="table table-like" id="tab-mt-distr"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.1.6<span class="period">.</span></span><span class="space"> </span>Membership table to prove the distributive law of intersection over union</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(A\)</span></th>
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(B\)</span></th>
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(C\)</span></th>
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(B \cup  C\)</span></th>
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(A \cap B\)</span></th>
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(A \cap C\)</span></th>
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(A \cap  (B \cup  C)\)</span></th>
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\((A \cap  B) \cup  (A \cap  C)\)</span></th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+</table></div></figure><div class="para" id="subsec6_1_3-membership-table-proof-8">Since each entry in Column 7 is the same as the corresponding entry in Column 8, we have shown that <span class="process-math">\(A\cap  (B \cup  C) = (A\cap B) \cup  (A \cap C)\)</span> for any sets <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\text{.}\)</span> The main advantage of this method is that it is mechanical. The main disadvantage is that it is reasonable to use only for a relatively small number of sets. If we are trying to prove a statement involving five sets, there are <span class="process-math">\(2^5 = 32\)</span> rows, which would test anyone’s patience doing the work by hand.</div></section><section class="subsection" id="subsec6_1_4-proofs-using-definitions-sets"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.1.4</span><span class="space"> </span><span class="title">Proof Using Definitions</span>
 </h3>
 <div class="para" id="subsec6_1_4-proofs-using-definitions-sets-2">This method involves using definitions and basic concepts to prove the given statement. This procedure forces one to learn, relearn, and understand basic definitions and concepts. It helps individuals to focus their attention on the main ideas of each topic and therefore is the most useful method of proof. One does not learn a topic by memorizing or occasionally glancing at core topics, but by using them in a variety of contexts. The word proof panics most people; however, everyone can become comfortable with proofs. Do not expect to prove every statement immediately. In fact, it is not our purpose to prove every theorem or fact encountered, only those that illustrate methods and/or basic concepts. Throughout the text we will focus in on main techniques of proofs. Let’s illustrate by proving the distributive law.</div>
