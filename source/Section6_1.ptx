@@ -39,24 +39,25 @@
 
 
 		<table xml:id="mt-union">
-			<title>Membership Table for <m>A \cup  B</m></title>
-			<me>
+			<title>Membership Table for <m>A \cup B</m></title>
+			<!-- <me>
 				\begin{array}{|c|c|c|}
 				\hline
-				 A&amp;  B &amp; A \cup  B\\\hline
+				 A &amp;  B &amp; A \cup  B \\\hline
 				 0 &amp; 0 &amp; 0 \\\hline
 				 0 &amp; 1 &amp; 1 \\\hline
 				 1 &amp; 0 &amp; 1 \\\hline
 				 1 &amp; 1 &amp; 1 \\\hline
 				\end{array}
-			</me>
-<!--			<tabular  halign="center">
-				<row><cell> <m>A</m>  </cell><cell> <m>B</m>  </cell><cell><m>A \cup  B</m></cell></row>
+			</me> -->
+			<tabular  halign="center">
+      <row header="yes" bottom="major">
+				<cell> <m>A</m>  </cell><cell> <m>B</m>  </cell><cell><m>A \cup  B</m></cell></row>
 				<row><cell> 0 </cell><cell> 0 </cell><cell> 0 </cell></row>
 				<row><cell> 0 </cell><cell> 1 </cell><cell> 1 </cell></row>
 				<row><cell> 1 </cell><cell> 0 </cell><cell> 1 </cell></row>
 				<row><cell> 1 </cell><cell> 1 </cell><cell> 1 </cell></row>
-			</tabular>-->
+			</tabular>
 		</table>
 		<p>This table illustrates that <m>u\in A \cup  B</m> if and only if <m>u\in A</m> or <m>u \in  B</m>.</p>
 
@@ -67,7 +68,7 @@
 		<table xml:id="tab-mt-distr">
 			<title>Membership table to prove the distributive law of intersection over union</title>
 
-			<me>\begin{array}{|c|c|c|c|c|c|c|c|}
+			<!-- <me>\begin{array}{|c|c|c|c|c|c|c|c|}
 				\hline
 				A &amp; B &amp; C &amp; B \cup  C &amp; A \cap B &amp; A \cap C &amp; A \cap  (B \cup  C) &amp;  (A \cap  B) \cup  (A \cap  C)\\\hline
 				0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\\hline
@@ -79,9 +80,9 @@
 				1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1\\\hline
 				1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1\\\hline
 				\end{array}
-				</me>
-<!--			<tabular  halign="center">
-				<row><cell><m>A</m></cell><cell><m>B</m></cell><cell><m>C</m></cell><cell><m>B \cup  C</m></cell><cell><m>A \cap B</m></cell><cell><m>A \cap C</m></cell><cell><m>A \cap  (B \cup  C)</m></cell><cell><m> (A \cap  B) \cup  (A \cap  C)</m></cell></row>
+				</me> -->
+				<tabular  halign="center">
+					<row header="yes" bottom="major"><cell><m>A</m></cell><cell><m>B</m></cell><cell><m>C</m></cell><cell><m>B \cup  C</m></cell><cell><m>A \cap B</m></cell><cell><m>A \cap C</m></cell><cell><m>A \cap  (B \cup  C)</m></cell><cell><m> (A \cap  B) \cup  (A \cap  C)</m></cell></row>
 				<row><cell>0</cell><cell>0</cell><cell>0</cell><cell>0</cell><cell>0</cell><cell>0</cell><cell>0</cell><cell>0</cell></row>
 				<row><cell>0</cell><cell>0</cell><cell>1</cell><cell>1</cell><cell>0</cell><cell>0</cell><cell>0</cell><cell>0</cell></row>
 				<row><cell>0</cell><cell>1</cell><cell>0</cell><cell>1</cell><cell>0</cell><cell>0</cell><cell>0</cell><cell>0</cell></row>
@@ -90,7 +91,7 @@
 				<row><cell>1</cell><cell>0</cell><cell>1</cell><cell>1</cell><cell>0</cell><cell>1</cell><cell>1</cell><cell>1</cell></row>
 				<row><cell>1</cell><cell>1</cell><cell>0</cell><cell>1</cell><cell>1</cell><cell>0</cell><cell>1</cell><cell>1</cell></row>
 				<row><cell>1</cell><cell>1</cell><cell>1</cell><cell>1</cell><cell>1</cell><cell>1</cell><cell>1</cell><cell>1</cell></row>
-			</tabular>-->
+			</tabular>
 		</table>
 
 
