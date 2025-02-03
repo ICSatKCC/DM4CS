@@ -122,7 +122,8 @@
       <answer>
         <p><ol marker="(a)" cols="2">
             <li><p><m>16</m></p></li>
-            <li><p> <m>30</m></p></li>
+            <li><p>If <m>\emptyset</m> is considered to be a proper subset the answer is <m>31</m>. If <m>\emptyset</m> is not considered a proper subset
+            then the answer is <m>30</m>.</p></li>
             </ol></p>
       </answer>
     </exercise>
