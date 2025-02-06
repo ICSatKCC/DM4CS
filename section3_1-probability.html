@@ -1045,7 +1045,7 @@ P(\{H,T\}) &amp;= &amp;P(H) + P(T) &amp;= &amp;1/2 + 1/2 &amp;= &amp;1 .
 </div></article><article class="example example-like" id="ex-flipping-a-coin-twice"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Flipping a Coin Twice.</span>
 </h4> <div class="para logical" id="ex-flipping-a-coin-twice-2">
-<div class="para">If we flip a fair coin twice, then there are four possible outcomes, and the sample space becomes <span class="process-math">\(S = \{ HH , HT , TH , TT \}\text{.}\)</span> For example, <span class="process-math">\(HT\)</span> indicates that the first flip resulted in heads, whereas the second flip resulted in tails. In this case, the probability function <span class="process-math">\(P : S \rightarrow \mathbb{R}\)</span> is given by \[ P(HH) = P(HT) = P(TH) = P(TT) = 1/4 . \] Observe again that this function <span class="process-math">\(P\)</span> satisfies the two conditions in <a href="section3_1-probability.html#def-probability-function" class="xref" data-knowl="./knowl/xref/def-probability-function.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.2: Probability Function or Distribution">Definition 3.1.2</a>. Since the sample space consists of <span class="process-math">\(4\)</span> elements, the number of events is equal to <span class="process-math">\(2^4 = 16\text{.}\)</span> For example, <span class="process-math">\(A = \{ HT , TH \}\)</span> is an event and it follows from <a href="section3_1-probability.html#def-probability-event" class="xref" data-knowl="./knowl/xref/def-probability-event.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.4: Probability of an Event">Definition 3.1.4</a> that</div>
+<div class="para">If we flip a fair coin twice, then there are four possible outcomes, and the sample space becomes <span class="process-math">\(S = \{ HH , HT , TH , TT \}\text{.}\)</span> For example, <span class="process-math">\(HT\)</span> indicates that the first flip resulted in heads, whereas the second flip resulted in tails. In this case, the probability function <span class="process-math">\(P : S \rightarrow \mathbb{R}\)</span> is given by <span class="process-math">\(P(HH) = P(HT) = P(TH) = P(TT) = 1/4\)</span> . Observe again that this function <span class="process-math">\(P\)</span> satisfies the two conditions in <a href="section3_1-probability.html#def-probability-function" class="xref" data-knowl="./knowl/xref/def-probability-function.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.2: Probability Function or Distribution">Definition 3.1.2</a>. Since the sample space consists of <span class="process-math">\(4\)</span> elements, the number of events is equal to <span class="process-math">\(2^4 = 16\text{.}\)</span> For example, <span class="process-math">\(A = \{ HT , TH \}\)</span> is an event and it follows from <a href="section3_1-probability.html#def-probability-event" class="xref" data-knowl="./knowl/xref/def-probability-event.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.4: Probability of an Event">Definition 3.1.4</a> that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-probability-function.html ./knowl/xref/def-probability-event.html">
 \begin{equation*}
 P(A) = P(HT) + P(TH) = 1/4 + 1/4 = 1/2 .
@@ -1074,7 +1074,7 @@ P(i,j) = 1/36
 <div class="para">If we are interested in the sum of the results of the two rolls, then we define the event</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A_k = \text{ ``the sum of the two rolls } = k \text{'',}
+A_k = \text{ "the sum of the two rolls } =k \text{",} 
 \end{equation*}
 </div>
 <div class="para">which, using the notation of sets, is the same as</div>
@@ -1239,7 +1239,7 @@ P(A) = P\left(A_1\right) + P\left(A_2\right) =
 </div>
 </div></article><article class="definition definition-like" id="def-complement-of-event"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Complement of an event.</span>
-</h4> <div class="para" id="def-complement-of-event-3-1">If <span class="process-math">\(A\)</span> is an event, then <span class="process-math">\(\overline{A}\)</span> denotes its <em class="emphasis">complement</em>, i.e., <span class="process-math">\(\overline{A} = S - A\text{.}\)</span> Intuitively, the sum of <span class="process-math">\(P(A)\)</span> and <span class="process-math">\(P \left( \overline{A} \right)\)</span> must be equal to one, because the event <span class="process-math">\(A\)</span> either occurs or does not occur. Observe that this is similar to the <a href="section1_2-basic_Set_Operations.html#set_complement" class="xref" data-knowl="./knowl/xref/set_complement.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.10: Complement of a set">Definition 1.2.10</a>.</div></article><article class="theorem theorem-like" id="thm-probability-of-complements"><h4 class="heading">
+</h4> <div class="para" id="def-complement-of-event-3-1">If <span class="process-math">\(A\)</span> is an event, then <span class="process-math">\(\bar{A}\)</span> denotes its <em class="emphasis">complement</em>, i.e., <span class="process-math">\(\bar{A} = S - A\text{.}\)</span> Intuitively, the sum of <span class="process-math">\(P(A)\)</span> and <span class="process-math">\(P \left( \bar{A} \right)\)</span> must be equal to one, because the event <span class="process-math">\(A\)</span> either occurs or does not occur. Observe that this is similar to the <a href="section1_2-basic_Set_Operations.html#set_complement" class="xref" data-knowl="./knowl/xref/set_complement.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.10: Complement of a set">Definition 1.2.10</a>.</div></article><article class="theorem theorem-like" id="thm-probability-of-complements"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of Complements.</span>
 </h4>
 <div class="para logical" id="thm-probability-of-complements-2-1">
@@ -1247,15 +1247,15 @@ P(A) = P\left(A_1\right) + P\left(A_2\right) =
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-P(A) = 1 - P \left( \overline{A} \right) .
+P(A) = 1 - P \left( \bar{A} \right) .
 \end{equation*}
 </div>
 </div></article><details id="thm-probability-of-complements-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-probability-of-complements-3-1">
-<div class="para">Since <span class="process-math">\(A\)</span> and <span class="process-math">\(\overline{A}\)</span> are disjoint and <span class="process-math">\(S = A \cup \overline{A}\text{,}\)</span> it follows from <a href="section3_1-probability.html#thm-probability-of-sequence-of-disjoint" class="xref" data-knowl="./knowl/xref/thm-probability-of-sequence-of-disjoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.10: Probability of a Sequence of Disjoint Events">Theorem 3.1.10</a> that</div>
+<div class="para">Since <span class="process-math">\(A\)</span> and <span class="process-math">\(\bar{A}\)</span> are disjoint and <span class="process-math">\(S = A \cup \bar{A}\text{,}\)</span> it follows from <a href="section3_1-probability.html#thm-probability-of-sequence-of-disjoint" class="xref" data-knowl="./knowl/xref/thm-probability-of-sequence-of-disjoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.10: Probability of a Sequence of Disjoint Events">Theorem 3.1.10</a> that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-probability-of-sequence-of-disjoint.html ./knowl/xref/def-probability-event.html">
 \begin{equation*}
-P(S) = P \left( A \cup \overline{A} \right) =
-P(A) + P \left( \overline{A} \right) .
+P(S) = P \left( A \cup \bar{A} \right) =
+P(A) + P \left( \bar{A} \right) .
 \end{equation*}
 </div>
 <div class="para">We have seen in <a href="section3_1-probability.html#def-probability-event" class="xref" data-knowl="./knowl/xref/def-probability-event.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.4: Probability of an Event">Definition 3.1.4</a> that <span class="process-math">\(P(S) = 1\text{.}\)</span>
@@ -1339,9 +1339,9 @@ P(A \cap B) = 166/1000 .
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-probability-of-union.html">
 \begin{equation*}
 \begin{array}{rl}
-P(A \cup B) &amp;= P(A) + P(B) - P(A \cap B) \\
-&amp;= 500/1000 + 333/1000 - 166/1000  \\
-&amp;=  667/1000 .
+P(A \cup B) &amp; = P(A) + P(B) - P(A \cap B) \\
+&amp; = 500/1000 + 333/1000 - 166/1000  \\
+&amp; =  667/1000 .
 \end{array}
 \end{equation*}
 </div>
