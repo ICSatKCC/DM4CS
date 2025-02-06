@@ -108,8 +108,7 @@ and the sample space becomes <m>S = \{ HH , HT , TH , TT \}</m>. For
 example, <m>HT</m> indicates that the first flip resulted in heads, whereas
 the second flip resulted in tails. In this case, the probability
 function <m>P : S \rightarrow \mathbb{R}</m> is given by
-\[ P(HH) = P(HT) = P(TH) = P(TT) = 1/4 .
-\]
+<m>P(HH) = P(HT) = P(TH) = P(TT) = 1/4</m> .
 Observe again that this function <m>P</m> satisfies the two conditions in
 <xref ref="def-probability-function"/>. Since the sample space consists of <m>4</m> elements,
 the number of events is equal to <m>2^4 = 16</m>. For example,
@@ -137,8 +136,7 @@ for each outcome <m>(i,j)</m> in <m>S</m>.</p>
 
 <p>If we are interested in the sum of the results of the two rolls,
 then we define the event
- <me>A_k = \text{ ``the sum of the two rolls } = k \text{'',}</me>
-
+<me>A_k = \text{ "the sum of the two rolls } =k \text{",} </me>
 which, using the notation of sets, is the same as
 <me> A_k = \{ (i,j) \in S : i+j=k \} .</me>
 
@@ -152,6 +150,7 @@ outcomes of two rolls that result in a sum of <m>4</m>. These outcomes are
 <p>In the matrix below, the leftmost column indicates the result of the
 first roll, the top row indicates the result of the second roll, and
 each entry is the sum of the results of the two corresponding rolls.
+
 <me>
 \begin{array}{|c||c|c|c|c|c|c|}
       \hline
@@ -296,9 +295,9 @@ has <m>9</m> elements. It follows that
 <definition  xml:id="def-complement-of-event">
 			<title>Complement of an event</title><idx>Complement of an Event</idx>
 			<statement><p>If <m>A</m> is an event, then
-<m>\overline{A}</m> denotes its <em>complement</em>, i.e.,
-<m>\overline{A} = S - A</m>. Intuitively, the sum of <m>P(A)</m> and
-<m>P \left( \overline{A} \right)</m> must be equal to one, because the
+<m>\bar{A}</m> denotes its <em>complement</em>, i.e.,
+<m>\bar{A} = S - A</m>. Intuitively, the sum of <m>P(A)</m> and
+<m>P \left( \bar{A} \right)</m> must be equal to one, because the
 event <m>A</m> either occurs or does not occur. Observe that this is similar to the
 <xref ref="set_complement"/>. </p>
 			</statement>
@@ -309,13 +308,13 @@ event <m>A</m> either occurs or does not occur. Observe that this is similar to 
 			<title>Probability of Complements</title>
 			<statement><p>
 For any event <m>A</m>,
-<me>P(A) = 1 - P \left( \overline{A} \right) .</me>
+<me>P(A) = 1 - P \left( \bar{A} \right) .</me>
 </p></statement>
 <proof><p>
-Since <m>A</m> and <m>\overline{A}</m> are disjoint and <m>S = A \cup \overline{A}</m>,
+Since <m>A</m> and <m>\bar{A}</m> are disjoint and <m>S = A \cup \bar{A}</m>,
 it follows from <xref ref="thm-probability-of-sequence-of-disjoint"/> that
- <me>P(S) = P \left( A \cup \overline{A} \right) =
-            P(A) + P \left( \overline{A} \right) .</me>
+ <me>P(S) = P \left( A \cup \bar{A} \right) =
+            P(A) + P \left( \bar{A} \right) .</me>
 We have seen in <xref ref="def-probability-event"/> that <m>P(S) = 1</m>.
 </p></proof></theorem>
 
@@ -373,9 +372,9 @@ are divisible by <m>6</m>, we have
 We conclude that
 
 <me>\begin{array}{rl}
-  P(A \cup B) &amp;= P(A) + P(B) - P(A \cap B) \\
-        &amp;= 500/1000 + 333/1000 - 166/1000  \\
-        &amp;=  667/1000 .
+  P(A \cup B) &amp; = P(A) + P(B) - P(A \cap B) \\
+        &amp; = 500/1000 + 333/1000 - 166/1000  \\
+        &amp; =  667/1000 .
 \end{array}</me> </p>
 </example>
 
