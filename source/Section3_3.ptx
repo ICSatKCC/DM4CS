@@ -818,7 +818,7 @@ changing the value of the series:
     <exercise number="3">
       <statement>
         <!--  amsbook ex 7 part    -->
-        <p>7 A coin is tossed three times. Let<m> X</m> be the number of heads that turn up. Find <m>V
+        <p>A coin is tossed three times. Let<m> X</m> be the number of heads that turn up. Find <m>V
           (X)</m> and <m>\sigma(X)</m> (the standard deviation of <m>X</m>). </p>
       </statement>
       <answer>
@@ -848,9 +848,9 @@ changing the value of the series:
       <statement>
         <p> In Las Vegas, a roulette wheel has 38 slots numbered 0, 00, 1, 2, . . . , 36. The
           0 and 00 slots are green and half of the remaining 36 slots are red and half
-          are black. A croupier spins the wheel and throws in an ivory ball. If you bet
-          1 dollar on red, you win 1 dollar if the ball stops in a red slot and otherwise
-          you lose 1 dollar. </p>
+          are black. A croupier spins the wheel and throws in an ivory ball. If a player bets
+          1 dollar on a color, they win 1 dollar if the ball stops in a slot with the same color. If
+          the ball stops on either of the other colors, the player loses the 1 dollar they bet. </p>
 
         <p> You place a 1-dollar bet on black. Let <m>X</m> be your winnings. Define <m>S </m> and
           calculate the values of <m> P(X), \mathbb{E}(X) </m> and <m>V (X)</m>.</p>
@@ -884,15 +884,27 @@ changing the value of the series:
 
     <exercise number="6">
       <statement>
-        <p> Another form of bet for roulette is to bet that a specific number (say 17) will
-          turn up. If the ball stops on your number, you get your dollar back plus 35
-          dollars. If not, you lose your dollar.</p>
+        <p> Another form of betting on roulette is to bet that the ball will stop on a specific number (say 17). 
+        If the ball stops on a player's chosen number, they get their dollar back, plus 35
+          dollars. If not, they lose their 1 dollar bet.</p>
 
-        <p>You place a 1-dollar bet on the number 17. Let <m>Y</m> be your winnings. Define <m>S </m>
-          and calculate the values of <m> P(Y), \mathbb{E}(Y) </m> and <m>V (Y)</m>. Compare your
+        <p>You place a 1-dollar bet on the number 17. Let <m>Y</m> be your winnings.
+        <ol>
+          <li>
+            <p>
+              Define <m>S </m>
+          and calculate the values of <m> P(Y), \mathbb{E}(Y) </m> and <m>V (Y)</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Compare your
           answers from exercise 5, <m>\mathbb{E}(X), \mathbb{E}(Y)</m>, and <m>V (X), V (Y).</m>
           What do these computations tell you about the nature of your winnings if you make a
-          sequence of bets, betting each time on a number versus betting each time on a color?</p>
+          sequence of bets, betting each time on a number versus betting each time on a color?
+            </p>
+          </li>
+        </ol> </p>
       </statement>
     </exercise>
 
