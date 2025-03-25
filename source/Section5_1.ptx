@@ -268,7 +268,7 @@
 							<p><ol marker="(1)">
 									<li><p> <m>(p\to q)\land (r\to s)</m></p></li>
 									<li><p> <m>p\to q</m></p></li>
-									<li><p> <m>(p\to t)\land (s\to u)</m></p></li>
+									<li><p> <m>(q\to t)\land (s\to u)</m></p></li>
 									<li><p> <m>q\to t</m></p></li>
 									<li><p> <m>p\to t</m></p></li>
 									<li><p> <m>r\to s</m></p></li>
@@ -325,7 +325,7 @@
 									<li><p> <m>q\quad </m>   Premise</p></li>
 									<li><p> <m>r\quad</m>   Detachment (9), (10)</p></li>
 									<li><p> <m>\neg r \quad</m> Conjunctive simplification (3)</p></li>
-									<li><p> <m>0</m>  \quad Conjunction (11), (12) <m>\square</m></p></li>
+									<li><p> <m>0 \quad</m>  Conjunction (11), (12) <m>\square</m></p></li>
 									</ol></p>
 						</li>
 						<li>
@@ -351,6 +351,25 @@
 									<li><p> <m>q\to r</m>  Premise</p></li>
 									<li><p> <m>r \quad </m>Detachment (5), (6)</p></li>
 									<li><p> 0   (1), (7) <m>\square</m></p></li>
+									</ol></p>
+						</li>
+							<li><p> Direct proof:</p> <!-- problem e-->
+							<p><ol marker="(1)">
+									<li><p> <m>\neg q \quad </m>   Premise</p></li>
+									<li><p> <m>p \to q\quad </m>    Premise</p></li>
+									<li><p> <m>\neg p\quad </m>   Modus Tollens (1,2)</p></li>
+									<li><p> <m>p \lor t \quad </m> Premise</p></li>
+									<li><p> <m>t\quad </m>     Disjunctive Simp (3,4) <m>\square</m> </p></li>
+									</ol></p>
+							<p>Indirect proof:</p>
+							<p><ol marker="(1)">
+									<li><p> <m>\neg t\quad </m>    Negated conclusion</p></li>
+									<li><p> <m> p\lor t \quad </m>  Premise </p></li>
+									<li><p> <m>p \quad </m>   Disjunctive Simp. (1,2)</p></li>
+									<li><p> <m>p \to q \quad</m> Premise</p></li>
+									<li><p> <m>q \quad </m>   Modus Ponens (3,4)</p></li>
+									<li><p> <m>\neg q \quad</m>   Premise</p></li>
+									<li><p> <m>0\quad </m>  Negation (5,6) <m>\square</m></p></li>
 									</ol></p>
 						</li>
 						</ol></p>
