@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Expected Value and Variance</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Discrete Mathematics for Computer Science">
+<meta property="book:author" content="Ken Levasseur">
+<meta property="book:author" content="Al Doerr">
+<meta property="book:author" content="Michiel Smid">
+<meta property="book:author" content="Oscar Levin">
+<meta property="book:author" content="Charles M. Grinstead">
+<meta property="book:author" content="J. Laurie Snell">
+<meta property="book:author" content="Eric Lehman">
+<meta property="book:author" content="F. Thomson Leighton">
+<meta property="book:author" content="Albert R Meyer">
+<meta property="book:author" content="Jeff Erickson">
+<meta property="book:author" content="Kenneth P. Bogart">
+<meta property="book:author" content="Carol Chritchlow">
+<meta property="book:author" content="David Eck">
+<meta property="book:author" content="OpenDSA Project">
+<meta property="book:author" content="L.J. Miller">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
+<p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="section3_2-Bayes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_3.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chapter4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}} \newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}} \renewcommand{\vec}[1]{\mathbf{#1}}     
+
+\newcommand{\N}{{\mathbb N}} \newcommand{\Z}{{\mathbb Z}} \newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}} \newcommand{\Zpos}{{{\mathbb Z}^+}} \newcommand{\SUB}{\subseteq}
+\newcommand{\SUP}{\supseteq} \newcommand{\PSUB}{\varsubsetneq}
+\newcommand{\PSUP}{\varsupsetneq} \newcommand{\SETDIFF}{\smallsetminus}
+ 
+\newcommand{\st}{\,|\,} 
+\newcommand{\ab}{\mbox{$\{a,b\}$}} \newcommand{\aetc}[2]{\mbox{{${#1}_1{#1}_2\ldots
+{#1}_{#2}$}}} \newcommand{\varep}{\varepsilon}
+\newcommand{\fsafig}[1]{\medskip\centerline{\eps{fsa#1}}\medskip}
+\newcommand{\REOR}{\hbox{$\,|\,$}} \newcommand{\POW}{{\mathscr P}} 
+
+\newcommand{\EMPTYSTRING}{\varepsilon}  
+ 
+\newcommand{\PRODUCES}{\longrightarrow}
+\newcommand{\YIELDS}{\Longrightarrow} 
+\newcommand{\YIELDSTAR}{{\Longrightarrow}^*}
+\newcommand{\NT}[1]{\hbox{$\langle$\textit{#1}$\rangle$}}
+\newcommand{\BNFPRODUCES}{\hbox{\texttt{::=}}} 
+\newcommand{\BNFALT}{\hbox{$|$}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter_1.html" class="internal"><span class="codenumber">1</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section1_1-set-Notation-and-Relations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Set Notation and Relations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section1_1-set-Notation-and-Relations.html#section1_1-set-Notation-and-Relations-2" class="internal"><span class="codenumber">1.1.1</span> <span class="title">The notion of a set</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section1_1-set-Notation-and-Relations.html#ss-subsets" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Subsets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section1_1-set-Notation-and-Relations.html#section1_1-set-Notation-and-Relations-4" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Exercises for Section 1.1</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section1_2-basic_Set_Operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Basic Set Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section1_2-basic_Set_Operations.html#section1_2-basic_Set_Operations-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section1_2-basic_Set_Operations.html#section1_2-basic_Set_Operations-4" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Set Operations and their Venn Diagrams</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section1_2-basic_Set_Operations.html#Sage_Note_Sets-1-2" class="internal"><span class="codenumber">1.2.3</span> <span class="title">SageMath Note: Sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section1_2-basic_Set_Operations.html#exercises-1-2" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercises for Section 1.2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section1_3-cartesian_Products_and_Power_Sets.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Cartesian Products and Power Sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section1_3-cartesian_Products_and_Power_Sets.html#Cartesian-products" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Cartesian Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section1_3-cartesian_Products_and_Power_Sets.html#power-sets" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Power Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section1_3-cartesian_Products_and_Power_Sets.html#Sage_Note_Sets-1-3" class="internal"><span class="codenumber">1.3.3</span> <span class="title">SageMath Note: Cartesian Products and Power Sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section1_3-cartesian_Products_and_Power_Sets.html#exercises-1-3" class="internal"><span class="codenumber">1.3.4</span> <span class="title">EXERCISES FOR SECTION 1.3</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section1_4-binary_Representation_of_Positive_Integers.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Binary Representation of Positive Integers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section1_4-binary_Representation_of_Positive_Integers.html#ss-grouping-by-twos" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Grouping by Twos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section1_4-binary_Representation_of_Positive_Integers.html#ss-conversion-algorithm" class="internal"><span class="codenumber">1.4.2</span> <span class="title">A Conversion Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section1_4-binary_Representation_of_Positive_Integers.html#Sage_Note_Binary-1-4" class="internal"><span class="codenumber">1.4.3</span> <span class="title">SageMath Note: Binary Conversion Algorithm</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section1_4-binary_Representation_of_Positive_Integers.html#exercises-1-4" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Exercises for Section 1.4</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section1_5-summation_Notation_and_Generalizations.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Summation Notation and Generalizations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section1_5-summation_Notation_and_Generalizations.html#ss-sums" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Sums</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section1_5-summation_Notation_and_Generalizations.html#ss-generalizations" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Generalizations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section1_5-summation_Notation_and_Generalizations.html#exercises-1-5" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Exercises for Section 1.5</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter_2.html" class="internal"><span class="codenumber">2</span> <span class="title">Combinatorics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section2_1-the-rule-of-products.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Basic Counting Techniques - The Rule of Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section2_1-the-rule-of-products.html#What-is-Combinatorics" class="internal"><span class="codenumber">2.1.1</span> <span class="title">What is Combinatorics?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section2_1-the-rule-of-products.html#rule-of-products" class="internal"><span class="codenumber">2.1.2</span> <span class="title">The Rule Of Products</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section2_1-the-rule-of-products.html#EXERCISES-FOR-SECTION-2-1" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section2_2-permutations.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Permutations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section2_2-permutations.html#section2_2-permutations-2" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Ordering Things</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section2_2-permutations.html#section2_2-permutations-3" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section2_3-partitions-and-law-of-addition.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Partitions of Sets and the Law of Addition</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section2_3-partitions-and-law-of-addition.html#section2_3-partitions-and-law-of-addition-2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Partitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section2_3-partitions-and-law-of-addition.html#section2_3-partitions-and-law-of-addition-3" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Addition Laws</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section2_3-partitions-and-law-of-addition.html#exercises-2-3" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercises for Section 2.3</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section2_4-combinations-and-the-binomial-theorem.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Combinations and the Binomial Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section2_4-combinations-and-the-binomial-theorem.html#combinations" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Combinations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section2_4-combinations-and-the-binomial-theorem.html#the-binomial-theorem" class="internal"><span class="codenumber">2.4.2</span> <span class="title">The Binomial Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section2_4-combinations-and-the-binomial-theorem.html#sage-bridge-hands" class="internal"><span class="codenumber">2.4.3</span> <span class="title">SageMath Note</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section2_4-combinations-and-the-binomial-theorem.html#exercises-2-4" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Counting with Repetition or Indistinguishable Objects</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#tuples-with-repetition" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Tuples or Permutations with Repetition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#combinations-with-repetition" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Combinations with Repetition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#ordering-indistinguishable-objects" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Ordering Indistinguishable Objects</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section2_5-counting-with-repetition-or-indistinguishable-objects.html#exercises-2-5" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chapter_3.html" class="internal"><span class="codenumber">3</span> <span class="title">Probability</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section3_1-probability.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction to Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section3_1-probability.html#subsec3_1_1-probability-spaces" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Probability Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section3_1-probability.html#subsec3_1_2-basic-rules-of-probability" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Basic Rules of Probability</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section3_1-probability.html#section3_1-probability-6" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Exercises for Section 3.1</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section3_2-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Conditional Probability, Independence, and Bayes’ Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section3_2-Bayes.html#subsec3_2_1-conditional-probability" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Conditional probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section3_2-Bayes.html#subsec3_2_2-independent-events" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Independent Events</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section3_2-Bayes.html#subsec3_2_3-random-variables" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Random Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section3_2-Bayes.html#subsec3_2_4-bayes-theorem" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Bayes’ Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section3_2-Bayes.html#section3_2-Bayes-8" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Exercises for Section 3.2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="section3_3-ExpectedValue.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Expected Value and Variance</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section3_3-ExpectedValue.html#subsec3_3_1-expected-value" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Expected Values</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="section3_3-ExpectedValue.html#ssubsec3_3_1_1-comp-expected-value" class="internal"><span class="codenumber">3.3.1.1</span> <span class="title">Comparing the Expected Values of Comparable Random Variables</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="section3_3-ExpectedValue.html#ssubsec3_3_1_2-alt-expected-value" class="internal"><span class="codenumber">3.3.1.2</span> <span class="title">An Alternative Expression for the Expected Value</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section3_3-ExpectedValue.html#subsec3_3_2-linearity-of-expectation" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Linearity of Expectation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section3_3-ExpectedValue.html#subsec3_3_3-geometric-distribution" class="internal"><span class="codenumber">3.3.3</span> <span class="title">The Geometric Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section3_3-ExpectedValue.html#subsec3_3_4-binomial-distribution" class="internal"><span class="codenumber">3.3.4</span> <span class="title">The Binomial Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section3_3-ExpectedValue.html#subsec3_3_5-variance" class="internal"><span class="codenumber">3.3.5</span> <span class="title">Variance</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section3_3-ExpectedValue.html#section3_3-ExpectedValue-8" class="internal"><span class="codenumber">3.3.6</span> <span class="title">Exercises for Section 3.3</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter4.html" class="internal"><span class="codenumber">4</span> <span class="title">Logic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section4_1-propositions-logic-operators.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Propositions and Logical Operators</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_1-propositions-logic-operators.html#subsec4_1_1-propositions" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Propositions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_1-propositions-logic-operators.html#subsec4_1_2-logical-operations" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Logical Operations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section4_1-propositions-logic-operators.html#exercises-4-1" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Exercises for Section 4.1</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section4_2-truth-tables.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Truth Tables and Propositions Generated by a Set</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_2-truth-tables.html#subsec4_2_1-truth-tables" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Truth Tables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_2-truth-tables.html#subsec4_2_2-proposition-generated-by-set" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Propositions Generated by a Set</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_2-truth-tables.html#subsec4_2_3-precedence" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Precedence of Logical Operators</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section4_2-truth-tables.html#exercises-4-2" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises for Section 4.2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section4_3-equivalence-implication.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Equivalence and Implication</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_3-equivalence-implication.html#tautology-contradiction" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Tautologies and Contradictions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_3-equivalence-implication.html#section4_3-equivalence-implication-4" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_3-equivalence-implication.html#section4_3-equivalence-implication-5" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Implication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_3-equivalence-implication.html#section4_3-equivalence-implication-6" class="internal"><span class="codenumber">4.3.4</span> <span class="title">A Universal Operation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section4_3-equivalence-implication.html#exercises-4-3" class="internal"><span class="codenumber">4.3.5</span> <span class="title">Exercises for Section 4.3</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section4_4-logic-laws.html" class="internal"><span class="codenumber">4.4</span> <span class="title">The Laws of Logic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_4-logic-laws.html#section4_4-logic-laws-2" class="internal"><span class="codenumber">4.4.1</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section4_4-logic-laws.html#exercises-4_4" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Exercises for Section 4.4</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section4_5-propositions-over-universe.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Propositions over a Universe</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_5-propositions-over-universe.html#subsec4_5_1-propositions-over-a-universe" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Propositions over a Universe</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_5-propositions-over-universe.html#ss-truth-sets" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Truth Sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section4_5-propositions-over-universe.html#exercises-4_5" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Exercises for Section 4.5</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section4_6-quantifiers.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Quantifiers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_6-quantifiers.html#subsec4_6_1-existential" class="internal"><span class="codenumber">4.6.1</span> <span class="title">The Existential Quantifier</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_6-quantifiers.html#subsec4_6_2-universal-quantifier" class="internal"><span class="codenumber">4.6.2</span> <span class="title">The Universal Quantifier</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_6-quantifiers.html#ss-negated-quantifiers" class="internal"><span class="codenumber">4.6.3</span> <span class="title">The Negation of Quantified Propositions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section4_6-quantifiers.html#ss-multiple-quantifiers" class="internal"><span class="codenumber">4.6.4</span> <span class="title">Multiple Quantifiers</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section4_6-quantifiers.html#exercises-4_6" class="internal"><span class="codenumber">4.6.5</span> <span class="title">Exercises for Section 4.6</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter5.html" class="internal"><span class="codenumber">5</span> <span class="title">Proofs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section5_1-math-systems.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Mathematical Systems and Proofs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section5_1-math-systems.html#section5_1-math-systems-2" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Mathematical Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section5_1-math-systems.html#section5_1-math-systems-3" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Direct Proof</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section5_1-math-systems.html#sub-indirect-proof" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Indirect Proof</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section5_1-math-systems.html#exercises-5_1" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Exercises for Section 5.1</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section5_2-induction.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Mathematical Induction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section5_2-induction.html#section5_2-induction-2" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Introduction, First Example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section5_2-induction.html#section5_2-induction-3" class="internal"><span class="codenumber">5.2.2</span> <span class="title">More Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section5_2-induction.html#section5_2-induction-4" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Course of Values Induction</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section5_2-induction.html#exercises-5_2" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Exercises for Section 5.2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section5_3-proofs-quantifiers.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Proofs of Quantified Statements</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section5_3-proofs-quantifiers.html#ss-proofs-with-quantifiers" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Proofs With Quantifiers</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section5_3-proofs-quantifiers.html#exercises-5_3" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Exercises for Section 5.3</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section5_4-proof-review.html" class="internal"><span class="codenumber">5.4</span> <span class="title">A Review of Methods of Proof</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section5_4-proof-review.html#subsec5_4_1-proof-concepts" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Key Concepts in Proof</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section5_4-proof-review.html#subsec5_4_2-art-of-proving-ifpthenq" class="internal"><span class="codenumber">5.4.2</span> <span class="title">The Art of Proving <span class="process-math">\(P \Rightarrow  C\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section5_4-proof-review.html#exercises-5_4" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Exercises for Section 5.4</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter_6.html" class="internal"><span class="codenumber">6</span> <span class="title">More on Sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section6_1-proof-methods-sets.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Methods of Proof for Sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section6_1-proof-methods-sets.html#subsec6_1_1-examples-and-counterexamples" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Examples and Counterexamples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section6_1-proof-methods-sets.html#subsec6_1_2-venn-proofs" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Proof Using Venn Diagrams</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section6_1-proof-methods-sets.html#subsec6_1_3-membership-table-proof" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Proof using Set-Membership Tables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section6_1-proof-methods-sets.html#subsec6_1_4-proofs-using-definitions-sets" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Proof Using Definitions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section6_1-proof-methods-sets.html#section6_1-proof-methods-sets-7" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Exercises for Section 6.1</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section6_2-laws-of-set-theory.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Laws of Set Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section6_2-laws-of-set-theory.html#section6_2-laws-of-set-theory-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Tables of Laws</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section6_2-laws-of-set-theory.html#ss-proof-with-theorems" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Proof Using Previously Proven Theorems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section6_2-laws-of-set-theory.html#ss-proof-sets-contradiction" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Proof Using the Indirect Method/Contradiction</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section6_2-laws-of-set-theory.html#exer-6_2" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Exercises for Section 6.2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section6_3-minsets.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Minsets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section6_3-minsets.html#section6_3-minsets-2" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Definition of Minsets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section6_3-minsets.html#section6_3-minsets-3" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Properties of Minsets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section6_3-minsets.html#exercises-6_3" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Exercises for Section 6.3</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section6_4-duality-principle.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Duality Principle</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section6_4-duality-principle.html#section6_4-duality-principle-2" class="internal"><span class="codenumber">6.4.1</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section6_4-duality-principle.html#exer-6_4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Exercises for Section 6.4</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter_7.html" class="internal"><span class="codenumber">7</span> <span class="title">Introduction to Matrix Algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section7_1-basic-matrix-definitions.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Basic Definitions and Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section7_1-basic-matrix-definitions.html#subsec7_1_1-order-equality" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Matrix Order and Equality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section7_1-basic-matrix-definitions.html#ss-matrix-addition-scalarmult" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Matrix Addition and Scalar Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section7_1-basic-matrix-definitions.html#ss-matrix-multiplication" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section7_1-basic-matrix-definitions.html#exercises-7-1" class="internal"><span class="codenumber">7.1.4</span> <span class="title">Exercises for Section 7.1</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section7_2-special-matrices.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Special Types of Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section7_2-special-matrices.html#section7_2-special-matrices-2" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Diagonal Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section7_2-special-matrices.html#section7_2-special-matrices-3" class="internal"><span class="codenumber">7.2.2</span> <span class="title">The Identity Matrix and Matrix Inverses</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section7_2-special-matrices.html#exercises-7-2" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Exercises for Section 7.2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section7_3-laws-of-matrix-algebra.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Laws of Matrix Algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section7_3-laws-of-matrix-algebra.html#section7_3-laws-of-matrix-algebra-3" class="internal"><span class="codenumber">7.3.1</span> <span class="title">The Laws</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section7_3-laws-of-matrix-algebra.html#section7_3-laws-of-matrix-algebra-4" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Commentary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section7_3-laws-of-matrix-algebra.html#exercises-7-3" class="internal"><span class="codenumber">7.3.3</span> <span class="title">Exercises for Section 7.3</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section7_4-matrix-oddities.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Matrix Oddities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section7_4-matrix-oddities.html#section7_4-matrix-oddities-3" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Dissimilarities with elementary algebra</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section7_4-matrix-oddities.html#exercises-7_4" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Exercises for Section 7.4</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter_8.html" class="internal"><span class="codenumber">8</span> <span class="title">Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section8_1-functions.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Function Fundamentals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_1-functions.html#subsec8_1_1-function-definition-notation" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Function Definition and Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_1-functions.html#subsec8_1_2-two-variables" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Functions of Two Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_1-functions.html#subsec8_1_3-sage-note-functions" class="internal"><span class="codenumber">8.1.3</span> <span class="title">SageMath Note</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_1-functions.html#subsec8_1_4-non-functions" class="internal"><span class="codenumber">8.1.4</span> <span class="title">Non-Functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section8_1-functions.html#exercises-8-1" class="internal"><span class="codenumber">8.1.5</span> <span class="title">Exercises for Section 8.1</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section8_2-properties-of-functions.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Properties of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_2-properties-of-functions.html#section8_2-properties-of-functions-3" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_2-properties-of-functions.html#section8_2-properties-of-functions-4" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Counting</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section8_2-properties-of-functions.html#exercises-8-2" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Exercises for Section 8.2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section8_3-function-composition.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Function Composition</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_3-function-composition.html#subsec8_3_1-function-equality" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Function Equality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_3-function-composition.html#subsec8_3_2-composition" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Function Composition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_3-function-composition.html#subsec8_3_3-inverse-functions" class="internal"><span class="codenumber">8.3.3</span> <span class="title">Inverse Functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section8_3-function-composition.html#exercises-8-3" class="internal"><span class="codenumber">8.3.4</span> <span class="title">Exercises for Section 8.3</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section8_4-recursion.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Introduction to Recursion</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_4-recursion.html#subsec8_4_1-binomial-coefficients" class="internal"><span class="codenumber">8.4.1</span> <span class="title">Binomial Coefficients</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_4-recursion.html#subsec8_4_2-polynomials-and-their-evaluation" class="internal"><span class="codenumber">8.4.2</span> <span class="title">Polynomials and Their Evaluation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_4-recursion.html#subsec8_4_4-recursive-sequences" class="internal"><span class="codenumber">8.4.3</span> <span class="title">Recursively Defined Sequences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_4-recursion.html#subsec8_4_5-recursion" class="internal"><span class="codenumber">8.4.4</span> <span class="title">Recursion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_4-recursion.html#subsec8_4_6-iteration" class="internal"><span class="codenumber">8.4.5</span> <span class="title">Iteration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_4-recursion.html#subsec8_4_7-induction-and-recursion" class="internal"><span class="codenumber">8.4.6</span> <span class="title">Induction and Recursion</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section8_4-recursion.html#section8_4-recursion-10" class="internal"><span class="codenumber">8.4.7</span> <span class="title">Exercises for Section 8.4</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section8_5-Sequences.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_5-Sequences.html#section8_5-Sequences-3" class="internal"><span class="codenumber">8.5.1</span> <span class="title">Sequences and Ways They Are Defined</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_5-Sequences.html#section8_5-Sequences-4" class="internal"><span class="codenumber">8.5.2</span> <span class="title">A Fundamental Problem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section8_5-Sequences.html#exercises-8-5" class="internal"><span class="codenumber">8.5.3</span> <span class="title">Exercises for Section 8.5</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section8_6-Growth-of-Functions.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Growth of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_6-Growth-of-Functions.html#subsec8_6_1-big-o-notation" class="internal"><span class="codenumber">8.6.1</span> <span class="title">Big O Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_6-Growth-of-Functions.html#subsec8_6_2-big-o-common" class="internal"><span class="codenumber">8.6.2</span> <span class="title">Big O For Common Functional Forms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_6-Growth-of-Functions.html#subsec8_6_3-big-o-combinations" class="internal"><span class="codenumber">8.6.3</span> <span class="title">Big O For Combinations of Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_6-Growth-of-Functions.html#subsec8_6_4-big-omega" class="internal"><span class="codenumber">8.6.4</span> <span class="title">Big Omega</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_6-Growth-of-Functions.html#subsec8_6_5-big-theta" class="internal"><span class="codenumber">8.6.5</span> <span class="title">Big Theta</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section8_6-Growth-of-Functions.html#section8_6-Growth-of-Functions-9" class="internal"><span class="codenumber">8.6.6</span> <span class="title">Exercises for Section 8.6</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter_9.html" class="internal"><span class="codenumber">9</span> <span class="title">Algorithms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section9_1-Algorithms.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Introduction to Algorithms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section9_1-Algorithms.html#subsec9_1_1-describing-algorithms" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Describing Algorithms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="section9_1-Algorithms.html#subsubsec9_1_1_1-assignments" class="internal"><span class="codenumber">9.1.1.1</span> <span class="title">Assignments</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="section9_1-Algorithms.html#subsubsec9_1_1_2-conditionalstep" class="internal"><span class="codenumber">9.1.1.2</span> <span class="title">Conditional steps</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="section9_1-Algorithms.html#subsubsec9_1_1_3-loops" class="internal"><span class="codenumber">9.1.1.3</span> <span class="title">Loops</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section9_1-Algorithms.html#subsec9_1_2-factorial-algorithm" class="internal"><span class="codenumber">9.1.2</span> <span class="title">The Factorial Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section9_1-Algorithms.html#subsec9_1_3-some-common-algorithms" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Some Common Algorithms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="section9_1-Algorithms.html#subsubsec9_1_3_1-search-algorithms" class="internal"><span class="codenumber">9.1.3.1</span> <span class="title">Search Algorithms</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="section9_1-Algorithms.html#subsubsec9_1_3_2-sorting-algorithms" class="internal"><span class="codenumber">9.1.3.2</span> <span class="title">Sorting Algorithms</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="section9_1-Algorithms.html#subsubsec9_1_3_3-greedy-algorithms" class="internal"><span class="codenumber">9.1.3.3</span> <span class="title">Greedy Algorithms</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section9_1-Algorithms.html#exercises-9-1" class="internal"><span class="codenumber">9.1.4</span> <span class="title">Exercises for Section 9.1</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section9_2-Recursive_Algorithms.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Recursive Algorithms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section9_2-Recursive_Algorithms.html#subsec9_2_1-euclid" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Euclid’s Algorithm</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="section9_2-Recursive_Algorithms.html#sssec9_2_1_1-modulo" class="internal"><span class="codenumber">9.2.1.1</span> <span class="title">The Modulo Operation</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="section9_2-Recursive_Algorithms.html#sssec9_2_1_2-euclids-algorithm" class="internal"><span class="codenumber">9.2.1.2</span> <span class="title">The Euclidean Algorithm</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section9_2-Recursive_Algorithms.html#subsec9_2_2-recursive-searching" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Recursive Searching</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section9_2-Recursive_Algorithms.html#subsec9_2_3-recursive-sorting" class="internal"><span class="codenumber">9.2.3</span> <span class="title">Recursive Sorting</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section9_2-Recursive_Algorithms.html#section9_2-Recursive_Algorithms-7" class="internal"><span class="codenumber">9.2.4</span> <span class="title">Exercises for Section 9.2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section9_3-AlgorthmicComplexity.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Algorithmic Complexity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section9_3-AlgorthmicComplexity.html#subsec9_3_1-basic_operations" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Basic Operations and Input Size</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section9_3-AlgorthmicComplexity.html#subsec9_3_2-running_times" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Analyzing Algorithmic Complexity</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section9_3-AlgorthmicComplexity.html#section9_3-AlgorthmicComplexity-6" class="internal"><span class="codenumber">9.3.3</span> <span class="title">Exercises for Section 9.3</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter_10.html" class="internal"><span class="codenumber">10</span> <span class="title">Relations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-basic-definitions.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Basic Definitions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-basic-definitions.html#s-basic-definitions-3" class="internal"><span class="codenumber">10.1.1</span> <span class="title">Relations Between Two Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-basic-definitions.html#s-basic-definitions-4" class="internal"><span class="codenumber">10.1.2</span> <span class="title">Relations on a Set</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-basic-definitions.html#s-basic-definitions-5" class="internal"><span class="codenumber">10.1.3</span> <span class="title">Composition of Relations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-basic-definitions.html#exercises-10-1" class="internal"><span class="codenumber">10.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-graphs-of-relations-on-a-set.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Graphs of Relations on a Set</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-graphs-of-relations-on-a-set.html#s-graphs-of-relations-on-a-set-3" class="internal"><span class="codenumber">10.2.1</span> <span class="title">Digraphs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-graphs-of-relations-on-a-set.html#exercises-10-2" class="internal"><span class="codenumber">10.2.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-properties-of-relations.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Properties of Relations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-properties-of-relations.html#ss-individual-properties" class="internal"><span class="codenumber">10.3.1</span> <span class="title">Individual Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-properties-of-relations.html#ss-partial-ordering" class="internal"><span class="codenumber">10.3.2</span> <span class="title">Partial Orderings</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-properties-of-relations.html#ss-equivalence-relations" class="internal"><span class="codenumber">10.3.3</span> <span class="title">Equivalence Relations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-properties-of-relations.html#exercises-10-3" class="internal"><span class="codenumber">10.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-matrices-of-relations.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Matrices of Relations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-matrices-of-relations.html#s-matrices-of-relations-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Representing a Relation with a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-matrices-of-relations.html#s-matrices-of-relations-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Composition as Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-matrices-of-relations.html#exercises-10-4" class="internal"><span class="codenumber">10.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-closure-operations-on-relations.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Closure Operations on Relations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-closure-operations-on-relations.html#s-closure-operations-on-relations-3" class="internal"><span class="codenumber">10.5.1</span> <span class="title">Transitive Closure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-closure-operations-on-relations.html#s-closure-operations-on-relations-4" class="internal"><span class="codenumber">10.5.2</span> <span class="title">Algorithms for computing transitive closure</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-closure-operations-on-relations.html#exercises-10-5" class="internal"><span class="codenumber">10.5.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter_11.html" class="internal"><span class="codenumber">11</span> <span class="title">Linear Algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-Systems-of-Equations.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Systems of Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-Systems-of-Equations.html#ss-elementary-operations" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Elementary Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-Systems-of-Equations.html#ss-gauss-elimination" class="internal"><span class="codenumber">11.1.2</span> <span class="title">Gauss Elimination</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-Systems-of-Equations.html#exercises-11-1" class="internal"><span class="codenumber">11.1.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section11_2.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Revisiting Matrix Arithmetic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_2.html#ss-Add-Scalar-Multi-Matrices" class="internal"><span class="codenumber">11.2.1</span> <span class="title">Addition and Scalar Multiplication of Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_2.html#subsec-mult-of-matrices" class="internal"><span class="codenumber">11.2.2</span> <span class="title">Multiplication of Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_2.html#subsec-ijth-entry-of-matrix-prod" class="internal"><span class="codenumber">11.2.3</span> <span class="title">The <span class="process-math">\(ij^{th}\)</span> Entry of a Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_2.html#subsec-props-of-matrix-mult" class="internal"><span class="codenumber">11.2.4</span> <span class="title">Properties of Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_2.html#subsec-matrix-transpose" class="internal"><span class="codenumber">11.2.5</span> <span class="title">Matrix Transpose</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_2.html#subsec-identity-matrix" class="internal"><span class="codenumber">11.2.6</span> <span class="title">Identity Matrix</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section11_2.html#exercises-11-2" class="internal"><span class="codenumber">11.2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section11_3.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Matrix Inverses</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_3.html#subsec-inverse-matrix" class="internal"><span class="codenumber">11.3.1</span> <span class="title">Inverse Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_3.html#subsec-finding-matrix-inverse" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Finding The Inverse Of A Matrix</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section11_3.html#exercises-11-3" class="internal"><span class="codenumber">11.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-row-ops" class="internal"><span class="codenumber">11.4.4</span> <span class="title">Finding Determinants Using Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-formula-for-inverse" class="internal"><span class="codenumber">11.4.5</span> <span class="title">A Formula For The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cramers-rule" class="internal"><span class="codenumber">11.4.6</span> <span class="title">Cramer’s Rule</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section11_4.html#exercises-11-4" class="internal"><span class="codenumber">11.4.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter_12.html" class="internal"><span class="codenumber">12</span> <span class="title">Boolean Algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-posets-revisited.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Posets Revisited</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-posets-revisited.html#exercises-12-1" class="internal"><span class="codenumber">12.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-lattices.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Lattices</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-lattices.html#exercises-12-2" class="internal"><span class="codenumber">12.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-boolean-algebras.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Boolean Algebras</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-boolean-algebras.html#exercises-12-3" class="internal"><span class="codenumber">12.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-atoms-of-a-boolean-algebra.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Atoms of a Boolean Algebra</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-atoms-of-a-boolean-algebra.html#exercises-12-4" class="internal"><span class="codenumber">12.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-finite-boolean-algebras-ntuples.html" class="internal"><span class="codenumber">12.5</span> <span class="title">Finite Boolean Algebras as <span class="process-math">\(n\)</span>-tuples of 0’s and 1’s</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-finite-boolean-algebras-ntuples.html#exercises-12-5" class="internal"><span class="codenumber">12.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-boolean-expressions.html" class="internal"><span class="codenumber">12.6</span> <span class="title">Boolean Expressions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-boolean-expressions.html#exercises-12-6" class="internal"><span class="codenumber">12.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-logic-circuits.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Logic Gates and Circuits</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-logic-circuits.html#exercises-12-7" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises for Section 12.7</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-circuit-minimization.html" class="internal"><span class="codenumber">12.8</span> <span class="title">Logic Circuit Minimization</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-circuit-minimization.html#exercises-12-8" class="internal"><span class="codenumber">12.8</span> <span class="title">Exercises for Section 12.8</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter_13_recurrence_relns.html" class="internal"><span class="codenumber">13</span> <span class="title">Recurrence Relations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-recurrence-relations.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Recurrence Relations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-recurrence-relations.html#defs-rr" class="internal"><span class="codenumber">13.1.1</span> <span class="title">Definition and Terminology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-recurrence-relations.html#ss-solving-recurrence-relations" class="internal"><span class="codenumber">13.1.2</span> <span class="title">Solving Recurrence Relations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-recurrence-relations.html#sss-recurrence-relations-obtained-from-solutions" class="internal"><span class="codenumber">13.1.3</span> <span class="title">Recurrence relations obtained from “solutions”</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-recurrence-relations.html#ss-solution-of-nonhomogeneous-relations" class="internal"><span class="codenumber">13.1.4</span> <span class="title">Solution of Nonhomogeneous Finite Order Linear Relations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-recurrence-relations.html#exercises-13-1" class="internal"><span class="codenumber">13.1.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-some-common-rrs.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Some Common Recurrence Relations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-some-common-rrs.html#rr-basic-example" class="internal"><span class="codenumber">13.2.1</span> <span class="title">A First Basic Example</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s-some-common-rrs.html#analysis-of-binary-search" class="internal"><span class="codenumber">13.2.2</span> <span class="title">An Analysis of the Binary Search Algorithm</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s-some-common-rrs.html#ss-review-of-logarithms" class="internal"><span class="codenumber">13.2.2.1</span> <span class="title">Review of Logarithms</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-some-common-rrs.html#ss-bubblesort-analysis" class="internal"><span class="codenumber">13.2.3</span> <span class="title">Analysis of Bubble Sort and Merge Sort</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-some-common-rrs.html#ss-derangements" class="internal"><span class="codenumber">13.2.4</span> <span class="title">Derangements</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-some-common-rrs.html#exercises-13-2" class="internal"><span class="codenumber">13.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-generating-functions.html" class="internal"><span class="codenumber">13.3</span> <span class="title">Generating Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-generating-functions.html#ss-what-is-a-generating-function" class="internal"><span class="codenumber">13.3.1</span> <span class="title">Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-generating-functions.html#ss-solution-of-rr-using-generating-functions" class="internal"><span class="codenumber">13.3.2</span> <span class="title">Solution of a Recurrence Relation Using Generating Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-generating-functions.html#ops-on-sequences" class="internal"><span class="codenumber">13.3.3</span> <span class="title">Operations on Sequences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-generating-functions.html#sss-operations-on-generating-functions" class="internal"><span class="codenumber">13.3.4</span> <span class="title">Operations on Generating Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-generating-functions.html#ss-closed-form-expressions-for-generating-functions" class="internal"><span class="codenumber">13.3.5</span> <span class="title">Closed Form Expressions for Generating Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-generating-functions.html#ss-extra-for-experts" class="internal"><span class="codenumber">13.3.6</span> <span class="title">Extra for Experts</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-generating-functions.html#s-generating-functions-10" class="internal"><span class="codenumber">13.3.7</span> <span class="title">Exercises for Section 10.3</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter_14_prog_corr.html" class="internal"><span class="codenumber">14</span> <span class="title">Program Correctness</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section14_1.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Revisiting Inductive Proofs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section14_1.html#subsec-ordinary-induction" class="internal"><span class="codenumber">14.1.1</span> <span class="title">Ordinary Induction</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section14_1.html#subsec-template-inductive-proofs" class="internal"><span class="codenumber">14.1.2</span> <span class="title">A Template for Inductive Proofs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section14_1.html#subsec-review-strong-induction" class="internal"><span class="codenumber">14.1.3</span> <span class="title">Strong Induction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section14_2.html" class="internal"><span class="codenumber">14.2</span> <span class="title">Program Correctness</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section14_2.html#Section14_2-3" class="internal"><span class="codenumber">14.2.1</span> <span class="title">Two Exponentiation Algorithms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section14_2.html#Section14_2-4" class="internal"><span class="codenumber">14.2.2</span> <span class="title">Proving the correctness of the fast algorithm</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section14_2.html#exercises-app-alg1" class="internal"><span class="codenumber">14.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter_15_graphs.html" class="internal"><span class="codenumber">15</span> <span class="title">Graph Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-graphs-introduction.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Graphs - General Introduction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-graphs-introduction.html#s-graphs-introduction-2" class="internal"><span class="codenumber">15.1.1</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-graphs-introduction.html#s-graphs-introduction-3" class="internal"><span class="codenumber">15.1.2</span> <span class="title">Subgraphs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-graphs-introduction.html#s-graphs-introduction-4" class="internal"><span class="codenumber">15.1.3</span> <span class="title">Graph Isomorphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-graphs-introduction.html#s-graphs-introduction-5" class="internal"><span class="codenumber">15.1.4</span> <span class="title">Next Steps</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-graphs-introduction.html#exercises-15-1" class="internal"><span class="codenumber">15.1.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-data-structures-for-graphs.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Data Structures for Graphs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-data-structures-for-graphs.html#ss-graph-data-structures" class="internal"><span class="codenumber">15.2.1</span> <span class="title">Basic Data Structures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-data-structures-for-graphs.html#sss-sage-graphs" class="internal"><span class="codenumber">15.2.2</span> <span class="title">Sage Graphs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-data-structures-for-graphs.html#exercises-15-2" class="internal"><span class="codenumber">15.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-Connectivity.html" class="internal"><span class="codenumber">15.3</span> <span class="title">Connectivity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-Connectivity.html#ss-connectivity-prelim" class="internal"><span class="codenumber">15.3.1</span> <span class="title">Preliminaries</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-Connectivity.html#ss-adjacency-matrix-method" class="internal"><span class="codenumber">15.3.2</span> <span class="title">Adjacency Matrix Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-Connectivity.html#ss-breadth-first-search" class="internal"><span class="codenumber">15.3.3</span> <span class="title">Breadth-First Search</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-Connectivity.html#ss-sage-note-search" class="internal"><span class="codenumber">15.3.4</span> <span class="title">SageMath Note - Graph Searching</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-Connectivity.html#exercises-15-3" class="internal"><span class="codenumber">15.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-traversals.html" class="internal"><span class="codenumber">15.4</span> <span class="title">Traversals: Eulerian and Hamiltonian Graphs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-traversals.html#ss-eulerian" class="internal"><span class="codenumber">15.4.1</span> <span class="title">Eulerian Graphs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-traversals.html#ss-hamiltonian-graphs" class="internal"><span class="codenumber">15.4.2</span> <span class="title">Hamiltonian Graphs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-traversals.html#exercises-15-4" class="internal"><span class="codenumber">15.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-graph-optimization.html" class="internal"><span class="codenumber">15.5</span> <span class="title">Graph Optimization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-graph-optimization.html#ss-weighted-graph" class="internal"><span class="codenumber">15.5.1</span> <span class="title">Weighted Graphs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-graph-optimization.html#ss-traveling-salesman-problem" class="internal"><span class="codenumber">15.5.2</span> <span class="title">The Traveling Salesman Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-graph-optimization.html#ss-networks-and-flows" class="internal"><span class="codenumber">15.5.3</span> <span class="title">Networks and the Maximum Flow Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-graph-optimization.html#ss-other-optimization" class="internal"><span class="codenumber">15.5.4</span> <span class="title">Other Graph Optimization Problems</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-graph-optimization.html#exercises-15-5" class="internal"><span class="codenumber">15.5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-planarity-and-colorings.html" class="internal"><span class="codenumber">15.6</span> <span class="title">Planarity and Colorings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-planarity-and-colorings.html#ss-planarity" class="internal"><span class="codenumber">15.6.1</span> <span class="title">Planar Graphs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-planarity-and-colorings.html#ss-graph-coloring" class="internal"><span class="codenumber">15.6.2</span> <span class="title">Graph Coloring</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-planarity-and-colorings.html#exercises-15-6" class="internal"><span class="codenumber">15.6.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="s-planarity-and-colorings.html#s-planarity-and-colorings-6" class="internal"><span class="codenumber">15.6.4</span> <span class="title">Further Reading</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter_16_trees.html" class="internal"><span class="codenumber">16</span> <span class="title">Trees</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-what-is-a-tree.html" class="internal"><span class="codenumber">16.1</span> <span class="title">What Is a Tree?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-what-is-a-tree.html#s-what-is-a-tree-3" class="internal"><span class="codenumber">16.1.1</span> <span class="title">Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-what-is-a-tree.html#s-what-is-a-tree-4" class="internal"><span class="codenumber">16.1.2</span> <span class="title">Conditions for a graph to be a tree</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-what-is-a-tree.html#exercises-16-1" class="internal"><span class="codenumber">16.1.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-spanning-trees.html" class="internal"><span class="codenumber">16.2</span> <span class="title">Spanning Trees</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-spanning-trees.html#s-spanning-trees-3" class="internal"><span class="codenumber">16.2.1</span> <span class="title">Motivation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-spanning-trees.html#s-spanning-trees-4" class="internal"><span class="codenumber">16.2.2</span> <span class="title">Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-spanning-trees.html#s-spanning-trees-5" class="internal"><span class="codenumber">16.2.3</span> <span class="title">Prim’s Algorithm</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-spanning-trees.html#exercises-16-2" class="internal"><span class="codenumber">16.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-rooted-trees.html" class="internal"><span class="codenumber">16.3</span> <span class="title">Rooted Trees</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-rooted-trees.html#ss-rooted-trees" class="internal"><span class="codenumber">16.3.1</span> <span class="title">Definition and Terminology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-rooted-trees.html#ss-kruskal-algorithm" class="internal"><span class="codenumber">16.3.2</span> <span class="title">Kruskal’s Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-rooted-trees.html#ss-sage-note-kruskal" class="internal"><span class="codenumber">16.3.3</span> <span class="title">SageMath Note - Implementation of Kruskal’s Algorithm</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-rooted-trees.html#exercises-16-3" class="internal"><span class="codenumber">16.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-binary-trees.html" class="internal"><span class="codenumber">16.4</span> <span class="title">Binary Trees</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-binary-trees.html#s-binary-trees-3" class="internal"><span class="codenumber">16.4.1</span> <span class="title">Definition of a binary tree</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-binary-trees.html#ss-traversals" class="internal"><span class="codenumber">16.4.2</span> <span class="title">Traversals of Binary Trees</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-binary-trees.html#ss-expression-trees" class="internal"><span class="codenumber">16.4.3</span> <span class="title">Expression Trees</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-binary-trees.html#ss-counting-binary-trees" class="internal"><span class="codenumber">16.4.4</span> <span class="title">Counting Binary Trees</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-binary-trees.html#ss-sage-note-powerseries" class="internal"><span class="codenumber">16.4.5</span> <span class="title">SageMath Note - Power Series</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-binary-trees.html#exercises-16-4" class="internal"><span class="codenumber">16.4.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter_17_theory.html" class="internal"><span class="codenumber">17</span> <span class="title">Theory of Computation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-Languages.html" class="internal"><span class="codenumber">17.1</span> <span class="title">Formal Language Theory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s-Languages.html#subsec-Languages" class="internal"><span class="codenumber">17.1.1</span> <span class="title">Languages</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-Languages.html#exercises-17-1" class="internal"><span class="codenumber">17.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-regular-expressions-and-apps.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Regular Expressions and Their Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-regular-expressions-and-apps.html#subsec-regular-expressions" class="internal"><span class="codenumber">17.2.1</span> <span class="title">Regular Expressions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-regular-expressions-and-apps.html#subsec-regex-applications" class="internal"><span class="codenumber">17.2.2</span> <span class="title">Application: Using Regular Expressions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-regular-expressions-and-apps.html#exercises-17-2" class="internal"><span class="codenumber">17.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s-finite-state-automata.html" class="internal"><span class="codenumber">17.3</span> <span class="title">Finite-State Automata</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-finite-state-automata.html#subsec-deterministic-fsa" class="internal"><span class="codenumber">17.3.1</span> <span class="title">Deterministic Finite-State Automata</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-finite-state-automata.html#subsec-non-deterministic-fsa" class="internal"><span class="codenumber">17.3.2</span> <span class="title">Nondeterministic Finite-State Automata</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-finite-state-automata.html#exercises-17-3" class="internal"><span class="codenumber">17.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-FSA-and-Regular-Languages.html" class="internal"><span class="codenumber">17.4</span> <span class="title">Finite-State Automata and Regular Languages</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-FSA-and-Regular-Languages.html#subsec-every-reg-language-recognized-by-fsa" class="internal"><span class="codenumber">17.4.1</span> <span class="title">All Regular Languages are Recognized by NFAs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-FSA-and-Regular-Languages.html#subsec-every-language-recognized-by-fsa-regular" class="internal"><span class="codenumber">17.4.2</span> <span class="title">Every Language Recognized by an NFA is Regular</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-FSA-and-Regular-Languages.html#subsec-non-regular-languages" class="internal"><span class="codenumber">17.4.3</span> <span class="title">Non-regular Languages</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-FSA-and-Regular-Languages.html#exercises-17-4" class="internal"><span class="codenumber">17.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-grammars.html" class="internal"><span class="codenumber">17.5</span> <span class="title">Grammars</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-grammars.html#subsec-context-free-grammars" class="internal"><span class="codenumber">17.5.1</span> <span class="title">Context-free Grammars</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-grammars.html#subsec-bnf" class="internal"><span class="codenumber">17.5.2</span> <span class="title">Backus-Naur Form</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-grammars.html#subsec-parsing" class="internal"><span class="codenumber">17.5.3</span> <span class="title">Parsing and Parse Trees</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-grammars.html#exercises-17-5" class="internal"><span class="codenumber">17.5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-turing-machines-comp.html" class="internal"><span class="codenumber">17.6</span> <span class="title">Turing Machines and Computability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-turing-machines-comp.html#subsec-turing" class="internal"><span class="codenumber">17.6.1</span> <span class="title">Turing Machines</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-turing-machines-comp.html#subsec-computability" class="internal"><span class="codenumber">17.6.2</span> <span class="title">Computability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-turing-machines-comp.html#subsec-limits-of-comp" class="internal"><span class="codenumber">17.6.3</span> <span class="title">The Limits of Computation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-turing-machines-comp.html#exercises-17-6" class="internal"><span class="codenumber">17.6.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="app-pythonsage.html" class="internal"><span class="codenumber">A</span> <span class="title">Python and SageMath</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="app-python-iterators.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Python Iterators</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="app-python-iterators.html#app-python-iterators-3" class="internal"><span class="codenumber">A.1.1</span> <span class="title">Counting Subsets</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="app-pythonsage-dictionaries.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Dictionaries</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="app-pythonsage-dictionaries.html#app-pythonsage-dictionaries-2" class="internal"><span class="codenumber">A.2.1</span> <span class="title">Colors of Fruits</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">B</span> <span class="title">Hints and Solutions to Selected Exercises</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="codenumber">C</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">References</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section3_3-ExpectedValue"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.3</span><span class="space"> </span><span class="title">Expected Value and Variance</span>
+</h2>
+<section class="subsection" id="subsec3_3_1-expected-value"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="space"> </span><span class="title">Expected Values</span>
+</h3>
+<section class="introduction" id="subsec3_3_1-expected-value-3"><div class="para" id="subsec3_3_1-expected-value-3-1">Consider the probability space <span class="process-math">\((S,P)\)</span> with sample space <span class="process-math">\(S = \{1,2,3\}\)</span> and probability function <span class="process-math">\(P\)</span> defined by <span class="process-math">\(P(1)=4/5\text{,}\)</span> <span class="process-math">\(P(2)=1/10\text{,}\)</span> and <span class="process-math">\(P(3)=1/10\text{.}\)</span> Assume we choose an element in <span class="process-math">\(S\)</span> according to this probability function. Let <span class="process-math">\(X\)</span> be the random variable whose value is equal to the element in <span class="process-math">\(S\)</span> that is chosen. Thus, as a function <span class="process-math">\(X : S \rightarrow \mathbb{R}\text{,}\)</span> we have <span class="process-math">\(X(1)=1\text{,}\)</span> <span class="process-math">\(X(2)=2\text{,}\)</span> and <span class="process-math">\(X(3)=3\text{.}\)</span>
+</div> <div class="para logical" id="subsec3_3_1-expected-value-3-2">
+<div class="para">The “expected value” of <span class="process-math">\(X\)</span> is the value of <span class="process-math">\(X\)</span> that we observe “on average”. How should we define this? Since <span class="process-math">\(X\)</span> has a much higher probability to take the value <span class="process-math">\(1\)</span> than the other two values <span class="process-math">\(2\)</span> and <span class="process-math">\(3\text{,}\)</span> the value <span class="process-math">\(1\)</span> should get a larger “weight” in the expected value of <span class="process-math">\(X\text{.}\)</span> Based on this, it is natural to define the expected value of <span class="process-math">\(X\)</span> to be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1 \cdot P(1) + 2 \cdot P(2) + 3
+\cdot P(3)
+= 1 \cdot \frac{4}{5} + 2 \cdot \frac{1}{10} + 3 \cdot \frac{1}{10}
+= \frac{13}{10} .
+\end{equation*}
+</div>
+</div></section><article class="definition definition-like" id="def-expected-value"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Expected Value.</span>
+</h4>  <div class="para logical" id="def-expected-value-3-1">
+<div class="para">Let <span class="process-math">\((S,P)\)</span> be a probability space and let <span class="process-math">\(X : S \rightarrow \mathbb{R}\)</span> be a random variable. The <em class="emphasis">expected value</em> (or <em class="emphasis">expectation</em> or <em class="emphasis">weighted average</em>) of <span class="process-math">\(X\)</span> is defined to be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{E}(X) = \sum_{s \in S} X(s) \cdot
+P(s)\text{.}
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="ex-expected-coin-flip"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Expected value of a coin flip.</span>
+</h4> <div class="para logical" id="ex-expected-coin-flip-2">
+<div class="para">Assume we flip a fair coin, in which case the sample space is <span class="process-math">\(S = \{H,T\}\)</span> and <span class="process-math">\(P(H)
+= P(T) = 1/2\text{.}\)</span> Define the random variable <span class="process-math">\(X\)</span> to have value</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X =
+\left\{\begin{array}{ll}
+1 &amp; \mbox{if the coin comes up heads,} \\
+0 &amp; \mbox{if the coin comes up tails.}
+\end{array}
+\right.
+\end{equation*}
+</div>
+<div class="para">Thus, as a function <span class="process-math">\(X : S \rightarrow \mathbb{R}\text{,}\)</span> we have <span class="process-math">\(X(H)=1\)</span> and <span class="process-math">\(X(T)=0\text{.}\)</span> The expected value <span class="process-math">\(\mathbb{E}(X)\)</span> of <span class="process-math">\(X\)</span> is equal to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X) &amp; = X(H) \cdot P(H) + X(T) \cdot P(T) \\
+&amp; = 1 \cdot \frac{1}{2} + 0 \cdot \frac{1}{2} \\
+&amp; = \frac{1}{2} .
+\end{array}
+\end{equation*}
+</div>
+<div class="para">This example shows that the term “expected value” is a bit misleading: <span class="process-math">\(\mathbb{E}(X)\)</span> is <em class="emphasis">not</em> the value that we expect to observe, because many times the value of <span class="process-math">\(X\)</span> can <em class="emphasis">never</em> equal to its expected value.</div>
+</div></article><article class="definition definition-like" id="def-bernoulli-trial"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Bernoulli Trial.</span>
+</h4>  <div class="para logical" id="def-bernoulli-trial-3-1">
+<div class="para">A Bernoulli trial is a special kind of experiment that can have only two outcomes: 1 or 0. A 1 is called a “success” and a 0 is called a “failure”. The probability of success is defined as <span class="process-math">\(p\)</span> and the probability of failure is therefore <span class="process-math">\(1-p\)</span> or <span class="process-math">\(q\text{.}\)</span> If <span class="process-math">\(X\)</span> is a random variable that represents the outcome of a Bernoulli trial then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(X=1) = p 
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(X=0) = 1-p = q
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(p + q = 1\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="def-bernoulli-trial-3-2">
+<div class="para">In the preceding example (<a href="section3_3-ExpectedValue.html#ex-expected-coin-flip" class="xref" data-knowl="./knowl/xref/ex-expected-coin-flip.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.3.2: Expected value of a coin flip">Example 3.3.2</a>) we defined a random variable <span class="process-math">\(X\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-expected-coin-flip.html">
+\begin{equation*}
+X = \left\{\begin{array}{ll}
+1 &amp; \mbox{if the coin comes up heads,} \\
+0 &amp; \mbox{if the coin comes up tails.}
+\end{array}
+\right.
+\end{equation*}
+</div>
+<div class="para">Each coin flip is a <em class="emphasis">Bernoulli trial</em>.</div>
+</div></article><article class="theorem theorem-like" id="thm-expectation-of-bernoulli-successes"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Expected Successes in a Bernoulli Trial.</span>
+</h4>
+<div class="para logical" id="thm-expectation-of-bernoulli-successes-3-1">
+<div class="para">Let <span class="process-math">\(X\)</span> be a random variable representing a Bernoulli trial that takes the value 1 with probability <span class="process-math">\(p\)</span> and the value 0 with probability <span class="process-math">\(1-p\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{E}(X)
+= p.
+\end{equation*}
+</div>
+</div></article><details id="thm-expectation-of-bernoulli-successes-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-expectation-of-bernoulli-successes-4-1">
+<div class="para">By <a href="section3_3-ExpectedValue.html#def-expected-value" class="xref" data-knowl="./knowl/xref/def-expected-value.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.3.1: Expected Value">Definition 3.3.1</a>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-expected-value.html">
+\begin{equation*}
+\mathbb{E}(X) = 1\cdot p + 0 \cdot (1-p) = p \,
+\Box
+\end{equation*}
+</div>
+</div></article></details><article class="example example-like" id="ex-expected-die-roll"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Expected value of a die roll.</span>
+</h4> <div class="para logical" id="ex-expected-die-roll-2">
+<div class="para">Assume we roll a fair die. Define the random variable <span class="process-math">\(X\)</span> to be the value of the result. Then, <span class="process-math">\(X\)</span> takes each of the values in <span class="process-math">\(\{1,2,3,4,5,6\}\)</span> with equal probability <span class="process-math">\(1/6\text{,}\)</span> and we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X) = &amp; 1 \cdot \frac{1}{6} + 2 \cdot \frac{1}{6} +
+3 \cdot \frac{1}{6} + 4 \cdot \frac{1}{6} +
+5 \cdot \frac{1}{6} + 6 \cdot \frac{1}{6} \\
+= &amp; \frac{7}{2} .
+\end{array}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="ex-expected-die-roll-3">
+<div class="para">Now define the random variable <span class="process-math">\(Y\)</span> to be equal to one divided by the result of the die. In other words, <span class="process-math">\(Y = 1/X\text{.}\)</span> This random variable takes each of the values in <span class="process-math">\(\{1,1/2,1/3,1/4,1/5,1/6\}\)</span> with equal probability <span class="process-math">\(1/6\text{,}\)</span> and we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(Y) &amp; = 1 \cdot \frac{1}{6} + \frac{1}{2} \cdot \frac{1}{6} +
+\frac{1}{3} \cdot \frac{1}{6} +
+\frac{1}{4} \cdot \frac{1}{6} +
+\frac{1}{5} \cdot \frac{1}{6} +
+\frac{1}{6} \cdot \frac{1}{6} \\
+&amp; = \frac{49}{120} .
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Note that <span class="process-math">\(\mathbb{E}(Y) \neq 1 / \mathbb{E}(X)\text{.}\)</span> Thus, this example shows that, in general, <span class="process-math">\(\mathbb{E}(1/X) \neq 1 / \mathbb{E}(X)\text{.}\)</span>
+</div>
+</div></article><article class="example example-like" id="ex-expected-two-dice-roll"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Expected value of rolling two dice.</span>
+</h4> <div class="para logical" id="ex-expected-two-dice-roll-2">
+<div class="para">Consider a fair red die and a fair blue die, and assume we roll them independently, just like <a href="section3_1-probability.html#ex-rolling-a-die-twice" class="xref" data-knowl="./knowl/xref/ex-rolling-a-die-twice.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.7: Rolling a Die Twice">Example 3.1.7</a>. The sample space is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-rolling-a-die-twice.html">
+\begin{equation*}
+S = \{ (i,j) : 1 \leq i
+\leq 6 , 1 \leq j \leq 6 \} ,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(i\)</span> is the result of the red die and <span class="process-math">\(j\)</span> is the result of the blue die. Each outcome <span class="process-math">\((i,j)\)</span> in <span class="process-math">\(S\)</span> has the same probability of <span class="process-math">\(1/36\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="ex-expected-two-dice-roll-3">
+<div class="para">Let <span class="process-math">\(X\)</span> be the random variable whose value is equal to the sum of the results of the two rolls. As a function <span class="process-math">\(X : S \rightarrow \mathbb{R}\text{,}\)</span> we have <span class="process-math">\(X(i,j) = i+j\text{.}\)</span> The matrix below gives all possible values of <span class="process-math">\(X\text{.}\)</span> The leftmost column indicates the result of the red die, the top row indicates the result of the blue die, and each other entry is the corresponding value of <span class="process-math">\(X\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{|c||c|c|c|c|c|c|}
+\hline
+&amp;1 &amp;2 &amp;3 &amp;4 &amp;5 &amp;6 \\
+\hline
+\hline
+1 &amp;2 &amp;3 &amp;4 &amp;5 &amp;6 &amp;7 \\
+2 &amp;3 &amp;4 &amp;5 &amp;6 &amp;7 &amp;8 \\
+3 &amp;4 &amp;5 &amp;6 &amp;7 &amp;8 &amp;9 \\
+4 &amp;5 &amp;6 &amp;7 &amp;8 &amp;9 &amp;10 \\
+5 &amp;6 &amp;7 &amp;8 &amp;9 &amp;10 &amp;11 \\
+6 &amp;7 &amp;8 &amp;9 &amp;10 &amp;11 &amp;12 \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<div class="para">The expected value <span class="process-math">\(\mathbb{E}(X)\)</span> of <span class="process-math">\(X\)</span> is equal to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X) &amp; = \sum_{(i,j) \in S} X(i,j) \cdot P(i,j) \\
+&amp; = \sum_{(i,j) \in S} (i+j) \cdot \frac{1}{36} \\
+&amp; = \frac{1}{36} \sum_{(i,j) \in S} (i+j) \\
+&amp; = \frac{1}{36} \cdot \text{the sum of all matrix entries} \\
+&amp; = \frac{1}{36} \cdot 252 \\
+&amp; = 7 .
+\end{array}
+\end{equation*}
+</div>
+</div></article><section class="subsubsection" id="ssubsec3_3_1_1-comp-expected-value"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">3.3.1.1</span><span class="space"> </span><span class="title">Comparing the Expected Values of Comparable Random Variables</span>
+</h4>
+<section class="introduction" id="ssubsec3_3_1_1-comp-expected-value-3"><div class="para" id="ssubsec3_3_1_1-comp-expected-value-3-1">Consider a probability space <span class="process-math">\((S,P)\text{,}\)</span> and let <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> be two random variables on <span class="process-math">\(S\text{.}\)</span> Recall that <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are functions that map elements of <span class="process-math">\(S\)</span> to real numbers. We will write <span class="process-math">\(X \leq Y\text{,}\)</span> if for each element <span class="process-math">\(s \in S\text{,}\)</span> we have <span class="process-math">\(X(s) \leq Y(s)\text{.}\)</span> In other words, the value of <span class="process-math">\(X\)</span> is at most the value of <span class="process-math">\(Y\text{,}\)</span> no matter which outcome <span class="process-math">\(s\)</span> is chosen.</div></section><article class="theorem theorem-like" id="thm-comparison-of-expectations"><h5 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Comparison of Expectations.</span>
+</h5>
+<div class="para" id="thm-comparison-of-expectations-2-1">Let <span class="process-math">\((S,P)\)</span> be a probability space and let <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> be two random variables on <span class="process-math">\(S\text{.}\)</span> If <span class="process-math">\(X \leq Y\text{,}\)</span> then <span class="process-math">\(\mathbb{E}(X) \leq \mathbb{E}(Y)\text{.}\)</span>
+</div></article><details id="thm-comparison-of-expectations-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-comparison-of-expectations-3-1">
+<div class="para">Using <a href="section3_3-ExpectedValue.html#def-expected-value" class="xref" data-knowl="./knowl/xref/def-expected-value.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.3.1: Expected Value">Definition 3.3.1</a> and the assumption that <span class="process-math">\(X \leq Y\text{,}\)</span> we obtain</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-expected-value.html">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X) &amp; = \sum_{s \in S} X(s) \cdot P(s) \\
+&amp; \leq &amp; \sum_{s \in S} Y(s) \cdot P(s) \\
+&amp; = \mathbb{E}(Y) .
+\end{array}
+\end{equation*}
+</div>
+</div></article></details></section><section class="subsubsection" id="ssubsec3_3_1_2-alt-expected-value"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">3.3.1.2</span><span class="space"> </span><span class="title">An Alternative Expression for the Expected Value</span>
+</h4>
+<div class="para logical" id="ssubsec3_3_1_2-alt-expected-value-2">
+<div class="para">In the <a href="section3_3-ExpectedValue.html#ex-expected-two-dice-roll" class="xref" data-knowl="./knowl/xref/ex-expected-two-dice-roll.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.3.6: Expected value of rolling two dice">Example 3.3.6</a>, we used <a href="section3_3-ExpectedValue.html#def-expected-value" class="xref" data-knowl="./knowl/xref/def-expected-value.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.3.1: Expected Value">Definition 3.3.1</a> to compute the expected value <span class="process-math">\(\mathbb{E}(X)\)</span> of the random variable <span class="process-math">\(X\)</span> that was defined to be the sum of the results when rolling two fair and independent dice. This was a painful way to compute <span class="process-math">\(\mathbb{E}(X)\text{,}\)</span> because we added all <span class="process-math">\(36\)</span> entries in the matrix. There is a slightly easier way to determine <span class="process-math">\(\mathbb{E}(X)\text{:}\)</span> By looking at the matrix, we see that the value <span class="process-math">\(4\)</span> occurs three times. Thus, the event “<span class="process-math">\(X=4\)</span>” has size <span class="process-math">\(3\text{,}\)</span> i.e., if we consider the subset of the sample space <span class="process-math">\(S\)</span> that corresponds to this event, then this subset has size <span class="process-math">\(3\text{.}\)</span> Similarly, the event “<span class="process-math">\(X=7\)</span>” has size <span class="process-math">\(6\text{,}\)</span> because the value <span class="process-math">\(7\)</span> occurs <span class="process-math">\(6\)</span> times in the matrix. The table below lists the sizes of all non-empty events, together with their probabilities.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-expected-two-dice-roll.html ./knowl/xref/def-expected-value.html">
+\begin{equation*}
+\begin{array}{|c|c|c|} \hline
+\text{event} &amp; \text{size of event} &amp; \text{probability} \\
+\hline
+\hline
+X=2 &amp; 1 &amp; 1/36 \\
+X=3 &amp; 2 &amp; 2/36 \\
+X=4 &amp; 3 &amp; 3/36 \\
+X=5 &amp; 4 &amp; 4/36 \\
+X=6 &amp; 5 &amp; 5/36 \\
+X=7 &amp; 6 &amp; 6/36 \\
+X=8 &amp; 5 &amp; 5/36 \\
+X=9 &amp; 4 &amp; 4/36 \\
+X=10 &amp; 3 &amp; 3/36 \\
+X=11 &amp; 2 &amp; 2/36 \\
+X=12 &amp; 1 &amp; 1/36 \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Based on this, we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-expected-two-dice-roll.html ./knowl/xref/def-expected-value.html">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X) &amp; = 2 \cdot \frac{1}{36} +
+3 \cdot \frac{2}{36} +
+4 \cdot \frac{3}{36} +
+5 \cdot \frac{4}{36} +
+6 \cdot \frac{5}{36} +
+7 \cdot \frac{6}{36} + \\
+&amp; 8 \cdot \frac{5}{36} +
+9 \cdot \frac{4}{36} +
+10 \cdot \frac{3}{36} +
+11 \cdot \frac{2}{36} +
+12 \cdot \frac{1}{36} \\
+&amp; = 7 .
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Even though this is still quite painful, less computation is needed. What we have done is the following: In the definition of <span class="process-math">\(\mathbb{E}(X)\text{,}\)</span> i.e.,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-expected-two-dice-roll.html ./knowl/xref/def-expected-value.html">
+\begin{equation*}
+\mathbb{E}(X)
+= \sum_{(i,j) \in S} X(i,j) \cdot P(i,j) ,
+\end{equation*}
+</div>
+<div class="para">we rearranged the terms in the summation. That is, instead of taking the sum over all elements <span class="process-math">\((i,j)\)</span> in <span class="process-math">\(S\text{,}\)</span> we</div>
+<ul class="disc">
+<li id="ssubsec3_3_1_2-alt-expected-value-2-23-1"><div class="para" id="ssubsec3_3_1_2-alt-expected-value-2-23-1-1">grouped together all outcomes <span class="process-math">\((i,j)\)</span> for which <span class="process-math">\(X(i,j) = i+j\)</span> has the same value, say, <span class="process-math">\(k\text{,}\)</span>
+</div></li>
+<li id="ssubsec3_3_1_2-alt-expected-value-2-23-2"><div class="para" id="ssubsec3_3_1_2-alt-expected-value-2-23-2-1">multiplied this common value <span class="process-math">\(k\)</span> by the probability that <span class="process-math">\(X\)</span> is equal to <span class="process-math">\(k\text{,}\)</span>
+</div></li>
+<li id="ssubsec3_3_1_2-alt-expected-value-2-23-3"><div class="para" id="ssubsec3_3_1_2-alt-expected-value-2-23-3-1">and took the sum of the resulting products over all possible values of <span class="process-math">\(k\text{.}\)</span>
+</div></li>
+</ul>
+<div class="para">This resulted in</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-expected-two-dice-roll.html ./knowl/xref/def-expected-value.html">
+\begin{equation*}
+\mathbb{E}(X) = \sum_{k=2}^{12} k \cdot P(X=k) .
+\end{equation*}
+</div>
+<div class="para">The following theorem states that this can be done for any random variable.</div>
+</div>
+<article class="theorem theorem-like" id="thm-alternative-expected-value"><h5 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Expected Value Alternative Equation.</span>
+</h5>
+<div class="para logical" id="thm-alternative-expected-value-3-1">
+<div class="para">Let <span class="process-math">\((S,P)\)</span> be a probability space and let <span class="process-math">\(X : S \rightarrow \mathbb{R}\)</span> be a random variable. The expected value of <span class="process-math">\(X\)</span> is equal to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{E}(X) = \sum_x
+x \cdot P(X=x) .
+\end{equation*}
+</div>
+</div></article><details id="thm-alternative-expected-value-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-alternative-expected-value-4-1">
+<div class="para">Recall that the event “<span class="process-math">\(X=x\)</span>” corresponds to the subset</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_x = \{ s \in S : X(s) = x
+\}
+\end{equation*}
+</div>
+<div class="para">of the sample space <span class="process-math">\(S\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X) &amp; = \sum_{s \in S} X(s) \cdot P(s) \\
+&amp; = \sum_x \sum_{s : X(s) = x}
+X(s) \cdot P(s) \\
+&amp; = \sum_x \sum_{s : X(s) = x}
+x \cdot P(s) \\
+&amp; = \sum_x \sum_{s \in A_x} x \cdot P(s) \\
+&amp; = \sum_x x \sum_{s \in A_x} P(s) \\
+&amp; = \sum_x x \cdot P \left( A_x \right) \\
+&amp; = \sum_x x \cdot P(X=x) .
+\end{array}
+\end{equation*}
+</div>
+</div></article></details><div class="para logical" id="ssubsec3_3_1_2-alt-expected-value-4">
+<div class="para">When determining the expected value of a random variable <span class="process-math">\(X\text{,}\)</span> it is usually easier to use <a href="section3_3-ExpectedValue.html#thm-alternative-expected-value" class="xref" data-knowl="./knowl/xref/thm-alternative-expected-value.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.8: Expected Value Alternative Equation">Theorem 3.3.8</a> than <a href="section3_3-ExpectedValue.html#def-expected-value" class="xref" data-knowl="./knowl/xref/def-expected-value.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.3.1: Expected Value">Definition 3.3.1</a>. To use <a href="section3_3-ExpectedValue.html#thm-alternative-expected-value" class="xref" data-knowl="./knowl/xref/thm-alternative-expected-value.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.8: Expected Value Alternative Equation">Theorem 3.3.8</a>, you have to do the following:</div>
+<ul class="disc">
+<li id="ssubsec3_3_1_2-alt-expected-value-4-5-1"><div class="para" id="ssubsec3_3_1_2-alt-expected-value-4-5-1-1">Determine all values <span class="process-math">\(x\)</span> that <span class="process-math">\(X\)</span> can take, i.e., determine the <em class="emphasis">range</em> of the function <span class="process-math">\(X\text{.}\)</span>
+</div></li>
+<li id="ssubsec3_3_1_2-alt-expected-value-4-5-2"><div class="para" id="ssubsec3_3_1_2-alt-expected-value-4-5-2-1">For each such value <span class="process-math">\(x\text{,}\)</span> determine <span class="process-math">\(P(X=x)\text{.}\)</span>
+</div></li>
+<li id="ssubsec3_3_1_2-alt-expected-value-4-5-3"><div class="para" id="ssubsec3_3_1_2-alt-expected-value-4-5-3-1">Compute the sum of all products <span class="process-math">\(x \cdot P(X=x)\text{.}\)</span>
+</div></li>
+</ul>
+</div></section></section><section class="subsection" id="subsec3_3_2-linearity-of-expectation"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="space"> </span><span class="title">Linearity of Expectation</span>
+</h3>
+<section class="introduction" id="subsec3_3_2-linearity-of-expectation-3"><div class="para" id="subsec3_3_2-linearity-of-expectation-3-1">We now come to one of the most useful tools for determining expected values:</div></section><article class="theorem theorem-like" id="thm-linearity-of-expectation"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Linearity of Expectation.</span>
+</h4>
+<div class="para logical" id="thm-linearity-of-expectation-3-1">
+<div class="para">Let <span class="process-math">\((S,P)\)</span> be a probability space. For any two random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> on <span class="process-math">\(S\text{,}\)</span> and for any two real numbers <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{E}(aX+bY) = a
+\cdot \mathbb{E}(X) + b \cdot \mathbb{E}(Y) .
+\end{equation*}
+</div>
+</div></article><details id="thm-linearity-of-expectation-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-linearity-of-expectation-4-1">
+<div class="para">Recall that both <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are functions from <span class="process-math">\(S\)</span> to <span class="process-math">\(\mathbb{R}\text{.}\)</span> Define the random variable <span class="process-math">\(Z\)</span> to be <span class="process-math">\(Z=aX+bY\text{.}\)</span> That is, as a function <span class="process-math">\(Z : S
+\rightarrow \mathbb{R}\text{,}\)</span> <span class="process-math">\(Z\)</span> is defined by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-expected-value.html">
+\begin{equation*}
+Z(s) = a \cdot X(s) + b \cdot Y(s)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(s\)</span> in <span class="process-math">\(S\text{.}\)</span> Using <a href="section3_3-ExpectedValue.html#def-expected-value" class="xref" data-knowl="./knowl/xref/def-expected-value.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.3.1: Expected Value">Definition 3.3.1</a>, we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-expected-value.html">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(Z) &amp; = \sum_{s \in S} Z(s) \cdot P(s) \\
+&amp; = \sum_{s \in S}
+\left( a \cdot X(s) + b \cdot Y(s) \right)
+\cdot P(s) \\
+&amp; = a \sum_{s \in S} X(s) \cdot P(s) +
+b \sum_{s \in S} Y(s) \cdot P(s) \\
+&amp; = a \cdot \mathbb{E}(X) + b \cdot \mathbb{E}(Y) \, \Box
+\end{array}
+\end{equation*}
+</div>
+</div></article></details><div class="para logical" id="subsec3_3_2-linearity-of-expectation-5">
+<div class="para">Let us return to the example in which we roll two fair and independent dice, one being red and the other being blue. Define the random variable <span class="process-math">\(X\)</span> to be the sum of the results of the two rolls. We have seen two ways to compute the expected value <span class="process-math">\(\mathbb{E}(X)\)</span> of <span class="process-math">\(X\text{.}\)</span> We now present a third way, which is the easiest one: We define two random variables</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-linearity-of-expectation.html">
+\begin{equation*}
+Y
+= \mbox{ the result of the red die}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-linearity-of-expectation.html">
+\begin{equation*}
+Z = \mbox{ the result of the blue die.}
+\end{equation*}
+</div>
+<div class="para">We have already seen that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-linearity-of-expectation.html">
+\begin{equation*}
+\mathbb{E}(Y) = 1
+\cdot \frac{1}{6} + 2 \cdot \frac{1}{6} +
+3 \cdot \frac{1}{6} + 4 \cdot \frac{1}{6} +
+5 \cdot \frac{1}{6} + 6 \cdot \frac{1}{6}
+= \frac{7}{2} .
+\end{equation*}
+</div>
+<div class="para">By the same computation, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-linearity-of-expectation.html">
+\begin{equation*}
+\mathbb{E}(Z) = \frac{7}{2} .
+\end{equation*}
+</div>
+<div class="para">Observe that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-linearity-of-expectation.html">
+\begin{equation*}
+X = Y + Z .
+\end{equation*}
+</div>
+<div class="para">Then, by the Linearity of Expectation (i.e., <a href="section3_3-ExpectedValue.html#thm-linearity-of-expectation" class="xref" data-knowl="./knowl/xref/thm-linearity-of-expectation.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.9: Linearity of Expectation">Theorem 3.3.9</a>), we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-linearity-of-expectation.html">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X) &amp; = \mathbb{E}(Y+Z) \\
+&amp; = \mathbb{E}(Y) + \mathbb{E}(Z) \\
+&amp; = \frac{7}{2} + \frac{7}{2} \\
+&amp; = 7 .
+\end{array}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="subsec3_3_2-linearity-of-expectation-6">We have stated the Linearity of Expectation for two random variables. The proof of <a href="section3_3-ExpectedValue.html#thm-linearity-of-expectation" class="xref" data-knowl="./knowl/xref/thm-linearity-of-expectation.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.9: Linearity of Expectation">Theorem 3.3.9</a> can easily be generalized to any finite sequence of random variables:</div>
+<article class="theorem theorem-like" id="thm-gen-linearity-of-expectation"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Generalized Linearity of Expectation.</span>
+</h4>
+<div class="para logical" id="thm-gen-linearity-of-expectation-3-1">
+<div class="para">Let <span class="process-math">\((S,P)\)</span> be a probability space, let <span class="process-math">\(n \geq 2\)</span> be an integer, let <span class="process-math">\(X_1,X_2,\ldots,X_n\)</span> be a sequence of random variables on <span class="process-math">\(S\text{,}\)</span> and let <span class="process-math">\(a_1,a_2,\ldots,a_n\)</span> be a sequence of real numbers. Then,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{E} \left(
+\sum_{i=1}^n a_i X_i \right) =
+\sum_{i=1}^n a_i \cdot \mathbb{E} \left( X_i \right) .
+\end{equation*}
+</div>
+</div></article></section><section class="subsection" id="subsec3_3_3-geometric-distribution"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="space"> </span><span class="title">The Geometric Distribution</span>
+</h3>
+<section class="introduction" id="subsec3_3_3-geometric-distribution-3"><div class="para" id="subsec3_3_3-geometric-distribution-3-1">Say we are performing repeated independent Bernoulli trials such that each one is <em class="emphasis">successful</em> with probability <span class="process-math">\(p\)</span> and <em class="emphasis">fails</em> with probability <span class="process-math">\(1-p\text{.}\)</span> What is the expected number of times that we must perform the trial before we see a success?</div></section><div class="para" id="subsec3_3_3-geometric-distribution-4">We model this problem in the following way: Assume we have a coin that comes up heads with probability <span class="process-math">\(p\)</span> and, thus, comes up tails with probability <span class="process-math">\(1-p\text{.}\)</span> We flip this coin repeatedly and independently until it comes up heads for the first time. Define the random variable <span class="process-math">\(X\)</span> to be the number of times that we flip the coin; this includes the last coin flip, which resulted in heads. We want to determine the expected value <span class="process-math">\(\mathbb{E}(X)\)</span> of <span class="process-math">\(X\text{.}\)</span>
+</div>
+<div class="para logical" id="subsec3_3_3-geometric-distribution-5">
+<div class="para">The sample space is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S = \{ T^{k-1} H : k \geq 1 \} ,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(T^{k-1} H\)</span> denotes the sequence consisting of <span class="process-math">\(k-1\)</span> tails followed by one heads. Since the coin flips are independent, the outcome <span class="process-math">\(T^{k-1}
+H\)</span> has a probability of <span class="process-math">\((1-p)^{k-1} p = p (1-p)^{k-1}\text{,}\)</span> i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P \left( T^{k-1} H
+\right) = p (1-p)^{k-1} .
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="subsec3_3_3-geometric-distribution-6">
+<div class="para">For any integer <span class="process-math">\(k \geq 1\text{,}\)</span> <span class="process-math">\(X=k\)</span> if and only if the coin flips give the sequence <span class="process-math">\(T^{k-1}
+H\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(X=k) = P \left( T^{k-1} H \right) = p (1-p)^{k-1} .
+\end{equation*}
+</div>
+</div>
+<article class="definition definition-like" id="def-geometric-distribution"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Geometric Distribution.</span>
+</h4>  <div class="para logical" id="def-geometric-distribution-3-1">
+<div class="para">Let <span class="process-math">\(p\)</span> be a real number with <span class="process-math">\(0 &lt;p &lt;1\text{.}\)</span> A random variable <span class="process-math">\(X\)</span> has a <em class="emphasis">geometric distribution with parameter</em> <span class="process-math">\(p\text{,}\)</span> if its distribution function satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(X=k) = p (1-p)^{k-1}
+\end{equation*}
+</div>
+<div class="para">for any integer <span class="process-math">\(k \geq 1\text{.}\)</span>
+</div>
+</div></article><article class="theorem theorem-like" id="thm-expectation-of-geo-distribution"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Expectation of a Geometric Distribution.</span>
+</h4>
+<div class="para logical" id="thm-expectation-of-geo-distribution-3-1">
+<div class="para">Let <span class="process-math">\(p\)</span> be a real number with <span class="process-math">\(0 &lt; p &lt; 1\)</span> and let <span class="process-math">\(X\)</span> be a random variable that has a geometric distribution with parameter <span class="process-math">\(p\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{E}(X)
+= 1/p .
+\end{equation*}
+</div>
+</div></article><details id="thm-expectation-of-geo-distribution-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-expectation-of-geo-distribution-4-1">Informally, this makes sense. If we see a success with probability <span class="process-math">\(p\)</span> in each trial, then we should expect to see a success in 1 out of <span class="process-math">\(p\)</span> trials, (if <span class="process-math">\(p = 1/n\)</span> then we expect to perform <span class="process-math">\(1/p = n\)</span> trials).</div> <div class="para" id="thm-expectation-of-geo-distribution-4-2">A formal proof requires calculus so not given here.</div></article></details><div class="para" id="subsec3_3_3-geometric-distribution-9">For example, if we flip a fair coin (in which case <span class="process-math">\(p=1/2\)</span>) repeatedly and independently until it comes up heads for the first time, then the expected number of coin flips is equal to <span class="process-math">\(2\text{.}\)</span>
+</div></section><section class="subsection" id="subsec3_3_4-binomial-distribution"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="space"> </span><span class="title">The Binomial Distribution</span>
+</h3>
+<section class="introduction" id="subsec3_3_4-binomial-distribution-3"><div class="para" id="subsec3_3_4-binomial-distribution-3-1">Say as in <a href="section3_3-ExpectedValue.html#subsec3_3_3-geometric-distribution" class="internal" title="Subsection 3.3.3: The Geometric Distribution">Subsection 3.3.3</a> we are performing repeated independent Bernoulli trials such that each one is <em class="emphasis">successful</em> with probability <span class="process-math">\(p\)</span> and <em class="emphasis">fails</em> with probability <span class="process-math">\(1-p\text{.}\)</span> But now we repeat the experiment a fixed number of times, say <span class="process-math">\(n\)</span> times, integer <span class="process-math">\(n \geq 1\text{.}\)</span> What number of successes can we expect to see in those <span class="process-math">\(n\)</span> trials?</div></section><div class="para" id="subsec3_3_4-binomial-distribution-4">We again model this problem using a coin that comes up heads with probability <span class="process-math">\(p\)</span> and, thus, comes up tails with probability <span class="process-math">\(1-p\text{.}\)</span> We flip the coin, independently, <span class="process-math">\(n\)</span> times and define the random variable <span class="process-math">\(X\)</span> to be the number of times the coin comes up heads. We want to determine the expected value <span class="process-math">\(\mathbb{E}(X)\text{.}\)</span>
+</div>
+<div class="para" id="subsec3_3_4-binomial-distribution-5">Let <span class="process-math">\(n \geq 1\)</span> and <span class="process-math">\(k\)</span> be integers with <span class="process-math">\(0 \leq k \leq n\text{.}\)</span> Then, <span class="process-math">\(X=k\)</span> if and only if there are exactly <span class="process-math">\(k\)</span> <span class="process-math">\(H\)</span>’s in the sequence of <span class="process-math">\(n\)</span> coin flips. The number of such sequences is equal to <span class="process-math">\(n \choose k\text{,}\)</span> and each one of them has probability <span class="process-math">\(p^k
+(1-p)^{n-k}\text{.}\)</span>
+</div>
+<article class="definition definition-like" id="def-binomial-distribution"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">Binomial Distribution.</span>
+</h4>  <div class="para logical" id="def-binomial-distribution-3-1">
+<div class="para">Let <span class="process-math">\(n \geq 1\)</span> be an integer and let <span class="process-math">\(p\)</span> be a real number with <span class="process-math">\(0 &lt; p
+&lt; 1\text{.}\)</span> A random variable <span class="process-math">\(X\)</span> has a <em class="emphasis">binomial distribution with parameters</em> <span class="process-math">\(n\)</span> and <span class="process-math">\(p\text{,}\)</span> if its distribution function satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(X=k) = {n \choose k} p^k
+(1-p)^{n-k}
+\end{equation*}
+</div>
+<div class="para">for any integer <span class="process-math">\(k\)</span> with <span class="process-math">\(0 \leq k
+\leq n\text{.}\)</span>
+</div>
+</div></article><article class="theorem theorem-like" id="thm-expectation-of-binomial-distribution"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Expectation of a Binomial Distribution.</span>
+</h4>
+<div class="para logical" id="thm-expectation-of-binomial-distribution-3-1">
+<div class="para">Let <span class="process-math">\(n \geq 1\)</span> be an integer, let <span class="process-math">\(p\)</span> be a real number with <span class="process-math">\(0&lt; p &lt; 1\text{,}\)</span> and let <span class="process-math">\(X\)</span> be a random variable that has a binomial distribution with parameters <span class="process-math">\(n\)</span> and <span class="process-math">\(p\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{E}(X) = pn .
+\end{equation*}
+</div>
+</div></article><details id="thm-expectation-of-binomial-distribution-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-expectation-of-binomial-distribution-4-1">
+<div class="para">We define a sequence <span class="process-math">\(X_1,X_2,\ldots,X_n\)</span> of random variables each representing a Bernoulli trial that takes the value 1 with probability <span class="process-math">\(p\)</span> and the value 0 with probability <span class="process-math">\(1-p\text{.}\)</span> Observe that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-gen-linearity-of-expectation.html ./knowl/xref/thm-expectation-of-bernoulli-successes.html">
+\begin{equation*}
+X = X_1 + X_2 + \cdots + X_n ,
+\end{equation*}
+</div>
+<div class="para">because</div>
+<ul class="disc">
+<li id="thm-expectation-of-binomial-distribution-4-1-5-1"><div class="para" id="thm-expectation-of-binomial-distribution-4-1-5-1-1">
+<span class="process-math">\(X\)</span> counts the number of heads in the sequence of <span class="process-math">\(n\)</span> coin flips, and</div></li>
+<li id="thm-expectation-of-binomial-distribution-4-1-5-2"><div class="para" id="thm-expectation-of-binomial-distribution-4-1-5-2-1">the summation on the right-hand side is equal to the number of <span class="process-math">\(1\)</span>’s in the sequence <span class="process-math">\(X_1,X_2,\ldots,X_n\text{,}\)</span> which, by definition, is equal to the number of successes in the sequence of <span class="process-math">\(n\)</span> Bernoulli trials.</div></li>
+</ul>
+<div class="para">Using the Linearity of Expectation (<a href="section3_3-ExpectedValue.html#thm-gen-linearity-of-expectation" class="xref" data-knowl="./knowl/xref/thm-gen-linearity-of-expectation.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.10: Generalized Linearity of Expectation">Theorem 3.3.10</a>), we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-gen-linearity-of-expectation.html ./knowl/xref/thm-expectation-of-bernoulli-successes.html">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X) &amp; = \mathbb{E} \left( \sum_{i=1}^n X_i \right) \\
+&amp; = \sum_{i=1}^n \mathbb{E} \left( X_i \right) .
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Thus, we have to determine the expected value for each <span class="process-math">\(X_i\text{.}\)</span> Since each <span class="process-math">\(X_i\)</span> is a Bernoulli trial, by <a href="section3_3-ExpectedValue.html#thm-expectation-of-bernoulli-successes" class="xref" data-knowl="./knowl/xref/thm-expectation-of-bernoulli-successes.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.4: Expected Successes in a Bernoulli Trial">Theorem 3.3.4</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-gen-linearity-of-expectation.html ./knowl/xref/thm-expectation-of-bernoulli-successes.html">
+\begin{equation*}
+\mathbb{E} \left( X_i \right) = p .
+\end{equation*}
+</div>
+<div class="para">We conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-gen-linearity-of-expectation.html ./knowl/xref/thm-expectation-of-bernoulli-successes.html">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X) &amp; = \sum_{i=1}^n \mathbb{E} \left( X_i \right) \\
+&amp; = \sum_{i=1}^n p \\
+&amp; = pn .
+\end{array}
+\end{equation*}
+</div>
+</div></article></details></section><section class="subsection" id="subsec3_3_5-variance"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="space"> </span><span class="title">Variance</span>
+</h3>
+<section class="introduction" id="subsec3_3_5-variance-3"><div class="para" id="subsec3_3_5-variance-3-1">The usefulness of the expected value as a prediction for the outcome of an experiment is increased when the outcome is not likely to deviate too much from the expected value. In this section we shall introduce a measure of this deviation, called the variance.</div></section><div class="para" id="subsec3_3_5-variance-4">First, we must define what we mean by deviation.</div>
+<article class="definition definition-like" id="def-deviation"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">Deviation of a Random Variable.</span>
+</h4>  <div class="para logical" id="def-deviation-3-1">
+<div class="para">Let <span class="process-math">\(X\)</span> be a random variable with expected value <span class="process-math">\(\mathbb{E}(X)\text{.}\)</span> Then the <em class="emphasis">deviation</em> of <span class="process-math">\(X\)</span> at <span class="process-math">\(s \in S\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(X(s) - \mathbb{E}(X)).
+\end{equation*}
+</div>
+<div class="para">The deviation can be thought of as the measurement of how far <span class="process-math">\(X(s)\)</span> is from the expected value of <span class="process-math">\(X\text{.}\)</span>
+</div>
+</div></article><div class="para" id="subsec3_3_5-variance-6">The variance is the weighted average (or expectation) of the square of the deviation. This can be seen as answering the question “how much on average does the value of <span class="process-math">\(X\)</span> vary from its expected value?”</div>
+<article class="definition definition-like" id="def-variance"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.16</span><span class="period">.</span><span class="space"> </span><span class="title">Variance.</span>
+</h4>  <div class="para logical" id="def-variance-3-1">
+<div class="para">Let <span class="process-math">\(X\)</span> be a random variable with expected value <span class="process-math">\(\mathbb{E}(X)\text{.}\)</span> Then the <em class="emphasis">variance</em> of <span class="process-math">\(X\text{,}\)</span> denoted by <span class="process-math">\(V(X)\)</span> or <span class="process-math">\(\sigma^2\text{,}\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V(X) =
+\sum_{s \in S}(X(s) - \mathbb{E}(X))^2 \cdot P(s).
+\end{equation*}
+</div>
+<div class="para">Note that because of the squaring, the variance is not in the same units as <span class="process-math">\(X(s)\)</span> and <span class="process-math">\(\mathbb{E}(X)\text{.}\)</span> A low variance indicates that the values of <span class="process-math">\(X\)</span> tend to be close to the expected value, while a large variance indicates that <span class="process-math">\(X\)</span>’s outcomes are spread out over a wider range.</div>
+</div></article><article class="definition definition-like" id="def-standard-deviation"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.17</span><span class="period">.</span><span class="space"> </span><span class="title">Standard Deviation of a Random Variable.</span>
+</h4>  <div class="para logical" id="def-standard-deviation-3-1">
+<div class="para">Let <span class="process-math">\(X\)</span> be a random variable with variance <span class="process-math">\(V(X)\text{.}\)</span> Then the <em class="emphasis">standard deviation</em> of <span class="process-math">\(X\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma = \sqrt{V(X)}
+\end{equation*}
+</div>
+<div class="para">Like the variance, a low standard deviation indicates that the outcomes of an experiment, or values of <span class="process-math">\(X\)</span> tend to be close to the expected value, while a high standard deviation indicates that the outcomes are spread out over a wider range of values. The standard deviation is often more useful than the variance because it is in the same units as <span class="process-math">\(X\)</span> and <span class="process-math">\(\mathbb{E}(X)\)</span> .</div>
+</div></article><article class="theorem theorem-like" id="thm-variance-as-expectation"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.18</span><span class="period">.</span><span class="space"> </span><span class="title">Variance as Expectation of Deviation.</span>
+</h4>
+<div class="para logical" id="thm-variance-as-expectation-3">
+<div class="para">If <span class="process-math">\(X\)</span> is a numerically valued random variable with expected value <span class="process-math">\(\mathbb{E}(X) =
+\mu\text{,}\)</span> we can rewrite the formula above as an expectation of the deviations.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V(X) =
+\mathbb{E}((X - \mu)^2)\text{.}
+\end{equation*}
+</div>
+</div></article><article class="theorem theorem-like" id="thm-variance-using-square-expectations"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.19</span><span class="period">.</span><span class="space"> </span><span class="title">Variance Using Squared Expectations.</span>
+</h4>
+<div class="para logical" id="thm-variance-using-square-expectations-3">
+<div class="para">Applying the definition of <span class="process-math">\(\mathbb{E}(X)\text{,}\)</span><a href="section3_3-ExpectedValue.html#def-expected-value" class="xref" data-knowl="./knowl/xref/def-expected-value.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.3.1: Expected Value">Definition 3.3.1</a> to the formula for variance <a href="section3_3-ExpectedValue.html#def-variance" class="xref" data-knowl="./knowl/xref/def-variance.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.3.16: Variance">Definition 3.3.16</a>, we have a third form:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-expected-value.html ./knowl/xref/def-variance.html">
+\begin{equation*}
+V(X) =
+\mathbb{E}(X^2) - \mathbb{E}(X)^2
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="ex-variance-die-roll"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.20</span><span class="period">.</span><span class="space"> </span><span class="title">Variance of a Die Roll.</span>
+</h4> <div class="para logical" id="ex-variance-die-roll-2">
+<div class="para">Continuing our scenario from <a href="section3_3-ExpectedValue.html#ex-expected-die-roll" class="xref" data-knowl="./knowl/xref/ex-expected-die-roll.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.3.5: Expected value of a die roll">Example 3.3.5</a>, assume we roll a fair die. Define the random variable <span class="process-math">\(X\)</span> to be the value of the result, <span class="process-math">\(X\)</span> takes each of the values in <span class="process-math">\(S = \{1,2,3,4,5,6\}\)</span> with equal probability <span class="process-math">\(1/6\text{,}\)</span> and we have calculated <span class="process-math">\(\mathbb{E}(X) = \frac{7}{2}\text{.}\)</span> To use the variance formula in <a href="section3_3-ExpectedValue.html#def-variance" class="xref" data-knowl="./knowl/xref/def-variance.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.3.16: Variance">Definition 3.3.16</a> we calculate the squared difference between <span class="process-math">\(X(s)\)</span> and <span class="process-math">\(\mathbb{E}(X)\text{,}\)</span> shown in the table below:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-expected-die-roll.html ./knowl/xref/def-variance.html">
+\begin{equation*}
+\begin{array}{l|l|l}
+\hline
+\hline
+X(s) &amp; P(s) &amp; (X(s) - \frac{7}{2})^2\\
+\hline
+1 &amp; 1/6 &amp; 25/4 \\
+2 &amp; 1/6 &amp; 9/4 \\
+3 &amp; 1/6 &amp; 1/4 \\
+4 &amp; 1/6 &amp; 1/4 \\
+5 &amp; 1/6 &amp; 9/4 \\
+6 &amp; 1/6 &amp; 25/4 \\
+\end{array}.
+\end{equation*}
+</div>
+<div class="para">From the table we can calculate</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-expected-die-roll.html ./knowl/xref/def-variance.html">
+\begin{equation*}
+\begin{array}{cc}
+V(X) &amp; =
+1/6(\frac{25}{4}+\frac{9}{4}+\frac{1}{4}+\frac{1}{4}+\frac{9}{4}+\frac{25}{4})\\
+&amp; = \frac{35}{12} = 2 \frac{11}{12}
+\end{array}
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="ex-variance-die-roll-mu2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.21</span><span class="period">.</span><span class="space"> </span><span class="title">Variance of a Die Roll using <span class="process-math">\(\mu^2\)</span>.</span>
+</h4> <div class="para logical" id="ex-variance-die-roll-mu2-2">
+<div class="para">We can calculate the same variance of a fair die using <a href="section3_3-ExpectedValue.html#thm-variance-using-square-expectations" class="xref" data-knowl="./knowl/xref/thm-variance-using-square-expectations.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.19: Variance Using Squared Expectations">Theorem 3.3.19</a>. First we calculate</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-variance-using-square-expectations.html">
+\begin{equation*}
+\mathbb{E}(X)^2 =
+\left(\frac{7}{2}\right)^2 = \frac{49}{4}\text{.}
+\end{equation*}
+</div>
+<div class="para">Then we must calculate the expectation of the squares of <span class="process-math">\(X\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-variance-using-square-expectations.html">
+\begin{equation*}
+\begin{array}{cc}
+\mathbb{E}(X^2)&amp; = 1^2 (1/6) + 2^2 (1/6) + 3^2 (1/6) + 4^2 (1/6) + 5^2 (1/6) + 6^2
+(1/6)\\
+&amp; = 1 (1/6) + 4(1/6) + 9(1/6) + 16(1/6) + 25(1/6) + 36(1/6)\\
+&amp; = 91/6
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Finally:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-variance-using-square-expectations.html">
+\begin{equation*}
+V(X) = 91/6 - 49/4 = 35/12 = 2 \frac{11}{12}.
+\end{equation*}
+</div>
+</div></article><article class="theorem theorem-like" id="thm-variance-of-bernoulli-trial"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.22</span><span class="period">.</span><span class="space"> </span><span class="title">Variance of Successes in a Bernoulli Trial.</span>
+</h4>
+<div class="para logical" id="thm-variance-of-bernoulli-trial-3-1">
+<div class="para">Let <span class="process-math">\(X\)</span> be a random variable representing a Bernoulli Trial that takes the value 1 with probability <span class="process-math">\(p\)</span> and the value 0 with probability <span class="process-math">\(1-p = q\text{.}\)</span> The variance of <span class="process-math">\(X\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V(X) = p(1-p) = pq.
+\end{equation*}
+</div>
+</div></article><details id="thm-variance-of-bernoulli-trial-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-variance-of-bernoulli-trial-4-1">
+<div class="para">If <span class="process-math">\(X\)</span> is a random variable representing a Bernoulli trial, then we know from <a href="section3_3-ExpectedValue.html#thm-expectation-of-bernoulli-successes" class="xref" data-knowl="./knowl/xref/thm-expectation-of-bernoulli-successes.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.4: Expected Successes in a Bernoulli Trial">Theorem 3.3.4</a> that <span class="process-math">\(\mathbb{E}(X) = p.\)</span> By <a href="section3_3-ExpectedValue.html#def-expected-value" class="xref" data-knowl="./knowl/xref/def-expected-value.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.3.1: Expected Value">Definition 3.3.1</a>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-expectation-of-bernoulli-successes.html ./knowl/xref/def-expected-value.html ./knowl/xref/thm-variance-using-square-expectations.html">
+\begin{equation*}
+\mathbb{E}(X^2) = 1^2 \cdot p + 0^2 \cdot (1-p) = p.
+\end{equation*}
+</div>
+<div class="para">It follows using <a href="section3_3-ExpectedValue.html#thm-variance-using-square-expectations" class="xref" data-knowl="./knowl/xref/thm-variance-using-square-expectations.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.19: Variance Using Squared Expectations">Theorem 3.3.19</a> that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-expectation-of-bernoulli-successes.html ./knowl/xref/def-expected-value.html ./knowl/xref/thm-variance-using-square-expectations.html">
+\begin{equation*}
+\begin{array}{rl}
+V(X) = &amp; \mathbb{E}(X^2) - (\mathbb{E}(X))^2 \\
+= &amp; p - p^2 \\
+= &amp; p(1-p)\\
+= &amp; pq
+\end{array}
+\end{equation*}
+</div>
+</div></article></details><article class="theorem theorem-like" id="thm-bienaymes-Formula"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.23</span><span class="period">.</span><span class="space"> </span><span class="title">Bienaymé’s Formula.</span>
+</h4>
+<div class="para logical" id="thm-bienaymes-Formula-3-1">
+<div class="para">Let <span class="process-math">\(X_1, X_2, \dots, X_n\)</span> be <span class="process-math">\(n\)</span> independent random variables on sample space <span class="process-math">\(\text{.}\)</span> The variance of the sum <span class="process-math">\(X_1 + X_2 + \dots + X_n\)</span> is the sum of the variances</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V(X_1
++ X_2 + \dots + X_n) = V(X_1) + V(X_2) + \dots + V(X_n) .
+\end{equation*}
+</div>
+</div></article><article class="theorem theorem-like" id="thm-variance-of-geo-distribution"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.24</span><span class="period">.</span><span class="space"> </span><span class="title">Variance of a Geometric Distribution.</span>
+</h4>
+<div class="para logical" id="thm-variance-of-geo-distribution-3-1">
+<div class="para">Let <span class="process-math">\(p\)</span> be a real number with <span class="process-math">\(0 &lt; p &lt; 1\)</span> and let <span class="process-math">\(X\)</span> be a random variable that has a geometric distribution with parameter <span class="process-math">\(p\text{.}\)</span> The variance of <span class="process-math">\(X\)</span> is:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V(X) = \frac{1-p}{p^2}
+\end{equation*}
+</div>
+</div></article><details id="thm-variance-of-geo-distribution-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-variance-of-geo-distribution-4-1">Requires calculus so not given here</div>.</article></details><article class="theorem theorem-like" id="thm-variance-of-binomial-distribution"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.25</span><span class="period">.</span><span class="space"> </span><span class="title">Variance of a Binomial Distribution.</span>
+</h4>
+<div class="para logical" id="thm-variance-of-binomial-distribution-3-1">
+<div class="para">Let <span class="process-math">\(X\)</span> be a random variable that has a binomial distribution with parameters <span class="process-math">\(n\)</span> and <span class="process-math">\(p\text{.}\)</span> Then the variance of <span class="process-math">\(X\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V(X) = np(1-p) = npq.
+\end{equation*}
+</div>
+</div></article><details id="thm-variance-of-binomial-distribution-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-variance-of-binomial-distribution-4-1">
+<div class="para">Like in the proof of <a href="section3_3-ExpectedValue.html#thm-expectation-of-binomial-distribution" class="xref" data-knowl="./knowl/xref/thm-expectation-of-binomial-distribution.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.14: Expectation of a Binomial Distribution">Theorem 3.3.14</a> we define a sequence of random variables <span class="process-math">\(X_1,X_2,\ldots,X_n\)</span> each representing a Bernoulli trial that takes the value 1 with probability <span class="process-math">\(p\)</span> and the value 0 with probability <span class="process-math">\(1-p\text{.}\)</span> We know from <a href="section3_3-ExpectedValue.html#thm-variance-of-bernoulli-trial" class="xref" data-knowl="./knowl/xref/thm-variance-of-bernoulli-trial.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.22: Variance of Successes in a Bernoulli Trial">Theorem 3.3.22</a> that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-expectation-of-binomial-distribution.html ./knowl/xref/thm-variance-of-bernoulli-trial.html ./knowl/xref/thm-bienaymes-Formula.html">
+\begin{equation*}
+V(X_i) = pq.
+\end{equation*}
+</div>
+<div class="para">Therefore using Bienaymé’s Formula, <a href="section3_3-ExpectedValue.html#thm-bienaymes-Formula" class="xref" data-knowl="./knowl/xref/thm-bienaymes-Formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.23: Bienaymé’s Formula">Theorem 3.3.23</a>, the variance for the whole distribution is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-expectation-of-binomial-distribution.html ./knowl/xref/thm-variance-of-bernoulli-trial.html ./knowl/xref/thm-bienaymes-Formula.html">
+\begin{equation*}
+\begin{array}{ll}
+V(X) &amp;= V(X_1 + X_2 + \dots + X_n) \\
+&amp;= V(X_1) + V(X_2) + \dots + V(X_n)\\
+&amp;= nV(X_i)\\
+&amp;= np(1-p)
+&amp;= npq
+\end{array}.
+\end{equation*}
+</div>
+</div></article></details></section><section class="exercises" id="section3_3-ExpectedValue-8"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">3.3.6</span><span class="space"> </span><span class="title">Exercises for Section 3.3</span>
+</h3>
+<article class="exercise exercise-like" id="section3_3-ExpectedValue-8-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="section3_3-ExpectedValue-8-2-1-1">A number is chosen at random from the set <span class="process-math">\(S = \{−1, 0, 1\}\text{.}\)</span> Let <span class="process-math">\(X\)</span> be the number chosen. Find the expected value, variance, and standard deviation of <span class="process-math">\(X\text{.}\)</span>
+</div>
+<div class="solutions"><details id="section3_3-ExpectedValue-8-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="section3_3-ExpectedValue-8-2-2-1">
+<div class="para">Because the numbers are chosen randomly:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(X = -1) = P(X = 0) = P(X = 1) = 1/3.
+\end{equation*}
+</div>
+<div class="para">The expected value of <span class="process-math">\(X\)</span> is then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{E}(X) = (-1)1/3 + (0) 1/3 + (1) 1/3 =
+0.
+\end{equation*}
+</div>
+<div class="para">Using <span class="process-math">\(V(X) =\mathbb{E}(X^2) - (\mathbb{E}(X))^2\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X^2) = &amp; = (-1^2)1/3 + (0^2) 1/3 + 1^2 (1/3) = 2/3\\
+V(X) = &amp; 2/3 - (0)^2 \\
+= &amp; 2/3.
+\end{array} 
+\end{equation*}
+</div>
+<div class="para">The standard deviation is then:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sqrt{2/3} \approx 0.82 
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="section3_3-ExpectedValue-8-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="section3_3-ExpectedValue-8-3-1-1">
+<div class="para">A random variable X has the distribution</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+P(X=0) = &amp; 1/3 \\
+P(X=1) = &amp; 1/3 \\
+P(X=2) = &amp; 1/6 \\
+P(X=4) = &amp; 1/6 \\
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Find the expected value, variance, and standard deviation of <span class="process-math">\(X\text{.}\)</span>
+</div>
+</div></article><article class="exercise exercise-like" id="section3_3-ExpectedValue-8-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4> <div class="para" id="section3_3-ExpectedValue-8-4-1-1">A coin is tossed three times. Let<span class="process-math">\(X\)</span> be the number of heads that turn up. Find <span class="process-math">\(V
+(X)\)</span> and <span class="process-math">\(\sigma(X)\)</span> (the standard deviation of <span class="process-math">\(X\)</span>).</div>
+<div class="solutions"><details id="section3_3-ExpectedValue-8-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="section3_3-ExpectedValue-8-4-2-1">
+<div class="para">This is a straightforward application of the variance of a binomial distribution. <span class="process-math">\(X\)</span> is a random variable with binomial distribution with parameters <span class="process-math">\(n = 3&gt;\)</span> and <span class="process-math">\(p =
+1/2\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V(X) = npq = 3*(1/2)*(1/2) = 3/4
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma(X) = \sqrt{3/4} \approx 0.87 
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="section3_3-ExpectedValue-8-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="section3_3-ExpectedValue-8-5-1-1">A random sample of 2400 people are asked if they favor a government proposal to develop new nuclear power plants. If 40 percent of the people in the country are in favor of this proposal, find the expected value and the standard deviation for the number of people in the sample who favored the proposal.</div></article><article class="exercise exercise-like" id="section3_3-ExpectedValue-8-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="section3_3-ExpectedValue-8-6-1-1">In Las Vegas, a roulette wheel has 38 slots numbered 0, 00, 1, 2, . . . , 36. The 0 and 00 slots are green and half of the remaining 36 slots are red and half are black. A croupier spins the wheel and throws in an ivory ball. If a player bets 1 dollar on a color, they win 1 dollar if the ball stops in a slot with the same color. If the ball stops on either of the other colors, the player loses the 1 dollar they bet.</div> <div class="para" id="section3_3-ExpectedValue-8-6-1-2">You place a 1-dollar bet on black. Let <span class="process-math">\(X\)</span> be your winnings. Define <span class="process-math">\(S \)</span> and calculate the values of <span class="process-math">\(P(X), \mathbb{E}(X) \)</span> and <span class="process-math">\(V (X)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="section3_3-ExpectedValue-8-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="section3_3-ExpectedValue-8-6-2-1">
+<div class="para">Here the set of outcomes <span class="process-math">\(S\)</span> is the color of the slots we care about: {black, not black}. Let <span class="process-math">\(X\)</span> be a random variable that represents your winnings, it takes the value 1 if a spin results in a black slot, and the value -1 otherwise. The probability of winning in a spin is <span class="process-math">\(P(X = 1)\)</span> the probability the ball lands on a black slot: <span class="process-math">\(\frac{18}{38}\text{.}\)</span> The probability of losing a spin is <span class="process-math">\(P(X = -1)\)</span> the probability the ball lands on a green or red slot: <span class="process-math">\(\frac{20}{38}\text{.}\)</span> Therefore:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X) = &amp; (1)\frac{18}{38} + (-1)\frac{20}{38}\\
+= &amp; \frac{-2}{38} \\
+= &amp; \frac{-1}{19}\\
+\approx &amp; - 5 \text{ cents}.
+\end{array} 
+\end{equation*}
+</div>
+<div class="para">To calculate the variance we calculate <span class="process-math">\(\mathbb{E}(X^2)\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(X^2) = &amp; (1^2)\frac{18}{38} + (-1^2)\frac{20}{38}\\
+= &amp; \frac{38}{38} \\
+= &amp; 1 \text{ dollar}.
+\end{array} 
+\end{equation*}
+</div>
+<div class="para">Using <span class="process-math">\(V(X) =\mathbb{E}(X^2) - (\mathbb{E}(X))^2\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+V(X) = &amp; 1 - (\frac{-1}{19})^2 \\
+= &amp; 1 - \frac{1}{361} \\
+= &amp; \frac{360}{361} \\
+\approx &amp; 99.7 \text{ cents}.
+\end{array} .
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="section3_3-ExpectedValue-8-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="section3_3-ExpectedValue-8-7-1-1">Another form of betting on roulette is to bet that the ball will stop on a specific number (say 17). If the ball stops on a player’s chosen number, they get their dollar back, plus 35 dollars. If not, they lose their 1 dollar bet.</div> <div class="para logical" id="section3_3-ExpectedValue-8-7-1-2">
+<div class="para">You place a 1-dollar bet on the number 17. Let <span class="process-math">\(Y\)</span> be your winnings.</div>
+<ol class="lower-alpha">
+<li id="section3_3-ExpectedValue-8-7-1-2-2-1"><div class="para" id="section3_3-ExpectedValue-8-7-1-2-2-1-1">Define <span class="process-math">\(S \)</span> and calculate the values of <span class="process-math">\(P(Y), \mathbb{E}(Y) \)</span> and <span class="process-math">\(V (Y)\text{.}\)</span>
+</div></li>
+<li id="section3_3-ExpectedValue-8-7-1-2-2-2"><div class="para" id="section3_3-ExpectedValue-8-7-1-2-2-2-1">Compare your answers from exercise 5, <span class="process-math">\(\mathbb{E}(X), \mathbb{E}(Y)\text{,}\)</span> and <span class="process-math">\(V (X), V (Y).\)</span> What do these computations tell you about the nature of your winnings if you make a sequence of bets, betting each time on a number versus betting each time on a color?</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="section3_3-ExpectedValue-8-8"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4> <div class="para" id="section3_3-ExpectedValue-8-8-1-1">We flip a fair coin 27 times (independently). For each heads, you win 3 dollars, whereas for each tails, you lose 2 dollars. Define the random variable <span class="process-math">\(Y\)</span> to be the amount of money that you win. Compute the expected value <span class="process-math">\(\mathbb{E}(Y)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="section3_3-ExpectedValue-8-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical" id="section3_3-ExpectedValue-8-8-2-1">
+<div class="para">For a single flip:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(Y = 3) = P(\text{heads}) = 1/2
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(Y = -2) =
+P(\text{tails}) = 1/2
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+\mathbb{E}(Y) = &amp; (3)\frac{1}{2} + (-2)\frac{1}{2}\\
+= &amp; \frac{1}{2} \\
+= &amp; 50 \text{ cents}.
+\end{array} 
+\end{equation*}
+</div>
+<div class="para">Therefore the expected amount of winnings is <span class="process-math">\(27 * \frac{1}{2} =
+13.5\)</span> dollars</div>
+</div> <div class="para logical" id="section3_3-ExpectedValue-8-8-2-2">
+<div class="para">Alternatively we can think of this as a binomial distribution with <span class="process-math">\(p = 1/2, n = 27\text{.}\)</span> Let <span class="process-math">\(X\)</span> be a random variable that takes the value 1 for each head and 0 for each tail.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-expectation-of-binomial-distribution.html">
+\begin{equation*}
+P(X = 1) = p = 1/2
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-expectation-of-binomial-distribution.html">
+\begin{equation*}
+P(X = 0) = (1-p) = 1/2
+\end{equation*}
+</div>
+<div class="para">By <a href="section3_3-ExpectedValue.html#thm-expectation-of-binomial-distribution" class="xref" data-knowl="./knowl/xref/thm-expectation-of-binomial-distribution.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.14: Expectation of a Binomial Distribution">Theorem 3.3.14</a>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-expectation-of-binomial-distribution.html">
+\begin{equation*}
+\mathbb{E}(X) = pn = 27*
+\frac{1}{2} = 13.5
+\end{equation*}
+</div>
+<div class="para">The 13.5 is the expected number of wins, so the expected winnings is <span class="process-math">\(13.5 * 3 = 40.5\)</span> dollars. Then we also must calculate the expected losses which is <span class="process-math">\(13.5 * 2 = 27\)</span> dollars. So the overall expected winnings is <span class="process-math">\(40.5 - 27 = 13.5\)</span>
+</div>
+</div>
+</div></details></div></article><article class="exercise exercise-like" id="section3_3-ExpectedValue-8-9"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para logical" id="section3_3-ExpectedValue-8-9-1-1">
+<div class="para">Assume we flip a fair coin twice, independently of each other. Define the following random variables:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rl}
+X=&amp;\text{ the number of heads,}\\
+Y=&amp;\text{ the number of tails,}\\
+Z=&amp;\text{ the number of heads times the number of tails.}\\
+\end{array} 
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="section3_3-ExpectedValue-8-9-1-1-2-1"><div class="para" id="section3_3-ExpectedValue-8-9-1-1-2-1-1">Determine the expected values of these three random variables.</div></li>
+<li id="section3_3-ExpectedValue-8-9-1-1-2-2"><div class="para" id="section3_3-ExpectedValue-8-9-1-1-2-2-1">Are <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> independent random variables?</div></li>
+<li id="section3_3-ExpectedValue-8-9-1-1-2-3"><div class="para" id="section3_3-ExpectedValue-8-9-1-1-2-3-1">Are <span class="process-math">\(X\)</span> and <span class="process-math">\(Z\)</span> independent random variables?</div></li>
+<li id="section3_3-ExpectedValue-8-9-1-1-2-4"><div class="para" id="section3_3-ExpectedValue-8-9-1-1-2-4-1">Are <span class="process-math">\(Y\)</span> and <span class="process-math">\(Z\)</span> independent random variables?</div></li>
+</ol>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="section3_2-Bayes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

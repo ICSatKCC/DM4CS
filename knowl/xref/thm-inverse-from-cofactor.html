@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.4.31</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix Inverse is Adjugate Divided by Determinant.</span>
+</h4>
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(A^{-1}\)</span> exists if and only if <span class="process-math">\(\det (A) \neq 0\text{.}\)</span> If <span class="process-math">\(\det (A) \neq 0\text{,}\)</span> then <span class="process-math">\(A^{-1} = (a_{ij}^{-1}) \)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_{ij}^{-1} = \frac{\text{adj} (A)_{ij}}{\det (A)} = \frac{\text{cof} (A)_{ji}}{\det (A)}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\text{cof} (A)_{ji}  = \text{cof} (A)_{ij}^T = \text{adj} A_{ij}\text{.}\)</span>
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">From the definition of the determinant in terms of expansion along a column, and letting <span class="process-math">\((a_{ir}) = A\text{,}\)</span> if <span class="process-math">\(\det (A) \neq 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-switch-rows-neg-det.html">
+\begin{equation*}
+\sum_{i=1}^n a_{ir} \text{cof} (A)_{ir}\det (A)^{-1} = \det (A)\det (A)^{-1} = 1.
+\end{equation*}
+</div>
+<div class="para">Now consider</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-switch-rows-neg-det.html">
+\begin{equation*}
+\sum_{i=1}^n a_{ir} \text{cof} (A)_{ik}\det (A)^{-1}
+\end{equation*}
+</div>
+<div class="para">when <span class="process-math">\(k \neq r\text{.}\)</span> Replace the <span class="process-math">\(k^{th}\)</span> column with the <span class="process-math">\(r^{th}\)</span> column to obtain a matrix <span class="process-math">\(B_k\)</span> whose determinant equals zero by <a href="Section11_4.html#thm-switch-rows-neg-det" class="xref" data-knowl="./knowl/xref/thm-switch-rows-neg-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.18: Switching two rows negates the determinant">Theorem 11.4.18</a>. However, expanding this matrix <span class="process-math">\(B_k\)</span> along the <span class="process-math">\(k^{th}\)</span> column yields</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-switch-rows-neg-det.html">
+\begin{equation*}
+0 = \det (B_k)\det (A)^{-1}  = \sum_{i=1}^n a_{ir} \text{cof} (A)_{ik}\det (A)^{-1}.
+\end{equation*}
+</div>
+<div class="para">Summarizing,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-switch-rows-neg-det.html">
+\begin{equation*}
+\sum_{i=1}^n a_{ir} \text{cof} (A)_{ik}\det (A)^{-1} = \delta_{rk} \equiv \begin{cases}1 &amp; \text{if } r = k\\ 0 &amp; \text{if } r \neq k\end{cases}.
+\end{equation*}
+</div>
+<div class="para">Now</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-switch-rows-neg-det.html">
+\begin{equation*}
+\sum_{i=1}^n a_{ir} \text{cof} (A)_{ik} = \sum_{i=1}^n a_{ir} \text{cof} (A)_{ki}^T
+\end{equation*}
+</div>
+<div class="para">which is the <span class="process-math">\(kr^{th}\)</span> entry of <span class="process-math">\(\text{cof} (A)^T A\text{.}\)</span> Therefore,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-switch-rows-neg-det.html">
+\begin{equation*}
+\frac{\text{cof} (A)^T}{\det (A)} A = I.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Using the other formula in <a href="Section11_4.html#def-det-sum-of-cof" class="xref" data-knowl="./knowl/xref/def-det-sum-of-cof.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.13: Determininant as Sum of Cofactor Matrices">Definition 11.4.13</a> and similar reasoning,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-det-sum-of-cof.html">
+\begin{equation*}
+\sum_{j=1}^n a_{rj} \text{cof} (A)_{kj} \det (A)^{-1} = \delta_{rk}.
+\end{equation*}
+</div>
+<div class="para">Now,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-det-sum-of-cof.html">
+\begin{equation*}
+\sum_{j=1}^n a_{rj} \text{cof} (A)_{kj} = \sum_{j=1}^n a_{rj} \text{cof} (A)_{jk}^T
+\end{equation*}
+</div>
+<div class="para">which is the <span class="process-math">\(rk^{th}\)</span> entry of <span class="process-math">\(A\, \text{cof} (A)^T\text{.}\)</span> Therefore,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-det-sum-of-cof.html">
+\begin{equation*}
+A \frac{\text{cof} (A)^T}{\det (A)} A = I,
+\end{equation*}
+</div>
+<div class="para">and it follows that <span class="process-math">\(A^{-1} = (a_{ij}^{-1})\text{,}\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-det-sum-of-cof.html">
+\begin{equation*}
+a_{ij}^{-1} = \text{cof} (A)_{ij} \det (A)^{-1}.
+\end{equation*}
+</div>
+<div class="para">In other words,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-det-sum-of-cof.html">
+\begin{equation*}
+A^{-1} = \frac{\text{cof} (A)^T}{\det (A)}.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Now suppose <span class="process-math">\(A^{-1}\)</span> exists. Then by <a href="Section11_4.html#thm-prod-of-dets" class="xref" data-knowl="./knowl/xref/thm-prod-of-dets.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.25: The determinant of a matrix product is the product of the determinants">Theorem 11.4.25</a>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-prod-of-dets.html">
+\begin{equation*}
+1 = \det (I) = \det (AA^{-1}) = \det (A)\det (A^{-1})
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\det (A) \neq 0.
+\blacksquare\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="Section11_4.html#thm-inverse-from-cofactor">in-context</a></span>
+</body>
+</html>

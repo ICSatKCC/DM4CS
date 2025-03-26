@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">An Indirect Proof in Set Theory.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(A, B, C\)</span> be sets. If <span class="process-math">\(A\subseteq B\)</span> and <span class="process-math">\(B\cap C = \emptyset\text{,}\)</span> then <span class="process-math">\(A\cap C = \emptyset\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Commentary: The usual and first approach would be to assume <span class="process-math">\(A\subseteq B\)</span> and <span class="process-math">\(B\cap C = \emptyset\)</span> is true and to attempt to prove <span class="process-math">\(A\cap C = \emptyset\)</span> is true. To do this you would need to show that nothing is contained in the set <span class="process-math">\(A \cap  C\text{.}\)</span> Think about how you would show that something doesn’t exist. It is very difficult to do directly.</div> <div class="para">The Indirect Method is much easier: If we assume the conclusion is false and we obtain a contradiction ---  then the theorem must be true. This approach is on sound logical footing since it is exactly the same method of indirect proof that we discussed in <a href="section5_1-math-systems.html#sub-indirect-proof" class="internal" title="Subsection 5.1.3: Indirect Proof">Subsection 5.1.3</a>.</div> <div class="para">Assume <span class="process-math">\(A\subseteq B\)</span> and <span class="process-math">\(B\cap C = \emptyset\text{,}\)</span> and <span class="process-math">\(A\cap C \neq  \emptyset\text{.}\)</span> To prove that this cannot occur, let <span class="process-math">\(x\in A \cap C\text{.}\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+x \in A \cap C &amp; \Rightarrow x \in A \textrm{ and } x \in  C\\
+&amp; \Rightarrow x \in B \textrm{ and } x \in  C\\
+&amp; \Rightarrow x \in  B \cap C
+\end{split}\text{.}
+\end{equation*}
+</div></div> <div class="para">But this contradicts the second premise.  Hence, the theorem is proven.</div></article></details><span class="incontext"><a class="internal" href="section6_2-laws-of-set-theory.html#theorem-example-sets-contradiction">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Polynomial Big O Theorem.</span>
+</h4>
+<div class="para">For any polynomial, the degree of the highest order term will be its Big O</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_k x^k + a_{k-1}x^{k-1} + \dots + a_1x + a_0 = O(x^k)
+\end{equation*}
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Given a polynomial:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_k x^k + a_{k-1}x^{k-1} + \dots + a_1x + a_0
+\end{equation*}
+</div>
+<div class="para">if we replace all of the lower-order <span class="process-math">\(x\)</span> terms with the highest order <span class="process-math">\(x^k\)</span> we have:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c c}\\
+a_k x^k + a_{k-1}x^{k-1} + \dots + a_1x + a_0  &amp; \leq a_k x^k + a_{k-1}x^k + \dots + a_1x^k + a_0x^k\\
+&amp; = (a_k + a_{k-1} + \dots + a_1 + a_0)x^k\\
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Therefore,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_k x^k + a_{k-1}x^{k-1} + \dots + a_1x + a_0 = O(x^k)
+\end{equation*}
+</div>
+<div class="para">for <span class="process-math">\(c = (a_k + a_{k-1} + \dots + a_1 + a_0)\)</span> and <span class="process-math">\(k \geq 1\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="section8_6-Growth-of-Functions.html#bigO-of-polynomials">in-context</a></span>
+</body>
+</html>

@@ -1,18 +1,18 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
-  "id": "front-colophon",
+  "id": "frontmatter-2",
   "level": "1",
-  "url": "front-colophon.html",
+  "url": "frontmatter-2.html",
   "type": "Colophon",
   "number": "",
   "title": "Colophon",
-  "body": ""
+  "body": " 1st Edition - version 2   https:\/\/icsatkcc.github.io\/DM4CS\/dm4cs.html   copyright   Unless otherwise indicated below, this work is a deriviative of Applied Discrete Structures by Al Doerr and Ken Levasseur licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License .  Webwork exercises marked with WebWork Open Problem are contributions to the WeBWorK Open Problem Library , licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License by the author(s) indicated in the source file for each problem. Source files retrieved from https:\/\/github.com\/openwebwork\/webwork-open-problem-library .  Chapter 2.5 is a deriviative of Chapter 1.5 of Discrete Mathematics: An Open Introduction by Oscar Levin licensed under a Creative Commons Attribution-ShareAlike 4.0 International License .   "
 },
 {
-  "id": "frontmatter-4",
+  "id": "frontmatter-3",
   "level": "1",
-  "url": "frontmatter-4.html",
+  "url": "frontmatter-3.html",
   "type": "Dedication",
   "number": "",
   "title": "Dedication",
