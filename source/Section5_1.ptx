@@ -343,12 +343,12 @@
 									</ol></p>
 							<p>Indirect proof:</p>
 							<p><ol marker="(1)">
-									<li><p> <m>\neg r</m> Negated conclusion</p></li>
-									<li><p> <m>p\lor r</m> Premise</p></li>
-									<li><p>  <m>p</m>   (1), (2)</p></li>
-									<li><p> <m>p\to q</m> Premise</p></li>
+									<li><p> <m>\neg r \quad </m> Negated conclusion</p></li>
+									<li><p> <m>p\lor r \quad </m> Premise</p></li>
+									<li><p>  <m>p\quad </m>   Disjuntive Simp. (1),(2)</p></li>
+									<li><p> <m>p\to q \quad </m> Premise</p></li>
 									<li><p> <m>q \quad </m>  Detachment (3), (4)</p></li>
-									<li><p> <m>q\to r</m>  Premise</p></li>
+									<li><p> <m>q\to r \quad </m>  Premise</p></li>
 									<li><p> <m>r \quad </m>Detachment (5), (6)</p></li>
 									<li><p> 0   (1), (7) <m>\square</m></p></li>
 									</ol></p>
