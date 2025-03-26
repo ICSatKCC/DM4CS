@@ -115,6 +115,13 @@ class SlideRevealer {
     this.animatedElement.style.overflow = '';
     if (!isOpen)
       this.contentElement.style.display = 'none';
+
+    if (isOpen) {
+      let hasCallback = this.contentElement.querySelectorAll("[data-knowl-callback]");
+      hasCallback.forEach((el) => {
+        window[el.getAttribute("data-knowl-callback")](el, open);
+      });
+    }
   }
 }
 
@@ -307,6 +314,9 @@ class LinkKnowl {
           // render any knowls and mathjax in the knowl
           MathJax.typesetPromise([this.outputElement]);
           addKnowls(this.outputElement);
+
+          // try prism highlighting
+          Prism.highlightAllUnder(this.outputElement);
 
           // force any scripts (e.g. sagecell) to execute by evaling them
           [...this.outputElement.getElementsByTagName("script")].forEach((s) => {
