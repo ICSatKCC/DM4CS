@@ -12,13 +12,14 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">17.3.23</span><span class="period">.</span>
+<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">17.3.23</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span>
 </h4>
-<div class="para">Consider the NFA shown below. <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa9.svg" role="img" class="contained" alt="Diagram of an NFA."></div>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Consider the NFA shown below. <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa9.svg" role="img" class="contained" alt="Diagram of an NFA."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">17.3.24<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
-</div> <div class="para logical">
+</div>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">We start by looking at <span class="process-math">\(\partial^*(p_0, \varep)\text{,}\)</span> and then add transitions and states as described above.</div>
-<ul class="disc">
+<ul class="disc" id="ex-nfa-to-dfa-2-2">
 <li><div class="para">
 <span class="process-math">\(\partial^*(p_0, \varep) = \{p_0\}\)</span> so <span class="process-math">\(q_0 = \{p_0\}\text{.}\)</span>
 </div></li>
@@ -38,9 +39,11 @@ p_1\}\text{,}\)</span> so we need to add a new state <span class="process-math">
 = q_3\text{.}\)</span>
 </div></li>
 </ul>
-</div> <div class="para">At this point, our partially-constructed DFA looks as shown below: <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa10.svg" role="img" class="contained" alt="Diagram of an NFA partially converted to a DFA."></div>
+</div>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">At this point, our partially-constructed DFA looks as shown below: <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa10.svg" role="img" class="contained" alt="Diagram of an NFA partially converted to a DFA."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">17.3.25<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
-</div> <div class="para">The construction continues as long as there are new states being added, and new transitions from those states that have to be computed. The final DFA is shown below. <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa11.svg" role="img" class="contained" alt="Diagram of completely converted DFA."></div>
+</div>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">The construction continues as long as there are new states being added, and new transitions from those states that have to be computed. The final DFA is shown below. <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fsa11.svg" role="img" class="contained" alt="Diagram of completely converted DFA."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">17.3.26<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
 </div></article><span class="incontext"><a class="internal" href="s-finite-state-automata.html#ex-nfa-to-dfa">in-context</a></span>
 </body>

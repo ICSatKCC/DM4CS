@@ -5,30 +5,20 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Growth of Functions</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Discrete Mathematics for Computer Science">
-<meta property="book:author" content="Ken Levasseur">
-<meta property="book:author" content="Al Doerr">
-<meta property="book:author" content="Michiel Smid">
-<meta property="book:author" content="Oscar Levin">
-<meta property="book:author" content="Charles M. Grinstead">
-<meta property="book:author" content="J. Laurie Snell">
-<meta property="book:author" content="Eric Lehman">
-<meta property="book:author" content="F. Thomson Leighton">
-<meta property="book:author" content="Albert R Meyer">
-<meta property="book:author" content="Jeff Erickson">
-<meta property="book:author" content="Kenneth P. Bogart">
-<meta property="book:author" content="Carol Chritchlow">
-<meta property="book:author" content="David Eck">
-<meta property="book:author" content="OpenDSA Project">
-<meta property="book:author" content="L.J. Miller">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -100,10 +90,64 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Discrete Mathematics for Computer Science">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ken Levasseur">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Al Doerr">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Michiel Smid">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Oscar Levin">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Charles M. Grinstead">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="J. Laurie Snell">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Eric Lehman">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="F. Thomson Leighton">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Albert R Meyer">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Jeff Erickson">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Kenneth P. Bogart">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Carol Chritchlow">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="David Eck">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="OpenDSA Project">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="L.J. Miller">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "pre.sagecell-sage",
+  "inputLocation": "div.sagecell-sage",
   "linked": true,
   "linkKey": "linked-sage",
   "autoeval": false,
@@ -112,36 +156,14 @@ sagecell.makeSagecell({
   ],
   "evalButtonText": "Evaluate (Sage)"
 });
-</script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
 <p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -152,7 +174,8 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="section8_5-Sequences.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_8.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chapter_9.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="section8_5-Sequences.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_8.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chapter_9.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
 \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
 \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
@@ -185,12 +208,12 @@ sagecell.makeSagecell({
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -549,9 +572,9 @@ sagecell.makeSagecell({
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section8_5-Sequences.html#exercises-8-5" class="internal"><span class="codenumber">8.5.3</span> <span class="title">Exercises for Section 8.5</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="section8_6-Growth-of-Functions.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Growth of Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_6-Growth-of-Functions.html#subsec8_6_1-big-o-notation" class="internal"><span class="codenumber">8.6.1</span> <span class="title">Big O Notation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_6-Growth-of-Functions.html#subsec8_6_2-big-o-common" class="internal"><span class="codenumber">8.6.2</span> <span class="title">Big O For Common Functional Forms</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section8_6-Growth-of-Functions.html#subsec8_6_3-big-o-combinations" class="internal"><span class="codenumber">8.6.3</span> <span class="title">Big O For Combinations of Functions</span></a></div></li>
@@ -982,16 +1005,19 @@ sagecell.makeSagecell({
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section8_6-Growth-of-Functions"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="section8_6-Growth-of-Functions"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">8.6</span><span class="space"> </span><span class="title">Growth of Functions</span>
 </h2>
-<section class="introduction" id="section8_6-Growth-of-Functions-3"><blockquote class="blockquote" id="section8_6-Growth-of-Functions-3-1"><div class="para" id="section8_6-Growth-of-Functions-3-1-1">How long will it take to process the company payroll once we complete our planned merger? Should I buy a new payroll program from vendor X or vendor Y? If a particular program is slow, is it badly implemented or is it solving a hard problem?</div></blockquote> <div class="para" id="section8_6-Growth-of-Functions-3-2">Questions like these ask us to consider the difficulty of a problem, or the relative efficiency of two or more approaches to solving a problem.</div> <div class="para" id="section8_6-Growth-of-Functions-3-3">This section and the next introduce the motivation, basic notation, and fundamental techniques of algorithm analysis. In this section we focus on <em class="emphasis">Big O notation</em> a mathematical notation that describes the limiting or asymptotic behavior of a function as the input values become large. In the next section we will use Big O notation to analyze running times of different algorithms using <em class="emphasis">asymptotic algorithm analysis</em>.</div></section><section class="subsection" id="subsec8_6_1-big-o-notation"><h3 class="heading hide-type">
+<section class="introduction" id="section8_6-Growth-of-Functions-3"><blockquote class="blockquote" id="section8_6-Growth-of-Functions-3-1"><div class="para" id="section8_6-Growth-of-Functions-3-1-1">How long will it take to process the company payroll once we complete our planned merger? Should I buy a new payroll program from vendor X or vendor Y? If a particular program is slow, is it badly implemented or is it solving a hard problem?</div></blockquote>
+<div class="para" id="section8_6-Growth-of-Functions-3-2">Questions like these ask us to consider the difficulty of a problem, or the relative efficiency of two or more approaches to solving a problem.</div>
+<div class="para" id="section8_6-Growth-of-Functions-3-3">This section and the next introduce the motivation, basic notation, and fundamental techniques of algorithm analysis. In this section we focus on <em class="emphasis">Big O notation</em> a mathematical notation that describes the limiting or asymptotic behavior of a function as the input values become large. In the next section we will use Big O notation to analyze running times of different algorithms using <em class="emphasis">asymptotic algorithm analysis</em>.</div></section><section class="subsection" id="subsec8_6_1-big-o-notation"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">8.6.1</span><span class="space"> </span><span class="title">Big O Notation</span>
 </h3>
-<section class="introduction" id="subsec8_6_1-big-o-notation-3"> <div class="para" id="subsec8_6_1-big-o-notation-3-1">Big O is the most frequently used asymptotic notation. It is often used to give an upper bound on the growth of a function, such as the running time of an algorithm. Big O notation characterizes functions according to their growth rates: different functions with the same growth rate may be represented using the same Big O notation. The letter O is used because the growth rate of a function is also referred to as the <em class="emphasis">order of the function</em>
-</div>.</section><article class="definition definition-like" id="def-big-o"><h4 class="heading">
+<section class="introduction" id="subsec8_6_1-big-o-notation-3"><div class="para" id="subsec8_6_1-big-o-notation-3-1">Big O is the most frequently used asymptotic notation. It is often used to give an upper bound on the growth of a function, such as the running time of an algorithm. Big O notation characterizes functions according to their growth rates: different functions with the same growth rate may be represented using the same Big O notation. The letter O is used because the growth rate of a function is also referred to as the <em class="emphasis">order of the function</em>
+</div></section><article class="definition definition-like" id="def-big-o"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Big O.</span>
-</h4> <div class="para logical" id="def-big-o-2-1">
+</h4>
+<div class="para logical" id="def-big-o-2-1">
 <div class="para">Given functions <span class="process-math">\(f(x),g(x): \mathbb{R} \rightarrow \mathbb{R}\)</span> with <span class="process-math">\(g\)</span> non-negative, we say <span class="process-math">\(f(x)\)</span> is Big O <span class="process-math">\(g(x)\)</span> or:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1008,7 +1034,8 @@ f(x) = O(g(x))
 </div></article><div class="para" id="subsec8_6_1-big-o-notation-5">This definition is rather complicated, but the idea is simple: <span class="process-math">\(f(x) = O(g(x))\)</span> means <span class="process-math">\(f(x)\)</span> is less than or equal to <span class="process-math">\(g(x)\text{,}\)</span> except that we’re willing to ignore a constant factor, namely <span class="process-math">\(c\text{,}\)</span> and to allow exceptions for small <span class="process-math">\(x\text{,}\)</span> namely, for <span class="process-math">\(x \leq k\)</span> .</div>
 <article class="example example-like" id="ex-big-o-x-squared"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Prove <span class="process-math">\(10x^2 = O(x^2)\)</span>.</span>
-</h4> <div class="para logical" id="ex-big-o-x-squared-2">
+</h4>
+<div class="para logical" id="ex-big-o-x-squared-2">
 <div class="para">If we choose <span class="process-math">\(c = 10\)</span> and <span class="process-math">\(k = 0\text{,}\)</span> then <span class="process-math">\(10x^2 = O(x^2) \)</span> holds because for all <span class="process-math">\(x \geq 0,\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1017,7 +1044,7 @@ f(x) = O(g(x))
 \end{equation*}
 </div>
 </div></article><div class="para" id="subsec8_6_1-big-o-notation-7">In the following SageMath cell, we plot <span class="process-math">\(f(x) = 10x^2\text{,}\)</span> <span class="process-math">\(g(x) = x^2\text{,}\)</span> and <span class="process-math">\(c\,*\,g(x)\)</span> with <span class="process-math">\(c = 10\text{.}\)</span> The resulting plot shows that <span class="process-math">\(f(x)\)</span> (red) never exceeds <span class="process-math">\(c \,*\, g(x)\)</span>  (black dots). That is what we want to show for Big O.</div>
-<pre id="subsec8_6_1-big-o-notation-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f(x) = 10*x^2
+<div id="subsec8_6_1-big-o-notation-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f(x) = 10*x^2
 g(x) = x^2
 c = 10
 
@@ -1025,10 +1052,11 @@ p1 = plot(f, (x,0,5), color="red" , legend_label='f(x)', thickness='2')
 p2 = plot(g, (x,0,5),  color="blue", legend_label='g(x)', thickness='2')
 p3 = plot(c*g, (x,0,5),  color="black", linestyle="dotted", legend_label='10*g(x)', thickness='3')
 p1+ p2 + p3
-</script></pre>
+</script></div>
 <article class="example example-like" id="ex-big-o-deg2-poly"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Prove <span class="process-math">\(x^2 + 100x + 10 = O(x^2)\)</span>.</span>
-</h4> <div class="para logical" id="ex-big-o-deg2-poly-2">
+</h4>
+<div class="para logical" id="ex-big-o-deg2-poly-2">
 <div class="para">If we take the polynomial <span class="process-math">\(x^2 + 100x + 10\)</span> and change it so that all of the constant cofficients are multiplied with <span class="process-math">\(x^2\)</span> we have:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1044,7 +1072,7 @@ x^2 + 100x + 10 \leq x^2 + 100x^2 + 10x^2, \text{ with } x\geq 1\text{.}
 <div class="para">Therefore, if we choose <span class="process-math">\(c = 111\)</span> and <span class="process-math">\(k = 1\)</span> we have <span class="process-math">\(x^2 + 100x + 10 = O(x^2)\)</span>
 </div>
 </div></article><div class="para" id="subsec8_6_1-big-o-notation-10">In the following SageMath cell, we plot <span class="process-math">\(f(x) = x^2 + 100x + 10\text{,}\)</span> <span class="process-math">\(g(x) = x^2\text{,}\)</span> and <span class="process-math">\(c\,*\,g(x)\)</span> with <span class="process-math">\(c = 111\text{.}\)</span> The resulting plot shows that <span class="process-math">\(f(x)\)</span> (red) never exceeds <span class="process-math">\(c \, g(x)\)</span> after <span class="process-math">\(x = 1\)</span>  (black dots). That is what we want to show for Big O.</div>
-<pre id="subsec8_6_1-big-o-notation-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f(x) = (x^2 + 100*x + 10)
+<div id="subsec8_6_1-big-o-notation-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f(x) = (x^2 + 100*x + 10)
 g(x) = x^2
 c = 111
 
@@ -1052,7 +1080,7 @@ p1 = plot(f, (x,0,3), color="red" , legend_label='f(x)', thickness='2')
 p2 = plot(g, (x,0,3),  color="blue", legend_label='g(x)', thickness='2')
 p3 = plot(c*g, (x,0,3),  color="black", linestyle="dotted", legend_label='c*g(x)', thickness='3')
 p1+ p2 + p3
-</script></pre>
+</script></div>
 <article class="theorem theorem-like" id="bigO-of-polynomials"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Polynomial Big O Theorem.</span>
 </h4>
@@ -1087,7 +1115,9 @@ a_k x^k + a_{k-1}x^{k-1} + \dots + a_1x + a_0 = O(x^k)
 </div>
 </div></article></details><article class="example example-like" id="ex-big-o-poly-w-neg"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">Prove <span class="process-math">\(6x^4 - 2x^3 + 5 = O(x^4)\)</span>.</span>
-</h4> <div class="para" id="ex-big-o-poly-w-neg-2">If we have negative coefficients in a polynomial, <a href="section8_6-Growth-of-Functions.html#bigO-of-polynomials" class="xref" data-knowl="./knowl/xref/bigO-of-polynomials.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.6.4: Polynomial Big O Theorem">Theorem 8.6.4</a> still applies because Big O as defined in <a href="section8_6-Growth-of-Functions.html#def-big-o" class="xref" data-knowl="./knowl/xref/def-big-o.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 8.6.1: Big O">Definition 8.6.1</a>  is an upper bound on the <em class="emphasis">absolute value</em> of <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> must be non-negative.</div> <div class="para logical" id="ex-big-o-poly-w-neg-3">
+</h4>
+<div class="para" id="ex-big-o-poly-w-neg-2">If we have negative coefficients in a polynomial, <a href="section8_6-Growth-of-Functions.html#bigO-of-polynomials" class="xref" data-knowl="./knowl/xref/bigO-of-polynomials.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.6.4: Polynomial Big O Theorem">Theorem 8.6.4</a> still applies because Big O as defined in <a href="section8_6-Growth-of-Functions.html#def-big-o" class="xref" data-knowl="./knowl/xref/def-big-o.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 8.6.1: Big O">Definition 8.6.1</a>  is an upper bound on the <em class="emphasis">absolute value</em> of <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> must be non-negative.</div>
+<div class="para logical" id="ex-big-o-poly-w-neg-3">
 <div class="para">Here we take the absolute value of our polynomial <span class="process-math">\(\lvert 6x^4 - 2x^3 + 5 \rvert\)</span> and multipling all of the constant cofficients by <span class="process-math">\(x^4\)</span> we have:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1105,7 +1135,8 @@ a_k x^k + a_{k-1}x^{k-1} + \dots + a_1x + a_0 = O(x^k)
 </div>
 <div class="para">With <span class="process-math">\(c = 13\)</span> and <span class="process-math">\(k = 1\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="ex-big-o-poly-w-neg-4">
+</div>
+<div class="para logical" id="ex-big-o-poly-w-neg-4">
 <div class="para">We can actually get a closer bound if we realize that the <span class="process-math">\(- 2x^3\)</span> is only making the outcome of the polynomial smaller:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1114,9 +1145,10 @@ a_k x^k + a_{k-1}x^{k-1} + \dots + a_1x + a_0 = O(x^k)
 </div>
 <div class="para">Therefore, we can also say that <span class="process-math">\(6x^4 - 2x^3 + 5 = O(x^4)\)</span> for <span class="process-math">\(c = 11\)</span> and <span class="process-math">\(k = 1\text{.}\)</span>
 </div>
-</div> <div class="para" id="ex-big-o-poly-w-neg-5">We only need to show that one <span class="process-math">\(c\)</span> and one <span class="process-math">\(k\)</span> exist to prove Big O. Once they are found, the bound is also true for any larger values of <span class="process-math">\(c\)</span> and <span class="process-math">\(k\text{.}\)</span>
+</div>
+<div class="para" id="ex-big-o-poly-w-neg-5">We only need to show that one <span class="process-math">\(c\)</span> and one <span class="process-math">\(k\)</span> exist to prove Big O. Once they are found, the bound is also true for any larger values of <span class="process-math">\(c\)</span> and <span class="process-math">\(k\text{.}\)</span>
 </div></article><div class="para" id="subsec8_6_1-big-o-notation-14">In the following SageMath cell, we plot <span class="process-math">\(f(x) = 6x^4 - 2x^3 + 5\)</span> (red), <span class="process-math">\(g(x) = x^4\)</span> (blue), and <span class="process-math">\(c\,*\,g(x)\)</span> with <span class="process-math">\(c = 13\)</span> (black dots). The resulting plot shows that <span class="process-math">\(f(x)\)</span> never exceeds <span class="process-math">\(c \, g(x)\)</span> after <span class="process-math">\(x = 1\text{.}\)</span> That is what we want to show for Big O.</div>
-<pre id="subsec8_6_1-big-o-notation-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f(x) = (6*x^4 - 2*x^3 + 5)
+<div id="subsec8_6_1-big-o-notation-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f(x) = (6*x^4 - 2*x^3 + 5)
 g(x) = x^4
 c = 13
 
@@ -1124,10 +1156,11 @@ p1 = plot(f, (x,0,3), color="red" , legend_label='f(x)', thickness='2')
 p2 = plot(g, (x,0,3),  color="blue", legend_label='g(x)', thickness='2')
 p3 = plot(c*g, (x,0,3),  color="black", linestyle="dotted", legend_label='c*g(x)', thickness='3')
 p1+ p2 + p3
-</script></pre>
+</script></div>
 <article class="example example-like" id="ex-big-o-factorial"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.6.6</span><span class="period">.</span><span class="space"> </span><span class="title">Big O of <span class="process-math">\(n!\)</span></span>
-</h4> <div class="para logical" id="ex-big-o-factorial-2">
+</h4>
+<div class="para logical" id="ex-big-o-factorial-2">
 <div class="para">
 <span class="process-math">\(n! = n * (n-1) * \dots * 2 * 1\)</span> for <span class="process-math">\(n \geq 1\text{.}\)</span> There are <span class="process-math">\(n\)</span> terms total. Since <span class="process-math">\(n \geq 1 \text{,}\)</span> it must be true that:</div>
 <div class="displaymath process-math">
@@ -1143,7 +1176,7 @@ n * (n-1) * \dots * 2 * 1 \leq n * n * \dots *n * n = n^n
 <section class="introduction" id="subsec8_6_2-big-o-common-3"><div class="para" id="subsec8_6_2-big-o-common-3-1">In <a href="section9_3-AlgorthmicComplexity.html" class="internal" title="Section 9.3: Algorithmic Complexity">Section 9.3</a> we will be using several functions to analyze the running time of algorithms. The most commonly encountered functions are shown in the <a href="section8_6-Growth-of-Functions.html#fig-big0-common-functions" class="xref" data-knowl="./knowl/xref/fig-big0-common-functions.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.6.7">Figure 8.6.7</a> below.</div></section><figure class="figure figure-like" id="fig-big0-common-functions"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/images/Comparison_computational_complexity.png" class="contained" alt="Plot showing growth of common functions."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.6.7<span class="period">.</span></span><span class="space"> </span>Growth of functions commonly used for algorithm analysis. Image by Cmglee <a class="external" href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4</a><details class="ptx-footnote" aria-live="polite" id="fig-big0-common-functions-1-2"><summary class="ptx-footnote__number" title="Footnote 8.6.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="fig-big0-common-functions-1-2"><code class="code-inline tex2jax_ignore">creativecommons.org/licenses/by-sa/4.0</code></div></details></figcaption></figure><div class="para logical" id="subsec8_6_2-big-o-common-5">
 <div class="para">In addition to polynomials, we have the following Big O estimates:</div>
-<ol class="decimal">
+<ol class="decimal" id="subsec8_6_2-big-o-common-5-1">
 <li id="subsec8_6_2-big-o-common-5-1-1"><div class="para" id="p-derived-subsec8_6_2-big-o-common-5-1-1">Any power of <span class="process-math">\(n\)</span> is Big O any larger power of <span class="process-math">\(n\text{,}\)</span> powers greater than 1:<div class="displaymath process-math">
 \begin{equation*}
 n^c = O(n^d), 1  &lt; c  &lt; d.
@@ -1276,10 +1309,10 @@ b^n = O(c^n), 1  &lt; b  &lt; c
 </table></div></figure></section><section class="subsection" id="subsec8_6_3-big-o-combinations"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">8.6.3</span><span class="space"> </span><span class="title">Big O For Combinations of Functions</span>
 </h3>
-<section class="introduction" id="subsec8_6_3-big-o-combinations-3"><div class="para" id="subsec8_6_3-big-o-combinations-3-1">The Big O of multiple functions can be combined. If we have a complex function, we can break it down into simpler parts then find the Big O of the simpler functions and combine them.</div></section><div class="para logical" id="subsec8_6_3-big-o-combinations-4"><ul class="disc">
+<section class="introduction" id="subsec8_6_3-big-o-combinations-3"><div class="para" id="subsec8_6_3-big-o-combinations-3-1">The Big O of multiple functions can be combined. If we have a complex function, we can break it down into simpler parts then find the Big O of the simpler functions and combine them.</div></section><div class="para logical" id="subsec8_6_3-big-o-combinations-4"><ul class="disc" id="subsec8_6_3-big-o-combinations-4-1">
 <li id="subsec8_6_3-big-o-combinations-4-1-1"><div class="para logical" id="subsec8_6_3-big-o-combinations-4-1-1-1">
 <div class="para">If two functions are <em class="emphasis">added</em> together, their Big O is the Big O of the larger one.</div>
-<ul class="circle"><li id="subsec8_6_3-big-o-combinations-4-1-1-1-2-1"><div class="para logical" id="subsec8_6_3-big-o-combinations-4-1-1-1-2-1-1">
+<ul class="circle" id="subsec8_6_3-big-o-combinations-4-1-1-1-2"><li id="subsec8_6_3-big-o-combinations-4-1-1-1-2-1"><div class="para logical" id="subsec8_6_3-big-o-combinations-4-1-1-1-2-1-1">
 <div class="para">If <span class="process-math">\(f_1(x) = O(g_1(x))\)</span> and <span class="process-math">\(f_2(x) = O(g_2(x))\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1291,7 +1324,7 @@ f_1+f_2(x) = O(\max(g_1(x),g_2(x))
 </div></li>
 <li id="subsec8_6_3-big-o-combinations-4-1-2"><div class="para logical" id="subsec8_6_3-big-o-combinations-4-1-2-1">
 <div class="para">If two functions are <em class="emphasis">multiplied</em> together, their Big O is the product of the Big O of both.</div>
-<ul class="circle"><li id="subsec8_6_3-big-o-combinations-4-1-2-1-2-1"><div class="para logical" id="subsec8_6_3-big-o-combinations-4-1-2-1-2-1-1">
+<ul class="circle" id="subsec8_6_3-big-o-combinations-4-1-2-1-2"><li id="subsec8_6_3-big-o-combinations-4-1-2-1-2-1"><div class="para logical" id="subsec8_6_3-big-o-combinations-4-1-2-1-2-1-1">
 <div class="para">If <span class="process-math">\(f_1(x) = O(g_1(x))\)</span> and <span class="process-math">\(f_2(x) = O(g_2(x))\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1304,17 +1337,23 @@ f_1*f_2(x) = O(g_1(x)*g_2(x))
 </ul></div>
 <article class="example example-like" id="ex-big-o-log_poly"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.6.9</span><span class="period">.</span><span class="space"> </span><span class="title">Big O of <span class="process-math">\(7x^3\log_{2}x\)</span>.</span>
-</h4> <div class="para" id="ex-big-o-log_poly-2">Here we have two functions multiplied together: <span class="process-math">\(f(x) = x^3\)</span> and <span class="process-math">\(g(x) = \log_{2}x\text{.}\)</span> We can calculate the Big O of both separately and combine them.</div> <div class="para" id="ex-big-o-log_poly-3">For the first one <a href="section8_6-Growth-of-Functions.html#bigO-of-polynomials" class="xref" data-knowl="./knowl/xref/bigO-of-polynomials.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.6.4: Polynomial Big O Theorem">Theorem 8.6.4</a> applies so we have <span class="process-math">\(f(x) = O(x^3)\text{.}\)</span> For <span class="process-math">\(g(x)\)</span> there are no powers or constants so the Big O is just <span class="process-math">\(\log_2(x)\text{.}\)</span>
-</div> <div class="para" id="ex-big-o-log_poly-4">Multiplying: <span class="process-math">\(7x^3\log_{2}x = O(x^3\log_{2}x)\)</span>
+</h4>
+<div class="para" id="ex-big-o-log_poly-2">Here we have two functions multiplied together: <span class="process-math">\(f(x) = x^3\)</span> and <span class="process-math">\(g(x) = \log_{2}x\text{.}\)</span> We can calculate the Big O of both separately and combine them.</div>
+<div class="para" id="ex-big-o-log_poly-3">For the first one <a href="section8_6-Growth-of-Functions.html#bigO-of-polynomials" class="xref" data-knowl="./knowl/xref/bigO-of-polynomials.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.6.4: Polynomial Big O Theorem">Theorem 8.6.4</a> applies so we have <span class="process-math">\(f(x) = O(x^3)\text{.}\)</span> For <span class="process-math">\(g(x)\)</span> there are no powers or constants so the Big O is just <span class="process-math">\(\log_2(x)\text{.}\)</span>
+</div>
+<div class="para" id="ex-big-o-log_poly-4">Multiplying: <span class="process-math">\(7x^3\log_{2}x = O(x^3\log_{2}x)\)</span>
 </div></article><article class="example example-like" id="ex-big-o-log_plus_poly"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">8.6.10</span><span class="period">.</span><span class="space"> </span><span class="title">Big O of <span class="process-math">\(9x^{2} + 3^x\)</span>.</span>
-</h4> <div class="para" id="ex-big-o-log_plus_poly-2">Here we have two functions added together: <span class="process-math">\(f(x) = 9x^{2}\)</span> and <span class="process-math">\(g(x) = 3^x\text{.}\)</span> We must calculate the Big O of both separately and decide which is largest.</div> <div class="para" id="ex-big-o-log_plus_poly-3">For the first one <a href="section8_6-Growth-of-Functions.html#bigO-of-polynomials" class="xref" data-knowl="./knowl/xref/bigO-of-polynomials.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.6.4: Polynomial Big O Theorem">Theorem 8.6.4</a> applies so we have <span class="process-math">\(f(x) = O(x^2)\text{.}\)</span> For <span class="process-math">\(g(x)\text{,}\)</span> this is an exponential in <span class="process-math">\(x\text{,}\)</span> so the Big O is just the function itself: <span class="process-math">\(3^x\text{.}\)</span> Looking at <a href="section8_6-Growth-of-Functions.html#fig-big0-common-functions" class="xref" data-knowl="./knowl/xref/fig-big0-common-functions.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.6.7">Figure 8.6.7</a> we can see that <span class="process-math">\(3^x\)</span> grows much faster than the polynomial <span class="process-math">\(x^2\text{,}\)</span> therefore <span class="process-math">\(9x^{2} + 3^x = O(3^x)\)</span>
+</h4>
+<div class="para" id="ex-big-o-log_plus_poly-2">Here we have two functions added together: <span class="process-math">\(f(x) = 9x^{2}\)</span> and <span class="process-math">\(g(x) = 3^x\text{.}\)</span> We must calculate the Big O of both separately and decide which is largest.</div>
+<div class="para" id="ex-big-o-log_plus_poly-3">For the first one <a href="section8_6-Growth-of-Functions.html#bigO-of-polynomials" class="xref" data-knowl="./knowl/xref/bigO-of-polynomials.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.6.4: Polynomial Big O Theorem">Theorem 8.6.4</a> applies so we have <span class="process-math">\(f(x) = O(x^2)\text{.}\)</span> For <span class="process-math">\(g(x)\text{,}\)</span> this is an exponential in <span class="process-math">\(x\text{,}\)</span> so the Big O is just the function itself: <span class="process-math">\(3^x\text{.}\)</span> Looking at <a href="section8_6-Growth-of-Functions.html#fig-big0-common-functions" class="xref" data-knowl="./knowl/xref/fig-big0-common-functions.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.6.7">Figure 8.6.7</a> we can see that <span class="process-math">\(3^x\)</span> grows much faster than the polynomial <span class="process-math">\(x^2\text{,}\)</span> therefore <span class="process-math">\(9x^{2} + 3^x = O(3^x)\)</span>
 </div></article></section><section class="subsection" id="subsec8_6_4-big-omega"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">8.6.4</span><span class="space"> </span><span class="title">Big Omega</span>
 </h3>
 <section class="introduction" id="subsec8_6_4-big-omega-3"><div class="para" id="subsec8_6_4-big-omega-3-1">This is almost the same definition as Big O, except that Big <span class="process-math">\(\Omega\)</span> (Omega) gives a <em class="emphasis">lower bound</em> on the growth of a function or running time of an algorithm. It is used to describe the <em class="emphasis">best case</em> running time for an algorithm on a given data size.</div></section><article class="definition definition-like" id="def-big-omega"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.6.11</span><span class="period">.</span><span class="space"> </span><span class="title">Big <span class="process-math">\(\Omega\)</span>.</span>
-</h4> <div class="para logical" id="def-big-omega-2-1">
+</h4>
+<div class="para logical" id="def-big-omega-2-1">
 <div class="para">Given functions <span class="process-math">\(f(x),g(x): \mathbb{R} \rightarrow \mathbb{R}\)</span> with <span class="process-math">\(f\)</span> non-negative, we say <span class="process-math">\(f(x)\)</span> is Big <span class="process-math">\(\Omega\)</span> (Omega) <span class="process-math">\(g(x)\)</span> or:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1341,7 +1380,8 @@ c f(x) \geq \lvert g(x) \rvert
 </h3>
 <section class="introduction" id="subsec8_6_5-big-theta-3"><div class="para" id="subsec8_6_5-big-theta-3-1">Big <span class="process-math">\(\Theta\)</span> (Theta) combines Big O and Big <span class="process-math">\(\Omega\)</span> to specify that the growth of a function (or running time of an algorithm) is always equal to some other function plus or minus a constant factor. We take the definitions of both Big O and Big <span class="process-math">\(\Omega\)</span> to give both an upper and lower bound. It is used to describe the <em class="emphasis">best and worst case</em> running times for an algorithm on a given data size.</div></section><article class="definition definition-like" id="def-big-theta"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.6.12</span><span class="period">.</span><span class="space"> </span><span class="title">Big <span class="process-math">\(\Theta\)</span>.</span>
-</h4> <div class="para logical" id="def-big-theta-2-1">
+</h4>
+<div class="para logical" id="def-big-theta-2-1">
 <div class="para">Given functions <span class="process-math">\(f(x),g(x): \mathbb{R} \rightarrow \mathbb{R}\)</span> with <span class="process-math">\(f,g\)</span> non-negative, we say <span class="process-math">\(f(x)\)</span> is Big <span class="process-math">\(\Theta\)</span> (Theta) <span class="process-math">\(g(x)\)</span> or:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1366,7 +1406,7 @@ g(x) = O(f(x)).
 </div>
 <div class="para" id="subsec8_6_5-big-theta-6">In the following SageMath cell, we plot <span class="process-math">\(f(x) = x^4 + 2^x\)</span> (red), this is an addition of two functions with the larger one being the exponential <span class="process-math">\(2^x\text{,}\)</span> so it should be <span class="process-math">\(\Theta(2^x)\text{.}\)</span> We show this by using <span class="process-math">\(g(x) = 2^x\)</span> and plotting both <span class="process-math">\(c_1\,*\,g(x)\)</span> with <span class="process-math">\(c_1 = 20\)</span> to show <span class="process-math">\(f(x) = O(2^x)\)</span> and  <span class="process-math">\(c_2\,*\,g(x)\)</span> with <span class="process-math">\(c_2 = 1\)</span> to show <span class="process-math">\(f(x) = \Omega(2^x)\)</span> with black dots. The resulting plot shows that <span class="process-math">\(f(x)\)</span> is bounded above by <span class="process-math">\(c_1 \,*\, g(x)\)</span> after <span class="process-math">\(x \approx 7\)</span> and it is always bounded below by <span class="process-math">\(c_2 \,*\, g(x)\)</span> . That is what we want to show for Big <span class="process-math">\(\Theta\text{.}\)</span>
 </div>
-<pre id="subsec8_6_5-big-theta-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f(x) = (x^4 + 2^x)
+<div id="subsec8_6_5-big-theta-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f(x) = (x^4 + 2^x)
 g(x) = 2^x
 c1 = 20
 c2 = 1
@@ -1375,7 +1415,7 @@ p1 = plot(f, (x,0,10), color="red" , legend_label='f(x)', thickness='2')
 p2 = plot(c1*g, (x,0,10),  color="black", linestyle="dotted", legend_label='20 * g(x)', thickness='3')
 p3 = plot(c2*g, (x,0,10),  color="black", linestyle="dotted", legend_label='1 * g(x)', thickness='3')
 p1+ p2 + p3
-</script></pre></section><section class="exercises" id="section8_6-Growth-of-Functions-9"><h3 class="heading hide-type">
+</script></div></section><section class="exercises" id="section8_6-Growth-of-Functions-9"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">8.6.6</span><span class="space"> </span><span class="title">Exercises for Section 8.6</span>
 </h3>
 <article class="exercise exercise-like" id="section8_6-Growth-of-Functions-9-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
@@ -1426,7 +1466,7 @@ x  &amp;  \leq 1\\
 </div>
 </div></div></details></div></article><article class="exercise exercise-like" id="section8_6-Growth-of-Functions-9-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para" id="section8_6-Growth-of-Functions-9-5-1-1">For each pair of functions below, determine whether <span class="process-math">\(f(x) = O(g(x))\)</span> and whether <span class="process-math">\(g(x) = O(f(x))\text{.}\)</span> If one function is Big O of the other, give values for <span class="process-math">\(c\)</span> and <span class="process-math">\(k\text{.}\)</span>
-</div> <div class="para logical" id="section8_6-Growth-of-Functions-9-5-1-2"><ol class="lower-alpha cols2">
+</div> <div class="para logical" id="section8_6-Growth-of-Functions-9-5-1-2"><ol class="lower-alpha ol-marker-1 cols2" id="section8_6-Growth-of-Functions-9-5-1-2-1">
 <li id="section8_6-Growth-of-Functions-9-5-1-2-1-1"><div class="para" id="p-derived-section8_6-Growth-of-Functions-9-5-1-2-1-1"><span class="process-math">\(\displaystyle f(x) = x^2, g(x) = 3x.\)</span></div></li>
 <li id="section8_6-Growth-of-Functions-9-5-1-2-1-2"><div class="para" id="p-derived-section8_6-Growth-of-Functions-9-5-1-2-1-2"><span class="process-math">\(\displaystyle f(x) = \frac{3x - 7}{x+4}, g(x) = 4.\)</span></div></li>
 <li id="section8_6-Growth-of-Functions-9-5-1-2-1-3"><div class="para" id="p-derived-section8_6-Growth-of-Functions-9-5-1-2-1-3"><span class="process-math">\(\displaystyle f(x) = 2^x, g(x) = 2^{\frac{x}{2}}.\)</span></div></li>
@@ -1462,7 +1502,7 @@ x  &amp;  \leq 1\\
 <div class="para">Therefore <span class="process-math">\(\log(n^3 + 1)\)</span> is <span class="process-math">\(O(\log n)\)</span> with <span class="process-math">\(c = 4, k = 2\text{.}\)</span>
 </div>
 </div></div></details></div></article><article class="exercise exercise-like" id="section8_6-Growth-of-Functions-9-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para" id="section8_6-Growth-of-Functions-9-7-1-1">Arrange these functions into a sequence from smallest to largest Big O</div> <div class="para logical" id="section8_6-Growth-of-Functions-9-7-1-2"><ol class="lower-alpha cols2">
+<div class="para" id="section8_6-Growth-of-Functions-9-7-1-1">Arrange these functions into a sequence from smallest to largest Big O</div> <div class="para logical" id="section8_6-Growth-of-Functions-9-7-1-2"><ol class="lower-alpha ol-marker-1 cols2" id="section8_6-Growth-of-Functions-9-7-1-2-1">
 <li id="section8_6-Growth-of-Functions-9-7-1-2-1-1"><div class="para" id="p-derived-section8_6-Growth-of-Functions-9-7-1-2-1-1"><span class="process-math">\(\displaystyle n\log n\)</span></div></li>
 <li id="section8_6-Growth-of-Functions-9-7-1-2-1-2"><div class="para" id="p-derived-section8_6-Growth-of-Functions-9-7-1-2-1-2"><span class="process-math">\(\displaystyle 2^{100} n\)</span></div></li>
 <li id="section8_6-Growth-of-Functions-9-7-1-2-1-3"><div class="para" id="p-derived-section8_6-Growth-of-Functions-9-7-1-2-1-3"><span class="process-math">\(\displaystyle n!\)</span></div></li>
@@ -1478,11 +1518,11 @@ x  &amp;  \leq 1\\
 <li id="section8_6-Growth-of-Functions-9-7-1-2-1-13"><div class="para" id="p-derived-section8_6-Growth-of-Functions-9-7-1-2-1-13"><span class="process-math">\(\displaystyle \log (n!)\)</span></div></li>
 </ol></div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="section8_5-Sequences.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter_9.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="section8_5-Sequences.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter_9.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

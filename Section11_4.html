@@ -5,30 +5,20 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Matrix Determinants</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Discrete Mathematics for Computer Science">
-<meta property="book:author" content="Ken Levasseur">
-<meta property="book:author" content="Al Doerr">
-<meta property="book:author" content="Michiel Smid">
-<meta property="book:author" content="Oscar Levin">
-<meta property="book:author" content="Charles M. Grinstead">
-<meta property="book:author" content="J. Laurie Snell">
-<meta property="book:author" content="Eric Lehman">
-<meta property="book:author" content="F. Thomson Leighton">
-<meta property="book:author" content="Albert R Meyer">
-<meta property="book:author" content="Jeff Erickson">
-<meta property="book:author" content="Kenneth P. Bogart">
-<meta property="book:author" content="Carol Chritchlow">
-<meta property="book:author" content="David Eck">
-<meta property="book:author" content="OpenDSA Project">
-<meta property="book:author" content="L.J. Miller">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -100,36 +90,68 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Discrete Mathematics for Computer Science">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ken Levasseur">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Al Doerr">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Michiel Smid">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Oscar Levin">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Charles M. Grinstead">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="J. Laurie Snell">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Eric Lehman">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="F. Thomson Leighton">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Albert R Meyer">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Jeff Erickson">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Kenneth P. Bogart">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Carol Chritchlow">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="David Eck">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="OpenDSA Project">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="L.J. Miller">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
 <p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -140,7 +162,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="Section11_3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_11.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chapter_12.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="Section11_3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_11.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chapter_12.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
 \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
 \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
@@ -173,12 +196,12 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -678,9 +701,9 @@ window.MathJax = {
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section11_3.html#exercises-11-3" class="internal"><span class="codenumber">11.3.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="Section11_4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Matrix Determinants</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-cofactors-2-x-2-dets" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-det-of-triangular-matrix" class="internal"><span class="codenumber">11.4.2</span> <span class="title">The Determinant of a Triangular Matrix</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_4.html#subsec-props-of-dets" class="internal"><span class="codenumber">11.4.3</span> <span class="title">Properties of Determinants</span></a></div></li>
@@ -970,17 +993,19 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Section11_4"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="Section11_4"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">11.4</span><span class="space"> </span><span class="title">Matrix Determinants</span>
 </h2>
-<section class="introduction" id="Section11_4-3"><div class="para" id="Section11_4-3-1">The <dfn class="terminology">determinant</dfn> is a number (a scalar value) that is a certain function of the entries of a square matrix. The determinant of a matrix <span class="process-math">\(A\)</span> is commonly denoted <span class="process-math">\(\det (A)\text{,}\)</span> <span class="process-math">\(\det A\text{,}\)</span> or <span class="process-math">\(|A|\text{.}\)</span> Its value characterizes some properties of the matrix and the area of the shape it represents geometrically. Historically, determinants were used long before matrices: A determinant was originally defined as a property of a system of linear equations. The determinant "determines" whether the system has a unique solution (which occurs precisely if the determinant is non-zero).</div> <div class="para" id="Section11_4-3-2">We will see in this section that the determinant is used to determine if a matrix has an inverse (the system of equations has a unique solution), to find an inverse matrix if it exists, and to solve systems of linear equations more quickly. The determinant has many other uses which would be covered in more advanced mathematics courses. See also the <a class="external" href="https://en.wikipedia.org/wiki/Determinant" target="_blank">Wikipedia article: Determinant.</a><details class="ptx-footnote" aria-live="polite" id="Section11_4-3-2-2"><summary class="ptx-footnote__number" title="Footnote 11.4.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="Section11_4-3-2-2"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Determinant</code></div></details>
+<section class="introduction" id="Section11_4-3"><div class="para" id="Section11_4-3-1">The <dfn class="terminology">determinant</dfn> is a number (a scalar value) that is a certain function of the entries of a square matrix. The determinant of a matrix <span class="process-math">\(A\)</span> is commonly denoted <span class="process-math">\(\det (A)\text{,}\)</span> <span class="process-math">\(\det A\text{,}\)</span> or <span class="process-math">\(|A|\text{.}\)</span> Its value characterizes some properties of the matrix and the area of the shape it represents geometrically. Historically, determinants were used long before matrices: A determinant was originally defined as a property of a system of linear equations. The determinant "determines" whether the system has a unique solution (which occurs precisely if the determinant is non-zero).</div>
+<div class="para" id="Section11_4-3-2">We will see in this section that the determinant is used to determine if a matrix has an inverse (the system of equations has a unique solution), to find an inverse matrix if it exists, and to solve systems of linear equations more quickly. The determinant has many other uses which would be covered in more advanced mathematics courses. See also the <a class="external" href="https://en.wikipedia.org/wiki/Determinant" target="_blank">Wikipedia article: Determinant.</a><details class="ptx-footnote" aria-live="polite" id="Section11_4-3-2-2"><summary class="ptx-footnote__number" title="Footnote 11.4.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="Section11_4-3-2-2"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Determinant</code></div></details>
 </div></section><section class="subsection" id="subsec-cofactors-2-x-2-dets"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.4.1</span><span class="space"> </span><span class="title">Cofactors and <span class="process-math">\(2 \times 2\)</span> Deteriminants</span>
 </h3>
 <div class="para" id="subsec-cofactors-2-x-2-dets-2">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n \times n\)</span> matrix. The <dfn class="terminology">determinant</dfn> of <span class="process-math">\(A\text{,}\)</span> denoted as <span class="process-math">\(\det (A)\)</span> is a number. If the matrix is a <span class="process-math">\(2 \times 2\)</span> matrix, this number is very easy to find.</div>
 <article class="definition definition-like" id="def-2-x-2-det"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Determinant of a <span class="process-math">\(2 \times 2\)</span> Matrix.</span>
-</h4> <div class="para logical" id="def-2-x-2-det-2-1">
+</h4>
+<div class="para logical" id="def-2-x-2-det-2-1">
 <div class="para">Let</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1015,7 +1040,8 @@ A = \begin{pmatrix} a &amp; b\\ c &amp; d \end{pmatrix}\text{.}
 </div></div></details></div></article><div class="para" id="subsec-cofactors-2-x-2-dets-5">Having defined what is meant by the determinant of a <span class="process-math">\(2 \times 2\)</span> matrix, what about a <span class="process-math">\(3 \times 3\)</span> matrix?</div>
 <article class="definition definition-like" id="def-matrix-minor"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix Minor.</span>
-</h4>  <div class="para" id="def-matrix-minor-3-1">Suppose <span class="process-math">\(A\)</span> is a <span class="process-math">\(3 \times 3\)</span> matrix. The <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">minor</dfn>, denoted as <span class="process-math">\(\text{minor}(A)_{ij}\)</span> or <span class="process-math">\((i,j)\)</span> minor , is the determinant of the <span class="process-math">\(2\times 2\)</span> matrix which results from deleting the <span class="process-math">\(i^{th}\)</span> row and the <span class="process-math">\(j^{th}\)</span> column.</div></article><article class="example example-like" id="subsec-cofactors-2-x-2-dets-7"><h4 class="heading">
+</h4>
+<div class="para" id="def-matrix-minor-3-1">Suppose <span class="process-math">\(A\)</span> is a <span class="process-math">\(3 \times 3\)</span> matrix. The <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">minor</dfn>, denoted as <span class="process-math">\(\text{minor}(A)_{ij}\)</span> or <span class="process-math">\((i,j)\)</span> minor , is the determinant of the <span class="process-math">\(2\times 2\)</span> matrix which results from deleting the <span class="process-math">\(i^{th}\)</span> row and the <span class="process-math">\(j^{th}\)</span> column.</div></article><article class="example example-like" id="subsec-cofactors-2-x-2-dets-7"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.4</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="subsec-cofactors-2-x-2-dets-7-1">
@@ -1025,14 +1051,16 @@ A = \begin{pmatrix} a &amp; b\\ c &amp; d \end{pmatrix}\text{.}
 \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 4 &amp; 3 &amp; 2\\ 3 &amp; 2 &amp; 1\\ \end{pmatrix}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-7-2">
+</div>
+<div class="para logical" id="subsec-cofactors-2-x-2-dets-7-2">
 <div class="para">The (1,2) minor is the determinant of the <span class="process-math">\(2 \times 2\)</span> matrix which results when you delete the first row and the second column. This minor is therefore</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \det\begin{pmatrix} 4 &amp; 2\\ 3 &amp; 1\end{pmatrix} = (4)(1) - (3)(2) = -2.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-7-3">
+</div>
+<div class="para logical" id="subsec-cofactors-2-x-2-dets-7-3">
 <div class="para">The (2,3) minor is the determinant of the <span class="process-math">\(2 \times 2\)</span> matrix which results when you delete the second row and the third column. This minor is therefore</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1041,7 +1069,8 @@ A = \begin{pmatrix} a &amp; b\\ c &amp; d \end{pmatrix}\text{.}
 </div>
 </div></article><article class="definition definition-like" id="def-ij-cofactor"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.5</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(ij^{th}\)</span> Cofactor.</span>
-</h4>  <div class="para" id="def-ij-cofactor-3-1">Suppose <span class="process-math">\(A\)</span> is a <span class="process-math">\(3 \times 3\)</span> matrix. The <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">cofactor</dfn> is defined to be <span class="process-math">\((-1)^{i+j} \times (ij^{th}\)</span> minor). In words, you multiply <span class="process-math">\((-1)^{(i+j)}\)</span> times the <span class="process-math">\(ij^{th}\)</span> minor to get the <span class="process-math">\(ij^{th}\)</span> cofactor.</div> <div class="para" id="def-ij-cofactor-3-2">The cofactors of a matrix are so important that special notation is appropriate when referring to them. The <span class="process-math">\(ij^{th}\)</span> cofactor of a matrix <span class="process-math">\(A\)</span> will be denoted by <dfn class="terminology"><span class="process-math">\(\text{cof} (A)_{ij}\)</span></dfn> . It is also convenient to refer to the cofactor of an entry of a matrix as follows. For <span class="process-math">\(a_{ij}\)</span> an entry of the matrix, its cofactor is just <span class="process-math">\(\text{cof} (A)_{ij}\)</span> . Thus the cofactor of the <span class="process-math">\(ij^{th}\)</span> entry is just the <span class="process-math">\(ij^{th}\)</span> cofactor.</div></article><article class="example example-like" id="subsec-cofactors-2-x-2-dets-9"><h4 class="heading">
+</h4>
+<div class="para" id="def-ij-cofactor-3-1">Suppose <span class="process-math">\(A\)</span> is a <span class="process-math">\(3 \times 3\)</span> matrix. The <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">cofactor</dfn> is defined to be <span class="process-math">\((-1)^{i+j} \times (ij^{th}\)</span> minor). In words, you multiply <span class="process-math">\((-1)^{(i+j)}\)</span> times the <span class="process-math">\(ij^{th}\)</span> minor to get the <span class="process-math">\(ij^{th}\)</span> cofactor.</div> <div class="para" id="def-ij-cofactor-3-2">The cofactors of a matrix are so important that special notation is appropriate when referring to them. The <span class="process-math">\(ij^{th}\)</span> cofactor of a matrix <span class="process-math">\(A\)</span> will be denoted by <dfn class="terminology"><span class="process-math">\(\text{cof} (A)_{ij}\)</span></dfn> . It is also convenient to refer to the cofactor of an entry of a matrix as follows. For <span class="process-math">\(a_{ij}\)</span> an entry of the matrix, its cofactor is just <span class="process-math">\(\text{cof} (A)_{ij}\)</span> . Thus the cofactor of the <span class="process-math">\(ij^{th}\)</span> entry is just the <span class="process-math">\(ij^{th}\)</span> cofactor.</div></article><article class="example example-like" id="subsec-cofactors-2-x-2-dets-9"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.6</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="subsec-cofactors-2-x-2-dets-9-1">
@@ -1051,35 +1080,40 @@ A = \begin{pmatrix} a &amp; b\\ c &amp; d \end{pmatrix}\text{.}
 \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 4 &amp; 3 &amp; 2\\ 3 &amp; 2 &amp; 1\\ \end{pmatrix}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-9-2">
+</div>
+<div class="para logical" id="subsec-cofactors-2-x-2-dets-9-2">
 <div class="para">The (1,2) minor is the determinant of the <span class="process-math">\(2 \times 2\)</span> matrix which results when you delete the first row and the second column. This minor is therefore</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \det \begin{pmatrix}4&amp;2\\ 3&amp;1\end{pmatrix}  = (4)(1) - (3)(2) = -2.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-9-3">
+</div>
+<div class="para logical" id="subsec-cofactors-2-x-2-dets-9-3">
 <div class="para">It follows</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \text{cof} (A)_{12} = (-1)^{1+2} \det \begin{pmatrix} 4 &amp; 2\\ 3 &amp; 1\end{pmatrix} = (-1)^{1+2} (-2) = 2.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-9-4">
+</div>
+<div class="para logical" id="subsec-cofactors-2-x-2-dets-9-4">
 <div class="para">The (2,3) minor is the determinant of the <span class="process-math">\(2 \times 2\)</span> matrix which results when you delete the second row and the third column. This minor is therefore</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \det \begin{pmatrix} 1 &amp; 2\\ 3 &amp; 2\end{pmatrix} = (1)(2) - (3)(2) = -4.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-9-5">
+</div>
+<div class="para logical" id="subsec-cofactors-2-x-2-dets-9-5">
 <div class="para">Therefore,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \text{cof} (A)_{23} = (-1)^{2+3} \det \begin{pmatrix} 1 &amp; 2\\ 3 &amp; 2\end{pmatrix} = (-1)^{2+3} (-4) = 4.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-9-6">
+</div>
+<div class="para logical" id="subsec-cofactors-2-x-2-dets-9-6">
 <div class="para">Similarly,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1088,7 +1122,8 @@ A = \begin{pmatrix} a &amp; b\\ c &amp; d \end{pmatrix}\text{.}
 </div>
 </div></article><article class="definition definition-like" id="def-expanding-along-row"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Expanding Along a Row or Column.</span>
-</h4> <div class="para" id="def-expanding-along-row-2-1">The determinant of a <span class="process-math">\(3 \times 3\)</span> matrix <span class="process-math">\(A\text{,}\)</span> is obtained by picking a row (column) and taking the product of each entry in that row (column) with its cofactor and adding these up. This process when applied to the <span class="process-math">\(i^{th}\)</span> row (column) is known as <dfn class="terminology">expanding the determinant along the <span class="process-math">\(i^{th}\)</span> row (column)</dfn>.</div></article><article class="example example-like" id="subsec-cofactors-2-x-2-dets-11"><h4 class="heading">
+</h4>
+<div class="para" id="def-expanding-along-row-2-1">The determinant of a <span class="process-math">\(3 \times 3\)</span> matrix <span class="process-math">\(A\text{,}\)</span> is obtained by picking a row (column) and taking the product of each entry in that row (column) with its cofactor and adding these up. This process when applied to the <span class="process-math">\(i^{th}\)</span> row (column) is known as <dfn class="terminology">expanding the determinant along the <span class="process-math">\(i^{th}\)</span> row (column)</dfn>.</div></article><article class="example example-like" id="subsec-cofactors-2-x-2-dets-11"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.8</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="subsec-cofactors-2-x-2-dets-11-1">
@@ -1105,7 +1140,9 @@ A = \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 4 &amp; 3 &amp; 2\\ 3 &amp; 2 &amp; 1\\ 
 \overbrace{1(-1)^{1+1}\begin{vmatrix}3 &amp; 2\\ 2 &amp; 1 \end{vmatrix}}^{\text{cof} (A)_{11}} + \overbrace{4(-1)^{2+1}\begin{vmatrix}2 &amp; 3\\ 2 &amp; 1 \end{vmatrix}}^{\text{cof} (A)_{21}} + \overbrace{3(-1)^{3+1}\begin{vmatrix}3 &amp; 2\\ 3 &amp; 2 \end{vmatrix}}^{\text{cof} (A)_{31}} = 0 .
 \end{equation*}
 </div>
-</div> <div class="para" id="subsec-cofactors-2-x-2-dets-11-2">You see, we just followed the rule in the above definition. We took the 1 in the first column and multiplied it by its cofactor, the 4 in the first column and multiplied it by its cofactor, and the 3 in the first column and multiplied it by its cofactor. Then we added these numbers together.</div> <div class="para logical" id="subsec-cofactors-2-x-2-dets-11-3">
+</div>
+<div class="para" id="subsec-cofactors-2-x-2-dets-11-2">You see, we just followed the rule in the above definition. We took the 1 in the first column and multiplied it by its cofactor, the 4 in the first column and multiplied it by its cofactor, and the 3 in the first column and multiplied it by its cofactor. Then we added these numbers together.</div>
+<div class="para logical" id="subsec-cofactors-2-x-2-dets-11-3">
 <div class="para">You could also expand the determinant along the second row as follows.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1119,7 +1156,8 @@ A = \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 4 &amp; 3 &amp; 2\\ 3 &amp; 2 &amp; 1\\ 
 </h4>
 <div class="para" id="def-det-of-four-by-four-1-1">Suppose A is a <span class="process-math">\(4 \times 4\)</span> matrix. The <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">minor</dfn> is the determinant of the <span class="process-math">\(3 \times 3\)</span> matrix you obtain when you delete the <span class="process-math">\(i^{th}\)</span> row and the <span class="process-math">\(j^{th}\)</span> column. The <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">cofactor</dfn>, <span class="process-math">\(\text{cof} (A)\)</span> is defined to be <span class="process-math">\((-1)^{i+j} \times (ij^{th} \text{ minor})\text{.}\)</span> In words, you multiply <span class="process-math">\((-1)^{i+j}\)</span> times the <span class="process-math">\(ij^{th}\)</span> minor to get the <span class="process-math">\(ij^{th}\)</span> cofactor.</div></article><article class="definition definition-like" id="def-laplace-expansion"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Laplace Expansion.</span>
-</h4> <div class="para" id="def-laplace-expansion-2-1">The determinant of a <span class="process-math">\(4 \times 4\)</span> matrix <span class="process-math">\(A\text{,}\)</span> is obtained by expanding along a row (column) just as was done for a <span class="process-math">\(3\times 3\)</span> matrix in <a href="Section11_4.html#def-expanding-along-row" class="xref" data-knowl="./knowl/xref/def-expanding-along-row.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.7: Expanding Along a Row or Column">Definition 11.4.7</a>, except the expanding process must be repeated again for each of the resulting <span class="process-math">\(3\times 3\)</span> matrices to obtain their determinants.</div> <div class="para" id="def-laplace-expansion-2-2">This method of evaluating a determinant by expanding along a row or a column can be done for any size square matrix and is called the <em class="emphasis">method of Laplace expansion</em>. The process must be repeated until the resulting matrices are small enough to easily calculate their determinants.</div></article><article class="example example-like" id="subsec-cofactors-2-x-2-dets-15"><h4 class="heading">
+</h4>
+<div class="para" id="def-laplace-expansion-2-1">The determinant of a <span class="process-math">\(4 \times 4\)</span> matrix <span class="process-math">\(A\text{,}\)</span> is obtained by expanding along a row (column) just as was done for a <span class="process-math">\(3\times 3\)</span> matrix in <a href="Section11_4.html#def-expanding-along-row" class="xref" data-knowl="./knowl/xref/def-expanding-along-row.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.7: Expanding Along a Row or Column">Definition 11.4.7</a>, except the expanding process must be repeated again for each of the resulting <span class="process-math">\(3\times 3\)</span> matrices to obtain their determinants.</div> <div class="para" id="def-laplace-expansion-2-2">This method of evaluating a determinant by expanding along a row or a column can be done for any size square matrix and is called the <em class="emphasis">method of Laplace expansion</em>. The process must be repeated until the resulting matrices are small enough to easily calculate their determinants.</div></article><article class="example example-like" id="subsec-cofactors-2-x-2-dets-15"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.11</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="subsec-cofactors-2-x-2-dets-15-1-1">
@@ -1144,15 +1182,18 @@ A = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 5 &amp; 4 &amp; 2 &amp; 3\\ 1 &a
 4(-1)^{3+3}\begin{vmatrix} 1 &amp; 2 &amp; 4\\ 5 &amp; 4 &amp; 3\\ 3 &amp; 4 &amp; 2 \end{vmatrix} + 3(-1)^{4+3}\begin{vmatrix} 1 &amp; 2 &amp; 4\\ 5 &amp; 4 &amp; 3\\ 1 &amp; 3 &amp; 5 \end{vmatrix} .
 \end{equation*}
 </div>
-</div> <div class="para" id="subsec-cofactors-2-x-2-dets-15-2-2">Now you know how to expand each of the <span class="process-math">\(3 \times 3\)</span> matrices along a row or a column. If you do so, you will get <span class="process-math">\(-12\)</span> assuming you make no mistakes. You could expand this matrix along any row or any column and assuming you make no mistakes, you will always get the same thing which is defined to be the determinant of the matrix <span class="process-math">\(A\text{.}\)</span> .</div>
+</div>
+<div class="para" id="subsec-cofactors-2-x-2-dets-15-2-2">Now you know how to expand each of the <span class="process-math">\(3 \times 3\)</span> matrices along a row or a column. If you do so, you will get <span class="process-math">\(-12\)</span> assuming you make no mistakes. You could expand this matrix along any row or any column and assuming you make no mistakes, you will always get the same thing which is defined to be the determinant of the matrix <span class="process-math">\(A\text{.}\)</span> .</div>
 </div></details></div></article><div class="para" id="subsec-cofactors-2-x-2-dets-16">Note that each of the four terms in the example solution above involves three terms consisting of determinants of <span class="process-math">\(2 \times 2\)</span> matrices and each of these will need 2 terms. Therefore, there will be <span class="process-math">\(4 \times 3 \times 2 = 24\)</span> terms to evaluate in order to find the determinant using the method of Laplace expansion. Suppose now you have a <span class="process-math">\(10 \times 10\)</span> matrix and you follow the above pattern for evaluating determinants. By analogy to the above, there will be <span class="process-math">\(10! = 3, 628 , 800\)</span> terms involved in the evaluation of such a determinant by Laplace expansion along a row or column. This is a lot of terms.</div>
 <div class="para" id="subsec-cofactors-2-x-2-dets-17">In addition to the difficulties just discussed, you should regard the above claim that you always get the same answer by picking any row or column with considerable skepticism. It is incredible and not at all obvious. However, it requires a little effort to establish it. This is done in the Elementary Linear Algebra book chapter 7 on the theory of the determinant.</div>
 <article class="definition definition-like" id="def-cofactor-equals-minor"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.12</span><span class="period">.</span><span class="space"> </span><span class="title">Cofactor Matrix.</span>
-</h4>  <div class="para" id="def-cofactor-equals-minor-3-1">Let <span class="process-math">\(A = (a_{ij})\)</span> be an <span class="process-math">\(n \times n\)</span> matrix and suppose the determinant of a <span class="process-math">\((n - 1) \times (n - 1)\)</span> matrix has been defined. Then a new matrix called the <dfn class="terminology">cofactor matrix</dfn>, <span class="process-math">\(cof (A)\)</span> is defined by <span class="process-math">\(cof (A) = (c_{ij}) \)</span> where to obtain <span class="process-math">\(c_{ij}\)</span> delete the <span class="process-math">\(i^{th}\)</span> row and the <span class="process-math">\(j^{th}\)</span> column of <span class="process-math">\(A\text{,}\)</span> take the determinant of the <span class="process-math">\((n - 1) \times (n - 1)\)</span> matrix which results, (This is called the <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">minor</dfn> of <span class="process-math">\(A\text{.}\)</span> ) and then multiply this number by <span class="process-math">\((-1)^{i+j}\)</span> .</div> <div class="para" id="def-cofactor-equals-minor-3-2">Thus <span class="process-math">\((-1)^{i+j} \times (\text{ the } ij^{th} \text{ minor})\)</span> equals the <span class="process-math">\(ij^{th}\)</span> cofactor. To make the formulas easier to remember, <span class="process-math">\(\text{cof} (A)_{ij}\)</span> will denote the <span class="process-math">\(ij^{th}\)</span> entry of the cofactor matrix.</div></article><div class="para" id="subsec-cofactors-2-x-2-dets-19">With this definition of the cofactor matrix, here is how to define the determinant of an <span class="process-math">\(n \times n\)</span> matrix.</div>
+</h4>
+<div class="para" id="def-cofactor-equals-minor-3-1">Let <span class="process-math">\(A = (a_{ij})\)</span> be an <span class="process-math">\(n \times n\)</span> matrix and suppose the determinant of a <span class="process-math">\((n - 1) \times (n - 1)\)</span> matrix has been defined. Then a new matrix called the <dfn class="terminology">cofactor matrix</dfn>, <span class="process-math">\(cof (A)\)</span> is defined by <span class="process-math">\(cof (A) = (c_{ij}) \)</span> where to obtain <span class="process-math">\(c_{ij}\)</span> delete the <span class="process-math">\(i^{th}\)</span> row and the <span class="process-math">\(j^{th}\)</span> column of <span class="process-math">\(A\text{,}\)</span> take the determinant of the <span class="process-math">\((n - 1) \times (n - 1)\)</span> matrix which results, (This is called the <span class="process-math">\(ij^{th}\)</span> <dfn class="terminology">minor</dfn> of <span class="process-math">\(A\text{.}\)</span> ) and then multiply this number by <span class="process-math">\((-1)^{i+j}\)</span> .</div> <div class="para" id="def-cofactor-equals-minor-3-2">Thus <span class="process-math">\((-1)^{i+j} \times (\text{ the } ij^{th} \text{ minor})\)</span> equals the <span class="process-math">\(ij^{th}\)</span> cofactor. To make the formulas easier to remember, <span class="process-math">\(\text{cof} (A)_{ij}\)</span> will denote the <span class="process-math">\(ij^{th}\)</span> entry of the cofactor matrix.</div></article><div class="para" id="subsec-cofactors-2-x-2-dets-19">With this definition of the cofactor matrix, here is how to define the determinant of an <span class="process-math">\(n \times n\)</span> matrix.</div>
 <article class="definition definition-like" id="def-det-sum-of-cof"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.13</span><span class="period">.</span><span class="space"> </span><span class="title">Determininant as Sum of Cofactor Matrices.</span>
-</h4> <div class="para logical" id="def-det-sum-of-cof-2-1">
+</h4>
+<div class="para logical" id="def-det-sum-of-cof-2-1">
 <div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n \times n\)</span> matrix where <span class="process-math">\(n \geq 2\)</span> and suppose the determinant of an <span class="process-math">\((n - 1) \times (n - 1)\)</span> has been defined. Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1169,7 +1210,8 @@ A = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 5 &amp; 4 &amp; 2 &amp; 3\\ 1 &a
 <div class="para" id="subsec-det-of-triangular-matrix-2">Notwithstanding the difficulties involved in using the method of Laplace expansion, certain types of matrices are very easy to deal with.</div>
 <article class="definition definition-like" id="def-upper-triangular-matrix"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">Triangular Matrices.</span>
-</h4>  <div class="para logical" id="def-upper-triangular-matrix-3-1">
+</h4>
+<div class="para logical" id="def-upper-triangular-matrix-3-1">
 <div class="para">A matrix <span class="process-math">\(M\)</span> , is <dfn class="terminology">upper triangular</dfn> if <span class="process-math">\(M_{ij}= 0\)</span> whenever <span class="process-math">\(i \gt j\text{.}\)</span> Thus in such a matrix, every entry below the main diagonal (the entries of the form <span class="process-math">\(M_{ii}\)</span>) equals zero, as shown.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1439,7 +1481,8 @@ D = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 0 &amp; -3 &amp; -8 &amp; -13\\ 
 8 \det \begin{pmatrix}-1 &amp; -1\\ -8 &amp; -4\end{pmatrix} + 10 \det \begin{pmatrix}-1 &amp; -1\\ -4 &amp; 1\end{pmatrix} = -82
 \end{equation*}
 </div>
-</div> <div class="para" id="subsec-det-row-ops-4-2-2">We suggest you do not try to be fancy in using row operations. That is, stick mostly to the one which replaces a row or column with a multiple of another row or column added to it. Also note there is no way to check your answer other than working the problem more than one way. To be sure you have gotten it right you must do this.</div>
+</div>
+<div class="para" id="subsec-det-row-ops-4-2-2">We suggest you do not try to be fancy in using row operations. That is, stick mostly to the one which replaces a row or column with a multiple of another row or column added to it. Also note there is no way to check your answer other than working the problem more than one way. To be sure you have gotten it right you must do this.</div>
 </div></details></div></article></section><section class="subsection" id="subsec-formula-for-inverse"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.4.5</span><span class="space"> </span><span class="title">A Formula For The Inverse</span>
 </h3>
@@ -1496,7 +1539,8 @@ a_{ij}^{-1} = \frac{\text{adj} (A)_{ij}}{\det (A)} = \frac{\text{cof} (A)_{ji}}{
 \frac{\text{cof} (A)^T}{\det (A)} A = I.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="thm-inverse-from-cofactor-3-2">
+</div>
+<div class="para logical" id="thm-inverse-from-cofactor-3-2">
 <div class="para">Using the other formula in <a href="Section11_4.html#def-det-sum-of-cof" class="xref" data-knowl="./knowl/xref/def-det-sum-of-cof.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.4.13: Determininant as Sum of Cofactor Matrices">Definition 11.4.13</a> and similar reasoning,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-det-sum-of-cof.html">
 \begin{equation*}
@@ -1527,7 +1571,8 @@ a_{ij}^{-1} = \text{cof} (A)_{ij} \det (A)^{-1}.
 A^{-1} = \frac{\text{cof} (A)^T}{\det (A)}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="thm-inverse-from-cofactor-3-3">
+</div>
+<div class="para logical" id="thm-inverse-from-cofactor-3-3">
 <div class="para">Now suppose <span class="process-math">\(A^{-1}\)</span> exists. Then by <a href="Section11_4.html#thm-prod-of-dets" class="xref" data-knowl="./knowl/xref/thm-prod-of-dets.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.25: The determinant of a matrix product is the product of the determinants">Theorem 11.4.25</a>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-prod-of-dets.html">
@@ -1558,7 +1603,8 @@ A =  \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 3 &amp; 0 &amp; 1\\ 1 &amp; 2 &amp; 1 \
 \end{equation*}
 </div>
 <div class="para">which equals 12.</div>
-</div> <div class="para logical" id="subsec-formula-for-inverse-5-2-2">
+</div>
+<div class="para logical" id="subsec-formula-for-inverse-5-2-2">
 <div class="para">Next, find the cofactor matrix of <span class="process-math">\(A\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1572,7 +1618,8 @@ A =  \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 3 &amp; 0 &amp; 1\\ 1 &amp; 2 &amp; 1 \
 \frac{1}{12} \begin{pmatrix} -2 &amp; -2 &amp; 6\\ 4 &amp; -2 &amp; 0\\ 2 &amp; 8 &amp; -6 \end{pmatrix}^T = \begin{pmatrix} -\frac{1}{6} &amp; \frac{1}{3} &amp; \frac{1}{6}\\ -\frac{1}{6} &amp; -\frac{1}{6} &amp; \frac{2}{3}\\ \frac{1}{2} &amp; 0 &amp; -\frac{1}{2} \end{pmatrix}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsec-formula-for-inverse-5-2-3">
+</div>
+<div class="para logical" id="subsec-formula-for-inverse-5-2-3">
 <div class="para">Does it work? You should check to see if it does. When the matrices are multiplied</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1617,7 +1664,8 @@ A = \begin{pmatrix} \frac{1}{2} &amp; 0 &amp; \frac{1}{2}\\ -\frac{1}{6} &amp; \
 6\begin{pmatrix} \frac{1}{6} &amp; \frac{1}{3} &amp; \frac{1}{6}\\ \frac{1}{3} &amp; \frac{1}{6} &amp; -\frac{1}{3}\\ -\frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} \end{pmatrix}^T =  \begin{pmatrix} 1 &amp; 2 &amp; -1\\ 2 &amp; 1 &amp; 1\\ 1 &amp; -2 &amp; 1 \end{pmatrix}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsec-formula-for-inverse-6-2-2">
+</div>
+<div class="para logical" id="subsec-formula-for-inverse-6-2-2">
 <div class="para">Always check your work.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1679,7 +1727,8 @@ x_i = \frac{1}{\det(A)}\det \begin{pmatrix}\cdot  &amp; \cdots &amp; y_1 &amp; \
 </div>
 <article class="definition definition-like" id="def-cramers-rule"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.4.35</span><span class="period">.</span><span class="space"> </span><span class="title">Cramer’s Rule.</span>
-</h4>  <div class="para logical" id="def-cramers-rule-3-1">
+</h4>
+<div class="para logical" id="def-cramers-rule-3-1">
 <div class="para">Suppose <span class="process-math">\(A\)</span> is an <span class="process-math">\(n \times n\)</span> matrix and it is desired to solve the system <span class="process-math">\(A\mathbf{x} = \mathbf{y}\text{,}\)</span> <span class="process-math">\(\mathbf{y} = (y_1, \cdots , y_n )^T\)</span> for <span class="process-math">\(\mathbf{x} = (x_1, \cdots , x_n )^T\text{.}\)</span> Then Cramer’s rule says</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1699,8 +1748,7 @@ x_i = \frac{\det A_i}{\det A}
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="subsec-cramers-rule-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para logical" id="subsec-cramers-rule-6-2-1">
+<div class="solutions"><details id="subsec-cramers-rule-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-cramers-rule-6-2-1">
 <div class="para">Using Cramer’s rule, solve for <span class="process-math">\(x\)</span> by replacing column 1 with <span class="process-math">\((y_1, \cdots , y_n )^T = \begin{pmatrix}1 \\ 2 \\ 3 \end{pmatrix}\)</span> and dividing the determinant of the new matrix by the determinant of the original matrix.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1721,7 +1769,7 @@ y = \frac{\begin{vmatrix}1 &amp; 1 &amp; 1\\ 3 &amp; 2 &amp; 1\\ 2 &amp; 3 &amp;
 z = \frac{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 3 &amp; 2 &amp; 2\\ 2 &amp; -3 &amp; 3\end{vmatrix}}{\begin{vmatrix}1 &amp; 2 &amp; 1\\ 3 &amp; 2 &amp; 1\\ 2 &amp; -3 &amp; 2\end{vmatrix}} = -\frac{11}{14}
 \end{equation*}
 </div>
-</div> You see the pattern.</div></details></div></article><div class="para" id="subsec-cramers-rule-7">For large systems Cramer’s rule is less than useful because to use it you must evaluate determinants. However, you have no practical way to evaluate determinants for large matrices other than row operations and if you are using row operations, you might just as well use them to solve the system to begin with. It will be a lot less trouble. Nevertheless, there are situations in which Cramer’s rule is useful.</div>
+</div></div></details></div></article><div class="para" id="subsec-cramers-rule-7">For large systems Cramer’s rule is less than useful because to use it you must evaluate determinants. However, you have no practical way to evaluate determinants for large matrices other than row operations and if you are using row operations, you might just as well use them to solve the system to begin with. It will be a lot less trouble. Nevertheless, there are situations in which Cramer’s rule is useful.</div>
 <article class="example example-like" id="subsec-cramers-rule-8"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.4.37</span><span class="period">.</span>
 </h4>
@@ -1746,7 +1794,7 @@ z = \frac{\begin{vmatrix}1 &amp; 0 &amp; 1\\ 0 &amp; e^t \cos t &amp; t\\ 0 &amp
 <article class="exercise exercise-like" id="exercises-11-4-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para logical" id="exercises-11-4-2-1-1">
 <div class="para">Find the determinants of the following matrices.</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="exercises-11-4-2-1-1-1">
 <li id="exercises-11-4-2-1-1-1-1"><div class="para logical" id="exercises-11-4-2-1-1-1-1-1"><div class="displaymath process-math">
 \begin{equation*}
 \begin{pmatrix} 1 &amp; 2 &amp; 3\\ 3 &amp; 2 &amp; 2\\ 0 &amp; 9 &amp; 8 \end{pmatrix}
@@ -1764,7 +1812,7 @@ z = \frac{\begin{vmatrix}1 &amp; 0 &amp; 1\\ 0 &amp; e^t \cos t &amp; t\\ 0 &amp
 </div></div></li>
 </ol>
 </div>
-<div class="solutions"><details id="exercises-11-4-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises-11-4-2-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-11-4-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises-11-4-2-2-1"><ol class="lower-alpha ol-marker-1" id="exercises-11-4-2-2-1-1">
 <li id="exercises-11-4-2-2-1-1-1"><div class="para logical" id="exercises-11-4-2-2-1-1-1-1">
 <div class="para">Using the "short cut" shown in class.</div>
 <div class="displaymath process-math">
@@ -2321,11 +2369,11 @@ z = 0\\
 <div class="para">Determine whether the matrix has an inverse by finding whether the determinant is non-zero. If the determinant is non-zero, find the inverse using the formula <a href="Section11_4.html#thm-inverse-from-cofactor" class="xref" data-knowl="./knowl/xref/thm-inverse-from-cofactor.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.4.31: Matrix Inverse is Adjugate Divided by Determinant">Theorem 11.4.31</a> for the inverse which involves the cofactor matrix.</div>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="Section11_3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter_12.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="Section11_3.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter_12.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

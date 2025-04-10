@@ -5,30 +5,20 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Introduction to Probability</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Discrete Mathematics for Computer Science">
-<meta property="book:author" content="Ken Levasseur">
-<meta property="book:author" content="Al Doerr">
-<meta property="book:author" content="Michiel Smid">
-<meta property="book:author" content="Oscar Levin">
-<meta property="book:author" content="Charles M. Grinstead">
-<meta property="book:author" content="J. Laurie Snell">
-<meta property="book:author" content="Eric Lehman">
-<meta property="book:author" content="F. Thomson Leighton">
-<meta property="book:author" content="Albert R Meyer">
-<meta property="book:author" content="Jeff Erickson">
-<meta property="book:author" content="Kenneth P. Bogart">
-<meta property="book:author" content="Carol Chritchlow">
-<meta property="book:author" content="David Eck">
-<meta property="book:author" content="OpenDSA Project">
-<meta property="book:author" content="L.J. Miller">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -100,36 +90,68 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Discrete Mathematics for Computer Science">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ken Levasseur">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Al Doerr">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Michiel Smid">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Oscar Levin">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Charles M. Grinstead">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="J. Laurie Snell">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Eric Lehman">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="F. Thomson Leighton">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Albert R Meyer">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Jeff Erickson">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Kenneth P. Bogart">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Carol Chritchlow">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="David Eck">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="OpenDSA Project">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="L.J. Miller">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
 <p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -140,7 +162,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chapter_3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_3.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="section3_2-Bayes.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chapter_3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_3.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="section3_2-Bayes.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
 \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
 \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
@@ -173,12 +196,12 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -279,9 +302,9 @@ window.MathJax = {
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="chapter_3.html" class="internal"><span class="codenumber">3</span> <span class="title">Probability</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="section3_1-probability.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction to Probability</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section3_1-probability.html#subsec3_1_1-probability-spaces" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Probability Spaces</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section3_1-probability.html#subsec3_1_2-basic-rules-of-probability" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Basic Rules of Probability</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section3_1-probability.html#section3_1-probability-6" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Exercises for Section 3.1</span></a></div></li>
@@ -970,7 +993,7 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section3_1-probability"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="section3_1-probability"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">3.1</span><span class="space"> </span><span class="title">Introduction to Probability</span>
 </h2>
 <section class="introduction" id="section3_1-probability-3"><div class="para" id="section3_1-probability-3-1">We all have some intuitive understanding of the notions of “chance” and “probability”. When buying a lottery ticket, we know that there is a chance of winning the jackpot, but we also know that this chance is very small. Before leaving home in the morning, we check the weather forecast and see that, with probability <span class="process-math">\(80\%\text{,}\)</span> we get <span class="process-math">\(3\)</span> inches of rain in Honolulu. In this chapter, we will give a formal definition of this notion of “probability”.</div></section><section class="subsection" id="subsec3_1_1-probability-spaces"><h3 class="heading hide-type">
@@ -978,13 +1001,15 @@ window.MathJax = {
 </h3>
 <section class="introduction" id="subsec3_1_1-probability-spaces-2"><div class="para" id="subsec3_1_1-probability-spaces-2-1">In this section, we give a formal definition of the notion of “probability” in terms of sets and functions.</div></section><article class="definition definition-like" id="def-sample-space"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Sample Space.</span>
-</h4>  <div class="para" id="def-sample-space-3-1">A <em class="emphasis">sample space</em> <span class="process-math">\(S\)</span> is a non-empty countable set. Each element of <span class="process-math">\(S\)</span> is called an <em class="emphasis">outcome</em> and each subset of <span class="process-math">\(S\)</span> is called an <em class="emphasis">event</em>.</div></article><div class="para" id="subsec3_1_1-probability-spaces-4">In daily life, we express probabilities in terms of percentages. For example, the weather forecast may tell us that, with <span class="process-math">\(80\%\)</span> probability, we will be getting a snowstorm today. In probability theory, probabilities are expressed in terms of numbers in the interval <span class="process-math">\([0,1]\text{.}\)</span> A probability of <span class="process-math">\(80\%\)</span> becomes a probability of <span class="process-math">\(0.8\text{.}\)</span>
+</h4>
+<div class="para" id="def-sample-space-3-1">A <em class="emphasis">sample space</em> <span class="process-math">\(S\)</span> is a non-empty countable set. Each element of <span class="process-math">\(S\)</span> is called an <em class="emphasis">outcome</em> and each subset of <span class="process-math">\(S\)</span> is called an <em class="emphasis">event</em>.</div></article><div class="para" id="subsec3_1_1-probability-spaces-4">In daily life, we express probabilities in terms of percentages. For example, the weather forecast may tell us that, with <span class="process-math">\(80\%\)</span> probability, we will be getting a snowstorm today. In probability theory, probabilities are expressed in terms of numbers in the interval <span class="process-math">\([0,1]\text{.}\)</span> A probability of <span class="process-math">\(80\%\)</span> becomes a probability of <span class="process-math">\(0.8\text{.}\)</span>
 </div>
 <article class="definition definition-like" id="def-probability-function"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Probability Function or Distribution.</span>
-</h4>  <div class="para logical" id="def-probability-function-3-1">
+</h4>
+<div class="para logical" id="def-probability-function-3-1">
 <div class="para">Let <span class="process-math">\(S\)</span> be a sample space. A <em class="emphasis">probability function</em> on <span class="process-math">\(S\)</span> is a function <span class="process-math">\(P : S \rightarrow \mathbb{R}\)</span> such that</div>
-<ul class="disc">
+<ul class="disc" id="def-probability-function-3-1-5">
 <li id="def-probability-function-3-1-5-1"><div class="para" id="p-derived-def-probability-function-3-1-5-1">for all <span class="process-math">\(x \in S\text{,}\)</span> <span class="process-math">\(0 \leq P(x) \leq 1\text{,}\)</span> and</div></li>
 <li id="def-probability-function-3-1-5-2"><div class="para" id="p-derived-def-probability-function-3-1-5-2"><span class="process-math">\(\sum_{x \in S} P(x) = 1\text{.}\)</span></div></li>
 </ul>
@@ -992,10 +1017,12 @@ window.MathJax = {
 </div>
 <article class="definition definition-like" id="def-probability-space"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Probability Space.</span>
-</h4>  <div class="para" id="def-probability-space-3-1">A <em class="emphasis">probability space</em> is a pair <span class="process-math">\((S,P)\text{,}\)</span> where <span class="process-math">\(S\)</span> is a sample space and <span class="process-math">\(P : S \rightarrow \mathbb{R}\)</span> is a probability function on <span class="process-math">\(S\text{.}\)</span>
+</h4>
+<div class="para" id="def-probability-space-3-1">A <em class="emphasis">probability space</em> is a pair <span class="process-math">\((S,P)\text{,}\)</span> where <span class="process-math">\(S\)</span> is a sample space and <span class="process-math">\(P : S \rightarrow \mathbb{R}\)</span> is a probability function on <span class="process-math">\(S\text{.}\)</span>
 </div></article><article class="definition definition-like" id="def-probability-event"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of an Event.</span>
-</h4>  <div class="para logical" id="def-probability-event-3-1">
+</h4>
+<div class="para logical" id="def-probability-event-3-1">
 <div class="para">A probability function <span class="process-math">\(P : S \rightarrow \mathbb{R}\)</span> maps each element of the sample space  <span class="process-math">\(S\)</span> (i.e., each outcome) to a real number in the interval <span class="process-math">\([0,1]\text{.}\)</span> It turns out to be useful to extend this function so that it maps any event to a real number in <span class="process-math">\([0,1]\text{.}\)</span> If <span class="process-math">\(A\)</span> is an event (i.e., <span class="process-math">\(A \subseteq S\)</span>), then we define</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1044,7 +1071,8 @@ P(\{H,T\}) &amp;= &amp;P(H) + P(T) &amp;= &amp;1/2 + 1/2 &amp;= &amp;1 .
 </div>
 </div></article><article class="example example-like" id="ex-flipping-a-coin-twice"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Flipping a Coin Twice.</span>
-</h4> <div class="para logical" id="ex-flipping-a-coin-twice-2">
+</h4>
+<div class="para logical" id="ex-flipping-a-coin-twice-2">
 <div class="para">If we flip a fair coin twice, then there are four possible outcomes, and the sample space becomes <span class="process-math">\(S = \{ HH , HT , TH , TT \}\text{.}\)</span> For example, <span class="process-math">\(HT\)</span> indicates that the first flip resulted in heads, whereas the second flip resulted in tails. In this case, the probability function <span class="process-math">\(P : S \rightarrow \mathbb{R}\)</span> is given by <span class="process-math">\(P(HH) = P(HT) = P(TH) = P(TT) = 1/4\)</span> . Observe again that this function <span class="process-math">\(P\)</span> satisfies the two conditions in <a href="section3_1-probability.html#def-probability-function" class="xref" data-knowl="./knowl/xref/def-probability-function.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.2: Probability Function or Distribution">Definition 3.1.2</a>. Since the sample space consists of <span class="process-math">\(4\)</span> elements, the number of events is equal to <span class="process-math">\(2^4 = 16\text{.}\)</span> For example, <span class="process-math">\(A = \{ HT , TH \}\)</span> is an event and it follows from <a href="section3_1-probability.html#def-probability-event" class="xref" data-knowl="./knowl/xref/def-probability-event.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.4: Probability of an Event">Definition 3.1.4</a> that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-probability-function.html ./knowl/xref/def-probability-event.html">
 \begin{equation*}
@@ -1055,7 +1083,8 @@ P(A) = P(HT) + P(TH) = 1/4 + 1/4 = 1/2 .
 </div>
 </div></article><article class="example example-like" id="ex-rolling-a-die-twice"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Rolling a Die Twice.</span>
-</h4> <div class="para logical" id="ex-rolling-a-die-twice-2">
+</h4>
+<div class="para logical" id="ex-rolling-a-die-twice-2">
 <div class="para">If we roll a fair die, then there are six possible outcomes (<span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(2\text{,}\)</span> <span class="process-math">\(3\text{,}\)</span> <span class="process-math">\(4\text{,}\)</span> <span class="process-math">\(5\text{,}\)</span> and <span class="process-math">\(6\)</span>), each one occurring with probability <span class="process-math">\(1/6\text{.}\)</span> If we roll this die twice, we obtain the sample space</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-probability-function.html">
 \begin{equation*}
@@ -1070,7 +1099,8 @@ P(i,j) = 1/36
 </div>
 <div class="para">for each outcome <span class="process-math">\((i,j)\)</span> in <span class="process-math">\(S\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="ex-rolling-a-die-twice-3">
+</div>
+<div class="para logical" id="ex-rolling-a-die-twice-3">
 <div class="para">If we are interested in the sum of the results of the two rolls, then we define the event</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1089,7 +1119,8 @@ A_k = \{ (i,j) \in S : i+j=k \} .
 A_4 = \{ (1,3) , (2,2) , (3,1) \} .
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ex-rolling-a-die-twice-4">
+</div>
+<div class="para logical" id="ex-rolling-a-die-twice-4">
 <div class="para">In the matrix below, the leftmost column indicates the result of the first roll, the top row indicates the result of the second roll, and each entry is the sum of the results of the two corresponding rolls.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1108,7 +1139,9 @@ A_4 = \{ (1,3) , (2,2) , (3,1) \} .
 \end{array}
 \end{equation*}
 </div>
-</div> <div class="para" id="ex-rolling-a-die-twice-5">As can be seen from this matrix, the event <span class="process-math">\(A_k\)</span> is non-empty only if <span class="process-math">\(k \in \{2,3,\ldots,12\}\text{.}\)</span> For any other <span class="process-math">\(k\text{,}\)</span> the event <span class="process-math">\(A_k\)</span> is empty, which means that it can never occur.</div> <div class="para logical" id="ex-rolling-a-die-twice-6">
+</div>
+<div class="para" id="ex-rolling-a-die-twice-5">As can be seen from this matrix, the event <span class="process-math">\(A_k\)</span> is non-empty only if <span class="process-math">\(k \in \{2,3,\ldots,12\}\text{.}\)</span> For any other <span class="process-math">\(k\text{,}\)</span> the event <span class="process-math">\(A_k\)</span> is empty, which means that it can never occur.</div>
+<div class="para logical" id="ex-rolling-a-die-twice-6">
 <div class="para">It follows from <a href="section3_1-probability.html#def-probability-event" class="xref" data-knowl="./knowl/xref/def-probability-event.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.4: Probability of an Event">Definition 3.1.4</a> that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-probability-event.html">
 \begin{equation*}
@@ -1141,7 +1174,8 @@ P\left(A_{12}\right) &amp;= &amp;1/36. &amp;&amp;
 \end{array}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ex-rolling-a-die-twice-7">
+</div>
+<div class="para logical" id="ex-rolling-a-die-twice-7">
 <div class="para">A sample space is not necessarily uniquely defined. In the last example, where we were interested in the sum of the results of two rolls of a die, we could also have taken the sample space to be the set</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-probability-function.html">
 \begin{equation*}
@@ -1172,7 +1206,8 @@ P(\emptyset) = \sum_{x \in \emptyset} P(x) .
 <div class="para">Since there are zero terms in this summation, its value is equal to zero.</div>
 </div></article></details><article class="definition definition-like" id="def-disjoint-events"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Disjoint Events.</span>
-</h4> <div class="para" id="def-disjoint-events-3-1">We say that two events <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <em class="emphasis">disjoint</em>, if <span class="process-math">\(A \cap B = \emptyset\text{.}\)</span> A sequence <span class="process-math">\(A_1,A_2,\ldots,A_n\)</span> of events is <em class="emphasis">pairwise disjoint</em>, if any pair in this sequence is disjoint.</div></article><article class="theorem theorem-like" id="thm-probability-of-sequence-of-disjoint"><h4 class="heading">
+</h4>
+<div class="para" id="def-disjoint-events-3-1">We say that two events <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <em class="emphasis">disjoint</em>, if <span class="process-math">\(A \cap B = \emptyset\text{.}\)</span> A sequence <span class="process-math">\(A_1,A_2,\ldots,A_n\)</span> of events is <em class="emphasis">pairwise disjoint</em>, if any pair in this sequence is disjoint.</div></article><article class="theorem theorem-like" id="thm-probability-of-sequence-of-disjoint"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of a Sequence of Disjoint Events.</span>
 </h4>
 <div class="para logical" id="thm-probability-of-sequence-of-disjoint-2-1">
@@ -1196,7 +1231,9 @@ P(A) &amp;= \sum_{x \in A} P(x) \\
 </div>
 </div></article></details><article class="example example-like" id="ex-probability-of-sum-of-dice"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of an Even Outcome When Flipping a Die Twice.</span>
-</h4> <div class="para" id="ex-probability-of-sum-of-dice-2">Assume we roll a fair die twice. What is the probability that the sum of the two results is even? If you look at the matrix in <a href="section3_1-probability.html#ex-rolling-a-die-twice" class="xref" data-knowl="./knowl/xref/ex-rolling-a-die-twice.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.7: Rolling a Die Twice">Example 3.1.7</a>, then you see that there are <span class="process-math">\(18\)</span> entries out of <span class="process-math">\(36\)</span> that are even. Therefore, the probability of having an even sum is equal to <span class="process-math">\(18/36=1/2\text{.}\)</span> Below we will give a different way to determine this probability.</div> <div class="para logical" id="ex-probability-of-sum-of-dice-3">
+</h4>
+<div class="para" id="ex-probability-of-sum-of-dice-2">Assume we roll a fair die twice. What is the probability that the sum of the two results is even? If you look at the matrix in <a href="section3_1-probability.html#ex-rolling-a-die-twice" class="xref" data-knowl="./knowl/xref/ex-rolling-a-die-twice.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.7: Rolling a Die Twice">Example 3.1.7</a>, then you see that there are <span class="process-math">\(18\)</span> entries out of <span class="process-math">\(36\)</span> that are even. Therefore, the probability of having an even sum is equal to <span class="process-math">\(18/36=1/2\text{.}\)</span> Below we will give a different way to determine this probability.</div>
+<div class="para logical" id="ex-probability-of-sum-of-dice-3">
 <div class="para">The sample space is the set</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1204,7 +1241,8 @@ S = \{ (i,j) : 1 \leq i \leq 6 , 1 \leq j \leq 6 \} ,
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(i\)</span> is the result of the first roll and <span class="process-math">\(j\)</span> is the result of the second roll. Each element of <span class="process-math">\(S\)</span> has the same probability <span class="process-math">\(1/36\)</span> of being an outcome of rolling the die twice.</div>
-</div> <div class="para logical" id="ex-probability-of-sum-of-dice-4">
+</div>
+<div class="para logical" id="ex-probability-of-sum-of-dice-4">
 <div class="para">The event we are interested in is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1223,7 +1261,8 @@ A_1 = \{ (i,j) \in S : i,j \text{ are both even} \}
 A_2 = \{ (i,j) \in S :  i,j \text{ are both odd} \} .
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ex-probability-of-sum-of-dice-5">
+</div>
+<div class="para logical" id="ex-probability-of-sum-of-dice-5">
 <div class="para">By <a href="section3_1-probability.html#thm-probability-of-sequence-of-disjoint" class="xref" data-knowl="./knowl/xref/thm-probability-of-sequence-of-disjoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.10: Probability of a Sequence of Disjoint Events">Theorem 3.1.10</a>, we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-probability-of-sequence-of-disjoint.html">
 \begin{equation*}
@@ -1239,7 +1278,8 @@ P(A) = P\left(A_1\right) + P\left(A_2\right) =
 </div>
 </div></article><article class="definition definition-like" id="def-complement-of-event"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Complement of an event.</span>
-</h4> <div class="para" id="def-complement-of-event-3-1">If <span class="process-math">\(A\)</span> is an event, then <span class="process-math">\(\bar{A}\)</span> denotes its <em class="emphasis">complement</em>, i.e., <span class="process-math">\(\bar{A} = S - A\text{.}\)</span> Intuitively, the sum of <span class="process-math">\(P(A)\)</span> and <span class="process-math">\(P \left( \bar{A} \right)\)</span> must be equal to one, because the event <span class="process-math">\(A\)</span> either occurs or does not occur. Observe that this is similar to the <a href="section1_2-basic_Set_Operations.html#set_complement" class="xref" data-knowl="./knowl/xref/set_complement.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.10: Complement of a set">Definition 1.2.10</a>.</div></article><article class="theorem theorem-like" id="thm-probability-of-complements"><h4 class="heading">
+</h4>
+<div class="para" id="def-complement-of-event-3-1">If <span class="process-math">\(A\)</span> is an event, then <span class="process-math">\(\bar{A}\)</span> denotes its <em class="emphasis">complement</em>, i.e., <span class="process-math">\(\bar{A} = S - A\text{.}\)</span> Intuitively, the sum of <span class="process-math">\(P(A)\)</span> and <span class="process-math">\(P \left( \bar{A} \right)\)</span> must be equal to one, because the event <span class="process-math">\(A\)</span> either occurs or does not occur. Observe that this is similar to the <a href="section1_2-basic_Set_Operations.html#set_complement" class="xref" data-knowl="./knowl/xref/set_complement.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.10: Complement of a set">Definition 1.2.10</a>.</div></article><article class="theorem theorem-like" id="thm-probability-of-complements"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of Complements.</span>
 </h4>
 <div class="para logical" id="thm-probability-of-complements-2-1">
@@ -1291,8 +1331,10 @@ P(A \cup B) = P(A) + P(B) - P(A \cap B)\text{.}
 </div>
 </div></article></details><article class="example example-like" id="ex-probability-of-divisible"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Probability a number is divisible by 2 or 3.</span>
-</h4> <div class="para" id="ex-probability-of-divisible-2">Assume we choose a number <span class="process-math">\(x\)</span> in the sample space <span class="process-math">\(S=\{1,2,\ldots,1000\}\text{,}\)</span> such that each element has the same probability <span class="process-math">\(1/1000\)</span> of being chosen. What is the probability that <span class="process-math">\(x\)</span> is divisible by <span class="process-math">\(2\)</span> or <span class="process-math">\(3\text{?}\)</span>
-</div> <div class="para logical" id="ex-probability-of-divisible-3">
+</h4>
+<div class="para" id="ex-probability-of-divisible-2">Assume we choose a number <span class="process-math">\(x\)</span> in the sample space <span class="process-math">\(S=\{1,2,\ldots,1000\}\text{,}\)</span> such that each element has the same probability <span class="process-math">\(1/1000\)</span> of being chosen. What is the probability that <span class="process-math">\(x\)</span> is divisible by <span class="process-math">\(2\)</span> or <span class="process-math">\(3\text{?}\)</span>
+</div>
+<div class="para logical" id="ex-probability-of-divisible-3">
 <div class="para">Define the events</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-probability-of-union.html">
 \begin{equation*}
@@ -1347,7 +1389,8 @@ P(A \cup B) &amp; = P(A) + P(B) - P(A \cap B) \\
 </div>
 </div></article><article class="definition definition-like" id="def-uniform-distribution"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.16</span><span class="period">.</span><span class="space"> </span><span class="title">Uniform Distributions or Probability Spaces.</span>
-</h4> <div class="para logical" id="def-uniform-distribution-3-1">
+</h4>
+<div class="para logical" id="def-uniform-distribution-3-1">
 <div class="para">A <em class="emphasis">uniform distribution</em> or <em class="emphasis">uniform probability space</em> is a pair <span class="process-math">\((S,P)\text{,}\)</span> where <span class="process-math">\(S\)</span> is a finite sample space and the probability function <span class="process-math">\(P : S \rightarrow \mathbb{R}\)</span> satisfies</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1380,7 +1423,9 @@ P(A) = \sum_{x \in A} P(x)
 </div>
 </div></article></details><article class="example example-like" id="ex-probability-of-full_house"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.18</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of a Full House.</span>
-</h4> <div class="para" id="ex-probability-of-full_house-2">In a standard deck of <span class="process-math">\(52\)</span> cards, each card has a <em class="emphasis">suit</em> and a <em class="emphasis">rank</em>. There are four suits (spades, hearts, clubs, and diamonds), and 13 ranks (Ace, <span class="process-math">\(2,3,4,5,6,7,8,9,10\text{,}\)</span> Jack, Queen, and King). A hand of five cards is called a <em class="emphasis">full house</em>, if three of the cards are of the same rank and the other two cards are also of the same (but necessarily different) rank. For example, the hand: <blockquote class="blockquote" id="ex-probability-of-full_house-2-6"><div class="para" id="ex-probability-of-full_house-2-6-1">7 of spades , 7 of hearts , 7 of diamonds , Q of spades , Q of clubs</div></blockquote> is a full house, because it consists of three sevens and two Queens.</div> <div class="para logical" id="ex-probability-of-full_house-3">
+</h4>
+<div class="para" id="ex-probability-of-full_house-2">In a standard deck of <span class="process-math">\(52\)</span> cards, each card has a <em class="emphasis">suit</em> and a <em class="emphasis">rank</em>. There are four suits (spades, hearts, clubs, and diamonds), and 13 ranks (Ace, <span class="process-math">\(2,3,4,5,6,7,8,9,10\text{,}\)</span> Jack, Queen, and King). A hand of five cards is called a <em class="emphasis">full house</em>, if three of the cards are of the same rank and the other two cards are also of the same (but necessarily different) rank. For example, the hand: <blockquote class="blockquote" id="ex-probability-of-full_house-2-6"><div class="para" id="ex-probability-of-full_house-2-6-1">7 of spades , 7 of hearts , 7 of diamonds , Q of spades , Q of clubs</div></blockquote> is a full house, because it consists of three sevens and two Queens.</div>
+<div class="para logical" id="ex-probability-of-full_house-3">
 <div class="para">Assume we get a uniformly random hand of five cards. What is the probability that this hand is a full house? To answer this question, first observe that a hand of five cards is a <em class="emphasis">subset</em> of the set of all <span class="process-math">\(52\)</span> cards. Thus, the sample space is the set <span class="process-math">\(S\)</span> consisting of all <span class="process-math">\(5\)</span>-element subsets of the set of <span class="process-math">\(52\)</span> cards and, therefore,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1388,7 +1433,8 @@ P(A) = \sum_{x \in A} P(x)
 \end{equation*}
 </div>
 <div class="para">Each hand of five cards has a probability of <span class="process-math">\(1/|S|\)</span> of being chosen.</div>
-</div> <div class="para logical" id="ex-probability-of-full_house-4">
+</div>
+<div class="para logical" id="ex-probability-of-full_house-4">
 <div class="para">Since we are interested in the probability of a random hand being a full house, we define the event <span class="process-math">\(A\)</span> to be the set of all elements in <span class="process-math">\(S\)</span> that are full houses. By <a href="section3_1-probability.html#thm-probability-of-uniform" class="xref" data-knowl="./knowl/xref/thm-probability-of-uniform.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.17: Probability of Events in a Uniform Distribution">Theorem 3.1.17</a>, we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-probability-of-uniform.html ./knowl/xref/rule-of-products.html">
 \begin{equation*}
@@ -1396,7 +1442,7 @@ P(A) = \frac{|A|}{|S|} .
 \end{equation*}
 </div>
 <div class="para">Thus, to determine <span class="process-math">\(P(A)\text{,}\)</span> it remains to determine the size of the set <span class="process-math">\(A\text{,}\)</span> i.e., the total number of full houses. For this, we will use the Rule of Products <a href="section2_1-the-rule-of-products.html#rule-of-products" class="internal" title="Subsection 2.1.2: The Rule Of Products">Subsection 2.1.2</a>:</div>
-<ul class="disc">
+<ul class="disc" id="ex-probability-of-full_house-4-8">
 <li id="ex-probability-of-full_house-4-8-1"><div class="para" id="ex-probability-of-full_house-4-8-1-1">The procedure is “choose a full house”.</div></li>
 <li id="ex-probability-of-full_house-4-8-2"><div class="para" id="ex-probability-of-full_house-4-8-2-1">First task: Choose the rank of the three cards in the full house. There are <span class="process-math">\(13\)</span> ways to do this.</div></li>
 <li id="ex-probability-of-full_house-4-8-3"><div class="para" id="ex-probability-of-full_house-4-8-3-1">Second task: Choose the suits of these three cards. There are <span class="process-math">\(4 \choose 3\)</span> ways to do this.</div></li>
@@ -1410,7 +1456,8 @@ P(A) = \frac{|A|}{|S|} .
 = 3,744 . 
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ex-probability-of-full_house-5">
+</div>
+<div class="para logical" id="ex-probability-of-full_house-5">
 <div class="para">We conclude that the probability of getting a full house is equal to</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1419,10 +1466,13 @@ P(A) = \frac{|A|}{|S|} = \frac{3,744}{2,598,960} \approx 0.00144 .
 </div>
 </div></article><article class="example example-like" id="ex-monty-hall"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">The Monty Hall Problem.</span>
-</h4> <div class="para" id="ex-monty-hall-2">The Monty Hall Problem is a well-known puzzle in probability theory. It is named after the host, Monty Hall, of the American television game show <em class="emphasis">Let’s Make a Deal</em>. The problem became famous in 1990, when (part of) a reader’s letter was published in Marilyn vos Savant’s column <em class="emphasis">Ask Marilyn</em> in the magazine <em class="emphasis">Parade</em>: <blockquote class="blockquote" id="ex-monty-hall-2-4"><div class="para" id="ex-monty-hall-2-4-1">Suppose you’re on a game show, and you’re given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what’s behind the doors, opens another door, say No. 3, which has a goat. He then says to you, “Do you want to switch?” Is it to your advantage to switch your choice?</div></blockquote>
-</div> <div class="para" id="ex-monty-hall-3">Note that the host can always open a door that has a goat behind it. After the host has opened No.3, we know that the car is either behind No.1 or No.2, and it seems that both these doors have the same probability (i.e., <span class="process-math">\(50\%\)</span>) of having the car behind them. We will prove below, however, that this is not true: It is indeed to our advantage to switch our choice.</div> <div class="para logical" id="ex-monty-hall-4">
+</h4>
+<div class="para" id="ex-monty-hall-2">The Monty Hall Problem is a well-known puzzle in probability theory. It is named after the host, Monty Hall, of the American television game show <em class="emphasis">Let’s Make a Deal</em>. The problem became famous in 1990, when (part of) a reader’s letter was published in Marilyn vos Savant’s column <em class="emphasis">Ask Marilyn</em> in the magazine <em class="emphasis">Parade</em>: <blockquote class="blockquote" id="ex-monty-hall-2-4"><div class="para" id="ex-monty-hall-2-4-1">Suppose you’re on a game show, and you’re given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what’s behind the doors, opens another door, say No. 3, which has a goat. He then says to you, “Do you want to switch?” Is it to your advantage to switch your choice?</div></blockquote>
+</div>
+<div class="para" id="ex-monty-hall-3">Note that the host can always open a door that has a goat behind it. After the host has opened No.3, we know that the car is either behind No.1 or No.2, and it seems that both these doors have the same probability (i.e., <span class="process-math">\(50\%\)</span>) of having the car behind them. We will prove below, however, that this is not true: It is indeed to our advantage to switch our choice.</div>
+<div class="para logical" id="ex-monty-hall-4">
 <div class="para">We assume that the car is equally likely to be behind any of the three doors. Moreover, the host knows what is behind each door.</div>
-<ul class="disc">
+<ul class="disc" id="ex-monty-hall-4-1">
 <li id="ex-monty-hall-4-1-1"><div class="para" id="p-derived-ex-monty-hall-4-1-1">We initially choose one of the three doors uniformly at random; this door remains closed.</div></li>
 <li id="ex-monty-hall-4-1-2"><div class="para" id="p-derived-ex-monty-hall-4-1-2">The host opens one of the other two doors that has a goat behind it.</div></li>
 <li id="ex-monty-hall-4-1-3"><div class="para" id="p-derived-ex-monty-hall-4-1-3">Our final choice is to switch to the other door that is still closed.</div></li>
@@ -1447,7 +1497,7 @@ P(A) = P(B) = 2/3 .
 </div></article><article class="exercise exercise-like" id="section3_1-probability-6-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="section3_1-probability-6-4-1-1">
 <div class="para">Give a possible sample space <span class="process-math">\(S\)</span> for each of the following experiments:</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="section3_1-probability-6-4-1-1-2">
 <li id="section3_1-probability-6-4-1-1-2-1"><div class="para" id="section3_1-probability-6-4-1-1-2-1-1">An election decides between two candidates <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span>
 </div></li>
 <li id="section3_1-probability-6-4-1-1-2-2"><div class="para" id="section3_1-probability-6-4-1-1-2-2-1">A two-sided coin is tossed.</div></li>
@@ -1456,7 +1506,7 @@ P(A) = P(B) = 2/3 .
 <li id="section3_1-probability-6-4-1-1-2-5"><div class="para" id="section3_1-probability-6-4-1-1-2-5-1">You receive a grade in this course.</div></li>
 </ol>
 </div>
-<div class="solutions"><details id="section3_1-probability-6-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="section3_1-probability-6-4-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="section3_1-probability-6-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="section3_1-probability-6-4-2-1"><ol class="lower-alpha lower-alpha-level-1" id="section3_1-probability-6-4-2-1-1">
 <li id="section3_1-probability-6-4-2-1-1-1"><div class="para" id="section3_1-probability-6-4-2-1-1-1-1">There are three possible outcomes, <span class="process-math">\(A\)</span> wins <span class="process-math">\((A_w)\text{,}\)</span> <span class="process-math">\(B\)</span> wins <span class="process-math">\((B_w)\text{,}\)</span>or it is a tie <span class="process-math">\((T)\text{.}\)</span> The sample space would be the set <span class="process-math">\(S = \{A_w, B_w, T\}\)</span>
 </div></li>
 <li id="section3_1-probability-6-4-2-1-1-2"><div class="para" id="section3_1-probability-6-4-2-1-1-2-1">The sample space is <span class="process-math">\(S = \{H,T\}\text{.}\)</span>
@@ -1467,13 +1517,13 @@ P(A) = P(B) = 2/3 .
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="section3_1-probability-6-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para" id="section3_1-probability-6-5-1-1">For which of the cases in Exercise 3 would it be reasonable to assign the uniform distribution function?</div></article><article class="exercise exercise-like" id="section3_1-probability-6-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4> <div class="para logical" id="section3_1-probability-6-6-1-1">
 <div class="para">Consider a coin that has <span class="process-math">\(0\)</span> on one side and <span class="process-math">\(1\)</span> on the other side. We flip this coin once and roll a die twice, and are interested in the product of the three numbers.</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="section3_1-probability-6-6-1-1-3">
 <li id="section3_1-probability-6-6-1-1-3-1"><div class="para" id="p-derived-section3_1-probability-6-6-1-1-3-1">What is the sample space?</div></li>
 <li id="section3_1-probability-6-6-1-1-3-2"><div class="para" id="p-derived-section3_1-probability-6-6-1-1-3-2">How many possible events are there?</div></li>
 <li id="section3_1-probability-6-6-1-1-3-3"><div class="para" id="p-derived-section3_1-probability-6-6-1-1-3-3">If both the coin and the die are fair, how would you define the probability function <span class="process-math">\(P\)</span> for this sample space?</div></li>
 </ol>
 </div>
-<div class="solutions"><details id="section3_1-probability-6-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="section3_1-probability-6-6-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="section3_1-probability-6-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="section3_1-probability-6-6-2-1"><ol class="lower-alpha ol-marker-1" id="section3_1-probability-6-6-2-1-1">
 <li id="section3_1-probability-6-6-2-1-1-1"><div class="para logical" id="section3_1-probability-6-6-2-1-1-1-1">
 <div class="para">The sample space is the products of the combinations of 1 coin flip and two dice rolls. We can use a matrix similar to  <a href="section3_1-probability.html#ex-rolling-a-die-twice" class="xref" data-knowl="./knowl/xref/ex-rolling-a-die-twice.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.7: Rolling a Die Twice">Example 3.1.7</a> above for the case where the coin flip results in a 0. The product for all entries is 0. Then we can make another matrix of the same size where the coin flip results in a 1. The product is just the product of the two dice rolls</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-rolling-a-die-twice.html">
@@ -1557,7 +1607,7 @@ S = \{HHH,\ HHT,\ HTH,\ HTT,\ THH,\ THT,\ TTH,\ TTT\}
 \end{equation*}
 </div>
 <div class="para">(see <a href="section3_1-probability.html#ex-flipping-a-coin" class="xref" data-knowl="./knowl/xref/ex-flipping-a-coin.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.5: Flipping a Coin">Example 3.1.5</a> and <a href="section3_1-probability.html#ex-flipping-a-coin-twice" class="xref" data-knowl="./knowl/xref/ex-flipping-a-coin-twice.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.6: Flipping a Coin Twice">Example 3.1.6</a>).</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="section3_1-probability-6-7-1-1-4">
 <li id="section3_1-probability-6-7-1-1-4-1"><div class="para" id="section3_1-probability-6-7-1-1-4-1-1"><span class="process-math">\(E = \{HHH,HHT,HTH,HTT\}\text{.}\)</span></div></li>
 <li id="section3_1-probability-6-7-1-1-4-2"><div class="para" id="section3_1-probability-6-7-1-1-4-2-1"><span class="process-math">\(E = \{HHH,TTT\}\text{.}\)</span></div></li>
 <li id="section3_1-probability-6-7-1-1-4-3"><div class="para" id="section3_1-probability-6-7-1-1-4-3-1"><span class="process-math">\(E = \{HHT,HTH,THH\}\text{.}\)</span></div></li>
@@ -1566,7 +1616,7 @@ S = \{HHH,\ HHT,\ HTH,\ HTT,\ THH,\ THT,\ TTH,\ TTT\}
 </ol>
 </div> <div class="para" id="section3_1-probability-6-7-1-2">What are the probabilities of each of these events?</div></article><article class="exercise exercise-like" id="section3_1-probability-6-8"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4> <div class="para" id="section3_1-probability-6-8-1-1">Let <span class="process-math">\(n\)</span> be a positive integer. We flip a fair coin <span class="process-math">\(2n\)</span> times and consider the possible outcomes, which are strings of length <span class="process-math">\(2n\)</span> with each character being <span class="process-math">\(H\)</span> (= heads) or <span class="process-math">\(T\)</span> (= tails). Thus, we take the sample space <span class="process-math">\(S\)</span> to be the set of all such strings. Since our coin is fair, each string of <span class="process-math">\(S\)</span> should have the same probability. Thus, we define <span class="process-math">\(P(s) = 1/|S|\)</span> for each string <span class="process-math">\(s\)</span> in <span class="process-math">\(S\text{.}\)</span> In other words, we have a uniform probability space.</div> <div class="para logical" id="section3_1-probability-6-8-1-2">
 <div class="para">You are asked to determine the probability that in the sequence of <span class="process-math">\(2n\)</span> flips, the coin comes up heads exactly <span class="process-math">\(n\)</span> times:</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="section3_1-probability-6-8-1-2-3">
 <li id="section3_1-probability-6-8-1-2-3-1"><div class="para" id="p-derived-section3_1-probability-6-8-1-2-3-1">What is the event <span class="process-math">\(A\)</span> that describes this?</div></li>
 <li id="section3_1-probability-6-8-1-2-3-2"><div class="para" id="p-derived-section3_1-probability-6-8-1-2-3-2">Determine <span class="process-math">\(P(A)\text{.}\)</span>
 </div></li>
@@ -1575,7 +1625,7 @@ S = \{HHH,\ HHT,\ HTH,\ HTT,\ THH,\ THT,\ TTH,\ TTT\}
 <div class="solutions"><details id="section3_1-probability-6-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="section3_1-probability-6-8-2-1">
 <div class="para">
 <span class="process-math">\(|S| = 2^{2n} = (2^2)^n = 4^n\)</span> because each of the <span class="process-math">\(2n\)</span> flips has 2 possible outcomes.</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="section3_1-probability-6-8-2-1-3">
 <li id="section3_1-probability-6-8-2-1-3-1"><div class="para" id="section3_1-probability-6-8-2-1-3-1-1">Let <span class="process-math">\(A\)</span> be the set of all sequences in <span class="process-math">\(S\)</span> that have exactly <span class="process-math">\(n\)</span> heads.</div></li>
 <li id="section3_1-probability-6-8-2-1-3-2"><div class="para logical" id="section3_1-probability-6-8-2-1-3-2-1">
 <div class="para">We must determine <span class="process-math">\(|A|\text{.}\)</span> To do this we must choose <span class="process-math">\(n\)</span> flips to come up heads, out of <span class="process-math">\(2n\)</span> flips total.</div>
@@ -1592,7 +1642,7 @@ S = \{HHH,\ HHT,\ HTH,\ HTT,\ THH,\ THT,\ TTH,\ TTT\}
 </ol>
 </div></div></details></div></article><article class="exercise exercise-like" id="section3_1-probability-6-9"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4> <div class="para logical" id="section3_1-probability-6-9-1-1">
 <div class="para">A cup contains two pennies (P), one nickel (N), and one dime (D). You choose one coin uniformly at random, and then you choose a second coin from the remaining coins, again uniformly at random.</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="section3_1-probability-6-9-1-1-1">
 <li id="section3_1-probability-6-9-1-1-1-1"><div class="para" id="p-derived-section3_1-probability-6-9-1-1-1-1">Let <span class="process-math">\(S\)</span> be the sample space consisting of all ordered pairs of letters P, N, and D that represent the possible outcomes. Write out all elements of <span class="process-math">\(S\text{.}\)</span>
 </div></li>
 <li id="section3_1-probability-6-9-1-1-1-2"><div class="para" id="p-derived-section3_1-probability-6-9-1-1-1-2">Determine the probability for each element in this sample space.</div></li>
@@ -1605,11 +1655,11 @@ S = \{HHH,\ HHT,\ HTH,\ HTT,\ THH,\ THT,\ TTH,\ TTT\}
 <div class="solutions"><details id="section3_1-probability-6-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="section3_1-probability-6-10-2-1"><span class="process-math">\(\frac{11}{12}\)</span></div></div></details></div></article><article class="exercise exercise-like" id="section3_1-probability-6-11"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
 <div class="para" id="section3_1-probability-6-11-1-1">A die is loaded in such a way that the probability of each face turning up is proportional to the number of dots on that face. (For example, a six is three times as probable as a two.) What is the probability of getting an even number in one throw?</div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="chapter_3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section3_2-Bayes.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="chapter_3.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section3_2-Bayes.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

@@ -5,30 +5,20 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Some Common Recurrence Relations</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Discrete Mathematics for Computer Science">
-<meta property="book:author" content="Ken Levasseur">
-<meta property="book:author" content="Al Doerr">
-<meta property="book:author" content="Michiel Smid">
-<meta property="book:author" content="Oscar Levin">
-<meta property="book:author" content="Charles M. Grinstead">
-<meta property="book:author" content="J. Laurie Snell">
-<meta property="book:author" content="Eric Lehman">
-<meta property="book:author" content="F. Thomson Leighton">
-<meta property="book:author" content="Albert R Meyer">
-<meta property="book:author" content="Jeff Erickson">
-<meta property="book:author" content="Kenneth P. Bogart">
-<meta property="book:author" content="Carol Chritchlow">
-<meta property="book:author" content="David Eck">
-<meta property="book:author" content="OpenDSA Project">
-<meta property="book:author" content="L.J. Miller">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -100,10 +90,64 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Discrete Mathematics for Computer Science">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ken Levasseur">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Al Doerr">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Michiel Smid">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Oscar Levin">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Charles M. Grinstead">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="J. Laurie Snell">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Eric Lehman">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="F. Thomson Leighton">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Albert R Meyer">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Jeff Erickson">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Kenneth P. Bogart">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Carol Chritchlow">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="David Eck">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="OpenDSA Project">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="L.J. Miller">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "pre.sagecell-sage",
+  "inputLocation": "div.sagecell-sage",
   "linked": true,
   "linkKey": "linked-sage",
   "autoeval": false,
@@ -112,36 +156,14 @@ sagecell.makeSagecell({
   ],
   "evalButtonText": "Evaluate (Sage)"
 });
-</script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
 <p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -152,7 +174,8 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s-recurrence-relations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_13_recurrence_relns.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s-generating-functions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s-recurrence-relations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_13_recurrence_relns.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s-generating-functions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
 \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
 \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
@@ -185,12 +208,12 @@ sagecell.makeSagecell({
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -754,9 +777,9 @@ sagecell.makeSagecell({
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-recurrence-relations.html#exercises-13-1" class="internal"><span class="codenumber">13.1.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="s-some-common-rrs.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Some Common Recurrence Relations</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-some-common-rrs.html#rr-basic-example" class="internal"><span class="codenumber">13.2.1</span> <span class="title">A First Basic Example</span></a></div></li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s-some-common-rrs.html#analysis-of-binary-search" class="internal"><span class="codenumber">13.2.2</span> <span class="title">An Analysis of the Binary Search Algorithm</span></a></div>
@@ -982,7 +1005,7 @@ sagecell.makeSagecell({
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s-some-common-rrs"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s-some-common-rrs"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">13.2</span><span class="space"> </span><span class="title">Some Common Recurrence Relations</span>
 </h2>
 <section class="introduction" id="s-some-common-rrs-2"><div class="para" id="s-some-common-rrs-2-1">In this section we intend to examine a variety of recurrence relations that are not finite-order linear with constant coefficients. For each part of this section, we will consider a concrete example, present a solution, and, if possible, examine a more general form of the original relation.</div></section><section class="subsection" id="rr-basic-example"><h3 class="heading hide-type">
@@ -1030,7 +1053,8 @@ P(n)=\prod _{k=0}^n f(k)
 </div></section><section class="subsection" id="analysis-of-binary-search"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">13.2.2</span><span class="space"> </span><span class="title">An Analysis of the Binary Search Algorithm</span>
 </h3>
-<section class="introduction" id="analysis-of-binary-search-2"><div class="para" id="analysis-of-binary-search-2-1">Suppose you intend to use a binary search algorithm (see <a href="section9_2-Recursive_Algorithms.html#subsec9_2_2-recursive-searching" class="internal" title="Subsection 9.2.2: Recursive Searching">Subsection 9.2.2</a>) on lists of zero or more sorted items, and that the items are stored in an array, so that you have easy access to each item. A natural question to ask is “How much time will it take to complete the search?” When a question like this is asked, the time we refer to is often the so-called worst-case time. That is, if we were to search through <span class="process-math">\(n\)</span> items, what is the longest amount of time that we will need to complete the search? In order to make an analysis such as this independent of the computer to be used, time is measured by counting the number of steps that are executed. Each step (or sequence of steps) is assigned an absolute time, or weight; therefore, our answer will not be in seconds, but in absolute time units. If the steps in two different algorithms are assigned weights that are consistent, then analyses of the algorithms can be used to compare their relative efficiencies. There are two major steps that must be executed in a call of the binary search algorithm:</div> <div class="para logical" id="analysis-of-binary-search-2-2"><ol class="decimal">
+<section class="introduction" id="analysis-of-binary-search-2"><div class="para" id="analysis-of-binary-search-2-1">Suppose you intend to use a binary search algorithm (see <a href="section9_2-Recursive_Algorithms.html#subsec9_2_2-recursive-searching" class="internal" title="Subsection 9.2.2: Recursive Searching">Subsection 9.2.2</a>) on lists of zero or more sorted items, and that the items are stored in an array, so that you have easy access to each item. A natural question to ask is “How much time will it take to complete the search?” When a question like this is asked, the time we refer to is often the so-called worst-case time. That is, if we were to search through <span class="process-math">\(n\)</span> items, what is the longest amount of time that we will need to complete the search? In order to make an analysis such as this independent of the computer to be used, time is measured by counting the number of steps that are executed. Each step (or sequence of steps) is assigned an absolute time, or weight; therefore, our answer will not be in seconds, but in absolute time units. If the steps in two different algorithms are assigned weights that are consistent, then analyses of the algorithms can be used to compare their relative efficiencies. There are two major steps that must be executed in a call of the binary search algorithm:</div>
+<div class="para logical" id="analysis-of-binary-search-2-2"><ol class="decimal ol-marker-2" id="analysis-of-binary-search-2-2-1">
 <li id="analysis-of-binary-search-2-2-1-1"><div class="para" id="analysis-of-binary-search-2-2-1-1-1">If the lower index is less than or equal to the upper index, then the middle of the list is located and its key is compared to the value that you are searching for.</div></li>
 <li id="analysis-of-binary-search-2-2-1-2"><div class="para logical" id="analysis-of-binary-search-2-2-1-2-1">
 <div class="para">In the worst case, the algorithm must be executed with a list that is roughly half as large as in the previous execution. If we assume that Step 1 takes one time unit and <span class="process-math">\(T(n)\)</span> is the worst-case time for a list of <span class="process-math">\(n\)</span> items, then</div>
@@ -1052,7 +1076,8 @@ k + 1\)</span> for some <span class="process-math">\(k\geq 0\text{,}\)</span> th
 + 1)^{st}\)</span> item, and no matter what half of the list the search is directed to, the reduced list will have <span class="process-math">\(k = \lfloor n/2\rfloor\)</span> items. On the other hand, if <span class="process-math">\(n\)</span> is even, then <span class="process-math">\(n
 = 2 k\)</span> for <span class="process-math">\(k&gt;0\text{.}\)</span> The middle of the list will be the <span class="process-math">\(k^{th}\)</span> item, and the worst case will occur if we are directed to the <span class="process-math">\(k\)</span> items that come after the middle (the <span class="process-math">\((k + 1)^{st}\)</span> through <span class="process-math">\((2k)^{th}\)</span> items). Again the reduced list has <span class="process-math">\(\lfloor n/2 \rfloor\)</span> items.</div>
 </div></li>
-</ol></div> <div class="para logical" id="analysis-of-binary-search-2-3">
+</ol></div>
+<div class="para logical" id="analysis-of-binary-search-2-3">
 <div class="para">
 <em class="emphasis">Solution to <a href="s-some-common-rrs.html#analysis-of-binary-search-2-2-1-2-1-3" class="xref" data-knowl="./knowl/xref/eq-bin-search-recursion.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 13.2.1">(13.2.1)</a> and <a href="s-some-common-rrs.html#analysis-of-binary-search-2-2-1-2-1-4" class="xref" data-knowl="./knowl/xref/eq-bin-search-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 13.2.2">(13.2.2)</a>.</em> To determine <span class="process-math">\(T(n)\text{,}\)</span> the easiest case is when <span class="process-math">\(n\)</span> is a power of two. If we compute <span class="process-math">\(T \left(2^m\right)\text{,}\)</span> <span class="process-math">\(m\geq
 0\)</span> , by iteration, our results are</div>
@@ -1068,7 +1093,8 @@ T(8) = 1 + T(4) = 4\\
 </div>
 <div class="para">The pattern that is established makes it clear that <span class="process-math">\(T\left(2^m\right)
 = m + 1\text{.}\)</span> This result would seem to indicate that every time you double the size of your list, the search time increases by only one unit.</div>
-</div> <div class="para logical" id="analysis-of-binary-search-2-4">
+</div>
+<div class="para logical" id="analysis-of-binary-search-2-4">
 <div class="para">A more complete solution can be obtained if we represent <span class="process-math">\(n\)</span> in binary form. For each <span class="process-math">\(n\geq 1\text{,}\)</span> there exists a non-negative integer <span class="process-math">\(r\)</span> such that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-inequality-84.html" id="analysis-of-binary-search-2-4-4">
 \begin{gather}
@@ -1077,8 +1103,10 @@ T(8) = 1 + T(4) = 4\\
 </div>
 <div class="para">For example, if <span class="process-math">\(n = 21\text{,}\)</span> <span class="process-math">\(2^4 \leq 21 &lt; 2^5\text{;}\)</span> therefore, <span class="process-math">\(r = 5\text{.}\)</span> If <span class="process-math">\(n\)</span> satisfies \<a href="s-some-common-rrs.html#analysis-of-binary-search-2-4-4" class="xref" data-knowl="./knowl/xref/eq-inequality-84.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 13.2.3">(13.2.3)</a>, its binary representation requires <span class="process-math">\(r\)</span> digits. For example, <span class="process-math">\(21_{\text{ten}}\)</span> = <span class="process-math">\(10101_{\textrm{two}}\text{.}\)</span>
 </div>
-</div> <div class="para" id="analysis-of-binary-search-2-5">In general, <span class="process-math">\(n = \left(a_1a_2\ldots a_r\right)_{\textrm{two}}\text{.}\)</span> where <span class="process-math">\(a_1=1\text{.}\)</span> Note that in this form, <span class="process-math">\(\lfloor n/2\rfloor\)</span> is easy to describe: it is the <span class="process-math">\(r-1\)</span> digit binary number <span class="process-math">\(\left(a_1a_2\ldots a_{r-1}\right)_{\textrm{two}}\)</span>
-</div> <div class="para logical" id="analysis-of-binary-search-2-6">
+</div>
+<div class="para" id="analysis-of-binary-search-2-5">In general, <span class="process-math">\(n = \left(a_1a_2\ldots a_r\right)_{\textrm{two}}\text{.}\)</span> where <span class="process-math">\(a_1=1\text{.}\)</span> Note that in this form, <span class="process-math">\(\lfloor n/2\rfloor\)</span> is easy to describe: it is the <span class="process-math">\(r-1\)</span> digit binary number <span class="process-math">\(\left(a_1a_2\ldots a_{r-1}\right)_{\textrm{two}}\)</span>
+</div>
+<div class="para logical" id="analysis-of-binary-search-2-6">
 <div class="para">Therefore,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1095,7 +1123,9 @@ T(n) &amp;= T\left(a_1a_2\ldots a_r\right)\\
 \end{equation*}
 </div>
 <div class="para">.</div>
-</div> <div class="para" id="analysis-of-binary-search-2-7">From the pattern that we’ve just established, <span class="process-math">\(T(n)\)</span> reduces to <span class="process-math">\(r\text{.}\)</span> A formal inductive proof of this statement is possible. However, we expect that most readers would be satisfied with the argument above. Any skeptics are invited to provide the inductive proof.</div> <div class="para logical" id="analysis-of-binary-search-2-8">
+</div>
+<div class="para" id="analysis-of-binary-search-2-7">From the pattern that we’ve just established, <span class="process-math">\(T(n)\)</span> reduces to <span class="process-math">\(r\text{.}\)</span> A formal inductive proof of this statement is possible. However, we expect that most readers would be satisfied with the argument above. Any skeptics are invited to provide the inductive proof.</div>
+<div class="para logical" id="analysis-of-binary-search-2-8">
 <div class="para">For those who prefer to see a numeric example, suppose <span class="process-math">\(n = 21\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1111,8 +1141,10 @@ T(21) &amp;= T(10101) \\
 \end{split}
 \end{equation*}
 </div>
-</div> <div class="para" id="analysis-of-binary-search-2-9">Our general conclusion is that the solution to <a href="s-some-common-rrs.html#analysis-of-binary-search-2-2-1-2-1-3" class="xref" data-knowl="./knowl/xref/eq-bin-search-recursion.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 13.2.1">(13.2.1)</a> and <a href="s-some-common-rrs.html#analysis-of-binary-search-2-2-1-2-1-4" class="xref" data-knowl="./knowl/xref/eq-bin-search-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 13.2.2">(13.2.2)</a> is that for <span class="process-math">\(n\geq 1\text{,}\)</span> <span class="process-math">\(T(n) = r\text{,}\)</span> where <span class="process-math">\(2^{r-1}\leq n &lt; 2^r\text{.}\)</span>
-</div> <div class="para" id="analysis-of-binary-search-2-10">A less cumbersome statement of this fact is that <span class="process-math">\(T(n)=\left\lfloor
+</div>
+<div class="para" id="analysis-of-binary-search-2-9">Our general conclusion is that the solution to <a href="s-some-common-rrs.html#analysis-of-binary-search-2-2-1-2-1-3" class="xref" data-knowl="./knowl/xref/eq-bin-search-recursion.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 13.2.1">(13.2.1)</a> and <a href="s-some-common-rrs.html#analysis-of-binary-search-2-2-1-2-1-4" class="xref" data-knowl="./knowl/xref/eq-bin-search-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 13.2.2">(13.2.2)</a> is that for <span class="process-math">\(n\geq 1\text{,}\)</span> <span class="process-math">\(T(n) = r\text{,}\)</span> where <span class="process-math">\(2^{r-1}\leq n &lt; 2^r\text{.}\)</span>
+</div>
+<div class="para" id="analysis-of-binary-search-2-10">A less cumbersome statement of this fact is that <span class="process-math">\(T(n)=\left\lfloor
 \log_{2}n\right\rfloor +1\text{.}\)</span> For example, <span class="process-math">\(T(21) = \left\lfloor \log_2
 21\right\rfloor + 1 = 4 + 1 = 5\text{.}\)</span>
 </div></section><section class="subsubsection" id="ss-review-of-logarithms"><h4 class="heading hide-type">
@@ -1121,7 +1153,8 @@ T(21) &amp;= T(10101) \\
 <div class="para" id="ss-review-of-logarithms-3">Any discussion of logarithms must start by establishing a base, which can be any positive number other than 1. With the exception of <a href="s-some-common-rrs.html#theorem-logs-related" class="xref" data-knowl="./knowl/xref/theorem-logs-related.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.2.5: How logarithms with different bases are related">Theorem 5</a>, our base will be 2. We will see that the use of a different base (10 and <span class="process-math">\(e\approx 2.171828\)</span> are the other common ones) only has the effect of multiplying each logarithm by a constant. Therefore, the base that you use really isn’t very important. Our choice of base 2 logarithms is convenient for the problems that we are considering.</div>
 <article class="definition definition-like" id="def-log-base-2"><h5 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">13.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Base 2 logarithm.</span>
-</h5>  <div class="para logical" id="def-log-base-2-3-1">
+</h5>
+<div class="para logical" id="def-log-base-2-3-1">
 <div class="para">The base 2 logarithm of a positive number represents an exponent and is defined by the following equivalence for any positive real numbers <span class="process-math">\(a\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1154,7 +1187,8 @@ x\)</span> also increases. However, if we move <span class="process-math">\(x\)<
 </div>
 </div></article><article class="definition definition-like" id="def-logarithm-general-base"><h5 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">13.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Logarithms base <span class="process-math">\(b\)</span>.</span>
-</h5>  <div class="para logical" id="def-logarithm-general-base-4-1">
+</h5>
+<div class="para logical" id="def-logarithm-general-base-4-1">
 <div class="para">If <span class="process-math">\(b &gt; 0\text{,}\)</span> <span class="process-math">\(b \neq 1\text{,}\)</span> then for <span class="process-math">\(a&gt;0\text{,}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1182,7 +1216,8 @@ x\Leftrightarrow b^x= a
 </h5>
 <div class="para" id="ss-review-of-logarithms-11-1">
 <span class="process-math">\(\log_210 \approx 3.32192\)</span> and <span class="process-math">\(\log_2e = 1.55269\text{.}\)</span>
-</div></article></section><section class="conclusion" id="analysis-of-binary-search-4"><div class="para" id="analysis-of-binary-search-4-1">Returning to the binary search algorithm, we can derive the final expression for <span class="process-math">\(T(n)\)</span> using the properties of logarithms, including that the logarithm function is increasing so that inequalities are maintained when taking logarithms of numbers.</div> <div class="para logical" id="analysis-of-binary-search-4-2"><div class="displaymath process-math">
+</div></article></section><section class="conclusion" id="analysis-of-binary-search-4"><div class="para" id="analysis-of-binary-search-4-1">Returning to the binary search algorithm, we can derive the final expression for <span class="process-math">\(T(n)\)</span> using the properties of logarithms, including that the logarithm function is increasing so that inequalities are maintained when taking logarithms of numbers.</div>
+<div class="para logical" id="analysis-of-binary-search-4-2"><div class="displaymath process-math">
 \begin{equation*}
 \begin{split}
 T(n)= r &amp; \Leftrightarrow 2^{r-1}\leq n &lt; 2^r\\
@@ -1192,7 +1227,8 @@ T(n)= r &amp; \Leftrightarrow 2^{r-1}\leq n &lt; 2^r\\
 &amp; \Leftrightarrow T(n) = r= \left\lfloor \log_2 n\right\rfloor +1
 \end{split}
 \end{equation*}
-</div></div> <div class="para logical" id="analysis-of-binary-search-4-3">
+</div></div>
+<div class="para logical" id="analysis-of-binary-search-4-3">
 <div class="para">We can apply several of these properties of logarithms to get an alternate expression for <span class="process-math">\(T(n)\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1205,10 +1241,12 @@ T(n)= r &amp; \Leftrightarrow 2^{r-1}\leq n &lt; 2^r\\
 \end{split}
 \end{equation*}
 </div>
-</div> <div class="para" id="analysis-of-binary-search-4-4">If the time that was assigned to Step 1 of the binary search algorithm is changed, we wouldn’t expect the form of the solution to be very different. If <span class="process-math">\(T(n)= a + T
+</div>
+<div class="para" id="analysis-of-binary-search-4-4">If the time that was assigned to Step 1 of the binary search algorithm is changed, we wouldn’t expect the form of the solution to be very different. If <span class="process-math">\(T(n)= a + T
 (\lfloor n/2 \rfloor )\)</span> with <span class="process-math">\(T(0) = c\text{,}\)</span> then <span class="process-math">\(T(n) = c + a \left\lfloor
 \log_2{2n}\right\rfloor\text{.}\)</span>
-</div> <div class="para logical" id="analysis-of-binary-search-4-5">
+</div>
+<div class="para logical" id="analysis-of-binary-search-4-5">
 <div class="para">A further generalization would be to add a coefficient to <span class="process-math">\(T(\lfloor n/2 \rfloor )\)</span> : <span class="process-math">\(T(n)= a + b T (\lfloor n/2 \rfloor )\)</span> with <span class="process-math">\(T(0) = c\text{,}\)</span> where <span class="process-math">\(a, b,
 c\in \mathbb{R}\text{,}\)</span> and <span class="process-math">\(b\neq 0\)</span> is not quite as simple to derive. First, if we consider values of <span class="process-math">\(n\)</span> that are powers of 2:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-bin-search-recursion.html ./knowl/xref/eq-bin-search-basis.html">
@@ -1231,7 +1269,8 @@ T(n) =\sum_{k=0}^r a b^k+ c b^{r+1}
 <div class="para">where <span class="process-math">\(r
 = \left\lfloor \log_2n\right\rfloor\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="analysis-of-binary-search-4-6">
+</div>
+<div class="para logical" id="analysis-of-binary-search-4-6">
 <div class="para">The first term of this expression is a geometric sum, which can be written in closed form. Let <span class="process-math">\(x\)</span> be that sum:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1251,7 +1290,8 @@ a b ^{r+1} \Rightarrow x(1-b) = a\left(1-b^{r+1}\right)
 <div class="para">Therefore, <span class="process-math">\(x =
 a\frac{b^{r+1}-1}{b-1}\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="analysis-of-binary-search-4-7">
+</div>
+<div class="para logical" id="analysis-of-binary-search-4-7">
 <div class="para">A closed form expression for <span class="process-math">\(T(n)\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1267,7 +1307,7 @@ T(n) = a\frac{b^{r+1}-1}{b-1} +\text{
 =\frac{1}{2}\left(n^2-n\right)\text{.}\)</span> The growth rate of a quadratic function such as this one is controlled by its squared term. Any other terms are dwarfed by it as <span class="process-math">\(n\)</span> gets large. For the bubble sort, this means that if we double the size of the list that we are to sort, <span class="process-math">\(n\)</span> changes to <span class="process-math">\(2n\)</span> and so <span class="process-math">\(n^2\)</span> becomes <span class="process-math">\(4n^2\)</span> . Therefore, the time needed to do a bubble sort is quadrupled. One alternative to bubble sort is the merge sort. Here is a simple version of this algorithm for sorting <span class="process-math">\(F=\{r(1),
 r(2), \ldots , r(n)\}\text{,}\)</span> <span class="process-math">\(n \geq 1\text{.}\)</span> If <span class="process-math">\(n
 = 1\text{,}\)</span> the list is sorted trivially. If <span class="process-math">\(n\geq 2\)</span> then:</div>
-<div class="para logical" id="ss-bubblesort-analysis-5"><ol class="decimal">
+<div class="para logical" id="ss-bubblesort-analysis-5"><ol class="decimal ol-marker-2" id="ss-bubblesort-analysis-5-1">
 <li id="ss-bubblesort-analysis-5-1-1"><div class="para" id="ss-bubblesort-analysis-5-1-1-1">Divide <span class="process-math">\(F\)</span> into <span class="process-math">\(F_1= \{r(1), \ldots , r(\lfloor n/2\rfloor )\}\)</span> and <span class="process-math">\(F_2= \{r(\lfloor n/2\rfloor +1), \ldots ,r(n)\}\text{.}\)</span>
 </div></li>
 <li id="ss-bubblesort-analysis-5-1-2"><div class="para" id="ss-bubblesort-analysis-5-1-2-1">Sort <span class="process-math">\(F_1\)</span> and <span class="process-math">\(F_2\)</span> using a merge sort.</div></li>
@@ -1344,7 +1384,8 @@ _2n\right\rfloor\)</span> can be considered a solution of <a href="s-some-common
 <div class="para" id="ss-derangements-3">A derangement is a permutation on a set that has no “fixed points”. Here is a formal definition:</div>
 <article class="definition definition-like" id="def-derangement"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">13.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Derangement.</span>
-</h4> <div class="para" id="def-derangement-2-1">A derangement of a nonempty set <span class="process-math">\(A\)</span> is a permutation of <span class="process-math">\(A\)</span> (i.e., a bijection from <span class="process-math">\(A\)</span> into <span class="process-math">\(A\)</span>) such that <span class="process-math">\(f(a)\neq a\)</span> for all <span class="process-math">\(a
+</h4>
+<div class="para" id="def-derangement-2-1">A derangement of a nonempty set <span class="process-math">\(A\)</span> is a permutation of <span class="process-math">\(A\)</span> (i.e., a bijection from <span class="process-math">\(A\)</span> into <span class="process-math">\(A\)</span>) such that <span class="process-math">\(f(a)\neq a\)</span> for all <span class="process-math">\(a
 \in A\text{.}\)</span>
 </div></article><div class="para" id="ss-derangements-5">If <span class="process-math">\(A = \{1, 2, . . . , n\}\text{,}\)</span> an interesting question might be “How many derangements are there of <span class="process-math">\(A\text{?}\)</span>” We know that our answer is bounded above by <span class="process-math">\(n!\text{.}\)</span> We can also expect our answer to be quite a bit smaller than <span class="process-math">\(n!\)</span> since <span class="process-math">\(n\)</span> is the image of itself for <span class="process-math">\((n-1)!\)</span> of the permutations of <span class="process-math">\(A\text{.}\)</span>
 </div>
@@ -1380,18 +1421,18 @@ D(n) = (n - 1) (D(n - 2) + D(n - 1))\tag{13.2.11}
 . . . , n\}\)</span> are drawn from a pool of <span class="process-math">\(n!\)</span> permutations, we will see what percentage of these permutations are derangements by listing the values of <span class="process-math">\(n!\text{,}\)</span> <span class="process-math">\(D(n)\text{,}\)</span> and <span class="process-math">\(\frac{D(n)}{n!}\text{.}\)</span> The results we observe will indicate that as <span class="process-math">\(n\)</span> grows, <span class="process-math">\(\frac{D(n)}{n!}\)</span> hardly changes at all. If this quotient is computed to eight decimal places, for <span class="process-math">\(n \geq 12\text{,}\)</span> <span class="process-math">\(D(n)/n!
 = 0.36787944\text{.}\)</span> The reciprocal of this number, which <span class="process-math">\(D(n)/n!\)</span> seems to be tending toward, is, to eight places, 2.7182818. This number appears in so many places in mathematics that it has its own name, <span class="process-math">\(e\text{.}\)</span> An approximate solution of our recurrence relation on <span class="process-math">\(D\)</span> is then <span class="process-math">\(D(n)\approx \frac{n!}{e}\text{.}\)</span>
 </div>
-<pre id="ss-derangements-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def D(n):
+<div id="ss-derangements-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def D(n):
 if n<=2:
 return n-1
 else:
 return (n-1)*(D(n-2)+D(n-1))
 
 map(lambda k:[k,D(k),(D(k)/factorial(k)).n(digits=8)],range(1,16))
-</script></pre></section><section class="exercises" id="exercises-13-2"><h3 class="heading hide-type">
+</script></div></section><section class="exercises" id="exercises-13-2"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">13.2.5</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercises-13-2-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="exercises-13-2-2-1-1">Solve the following recurrence relations. Indicate whether your solution is an improvement over iteration.</div> <div class="para logical" id="exercises-13-2-2-1-2"><ol class="lower-alpha">
+<div class="para" id="exercises-13-2-2-1-1">Solve the following recurrence relations. Indicate whether your solution is an improvement over iteration.</div> <div class="para logical" id="exercises-13-2-2-1-2"><ol class="lower-alpha ol-marker-1" id="exercises-13-2-2-1-2-1">
 <li id="exercises-13-2-2-1-2-1-1"><div class="para" id="exercises-13-2-2-1-2-1-1-1">
 <span class="process-math">\(n S(n) - S(n - 1) = 0\text{,}\)</span> <span class="process-math">\(S(0) = 1\text{.}\)</span>
 </div></li>
@@ -1401,7 +1442,7 @@ map(lambda k:[k,D(k),(D(k)/factorial(k)).n(digits=8)],range(1,16))
 <li id="exercises-13-2-2-1-2-1-3"><div class="para" id="exercises-13-2-2-1-2-1-3-1">
 <span class="process-math">\(U(k) -\frac{k-1}{k}U(k - 1) = 0\text{,}\)</span> <span class="process-math">\(k \geq 2\text{,}\)</span> <span class="process-math">\(U(1) = 1\)</span> .</div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-13-2-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-13-2-2-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-13-2-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-13-2-2-2-1"><ol class="lower-alpha ol-marker-1" id="exercises-13-2-2-2-1-1">
 <li id="exercises-13-2-2-2-1-1-1"><div class="para" id="exercises-13-2-2-2-1-1-1-1"><span class="process-math">\(S(n)=1/n\text{!}\)</span></div></li>
 <li id="exercises-13-2-2-2-1-1-2"><div class="para" id="exercises-13-2-2-2-1-1-2-1">
 <span class="process-math">\(U(k)=1/k\text{,}\)</span> an improvement.</div></li>
@@ -1409,7 +1450,7 @@ map(lambda k:[k,D(k),(D(k)/factorial(k)).n(digits=8)],range(1,16))
 <span class="process-math">\(T(k)=(-3)^kk\text{!,}\)</span> no improvement.</div></li>
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-13-2-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
 <div class="para" id="exercises-13-2-3-1-1">Prove that if <span class="process-math">\(n \geq 0\text{,}\)</span> <span class="process-math">\(\lfloor n/2\rfloor +\lceil n/2\rceil = n\text{.}\)</span> (Hint: Consider the cases of <span class="process-math">\(n\)</span> odd and <span class="process-math">\(n\)</span> even separately.)</div></article><article class="exercise exercise-like" id="exercises-13-2-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="exercises-13-2-4-1-1">Solve as completely as possible:</div> <div class="para logical" id="exercises-13-2-4-1-2"><ol class="lower-alpha">
+<div class="para" id="exercises-13-2-4-1-1">Solve as completely as possible:</div> <div class="para logical" id="exercises-13-2-4-1-2"><ol class="lower-alpha ol-marker-1" id="exercises-13-2-4-1-2-1">
 <li id="exercises-13-2-4-1-2-1-1"><div class="para" id="exercises-13-2-4-1-2-1-1-1">
 <span class="process-math">\(T(n) = 3 + T(\lfloor n/2\rfloor )\text{,}\)</span> <span class="process-math">\(T(0) = 0\text{.}\)</span>
 </div></li>
@@ -1419,7 +1460,7 @@ map(lambda k:[k,D(k),(D(k)/factorial(k)).n(digits=8)],range(1,16))
 <li id="exercises-13-2-4-1-2-1-3"><div class="para" id="exercises-13-2-4-1-2-1-3-1">
 <span class="process-math">\(V(n) = 1 + V\lfloor n/8\rfloor )\text{,}\)</span> <span class="process-math">\(V(0) = 0\text{.}\)</span> (Hint: Write <span class="process-math">\(n\)</span> in octal form.)</div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-13-2-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-13-2-4-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-13-2-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-13-2-4-2-1"><ol class="lower-alpha ol-marker-1" id="exercises-13-2-4-2-1-1">
 <li id="exercises-13-2-4-2-1-1-1"><div class="para" id="exercises-13-2-4-2-1-1-1-1"><span class="process-math">\(\displaystyle T(n)=3\left(\left\lfloor \log_2n\right\rfloor +1\right)\)</span></div></li>
 <li id="exercises-13-2-4-2-1-1-2"><div class="para" id="exercises-13-2-4-2-1-1-2-1"><span class="process-math">\(\displaystyle T(n)=2\)</span></div></li>
 <li id="exercises-13-2-4-2-1-1-3"><div class="para" id="exercises-13-2-4-2-1-1-3-1"><span class="process-math">\(\displaystyle V(n)=\left\lfloor \log_8n\right\rfloor +1\)</span></div></li>
@@ -1433,7 +1474,7 @@ map(lambda k:[k,D(k),(D(k)/factorial(k)).n(digits=8)],range(1,16))
 <div class="para" id="exercises-13-2-7-1-1">Use the substitution <span class="process-math">\(G(n) =T(n)^2\)</span> to solve <span class="process-math">\(T(n)^2-T(n-1)^2=1\)</span> for <span class="process-math">\(n
 \geq 1\text{,}\)</span> with <span class="process-math">\(T(0) = 10\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercises-13-2-8"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para" id="exercises-13-2-8-1-1">Solve as completely as possible:</div> <div class="para logical" id="exercises-13-2-8-1-2"><ol class="lower-alpha">
+<div class="para" id="exercises-13-2-8-1-1">Solve as completely as possible:</div> <div class="para logical" id="exercises-13-2-8-1-2"><ol class="lower-alpha ol-marker-1" id="exercises-13-2-8-1-2-1">
 <li id="exercises-13-2-8-1-2-1-1"><div class="para" id="exercises-13-2-8-1-2-1-1-1">
 <span class="process-math">\(Q(n)=1+Q\left(\left\lfloor \sqrt{n}\right\rfloor \right)\text{,}\)</span> <span class="process-math">\(n
 \geq 2\text{,}\)</span> <span class="process-math">\(Q(1) = 0\text{.}\)</span>
@@ -1441,7 +1482,7 @@ map(lambda k:[k,D(k),(D(k)/factorial(k)).n(digits=8)],range(1,16))
 <li id="exercises-13-2-8-1-2-1-2"><div class="para" id="exercises-13-2-8-1-2-1-2-1">
 <span class="process-math">\(R(n)=n +R(\lfloor n/2\rfloor )\text{,}\)</span> <span class="process-math">\(n \geq 1\text{,}\)</span> <span class="process-math">\(R(0) = 0\)</span> .</div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-13-2-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-13-2-8-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-13-2-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-13-2-8-2-1"><ol class="lower-alpha ol-marker-1" id="exercises-13-2-8-2-1-1">
 <li id="exercises-13-2-8-2-1-1-1"><div class="para" id="exercises-13-2-8-2-1-1-1-1">A good approximation to the solution of this recurrence relation is based on the following observation: <span class="process-math">\(n\)</span> is a power of a power of two; that is, <span class="process-math">\(n\)</span> is <span class="process-math">\(2^m\text{,}\)</span> where <span class="process-math">\(m=2^k\)</span> , then <span class="process-math">\(Q(n)=1+Q\left(2^{m/2}\right)\text{.}\)</span> By applying this recurrence relation <span class="process-math">\(k\)</span> times we obtain <span class="process-math">\(Q(n)=k\text{.}\)</span> Going back to the original form of <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(\log _2n=2^k\)</span> or <span class="process-math">\(\log
 _2\left(\log _2n\right)=k\text{.}\)</span> We would expect that in general, <span class="process-math">\(Q(n)\)</span> is <span class="process-math">\(\left\lfloor \log _2\left(\log
 _2n\right)\right\rfloor\text{.}\)</span> We do not see any elementary method for arriving at an exact solution.</div></li>
@@ -1451,18 +1492,18 @@ a_2a_1a_0\right)_{\textrm{two}}\)</span> with <span class="process-math">\(a_{k-
 }}\)</span> <span class="process-math">\(\left(a_{k-1}a_{k-2}\cdots a_i\right)_{\textrm{two}}\text{.}\)</span> If <span class="process-math">\(2^{k-1}\leq n &lt; 2^k\text{,}\)</span> then we can estimate this sum to be between <span class="process-math">\(2n-1\)</span> and <span class="process-math">\(2n+1\text{.}\)</span> Therefore, <span class="process-math">\(R(n)\approx 2n\)</span> .</div></li>
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-13-2-9"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="para" id="exercises-13-2-9-1-1">Suppose Step 1 of the merge sort algorithm did take a significant amount of time. Assume it takes 0.1 time unit, independent of the value of <span class="process-math">\(n\text{.}\)</span>
-</div> <div class="para logical" id="exercises-13-2-9-1-2"><ol class="lower-alpha">
+</div> <div class="para logical" id="exercises-13-2-9-1-2"><ol class="lower-alpha ol-marker-1" id="exercises-13-2-9-1-2-1">
 <li id="exercises-13-2-9-1-2-1-1"><div class="para" id="exercises-13-2-9-1-2-1-1-1">Write out a new recurrence relation for <span class="process-math">\(T(n)\)</span> that takes this factor into account.</div></li>
 <li id="exercises-13-2-9-1-2-1-2"><div class="para" id="exercises-13-2-9-1-2-1-2-1">Solve for <span class="process-math">\(T\left(2^r\right)\text{,}\)</span> <span class="process-math">\(r \geq 0\text{.}\)</span>
 </div></li>
 <li id="exercises-13-2-9-1-2-1-3"><div class="para" id="exercises-13-2-9-1-2-1-3-1">Assuming the solution for powers of 2 is a good estimate for all <span class="process-math">\(n\text{,}\)</span> compare your result to the solution in the text. As gets large, is there really much difference?</div></li>
 </ol></div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s-recurrence-relations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s-generating-functions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s-recurrence-relations.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s-generating-functions.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

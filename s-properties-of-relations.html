@@ -5,30 +5,20 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Properties of Relations</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Discrete Mathematics for Computer Science">
-<meta property="book:author" content="Ken Levasseur">
-<meta property="book:author" content="Al Doerr">
-<meta property="book:author" content="Michiel Smid">
-<meta property="book:author" content="Oscar Levin">
-<meta property="book:author" content="Charles M. Grinstead">
-<meta property="book:author" content="J. Laurie Snell">
-<meta property="book:author" content="Eric Lehman">
-<meta property="book:author" content="F. Thomson Leighton">
-<meta property="book:author" content="Albert R Meyer">
-<meta property="book:author" content="Jeff Erickson">
-<meta property="book:author" content="Kenneth P. Bogart">
-<meta property="book:author" content="Carol Chritchlow">
-<meta property="book:author" content="David Eck">
-<meta property="book:author" content="OpenDSA Project">
-<meta property="book:author" content="L.J. Miller">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -100,36 +90,68 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Discrete Mathematics for Computer Science">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ken Levasseur">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Al Doerr">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Michiel Smid">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Oscar Levin">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Charles M. Grinstead">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="J. Laurie Snell">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Eric Lehman">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="F. Thomson Leighton">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Albert R Meyer">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Jeff Erickson">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Kenneth P. Bogart">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Carol Chritchlow">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="David Eck">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="OpenDSA Project">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="L.J. Miller">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
 <p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -140,7 +162,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s-graphs-of-relations-on-a-set.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_10.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s-matrices-of-relations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s-graphs-of-relations-on-a-set.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_10.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s-matrices-of-relations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
 \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
 \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
@@ -173,12 +196,12 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -620,9 +643,9 @@ window.MathJax = {
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-graphs-of-relations-on-a-set.html#exercises-10-2" class="internal"><span class="codenumber">10.2.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="s-properties-of-relations.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Properties of Relations</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-properties-of-relations.html#ss-individual-properties" class="internal"><span class="codenumber">10.3.1</span> <span class="title">Individual Properties</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-properties-of-relations.html#ss-partial-ordering" class="internal"><span class="codenumber">10.3.2</span> <span class="title">Partial Orderings</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-properties-of-relations.html#ss-equivalence-relations" class="internal"><span class="codenumber">10.3.3</span> <span class="title">Equivalence Relations</span></a></div></li>
@@ -970,14 +993,14 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s-properties-of-relations"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s-properties-of-relations"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">10.3</span><span class="space"> </span><span class="title">Properties of Relations</span>
 </h2>
 <section class="subsection" id="ss-individual-properties"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">10.3.1</span><span class="space"> </span><span class="title">Individual Properties</span>
 </h3>
 <div class="para" id="ss-individual-properties-2">Consider the set <span class="process-math">\(B = \{1, 2, 3, 4, 6, 12, 36, 48\}\)</span> and the relations “divides” and <span class="process-math">\(\leq \)</span> on <span class="process-math">\(B\text{.}\)</span> We notice that these two relations on <span class="process-math">\(B\)</span> have three properties in common:</div>
-<div class="para logical" id="ss-individual-properties-3"><ul class="disc">
+<div class="para logical" id="ss-individual-properties-3"><ul class="disc" id="ss-individual-properties-3-1">
 <li id="ss-individual-properties-3-1-1"><div class="para" id="ss-individual-properties-3-1-1-1">Every element in <span class="process-math">\(B\)</span> divides itself and is less than or equal to itself. This is called the reflexive property.</div></li>
 <li id="ss-individual-properties-3-1-2"><div class="para" id="ss-individual-properties-3-1-2-1">If we search for two elements from <span class="process-math">\(B\)</span> where the first divides the second and the second divides the first, then we are forced to choose the two numbers to be the same. In other words, no two <em class="emphasis">different</em> numbers are related in both directions. The reader can verify that a similar fact is true for the relation <span class="process-math">\(\leq \)</span> on <span class="process-math">\(B\text{.}\)</span> This is called the antisymmetric property.</div></li>
 <li id="ss-individual-properties-3-1-3"><div class="para" id="ss-individual-properties-3-1-3-1">Next if we choose three values (not necessarily distinct) from <span class="process-math">\(B\)</span> such that the first divides the second and the second divides the third, then we always find that the first number divides the third.  Again, the same is true if we replace “divides” with “is less than or equal to.” This is called the transitive property.</div></li>
@@ -1007,7 +1030,7 @@ window.MathJax = {
 <div class="para" id="partial-ordering-4-1">A relation on a set <span class="process-math">\(A\)</span> that is reflexive, antisymmetric, and transitive is called a <dfn class="terminology">partial ordering</dfn> on <span class="process-math">\(A\text{.}\)</span> A set on which there is a partial ordering relation defined is called a <dfn class="terminology">partially ordered set</dfn> or <dfn class="terminology">poset</dfn>.</div></article><article class="example example-like" id="ex-subset-partial-ordering"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">10.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Set Containment as a Partial Ordering.</span>
 </h4>
-<div class="para" id="ex-subset-partial-ordering-2-1">Let <span class="process-math">\(A\)</span> be a set. Then <span class="process-math">\(\mathcal{P}(A)\)</span> together with the relation <span class="process-math">\(\subseteq\)</span> (set containment) is a poset. To prove this we observe that the three properties hold, as discussed in Chapter 4.</div> <div class="para logical" id="ex-subset-partial-ordering-2-2"><ul class="disc">
+<div class="para" id="ex-subset-partial-ordering-2-1">Let <span class="process-math">\(A\)</span> be a set. Then <span class="process-math">\(\mathcal{P}(A)\)</span> together with the relation <span class="process-math">\(\subseteq\)</span> (set containment) is a poset. To prove this we observe that the three properties hold, as discussed in Chapter 4.</div> <div class="para logical" id="ex-subset-partial-ordering-2-2"><ul class="disc" id="ex-subset-partial-ordering-2-2-1">
 <li id="ex-subset-partial-ordering-2-2-1-1"><div class="para" id="ex-subset-partial-ordering-2-2-1-1-1">Let <span class="process-math">\(B \in  \mathcal{P}(A)\text{.}\)</span> The fact that <span class="process-math">\(B \subseteq  B\)</span> follows from the definition of subset. Hence, set containment is reflexive.</div></li>
 <li id="ex-subset-partial-ordering-2-2-1-2"><div class="para" id="ex-subset-partial-ordering-2-2-1-2-1">Let <span class="process-math">\(B_1, B_2 \in \mathcal{P}(A)\)</span> and assume that <span class="process-math">\(B_1\subseteq  B_2\)</span> and <span class="process-math">\(B_1\neq  B_2\)</span> . Could it be that <span class="process-math">\(B_2\subseteq  B_1\text{?}\)</span> No. There must be some element <span class="process-math">\(a\in A\)</span> such that <span class="process-math">\(a \notin B_1\text{,}\)</span> but <span class="process-math">\(a\in B_2\text{.}\)</span> This is exactly what we need to conclude that <span class="process-math">\(B_2\)</span> is not contained in <span class="process-math">\(B_1\text{.}\)</span>  Hence, set containment is antisymmetric.</div></li>
 <li id="ex-subset-partial-ordering-2-2-1-3"><div class="para" id="ex-subset-partial-ordering-2-2-1-3-1">Let <span class="process-math">\(B_1, B_2,B_3 \in \mathcal{P}(A)\)</span> and assume that <span class="process-math">\(B_1 \subseteq  B_2\)</span> and <span class="process-math">\(B_2 \subseteq  B_3\)</span> . Does it follow that <span class="process-math">\(B_1 \subseteq B_3\)</span> ? Yes, if <span class="process-math">\(a\in B_1\text{,}\)</span> then <span class="process-math">\(a\in B_2\)</span> because <span class="process-math">\(B_1 \subseteq  B_2\text{.}\)</span> Now that we have <span class="process-math">\(a\in B_2\)</span> and we have assumed <span class="process-math">\(B_2 \subseteq B_3\text{,}\)</span> we conclude that <span class="process-math">\(a\in B_3\text{.}\)</span>  Therefore, <span class="process-math">\(B_1\subseteq B_3\)</span> and so set containment is transitive.</div></li>
@@ -1015,7 +1038,7 @@ window.MathJax = {
 <a href="s-graphs-of-relations-on-a-set.html#fig-graph-10-2-subsets-2" class="xref" data-knowl="./knowl/xref/fig-graph-10-2-subsets-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.6">Figure 10.2.6</a> is the graph for the “set containment” relation on the power set of <span class="process-math">\(\{1,2\}\text{.}\)</span>
 </div></article><div class="para" id="ss-partial-ordering-5">
 <a href="s-graphs-of-relations-on-a-set.html#fig-graph-10-2-subsets-2" class="xref" data-knowl="./knowl/xref/fig-graph-10-2-subsets-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.6">Figure 10.2.6</a> is helpful insofar as it reminds us that each set is a subset of itself and shows us at a glance the relationship between the various subsets in <span class="process-math">\(\mathcal{P} (\{1,2\})\text{.}\)</span> However, when a relation is a partial ordering, we can streamline a graph like this one.  The streamlined form of a graph is called a <dfn class="terminology">Hasse diagram</dfn> or <dfn class="terminology">ordering diagram</dfn>.  A Hasse diagram takes into account the following facts.</div>
-<div class="para logical" id="ss-partial-ordering-6"><ul class="disc">
+<div class="para logical" id="ss-partial-ordering-6"><ul class="disc" id="ss-partial-ordering-6-1">
 <li id="ss-partial-ordering-6-1-1"><div class="para" id="p-derived-ss-partial-ordering-6-1-1">By the reflexive property, each vertex must be related to itself, so the arrows from a vertex to itself (called “self-loops”) are not drawn in a Hasse diagram. They are simply assumed.</div></li>
 <li id="ss-partial-ordering-6-1-2"><div class="para" id="p-derived-ss-partial-ordering-6-1-2">By the antisymmetry property, connections between two distinct elements in a directed graph can only go one way, if at all.  When there is a connection, we agree to always place the second element above the first (as we do above with the connection from <span class="process-math">\(\{1\}\)</span> to <span class="process-math">\(\{1,2\}\)</span>). For this reason, we can just draw a connection without an arrow, just a line.</div></li>
 <li id="ss-partial-ordering-6-1-3"><div class="para" id="p-derived-ss-partial-ordering-6-1-3">By the transitive property, if there are edges connecting one element up to a second element and the second element up to a third element, then there will be a direct connection from the first to the third. We see this in <a href="s-graphs-of-relations-on-a-set.html#fig-graph-10-2-subsets-2" class="xref" data-knowl="./knowl/xref/fig-graph-10-2-subsets-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.6">Figure 10.2.6</a> with <span class="process-math">\(\emptyset\)</span> connected to <span class="process-math">\(\{1\}\)</span><span class="process-math">\(\)</span>and then <span class="process-math">\(\{1\}\)</span> connected to <span class="process-math">\(\{1,2\}\text{.}\)</span> Notice the edge connecting <span class="process-math">\(\emptyset\)</span> to <span class="process-math">\(\{1,2\}\text{.}\)</span>  Whenever we identify this situation, remove the connection from the first to the third in a Hasse diagram and simply observe that an upward path of any length implies that the lower element is related to the upper one.</div></li>
@@ -1043,7 +1066,8 @@ R = \{(1,1),(2,2),(3,3),(4,4),(5,5),(1,3),\\
 <div class="para" id="ss-equivalence-relations-3">Another common property of relations is symmetry.</div>
 <article class="definition definition-like" id="def-symmetric-relation"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">10.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Symmetric Relation.</span>
-</h4> <div class="para" id="def-symmetric-relation-3-1">Let <span class="process-math">\(R\)</span> be a relation on a set <span class="process-math">\(A\text{.}\)</span> <span class="process-math">\(R\)</span> is <dfn class="terminology">symmetric</dfn> if and only if whenever <span class="process-math">\(a R b\text{,}\)</span> it follows that <span class="process-math">\(b R a\text{.}\)</span>
+</h4>
+<div class="para" id="def-symmetric-relation-3-1">Let <span class="process-math">\(R\)</span> be a relation on a set <span class="process-math">\(A\text{.}\)</span> <span class="process-math">\(R\)</span> is <dfn class="terminology">symmetric</dfn> if and only if whenever <span class="process-math">\(a R b\text{,}\)</span> it follows that <span class="process-math">\(b R a\text{.}\)</span>
 </div></article><div class="para" id="ss-equivalence-relations-5">Consider the relation of equality defined on any set <span class="process-math">\(A\text{.}\)</span> Certainly <span class="process-math">\(a = b\)</span> implies that <span class="process-math">\(b = a\)</span> so equality is a symmetric relation on <span class="process-math">\(A\text{.}\)</span>
 </div>
 <div class="para" id="ss-equivalence-relations-6">Surprisingly, equality is also an antisymmetric relation on <span class="process-math">\(A\text{.}\)</span> This is due to the fact that the condition that defines the antisymmetry property, <span class="process-math">\(a = b\)</span> and <span class="process-math">\(a \neq  b\text{,}\)</span> is a contradiction. Remember, a conditional proposition is always true when the condition is false. So a relation can be both symmetric and antisymmetric on a set! Again recall that these terms are <em class="emphasis">not</em> negatives of one other. That said, there are very few important relations other than equality that are both symmetric and antisymmetric.</div>
@@ -1057,7 +1081,8 @@ R = \{(1,1),(2,2),(3,3),(4,4),(5,5),(1,3),\\
 <div class="para" id="ex-fraction-equivalence-2-1">Let <span class="process-math">\(\mathbb{Z}\)</span>* be the set of nonzero integers. One of the most basic equivalence relations in mathematics is the relation <span class="process-math">\(Q\)</span> on <span class="process-math">\(\mathbb{Z}\times \mathbb{Z}^*\)</span> defined by <span class="process-math">\((a, b) Q(c, d)\)</span> if and only if <span class="process-math">\(a d = b c\text{.}\)</span> We will leave it to the reader to, verify that <span class="process-math">\(Q\)</span> is indeed an equivalence relation. Be aware that since the elements of <span class="process-math">\(\mathbb{Z}\times \mathbb{Z}^*\)</span> are ordered pairs, proving symmetry involves four numbers and transitivity involves six numbers. Two ordered pairs, <span class="process-math">\((a, b)\)</span> and <span class="process-math">\((c, d)\text{,}\)</span> are related if the fractions <span class="process-math">\(\frac{a}{b}\)</span> and <span class="process-math">\(\frac{c}{d}\)</span> are numerically equal.</div></article><div class="para" id="ss-equivalence-relations-10">Our next example involves the following fundamental relations on the set of integers.</div>
 <article class="definition definition-like" id="def-congruence-mod-m"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">10.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">Congruence Modulo <span class="process-math">\(m\)</span>.</span>
-</h4>  <div class="para logical" id="def-congruence-mod-m-5-1">
+</h4>
+<div class="para logical" id="def-congruence-mod-m-5-1">
 <div class="para">Let <span class="process-math">\(m\)</span> be a positive integer, <span class="process-math">\(m\geq 2\text{.}\)</span>  We define <dfn class="terminology">congruence modulo m</dfn> to be the relation <span class="process-math">\(\equiv_m\)</span> defined on the integers by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1066,7 +1091,7 @@ a \equiv_m b \Leftrightarrow m \mid (a-b)
 </div>
 </div></article><div class="para" id="ss-equivalence-relations-12">We observe the following about congruence modulo <span class="process-math">\(m\text{:}\)</span>
 </div>
-<div class="para logical" id="ss-equivalence-relations-13"><ul class="disc">
+<div class="para logical" id="ss-equivalence-relations-13"><ul class="disc" id="ss-equivalence-relations-13-1">
 <li id="ss-equivalence-relations-13-1-1"><div class="para" id="ss-equivalence-relations-13-1-1-1">This relation is reflexive, for if <span class="process-math">\(a \in  \mathbb{Z} \text{,}\)</span>  <span class="process-math">\(m \mid (a-a) \Rightarrow  a\equiv_ma \text{.}\)</span>
 </div></li>
 <li id="ss-equivalence-relations-13-1-2"><div class="para logical" id="ss-equivalence-relations-13-1-2-1">
@@ -1091,7 +1116,7 @@ a \equiv_m b &amp;\Rightarrow   m \mid (a-b)\\
 <article class="example example-like" id="ex-no-propery-relation"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">10.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Random Relations usually have no properties.</span>
 </h4>
-<div class="para" id="ex-no-propery-relation-2-1">Consider the relation s described by the digraph in <a href="s-properties-of-relations.html#fig-graph-10-3-5" class="xref" data-knowl="./knowl/xref/fig-graph-10-3-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.3.15">Figure 10.3.15</a>. This was created by randomly selecting whether or not two elements from <span class="process-math">\(\{a,b,c\}\)</span> were related or not. Convince yourself that the following are true:</div> <div class="para logical" id="ex-no-propery-relation-2-2"><ul class="disc">
+<div class="para" id="ex-no-propery-relation-2-1">Consider the relation s described by the digraph in <a href="s-properties-of-relations.html#fig-graph-10-3-5" class="xref" data-knowl="./knowl/xref/fig-graph-10-3-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.3.15">Figure 10.3.15</a>. This was created by randomly selecting whether or not two elements from <span class="process-math">\(\{a,b,c\}\)</span> were related or not. Convince yourself that the following are true:</div> <div class="para logical" id="ex-no-propery-relation-2-2"><ul class="disc" id="ex-no-propery-relation-2-2-1">
 <li id="ex-no-propery-relation-2-2-1-1"><div class="para" id="ex-no-propery-relation-2-2-1-1-1">This relation is not reflexive.</div></li>
 <li id="ex-no-propery-relation-2-2-1-2"><div class="para" id="ex-no-propery-relation-2-2-1-2-1">It is not antisymmetric.</div></li>
 <li id="ex-no-propery-relation-2-2-1-3"><div class="para" id="ex-no-propery-relation-2-2-1-3-1">Also, it is not symmetric.</div></li>
@@ -1102,7 +1127,7 @@ a \equiv_m b &amp;\Rightarrow   m \mid (a-b)\\
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">10.3.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercises-10-3-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para logical" id="exercises-10-3-2-1-1"><ol class="lower-alpha">
+<div class="para logical" id="exercises-10-3-2-1-1"><ol class="lower-alpha ol-marker-1" id="exercises-10-3-2-1-1-1">
 <li id="exercises-10-3-2-1-1-1-1"><div class="para" id="exercises-10-3-2-1-1-1-1-1">Let <span class="process-math">\(B = \{a, b\}\)</span> and <span class="process-math">\(U = \mathcal{P}(B)\text{.}\)</span> Draw a Hasse diagram for <span class="process-math">\(\subseteq \)</span> on <span class="process-math">\(U\text{.}\)</span>
 </div></li>
 <li id="exercises-10-3-2-1-1-1-2"><div class="para" id="exercises-10-3-2-1-1-1-2-1">Let <span class="process-math">\(A = \{1,2, 3, 6\}\text{.}\)</span> Show that divides, <span class="process-math">\(\mid \text{,}\)</span> is a partial ordering on <span class="process-math">\(A\text{.}\)</span>
@@ -1113,7 +1138,7 @@ a \equiv_m b &amp;\Rightarrow   m \mid (a-b)\\
 </ol></div>
 <div class="solutions"><details id="exercises-10-3-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
 <figure class="figure figure-like" id="fig-sol-10-3-1"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/fig-sol-10-3-1.png" class="contained" alt="Solution Hasse diagrams for parts a and c."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.16<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para logical" id="exercises-10-3-2-2-2"><ol class="lower-alpha">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.16<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para logical" id="exercises-10-3-2-2-2"><ol class="lower-alpha ol-marker-1" id="exercises-10-3-2-2-2-1">
 <li id="exercises-10-3-2-2-2-1-1"><div class="para" id="exercises-10-3-2-2-2-1-1-1">See <a href="s-properties-of-relations.html#fig-sol-10-3-1" class="xref" data-knowl="./knowl/xref/fig-sol-10-3-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.3.16">Figure 10.3.16</a>.</div></li>
 <li id="exercises-10-3-2-2-2-1-2"><div class="para" id="exercises-10-3-2-2-2-1-2-1">
 <span class="process-math">\(\mid\)</span> on <span class="process-math">\(A\)</span> is reflexive because <span class="process-math">\(\forall a \in A, a \mid a\)</span> is true and <span class="process-math">\((a,a) \in \)</span> the relation. <span class="process-math">\(\mid\)</span> on <span class="process-math">\(A\)</span> is antisymmetric because <span class="process-math">\(\forall a, b \in A\)</span> if <span class="process-math">\(a \mid b\)</span> is true and <span class="process-math">\((a,b) \in \)</span> the relation, then <span class="process-math">\(b \mid a\)</span> is not true and <span class="process-math">\((b,a) \notin \)</span> the relation, unless <span class="process-math">\(a = b\text{.}\)</span> <span class="process-math">\(\mid\)</span> on <span class="process-math">\(A\)</span> is transitive because <span class="process-math">\(\forall a, b, c \in A\text{,}\)</span> if <span class="process-math">\((a,b)\)</span> and <span class="process-math">\((b,c) \in\)</span> the relation, then <span class="process-math">\(a|b\)</span> and <span class="process-math">\(b|c\text{.}\)</span> Therefore <span class="process-math">\(ak =b\)</span> for some integer <span class="process-math">\(k\)</span> and <span class="process-math">\(bj = c\)</span> for some integer <span class="process-math">\(j\text{.}\)</span> Thus <span class="process-math">\(akj = c\text{,}\)</span> <span class="process-math">\(a|c\text{,}\)</span> and <span class="process-math">\((a,c) \in\)</span> the relation. Therefore <span class="process-math">\(\mid\)</span> on <span class="process-math">\(A\)</span> is a partial ordering.</div></li>
@@ -1124,17 +1149,18 @@ a \equiv_m b &amp;\Rightarrow   m \mid (a-b)\\
 <div class="para" id="exercises-10-3-3-1-1">Repeat Exercise 1 with <span class="process-math">\(B = \{a, b, c\}\)</span> and <span class="process-math">\(A = \{1, 2, 3, 5, 6, 10, 15, 30\}\text{.}\)</span>
 </div>
 <div class="solutions"><details id="exercises-10-3-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content">
-<div class="para" id="exercises-10-3-3-2-1">Here is a Hasse diagram for the part (a).</div> <figure class="figure figure-like" id="fig-subsets-3-hasse"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/fig-subsets-3-hasse.png" class="contained" alt="Hasse Diagram for part a."></div>
+<div class="para" id="exercises-10-3-3-2-1">Here is a Hasse diagram for the part (a).</div>
+<figure class="figure figure-like" id="fig-subsets-3-hasse"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/fig-subsets-3-hasse.png" class="contained" alt="Hasse Diagram for part a."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.17<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
 </div></details></div></article><article class="exercise exercise-like" id="exercises-10-3-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="exercises-10-3-4-1-1">
 <div class="para">Consider the relations defined by the digraphs in <a href="s-properties-of-relations.html#fig-exercises-10-digraphs" class="xref" data-knowl="./knowl/xref/fig-exercises-10-digraphs.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.3.18">Figure 10.3.18</a>.</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="exercises-10-3-4-1-1-2">
 <li id="exercises-10-3-4-1-1-2-1"><div class="para" id="exercises-10-3-4-1-1-2-1-1">Determine whether the given relations are reflexive, symmetric, antisymmetric, or transitive. Try to develop procedures for determining the validity of these properties from the graphs,</div></li>
 <li id="exercises-10-3-4-1-1-2-2"><div class="para" id="exercises-10-3-4-1-1-2-2-1">Which of the graphs are of equivalence relations or of partial orderings?</div></li>
 </ol>
 </div> <figure class="figure figure-like" id="fig-exercises-10-digraphs"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/exercises-10-digraphs.png" class="contained" alt="Digraphs of relations for exercise 3."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.18<span class="period">.</span></span><span class="space"> </span>Some digraphs of relations</figcaption></figure><div class="solutions"><details id="exercises-10-3-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-3-4-2-1"><ol class="lower-alpha">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.18<span class="period">.</span></span><span class="space"> </span>Some digraphs of relations</figcaption></figure><div class="solutions"><details id="exercises-10-3-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-3-4-2-1"><ol class="lower-alpha ol-marker-1" id="exercises-10-3-4-2-1-1">
 <li id="exercises-10-3-4-2-1-1-1"><div class="para" id="exercises-10-3-4-2-1-1-1-1"><figure class="table table-like" id="table-10-3-3-sol"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">10.3.19<span class="period">.</span></span><span class="space"> </span>Properties of relations defined by given digraphs</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">Part</td>
@@ -1195,7 +1221,7 @@ a \equiv_m b &amp;\Rightarrow   m \mid (a-b)\\
 </table></div></figure></div></li>
 <li id="exercises-10-3-4-2-1-1-2"><div class="para" id="exercises-10-3-4-2-1-1-2-1">Graphs ii and vi show partial ordering relations. Graph v is of an equivalence relation.</div></li>
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-10-3-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="exercises-10-3-5-1-1">Determine which of the following are equivalence relations and/or partial ordering relations for the given sets:</div> <div class="para logical" id="exercises-10-3-5-1-2"><ol class="lower-alpha">
+<div class="para" id="exercises-10-3-5-1-1">Determine which of the following are equivalence relations and/or partial ordering relations for the given sets:</div> <div class="para logical" id="exercises-10-3-5-1-2"><ol class="lower-alpha ol-marker-1" id="exercises-10-3-5-1-2-1">
 <li id="exercises-10-3-5-1-2-1-1"><div class="para" id="exercises-10-3-5-1-2-1-1-1">
 <span class="process-math">\(A = \{\textrm{ lines in the plane}\}\text{,}\)</span> and <span class="process-math">\(R\)</span> defined by  <span class="process-math">\(x R y\)</span> if and only if <span class="process-math">\(x\)</span> is parallel to <span class="process-math">\(y\text{.}\)</span>  Assume every line is parallel to itself.</div></li>
 <li id="exercises-10-3-5-1-2-1-2"><div class="para" id="exercises-10-3-5-1-2-1-2-1">
@@ -1203,7 +1229,7 @@ a \equiv_m b &amp;\Rightarrow   m \mid (a-b)\\
 </div></li>
 </ol></div></article><article class="exercise exercise-like" id="exercises-10-3-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para" id="exercises-10-3-6-1-1">Consider the  relation on <span class="process-math">\(\{1, 2, 3, 4, 5, 6\}\)</span> defined by  <span class="process-math">\(R = \{(i,j):\enspace \lvert i - j\rvert  = 2\}\text{.}\)</span>
-</div> <div class="para logical" id="exercises-10-3-6-1-2"><ol class="lower-alpha">
+</div> <div class="para logical" id="exercises-10-3-6-1-2"><ol class="lower-alpha ol-marker-1" id="exercises-10-3-6-1-2-1">
 <li id="exercises-10-3-6-1-2-1-1"><div class="para" id="exercises-10-3-6-1-2-1-1-1">Is <span class="process-math">\(R\)</span> reflexive?</div></li>
 <li id="exercises-10-3-6-1-2-1-2"><div class="para" id="exercises-10-3-6-1-2-1-2-1">Is <span class="process-math">\(R\)</span> symmetric?</div></li>
 <li id="exercises-10-3-6-1-2-1-3"><div class="para" id="exercises-10-3-6-1-2-1-3-1">Is <span class="process-math">\(R\)</span> transitive?</div></li>
@@ -1211,7 +1237,7 @@ a \equiv_m b &amp;\Rightarrow   m \mid (a-b)\\
 </div></li>
 </ol></div>
 <div class="solutions"><details id="exercises-10-3-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-3-6-2-1">
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="exercises-10-3-6-2-1-1">
 <li id="exercises-10-3-6-2-1-1-1"><div class="para" id="exercises-10-3-6-2-1-1-1-1">No, since <span class="process-math">\(\mid 1-1\mid =0\neq 2\text{,}\)</span> for example</div></li>
 <li id="exercises-10-3-6-2-1-1-2"><div class="para" id="exercises-10-3-6-2-1-1-2-1">Yes, because <span class="process-math">\(\mid i-j\mid =\)</span><span class="process-math">\(\mid j-i\mid \text{.}\)</span>
 </div></li>
@@ -1231,7 +1257,7 @@ a \equiv_m b &amp;\Rightarrow   m \mid (a-b)\\
 R = \{(0, 0), (1, 1), (2, 2), (3, 3), (1, 2),(2, 1), (3, 2), (2, 3), (3, 1), (1, 3)\}
 \end{equation*}
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="equivalence-classes-2-1-3">
 <li id="equivalence-classes-2-1-3-1"><div class="para" id="equivalence-classes-2-1-3-1-1">Verify that <span class="process-math">\(R\)</span> is an equivalence relation on <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li id="equivalence-classes-2-1-3-2"><div class="para" id="equivalence-classes-2-1-3-2-1">Let <span class="process-math">\(a \in A\)</span> and define <span class="process-math">\(c(a) = \{b \in A \mid a R b\}\text{.}\)</span>  <span class="process-math">\(c(a)\)</span> is called the <dfn class="terminology">equivalence class of <span class="process-math">\(a\)</span> under <span class="process-math">\(R\)</span></dfn>. Find <span class="process-math">\(c(a)\)</span> for each element <span class="process-math">\(a \in A\text{.}\)</span>
@@ -1242,7 +1268,7 @@ R = \{(0, 0), (1, 1), (2, 2), (3, 3), (1, 2),(2, 1), (3, 2), (2, 3), (3, 1), (1,
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="equivalence-classes-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="equivalence-classes-3-1"><ol class="lower-alpha">
+<div class="solutions"><details id="equivalence-classes-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="equivalence-classes-3-1"><ol class="lower-alpha ol-marker-1" id="equivalence-classes-3-1-1">
 <li id="equivalence-classes-3-1-1-1"><div class="para" id="equivalence-classes-3-1-1-1-1">It must be shown that <span class="process-math">\(R\)</span> is reflexive, symmetric, and transitive.</div></li>
 <li id="equivalence-classes-3-1-1-2"><div class="para" id="equivalence-classes-3-1-1-2-1"><span class="process-math">\(\displaystyle c(0)=\{0\}, c(1)=\{1,2,3\}=c(2)=c(3)\)</span></div></li>
 <li id="equivalence-classes-3-1-1-3"><div class="para" id="equivalence-classes-3-1-1-3-1">
@@ -1279,7 +1305,7 @@ a R x \land a R b &amp;\Rightarrow x R a \land a R b\\
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-10-3-9"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="para" id="exercises-10-3-9-1-1">Define <span class="process-math">\(R\)</span> on the power set of <span class="process-math">\(S = \{1, 2, 3\}\)</span> by <span class="process-math">\(A \, R \, B \Leftrightarrow  \lvert A \rvert = \lvert B \rvert \text{,}\)</span> where <span class="process-math">\(A,B \subseteq S\text{.}\)</span> Prove that <span class="process-math">\(R\)</span> is an equivalence relation. What are the equivalence classes under <span class="process-math">\(R\text{?}\)</span>
 </div></article><article class="exercise exercise-like" id="exercises-10-3-10"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para" id="exercises-10-3-10-1-1">Consider the following relations on <span class="process-math">\(\mathbb{Z}_8= \{0, 1, . . . , 7\}\text{.}\)</span> Which are equivalence relations? For the equivalence relations, list the equivalence classes.</div> <div class="para logical" id="exercises-10-3-10-1-2"><ol class="lower-alpha">
+<div class="para" id="exercises-10-3-10-1-1">Consider the following relations on <span class="process-math">\(\mathbb{Z}_8= \{0, 1, . . . , 7\}\text{.}\)</span> Which are equivalence relations? For the equivalence relations, list the equivalence classes.</div> <div class="para logical" id="exercises-10-3-10-1-2"><ol class="lower-alpha ol-marker-1" id="exercises-10-3-10-1-2-1">
 <li id="exercises-10-3-10-1-2-1-1"><div class="para" id="exercises-10-3-10-1-2-1-1-1">
 <span class="process-math">\(a R b\)</span> iff the English spellings of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> begin with the same letter.</div></li>
 <li id="exercises-10-3-10-1-2-1-2"><div class="para" id="exercises-10-3-10-1-2-1-2-1">
@@ -1287,19 +1313,19 @@ a R x \land a R b &amp;\Rightarrow x R a \land a R b\\
 <li id="exercises-10-3-10-1-2-1-3"><div class="para" id="exercises-10-3-10-1-2-1-3-1">
 <span class="process-math">\(a T b\)</span> iff <span class="process-math">\(a-b\)</span> is an even integer.</div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-10-3-10-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-3-10-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-10-3-10-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-3-10-2-1"><ol class="lower-alpha ol-marker-1" id="exercises-10-3-10-2-1-1">
 <li id="exercises-10-3-10-2-1-1-1"><div class="para" id="p-derived-exercises-10-3-10-2-1-1-1">Equivalence Relation, <span class="process-math">\(c(0)=\{0\},c(1)=\{1\},c(2)=\{2,3\} =c(3),c(4)=\{4,5\}=c(5)\text{,}\)</span> and <span class="process-math">\(c(6)=\{6,7\}=c(7)\)</span>
 </div></li>
 <li id="exercises-10-3-10-2-1-1-2"><div class="para" id="exercises-10-3-10-2-1-1-2-1">Not an Equivalence Relation.</div></li>
 <li id="exercises-10-3-10-2-1-1-3"><div class="para" id="exercises-10-3-10-2-1-1-3-1">Equivalence Relation, <span class="process-math">\(c(0)=\{0,2,4,6\}=c(2)=c(4)=c(6)\)</span>  and <span class="process-math">\(c(1)=\{1,3,5,7\}=c(3)=c(5)=c(7)\)</span>
 </div></li>
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-10-3-11"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para" id="exercises-10-3-11-1-1">Building on <a href="s-properties-of-relations.html#equivalence-classes" class="xref" data-knowl="./knowl/xref/equivalence-classes.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.3.4.7: Equivalence Classes">Exercise 10.3.4.7</a>:</div> <div class="para logical" id="exercises-10-3-11-1-2"><ol class="lower-alpha">
+<div class="para" id="exercises-10-3-11-1-1">Building on <a href="s-properties-of-relations.html#equivalence-classes" class="xref" data-knowl="./knowl/xref/equivalence-classes.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.3.4.7: Equivalence Classes">Exercise 10.3.4.7</a>:</div> <div class="para logical" id="exercises-10-3-11-1-2"><ol class="lower-alpha ol-marker-1" id="exercises-10-3-11-1-2-1">
 <li id="exercises-10-3-11-1-2-1-1"><div class="para" id="exercises-10-3-11-1-2-1-1-1">Prove that congruence modulo <span class="process-math">\(m\)</span> is transitive.</div></li>
 <li id="exercises-10-3-11-1-2-1-2"><div class="para" id="exercises-10-3-11-1-2-1-2-1">What are the equivalence classes under congruence modulo 2?</div></li>
 <li id="exercises-10-3-11-1-2-1-3"><div class="para" id="exercises-10-3-11-1-2-1-3-1">What are the equivalence classes under congruence modulo 10?</div></li>
 </ol></div></article><article class="exercise exercise-like" id="exercises-10-3-12"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
-<div class="para" id="exercises-10-3-12-1-1">In this exercise, we prove that implication is a partial ordering. Let <span class="process-math">\(A\)</span> be any set of propositions.</div> <div class="para logical" id="exercises-10-3-12-1-2"><ol class="lower-alpha">
+<div class="para" id="exercises-10-3-12-1-1">In this exercise, we prove that implication is a partial ordering. Let <span class="process-math">\(A\)</span> be any set of propositions.</div> <div class="para logical" id="exercises-10-3-12-1-2"><ol class="lower-alpha ol-marker-1" id="exercises-10-3-12-1-2-1">
 <li id="exercises-10-3-12-1-2-1-1"><div class="para" id="exercises-10-3-12-1-2-1-1-1">Verify that <span class="process-math">\(q \to  q\)</span> is a tautology, thereby showing that <span class="process-math">\(\Rightarrow\)</span> is a reflexive relation on <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li id="exercises-10-3-12-1-2-1-2"><div class="para" id="p-derived-exercises-10-3-12-1-2-1-2">Prove that <span class="process-math">\(\Rightarrow\)</span> is antisymmetric on <span class="process-math">\(A\text{.}\)</span> Note: we do not use = when speaking of propositions, but rather equivalence, <span class="process-math">\(\Leftrightarrow\text{.}\)</span>
@@ -1309,7 +1335,7 @@ a R x \land a R b &amp;\Rightarrow x R a \land a R b\\
 <li id="exercises-10-3-12-1-2-1-4"><div class="para" id="exercises-10-3-12-1-2-1-4-1">Given that <span class="process-math">\(q_i\)</span> is the proposition <span class="process-math">\(n &lt; i\)</span> on <span class="process-math">\(\mathbb{N}\text{,}\)</span> draw the Hasse diagram for the relation <span class="process-math">\(\Rightarrow\)</span> on <span class="process-math">\(\{q_1, q_2, q_3,\ldots \}\text{.}\)</span>
 </div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-10-3-12-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-3-12-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-10-3-12-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-3-12-2-1"><ol class="lower-alpha ol-marker-1" id="exercises-10-3-12-2-1-1">
 <li id="exercises-10-3-12-2-1-1-1"><div class="para" id="exercises-10-3-12-2-1-1-1-1">These proofs follow from the biconditional equivalence in <a href="section4_4-logic-laws.html#table-implications" class="xref" data-knowl="./knowl/xref/table-implications.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 4.4.4: Basic Logical Laws - Common Implications and Equivalences">Table 4.4.4</a>.</div></li>
 <li id="exercises-10-3-12-2-1-1-2"><div class="para" id="exercises-10-3-12-2-1-1-2-1"></div></li>
 <li id="exercises-10-3-12-2-1-1-3"><div class="para" id="exercises-10-3-12-2-1-1-3-1">Apply the chain rule.</div></li>
@@ -1317,7 +1343,7 @@ a R x \land a R b &amp;\Rightarrow x R a \land a R b\\
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.21<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div></li>
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="exercise-10-3-12"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
 <div class="para" id="exercise-10-3-12-1-1">Let <span class="process-math">\(S = \{1,2,3,4,5,6,7\}\)</span> be a poset <span class="process-math">\((S, \leq )\)</span> with the Hasse diagram shown below. Another relation <span class="process-math">\(R \subseteq  S\times S\)</span> is defined as follows: <span class="process-math">\((x, y) \in  R\)</span> if and only if there exists <span class="process-math">\(z \in S\)</span> such that <span class="process-math">\(z &lt; x\)</span> and <span class="process-math">\(z &lt; y\)</span> in the poset <span class="process-math">\((S, \leq )\text{.}\)</span>
-</div> <div class="para logical" id="exercise-10-3-12-1-2"><ol class="lower-alpha">
+</div> <div class="para logical" id="exercise-10-3-12-1-2"><ol class="lower-alpha ol-marker-1" id="exercise-10-3-12-1-2-1">
 <li id="exercise-10-3-12-1-2-1-1"><div class="para" id="exercise-10-3-12-1-2-1-1-1">Prove that <span class="process-math">\(R\)</span> is reflexive.</div></li>
 <li id="exercise-10-3-12-1-2-1-2"><div class="para" id="exercise-10-3-12-1-2-1-2-1">Prove that <span class="process-math">\(R\)</span> is symmetric.</div></li>
 <li id="exercise-10-3-12-1-2-1-3"><div class="para" id="exercise-10-3-12-1-2-1-3-1">A compatible with respect to relation <span class="process-math">\(R\)</span> is any subset <span class="process-math">\(Q\)</span> of set <span class="process-math">\(S\)</span> such that <span class="process-math">\(x \in  Q \textrm{ and } y \in Q \Rightarrow  (x, y) \in R\text{.}\)</span> A compatible <span class="process-math">\(g\)</span> is a maximal compatible if <span class="process-math">\(Q\)</span> is not a proper subset of another compatible. Give all maximal compatibles with respect to relation <span class="process-math">\(R\)</span> defined above.</div></li>
@@ -1325,11 +1351,11 @@ a R x \land a R b &amp;\Rightarrow x R a \land a R b\\
 </ol></div> <figure class="figure figure-like" id="fig-exercise-10-12"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/exercise-10-12.png" class="contained" alt="Hasse diagram for exercise 12"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.22<span class="period">.</span></span><span class="space"> </span>Hasse diagram for <span class="process-math">\(R\)</span> in exercise 12.</figcaption></figure></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s-graphs-of-relations-on-a-set.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s-matrices-of-relations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s-graphs-of-relations-on-a-set.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s-matrices-of-relations.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

@@ -5,30 +5,20 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Combinations and the Binomial Theorem</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Discrete Mathematics for Computer Science">
-<meta property="book:author" content="Ken Levasseur">
-<meta property="book:author" content="Al Doerr">
-<meta property="book:author" content="Michiel Smid">
-<meta property="book:author" content="Oscar Levin">
-<meta property="book:author" content="Charles M. Grinstead">
-<meta property="book:author" content="J. Laurie Snell">
-<meta property="book:author" content="Eric Lehman">
-<meta property="book:author" content="F. Thomson Leighton">
-<meta property="book:author" content="Albert R Meyer">
-<meta property="book:author" content="Jeff Erickson">
-<meta property="book:author" content="Kenneth P. Bogart">
-<meta property="book:author" content="Carol Chritchlow">
-<meta property="book:author" content="David Eck">
-<meta property="book:author" content="OpenDSA Project">
-<meta property="book:author" content="L.J. Miller">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -100,10 +90,64 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Discrete Mathematics for Computer Science">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ken Levasseur">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Al Doerr">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Michiel Smid">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Oscar Levin">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Charles M. Grinstead">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="J. Laurie Snell">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Eric Lehman">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="F. Thomson Leighton">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Albert R Meyer">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Jeff Erickson">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Kenneth P. Bogart">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Carol Chritchlow">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="David Eck">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="OpenDSA Project">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="L.J. Miller">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "pre.sagecell-sage",
+  "inputLocation": "div.sagecell-sage",
   "linked": true,
   "linkKey": "linked-sage",
   "autoeval": false,
@@ -112,36 +156,14 @@ sagecell.makeSagecell({
   ],
   "evalButtonText": "Evaluate (Sage)"
 });
-</script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
 <p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -152,7 +174,8 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="section2_3-partitions-and-law-of-addition.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_2.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="section2_5-counting-with-repetition-or-indistinguishable-objects.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="section2_3-partitions-and-law-of-addition.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_2.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="section2_5-counting-with-repetition-or-indistinguishable-objects.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
 \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
 \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
@@ -185,12 +208,12 @@ sagecell.makeSagecell({
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -268,9 +291,9 @@ sagecell.makeSagecell({
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section2_3-partitions-and-law-of-addition.html#exercises-2-3" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercises for Section 2.3</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="section2_4-combinations-and-the-binomial-theorem.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Combinations and the Binomial Theorem</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section2_4-combinations-and-the-binomial-theorem.html#combinations" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Combinations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section2_4-combinations-and-the-binomial-theorem.html#the-binomial-theorem" class="internal"><span class="codenumber">2.4.2</span> <span class="title">The Binomial Theorem</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section2_4-combinations-and-the-binomial-theorem.html#sage-bridge-hands" class="internal"><span class="codenumber">2.4.3</span> <span class="title">SageMath Note</span></a></div></li>
@@ -982,7 +1005,7 @@ sagecell.makeSagecell({
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section2_4-combinations-and-the-binomial-theorem"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="section2_4-combinations-and-the-binomial-theorem"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.4</span><span class="space"> </span><span class="title">Combinations and the Binomial Theorem</span>
 </h2>
 <section class="subsection" id="combinations"><h3 class="heading hide-type">
@@ -999,7 +1022,8 @@ sagecell.makeSagecell({
 </h4>
 <div class="para" id="four-choose-three-2-1">How many ways can we select a set of three letters from  <span class="process-math">\(A = \{a, b, c, d\}\text{?}\)</span>  Note here that we are not concerned with the order of the three letters. By trial and error, abc, abd, acd, and bcd are the only listings possible. To repeat, we were looking for all three-element subsets of the set <span class="process-math">\(A\text{.}\)</span> Order is not important in sets. The notation for choosing 3 elements from 4 is most commonly <span class="process-math">\(\binom{4}{3}\)</span> or occasionally <span class="process-math">\(C(4,3)\text{,}\)</span> either of which is read “4 choose 3” or the number of combinations for four objects taken three at a time.</div></article><article class="definition definition-like" id="binomial-coefficient"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Binomial Coefficient.</span>
-</h4>  <div class="para" id="binomial-coefficient-4-1">Let <span class="process-math">\(n\)</span> and <span class="process-math">\(k\)</span> be nonnegative integers.  The binomial coefficient <span class="process-math">\(\binom{n}{k}\)</span> represents the number of combinations of <span class="process-math">\(n\)</span> objects taken <span class="process-math">\(k\)</span> at a time, and is read “<span class="process-math">\(n\)</span> choose <span class="process-math">\(k\text{.}\)</span>”</div></article><div class="para" id="combinations-8">We would now like to investigate the relationship between permutation and combination problems in order to derive a formula for <span class="process-math">\(\binom{n}{k}\)</span>
+</h4>
+<div class="para" id="binomial-coefficient-4-1">Let <span class="process-math">\(n\)</span> and <span class="process-math">\(k\)</span> be nonnegative integers.  The binomial coefficient <span class="process-math">\(\binom{n}{k}\)</span> represents the number of combinations of <span class="process-math">\(n\)</span> objects taken <span class="process-math">\(k\)</span> at a time, and is read “<span class="process-math">\(n\)</span> choose <span class="process-math">\(k\text{.}\)</span>”</div></article><div class="para" id="combinations-8">We would now like to investigate the relationship between permutation and combination problems in order to derive a formula for <span class="process-math">\(\binom{n}{k}\)</span>
 </div>
 <div class="para logical" id="combinations-9">
 <div class="para">Let us reconsider the <a href="section2_4-combinations-and-the-binomial-theorem.html#four-choose-three" class="xref" data-knowl="./knowl/xref/four-choose-three.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.4.2: Counting with No Order">Counting with No Order</a>. There are <span class="process-math">\(3 ! = 6\)</span> different orderings for each of the three-element subsets. The table below lists each subset of <span class="process-math">\(A\)</span>  and all permutations of each subset on the same line.</div>
@@ -1035,7 +1059,8 @@ sagecell.makeSagecell({
 \binom{n}{k} = \frac{P(n,k)}{k!} = \frac{n!}{(n-k)! k!}.\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="binomial-coefficient-formula-4-2">
+</div>
+<div class="para logical" id="binomial-coefficient-formula-4-2">
 <div class="para">Proof 2: To “construct” a permutation of <span class="process-math">\(k\)</span>  objects from a set of <span class="process-math">\(n\)</span> elements, we can first choose one of the subsets of objects and second, choose one of the <span class="process-math">\(k!\)</span>  permutations of those objects. By the rule of products,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1095,7 +1120,7 @@ y^3+5 x y^4+y^5 \\
 </div>
 </div>
 <div class="para" id="the-binomial-theorem-5">In summary, in the expansion of <span class="process-math">\(( x + y )^{n}\)</span> we note:</div>
-<div class="para logical" id="the-binomial-theorem-6"><ol class="lower-alpha">
+<div class="para logical" id="the-binomial-theorem-6"><ol class="lower-alpha ol-marker-1" id="the-binomial-theorem-6-1">
 <li id="the-binomial-theorem-6-1-1"><div class="para" id="the-binomial-theorem-6-1-1-1">The first term is <span class="process-math">\(x^n\)</span> and the last term is <span class="process-math">\(y^n\text{.}\)</span>
 </div></li>
 <li id="the-binomial-theorem-6-1-2"><div class="para" id="the-binomial-theorem-6-1-2-1">With each successive term, exponents of <span class="process-math">\(x\)</span> decrease by 1 as those of <span class="process-math">\(y\)</span> increase by 1. For any term the sum of the exponents is <span class="process-math">\(n\text{.}\)</span>
@@ -1136,11 +1161,11 @@ y^3+5 x y^4+y^5 \\
 </h3>
 <div class="para" id="sage-bridge-hands-3">A bridge hand is a 13 element subset of a standard 52 card deck. The order in which the cards come to the player doesn’t matter. From the point of view of a single player, the number of possible bridge hands is <span class="process-math">\(\binom{52}{13}\text{,}\)</span> which can be easily computed with <span class="process-math">\(Sage\text{.}\)</span>
 </div>
-<pre id="sage-bridge-hands-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">binomial(52,13)
-</script></pre>
+<div id="sage-bridge-hands-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">binomial(52,13)
+</script></div>
 <div class="para" id="sage-bridge-hands-5">In bridge, the location of a hand in relation to the dealer has some bearing on the game. An even truer indication of the number of possible hands takes into account <span class="process-math">\(each\)</span>  player’s possible hand. It is customary  to refer to bridge positions as West, North, East and South. We can apply the rule of product to get the total number of bridge hands with the following logic. West can get any of the <span class="process-math">\(\binom{52}{13}\)</span> hands identified above. Then North get 13 of the remaining 39 cards and so has  <span class="process-math">\(\binom{39}{13}\)</span> possible hands. East then gets 13 of the 26 remaining cards, which has <span class="process-math">\(\binom{26}{13}\)</span>  possibilities. South gets the remaining cards. Therefore the number of bridge hands is computed using the Product Rule.</div>
-<pre id="sage-bridge-hands-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">binomial(52,13)*binomial(39,13)*binomial(26,13)
-</script></pre></section><section class="exercises" id="exercises-2-4"><h3 class="heading hide-type">
+<div id="sage-bridge-hands-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">binomial(52,13)*binomial(39,13)*binomial(26,13)
+</script></div></section><section class="exercises" id="exercises-2-4"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercises-2-4-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
@@ -1163,12 +1188,12 @@ y^3+5 x y^4+y^5 \\
 <div class="para" id="exercises-2-4-6-1-1">How many of the lattice paths from <span class="process-math">\((0,0)\)</span> to <span class="process-math">\((6,6)\)</span> pass through <span class="process-math">\((3,3)\)</span> as the one in <a href="section2_4-combinations-and-the-binomial-theorem.html#fig-lattice-path-6" class="xref" data-knowl="./knowl/xref/fig-lattice-path-6.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.4.12">Figure 12</a> does?</div></article><article class="exercise exercise-like" id="exercises-2-4-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
 <div class="para logical" id="exercises-2-4-7-1-1">
 <div class="para">A poker game is played with 52 cards.  At the start of a game, each player gets five of the cards.  The order in which cards are dealt doesn’t matter.</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="exercises-2-4-7-1-1-1">
 <li id="exercises-2-4-7-1-1-1-1"><div class="para" id="exercises-2-4-7-1-1-1-1-1">How many “hands” of five cards are possible?</div></li>
 <li id="exercises-2-4-7-1-1-1-2"><div class="para" id="exercises-2-4-7-1-1-1-2-1">If there are four people playing, how many initial five-card “hands” are possible, taking into account all players and their positions at the table?  Position with respect to the dealer does matter.</div></li>
 </ol>
 </div>
-<div class="solutions"><details id="exercises-2-4-7-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-2-4-7-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-2-4-7-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-2-4-7-2-1"><ol class="lower-alpha ol-marker-1" id="exercises-2-4-7-2-1-1">
 <li id="exercises-2-4-7-2-1-1-1"><div class="para" id="exercises-2-4-7-2-1-1-1-1"><span class="process-math">\(\displaystyle C(52,5)=2,598,960\)</span></div></li>
 <li id="exercises-2-4-7-2-1-1-2"><div class="para" id="exercises-2-4-7-2-1-1-2-1"><span class="process-math">\(\displaystyle \binom{52}{5}\cdot \binom{47}{5}\cdot \binom{42}{5}\cdot \binom{37}{5}\)</span></div></li>
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-2-4-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
@@ -1178,17 +1203,17 @@ y^3+5 x y^4+y^5 \\
 <div class="para" id="exercises-2-4-10-1-1">In poker, a full house is three-of-a-kind and a pair in one hand; for example, three fives and two queens. How many full houses are possible from a 52-card deck?  You can use the sage cell in the <a href="section2_4-combinations-and-the-binomial-theorem.html#sage-bridge-hands" class="internal" title="Subsection 2.4.3: SageMath Note">SageMath Note</a> to do this calculation, but also write your answer in terms of binomial coefficients.</div></article><article class="exercise exercise-like" id="exercises-2-4-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
 <div class="para" id="exercises-2-4-11-1-1">A class of twelve computer science students are to be divided into three groups of 3, 4, and 5 students to work on a project. How many ways can this be done if every student is to be in exactly one group?</div>
 <div class="solutions"><details id="exercises-2-4-11-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="exercises-2-4-11-2-1"><span class="process-math">\(\binom{12}{3}\cdot\binom{9}{4}\cdot\binom{5}{5}\)</span></div></div></details></div></article><article class="exercise exercise-like" id="exercises-2-4-12"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
-<div class="para" id="exercises-2-4-12-1-1">Explain in words why the following equalities are true based on number of subsets,  and then verify the equalities using the formula for binomial coefficients.</div> <div class="para logical" id="exercises-2-4-12-1-2"><ol class="lower-alpha">
+<div class="para" id="exercises-2-4-12-1-1">Explain in words why the following equalities are true based on number of subsets,  and then verify the equalities using the formula for binomial coefficients.</div> <div class="para logical" id="exercises-2-4-12-1-2"><ol class="lower-alpha ol-marker-1" id="exercises-2-4-12-1-2-1">
 <li id="exercises-2-4-12-1-2-1-1"><div class="para" id="exercises-2-4-12-1-2-1-1-1"><span class="process-math">\(\displaystyle \binom{n}{1} = n\)</span></div></li>
 <li id="exercises-2-4-12-1-2-1-2"><div class="para" id="exercises-2-4-12-1-2-1-2-1">
 <span class="process-math">\(\binom{n}{k} = \binom{n}{n-k}\text{,}\)</span> <span class="process-math">\(0 \leq k \leq n\)</span>
 </div></li>
 </ol></div></article><article class="exercise exercise-like" id="exercises-2-4-13"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
-<div class="para" id="exercises-2-4-13-1-1">There are ten points, <span class="process-math">\(P_1, P_2, \dots , P_{10}\)</span> on a plane, no three on the same line.</div> <div class="para logical" id="exercises-2-4-13-1-2"><ol class="lower-alpha">
+<div class="para" id="exercises-2-4-13-1-1">There are ten points, <span class="process-math">\(P_1, P_2, \dots , P_{10}\)</span> on a plane, no three on the same line.</div> <div class="para logical" id="exercises-2-4-13-1-2"><ol class="lower-alpha ol-marker-1" id="exercises-2-4-13-1-2-1">
 <li id="exercises-2-4-13-1-2-1-1"><div class="para" id="exercises-2-4-13-1-2-1-1-1">How many lines are determined by the points?</div></li>
 <li id="exercises-2-4-13-1-2-1-2"><div class="para" id="exercises-2-4-13-1-2-1-2-1">How many triangles are determined by the points?</div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-2-4-13-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-2-4-13-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-2-4-13-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-2-4-13-2-1"><ol class="lower-alpha ol-marker-1" id="exercises-2-4-13-2-1-1">
 <li id="exercises-2-4-13-2-1-1-1"><div class="para" id="p-derived-exercises-2-4-13-2-1-1-1"><span class="process-math">\(\displaystyle \binom{10}{2}=45\)</span></div></li>
 <li id="exercises-2-4-13-2-1-1-2"><div class="para" id="p-derived-exercises-2-4-13-2-1-1-2"><span class="process-math">\(\displaystyle \binom{10}{3}=120\)</span></div></li>
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-2-4-14"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
@@ -1211,7 +1236,7 @@ y^3+5 x y^4+y^5 \\
 </div>
 <div class="solutions"><details id="exercises-2-4-15-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="exercises-2-4-15-2-1">Assume <span class="process-math">\(\lvert A \rvert =n\text{.}\)</span>  If we let <span class="process-math">\(x=y=1\)</span> in the Binomial Theorem, we obtain <span class="process-math">\(2^n=\binom{n}{0}+\binom{n}{1}+\cdots +\binom{n}{n}\text{,}\)</span> with the right side of the equality counting all subsets of <span class="process-math">\(A\)</span> containing <span class="process-math">\(0, 1, 2, \dots , n\)</span> elements.  Hence <span class="process-math">\(\lvert P(A)\rvert =2^{\lvert A  \rvert}\)</span>
 </div></div></details></div></article><article class="exercise exercise-like" id="exercises-2-4-16"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
-<div class="para logical" id="exercises-2-4-16-1-1"><ol class="lower-alpha">
+<div class="para logical" id="exercises-2-4-16-1-1"><ol class="lower-alpha ol-marker-1" id="exercises-2-4-16-1-1-1">
 <li id="exercises-2-4-16-1-1-1-1"><div class="para" id="exercises-2-4-16-1-1-1-1-1">A state’s lottery involves choosing six different numbers out of a possible 36. How many ways can a person choose six numbers?</div></li>
 <li id="exercises-2-4-16-1-1-1-2"><div class="para" id="exercises-2-4-16-1-1-1-2-1">What is the probability of a person winning with one bet?</div></li>
 </ol></div></article><article class="exercise exercise-like" id="exercises-2-4-17"><h4 class="heading"><span class="codenumber">17<span class="period">.</span></span></h4>
@@ -1222,11 +1247,11 @@ y^3+5 x y^4+y^5 \\
 </div></article><article class="exercise exercise-like" id="exercises-2-4-18"><h4 class="heading"><span class="codenumber">18<span class="period">.</span></span></h4>
 <div class="para" id="exercises-2-4-18-1-1">In the card game Blackjack, there are one or more players and a dealer.  Initially, each player is dealt two cards and the dealer is dealt one card down and one facing up.  As in bridge, the order of the hands, but not the order of the cards in the hands, matters.  Starting with a single 52 card deck, and three players, how many ways can the first two cards be dealt out?  You can use the sage cell in the <a href="section2_4-combinations-and-the-binomial-theorem.html#sage-bridge-hands" class="internal" title="Subsection 2.4.3: SageMath Note">SageMath Note</a> to do this calculation.</div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="section2_3-partitions-and-law-of-addition.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section2_5-counting-with-repetition-or-indistinguishable-objects.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="section2_3-partitions-and-law-of-addition.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section2_5-counting-with-repetition-or-indistinguishable-objects.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

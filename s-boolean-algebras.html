@@ -5,30 +5,20 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Boolean Algebras</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Discrete Mathematics for Computer Science">
-<meta property="book:author" content="Ken Levasseur">
-<meta property="book:author" content="Al Doerr">
-<meta property="book:author" content="Michiel Smid">
-<meta property="book:author" content="Oscar Levin">
-<meta property="book:author" content="Charles M. Grinstead">
-<meta property="book:author" content="J. Laurie Snell">
-<meta property="book:author" content="Eric Lehman">
-<meta property="book:author" content="F. Thomson Leighton">
-<meta property="book:author" content="Albert R Meyer">
-<meta property="book:author" content="Jeff Erickson">
-<meta property="book:author" content="Kenneth P. Bogart">
-<meta property="book:author" content="Carol Chritchlow">
-<meta property="book:author" content="David Eck">
-<meta property="book:author" content="OpenDSA Project">
-<meta property="book:author" content="L.J. Miller">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -100,36 +90,68 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Discrete Mathematics for Computer Science">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ken Levasseur">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Al Doerr">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Michiel Smid">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Oscar Levin">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Charles M. Grinstead">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="J. Laurie Snell">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Eric Lehman">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="F. Thomson Leighton">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Albert R Meyer">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Jeff Erickson">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Kenneth P. Bogart">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Carol Chritchlow">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="David Eck">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="OpenDSA Project">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="L.J. Miller">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
 <p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -140,7 +162,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s-lattices.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_12.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s-atoms-of-a-boolean-algebra.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s-lattices.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_12.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s-atoms-of-a-boolean-algebra.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
 \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
 \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
@@ -173,12 +196,12 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -703,9 +726,9 @@ window.MathJax = {
 <div class="toc-title-box"><a href="s-lattices.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Lattices</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-lattices.html#exercises-12-2" class="internal"><span class="codenumber">12.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="s-boolean-algebras.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Boolean Algebras</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-boolean-algebras.html#exercises-12-3" class="internal"><span class="codenumber">12.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul class="structural toc-item-list active"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-boolean-algebras.html#exercises-12-3" class="internal"><span class="codenumber">12.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s-atoms-of-a-boolean-algebra.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Atoms of a Boolean Algebra</span></a></div>
@@ -970,16 +993,18 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s-boolean-algebras"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s-boolean-algebras"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">12.3</span><span class="space"> </span><span class="title">Boolean Algebras</span>
 </h2>
 <div class="para" id="s-boolean-algebras-3">In order to define a Boolean algebra, we need the additional concept of complementation. A lattice must have both a greatest element and a least element in order for complementation to take place. The following definition will save us some words in the rest of this section.</div>
 <article class="definition definition-like" id="def-boundeded-lattice"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Bounded Lattice.</span>
-</h3>  <div class="para" id="def-boundeded-lattice-3-1">A bounded lattice is a lattice that contains both a least element and a greatest element.</div></article><div class="para" id="s-boolean-algebras-5">We use the symbols <span class="process-math">\(\pmb{0}\)</span> and <span class="process-math">\(\pmb{1}\)</span> for the least and greatest elements of a bounded lattice in the remainder of this section.</div>
+</h3>
+<div class="para" id="def-boundeded-lattice-3-1">A bounded lattice is a lattice that contains both a least element and a greatest element.</div></article><div class="para" id="s-boolean-algebras-5">We use the symbols <span class="process-math">\(\pmb{0}\)</span> and <span class="process-math">\(\pmb{1}\)</span> for the least and greatest elements of a bounded lattice in the remainder of this section.</div>
 <article class="definition definition-like" id="def-lattice-complement"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">The Complement of a Lattice Element.</span>
-</h3>  <div class="para logical" id="def-lattice-complement-3-1">
+</h3>
+<div class="para logical" id="def-lattice-complement-3-1">
 <div class="para">Let <span class="process-math">\([L; \lor ,\land ]\)</span> be a bounded lattice. If <span class="process-math">\(a \in L\text{,}\)</span> then <span class="process-math">\(a\)</span> has a complement if there exists <span class="process-math">\(b \in L\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -994,10 +1019,12 @@ a \land b =\pmb{0}\\
 </div>
 <article class="definition definition-like" id="def-complemented-lattice"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Complemented Lattice.</span>
-</h3>  <div class="para" id="def-complemented-lattice-3-1">Let <span class="process-math">\(\mathcal{L}=[L; \lor ,\land ]\)</span> be a bounded lattice. <span class="process-math">\(\mathcal{L}\)</span> is a complemented lattice if every element of <span class="process-math">\(L\)</span> has a complement in <span class="process-math">\(L\text{.}\)</span>
+</h3>
+<div class="para" id="def-complemented-lattice-3-1">Let <span class="process-math">\(\mathcal{L}=[L; \lor ,\land ]\)</span> be a bounded lattice. <span class="process-math">\(\mathcal{L}\)</span> is a complemented lattice if every element of <span class="process-math">\(L\)</span> has a complement in <span class="process-math">\(L\text{.}\)</span>
 </div></article><article class="example example-like" id="ex-set-complement-is-complementation"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">12.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Set Complement is a Complement.</span>
-</h3> <div class="para logical" id="ex-set-complement-is-complementation-2">
+</h3>
+<div class="para logical" id="ex-set-complement-is-complementation-2">
 <div class="para">In Chapter 1, we defined the complement of a subset of any universe. This turns out to be a concrete example of the general concept we have just defined, but we will reason through why this is the case here. Let <span class="process-math">\(L = \mathcal{P}(A)\text{,}\)</span> where <span class="process-math">\(A = \{a, b,
 c\}\text{.}\)</span> Then <span class="process-math">\([L; \cup , \cap ]\)</span> is a bounded lattice with <span class="process-math">\(0 = \emptyset\)</span> and <span class="process-math">\(1 = A\text{.}\)</span> To find the complement, if it exists, of <span class="process-math">\(B = \{a, b\} \in L\text{,}\)</span> for example, we want <span class="process-math">\(D\)</span> such that</div>
 <div class="displaymath process-math">
@@ -1014,10 +1041,12 @@ and\\
 </div></article><div class="para" id="s-boolean-algebras-10">In <a href="s-boolean-algebras.html#ex-set-complement-is-complementation" class="xref" data-knowl="./knowl/xref/ex-set-complement-is-complementation.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 12.3.4: Set Complement is a Complement">Example 12.3.4</a>, we observed that the complement of each element of <span class="process-math">\(L\)</span> is unique. Is this always true in a complemented lattice? The answer is no. Consider the following.</div>
 <article class="example example-like" id="ex-nonunique-complements"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">12.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">A Lattice for which complements are not unique.</span>
-</h3> <div class="para" id="ex-nonunique-complements-2">Let <span class="process-math">\(L = \{1, 2, 3, 5, 30\}\)</span> and consider the lattice <span class="process-math">\([L; \lor, \land ]\)</span> (under “divides”). The least element of <span class="process-math">\(L\)</span> is 1 and the greatest element is 30. Let us compute the complement of the element <span class="process-math">\(a = 2\text{.}\)</span> We want to determine <span class="process-math">\(\bar{a}\)</span> such that <span class="process-math">\(2 \land \bar{a} = 1\)</span> and <span class="process-math">\(2 \lor \bar{a} = 30\text{.}\)</span> Certainly, <span class="process-math">\(\bar{a} = 3\)</span> works, but so does <span class="process-math">\(\bar{a} = 5\text{,}\)</span> so the complement of <span class="process-math">\(a
+</h3>
+<div class="para" id="ex-nonunique-complements-2">Let <span class="process-math">\(L = \{1, 2, 3, 5, 30\}\)</span> and consider the lattice <span class="process-math">\([L; \lor, \land ]\)</span> (under “divides”). The least element of <span class="process-math">\(L\)</span> is 1 and the greatest element is 30. Let us compute the complement of the element <span class="process-math">\(a = 2\text{.}\)</span> We want to determine <span class="process-math">\(\bar{a}\)</span> such that <span class="process-math">\(2 \land \bar{a} = 1\)</span> and <span class="process-math">\(2 \lor \bar{a} = 30\text{.}\)</span> Certainly, <span class="process-math">\(\bar{a} = 3\)</span> works, but so does <span class="process-math">\(\bar{a} = 5\text{,}\)</span> so the complement of <span class="process-math">\(a
 = 2\)</span> in this lattice is not unique. However, <span class="process-math">\([L; \lor , \land ]\)</span> is still a complemented lattice since each element does have at least one complement.</div></article><article class="definition definition-like" id="def-complement-operation"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Complementation as an operation.</span>
-</h3>  <div class="para" id="def-complement-operation-4-1">If a complemented lattice has the property that the complement of every element is unique, then we consider complementation to be a unary operation. The usual notation for the complement of <span class="process-math">\(a\)</span> is <span class="process-math">\(\bar{a}\text{.}\)</span>
+</h3>
+<div class="para" id="def-complement-operation-4-1">If a complemented lattice has the property that the complement of every element is unique, then we consider complementation to be a unary operation. The usual notation for the complement of <span class="process-math">\(a\)</span> is <span class="process-math">\(\bar{a}\text{.}\)</span>
 </div></article><div class="para" id="s-boolean-algebras-13">The following theorem gives us an insight into when uniqueness of complements occurs.</div>
 <article class="theorem theorem-like" id="theorem-unique-complements"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">12.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">One condition for unique complements.</span>
@@ -1034,7 +1063,8 @@ a \land a_2 = 0\textrm{ and }a \lor a_2 = 1, \\
 \end{equation*}
 </div>
 <div class="para">.</div>
-</div> <div class="para logical" id="theorem-unique-complements-3-2">
+</div>
+<div class="para logical" id="theorem-unique-complements-3-2">
 <div class="para">Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1063,14 +1093,18 @@ a_2 &amp;= a_2 \land \pmb{1} = a_2 \land \left(a \lor a_1\right)\\
 <div class="para">Hence <span class="process-math">\(a_1 = a_2\text{,}\)</span> which contradicts the assumption that <span class="process-math">\(a\)</span> has two different complements.</div>
 </div></article></details><article class="definition definition-like" id="def-boolean-algebra"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Boolean Algebra.</span>
-</h3>  <div class="para" id="def-boolean-algebra-4-1">A Boolean algebra is a lattice that contains a least element and a greatest element and that is both complemented and distributive. The notation <span class="process-math">\([B; \lor , \land,
+</h3>
+<div class="para" id="def-boolean-algebra-4-1">A Boolean algebra is a lattice that contains a least element and a greatest element and that is both complemented and distributive. The notation <span class="process-math">\([B; \lor , \land,
 \bar{\hspace{5 mm}}]\)</span> is used to denote the Boolean algebra with operations disjunction, conjunction and complementation.</div></article><div class="para" id="s-boolean-algebras-16">Since the complement of each element in a Boolean algebra is unique (by <a href="s-boolean-algebras.html#theorem-unique-complements" class="xref" data-knowl="./knowl/xref/theorem-unique-complements.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 12.3.7: One condition for unique complements">Theorem 12.3.7</a>), complementation is a valid unary operation over the set under discussion, which is why we will list it together with the other two operations to emphasize that we are discussing a set together with three operations. Also, to help emphasize the distinction between lattices and lattices that are Boolean algebras, we will use the letter <span class="process-math">\(B\)</span> as the generic symbol for the set of a Boolean algebra; that is, <span class="process-math">\([B; \lor , \land, \bar{\hspace{5 mm}} ]\)</span> will stand for a general Boolean algebra.</div>
 <article class="example example-like" id="ex-set-boolean-algebra"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">12.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Boolean Algebra of Sets.</span>
-</h3> <div class="para" id="ex-set-boolean-algebra-2">Let <span class="process-math">\(A\)</span> be any set, and let <span class="process-math">\(B = \mathcal{P}(A)\text{.}\)</span> Then <span class="process-math">\([B; \cup, \cap, {}^c]\)</span> is a Boolean algebra. Here, <span class="process-math">\({}^c\)</span> stands for the complement of an element of <span class="process-math">\(B\)</span> with respect to <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(A-B\text{.}\)</span>
-</div> <div class="para" id="ex-set-boolean-algebra-3">This is a key example for us since all finite Boolean algebras and many infinite Boolean algebras look like this example for some <span class="process-math">\(A\text{.}\)</span> In fact, a glance at the basic Boolean algebra laws in <a href="s-boolean-algebras.html#table-boolean-laws" class="xref" data-knowl="./knowl/xref/table-boolean-laws.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 12.3.11: Basic Boolean Algebra Laws">Table 12.3.11</a>, in comparison with the set laws of Chapter 4 and the basic laws of logic of Chapter 3, indicates that all three systems behave the same; that is, they are isomorphic.</div></article><article class="example example-like" id="ex-boolean-algebra-d30"><h3 class="heading">
+</h3>
+<div class="para" id="ex-set-boolean-algebra-2">Let <span class="process-math">\(A\)</span> be any set, and let <span class="process-math">\(B = \mathcal{P}(A)\text{.}\)</span> Then <span class="process-math">\([B; \cup, \cap, {}^c]\)</span> is a Boolean algebra. Here, <span class="process-math">\({}^c\)</span> stands for the complement of an element of <span class="process-math">\(B\)</span> with respect to <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(A-B\text{.}\)</span>
+</div>
+<div class="para" id="ex-set-boolean-algebra-3">This is a key example for us since all finite Boolean algebras and many infinite Boolean algebras look like this example for some <span class="process-math">\(A\text{.}\)</span> In fact, a glance at the basic Boolean algebra laws in <a href="s-boolean-algebras.html#table-boolean-laws" class="xref" data-knowl="./knowl/xref/table-boolean-laws.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 12.3.11: Basic Boolean Algebra Laws">Table 12.3.11</a>, in comparison with the set laws of Chapter 4 and the basic laws of logic of Chapter 3, indicates that all three systems behave the same; that is, they are isomorphic.</div></article><article class="example example-like" id="ex-boolean-algebra-d30"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">12.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Divisors of 30.</span>
-</h3> <div class="para" id="ex-boolean-algebra-d30-2">A somewhat less standard example of a Boolean algebra is derived from the lattice of divisors of 30 under the relation “divides”. If you examine the ordering diagram for this lattice, you see that it is structurally the same as the Boolean algebra of subsets of a three element set. Therefore, the join, meet and complementation operations act the same as union, intersection and set complementation. We might conjecture that the lattice of divisors of any integer will produce a Boolean algebra, but it is only the case of certain integers. Try out a few integers to see if you can identify what is necessary to produce a Boolean algebra.</div></article><figure class="table table-like" id="table-boolean-laws"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">12.3.11<span class="period">.</span></span><span class="space"> </span>Basic Boolean Algebra Laws</figcaption><div class="tabular-box natural-width"><table class="tabular">
+</h3>
+<div class="para" id="ex-boolean-algebra-d30-2">A somewhat less standard example of a Boolean algebra is derived from the lattice of divisors of 30 under the relation “divides”. If you examine the ordering diagram for this lattice, you see that it is structurally the same as the Boolean algebra of subsets of a three element set. Therefore, the join, meet and complementation operations act the same as union, intersection and set complementation. We might conjecture that the lattice of divisors of any integer will produce a Boolean algebra, but it is only the case of certain integers. Try out a few integers to see if you can identify what is necessary to produce a Boolean algebra.</div></article><figure class="table table-like" id="table-boolean-laws"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">12.3.11<span class="period">.</span></span><span class="space"> </span>Basic Boolean Algebra Laws</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">Commutative Laws</td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(a\lor b = b\lor a\)</span></td>
@@ -1124,7 +1158,8 @@ a_2 &amp;= a_2 \land \pmb{1} = a_2 \land \left(a \lor a_1\right)\\
 </table></div></figure><div class="para" id="s-boolean-algebras-20">The “pairings” of the Boolean algebra laws reminds us of the principle of duality, which we state for a Boolean algebra.</div>
 <article class="definition definition-like" id="def-boolean-duality"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Principle of Duality for Boolean Algebras.</span>
-</h3>  <div class="para" id="def-boolean-duality-4-1">Let <span class="process-math">\(\mathcal{B}=[B; \lor, \land, \hspace{1 mm}^c]\)</span> be a Boolean algebra under <span class="process-math">\(\preceq\text{,}\)</span> and let <span class="process-math">\(S\)</span> be a true statement for <span class="process-math">\(\mathcal{B}\text{.}\)</span> If <span class="process-math">\(S^*\)</span> is obtained from <span class="process-math">\(S\)</span> by replacing <span class="process-math">\(\preceq\)</span> with <span class="process-math">\(\succeq\)</span> (this is equivalent to turning the graph upside down), <span class="process-math">\(\lor\)</span> with <span class="process-math">\(\land\text{,}\)</span> <span class="process-math">\(\land\)</span> with <span class="process-math">\(\lor\text{,}\)</span> <span class="process-math">\(\pmb{0}\)</span> with <span class="process-math">\(\pmb{1}\text{,}\)</span> and <span class="process-math">\(\pmb{1}\)</span> with <span class="process-math">\(\pmb{0}\text{,}\)</span> then <span class="process-math">\(S^*\)</span> is also a true statement in <span class="process-math">\(\mathcal{B}\text{.}\)</span>
+</h3>
+<div class="para" id="def-boolean-duality-4-1">Let <span class="process-math">\(\mathcal{B}=[B; \lor, \land, \hspace{1 mm}^c]\)</span> be a Boolean algebra under <span class="process-math">\(\preceq\text{,}\)</span> and let <span class="process-math">\(S\)</span> be a true statement for <span class="process-math">\(\mathcal{B}\text{.}\)</span> If <span class="process-math">\(S^*\)</span> is obtained from <span class="process-math">\(S\)</span> by replacing <span class="process-math">\(\preceq\)</span> with <span class="process-math">\(\succeq\)</span> (this is equivalent to turning the graph upside down), <span class="process-math">\(\lor\)</span> with <span class="process-math">\(\land\text{,}\)</span> <span class="process-math">\(\land\)</span> with <span class="process-math">\(\lor\text{,}\)</span> <span class="process-math">\(\pmb{0}\)</span> with <span class="process-math">\(\pmb{1}\text{,}\)</span> and <span class="process-math">\(\pmb{1}\)</span> with <span class="process-math">\(\pmb{0}\text{,}\)</span> then <span class="process-math">\(S^*\)</span> is also a true statement in <span class="process-math">\(\mathcal{B}\text{.}\)</span>
 </div></article><div class="para" id="s-boolean-algebras-22">We close this section with some comments on notation. The notation for operations in a Boolean algebra is derived from the algebra of logic. However, other notational systems are used. These are summarized in the following chart.</div>
 <figure class="table table-like" id="table-boolean-notation"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">12.3.13<span class="period">.</span></span><span class="space"> </span>Contrasting Notational Systems for Boolean Algebra</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
@@ -1199,9 +1234,10 @@ A \\
 \emptyset \\
 \end{array}
 \\
-\end{array}\)</span></div> <div class="para" id="exercises-12-3-2-2-2">This lattice is a Boolean algebra since it is a distributive complemented lattice.</div>
+\end{array}\)</span></div>
+<div class="para" id="exercises-12-3-2-2-2">This lattice is a Boolean algebra since it is a distributive complemented lattice.</div>
 </div></details></div></article><article class="exercise exercise-like" id="exercises-12-3-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para logical" id="exercises-12-3-3-1-1"><ol class="lower-alpha">
+<div class="para logical" id="exercises-12-3-3-1-1"><ol class="lower-alpha ol-marker-1" id="exercises-12-3-3-1-1-1">
 <li id="exercises-12-3-3-1-1-1-1"><div class="para" id="exercises-12-3-3-1-1-1-1-1">Determine the complement of each element of <span class="process-math">\(D_6\)</span> in <span class="process-math">\(\left[D_6;
 \lor , \land \right]\text{.}\)</span>
 </div></li>
@@ -1214,7 +1250,7 @@ A \\
 <div class="para logical" id="exercises-12-3-5-1-1">
 <div class="para">Let <span class="process-math">\(A = \{a, b\}\)</span> and <span class="process-math">\(B = \mathcal{P}(A)\text{.}\)</span>
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="exercises-12-3-5-1-1-3">
 <li id="exercises-12-3-5-1-1-3-1"><div class="para" id="exercises-12-3-5-1-1-3-1-1">Prove that <span class="process-math">\([B; \cup, \cap, \hspace{1 mm}^c ]\)</span> is a Boolean algebra.</div></li>
 <li id="exercises-12-3-5-1-1-3-2"><div class="para" id="exercises-12-3-5-1-1-3-2-1">Write out the operation tables for the Boolean algebra.</div></li>
 </ol>
@@ -1223,7 +1259,7 @@ A \\
 <div class="para">It can be shown that the following statement, <span class="process-math">\(S\text{,}\)</span> holds for any Boolean algebra <span class="process-math">\([B; \lor , \land, -]\)</span> : <span class="process-math">\((a \land b) = a\)</span> if and only if <span class="process-math">\(a
 \leq b\text{.}\)</span>
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="exercises-12-3-6-1-1-5">
 <li id="exercises-12-3-6-1-1-5-1"><div class="para" id="exercises-12-3-6-1-1-5-1-1">Write the dual, <span class="process-math">\(S^*\text{,}\)</span> of the statement <span class="process-math">\(S\text{.}\)</span>
 </div></li>
 <li id="exercises-12-3-6-1-1-5-2"><div class="para" id="exercises-12-3-6-1-1-5-2-1">Write the statement <span class="process-math">\(S\)</span> and its dual, <span class="process-math">\(S^*\text{,}\)</span> in the language of sets.</div></li>
@@ -1232,7 +1268,7 @@ A \\
 <li id="exercises-12-3-6-1-1-5-5"><div class="para" id="exercises-12-3-6-1-1-5-5-1">Are the statements in part d true for all propositions?</div></li>
 </ol>
 </div>
-<div class="solutions"><details id="exercises-12-3-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-12-3-6-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-12-3-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-12-3-6-2-1"><ol class="lower-alpha ol-marker-1" id="exercises-12-3-6-2-1-1">
 <li id="exercises-12-3-6-2-1-1-1"><div class="para" id="exercises-12-3-6-2-1-1-1-1"><span class="process-math">\(\displaystyle S^*:a \lor b= a \textrm{ if } a \geq b\)</span></div></li>
 <li id="exercises-12-3-6-2-1-1-2"><div class="para" id="exercises-12-3-6-2-1-1-2-1">The dual of <span class="process-math">\(S:A\cap B = A\textrm{ if }A \subseteq B\)</span> is <span class="process-math">\(S^*:A
 \cup B = A\textrm{ if } A \supseteq B\)</span>
@@ -1246,7 +1282,7 @@ q\Rightarrow p\)</span>
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-12-3-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <div class="para logical" id="exercises-12-3-7-1-1">
 <div class="para">State the dual of:</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="exercises-12-3-7-1-1-1">
 <li id="exercises-12-3-7-1-1-1-1"><div class="para" id="exercises-12-3-7-1-1-1-1-1"><span class="process-math">\(a \lor (b \land a) = a\text{.}\)</span></div></li>
 <li id="exercises-12-3-7-1-1-1-2"><div class="para" id="exercises-12-3-7-1-1-1-2-1"><span class="process-math">\(a \lor \left(\overline{\left(\bar{b} \lor a\right) \land
 b}\right) = 1\text{.}\)</span></div></li>
@@ -1257,7 +1293,7 @@ b}\right) = 1\text{.}\)</span></div></li>
 <div class="solutions"><details id="exercises-12-3-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-12-3-8-2-1">
 <div class="para">
 <span class="process-math">\([B; \land, \lor, -]\)</span> is isomorphic to <span class="process-math">\([B';\land, \lor, \tilde{}]\)</span> if and only if there exists a function <span class="process-math">\(T:B \to B'\)</span> such that</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="exercises-12-3-8-2-1-4">
 <li id="exercises-12-3-8-2-1-4-1"><div class="para" id="exercises-12-3-8-2-1-4-1-1">
 <span class="process-math">\(T\)</span> is a bijection;</div></li>
 <li id="exercises-12-3-8-2-1-4-2"><div class="para" id="exercises-12-3-8-2-1-4-2-1"><span class="process-math">\(\displaystyle T(a\land b)=T(a)\land T(b)\quad \textrm{ for} \textrm{ all }
@@ -1269,11 +1305,11 @@ a,b\in B\)</span></div></li>
 </div></div></details></div></article><article class="exercise exercise-like" id="exercises-12-3-9"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="para" id="exercises-12-3-9-1-1">For what positive integers, <span class="process-math">\(n\text{,}\)</span> does the lattice <span class="process-math">\([D_n,\mid]\)</span> produce a Boolean algebra?</div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s-lattices.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s-atoms-of-a-boolean-algebra.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s-lattices.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s-atoms-of-a-boolean-algebra.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

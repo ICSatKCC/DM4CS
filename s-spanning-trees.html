@@ -5,30 +5,20 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Spanning Trees</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Discrete Mathematics for Computer Science">
-<meta property="book:author" content="Ken Levasseur">
-<meta property="book:author" content="Al Doerr">
-<meta property="book:author" content="Michiel Smid">
-<meta property="book:author" content="Oscar Levin">
-<meta property="book:author" content="Charles M. Grinstead">
-<meta property="book:author" content="J. Laurie Snell">
-<meta property="book:author" content="Eric Lehman">
-<meta property="book:author" content="F. Thomson Leighton">
-<meta property="book:author" content="Albert R Meyer">
-<meta property="book:author" content="Jeff Erickson">
-<meta property="book:author" content="Kenneth P. Bogart">
-<meta property="book:author" content="Carol Chritchlow">
-<meta property="book:author" content="David Eck">
-<meta property="book:author" content="OpenDSA Project">
-<meta property="book:author" content="L.J. Miller">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -100,36 +90,68 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Discrete Mathematics for Computer Science">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ken Levasseur">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Al Doerr">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Michiel Smid">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Oscar Levin">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Charles M. Grinstead">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="J. Laurie Snell">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Eric Lehman">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="F. Thomson Leighton">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Albert R Meyer">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Jeff Erickson">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Kenneth P. Bogart">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Carol Chritchlow">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="David Eck">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="OpenDSA Project">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="L.J. Miller">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
 <p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -140,7 +162,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s-what-is-a-tree.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_16_trees.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s-rooted-trees.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s-what-is-a-tree.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_16_trees.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s-rooted-trees.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
 \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
 \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
@@ -173,12 +196,12 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -861,9 +884,9 @@ window.MathJax = {
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-what-is-a-tree.html#exercises-16-1" class="internal"><span class="codenumber">16.1.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="s-spanning-trees.html" class="internal"><span class="codenumber">16.2</span> <span class="title">Spanning Trees</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-spanning-trees.html#s-spanning-trees-3" class="internal"><span class="codenumber">16.2.1</span> <span class="title">Motivation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-spanning-trees.html#s-spanning-trees-4" class="internal"><span class="codenumber">16.2.2</span> <span class="title">Definition</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-spanning-trees.html#s-spanning-trees-5" class="internal"><span class="codenumber">16.2.3</span> <span class="title">Prim’s Algorithm</span></a></div></li>
@@ -970,7 +993,7 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s-spanning-trees"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s-spanning-trees"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">16.2</span><span class="space"> </span><span class="title">Spanning Trees</span>
 </h2>
 <section class="subsection" id="s-spanning-trees-3"><h3 class="heading hide-type">
@@ -980,7 +1003,7 @@ window.MathJax = {
 <div class="para" id="s-spanning-trees-3-3">A graph of Atlantis University (<a href="s-spanning-trees.html#fig-atlantis-16" class="xref" data-knowl="./knowl/xref/fig-atlantis-16.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 16.2.1">Figure 16.2.1</a>) shows that there are four campuses in the system. A new secure communications system is being installed and the objective is to allow for communication between any two campuses; to achieve this objective, the university must buy direct lines between certain pairs of campuses. Let <span class="process-math">\(G\)</span> be the graph with a vertex for each campus and an edge for each direct line. Total communication is equivalent to <span class="process-math">\(G\)</span> being a connected graph. This is due to the fact that two campuses can communicate over any number of lines. To minimize costs, the university wants to buy a minimum number of lines.</div>
 <figure class="figure figure-like" id="fig-atlantis-16"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/fig-atlantis-16.png" class="contained" alt="Graph representing four university campuses"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">16.2.1<span class="period">.</span></span><span class="space"> </span>Atlantis University Graph</figcaption></figure><div class="para" id="s-spanning-trees-3-5">The solutions to this problem are all trees. Any graph that satisfies the requirements of the university must be connected, and if a cycle does exist, any line in the cycle can be deleted, reducing the cost. Each of the sixteen trees that can be drawn to connect the vertices North, South, East, and West (see <a href="s-what-is-a-tree.html#exercise-trees" class="xref" data-knowl="./knowl/xref/exercise-trees.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 16.1.3.1">Exercise 16.1.3.1</a>) solves the problem as it is stated. Note that in each case, three direct lines must be purchased. There are two considerations that can help reduce the number of solutions that would be considered.</div>
-<div class="para logical" id="s-spanning-trees-3-6"><ul class="disc">
+<div class="para logical" id="s-spanning-trees-3-6"><ul class="disc" id="s-spanning-trees-3-6-1">
 <li id="s-spanning-trees-3-6-1-1"><div class="para" id="s-spanning-trees-3-6-1-1-1">Objective 1: Given that the cost of each line depends on certain factors, such as the distance between the campuses, select a tree whose cost is as low as possible.</div></li>
 <li id="s-spanning-trees-3-6-1-2"><div class="para" id="s-spanning-trees-3-6-1-2-1">Objective 2: Suppose that communication over multiple lines is noisier as the number of lines increases. Select a tree with the property that the maximum number of lines that any pair of campuses must use to communicate with is as small as possible.</div></li>
 </ul></div>
@@ -989,10 +1012,11 @@ window.MathJax = {
 </h3>
 <article class="definition definition-like" id="def-spanning-tree"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Spanning Tree.</span>
-</h4>  <div class="para" id="def-spanning-tree-3-1">Let <span class="process-math">\(G = (V, E)\)</span> be a connected undirected graph. A spanning tree for <span class="process-math">\(G\)</span> is a <a href="s-graphs-introduction.html#def-subgraph" class="xref" data-knowl="./knowl/xref/def-subgraph.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 15.1.16: Subgraph">spanning subgraph 15.1.16</a> of <span class="process-math">\(G\)</span> that is a tree.</div></article><article class="note remark-like" id="s-spanning-trees-4-3"><h4 class="heading">
+</h4>
+<div class="para" id="def-spanning-tree-3-1">Let <span class="process-math">\(G = (V, E)\)</span> be a connected undirected graph. A spanning tree for <span class="process-math">\(G\)</span> is a <a href="s-graphs-introduction.html#def-subgraph" class="xref" data-knowl="./knowl/xref/def-subgraph.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 15.1.16: Subgraph">spanning subgraph 15.1.16</a> of <span class="process-math">\(G\)</span> that is a tree.</div></article><article class="note remark-like" id="s-spanning-trees-4-3"><h4 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">16.2.3</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="s-spanning-trees-4-3-1"><ol class="lower-alpha">
+<div class="para logical" id="s-spanning-trees-4-3-1"><ol class="lower-alpha ol-marker-1" id="s-spanning-trees-4-3-1-1">
 <li id="s-spanning-trees-4-3-1-1-1"><div class="para" id="s-spanning-trees-4-3-1-1-1-1">If <span class="process-math">\((V, E')\)</span> is a spanning tree, <span class="process-math">\(\lvert E' \rvert =\lvert V
 \rvert - 1\text{.}\)</span>
 </div></li>
@@ -1000,13 +1024,15 @@ window.MathJax = {
 </ol></div></article><div class="para" id="s-spanning-trees-4-4">For the remainder of this section, we will discuss two of the many topics that relate to spanning trees. The first is the problem of finding Minimal Spanning Trees, which addresses Objective 1 above. The second is the problem of finding Minimum Diameter Spanning Trees, which addresses Objective 2.</div>
 <article class="definition definition-like" id="def-min-spanning-tree"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal Spanning Tree.</span>
-</h4>  <div class="para" id="def-min-spanning-tree-3-1">Given a weighted connected undirected graph <span class="process-math">\(G = (V, E, w)\text{,}\)</span> a minimal spanning tree is a spanning tree <span class="process-math">\((V, E')\)</span> for which <span class="process-math">\(\sum_{e\in E'} w(e)\)</span> is as small as possible.</div></article></section><section class="subsection" id="s-spanning-trees-5"><h3 class="heading hide-type">
+</h4>
+<div class="para" id="def-min-spanning-tree-3-1">Given a weighted connected undirected graph <span class="process-math">\(G = (V, E, w)\text{,}\)</span> a minimal spanning tree is a spanning tree <span class="process-math">\((V, E')\)</span> for which <span class="process-math">\(\sum_{e\in E'} w(e)\)</span> is as small as possible.</div></article></section><section class="subsection" id="s-spanning-trees-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">16.2.3</span><span class="space"> </span><span class="title">Prim’s Algorithm</span>
 </h3>
 <div class="para" id="s-spanning-trees-5-2">Unlike many of the graph-optimization problems that we’ve examined, a solution to this problem can be obtained efficiently. It is a situation in which a greedy algorithm works.</div>
 <article class="definition definition-like" id="def-bridge"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Bridge.</span>
-</h4>  <div class="para" id="def-bridge-3-1">Let <span class="process-math">\(G = (V, E)\)</span> be an undirected graph and let <span class="process-math">\(\{L, R\}\)</span> be a partition of <span class="process-math">\(V\text{.}\)</span> A bridge between <span class="process-math">\(L\)</span> and <span class="process-math">\(R\)</span> is an edge in <span class="process-math">\(E\)</span> that connects a vertex in <span class="process-math">\(L\)</span> to a vertex in <span class="process-math">\(R\text{.}\)</span>
+</h4>
+<div class="para" id="def-bridge-3-1">Let <span class="process-math">\(G = (V, E)\)</span> be an undirected graph and let <span class="process-math">\(\{L, R\}\)</span> be a partition of <span class="process-math">\(V\text{.}\)</span> A bridge between <span class="process-math">\(L\)</span> and <span class="process-math">\(R\)</span> is an edge in <span class="process-math">\(E\)</span> that connects a vertex in <span class="process-math">\(L\)</span> to a vertex in <span class="process-math">\(R\text{.}\)</span>
 </div></article><article class="theorem theorem-like" id="theorem-16-2-1"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.2.6</span><span class="period">.</span>
 </h4>
@@ -1014,22 +1040,24 @@ window.MathJax = {
 </div></article><details id="theorem-16-2-1-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="theorem-16-2-1-2-1">Suppose that no minimal spanning tree including <span class="process-math">\(e^*\)</span> exists. Let <span class="process-math">\(T = (V,
 E')\)</span> be a minimal spanning tree. If we add <span class="process-math">\(e^*\)</span> to <span class="process-math">\(T\text{,}\)</span> a cycle is created, and this cycle must contain another bridge, <span class="process-math">\(e\text{,}\)</span> between <span class="process-math">\(L\)</span> and <span class="process-math">\(R\text{.}\)</span> Since <span class="process-math">\(w\left(e^*\right) \leq w(e)\text{,}\)</span> we can delete <span class="process-math">\(e\)</span> and the new tree, which includes <span class="process-math">\(e^*\)</span> must also be a minimal spanning tree.</div></article></details><article class="example example-like" id="ex-some-bridges"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">16.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Some Bridges.</span>
-</h4> <div class="para" id="ex-some-bridges-2">The bridges between the vertex sets <span class="process-math">\(\{a, b, c\}\)</span> and <span class="process-math">\(\{d, e\}\)</span> in <a href="s-spanning-trees.html#fig-bridges-16" class="xref" data-knowl="./knowl/xref/fig-bridges-16.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 16.2.8">Figure 16.2.8</a> are the edges <span class="process-math">\(\{b, d\}\)</span> and <span class="process-math">\(\{c,
+</h4>
+<div class="para" id="ex-some-bridges-2">The bridges between the vertex sets <span class="process-math">\(\{a, b, c\}\)</span> and <span class="process-math">\(\{d, e\}\)</span> in <a href="s-spanning-trees.html#fig-bridges-16" class="xref" data-knowl="./knowl/xref/fig-bridges-16.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 16.2.8">Figure 16.2.8</a> are the edges <span class="process-math">\(\{b, d\}\)</span> and <span class="process-math">\(\{c,
 e\}\text{.}\)</span> According to the theorem above, a minimal spanning tree that includes <span class="process-math">\(\{b,
-d\}\)</span> exists. By examination, you should be able to see that this is true. Is it true that only the bridges of minimal weight can be part of a minimal spanning tree?</div> <figure class="figure figure-like" id="fig-bridges-16"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/fig-bridges-16.png" class="contained" alt="Graph image identifying bridge edges between two vertex sets"></div>
+d\}\)</span> exists. By examination, you should be able to see that this is true. Is it true that only the bridges of minimal weight can be part of a minimal spanning tree?</div>
+<figure class="figure figure-like" id="fig-bridges-16"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/fig-bridges-16.png" class="contained" alt="Graph image identifying bridge edges between two vertex sets"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">16.2.8<span class="period">.</span></span><span class="space"> </span>Bridges between two sets</figcaption></figure></article><div class="para" id="s-spanning-trees-5-6">
 <a href="s-spanning-trees.html#theorem-16-2-1" class="xref" data-knowl="./knowl/xref/theorem-16-2-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.2.6">Theorem 16.2.6</a> essentially tells us that a minimal spanning tree can be constructed recursively by continually adding minimally weighted bridges to a set of edges.</div>
 <article class="algorithm theorem-like" id="alg-prim"><h4 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">16.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Prim’s Algorithm.</span>
 </h4>
-<div class="para" id="alg-prim-3-1">Let <span class="process-math">\(G = (V, E, w)\)</span> be a connected, weighted, undirected graph, and let <span class="process-math">\(v_0\)</span> be an arbitrary vertex in <span class="process-math">\(V\text{.}\)</span> The following steps lead to a minimal spanning tree for <span class="process-math">\(G\text{.}\)</span> <span class="process-math">\(L\)</span> and <span class="process-math">\(R\)</span> will be sets of vertices and <span class="process-math">\(E'\)</span> is a set of edges.</div> <div class="para logical" id="alg-prim-3-2"><ol class="decimal">
+<div class="para" id="alg-prim-3-1">Let <span class="process-math">\(G = (V, E, w)\)</span> be a connected, weighted, undirected graph, and let <span class="process-math">\(v_0\)</span> be an arbitrary vertex in <span class="process-math">\(V\text{.}\)</span> The following steps lead to a minimal spanning tree for <span class="process-math">\(G\text{.}\)</span> <span class="process-math">\(L\)</span> and <span class="process-math">\(R\)</span> will be sets of vertices and <span class="process-math">\(E'\)</span> is a set of edges.</div> <div class="para logical" id="alg-prim-3-2"><ol class="decimal ol-marker-2" id="alg-prim-3-2-1">
 <li id="alg-prim-3-2-1-1"><div class="para" id="alg-prim-3-2-1-1-1">(Initialize) <span class="process-math">\(L = V - \left\{v_0\right\}\text{;}\)</span> <span class="process-math">\(R =
 \left\{v_0\right\}\text{;}\)</span> <span class="process-math">\(E' = \emptyset\text{.}\)</span>
 </div></li>
 <li id="alg-prim-3-2-1-2">
 <div class="para" id="alg-prim-3-2-1-2-1">(Build the tree) While <span class="process-math">\(L\neq \emptyset\text{:}\)</span>
 </div>
-<div class="para logical" id="alg-prim-3-2-1-2-2"><ol class="decimal">
+<div class="para logical" id="alg-prim-3-2-1-2-2"><ol class="decimal ol-marker-2" id="alg-prim-3-2-1-2-2-1">
 <li id="alg-prim-3-2-1-2-2-1-1"><div class="para" id="alg-prim-3-2-1-2-2-1-1-1">Find <span class="process-math">\(e^* = \left\{v_L,v_R\right\}\text{,}\)</span> a bridge of minimum weight between <span class="process-math">\(L\)</span> and <span class="process-math">\(R\text{.}\)</span>
 </div></li>
 <li id="alg-prim-3-2-1-2-2-1-2"><div class="para" id="alg-prim-3-2-1-2-2-1-2-1">
@@ -1044,22 +1072,27 @@ d\}\)</span> exists. By examination, you should be able to see that this is true
 </ol></div></article><article class="note remark-like" id="s-spanning-trees-5-8"><h4 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">16.2.10</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="s-spanning-trees-5-8-1"><ol class="lower-alpha">
+<div class="para logical" id="s-spanning-trees-5-8-1"><ol class="lower-alpha ol-marker-1" id="s-spanning-trees-5-8-1-1">
 <li id="s-spanning-trees-5-8-1-1-1"><div class="para" id="s-spanning-trees-5-8-1-1-1-1">If more than one minimal spanning tree exists, then the one that is obtained depends on <span class="process-math">\(v_0\)</span> and the means by which <span class="process-math">\(e^*\)</span> is selected in Step 2.</div></li>
 <li id="s-spanning-trees-5-8-1-1-2"><div class="para" id="s-spanning-trees-5-8-1-1-2-1">Warning: If two minimally weighted bridges exist between <span class="process-math">\(L\)</span> and <span class="process-math">\(R\text{,}\)</span> do not try to speed up the algorithm by adding both of them to <span class="process-math">\(E\)</span>’.</div></li>
 <li id="s-spanning-trees-5-8-1-1-3"><div class="para" id="s-spanning-trees-5-8-1-1-3-1">That <a href="s-spanning-trees.html#alg-prim" class="xref" data-knowl="./knowl/xref/alg-prim.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 16.2.9: Prim’s Algorithm">Algorithm 16.2.9</a> yields a minimal spanning tree can be proven by induction with the use of <a href="s-spanning-trees.html#theorem-16-2-1" class="xref" data-knowl="./knowl/xref/theorem-16-2-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.2.6">Theorem 16.2.6</a>.</div></li>
 <li id="s-spanning-trees-5-8-1-1-4"><div class="para" id="s-spanning-trees-5-8-1-1-4-1">If it is not known whether <span class="process-math">\(G\)</span> is connected, <a href="s-spanning-trees.html#alg-prim" class="xref" data-knowl="./knowl/xref/alg-prim.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 16.2.9: Prim’s Algorithm">Algorithm 16.2.9</a> can be revised to handle this possibility. The key change (in Step 2.1) would be to determine whether any bridge at all exists between <span class="process-math">\(L\)</span> and <span class="process-math">\(R\text{.}\)</span> The condition of the while loop in Step 2 must also be changed somewhat.</div></li>
 </ol></div></article><article class="example example-like" id="ex-an-example"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">16.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">A Small Example.</span>
-</h4> <div class="para" id="ex-an-example-2">Consider the graph in <a href="s-spanning-trees.html#fig-weighted-graph-16" class="xref" data-knowl="./knowl/xref/fig-weighted-graph-16.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 16.2.12">Figure 16.2.12</a>. If we apply <a href="s-spanning-trees.html#alg-prim" class="xref" data-knowl="./knowl/xref/alg-prim.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 16.2.9: Prim’s Algorithm">Prim’s Algorithm</a> starting at <span class="process-math">\(a\text{,}\)</span> we obtain the following edge list in the order given: <span class="process-math">\(\{a, f\}, \{f, e\}, \{e, c\}, \{c, d\},
-\{f, b\}, \{b, g\}\text{.}\)</span> The total of the weights of these edges is 20. The method that we have used (in Step 2.1) to select a bridge when more than one minimally weighted bridge exists is to order all bridges alphabetically by the vertex in <span class="process-math">\(L\)</span> and then, if further ties exist, by the vertex in <span class="process-math">\(R\text{.}\)</span> The first vertex in that order is selected in Step 2.1 of the algorithm.</div> <figure class="figure figure-like" id="fig-weighted-graph-16"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fig-weighted-graph-16.png" class="contained" alt="An undirected weighted graph with 7 vertices"></div>
+</h4>
+<div class="para" id="ex-an-example-2">Consider the graph in <a href="s-spanning-trees.html#fig-weighted-graph-16" class="xref" data-knowl="./knowl/xref/fig-weighted-graph-16.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 16.2.12">Figure 16.2.12</a>. If we apply <a href="s-spanning-trees.html#alg-prim" class="xref" data-knowl="./knowl/xref/alg-prim.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 16.2.9: Prim’s Algorithm">Prim’s Algorithm</a> starting at <span class="process-math">\(a\text{,}\)</span> we obtain the following edge list in the order given: <span class="process-math">\(\{a, f\}, \{f, e\}, \{e, c\}, \{c, d\},
+\{f, b\}, \{b, g\}\text{.}\)</span> The total of the weights of these edges is 20. The method that we have used (in Step 2.1) to select a bridge when more than one minimally weighted bridge exists is to order all bridges alphabetically by the vertex in <span class="process-math">\(L\)</span> and then, if further ties exist, by the vertex in <span class="process-math">\(R\text{.}\)</span> The first vertex in that order is selected in Step 2.1 of the algorithm.</div>
+<figure class="figure figure-like" id="fig-weighted-graph-16"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fig-weighted-graph-16.png" class="contained" alt="An undirected weighted graph with 7 vertices"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">16.2.12<span class="period">.</span></span><span class="space"> </span>A small weighted graph</figcaption></figure></article><article class="definition definition-like" id="def-min-diameter-spanning-tree"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.2.13</span><span class="period">.</span><span class="space"> </span><span class="title">Minimum Diameter Spanning Tree.</span>
-</h4>  <div class="para" id="def-min-diameter-spanning-tree-3-1">Given a connected undirected graph <span class="process-math">\(G = (V, E)\text{,}\)</span> find a spanning tree <span class="process-math">\(T =
+</h4>
+<div class="para" id="def-min-diameter-spanning-tree-3-1">Given a connected undirected graph <span class="process-math">\(G = (V, E)\text{,}\)</span> find a spanning tree <span class="process-math">\(T =
 (V, E')\)</span> of <span class="process-math">\(G\)</span> such that the longest path in <span class="process-math">\(T\)</span> is as short as possible.</div></article><article class="example example-like" id="ex-min-diameter-k5"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">16.2.14</span><span class="period">.</span><span class="space"> </span><span class="title">The Case for Complete Graphs.</span>
-</h4> <div class="para" id="ex-min-diameter-k5-2">The Minimum Diameter Spanning Tree Problem is trivial to solve in a <span class="process-math">\(K_n\text{.}\)</span> Select any vertex <span class="process-math">\(v_0\)</span> and construct the spanning tree whose edge set is the set of edges that connect <span class="process-math">\(v_0\)</span> to the other vertices in the <span class="process-math">\(K_n\)</span> . <a href="s-spanning-trees.html#fig-min-diameter-k5" class="xref" data-knowl="./knowl/xref/fig-min-diameter-k5.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 16.2.15">Figure 16.2.15</a> illustrates a solution for <span class="process-math">\(n=5\text{.}\)</span>
-</div> <figure class="figure figure-like" id="fig-min-diameter-k5"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fig-min-diameter-k5.png" class="contained" alt="Depiction of a minimum diameter spanning tree on \(K_5\)"></div>
+</h4>
+<div class="para" id="ex-min-diameter-k5-2">The Minimum Diameter Spanning Tree Problem is trivial to solve in a <span class="process-math">\(K_n\text{.}\)</span> Select any vertex <span class="process-math">\(v_0\)</span> and construct the spanning tree whose edge set is the set of edges that connect <span class="process-math">\(v_0\)</span> to the other vertices in the <span class="process-math">\(K_n\)</span> . <a href="s-spanning-trees.html#fig-min-diameter-k5" class="xref" data-knowl="./knowl/xref/fig-min-diameter-k5.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 16.2.15">Figure 16.2.15</a> illustrates a solution for <span class="process-math">\(n=5\text{.}\)</span>
+</div>
+<figure class="figure figure-like" id="fig-min-diameter-k5"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fig-min-diameter-k5.png" class="contained" alt="Depiction of a minimum diameter spanning tree on \(K_5\)"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">16.2.15<span class="period">.</span></span><span class="space"> </span>Minimum diameter spanning tree for <span class="process-math">\(K_5\)</span></figcaption></figure></article><div class="para" id="s-spanning-trees-5-12">For incomplete graphs, a two-stage algorithm is needed. In short, the first step is to locate a “center” of the graph. The maximum distance from a center to any other vertex is as small as possible. Once a center is located, a breadth-first search of the graph is used to construct the spanning tree.</div></section><section class="exercises" id="exercises-16-2"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">16.2.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
@@ -1070,7 +1103,8 @@ d\}\)</span> exists. By examination, you should be able to see that this is true
 <div class="para" id="exercises-16-2-4-1-1">Show that the answer to the question posed in <a href="s-spanning-trees.html#ex-some-bridges" class="xref" data-knowl="./knowl/xref/ex-some-bridges.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 16.2.7: Some Bridges">Example 16.2.7</a> is “no.”</div>
 <div class="solutions"><details id="exercises-16-2-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
 <div class="para" id="exercises-16-2-4-2-1">In the figure below, <span class="process-math">\(\{1,2\}\)</span> is not a minimal bridge between <span class="process-math">\(L=\{1,4\}
-\textrm{ and } R=\{2,3\}\text{,}\)</span> but it is part of the minimal spanning tree for this graph.</div> <figure class="figure figure-like" id="fig-sol-e-16-2-3"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fig-sol-e-16-2-3.png" class="contained" alt="Graph demonstrating solution to exercise 3"></div>
+\textrm{ and } R=\{2,3\}\text{,}\)</span> but it is part of the minimal spanning tree for this graph.</div>
+<figure class="figure figure-like" id="fig-sol-e-16-2-3"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fig-sol-e-16-2-3.png" class="contained" alt="Graph demonstrating solution to exercise 3"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">16.2.16<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
 </div></details></div></article><article class="exercise exercise-like" id="exercises-16-2-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para" id="exercises-16-2-5-1-1">Find a minimal spanning tree for the following graphs.</div> <figure class="figure figure-like" id="fig-exercise-16-2-4a"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fig-exercise-16-2-4a.png" class="contained" alt="Graph for exercise 4a"></div>
@@ -1079,7 +1113,7 @@ d\}\)</span> exists. By examination, you should be able to see that this is true
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">16.2.19<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="exercise exercise-like" id="exercises-16-2-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para" id="exercises-16-2-6-1-1">Find a minimum diameter spanning tree for the following graphs.</div> <figure class="figure figure-like" id="fig-exercise-16-2-5a"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fig-exercise-16-2-5a.png" class="contained" alt="Graph for exercise 5a"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">16.2.20<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <figure class="figure figure-like" id="fig-exercise-16-2-5b"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fig-exercise-16-2-5b.png" class="contained" alt="Graph for exercise 5b"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">16.2.21<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="solutions"><details id="exercises-16-2-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-16-2-6-2-1"><ol class="lower-alpha">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">16.2.21<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="solutions"><details id="exercises-16-2-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-16-2-6-2-1"><ol class="lower-alpha ol-marker-1" id="exercises-16-2-6-2-1-1">
 <li id="exercises-16-2-6-2-1-1-1"><div class="para" id="exercises-16-2-6-2-1-1-1-1">Edges in one solution are: <span class="process-math">\(\{8,7\},\{8,9\},\{8,13\},\{7,6\},\{9,4\},\{13,12\},\{13,14\},\{6,11\},\{6,1\},\{1,2\},\{4,3\},\{4,5\},\{14,15\},
 \textrm{ and } \{5,10\}\)</span>
 </div></li>
@@ -1090,16 +1124,16 @@ d\}\)</span> exists. By examination, you should be able to see that this is true
 \{16, 20\}, \{16,
 17\}, \{10, 11\}, \{20, 21\}, \{11, 5\}\}.\)</span> The diameter of the tree is 7.</div></li>
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-16-2-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para" id="exercises-16-2-7-1-1">In each of the following parts justify your answer with either a proof or a counterexample.</div> <div class="para logical" id="exercises-16-2-7-1-2"><ol class="lower-alpha">
+<div class="para" id="exercises-16-2-7-1-1">In each of the following parts justify your answer with either a proof or a counterexample.</div> <div class="para logical" id="exercises-16-2-7-1-2"><ol class="lower-alpha ol-marker-1" id="exercises-16-2-7-1-2-1">
 <li id="exercises-16-2-7-1-2-1-1"><div class="para" id="exercises-16-2-7-1-2-1-1-1">Suppose a weighted undirected graph had distinct edge weights. Is it possible that no minimal spanning tree includes the edge of minimal weight?</div></li>
 <li id="exercises-16-2-7-1-2-1-2"><div class="para" id="exercises-16-2-7-1-2-1-2-1">Suppose a weighted undirected graph had distinct edge weights. Is it possible that every minimal spanning tree includes the edge of maximal weight? If true, under what conditions would it happen?</div></li>
 </ol></div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s-what-is-a-tree.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s-rooted-trees.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s-what-is-a-tree.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s-rooted-trees.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

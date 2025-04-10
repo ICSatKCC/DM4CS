@@ -5,30 +5,20 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Revisiting Matrix Arithmetic</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Discrete Mathematics for Computer Science">
-<meta property="book:author" content="Ken Levasseur">
-<meta property="book:author" content="Al Doerr">
-<meta property="book:author" content="Michiel Smid">
-<meta property="book:author" content="Oscar Levin">
-<meta property="book:author" content="Charles M. Grinstead">
-<meta property="book:author" content="J. Laurie Snell">
-<meta property="book:author" content="Eric Lehman">
-<meta property="book:author" content="F. Thomson Leighton">
-<meta property="book:author" content="Albert R Meyer">
-<meta property="book:author" content="Jeff Erickson">
-<meta property="book:author" content="Kenneth P. Bogart">
-<meta property="book:author" content="Carol Chritchlow">
-<meta property="book:author" content="David Eck">
-<meta property="book:author" content="OpenDSA Project">
-<meta property="book:author" content="L.J. Miller">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -100,36 +90,68 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Discrete Mathematics for Computer Science">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ken Levasseur">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Al Doerr">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Michiel Smid">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Oscar Levin">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Charles M. Grinstead">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="J. Laurie Snell">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Eric Lehman">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="F. Thomson Leighton">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Albert R Meyer">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Jeff Erickson">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Kenneth P. Bogart">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Carol Chritchlow">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="David Eck">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="OpenDSA Project">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="L.J. Miller">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
 <p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -140,7 +162,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s-Systems-of-Equations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_11.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="Section11_3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s-Systems-of-Equations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_11.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="Section11_3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
 \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
 \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
@@ -173,12 +196,12 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -658,9 +681,9 @@ window.MathJax = {
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-Systems-of-Equations.html#exercises-11-1" class="internal"><span class="codenumber">11.1.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="Section11_2.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Revisiting Matrix Arithmetic</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_2.html#ss-Add-Scalar-Multi-Matrices" class="internal"><span class="codenumber">11.2.1</span> <span class="title">Addition and Scalar Multiplication of Matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_2.html#subsec-mult-of-matrices" class="internal"><span class="codenumber">11.2.2</span> <span class="title">Multiplication of Matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section11_2.html#subsec-ijth-entry-of-matrix-prod" class="internal"><span class="codenumber">11.2.3</span> <span class="title">The <span class="process-math">\(ij^{th}\)</span> Entry of a Product</span></a></div></li>
@@ -970,7 +993,7 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Section11_2"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="Section11_2"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">11.2</span><span class="space"> </span><span class="title">Revisiting Matrix Arithmetic</span>
 </h2>
 <section class="introduction" id="Section11_2-4"><div class="para" id="Section11_2-4-1">In this section we will review and expand upon what we learned about matrices and matrix arithmetic in <a href="chapter_7.html" class="internal" title="Chapter 7: Introduction to Matrix Algebra">Chapter 7</a>.</div></section><section class="subsection" id="ss-Add-Scalar-Multi-Matrices"><h3 class="heading hide-type">
@@ -1053,7 +1076,8 @@ window.MathJax = {
 <div class="para" id="ss-Add-Scalar-Multi-Matrices-6">The above discussion stated for general matrices is given in the following definition.</div>
 <article class="definition definition-like" id="def-scalar-matrix-mult"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Scalar Matrix Multiplication.</span>
-</h4>  <div class="para" id="def-scalar-matrix-mult-3-1">If <span class="process-math">\(A = (a_{ij})\)</span> and <span class="process-math">\(k\)</span> is a scalar, then <span class="process-math">\(kA = (ka_{ij})\text{.}\)</span>
+</h4>
+<div class="para" id="def-scalar-matrix-mult-3-1">If <span class="process-math">\(A = (a_{ij})\)</span> and <span class="process-math">\(k\)</span> is a scalar, then <span class="process-math">\(kA = (ka_{ij})\text{.}\)</span>
 </div></article><article class="example example-like" id="ss-Add-Scalar-Multi-Matrices-8"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.2</span><span class="period">.</span>
 </h4>
@@ -1071,7 +1095,8 @@ window.MathJax = {
 \end{equation*}
 </div></div></article><article class="definition definition-like" id="def-lin-alg-matrix-addition"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix Addition.</span>
-</h4>  <div class="para logical" id="def-lin-alg-matrix-addition-3-1">
+</h4>
+<div class="para logical" id="def-lin-alg-matrix-addition-3-1">
 <div class="para">If <span class="process-math">\(A = (a_{ij})\)</span> and <span class="process-math">\(B = (b_{ij})\)</span> are two <span class="process-math">\(m \times n\)</span> matrices. Then <span class="process-math">\(A+B =
 C\)</span> where</div>
 <div class="displaymath process-math">
@@ -1102,7 +1127,8 @@ C = (c_{ij})
 <div class="para" id="ss-Add-Scalar-Multi-Matrices-10-2">To save on notation, we will often use <span class="process-math">\(A_{ij}\)</span> to refer to the <span class="process-math">\(ij^{th}\)</span> entry of matrix <span class="process-math">\(A\text{.}\)</span>
 </div></article><article class="definition definition-like" id="def-zero-matrix"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Zero Matrix.</span>
-</h4>  <div class="para" id="def-zero-matrix-3-1">The <span class="process-math">\(m \times n\)</span> zero matrix is the <span class="process-math">\(m \times n\)</span> matrix having every entry equal to zero. It is denoted by 0.</div></article><article class="example example-like" id="ss-Add-Scalar-Multi-Matrices-12"><h4 class="heading">
+</h4>
+<div class="para" id="def-zero-matrix-3-1">The <span class="process-math">\(m \times n\)</span> zero matrix is the <span class="process-math">\(m \times n\)</span> matrix having every entry equal to zero. It is denoted by 0.</div></article><article class="example example-like" id="ss-Add-Scalar-Multi-Matrices-12"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.6</span><span class="period">.</span>
 </h4>
 <div class="para" id="ss-Add-Scalar-Multi-Matrices-12-1">The <span class="process-math">\(2 \times 3\)</span> zero matrix is <span class="process-math">\(\left( \begin{array}{c c c}
@@ -1111,10 +1137,11 @@ C = (c_{ij})
 \end{array} \right)\text{.}\)</span>
 </div></article><article class="definition definition-like" id="def-lin-alg-matrix-equality"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix Equality.</span>
-</h4>  <div class="para" id="def-lin-alg-matrix-equality-3-1">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be two matrices. Then <span class="process-math">\(A = B\)</span> means that the two matrices are of the same size and for <span class="process-math">\(A = (a_{ij})\)</span> and <span class="process-math">\(B = (b_{ij})\)</span> , <span class="process-math">\(a_{ij} = b_{ij} \)</span>for all <span class="process-math">\(1 \leq i \leq m\)</span> and <span class="process-math">\(1 \leq j \leq n\text{.}\)</span>
+</h4>
+<div class="para" id="def-lin-alg-matrix-equality-3-1">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be two matrices. Then <span class="process-math">\(A = B\)</span> means that the two matrices are of the same size and for <span class="process-math">\(A = (a_{ij})\)</span> and <span class="process-math">\(B = (b_{ij})\)</span> , <span class="process-math">\(a_{ij} = b_{ij} \)</span>for all <span class="process-math">\(1 \leq i \leq m\)</span> and <span class="process-math">\(1 \leq j \leq n\text{.}\)</span>
 </div></article><div class="para logical" id="ss-Add-Scalar-Multi-Matrices-14">
 <div class="para">The following properties of matrices can be easily verified. You should do so. These properties are called the vector space axioms.</div>
-<ul class="disc">
+<ul class="disc" id="ss-Add-Scalar-Multi-Matrices-14-1">
 <li id="ss-Add-Scalar-Multi-Matrices-14-1-1"><div class="para logical" id="ss-Add-Scalar-Multi-Matrices-14-1-1-1">
 <div class="para">Commutative Law Of Addition.</div>
 <div class="displaymath process-math">
@@ -1151,7 +1178,7 @@ A + (-A) = 0.
 </div>
 <div class="para logical" id="ss-Add-Scalar-Multi-Matrices-15">
 <div class="para">Also for <span class="process-math">\(\alpha, \beta\)</span> scalars, the following additional properties hold.</div>
-<ul class="disc">
+<ul class="disc" id="ss-Add-Scalar-Multi-Matrices-15-2">
 <li id="ss-Add-Scalar-Multi-Matrices-15-2-1"><div class="para logical" id="ss-Add-Scalar-Multi-Matrices-15-2-1-1">
 <div class="para">Distributive law over Matrix Addition.</div>
 <div class="displaymath process-math">
@@ -1202,7 +1229,8 @@ C_{ij} = A_{ij} + B_{ij} = B_{ij} + A_{ij} = D_{ij} .
 <div class="para" id="subsec-mult-of-matrices-2">This is where things get interesting. Matrices can be thought of as a rule for making new vectors from old vectors.</div>
 <article class="definition definition-like" id="def-vectors"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Vectors.</span>
-</h4>  <div class="para logical" id="def-vectors-3-1">
+</h4>
+<div class="para logical" id="def-vectors-3-1">
 <div class="para">Matrices which are <span class="process-math">\(n \times 1\)</span> or <span class="process-math">\(1 \times n\)</span> are called <dfn class="terminology">vectors</dfn> and are often denoted by a bold letter. Thus the <span class="process-math">\(n \times 1\)</span> matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1456,7 +1484,8 @@ AB \equiv (A\mathbf{b}_1, \dots , A\mathbf{b}_p)
 \end{pmatrix}
 \end{equation*}
 </div>
-</div> <details id="subsec-mult-of-matrices-13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-mult-of-matrices-13-2-1">
+</div>
+<details id="subsec-mult-of-matrices-13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-mult-of-matrices-13-2-1">
 <div class="para">The first thing you need to check before doing anything else is whether it is possible to do the multiplication. The first matrix on left is a <span class="process-math">\(2 \times 3\)</span> and the second matrix on right is a <span class="process-math">\(3 \times 3\text{.}\)</span> Therefore, is it possible to multiply these matrices. According to the above discussion it should be a <span class="process-math">\(2 \times 3\)</span> matrix of the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1495,7 +1524,7 @@ AB \equiv (A\mathbf{b}_1, \dots , A\mathbf{b}_p)
 \end{equation*}
 </div>
 <div class="para">You know how to multiply a matrix times a vector and so you do so to obtain each of the three columns.</div>
-</div></div></details> <details id="subsec-mult-of-matrices-13-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="subsec-mult-of-matrices-13-3-1"><div class="displaymath process-math">
+</div></div></details><details id="subsec-mult-of-matrices-13-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="subsec-mult-of-matrices-13-3-1"><div class="displaymath process-math">
 \begin{equation*}
 \begin{pmatrix}
 1 &amp; 2 &amp; 1\\
@@ -1529,7 +1558,8 @@ AB \equiv (A\mathbf{b}_1, \dots , A\mathbf{b}_p)
 \end{pmatrix}
 \end{equation*}
 </div>
-</div> <details id="subsec-mult-of-matrices-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="subsec-mult-of-matrices-14-2-1">First check if it is possible. This is of the form <span class="process-math">\((3 \times 3) (2 \times 3) \text{.}\)</span> The inside numbers do not match and so you can’t do this multiplication. This means that anything you write will be absolute nonsense because it is impossible to multiply these matrices in this order. Aren’t they the same two matrices considered in the previous example? Yes they are. It is just that here they are in a different order. This shows something you must always remember about matrix multiplication. <em class="emphasis">Order Matters! Matrix Multiplication Is Not Commutative!</em> This is very different than multiplication of numbers!</div></div></details></article></section><section class="subsection" id="subsec-ijth-entry-of-matrix-prod"><h3 class="heading hide-type">
+</div>
+<details id="subsec-mult-of-matrices-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="subsec-mult-of-matrices-14-2-1">First check if it is possible. This is of the form <span class="process-math">\((3 \times 3) (2 \times 3) \text{.}\)</span> The inside numbers do not match and so you can’t do this multiplication. This means that anything you write will be absolute nonsense because it is impossible to multiply these matrices in this order. Aren’t they the same two matrices considered in the previous example? Yes they are. It is just that here they are in a different order. This shows something you must always remember about matrix multiplication. <em class="emphasis">Order Matters! Matrix Multiplication Is Not Commutative!</em> This is very different than multiplication of numbers!</div></div></details></article></section><section class="subsection" id="subsec-ijth-entry-of-matrix-prod"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.2.3</span><span class="space"> </span><span class="title">The <span class="process-math">\(ij^{th}\)</span> Entry of a Product</span>
 </h3>
 <div class="para logical" id="subsec-ijth-entry-of-matrix-prod-2">
@@ -1689,7 +1719,8 @@ B_{nk}\end{pmatrix}
 2 &amp; 3 &amp; 1\\
 7 &amp; 6 &amp; 2\\
 \end{pmatrix}\text{.}\)</span>
-</div> <details id="subsec-ijth-entry-of-matrix-prod-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-ijth-entry-of-matrix-prod-6-2-1">
+</div>
+<details id="subsec-ijth-entry-of-matrix-prod-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-ijth-entry-of-matrix-prod-6-2-1">
 <div class="para">First check to see if this is possible. It is of the form <span class="process-math">\((3 \times 2) (2 \times 3)\)</span> and since the inside numbers match, the two matrices are conformable and it is possible to do the multiplication. The result should be a <span class="process-math">\(3 \times 3\)</span> matrix. The answer is of the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1743,7 +1774,8 @@ B_{nk}\end{pmatrix}
 </div></div></details></article><div class="para" id="subsec-ijth-entry-of-matrix-prod-7">You should try a few more such examples to verify the above definition in terms of the <span class="process-math">\(ij^{th}\)</span> entries works for other entries.</div>
 <article class="example example-like" id="subsec-ijth-entry-of-matrix-prod-8"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.17</span><span class="period">.</span>
-</h4>Multiply if possible <span class="process-math">\(\begin{pmatrix}
+</h4>
+<span class="process-math">\(\begin{pmatrix}
 1 &amp; 2 \\
 3 &amp; 1\\
 2 &amp; 6\\
@@ -1752,9 +1784,10 @@ B_{nk}\end{pmatrix}
 2 &amp; 3 &amp; 1\\
 7 &amp; 6 &amp; 2\\
 0 &amp; 0 &amp; 0\\
-\end{pmatrix}\text{.}\)</span> <details id="subsec-ijth-entry-of-matrix-prod-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="subsec-ijth-entry-of-matrix-prod-8-2-1">This is not possible because it is of the form <span class="process-math">\((3 \times 2)(3 \times 3)\)</span> and the middle numbers don’t match. In other words the two matrices are not conformable in the indicated order.</div></div></details></article><article class="example example-like" id="subsec-ijth-entry-of-matrix-prod-9"><h4 class="heading">
+\end{pmatrix}\text{.}\)</span><details id="subsec-ijth-entry-of-matrix-prod-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="subsec-ijth-entry-of-matrix-prod-8-2-1">This is not possible because it is of the form <span class="process-math">\((3 \times 2)(3 \times 3)\)</span> and the middle numbers don’t match. In other words the two matrices are not conformable in the indicated order.</div></div></details></article><article class="example example-like" id="subsec-ijth-entry-of-matrix-prod-9"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.18</span><span class="period">.</span>
-</h4>Multiply if possible <span class="process-math">\(\begin{pmatrix}
+</h4>
+<span class="process-math">\(\begin{pmatrix}
 2 &amp; 3 &amp; 1\\
 7 &amp; 6 &amp; 2\\
 0 &amp; 0 &amp; 0\\
@@ -1763,7 +1796,7 @@ B_{nk}\end{pmatrix}
 3 &amp; 1\\
 2 &amp; 6\\
 \end{pmatrix}
-\text{.}\)</span> <details id="subsec-ijth-entry-of-matrix-prod-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-ijth-entry-of-matrix-prod-9-2-1">
+\text{.}\)</span><details id="subsec-ijth-entry-of-matrix-prod-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-ijth-entry-of-matrix-prod-9-2-1">
 <div class="para">This is possible because in this case it is of the form <span class="process-math">\((3 \times 3)(3 \times 2)\)</span> and the middle numbers do match so the matrices are conformable. When the multiplication is done it equals</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1777,14 +1810,15 @@ B_{nk}\end{pmatrix}
 <div class="para">Check this and be sure you come up with the same answer.</div>
 </div></div></details></article><article class="example example-like" id="subsec-ijth-entry-of-matrix-prod-10"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.19</span><span class="period">.</span>
-</h4>Multiply if possible <span class="process-math">\(\begin{pmatrix}
+</h4>
+<span class="process-math">\(\begin{pmatrix}
 1\\
 2\\
 1\\
 \end{pmatrix}\begin{pmatrix}
 1 &amp; 2 &amp; 1 &amp; 0\\
 \end{pmatrix}
-\text{.}\)</span> <details id="subsec-ijth-entry-of-matrix-prod-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-ijth-entry-of-matrix-prod-10-2-1">
+\text{.}\)</span><details id="subsec-ijth-entry-of-matrix-prod-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-ijth-entry-of-matrix-prod-10-2-1">
 <div class="para">In this case it is of the form <span class="process-math">\((3 \times 1)(1 \times 4)\text{.}\)</span> The middle numbers match so you can do it. Verify</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1821,7 +1855,8 @@ B_{nk}\end{pmatrix}
 1 &amp; 2\\
 3 &amp; 4\\
 \end{pmatrix}\)</span>
-</div> <div class="para logical" id="subsec-props-of-matrix-mult-3-2">
+</div>
+<div class="para logical" id="subsec-props-of-matrix-mult-3-2">
 <div class="para">The first product is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1837,7 +1872,8 @@ B_{nk}\end{pmatrix}
 \end{pmatrix}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsec-props-of-matrix-mult-3-3">
+</div>
+<div class="para logical" id="subsec-props-of-matrix-mult-3-3">
 <div class="para">The second product is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1878,7 +1914,8 @@ A(BC) \amp = (AB)C \tag{11.2.3}
 \end{align*}
 </div>
 <div class="para">Thus <span class="process-math">\(A(aB + bC) = a(AB) + b(BC)\)</span> as claimed. Formula <a href="Section11_2.html#prop-matrix-mult-distributivity-1-1-3" class="xref" data-knowl="./knowl/xref/eq-mat-dist2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.2.2">(11.2.2)</a> is entirely similar.</div>
-</div> <div class="para logical" id="prop-matrix-mult-distributivity-2-2">
+</div>
+<div class="para logical" id="prop-matrix-mult-distributivity-2-2">
 <div class="para">Formula <a href="Section11_2.html#prop-matrix-mult-distributivity-1-1-3" class="xref" data-knowl="./knowl/xref/eq-mat-assoc.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.2.3">(11.2.3)</a> is the associative law of multiplication. Using definition <a href="Section11_2.html#def-ijth-entry-of-matrix-prod" class="xref" data-knowl="./knowl/xref/def-ijth-entry-of-matrix-prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 11.2.14">Definition 11.2.14</a>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-mat-assoc.html ./knowl/xref/def-ijth-entry-of-matrix-prod.html ./knowl/xref/eq-mat-assoc.html" id="prop-matrix-mult-distributivity-2-2-3">
@@ -2394,7 +2431,7 @@ B =
 \end{pmatrix}\)</span>
 </div> <div class="para logical" id="exercises-11-2-6-1-2">
 <div class="para">Find if possible:</div>
-<ol class="lower-alpha cols2">
+<ol class="lower-alpha ol-marker-1 cols2" id="exercises-11-2-6-1-2-1">
 <li id="exercises-11-2-6-1-2-1-1"><div class="para" id="exercises-11-2-6-1-2-1-1-1"><span class="process-math">\(\displaystyle AB\)</span></div></li>
 <li id="exercises-11-2-6-1-2-1-2"><div class="para" id="exercises-11-2-6-1-2-1-2-1"><span class="process-math">\(\displaystyle BA\)</span></div></li>
 <li id="exercises-11-2-6-1-2-1-3"><div class="para" id="exercises-11-2-6-1-2-1-3-1"><span class="process-math">\(\displaystyle AC\)</span></div></li>
@@ -2404,7 +2441,7 @@ B =
 </ol>
 <div class="para">If not possible, explain why.</div>
 </div>
-<div class="solutions"><details id="exercises-11-2-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-11-2-6-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-11-2-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-11-2-6-2-1"><ol class="lower-alpha ol-marker-1" id="exercises-11-2-6-2-1-1">
 <li id="exercises-11-2-6-2-1-1-1"><div class="para logical" id="exercises-11-2-6-2-1-1-1-1"><div class="displaymath process-math">
 \begin{equation*}
 AB = \begin{pmatrix}
@@ -2482,7 +2519,7 @@ BC = \begin{pmatrix}
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-11-2-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <div class="para logical" id="exercises-11-2-7-1-1">
 <div class="para">Suppose <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are square matrices of the same size. Which of the following are correct?</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="exercises-11-2-7-1-1-3">
 <li id="exercises-11-2-7-1-1-3-1"><div class="para" id="exercises-11-2-7-1-1-3-1-1"><span class="process-math">\(\displaystyle (A - B)^2 = A^2 - 2AB + B^2\)</span></div></li>
 <li id="exercises-11-2-7-1-1-3-2"><div class="para" id="exercises-11-2-7-1-1-3-2-1"><span class="process-math">\(\displaystyle (AB)^2 = A^2 B^2\)</span></div></li>
 <li id="exercises-11-2-7-1-1-3-3"><div class="para" id="exercises-11-2-7-1-1-3-3-1"><span class="process-math">\(\displaystyle (A + B)^2 = A^2 + 2AB + B^2\)</span></div></li>
@@ -2515,7 +2552,8 @@ BC = \begin{pmatrix}
 \end{pmatrix}
 \end{equation*}
 </div>
-</div> <div class="para" id="exercises-11-2-8-2-2">Otherwise let <span class="process-math">\(B = \begin{pmatrix}
+</div>
+<div class="para" id="exercises-11-2-8-2-2">Otherwise let <span class="process-math">\(B = \begin{pmatrix}
 x &amp; y \\
 z &amp; w
 \end{pmatrix}\text{,}\)</span> then <span class="process-math">\(AB = 0\)</span> whenever <span class="process-math">\(z = -x \)</span> and <span class="process-math">\(w = -y\text{.}\)</span>
@@ -2542,11 +2580,11 @@ z &amp; w
 <div class="para" id="exercises-11-2-13-1-1">Give an example of matrices, <span class="process-math">\(A, B, C \)</span> such that <span class="process-math">\(B \neq C, A \neq 0,\)</span> and yet <span class="process-math">\(AB = AC\text{.}\)</span>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s-Systems-of-Equations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Section11_3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s-Systems-of-Equations.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Section11_3.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

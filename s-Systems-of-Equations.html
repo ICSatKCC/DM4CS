@@ -5,30 +5,20 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Systems of Equations</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Discrete Mathematics for Computer Science">
-<meta property="book:author" content="Ken Levasseur">
-<meta property="book:author" content="Al Doerr">
-<meta property="book:author" content="Michiel Smid">
-<meta property="book:author" content="Oscar Levin">
-<meta property="book:author" content="Charles M. Grinstead">
-<meta property="book:author" content="J. Laurie Snell">
-<meta property="book:author" content="Eric Lehman">
-<meta property="book:author" content="F. Thomson Leighton">
-<meta property="book:author" content="Albert R Meyer">
-<meta property="book:author" content="Jeff Erickson">
-<meta property="book:author" content="Kenneth P. Bogart">
-<meta property="book:author" content="Carol Chritchlow">
-<meta property="book:author" content="David Eck">
-<meta property="book:author" content="OpenDSA Project">
-<meta property="book:author" content="L.J. Miller">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -100,36 +90,68 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Discrete Mathematics for Computer Science">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ken Levasseur">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Al Doerr">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Michiel Smid">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Oscar Levin">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Charles M. Grinstead">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="J. Laurie Snell">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Eric Lehman">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="F. Thomson Leighton">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Albert R Meyer">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Jeff Erickson">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Kenneth P. Bogart">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Carol Chritchlow">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="David Eck">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="OpenDSA Project">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="L.J. Miller">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
 <p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -140,7 +162,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chapter_11.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_11.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="Section11_2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chapter_11.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_11.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="Section11_2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
 \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
 \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
@@ -173,12 +196,12 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -650,9 +673,9 @@ window.MathJax = {
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="chapter_11.html" class="internal"><span class="codenumber">11</span> <span class="title">Linear Algebra</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="s-Systems-of-Equations.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Systems of Equations</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-Systems-of-Equations.html#ss-elementary-operations" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Elementary Operations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-Systems-of-Equations.html#ss-gauss-elimination" class="internal"><span class="codenumber">11.1.2</span> <span class="title">Gauss Elimination</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-Systems-of-Equations.html#exercises-11-1" class="internal"><span class="codenumber">11.1.3</span> <span class="title">Exercises</span></a></div></li>
@@ -970,7 +993,7 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s-Systems-of-Equations"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s-Systems-of-Equations"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">11.1</span><span class="space"> </span><span class="title">Systems of Equations</span>
 </h2>
 <section class="introduction" id="s-Systems-of-Equations-3"><div class="para" id="s-Systems-of-Equations-3-1">In this section we will learn how to solve multiple linear equations with multiple unknowns using matrices.</div></section><section class="subsection" id="ss-elementary-operations"><h3 class="heading hide-type">
@@ -979,19 +1002,23 @@ window.MathJax = {
 <div class="para" id="ss-elementary-operations-2">Consider the following example.</div>
 <article class="example example-like" id="ss-elementary-operations-3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Solution Set.</span>
-</h4>  <div class="para logical" id="ss-elementary-operations-3-3">
+</h4>
+<div class="para logical" id="ss-elementary-operations-3-3">
 <div class="para">Find <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 x + y = 7 \text{ and } 2x - y = 8.
 \end{equation*}
 </div>
-</div> <div class="para" id="ss-elementary-operations-3-4">The set of ordered pairs, (x, y) which solve both equations is called the <dfn class="terminology">solution set</dfn>.</div> <div class="para" id="ss-elementary-operations-3-5">You can verify that <span class="process-math">\((x, y) = (5, 2)\)</span> is a solution to the above system. The interesting question is this: If you were not given this information to verify, how could you determine the solution? You can do this by using the following basic operations on the equations, none of which change the set of solutions of the system of equations.</div></article><article class="definition definition-like" id="def-elementary-operations"><h4 class="heading">
+</div>
+<div class="para" id="ss-elementary-operations-3-4">The set of ordered pairs, (x, y) which solve both equations is called the <dfn class="terminology">solution set</dfn>.</div>
+<div class="para" id="ss-elementary-operations-3-5">You can verify that <span class="process-math">\((x, y) = (5, 2)\)</span> is a solution to the above system. The interesting question is this: If you were not given this information to verify, how could you determine the solution? You can do this by using the following basic operations on the equations, none of which change the set of solutions of the system of equations.</div></article><article class="definition definition-like" id="def-elementary-operations"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary Operations.</span>
-</h4>  <div class="para logical" id="def-elementary-operations-3-1">
+</h4>
+<div class="para logical" id="def-elementary-operations-3-1">
 <div class="para">
 <dfn class="terminology">Elementary operations</dfn> are those operations consisting of the following.</div>
-<ol class="decimal">
+<ol class="decimal" id="def-elementary-operations-3-1-2">
 <li id="def-elementary-operations-3-1-2-1"><div class="para" id="def-elementary-operations-3-1-2-1-1">Interchange the order in which the equations are listed.</div></li>
 <li id="def-elementary-operations-3-1-2-2"><div class="para" id="def-elementary-operations-3-1-2-2-1">Multiply any equation by a nonzero number.</div></li>
 <li id="def-elementary-operations-3-1-2-3"><div class="para" id="def-elementary-operations-3-1-2-3-1">Replace any equation with itself added to a multiple of another equation.</div></li>
@@ -1064,9 +1091,11 @@ f_1 \text{.}\)</span> Therefore, if <span class="process-math">\((x_1, · · · 
 f_1\)</span> and so you can subtract these equal quantities from both sides of <span class="process-math">\(E_2
 +aE_1 = f_2 +a f_1\)</span> to obtain <span class="process-math">\(E_2 = f_2\)</span> showing that it satisfies <span class="process-math">\(E_1
 =
-f_1 , E_2 = f_2\)</span> .</div> <div class="para" id="thm-elementary-operations-2-2">The second assertion of the theorem which says that the system <span class="process-math">\(E_1 = f_1 , E_2
+f_1 , E_2 = f_2\)</span> .</div>
+<div class="para" id="thm-elementary-operations-2-2">The second assertion of the theorem which says that the system <span class="process-math">\(E_1 = f_1 , E_2
 = f_2\)</span> has the same solution as the system, <span class="process-math">\(E_2
-= f_2 , E_1 = f_1\)</span> is seen to be true because it involves nothing more than listing the two equations in a different order. They are the same equations.</div> <div class="para" id="thm-elementary-operations-2-3">The third assertion of the theorem which says <span class="process-math">\(E_1 = f_1 , E_2 = f_2\)</span> has the same solution as the system <span class="process-math">\(E_1 = f_1, aE_2 = a f_2\)</span> provided <span class="process-math">\(a\neq
+= f_2 , E_1 = f_1\)</span> is seen to be true because it involves nothing more than listing the two equations in a different order. They are the same equations.</div>
+<div class="para" id="thm-elementary-operations-2-3">The third assertion of the theorem which says <span class="process-math">\(E_1 = f_1 , E_2 = f_2\)</span> has the same solution as the system <span class="process-math">\(E_1 = f_1, aE_2 = a f_2\)</span> provided <span class="process-math">\(a\neq
 0\)</span> is verified as follows: If <span class="process-math">\((x_1 , · · · , x_n )\)</span> is a solution of <span class="process-math">\(E_1
 = f_1 ,
 E_2 = f_2\)</span> , then it is a solution to <span class="process-math">\(E_1 = f_1 , aE_2 = a f_2\)</span> because the second system only involves multiplying the equation, <span class="process-math">\(E_2 = f_2\)</span> by <span class="process-math">\(a\text{.}\)</span> If <span class="process-math">\((x_1, · · · , x_n)\)</span> is a solution of <span class="process-math">\(E_1 = f_1 , aE_2 =
@@ -1115,7 +1144,8 @@ z \amp = 3
 \end{align*}
 </div>
 <div class="para">At this point, you can tell what the solution is. This system has the same solution as the original system and in the above, <span class="process-math">\(z = 3\text{.}\)</span> Then using this in the second equation, it follows <span class="process-math">\(y + 6 = 8\)</span> and so <span class="process-math">\(y = 2\text{.}\)</span> Now using this in the top equation yields <span class="process-math">\(x + 6 + 18 = 25\)</span> and so <span class="process-math">\(x = 1\text{.}\)</span> This process is called <dfn class="terminology">back substitution</dfn>.</div>
-</div> <div class="para logical" id="ex-elementary-operations-2-2">
+</div>
+<div class="para logical" id="ex-elementary-operations-2-2">
 <div class="para">Alternatively, you could have continued as follows. Add <span class="process-math">\((-2)\)</span> times the bottom equation to the middle and then add <span class="process-math">\((-6)\)</span> times the bottom to the top. This yields</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1221,9 +1251,10 @@ a_{m1} &amp; \dots &amp; a_{mn} &amp; b_m \\
 </div>
 <article class="definition definition-like" id="def-row-operations"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Row Operations.</span>
-</h4>  <div class="para logical" id="def-row-operations-3-1">
+</h4>
+<div class="para logical" id="def-row-operations-3-1">
 <div class="para">The <dfn class="terminology">row operations</dfn> consist of the following</div>
-<ol class="decimal">
+<ol class="decimal" id="def-row-operations-3-1-2">
 <li id="def-row-operations-3-1-2-1"><div class="para" id="def-row-operations-3-1-2-1-1">Switch two rows.</div></li>
 <li id="def-row-operations-3-1-2-2"><div class="para" id="def-row-operations-3-1-2-2-1">Multiply a row by a nonzero number.</div></li>
 <li id="def-row-operations-3-1-2-3"><div class="para" id="def-row-operations-3-1-2-3-1">Replace a row by a multiple of another row added to it.</div></li>
@@ -1232,18 +1263,20 @@ a_{m1} &amp; \dots &amp; a_{mn} &amp; b_m \\
 <dfn class="terminology">Gauss elimination</dfn> is a systematic procedure to simplify an augmented matrix to a reduced form. In the following definition, the term <dfn class="terminology">“leading entry”</dfn> refers to the first nonzero entry of a row when scanning the row from left to right.</div>
 <article class="definition definition-like" id="def-echelon-form"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Echelon Form.</span>
-</h4>  <div class="para logical" id="def-echelon-form-3-1">
+</h4>
+<div class="para logical" id="def-echelon-form-3-1">
 <div class="para">An augmented matrix is in <dfn class="terminology">echelon form</dfn> if</div>
-<ol class="decimal">
+<ol class="decimal" id="def-echelon-form-3-1-2">
 <li id="def-echelon-form-3-1-2-1"><div class="para" id="def-echelon-form-3-1-2-1-1">All nonzero rows are above any rows of zeros.</div></li>
 <li id="def-echelon-form-3-1-2-2"><div class="para" id="def-echelon-form-3-1-2-2-1">Each leading entry of a row is in a column to the right of the leading entries of any rows above it.</div></li>
 </ol>
 </div></article><div class="para" id="ss-gauss-elimination-8">How do you know when to stop doing row operations? You might stop when you have obtained an echelon form as described above, but you certainly should stop doing row operations if you have gotten a matrix in row reduced echelon form described next.</div>
 <article class="definition definition-like" id="def-row-reduced-echelon-form"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Row Reduced Echelon Form.</span>
-</h4>  <div class="para logical" id="def-row-reduced-echelon-form-3-1">
+</h4>
+<div class="para logical" id="def-row-reduced-echelon-form-3-1">
 <div class="para">An augmented matrix is in <dfn class="terminology">row reduced echelon form</dfn> if</div>
-<ol class="decimal">
+<ol class="decimal" id="def-row-reduced-echelon-form-3-1-2">
 <li id="def-row-reduced-echelon-form-3-1-2-1"><div class="para" id="def-row-reduced-echelon-form-3-1-2-1-1">All nonzero rows are above any rows of zeros.</div></li>
 <li id="def-row-reduced-echelon-form-3-1-2-2"><div class="para" id="def-row-reduced-echelon-form-3-1-2-2-1">Each leading entry of a row is in a column to the right of the leading entries of any rows above it.</div></li>
 <li id="def-row-reduced-echelon-form-3-1-2-3"><div class="para" id="def-row-reduced-echelon-form-3-1-2-3-1">All entries in a column above and below a leading entry are zero.</div></li>
@@ -1333,7 +1366,8 @@ a_{m1} &amp; \dots &amp; a_{mn} &amp; b_m \\
 </div>
 </div></article><article class="definition definition-like" id="def-pivot"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Pivot Positions and Pivot Columns.</span>
-</h4>  <div class="para" id="def-pivot-4-1">A <dfn class="terminology">pivot position</dfn> in a matrix is the location of a leading entry in an echelon form resulting from the application of row operations to the matrix. A <dfn class="terminology">pivot column</dfn> is a column that contains a pivot position.</div></article><div class="para" id="ss-gauss-elimination-14">For example consider the following.</div>
+</h4>
+<div class="para" id="def-pivot-4-1">A <dfn class="terminology">pivot position</dfn> in a matrix is the location of a leading entry in an echelon form resulting from the application of row operations to the matrix. A <dfn class="terminology">pivot column</dfn> is a column that contains a pivot position.</div></article><div class="para" id="ss-gauss-elimination-14">For example consider the following.</div>
 <article class="example example-like" id="ss-gauss-elimination-15"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Putting a Matrix into Row Reduced Echelon Form.</span>
 </h4>
@@ -1409,7 +1443,7 @@ A = \left(
 </h4>
 <div class="para logical" id="alg-row-reduced-echelon-1-1">
 <div class="para">This algorithm tells how to start with a matrix and do row operations on it in such a way as to end up with a matrix in row reduced echelon form.</div>
-<ol class="decimal">
+<ol class="decimal" id="alg-row-reduced-echelon-1-1-1">
 <li id="alg-row-reduced-echelon-1-1-1-1"><div class="para" id="alg-row-reduced-echelon-1-1-1-1-1">Find the first nonzero column from the left. This is the first pivot column. The position at the top of the first pivot column is the first pivot position. Switch rows if necessary to place a nonzero number in the first pivot position.</div></li>
 <li id="alg-row-reduced-echelon-1-1-1-2"><div class="para" id="alg-row-reduced-echelon-1-1-1-2-1">Use row operations to zero out the entries below the first pivot position.</div></li>
 <li id="alg-row-reduced-echelon-1-1-1-3"><div class="para" id="alg-row-reduced-echelon-1-1-1-3-1">Ignore the row containing the most recent pivot position identified and the rows above it. Repeat steps 1 and 2 to the remaining sub-matrix, the rectangular array of numbers obtained from the original matrix by deleting the rows you just ignored. Repeat the process until there are no more rows to modify. The matrix will then be in echelon form.</div></li>
@@ -1453,7 +1487,8 @@ A = \left(
 \right)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ss-gauss-elimination-18-2-2">
+</div>
+<div class="para logical" id="ss-gauss-elimination-18-2-2">
 <div class="para">Step two is not necessary because all the entries below the first pivot position in the resulting matrix are zero. Now ignore the top row and the columns to the left of this first pivot position. Thus you apply the same operations to the smaller matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1467,7 +1502,9 @@ A = \left(
 \right)
 \end{equation*}
 </div>
-</div> <div class="para" id="ss-gauss-elimination-18-2-3">The next pivot column is the third corresponding to the first in this smaller matrix and the second pivot position is therefore, the one which is in the second row and third column.</div> <div class="para logical" id="ss-gauss-elimination-18-2-4">
+</div>
+<div class="para" id="ss-gauss-elimination-18-2-3">The next pivot column is the third corresponding to the first in this smaller matrix and the second pivot position is therefore, the one which is in the second row and third column.</div>
+<div class="para logical" id="ss-gauss-elimination-18-2-4">
 <div class="para">In this case it is not necessary to switch any rows to place a nonzero entry in this position because there is already a nonzero entry there. Multiply the third row of the original matrix by -2 and then add the second row to it. This yields</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1482,7 +1519,8 @@ A = \left(
 \right)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ss-gauss-elimination-18-2-5">
+</div>
+<div class="para logical" id="ss-gauss-elimination-18-2-5">
 <div class="para">The next matrix the steps in the algorithm are applied to is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1495,7 +1533,8 @@ A = \left(
 \right)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ss-gauss-elimination-18-2-6">
+</div>
+<div class="para logical" id="ss-gauss-elimination-18-2-6">
 <div class="para">The first pivot column is the first column in this case and no switching of rows is necessary because there is a nonzero entry in the first pivot position. Therefore, the algorithm yields for the next step</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1510,7 +1549,8 @@ A = \left(
 \right)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ss-gauss-elimination-18-2-7">
+</div>
+<div class="para logical" id="ss-gauss-elimination-18-2-7">
 <div class="para">Now the algorithm will be applied to the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1536,7 +1576,8 @@ A = \left(
 \right)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ss-gauss-elimination-18-2-8">
+</div>
+<div class="para logical" id="ss-gauss-elimination-18-2-8">
 <div class="para">To complete placing the matrix in reduced echelon form, multiply the third row by 3 and add -2 times the fourth row to it. This yields</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1551,7 +1592,8 @@ A = \left(
 \right)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ss-gauss-elimination-18-2-9">
+</div>
+<div class="para logical" id="ss-gauss-elimination-18-2-9">
 <div class="para">Next multiply the second row by 3 and take 2 times the fourth row and add to it. Then add the fourth row to the first.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1566,7 +1608,8 @@ A = \left(
 \right)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ss-gauss-elimination-18-2-10">
+</div>
+<div class="para logical" id="ss-gauss-elimination-18-2-10">
 <div class="para">Next work on the fourth column in the same way.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1581,7 +1624,8 @@ A = \left(
 \right)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ss-gauss-elimination-18-2-11">
+</div>
+<div class="para logical" id="ss-gauss-elimination-18-2-11">
 <div class="para">Take <span class="process-math">\(-1/2\)</span> times the second row and add to the first.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1596,7 +1640,8 @@ A = \left(
 \right)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ss-gauss-elimination-18-2-12">
+</div>
+<div class="para logical" id="ss-gauss-elimination-18-2-12">
 <div class="para">Finally, divide by the value of the leading entries in the nonzero rows.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1633,7 +1678,8 @@ A = \left(
 \right)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ss-gauss-elimination-20-2-2">
+</div>
+<div class="para logical" id="ss-gauss-elimination-20-2-2">
 <div class="para">Multiply the second row by 2, the first row by 5, and then take (-1) times the first row and add to the second. Then multiply the first row by 1/5. This yields</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1646,7 +1692,8 @@ A = \left(
 \right)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ss-gauss-elimination-20-2-3">
+</div>
+<div class="para logical" id="ss-gauss-elimination-20-2-3">
 <div class="para">Switch the last two rows to get</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1659,7 +1706,8 @@ A = \left(
 \right)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ss-gauss-elimination-20-2-4">
+</div>
+<div class="para logical" id="ss-gauss-elimination-20-2-4">
 <div class="para">then take -3 times the top added to 2 times the middle to get</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1672,7 +1720,8 @@ A = \left(
 \right)\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ss-gauss-elimination-20-2-5">
+</div>
+<div class="para logical" id="ss-gauss-elimination-20-2-5">
 <div class="para">Multiply bottom by 19 and take the second row times -1 added to the bottom. This gives</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1708,7 +1757,8 @@ A = \left(
 \right)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ex-infinite-sols-2-2">
+</div>
+<div class="para logical" id="ex-infinite-sols-2-2">
 <div class="para">Replace the last row with 2 times the top row added to 3 times the bottom row combining two row operations. This gives</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1722,7 +1772,8 @@ A = \left(
 \end{equation*}
 </div>
 <div class="para">The entry 3 in this sequence of row operations is called the <dfn class="terminology">pivot</dfn>. It is used to create zeros in the other places of the column.</div>
-</div> <div class="para logical" id="ex-infinite-sols-2-3">
+</div>
+<div class="para logical" id="ex-infinite-sols-2-3">
 <div class="para">Next take -1 times the middle row and add to the bottom. Here the 1 in the second row is the pivot.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1773,7 +1824,8 @@ x + 3y - z + w = 5
 \right)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ex-two-parameters-2-2">
+</div>
+<div class="para logical" id="ex-two-parameters-2-2">
 <div class="para">Take -1 times the first row and add to the second. Then take -1 times the first row and add to the third. This yields</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1786,7 +1838,8 @@ x + 3y - z + w = 5
 \right)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ex-two-parameters-2-3">
+</div>
+<div class="para logical" id="ex-two-parameters-2-3">
 <div class="para">Now add the second row to the bottom row</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1821,7 +1874,8 @@ t\\
 \end{equation*}
 </div>
 <div class="para">This is another example of a system which has an infinite solution set but this time the solution set depends on two parameters, not one.</div>
-</div> <div class="para logical" id="ex-two-parameters-2-4">
+</div>
+<div class="para logical" id="ex-two-parameters-2-4">
 <div class="para">Most people find it less confusing in the case of an infinite solution set to first place the augmented matrix in row reduced echelon form rather than just echelon form before seeking to write down the description of the solution. In the above, this means we don’t stop with the echelon form above. Instead we first place it in reduced echelon form as follows.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1879,7 +1933,8 @@ t\\
 <div class="para" id="ss-gauss-elimination-26">In summary,</div>
 <article class="definition definition-like" id="def-system-of-linear-eqs"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">System of Linear Equations.</span>
-</h4>  <div class="para logical" id="def-system-of-linear-eqs-3-1">
+</h4>
+<div class="para logical" id="def-system-of-linear-eqs-3-1">
 <div class="para">A <dfn class="terminology">system of linear equations</dfn> is a list of equations,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2025,13 +2080,13 @@ a_{m1}x_1 + a_{m2}x_2 +&amp;\dots &amp; + a_{mn}X_n &amp; = b_m \\
 - 2z = 0\)</span> have a common point of intersection? If so, find one and if not, tell why there is no such point.</div></article><article class="exercise exercise-like" id="exercises-11-1-8"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
 <div class="para logical" id="exercises-11-1-8-1-1">
 <div class="para">You have a system of <span class="process-math">\(k\)</span> equations in two variables, <span class="process-math">\(k \geq 2\text{.}\)</span> Explain the geometric significance of</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="exercises-11-1-8-1-1-3">
 <li id="exercises-11-1-8-1-1-3-1"><div class="para" id="exercises-11-1-8-1-1-3-1-1">No solution.</div></li>
 <li id="exercises-11-1-8-1-1-3-2"><div class="para" id="exercises-11-1-8-1-1-3-2-1">A unique solution.</div></li>
 <li id="exercises-11-1-8-1-1-3-3"><div class="para" id="exercises-11-1-8-1-1-3-3-1">An infinite number of solutions.</div></li>
 </ol>
 </div>
-<div class="solutions"><details id="exercises-11-1-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises-11-1-8-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-11-1-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises-11-1-8-2-1"><ol class="lower-alpha lower-alpha-level-1" id="exercises-11-1-8-2-1-1">
 <li id="exercises-11-1-8-2-1-1-1"><div class="para" id="exercises-11-1-8-2-1-1-1-1">No solution. The lines are parallel.</div></li>
 <li id="exercises-11-1-8-2-1-1-2"><div class="para" id="exercises-11-1-8-2-1-1-2-1">A unique solution. The lines must intersect.</div></li>
 <li id="exercises-11-1-8-2-1-1-3"><div class="para" id="exercises-11-1-8-2-1-1-3-1">An infinite number of solutions. The lines must be the same line.</div></li>
@@ -2139,7 +2194,8 @@ x - y + z + w = 1
 \right).
 \end{equation*}
 </div>
-</div> <div class="para logical" id="exercises-11-1-12-2-2">
+</div>
+<div class="para logical" id="exercises-11-1-12-2-2">
 <div class="para">Add <span class="process-math">\(-4 * \)</span> row 1 to row 4:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2153,7 +2209,8 @@ x - y + z + w = 1
 \right).
 \end{equation*}
 </div>
-</div> <div class="para logical" id="exercises-11-1-12-2-3">
+</div>
+<div class="para logical" id="exercises-11-1-12-2-3">
 <div class="para">Add <span class="process-math">\(-2 * \)</span> row 1 to row 3:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2167,7 +2224,8 @@ x - y + z + w = 1
 \right).
 \end{equation*}
 </div>
-</div> <div class="para logical" id="exercises-11-1-12-2-4">
+</div>
+<div class="para logical" id="exercises-11-1-12-2-4">
 <div class="para">Add <span class="process-math">\(-1 * \)</span> row 1 to row 2:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2181,7 +2239,8 @@ x - y + z + w = 1
 \right).
 \end{equation*}
 </div>
-</div> <div class="para logical" id="exercises-11-1-12-2-5">
+</div>
+<div class="para logical" id="exercises-11-1-12-2-5">
 <div class="para">Add <span class="process-math">\(-1 * \)</span> row 2 to row 3:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2195,7 +2254,8 @@ x - y + z + w = 1
 \right).
 \end{equation*}
 </div>
-</div> <div class="para logical" id="exercises-11-1-12-2-6">
+</div>
+<div class="para logical" id="exercises-11-1-12-2-6">
 <div class="para">Add <span class="process-math">\(-2 * \)</span> row 2 to row 4:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2209,7 +2269,8 @@ x - y + z + w = 1
 \right).
 \end{equation*}
 </div>
-</div> <div class="para logical" id="exercises-11-1-12-2-7">
+</div>
+<div class="para logical" id="exercises-11-1-12-2-7">
 <div class="para">Therefore we see that we have a problem because rows 3 and 4 are saying <span class="process-math">\(-3z=
 -2\)</span> and <span class="process-math">\(-3z = -1\text{.}\)</span> Or we could keep going with the row operations and add <span class="process-math">\(-1 * \)</span>row 3 to row 4: Add <span class="process-math">\(-2 * \)</span> row 2 to row 4:</div>
 <div class="displaymath process-math">
@@ -2278,7 +2339,8 @@ x - y + z + w = 0
 \right).
 \end{equation*}
 </div>
-</div> <div class="para logical" id="exercises-11-1-14-2-2">
+</div>
+<div class="para logical" id="exercises-11-1-14-2-2">
 <div class="para">Adding <span class="process-math">\(-1 * \)</span> row 1 to row 2:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2291,7 +2353,8 @@ x - y + z + w = 0
 \right).
 \end{equation*}
 </div>
-</div> <div class="para logical" id="exercises-11-1-14-2-3">
+</div>
+<div class="para logical" id="exercises-11-1-14-2-3">
 <div class="para">Adding <span class="process-math">\(2 * \)</span> row 2 to row 3:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2304,7 +2367,8 @@ x - y + z + w = 0
 \right).
 \end{equation*}
 </div>
-</div> <div class="para logical" id="exercises-11-1-14-2-4">
+</div>
+<div class="para logical" id="exercises-11-1-14-2-4">
 <div class="para">Multiplying row 3 by <span class="process-math">\(1/10\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -2318,7 +2382,8 @@ x - y + z + w = 0
 \right).
 \end{equation*}
 </div>
-</div> <div class="para logical" id="exercises-11-1-14-2-5">
+</div>
+<div class="para logical" id="exercises-11-1-14-2-5">
 <div class="para">So <span class="process-math">\(z = -1/10\text{,}\)</span> continuing row operations: add <span class="process-math">\(-4 *\)</span> row 3 to row 2</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2346,7 +2411,8 @@ x - y + z + w = 0
 </div>
 <div class="para">So <span class="process-math">\(x = 12/10 = 6/5\text{.}\)</span>
 </div>
-</div> <div class="para" id="exercises-11-1-14-2-6">The solution is then <span class="process-math">\(x = 6/5, y = 2/5, z = -1/10\)</span>
+</div>
+<div class="para" id="exercises-11-1-14-2-6">The solution is then <span class="process-math">\(x = 6/5, y = 2/5, z = -1/10\)</span>
 </div>
 </div></details></div></article><article class="exercise exercise-like" id="exercises-11-1-15"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
 <div class="para logical" id="exercises-11-1-15-1-1">
@@ -2451,11 +2517,11 @@ s\\
 <div class="para" id="exercises-11-1-17-1-1">Give the complete solution to the system of equations, <span class="process-math">\(3x - y + 4z = 6\)</span> , <span class="process-math">\(y + 8z = 0\text{,}\)</span> and <span class="process-math">\(-2x + y = -4\text{.}\)</span>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="chapter_11.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Section11_2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="chapter_11.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Section11_2.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

@@ -5,30 +5,20 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Closure Operations on Relations</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Discrete Mathematics for Computer Science">
-<meta property="book:author" content="Ken Levasseur">
-<meta property="book:author" content="Al Doerr">
-<meta property="book:author" content="Michiel Smid">
-<meta property="book:author" content="Oscar Levin">
-<meta property="book:author" content="Charles M. Grinstead">
-<meta property="book:author" content="J. Laurie Snell">
-<meta property="book:author" content="Eric Lehman">
-<meta property="book:author" content="F. Thomson Leighton">
-<meta property="book:author" content="Albert R Meyer">
-<meta property="book:author" content="Jeff Erickson">
-<meta property="book:author" content="Kenneth P. Bogart">
-<meta property="book:author" content="Carol Chritchlow">
-<meta property="book:author" content="David Eck">
-<meta property="book:author" content="OpenDSA Project">
-<meta property="book:author" content="L.J. Miller">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -100,36 +90,68 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Discrete Mathematics for Computer Science">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ken Levasseur">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Al Doerr">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Michiel Smid">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Oscar Levin">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Charles M. Grinstead">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="J. Laurie Snell">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Eric Lehman">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="F. Thomson Leighton">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Albert R Meyer">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Jeff Erickson">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Kenneth P. Bogart">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Carol Chritchlow">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="David Eck">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="OpenDSA Project">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="L.J. Miller">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
 <p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -140,7 +162,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s-matrices-of-relations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_10.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chapter_11.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s-matrices-of-relations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_10.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chapter_11.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
 \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
 \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
@@ -173,12 +196,12 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -637,9 +660,9 @@ window.MathJax = {
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-matrices-of-relations.html#exercises-10-4" class="internal"><span class="codenumber">10.4.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="s-closure-operations-on-relations.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Closure Operations on Relations</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-closure-operations-on-relations.html#s-closure-operations-on-relations-3" class="internal"><span class="codenumber">10.5.1</span> <span class="title">Transitive Closure</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s-closure-operations-on-relations.html#s-closure-operations-on-relations-4" class="internal"><span class="codenumber">10.5.2</span> <span class="title">Algorithms for computing transitive closure</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-closure-operations-on-relations.html#exercises-10-5" class="internal"><span class="codenumber">10.5.3</span> <span class="title">Exercises</span></a></div></li>
@@ -970,7 +993,7 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s-closure-operations-on-relations"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s-closure-operations-on-relations"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">10.5</span><span class="space"> </span><span class="title">Closure Operations on Relations</span>
 </h2>
 <section class="introduction" id="s-closure-operations-on-relations-2"><div class="para" id="s-closure-operations-on-relations-2-1">In <a href="s-basic-definitions.html" class="internal" title="Section 10.1: Basic Definitions">Section 10.1</a>, we studied relations and one important operation on relations, namely composition. This operation enables us to generate new relations from previously known relations. In <a href="s-properties-of-relations.html" class="internal" title="Section 10.3: Properties of Relations">Section 10.3</a>, we discussed some key properties of relations. We now wish to consider the situation of constructing a new relation <span class="process-math">\(R^+\)</span> from an existing relation <span class="process-math">\(R\)</span> where, first, <span class="process-math">\(R^+\)</span> contains <span class="process-math">\(R\)</span> and, second, <span class="process-math">\(R^{+ }\)</span> satisfies the transitive property.</div></section><section class="subsection" id="s-closure-operations-on-relations-3"><h3 class="heading hide-type">
@@ -1125,7 +1148,7 @@ S_{2^k}(I+S_{2^k})=S_{2^{k+1}}
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">10.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Transitive Closure Algorithm.</span>
 </h4>
 <div class="para" id="alg-trans-closure-2-1">Let <span class="process-math">\(M\)</span> be a relation matrix and let <span class="process-math">\(M^+\)</span> be its transitive closure matrix, which is to be computed as matrix <span class="process-math">\(T\)</span>
-</div> <figure class="listing figure-like" id="alg-trans-closure-2-2"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-none">1.0. S = M
+</div> <figure class="listing figure-like" id="alg-trans-closure-2-2"><div class="code-box"><pre class="program"><code class="language-none">1.0. S = M
 2.0  T= S*(I+S)
 3.0 While T != S
 		3.1 S = T
@@ -1135,14 +1158,14 @@ S_{2^k}(I+S_{2^k})=S_{2^{k+1}}
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">10.5.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="note remark-like" id="s-closure-operations-on-relations-4-9"><h4 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">10.5.7</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="s-closure-operations-on-relations-4-9-1"><ul class="disc">
+<div class="para logical" id="s-closure-operations-on-relations-4-9-1"><ul class="disc" id="s-closure-operations-on-relations-4-9-1-1">
 <li id="s-closure-operations-on-relations-4-9-1-1-1"><div class="para" id="s-closure-operations-on-relations-4-9-1-1-1-1">Often the higher-powered terms in <span class="process-math">\(S_n\)</span> do not contribute anything to <span class="process-math">\(M^+\text{.}\)</span> When the condition <span class="process-math">\(T = S\)</span> becomes true in Step 3, this is an indication that no higher-powered terms are needed.</div></li>
 <li id="s-closure-operations-on-relations-4-9-1-1-2"><div class="para" id="p-derived-s-closure-operations-on-relations-4-9-1-1-2">To compute <span class="process-math">\(M^+\)</span> using this algorithm, you need to perform no more than <span class="process-math">\(\lceil \log_2 n \rceil\)</span> matrix multiplications, where <span class="process-math">\(\lceil x \rceil\)</span> is the least integer that is greater than or equal to <span class="process-math">\(x\text{.}\)</span> For example, if <span class="process-math">\(R\)</span> is a relation on 25 elements, no more than <span class="process-math">\(\lceil \log_2 25 \rceil = 5\)</span> matrix multiplications are needed.</div></li>
 </ul></div></article><div class="para" id="s-closure-operations-on-relations-4-10">A second algorithm, Warshall’s Algorithm, reduces computation time to the time that it takes to multiply two square matrices with the same order as the relation matrix in question.</div>
 <article class="algorithm theorem-like" id="alg-warshall"><h4 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">10.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Warshall’s Algorithm.</span>
 </h4>
-<div class="para" id="alg-warshall-2-1">Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(n \times n\)</span> relation matrix and let <span class="process-math">\(M^+\)</span> be its transitive closure matrix, which is to be computed as matrix <span class="process-math">\(W\)</span> using Boolean arithmetic</div> <figure class="listing figure-like" id="alg-warshall-2-2"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-none">1.0 W = M
+<div class="para" id="alg-warshall-2-1">Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(n \times n\)</span> relation matrix and let <span class="process-math">\(M^+\)</span> be its transitive closure matrix, which is to be computed as matrix <span class="process-math">\(W\)</span> using Boolean arithmetic</div> <figure class="listing figure-like" id="alg-warshall-2-2"><div class="code-box"><pre class="program"><code class="language-none">1.0 W = M
 2.0 for k = 1 to n:
      for i = 1 to n:
       for j = 1 to n:
@@ -1155,30 +1178,32 @@ S_{2^k}(I+S_{2^k})=S_{2^{k+1}}
 <article class="exercise exercise-like" id="exercises-10-5-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para" id="exercises-10-5-2-1-1">Let <span class="process-math">\(A =\{0, 1, 2, 3, 4\}\)</span> and <span class="process-math">\(\mathcal{S}=\{(0, 1), (1, 3), (2, 3), (3, 4), (4, 1)\}\text{.}\)</span> Compute <span class="process-math">\(\mathcal{S}^+\)</span> using the matrix representation of <span class="process-math">\(\mathcal{S}\text{.}\)</span> Verify your results by checking against the result obtained directly from the definition of transitive closure.</div></article><article class="exercise exercise-like" id="exercises-10-5-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
 <div class="para" id="exercises-10-5-3-1-1">Let <span class="process-math">\(A=\{1,2,3,4,6,12\}\)</span> and <span class="process-math">\(T=\{(a,b)\mid b/a \textrm{ is a prime number}\}\text{.}\)</span> Determine <span class="process-math">\(T^+\)</span> by any means.  Represent your answer as a matrix.</div></article><article class="exercise exercise-like" id="exercises-10-5-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para logical" id="exercises-10-5-4-1-1"><ol class="lower-alpha">
+<div class="para logical" id="exercises-10-5-4-1-1"><ol class="lower-alpha ol-marker-1" id="exercises-10-5-4-1-1-1">
 <li id="exercises-10-5-4-1-1-1-1"><div class="para" id="exercises-10-5-4-1-1-1-1-1">Draw digraphs of the relations <span class="process-math">\(\mathcal{S}\text{,}\)</span> <span class="process-math">\(\mathcal{S}^2\text{,}\)</span> <span class="process-math">\(\mathcal{S}^3\)</span> , and <span class="process-math">\(\mathcal{S}^+\)</span>  where <span class="process-math">\(\mathcal{S}\)</span> is defined in the first exercise above.</div></li>
 <li id="exercises-10-5-4-1-1-1-2"><div class="para" id="p-derived-exercises-10-5-4-1-1-1-2">Verify that in terms of the graph of <span class="process-math">\(\mathcal{S}\text{,}\)</span> <span class="process-math">\(a \mathcal{S}^+ b\)</span> if and only if <span class="process-math">\(b\)</span> is reachable from <span class="process-math">\(a\)</span> along a path of any finite nonzero length.</div></li>
 </ol></div>
 <div class="solutions"><details id="exercises-10-5-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
-<div class="para logical" id="exercises-10-5-4-2-1"><ol class="lower-alpha">
+<div class="para logical" id="exercises-10-5-4-2-1"><ol class="lower-alpha ol-marker-1" id="exercises-10-5-4-2-1-1">
 <li id="exercises-10-5-4-2-1-1-1"><div class="para" id="exercises-10-5-4-2-1-1-1-1">See graphs below.</div></li>
 <li id="exercises-10-5-4-2-1-1-2"><div class="para" id="exercises-10-5-4-2-1-1-2-1">For example, <span class="process-math">\(0\mathcal{S}^+ 4\)</span> and using <span class="process-math">\(\mathcal{S}\)</span> one can go from 0 to 4 using a path of length 3.</div></li>
-</ol></div> <div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
+</ol></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
 <div class="sbspanel top" style="width:48.9795918367347%;"><figure class="figure figure-like" id="exercises-10-5-4-2-2-1"><img src="external/images/S65-3s.svg" role="img" class="contained" alt="digraph of \(\mathcal{S}\)"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.5.10<span class="period">.</span></span><span class="space"> </span>Digraph of <span class="process-math">\(\mathcal{S}\)</span></figcaption></figure></div>
 <div class="sbspanel top" style="width:48.9795918367347%;"><figure class="figure figure-like" id="exercises-10-5-4-2-2-2"><img src="external/images/S65-3s2.svg" role="img" class="contained" alt="digraph of \(\mathcal{S}^2\)"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.5.11<span class="period">.</span></span><span class="space"> </span>Digraph of <span class="process-math">\(\mathcal{S}^2\)</span></figcaption></figure></div>
-</div></div> <div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
 <div class="sbspanel top" style="width:48.9795918367347%;"><figure class="figure figure-like" id="exercises-10-5-4-2-3-1"><img src="external/images/S65-3s3.svg" role="img" class="contained" alt="digraph of \(\mathcal{S}^3\)"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.5.12<span class="period">.</span></span><span class="space"> </span>Digraph of <span class="process-math">\(\mathcal{S}^3\)</span></figcaption></figure></div>
 <div class="sbspanel top" style="width:48.9795918367347%;"><figure class="figure figure-like" id="exercises-10-5-4-2-3-2"><img src="external/images/S65-3stc.svg" role="img" class="contained" alt="digraph of \(\mathcal{S}^+\)"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.5.13<span class="period">.</span></span><span class="space"> </span>Digraph of <span class="process-math">\(\mathcal{S}^+\)</span></figcaption></figure></div>
 </div></div>
 </div></details></div></article><article class="exercise exercise-like" id="exercises-10-5-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para" id="exercises-10-5-5-1-1">Let <span class="process-math">\(R\)</span> be the relation represented by the following digraph.</div> <figure class="figure figure-like" id="exercises-10-5-5-1-2"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/images/fig-exercise-10-5-4.png" class="contained" alt="Graph for exercise 4"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.5.14<span class="period">.</span></span><span class="space"> </span>Digraph of <span class="process-math">\(R\)</span> in exercise 4.</figcaption></figure> <div class="para logical" id="exercises-10-5-5-1-3"><ol class="lower-alpha">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.5.14<span class="period">.</span></span><span class="space"> </span>Digraph of <span class="process-math">\(R\)</span> in exercise 4.</figcaption></figure> <div class="para logical" id="exercises-10-5-5-1-3"><ol class="lower-alpha ol-marker-1" id="exercises-10-5-5-1-3-1">
 <li id="exercises-10-5-5-1-3-1-1"><div class="para" id="exercises-10-5-5-1-3-1-1-1">Find <span class="process-math">\(R^+\)</span> using the definition based on order pairs.</div></li>
 <li id="exercises-10-5-5-1-3-1-2"><div class="para" id="exercises-10-5-5-1-3-1-2-1">Determine the digraph of <span class="process-math">\(R^+\)</span> directly from the digraph of <span class="process-math">\(R\text{.}\)</span>
 </div></li>
 <li id="exercises-10-5-5-1-3-1-3"><div class="para" id="exercises-10-5-5-1-3-1-3-1">Verify your result in part (b) by computing the digraph from your result in part (a).</div></li>
 </ol></div></article><article class="exercise exercise-like" id="exercises-10-5-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para logical" id="exercises-10-5-6-1-1"><ol class="lower-alpha">
+<div class="para logical" id="exercises-10-5-6-1-1"><ol class="lower-alpha ol-marker-1" id="exercises-10-5-6-1-1-1">
 <li id="exercises-10-5-6-1-1-1-1"><div class="para" id="exercises-10-5-6-1-1-1-1-1">Define reflexive closure and symmetric closure by imitating the definition of transitive closure.</div></li>
 <li id="exercises-10-5-6-1-1-1-2"><div class="para" id="exercises-10-5-6-1-1-1-2-1">Use your definitions to compute the reflexive and symmetric closures of examples in the text.</div></li>
 <li id="exercises-10-5-6-1-1-1-3"><div class="para" id="exercises-10-5-6-1-1-1-3-1">What are the transitive reflexive closures of these examples?</div></li>
@@ -1187,10 +1212,11 @@ S_{2^k}(I+S_{2^k})=S_{2^{k+1}}
 </ol></div>
 <div class="solutions"><details id="exercises-10-5-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
 <div class="para" id="exercises-10-5-6-2-1">Definition: Reflexive Closure.  Let <span class="process-math">\(R\)</span> be a relation on <span class="process-math">\(A\text{.}\)</span> The reflexive closure of <span class="process-math">\(R\)</span> is the smallest reflexive relation that contains <span class="process-math">\(R\text{.}\)</span>
-</div> <div class="para" id="exercises-10-5-6-2-2">Theorem: The reflexive closure of <span class="process-math">\(R\)</span> is the union of <span class="process-math">\(R\)</span> with <span class="process-math">\(\{(x, x) : x\in A\}\)</span>
+</div>
+<div class="para" id="exercises-10-5-6-2-2">Theorem: The reflexive closure of <span class="process-math">\(R\)</span> is the union of <span class="process-math">\(R\)</span> with <span class="process-math">\(\{(x, x) : x\in A\}\)</span>
 </div>
 </div></details></div></article><article class="exercise exercise-like" id="exercises-10-5-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para" id="exercises-10-5-7-1-1">What common relations on <span class="process-math">\(\mathbb{Z}\)</span> are the transitive closures of the following relations?</div> <div class="para logical" id="exercises-10-5-7-1-2"><ol class="lower-alpha">
+<div class="para" id="exercises-10-5-7-1-1">What common relations on <span class="process-math">\(\mathbb{Z}\)</span> are the transitive closures of the following relations?</div> <div class="para logical" id="exercises-10-5-7-1-2"><ol class="lower-alpha ol-marker-1" id="exercises-10-5-7-1-2-1">
 <li id="exercises-10-5-7-1-2-1-1"><div class="para" id="exercises-10-5-7-1-2-1-1-1">
 <span class="process-math">\(a S b\)</span> if and only if <span class="process-math">\(a + 1 = b\text{.}\)</span>
 </div></li>
@@ -1198,12 +1224,12 @@ S_{2^k}(I+S_{2^k})=S_{2^{k+1}}
 <span class="process-math">\(a R b\)</span> if and only if <span class="process-math">\(| a - b | = 2\text{.}\)</span>
 </div></li>
 </ol></div></article><article class="exercise exercise-like" id="exercises-10-5-8"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para logical" id="exercises-10-5-8-1-1"><ol class="lower-alpha">
+<div class="para logical" id="exercises-10-5-8-1-1"><ol class="lower-alpha ol-marker-1" id="exercises-10-5-8-1-1-1">
 <li id="exercises-10-5-8-1-1-1-1"><div class="para" id="exercises-10-5-8-1-1-1-1-1">Let <span class="process-math">\(A\)</span> be any set and <span class="process-math">\(R\)</span> a relation on <span class="process-math">\(A\text{,}\)</span> prove that <span class="process-math">\(\left(R^+\right)^+=R^+\text{.}\)</span>
 </div></li>
 <li id="exercises-10-5-8-1-1-1-2"><div class="para" id="exercises-10-5-8-1-1-1-2-1">Is the transitive closure of a symmetric relation always both symmetric and reflexive? Explain.</div></li>
 </ol></div>
-<div class="solutions"><details id="exercises-10-5-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-5-8-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-10-5-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-10-5-8-2-1"><ol class="lower-alpha ol-marker-1" id="exercises-10-5-8-2-1-1">
 <li id="exercises-10-5-8-2-1-1-1"><div class="para" id="exercises-10-5-8-2-1-1-1-1">By the definition of transitive closure, <span class="process-math">\(R^+\)</span> is the smallest relation which contains <span class="process-math">\(R\text{;}\)</span> therefore, it is transitive. The transitive closure of <span class="process-math">\(R^+\text{,}\)</span> <span class="process-math">\(\left(R^+\right)^+\)</span> , is the smallest transitive relation that contains <span class="process-math">\(R^+\text{.}\)</span> Since <span class="process-math">\(R^+\)</span> is transitive, <span class="process-math">\(\left(R^+\right)^+=R^+\text{.}\)</span>
 </div></li>
 <li id="exercises-10-5-8-2-1-1-2"><div class="para" id="exercises-10-5-8-2-1-1-2-1">The transitive closure of a symmetric relation is symmetric, but it may not be reflexive. If one element is not related to any elements, then the transitive closure will not relate that element to others.</div></li>
@@ -1211,11 +1237,11 @@ S_{2^k}(I+S_{2^k})=S_{2^{k+1}}
 <div class="para" id="exercises-10-5-9-1-1">The definition of the <a href="s-closure-operations-on-relations.html#def-transitive-closure" class="xref" data-knowl="./knowl/xref/def-transitive-closure.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 10.5.1: Transitive Closure">Transitive Closure</a> of <span class="process-math">\(R\)</span> refers to the “smallest transitive relation that contains <span class="process-math">\(R\)</span> as a subset.”  Show that the intersection of all transitive relations on <span class="process-math">\(A\)</span> containing <span class="process-math">\(R\)</span> is a transitive relation containing <span class="process-math">\(R\)</span> and is precisely <span class="process-math">\(R^+\text{.}\)</span>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s-matrices-of-relations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter_11.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s-matrices-of-relations.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter_11.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

@@ -12,16 +12,16 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Expectation of a Binomial Distribution.</span>
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">3.3.14</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Expectation of a Binomial Distribution.</span>
 </h4>
-<div class="para logical">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">Let <span class="process-math">\(n \geq 1\)</span> be an integer, let <span class="process-math">\(p\)</span> be a real number with <span class="process-math">\(0&lt; p &lt; 1\text{,}\)</span> and let <span class="process-math">\(X\)</span> be a random variable that has a binomial distribution with parameters <span class="process-math">\(n\)</span> and <span class="process-math">\(p\text{.}\)</span> Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \mathbb{E}(X) = pn .
 \end{equation*}
 </div>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
 <div class="para">We define a sequence <span class="process-math">\(X_1,X_2,\ldots,X_n\)</span> of random variables each representing a Bernoulli trial that takes the value 1 with probability <span class="process-math">\(p\)</span> and the value 0 with probability <span class="process-math">\(1-p\text{.}\)</span> Observe that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-gen-linearity-of-expectation.html ./knowl/xref/thm-expectation-of-bernoulli-successes.html">
 \begin{equation*}
@@ -29,7 +29,7 @@ X = X_1 + X_2 + \cdots + X_n ,
 \end{equation*}
 </div>
 <div class="para">because</div>
-<ul class="disc">
+<ul class="disc" id="thm-expectation-of-binomial-distribution-4-1-5">
 <li><div class="para">
 <span class="process-math">\(X\)</span> counts the number of heads in the sequence of <span class="process-math">\(n\)</span> coin flips, and</div></li>
 <li><div class="para">the summation on the right-hand side is equal to the number of <span class="process-math">\(1\)</span>’s in the sequence <span class="process-math">\(X_1,X_2,\ldots,X_n\text{,}\)</span> which, by definition, is equal to the number of successes in the sequence of <span class="process-math">\(n\)</span> Bernoulli trials.</div></li>

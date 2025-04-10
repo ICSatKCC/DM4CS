@@ -5,30 +5,20 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Introduction to Algorithms</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Discrete Mathematics for Computer Science">
-<meta property="book:author" content="Ken Levasseur">
-<meta property="book:author" content="Al Doerr">
-<meta property="book:author" content="Michiel Smid">
-<meta property="book:author" content="Oscar Levin">
-<meta property="book:author" content="Charles M. Grinstead">
-<meta property="book:author" content="J. Laurie Snell">
-<meta property="book:author" content="Eric Lehman">
-<meta property="book:author" content="F. Thomson Leighton">
-<meta property="book:author" content="Albert R Meyer">
-<meta property="book:author" content="Jeff Erickson">
-<meta property="book:author" content="Kenneth P. Bogart">
-<meta property="book:author" content="Carol Chritchlow">
-<meta property="book:author" content="David Eck">
-<meta property="book:author" content="OpenDSA Project">
-<meta property="book:author" content="L.J. Miller">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -100,10 +90,64 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Discrete Mathematics for Computer Science">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ken Levasseur">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Al Doerr">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Michiel Smid">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Oscar Levin">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Charles M. Grinstead">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="J. Laurie Snell">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Eric Lehman">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="F. Thomson Leighton">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Albert R Meyer">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Jeff Erickson">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Kenneth P. Bogart">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Carol Chritchlow">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="David Eck">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="OpenDSA Project">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="L.J. Miller">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "pre.sagecell-sage",
+  "inputLocation": "div.sagecell-sage",
   "linked": true,
   "linkKey": "linked-sage",
   "autoeval": false,
@@ -112,36 +156,14 @@ sagecell.makeSagecell({
   ],
   "evalButtonText": "Evaluate (Sage)"
 });
-</script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
 <p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -152,7 +174,8 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chapter_9.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_9.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="section9_2-Recursive_Algorithms.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chapter_9.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_9.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="section9_2-Recursive_Algorithms.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
 \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
 \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
@@ -185,12 +208,12 @@ sagecell.makeSagecell({
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -565,9 +588,9 @@ sagecell.makeSagecell({
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="chapter_9.html" class="internal"><span class="codenumber">9</span> <span class="title">Algorithms</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="section9_1-Algorithms.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Introduction to Algorithms</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="section9_1-Algorithms.html#subsec9_1_1-describing-algorithms" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Describing Algorithms</span></a></div>
 <ul class="structural toc-item-list">
@@ -982,13 +1005,17 @@ sagecell.makeSagecell({
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section9_1-Algorithms"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="section9_1-Algorithms"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">9.1</span><span class="space"> </span><span class="title">Introduction to Algorithms</span>
 </h2>
-<section class="introduction" id="section9_1-Algorithms-3"><div class="para" id="section9_1-Algorithms-3-1">Computer programs, bicycle assembly instructions, knitting instructions, and recipes all have several things in common. They all tell us how to do something; and the usual format is as a list of steps or instructions. In addition, they are usually prefaced with a description of the raw materials that are needed (the input) to produce the end result (the output).</div> <div class="para" id="section9_1-Algorithms-3-2">We use the term <em class="emphasis">algorithm</em> to describe such lists of instructions.  An algorithm is an explicit, precise, unambiguous, mechanically-executable sequence of elementary instructions, usually intended to accomplish a specific purpose. For example, here is an algorithm for singing that annoying song 99 Bottles of Beer on the Wall, for arbitrary numbers of bottles:</div> <article class="algorithm theorem-like" id="alg-99-bottles"><h3 class="heading">
+<section class="introduction" id="section9_1-Algorithms-3"><div class="para" id="section9_1-Algorithms-3-1">Computer programs, bicycle assembly instructions, knitting instructions, and recipes all have several things in common. They all tell us how to do something; and the usual format is as a list of steps or instructions. In addition, they are usually prefaced with a description of the raw materials that are needed (the input) to produce the end result (the output).</div>
+<div class="para" id="section9_1-Algorithms-3-2">We use the term <em class="emphasis">algorithm</em> to describe such lists of instructions.  An algorithm is an explicit, precise, unambiguous, mechanically-executable sequence of elementary instructions, usually intended to accomplish a specific purpose. For example, here is an algorithm for singing that annoying song 99 Bottles of Beer on the Wall, for arbitrary numbers of bottles:</div>
+<article class="algorithm theorem-like" id="alg-99-bottles"><h3 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">9.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">BottlesOfBeer.</span>
 </h3>
-<section class="paragraphs" id="alg-99-bottles-2-1"><h4 class="heading"><span class="title">procedure BottlesOfBeer.</span></h4> <div class="para" id="alg-99-bottles-2-1-2">(<span class="process-math">\(n\text{:}\)</span> number of bottles)</div> <div class="tabular-box natural-width"><table class="tabular">
+<section class="paragraphs" id="alg-99-bottles-2-1"><h4 class="heading"><span class="title">procedure BottlesOfBeer.</span></h4>
+<div class="para" id="alg-99-bottles-2-1-2">(<span class="process-math">\(n\text{:}\)</span> number of bottles)</div>
+<div class="tabular-box natural-width"><table class="tabular">
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3">
 <em class="alert">For</em> i := n down to 1:</td></tr>
 <tr>
@@ -1005,7 +1032,8 @@ sagecell.makeSagecell({
 <em class="alert">Sing:</em>  “No bottles of beer on the wall, no bottles of beer,”</td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3">
 <em class="alert">Sing:</em>  “Go to the store, buy some more, n bottles of beer on the wall.”</td></tr>
-</table></div></section></article> <div class="para" id="section9_1-Algorithms-3-4">The word “algorithm” is a corruption of the name of the 9th century Persian mathematician Muhammand ibn Musa al-Khwarizmi. Although they have been a topic of formal academic study for only a few decades, algorithms have been with us since the dawn of civilization. Descriptions of step-by-step arithmetic computation are among the earliest examples of written human language, long predating the works of al-Khwarizmi.</div> <div class="para" id="section9_1-Algorithms-3-5">The most familiar method for multiplying large numbers, at least for American students, is the <em class="emphasis">lattice algorithm</em>. This algorithm was popularized by the medieval Italian mathematician and tradesman Leonardo of Pisa, better known as Fibonacci, in his 1202 book <em class="emphasis">Liber Abaci</em>. Fibonacci learned it from Arabic sources including al-Khwarizmi who in turn learned it from Indian sources, who may have learned it from Chinese sources. The oldest surviving descriptions of the algorithm appear in The Mathematical Classic of Sunzi, written in China between the 3rd and 5th centuries, and in Eutocius of Ascalon’s commentaries on Archimedes’ Measurement of the Circle, written around 500ce, but there is evidence that the algorithm was known much earlier.</div></section><section class="subsection" id="subsec9_1_1-describing-algorithms"><h3 class="heading hide-type">
+</table></div></section></article><div class="para" id="section9_1-Algorithms-3-4">The word “algorithm” is a corruption of the name of the 9th century Persian mathematician Muhammand ibn Musa al-Khwarizmi. Although they have been a topic of formal academic study for only a few decades, algorithms have been with us since the dawn of civilization. Descriptions of step-by-step arithmetic computation are among the earliest examples of written human language, long predating the works of al-Khwarizmi.</div>
+<div class="para" id="section9_1-Algorithms-3-5">The most familiar method for multiplying large numbers, at least for American students, is the <em class="emphasis">lattice algorithm</em>. This algorithm was popularized by the medieval Italian mathematician and tradesman Leonardo of Pisa, better known as Fibonacci, in his 1202 book <em class="emphasis">Liber Abaci</em>. Fibonacci learned it from Arabic sources including al-Khwarizmi who in turn learned it from Indian sources, who may have learned it from Chinese sources. The oldest surviving descriptions of the algorithm appear in The Mathematical Classic of Sunzi, written in China between the 3rd and 5th centuries, and in Eutocius of Ascalon’s commentaries on Archimedes’ Measurement of the Circle, written around 500ce, but there is evidence that the algorithm was known much earlier.</div></section><section class="subsection" id="subsec9_1_1-describing-algorithms"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.1</span><span class="space"> </span><span class="title">Describing Algorithms</span>
 </h3>
 <section class="introduction" id="subsec9_1_1-describing-algorithms-2"><div class="para logical" id="subsec9_1_1-describing-algorithms-2-1">
@@ -1020,7 +1048,9 @@ sagecell.makeSagecell({
 <dt id="subsec9_1_1-describing-algorithms-2-1-2-4">How fast:</dt>
 <dd><div class="para" id="subsec9_1_1-describing-algorithms-2-1-2-4-2">An analysis of the running time of the algorithm.</div></dd>
 </dl>
-</div> <div class="para" id="subsec9_1_1-describing-algorithms-2-2">This section and the next will demonstrate ways to specify and describe algorithms and then will introduce some commonly seen algorithms. In <a href="section9_3-AlgorthmicComplexity.html" class="internal" title="Section 9.3: Algorithmic Complexity">Section 9.3</a> we explore ways to analyze the running times of algorithms. Proving algorithmic correctness, the “why”, is covered in the second semester of Discrete Mathematics.</div>  <div class="para" id="subsec9_1_1-describing-algorithms-2-3">Most of the algorithms in this book will contain a combination of three kinds of steps: the assignment step, the conditional step, and the loop.</div></section><section class="subsubsection" id="subsubsec9_1_1_1-assignments"><h4 class="heading hide-type">
+</div>
+<div class="para" id="subsec9_1_1-describing-algorithms-2-2">This section and the next will demonstrate ways to specify and describe algorithms and then will introduce some commonly seen algorithms. In <a href="section9_3-AlgorthmicComplexity.html" class="internal" title="Section 9.3: Algorithmic Complexity">Section 9.3</a> we explore ways to analyze the running times of algorithms. Proving algorithmic correctness, the “why”, is covered in the second semester of Discrete Mathematics.</div>
+<div class="para" id="subsec9_1_1-describing-algorithms-2-3">Most of the algorithms in this book will contain a combination of three kinds of steps: the assignment step, the conditional step, and the loop.</div></section><section class="subsubsection" id="subsubsec9_1_1_1-assignments"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">9.1.1.1</span><span class="space"> </span><span class="title">Assignments</span>
 </h4>
 <div class="para logical" id="subsubsec9_1_1_1-assignments-2">
@@ -1036,7 +1066,7 @@ sagecell.makeSagecell({
 <span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">9.1.1.2</span><span class="space"> </span><span class="title">Conditional steps</span>
 </h4>
 <div class="para" id="subsubsec9_1_1_2-conditionalstep-2">Frequently there are steps that must be performed in an algorithm if and only if a certain condition is met. The conditional or "if ... then" step is then employed. For example, suppose that in step 2 of an algorithm we want to assure that the values of variables x and y satisfy the condition <code class="code-inline tex2jax_ignore">x &lt;= y</code>. The following step would accomplish this objective.</div>
-<figure class="listing figure-like" id="subsubsec9_1_1_2-conditionalstep-3"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-none">2. If x &gt; y:
+<figure class="listing figure-like" id="subsubsec9_1_1_2-conditionalstep-3"><div class="code-box"><pre class="program"><code class="language-none">2. If x &gt; y:
 
   2.1 t = x
 
@@ -1046,7 +1076,7 @@ sagecell.makeSagecell({
 </code></pre></div>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">9.1.2<span class="period">.</span></span><span class="space"> </span>An if/then conditional step.</figcaption></figure><div class="para" id="subsubsec9_1_1_2-conditionalstep-4">Steps 2.1 through 2.3 would be bypassed if the condition <code class="code-inline tex2jax_ignore">x &gt; y</code> were false before step 2.</div>
 <div class="para" id="subsubsec9_1_1_2-conditionalstep-5">One slight variation is the "if ... then ... else" step, which allows us to prescribe a step to be taken if the condition is false. For example, if you wanted to exercise today, you might look out the window and execute the following algorithm.</div>
-<figure class="listing figure-like" id="subsubsec9_1_1_2-conditionalstep-6"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-none">1. If it is cold or raining:
+<figure class="listing figure-like" id="subsubsec9_1_1_2-conditionalstep-6"><div class="code-box"><pre class="program"><code class="language-none">1. If it is cold or raining:
 
   exercise indoors
 
@@ -1062,7 +1092,7 @@ else:
 <div class="para" id="subsubsec9_1_1_3-loops-2">The conditional step tells us to do something once if a logical condition is true. A loop tells us to repeat one or more steps, called the body of the loop, while the logical condition is true. Before every execution of the body, the condition is tested. The following flow diagram serves to illustrate the steps in a <code class="code-inline tex2jax_ignore">while</code> loop.</div>
 <figure class="figure figure-like" id="fig-while-flow"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/while-flow.png" class="contained" alt="Flow diagram for a while loop"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.4<span class="period">.</span></span><span class="space"> </span>Flow diagram for a while loop</figcaption></figure><div class="para" id="subsubsec9_1_1_3-loops-4">Suppose you wanted to solve the equation <span class="process-math">\(f(x) = 0\text{.}\)</span> The following initial assignment and loop could be employed.</div>
-<figure class="listing figure-like" id="subsubsec9_1_1_3-loops-5"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-none">1. c = your first guess
+<figure class="listing figure-like" id="subsubsec9_1_1_3-loops-5"><div class="code-box"><pre class="program"><code class="language-none">1. c = your first guess
 
 2. While f(c) != 0:
 
@@ -1071,7 +1101,7 @@ else:
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">9.1.5<span class="period">.</span></span><span class="space"> </span>A While loop</figcaption></figure><div class="para" id="subsubsec9_1_1_3-loops-6">
 <em class="alert">Caution:</em> One must always guard against the possibility that the condition of a <code class="code-inline tex2jax_ignore">While</code> loop will never become false. Such "infinite loops" are the bane of beginning programmers. The loop above could very well be such a situation, particularly if the equation has no solution, or if the variable takes on real values</div>
 <div class="para" id="subsubsec9_1_1_3-loops-7">In cases where  consecutive integer values are to be assigned to a variable, a different loop construction, a <code class="code-inline tex2jax_ignore">For</code> loop, is often employed. For example, suppose we wanted to assign to variable <code class="code-inline tex2jax_ignore">k</code> each of the integer values from <code class="code-inline tex2jax_ignore">m</code> to <code class="code-inline tex2jax_ignore">n</code> and <code class="code-inline tex2jax_ignore">for</code> each of these values perform some undefined steps. We could accomplish this with a <code class="code-inline tex2jax_ignore">While</code> loop:</div>
-<figure class="listing figure-like" id="subsubsec9_1_1_3-loops-8"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-none">1. k := m
+<figure class="listing figure-like" id="subsubsec9_1_1_3-loops-8"><div class="code-box"><pre class="program"><code class="language-none">1. k := m
 
 2. While k &lt;= n:
 
@@ -1080,7 +1110,7 @@ else:
   2.2 k = k + l
 </code></pre></div>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">9.1.6<span class="period">.</span></span><span class="space"> </span>A While loop from <span class="process-math">\(m\)</span> to <span class="process-math">\(n\)</span></figcaption></figure><div class="para" id="subsubsec9_1_1_3-loops-9">Alternatively, we can perform these steps is with a <code class="code-inline tex2jax_ignore">For</code> loop.</div>
-<figure class="listing figure-like" id="subsubsec9_1_1_3-loops-10"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-none">For k = m to n:
+<figure class="listing figure-like" id="subsubsec9_1_1_3-loops-10"><div class="code-box"><pre class="program"><code class="language-none">For k = m to n:
 
   {execute some steps}
 </code></pre></div>
@@ -1093,7 +1123,9 @@ else:
 <article class="algorithm theorem-like" id="alg-factorial"><h4 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">9.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Factorial.</span>
 </h4>
-<section class="paragraphs" id="alg-factorial-3-1"><h5 class="heading"><span class="title">procedure Factorial.</span></h5> <div class="para" id="alg-factorial-3-1-2">(<span class="process-math">\(n\text{:}\)</span> non-negative integer)</div> <div class="tabular-box natural-width"><table class="tabular">
+<section class="paragraphs" id="alg-factorial-3-1"><h5 class="heading"><span class="title">procedure Factorial.</span></h5>
+<div class="para" id="alg-factorial-3-1-2">(<span class="process-math">\(n\text{:}\)</span> non-negative integer)</div>
+<div class="tabular-box natural-width"><table class="tabular">
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3">prod <span class="process-math">\(: = 1\text{:}\)</span>
 </td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3">
@@ -1125,9 +1157,11 @@ else:
 <span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">9.1.3.1</span><span class="space"> </span><span class="title">Search Algorithms</span>
 </h4>
 <div class="para" id="subsubsec9_1_3_1-search-algorithms-2">The search task involves looking for a particular item in a list of items.</div>
-<section class="paragraphs" id="subsubsec9_1_3_1-search-algorithms-3"><h5 class="heading"><span class="title">Linear Search.</span></h5> <div class="para" id="subsubsec9_1_3_1-search-algorithms-3-2">The linear search algorithm must have a list of items <span class="process-math">\(\{a_1, a_2, \ldots, a_n\}\)</span> and the target item <span class="process-math">\(x\)</span> as inputs. There are several ways to format the output, but commonly the output is the target item’s location in list if it is found, or some <em class="emphasis">indicator</em> value such as <span class="process-math">\(0\)</span> or <span class="process-math">\(-1\)</span> if the target is not found in the list. Linear Search is an example of a “brute force algorithm”, it approaches the problem in the most direct way possible, without no attempt at improving efficiency.</div> <div class="para logical" id="subsubsec9_1_3_1-search-algorithms-3-3">
+<section class="paragraphs" id="subsubsec9_1_3_1-search-algorithms-3"><h5 class="heading"><span class="title">Linear Search.</span></h5>
+<div class="para" id="subsubsec9_1_3_1-search-algorithms-3-2">The linear search algorithm must have a list of items <span class="process-math">\(\{a_1, a_2, \ldots, a_n\}\)</span> and the target item <span class="process-math">\(x\)</span> as inputs. There are several ways to format the output, but commonly the output is the target item’s location in list if it is found, or some <em class="emphasis">indicator</em> value such as <span class="process-math">\(0\)</span> or <span class="process-math">\(-1\)</span> if the target is not found in the list. Linear Search is an example of a “brute force algorithm”, it approaches the problem in the most direct way possible, without no attempt at improving efficiency.</div>
+<div class="para logical" id="subsubsec9_1_3_1-search-algorithms-3-3">
 <div class="para">The algorithm starts from the beginning of the list of items and compares each item to the target, counting the items as it goes. If the list item is the same as the target item, then the location variable is updated with the count. When it gets to the end of the list, it outputs the value in the location variable.</div>
-<ul class="disc">
+<ul class="disc" id="subsubsec9_1_3_1-search-algorithms-3-3-1">
 <li id="subsubsec9_1_3_1-search-algorithms-3-3-1-1"><div class="para" id="subsubsec9_1_3_1-search-algorithms-3-3-1-1-1">Let <span class="process-math">\(x\)</span> be the item to look for and <span class="process-math">\(\{a_1, a_2, \ldots, a_n\}\)</span> be the list of items to search.</div></li>
 <li id="subsubsec9_1_3_1-search-algorithms-3-3-1-2"><div class="para" id="subsubsec9_1_3_1-search-algorithms-3-3-1-2-1">First, compare <span class="process-math">\(x\)</span> with the first item <span class="process-math">\(a_1\text{.}\)</span>
 </div></li>
@@ -1138,10 +1172,13 @@ else:
 <li id="subsubsec9_1_3_1-search-algorithms-3-3-1-6"><div class="para" id="subsubsec9_1_3_1-search-algorithms-3-3-1-6-1">Continue until the whole list has been scanned.</div></li>
 <li id="subsubsec9_1_3_1-search-algorithms-3-3-1-7"><div class="para" id="subsubsec9_1_3_1-search-algorithms-3-3-1-7-1">Return location value or 0 if no match was found.</div></li>
 </ul>
-</div> <article class="algorithm theorem-like" id="alg-linear-search"><h6 class="heading">
+</div>
+<article class="algorithm theorem-like" id="alg-linear-search"><h6 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">9.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Linear Search.</span>
 </h6>
-<section class="paragraphs" id="alg-linear-search-3-1"><h6 class="heading"><span class="title">procedure linear search.</span></h6> <div class="para" id="alg-linear-search-3-1-2">(<span class="process-math">\(x\text{:}\)</span> target; <span class="process-math">\(\{a_1, a_2, ..., a_n\}\text{:}\)</span> list of items)</div> <div class="tabular-box natural-width"><table class="tabular">
+<section class="paragraphs" id="alg-linear-search-3-1"><h6 class="heading"><span class="title">procedure linear search.</span></h6>
+<div class="para" id="alg-linear-search-3-1-2">(<span class="process-math">\(x\text{:}\)</span> target; <span class="process-math">\(\{a_1, a_2, ..., a_n\}\text{:}\)</span> list of items)</div>
+<div class="tabular-box natural-width"><table class="tabular">
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3">index := 1</td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3">location := 0</td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3">
@@ -1168,10 +1205,13 @@ else:
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
-</table></div></section></article> <div class="para" id="subsubsec9_1_3_1-search-algorithms-3-5">We can make the linear search algorithm more efficient by modifying the loop condition so that the <code class="code-inline tex2jax_ignore">while</code>loop will stop if the target item is found. This eliminates having to continue to compare items if a matching one has been seen.</div> <article class="algorithm theorem-like" id="alg-linear-search2"><h6 class="heading">
+</table></div></section></article><div class="para" id="subsubsec9_1_3_1-search-algorithms-3-5">We can make the linear search algorithm more efficient by modifying the loop condition so that the <code class="code-inline tex2jax_ignore">while</code>loop will stop if the target item is found. This eliminates having to continue to compare items if a matching one has been seen.</div>
+<article class="algorithm theorem-like" id="alg-linear-search2"><h6 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">9.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Smarter Linear Search.</span>
 </h6>
-<section class="paragraphs" id="alg-linear-search2-2-1"><h6 class="heading"><span class="title">procedure faster linear search:.</span></h6> <div class="para" id="alg-linear-search2-2-1-2">(<span class="process-math">\(x\text{:}\)</span> target; <span class="process-math">\(\{a_1, a_2, ..., a_n\}\text{:}\)</span> list of items)</div> <div class="tabular-box natural-width"><table class="tabular">
+<section class="paragraphs" id="alg-linear-search2-2-1"><h6 class="heading"><span class="title">procedure faster linear search:.</span></h6>
+<div class="para" id="alg-linear-search2-2-1-2">(<span class="process-math">\(x\text{:}\)</span> target; <span class="process-math">\(\{a_1, a_2, ..., a_n\}\text{:}\)</span> list of items)</div>
+<div class="tabular-box natural-width"><table class="tabular">
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3">index := 1</td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3">location := 0</td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3">
@@ -1194,7 +1234,7 @@ else:
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 </table></div></section></article></section><div class="para" id="subsubsec9_1_3_1-search-algorithms-4">In the following implementation of the Faster Linear Search in SageMath, we search within a randomly generated list of integers.</div>
-<pre id="subsubsec9_1_3_1-search-algorithms-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def LinearSearch(target, aList):
+<div id="subsubsec9_1_3_1-search-algorithms-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def LinearSearch(target, aList):
     loc = -1
     index = 0
     n = len(aList) - 1
@@ -1210,11 +1250,12 @@ else:
 s = [64, 7, 30, 91, 32, 1, 15, 45, 42, 86, 24, 75, 22, 82, 38, 22, 13, 5, 82, 30, 89, 47, 81, 34, 41, 9, 5, 66, 49, 42]
 print(s)
 LinearSearch(41,s)
-</script></pre>
+</script></div>
 <section class="paragraphs" id="subsubsec9_1_3_1-search-algorithms-6"><h5 class="heading"><span class="title">Maximum Element.</span></h5>
-<div class="para" id="subsubsec9_1_3_1-search-algorithms-6-2">Linear Search can be modified to find an item in a list with a specific property. For example, we can modify the algorithm to find the largest item in the list, rather than a specific item of our choosing. To do this we must change how the algorithm compares elements.</div> <div class="para logical" id="subsubsec9_1_3_1-search-algorithms-6-3">
+<div class="para" id="subsubsec9_1_3_1-search-algorithms-6-2">Linear Search can be modified to find an item in a list with a specific property. For example, we can modify the algorithm to find the largest item in the list, rather than a specific item of our choosing. To do this we must change how the algorithm compares elements.</div>
+<div class="para logical" id="subsubsec9_1_3_1-search-algorithms-6-3">
 <div class="para">The algorithm for finding the maximum element in a list starts from the beginning of the list of items. It compares the first two items and keeps the larger one, then it compares that to the third item again keeping the larger, this continues through the entire list. When it gets to the end of the list, it outputs the value that it has saved. This must be the maximum element in the list.</div>
-<ul class="disc">
+<ul class="disc" id="subsubsec9_1_3_1-search-algorithms-6-3-1">
 <li id="subsubsec9_1_3_1-search-algorithms-6-3-1-1"><div class="para" id="subsubsec9_1_3_1-search-algorithms-6-3-1-1-1">Let <span class="process-math">\(max\)</span> be the largest item seen so far and <span class="process-math">\(\{a_1, a_2, \ldots, a_n\}\)</span> be the list of items to search.</div></li>
 <li id="subsubsec9_1_3_1-search-algorithms-6-3-1-2"><div class="para" id="subsubsec9_1_3_1-search-algorithms-6-3-1-2-1">First, set <span class="process-math">\(max\)</span> to the value of the first item, <span class="process-math">\(a_1\text{.}\)</span>
 </div></li>
@@ -1226,10 +1267,13 @@ LinearSearch(41,s)
 <li id="subsubsec9_1_3_1-search-algorithms-6-3-1-6"><div class="para" id="subsubsec9_1_3_1-search-algorithms-6-3-1-6-1">Return the value of <span class="process-math">\(max\text{.}\)</span>
 </div></li>
 </ul>
-</div> <article class="algorithm theorem-like" id="alg-max-element"><h6 class="heading">
+</div>
+<article class="algorithm theorem-like" id="alg-max-element"><h6 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">9.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Maximum Element in a List.</span>
 </h6>
-<section class="paragraphs" id="alg-max-element-3-1"><h6 class="heading"><span class="title">procedure maximum element:.</span></h6> <div class="para" id="alg-max-element-3-1-2">(<span class="process-math">\(\{a_1, a_2, ..., a_n\}\text{:}\)</span> list of items)</div> <div class="tabular-box natural-width"><table class="tabular">
+<section class="paragraphs" id="alg-max-element-3-1"><h6 class="heading"><span class="title">procedure maximum element:.</span></h6>
+<div class="para" id="alg-max-element-3-1-2">(<span class="process-math">\(\{a_1, a_2, ..., a_n\}\text{:}\)</span> list of items)</div>
+<div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">index := 1</td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -1268,7 +1312,8 @@ LinearSearch(41,s)
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
-</table></div></section></article> <div class="para" id="subsubsec9_1_3_1-search-algorithms-6-5">In the following implementation of the Maximum Element in SageMath, we find the maximum of a randomly generated list of integers.</div> <pre id="subsubsec9_1_3_1-search-algorithms-6-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def MaximumElement(aList):
+</table></div></section></article><div class="para" id="subsubsec9_1_3_1-search-algorithms-6-5">In the following implementation of the Maximum Element in SageMath, we find the maximum of a randomly generated list of integers.</div>
+<div id="subsubsec9_1_3_1-search-algorithms-6-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def MaximumElement(aList):
     index = 0
     max = aList[0]
     for item in aList:
@@ -1279,11 +1324,15 @@ LinearSearch(41,s)
 s = [64, 7, 30, 91, 32, 1, 15, 45, 42, 86, 24, 75, 22, 82, 38, 22, 13, 5, 82, 30, 89, 47, 81, 34, 41, 9, 5, 66, 49, 42]
 print(s)
 MaximumElement(s)
-</script></pre></section><section class="paragraphs" id="subsubsec9_1_3_1-search-algorithms-7"><h5 class="heading"><span class="title">Binary Search.</span></h5>
-<div class="para" id="subsubsec9_1_3_1-search-algorithms-7-2">The binary search algorithm is a much more efficient way to search for an item in a list than linear search, however, the list to be searched must be put into a sorted order before searching can be done. Binary search is an example of a “divide-and-conquer” algorithm where the problem is repeatedly divided into smaller problems until solving the problem is very easy. We will come back to see the recursive version of Binary Search in <a href="section9_2-Recursive_Algorithms.html" class="internal" title="Section 9.2: Recursive Algorithms">Section 9.2</a> on recursive algorithms. Here we describe the <em class="emphasis">iterative</em>, or looping, version.</div> <div class="para" id="subsubsec9_1_3_1-search-algorithms-7-3">The binary search algorithm starts by comparing the item in the middle position of the sorted list to the target. If the middle item is the same as the target item, then the location is returned. If the target is larger than the middle item, the lower half of the list is disregarded, the middle becomes the new start of the list and the target is compared to the item halfway between the new start and the end. If the target is smaller than the middle item, the upper half of the list is disregarded, the middle becomes the new end of the list, and the target is compared to the item halfway between the beginning and the new end. This procedure continues until the target is found or the list is reduced to a single item and that doesn’t match the target.</div> <div class="para" id="subsubsec9_1_3_1-search-algorithms-7-4"><article class="algorithm theorem-like" id="alg-iterative-binary-search"><h6 class="heading">
+</script></div></section><section class="paragraphs" id="subsubsec9_1_3_1-search-algorithms-7"><h5 class="heading"><span class="title">Binary Search.</span></h5>
+<div class="para" id="subsubsec9_1_3_1-search-algorithms-7-2">The binary search algorithm is a much more efficient way to search for an item in a list than linear search, however, the list to be searched must be put into a sorted order before searching can be done. Binary search is an example of a “divide-and-conquer” algorithm where the problem is repeatedly divided into smaller problems until solving the problem is very easy. We will come back to see the recursive version of Binary Search in <a href="section9_2-Recursive_Algorithms.html" class="internal" title="Section 9.2: Recursive Algorithms">Section 9.2</a> on recursive algorithms. Here we describe the <em class="emphasis">iterative</em>, or looping, version.</div>
+<div class="para" id="subsubsec9_1_3_1-search-algorithms-7-3">The binary search algorithm starts by comparing the item in the middle position of the sorted list to the target. If the middle item is the same as the target item, then the location is returned. If the target is larger than the middle item, the lower half of the list is disregarded, the middle becomes the new start of the list and the target is compared to the item halfway between the new start and the end. If the target is smaller than the middle item, the upper half of the list is disregarded, the middle becomes the new end of the list, and the target is compared to the item halfway between the beginning and the new end. This procedure continues until the target is found or the list is reduced to a single item and that doesn’t match the target.</div>
+<div class="para" id="subsubsec9_1_3_1-search-algorithms-7-4"><article class="algorithm theorem-like" id="alg-iterative-binary-search"><h6 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">9.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Iterative Binary Search.</span>
 </h6>
-<section class="paragraphs" id="alg-iterative-binary-search-3-1"><h6 class="heading"><span class="title">procedure binary search.</span></h6> <div class="para" id="alg-iterative-binary-search-3-1-2">(<span class="process-math">\(x\text{:}\)</span> target; <span class="process-math">\(\{a_1, a_2, ..., a_n\}\text{:}\)</span> sorted list of items)</div> <div class="tabular-box natural-width"><table class="tabular">
+<section class="paragraphs" id="alg-iterative-binary-search-3-1"><h6 class="heading"><span class="title">procedure binary search.</span></h6>
+<div class="para" id="alg-iterative-binary-search-3-1-2">(<span class="process-math">\(x\text{:}\)</span> target; <span class="process-math">\(\{a_1, a_2, ..., a_n\}\text{:}\)</span> sorted list of items)</div>
+<div class="tabular-box natural-width"><table class="tabular">
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3">loc := -1</td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3">begin := 1</td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3">end := n</td></tr>
@@ -1339,7 +1388,9 @@ MaximumElement(s)
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
-</table></div></section></article></div> <div class="para" id="subsubsec9_1_3_1-search-algorithms-7-5">In the following implementation of the Iterative Binary Search in SageMath, we search within a sorted list of integers.</div> <pre id="subsubsec9_1_3_1-search-algorithms-7-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def IterativeBinarySearch(target, aList):
+</table></div></section></article></div>
+<div class="para" id="subsubsec9_1_3_1-search-algorithms-7-5">In the following implementation of the Iterative Binary Search in SageMath, we search within a sorted list of integers.</div>
+<div id="subsubsec9_1_3_1-search-algorithms-7-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def IterativeBinarySearch(target, aList):
   loc = -1
   begin = 0
   end = len(aList) - 1
@@ -1364,15 +1415,18 @@ MaximumElement(s)
   return loc
 s=[1,9,13,16,30,31,32,33,36,37,38,45,49,50,52,61,63,64,69,77,79,80,81,83,86,90,93,96]
 IterativeBinarySearch(37, s)
-</script></pre></section></section><section class="subsubsection" id="subsubsec9_1_3_2-sorting-algorithms"><h4 class="heading hide-type">
+</script></div></section></section><section class="subsubsection" id="subsubsec9_1_3_2-sorting-algorithms"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">9.1.3.2</span><span class="space"> </span><span class="title">Sorting Algorithms</span>
 </h4>
 <div class="para" id="subsubsec9_1_3_2-sorting-algorithms-2">The sorting task involves rearranging a list of items into a sorted order. The development of efficient sorting algorithms has been an important part of theoretical computer science for many years, and there are many different sorting algorithms. In this section we introduce two of the simpler “brute-force”sorting algorithms.</div>
 <section class="paragraphs" id="subsubsec9_1_3_2-sorting-algorithms-3"><h5 class="heading"><span class="title">Bubble Sort.</span></h5>
-<div class="para" id="subsubsec9_1_3_2-sorting-algorithms-3-2">Bubble sort is very simple. It runs through the list to be sorted several times, comparing neighboring pairs of items. If the first item is larger than the second, they swap places. Then it moves forward and compares the next pair, and so on. This causes the largest item in the list to “bubble down” to its correct sorted position at the end of the list in the first pass through to list. In the next pass through the list, the second largest item will end up in its correct sorted position (second from the end). In the third pass, the third largest item will be in its sorted position, and so on. Each time the algorithm passes through the list, it can stop looking for swaps sooner,  when it gets to the previously placed items. The algorithm has to make almost as many passes through the list as there are items in it. In each pass execept the last, only one item is guaranteed to be put into its correct position. In the final pass, the last two smallest items are correctly placed because there are only two positions left at that point. The algorithm finishes after making <span class="process-math">\(n-1\)</span> passes through the list, if <span class="process-math">\(n\)</span> is the length of the list it sorted.</div> <div class="para" id="subsubsec9_1_3_2-sorting-algorithms-3-3"><article class="algorithm theorem-like" id="alg-bubble-sort"><h6 class="heading">
+<div class="para" id="subsubsec9_1_3_2-sorting-algorithms-3-2">Bubble sort is very simple. It runs through the list to be sorted several times, comparing neighboring pairs of items. If the first item is larger than the second, they swap places. Then it moves forward and compares the next pair, and so on. This causes the largest item in the list to “bubble down” to its correct sorted position at the end of the list in the first pass through to list. In the next pass through the list, the second largest item will end up in its correct sorted position (second from the end). In the third pass, the third largest item will be in its sorted position, and so on. Each time the algorithm passes through the list, it can stop looking for swaps sooner,  when it gets to the previously placed items. The algorithm has to make almost as many passes through the list as there are items in it. In each pass execept the last, only one item is guaranteed to be put into its correct position. In the final pass, the last two smallest items are correctly placed because there are only two positions left at that point. The algorithm finishes after making <span class="process-math">\(n-1\)</span> passes through the list, if <span class="process-math">\(n\)</span> is the length of the list it sorted.</div>
+<div class="para" id="subsubsec9_1_3_2-sorting-algorithms-3-3"><article class="algorithm theorem-like" id="alg-bubble-sort"><h6 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">9.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Bubble Sort.</span>
 </h6>
-<section class="paragraphs" id="alg-bubble-sort-3-1"><h6 class="heading"><span class="title">procedure bubble sort.</span></h6> <div class="para" id="alg-bubble-sort-3-1-2">(<span class="process-math">\(\{a_1, a_2, ..., a_n\}\text{:}\)</span> list of items)</div> <div class="tabular-box natural-width"><table class="tabular">
+<section class="paragraphs" id="alg-bubble-sort-3-1"><h6 class="heading"><span class="title">procedure bubble sort.</span></h6>
+<div class="para" id="alg-bubble-sort-3-1-2">(<span class="process-math">\(\{a_1, a_2, ..., a_n\}\text{:}\)</span> list of items)</div>
+<div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">end := n</td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -1397,7 +1451,9 @@ IterativeBinarySearch(37, s)
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
-</table></div></section></article></div> <div class="para" id="subsubsec9_1_3_2-sorting-algorithms-3-4">In the following implementation of Bubble Sort in SageMath, we sort a randomized list of integers.</div> <pre id="subsubsec9_1_3_2-sorting-algorithms-3-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def BubbleSort(aList):
+</table></div></section></article></div>
+<div class="para" id="subsubsec9_1_3_2-sorting-algorithms-3-4">In the following implementation of Bubble Sort in SageMath, we sort a randomized list of integers.</div>
+<div id="subsubsec9_1_3_2-sorting-algorithms-3-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def BubbleSort(aList):
     for i in range(0, len(aList)):
         for j in range(0, len(aList) - 1 -i):
             if aList[j] > aList[j+1]:
@@ -1410,11 +1466,14 @@ s = [19, 20, 12, 0, 30, 23, 11, 9, 0, 17, 7, 30, 9, 0, 14, 5, 22, 9, 29, 26, 9, 
 print(s)
 BubbleSort(s)
 print(s)
-</script></pre></section><section class="paragraphs" id="subsubsec9_1_3_2-sorting-algorithms-4"><h5 class="heading"><span class="title">Insertion Sort.</span></h5>
-<div class="para" id="subsubsec9_1_3_2-sorting-algorithms-4-2">Insertion sort works by keeping the list it is sorting in two sections, sorted and unsorted. It starts with the just the first item in the list as the sorted part and the whole rest unsorted. It then puts the second item in sorted order with the first by swapping places if the second is smaller than the first. Now the sorted part is two items long and the rest is unsorted. Then it takes the third item and puts it in its correct position in the sorted part by shifting any larger items over to make room for that item. Then it moves the sorted/unsorted boundary over. This is repeated until the whole list is included in the sorted part.</div> <div class="para" id="subsubsec9_1_3_2-sorting-algorithms-4-3"><article class="algorithm theorem-like" id="alg-insertion-sort"><h6 class="heading">
+</script></div></section><section class="paragraphs" id="subsubsec9_1_3_2-sorting-algorithms-4"><h5 class="heading"><span class="title">Insertion Sort.</span></h5>
+<div class="para" id="subsubsec9_1_3_2-sorting-algorithms-4-2">Insertion sort works by keeping the list it is sorting in two sections, sorted and unsorted. It starts with the just the first item in the list as the sorted part and the whole rest unsorted. It then puts the second item in sorted order with the first by swapping places if the second is smaller than the first. Now the sorted part is two items long and the rest is unsorted. Then it takes the third item and puts it in its correct position in the sorted part by shifting any larger items over to make room for that item. Then it moves the sorted/unsorted boundary over. This is repeated until the whole list is included in the sorted part.</div>
+<div class="para" id="subsubsec9_1_3_2-sorting-algorithms-4-3"><article class="algorithm theorem-like" id="alg-insertion-sort"><h6 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">9.1.14</span><span class="period">.</span><span class="space"> </span><span class="title">Insertion Sort.</span>
 </h6>
-<section class="paragraphs" id="alg-insertion-sort-3-1"><h6 class="heading"><span class="title">procedure insertion sort.</span></h6> <div class="para" id="alg-insertion-sort-3-1-2">(<span class="process-math">\(\{a_1, a_2, ..., a_n\}\text{:}\)</span> list of items)</div> <div class="tabular-box natural-width"><table class="tabular">
+<section class="paragraphs" id="alg-insertion-sort-3-1"><h6 class="heading"><span class="title">procedure insertion sort.</span></h6>
+<div class="para" id="alg-insertion-sort-3-1-2">(<span class="process-math">\(\{a_1, a_2, ..., a_n\}\text{:}\)</span> list of items)</div>
+<div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">end := n</td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -1455,7 +1514,9 @@ print(s)
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
-</table></div></section></article></div> <div class="para" id="subsubsec9_1_3_2-sorting-algorithms-4-4">In the following implementation of Insertion Sort in SageMath, we sort a randomized list of integers.</div> <pre id="subsubsec9_1_3_2-sorting-algorithms-4-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def InsertionSort(aList):
+</table></div></section></article></div>
+<div class="para" id="subsubsec9_1_3_2-sorting-algorithms-4-4">In the following implementation of Insertion Sort in SageMath, we sort a randomized list of integers.</div>
+<div id="subsubsec9_1_3_2-sorting-algorithms-4-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def InsertionSort(aList):
 
     for i in range(0, len(aList)):
         j = i
@@ -1471,16 +1532,21 @@ s = [19, 20, 12, 0, 30, 23, 11, 9, 0, 17, 7, 30, 9, 0, 14, 5, 22, 9, 29, 26, 9, 
 print(s)
 InsertionSort(s)
 print(s)
-</script></pre></section></section><section class="subsubsection" id="subsubsec9_1_3_3-greedy-algorithms"><h4 class="heading hide-type">
+</script></div></section></section><section class="subsubsection" id="subsubsec9_1_3_3-greedy-algorithms"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">9.1.3.3</span><span class="space"> </span><span class="title">Greedy Algorithms</span>
 </h4>
 <div class="para" id="subsubsec9_1_3_3-greedy-algorithms-2">An <dfn class="terminology">optimization problem</dfn> is where the task is to minimize or maximize some value over a whole range of possibilities. Problems such as finding a delivery route with the shortest mileage or making a schedule of classes using the fewest number of classrooms or predicting the most probable winner in an election are all optimization problems. These kinds of problems are hard to solve algorithmically because the number of possibilities can become unmanageable.</div>
 <div class="para" id="subsubsec9_1_3_3-greedy-algorithms-3">Greedy algorithms are one type of approach to optimization problems. A greedy algorithm doesn’t try to solve the overall problem in an optimal way, instead it makes the “best” choice it can at each step towards a solution. Often, greedy algorithms are remarkably accurate and efficient. Many optimization tasks are so difficult that a greedy algorithm is the only known way to compute an answer, as we will see in ICS 241.</div>
 <section class="paragraphs" id="subsubsec9_1_3_3-greedy-algorithms-4"><h5 class="heading"><span class="title">Greedy Change Making Algorithm.</span></h5>
-<div class="para" id="subsubsec9_1_3_3-greedy-algorithms-4-2">Say we want to develop an algorithm for an automated change machine. How can we program our machine to return any amount of change with the fewest number of coins possible? This is a simple optimization problem. We don’t want to approach this in a “brute force” manner where our machine would have to figure out all possible combinations of coins and then choose the one that requires the least coins. Instead we will use a “greedy” method.</div> <div class="para" id="subsubsec9_1_3_3-greedy-algorithms-4-3">In the greedy paradigm we want our machine to make the best choice at each step. In this case, that will mean always adding the largest value coin possible to the change without exceeding the amount remaining to return.</div> <div class="para" id="subsubsec9_1_3_3-greedy-algorithms-4-4">If the machine can hold quarters, dimes, nickels, and pennies we will make a sorted list holding their values from high to low: <span class="process-math">\(\{25, 10, 5, 1\}\)</span> and another list holding the coin types in the same order {quarter, dime, nickel, penny}. These will be the <span class="process-math">\(c_i\)</span> and <span class="process-math">\(t_i\)</span> values below and <span class="process-math">\(n\)</span> would be 4.</div> <div class="para" id="subsubsec9_1_3_3-greedy-algorithms-4-5"><article class="algorithm theorem-like" id="alg-greedy-change"><h6 class="heading">
+<div class="para" id="subsubsec9_1_3_3-greedy-algorithms-4-2">Say we want to develop an algorithm for an automated change machine. How can we program our machine to return any amount of change with the fewest number of coins possible? This is a simple optimization problem. We don’t want to approach this in a “brute force” manner where our machine would have to figure out all possible combinations of coins and then choose the one that requires the least coins. Instead we will use a “greedy” method.</div>
+<div class="para" id="subsubsec9_1_3_3-greedy-algorithms-4-3">In the greedy paradigm we want our machine to make the best choice at each step. In this case, that will mean always adding the largest value coin possible to the change without exceeding the amount remaining to return.</div>
+<div class="para" id="subsubsec9_1_3_3-greedy-algorithms-4-4">If the machine can hold quarters, dimes, nickels, and pennies we will make a sorted list holding their values from high to low: <span class="process-math">\(\{25, 10, 5, 1\}\)</span> and another list holding the coin types in the same order {quarter, dime, nickel, penny}. These will be the <span class="process-math">\(c_i\)</span> and <span class="process-math">\(t_i\)</span> values below and <span class="process-math">\(n\)</span> would be 4.</div>
+<div class="para" id="subsubsec9_1_3_3-greedy-algorithms-4-5"><article class="algorithm theorem-like" id="alg-greedy-change"><h6 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">9.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Greedy Change Making.</span>
 </h6>
-<section class="paragraphs" id="alg-greedy-change-3-1"><h6 class="heading"><span class="title">procedure makeChange.</span></h6> <div class="para" id="alg-greedy-change-3-1-2">(<span class="process-math">\(x\text{:}\)</span> change amount; <span class="process-math">\(\{c_1, c_2, ..., c_n\}\text{:}\)</span> list of coin values; <span class="process-math">\(\{t_1, t_2, ..., t_n\}\text{:}\)</span> list of coin types)</div> <div class="tabular-box natural-width"><table class="tabular">
+<section class="paragraphs" id="alg-greedy-change-3-1"><h6 class="heading"><span class="title">procedure makeChange.</span></h6>
+<div class="para" id="alg-greedy-change-3-1-2">(<span class="process-math">\(x\text{:}\)</span> change amount; <span class="process-math">\(\{c_1, c_2, ..., c_n\}\text{:}\)</span> list of coin values; <span class="process-math">\(\{t_1, t_2, ..., t_n\}\text{:}\)</span> list of coin types)</div>
+<div class="tabular-box natural-width"><table class="tabular">
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3">
 <em class="alert">for</em> (i = 1 to n)</td></tr>
 <tr>
@@ -1501,7 +1567,9 @@ print(s)
 <td class="l m b0 r0 l0 t0 lines">x := x - <span class="process-math">\(c_i\)</span>
 </td>
 </tr>
-</table></div></section></article></div> <div class="para" id="subsubsec9_1_3_3-greedy-algorithms-4-6">In the following implementation of the Greedy Change Making algorithm in SageMath the coins it would return are printed out.</div> <pre id="subsubsec9_1_3_3-greedy-algorithms-4-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def makeChange(amt, cList, tList):
+</table></div></section></article></div>
+<div class="para" id="subsubsec9_1_3_3-greedy-algorithms-4-6">In the following implementation of the Greedy Change Making algorithm in SageMath the coins it would return are printed out.</div>
+<div id="subsubsec9_1_3_3-greedy-algorithms-4-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def makeChange(amt, cList, tList):
     total = 0
     for i in range(0, len(cList)):
         while amt >= cList[i]:
@@ -1513,11 +1581,13 @@ amounts = [25, 10, 5, 1]
 types = ["quarter", "dime", "nickel", "penny"]
 change = 92
 makeChange(change, amounts, types)
-</script></pre></section></section></section><section class="exercises" id="exercises-9-1"><h3 class="heading hide-type">
+</script></div></section></section></section><section class="exercises" id="exercises-9-1"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">9.1.4</span><span class="space"> </span><span class="title">Exercises for Section 9.1</span>
 </h3>
 <article class="exercise exercise-like" id="exercises-9-1-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="exercises-9-1-2-1-1">Describe, in words, what the following algorithm does:</div> <section class="paragraphs" id="exercises-9-1-2-1-2"><h5 class="heading"><span class="title">Alg1.</span></h5> <div class="para" id="exercises-9-1-2-1-2-2">(<span class="process-math">\(k\text{:}\)</span> positive integer)</div> <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="exercises-9-1-2-1-1">Describe, in words, what the following algorithm does:</div> <section class="paragraphs" id="exercises-9-1-2-1-2"><h5 class="heading"><span class="title">Alg1.</span></h5>
+<div class="para" id="exercises-9-1-2-1-2-2">(<span class="process-math">\(k\text{:}\)</span> positive integer)</div>
+<div class="tabular-box natural-width"><table class="tabular">
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="2"><span class="process-math">\(s := 0\)</span></td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="2">
 <em class="alert">while</em> <span class="process-math">\(k &gt; 0\text{:}\)</span>
@@ -1535,7 +1605,9 @@ makeChange(change, amounts, types)
 </td></tr>
 </table></div></section><div class="solutions"><details id="exercises-9-1-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="exercises-9-1-2-2-1">This algorithm calculates the sum of the first <span class="process-math">\(k\)</span> positive integers: <span class="process-math">\(s = k + (k-1) + \ldots + 2 + 1\text{.}\)</span>
 </div></div></details></div></article><article class="exercise exercise-like" id="exercises-9-1-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="exercises-9-1-3-1-1">Describe in words what the following algorithm does:</div> <section class="paragraphs" id="exercises-9-1-3-1-2"><h5 class="heading"><span class="title">Alg2.</span></h5> <div class="para" id="exercises-9-1-3-1-2-2">(<span class="process-math">\(n\text{:}\)</span> positive integer)</div> <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="exercises-9-1-3-1-1">Describe in words what the following algorithm does:</div> <section class="paragraphs" id="exercises-9-1-3-1-2"><h5 class="heading"><span class="title">Alg2.</span></h5>
+<div class="para" id="exercises-9-1-3-1-2-2">(<span class="process-math">\(n\text{:}\)</span> positive integer)</div>
+<div class="tabular-box natural-width"><table class="tabular">
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="2"><span class="process-math">\(f := 0\)</span></td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="2"><span class="process-math">\(k := n\)</span></td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="2">
@@ -1553,7 +1625,9 @@ makeChange(change, amounts, types)
 </td></tr>
 </table></div></section></article><article class="exercise exercise-like" id="exercises-9-1-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para" id="exercises-9-1-4-1-1">Write in pseudocode an algorithm that finds the largest and smallest elements in a list of integers of length <span class="process-math">\(n\)</span> and returns the sum of those two.</div>
-<div class="solutions"><details id="exercises-9-1-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><section class="paragraphs" id="exercises-9-1-4-2-1"><h5 class="heading"><span class="title">LargestAndSmallest.</span></h5> <div class="para" id="exercises-9-1-4-2-1-2">(<span class="process-math">\(\{a_1, a_2, ..., a_n\}\text{:}\)</span> list of integers)</div> <div class="tabular-box natural-width"><table class="tabular">
+<div class="solutions"><details id="exercises-9-1-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><section class="paragraphs" id="exercises-9-1-4-2-1"><h5 class="heading"><span class="title">LargestAndSmallest.</span></h5>
+<div class="para" id="exercises-9-1-4-2-1-2">(<span class="process-math">\(\{a_1, a_2, ..., a_n\}\text{:}\)</span> list of integers)</div>
+<div class="tabular-box natural-width"><table class="tabular">
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3"><span class="process-math">\(smallest := a_1\)</span></td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3"><span class="process-math">\(largest := a_1\)</span></td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines" colspan="3"><span class="process-math">\(index:= 2\)</span></td></tr>
@@ -1651,11 +1725,11 @@ makeChange(change, amounts, types)
 </table></div> The remaining passes won’t swap anything since the list is now sorted.</div></div></details></div></article><article class="exercise exercise-like" id="exercises-9-1-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <div class="para" id="exercises-9-1-7-1-1">Write a complete trace of insertion sort on the list [6, 2, 3, 1, 5, 4] showing the lists obtained at each step (each change in values of <span class="process-math">\(i \)</span> and <span class="process-math">\(j\)</span>).</div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="chapter_9.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section9_2-Recursive_Algorithms.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="chapter_9.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section9_2-Recursive_Algorithms.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

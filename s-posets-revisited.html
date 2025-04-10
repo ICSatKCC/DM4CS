@@ -5,30 +5,20 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Posets Revisited</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Discrete Mathematics for Computer Science">
-<meta property="book:author" content="Ken Levasseur">
-<meta property="book:author" content="Al Doerr">
-<meta property="book:author" content="Michiel Smid">
-<meta property="book:author" content="Oscar Levin">
-<meta property="book:author" content="Charles M. Grinstead">
-<meta property="book:author" content="J. Laurie Snell">
-<meta property="book:author" content="Eric Lehman">
-<meta property="book:author" content="F. Thomson Leighton">
-<meta property="book:author" content="Albert R Meyer">
-<meta property="book:author" content="Jeff Erickson">
-<meta property="book:author" content="Kenneth P. Bogart">
-<meta property="book:author" content="Carol Chritchlow">
-<meta property="book:author" content="David Eck">
-<meta property="book:author" content="OpenDSA Project">
-<meta property="book:author" content="L.J. Miller">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -100,10 +90,64 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Discrete Mathematics for Computer Science">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ken Levasseur">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Al Doerr">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Michiel Smid">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Oscar Levin">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Charles M. Grinstead">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="J. Laurie Snell">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Eric Lehman">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="F. Thomson Leighton">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Albert R Meyer">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Jeff Erickson">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Kenneth P. Bogart">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Carol Chritchlow">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="David Eck">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="OpenDSA Project">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="L.J. Miller">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "pre.sagecell-sage",
+  "inputLocation": "div.sagecell-sage",
   "linked": true,
   "linkKey": "linked-sage",
   "autoeval": false,
@@ -112,36 +156,14 @@ sagecell.makeSagecell({
   ],
   "evalButtonText": "Evaluate (Sage)"
 });
-</script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="dm4cs.html"><span class="title">Discrete Mathematics for Computer Science:</span> <span class="subtitle">An open educational resource.</span></a></h1>
 <p class="byline">Ken Levasseur, Al Doerr, Michiel Smid, Oscar Levin, Charles M. Grinstead, J. Laurie Snell, Eric Lehman, F. Thomson Leighton, Albert R Meyer, Jeff Erickson, Kenneth P. Bogart, Carol Chritchlow, David Eck, OpenDSA Project, L.J. Miller</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -152,7 +174,8 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chapter_12.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_12.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s-lattices.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chapter_12.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter_12.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s-lattices.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}} \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset} \newcommand{\lcm}{\operatorname{lcm}}
 \newcommand{\gf}{\operatorname{GF}} \newcommand{\inn}{\operatorname{Inn}}
 \newcommand{\aut}{\operatorname{Aut}} \newcommand{\Hom}{\operatorname{Hom}}
@@ -185,12 +208,12 @@ sagecell.makeSagecell({
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="book-preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -707,9 +730,9 @@ sagecell.makeSagecell({
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="chapter_12.html" class="internal"><span class="codenumber">12</span> <span class="title">Boolean Algebra</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="s-posets-revisited.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Posets Revisited</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-posets-revisited.html#exercises-12-1" class="internal"><span class="codenumber">12.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul class="structural toc-item-list active"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s-posets-revisited.html#exercises-12-1" class="internal"><span class="codenumber">12.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s-lattices.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Lattices</span></a></div>
@@ -982,15 +1005,16 @@ sagecell.makeSagecell({
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s-posets-revisited"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s-posets-revisited"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">12.1</span><span class="space"> </span><span class="title">Posets Revisited</span>
 </h2>
 <div class="para" id="s-posets-revisited-3">Recall the definition of a <a href="s-properties-of-relations.html#partial-ordering" class="xref" data-knowl="./knowl/xref/partial-ordering.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 10.3.4: Partial Ordering">Definition 10.3.4</a> from <a href="s-properties-of-relations.html" class="internal" title="Section 10.3: Properties of Relations">Section 10.3</a>. The entire definition can be stated more compactly:</div>
 <article class="definition definition-like" id="def-partial-ordering-12"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Partial Ordering.</span>
-</h3>  <div class="para logical" id="def-partial-ordering-12-3-1">
+</h3>
+<div class="para logical" id="def-partial-ordering-12-3-1">
 <div class="para">Let <span class="process-math">\(\preceq\)</span> be a relation on a set <span class="process-math">\(L\text{.}\)</span> We say that <span class="process-math">\(\preceq\)</span> is a partial ordering on <span class="process-math">\(L\)</span> if it is reflexive, antisymmetric, and transitive. That is:</div>
-<ol class="decimal">
+<ol class="decimal ol-marker-2" id="def-partial-ordering-12-3-1-5">
 <li id="def-partial-ordering-12-3-1-5-1"><div class="para" id="def-partial-ordering-12-3-1-5-1-1">
 <span class="process-math">\(\preceq\)</span> is reflexive: <span class="process-math">\(a \preceq a \quad \forall a \in L\)</span>
 </div></li>
@@ -1007,9 +1031,10 @@ sagecell.makeSagecell({
 </div>
 </div></article><article class="example example-like" id="ex-some-posets"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">12.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Some posets.</span>
-</h3> <div class="para logical" id="ex-some-posets-2">
+</h3>
+<div class="para logical" id="ex-some-posets-2">
 <div class="para">We recall a few examples of posets:</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="ex-some-posets-2-1">
 <li id="ex-some-posets-2-1-1"><div class="para" id="ex-some-posets-2-1-1-1">
 <span class="process-math">\((\mathbb{R}, \leq)\)</span> is a poset. Notice that our generic symbol for the partial ordering, <span class="process-math">\(\preceq\text{,}\)</span> is selected to remind us that a partial ordering is similar to “less than or equal to.”</div></li>
 <li id="ex-some-posets-2-1-2"><div class="para" id="ex-some-posets-2-1-2-1">Let <span class="process-math">\(A=\{a,b\}\text{.}\)</span> Then <span class="process-math">\((\mathcal{P}(A) ,\subseteq)\)</span> is a poset.</div></li>
@@ -1018,13 +1043,15 @@ sagecell.makeSagecell({
 </div></article><div class="para" id="s-posets-revisited-6">The posets we will concentrate on in this chapter will be those which have upper and lower bounds in relation to any pair of elements. Next, we define this concept precisely.</div>
 <article class="definition definition-like" id="def-bounds"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Lower Bound, Upper Bound.</span>
-</h3>  <div class="para" id="def-bounds-4-1">Let <span class="process-math">\((L, \preceq)\)</span> be a poset, and <span class="process-math">\(a, b \in L\text{.}\)</span> Then <span class="process-math">\(c \in L\)</span> is a lower bound of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> if <span class="process-math">\(c \preceq a\)</span> and <span class="process-math">\(c \preceq b\text{.}\)</span> Also, <span class="process-math">\(d \in L\)</span> is an upper bound of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> if <span class="process-math">\(a \preceq d\)</span> and <span class="process-math">\(b \preceq d\text{.}\)</span>
+</h3>
+<div class="para" id="def-bounds-4-1">Let <span class="process-math">\((L, \preceq)\)</span> be a poset, and <span class="process-math">\(a, b \in L\text{.}\)</span> Then <span class="process-math">\(c \in L\)</span> is a lower bound of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> if <span class="process-math">\(c \preceq a\)</span> and <span class="process-math">\(c \preceq b\text{.}\)</span> Also, <span class="process-math">\(d \in L\)</span> is an upper bound of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> if <span class="process-math">\(a \preceq d\)</span> and <span class="process-math">\(b \preceq d\text{.}\)</span>
 </div></article><div class="para" id="s-posets-revisited-8">In most of the posets that will interest us, every pair of elements have both upper and lower bounds, though there are posets for which this is not true.</div>
 <article class="definition definition-like" id="def-glb"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Greatest Lower Bound.</span>
-</h3>  <div class="para logical" id="def-glb-3-1">
+</h3>
+<div class="para logical" id="def-glb-3-1">
 <div class="para">Let <span class="process-math">\((L, \preceq)\)</span> be a poset. If <span class="process-math">\(a, b \in L\text{,}\)</span> then <span class="process-math">\(\ell \in L\)</span> is a greatest lower bound of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> if and only if</div>
-<ul class="disc">
+<ul class="disc" id="def-glb-3-1-6">
 <li id="def-glb-3-1-6-1"><div class="para" id="def-glb-3-1-6-1-1"><span class="process-math">\(\displaystyle \ell \preceq a\)</span></div></li>
 <li id="def-glb-3-1-6-2"><div class="para" id="def-glb-3-1-6-2-1"><span class="process-math">\(\displaystyle \ell \preceq b\)</span></div></li>
 <li id="def-glb-3-1-6-3"><div class="para" id="def-glb-3-1-6-3-1">If <span class="process-math">\(\ell' \in L\)</span> such that <span class="process-math">\(\ell' \preceq a\)</span> and <span class="process-math">\(\ell'
@@ -1034,9 +1061,10 @@ sagecell.makeSagecell({
 </div></article><div class="para" id="s-posets-revisited-10">The last condition in the definition of Greatest Lower Bound says that if <span class="process-math">\(\ell'\)</span> is also a lower bound, then <span class="process-math">\(\ell\)</span> is “greater” in relation to <span class="process-math">\(\preceq\)</span> than <span class="process-math">\(\ell'\text{.}\)</span> The definition of a least upper bound is a mirror image of a greatest lower bound:</div>
 <article class="definition definition-like" id="def-lub"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Least Upper Bound.</span>
-</h3>  <div class="para logical" id="def-lub-3-1">
+</h3>
+<div class="para logical" id="def-lub-3-1">
 <div class="para">Let <span class="process-math">\((L, \preceq)\)</span> be a poset. If <span class="process-math">\(a, b \in L\text{,}\)</span> then <span class="process-math">\(u \in L\)</span> is a least upper bound of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> if and only if</div>
-<ul class="disc">
+<ul class="disc" id="def-lub-3-1-6">
 <li id="def-lub-3-1-6-1"><div class="para" id="def-lub-3-1-6-1-1"><span class="process-math">\(\displaystyle a \preceq u\)</span></div></li>
 <li id="def-lub-3-1-6-2"><div class="para" id="def-lub-3-1-6-2-1"><span class="process-math">\(\displaystyle b \preceq u\)</span></div></li>
 <li id="def-lub-3-1-6-3"><div class="para" id="def-lub-3-1-6-3-1">If <span class="process-math">\(u' \in L\)</span> such that if <span class="process-math">\(a \preceq u'\)</span> and <span class="process-math">\(b \preceq u'\text{,}\)</span> then <span class="process-math">\(u \preceq u'\text{.}\)</span>
@@ -1049,7 +1077,7 @@ sagecell.makeSagecell({
 <div class="para" id="theorem-unique-lub-glb-2-1">Let <span class="process-math">\((L, \preceq)\)</span> be a poset, and <span class="process-math">\(a, b \in L\text{.}\)</span> If a greatest lower bound of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> exists, then it is unique. The same is true of a least upper bound, if it exists.</div></article><details id="theorem-unique-lub-glb-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="theorem-unique-lub-glb-3-1">
 <div class="para">Let <span class="process-math">\(\ell\)</span> and <span class="process-math">\(\ell'\)</span> be greatest lower bounds of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span> We will prove that <span class="process-math">\(\ell=\ell'\text{.}\)</span>
 </div>
-<ol class="decimal">
+<ol class="decimal ol-marker-2" id="theorem-unique-lub-glb-3-1-6">
 <li id="theorem-unique-lub-glb-3-1-6-1"><div class="para" id="theorem-unique-lub-glb-3-1-6-1-1">
 <span class="process-math">\(\ell\)</span> a greatest lower bound of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> <span class="process-math">\(\Rightarrow\)</span>  <span class="process-math">\(\ell\)</span> is a lower bound of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span>
 </div></li>
@@ -1065,22 +1093,28 @@ sagecell.makeSagecell({
 <li id="theorem-unique-lub-glb-3-1-6-5"><div class="para" id="theorem-unique-lub-glb-3-1-6-5-1">
 <span class="process-math">\(\ell\preceq \ell'\)</span> and <span class="process-math">\(\ell'\preceq \ell \Rightarrow \ell=\ell'\)</span> by the antisymmetry property of a partial ordering.</div></li>
 </ol>
-</div> <div class="para" id="theorem-unique-lub-glb-3-2">The proof of the second statement in the theorem is almost identical to the first and is left to the reader.</div></article></details><article class="definition definition-like" id="def-greatest-least"><h3 class="heading">
+</div>
+<div class="para" id="theorem-unique-lub-glb-3-2">The proof of the second statement in the theorem is almost identical to the first and is left to the reader.</div></article></details><article class="definition definition-like" id="def-greatest-least"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Greatest Element, Least Element.</span>
-</h3>  <div class="para" id="def-greatest-least-6-1">Let <span class="process-math">\((L, \preceq)\)</span> be a poset. <span class="process-math">\(M \in L\)</span> is called the greatest (maximum) element of <span class="process-math">\(L\)</span> if, for all <span class="process-math">\(a \in L\text{,}\)</span> <span class="process-math">\(a \preceq M\text{.}\)</span> In addition, <span class="process-math">\(m
+</h3>
+<div class="para" id="def-greatest-least-6-1">Let <span class="process-math">\((L, \preceq)\)</span> be a poset. <span class="process-math">\(M \in L\)</span> is called the greatest (maximum) element of <span class="process-math">\(L\)</span> if, for all <span class="process-math">\(a \in L\text{,}\)</span> <span class="process-math">\(a \preceq M\text{.}\)</span> In addition, <span class="process-math">\(m
 \in L\)</span> is called the least (minimum) element of <span class="process-math">\(L\)</span> if for all <span class="process-math">\(a \in L\)</span> , <span class="process-math">\(m \preceq a\text{.}\)</span> The greatest and least elements, when they exist, are frequently denoted by <span class="process-math">\(\pmb{1}\)</span> and <span class="process-math">\(\pmb{0}\)</span> respectively.</div></article><article class="example example-like" id="ex-bounds-105"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">12.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Bounds on the divisors of 105.</span>
-</h3> <div class="para" id="ex-bounds-105-2">Consider the partial ordering “divides” on <span class="process-math">\(L = \{1, 3, 5, 7, 15, 21, 35, 105\}\text{.}\)</span> Then <span class="process-math">\((L, \mid)\)</span> is a poset. To determine the least upper bound of 3 and 7, we look for all <span class="process-math">\(u \in L\text{,}\)</span> such that <span class="process-math">\(3|u\)</span> and <span class="process-math">\(7|u\text{.}\)</span> Certainly, both <span class="process-math">\(u = 21\)</span> and <span class="process-math">\(u = 105\)</span> satisfy these conditions and no other element of <span class="process-math">\(L\)</span> does. Next, since <span class="process-math">\(21|105\text{,}\)</span> <span class="process-math">\(21\)</span> is the least upper bound of 3 and 7. Similarly, the least upper bound of 3 and 5 is 15. The greatest element of <span class="process-math">\(L\)</span> is 105 since <span class="process-math">\(a|105\)</span> for all <span class="process-math">\(a \in L\text{.}\)</span> To find the greatest lower bound of 15 and 35, we first consider all elements <span class="process-math">\(g\)</span> of <span class="process-math">\(L\)</span> such that <span class="process-math">\(g \mid 15\text{.}\)</span> They are 1, 3, 5, and 15. The elements for which <span class="process-math">\(g \mid 35\)</span> are 1, 5, 7, and 35. From these two lists, we see that <span class="process-math">\(\ell = 5\)</span> and <span class="process-math">\(\ell = 1\)</span> satisfy the required conditions. But since <span class="process-math">\(1|5\text{,}\)</span> the greatest lower bound is 5. The least element of <span class="process-math">\(L\)</span> is 1 since <span class="process-math">\(1|a\)</span> for all <span class="process-math">\(a \in L\text{.}\)</span>
+</h3>
+<div class="para" id="ex-bounds-105-2">Consider the partial ordering “divides” on <span class="process-math">\(L = \{1, 3, 5, 7, 15, 21, 35, 105\}\text{.}\)</span> Then <span class="process-math">\((L, \mid)\)</span> is a poset. To determine the least upper bound of 3 and 7, we look for all <span class="process-math">\(u \in L\text{,}\)</span> such that <span class="process-math">\(3|u\)</span> and <span class="process-math">\(7|u\text{.}\)</span> Certainly, both <span class="process-math">\(u = 21\)</span> and <span class="process-math">\(u = 105\)</span> satisfy these conditions and no other element of <span class="process-math">\(L\)</span> does. Next, since <span class="process-math">\(21|105\text{,}\)</span> <span class="process-math">\(21\)</span> is the least upper bound of 3 and 7. Similarly, the least upper bound of 3 and 5 is 15. The greatest element of <span class="process-math">\(L\)</span> is 105 since <span class="process-math">\(a|105\)</span> for all <span class="process-math">\(a \in L\text{.}\)</span> To find the greatest lower bound of 15 and 35, we first consider all elements <span class="process-math">\(g\)</span> of <span class="process-math">\(L\)</span> such that <span class="process-math">\(g \mid 15\text{.}\)</span> They are 1, 3, 5, and 15. The elements for which <span class="process-math">\(g \mid 35\)</span> are 1, 5, 7, and 35. From these two lists, we see that <span class="process-math">\(\ell = 5\)</span> and <span class="process-math">\(\ell = 1\)</span> satisfy the required conditions. But since <span class="process-math">\(1|5\text{,}\)</span> the greatest lower bound is 5. The least element of <span class="process-math">\(L\)</span> is 1 since <span class="process-math">\(1|a\)</span> for all <span class="process-math">\(a \in L\text{.}\)</span>
 </div></article><article class="definition definition-like" id="def-set-of-divisors"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">The Set of Divisors of an Integer.</span>
-</h3>  <div class="para" id="def-set-of-divisors-4-1">For any positive integer <span class="process-math">\(n\text{,}\)</span> the divisors of <span class="process-math">\(n\)</span> is the set of integers that divide evenly into <span class="process-math">\(n\text{.}\)</span> We denote this set <span class="process-math">\(D_n\text{.}\)</span>
+</h3>
+<div class="para" id="def-set-of-divisors-4-1">For any positive integer <span class="process-math">\(n\text{,}\)</span> the divisors of <span class="process-math">\(n\)</span> is the set of integers that divide evenly into <span class="process-math">\(n\text{.}\)</span> We denote this set <span class="process-math">\(D_n\text{.}\)</span>
 </div></article><div class="para" id="s-posets-revisited-17">For example, the set <span class="process-math">\(L\)</span> of <a href="s-posets-revisited.html#ex-bounds-105" class="xref" data-knowl="./knowl/xref/ex-bounds-105.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 12.1.8: Bounds on the divisors of 105">Example 12.1.8</a> is <span class="process-math">\(D_{105}\text{.}\)</span>
 </div>
 <article class="example example-like" id="ex-power-3"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">12.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">The power set of a three element set.</span>
-</h3> <div class="para" id="ex-power-3-2">Consider the poset <span class="process-math">\((\mathcal{P}(A),\subseteq)\text{,}\)</span> where <span class="process-math">\(A = \{1, 2, 3\}\text{.}\)</span> The greatest lower bound of <span class="process-math">\(\{1, 2\}\)</span> and <span class="process-math">\(\{1,3\}\)</span> is <span class="process-math">\(\ell = \{1\}\text{.}\)</span> For any other element <span class="process-math">\(\ell'\)</span> which is a subset of <span class="process-math">\(\{a,
+</h3>
+<div class="para" id="ex-power-3-2">Consider the poset <span class="process-math">\((\mathcal{P}(A),\subseteq)\text{,}\)</span> where <span class="process-math">\(A = \{1, 2, 3\}\text{.}\)</span> The greatest lower bound of <span class="process-math">\(\{1, 2\}\)</span> and <span class="process-math">\(\{1,3\}\)</span> is <span class="process-math">\(\ell = \{1\}\text{.}\)</span> For any other element <span class="process-math">\(\ell'\)</span> which is a subset of <span class="process-math">\(\{a,
 b\}\)</span> and <span class="process-math">\(\{a, c\}\)</span> (there is only one; what is it?), <span class="process-math">\(\ell' \subseteq
-\ell\text{.}\)</span> The least element of <span class="process-math">\(\mathcal{P}(A)\)</span> is <span class="process-math">\(\emptyset\)</span> and the greatest element is <span class="process-math">\(A=\{a, b, c\}\text{.}\)</span> The Hasse diagram of this poset is shown in <a href="s-posets-revisited.html#fig-power-3" class="xref" data-knowl="./knowl/xref/fig-power-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 12.1.11">Figure 12.1.11</a>.</div> <figure class="figure figure-like" id="fig-power-3"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/images/fig-power-3.png" class="contained" alt="Power Set of the set \(\{1, 2, 3\}\)"></div>
+\ell\text{.}\)</span> The least element of <span class="process-math">\(\mathcal{P}(A)\)</span> is <span class="process-math">\(\emptyset\)</span> and the greatest element is <span class="process-math">\(A=\{a, b, c\}\text{.}\)</span> The Hasse diagram of this poset is shown in <a href="s-posets-revisited.html#fig-power-3" class="xref" data-knowl="./knowl/xref/fig-power-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 12.1.11">Figure 12.1.11</a>.</div>
+<figure class="figure figure-like" id="fig-power-3"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/images/fig-power-3.png" class="contained" alt="Power Set of the set \(\{1, 2, 3\}\)"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.1.11<span class="period">.</span></span><span class="space"> </span>Power Set of <span class="process-math">\(\{1, 2, 3\}\)</span></figcaption></figure></article><div class="para" id="s-posets-revisited-19">The previous examples and definitions indicate that the least upper bound and greatest lower bound are defined in terms of the partial ordering of the given poset. It is not yet clear whether all posets have the property such every pair of elements always has both a least upper bound and greatest lower bound. Indeed, this is not the case (see <a href="s-posets-revisited.html#exercise-12-1-3" class="xref" data-knowl="./knowl/xref/exercise-12-1-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 12.1.3">Exercise 12.1.3</a>).</div>
 <section class="exercises" id="exercises-12-1"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
@@ -1090,7 +1124,7 @@ b\}\)</span> and <span class="process-math">\(\{a, c\}\)</span> (there is only o
 <div class="para">Consider the poset <span class="process-math">\((D_{30},\mid)\text{,}\)</span> where <span class="process-math">\(D_{30} = \{1,2, 3, 5, 6, 10,
 15, 30\}\text{.}\)</span>
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="exercise-12-1-1-1-1-3">
 <li id="exercise-12-1-1-1-1-3-1"><div class="para" id="exercise-12-1-1-1-1-3-1-1">Find all lower bounds of 10 and 15.</div></li>
 <li id="exercise-12-1-1-1-1-3-2"><div class="para" id="exercise-12-1-1-1-1-3-2-1">Find the greatest lower bound of 10 and 15.</div></li>
 <li id="exercise-12-1-1-1-1-3-3"><div class="para" id="exercise-12-1-1-1-1-3-3-1">Find all upper bounds of 10 and 15.</div></li>
@@ -1099,29 +1133,30 @@ b\}\)</span> and <span class="process-math">\(\{a, c\}\)</span> (there is only o
 </ol>
 </div>
 <div class="solutions"><details id="exercise-12-1-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
-<div class="para logical" id="exercise-12-1-1-2-1"><ol class="lower-alpha cols2">
+<div class="para logical" id="exercise-12-1-1-2-1"><ol class="lower-alpha ol-marker-1 cols2" id="exercise-12-1-1-2-1-1">
 <li id="exercise-12-1-1-2-1-1-1"><div class="para" id="exercise-12-1-1-2-1-1-1-1">1, 5</div></li>
 <li id="exercise-12-1-1-2-1-1-2"><div class="para" id="exercise-12-1-1-2-1-1-2-1">5</div></li>
 <li id="exercise-12-1-1-2-1-1-3"><div class="para" id="exercise-12-1-1-2-1-1-3-1">30</div></li>
 <li id="exercise-12-1-1-2-1-1-4"><div class="para" id="exercise-12-1-1-2-1-1-4-1">30</div></li>
 <li id="exercise-12-1-1-2-1-1-5"><div class="para" id="exercise-12-1-1-2-1-1-5-1">See the Sage cell below with the default input displaying a Hasse diagram for <span class="process-math">\(D_{12}\text{.}\)</span>
 </div></li>
-</ol></div> <pre id="exercise-12-1-1-2-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Posets.DivisorLattice(12).show()
-</script></pre>
+</ol></div>
+<div id="exercise-12-1-1-2-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Posets.DivisorLattice(12).show()
+</script></div>
 </div></details></div></article><article class="exercise exercise-like" id="exercises-12-1-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
 <div class="para" id="exercises-12-1-3-1-1">List the elements of the sets <span class="process-math">\(D_8\text{,}\)</span> <span class="process-math">\(D_{50}\text{,}\)</span> and <span class="process-math">\(D_{1001}\text{.}\)</span> For each set, draw the Hasse diagram for “divides.”</div></article><article class="exercise exercise-like" id="exercise-12-1-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="exercise-12-1-3-1-1">
 <div class="para">
 <a href="s-posets-revisited.html#fig-exercise-12-1-3" class="xref" data-knowl="./knowl/xref/fig-exercise-12-1-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 12.1.12">Figure 12.1.12</a> contains Hasse diagrams of posets.</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="exercise-12-1-3-1-1-2">
 <li id="exercise-12-1-3-1-1-2-1"><div class="para" id="exercise-12-1-3-1-1-2-1-1">Determine the least upper bound and greatest lower bound of all pairs of elements when they exist. Indicate those pairs that do not have a least upper bound (or a greatest lower bound ).</div></li>
 <li id="exercise-12-1-3-1-1-2-2"><div class="para" id="exercise-12-1-3-1-1-2-2-1">Find the least and greatest elements when they exist.</div></li>
 </ol>
 </div> <figure class="figure figure-like" id="fig-exercise-12-1-3"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/fig-exercise-12-1-3.png" class="contained" alt="Eight Hasse diagrams for Exercise 3"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.1.12<span class="period">.</span></span><span class="space"> </span>Figure for Exercise 3</figcaption></figure><div class="solutions"><details id="exercise-12-1-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercise-12-1-3-2-1"><ul class="disc">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.1.12<span class="period">.</span></span><span class="space"> </span>Figure for Exercise 3</figcaption></figure><div class="solutions"><details id="exercise-12-1-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercise-12-1-3-2-1"><ul class="disc" id="exercise-12-1-3-2-1-1">
 <li id="exercise-12-1-3-2-1-1-1"><div class="para logical" id="exercise-12-1-3-2-1-1-1-1">
 <div class="para">Solution for Hasse diagram (b):</div>
-<ul class="circle"><li id="exercise-12-1-3-2-1-1-1-1-1-1">
+<ul class="circle" id="exercise-12-1-3-2-1-1-1-1-1"><li id="exercise-12-1-3-2-1-1-1-1-1-1">
 <div class="para logical" id="exercise-12-1-3-2-1-1-1-1-1-1-1"><div class="displaymath process-math">
 \begin{equation*}
 \begin{array}{c|c}
@@ -1164,7 +1199,7 @@ a_5 \\
 </div></li>
 <li id="exercise-12-1-3-2-1-1-2"><div class="para logical" id="exercise-12-1-3-2-1-1-2-1">
 <div class="para">Partial solution for Hasse diagram (f):</div>
-<ul class="circle">
+<ul class="circle" id="exercise-12-1-3-2-1-1-2-1-1">
 <li id="exercise-12-1-3-2-1-1-2-1-1-1"><div class="para" id="exercise-12-1-3-2-1-1-2-1-1-1-1">
 <span class="process-math">\(\textrm{ lub}\left(a_2, a_3\right)\)</span> and <span class="process-math">\(\textrm{
 lub}\left( a_4,a_5\right)\)</span> do not exist.</div></li>
@@ -1173,7 +1208,7 @@ lub}\left( a_4,a_5\right)\)</span> do not exist.</div></li>
 </div></li>
 </ul></div></div></details></div></article><article class="exercise exercise-like" id="exercises-12-1-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para" id="exercises-12-1-5-1-1">For the poset <span class="process-math">\((\mathbb{N},\leq )\text{,}\)</span> what are the greatest lower bound and least upper bound of two elements <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{?}\)</span> Are there least and/or greatest elements?</div></article><article class="exercise exercise-like" id="exercises-12-1-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para logical" id="exercises-12-1-6-1-1"><ol class="lower-alpha">
+<div class="para logical" id="exercises-12-1-6-1-1"><ol class="lower-alpha ol-marker-1" id="exercises-12-1-6-1-1-1">
 <li id="exercises-12-1-6-1-1-1-1"><div class="para" id="exercises-12-1-6-1-1-1-1-1">Prove the second part of <a href="s-posets-revisited.html#theorem-unique-lub-glb" class="xref" data-knowl="./knowl/xref/theorem-unique-lub-glb.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 12.1.6: Uniqueness of Least Upper and Greatest Lower Bounds">Theorem 12.1.6</a>, the least upper bound of two elements in a poset is unique, it one exists.</div></li>
 <li id="exercises-12-1-6-1-1-1-2"><div class="para" id="exercises-12-1-6-1-1-1-2-1">Prove that if a poset <span class="process-math">\(L\)</span> has a least element, then that element is unique.</div></li>
 </ol></div>
@@ -1198,7 +1233,7 @@ lub}\left( a_4,a_5\right)\)</span> do not exist.</div></li>
 b') \Leftrightarrow a \leq a' \textrm{ and } b \leq b'
 \end{equation*}
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha ol-marker-1" id="exercises-12-1-7-1-1-6">
 <li id="exercises-12-1-7-1-1-6-1"><div class="para" id="exercises-12-1-7-1-1-6-1-1">Prove that <span class="process-math">\(\preceq\)</span> is a partial ordering on <span class="process-math">\(A_m \times A_n\)</span> .</div></li>
 <li id="exercises-12-1-7-1-1-6-2"><div class="para" id="exercises-12-1-7-1-1-6-2-1">Draw the ordering diagrams for <span class="process-math">\(\preceq\)</span> on <span class="process-math">\(A_2 \times A_2\)</span> , <span class="process-math">\(A_2\times A_3\text{,}\)</span> and <span class="process-math">\(A_3 \times A_3\text{.}\)</span>
 </div></li>
@@ -1209,11 +1244,11 @@ b') \Leftrightarrow a \leq a' \textrm{ and } b \leq b'
 </ol>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="chapter_12.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s-lattices.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="chapter_12.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s-lattices.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>
