@@ -99,7 +99,7 @@
 					
 				</figure>
 				<figure xml:id="venn-assoc-intersect-right">
-					<caption>Right side of associate law for intersection</caption>
+					<caption>Right side of associative law for intersection</caption>
 					<image width="100%" source="images/venn-assoc-intersect-right.png">
 						<shortdescription>(Venn diagram showing <m>(A\cup B)\cup C</m>)</shortdescription>
 					</image>
