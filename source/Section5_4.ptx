@@ -125,7 +125,7 @@
 						\lvert x \rvert =
 						\begin{cases}
 						\hfill x    \hfill &amp; \text{ if $x$ is greater than or equal to 0} \\
-						\hfill -x \hfill &amp; \text{ if $n$ is less than 0} \\
+						\hfill -x \hfill &amp; \text{ if $x$ is less than 0} \\
 						\end{cases}
 						</me></p>
 					<p><ol marker="(a)">

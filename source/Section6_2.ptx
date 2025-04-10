@@ -90,7 +90,21 @@
 						<li>Prove the Idempotent Law (Law 6) using basic definitions.</li>
 						</ol></p>
 			</statement>
-			<answer><p><ol marker="(a)"><li><p></p></li> <!-- TODO -->
+			<answer><p><ol marker="(a)"><li><p>
+				<figure xml:id="venn-assoc-intersect-left">
+					<caption>Left side of associative law for intersection</caption>
+					<image width="100%" source="images/venn-assoc-intersect-left.png">
+						<shortdescription>(Venn diagram showing <m>A\cup (B\cup C)</m>')</shortdescription>
+					</image>
+					
+				</figure>
+				<figure xml:id="venn-assoc-intersect-right">
+					<caption>Right side of associate law for intersection</caption>
+					<image width="100%" source="images/venn-assoc-intersect-right.png">
+						<shortdescription>(Venn diagram showing <m>(A\cup B)\cup C</m>)</shortdescription>
+					</image>
+				</figure>
+			</p></li> 
 						<li><p>
 								<me>\begin{array}{ccccccc}
 									A &amp; B &amp;\overline{A} &amp; \overline{B} &amp; A\cup B &amp; \overline{(A\cup B)} &amp;\overline{A}\cap \overline{B} \\
@@ -161,13 +175,15 @@
 									&amp; \Rightarrow B\cap C \neq \emptyset \quad \square \\
 									\end{split}
 									</me></p></li>
-						<li><p><me>
+						<li><p>Starting with the right side<me>
 									\begin{split}
-									A\cap (B-C) &amp;=A\cap (B\cap \overline{C}) \\
+									(A\cap B) - (A\cap C) &amp;= A\cap B) \cap (\overline{A\cap C}) \\
+									&amp; = (A \cap B) \cap (\overline{A} \cup \overline{C}) \\
 									&amp; = (A\cap B\cap \overline{A})\cup (A\cap B\cap \overline{C}) \\
-									&amp; =(A\cap B)\cap (\overline{A}\cup \overline{C}) \\
-									&amp; =(A\cap B)\cap \overline{(A\cup C)} \\
-									&amp; =(A-B)\cap (A-C) \quad \square\\
+									&amp; =(\emptyset \cap B) \cup (A \cap B \cap \overline{C}) \\
+									&amp; = \emptyset \cup (A \cap B \cap \overline{C}) \\
+									&amp; = A \cap B \cap \overline{C}\\
+									&amp; =A\cap (B-C) \quad \square\\
 									\end{split}
 									</me></p></li>
 						<li><p><me>
