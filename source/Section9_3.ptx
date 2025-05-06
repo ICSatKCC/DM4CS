@@ -186,7 +186,7 @@ Thus, we obtain the following recurrence relation:
 \begin{array}{c c}
    T(1)  &amp; =  0 , \nonumber \\
    T(n)  &amp; \leq 2 \cdot T(n/2) + n \\
-   &amp;<m>n \geq 2, n = 2^k</m>.}
+   &amp;<m>n \geq 2, n = 2^k</m>.
   \end{array}</me></p>
 <p>Our goal was to determine <m>T(n)</m>, but at this moment, we only have a
 recurrence relation for this function. We will solve this recurrence
